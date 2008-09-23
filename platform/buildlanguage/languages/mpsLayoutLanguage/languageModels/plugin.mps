@@ -1254,16 +1254,16 @@
         <link role="classifier" targetNodeId="4.~SModelDescriptor" resolveInfo="SModelDescriptor" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221242205747">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221242254681">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221242254682">
-            <property name="name" value="newModelUID" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221242254683">
-              <link role="classifier" targetNodeId="4.~SModelUID" resolveInfo="SModelUID" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1222168911954">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1222168911955">
+            <property name="name" value="newModelFQName" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222168911956">
+              <link role="classifier" targetNodeId="4.~SModelFqName" resolveInfo="SModelFqName" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1221845358216">
-              <link role="baseMethodDeclaration" targetNodeId="4.~SModelUID.fromString(java.lang.String):jetbrains.mps.smodel.SModelUID" resolveInfo="fromString" />
-              <link role="classConcept" targetNodeId="4.~SModelUID" resolveInfo="SModelUID" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221845360624">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1222168929970">
+              <link role="baseMethodDeclaration" targetNodeId="4.~SModelFqName.fromString(java.lang.String):jetbrains.mps.smodel.SModelFqName" resolveInfo="fromString" />
+              <link role="classConcept" targetNodeId="4.~SModelFqName" resolveInfo="SModelFqName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222168933388">
                 <link role="variableDeclaration" targetNodeId="1221242259765" resolveInfo="modelName" />
               </node>
             </node>
@@ -1324,14 +1324,14 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1221242254711">
                     <link role="variable" targetNodeId="1221242254699" resolveInfo="descriptor" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221242254712">
-                    <link role="baseMethodDeclaration" targetNodeId="4.~SModelDescriptor.getModelUID():jetbrains.mps.smodel.SModelUID" resolveInfo="getModelUID" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222168940579">
+                    <link role="baseMethodDeclaration" targetNodeId="4.~SModelDescriptor.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221242254713">
-                  <link role="baseMethodDeclaration" targetNodeId="4.~SModelUID.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221242254714">
-                    <link role="variableDeclaration" targetNodeId="1221242254682" resolveInfo="newModelUID" />
+                  <link role="baseMethodDeclaration" targetNodeId="10.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222168944985">
+                    <link role="variableDeclaration" targetNodeId="1222168911955" resolveInfo="newModelFQName" />
                   </node>
                 </node>
               </node>
@@ -1350,9 +1350,9 @@
                     <link role="variableDeclaration" targetNodeId="1221242265347" resolveInfo="solution" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221242254722">
-                    <link role="baseMethodDeclaration" targetNodeId="2.~AbstractModule.createModel(jetbrains.mps.smodel.SModelUID,jetbrains.mps.project.SModelRoot):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createModel" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221242254723">
-                      <link role="variableDeclaration" targetNodeId="1221242254682" resolveInfo="newModelUID" />
+                    <link role="baseMethodDeclaration" targetNodeId="2.~AbstractModule.createModel(jetbrains.mps.smodel.SModelFqName,jetbrains.mps.project.SModelRoot):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createModel" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222168967973">
+                      <link role="variableDeclaration" targetNodeId="1222168911955" resolveInfo="newModelFQName" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221242254724">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221242254725">
@@ -1365,7 +1365,7 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221242254728">
                         <link role="baseMethodDeclaration" targetNodeId="9.~List.get(int):java.lang.Object" resolveInfo="get" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1221242254729">
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222168312174">
                           <property name="value" value="0" />
                         </node>
                       </node>
