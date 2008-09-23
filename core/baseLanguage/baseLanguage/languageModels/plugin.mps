@@ -2417,7 +2417,7 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1208785675987" />
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208786293710">
-      <link role="classifier" targetNodeId="36.~EditorCheckerAdapter" resolveInfo="EditorCheckerAdapter" />
+      <link role="classifier" targetNodeId="35.~EditorCheckerAdapter" resolveInfo="EditorCheckerAdapter" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1208786474480">
       <property name="name" value="createMessages" />
@@ -2496,7 +2496,7 @@
                           </node>
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208787238154">
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208787238155">
-                              <link role="baseMethodDeclaration" targetNodeId="36.~EditorCheckerAdapter.getOwner(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.EditorMessageOwner" resolveInfo="getOwner" />
+                              <link role="baseMethodDeclaration" targetNodeId="35.~EditorCheckerAdapter.getOwner(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.EditorMessageOwner" resolveInfo="getOwner" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208787278150">
                                 <link role="variableDeclaration" targetNodeId="1208786474484" resolveInfo="rootNode" />
                               </node>
