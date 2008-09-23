@@ -28,7 +28,7 @@ public class typeof_MoveNodesToNodeExpression_InferenceRule implements Inference
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).MoveNodesToNodeExpression";
+    return "jetbrains.mps.logging.refactoring.structure.MoveNodesToNodeExpression";
   }
 
   public boolean isApplicable(SNode argument) {

@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
@@ -747,6 +748,35 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void reloadFromDisk() {
+  }
+
+  public boolean updateSModelReferences() {
+    boolean changed = false;
+
+    if (getModuleDescriptor() == null) {
+      return false;
+    }
+
+    for (Model m : getModuleDescriptor().getDescendants(Model.class)) {
+      SModelReference oldRef = SModelReference.fromString(m.getModelRef());
+      SModelReference newRef = oldRef.update();
+      changed = changed || changed(oldRef, newRef);
+      m.setModelRef(newRef.toString());
+    }
+
+    for (MappingConfig_SimpleRef ref : getModuleDescriptor().getDescendants(MappingConfig_SimpleRef.class)) {
+      SModelReference oldRef = SModelReference.fromString(ref.getModelUID());
+      SModelReference newRef = oldRef.update();
+      changed = changed || changed(oldRef, newRef);
+      ref.setModelUID(newRef.toString());
+    }
+
+    return changed;
+  }
+
+  private boolean changed(SModelReference ref1, SModelReference ref2) {
+    return !EqualUtil.equals(ref1.getSModelId(), ref2.getSModelId()) ||
+      !EqualUtil.equals(ref1.getSModelFqName(), ref2.getSModelFqName());
   }
 
   public class ModuleScope extends DefaultScope {

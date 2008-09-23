@@ -23,7 +23,7 @@ public class typeof_RequiredAdditionalArgument_InferenceRule implements Inferenc
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).RequiredAdditionalArgument";
+    return "jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument";
   }
 
   public boolean isApplicable(SNode argument) {

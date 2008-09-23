@@ -573,7 +573,6 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public IModule getModuleForModelFile(String path) {
-    List<IModule> result = new ArrayList<IModule>();
     for (IModule module : getAllModules()) {
       List<SModelRoot> smodelRoots = module.getSModelRoots();
       for (SModelRoot root : smodelRoots) {
@@ -592,6 +591,15 @@ public class MPSModuleRepository implements ApplicationComponent {
       return true;
     } else {
       return false;
+    }
+  }
+
+  public void updateModuleReferences() {
+    for (IModule m : getAllModules()) {
+      AbstractModule module = (AbstractModule) m;
+      if (module.updateSModelReferences()) {
+        module.save();
+      }
     }
   }
 }

@@ -23,7 +23,7 @@ public class typeof_MoveNodesToModelExpression_InferenceRule implements Inferenc
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).MoveNodesToModelExpression";
+    return "jetbrains.mps.logging.refactoring.structure.MoveNodesToModelExpression";
   }
 
   public boolean isApplicable(SNode argument) {

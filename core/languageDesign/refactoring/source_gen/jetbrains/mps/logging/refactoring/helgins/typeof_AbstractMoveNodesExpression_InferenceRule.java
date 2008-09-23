@@ -28,7 +28,7 @@ public class typeof_AbstractMoveNodesExpression_InferenceRule implements Inferen
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).AbstractMoveNodesExpression";
+    return "jetbrains.mps.logging.refactoring.structure.AbstractMoveNodesExpression";
   }
 
   public boolean isApplicable(SNode argument) {

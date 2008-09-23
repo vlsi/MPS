@@ -33,7 +33,7 @@ public class typeof_ChangeFeatureNameOperation_InferenceRule implements Inferenc
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).ChangeFeatureNameOperation";
+    return "jetbrains.mps.logging.refactoring.structure.ChangeFeatureNameOperation";
   }
 
   public boolean isApplicable(SNode argument) {

@@ -22,7 +22,7 @@ public class typeof_OperationContextExpression_InferenceRule implements Inferenc
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).OperationContextExpression";
+    return "jetbrains.mps.logging.refactoring.structure.OperationContextExpression";
   }
 
   public boolean isApplicable(SNode argument) {

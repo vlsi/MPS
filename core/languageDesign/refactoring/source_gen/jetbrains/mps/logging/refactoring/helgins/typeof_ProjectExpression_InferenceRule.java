@@ -22,7 +22,7 @@ public class typeof_ProjectExpression_InferenceRule implements InferenceRule_Run
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).ProjectExpression";
+    return "jetbrains.mps.logging.refactoring.structure.ProjectExpression";
   }
 
   public boolean isApplicable(SNode argument) {

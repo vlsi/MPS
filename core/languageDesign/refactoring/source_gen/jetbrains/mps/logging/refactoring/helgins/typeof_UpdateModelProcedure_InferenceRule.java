@@ -23,7 +23,7 @@ public class typeof_UpdateModelProcedure_InferenceRule implements InferenceRule_
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).UpdateModelProcedure";
+    return "jetbrains.mps.logging.refactoring.structure.UpdateModelProcedure";
   }
 
   public boolean isApplicable(SNode argument) {

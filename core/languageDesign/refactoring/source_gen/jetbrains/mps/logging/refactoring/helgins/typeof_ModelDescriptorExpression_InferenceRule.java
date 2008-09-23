@@ -22,7 +22,7 @@ public class typeof_ModelDescriptorExpression_InferenceRule implements Inference
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).ModelDescriptorExpression";
+    return "jetbrains.mps.logging.refactoring.structure.ModelDescriptorExpression";
   }
 
   public boolean isApplicable(SNode argument) {

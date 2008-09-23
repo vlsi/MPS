@@ -33,7 +33,7 @@ public class typeof_ExecuteFindersExpression_InferenceRule implements InferenceR
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).ExecuteFindersExpression";
+    return "jetbrains.mps.logging.refactoring.structure.ExecuteFindersExpression";
   }
 
   public boolean isApplicable(SNode argument) {

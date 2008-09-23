@@ -4,8 +4,8 @@
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.transformation.TLBase" />
   </models>
   <accessoryModels>
-    <model modelUID="jetbrains.mps.generator.template@java_stub" />
-    <model modelUID="jetbrains.mps.generator@java_stub" />
+    <model modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" />
+    <model modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" />
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.transformation.TLBase#1167163152317">
@@ -28,10 +28,10 @@
           <greater-priority-mapping>
             <mapping-set>
               <mapping-set-element>
-                <mapping-node modelUID="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.main@generator" nodeID="1167163238171" />
+                <mapping-node modelUID="r:1222075024105(jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.main@generator)" nodeID="1167163238171" />
               </mapping-set-element>
               <mapping-set-element>
-                <mapping-node modelUID="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.main@generator" nodeID="1200915686141" />
+                <mapping-node modelUID="r:1222075024105(jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.main@generator)" nodeID="1200915686141" />
               </mapping-set-element>
             </mapping-set>
           </greater-priority-mapping>

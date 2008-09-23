@@ -5,7 +5,7 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="agreementLanguage" />
   </models>
   <accessoryModels>
-    <model modelUID="agreementLanguage.declarations" />
+    <model modelUID="r:1222075024395(agreementLanguage.declarations)" />
   </accessoryModels>
   <generators>
     <generator generatorUID="agreementLanguage#1130266708218">

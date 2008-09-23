@@ -22,7 +22,7 @@ public class typeof_ScopeExpression_InferenceRule implements InferenceRule_Runti
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).ScopeExpression";
+    return "jetbrains.mps.logging.refactoring.structure.ScopeExpression";
   }
 
   public boolean isApplicable(SNode argument) {

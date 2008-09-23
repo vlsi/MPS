@@ -47,7 +47,7 @@
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.bootstrap.smodelLanguage#1139186730696" />
             <external-mapping>
-              <mapping-node modelUID="jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.template.main@generator" nodeID="1208783529339" />
+              <mapping-node modelUID="r:1222075024131(jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.template.main@generator)" nodeID="1208783529339" />
             </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>

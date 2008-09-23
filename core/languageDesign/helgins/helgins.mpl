@@ -5,7 +5,7 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.helgins" />
   </models>
   <accessoryModels>
-    <model modelUID="jetbrains.mps.bootstrap.helgins.dependencies" />
+    <model modelUID="r:1222075024053(jetbrains.mps.bootstrap.helgins.dependencies)" />
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.bootstrap.helgins#1174411220599">
@@ -25,10 +25,10 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main@generator" nodeID="1174411222995" />
+            <mapping-node modelUID="r:1222075024055(jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main@generator)" nodeID="1174411222995" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <mapping-node modelUID="jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main@generator" nodeID="1215528394348" />
+            <mapping-node modelUID="r:1222075024055(jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main@generator)" nodeID="1215528394348" />
           </lesser-priority-mapping>
         </mapping-priority-rule>
       </mapping-priorities>

@@ -5,7 +5,7 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.regexp" />
   </models>
   <accessoryModels>
-    <model modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" />
+    <model modelUID="r:1222075024665(jetbrains.mps.regexp.jetbrains.mps.regexp.accessory)" />
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.regexp#1174510748147">
@@ -26,7 +26,7 @@
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
             <external-mapping>
-              <mapping-node modelUID="jetbrains.mps.baseLanguage.generator.java.closures@generator" nodeID="*" />
+              <mapping-node modelUID="r:1222075024075(jetbrains.mps.baseLanguage.generator.java.closures@generator)" nodeID="*" />
             </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>

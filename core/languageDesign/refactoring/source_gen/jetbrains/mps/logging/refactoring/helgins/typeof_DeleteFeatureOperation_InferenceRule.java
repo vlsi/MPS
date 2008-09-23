@@ -23,7 +23,7 @@ public class typeof_DeleteFeatureOperation_InferenceRule implements InferenceRul
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).DeleteFeatureOperation";
+    return "jetbrains.mps.logging.refactoring.structure.DeleteFeatureOperation";
   }
 
   public boolean isApplicable(SNode argument) {

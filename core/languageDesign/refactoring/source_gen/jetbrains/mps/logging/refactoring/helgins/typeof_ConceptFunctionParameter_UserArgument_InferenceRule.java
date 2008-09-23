@@ -26,7 +26,7 @@ public class typeof_ConceptFunctionParameter_UserArgument_InferenceRule implemen
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).ConceptFunctionParameter_UserArgument";
+    return "jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_UserArgument";
   }
 
   public boolean isApplicable(SNode argument) {

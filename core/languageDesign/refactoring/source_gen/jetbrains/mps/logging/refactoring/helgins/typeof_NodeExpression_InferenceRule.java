@@ -22,7 +22,7 @@ public class typeof_NodeExpression_InferenceRule implements InferenceRule_Runtim
   }
 
   public String getApplicableConceptFQName() {
-    return "r:1222075024153(jetbrains.mps.logging.refactoring.structure).NodeExpression";
+    return "jetbrains.mps.logging.refactoring.structure.NodeExpression";
   }
 
   public boolean isApplicable(SNode argument) {
