@@ -75,11 +75,21 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private boolean myIsGeneration = false;
   private boolean myIsInterrupted = false;
 
+  private TypeCheckingContext myTypeCheckingContext;
+
   public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker) {
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
-    // myProject = project;
-    myEquationManager = new EquationManager(myTypeChecker);
+    myTypeCheckingContext = new TypeCheckingContext(this);
+    myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext);
+  }
+
+  public TypeCheckingContext getTypeCheckingContext() {
+    return myTypeCheckingContext;
+  }
+
+  public TypeChecker getTypeChecker() {
+    return myTypeChecker;
   }
 
   public NodeTypesComponent clone() throws CloneNotSupportedException {
@@ -88,7 +98,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     result.myNodesToErrorsMap = new HashMap<SNode, IErrorReporter>();
     result.myFullyCheckedNodes = new WeakSet<SNode>();
     result.myPartlyCheckedNodes = new WeakSet<SNode>();
-    result.myEquationManager = new EquationManager(result.myTypeChecker);
+    result.myEquationManager = new EquationManager(result.myTypeChecker, new TypeCheckingContext(result));
     result.myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
     result.myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
     result.myModelListener = new MyModelListener();
@@ -109,7 +119,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   private void clearEquationManager() {
-    myEquationManager = new EquationManager(myTypeChecker);
+    myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext);
   }
 
   public SNode getNode() {

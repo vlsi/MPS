@@ -121,12 +121,14 @@ public class TypeChecker implements ApplicationComponent {
     return myResolveModeNodesBeingChecked.contains(node);
   }
 
+  @Deprecated
   public Map<SNode, SNode> getMainContext() {
     return myCurrentTypesComponent.getMainContext();
   }
 
+  @Deprecated
   public EquationManager getEquationManager() {
-    if (myCurrentTypesComponent == null) return new EquationManager(this);
+    if (myCurrentTypesComponent == null) return new EquationManager(this, null);
     return myCurrentTypesComponent.getEquationManager();
   }
 
@@ -222,6 +224,7 @@ public class TypeChecker implements ApplicationComponent {
      reportTypeError(nodeWithError, reporter);
   }
 
+  @Deprecated
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
     if (myCurrentTypesComponent == null) return;
     myCurrentTypesComponent.reportTypeError(nodeWithError, errorReporter);
@@ -438,11 +441,7 @@ public class TypeChecker implements ApplicationComponent {
     return modelDescriptor.getSModel();
   }
 
-  @Hack
-  public void markUnchecked(SNode containingRoot) {
-    myCheckedRoots.remove(containingRoot);
-  }
-
+  @Deprecated
   public NodeTypesComponent getCurrentTypesComponent() {
     return myCurrentTypesComponent;
   }

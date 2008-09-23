@@ -51,8 +51,11 @@ public class EquationManager {
   private boolean myCollectConcretes = false;
   private Set<WhenConcreteEntity> myCollectedWhenConcreteEntities = new HashSet<WhenConcreteEntity>();
 
-  public EquationManager(TypeChecker typeChecker) {
+  private TypeCheckingContext myTypeCheckingContext;
+
+  public EquationManager(TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
     myTypeChecker = typeChecker;
+    myTypeCheckingContext = typeCheckingContext;
   }
 
   public TypeChecker getTypeChecker() {
@@ -121,7 +124,7 @@ public class EquationManager {
   }
 
   private SNode registerVariable(SNode node) {
-    SNode runtimeTypesVariable = myTypeChecker.getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    SNode runtimeTypesVariable = myTypeChecker.getRuntimeSupport().createNewRuntimeTypesVariable();
     myRegisteredVariables.put(node, runtimeTypesVariable);
     return runtimeTypesVariable;
   }

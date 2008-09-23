@@ -37,6 +37,7 @@ public class RuntimeSupport {
     return typeOf(node, ruleModel, ruleId, true);
   }
 
+  @Deprecated
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     if (node == null) return null;
     SNode type;
@@ -65,12 +66,13 @@ public class RuntimeSupport {
       }
     }
 
-    SNode var = createNewRuntimeTypesVariable(false);
+    SNode var = createNewRuntimeTypesVariable();
     type = TypeChecker.asType(var);
     myTypeChecker.getMainContext().put(node, type);
     return getRepresentatorIfNecessary(type, currentTypesComponent);
   }
 
+  @Deprecated
   public void addDependencyForCurrent(SNode node) {
     NodeTypesComponent currentTypesComponent = myTypeChecker.getCurrentTypesComponent();
     if (currentTypesComponent != null) {
@@ -78,6 +80,7 @@ public class RuntimeSupport {
     }
   }
 
+  @Deprecated
   private SNode getRepresentatorIfNecessary(SNode type, NodeTypesComponent nodeTypesComponent) {
     if (type == null) return null;
     SNode representator = nodeTypesComponent.getEquationManager().getRepresentator(type);
@@ -90,6 +93,7 @@ public class RuntimeSupport {
     return createNewRuntimeTypesVariable();
   }
 
+  @Deprecated
   public SNode createNewRuntimeTypesVariable() {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable", myTypeChecker.getRuntimeTypesModel(), GlobalScope.getInstance(), false);
     typeVar.setName(getNewVarName());
@@ -101,6 +105,7 @@ public class RuntimeSupport {
     return myTypeChecker.getCurrentTypesComponent().getNewVarName();
   }
 
+  @Deprecated
   public void registerTypeVariable(SNode variable) {
     NodeTypesComponent typesComponent = myTypeChecker.getCurrentTypesComponent();
     if (typesComponent != null) {
@@ -108,6 +113,7 @@ public class RuntimeSupport {
     }
   }
 
+  @Deprecated
   public SNode[] getRegisteredTypeVariables(String varName) {
     NodeTypesComponent typesComponent = myTypeChecker.getCurrentTypesComponent();
     if (typesComponent != null) {
@@ -273,6 +279,7 @@ public class RuntimeSupport {
   }
 
 
+  @Deprecated
   public void givetype(SNode type, SNode node, String ruleModel, String ruleId) {
     Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
     NodeTypesComponent component = myTypeChecker.getCurrentTypesComponent();
