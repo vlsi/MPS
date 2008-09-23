@@ -103,11 +103,16 @@ public class SModelReference implements Comparable<Object> {
   }
 
   public SModelReference update() {
+    SModelDescriptor sm;
     if (myModelId != null) {
-      return GlobalScope.getInstance().getModelDescriptor(myModelId).getSModelReference();      
+      sm = GlobalScope.getInstance().getModelDescriptor(myModelId);
     } else {
-      return GlobalScope.getInstance().getModelDescriptor(myModelFqName).getSModelReference();
+      sm = GlobalScope.getInstance().getModelDescriptor(myModelFqName);
     }
+    if (sm == null) {
+      return this;
+    }
+    return sm.getSModelReference();
   }
 
   public int compareTo(Object o) {

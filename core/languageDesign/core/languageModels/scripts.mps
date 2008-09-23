@@ -7,65 +7,46 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.logging.refactoring" />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="83" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="6" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.logging.refactoring.constraints" version="4" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="21" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="26" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="17" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.pluginLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="1" />
-  <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
-  <languageAspect modelUID="jetbrains.mps.patterns.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="11" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.constraints" version="0" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" version="1" />
-  <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.constraints" version="4" />
-  <languageAspect modelUID="jetbrains.mps.closures.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.constraints" version="0" />
-  <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.internal.collections.constraints" version="2" />
-  <languageAspect modelUID="jetbrains.mps.baseLanguage.blTypes.constraints" version="0" />
-  <languageAspect modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:1222075024065(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
+  <languageAspect modelUID="r:1222075024074(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:1222075024123(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
-  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
-  <languageAspect modelUID="r:1222075024147(jetbrains.mps.logging.refactoring.constraints)" version="4" />
-  <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:1222075024216(jetbrains.mps.bootstrap.findUsagesLanguage.constraints)" version="4" />
   <languageAspect modelUID="r:1222075024129(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:1222075024168(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
+  <languageAspect modelUID="r:1222075024174(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
+  <languageAspect modelUID="r:1222075024147(jetbrains.mps.logging.refactoring.constraints)" version="4" />
   <languageAspect modelUID="r:1222075024024(jetbrains.mps.bootstrap.editorLanguage.constraints)" version="21" />
   <languageAspect modelUID="r:1222075024030(jetbrains.mps.bootstrap.editorLanguage.structure)" version="26" />
-  <languageAspect modelUID="r:1222075024174(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
-  <languageAspect modelUID="r:1222075024158(jetbrains.mps.ide.scriptLanguage.constraints)" version="0" />
-  <languageAspect modelUID="r:1222075024058(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:1222075024168(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
+  <languageAspect modelUID="r:1222075024046(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
+  <languageAspect modelUID="r:1222075024141(jetbrains.mps.bootstrap.constraintsLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:1222075024232(jetbrains.mps.bootstrap.pluginLanguage.structure)" version="1" />
   <languageAspect modelUID="r:1222075024219(jetbrains.mps.bootstrap.findUsagesLanguage.structure)" version="1" />
-  <languageAspect modelUID="r:1222075024091(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:1222075024207(jetbrains.mps.bootstrap.intentionsLanguage.constraints)" version="1" />
   <languageAspect modelUID="r:1222075024184(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:1222075024192(jetbrains.mps.patterns.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024012(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
+  <languageAspect modelUID="r:1222075024058(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
+  <languageAspect modelUID="r:1222075024207(jetbrains.mps.bootstrap.intentionsLanguage.constraints)" version="1" />
+  <languageAspect modelUID="r:1222075024216(jetbrains.mps.bootstrap.findUsagesLanguage.constraints)" version="4" />
+  <languageAspect modelUID="r:1222075024180(jetbrains.mps.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024158(jetbrains.mps.ide.scriptLanguage.constraints)" version="0" />
+  <languageAspect modelUID="r:1222075024003(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024356(jetbrains.mps.internal.collections.constraints)" version="2" />
+  <languageAspect modelUID="r:1222075024091(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <maxImportIndex value="36" />
-  <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="4" modelUID="java.lang@java_stub" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
-  <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="7" modelUID="java.util@java_stub" version="-1" />
-  <import index="8" modelUID="jetbrains.mps.refactoring.framework@java_stub" version="-1" />
-  <import index="14" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
-  <import index="15" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
-  <import index="18" modelUID="jetbrains.mps.project@java_stub" version="-1" />
-  <import index="26" modelUID="jetbrains.mps.ide.findusages.model@java_stub" version="-1" />
-  <import index="30" modelUID="jetbrains.mps.ide.findusages.findalgorithm.finders.specific@java_stub" version="-1" />
-  <import index="33" modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
-  <import index="34" modelUID="jetbrains.mps.ide.findusages.view@java_stub" version="-1" />
-  <import index="35" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="36" modelUID="com.intellij.openapi.progress@java_stub" version="-1" />
+  <import index="1" modelUID="r:1222075024008(jetbrains.mps.core.structure)" version="-1" />
+  <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="6" modelUID="r:1222075024018(jetbrains.mps.bootstrap.structureLanguage.structure)" version="-1" />
+  <import index="7" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="8" modelUID="f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
+  <import index="14" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
+  <import index="15" modelUID="f:java_stub#jetbrains.mps.bootstrap.structureLanguage.structure(jetbrains.mps.bootstrap.structureLanguage.structure@java_stub)" version="-1" />
+  <import index="18" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="26" modelUID="f:java_stub#jetbrains.mps.ide.findusages.model(jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
+  <import index="30" modelUID="f:java_stub#jetbrains.mps.ide.findusages.findalgorithm.finders.specific(jetbrains.mps.ide.findusages.findalgorithm.finders.specific@java_stub)" version="-1" />
+  <import index="33" modelUID="r:1222075024014(jetbrains.mps.bootstrap.structureLanguage.findUsages)" version="-1" />
+  <import index="34" modelUID="f:java_stub#jetbrains.mps.ide.findusages.view(jetbrains.mps.ide.findusages.view@java_stub)" version="-1" />
+  <import index="35" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="36" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198076144993">
     <property name="name" value="MoveNodes" />
     <property name="userFriendlyName" value="Move Nodes" />
@@ -943,7 +924,6 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1209043749725">
     <property name="name" value="RenameModel" />
     <property name="userFriendlyName" value="Rename Model" />
@@ -1011,14 +991,14 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1209124107218">
             <property name="name" value="oldModelUID" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222085975168">
-              <link role="classifier" targetNodeId="2v.~SModelFqName" resolveInfo="SModelFqName" />
+              <link role="classifier" targetNodeId="5.~SModelFqName" resolveInfo="SModelFqName" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209124132364">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1209124130487">
                 <link role="variableDeclaration" targetNodeId="1209124038621" resolveInfo="model" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222094879164">
-                <link role="baseMethodDeclaration" targetNodeId="2v.~SModelDescriptor.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
               </node>
             </node>
           </node>
@@ -1030,7 +1010,7 @@
                 <link role="variableDeclaration" targetNodeId="1209124107218" resolveInfo="oldModelUID" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209124407287">
-                <link role="baseMethodDeclaration" targetNodeId="2v.~SModelFqName.toString():java.lang.String" resolveInfo="toString" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModelFqName.toString():java.lang.String" resolveInfo="toString" />
               </node>
             </node>
             <node role="lValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1209124401748">
@@ -1102,17 +1082,17 @@
               <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_SModel" id="1209124341874" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209124363850">
-              <link role="baseMethodDeclaration" targetNodeId="2v.~SModel.changeImportedModelUID(jetbrains.mps.smodel.SModelReference,jetbrains.mps.smodel.SModelReference):void" resolveInfo="changeImportedModelUID" />
+              <link role="baseMethodDeclaration" targetNodeId="5.~SModel.changeImportedModelUID(jetbrains.mps.smodel.SModelReference,jetbrains.mps.smodel.SModelReference):void" resolveInfo="changeImportedModelUID" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1209124427854">
-                <link role="classConcept" targetNodeId="2v.~SModelReference" resolveInfo="SModelReference" />
-                <link role="baseMethodDeclaration" targetNodeId="2v.~SModelReference.fromString(java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="fromString" />
+                <link role="classConcept" targetNodeId="5.~SModelReference" resolveInfo="SModelReference" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModelReference.fromString(java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="fromString" />
                 <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1209124437370">
                   <link role="argument" targetNodeId="1209124371820" resolveInfo="oldModelUIDString" />
                 </node>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214839513572">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214839513574">
-                  <link role="baseMethodDeclaration" targetNodeId="2v.~SModelReference.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="SModelReference" />
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SModelReference.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="SModelReference" />
                   <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1209124455218">
                     <link role="argument" targetNodeId="1199457954885" resolveInfo="newName" />
                   </node>
@@ -1246,10 +1226,10 @@
                     <link role="classConcept" targetNodeId="5.~SModelRepository" resolveInfo="SModelRepository" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209896952903">
-                    <link role="baseMethodDeclaration" targetNodeId="2v.~SModelRepository.getModelDescriptor(jetbrains.mps.smodel.SModel):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                    <link role="baseMethodDeclaration" targetNodeId="5.~SModelRepository.getModelDescriptor(jetbrains.mps.smodel.SModel):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1209896994539">
-                      <link role="classConcept" targetNodeId="2v.~SModelReference" resolveInfo="SModelReference" />
-                      <link role="baseMethodDeclaration" targetNodeId="2v.~SModelReference.fromString(java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="fromString" />
+                      <link role="classConcept" targetNodeId="5.~SModelReference" resolveInfo="SModelReference" />
+                      <link role="baseMethodDeclaration" targetNodeId="5.~SModelReference.fromString(java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="fromString" />
                       <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1209896997680">
                         <link role="argument" targetNodeId="1199457954885" resolveInfo="newName" />
                       </node>
@@ -1546,11 +1526,11 @@
                         <link role="variableDeclaration" targetNodeId="1214841550661" resolveInfo="modelDescriptor" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222094841454">
-                        <link role="baseMethodDeclaration" targetNodeId="2v.~SModelDescriptor.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
+                        <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215419815696">
-                      <link role="baseMethodDeclaration" targetNodeId="2v.~SModelReference.toString():java.lang.String" resolveInfo="toString" />
+                      <link role="baseMethodDeclaration" targetNodeId="5.~SModelReference.toString():java.lang.String" resolveInfo="toString" />
                     </node>
                   </node>
                 </node>
