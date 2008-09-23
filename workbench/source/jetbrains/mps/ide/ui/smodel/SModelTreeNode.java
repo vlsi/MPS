@@ -95,8 +95,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     SModelDescriptor sm = getSModelDescriptor();
     if (sm != null && sm.isInitialized() && SModelRepository.getInstance().isChanged(sm)) {
       setColor(new Color(0x00, 0x00, 0x90));
-    } else if (sm instanceof StubModelDescriptor) {
-      setColor(Color.LIGHT_GRAY);
     } else {
       setColor(Color.BLACK);
     }
@@ -355,9 +353,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       myRootGroups.clear();
 
       SModelDescriptor sm = getSModelDescriptor();
-      if (sm instanceof StubModelDescriptor) {
-        return;
-      }
       for (SNodeGroupTreeNode group : myRootGroups) {
         add(group);
       }

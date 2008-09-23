@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel;
 
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.UUID;
 
 public abstract class SModelId {
   private static final String REGULAR_PREFIX = "r:";

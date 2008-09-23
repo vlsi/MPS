@@ -733,29 +733,12 @@ public class Language extends AbstractModule {
     DescriptorsPersistence.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());
   }
 
-  private SModelDescriptor replaceAccessoryModel(SModelDescriptor accessoryModel, Model accessoryModelMPSNode) {
-    if (accessoryModel instanceof StubModelDescriptor) {
-      StubModelDescriptor stubModelDescriptor = (StubModelDescriptor) accessoryModel;
-      SModelDescriptor actualDescriptor = stubModelDescriptor.getActualDescriptor();
-
-      if (getLanguageDescriptor().equals(accessoryModelMPSNode.getParent())) {
-        Model newAccessoryModelNode = Model.newInstance(accessoryModelMPSNode.getModel());
-        newAccessoryModelNode.setName(actualDescriptor.toString());
-        getLanguageDescriptor().replaceChild(accessoryModelMPSNode, newAccessoryModelNode);
-        save();
-      }
-      return actualDescriptor;
-    }
-    return accessoryModel;
-  }
-
   public List<SModelDescriptor> getAccessoryModels() {
     List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
     List<Model> accessoryModels = new ArrayList<Model>(getLanguageDescriptor().getAccessoryModels());
     for (Model model : accessoryModels) {
       SModelDescriptor modelDescriptor = getScope().getModelDescriptor(SModelReference.fromString(model.getName()));
       if (modelDescriptor != null) {
-        modelDescriptor = replaceAccessoryModel(modelDescriptor, model);
         result.add(modelDescriptor);
       }
     }

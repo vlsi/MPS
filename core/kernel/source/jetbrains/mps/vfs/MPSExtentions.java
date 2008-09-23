@@ -12,7 +12,6 @@ public class MPSExtentions {
   public static final String MPS_ARCH = "mpsarch";
   public static final String JAVAFILE = "java";
   public static final String CLASSFILE = "class";
-  public static final String STUB = "mpstub";
 
   public static final String DOT_IDEAPROJECT = "." + IDEAPROJECT;
   public static final String DOT_LANGUAGE = "." + LANGUAGE;
@@ -22,7 +21,6 @@ public class MPSExtentions {
   public static final String DOT_MPS_ARCH = "." + MPS_ARCH;
   public static final String DOT_JAVAFILE = "." + JAVAFILE;
   public static final String DOT_CLASSFILE = "." + CLASSFILE;
-  public static final String DOT_STUB = "." + STUB;
   public static final String DOT_IDEAWORKSPACE = "." + IDEAWORKSPACE;
   public static final String DOT_WORKSPACE = "." + WORKSPACE;
   public static final String DOT_IDEMODULE = "." + IDEAMODULE;

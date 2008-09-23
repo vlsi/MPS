@@ -180,13 +180,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   private void playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
-    if (modelDescriptor instanceof StubModelDescriptor) {
-      StubModelDescriptor stubModelDescriptor = (StubModelDescriptor) modelDescriptor;
-      SModelDescriptor actualDescriptor = stubModelDescriptor.getActualDescriptor();
-      mySModel.changeImportedModelUID(stubModelDescriptor.getSModelReference(), actualDescriptor.getSModelReference());
-      playUsedModelDescriptorsRefactoring(actualDescriptor);
-      return;
-    }
     int currentVersion = modelDescriptor.getVersion();
     int usedVersion = mySModel.getUsedVersion(modelDescriptor.getSModelReference());
     if (myIsTestRefactoringMode) {

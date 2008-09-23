@@ -49,8 +49,7 @@ public class GoToNamedNodeAction extends BaseAction {
         final List<SNode> nodes = new ArrayList<SNode>();
         List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
         for (SModelDescriptor modelDescriptor : modelDescriptors) {
-          if (SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) continue;
-          if (modelDescriptor instanceof StubModelDescriptor) continue;
+          if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
 
           nodes.addAll(modelDescriptor.getSModel().allNodes(new Condition<SNode>() {
             public boolean met(SNode node) {

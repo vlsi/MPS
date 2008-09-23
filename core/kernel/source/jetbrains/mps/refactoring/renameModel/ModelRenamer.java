@@ -3,6 +3,8 @@ package jetbrains.mps.refactoring.renameModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 
+import java.util.UUID;
+
 public class ModelRenamer {
   private SModelDescriptor myModelDescriptor;
   private SModelFqName myModelFqName;
@@ -15,6 +17,5 @@ public class ModelRenamer {
   }
 
   public void rename() {
-    
   }
 }

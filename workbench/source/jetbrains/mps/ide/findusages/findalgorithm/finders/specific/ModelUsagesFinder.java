@@ -21,9 +21,7 @@ public class ModelUsagesFinder extends BaseFinder {
     SModelReference modelReference = model.getSModelReference();
     for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (indicator.isCanceled()) return searchResults;
-      if (modelDescriptor instanceof StubModelDescriptor) {
-        continue;
-      }
+      
       if (!SModelStereotype.isUserModel(modelDescriptor)) {
         continue;
       }
