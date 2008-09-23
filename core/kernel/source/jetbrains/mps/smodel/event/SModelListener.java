@@ -23,6 +23,9 @@ public interface SModelListener {
   void beforeModelRenamed(SModelRenamedEvent event);
   void modelRenamed(SModelRenamedEvent event);
 
+  void beforeModelFileChanged(SModelFileChangedEvent event);
+  void modelFileChanged(SModelFileChangedEvent event);
+
   void propertyChanged(SModelPropertyEvent event);
 
   void childAdded(SModelChildEvent event);

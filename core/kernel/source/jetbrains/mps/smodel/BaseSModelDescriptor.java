@@ -5,6 +5,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.JarFileEntryFile;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.project.*;
@@ -177,6 +178,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public void changeModelFile(IFile newModelFile) {
+    IFile oldFile = myModelFile;    
+    SModel model = getSModel();
+    model.fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
     myModelFile = newModelFile;
+    model.fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
   }
 }

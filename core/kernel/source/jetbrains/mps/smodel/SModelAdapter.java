@@ -85,6 +85,13 @@ public class SModelAdapter implements SModelListener {
     eventFired(event);
   }
 
+  public void beforeModelFileChanged(SModelFileChangedEvent event) {
+  }
+
+  public void modelFileChanged(SModelFileChangedEvent event) {
+    eventFired(event);
+  }
+
   public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
   }
 

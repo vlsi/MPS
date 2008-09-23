@@ -541,6 +541,28 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  void fireBeforeModelFileChanged(SModelFileChangedEvent event) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      try {
+        sModelListener.beforeModelFileChanged(event);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  void fireModelFileChanged(SModelFileChangedEvent event) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      try {
+        sModelListener.modelFileChanged(event);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
   @NotNull
   private List<SModelListener> copyListeners() {
     synchronized (myListenersLock) {
@@ -1433,14 +1455,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   private boolean changed(SModelReference ref1, SModelReference ref2) {
-    boolean result = !EqualUtil.equals(ref1.getSModelId(), ref2.getSModelId()) ||
+    return !EqualUtil.equals(ref1.getSModelId(), ref2.getSModelId()) ||
       !EqualUtil.equals(ref1.getSModelFqName(), ref2.getSModelFqName());
-
-    if (result) {
-      System.out.println("!!!");
-    }
-
-    return result;
   }
 
   private static WeakSet<SModel> ourActiveModels = new WeakSet<SModel>();
