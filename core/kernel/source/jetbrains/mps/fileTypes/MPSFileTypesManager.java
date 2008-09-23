@@ -96,7 +96,6 @@ public class MPSFileTypesManager implements ApplicationComponent {
     for (FileType f : myFileTypes) {
       myFileTypeManager.associateExtension(f, f.getDefaultExtension());
     }
-    myFileTypeManager.associateExtension(MODEL_FILE_TYPE, MPSExtentions.STUB);
     for (String xmlExt : XML_EXTENSIONS){
       myFileTypeManager.associateExtension(XML_FILE_TYPE, xmlExt);
     }
@@ -108,7 +107,6 @@ public class MPSFileTypesManager implements ApplicationComponent {
     for (FileType f : myFileTypes) {
       myFileTypeManager.removeAssociatedExtension(f, f.getDefaultExtension());
     }
-    myFileTypeManager.removeAssociatedExtension(MODEL_FILE_TYPE, MPSExtentions.STUB);
     for (String xmlExt : XML_EXTENSIONS){
       myFileTypeManager.removeAssociatedExtension(XML_FILE_TYPE, xmlExt);
     }
