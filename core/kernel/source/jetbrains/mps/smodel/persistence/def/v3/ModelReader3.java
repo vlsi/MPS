@@ -173,7 +173,7 @@ public class ModelReader3 implements IModelReader {
   }
 
   public SModelReference upgradeModelUID(SModelReference modelReference) {
-    return new SModelReference(modelReference.getLongName(), upgradeStereotype(modelReference.getStereotype()));
+    return new SModelReference(new SModelFqName(modelReference.getLongName(), upgradeStereotype(modelReference.getStereotype())), modelReference.getSModelId());
   }
 
   protected void readLanguageAspects(SModel model, List<Element> aspectElements) {

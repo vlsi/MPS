@@ -1388,23 +1388,23 @@ public class SModel implements Iterable<SNode> {
       for (SReference reference : node.getReferences()) {
         SModelReference oldReference = reference.getTargetSModelReference();
         SModelReference newReference = oldReference.update();
-        reference.setTargetSModelReference(newReference);
         changed = changed || changed(oldReference, newReference);
+        reference.setTargetSModelReference(newReference);
       }
     }
 
     for (ImportElement e : myImports) {
       SModelReference oldReference = e.myModelDescriptor;
       SModelReference newReference = oldReference.update();
-      e.myModelDescriptor = newReference;
       changed = changed || changed(oldReference, newReference);
+      e.myModelDescriptor = newReference;
     }
 
     for (ImportElement e : myAdditionalModelsVersions) {
       SModelReference oldReference = e.myModelDescriptor;
       SModelReference newReference = oldReference.update();
-      e.myModelDescriptor = newReference;
       changed = changed || changed(oldReference, newReference);
+      e.myModelDescriptor = newReference;
     }
 
     return changed;
