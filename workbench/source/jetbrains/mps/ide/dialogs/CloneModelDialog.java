@@ -82,7 +82,7 @@ public class CloneModelDialog extends BaseNodeDialog {
 
         for (SModelReference importedModelReference : mySModel.getImportedModelUIDs()) {
           Model m = Model.newInstance(myProjectModel);
-          m.setName(importedModelReference.toString());
+          m.setModelRef(importedModelReference.toString());
           myCloneModelProperties.addImportedModel(m);
         }
 
@@ -187,7 +187,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     Set<String> result = new HashSet<String>();
     Iterator<Model> models = myCloneModelProperties.importedModels();
     while (models.hasNext()) {
-      result.add(models.next().getName());
+      result.add(models.next().getModelRef());
     }
     return result;
   }
