@@ -287,11 +287,10 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
         manager.getToolWindow(ToolWindowId.PROJECT_VIEW).activate(new Runnable() {
           public void run() {
-            myProjectView.changeView(getId());
             manager.getFocusManager().requestFocus(myTree, false);
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
-                selectNode(myNode);
+                selectNode(myNode, true);
               }
             });
           }
@@ -479,6 +478,11 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
   public void rebuildTree() {
     getTree().rebuildNow();
+  }
+
+  public void selectNode(final SNode node, boolean changeView) {
+    if (changeView) myProjectView.changeView(getId());
+    selectNode(node);
   }
 
   public void selectNode(final SNode node, final IOperationContext context) {

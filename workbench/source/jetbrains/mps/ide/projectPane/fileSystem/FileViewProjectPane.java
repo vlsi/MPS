@@ -7,9 +7,9 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.fileEditor.FileEditorManagerAdapter;
 import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
+import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
@@ -17,12 +17,11 @@ import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsListener;
-import com.intellij.openapi.vcs.changes.ChangeListListener;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
+import com.intellij.openapi.vcs.changes.ChangeListListener;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vfs.*;
-import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -31,10 +30,13 @@ import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -42,9 +44,8 @@ import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 import javax.swing.Timer;
-import javax.swing.tree.TreePath;
 import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeNode;
+import javax.swing.tree.TreePath;
 import java.awt.event.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -171,6 +172,14 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     return (MPSTree) myTree;
   }
 
+  public Project getProject() {
+    return myProject;
+  }
+
+  public ProjectView getProjectView() {
+    return myProjectView;
+  }
+
   public void disposeComponent() {
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
@@ -270,7 +279,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   }
 
   @Nullable
-  private MPSTreeNode getNode(VirtualFile file) {
+  protected MPSTreeNode getNode(VirtualFile file) {
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
     MPSTreeNode rootTreeNode = (MPSTreeNode) treeModel.getRoot();
     return getNode(rootTreeNode, file);

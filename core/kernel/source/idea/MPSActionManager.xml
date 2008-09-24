@@ -3,6 +3,11 @@
   <xi:include href="/idea/VcsActions.xml" xpointer="xpointer(/component/*)"/>
 
   <actions>
+    <!--add "select in" action to all the editors-->
+    <group id="CodeEditorViewGroup" class="com.intellij.ide.actions.CodeEditorActionGroup">
+      <action id="SelectIn" class="com.intellij.ide.actions.SelectInAction"/>
+    </group>
+
     <group>
       <action id="NewProject" class="jetbrains.mps.workbench.actions.NewMPSProjectAction" text="New MPS Project"/>
       <action id="OpenProject" class="jetbrains.mps.workbench.actions.OpenMPSProjectAction" text="Open MPS Project"/>
@@ -55,7 +60,8 @@
     <group>
       <separator/>
       <action id="ShowInFileView" class="jetbrains.mps.vcs.actions.ShowInFileView" text="Show In File System View"/>
-      <action id="ShowInVcsRootsView" class="jetbrains.mps.vcs.actions.ShowInVcsRootsView" text="Show In VCS Roots View"/>
+      <action id="ShowInVcsRootsView" class="jetbrains.mps.vcs.actions.ShowInVcsRootsView"
+              text="Show In VCS Roots View"/>
       <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
     </group>
 
