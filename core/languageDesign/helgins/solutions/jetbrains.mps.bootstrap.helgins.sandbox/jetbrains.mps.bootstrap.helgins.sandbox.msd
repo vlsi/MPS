@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.bootstrap.helgins.sandbox" extenallyVisible="true" compileInMPS="false">
+<solution name="jetbrains.mps.bootstrap.helgins.sandbox" uuid="0cf1d5a9-b9e3-456c-ba30-edde0dcd47b6" extenallyVisible="true" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>

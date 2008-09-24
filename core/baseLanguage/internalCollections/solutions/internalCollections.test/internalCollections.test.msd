@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="internalCollections.test" extenallyVisible="true" compileInMPS="false">
+<solution name="internalCollections.test" uuid="b93c2d4f-0960-4576-8e83-387c62882028" extenallyVisible="true" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>

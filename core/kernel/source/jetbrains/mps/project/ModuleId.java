@@ -8,6 +8,9 @@ public class ModuleId {
   }
 
   public static ModuleId fromString(String text) {
+    if (text == null) {
+      return null;
+    }
     return new ModuleId(UUID.fromString(text));
   }
 

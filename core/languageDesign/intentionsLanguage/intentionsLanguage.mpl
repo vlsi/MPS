@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.intentionsLanguage" compileInMPS="false">
+<language namespace="jetbrains.mps.bootstrap.intentionsLanguage" uuid="d7a92d38-f7db-40d0-8431-763b0c3c9f20" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.intentionsLanguage" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.intentionsLanguage" />
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.bootstrap.intentionsLanguage#1192798684353">
+    <generator generatorUID="jetbrains.mps.bootstrap.intentionsLanguage#1192798684353" uuid="79a2d464-32b0-48d2-96f9-b40717277a07">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.intentionsLanguage.generator.baseLanguage.template" />
       </models>

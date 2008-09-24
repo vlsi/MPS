@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mpslite" compileInMPS="false">
+<language namespace="jetbrains.mpslite" uuid="3fe6ec39-7405-4314-abfd-5964c9c40e6b" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mpslite" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mpslite" />
@@ -9,7 +9,7 @@
     <model modelUID="r:00000000-0000-4000-0000-011c895905d6(jetbrains.mpslite.treeAspect)" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mpslite#1182846582475">
+    <generator generatorUID="jetbrains.mpslite#1182846582475" uuid="c9f704d7-9458-459e-bd1d-04579f05bc4f">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mpslite.generator.baseLanguage.template" />
       </models>

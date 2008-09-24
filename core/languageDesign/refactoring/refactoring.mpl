@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.logging.refactoring" compileInMPS="false">
+<language namespace="jetbrains.mps.logging.refactoring" uuid="3ecd7c84-cde3-45de-886c-135ecc69b742" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.logging.refactoring" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.logging.refactoring" />
@@ -8,7 +8,7 @@
     <model modelUID="r:00000000-0000-4000-0000-011c89590318(jetbrains.mps.logging.refactoring.samples)" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mps.logging.refactoring#1189697379687">
+    <generator generatorUID="jetbrains.mps.logging.refactoring#1189697379687" uuid="071dc6d3-9172-49bc-9ecd-8487bb9112a4">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.logging.refactoring.generator.baseLanguage.template" />
       </models>

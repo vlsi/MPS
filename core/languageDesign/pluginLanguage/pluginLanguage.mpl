@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.pluginLanguage" compileInMPS="false">
+<language namespace="jetbrains.mps.bootstrap.pluginLanguage" uuid="28f9e497-3b42-4291-aeba-0a1039153ab1" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage" />
@@ -10,7 +10,7 @@
     <model modelUID="f:java_stub#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mps.bootstrap.pluginLanguage#1203080439937">
+    <generator generatorUID="jetbrains.mps.bootstrap.pluginLanguage#1203080439937" uuid="1d6e05d7-9de9-40a7-9dad-7b8444280942">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template" />
       </models>

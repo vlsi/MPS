@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.structureLanguage" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.bootstrap.structureLanguage" uuid="c72da2b9-7cce-4447-8389-f407dc1158b7" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.structureLanguage" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.structureLanguage" />
@@ -8,7 +8,7 @@
     <model modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mps.bootstrap.structureLanguage#1170324972255">
+    <generator generatorUID="jetbrains.mps.bootstrap.structureLanguage#1170324972255" uuid="b8e4beec-8383-4fb9-b0bb-9d1c9c159cfc">
       <models>
         <modelRoot path="${language_descriptor}\generator_new" namespacePrefix="jetbrains.mps.bootstrap.structureLanguage.generator_new" />
       </models>

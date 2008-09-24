@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="resolve" extenallyVisible="true" compileInMPS="false">
+<solution name="resolve" uuid="f6a90fdc-7962-4cbe-9b55-b3ed7d8493b7" extenallyVisible="true" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="jetbrains.mps.baseLanguage.resolve" />
     <modelRoot path="${mps_home}\models" namespacePrefix="" />

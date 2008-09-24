@@ -36,8 +36,13 @@ public class Solution extends AbstractModule {
     SolutionDescriptor solutionDescriptor;
     if (descriptorFile.exists()) {
       solutionDescriptor = DescriptorsPersistence.loadSolutionDescriptor(descriptorFile, model);
+      if (solutionDescriptor.getModuleUUID() == null) {
+        solutionDescriptor.setModuleUUID(UUID.randomUUID().toString());
+        DescriptorsPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor);
+      }
     } else {
       solutionDescriptor = SolutionDescriptor.newInstance(model);
+      solutionDescriptor.setModuleUUID(UUID.randomUUID().toString());
     }
     solution.myDescriptorFile = descriptorFile;
     solution.setSolutionDescriptor(solutionDescriptor, false);
@@ -83,7 +88,7 @@ public class Solution extends AbstractModule {
 
     ModuleReference mp;
     if (isExternallyVisible() && mySolutionDescriptor.getName() != null) {
-      mp = ModuleReference.fromString(mySolutionDescriptor.getName());
+      mp = new ModuleReference(mySolutionDescriptor.getName(), ModuleId.fromString(mySolutionDescriptor.getModuleUUID()));
     } else {
       mp = ModuleReference.fromString(FileUtil.getCanonicalPath(myDescriptorFile.getAbsolutePath()));
     }    

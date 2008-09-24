@@ -57,6 +57,10 @@ public class Language extends AbstractModule {
     LanguageDescriptor languageDescriptor;
     if (descriptorFile.exists()) {
       languageDescriptor = DescriptorsPersistence.loadLanguageDescriptor(descriptorFile, descriptorModel);
+      if (languageDescriptor.getModuleUUID() == null) {
+        languageDescriptor.setModuleUUID(UUID.randomUUID().toString());
+        DescriptorsPersistence.saveLanguageDescriptor(descriptorFile, languageDescriptor);
+      }
     } else {
       languageDescriptor = createNewDescriptor(namespace, descriptorFile, descriptorModel);
     }
@@ -863,6 +867,8 @@ public class Language extends AbstractModule {
     LanguageDescriptor languageDescriptor = LanguageDescriptor.newInstance(descriptorModel);
     descriptorModel.addRoot(languageDescriptor);
     languageDescriptor.setNamespace(languageNamespace);
+    languageDescriptor.setModuleUUID(UUID.randomUUID().toString());
+
     // default descriptorModel roots
     ModelRoot modelRoot = ModelRoot.newInstance(descriptorModel);
     modelRoot.setPath(new File(descriptorFile.getParent().toFile(), LANGUAGE_MODELS).getAbsolutePath());

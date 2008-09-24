@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.regexp" compileInMPS="false">
+<language namespace="jetbrains.mps.regexp" uuid="daafa647-f1f7-4b0b-b096-69cd7c8408c0" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.regexp" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.regexp" />
@@ -8,7 +8,7 @@
     <model modelUID="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.regexp.jetbrains.mps.regexp.accessory)" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mps.regexp#1174510748147">
+    <generator generatorUID="jetbrains.mps.regexp#1174510748147" uuid="bffd1385-a29f-4b76-bb8a-cfb3227968be">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.regexp.generator.baseLanguage.template" />
       </models>

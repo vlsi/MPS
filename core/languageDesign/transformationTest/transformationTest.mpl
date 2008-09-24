@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.transformationTest" compileInMPS="false">
+<language namespace="jetbrains.mps.transformationTest" uuid="8585453e-6bfb-4d80-98de-b16074f1d86c" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.transformationTest" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.transformationTest" />
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.transformationTest#1210261198005">
+    <generator generatorUID="jetbrains.mps.transformationTest#1210261198005" uuid="fc4584d6-365c-4ceb-b660-b2c91933024d">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.transformationTest.generator.baseLanguage.template" />
       </models>

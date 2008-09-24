@@ -14,6 +14,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
@@ -29,8 +30,13 @@ public class DevKit extends AbstractModule {
     DevKitDescriptor devKitDescriptor;
     if (descriptorFile.exists()) {
       devKitDescriptor = DescriptorsPersistence.loadDevKitDescriptor(descriptorFile, model);
+      if (devKitDescriptor.getModuleUUID() == null) {
+        devKitDescriptor.setModuleUUID(UUID.randomUUID().toString());
+        DescriptorsPersistence.saveDevKitDescriptor(devKitDescriptor, descriptorFile);
+      }
     } else {
       devKitDescriptor = DevKitDescriptor.newInstance(model);
+      devKitDescriptor.setModuleUUID(UUID.randomUUID().toString());
     }
 
 
@@ -85,7 +91,7 @@ public class DevKit extends AbstractModule {
     myDescriptor = descriptor;
 
     if (myDescriptor.getName() != null) {
-      ModuleReference mp = ModuleReference.fromString(myDescriptor.getName());
+      ModuleReference mp = new ModuleReference(myDescriptor.getName(), ModuleId.fromString(myDescriptor.getModuleUUID()));
       setModulePointer(mp);
     }
 

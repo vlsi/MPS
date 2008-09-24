@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="closures.test" extenallyVisible="true" compileInMPS="false">
+<solution name="closures.test" uuid="7a0c7a21-43a3-4bb4-b898-a819ebed44a5" extenallyVisible="true" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="" />
   </models>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.quickQueryLanguage" compileInMPS="false">
+<language namespace="jetbrains.mps.quickQueryLanguage" uuid="d745e97c-8235-4470-b086-ba3da1f4c03c" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.quickQueryLanguage" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.quickQueryLanguage" />
   </models>
   <accessoryModels />
   <generators>
-    <generator name="BaseQuery" generatorUID="jetbrains.mps.quickQueryLanguage#1218799731940">
+    <generator name="BaseQuery" generatorUID="jetbrains.mps.quickQueryLanguage#1218799731940" uuid="59fbbb1e-71f1-44ea-9e9a-726e1e1c4192">
       <models>
         <modelRoot path="${language_descriptor}\generator\template" namespacePrefix="jetbrains.mps.quickQueryLanguage.generator.template" />
       </models>

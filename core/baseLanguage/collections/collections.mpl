@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" uuid="83888646-71ce-4f1c-9c53-c54016f6ad4f" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.baseLanguage.ext.collections.lang" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.baseLanguage.ext.collections.lang" />
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.baseLanguage.ext.collections.lang#1151699677197">
+    <generator generatorUID="jetbrains.mps.baseLanguage.ext.collections.lang#1151699677197" uuid="5f9babc9-8d5d-4825-8e61-17b241ee6272">
       <models>
         <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template" />
       </models>

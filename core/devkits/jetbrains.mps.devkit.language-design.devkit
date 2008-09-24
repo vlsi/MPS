@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dev-kit name="jetbrains.mps.devkit.language-design">
+<dev-kit name="jetbrains.mps.devkit.language-design" uuid="2677cb18-f558-4e33-bc38-a5139cee06dc">
   <exported-language name="jetbrains.mps.bootstrap.smodelLanguage" />
   <exported-language name="jetbrains.mps.quotation" />
   <extendedDevKits>

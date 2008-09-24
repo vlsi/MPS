@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.actionsLanguage" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.bootstrap.actionsLanguage" uuid="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.actionsLanguage" />
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.bootstrap.actionsLanguage#1154466409006">
+    <generator generatorUID="jetbrains.mps.bootstrap.actionsLanguage#1154466409006" uuid="018659ff-d3ef-4215-97e0-bcfeeb111145">
       <models>
         <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template" />
       </models>

@@ -12,10 +12,7 @@ import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.runtime.BytecodeLocator;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.LinkedHashSet;
+import java.util.*;
 import java.net.URL;
 
 public class Generator extends AbstractModule {
@@ -34,8 +31,13 @@ public class Generator extends AbstractModule {
       mySourceLanguage.save();
     }
 
-
-    ModuleReference mp = ModuleReference.fromString(myGeneratorDescriptor.getGeneratorUID());
+    String uuid = myGeneratorDescriptor.getModuleUUID();
+    if (uuid == null) {
+      uuid = UUID.randomUUID().toString();
+      myGeneratorDescriptor.setModuleUUID(uuid);
+      save();
+    }
+    ModuleReference mp = new ModuleReference(myGeneratorDescriptor.getGeneratorUID(), ModuleId.fromString(uuid));
     setModulePointer(mp);
 
     upgradeGeneratorDescriptor();
