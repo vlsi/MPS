@@ -20,14 +20,14 @@ public class SmartClosureParameterTypeUtil {
       {
         SNode _nodeToCheck_1029348928467 = scpd;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(vabs, "jetbrains.mps.baseLanguage.ext.collections.lang.constraints", "1206111346115", true), InputType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.constraints", "1206111352089", intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(vabs, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)", "1206111346115", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)", "1206111352089", intentionProvider);
       }
     } else
     if (SNodeOperations.isInstanceOf(vabs, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
       {
         SNode _nodeToCheck_1029348928467 = scpd;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(vabs, "lValue", true), "jetbrains.mps.baseLanguage.ext.collections.lang.constraints", "1206111371042", true), InputType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.constraints", "1206111366159", intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(vabs, "lValue", true), "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)", "1206111371042", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)", "1206111366159", intentionProvider);
       }
     } else
     if (SNodeOperations.isInstanceOf(vabs, "jetbrains.mps.baseLanguage.structure.IMethodCall") && SNodeOperations.getParent(SNodeOperations.getParent(scpd)) == vabs) {
@@ -38,7 +38,7 @@ public class SmartClosureParameterTypeUtil {
         {
           SNode _nodeToCheck_1029348928467 = scpd;
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(InputType, ptype, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.constraints", "1206111460144", intentionProvider);
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(InputType, ptype, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)", "1206111460144", intentionProvider);
         }
       }
     } else
@@ -46,7 +46,7 @@ public class SmartClosureParameterTypeUtil {
       {
         SNode _nodeToCheck_1029348928467 = scpd;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(vabs, "operand", true), "jetbrains.mps.baseLanguage.ext.collections.lang.constraints", "1206111474860", true), InputType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.constraints", "1206111479241", intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(vabs, "operand", true), "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)", "1206111474860", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)", "1206111479241", intentionProvider);
       }
     }
   }
@@ -58,21 +58,21 @@ public class SmartClosureParameterTypeUtil {
       {
         SNode _nodeToCheck_1029348928467 = scpd;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(bmc), "jetbrains.mps.baseLanguage.ext.collections.lang.constraints", "1204110524611", true), InputType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.constraints", "1206111787726", intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(bmc), "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)", "1204110524611", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)", "1206111787726", intentionProvider);
       }
     } else
     if (SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.NewExpression")) {
       {
         SNode _nodeToCheck_1029348928467 = scpd;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(bmc, "jetbrains.mps.baseLanguage.ext.collections.lang.constraints", "1219273747138", true), InputType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.constraints", "1219273747134", intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(bmc, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)", "1219273747138", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)", "1219273747134", intentionProvider);
       }
     } else
     if (SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.ClassCreator")) {
       {
         SNode _nodeToCheck_1029348928467 = scpd;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(bmc, "jetbrains.mps.baseLanguage.ext.collections.lang.constraints", "1219273765216", true), InputType, _nodeToCheck_1029348928467, null, "jetbrains.mps.baseLanguage.ext.collections.lang.constraints", "1219273765212", intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(bmc, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)", "1219273765216", true), InputType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)", "1219273765212", intentionProvider);
       }
     }
   }

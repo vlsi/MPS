@@ -22,15 +22,15 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
     return false;
   }
 
-  public String getDescription(SNode node, EditorContext editorContext) {
+  public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Convert to \"for (Type var: iterable)\"";
   }
 
-  public boolean isApplicable(SNode node, EditorContext editorContext) {
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
 
-  public void execute(SNode node, EditorContext editorContext) {
+  public void execute(final SNode node, final EditorContext editorContext) {
     final SNode oldVariable = SLinkOperations.getTarget(node, "variable", true);
     SNode variableType = SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(oldVariable));
     SNode foreachStatement = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ForeachStatement");
