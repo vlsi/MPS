@@ -181,10 +181,10 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   public void computeTypes(boolean refreshTypes) {
-    computeTypes(myRootNode, refreshTypes, true, true, new ArrayList<SNode>());
+    computeTypes(myRootNode, refreshTypes, true, new ArrayList<SNode>());
   }
 
-  private void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, boolean useNonTypesystemRules, List<SNode> additionalNodes) {
+  private void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes) {
     assert nodeToCheck.getContainingRoot() == myRootNode;
     try {
       if (!isIncrementalMode() || refreshTypes) {
@@ -202,7 +202,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       }
       clearEquationManager();
 
-      computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, useNonTypesystemRules);
+      computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
       solveInequationsAndExpandTypes();
       performActionsAfterChecking();
 
@@ -287,13 +287,13 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         if (prevNode != null) {
           additionalNodes.add(prevNode);
         }
-        computeTypes(node, refreshTypes, false, false, additionalNodes);
+        computeTypes(node, refreshTypes, false, additionalNodes);
         type = getType(initialNode);
         if (type == null ||
           type.getAdapter() instanceof RuntimeTypeVariable ||
           !type.getAdapter().getDescendants(RuntimeTypeVariable.class).isEmpty()) {
           if (node.isRoot()) {
-            computeTypes(node, refreshTypes, true, false, new ArrayList<SNode>()); //the last possibility: check the whole root
+            computeTypes(node, refreshTypes, true, new ArrayList<SNode>()); //the last possibility: check the whole root
             type = getType(initialNode);
             continuation.run();
             return type;
@@ -313,11 +313,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     return type;
   }
 
-  public void computeOnlyTypesForNode(SNode node) {
-    computeTypesForNode(node, true, new ArrayList<SNode>(), true);
-  }
-
-  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean useNonTypesystemRules) {
+  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
@@ -343,7 +339,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
             NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
           }
           try {
-            applyRulesToNode(sNode, useNonTypesystemRules);
+            applyRulesToNode(sNode);
           } finally {
             if (isIncrementalMode()) {
               NodeReadEventsCaster.removeNodesReadListener();
@@ -396,20 +392,14 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     return myNodesToTypesMap;
   }
 
-  private void applyRulesToNode(SNode node, boolean useNonTypesystemRules) {
+  private void applyRulesToNode(SNode node) {
     Set<InferenceRule_Runtime> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
-  //  Set<NonTypesystemRule_Runtime> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
     if (newRules != null) {
       SNode oldCheckedNode = myCurrentCheckedNode;
       myCurrentCheckedNode = node;
       for (InferenceRule_Runtime rule : newRules) {
         applyRuleToNode(node, rule);
       }
-    /*  if (useNonTypesystemRules) {
-        for (NonTypesystemRule_Runtime rule : nonTypesystemRules) {
-          applyRuleToNode(node, rule);
-        }
-      }*/
       myCurrentCheckedNode = oldCheckedNode;
     }
   }
