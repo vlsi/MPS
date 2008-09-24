@@ -34,8 +34,6 @@ public class SModel implements Iterable<SNode> {
   private Set<SModelListener> myListeners = new LinkedHashSet<SModelListener>(0);
   private Set<SModelCommandListener> myCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
 
-  private Set<Language> myVersionedLanguages = new HashSet<Language>();
-
   private Set<String> myVersionedLanguageNamespaces = new HashSet<String>();
 
   private List<SNode> myRoots = new ArrayList<SNode>();
@@ -642,13 +640,13 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void addAspectModelsVersions(@NotNull Language language) {
-    if (myVersionedLanguages.contains(language)) {
+    if (myVersionedLanguageNamespaces.contains(language.getNamespace())) {
       return;
     }
     for (SModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
       addAdditionalModelVersion(modelDescriptor.getSModelReference(), modelDescriptor.getVersion());
     }
-    myVersionedLanguages.add(language);
+    myVersionedLanguageNamespaces.add(language.getNamespace());
     for (Language l : language.getExtendedLanguages()) {
       addAspectModelsVersions(l);
     }
@@ -674,6 +672,7 @@ public class SModel implements Iterable<SNode> {
 
   public void deleteLanguage(@NotNull String languageNamespace) {
     myLanguages.remove(InternUtil.intern(languageNamespace));
+    myVersionedLanguageNamespaces.remove(languageNamespace);
     fireLanguageRemovedEvent(languageNamespace);
   }
 
