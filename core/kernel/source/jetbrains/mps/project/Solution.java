@@ -81,6 +81,15 @@ public class Solution extends AbstractModule {
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
     mySolutionDescriptor = newDescriptor;
 
+    ModulePointer mp;
+    if (isExternallyVisible() && mySolutionDescriptor.getName() != null) {
+      mp = ModulePointer.fromString(mySolutionDescriptor.getName());
+    } else {
+      mp = ModulePointer.fromString(FileUtil.getCanonicalPath(myDescriptorFile.getAbsolutePath()));
+    }    
+
+    setModulePointer(mp);
+
     reload();
 
     if (reloadClasses) {

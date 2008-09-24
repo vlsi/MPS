@@ -395,6 +395,9 @@ public class Language extends AbstractModule {
 
     myLanguageDescriptor = newDescriptor;
 
+    ModulePointer pointer = ModulePointer.fromString(myLanguageDescriptor.getNamespace());
+    setModulePointer(pointer);
+
     reload();
 
     if (reloadClasses) {

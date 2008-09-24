@@ -1,10 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Dependency;
-import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.PathManager;
@@ -29,6 +26,17 @@ public class Generator extends AbstractModule {
   Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
+
+    String uid = myGeneratorDescriptor.getGeneratorUID();
+    if (uid == null) {
+      myGeneratorDescriptor.setGeneratorUID(generateGeneratorUID(mySourceLanguage));
+      mySourceLanguage.save();
+    }
+
+
+    ModulePointer mp = ModulePointer.fromString(myGeneratorDescriptor.getGeneratorUID());
+    setModulePointer(mp);
+
     upgradeGeneratorDescriptor();
     reload();
   }

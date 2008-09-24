@@ -21,6 +21,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
   public static final String RUNTIME_JAR_SUFFIX = "runtime.jar";
@@ -47,7 +49,7 @@ public abstract class AbstractModule implements IModule {
 
   private ModulePointer myModulePointer;
 
-  protected void setModulePointer(ModulePointer pointer) {
+  protected void setModulePointer(@NotNull ModulePointer pointer) {
     assert myModulePointer == null || myModulePointer.getModuleId().equals(pointer.getModuleId());
     myModulePointer = pointer;
   }

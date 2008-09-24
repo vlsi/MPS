@@ -33,6 +33,7 @@ public class DevKit extends AbstractModule {
       devKitDescriptor = DevKitDescriptor.newInstance(model);
     }
 
+
     model.addRoot(devKitDescriptor);
 
     result.myDescriptorFile = descriptorFile;
@@ -82,6 +83,11 @@ public class DevKit extends AbstractModule {
     SModelRepository.getInstance().registerModelDescriptor(descriptor.getModel().getModelDescriptor(), this);
 
     myDescriptor = descriptor;
+
+    if (myDescriptor.getName() != null) {
+      ModulePointer mp = ModulePointer.fromString(myDescriptor.getName());
+      setModulePointer(mp);
+    }
 
     reload();
 
