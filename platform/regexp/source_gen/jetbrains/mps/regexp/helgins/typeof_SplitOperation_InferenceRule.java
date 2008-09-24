@@ -9,17 +9,17 @@ import jetbrains.mps.helgins.inference.TypeCheckingContext;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class MatchVariableReference_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
+public class typeof_SplitOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
 
-  public MatchVariableReference_InferenceRule() {
+  public typeof_SplitOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode mvr, final TypeCheckingContext typeCheckingContext) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_0().createNode(), mvr, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.regexp.helgins)", "1178179183609");
+  public void applyRule(final SNode so, final TypeCheckingContext typeCheckingContext) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_8().createNode(), so, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.regexp.helgins)", "1222260051562");
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.regexp.structure.MatchVariableReference";
+    return "jetbrains.mps.regexp.structure.SplitOperation";
   }
 
   public boolean isApplicable(SNode argument) {

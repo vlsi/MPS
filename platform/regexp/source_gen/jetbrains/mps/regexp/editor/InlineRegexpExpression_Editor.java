@@ -18,9 +18,9 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
@@ -456,7 +456,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateFontStyle6834_2(cell);
+            }
+
+          });
         }
 
       };
@@ -520,7 +526,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateFontStyle6834_1(cell);
+            }
+
+          });
         }
 
       };
@@ -559,7 +571,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateFontStyle6834_0(cell);
+            }
+
+          });
         }
 
       };
@@ -716,6 +734,24 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition6834_2(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "multiLine");
+  }
+
+  private static Integer calculateFontStyle6834_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
+  }
+
+  private static Integer calculateFontStyle6834_1(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
+  }
+
+  private static Integer calculateFontStyle6834_2(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
   }
 
   private static Color calculateColor6834_0(EditorCell cell) {

@@ -14,9 +14,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class StringLiteralRegexp_Editor extends DefaultNodeEditor {
@@ -74,7 +74,13 @@ public class StringLiteralRegexp_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return StringLiteralRegexp_Editor.calculateFontStyle3179_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -90,6 +96,12 @@ public class StringLiteralRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_text_1174482866914(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Integer calculateFontStyle3179_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
   }
 
   private static Color calculateColor3179_0(EditorCell cell) {

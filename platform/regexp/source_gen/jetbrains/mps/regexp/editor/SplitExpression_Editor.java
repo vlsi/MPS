@@ -111,7 +111,7 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11751644522681175164452268(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175164452268");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

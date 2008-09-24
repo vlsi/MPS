@@ -17,10 +17,10 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
 
@@ -141,6 +141,12 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1174909556965_1174909556965(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static Integer calculateFontStyle1753_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
+  }
+
   private static Color calculateColor1753_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
@@ -208,7 +214,13 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+              public Integer calculate(EditorCell cell) {
+                return MatchVariableReferenceRegexp_Editor.calculateFontStyle1753_0(cell);
+              }
+
+            });
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {

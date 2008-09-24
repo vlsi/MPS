@@ -11,10 +11,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.regexp.jetbrains.mps.regexp.accessory)" version="-1" />
+  <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1178529045424">
     <property name="name" value="EmailExample" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1178529072362">
@@ -105,6 +106,74 @@
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178529203707">
                       <property name="value" value="Domain = " />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1222257928767">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1222257928768">
+            <property name="name" value="s" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222257928769">
+              <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1222260338412">
+              <property name="value" value="username@domain.com" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1222257935197">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1222257935198">
+            <property name="name" value="list" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222260233675">
+              <link role="classifier" targetNodeId="4.~List" resolveInfo="List" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222260236943">
+                <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222257938546">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222257937670">
+                <link role="variableDeclaration" targetNodeId="1222257928768" resolveInfo="s" />
+              </node>
+              <node role="operation" type="jetbrains.mps.regexp.structure.SplitOperation" id="1222257940049">
+                <node role="regexp" type="jetbrains.mps.regexp.structure.InlineRegexpExpression" id="1222257941207">
+                  <node role="regexp" type="jetbrains.mps.regexp.structure.SeqRegexp" id="1222257955241">
+                    <node role="left" type="jetbrains.mps.regexp.structure.MatchParensRegexp" id="1222257955242">
+                      <property name="name" value="user" />
+                      <node role="regexp" type="jetbrains.mps.regexp.structure.PlusRegexp" id="1222257955243">
+                        <node role="regexp" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp" id="1222257955244">
+                          <link role="symbolClass" targetNodeId="3.1174554738336" resolveInfo="\w" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="right" type="jetbrains.mps.regexp.structure.SeqRegexp" id="1222257955245">
+                      <node role="left" type="jetbrains.mps.regexp.structure.StringLiteralRegexp" id="1222257955246">
+                        <property name="text" value="@" />
+                      </node>
+                      <node role="right" type="jetbrains.mps.regexp.structure.MatchParensRegexp" id="1222257955247">
+                        <property name="name" value="domain" />
+                        <node role="regexp" type="jetbrains.mps.regexp.structure.SeqRegexp" id="1222257955248">
+                          <node role="left" type="jetbrains.mps.regexp.structure.PlusRegexp" id="1222257955249">
+                            <node role="regexp" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp" id="1222257955250">
+                              <link role="symbolClass" targetNodeId="3.1174554738336" resolveInfo="\w" />
+                            </node>
+                          </node>
+                          <node role="right" type="jetbrains.mps.regexp.structure.ParensRegexp" id="1222257955251">
+                            <node role="expr" type="jetbrains.mps.regexp.structure.SeqRegexp" id="1222257955252">
+                              <node role="left" type="jetbrains.mps.regexp.structure.StringLiteralRegexp" id="1222257955253">
+                                <property name="text" value="." />
+                              </node>
+                              <node role="right" type="jetbrains.mps.regexp.structure.PlusRegexp" id="1222257955254">
+                                <node role="regexp" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp" id="1222257955255">
+                                  <link role="symbolClass" targetNodeId="3.1174554738336" resolveInfo="\w" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

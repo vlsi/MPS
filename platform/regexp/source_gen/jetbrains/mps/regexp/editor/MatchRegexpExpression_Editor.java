@@ -111,7 +111,7 @@ public class MatchRegexpExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11793573563911179357356391(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1179357356391");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

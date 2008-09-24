@@ -162,7 +162,13 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return MatchParensRegexp_Editor.calculateFontStyle4405_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -190,6 +196,12 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_regexp_1174564178985(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Integer calculateFontStyle4405_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.ITALIC;
+    return result;
   }
 
   private static Color calculateColor4405_0(EditorCell cell) {
