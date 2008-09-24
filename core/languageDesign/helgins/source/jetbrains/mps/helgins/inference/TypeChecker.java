@@ -229,10 +229,10 @@ public class TypeChecker implements ApplicationComponent {
     reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId, true));
   }
 
-   public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
-     SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId, true);
-     reporter.setIntentionProvider(intentionProvider);
-     reportTypeError(nodeWithError, reporter);
+  public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
+    SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId, true);
+    reporter.setIntentionProvider(intentionProvider);
+    reportTypeError(nodeWithError, reporter);
   }
 
   @Deprecated
@@ -320,15 +320,15 @@ public class TypeChecker implements ApplicationComponent {
       final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
       setCurrentTypesComponent(component1);
       try {
-      checkWithinRoot(node, new Runnable() {
-        public void run() {
-          result[0] = component1.computeTypesForNodeDuringGeneration(node, new Runnable() {
-            public void run() {
-              myCheckedRoots.add(node);
-            }
-          });
-        }
-      });
+        checkWithinRoot(node, new Runnable() {
+          public void run() {
+            result[0] = component1.computeTypesForNodeDuringGeneration(node, new Runnable() {
+              public void run() {
+                myCheckedRoots.add(node);
+              }
+            });
+          }
+        });
       } finally {
         clearCurrentTypesComponent();
       }
@@ -396,16 +396,27 @@ public class TypeChecker implements ApplicationComponent {
   @Nullable
   private SNode getTypeOf_normalMode(SNode node) {
     if (node == null) return null;
-    if (!checkIfNotChecked(node)) return null;
+    if (!checkIfNotChecked(node, true)) return null;
     return getTypeDontCheck(node);
   }
 
   public boolean checkIfNotChecked(SNode node) {
+    return checkIfNotChecked(node, true);
+  }
+
+  public boolean checkIfNotChecked(SNode node, boolean useNonTypesystemRules) {
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return false;
-    if (!myCheckedRoots.contains(containingRoot) || NodeTypesComponentsRepository.getInstance().
-      getNodeTypesComponent(node.getContainingRoot()) == null) {
+    NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
+      getNodeTypesComponent(node.getContainingRoot());
+    if (!myCheckedRoots.contains(containingRoot) || component == null) {
+      component = NodeTypesComponentsRepository.getInstance().
+        createNodeTypesComponent(node.getContainingRoot());
       checkRoot(containingRoot);
+
+      if (useNonTypesystemRules) {
+        checkWithNonTypesystemRules(component);
+      }
     }
     return true;
   }
