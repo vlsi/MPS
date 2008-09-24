@@ -22,6 +22,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelItem;
 import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelModel;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -72,6 +73,12 @@ public class GoToModelAction extends BaseAction {
           });
 
         return modelDescriptors.toArray(new SModelDescriptor[0]);
+      }
+
+      @Nullable
+      public String getPromptText() {
+        //return IdeBundle.message("prompt.gotoclass.enter.class.name");
+        return "Model name:";
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, fakePsiContext);

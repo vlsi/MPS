@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.framework.nodes.BaseNodeModel;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +56,11 @@ public class GoToConceptNodeAction extends BaseAction {
         }
         return nodes.toArray(new SNode[0]);
 
+      }
+
+      @Nullable
+      public String getPromptText() {
+        return "Concept name:";
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, baseNodeModel, fakePsiContext);

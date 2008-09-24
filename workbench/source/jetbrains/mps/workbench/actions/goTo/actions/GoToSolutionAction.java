@@ -19,6 +19,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseModuleItem;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseSolutionModel;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +67,12 @@ public class GoToSolutionAction extends BaseAction {
           }
         }
         return solutions.toArray(new Solution[0]);
+      }
+
+      @Nullable
+      public String getPromptText() {
+        //return IdeBundle.message("prompt.gotoclass.enter.class.name");
+        return "Solution name:";
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToSolutionModel, fakePsiContext);

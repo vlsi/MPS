@@ -4,7 +4,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.actions.goTo.framework.base.BaseMPSChooseModel;
-import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseModelModel extends BaseMPSChooseModel<SModelDescriptor> {
   public BaseModelModel(MPSProject project) {
@@ -28,12 +27,6 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelDescriptor
   }
 
   //---------------------INTERFACE STUFF------------------------
-
-  @Nullable
-  public String getPromptText() {
-    //return IdeBundle.message("prompt.gotoclass.enter.class.name");
-    return "Model name:";
-  }
 
   public String getCheckBoxName() {
     //return IdeBundle.message("checkbox.include.non.project.classes");

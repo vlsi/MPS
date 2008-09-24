@@ -19,6 +19,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseDevkitModel;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseModuleItem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class GoToDevkitAction extends BaseAction {
   public GoToDevkitAction() {
@@ -57,6 +58,12 @@ public class GoToDevkitAction extends BaseAction {
 
       public DevKit[] find(IScope scope) {
         return scope.getVisibleDevkits().toArray(new DevKit[0]);
+      }
+
+      @Nullable
+      public String getPromptText() {
+        //return IdeBundle.message("prompt.gotoclass.enter.class.name");
+        return "Devkit name:";
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToDevkitModel, fakePsiContext);

@@ -36,7 +36,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.actions.goTo.framework.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
   public BaseNodeModel(MPSProject project) {
@@ -66,12 +65,6 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
   }
 
   //---------------------INTERFACE STUFF------------------------
-
-  @Nullable
-  public String getPromptText() {
-    //return IdeBundle.message("prompt.gotoclass.enter.class.name");
-    return "Node name:";
-  }
 
   public String getCheckBoxName() {
     //return IdeBundle.message("checkbox.include.non.project.classes");

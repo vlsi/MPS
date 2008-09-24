@@ -19,6 +19,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseModuleItem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class GoToLanguageAction extends BaseAction {
   public GoToLanguageAction() {
@@ -57,6 +58,12 @@ public class GoToLanguageAction extends BaseAction {
 
       public Language[] find(IScope scope) {
         return scope.getVisibleLanguages().toArray(new Language[0]);
+      }
+
+      @Nullable
+      public String getPromptText() {
+        //return IdeBundle.message("prompt.gotoclass.enter.class.name");
+        return "Language name:";
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, fakePsiContext);
