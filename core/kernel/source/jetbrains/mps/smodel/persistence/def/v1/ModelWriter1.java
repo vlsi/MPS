@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel.persistence.def.v1;
 
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
@@ -67,7 +66,7 @@ public class ModelWriter1 implements IModelWriter {
       rootElement.addContent(languageElem);
     }
     for (ImportElement aspectElement : sourceModel.getLanguageAspectModelElements()) {
-      SModelReference modelReference = aspectElement.getModelUID();
+      SModelReference modelReference = aspectElement.getModelReference();
       if (!writtenAspects.contains(modelReference.toString())) {
         writtenAspects.add(modelReference.toString());
         writeAspect(sourceModel, rootElement, modelReference);
@@ -98,7 +97,7 @@ public class ModelWriter1 implements IModelWriter {
       ImportElement importElement = imports.next();
       Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
       importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
-      SModelReference modelReference = importElement.getModelUID();
+      SModelReference modelReference = importElement.getModelReference();
       importElem.setAttribute(ModelPersistence.MODEL_UID, modelReference.toString());
       importElem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
 

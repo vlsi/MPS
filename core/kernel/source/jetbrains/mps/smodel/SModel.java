@@ -851,7 +851,7 @@ public class SModel implements Iterable<SNode> {
   @Nullable
   public ImportElement getImportElement(@NotNull SModelReference modelReference) {
     for (ImportElement importElement : myImports) {
-      if (importElement.getModelUID().equals(modelReference)) {
+      if (importElement.getModelReference().equals(modelReference)) {
         return importElement;
       }
     }
@@ -861,7 +861,7 @@ public class SModel implements Iterable<SNode> {
   @Nullable
   ImportElement getAdditionalModelElement(@NotNull SModelReference modelReference) {
     for (ImportElement importElement : myAdditionalModelsVersions) {
-      if (importElement.getModelUID().equals(modelReference)) {
+      if (importElement.getModelReference().equals(modelReference)) {
         return importElement;
       }
     }
@@ -893,7 +893,7 @@ public class SModel implements Iterable<SNode> {
   public List<SModelReference> getImportedModelUIDs() {
     List<SModelReference> references = new ArrayList<SModelReference>();
     for (ImportElement importElement : myImports) {
-      references.add(importElement.getModelUID());
+      references.add(importElement.getModelReference());
     }
     return Collections.unmodifiableList(references);
   }
@@ -937,7 +937,7 @@ public class SModel implements Iterable<SNode> {
   public SModelReference getImportedModelUID(int referenceID) {
     for (ImportElement importElement : myImports) {
       if (importElement.getReferenceID() == referenceID) {
-        return importElement.getModelUID();
+        return importElement.getModelReference();
       }
     }
     return null;
@@ -947,7 +947,7 @@ public class SModel implements Iterable<SNode> {
   public Iterator<SModelDescriptor> importedModels(@NotNull IScope scope) {
     List<SModelDescriptor> modelsList = new ArrayList<SModelDescriptor>();
     for (ImportElement importElement : myImports) {
-      SModelReference modelReference = importElement.getModelUID();
+      SModelReference modelReference = importElement.getModelReference();
       SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelReference);
 
       if (modelDescriptor == null) {
@@ -1140,7 +1140,7 @@ public class SModel implements Iterable<SNode> {
   @UseCarefully
   public void changeImportedModelUID(SModelReference oldImportedModelReference, SModelReference newImportedModelReference) {
     for (ImportElement importElement : myImports) {
-      if (importElement.getModelUID().equals(oldImportedModelReference)) {
+      if (importElement.getModelReference().equals(oldImportedModelReference)) {
         importElement.myModelDescriptor = newImportedModelReference;
       }
     }
@@ -1272,7 +1272,7 @@ public class SModel implements Iterable<SNode> {
       myUsedVersion = usedVersion;
     }
 
-    public SModelReference getModelUID() {
+    public SModelReference getModelReference() {
       return myModelDescriptor;
     }
 
