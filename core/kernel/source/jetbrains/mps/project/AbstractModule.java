@@ -45,6 +45,25 @@ public abstract class AbstractModule implements IModule {
   private MyClassPathModelRootManager myManager = new MyClassPathModelRootManager();
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
 
+  private ModulePointer myModulePointer;
+
+  protected void setModulePointer(ModulePointer pointer) {
+    assert myModulePointer == null || myModulePointer.getModuleId().equals(pointer.getModuleId());
+    myModulePointer = pointer;
+  }
+
+  public ModulePointer getModulePointer() {
+    return myModulePointer;
+  }
+
+  public ModuleId getModuleId() {
+    return myModulePointer.getModuleId();
+  }
+
+  public String getModuleFqName() {
+    return myModulePointer.getModuleFqName();
+  }
+
   protected void reload() {
     MPSModuleRepository.getInstance().unRegisterModules(this);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
