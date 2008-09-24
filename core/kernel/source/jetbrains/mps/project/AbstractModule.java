@@ -50,7 +50,7 @@ public abstract class AbstractModule implements IModule {
   private ModuleReference myModuleReference;
 
   protected void setModulePointer(@NotNull ModuleReference reference) {
-    assert myModuleReference == null || myModuleReference.getModuleId().equals(reference.getModuleId());
+    assert myModuleReference == null || EqualUtil.equals(myModuleReference.getModuleId(), reference.getModuleId());
     myModuleReference = reference;
   }
 
