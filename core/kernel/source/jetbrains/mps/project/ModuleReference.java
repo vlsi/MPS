@@ -2,15 +2,15 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.util.EqualUtil;
 
-public class ModulePointer {
-  public static ModulePointer fromString(String text) {
-    return new ModulePointer(text, null);
+public class ModuleReference {
+  public static ModuleReference fromString(String text) {
+    return new ModuleReference(text, null);
   }
 
   private String myModuleFqName;
   private ModuleId myModuleId;
 
-  public ModulePointer(String moduleFqName, ModuleId moduleId) {
+  public ModuleReference(String moduleFqName, ModuleId moduleId) {
     myModuleFqName = moduleFqName;
     myModuleId = moduleId;
   }
@@ -31,11 +31,11 @@ public class ModulePointer {
   }
 
   public boolean equals(Object obj) {
-    if (!(obj instanceof ModulePointer)) {
+    if (!(obj instanceof ModuleReference)) {
       return false;
     }
 
-    ModulePointer p = (ModulePointer) obj;
+    ModuleReference p = (ModuleReference) obj;
 
     if (myModuleId != null && p.myModuleId != null) {
       return EqualUtil.equals(myModuleId, myModuleId);

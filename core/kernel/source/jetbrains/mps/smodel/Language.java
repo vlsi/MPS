@@ -11,6 +11,7 @@ import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.refactoring.structure.Refactoring;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
@@ -185,7 +186,7 @@ public class Language extends AbstractModule {
     List<Dependency> result = new ArrayList<Dependency>();
     LanguageDescriptor descriptor = getLanguageDescriptor();
     if (descriptor != null) {
-      for (ModuleReference ref : descriptor.getRuntimeModules()) {
+      for (jetbrains.mps.projectLanguage.structure.ModuleReference ref : descriptor.getRuntimeModules()) {
         result.add(new Dependency(ref.getName(), ref.getReexport()));
       }
     }
@@ -395,8 +396,8 @@ public class Language extends AbstractModule {
 
     myLanguageDescriptor = newDescriptor;
 
-    ModulePointer pointer = ModulePointer.fromString(myLanguageDescriptor.getNamespace());
-    setModulePointer(pointer);
+    ModuleReference reference = ModuleReference.fromString(myLanguageDescriptor.getNamespace());
+    setModulePointer(reference);
 
     reload();
 

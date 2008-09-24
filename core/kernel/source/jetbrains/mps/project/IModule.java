@@ -5,17 +5,16 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.runtime.BytecodeLocator;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.List;
 import java.util.Set;
 
 public interface IModule extends ModelOwner, MPSModuleOwner {
+  @Deprecated
   String getModuleUID();
 
-  ModulePointer getModulePointer();
+  ModuleReference getModulePointer();
   ModuleId getModuleId();
   String getModuleFqName();
 

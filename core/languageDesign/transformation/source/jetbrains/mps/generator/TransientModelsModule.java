@@ -27,8 +27,8 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   public TransientModelsModule(Project project) {
     myProject = project;
 
-    ModulePointer pointer = ModulePointer.fromString("TransientModule " + myNumber);
-    setModulePointer(pointer);
+    ModuleReference reference = ModuleReference.fromString("TransientModule " + myNumber);
+    setModulePointer(reference);
   }
 
   public void projectOpened() {

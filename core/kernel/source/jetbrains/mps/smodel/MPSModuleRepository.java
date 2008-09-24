@@ -29,8 +29,9 @@ public class MPSModuleRepository implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(MPSModuleRepository.class);
   }
 
-  private Map<String, IModule> myFileToModuleMap = new LinkedHashMap<String, IModule>();
+  private Map<String, IModule> myFileToModuleMap = new LinkedHashMap<String, IModule>();  
   private Map<String, IModule> myUIDToModulesMap = new LinkedHashMap<String, IModule>();
+  private Map<ModuleId, IModule> myIdToModuleMap = new LinkedHashMap<ModuleId, IModule>();
 
   private Map<String, ModuleStub> myFileToModuleStubMap = new LinkedHashMap<String, ModuleStub>();
   private Map<String, List<ModuleStub>> myUIDToModuleStubsMap = new LinkedHashMap<String, List<ModuleStub>>();
@@ -177,6 +178,17 @@ public class MPSModuleRepository implements ApplicationComponent {
     return myUIDToModulesMap.get(moduleUID);
   }
 
+  public IModule getModuleById(ModuleId moduleId) {
+    return myIdToModuleMap.get(moduleId);
+  }
+
+  public IModule getModule(ModuleReference ref) {
+    if (ref.getModuleId() != null) {
+      return myIdToModuleMap.get(ref.getModuleId());
+    }
+    return myUIDToModulesMap.get(ref.getModuleFqName());
+  }
+
   public ModuleStub getModuleStubByUID(String moduleUID) {
     List<ModuleStub> modules = myUIDToModuleStubsMap.get(moduleUID);
     if (modules == null || modules.isEmpty()) return null;
@@ -295,6 +307,16 @@ public class MPSModuleRepository implements ApplicationComponent {
     }
 
     myUIDToModulesMap.put(moduleUID, module);
+
+    ModuleId moduleId = module.getModuleId();
+    if (moduleId != null) {
+      if (myIdToModuleMap.containsKey(moduleId)) {
+        LOG.error("can't add module " + module.getModulePointer() + " module with the same id already exists " + myIdToModuleMap.get(moduleId).getModulePointer());
+      }
+
+      myIdToModuleMap.put(module.getModuleId(), module);
+    }
+
     myModuleToOwners.addLink(module, owner);
     myModules.add(module);
 
@@ -372,6 +394,9 @@ public class MPSModuleRepository implements ApplicationComponent {
     myModuleToOwners.clearFirst(module);
     myModules.remove(module);
     myUIDToModulesMap.remove(module.getModuleUID());
+    if (module.getModuleId() != null) {
+      myIdToModuleMap.remove(module.getModuleId());
+    }
 
     if (descriptorFile != null) {
       myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
@@ -467,22 +492,6 @@ public class MPSModuleRepository implements ApplicationComponent {
       LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), t);
     }
     return module;
-  }
-
-  @UseCarefully
-  public void renameUID(Language l, String newUID) {
-    IFile descriptorFile = l.getDescriptorFile();
-    if (descriptorFile != null) {
-      myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
-    }
-    myUIDToModulesMap.remove(l.getNamespace());
-
-    if (myUIDToModulesMap.containsKey(newUID)) {
-      throw new IllegalStateException("Can't rename " + l + " to " + newUID);
-    }
-
-    myUIDToModulesMap.put(l.getModuleUID(), l);
-    myFileToModuleMap.put(l.newDescriptorFileByNewName(newUID).getCanonicalPath(), l);
   }
 
   public Language getLanguageSafe(String namespace) {

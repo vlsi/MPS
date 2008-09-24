@@ -44,7 +44,7 @@ public class ModuleMaker {
         if (indicator.isCanceled()) {
           break;
         }
-        indicator.setText2("Cleaning " + m.getModuleUID() + "...");
+        indicator.setText2("Cleaning " + m.getModulePointer() + "...");
         FileUtil.delete(m.getClassesGen().toFile());
       }
     } finally {

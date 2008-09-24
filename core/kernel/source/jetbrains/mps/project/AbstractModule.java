@@ -47,23 +47,23 @@ public abstract class AbstractModule implements IModule {
   private MyClassPathModelRootManager myManager = new MyClassPathModelRootManager();
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
 
-  private ModulePointer myModulePointer;
+  private ModuleReference myModuleReference;
 
-  protected void setModulePointer(@NotNull ModulePointer pointer) {
-    assert myModulePointer == null || myModulePointer.getModuleId().equals(pointer.getModuleId());
-    myModulePointer = pointer;
+  protected void setModulePointer(@NotNull ModuleReference reference) {
+    assert myModuleReference == null || myModuleReference.getModuleId().equals(reference.getModuleId());
+    myModuleReference = reference;
   }
 
-  public ModulePointer getModulePointer() {
-    return myModulePointer;
+  public ModuleReference getModulePointer() {
+    return myModuleReference;
   }
 
   public ModuleId getModuleId() {
-    return myModulePointer.getModuleId();
+    return myModuleReference.getModuleId();
   }
 
   public String getModuleFqName() {
-    return myModulePointer.getModuleFqName();
+    return myModuleReference.getModuleFqName();
   }
 
   public String getModuleUID() {
@@ -205,7 +205,7 @@ public abstract class AbstractModule implements IModule {
   public void addDependency(String modelUID, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     SModel model = descriptor.getModel();
-    ModuleReference ref = ModuleReference.newInstance(model);
+    jetbrains.mps.projectLanguage.structure.ModuleReference ref = jetbrains.mps.projectLanguage.structure.ModuleReference.newInstance(model);
     ref.setName(modelUID);
     ref.setReexport(reexport);
     descriptor.addDependency(ref);
@@ -291,7 +291,7 @@ public abstract class AbstractModule implements IModule {
     List<Dependency> result = new ArrayList<Dependency>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
-      for (ModuleReference ref : descriptor.getDependencies()) {
+      for (jetbrains.mps.projectLanguage.structure.ModuleReference ref : descriptor.getDependencies()) {
         result.add(new Dependency(ref.getName(), ref.getReexport()));
       }
     }
@@ -680,13 +680,13 @@ public abstract class AbstractModule implements IModule {
         ModuleDescriptor md = getModuleDescriptor();
         if (md == null) return;
 
-        for (ModuleReference r : md.getDependencies()) {
+        for (jetbrains.mps.projectLanguage.structure.ModuleReference r : md.getDependencies()) {
           if (moduleUID.equals(r.getName())) {
             return;
           }
         }
 
-        ModuleReference ref = ModuleReference.newInstance(md.getModel());
+        jetbrains.mps.projectLanguage.structure.ModuleReference ref = jetbrains.mps.projectLanguage.structure.ModuleReference.newInstance(md.getModel());
         ref.setName(moduleUID);
         md.addDependency(ref);
 
@@ -702,13 +702,13 @@ public abstract class AbstractModule implements IModule {
         ModuleDescriptor md = getModuleDescriptor();
         if (md == null) return null;
 
-        for (ModuleReference r : md.getDependencies()) {
+        for (jetbrains.mps.projectLanguage.structure.ModuleReference r : md.getDependencies()) {
           if (oldModuleUID.equals(r.getName())) {
             md.removeChild(r);
           }
         }
 
-        ModuleReference ref = ModuleReference.newInstance(md.getModel());
+        jetbrains.mps.projectLanguage.structure.ModuleReference ref = jetbrains.mps.projectLanguage.structure.ModuleReference.newInstance(md.getModel());
         ref.setName(newModuleUID);
         md.addDependency(ref);
 

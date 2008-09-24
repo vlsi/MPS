@@ -2,6 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.PathManager;
@@ -34,7 +35,7 @@ public class Generator extends AbstractModule {
     }
 
 
-    ModulePointer mp = ModulePointer.fromString(myGeneratorDescriptor.getGeneratorUID());
+    ModuleReference mp = ModuleReference.fromString(myGeneratorDescriptor.getGeneratorUID());
     setModulePointer(mp);
 
     upgradeGeneratorDescriptor();
