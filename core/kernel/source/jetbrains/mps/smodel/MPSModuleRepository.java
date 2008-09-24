@@ -6,13 +6,11 @@ import jetbrains.mps.projectLanguage.structure.Root;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.generator.TransientModelsModule;
 
 import java.io.File;
 import java.util.*;
@@ -311,7 +309,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     ModuleId moduleId = module.getModuleId();
     if (moduleId != null) {
       if (myIdToModuleMap.containsKey(moduleId)) {
-        LOG.error("can't add module " + module.getModulePointer() + " module with the same id already exists " + myIdToModuleMap.get(moduleId).getModulePointer());
+        LOG.error("can't add module " + module.getModuleReference() + " module with the same id already exists " + myIdToModuleMap.get(moduleId).getModuleReference());
       }
 
       myIdToModuleMap.put(module.getModuleId(), module);

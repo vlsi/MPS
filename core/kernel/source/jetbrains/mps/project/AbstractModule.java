@@ -54,7 +54,7 @@ public abstract class AbstractModule implements IModule {
     myModuleReference = reference;
   }
 
-  public ModuleReference getModulePointer() {
+  public ModuleReference getModuleReference() {
     return myModuleReference;
   }
 
