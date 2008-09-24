@@ -49,6 +49,10 @@ public class TypeChecker implements ApplicationComponent {
   private NodeTypesComponent myCurrentTypesComponent = null;
   private Stack<NodeTypesComponent> myCurentTypesComponentStack = new Stack<NodeTypesComponent>();
   private Stack<TypeCheckingMode> myTypesCheckingModesStack = new Stack<TypeCheckingMode>();
+
+  @Deprecated @Hack
+  private NodeTypesComponent myCurrentTypesComponentForNonTypesystemCheck = null; //will be removed after refactoring
+
   private SubtypingCache mySubtypingCache = null;
 
   @ForDebug
@@ -148,6 +152,13 @@ public class TypeChecker implements ApplicationComponent {
     return myRulesManager;
   }
 
+  @Hack @Deprecated //will be removed after refactoring
+  public void checkWithNonTypesystemRules(NodeTypesComponent component) {
+    myCurrentTypesComponentForNonTypesystemCheck = component;
+    component.applyNonTypesystemRulesToRoot();
+    myCurrentTypesComponentForNonTypesystemCheck = null;
+  }
+
   @UseCarefully
   public void setCurrentTypesComponent(NodeTypesComponent component) {
     if (myCurrentTypesComponent != null) {
@@ -226,7 +237,13 @@ public class TypeChecker implements ApplicationComponent {
 
   @Deprecated
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
-    if (myCurrentTypesComponent == null) return;
+    if (myCurrentTypesComponent == null) {
+      if (myCurrentTypesComponentForNonTypesystemCheck == null) {
+        return;
+      }
+      myCurrentTypesComponentForNonTypesystemCheck.reportTypeError(nodeWithError, errorReporter);
+      return;
+    }
     myCurrentTypesComponent.reportTypeError(nodeWithError, errorReporter);
     myCurrentTypesComponent.addDependcyOnCurrent(nodeWithError);
   }

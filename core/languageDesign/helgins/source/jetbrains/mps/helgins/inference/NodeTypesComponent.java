@@ -396,27 +396,47 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     return myNodesToTypesMap;
   }
 
-  private void applyRulesToNode(SNode node) {
-    applyRulesToNode(node, true);
-  }
-
   private void applyRulesToNode(SNode node, boolean useNonTypesystemRules) {
     Set<InferenceRule_Runtime> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
-    Set<NonTypesystemRule_Runtime> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
+  //  Set<NonTypesystemRule_Runtime> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
     if (newRules != null) {
       SNode oldCheckedNode = myCurrentCheckedNode;
       myCurrentCheckedNode = node;
       for (InferenceRule_Runtime rule : newRules) {
-        checkInterrupted();
         applyRuleToNode(node, rule);
       }
-      if (useNonTypesystemRules) {
+    /*  if (useNonTypesystemRules) {
         for (NonTypesystemRule_Runtime rule : nonTypesystemRules) {
-          checkInterrupted();
           applyRuleToNode(node, rule);
         }
-      }
+      }*/
       myCurrentCheckedNode = oldCheckedNode;
+    }
+  }
+
+  public void applyNonTypesystemRulesToRoot() {
+    SNode root = myRootNode;
+    if (root == null) return;
+    Set<SNode> frontier = new LinkedHashSet<SNode>();
+    Set<SNode> newFrontier = new LinkedHashSet<SNode>();
+    frontier.add(root);
+    while (!(frontier.isEmpty())) {
+      for (SNode sNode : frontier) {
+          newFrontier.addAll(sNode.getChildren());
+          applyNonTypesystemRulesToNode(sNode);
+      }
+      frontier = newFrontier;
+      newFrontier = new LinkedHashSet<SNode>();
+    }
+    //all error reporters must be simple reporters, no error expansion needed
+  }
+
+   private void applyNonTypesystemRulesToNode(SNode node) {
+    Set<NonTypesystemRule_Runtime> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
+    if (nonTypesystemRules != null) {
+        for (NonTypesystemRule_Runtime rule : nonTypesystemRules) {
+          applyRuleToNode(node, rule);
+        }
     }
   }
 
