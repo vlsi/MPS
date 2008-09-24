@@ -4,12 +4,14 @@ import com.intellij.openapi.diagnostic.ErrorReportSubmitter;
 import com.intellij.openapi.diagnostic.IdeaLoggingEvent;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo.SubmissionStatus;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Performer;
 import jetbrains.mps.ide.blame.perform.Response;
 import jetbrains.mps.ide.blame.perform.ResponseCallback;
 
+import javax.swing.JOptionPane;
 import java.awt.Component;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,6 +23,8 @@ public class CharismaReporter extends ErrorReportSubmitter {
   }
 
   public SubmittedReportInfo submit(IdeaLoggingEvent[] events, Component parentComponent) {
+    assert ThreadUtils.isEventDispatchThread();
+
     if (events.length == 0) {
       return new SubmittedReportInfo(null, null, SubmissionStatus.FAILED);
     }
@@ -43,26 +47,18 @@ public class CharismaReporter extends ErrorReportSubmitter {
             url = Performer.teamsys + "/issue/" + issueId;
           }
 
-          reportInfo[0] = new SubmittedReportInfo(url, issueId, SubmissionStatus.NEW_ISSUE);
+          JOptionPane.showMessageDialog(null, response.getMessage(), "Submit OK", JOptionPane.INFORMATION_MESSAGE);
         } else {
-          reportInfo[0] = new SubmittedReportInfo(null, response.getMessage(), SubmissionStatus.FAILED);
+          JOptionPane.showMessageDialog(null, response.getMessage(), "Submit Failed", JOptionPane.ERROR_MESSAGE);
         }
       }
     });
 
     blameDialog.showDialog();
     if (blameDialog.isCancelled()) {
-      reportInfo[0] = new SubmittedReportInfo(null, "Cancelled issue submit", SubmissionStatus.FAILED);
+      return new SubmittedReportInfo(null, "Cancelled issue submit", SubmissionStatus.FAILED);
     } else {
-      while (reportInfo[0] == null) {
-        try {
-          Thread.sleep(100);
-        } catch (InterruptedException e) {
-
-        }
-      }
+      return new SubmittedReportInfo(null, "", SubmissionStatus.NEW_ISSUE);
     }
-
-    return reportInfo[0];
   }
 }
