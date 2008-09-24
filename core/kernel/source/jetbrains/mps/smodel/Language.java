@@ -456,10 +456,6 @@ public class Language extends AbstractModule {
     return new ArrayList<Generator>(myGenerators);
   }
 
-  public String getModuleUID() {
-    return getNamespace();
-  }
-
   public String getNamespace() {
     String result = getLanguageDescriptor().getNamespace();
     assert result != null;

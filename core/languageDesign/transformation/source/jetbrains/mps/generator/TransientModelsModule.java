@@ -25,7 +25,10 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   private int myNumber = ourModuleCounter.getAndIncrement();
 
   public TransientModelsModule(Project project) {
-    myProject = project;    
+    myProject = project;
+
+    ModulePointer pointer = ModulePointer.fromString("TransientModule " + myNumber);
+    setModulePointer(pointer);
   }
 
   public void projectOpened() {
@@ -130,11 +133,6 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     result.setTransient(true);
     SModelRepository.getInstance().registerModelDescriptor(result, this);
     return result;
-  }
-
-  public String getModuleUID() {
-    //we can't use toStrng since the same project can be opened twice (this happens during tests)
-    return "TransientModule " + myNumber;
   }
 
   @NotNull

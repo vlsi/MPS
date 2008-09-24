@@ -127,14 +127,6 @@ public class Solution extends AbstractModule {
     return mySolutionDescriptor.getExternallyVisible();
   }
 
-  public String getModuleUID() {
-    if (isExternallyVisible() && mySolutionDescriptor.getName() != null) {
-      return mySolutionDescriptor.getName();
-    } else {
-      return FileUtil.getCanonicalPath(myDescriptorFile.getAbsolutePath());
-    }
-  }
-
   public String getGeneratorOutputPath() {
     String generatorOutputPath = mySolutionDescriptor.getGeneratorOutputPath();
     if (generatorOutputPath == null) {

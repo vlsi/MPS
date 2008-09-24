@@ -66,6 +66,10 @@ public abstract class AbstractModule implements IModule {
     return myModulePointer.getModuleFqName();
   }
 
+  public String getModuleUID() {
+    return getModuleFqName();
+  }
+
   protected void reload() {
     MPSModuleRepository.getInstance().unRegisterModules(this);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
@@ -227,10 +231,6 @@ public abstract class AbstractModule implements IModule {
     descriptor.addUsedDevKit(ref);
     setModuleDescriptor(descriptor);
     save();
-  }
-
-  public String getModuleUID() {
-    return toString();
   }
 
   /**

@@ -173,15 +173,6 @@ public class Generator extends AbstractModule {
     return getSourceLanguage().getNamespace() + "/" + (name == null ? "<no name>" : name);
   }
 
-  public String getModuleUID() {
-    String uid = myGeneratorDescriptor.getGeneratorUID();
-    if (uid == null) {
-      myGeneratorDescriptor.setGeneratorUID(generateGeneratorUID(mySourceLanguage));
-      mySourceLanguage.save();
-    }
-    return myGeneratorDescriptor.getGeneratorUID();
-  }
-
   public static String generateGeneratorUID(Language sourceLanguage) {
     return sourceLanguage.getModuleUID() + "#" + SNode.generateUniqueId();
   }
