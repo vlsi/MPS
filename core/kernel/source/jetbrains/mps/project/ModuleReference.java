@@ -37,9 +37,9 @@ public class ModuleReference {
   }
 
   public int hashCode() {
-    if (myModuleId != null) {
-      return myModuleId.hashCode();
-    }
+//    if (myModuleId != null) {
+//      return myModuleId.hashCode();
+//    }
     return myModuleFqName.hashCode();
   }
 
@@ -50,17 +50,17 @@ public class ModuleReference {
 
     ModuleReference p = (ModuleReference) obj;
 
-    if (myModuleId != null && p.myModuleId != null) {
-      return EqualUtil.equals(myModuleId, myModuleId);
-    }
+//    if (myModuleId != null && p.myModuleId != null) {
+//      return EqualUtil.equals(myModuleId, myModuleId);
+//    }
 
-    if (myModuleId == null && p.myModuleId != null) {
-      return false;
-    }
-
-    if (myModuleId != null && p.myModuleId == null) {
-      return false;
-    }
+//    if (myModuleId == null && p.myModuleId != null) {
+//      return false;
+//    }
+//
+//    if (myModuleId != null && p.myModuleId == null) {
+//      return false;
+//    }
 
     return myModuleFqName.equals(p.myModuleFqName);
   }

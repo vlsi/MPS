@@ -33,7 +33,7 @@ public class SModel implements Iterable<SNode> {
   private Set<SModelListener> myWeakListeners = new WeakSet<SModelListener>(0);
   private Set<SModelListener> myListeners = new LinkedHashSet<SModelListener>(0);
   private Set<SModelCommandListener> myCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
-
+                                                    
   private Set<String> myVersionedLanguageNamespaces = new HashSet<String>();
 
   private List<SNode> myRoots = new ArrayList<SNode>();

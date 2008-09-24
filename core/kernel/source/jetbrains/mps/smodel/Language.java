@@ -138,11 +138,11 @@ public class Language extends AbstractModule {
     return result;
   }
 
-  public List<String> getUsedLanguagesNamespaces() {
-    List<String> result = super.getUsedLanguagesNamespaces();
+  public List<ModuleReference> getUsedLanguagesReferences() {
+    List<ModuleReference> result = super.getUsedLanguagesReferences();
     for (Language l : BootstrapLanguagesManager.getInstance().getLanguages()) {
-      if (!result.contains(l.getNamespace())) {
-        result.add(l.getNamespace());
+      if (!result.contains(l.getModuleReference())) {
+        result.add(l.getModuleReference());
       }
     }
     return result;
@@ -159,22 +159,22 @@ public class Language extends AbstractModule {
     return dir.child(newPathSuffix + MPSExtentions.DOT_LANGUAGE);
   }
 
-  public List<String> getExtendedLanguageNamespaces() {
-    List<String> result = new ArrayList<String>();
+  public List<ModuleReference> getExtendedLanguageNamespaces() {
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
     for (LanguageReference ref : myLanguageDescriptor.getExtendedLanguages()) {
-      result.add(ref.getName());
+      result.add(ModuleReference.fromString(ref.getName()));
     }
     return result;
   }
 
   public List<Language> getExtendedLanguages() {
     List<Language> result = new ArrayList<Language>();
-    for (String namespace : getExtendedLanguageNamespaces()) {
-      Language language = GlobalScope.getInstance().getLanguage(namespace);
+    for (ModuleReference ref : getExtendedLanguageNamespaces()) {
+      Language language = GlobalScope.getInstance().getLanguage(ref);
       if (language != null) {
         result.add(language);
       } else {
-        LOG.error("Can't find a language " + namespace + " which is referenced in " + this);
+        LOG.error("Can't find a language " + ref + " which is referenced in " + this);
       }
     }
     return result;
@@ -191,7 +191,7 @@ public class Language extends AbstractModule {
     LanguageDescriptor descriptor = getLanguageDescriptor();
     if (descriptor != null) {
       for (jetbrains.mps.projectLanguage.structure.ModuleReference ref : descriptor.getRuntimeModules()) {
-        result.add(new Dependency(ref.getName(), ref.getReexport()));
+        result.add(new Dependency(ModuleReference.fromString(ref.getName()), ref.getReexport()));
       }
     }
     return result;
@@ -206,7 +206,7 @@ public class Language extends AbstractModule {
   public List<IModule> getRuntimeDependOnModules() {
     List<IModule> result = new ArrayList<IModule>();
     for (Dependency d : getRuntimeDependOn()) {
-      IModule module = MPSModuleRepository.getInstance().getModuleByUID(d.getModuleUID());
+      IModule module = MPSModuleRepository.getInstance().getModule(d.getModuleReference());
       if (module != null) {
         result.add(module);
       }
@@ -216,8 +216,8 @@ public class Language extends AbstractModule {
 
   public List<String> validate() {
     List<String> errors = new ArrayList<String>(super.validate());
-    for (String lang : getExtendedLanguageNamespaces()) {
-      if (MPSModuleRepository.getInstance().getModuleByUID(lang) == null) {
+    for (ModuleReference lang : getExtendedLanguageNamespaces()) {
+      if (MPSModuleRepository.getInstance().getModule(lang) == null) {
         errors.add("Can't find extended language " + lang);
       }
     }
@@ -300,35 +300,10 @@ public class Language extends AbstractModule {
     }
   }
 
-  private ModuleDescriptor renameExtendedLanguage(final String oldLanguageNamespace, final String newLanguageNamespace, final boolean setModuleDescriptor) {
-    return ModelAccess.instance().runWriteActionInCommand(new Computable<ModuleDescriptor>() {
-      public ModuleDescriptor compute() {
-        LanguageDescriptor ld = getLanguageDescriptor();
-        if (ld == null) return null;
-
-        for (LanguageReference r : ld.getExtendedLanguages()) {
-          if (oldLanguageNamespace.equals(r.getName())) {
-            ld.removeChild(r);
-          }
-        }
-
-        LanguageReference ref = LanguageReference.newInstance(ld.getModel());
-        ref.setName(newLanguageNamespace);
-        ld.addExtendedLanguage(ref);
-
-        if (setModuleDescriptor) {
-          setModuleDescriptor(ld);
-          save();
-        }
-        return ld;
-      }
-    });
-  }
-
   public List<Dependency> getDependOn() {
     List<Dependency> result = super.getDependOn();
-    for (String language : getExtendedLanguageNamespaces()) {
-      result.add(new Dependency(language, true));
+    for (ModuleReference ref : getExtendedLanguageNamespaces()) {
+      result.add(new Dependency(ref, true));
     }
 
     for (Generator g : getGenerators()) {
@@ -392,18 +367,6 @@ public class Language extends AbstractModule {
 
   public boolean isBootstrap() {
     return BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore().contains(this);
-  }
-
-  private List<String> getGeneratorsPacks() {
-    List<String> result = new ArrayList<String>();
-
-    for (Generator g : getGenerators()) {
-      for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
-        result.add(sm.getLongName());
-      }
-    }
-
-    return result;
   }
 
   public int getVersion() {

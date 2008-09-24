@@ -138,14 +138,14 @@ public abstract class AbstractModule implements IModule {
   public List<String> validate() {
     List<String> errors = new ArrayList<String>();
     for (Dependency dep : getDependOn()) {
-      String modelUID = dep.getModuleUID();
-      if (MPSModuleRepository.getInstance().getModuleByUID(modelUID) == null) {
-        errors.add("Can't find dependency: " + modelUID);
+      ModuleReference moduleRef = dep.getModuleReference();
+      if (MPSModuleRepository.getInstance().getModule(moduleRef) == null) {
+        errors.add("Can't find dependency: " + moduleRef);
       }
     }
-    for (String usedLanguage : getUsedLanguagesNamespaces()) {
-      if (MPSModuleRepository.getInstance().getModuleByUID(usedLanguage) == null) {
-        errors.add("Can't find used language: " + usedLanguage);
+    for (ModuleReference reference : getUsedLanguagesReferences()) {
+      if (MPSModuleRepository.getInstance().getLanguage(reference) == null) {
+        errors.add("Can't find used language: " + reference);
       }
     }
     return errors;
@@ -155,32 +155,32 @@ public abstract class AbstractModule implements IModule {
     return validate().isEmpty();
   }
 
-  public void addDependency(String modelUID, boolean reexport) {
+  public void addDependency(ModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     SModel model = descriptor.getModel();
     jetbrains.mps.projectLanguage.structure.ModuleReference ref = jetbrains.mps.projectLanguage.structure.ModuleReference.newInstance(model);
-    ref.setName(modelUID);
+    ref.setName(moduleRef.toString());
     ref.setReexport(reexport);
     descriptor.addDependency(ref);
     setModuleDescriptor(descriptor);
     save();
   }
 
-  public void addUsedLangauge(String languageNamespace) {
+  public void addUsedLangauge(ModuleReference langRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     SModel model = descriptor.getModel();
     LanguageReference ref = LanguageReference.newInstance(model);
-    ref.setName(languageNamespace);
+    ref.setName(langRef.toString());
     descriptor.addUsedLanguage(ref);
     setModuleDescriptor(descriptor);
     save();
   }
 
-  public void addUsedDevkit(String devkit) {
+  public void addUsedDevkit(ModuleReference devkitRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     SModel model = descriptor.getModel();
     DevKitReference ref = DevKitReference.newInstance(model);
-    ref.setName(devkit);
+    ref.setName(devkitRef.toString());
     descriptor.addUsedDevKit(ref);
     setModuleDescriptor(descriptor);
     save();
@@ -245,7 +245,7 @@ public abstract class AbstractModule implements IModule {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
       for (jetbrains.mps.projectLanguage.structure.ModuleReference ref : descriptor.getDependencies()) {
-        result.add(new Dependency(ref.getName(), ref.getReexport()));
+        result.add(new Dependency(ModuleReference.fromString(ref.getName()), ref.getReexport()));
       }
     }
     return result;
@@ -288,11 +288,11 @@ public abstract class AbstractModule implements IModule {
   public List<IModule> getDependOnModules() {
     List<IModule> result = new ArrayList<IModule>();
     for (Dependency dep : getDependOn()) {
-      IModule m = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
+      IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleReference());
       if (m != null) {
         result.add(m);
       } else {
-        LOG.error("Can't load module " + dep.getModuleUID() + " from " + this);
+        LOG.error("Can't load module " + dep.getModuleReference() + " from " + this);
       }
     }
     return result;
@@ -307,12 +307,12 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<IModule>(result);
   }
 
-  public List<String> getUsedLanguagesNamespaces() {
-    List<String> result = new ArrayList<String>();
+  public List<ModuleReference> getUsedLanguagesReferences() {
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
       for (LanguageReference lr : descriptor.getUsedLanguages()) {
-        result.add(lr.getName());
+        result.add(ModuleReference.fromString(lr.getName()));
       }
     }
     return result;
@@ -320,12 +320,12 @@ public abstract class AbstractModule implements IModule {
 
   public List<Language> getUsedLanguages() {
     List<Language> result = new ArrayList<Language>();
-    for (String namespace : getUsedLanguagesNamespaces()) {
-      Language l = MPSModuleRepository.getInstance().getLanguage(namespace);
+    for (ModuleReference ref : getUsedLanguagesReferences()) {
+      Language l = MPSModuleRepository.getInstance().getLanguage(ref);
       if (l != null) {
         result.add(l);
       } else {
-        LOG.error("Can't load language " + namespace + " from " + this);
+        LOG.error("Can't load language " + ref + " from " + this);
       }
     }
 
@@ -347,12 +347,12 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<Language>(result);
   }
 
-  public List<String> getUsedDevKitNamespaces() {
-    List<String> result = new ArrayList<String>();
+  public List<ModuleReference> getUsedDevkitReferences() {
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
       for (DevKitReference dr : descriptor.getUsedDevKits()) {
-        result.add(dr.getName());
+        result.add(ModuleReference.fromString(dr.getName()));
       }
     }
     return result;
@@ -361,8 +361,8 @@ public abstract class AbstractModule implements IModule {
   public List<DevKit> getUsedDevkits() {
     List<DevKit> result = new ArrayList<DevKit>();
 
-    for (String namespace : getUsedDevKitNamespaces()) {
-      DevKit dk = MPSModuleRepository.getInstance().getDevKit(namespace);
+    for (ModuleReference ref : getUsedDevkitReferences()) {
+      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
       if (dk != null) {
         result.add(dk);
       } else {

@@ -198,9 +198,9 @@ public class Generator extends AbstractModule {
 
   public List<Dependency> getDependOn() {
     List<Dependency> result = super.getDependOn();
-    result.add(new Dependency(mySourceLanguage.getNamespace(), false));
+    result.add(new Dependency(mySourceLanguage.getModuleReference(), false));
 
-    for (String refGenerator : getReferencedGeneratorUIDs()) {
+    for (ModuleReference refGenerator : getReferencedGeneratorUIDs()) {
       result.add(new Dependency(refGenerator, false));
     }
 
@@ -208,10 +208,10 @@ public class Generator extends AbstractModule {
     return result;
   }
 
-  public List<String> getReferencedGeneratorUIDs() {
-    List<String> result = new ArrayList<String>();
+  public List<ModuleReference> getReferencedGeneratorUIDs() {
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
     for (GeneratorReference generatorReference : myGeneratorDescriptor.getGeneratorReferences()) {
-      result.add(generatorReference.getGeneratorUID());
+      result.add(ModuleReference.fromString(generatorReference.getGeneratorUID()));
     }
     return result;
 
@@ -219,8 +219,8 @@ public class Generator extends AbstractModule {
 
   public List<Generator> getReferencedGenerators() {
     List<Generator> result = new ArrayList<Generator>();
-    for (String guid : getReferencedGeneratorUIDs()) {
-      IModule module = MPSModuleRepository.getInstance().getModuleByUID(guid);
+    for (ModuleReference guid : getReferencedGeneratorUIDs()) {
+      IModule module = MPSModuleRepository.getInstance().getModule(guid);
       if (module instanceof Generator) {
         result.add((Generator) module);
       }
@@ -243,11 +243,11 @@ public class Generator extends AbstractModule {
     return home.getAbsoluteFile();
   }
 
-  public List<String> getUsedLanguagesNamespaces() {
-    List<String> result = super.getUsedLanguagesNamespaces();
+  public List<ModuleReference> getUsedLanguagesReferences() {
+    List<ModuleReference> result = super.getUsedLanguagesReferences();
     for (Language l : BootstrapLanguagesManager.getInstance().getLanguages()) {
-      if (!result.contains(l.getNamespace())) {
-        result.add(l.getNamespace());
+      if (!result.contains(l.getModuleReference())) {
+        result.add(l.getModuleReference());
       }
     }
     return result;

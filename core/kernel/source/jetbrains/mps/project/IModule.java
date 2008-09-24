@@ -27,11 +27,11 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   List<IModule> getDependOnModules();
   List<IModule> getAllDependOnModules();
 
-  List<String> getUsedLanguagesNamespaces();
+  List<ModuleReference> getUsedLanguagesReferences();
   List<Language> getUsedLanguages();
   List<Language> getAllUsedLanguages();
 
-  List<String> getUsedDevKitNamespaces();
+  List<ModuleReference> getUsedDevkitReferences();
   List<DevKit> getUsedDevkits();
 
   List<IModule> getExplicitlyDependOnModules();
@@ -39,9 +39,9 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   List<IModule> getDesignTimeDependOnModules();
 
-  void addDependency(String modelUID, boolean reexport);
-  void addUsedLangauge(String languageNamespace);
-  void addUsedDevkit(String devkit);
+  void addDependency(ModuleReference moduleRef, boolean reexport);
+  void addUsedLangauge(ModuleReference langRef);
+  void addUsedDevkit(ModuleReference devkitRef);
 
   SModelDescriptor createModel(SModelFqName fqName, SModelRoot root);
 

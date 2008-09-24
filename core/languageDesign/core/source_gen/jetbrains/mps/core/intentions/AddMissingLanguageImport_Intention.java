@@ -25,7 +25,7 @@ public class AddMissingLanguageImport_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    editorContext.getOperationContext().getModule().addUsedLangauge(node.getLanguageNamespace());
+    editorContext.getOperationContext().getModule().addUsedLangauge(node.getLanguage(editorContext.getScope()).getModuleReference());
   }
 
   public String getLocationString() {

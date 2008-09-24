@@ -98,11 +98,11 @@ public abstract class DefaultScope extends BaseScope {
     visibleModules.addAll(getInitialModules());
     for (IModule module : getInitialModules()) {
       for (Dependency d : module.getDependOn()) {
-        IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(d.getModuleUID());
+        IModule dependency = MPSModuleRepository.getInstance().getModule(d.getModuleReference());
         if (dependency != null) {
           visibleModules.add(dependency);
         } else {
-          LOG.error("Can't find a module " +  d.getModuleUID() + " in " + this);
+          LOG.error("Can't find a module " +  d.getModuleReference() + " in " + this);
         }
       }
     }
@@ -136,14 +136,14 @@ public abstract class DefaultScope extends BaseScope {
 
         for (Dependency dep : module.getDependOn()) {
           if (dep.isREExport()) {
-            IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
+            IModule dependency = MPSModuleRepository.getInstance().getModule(dep.getModuleReference());
             if (dependency != null) {
               if (!visibleModules.contains(dependency)) {
                 visibleModules.add(dependency);
                 changed = true;
               }
             } else {
-              LOG.error("Can't find a module " +  dep.getModuleUID() + " in " + this);
+              LOG.error("Can't find a module " +  dep.getModuleReference() + " in " + this);
             }
           }
         }
@@ -160,14 +160,14 @@ public abstract class DefaultScope extends BaseScope {
         }
 
         for (Dependency dep : language.getDependOn()) {
-          IModule dependency = MPSModuleRepository.getInstance().getModuleByUID(dep.getModuleUID());
+          IModule dependency = MPSModuleRepository.getInstance().getModule(dep.getModuleReference());
           if (dependency != null) {
             if (dep.isREExport() && !visibleModules.contains(dependency)) {
               visibleModules.add(dependency);
               changed = true;
             }
           } else {
-            LOG.error("Can't load " + dep.getModuleUID() + " from " + language);
+            LOG.error("Can't load " + dep.getModuleReference() + " from " + language);
           }
         }
       }
