@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.ModuleReference;
 import org.jdom.Element;
 import org.jdom.Document;
 import org.jetbrains.annotations.Nullable;
@@ -91,7 +92,7 @@ public class ModelReader2 implements IModelReader  {
     for (Object language : languages) {
       Element element = (Element) language;
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addLanguage_internal(languageNamespace);
+      model.addLanguage_internal(ModuleReference.fromString(languageNamespace));
       List<Element> aspectElements = element.getChildren(ModelPersistence.LANGUAGE_ASPECT);
 
       //aspect models versions
@@ -106,7 +107,7 @@ public class ModelReader2 implements IModelReader  {
     for (Object languageEOG : languagesEOG) {
       Element element = (Element) languageEOG;
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addEngagedOnGenerationLanguage(languageNamespace);
+      model.addEngagedOnGenerationLanguage(ModuleReference.fromString(languageNamespace));
     }
 
     //devkits
@@ -114,7 +115,7 @@ public class ModelReader2 implements IModelReader  {
     for (Object devkit : devkits) {
       Element element = (Element) devkit;
       String devkitNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addDevKit(devkitNamespace);
+      model.addDevKit(ModuleReference.fromString(devkitNamespace));
     }
 
     // imports

@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.ModuleReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -20,7 +21,7 @@ public class ProjectModels {
     @NotNull
     public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
       SModel result = new SModel(modelDescriptor.getSModelReference());
-      result.addLanguage_internal("jetbrains.mps.projectLanguage");
+      result.addLanguage_internal(ModuleReference.fromString("jetbrains.mps.projectLanguage"));
       return result;
     }
 

@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.ModuleReference;
 
 import javax.swing.JPopupMenu;
 import javax.swing.JMenuItem;
@@ -81,8 +82,8 @@ public class KeyMapUtil {
     SNode node = editorContext.getNodeEditorComponent().getEditedNode();
     if (node != null) {
       SModel model = node.getModel();
-      for (String namespace : model.getLanguageNamespaces(GlobalScope.getInstance())) {
-        List<EditorCellKeyMap> keyMapsForNamespace = LanguagesKeymapManager.getInstance().getKeyMapsForLanguage(namespace);
+      for (ModuleReference ref : model.getLanguageRefs(GlobalScope.getInstance())) {
+        List<EditorCellKeyMap> keyMapsForNamespace = LanguagesKeymapManager.getInstance().getKeyMapsForLanguage(editorContext.getScope().getLanguage(ref));
         if (keyMapsForNamespace != null) {
           for (EditorCellKeyMap keymap : keyMapsForNamespace) {
             if (!addedKeymaps.contains(keymap.getClass())) {

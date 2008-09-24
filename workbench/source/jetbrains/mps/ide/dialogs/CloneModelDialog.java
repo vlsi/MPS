@@ -5,6 +5,7 @@ import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.projectLanguage.structure.CloneModelProperties;
 import jetbrains.mps.projectLanguage.structure.DevKit;
 import jetbrains.mps.projectLanguage.structure.Model;
@@ -74,9 +75,9 @@ public class CloneModelDialog extends BaseNodeDialog {
           myCloneModelProperties.setRoot(rootReference);
         }
 
-        for (String language : mySModel.getExplicitlyImportedLanguages()) {
+        for (ModuleReference language : mySModel.getExplicitlyImportedLanguages()) {
           jetbrains.mps.projectLanguage.structure.Language lang = jetbrains.mps.projectLanguage.structure.Language.newInstance(myProjectModel);
-          lang.setName(language);
+          lang.setName(language.toString());
           myCloneModelProperties.addLanguage(lang);
         }
 
@@ -86,15 +87,15 @@ public class CloneModelDialog extends BaseNodeDialog {
           myCloneModelProperties.addImportedModel(m);
         }
 
-        for (String devKit : mySModel.getDevKitNamespaces()) {
+        for (ModuleReference devKit : mySModel.getDevKitRefs()) {
           DevKit dk = DevKit.newInstance(myProjectModel);
-          dk.setName(devKit);
+          dk.setName(devKit.toString());
           myCloneModelProperties.addDevKit(dk);
         }
 
-        for (String language : mySModel.getEngagedOnGenerationLanguages()) {
+        for (ModuleReference language : mySModel.getEngagedOnGenerationLanguages()) {
           jetbrains.mps.projectLanguage.structure.Language lang = jetbrains.mps.projectLanguage.structure.Language.newInstance(myProjectModel);
-          lang.setName(language);
+          lang.setName(language.toString());
           myCloneModelProperties.addEngagedOnGenerationLanguage(lang);
         }
       }
@@ -163,7 +164,7 @@ public class CloneModelDialog extends BaseNodeDialog {
         for (jetbrains.mps.projectLanguage.structure.Language l : myCloneModelProperties.getEngagedOnGenerationLanguages()) {
           String name = l.getName();
           assert name != null;
-          model.addEngagedOnGenerationLanguage(name);
+          model.addEngagedOnGenerationLanguage(ModuleReference.fromString(name));
         }
       }
     });

@@ -6,6 +6,7 @@ import jetbrains.mps.ide.dialogs.AddRequiredModelImportsDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.Parser;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
@@ -196,14 +197,14 @@ public class CopyPasteUtil {
     SModelReference modelReference = model.getSModelReference();
     SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
     SModel newModel = new SModel(new SModelReference(fqName, SModelId.generate()));
-    for (String language : model.getExplicitlyImportedLanguages()) {
+    for (ModuleReference language : model.getExplicitlyImportedLanguages()) {
       newModel.addLanguage(language);
     }
     for (SModelReference importedModel : model.getImportedModelUIDs()) {
       newModel.addImportedModel(importedModel);
     }
 
-    for (String devKit : model.getDevKitNamespaces()) {
+    for (ModuleReference devKit : model.getDevKitRefs()) {
       newModel.addDevKit(devKit);
     }
     
@@ -256,17 +257,6 @@ public class CopyPasteUtil {
       } catch (IOException e) {
         LOG.error("Exception", e);
       }
-    } else if (content.isDataFlavorSupported(SModelDataFlavor.stringFlavor)
-      && canReceiveText(model)) {// string -> text lang nodes
-      String s = TextPasteUtil.getStringFromTransferable(content);
-      if (s == null || s.length() <= 0) return PasteNodeData.emptyPasteNodeData(model);
-      @Hack List<SNode> nodes = Parser.parse(s, model, "jetbrains.mpswiki");
-      if (nodes == null) return PasteNodeData.emptyPasteNodeData(model);
-      return new PasteNodeData(nodes,
-        new HashSet<SReference>(), model,
-        new HashSet<String>(),
-        new HashSet<SModelReference>(),
-        new HashSet<String>());
     }
 
     return PasteNodeData.emptyPasteNodeData(model);
@@ -277,10 +267,10 @@ public class CopyPasteUtil {
     return getNodesFromClipboard(model).get(0);
   }
 
-  public static boolean addImportsAndLanguagesToModel(final SModel targetModel, final Set<String> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
-    final List<String> additionalLanguages = new ArrayList<String>();
+  public static boolean addImportsAndLanguagesToModel(final SModel targetModel, final Set<ModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
+    final List<ModuleReference> additionalLanguages = new ArrayList<ModuleReference>();
     final List<SModelReference> additionalModels = new ArrayList<SModelReference>();
-    final Set<String> necessaryDevKits = new HashSet<String>();
+    final Set<ModuleReference> necessaryDevKits = new HashSet<ModuleReference>();
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -289,8 +279,10 @@ public class CopyPasteUtil {
             additionalModels.add(modelReference);
         }
 
-        for (String namespace : necessaryLanguages) {
-          if (!targetModel.hasLanguage(namespace)) additionalLanguages.add(namespace);
+        for (ModuleReference namespace : necessaryLanguages) {
+          if (!targetModel.hasLanguage(namespace)) {
+            additionalLanguages.add(namespace);
+          }
         }
 
         necessaryImports.retainAll(additionalModels);
@@ -335,16 +327,7 @@ public class CopyPasteUtil {
 
     if (hasNodes) {
       return true;
-    } else if (content.isDataFlavorSupported(SModelDataFlavor.stringFlavor) && canReceiveText(modelToPaste)) {
-      String s = TextPasteUtil.getStringFromTransferable(content);
-      return (s != null && s.length() > 0 && s.indexOf(' ') > -1);
     }
     return false;
-  }
-
-  @Hack
-  public static boolean canReceiveText(SModel model) {
-    return (model.getLanguageNamespaces(GlobalScope.getInstance()).contains("jetbrains.textLanguage")
-      || model.getLanguageNamespaces(GlobalScope.getInstance()).contains("jetbrains.mpswiki"));
   }
 }

@@ -3,6 +3,7 @@ package jetbrains.mps.ide.dialogs;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.project.ModuleReference;
 
 import javax.swing.*;
 import javax.swing.event.TableModelEvent;
@@ -27,15 +28,15 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
 
   private SModel myModel;
 
-  private List<String> myLanguages;
+  private List<ModuleReference> myLanguages;
   private List<SModelReference> myImports;
-  private List<String> myDevKits;
+  private List<ModuleReference> myDevKits;
 
   private boolean myCanceled = true;
 
-  private List<String> myLanguagesToAdd;
+  private List<ModuleReference> myLanguagesToAdd;
   private List<SModelReference> myImportsToAdd;
-  private List<String> myDevKitsToAdd;
+  private List<ModuleReference> myDevKitsToAdd;
 
   public boolean isCanceled() {
     return myCanceled;
@@ -43,15 +44,15 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
 
   public AddRequiredModelImportsDialog(Frame frame, SModel model,
                                        Set<SModelReference> necessaryImports,
-                                       Set<String> necessaryLanguages,
-                                       Set<String> necessaryDevKits) {
+                                       Set<ModuleReference> necessaryLanguages,
+                                       Set<ModuleReference> necessaryDevKits) {
     super(frame, "Imports And Languages");
     myImports = new ArrayList<SModelReference>(necessaryImports);
-    myLanguages = new ArrayList<String>(necessaryLanguages);
-    myDevKits = new ArrayList<String>(necessaryDevKits);
-    myLanguagesToAdd = new ArrayList<String>(necessaryLanguages);
+    myLanguages = new ArrayList<ModuleReference>(necessaryLanguages);
+    myDevKits = new ArrayList<ModuleReference>(necessaryDevKits);
+    myLanguagesToAdd = new ArrayList<ModuleReference>(necessaryLanguages);
     myImportsToAdd = new ArrayList<SModelReference>(necessaryImports);
-    myDevKitsToAdd = new ArrayList<String>(necessaryDevKits);
+    myDevKitsToAdd = new ArrayList<ModuleReference>(necessaryDevKits);
 
     myModel = model;
 
@@ -112,10 +113,10 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
         for (SModelReference imported : myImports) {
           myModel.addImportedModel(imported);
         }
-        for (String language : myLanguages) {
+        for (ModuleReference language : myLanguages) {
           myModel.addLanguage(language);
         }
-        for (String devkit : myDevKits) {
+        for (ModuleReference devkit : myDevKits) {
           myModel.addNewlyImportedDevKit(devkit);
         }
         myCanceled = false;
@@ -131,10 +132,10 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
         for (SModelReference imported : myImportsToAdd) {
           myModel.addImportedModel(imported);
         }
-        for (String language : myLanguagesToAdd) {
+        for (ModuleReference language : myLanguagesToAdd) {
           myModel.addLanguage(language);
         }
-        for (String devKit : myDevKitsToAdd) {
+        for (ModuleReference devKit : myDevKitsToAdd) {
           myModel.addNewlyImportedDevKit(devKit);
         }
         myCanceled = false;

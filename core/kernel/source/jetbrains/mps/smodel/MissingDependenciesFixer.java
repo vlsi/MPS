@@ -1,13 +1,9 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.ChooseModuleDialog;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.projectLanguage.structure.DevKitReference;
-import jetbrains.mps.projectLanguage.structure.LanguageReference;
-import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
-import jetbrains.mps.projectLanguage.structure.ModuleReference;
+import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.ArrayList;
@@ -58,31 +54,31 @@ public class MissingDependenciesFixer {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         for (IModule module : newImports) {
-          ModuleReference ref = ModuleReference.newInstance(model[0]);
-          ref.setName(module.getModuleUID());
+          jetbrains.mps.projectLanguage.structure.ModuleReference ref = jetbrains.mps.projectLanguage.structure.ModuleReference.newInstance(model[0]);
+          ref.setName(module.getModuleReference().toString());
           md[0].addDependency(ref);
         }
 
-        for (String namespace : CollectionUtil.union(
+        for (ModuleReference namespace : CollectionUtil.union(
           myModelDescriptor.getSModel().getExplicitlyImportedLanguages(),
           myModelDescriptor.getSModel().getEngagedOnGenerationLanguages())) {
           if (moduleScope[0].getLanguage(namespace) == null) {
             Language lang = GlobalScope.getInstance().getLanguage(namespace);
             if (lang != null) {
               LanguageReference ref = LanguageReference.newInstance(model[0]);
-              ref.setName(namespace);
+              ref.setName(namespace.toString());
               md[0].addUsedLanguage(ref);
               wereChanges[0] = true;
             }
           }
         }
 
-        for (String devKitNamespace : myModelDescriptor.getSModel().getDevKitNamespaces()) {
+        for (ModuleReference devKitNamespace : myModelDescriptor.getSModel().getDevKitRefs()) {
           if (moduleScope[0].getDevKit(devKitNamespace) == null) {
             DevKit devKit = GlobalScope.getInstance().getDevKit(devKitNamespace);
             if (devKit != null) {
               DevKitReference ref = DevKitReference.newInstance(model[0]);
-              ref.setName(devKitNamespace);
+              ref.setName(devKitNamespace.toString());
               md[0].addUsedDevKit(ref);
               wereChanges[0] = true;
             }

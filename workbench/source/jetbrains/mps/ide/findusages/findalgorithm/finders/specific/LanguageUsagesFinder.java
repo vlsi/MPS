@@ -95,7 +95,7 @@ public class LanguageUsagesFinder extends BaseFinder {
       if (!SModelStereotype.isUserModel(modelDescriptor)) {
         continue;
       }
-      if (modelDescriptor.getSModel().hasLanguage(searchedLanguage.getNamespace())) {
+      if (modelDescriptor.getSModel().hasLanguage(searchedLanguage.getModuleReference())) {
         SModel model = modelDescriptor.getSModel();
         searchResults.getSearchResults().add(new SearchResult<SModel>(model, MODELS_WRITTEN_IN_LANGUAGE));
       }

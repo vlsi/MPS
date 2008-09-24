@@ -2,21 +2,22 @@ package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.ModuleReference;
 
 public class SModelLanguageEvent extends SModelEvent {
-  private String myLanguageNamespace;
+  private ModuleReference myLanguage;
 
-  public SModelLanguageEvent(SModel model, String languageNamespace) {
+  public SModelLanguageEvent(SModel model, ModuleReference ref) {
     super(model);
-    myLanguageNamespace = languageNamespace;
+    myLanguage = ref;
   }
 
   public SNode getAffectedRoot() {
     return null;
   }
 
-  public String getLanguageNamespace() {
-    return myLanguageNamespace;
+  public ModuleReference getLanguageNamespace() {
+    return myLanguage;
   }
 
   public void accept(SModelEventVisitor visitor) {

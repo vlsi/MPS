@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.project.ModuleReference;
 
 import java.util.*;
 
@@ -90,12 +91,12 @@ public class GenerationPartitioningUtil {
 
 
   private static List<Language> getUsedLanguages(SModel model, boolean excludeTLBase, IScope scope) {
-    Set<String> namespaces = new HashSet<String>(model.getEngagedOnGenerationLanguages());
+    Set<ModuleReference> namespaces = new HashSet<ModuleReference>(model.getEngagedOnGenerationLanguages());
     for (SNode root : model.getRoots()) {
       collectLanguageNamespaces(root, namespaces, excludeTLBase);
     }
     List<Language> result = new ArrayList<Language>();
-    for (String namespace : namespaces) {
+    for (ModuleReference namespace : namespaces) {
       Language language = scope.getLanguage(namespace);
       if (language != null) {
         result.add(language);
@@ -106,17 +107,17 @@ public class GenerationPartitioningUtil {
     return result;
   }
 
-  public static List<String> getUsedLanguageNamespaces(SModel model, boolean excludeTLBase) {
-    Set<String> namespaces = new HashSet<String>(model.getEngagedOnGenerationLanguages());
+  public static List<ModuleReference> getUsedLanguageNamespaces(SModel model, boolean excludeTLBase) {
+    Set<ModuleReference> namespaces = new HashSet<ModuleReference>(model.getEngagedOnGenerationLanguages());
     for (SNode root : model.getRoots()) {
       collectLanguageNamespaces(root, namespaces, excludeTLBase);
     }
     return CollectionUtil.setAsList(namespaces);
   }
 
-  private static void collectLanguageNamespaces(SNode node, Set<String> namespaces, boolean excludeTLBase) {
-    String namespace = node.getLanguageNamespace();
-    if (!namespace.equals("jetbrains.mps.transformation.TLBase")) {
+  private static void collectLanguageNamespaces(SNode node, Set<ModuleReference> namespaces, boolean excludeTLBase) {
+    ModuleReference namespace = node.getConceptLanguage();
+    if (!namespace.getModuleFqName().equals("jetbrains.mps.transformation.TLBase")) {
       namespaces.add(namespace);
       for (SNode child : node.getChildren()) {
         collectLanguageNamespaces(child, namespaces, excludeTLBase);

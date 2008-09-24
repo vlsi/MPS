@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.project.ModuleReference;
 
 import javax.swing.Icon;
 import java.util.List;
@@ -10,8 +11,8 @@ import java.util.ArrayList;
 
 public enum LanguageAspect {
   STRUCTURE("structure") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.STRUCTURE.getUID());
+    protected List<ModuleReference> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.STRUCTURE.getModuleReference());
     }
 
     public Icon getIcon() {
@@ -20,8 +21,8 @@ public enum LanguageAspect {
   },
 
   EDITOR("editor") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.EDITOR.getUID());
+    protected List<ModuleReference> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.EDITOR.getModuleReference());
     }
 
     public Icon getIcon() {
@@ -30,8 +31,8 @@ public enum LanguageAspect {
   },
 
   ACTIONS("actions") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.ACTIONS.getUID());
+    protected List<ModuleReference> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.ACTIONS.getModuleReference());
     }
 
     public Icon getIcon() {
@@ -40,8 +41,8 @@ public enum LanguageAspect {
   },
 
   CONSTRAINTS("constraints") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.CONSTRAINTS.getUID());
+    protected List<ModuleReference> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.CONSTRAINTS.getModuleReference());
     }
 
     public Icon getIcon() {
@@ -50,8 +51,8 @@ public enum LanguageAspect {
   },
 
   BEHAVIOR("behavior") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.CONSTRAINTS.getUID());
+    protected List<ModuleReference> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.CONSTRAINTS.getModuleReference());
     }
 
     public Icon getIcon() {
@@ -60,8 +61,8 @@ public enum LanguageAspect {
   },
 
   HELGINS_TYPESYSTEM("helgins") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.HELGINS.getUID());
+    protected List<ModuleReference> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.HELGINS.getModuleReference());
     }
 
     public Icon getIcon() {
@@ -70,16 +71,16 @@ public enum LanguageAspect {
   },
 
   SCRIPTS("scripts") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.IDESCRIPT.getUID());
+    protected List<ModuleReference> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.IDESCRIPT.getModuleReference());
     }
   },
 
   DOCUMENTATION("documentation"),
 
   INTENTIONS("intentions") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.INTENTION.getUID());
+    protected List<ModuleReference> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.INTENTION.getModuleReference());
     }
 
     public Icon getIcon() {
@@ -88,8 +89,8 @@ public enum LanguageAspect {
   },
 
   FIND_USAGES("findUsages") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.FIND_USAGES.getUID());
+    protected List<ModuleReference> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.FIND_USAGES.getModuleReference());
     }
 
     public Icon getIcon() {
@@ -98,8 +99,8 @@ public enum LanguageAspect {
   },
 
   PLUGIN("plugin") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.PLUGIN.getUID());
+    protected List<ModuleReference> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.PLUGIN.getModuleReference());
     }
 
     public Icon getIcon() {
@@ -108,14 +109,14 @@ public enum LanguageAspect {
   },
 
   DATA_FLOW("dataFlow") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.DATA_FLOW.getUID());
+    protected List<ModuleReference> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.DATA_FLOW.getModuleReference());
     }
   },
 
   LANGUAGE_TEST("languageTest") {
-    protected List<String> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.LANGUAGE_TEST.getUID());
+    protected List<ModuleReference> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapModule.LANGUAGE_TEST.getModuleReference());
     }
   };
 
@@ -150,9 +151,9 @@ public enum LanguageAspect {
 
     model.getSModel().runLoadingAction(new Runnable() {
       public void run() {
-        model.getSModel().addDevKit(BootstrapModule.LANGUAGE_DESIGN_DEVKIT.getUID());
+        model.getSModel().addDevKit(BootstrapModule.LANGUAGE_DESIGN_DEVKIT.getModuleReference());
 
-        for (String lang : getLanguagesToImport(l)) {
+        for (ModuleReference lang : getLanguagesToImport(l)) {
           model.getSModel().addLanguage(lang);
         }
 
@@ -174,17 +175,14 @@ public enum LanguageAspect {
     return model;
   }
 
-  public List<String> getAllLanguagesToImport(Language l) {
-    List<String> result = new ArrayList<String>(getLanguagesToImport(l));
+  public List<ModuleReference> getAllLanguagesToImport(Language l) {
+    List<ModuleReference> result = new ArrayList<ModuleReference>(getLanguagesToImport(l));
     result.addAll(getLanguagesToImport(l));
-//    result.add(BootstrapModule.COLLECTIONS.getUID());
-//    result.add(BootstrapModule.SMODEL.getUID());
-//    result.add(BootstrapModule.BASE_LANGUAGE.getUID());
     return result;
   }
 
-  protected List<String> getLanguagesToImport(Language l) {
-    return new ArrayList<String>();
+  protected List<ModuleReference> getLanguagesToImport(Language l) {
+    return new ArrayList<ModuleReference>();
   }
 
   protected List<String> getModelsToImport(Language l) {

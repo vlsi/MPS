@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.project.ModuleReference;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -35,9 +36,9 @@ public class ModelWriter3 implements IModelWriter {
 
     // languages
     Set<String> writtenAspects = new HashSet<String>();
-    for (String languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
+    for (ModuleReference languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
-      languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace);
+      languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
     for (ImportElement aspectElement : sourceModel.getLanguageAspectModelElements()) {
@@ -49,16 +50,16 @@ public class ModelWriter3 implements IModelWriter {
     }
 
     // languages engaged on generation
-    for (String languageNamespace : sourceModel.getEngagedOnGenerationLanguages()) {
+    for (ModuleReference languageNamespace : sourceModel.getEngagedOnGenerationLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
-      languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace);
+      languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     //devkits
-    for (String devkitNamespace : sourceModel.getDevKitNamespaces()) {
+    for (ModuleReference devkitNamespace : sourceModel.getDevKitRefs()) {
       Element devkitElem = new Element(ModelPersistence.DEVKIT);
-      devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace);
+      devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace.toString());
       rootElement.addContent(devkitElem);
     }
 

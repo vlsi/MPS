@@ -157,16 +157,16 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       }
     }
 
-    List<String> langsToCheck = new ArrayList<String>();
+    List<ModuleReference> langsToCheck = new ArrayList<ModuleReference>();
     langsToCheck.addAll(model.getExplicitlyImportedLanguages());
     langsToCheck.addAll(model.getEngagedOnGenerationLanguages());
-    for (String lang : langsToCheck) {
+    for (ModuleReference lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {
         errors.add("Can't find language " + lang);
       }
     }
 
-    for (String devKit : model.getDevKitNamespaces()) {
+    for (ModuleReference devKit : model.getDevKitRefs()) {
       if (scope.getDevKit(devKit) == null) {
         errors.add("Can't find devkit " + devKit);
       }

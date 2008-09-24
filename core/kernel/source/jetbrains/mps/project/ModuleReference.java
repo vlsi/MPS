@@ -5,7 +5,7 @@ import jetbrains.mps.util.EqualUtil;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class ModuleReference {
+public class ModuleReference implements Comparable<ModuleReference> {
   private static Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");
 
   public static ModuleReference fromString(String text) {
@@ -67,6 +67,10 @@ public class ModuleReference {
 
   public String toString() {
     return myModuleFqName;
+  }
+
+  public int compareTo(ModuleReference o) {
+    return toString().compareTo(o.toString());
   }
 }
 

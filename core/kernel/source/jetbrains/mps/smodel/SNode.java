@@ -8,6 +8,7 @@ import jetbrains.mps.core.structure.IResolveInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
@@ -725,7 +726,7 @@ public final class SNode {
         addedOrRemoved = true;
         isRemoved = true;
       }
-      getModel().firePropertyChangedEvent(this, propertyName_, oldValue, propertyValue, addedOrRemoved, isRemoved);
+      getModel().firePropertyChangedEvent(this, propertyName_, oldValue, propertyValue);
     }
   }
 
@@ -1039,7 +1040,7 @@ public final class SNode {
     }
 
     // add language because helgins needs it to invalidate/revalidate its caches
-    myModel.addLanguage_internal(getLanguageNamespace());
+    myModel.addLanguage_internal(ModuleReference.fromString(getLanguageNamespace()));
   }
 
   public boolean isDetached() {
@@ -1435,6 +1436,10 @@ public final class SNode {
 
     fireNodeReadAccess();
     return myConceptFqName;
+  }
+
+  public ModuleReference getConceptLanguage() {
+    return ModuleReference.fromString(getLanguageNamespace());
   }
 
   public String getConceptShortName() {

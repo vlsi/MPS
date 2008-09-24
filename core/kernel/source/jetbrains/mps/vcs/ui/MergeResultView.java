@@ -19,6 +19,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleReference;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -138,8 +139,8 @@ public class MergeResultView extends JPanel {
     myResultModel = ModelPersistence.copyModel(myBaseModel);
     myResultModel.setLoading(true);
 
-    String languageNamespace = "jetbrains.mps.core";
-    SNode tmp = new SNode(myResultModel, NameUtil.conceptFQNameFromNamespaceAndShortName(languageNamespace, "BaseConcept"));
+    ModuleReference languageNamespace = ModuleReference.fromString("jetbrains.mps.core");
+    SNode tmp = new SNode(myResultModel, NameUtil.conceptFQNameFromNamespaceAndShortName(languageNamespace.getModuleFqName(), "BaseConcept"));
     boolean notRemoveLanguage = false;
     if (myResultModel.getExplicitlyImportedLanguages().contains(languageNamespace)){
       notRemoveLanguage = true;

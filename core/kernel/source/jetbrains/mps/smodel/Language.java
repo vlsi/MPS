@@ -487,7 +487,7 @@ public class Language extends AbstractModule {
 
     LanguageAspect aspect = Language.getModelAspect(sm);
     if (aspect != null) {
-      for (String namespace : aspect.getAllLanguagesToImport(this)) {
+      for (ModuleReference namespace : aspect.getAllLanguagesToImport(this)) {
         Language language = GlobalScope.getInstance().getLanguage(namespace);
         if (language != null) {
           result.add(language);

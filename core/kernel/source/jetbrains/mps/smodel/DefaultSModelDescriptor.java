@@ -444,7 +444,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (!myModelRootManager.containsSomeString(this, strings)) return false;
     getSModel();
     if (mySModel != null) {
-      return mySModel.hasLanguage(language.getNamespace());
+      return mySModel.hasLanguage(language.getModuleReference());
     }
     return false;
   }

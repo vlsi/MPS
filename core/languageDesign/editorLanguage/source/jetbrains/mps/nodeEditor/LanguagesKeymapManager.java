@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -22,9 +23,9 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(LanguagesKeymapManager.class);
   }
 
-  private Map<String, List<EditorCellKeyMap>> myLanguagesToKeyMaps = new HashMap<String, List<EditorCellKeyMap>>();
+  private Map<Language, List<EditorCellKeyMap>> myLanguagesToKeyMaps = new HashMap<Language, List<EditorCellKeyMap>>();
   private Set<Language> myLanguages = new HashSet<Language>();
-  private Set<String> myRegisteredLanguages = new HashSet<String>();
+  private Set<Language> myRegisteredLanguages = new HashSet<Language>();
   private List<Language> myLanguagesToRegister = new LinkedList<Language>();
   private MyModuleRepositoryListener myListener = new MyModuleRepositoryListener();
 
@@ -73,12 +74,12 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     }
   }
 
-  private void registerKeyMap(EditorCellKeyMap keyMap, String languageNamespace) {
+  private void registerKeyMap(EditorCellKeyMap keyMap, Language l) {
     if (keyMap.isApplicableToEveryModel()) {
-      List<EditorCellKeyMap> keyMaps = myLanguagesToKeyMaps.get(languageNamespace);
+      List<EditorCellKeyMap> keyMaps = myLanguagesToKeyMaps.get(l);
       if (keyMaps == null) {
         keyMaps = new ArrayList<EditorCellKeyMap>();
-        myLanguagesToKeyMaps.put(languageNamespace, keyMaps);
+        myLanguagesToKeyMaps.put(l, keyMaps);
       }
       keyMaps.add(keyMap);
     }
@@ -86,9 +87,9 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
   private void registerLanguageKeyMaps(Language language) {
 //    System.out.println("register KeyMaps " + language.getNamespace());
-    if (myRegisteredLanguages.contains(language.getNamespace())) return;
+    if (myRegisteredLanguages.contains(language)) return;
     myLanguages.add(language);
-    myRegisteredLanguages.add(language.getNamespace());
+    myRegisteredLanguages.add(language);
     SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
     if (editorModelDescriptor == null) return;
     SModel editorModel = editorModelDescriptor.getSModel();
@@ -97,7 +98,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
       try {
         Class<EditorCellKeyMap> keyMapClass = findKeyMapClassByDeclaration(node);
         if (keyMapClass != null) {
-          registerKeyMap(keyMapClass.newInstance(), language.getNamespace());
+          registerKeyMap(keyMapClass.newInstance(), language);
         }
       } catch (Throwable t) {
         LOG.error(t);
@@ -119,14 +120,14 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
   private void unregisterLanguageKeyMaps(Language language) {
     myLanguages.remove(language);
-    myRegisteredLanguages.remove(language.getNamespace());
+    myRegisteredLanguages.remove(language);
     myLanguagesToRegister.remove(language);
 //    System.out.println("unregister KeyMaps " + language.getNamespace());
     SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
     if (editorModelDescriptor == null) return;
     String modelName = editorModelDescriptor.getLongName();
-    for (String namespace : myLanguagesToKeyMaps.keySet()) {
-      List<EditorCellKeyMap> keyMaps = myLanguagesToKeyMaps.get(namespace);
+    for (Language l : myLanguagesToKeyMaps.keySet()) {
+      List<EditorCellKeyMap> keyMaps = myLanguagesToKeyMaps.get(l);
       if (keyMaps == null) continue;
       for (EditorCellKeyMap keyMap : new ArrayList<EditorCellKeyMap>(keyMaps)) {        
         if (keyMap.getClass().getPackage().getName().equals(modelName)) {
@@ -136,16 +137,16 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     }
   }
 
-  public List<EditorCellKeyMap> getKeyMapsForLanguage(String languageNamespace) {
-    if (!myLanguagesToKeyMaps.containsKey(languageNamespace) && !myRegisteredLanguages.contains(languageNamespace)) {
-      for (Language l : myLanguagesToRegister) {
-        if (languageNamespace.equals(l.getNamespace())) {
+  public List<EditorCellKeyMap> getKeyMapsForLanguage(Language l) {
+    if (!myLanguagesToKeyMaps.containsKey(l) && !myRegisteredLanguages.contains(l)) {
+      for (Language lang : myLanguagesToRegister) {
+        if (lang == l) {
           registerLanguageKeyMaps(l);
           break;
         }
       }
     }
-    return myLanguagesToKeyMaps.get(languageNamespace);
+    return myLanguagesToKeyMaps.get(l);
   }
 
   private class MyModuleRepositoryListener implements ModuleRepositoryListener {

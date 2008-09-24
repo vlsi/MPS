@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.transformation.TLBase.structure.MappingScriptKind;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.project.ModuleReference;
 
 import javax.swing.JOptionPane;
 import java.lang.reflect.InvocationTargetException;
@@ -372,10 +373,10 @@ public class GenerationSession implements IGenerationSession {
   }
 
   private void printGenerationStepData(AbstractGenerationStepController stepController, SModel inputModel) {
-    List<String> namespaces = GenerationPartitioningUtil.getUsedLanguageNamespaces(inputModel, false);
+    List<ModuleReference> namespaces = GenerationPartitioningUtil.getUsedLanguageNamespaces(inputModel, false);
     Collections.sort(namespaces);
     addMessage(new Message(MessageKind.INFORMATION, "languages used:"));
-    for (String namespace : namespaces) {
+    for (ModuleReference namespace : namespaces) {
       addMessage(new Message(MessageKind.INFORMATION, "    " + namespace));
     }
 //    List<Generator> generators = stepController.getGenerators();
