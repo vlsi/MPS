@@ -237,12 +237,8 @@ public class MPSEditorOpener implements ProjectComponent {
         while (currentTargetNode != null) {
           EditorCell cellInInspector = inspector.findNodeCell(currentTargetNode);
           if (cellInInspector != null) {
-            boolean hasInspector = !(inspector.getRootCell() instanceof DefaultInspectorCell);
-            if (hasInspector) {
-              nec.getInspectorTool().openTool(focus);
-            }
             inspector.selectNode(node);
-            doFocus(focus, nodeEditor, hasInspector);
+            doFocus(focus, nodeEditor, currentTargetNode != node);
             return;
           }
           currentTargetNode = currentTargetNode.getParent();
