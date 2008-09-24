@@ -161,9 +161,6 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
       }
     }
     fireOnLoad(myPredefinedLibrariesOwner);
-    for (IModule module : result) {
-      ((AbstractModule)module).convertRenamedDependencies();
-    }
   }
 
   public void update() {
@@ -183,9 +180,6 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
         fireOnLoad(myOwner);
 
         CleanupManager.getInstance().cleanup();
-        for (IModule module : modules) {
-          ((AbstractModule)module).convertRenamedDependencies();
-        }
       }
     });
   }

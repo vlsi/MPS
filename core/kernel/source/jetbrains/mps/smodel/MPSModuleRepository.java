@@ -31,10 +31,6 @@ public class MPSModuleRepository implements ApplicationComponent {
   private Map<String, IModule> myUIDToModulesMap = new LinkedHashMap<String, IModule>();
   private Map<ModuleId, IModule> myIdToModuleMap = new LinkedHashMap<ModuleId, IModule>();
 
-  private Map<String, ModuleStub> myFileToModuleStubMap = new LinkedHashMap<String, ModuleStub>();
-  private Map<String, List<ModuleStub>> myUIDToModuleStubsMap = new LinkedHashMap<String, List<ModuleStub>>();
-  private ManyToManyMap<ModuleStub, MPSModuleOwner> myModuleStubToOwners = new ManyToManyMap<ModuleStub, MPSModuleOwner>();
-
   private Set<IModule> myModules = new LinkedHashSet<IModule>();
 
   private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();
@@ -185,67 +181,6 @@ public class MPSModuleRepository implements ApplicationComponent {
       return myIdToModuleMap.get(ref.getModuleId());
     }
     return myUIDToModulesMap.get(ref.getModuleFqName());
-  }
-
-  public ModuleStub getModuleStubByUID(String moduleUID) {
-    List<ModuleStub> modules = myUIDToModuleStubsMap.get(moduleUID);
-    if (modules == null || modules.isEmpty()) return null;
-    return modules.get(0);
-  }
-
-  public ModuleStub registerModuleStub(IFile file, MPSModuleOwner owner) {
-    myDirtyFlag = true;
-    String canonicalPath = file.getCanonicalPath();
-    ModuleStub moduleStub = myFileToModuleStubMap.get(canonicalPath);
-    if (moduleStub == null) {
-      moduleStub = ModuleStub.newInstance(file, CollectionUtil.asSet(owner));
-    } else {
-      //todo
-      myModuleStubToOwners.addLink(moduleStub, owner);
-    }
-    //fireRepositoryChanged();
-    return moduleStub;
-  }
-
-  public void addModuleStub(ModuleStub moduleStub, Set<MPSModuleOwner> owners) {
-    myDirtyFlag = true;
-/*    if (myModuleStubToOwners.contains(moduleStub, owners)) {
-      throw new RuntimeException("Couldn't add module stub\"" + moduleStub.getOldModuleId() + "\" : this module stub is already registered with this very owner: " + owners);
-    }*/
-    IFile descriptorFile = moduleStub.getDescriptorFile();
-
-    String canonicalDescriptorPath;
-    if (descriptorFile == null) {
-      canonicalDescriptorPath = null;
-    } else {
-      canonicalDescriptorPath = descriptorFile.getCanonicalPath();
-    }
-    if (canonicalDescriptorPath != null && !myFileToModuleStubMap.containsKey(canonicalDescriptorPath)) {
-      myFileToModuleStubMap.put(canonicalDescriptorPath, moduleStub);
-    }
-
-    putModuleStubWithUID(moduleStub.getOldModuleId(), moduleStub);
-
-    for (MPSModuleOwner owner : owners) {
-      myModuleStubToOwners.addLink(moduleStub, owner);
-    }
-
-    //fireModuleAdded(moduleStub);
-  }
-
-  private void putModuleStubWithUID(String moduleUID, ModuleStub moduleStub) {
-    List<ModuleStub> moduleStubsWithUID = myUIDToModuleStubsMap.get(moduleUID);
-    if (moduleStubsWithUID == null) {
-      moduleStubsWithUID = new ArrayList<ModuleStub>(1);
-      myUIDToModuleStubsMap.put(moduleUID, moduleStubsWithUID);
-    }
-    if (moduleStubsWithUID.size() > 1) {
-      LOG.error("can't add module " + moduleUID + " : module with the same UID exists", moduleStubsWithUID.get(0));
-    }
-    if (moduleStubsWithUID.size() == 1 && moduleStubsWithUID.get(0) != moduleStub) {
-      LOG.error("can't add module " + moduleUID + " : module with the same UID exists", moduleStubsWithUID.get(0));
-    }
-    moduleStubsWithUID.add(moduleStub);
   }
 
   public <TM extends IModule> TM registerModule(IFile file, MPSModuleOwner owner, Class<TM> cls) {
@@ -439,8 +374,6 @@ public class MPSModuleRepository implements ApplicationComponent {
         if (module != null) {
           result.add(module);
         }
-      } else if (hasStubExtension(dirName)) {
-        tryToReadStub(dir, owner);
       }
       return result;
     }
@@ -451,8 +384,6 @@ public class MPSModuleRepository implements ApplicationComponent {
         if (module != null) {
           result.add(module);
         }
-      } else if (hasStubExtension(file.getName())) {
-        tryToReadStub(file, owner);
       } else if (file.getName().endsWith(AbstractModule.PACKAGE_SUFFIX)) {
         IFile dirInJar = FileSystem.getFile(file.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
         result.addAll(readModuleDescriptors(dirInJar, owner));
@@ -468,10 +399,6 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   private boolean hasModuleExtension(String name) {
     return getModuleExtension(name) != null;
-  }
-
-  private boolean hasStubExtension(String name) {
-    return name.endsWith(ModuleStub.MODULE_STUB_EXTENSION);
   }
 
   private String getModuleExtension(String name) {
@@ -602,15 +529,6 @@ public class MPSModuleRepository implements ApplicationComponent {
       }
     }
     return null;
-  }
-
-  public boolean tryToReadStub(IFile descriptorFile, MPSModuleOwner owner) {
-    if (descriptorFile.exists()) {
-      registerModuleStub(descriptorFile, owner);
-      return true;
-    } else {
-      return false;
-    }
   }
 
   public void updateModuleReferences() {

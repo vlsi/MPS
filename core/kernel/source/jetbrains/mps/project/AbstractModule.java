@@ -127,53 +127,6 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  public void convertRenamedDependencies() {
-    boolean setModuleDescriptor = convertRenamedDependencies_internal();
-    if (setModuleDescriptor && !isPackaged()) {
-      setModuleDescriptor(getModuleDescriptor());
-      save();
-    }
-  }
-
-  protected boolean convertRenamedDependencies_internal() {
-    boolean setModuleDescriptor = false;
-    for (Dependency dependency : getDependOn()) {
-      String moduleUID = dependency.getModuleUID();
-      IModule m = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
-      if (m == null) {
-        ModuleStub moduleStub = MPSModuleRepository.getInstance().getModuleStubByUID(moduleUID);
-        if (moduleStub != null) {
-          String newModuleUID = moduleUID;
-          ModuleStub newModuleStub = moduleStub;
-          while (newModuleStub != null) {
-            newModuleUID = newModuleStub.getActualModuleId();
-            newModuleStub = MPSModuleRepository.getInstance().getModuleStubByUID(newModuleUID);
-          }
-          setModuleDescriptor = true;
-          renameModuleImport(moduleUID, newModuleUID, false);
-        }
-      }
-    }
-
-    for (String languageNamespace : getUsedLanguagesNamespaces()) {
-      Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
-      if (language == null) {
-        ModuleStub moduleStub = MPSModuleRepository.getInstance().getModuleStubByUID(languageNamespace);
-        if (moduleStub != null) {
-          String newModuleUID = languageNamespace;
-          ModuleStub newModuleStub = moduleStub;
-          while (newModuleStub != null) {
-            newModuleUID = newModuleStub.getActualModuleId();
-            newModuleStub = MPSModuleRepository.getInstance().getModuleStubByUID(newModuleUID);
-          }
-          setModuleDescriptor = true;
-          renameUsedLanguage(languageNamespace, newModuleUID, false);
-        }
-      }
-    }
-    return setModuleDescriptor;
-  }
-
   public boolean isPackaged() {
     if (getDescriptorFile() == null) {
       return false;

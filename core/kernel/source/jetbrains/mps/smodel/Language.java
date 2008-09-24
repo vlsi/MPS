@@ -300,28 +300,6 @@ public class Language extends AbstractModule {
     }
   }
 
-  protected boolean convertRenamedDependencies_internal() {
-    boolean setModuleDescriptor = super.convertRenamedDependencies_internal();
-
-    for (String languageNamespace : getExtendedLanguageNamespaces()) {
-      Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
-      if (language == null) {
-        ModuleStub moduleStub = MPSModuleRepository.getInstance().getModuleStubByUID(languageNamespace);
-        if (moduleStub != null) {
-          String newModuleUID = languageNamespace;
-          ModuleStub newModuleStub = moduleStub;
-          while (newModuleStub != null) {
-            newModuleUID = newModuleStub.getActualModuleId();
-            newModuleStub = MPSModuleRepository.getInstance().getModuleStubByUID(newModuleUID);
-          }
-          setModuleDescriptor = true;
-          renameExtendedLanguage(languageNamespace, newModuleUID, false);
-        }
-      }
-    }
-    return setModuleDescriptor;
-  }
-
   private ModuleDescriptor renameExtendedLanguage(final String oldLanguageNamespace, final String newLanguageNamespace, final boolean setModuleDescriptor) {
     return ModelAccess.instance().runWriteActionInCommand(new Computable<ModuleDescriptor>() {
       public ModuleDescriptor compute() {

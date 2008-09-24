@@ -19,9 +19,13 @@ public class ModuleReference {
   private String myModuleFqName;
   private ModuleId myModuleId;
 
+  public ModuleReference(String moduleFqName) {
+    this(moduleFqName, null);
+  }
+
   public ModuleReference(String moduleFqName, ModuleId moduleId) {
     myModuleFqName = moduleFqName;
-    myModuleId = moduleId;
+//    myModuleId = moduleId;
   }
 
   public String getModuleFqName() {

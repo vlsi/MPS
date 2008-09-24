@@ -77,9 +77,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
           m.onModuleLoad();
         }
 
-        for (IModule m : getModules()) {
-          ((AbstractModule) m).convertRenamedDependencies();
-        }
 
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
 
@@ -115,10 +112,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         LOG.error("Couldn't load solution from: " + descriptorFile.getPath() + " : '*" + MPSExtentions.DOT_SOLUTION + "' file expected");
       } else if (descriptorFile.exists()) {
         mySolutions.add((Solution) MPSModuleRepository.getInstance().registerSolution(descriptorFile, this));
-      } else {
-        if (!MPSModuleRepository.getInstance().tryToReadStub(descriptorFile, this)) {
-          LOG.error("Couldn't load solution from: " + descriptorFile.getPath() + " : file doesn't exist");
-        }
       }
     }
 
@@ -131,10 +124,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         LOG.error("Couldn't load language from: " + descriptorFile.getPath() + " : '*" + MPSExtentions.DOT_LANGUAGE + "' file expected");
       } else if (descriptorFile.exists()) {
         myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this));
-      } else {
-        if (!MPSModuleRepository.getInstance().tryToReadStub(descriptorFile, this)) {
-          LOG.error("Couldn't load language from: " + descriptorFile.getPath() + " : file doesn't exist");
-        }
       }
 
       FileSystem.getFile(path);
@@ -149,11 +138,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         LOG.error("Couldn't load devkit from: " + devKit.getPath() + " : '*." + MPSExtentions.DOT_DEVKIT + "' file expected");
       } else if (devKit.exists()) {
         myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
-      } else {
-        if (!MPSModuleRepository.getInstance().tryToReadStub(devKit, this)) {
-          LOG.error("Couldn't load devkit from: " + devKit.getPath() + " : file doesn't exist");
-        }
-      }
+      } 
     }
 
 
