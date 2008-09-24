@@ -23,13 +23,12 @@ public class GlobalScope extends BaseScope {
     return "global scope";
   }
 
-  public Language getLanguage(String languageNamespace) {
-    Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
-    return language;
+  public Language getLanguage(ModuleReference moduleReference) {
+    return MPSModuleRepository.getInstance().getLanguage(moduleReference);
   }
 
-  public boolean isVisibleLanguage(String languageNamespace) {
-    return getLanguage(languageNamespace) != null;
+  public DevKit getDevKit(ModuleReference ref) {
+    return MPSModuleRepository.getInstance().getDevKit(ref);
   }
 
   public List<Language> getVisibleLanguages() {
@@ -40,33 +39,8 @@ public class GlobalScope extends BaseScope {
     return MPSModuleRepository.getInstance().getAllModules(DevKit.class); 
   }
 
-  public List<Solution> getVisibleSolutions() {
-    return MPSModuleRepository.getInstance().getAllModules(Solution.class);
-  }
-
   public Set<IModule> getVisibleModules() {
     return new HashSet<IModule>(MPSModuleRepository.getInstance().getAllModules());
-  }
-
-  public DevKit getDevKit(String devKitNamespace) {
-    for (DevKit dk : getVisibleDevkits()) {
-      if (devKitNamespace.equals(dk.getName())) return dk;
-    }
-    return null;
-  }
-
-  public Solution getSolution(String solutionNamespace) {
-    for (Solution s : getVisibleSolutions()) {
-      if (solutionNamespace.equals(s.getSolutionDescriptor().getName())) return s;
-    }
-    return null;
-  }
-
-  public boolean isVisibleDevKit(String devKitNamespace) {
-    for (DevKit dk : getVisibleDevkits()) {
-      if (dk.getName().equals(devKitNamespace)) return true;
-    }
-    return false;
   }
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {

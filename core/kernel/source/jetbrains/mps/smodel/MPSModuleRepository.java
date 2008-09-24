@@ -506,12 +506,24 @@ public class MPSModuleRepository implements ApplicationComponent {
     return (Language) myUIDToModulesMap.get(namespace);
   }
 
+  public Language getLanguage(ModuleReference ref) {
+    return (Language) getModule(ref);
+  }
+
   public DevKit getDevKit(String namespace) {
     return (DevKit) myUIDToModulesMap.get(namespace);
   }
 
+  public DevKit getDevKit(ModuleReference ref) {
+    return (DevKit) getModule(ref);
+  }
+
   public Solution getSolution(String namespace) {
     return (Solution) myUIDToModulesMap.get(namespace);
+  }
+
+  public Solution getSolution(ModuleReference ref) {
+    return (Solution) getModule(ref);
   }
 
   public <MT extends IModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {

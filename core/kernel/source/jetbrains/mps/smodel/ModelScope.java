@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleReference;
 
 public class ModelScope extends BaseScope {
   private IScope myScope = null;
@@ -36,12 +37,12 @@ public class ModelScope extends BaseScope {
     return result;
   }
 
-  public Language getLanguage(String languageNamespace) {
-    return myScope.getLanguage(languageNamespace);
+  public Language getLanguage(ModuleReference moduleReference) {
+    return myScope.getLanguage(moduleReference);
   }
 
-  public boolean isVisibleLanguage(String languageNamespace) {
-    return myScope.isVisibleLanguage(languageNamespace);
+  public DevKit getDevKit(ModuleReference ref) {
+    return myScope.getDevKit(ref);
   }
 
   public List<Language> getVisibleLanguages() {
@@ -50,14 +51,6 @@ public class ModelScope extends BaseScope {
 
   public List<DevKit> getVisibleDevkits() {
     return myScope.getVisibleDevkits();
-  }
-
-  public DevKit getDevKit(String devKitNamespace) {
-    return myScope.getDevKit(devKitNamespace);
-  }
-
-  public boolean isVisibleDevKit(String devKitNamespace) {
-    return myScope.isVisibleDevKit(devKitNamespace);
   }
 
   public Set<IModule> getVisibleModules() {

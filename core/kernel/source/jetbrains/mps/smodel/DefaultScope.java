@@ -1,9 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.ide.BootstrapLanguagesManager;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Dependency;
+import jetbrains.mps.project.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.logging.Logger;
 
@@ -16,8 +14,11 @@ public abstract class DefaultScope extends BaseScope {
   private boolean myInitializationInProgress;
 
   private Set<IModule> myVisibleModules;
-  private Map<String, Language> myLanguages = new HashMap<String, Language>();
-  private Map<String, DevKit> myDevkits = new HashMap<String, DevKit>();
+  private Map<String, Language> myFqNameToLanguage = new HashMap<String, Language>();
+  private Map<ModuleId, Language> myIdToLanguage = new HashMap<ModuleId, Language>();
+
+  private Map<String, DevKit> myFqNameToDevKit = new HashMap<String, DevKit>();
+  private Map<ModuleId, DevKit> myIdToDevKit = new HashMap<ModuleId, DevKit>();
 
   private Map<SModelFqName, SModelDescriptor> myFqNameToDescriptor = new HashMap<SModelFqName, SModelDescriptor>();
   private Map<SModelId, SModelDescriptor> myIdToDescriptor = new HashMap<SModelId, SModelDescriptor>();
@@ -35,37 +36,35 @@ public abstract class DefaultScope extends BaseScope {
     return new ArrayList<SModelDescriptor>(myFqNameToDescriptor.values());
   }
 
-  public Language getLanguage(String languageNamespace) {
-    initialize();
-    return myLanguages.get(languageNamespace);
-  }
-
-  public boolean isVisibleLanguage(String languageNamespace) {
-    return getLanguage(languageNamespace) != null;
-  }
-
   public List<Language> getVisibleLanguages() {
     initialize();
-    return new ArrayList<Language>(myLanguages.values());
+    return new ArrayList<Language>(myFqNameToLanguage.values());
+  }
+
+  public Language getLanguage(ModuleReference moduleReference) {
+    initialize();
+    if (moduleReference.getModuleId() != null) {
+      return myIdToLanguage.get(moduleReference.getModuleId());
+    }
+    return myFqNameToLanguage.get(moduleReference.getModuleFqName());
   }
 
   public List<DevKit> getVisibleDevkits() {
     initialize();
-    return new ArrayList<DevKit>(myDevkits.values());
-  }
-
-  public DevKit getDevKit(String devKitNamespace) {
-    initialize();
-    return myDevkits.get(devKitNamespace);
-  }
-
-  public boolean isVisibleDevKit(String devKitNamespace) {
-    return getDevKit(devKitNamespace) != null;
+    return new ArrayList<DevKit>(myFqNameToDevKit.values());
   }
 
   public Set<IModule> getVisibleModules() {
     initialize();
     return Collections.unmodifiableSet(myVisibleModules);
+  }
+
+  public DevKit getDevKit(ModuleReference ref) {
+    initialize();
+    if (ref.getModuleId() != null) {
+      return myIdToDevKit.get(ref.getModuleId());
+    }
+    return myFqNameToDevKit.get(ref.getModuleFqName());
   }
 
   protected abstract ModelOwner getModelOwner();
@@ -80,7 +79,10 @@ public abstract class DefaultScope extends BaseScope {
 
   public void invalidateCaches() {
     myVisibleModules = null;
-    myLanguages.clear();
+    myFqNameToLanguage.clear();
+    myIdToLanguage.clear();
+    myFqNameToDevKit.clear();
+    myIdToDevKit.clear();
     myFqNameToDescriptor.clear();
     myIdToDescriptor.clear();
     myInitialized = false;
@@ -173,14 +175,20 @@ public abstract class DefaultScope extends BaseScope {
 
     myVisibleModules = visibleModules;
 
-    myDevkits = new HashMap<String, DevKit>();
+    myFqNameToDevKit = new HashMap<String, DevKit>();
     for (DevKit dk : usedDevkits) {
-      myDevkits.put(dk.getModuleUID(), dk);
+      myFqNameToDevKit.put(dk.getModuleUID(), dk);
+      if (dk.getModuleId() != null) {
+        myIdToDevKit.put(dk.getModuleId(), dk);
+      }
     }
 
-    myLanguages = new HashMap<String, Language>();
+    myFqNameToLanguage = new HashMap<String, Language>();
     for (Language l : usedLanguages) {
-      myLanguages.put(l.getNamespace(), l);
+      myFqNameToLanguage.put(l.getNamespace(), l);
+      if (l.getModuleId() != null) {
+        myIdToLanguage.put(l.getModuleId(), l);
+      }
     }
 
     for (IModule module : visibleModules) {

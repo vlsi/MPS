@@ -5,6 +5,7 @@ import jetbrains.mps.ide.scriptLanguage.structure.MigrationScript;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.BaseAction;
 
@@ -86,14 +87,6 @@ public abstract class AbstractMigrationScriptAction extends BaseAction {
       return GlobalScope.getInstance().getModelDescriptor(modelReference);
     }
 
-    public Language getLanguage(String languageNamespace) {
-      return GlobalScope.getInstance().getLanguage(languageNamespace);
-    }
-
-    public boolean isVisibleLanguage(String languageNamespace) {
-      return GlobalScope.getInstance().isVisibleLanguage(languageNamespace);
-    }
-
     public List<Language> getVisibleLanguages() {
       throw new UnsupportedOperationException();
     }
@@ -102,12 +95,13 @@ public abstract class AbstractMigrationScriptAction extends BaseAction {
       throw new UnsupportedOperationException();
     }
 
-    public DevKit getDevKit(String devKitNamespace) {
-      return GlobalScope.getInstance().getDevKit(devKitNamespace);
+
+    public Language getLanguage(ModuleReference moduleReference) {
+      return GlobalScope.getInstance().getLanguage(moduleReference);
     }
 
-    public boolean isVisibleDevKit(String devKitNamespace) {
-      return GlobalScope.getInstance().isVisibleDevKit(devKitNamespace);
+    public DevKit getDevKit(ModuleReference ref) {
+      return GlobalScope.getInstance().getDevKit(ref);
     }
 
     public Set<IModule> getVisibleModules() {

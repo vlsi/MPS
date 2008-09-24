@@ -2,6 +2,7 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
@@ -48,26 +49,34 @@ public class BootstrapScope extends BaseScope {
     return new HashSet(getModules(null));
   }
 
-  public Language getLanguage(String languageNamespace) {
-    for (Language l : getVisibleLanguages()) {
-      if (l.getNamespace().equals(languageNamespace)) return l;
+  public Language getLanguage(ModuleReference moduleReference) {
+    for (Language l : getModules(Language.class)) {
+      if (moduleReference.getModuleId() != null) {
+        if (l.getModuleId().equals(moduleReference.getModuleId())) {
+          return l;
+        }
+      } else {
+        if (l.getModuleFqName().equals(moduleReference.getModuleFqName())) {
+          return l;
+        }
+      }
     }
     return null;
   }
 
-  public DevKit getDevKit(String devKitNamespace) {
-    for (DevKit dk : getVisibleDevkits()) {
-      if (devKitNamespace.equals(dk.getName())) return dk;
+  public DevKit getDevKit(ModuleReference moduleReference) {
+    for (DevKit d : getModules(DevKit.class)) {
+      if (moduleReference.getModuleId() != null) {
+        if (d.getModuleId().equals(moduleReference.getModuleId())) {
+          return d;
+        }
+      } else {
+        if (d.getModuleFqName().equals(moduleReference.getModuleFqName())) {
+          return d;
+        }
+      }
     }
     return null;
-  }
-
-  public boolean isVisibleLanguage(String languageNamespace) {
-    return getLanguage(languageNamespace) != null;
-  }
-
-  public boolean isVisibleDevKit(String devKitNamespace) {
-    return getDevKit(devKitNamespace) != null;
   }
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
