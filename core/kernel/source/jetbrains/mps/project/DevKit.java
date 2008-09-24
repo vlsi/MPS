@@ -35,10 +35,8 @@ public class DevKit extends AbstractModule {
 
     model.addRoot(devKitDescriptor);
 
-    result.myDescriptor = devKitDescriptor;
     result.myDescriptorFile = descriptorFile;
-
-    result.reload();
+    result.setDevKitDescriptor(devKitDescriptor, false);
 
     MPSModuleRepository.getInstance().addModule(result, moduleOwner);
     return result;
@@ -72,7 +70,12 @@ public class DevKit extends AbstractModule {
     return null;
   }
 
+
   public void setDevKitDescriptor(DevKitDescriptor descriptor) {
+    setDevKitDescriptor(descriptor, true);
+  }
+
+  public void setDevKitDescriptor(DevKitDescriptor descriptor, boolean reloadClasses) {
     MPSModuleRepository.getInstance().unRegisterModules(this);
     MPSModuleRepository.getInstance().unRegisterModules(myGenerationOnlyModelsModelOwner);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
@@ -82,7 +85,9 @@ public class DevKit extends AbstractModule {
 
     reload();
 
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+    if (reloadClasses) {
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+    }
   }
 
 

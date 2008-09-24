@@ -24,8 +24,8 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   private Set<String> myModelsToKeep = new HashSet<String>();
   private int myNumber = ourModuleCounter.getAndIncrement();
 
-  public TransientModelsModule(Project project, MPSProjectHolder holder) {
-    myProject = project;
+  public TransientModelsModule(Project project) {
+    myProject = project;    
   }
 
   public void projectOpened() {

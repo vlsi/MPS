@@ -40,10 +40,7 @@ public class Solution extends AbstractModule {
       solutionDescriptor = SolutionDescriptor.newInstance(model);
     }
     solution.myDescriptorFile = descriptorFile;
-    solution.mySolutionDescriptor = solutionDescriptor;
-
-    solution.reload();
-
+    solution.setSolutionDescriptor(solutionDescriptor, false);
     MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
     return solution;
   }
@@ -72,16 +69,23 @@ public class Solution extends AbstractModule {
     if (moduleDescriptor instanceof SolutionDescriptor) {
       setSolutionDescriptor((SolutionDescriptor) moduleDescriptor);
     } else {
-      LOG.error("not a dev kit descriptor", new Throwable());
+      LOG.error("not a solution descriptor", new Throwable());
     }
   }
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
+    setSolutionDescriptor(newDescriptor, true);
+
+  }
+
+  public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
     mySolutionDescriptor = newDescriptor;
 
     reload();
 
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+    if (reloadClasses) {
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+    }
   }
 
   public void dispose() {

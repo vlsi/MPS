@@ -60,8 +60,7 @@ public class Language extends AbstractModule {
       languageDescriptor = createNewDescriptor(namespace, descriptorFile, descriptorModel);
     }
     language.myDescriptorFile = descriptorFile;
-    language.myLanguageDescriptor = languageDescriptor;
-    language.reload();
+    language.setLanguageDescriptor(languageDescriptor, false);
     MPSModuleRepository.getInstance().addModule(language, moduleOwner);
     return language;
   }
