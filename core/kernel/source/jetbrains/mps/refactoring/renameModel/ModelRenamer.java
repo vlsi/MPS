@@ -17,8 +17,7 @@ public class ModelRenamer {
     myModelDescriptor.rename(myModelFqName, true);
     
     if (!myLazy) {
-      SModelRepository.getInstance().updateSModelReferences();
-      MPSModuleRepository.getInstance().updateSModelReferences();      
+      SModelRepository.getInstance().updateReferences();
     }
   }
 }

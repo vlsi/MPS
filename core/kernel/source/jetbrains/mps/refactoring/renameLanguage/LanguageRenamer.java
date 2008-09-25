@@ -50,11 +50,8 @@ public class LanguageRenamer {
     myLanguage.setLanguageDescriptor(descriptor, false);
     myLanguage.save();
 
-    SModelRepository.getInstance().updateModuleReferences();
-    SModelRepository.getInstance().updateSModelReferences();
-
-    MPSModuleRepository.getInstance().updateModuleReferences();
-    MPSModuleRepository.getInstance().updateSModelReferences();
+    SModelRepository.getInstance().updateReferences();
+    MPSModuleRepository.getInstance().updateReferences();
 
     new RefactoringProcessor().writeInLogAndUpdateModels(structure.getSModelReference(), structure.getSModel(), context);
 

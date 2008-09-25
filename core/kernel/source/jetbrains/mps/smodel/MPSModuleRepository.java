@@ -556,19 +556,21 @@ public class MPSModuleRepository implements ApplicationComponent {
     return null;
   }
 
-  public void updateSModelReferences() {
+  public void updateReferences() {
     for (IModule m : getAllModules()) {
       AbstractModule module = (AbstractModule) m;
-      if (module.updateSModelReferences()) {
-        module.save();
-      }
-    }
-  }
 
-  public void updateModuleReferences() {
-    for (IModule m : getAllModules()) {
-      AbstractModule module = (AbstractModule) m;
+      boolean needSaving = false;
+
+      if (module.updateSModelReferences()) {
+        needSaving = true;
+      }
+
       if (module.updateModuleReferences()) {
+        needSaving = true;
+      }
+
+      if (needSaving && module.getDescriptorFile() != null && !module.isPackaged()) {
         module.save();
       }
     }
