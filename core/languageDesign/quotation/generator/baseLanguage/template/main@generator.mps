@@ -1131,8 +1131,8 @@
                                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196351886919">
                                         <link role="variableDeclaration" targetNodeId="1196351886891" resolveInfo="reference" />
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216933354569">
-                                        <link role="baseMethodDeclaration" targetNodeId="11.~SReference.getTargetModelUID():jetbrains.mps.smodel.SModelReference" resolveInfo="getTargetModelUID" />
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222349877818">
+                                        <link role="baseMethodDeclaration" targetNodeId="11.~SReference.getTargetSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getTargetSModelReference" />
                                       </node>
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216933351424">
