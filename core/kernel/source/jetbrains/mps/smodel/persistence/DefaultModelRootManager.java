@@ -48,7 +48,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     }
 
     if (ApplicationLevelVcsManager.instance().isInConflict(modelDescriptor, modelDescriptor.needsReloading())) {
-      return handleExceptionDuringModelRead(modelDescriptor, new ConflictModelException(modelDescriptor), true);
+      return handleExceptionDuringModelRead(modelDescriptor, new ConflictException(modelDescriptor), true);
     }
 
     SModel model;

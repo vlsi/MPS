@@ -11,11 +11,14 @@ import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.persistence.ConflictException;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
+import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vcs.SuspiciousModelIndex;
 
 import java.io.File;
 import java.io.IOException;
@@ -714,12 +717,21 @@ public abstract class AbstractModule implements IModule {
   }
 
   public final void reloadFromDisk() {
+    // TODO listeners?
+    if (ApplicationLevelVcsManager.instance().isInConflict(myDescriptorFile, true)){
+      handleReadProblem(new ConflictException(myDescriptorFile), true);
+    }
     try {
       ModuleDescriptor descriptor = loadDescriptor();
       setModuleDescriptor(descriptor);
     } catch (ModuleReadException e) {
-      LOG.error(e);
+      handleReadProblem(e, false);
     }
+  }
+
+  private void handleReadProblem(Exception e, boolean isInConflict) {
+    SuspiciousModelIndex.instance().addModule(this, isInConflict);
+    LOG.error(e);
   }
 
   public boolean updateSModelReferences() {
