@@ -965,9 +965,9 @@ public class SModel implements Iterable<SNode> {
     Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
     List<Language> languages = getLanguages(scope);
     for (Language language : languages) {
-      for (SModelDescriptor accessoryModels : language.getAccessoryModels()) {
-        if (accessoryModels != sourceModel && !result.contains(accessoryModels)) {
-          result.add(accessoryModels);
+      for (SModelDescriptor am : language.getAccessoryModels()) {
+        if (am != sourceModel && !result.contains(am)) {
+          result.add(am);
         }
       }
     }

@@ -454,7 +454,7 @@ public class Language extends AbstractModule {
 
     LanguageAspect aspect = Language.getModelAspect(sm);
 
-    if (aspect != LanguageAspect.STRUCTURE) {
+    if (aspect != LanguageAspect.STRUCTURE && getStructureModelDescriptor() != null) {
       result.add(getStructureModelDescriptor());
     }
 
