@@ -1438,6 +1438,10 @@ public final class SNode {
     return myConceptFqName;
   }
 
+  public SConceptReference getConceptRefernece() {
+    return new SConceptReference(getConceptFqName());
+  }
+
   public ModuleReference getConceptLanguage() {
     return ModuleReference.fromString(getLanguageNamespace());
   }
