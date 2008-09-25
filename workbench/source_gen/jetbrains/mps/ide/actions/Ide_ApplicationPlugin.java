@@ -44,6 +44,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     groups.add(new FolderActions_ActionGroup());
     groups.add(new ModuleActions_ActionGroup());
     groups.add(new ProjectPaneModelRefactoring_ActionGroup());
+    groups.add(new LanguageRefactoring_ActionGroup());
     return groups;
   }
 

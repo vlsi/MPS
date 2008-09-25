@@ -30,7 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904ae(jetbrains.mps.ide.uiLanguage.constraints)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <maxImportIndex value="115" />
+  <maxImportIndex value="116" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -97,6 +97,7 @@
   <import index="113" modelUID="f:java_stub#com.intellij.openapi.fileChooser.actions(com.intellij.openapi.fileChooser.actions@java_stub)" version="-1" />
   <import index="114" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def.v3(jetbrains.mps.smodel.persistence.def.v3@java_stub)" version="-1" />
   <import index="115" modelUID="f:java_stub#jetbrains.mps.refactoring.renameModel(jetbrains.mps.refactoring.renameModel@java_stub)" version="-1" />
+  <import index="116" modelUID="f:java_stub#jetbrains.mps.refactoring.renameLanguage(jetbrains.mps.refactoring.renameLanguage@java_stub)" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -362,6 +363,11 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1216128344327">
         <link role="action" targetNodeId="1216128015035" resolveInfo="SetModuleFolder" />
       </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1222348083067" />
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExtentionPoint" id="1222348086225">
+        <property name="name" value="refactoring" />
+      </node>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1222348864979" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991225922">
@@ -8011,6 +8017,21 @@
     <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1222173607728">
       <link role="modifiedGroup" targetNodeId="1204991218714" resolveInfo="ProjectPaneModelActions" />
       <link role="point" targetNodeId="1222173595836" resolveInfo="refactoring" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1222347871198">
+    <property name="package" value="Menu.ProjectPane.Module.Language" />
+    <property name="name" value="LanguageRefactoring" />
+    <property name="isPopup" value="true" />
+    <property name="caption" value="Refactoring" />
+    <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1222347974499">
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator" id="1222348048861">
+        <link role="constructorDeclaration" targetNodeId="116.~RenameLanguageAction.&lt;init&gt;()" resolveInfo="RenameLanguageAction" />
+      </node>
+    </node>
+    <node role="modifier" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ModificationStatement" id="1222348127398">
+      <link role="modifiedGroup" targetNodeId="1204991224874" resolveInfo="LanguageActions" />
+      <link role="point" targetNodeId="1222348086225" resolveInfo="refactoring" />
     </node>
   </node>
 </model>

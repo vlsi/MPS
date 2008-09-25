@@ -14,6 +14,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   public static Logger LOG = Logger.getLogger(LanguageActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.LanguageActions";
   public static final String LABEL_ID_newGroup = ID + "newGroup";
+  public static final String LABEL_ID_refactoring = ID + "refactoring";
 
   public LanguageActions_ActionGroup() {
     super("", ID);
@@ -41,6 +42,9 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
       this.add(new CleanModule_Action());
       this.addSeparator();
       this.add(new SetModuleFolder_Action());
+      this.addSeparator();
+      this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_refactoring);
+      this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
