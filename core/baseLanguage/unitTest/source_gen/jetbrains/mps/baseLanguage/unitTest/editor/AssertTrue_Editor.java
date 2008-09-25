@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class AssertTrue_Editor extends DefaultNodeEditor {
 
@@ -123,7 +124,7 @@ public class AssertTrue_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor9112_0(EditorCell cell) {
     Color result;
-    result = Color.blue;
+    result = MPSColors.blue;
     return result;
   }
 

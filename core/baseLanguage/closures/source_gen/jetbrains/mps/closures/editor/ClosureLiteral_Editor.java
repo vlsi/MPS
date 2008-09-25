@@ -121,7 +121,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11995699456781199569945678(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199569945678");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -135,7 +135,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11995699480051199569948005(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199569948005");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -153,7 +153,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11995699642401199569964240(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199569964240");
-    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_body1199569970439(EditorCell editorCell, SNode node, EditorContext context) {

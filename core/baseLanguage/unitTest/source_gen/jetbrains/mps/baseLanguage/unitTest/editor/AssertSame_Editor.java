@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class AssertSame_Editor extends DefaultNodeEditor {
 
@@ -151,7 +152,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11719857885191171985788519(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171985788519");
-    BaseLanguageStyle_StyleSheet.OPERATOR.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -192,13 +193,13 @@ public class AssertSame_Editor extends DefaultNodeEditor {
 
   private static Color calculateColor9280_0(EditorCell cell) {
     Color result;
-    result = Color.blue;
+    result = MPSColors.blue;
     return result;
   }
 
   private static Color calculateColor9280_1(EditorCell cell) {
     Color result;
-    result = Color.blue;
+    result = MPSColors.blue;
     return result;
   }
 

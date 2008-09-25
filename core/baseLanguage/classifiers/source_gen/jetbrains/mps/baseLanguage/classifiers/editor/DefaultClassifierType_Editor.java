@@ -96,7 +96,7 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12057529272971205752927297(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205752927297");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12057529299091205752929909(EditorCell editorCell, SNode node, EditorContext context) {

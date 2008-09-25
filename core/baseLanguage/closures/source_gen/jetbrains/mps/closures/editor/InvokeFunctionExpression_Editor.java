@@ -133,7 +133,7 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11995479298191199547929819(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199547929819");
-    BaseLanguageStyle_StyleSheet.DOT.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11995479313561199547931356(EditorCell editorCell, SNode node, EditorContext context) {
@@ -151,12 +151,12 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11995479387471199547938747(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199547938747");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11995479587211199547958721(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199547958721");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

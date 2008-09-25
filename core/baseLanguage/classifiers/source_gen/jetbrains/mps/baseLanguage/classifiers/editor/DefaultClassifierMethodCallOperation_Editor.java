@@ -127,7 +127,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
 
   private static void setupBasic_Constant_12057694255011205769425501(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205769425501");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -145,7 +145,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
 
   private static void setupBasic_Constant_12057694374611205769437461(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205769437461");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_refCell_method_1205769396163(EditorCell_Label editorCell, SNode node, EditorContext context) {

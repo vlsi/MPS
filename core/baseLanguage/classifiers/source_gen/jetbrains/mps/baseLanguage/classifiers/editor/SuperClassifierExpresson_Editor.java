@@ -29,7 +29,7 @@ public class SuperClassifierExpresson_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12174335757421217433575742(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217433575742");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

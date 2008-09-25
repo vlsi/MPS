@@ -426,7 +426,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
 
   private static void setupBasic_Constant_12213102801471221310280147(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221310280147");
-    BaseLanguageStyle_StyleSheet.LEFT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -444,7 +444,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
 
   private static void setupBasic_Constant_12213102801551221310280155(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221310280155");
-    BaseLanguageStyle_StyleSheet.RIGHT_PAREN.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -472,7 +472,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
 
   private static void setupBasic_Constant_12213102801581221310280158(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221310280158");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -490,7 +490,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
 
   private static void setupBasic_Constant_12213102801721221310280172(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221310280172");
-    BaseLanguageStyle_StyleSheet.LEFT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
@@ -517,7 +517,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
 
   private static void setupBasic_Constant_12213102801791221310280179(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221310280179");
-    BaseLanguageStyle_StyleSheet.RIGHT_BRACE.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -85,7 +85,7 @@ public class YieldStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12008309482251200830948225(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200830948225");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_expression1200830953102(EditorCell editorCell, SNode node, EditorContext context) {
