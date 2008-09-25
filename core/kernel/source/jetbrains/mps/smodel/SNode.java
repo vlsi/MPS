@@ -1040,7 +1040,10 @@ public final class SNode {
     }
 
     // add language because helgins needs it to invalidate/revalidate its caches
-    myModel.addLanguage_internal(ModuleReference.fromString(getLanguageNamespace()));
+
+    if (!myModel.hasLanguage(getLanguageNamespace())) {    
+      myModel.addLanguage_internal(ModuleReference.fromString(getLanguageNamespace()));
+    }
   }
 
   public boolean isDetached() {

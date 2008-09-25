@@ -55,6 +55,8 @@ public class LanguageRenamer {
 
     new RefactoringProcessor().writeInLogAndUpdateModels(structure.getSModelReference(), structure.getSModel(), context);
 
+    SModelRepository.getInstance().saveAll();
+
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
@@ -66,7 +68,7 @@ public class LanguageRenamer {
     }
   }
 
-  private static class MyRefactoring extends AbstractLoggableRefactoring {
+  public static class MyRefactoring extends AbstractLoggableRefactoring {
     public void updateModel(SModel model, RefactoringContext refactoringContext) {
       refactoringContext.updateModelWithMaps(model);
     }

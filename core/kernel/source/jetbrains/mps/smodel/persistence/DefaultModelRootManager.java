@@ -73,7 +73,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     }
 
     if (needToSave && !modelDescriptor.getModelFile().isReadOnly()) {
-      ModelPersistence.saveModel(model, modelDescriptor.getModelFile());
+      ModelPersistence.saveModel(model, modelDescriptor.getModelFile(), false);
     }
 
     LOG.assertLog(model.getSModelReference().equals(modelDescriptor.getSModelReference()),

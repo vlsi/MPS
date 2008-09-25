@@ -1467,7 +1467,7 @@ public class SModel implements Iterable<SNode> {
         refs.set(i, newRef);
         changed = changed || changed(ref, newRef);
       } else {
-        LOG.error("Can't load module " + ref);
+        LOG.error("Can't load module " + ref + " in model " + getSModelReference());
       }
     }
     return changed;

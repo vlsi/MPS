@@ -376,7 +376,6 @@ public class SModelRepository implements ApplicationComponent {
     for (SModelDescriptor sm : getModelDescriptors()) {
       if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) continue;
 
-
       boolean needSaving = false;
 
       if (sm.getSModel().updateSModelReferences() && sm.getModelFile() != null && !sm.getModelFile().isReadOnly()) {
@@ -388,7 +387,7 @@ public class SModelRepository implements ApplicationComponent {
       }
 
       if (needSaving) {
-        sm.save();
+        markChanged(sm, true);
       }
     }
   }
