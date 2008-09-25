@@ -1951,7 +1951,7 @@
                   <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1222257141479">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222257141480">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1222257141481">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222259468072">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222326423621">
                           <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1222259462242">
                             <link role="concept" targetNodeId="1.1222256539755" resolveInfo="SplitOperation" />
                             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222257141482">
@@ -1961,8 +1961,8 @@
                               </node>
                             </node>
                           </node>
-                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1222262989100">
-                            <link role="link" targetNodeId="1.1222262966209" />
+                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1222326424030">
+                            <link role="link" targetNodeId="1.1174653387388" />
                           </node>
                         </node>
                       </node>
