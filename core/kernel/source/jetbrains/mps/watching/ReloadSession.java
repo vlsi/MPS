@@ -58,6 +58,7 @@ public class ReloadSession {
           try {
             progressIndicator.setText("Reloading " + model.getSModelReference());
             model.reloadFromDisk();
+            progressIndicator.setText("Reloaded " + model.getSModelReference());
           } catch (RuntimeException e) {
             LOG.error(e);
           }
@@ -70,8 +71,9 @@ public class ReloadSession {
     for (final IModule module : myChangedModules) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          progressIndicator.setText("Reloading " + module.getModuleUID());
+          progressIndicator.setText("Reloading " + module.getModuleFqName());
           module.reloadFromDisk();
+          progressIndicator.setText("Reloaded " + module.getModuleFqName());
         }
       });
     }

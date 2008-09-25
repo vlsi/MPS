@@ -73,7 +73,7 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     if (classesGenVirtual != null) {
       boolean found = myExcludedFiles.remove(classesGenVirtual);
       if (!found) {
-        LOG.error("Not found classes_gen folder " + classesGenVirtual + " of module " + module);
+        LOG.warning("Not found classes_gen folder " + classesGenVirtual + " of module " + module);
       }
     }
   }

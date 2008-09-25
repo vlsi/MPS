@@ -5,6 +5,7 @@ import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.javastub.classpath.ClassPathModelRootManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.projectLanguage.ModuleReadException;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
@@ -709,7 +710,13 @@ public abstract class AbstractModule implements IModule {
     myScope.invalidateCaches();
   }
 
-  public void reloadFromDisk() {
+  public final void reloadFromDisk() {
+    try {
+      ModuleDescriptor descriptor = loadDescriptor();
+      setModuleDescriptor(descriptor);
+    } catch (ModuleReadException e) {
+      LOG.error(e);
+    }
   }
 
   public boolean updateSModelReferences() {
@@ -782,6 +789,10 @@ public abstract class AbstractModule implements IModule {
   private boolean changed(ModuleReference ref1, ModuleReference ref2) {
     return !EqualUtil.equals(ref1.getModuleFqName(), ref2.getModuleFqName()) ||
       !EqualUtil.equals(ref1.getModuleId(), ref2.getModuleId());
+  }
+
+  protected ModuleDescriptor loadDescriptor(){
+    return null;
   }
 
   public class ModuleScope extends DefaultScope {

@@ -140,14 +140,6 @@ public class Solution extends AbstractModule {
     return generatorOutputPath;
   }
 
-  public void reloadFromDisk() {
-    SModel model = ProjectModels.createDescriptorFor(this).getSModel();
-    IFile file = getDescriptorFile();
-    assert file != null;
-    SolutionDescriptor descriptor = DescriptorsPersistence.loadSolutionDescriptor(file, model);
-    setSolutionDescriptor(descriptor);
-  }
-
   protected void collectRuntimePackages(Set<String> result, String current) {
     if (!"".equals(current) && !getClassPathItem().getAvailableClasses(current).isEmpty()) {
       result.add(current);
@@ -168,5 +160,13 @@ public class Solution extends AbstractModule {
 
   public boolean reloadClassesAfterGeneration() {
     return false;
+  }
+
+  @Override
+  protected SolutionDescriptor loadDescriptor() {
+    SModel model = ProjectModels.createDescriptorFor(this).getSModel();
+    IFile file = getDescriptorFile();
+    assert file != null;
+    return DescriptorsPersistence.loadSolutionDescriptor(file, model);
   }
 }

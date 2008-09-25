@@ -197,7 +197,7 @@ public class SModelRepository implements ApplicationComponent {
 
     myModelDescriptors.remove(modelDescriptor);
     boolean result = removeModelFromFileCache(modelDescriptor);
-    assert result;
+    LOG.assertLog(result, "model " + modelDescriptor + " do not have a path in file cache");
     if (modelDescriptor.getSModelReference().getSModelId() != null) {
       myIdToModelDescriptorMap.remove(modelDescriptor.getSModelReference().getSModelId());
     }

@@ -2,6 +2,7 @@ package jetbrains.mps.watching;
 
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
@@ -97,8 +98,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
         return;
       }
 
-//      System.out.println("got events " + events);
-
       final ReloadSession reloadSession = new ReloadSession();
 
       // collecting changed models, modules etc.
@@ -116,7 +115,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
         public void run() {
           reloadSession.doReload();
         }
-      });
+      }, ModalityState.NON_MODAL);
     }
   }
 }

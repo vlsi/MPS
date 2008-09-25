@@ -111,10 +111,9 @@ public class DevKit extends AbstractModule {
     MPSModuleRepository.getInstance().unRegisterModules(myGenerationOnlyModelsModelOwner);
   }
 
-  public void reloadFromDisk() {
-    SModel sModel = getModuleDescriptor().getModel();
-    ModuleDescriptor descriptor = DescriptorsPersistence.loadDevKitDescriptor(getDescriptorFile(), sModel);
-    setModuleDescriptor(descriptor);
+  @Override
+  protected DevKitDescriptor loadDescriptor() {
+    return DescriptorsPersistence.loadDevKitDescriptor(getDescriptorFile(), getModuleDescriptor().getModel());
   }
 
   public List<Language> getExportedLanguages() {
