@@ -30,13 +30,12 @@ public class CopyPasteUtil {
   }
 
 
-  private static void processImportsAndLanguages(HashSet<SModelReference> necessaryImports, HashSet<String> necessaryLanguages, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
+  private static void processImportsAndLanguages(HashSet<SModelReference> necessaryImports, HashSet<ModuleReference> necessaryLanguages, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     necessaryImports.clear();
     necessaryLanguages.clear();
     Set<SNode> sourceNodes = sourceNodesToNewNodes.keySet();
     for (SNode node : sourceNodes) {
-      String languageNamespace = NameUtil.namespaceFromConceptFQName(node.getConceptFqName());
-      necessaryLanguages.add(languageNamespace);
+      necessaryLanguages.add(node.getConceptLanguage());
     }
     for (SReference ref : allReferences) {
       if (sourceNodesToNewNodes.get(ref.getTargetNode()) == null) {
@@ -60,8 +59,8 @@ public class CopyPasteUtil {
       result.add(targetNode);
     }
     HashSet<SModelReference> necessaryImports = new HashSet<SModelReference>();
-    HashSet<String> necessaryLanguages = new HashSet<String>();
-    HashSet<String> necessaryDevKits = new HashSet<String>();  // todo populate
+    HashSet<ModuleReference> necessaryLanguages = new HashSet<ModuleReference>();
+    HashSet<ModuleReference> necessaryDevKits = new HashSet<ModuleReference>();  // todo populate
     SModel fakeModel = copyModelProperties(model);
     processImportsAndLanguages(necessaryImports, necessaryLanguages, sourceNodesToNewNodes, allReferences);
     for (SNode copiedNode : result) {
@@ -74,9 +73,9 @@ public class CopyPasteUtil {
   }
 
   public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModel model, SModel modelProperties,
-                                                Set<String> necessaryLanguages,
+                                                Set<ModuleReference> necessaryLanguages,
                                                 Set<SModelReference> necessaryImports,
-                                                Set<String> necessaryDevKits) {
+                                                Set<ModuleReference> necessaryDevKits) {
     if (sourceNodes.isEmpty()) return PasteNodeData.emptyPasteNodeData(null);
     List<SNode> result = new ArrayList<SNode>();
     model.setLoading(true);

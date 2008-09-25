@@ -11,6 +11,7 @@ import java.util.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.project.ModuleReference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
@@ -36,8 +37,8 @@ public class SNodeTransferable implements Transferable {
   private List<SNode> mySNodes = new ArrayList<SNode>();
   private SModel myModelProperties;
   private Set<SModelReference> myNecessaryImports = new HashSet<SModelReference>();
-  private Set<String> myNecessaryLanguages = new HashSet<String>();
-  private Set<String> myNecessaryDevKits = new HashSet<String>();
+  private Set<ModuleReference> myNecessaryLanguages = new HashSet<ModuleReference>();
+  private Set<ModuleReference> myNecessaryDevKits = new HashSet<ModuleReference>();
   private String myText = "";
 
   public DataFlavor[] getTransferDataFlavors() {
@@ -101,15 +102,15 @@ public class SNodeTransferable implements Transferable {
 
 
   public PasteNodeData createNodeData(SModel sModel) {
-    Set<String> necessaryLanguages = myNecessaryLanguages;
+    Set<ModuleReference> necessaryLanguages = myNecessaryLanguages;
     Set<SModelReference> necessaryImports = myNecessaryImports;
-    Set<String> necessaryDevKits = myNecessaryDevKits;
+    Set<ModuleReference> necessaryDevKits = myNecessaryDevKits;
     if (necessaryImports == null) necessaryImports = new HashSet<SModelReference>();
-    if (necessaryLanguages == null) necessaryLanguages = new HashSet<String>();
+    if (necessaryLanguages == null) necessaryLanguages = new HashSet<ModuleReference>();
     return CopyPasteUtil.createNodeDataOut(mySNodes, sModel, myModelProperties,
-            new HashSet<String>(necessaryLanguages),
+            new HashSet<ModuleReference>(necessaryLanguages),
             new HashSet<SModelReference>(necessaryImports),
-            new HashSet<String>(necessaryDevKits));
+            new HashSet<ModuleReference>(necessaryDevKits));
   }
 
 

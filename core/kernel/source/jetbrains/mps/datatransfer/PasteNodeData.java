@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.project.ModuleReference;
 
 import java.util.List;
 import java.util.Set;
@@ -20,16 +21,16 @@ import java.util.HashSet;
 public class PasteNodeData {
   private List<SNode> myNodes;
   private Set<SReference> myRequireResolveReferences;
-  private Set<String> myNecessaryLanguages;
+  private Set<ModuleReference> myNecessaryLanguages;
   private Set<SModelReference> myNecessaryImports;
-  private Set<String> myNecessaryDevKits;
+  private Set<ModuleReference> myNecessaryDevKits;
   private SModel myModelProperties;
 
   public PasteNodeData(List<SNode> nodes, Set<SReference> references,
                        SModel modelProperties,
-                       Set<String> necessaryLanguages,
+                       Set<ModuleReference> necessaryLanguages,
                        Set<SModelReference> necessaryImports,
-                       Set<String> necessaryDevKits) {
+                       Set<ModuleReference> necessaryDevKits) {
     this.myNodes = nodes;
     this.myRequireResolveReferences = references;
     myNecessaryLanguages = necessaryLanguages;
@@ -46,7 +47,7 @@ public class PasteNodeData {
     return myRequireResolveReferences;
   }
 
-  public Set<String> getNecessaryLanguages() {
+  public Set<ModuleReference> getNecessaryLanguages() {
     return myNecessaryLanguages;
   }
 
@@ -54,7 +55,7 @@ public class PasteNodeData {
     return myNecessaryImports;
   }
 
-  public Set<String> getNecessaryDevKits() {
+  public Set<ModuleReference> getNecessaryDevKits() {
     return myNecessaryDevKits;
   }
 
@@ -67,8 +68,8 @@ public class PasteNodeData {
     return new PasteNodeData(new ArrayList<SNode>(),
             new HashSet<SReference>(),
             model,
-            new HashSet<String>(),
+            new HashSet<ModuleReference>(),
             new HashSet<SModelReference>(),
-            new HashSet<String>());
+            new HashSet<ModuleReference>());
   }
 }
