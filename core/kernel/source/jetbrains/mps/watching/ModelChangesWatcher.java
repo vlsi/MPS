@@ -99,7 +99,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
 //      System.out.println("got events " + events);
 
-      ReloadSession reloadSession = new ReloadSession();
+      final ReloadSession reloadSession = new ReloadSession();
 
       // collecting changed models, modules etc.
       for (VFileEvent event : events) {
@@ -108,11 +108,15 @@ public class ModelChangesWatcher implements ApplicationComponent {
           ModelFileProcessor.getInstance().process(event, reloadSession);
         } else if (MPSFileTypesManager.instance().isModuleFile(path)) {
           ModuleFileProcessor.getInstance().process(event, reloadSession);
-        } 
+        }
       }
 
       // reloading
-      reloadSession.doReload();
+      application.invokeLater(new Runnable() {
+        public void run() {
+          reloadSession.doReload();
+        }
+      });
     }
   }
 }
