@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.cleanup.CleanupManager;
 
 import javax.swing.*;
 import java.util.*;
@@ -485,6 +486,8 @@ public class SModelRepository implements ApplicationComponent {
       myFqNameToModelDescriptorMap.remove(event.getOldName());
       myFqNameToModelDescriptorMap.put(event.getNewName(), event.getModelDescriptor());
       fireModelRenamed(event.getModelDescriptor());
+
+      CleanupManager.getInstance().cleanup();
     }
 
     public void beforeModelFileChanged(SModelFileChangedEvent event) {

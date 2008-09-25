@@ -5,12 +5,13 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.Root;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ManyToManyMap;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.cleanup.CleanupListener;
 
 import java.io.File;
 import java.util.*;
@@ -28,7 +29,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   private Map<String, IModule> myFileToModuleMap = new LinkedHashMap<String, IModule>();  
-  private Map<String, IModule> myUIDToModulesMap = new LinkedHashMap<String, IModule>();
+  private Map<String, IModule> myFqNameToModulesMap = new LinkedHashMap<String, IModule>();
   private Map<ModuleId, IModule> myIdToModuleMap = new LinkedHashMap<ModuleId, IModule>();
 
   private Set<IModule> myModules = new LinkedHashSet<IModule>();
@@ -49,6 +50,12 @@ public class MPSModuleRepository implements ApplicationComponent {
   public void initComponent() {
     ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
       public void onReload() {
+        invalidateCaches();
+      }
+    });
+
+    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
+      public void performCleanup() {
         invalidateCaches();
       }
     });
@@ -169,7 +176,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public IModule getModuleByUID(String moduleUID) {
-    return myUIDToModulesMap.get(moduleUID);
+    return myFqNameToModulesMap.get(moduleUID);
   }
 
   public IModule getModuleById(ModuleId moduleId) {
@@ -180,7 +187,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     if (ref.getModuleId() != null) {
       return myIdToModuleMap.get(ref.getModuleId());
     }
-    return myUIDToModulesMap.get(ref.getModuleFqName());
+    return myFqNameToModulesMap.get(ref.getModuleFqName());
   }
 
   public <TM extends IModule> TM registerModule(IFile file, MPSModuleOwner owner, Class<TM> cls) {
@@ -234,12 +241,12 @@ public class MPSModuleRepository implements ApplicationComponent {
 
     String moduleUID = module.getModuleUID();
 
-    if (myUIDToModulesMap.containsKey(moduleUID)) {
-      IModule m = myUIDToModulesMap.get(moduleUID);
+    if (myFqNameToModulesMap.containsKey(moduleUID)) {
+      IModule m = myFqNameToModulesMap.get(moduleUID);
       LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
     }
 
-    myUIDToModulesMap.put(moduleUID, module);
+    myFqNameToModulesMap.put(moduleUID, module);
 
     ModuleId moduleId = module.getModuleId();
     if (moduleId != null) {
@@ -326,7 +333,7 @@ public class MPSModuleRepository implements ApplicationComponent {
 
     myModuleToOwners.clearFirst(module);
     myModules.remove(module);
-    myUIDToModulesMap.remove(module.getModuleUID());
+    myFqNameToModulesMap.remove(module.getModuleUID());
     if (module.getModuleId() != null) {
       myIdToModuleMap.remove(module.getModuleId());
     }
@@ -428,7 +435,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public Language getLanguage(String namespace) {
-    return (Language) myUIDToModulesMap.get(namespace);
+    return (Language) myFqNameToModulesMap.get(namespace);
   }
 
   public Language getLanguage(ModuleReference ref) {
@@ -449,7 +456,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public DevKit getDevKit(String namespace) {
-    return (DevKit) myUIDToModulesMap.get(namespace);
+    return (DevKit) myFqNameToModulesMap.get(namespace);
   }
 
   public DevKit getDevKit(ModuleReference ref) {
@@ -457,7 +464,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public Solution getSolution(String namespace) {
-    return (Solution) myUIDToModulesMap.get(namespace);
+    return (Solution) myFqNameToModulesMap.get(namespace);
   }
 
   public Solution getSolution(ModuleReference ref) {
