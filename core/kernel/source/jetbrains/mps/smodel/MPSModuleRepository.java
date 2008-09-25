@@ -53,12 +53,6 @@ public class MPSModuleRepository implements ApplicationComponent {
         invalidateCaches();
       }
     });
-
-    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
-      public void performCleanup() {
-        invalidateCaches();
-      }
-    });
   }
 
   @NonNls
@@ -154,7 +148,6 @@ public class MPSModuleRepository implements ApplicationComponent {
     }
   }
 
-
   public Set<MPSModuleOwner> getOwners(IModule module) {
     return myModuleToOwners.getByFirst(module);
   }
@@ -181,6 +174,14 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   public IModule getModuleById(ModuleId moduleId) {
     return myIdToModuleMap.get(moduleId);
+  }
+
+  public void moduleFqNameChanged(IModule module, String oldName) {
+    if (myFqNameToModulesMap.get(oldName) != module || !myFqNameToModulesMap.containsKey(module.getModuleFqName())) {
+      throw new IllegalStateException();
+    }
+    myFqNameToModulesMap.remove(oldName);
+    myFqNameToModulesMap.put(module.getModuleFqName(), module);
   }
 
   public IModule getModule(ModuleReference ref) {

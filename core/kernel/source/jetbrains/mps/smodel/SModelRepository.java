@@ -488,6 +488,7 @@ public class SModelRepository implements ApplicationComponent {
       fireModelRenamed(event.getModelDescriptor());
 
       CleanupManager.getInstance().cleanup();
+      MPSModuleRepository.getInstance().invalidateCaches();
     }
 
     public void beforeModelFileChanged(SModelFileChangedEvent event) {

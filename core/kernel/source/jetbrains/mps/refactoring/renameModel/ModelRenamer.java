@@ -24,7 +24,7 @@ public class ModelRenamer {
         }
       }
 
-      MPSModuleRepository.getInstance().updateSModelReferences();
+      MPSModuleRepository.getInstance().updateSModelReferences();      
     }
   }
 }
