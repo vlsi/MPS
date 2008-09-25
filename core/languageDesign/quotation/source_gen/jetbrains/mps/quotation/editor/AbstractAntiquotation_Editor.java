@@ -4,30 +4,30 @@ package jetbrains.mps.quotation.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class AbstractAntiquotation_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ErrorCell20599_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ErrorCell20599_0");
-  }
-
-  private static void setupLabel_ErrorCell20599_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ErrorCell20599_0(context, node);
+    return this.createError1196350915487(context, node);
   }
 
-  public EditorCell create_ErrorCell20599_0(EditorContext context, SNode node) {
+  public EditorCell createError1196350915487(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "abstract antiquotation");
-    setupBasic_ErrorCell20599_0(editorCell, node, context);
-    setupLabel_ErrorCell20599_0(editorCell, node, context);
+    setupBasic_Error_11963509154871196350915487(editorCell, node, context);
+    setupLabel_Error_1196350915487_1196350915487(editorCell, node, context);
     return editorCell;
+  }
+
+
+  private static void setupBasic_Error_11963509154871196350915487(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1196350915487");
+  }
+
+  private static void setupLabel_Error_1196350915487_1196350915487(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

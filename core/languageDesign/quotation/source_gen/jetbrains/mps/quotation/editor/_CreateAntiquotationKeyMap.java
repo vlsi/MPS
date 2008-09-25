@@ -84,7 +84,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
         return;
       }
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.Antiquotation")) {
-        SNode attributedNode = SNodeOperations.getParent((contextNode), null, false, false);
+        SNode attributedNode = SNodeOperations.getParent((contextNode));
         attributedNode.setAttribute(null);
         return;
       }
@@ -144,7 +144,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
         return;
       }
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.ListAntiquotation")) {
-        SNode attributedNode = SNodeOperations.getParent(contextNode, null, false, false);
+        SNode attributedNode = SNodeOperations.getParent(contextNode);
         assert attributedNode != null;
         attributedNode.setAttribute(null);
         return;
@@ -215,7 +215,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       }
       String role = SPropertyOperations.getString(link, "role");
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.ReferenceAntiquotation")) {
-        SNode attributedNode = SNodeOperations.getParent(contextNode, null, false, false);
+        SNode attributedNode = SNodeOperations.getParent(contextNode);
         assert attributedNode != null;
         ReferenceAntiquotation_AnnotationLink.setReferenceAntiquotation(((BaseConcept)SNodeOperations.getAdapter(attributedNode)), role, null);
         attributedNode.setAttribute(null);
@@ -285,7 +285,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       EditorCell_Property editorCell_Property = (EditorCell_Property)selectedCell;
       String propertyName = ((PropertyAccessor)editorCell_Property.getModelAccessor()).getPropertyName();
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.PropertyAntiquotation")) {
-        SNode attributedNode = SNodeOperations.getParent(contextNode, null, false, false);
+        SNode attributedNode = SNodeOperations.getParent(contextNode);
         assert attributedNode != null;
         PropertyAntiquotation_AnnotationLink.setPropertyAntiquotation(((BaseConcept)SNodeOperations.getAdapter(attributedNode)), propertyName, null);
         attributedNode.setAttribute(null);

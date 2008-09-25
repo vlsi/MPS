@@ -8,6 +8,7 @@
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.bootstrap.editorLanguage)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
+  <language namespace="jetbrains.mps.baseLanguage" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.bootstrap.editorLanguage.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.bootstrap.editorLanguage.structure)" version="26" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -1015,8 +1016,13 @@
                 <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196867479157">
                   <link role="concept" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
                 </node>
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BaseMethodCall" id="1216851139275">
-                  <link role="baseMethodDeclaration" targetNodeId="4.~AbstractCellProvider.getSNode():jetbrains.mps.smodel.SNode" resolveInfo="getSNode" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222351293184">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222351292062">
+                    <link role="variableDeclaration" targetNodeId="1196350915880" resolveInfo="selectedCell" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222351323891">
+                    <link role="baseMethodDeclaration" targetNodeId="34.~EditorCell.getSNode():jetbrains.mps.smodel.SNode" resolveInfo="getSNode" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1028,8 +1034,17 @@
                 <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1196350915892">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BaseMethodCall" id="1216851139273">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~BaseAdapter.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222351338295">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222351337578">
+                    <link role="variableDeclaration" targetNodeId="1196350915880" resolveInfo="selectedCell" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222351340999">
+                    <link role="baseMethodDeclaration" targetNodeId="34.~EditorCell.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1222351351681">
+                      <link role="classifier" targetNodeId="34.~EditorCell_Component" resolveInfo="EditorCell_Component" />
+                      <link role="variableDeclaration" targetNodeId="34.~EditorCell.METAINFO_LINK_DECLARATION" resolveInfo="METAINFO_LINK_DECLARATION" />
+                    </node>
+                  </node>
                 </node>
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196350915896">
                   <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
@@ -1307,8 +1322,13 @@
                 <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196867101237">
                   <link role="concept" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
                 </node>
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BaseMethodCall" id="1216851139274">
-                  <link role="baseMethodDeclaration" targetNodeId="4.~AbstractCellProvider.getSNode():jetbrains.mps.smodel.SNode" resolveInfo="getSNode" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222351403635">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222351403111">
+                    <link role="variableDeclaration" targetNodeId="1196866967526" resolveInfo="selectedCell" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222351405652">
+                    <link role="baseMethodDeclaration" targetNodeId="34.~EditorCell.getSNode():jetbrains.mps.smodel.SNode" resolveInfo="getSNode" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1371,11 +1391,15 @@
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196867287449">
                         <link role="variableDeclaration" targetNodeId="1196867115040" resolveInfo="editorCell_Property" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628916802" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222351414261">
+                        <link role="baseMethodDeclaration" targetNodeId="34.~EditorCell_Property.getModelAccessor():jetbrains.mps.nodeEditor.cells.ModelAccessor" resolveInfo="getModelAccessor" />
+                      </node>
                     </node>
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628871603" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222351416702">
+                  <link role="baseMethodDeclaration" targetNodeId="34.~PropertyAccessor.getPropertyName():java.lang.String" resolveInfo="getPropertyName" />
+                </node>
               </node>
             </node>
           </node>
@@ -1527,12 +1551,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapItem" id="1221479243490">
-      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1221479243491" />
-      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_ExecuteFunction" id="1221479243492">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221479243493" />
       </node>
     </node>
   </node>
