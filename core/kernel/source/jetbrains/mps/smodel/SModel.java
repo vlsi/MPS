@@ -35,7 +35,7 @@ public class SModel implements Iterable<SNode> {
   private Set<SModelListener> myListeners = new LinkedHashSet<SModelListener>(0);
   private Set<SModelCommandListener> myCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
                                                     
-  private Set<ModuleReference> myVersionedLanguages = new HashSet<ModuleReference>();
+  private List<ModuleReference> myVersionedLanguages = new ArrayList<ModuleReference>();
 
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelReference myReference;
@@ -1429,6 +1429,49 @@ public class SModel implements Iterable<SNode> {
   private boolean changed(SModelReference ref1, SModelReference ref2) {
     return !EqualUtil.equals(ref1.getSModelId(), ref2.getSModelId()) ||
       !EqualUtil.equals(ref1.getSModelFqName(), ref2.getSModelFqName());
+  }
+
+  public boolean updateModuleReferences() {
+    boolean changed = false;
+
+    if (updateRefs(myDevKits)) {
+      changed = true;
+    }
+
+    if (updateRefs(myLanguages)) {
+      changed = true;
+    }
+
+    if (updateRefs(myLanguagesEngagedOnGeneration)) {
+      changed = true;
+    }
+
+    if (updateRefs(myVersionedLanguages)) {
+      changed = true;
+    }
+
+    return changed;
+  }
+
+  private boolean updateRefs(List<ModuleReference> refs) {
+    boolean changed = false;
+    for (int i = 0; i < refs.size(); i++) {
+      ModuleReference ref = refs.get(i);
+      IModule module = MPSModuleRepository.getInstance().getModule(ref);
+      if (module != null) {
+        ModuleReference newRef = module.getModuleReference();
+        refs.set(i, newRef);
+        changed = changed || changed(ref, newRef);
+      } else {
+        LOG.error("Can't load module " + ref);
+      }
+    }
+    return changed;
+  }
+
+  private boolean changed(ModuleReference ref1, ModuleReference ref2) {
+    return !EqualUtil.equals(ref1.getModuleFqName(), ref2.getModuleFqName()) ||
+      !EqualUtil.equals(ref1.getModuleId(), ref2.getModuleId());
   }
 
   private static WeakSet<SModel> ourActiveModels = new WeakSet<SModel>();

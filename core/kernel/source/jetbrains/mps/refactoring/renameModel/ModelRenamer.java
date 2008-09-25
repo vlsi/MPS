@@ -2,8 +2,6 @@ package jetbrains.mps.refactoring.renameModel;
 
 import jetbrains.mps.smodel.*;
 
-import java.util.UUID;
-
 public class ModelRenamer {
   private SModelDescriptor myModelDescriptor;
   private SModelFqName myModelFqName;
@@ -26,7 +24,7 @@ public class ModelRenamer {
         }
       }
 
-      MPSModuleRepository.getInstance().updateModuleReferences();
+      MPSModuleRepository.getInstance().updateSModelReferences();
     }
   }
 }

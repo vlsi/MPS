@@ -435,6 +435,19 @@ public class MPSModuleRepository implements ApplicationComponent {
     return (Language) getModule(ref);
   }
 
+  public Generator getGenerator(ModuleReference ref) {
+    return (Generator) getModule(ref);
+  }
+
+  public Generator getGenerator(String alias) {
+    for (Generator g : getAllGenerators()) {
+      if (g.getAlias().equals(alias)) {
+        return g;
+      }
+    }
+    return null;
+  }
+
   public DevKit getDevKit(String namespace) {
     return (DevKit) myUIDToModulesMap.get(namespace);
   }
@@ -496,6 +509,10 @@ public class MPSModuleRepository implements ApplicationComponent {
     return getAllModules(DevKit.class);
   }
 
+  public List<Generator> getAllGenerators() {
+    return getAllModules(Generator.class);
+  }
+
   public List<IModule> getAllModules() {
     return getAllModules(IModule.class);
   }
@@ -531,10 +548,19 @@ public class MPSModuleRepository implements ApplicationComponent {
     return null;
   }
 
-  public void updateModuleReferences() {
+  public void updateSModelReferences() {
     for (IModule m : getAllModules()) {
       AbstractModule module = (AbstractModule) m;
       if (module.updateSModelReferences()) {
+        module.save();
+      }
+    }
+  }
+
+  public void updateModuleReferences() {
+    for (IModule m : getAllModules()) {
+      AbstractModule module = (AbstractModule) m;
+      if (module.updateModuleReferences()) {
         module.save();
       }
     }

@@ -80,10 +80,14 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void onModuleLoad() {
-    boolean save = false;
+    boolean needToSave = false;
 
     if (updateSModelReferences()) {
-      save = true;
+      needToSave = true;
+    }
+
+    if (updateModuleReferences()) {
+      needToSave = true;
     }
 
     if (isPackaged()) {
@@ -93,14 +97,14 @@ public abstract class AbstractModule implements IModule {
       for (ClassPathEntry e : getModuleDescriptor().getClassPathEntries()) {
         if (visited.contains(e.getPath())) {
           e.delete();
-          save = true;
+          needToSave = true;
         }
 
         visited.add(e.getPath());
       }
     }
 
-    if (save && !isPackaged()) {
+    if (needToSave && !isPackaged()) {
       save();
     }
   }
@@ -755,6 +759,11 @@ public abstract class AbstractModule implements IModule {
   private boolean changed(SModelReference ref1, SModelReference ref2) {
     return !EqualUtil.equals(ref1.getSModelId(), ref2.getSModelId()) ||
       !EqualUtil.equals(ref1.getSModelFqName(), ref2.getSModelFqName());
+  }
+
+  public boolean updateModuleReferences() {
+    return false;
+
   }
 
   public class ModuleScope extends DefaultScope {
