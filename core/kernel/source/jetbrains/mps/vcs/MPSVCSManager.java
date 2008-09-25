@@ -26,10 +26,6 @@ import org.jetbrains.annotations.NotNull;
 public class MPSVCSManager implements ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSVCSManager.class);
 
-  //the files we want to add or remove when we have no project loaded yet (and thus no VCS managers)
-  private static List<File> ourFilesToAddLater = new ArrayList<File>();
-  private static List<File> ourFilesToRemoveLater = new ArrayList<File>();
-
   public static MPSVCSManager getInstance(Project project) {
     return project.getComponent(MPSVCSManager.class);
   }
@@ -150,8 +146,6 @@ public class MPSVCSManager implements ProjectComponent {
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
     ModelChangesWatcher.instance().addMetadataListener(myMetadataListener);
     myChangeListManager.addChangeListListener(myChangeListUpdateListener);
-    addFilesScheduledToAddLater();
-    removeFilesScheduledToRemoveLater();
   }
 
   public void disposeComponent() {
@@ -161,27 +155,7 @@ public class MPSVCSManager implements ProjectComponent {
     ModelChangesWatcher.instance().removeMetadataListener(myMetadataListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
 
-    addFilesScheduledToAddLater();
-    removeFilesScheduledToRemoveLater();
     myTasksQueue.allowAccessAndProcessAllTasks();
-  }
-
-  public static void addFileLater(File file) {
-    ourFilesToAddLater.add(file);
-  }
-
-  private void addFilesScheduledToAddLater() {
-    addFilesToVcs(ourFilesToAddLater); //todo only files in an appropriate project or to every project opened; now files are added to a first opened project
-    ourFilesToAddLater.clear();
-  }
-
-  public static void removeFileLater(File file) {
-    ourFilesToRemoveLater.add(file);
-  }
-
-  private void removeFilesScheduledToRemoveLater() {
-    deleteFilesAndRemoveFromVcs(ourFilesToRemoveLater); //todo only files in an appropriate project or in every project opened
-    ourFilesToRemoveLater.clear();
   }
 
   private class ModelSavedListener extends SModelAdapter {

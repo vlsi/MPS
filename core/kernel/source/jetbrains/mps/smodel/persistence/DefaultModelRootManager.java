@@ -343,18 +343,8 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   }
 
   private void renameFile(IFile modelFile, IFile newFile) {
-    Project[] projects = ProjectManagerEx.getInstance().getOpenProjects();
-    if (projects.length == 0)  {
-      MPSVCSManager.addFileLater(newFile.toFile());
-      MPSVCSManager.removeFileLater(modelFile.toFile());
-    } else {
-      for (Project project : projects) {
-        MPSVCSManager mpsvcsManager = MPSVCSManager.getInstance(project);
-        if (mpsvcsManager != null) {
-          mpsvcsManager.deleteFilesAndRemoveFromVcs(Collections.singletonList(modelFile.toFile()));
-          mpsvcsManager.addFilesToVcs(Collections.singletonList(newFile.toFile()));
-        }
-      }
-    }
+    // todo use listeners
+    ApplicationLevelVcsManager.instance().addToVcsLater(newFile.toFile());
+    ApplicationLevelVcsManager.instance().removeFromVcsLater(modelFile.toFile());
   }
 }
