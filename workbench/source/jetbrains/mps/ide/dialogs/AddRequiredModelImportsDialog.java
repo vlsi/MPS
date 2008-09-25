@@ -196,6 +196,13 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     public Object getValueAt(int rowIndex, int columnIndex) {
       Object value = myItems.get(rowIndex);
       if (columnIndex == 0) return myItemsToAdd.contains(value);
+
+      if (value instanceof SModelReference) {
+        return ((SModelReference) value).getSModelFqName().toString();
+      }
+      if (value instanceof ModuleReference) {
+        return ((ModuleReference) value).getModuleFqName();
+      }
       return value.toString();
     }
 
