@@ -175,7 +175,7 @@ public class RefactoringProcessor {
     ThreadUtils.runInUIThreadNoWait(runnable);
   }
 
-  public void writeInLogAndUpdateModels(SModelReference initialModelReference, SModel model, RefactoringContext refactoringContext) {
+  public void     writeInLogAndUpdateModels(SModelReference initialModelReference, SModel model, RefactoringContext refactoringContext) {
     writeIntoLog(model, refactoringContext);
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (!SModelStereotype.isUserModel(anotherDescriptor)) {

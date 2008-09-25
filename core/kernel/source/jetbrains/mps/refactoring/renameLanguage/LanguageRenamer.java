@@ -4,6 +4,11 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class LanguageRenamer {
@@ -24,7 +29,16 @@ public class LanguageRenamer {
       root.setPrefix(myNewName);
     }
 
-    for (SModelDescriptor sm : myLanguage.getOwnModelDescriptors()) {
+    SModelDescriptor structure = myLanguage.getStructureModelDescriptor();
+    RefactoringContext context = new RefactoringContext(new MyRefactoring());
+    for (AbstractConceptDeclaration concept : structure.getSModel().getRootsAdapters(AbstractConceptDeclaration.class)) {
+      context.changeFeatureName(concept.getNode(), myNewName + ".structure." + concept.getName(), concept.getName());
+    }
+    context.computeCaches();
+
+    for (SModelDescriptor sm : myLanguage.getOwnModelDescriptors()) {      
+      if (!SModelStereotype.isUserModel(sm)) continue;
+
       if (sm.getSModelFqName().toString().startsWith(oldFqName + ".")) {
         String suffix = sm.getSModelFqName().toString().  substring(oldFqName.length());
         sm.rename(SModelFqName.fromString(myNewName + suffix), false);        
@@ -42,6 +56,8 @@ public class LanguageRenamer {
     MPSModuleRepository.getInstance().updateModuleReferences();
     MPSModuleRepository.getInstance().updateSModelReferences();
 
+    new RefactoringProcessor().writeInLogAndUpdateModels(structure.getSModelReference(), structure.getSModel(), context);
+
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
@@ -50,6 +66,12 @@ public class LanguageRenamer {
       if (!root.getPrefix().equals(myLanguage.getModuleFqName())) {
         throw new IllegalArgumentException();
       }
+    }
+  }
+
+  private static class MyRefactoring extends AbstractLoggableRefactoring {
+    public void updateModel(SModel model, RefactoringContext refactoringContext) {
+      refactoringContext.updateModelWithMaps(model);
     }
   }
 }

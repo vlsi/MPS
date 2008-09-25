@@ -1215,7 +1215,7 @@ public class SModel implements Iterable<SNode> {
     fireImportAddedEvent(myReference);
   }
 
-  /*package*/ void increaseVersion() {
+  public void increaseVersion() {
     getModelDescriptor().setVersion(getVersion() + 1);
   }
 
