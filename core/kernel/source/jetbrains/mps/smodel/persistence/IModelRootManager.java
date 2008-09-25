@@ -52,7 +52,7 @@ public interface IModelRootManager {
                                            @NotNull SModelFqName fqName,
                                            @NotNull ModelOwner owner);
 
-  void rename(SModelDescriptor model, SModelFqName modelFqName);
+  void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile);
 
   void changeSModelRoot(SModelDescriptor model, SModelRoot modelRoot);
 

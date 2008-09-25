@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel.persistence;
 
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.*;
@@ -73,7 +72,7 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   public void dispose() {
   }
 
-  public void rename(SModelDescriptor model, SModelFqName modelFqName) {
+  public void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile) {
     throw new UnsupportedOperationException();
   }
 

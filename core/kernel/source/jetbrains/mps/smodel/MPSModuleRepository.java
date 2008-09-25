@@ -177,7 +177,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void moduleFqNameChanged(IModule module, String oldName) {
-    if (myFqNameToModulesMap.get(oldName) != module || !myFqNameToModulesMap.containsKey(module.getModuleFqName())) {
+    if (myFqNameToModulesMap.get(oldName) != module || myFqNameToModulesMap.containsKey(module.getModuleFqName())) {
       throw new IllegalStateException();
     }
     myFqNameToModulesMap.remove(oldName);

@@ -136,5 +136,5 @@ public interface SModelDescriptor {
 
   boolean isValid(IScope scope);
 
-  void rename(SModelFqName newModelFqName);
+  void rename(SModelFqName newModelFqName, boolean changeFile);
 }

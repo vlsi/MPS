@@ -37,8 +37,16 @@ public class SModelRoot {
     return myModelRoot.getPath();
   }
 
+  public void setPath(String newPath) {
+    myModelRoot.setPath(newPath);
+  }
+
   public String getPrefix() {
     return myModelRoot.getPrefix();
+  }
+
+  public void setPrefix(String newPrefix) {
+    myModelRoot.setPrefix(newPrefix);
   }
 
   public boolean isCorrectModelFqName(SModelFqName fqName) {

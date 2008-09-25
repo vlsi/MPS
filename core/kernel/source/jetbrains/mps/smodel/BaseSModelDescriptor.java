@@ -175,21 +175,25 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return errors;
   }
 
-  public void rename(SModelFqName newModelFqName) {
+  public void rename(SModelFqName newModelFqName, boolean changeFile) {
     SModelFqName oldFqName = getSModelFqName();
     SModel model = getSModel();
     model.fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
 
     SModelReference newModelReference = new SModelReference(newModelFqName, myModelReference.getSModelId());
     model.changeModelReference(newModelReference);
-    myModelRootManager.rename(this, newModelFqName);
+    myModelRootManager.rename(this, newModelFqName, changeFile);
     myModelReference = newModelReference;
 
     model.fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
   }
 
   public void changeModelFile(IFile newModelFile) {
-    IFile oldFile = myModelFile;    
+    IFile oldFile = myModelFile;
+    if (oldFile.getAbsolutePath().equals(newModelFile.getAbsolutePath())) {
+      return;
+    }
+
     SModel model = getSModel();
     model.fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
     myModelFile = newModelFile;

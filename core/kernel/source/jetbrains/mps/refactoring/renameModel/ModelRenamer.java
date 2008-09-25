@@ -14,16 +14,10 @@ public class ModelRenamer {
   }
 
   public void rename() {
-    myModelDescriptor.rename(myModelFqName);
+    myModelDescriptor.rename(myModelFqName, true);
     
     if (!myLazy) {
-      for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
-        if (!SModelStereotype.isUserModel(sm)) continue;
-        if (sm.getSModel().updateSModelReferences()) {
-          sm.save();
-        }
-      }
-
+      SModelRepository.getInstance().updateSModelReferences();
       MPSModuleRepository.getInstance().updateSModelReferences();      
     }
   }

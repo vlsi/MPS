@@ -372,6 +372,26 @@ public class SModelRepository implements ApplicationComponent {
     myChangedModels.clear();
   }
 
+  public void updateSModelReferences() {
+    for (SModelDescriptor sm : getModelDescriptors()) {
+      if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) continue;
+
+      if (sm.getSModel().updateSModelReferences() && sm.getModelFile() != null && !sm.getModelFile().isReadOnly()) {
+        sm.save();
+      }
+    }
+  }
+
+  public void updateModuleReferences() {
+    for (SModelDescriptor sm : getModelDescriptors()) {
+      if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) continue;
+
+      if (sm.getSModel().updateModuleReferences() && sm.getModelFile() != null && !sm.getModelFile().isReadOnly()) {
+        sm.save();
+      }
+    }
+  }
+
   public void reloadAll() {
     for (SModelDescriptor modelDescriptor : new HashSet<SModelDescriptor>(myModelDescriptors)) {
       modelDescriptor.reloadFromDisk();

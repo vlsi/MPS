@@ -2,7 +2,6 @@ package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -12,12 +11,10 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
-import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.watching.ModelChangesWatcher;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,9 +23,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.*;
-
-import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.project.Project;
 
 /**
  * @author Kostik
@@ -323,7 +317,11 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     return FileSystem.getFile(versionPath);
   }
 
-  public void rename(SModelDescriptor sm, SModelFqName modelFqName) {
+  public void rename(SModelDescriptor sm, SModelFqName modelFqName, boolean changeFile) {
+    if (!changeFile) {
+      sm.save();
+      return;
+    }
     IFile oldFile = sm.getModelFile();
     SModelRoot root = sm.getSModelRoot();
     IFile newFile = createFileForModelUID(root, modelFqName);
