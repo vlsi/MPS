@@ -46,6 +46,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private TypeChecker myTypeChecker;
   private Map<SNode, SNode> myNodesToTypesMap = new HashMap<SNode, SNode>();
   private Map<SNode, IErrorReporter> myNodesToErrorsMap = new HashMap<SNode, IErrorReporter>();
+  private Map<SNode, IErrorReporter> myNodesToNonTypesystemErrorsMap = new HashMap<SNode, IErrorReporter>();
 
   private Set<SNode> myFullyCheckedNodes = new HashSet<SNode>(); //nodes which are checked with their children
   private Set<SNode> myPartlyCheckedNodes = new HashSet<SNode>(); // nodes which are checked themselves but not children
@@ -71,7 +72,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private SNode myCurrentCheckedNode;
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
   private boolean myIsGeneration = false;
-  private boolean myIsInterrupted = false;
+
+  boolean myIsNonTypesystemCheckingInProgress = false;
 
   private TypeCheckingContext myTypeCheckingContext;
 
@@ -94,6 +96,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     NodeTypesComponent result = (NodeTypesComponent) super.clone();
     result.myNodesToTypesMap = new HashMap<SNode, SNode>();
     result.myNodesToErrorsMap = new HashMap<SNode, IErrorReporter>();
+    result.myNodesToNonTypesystemErrorsMap = new HashMap<SNode, IErrorReporter>();
     result.myFullyCheckedNodes = new WeakSet<SNode>();
     result.myPartlyCheckedNodes = new WeakSet<SNode>();
     result.myEquationManager = new EquationManager(result.myTypeChecker, new TypeCheckingContext(result));
@@ -134,6 +137,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private void clearNodesTypes() {
     myNodesToTypesMap.clear();
     myNodesToErrorsMap.clear();
+    myNodesToNonTypesystemErrorsMap.clear();
     myCurrentNodesToInvalidate.clear();
     myVariableChar = A_CHAR;
     myVariableIndex = 0;
@@ -144,19 +148,37 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     myPartlyCheckedNodes.remove(node);
     myNodesToTypesMap.remove(node);
     myNodesToErrorsMap.remove(node);
+    myNodesToNonTypesystemErrorsMap.remove(node);
     myNodesToRules.remove(node);
   }
 
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     if (nodeWithError != null) {
-      myNodesToErrorsMap.put(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId));
+      SimpleErrorReporter errorReporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
+      putError(nodeWithError, errorReporter);
     }
   }
 
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
     if (nodeWithError != null) {
-      myNodesToErrorsMap.put(nodeWithError, errorReporter);
+      putError(nodeWithError, errorReporter);
     }
+  }
+
+  private void putError(SNode node, IErrorReporter errorReporter) {
+    Map<SNode, IErrorReporter> map;
+    if (myIsNonTypesystemCheckingInProgress) {
+      map = myNodesToNonTypesystemErrorsMap;
+    } else {
+      map = myNodesToErrorsMap;
+    }
+    if (errorReporter.isWarning()) { //warnings should not hide errors
+      IErrorReporter former = map.get(node);
+      if (former != null && !former.isWarning()) {
+        return;
+      }
+    }
+    map.put(node, errorReporter);
   }
 
   public boolean isInCheckedNodes(SNode node) {
@@ -407,26 +429,32 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   public void applyNonTypesystemRulesToRoot() {
     SNode root = myRootNode;
     if (root == null) return;
-    Set<SNode> frontier = new LinkedHashSet<SNode>();
-    Set<SNode> newFrontier = new LinkedHashSet<SNode>();
-    frontier.add(root);
-    while (!(frontier.isEmpty())) {
-      for (SNode sNode : frontier) {
+    myNodesToNonTypesystemErrorsMap.clear();
+    myIsNonTypesystemCheckingInProgress = true;
+    try {
+      Set<SNode> frontier = new LinkedHashSet<SNode>();
+      Set<SNode> newFrontier = new LinkedHashSet<SNode>();
+      frontier.add(root);
+      while (!(frontier.isEmpty())) {
+        for (SNode sNode : frontier) {
           newFrontier.addAll(sNode.getChildren());
           applyNonTypesystemRulesToNode(sNode);
+        }
+        frontier = newFrontier;
+        newFrontier = new LinkedHashSet<SNode>();
       }
-      frontier = newFrontier;
-      newFrontier = new LinkedHashSet<SNode>();
+      //all error reporters must be simple reporters, no error expansion needed
+    } finally {
+      myIsNonTypesystemCheckingInProgress = false;
     }
-    //all error reporters must be simple reporters, no error expansion needed
   }
 
-   private void applyNonTypesystemRulesToNode(SNode node) {
+  private void applyNonTypesystemRulesToNode(SNode node) {
     Set<NonTypesystemRule_Runtime> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
     if (nonTypesystemRules != null) {
-        for (NonTypesystemRule_Runtime rule : nonTypesystemRules) {
-          applyRuleToNode(node, rule);
-        }
+      for (NonTypesystemRule_Runtime rule : nonTypesystemRules) {
+        applyRuleToNode(node, rule);
+      }
     }
   }
 
@@ -488,6 +516,9 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
   public IErrorReporter getError(SNode node) {
     IErrorReporter iErrorReporter = myNodesToErrorsMap.get(node);
+    if (iErrorReporter == null) {
+      iErrorReporter = myNodesToNonTypesystemErrorsMap.get(node);
+    }
     return iErrorReporter;
   }
 
@@ -502,11 +533,13 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   public Set<Pair<SNode, IErrorReporter>> getNodesWithErrorStrings() {
-    return CollectionUtil.map(myNodesToErrorsMap.keySet(), new Mapper<SNode, Pair<SNode, IErrorReporter>>() {
-      public Pair<SNode, IErrorReporter> map(SNode sNode) {
-        return new Pair<SNode, IErrorReporter>(sNode, myNodesToErrorsMap.get(sNode));
-      }
-    });
+    Set<Pair<SNode, IErrorReporter>> result = new HashSet<Pair<SNode, IErrorReporter>>();
+    Set<SNode> keySet = new HashSet<SNode>(myNodesToErrorsMap.keySet());
+    keySet.addAll(myNodesToNonTypesystemErrorsMap.keySet());
+    for (SNode key : keySet) {
+      result.add(new Pair<SNode, IErrorReporter>(key, getError(key)));
+    }
+    return result;
   }
 
   public String getNewVarName() {
@@ -571,29 +604,6 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       return SNode.EMPTY_ARRAY;
     } else {
       return variables.toArray(new SNode[variables.size()]);
-    }
-  }
-
-  /*package*/ void interrupt() {
-    myIsInterrupted = true;
-  }
-
-  private void checkInterrupted() {
-    try {
-      if (myIsInterrupted) {
-        try {
-          solveInequationsAndExpandTypes();
-          performActionsAfterChecking();
-        } finally {
-          myNotSkippedNodes.clear();
-          clearEquationManager();
-          if (myRootNode.isRoot()) {
-            myTypeChecker.markAsChecked(myRootNode);
-          }
-        }
-      }
-    } finally {
-      myIsInterrupted = false;
     }
   }
 
