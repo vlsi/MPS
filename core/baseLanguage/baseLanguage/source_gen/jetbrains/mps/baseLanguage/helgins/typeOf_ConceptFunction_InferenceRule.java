@@ -39,11 +39,11 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "r:1222183538981(jetbrains.mps.baseLanguage.helgins@3_0)", "1222183899767", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "r:f8affc78-bfdf-4de0-9e6a-97166f21591a(jetbrains.mps.baseLanguage.helgins@21_0)", "1222352245707", intentionProvider);
           }
         }
       }
-      TypeChecker.getInstance().getRuntimeSupport().givetype(null, func, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1179436909754");
+      TypeChecker.getInstance().getRuntimeSupport().givetype(null, func, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1179436909754");
     } else
     {
       // should return subtypes of the 'expected type'
@@ -52,14 +52,14 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "r:1222183538981(jetbrains.mps.baseLanguage.helgins@3_0)", "1222183899782", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "r:f8affc78-bfdf-4de0-9e6a-97166f21591a(jetbrains.mps.baseLanguage.helgins@21_0)", "1222352245722", intentionProvider);
           }
         } else
         {
           {
             SNode _nodeToCheck_1029348928467 = func;
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1186053304515", true), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1186053304511", false, 0, intentionProvider);
+            TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1186053304515", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1186053304511", false, 0, intentionProvider);
           }
         }
       }
@@ -70,7 +70,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
         {
           SNode _nodeToCheck_1029348928467 = func;
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), TypeChecker.getInstance().getRuntimeSupport().typeOf(expression, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1186053084979", true), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1186053063874", false, 0, intentionProvider);
+          TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), TypeChecker.getInstance().getRuntimeSupport().typeOf(expression, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1186053084979", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1186053063874", false, 0, intentionProvider);
         }
         somethingReturned = true;
       }
@@ -81,19 +81,19 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
         );
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(func, "function should return " + whatExpected, "r:1222183538981(jetbrains.mps.baseLanguage.helgins@3_0)", "1222183884856", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(func, "function should return " + whatExpected, "r:f8affc78-bfdf-4de0-9e6a-97166f21591a(jetbrains.mps.baseLanguage.helgins@21_0)", "1222352226731", intentionProvider);
         }
       }
       {
         SNode _nodeToCheck_1029348928467 = func;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(func, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1186053169643", true), TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1186053174208", intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(func, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1186053169643", true), TypeChecker.getInstance().getEquationManager().getRepresentator(LCS_typevar_1186052624152), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1186053174208", intentionProvider);
       }
       if ((expectedRetType != null)) {
         {
           SNode _nodeToCheck_1029348928467 = func;
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(func, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1186053540851", true), expectedRetType, _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1186053540847", false, 0, intentionProvider);
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(func, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1186053540851", true), expectedRetType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1186053540847", false, 0, intentionProvider);
         }
       }
     }

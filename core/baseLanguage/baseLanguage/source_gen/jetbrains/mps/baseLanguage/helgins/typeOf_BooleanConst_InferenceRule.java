@@ -15,7 +15,7 @@ public class typeOf_BooleanConst_InferenceRule extends AbstractInferenceRule_Run
   }
 
   public void applyRule(final SNode boolConst, final TypeCheckingContext typeCheckingContext) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_5().createNode(), boolConst, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1175598801792");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_5().createNode(), boolConst, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175598801792");
   }
 
   public String getApplicableConceptFQName() {

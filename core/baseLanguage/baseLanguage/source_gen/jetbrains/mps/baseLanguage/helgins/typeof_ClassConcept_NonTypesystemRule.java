@@ -24,21 +24,21 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
     if ((SLinkOperations.getTarget(cls, "superclass", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(cls, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(cls, "superclass", true), "Class expected", "r:1222183538981(jetbrains.mps.baseLanguage.helgins@3_0)", "1222183888995", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(cls, "superclass", true), "Class expected", "r:f8affc78-bfdf-4de0-9e6a-97166f21591a(jetbrains.mps.baseLanguage.helgins@21_0)", "1222352231517", intentionProvider);
       }
     }
     for(SNode impl : SLinkOperations.getTargets(cls, "implementedInterface", true)) {
       if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(impl, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"))) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(impl, "Interface expected", "r:1222183538981(jetbrains.mps.baseLanguage.helgins@3_0)", "1222183900095", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(impl, "Interface expected", "r:f8affc78-bfdf-4de0-9e6a-97166f21591a(jetbrains.mps.baseLanguage.helgins@21_0)", "1222352246663", intentionProvider);
         }
       }
     }
     if (!(SPropertyOperations.getBoolean(cls, "abstractClass")) && ListSequence.fromList(ClassConcept_Behavior.call_getMethodsToImplement_1221637841398(cls)).isNotEmpty()) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(cls, "Class has not implemented methods (press control+I too see)", "r:1222183538981(jetbrains.mps.baseLanguage.helgins@3_0)", "1222183889018", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(cls, "Class has not implemented methods (press control+I too see)", "r:f8affc78-bfdf-4de0-9e6a-97166f21591a(jetbrains.mps.baseLanguage.helgins@21_0)", "1222352231555", intentionProvider);
       }
     }
   }

@@ -33,7 +33,7 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
     if (!(b)) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(iMethodCall, "wrong number of parameters", "r:1222183538981(jetbrains.mps.baseLanguage.helgins@3_0)", "1222183888639", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(iMethodCall, "wrong number of parameters", "r:f8affc78-bfdf-4de0-9e6a-97166f21591a(jetbrains.mps.baseLanguage.helgins@21_0)", "1222352231093", intentionProvider);
       }
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).count() > 0) {

@@ -20,7 +20,7 @@ public class typeOf_IfStatement_InferenceRule extends AbstractInferenceRule_Runt
     {
       SNode _nodeToCheck_1029348928467 = ifStatement;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ifStatement, "condition", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176898833121", true), new QuotationClass_23().createNode(), _nodeToCheck_1029348928467, "condition should be boolean", "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176898861472", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ifStatement, "condition", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176898833121", true), new QuotationClass_23().createNode(), _nodeToCheck_1029348928467, "condition should be boolean", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176898861472", false, 0, intentionProvider);
     }
   }
 

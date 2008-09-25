@@ -18,11 +18,11 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
 
   public void applyRule(final SNode castExpression, final TypeCheckingContext typeCheckingContext) {
     if ((SLinkOperations.getTarget(castExpression, "type", true) != null)) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(castExpression, "type", true), castExpression, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1178271952457");
+      TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(castExpression, "type", true), castExpression, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178271952457");
       {
         SNode _nodeToCheck_1029348928467 = castExpression;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(castExpression, "expression", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1178271928128", true), SLinkOperations.getTarget(castExpression, "type", true), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1178271928127", intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(castExpression, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178271928128", true), SLinkOperations.getTarget(castExpression, "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178271928127", intentionProvider);
       }
     }
   }

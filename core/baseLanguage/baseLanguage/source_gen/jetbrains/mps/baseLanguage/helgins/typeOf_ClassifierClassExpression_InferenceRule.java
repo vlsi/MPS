@@ -16,7 +16,7 @@ public class typeOf_ClassifierClassExpression_InferenceRule extends AbstractInfe
   }
 
   public void applyRule(final SNode classExpr, final TypeCheckingContext typeCheckingContext) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_24().createNode(SLinkOperations.getTarget(classExpr, "classifier", false)), classExpr, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176898941933");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_24().createNode(SLinkOperations.getTarget(classExpr, "classifier", false)), classExpr, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176898941933");
   }
 
   public String getApplicableConceptFQName() {

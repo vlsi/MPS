@@ -16,7 +16,7 @@ public class check_ThisExpression_NonTypesystemRule extends AbstractNonTypesyste
 
   public void applyRule(final SNode thisExpression, final TypeCheckingContext typeCheckingContext) {
     if (!(!(RulesFunctions_BaseLanguage.isWithinStatic(thisExpression)))) {
-      TypeChecker.getInstance().reportTypeError(thisExpression, "this-expression is not allowed in a static context ", "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1201700958007");
+      TypeChecker.getInstance().reportTypeError(thisExpression, "this-expression is not allowed in a static context ", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1201700958007");
     }
   }
 

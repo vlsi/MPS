@@ -48,7 +48,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                     {
                       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                       BaseIntentionProvider intentionProvider = null;
-                      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(finalTypeParam, myParam, _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1220535076789", false, 0, intentionProvider);
+                      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(finalTypeParam, myParam, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1220535076789", false, 0, intentionProvider);
                     }
                     {
                       final SNode concreteParam = myParam;
@@ -60,7 +60,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                               {
                                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                                 BaseIntentionProvider intentionProvider = null;
-                                TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(finalTypeParam, TypeChecker.getInstance().getEquationManager().getRepresentator(concreteParam), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1220523357893", false, 0, intentionProvider);
+                                TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(finalTypeParam, TypeChecker.getInstance().getEquationManager().getRepresentator(concreteParam), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1220523357893", false, 0, intentionProvider);
                               }
                             */
                           } else
@@ -68,12 +68,12 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                             {
                               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                               BaseIntentionProvider intentionProvider = null;
-                              TypeChecker.getInstance().getRuntimeSupport().createEquation(finalTypeParam, TypeChecker.getInstance().getEquationManager().getRepresentator(concreteParam), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1220523357903", intentionProvider);
+                              TypeChecker.getInstance().getRuntimeSupport().createEquation(finalTypeParam, TypeChecker.getInstance().getEquationManager().getRepresentator(concreteParam), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1220523357903", intentionProvider);
                             }
                           }
                         }
 
-                      }, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1220523357880");
+                      }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1220523357880");
                     }
                   }
                 }
@@ -82,13 +82,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
             {
               {
                 BaseIntentionProvider intentionProvider = null;
-                TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:1222183538981(jetbrains.mps.baseLanguage.helgins@3_0)", "1222183889773", intentionProvider);
+                TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:f8affc78-bfdf-4de0-9e6a-97166f21591a(jetbrains.mps.baseLanguage.helgins@21_0)", "1222352232357", intentionProvider);
               }
             }
           }
         }
 
-      }, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1220523357849");
+      }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1220523357849");
     }
   }
 

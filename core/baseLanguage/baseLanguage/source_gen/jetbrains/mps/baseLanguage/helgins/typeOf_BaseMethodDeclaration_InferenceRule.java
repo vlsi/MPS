@@ -26,7 +26,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       {
         SNode _nodeToCheck_1029348928467 = bmd;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_98().createNode(), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1215105338790", false, 0, intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_98().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1215105338790", false, 0, intentionProvider);
       }
     }
     // ==========
@@ -53,7 +53,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "r:1222183538981(jetbrains.mps.baseLanguage.helgins@3_0)", "1222183899647", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "r:f8affc78-bfdf-4de0-9e6a-97166f21591a(jetbrains.mps.baseLanguage.helgins@21_0)", "1222352245093", intentionProvider);
           }
         }
       }
@@ -64,15 +64,15 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "r:1222183538981(jetbrains.mps.baseLanguage.helgins@3_0)", "1222183899662", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "r:f8affc78-bfdf-4de0-9e6a-97166f21591a(jetbrains.mps.baseLanguage.helgins@21_0)", "1222352245108", intentionProvider);
           }
         } else
         {
-          SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1178765405776", true);
+          SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178765405776", true);
           {
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1185363921400", false, 0, intentionProvider);
+            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1185363921400", false, 0, intentionProvider);
           }
         }
       }
@@ -82,11 +82,11 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       // last expression statement can serve as return statement
       SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(bmd, "body", true), "statement", true)).last();
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-        SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStatement, "expression", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1178765601477", true);
+        SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStatement, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178765601477", true);
         {
           SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(lastStatement, "expression", true);
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, expectedRetType + " is expected", "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1185363855090", false, 0, intentionProvider);
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1185363855090", false, 0, intentionProvider);
         }
       }
     }

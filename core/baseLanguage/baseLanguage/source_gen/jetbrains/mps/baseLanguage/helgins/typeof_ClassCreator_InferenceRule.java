@@ -28,12 +28,12 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     if (!(SLinkOperations.getCount(creator, "typeParameter") == 0 || SLinkOperations.getCount(creator, "typeParameter") == SLinkOperations.getCount(SNodeOperations.getAncestor(SLinkOperations.getTarget(creator, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "typeVariableDeclaration"))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "r:1222183538981(jetbrains.mps.baseLanguage.helgins@3_0)", "1222183887797", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "r:f8affc78-bfdf-4de0-9e6a-97166f21591a(jetbrains.mps.baseLanguage.helgins@21_0)", "1222352229985", intentionProvider);
       }
     }
     for(SNode parameter : SLinkOperations.getTargets(creator, "typeParameter", true)) {
       if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(new QuotationClass_92().createNode(), "descriptor", false), false, false)))) {
-        TypeChecker.getInstance().reportTypeError(parameter, "primitive type not allowed", "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1212781606006");
+        TypeChecker.getInstance().reportTypeError(parameter, "primitive type not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1212781606006");
       }
     }
     // ---
@@ -41,13 +41,13 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     {
       SNode _nodeToCheck_1029348928467 = creator;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(creator, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1212781606043", true), constructedType, _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1212781606039", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(creator, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1212781606043", true), constructedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1212781606039", intentionProvider);
     }
     final SNode instanceType_typevar_1212781606045 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = creator;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1212781606045), constructedType, _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1212781606046", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1212781606045), constructedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1212781606046", intentionProvider);
     }
     // --- following piece of cake is identical for any method call ---
     {
@@ -61,7 +61,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
           RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
         }
 
-      }, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1212781606052");
+      }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1212781606052");
     }
   }
 

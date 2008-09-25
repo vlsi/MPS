@@ -20,7 +20,7 @@ public class typeOf_ConceptFunctionParameter_InferenceRule extends AbstractInfer
   public void applyRule(final SNode conceptFunctionParameter, final TypeCheckingContext typeCheckingContext) {
     List<SNode> conceptFunctionParameters = SLinkOperations.getConceptLinkTargets(conceptFunctionParameter, "conceptFunctionParameterType");
     if (!(ListSequence.fromList(conceptFunctionParameters).isEmpty())) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(ListSequence.fromList(conceptFunctionParameters).getElement(0), conceptFunctionParameter, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1177326121286");
+      TypeChecker.getInstance().getRuntimeSupport().givetype(ListSequence.fromList(conceptFunctionParameters).getElement(0), conceptFunctionParameter, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1177326121286");
     }
   }
 

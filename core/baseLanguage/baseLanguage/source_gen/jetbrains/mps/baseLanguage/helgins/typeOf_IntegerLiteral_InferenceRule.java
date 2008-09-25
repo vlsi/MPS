@@ -15,7 +15,7 @@ public class typeOf_IntegerLiteral_InferenceRule extends AbstractInferenceRule_R
   }
 
   public void applyRule(final SNode integerLiteral, final TypeCheckingContext typeCheckingContext) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_36().createNode(), integerLiteral, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176907711684");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_36().createNode(), integerLiteral, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176907711684");
   }
 
   public String getApplicableConceptFQName() {

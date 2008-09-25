@@ -20,7 +20,7 @@ public class typeOf_GenericNewExpression_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = genericNE;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(genericNE, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1197929386566", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(genericNE, "creator", true), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176896993400", true), _nodeToCheck_1029348928467, null, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1197929386564", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(genericNE, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1197929386566", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(genericNE, "creator", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176896993400", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1197929386564", intentionProvider);
     }
   }
 

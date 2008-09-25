@@ -16,7 +16,7 @@ public class typeOf_EnumConstantDeclaration_InferenceRule extends AbstractInfere
   }
 
   public void applyRule(final SNode enumConstDecl, final TypeCheckingContext typeCheckingContext) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_34().createNode(SNodeOperations.getAncestor(enumConstDecl, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false)), enumConstDecl, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176904413280");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_34().createNode(SNodeOperations.getAncestor(enumConstDecl, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false)), enumConstDecl, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176904413280");
   }
 
   public String getApplicableConceptFQName() {

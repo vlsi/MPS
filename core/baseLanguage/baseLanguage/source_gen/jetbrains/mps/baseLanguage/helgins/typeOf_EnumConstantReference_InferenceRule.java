@@ -17,9 +17,9 @@ public class typeOf_EnumConstantReference_InferenceRule extends AbstractInferenc
 
   public void applyRule(final SNode enumConstantRef, final TypeCheckingContext typeCheckingContext) {
     if (!((SLinkOperations.getTarget(enumConstantRef, "enumConstantDeclaration", false) != null))) {
-      TypeChecker.getInstance().reportTypeError(enumConstantRef, "no constant declaration", "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176905227742");
+      TypeChecker.getInstance().reportTypeError(enumConstantRef, "no constant declaration", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176905227742");
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(enumConstantRef, "enumConstantDeclaration", false), "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176905306388", true), enumConstantRef, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176905295744");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(enumConstantRef, "enumConstantDeclaration", false), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176905306388", true), enumConstantRef, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176905295744");
   }
 
   public String getApplicableConceptFQName() {

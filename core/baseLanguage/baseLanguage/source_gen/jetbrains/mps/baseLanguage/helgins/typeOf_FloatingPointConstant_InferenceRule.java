@@ -15,7 +15,7 @@ public class typeOf_FloatingPointConstant_InferenceRule extends AbstractInferenc
   }
 
   public void applyRule(final SNode floatConst, final TypeCheckingContext typeCheckingContext) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_37().createNode(), floatConst, "r:1222075024069(jetbrains.mps.baseLanguage.helgins)", "1176907782194");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_37().createNode(), floatConst, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176907782194");
   }
 
   public String getApplicableConceptFQName() {
