@@ -18,10 +18,10 @@
       </models>
       <external-templates />
       <dependencies>
-        <dependency reexport="false">jetbrains.mps.xml</dependency>
+        <dependency reexport="false">823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml)</dependency>
       </dependencies>
       <usedLanguages>
-        <usedLanguages>jetbrains.mps.xml</usedLanguages>
+        <usedLanguages>823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml)</usedLanguages>
       </usedLanguages>
       <mapping-priorities />
     </generator>

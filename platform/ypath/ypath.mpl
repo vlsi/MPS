@@ -14,18 +14,18 @@
         <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.ypath.generator.baseLanguage.template" />
       </models>
       <external-templates>
-        <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
+        <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
       </external-templates>
       <dependencies>
-        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
-        <dependency reexport="true">jetbrains.mps.baseLanguageInternal</dependency>
-        <dependency reexport="true">jetbrains.mps.closures</dependency>
-        <dependency reexport="true">ypath#1168438160182</dependency>
+        <dependency reexport="true">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
+        <dependency reexport="true">df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</dependency>
+        <dependency reexport="true">fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)</dependency>
+        <dependency reexport="true">f18753d4-d7a2-434f-85a3-f8eedf77c99a(ypath#1168438160182)</dependency>
       </dependencies>
       <usedLanguages>
-        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
-        <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-        <usedLanguages>jetbrains.mps.closures</usedLanguages>
+        <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
+        <usedLanguages>d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)</usedLanguages>
+        <usedLanguages>fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
@@ -73,7 +73,7 @@
             <mapping-node modelUID="r:00000000-0000-4000-0000-011c895905b3(jetbrains.mps.ypath.generator.baseLanguage.template.main@generator)" nodeID="1168438163478" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
+            <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
             <external-mapping>
               <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" nodeID="*" />
             </external-mapping>
@@ -91,9 +91,9 @@
   </languageRuntimeClassPath>
   <sourcePath />
   <extendedLanguages>
-    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.bootstrap.structureLanguage</extendedLanguage>
+    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)</extendedLanguage>
+    <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
+    <extendedLanguage>c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)</extendedLanguage>
   </extendedLanguages>
 </language>
 

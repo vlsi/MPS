@@ -2,7 +2,7 @@
 <model modelUID="r:00000000-0000-4000-0000-011c89590381(jetbrains.mps.transformationTest.categories)">
   <persistence version="3" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.transformationTest" />
+  <language namespace="8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.transformationTest)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.transformationTest.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.transformationTest.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />

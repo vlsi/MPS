@@ -12,11 +12,11 @@
       </models>
       <external-templates />
       <dependencies>
-        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
-        <dependency reexport="true">jetbrains.mps.baseLanguage.unitTest</dependency>
+        <dependency reexport="true">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
+        <dependency reexport="true">f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</dependency>
       </dependencies>
       <usedLanguages>
-        <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
+        <usedLanguages>f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</usedLanguages>
       </usedLanguages>
       <mapping-priorities />
     </generator>

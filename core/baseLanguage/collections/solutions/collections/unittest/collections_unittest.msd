@@ -6,12 +6,12 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="true">jetbrains.mps.baseLanguage.ext.collections.lang</dependency>
-    <dependency reexport="true">jetbrains.mps.baseLanguage.unitTest</dependency>
+    <dependency reexport="true">83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)</dependency>
+    <dependency reexport="true">f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.strings</usedLanguages>
+    <usedLanguages>f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</usedLanguages>
+    <usedLanguages>3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)</usedLanguages>
   </usedLanguages>
 </solution>
 

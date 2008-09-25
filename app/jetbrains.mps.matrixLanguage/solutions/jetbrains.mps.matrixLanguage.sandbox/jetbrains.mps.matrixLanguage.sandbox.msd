@@ -6,7 +6,7 @@
   <classPath />
   <sourcePath />
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.matrixLanguage</usedLanguages>
+    <usedLanguages>aeb98137-c8ec-4c86-a51b-f00c080e4652(jetbrains.mps.matrixLanguage)</usedLanguages>
   </usedLanguages>
 </solution>
 

@@ -88,9 +88,9 @@ public class Solution extends AbstractModule {
 
     ModuleReference mp;
     if (isExternallyVisible() && mySolutionDescriptor.getName() != null) {
-      mp = new ModuleReference(mySolutionDescriptor.getName(), ModuleId.fromString(mySolutionDescriptor.getModuleUUID()));
+      mp = new ModuleReference(mySolutionDescriptor.getName(), mySolutionDescriptor.getModuleUUID());
     } else {
-      mp = ModuleReference.fromString(FileUtil.getCanonicalPath(myDescriptorFile.getAbsolutePath()));
+      mp = new ModuleReference(FileUtil.getCanonicalPath(myDescriptorFile.getAbsolutePath()), mySolutionDescriptor.getModuleUUID());
     }    
 
     setModulePointer(mp);

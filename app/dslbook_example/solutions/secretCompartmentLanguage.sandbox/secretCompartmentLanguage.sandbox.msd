@@ -6,10 +6,10 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="true">secretCompartmentLanguage</dependency>
+    <dependency reexport="true">6986543d-8218-4ebf-a2e9-565e5049c1ce(secretCompartmentLanguage)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>secretCompartmentLanguage</usedLanguages>
+    <usedLanguages>6986543d-8218-4ebf-a2e9-565e5049c1ce(secretCompartmentLanguage)</usedLanguages>
   </usedLanguages>
 </solution>
 

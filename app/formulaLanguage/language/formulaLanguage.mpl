@@ -19,10 +19,10 @@
   <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="true">jetbrains.mps.regexp</dependency>
+    <dependency reexport="true">daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.regexp)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.regexp</usedLanguages>
+    <usedLanguages>daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.regexp)</usedLanguages>
   </usedLanguages>
   <extendedLanguages />
 </language>

@@ -91,7 +91,7 @@ public class DevKit extends AbstractModule {
     myDescriptor = descriptor;
 
     if (myDescriptor.getName() != null) {
-      ModuleReference mp = new ModuleReference(myDescriptor.getName(), ModuleId.fromString(myDescriptor.getModuleUUID()));
+      ModuleReference mp = new ModuleReference(myDescriptor.getName(), myDescriptor.getModuleUUID());
       setModulePointer(mp);
     }
 

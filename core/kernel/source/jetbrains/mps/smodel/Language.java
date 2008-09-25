@@ -353,7 +353,7 @@ public class Language extends AbstractModule {
 
     myLanguageDescriptor = newDescriptor;
 
-    ModuleReference reference = ModuleReference.fromString(myLanguageDescriptor.getNamespace());
+    ModuleReference reference = new ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getModuleUUID());
     setModulePointer(reference);
 
     reload();

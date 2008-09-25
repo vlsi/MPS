@@ -2,7 +2,8 @@
 <model modelUID="r:00000000-0000-4000-0000-011c8959039b(jetbrains.mps.baseLanguage.sandbox.testXml)">
   <persistence version="3" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.xml" />
+  <language namespace="823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml)" />
+  <language namespace="823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.xml.structure.Document" id="1220988181973">

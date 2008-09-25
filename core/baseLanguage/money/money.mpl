@@ -11,10 +11,10 @@
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.accounting.money.generator.baseLanguage.template" />
       </models>
       <external-templates>
-        <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
+        <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
       </external-templates>
       <dependencies>
-        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
+        <dependency reexport="true">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
       </dependencies>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
@@ -22,7 +22,7 @@
             <mapping-node modelUID="r:00000000-0000-4000-0000-011c895903f8(jetbrains.accounting.money.generator.baseLanguage.template.main@generator)" nodeID="*" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
+            <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
             <external-mapping>
               <all-local-mappings />
             </external-mapping>
@@ -38,8 +38,8 @@
   <languageRuntimeClassPath />
   <sourcePath />
   <extendedLanguages>
-    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
+    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)</extendedLanguage>
+    <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
   </extendedLanguages>
 </language>
 

@@ -14,7 +14,7 @@
       </models>
       <external-templates />
       <usedLanguages>
-        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+        <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
       </usedLanguages>
       <mapping-priorities />
     </generator>
@@ -25,17 +25,17 @@
   <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">jetbrains.mps.bootstrap.dataFlow</dependency>
-    <dependency reexport="false">jetbrains.mps.logging.refactoring</dependency>
-    <dependency reexport="false">JDK</dependency>
-    <dependency reexport="false">jetbrains.mps.ide</dependency>
-    <dependency reexport="false">MPS.Classpath</dependency>
+    <dependency reexport="false">7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.bootstrap.dataFlow)</dependency>
+    <dependency reexport="false">3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.logging.refactoring)</dependency>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
+    <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
+    <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+    <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
   </usedLanguages>
   <extendedLanguages>
-    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
+    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)</extendedLanguage>
   </extendedLanguages>
 </language>
 

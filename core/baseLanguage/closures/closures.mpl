@@ -12,12 +12,12 @@
       </models>
       <external-templates />
       <dependencies>
-        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
-        <dependency reexport="true">jetbrains.mps.baseLanguage.ext.csharp</dependency>
-        <dependency reexport="false">jetbrains.mps.baseLanguageInternal</dependency>
+        <dependency reexport="true">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
+        <dependency reexport="true">fee851e4-5471-4f3b-94d3-f616e527d621(jetbrains.mps.baseLanguage.ext.csharp)</dependency>
+        <dependency reexport="false">df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</dependency>
       </dependencies>
       <usedLanguages>
-        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+        <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
       </usedLanguages>
       <mapping-priorities />
     </generator>
@@ -31,13 +31,13 @@
   </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">jetbrains.mps.closures#1199623535494</dependency>
-    <dependency reexport="false">jetbrains.mps.bootstrap.helgins</dependency>
-    <dependency reexport="false">jetbrains.mps.patterns#1174810948060</dependency>
+    <dependency reexport="false">857d0a79-6f44-4f46-84ed-9c5b42632011(jetbrains.mps.closures#1199623535494)</dependency>
+    <dependency reexport="false">7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)</dependency>
+    <dependency reexport="false">e7d4970e-3e9f-4cf0-a129-f5976c82d635(jetbrains.mps.patterns#1174810948060)</dependency>
   </dependencies>
   <extendedLanguages>
-    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
+    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)</extendedLanguage>
+    <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
   </extendedLanguages>
 </language>
 

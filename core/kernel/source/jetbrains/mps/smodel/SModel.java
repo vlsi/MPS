@@ -723,7 +723,7 @@ public class SModel implements Iterable<SNode> {
         //addAspectModelsVersions(languageNamespace, language);
       } else {
         if (!isLoading()) {
-        LOG.error("Language \"" + lang + "\" isn't visible in scope " + scope + " . Used by model \"" + getSModelReference() +
+         LOG.error("Language \"" + lang + "\" isn't visible in scope " + scope + " . Used by model \"" + getSModelReference() +
                 "\"\nAdd this language to the LANGUAGES section of the module properties");
         }
       }
@@ -1088,6 +1088,10 @@ public class SModel implements Iterable<SNode> {
     List<SNode> nodes = allNodes();
     for (SNode node : nodes) {
       Language lang = node.getLanguage(scope);
+      if (lang == null) {
+        LOG.error("Can't find a language " + node.getLanguageNamespace());
+        continue;        
+      }
       ModuleReference ref = lang.getModuleReference();
       if (!usedLanguages.contains(ref)) {
         usedLanguages.add(ref);

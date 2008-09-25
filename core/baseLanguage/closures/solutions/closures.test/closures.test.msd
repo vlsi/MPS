@@ -6,13 +6,13 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="true">jetbrains.mps.baseLanguage.unitTest</dependency>
-    <dependency reexport="true">jetbrains.mps.closures</dependency>
+    <dependency reexport="true">f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</dependency>
+    <dependency reexport="true">fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.closures</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
-    <usedLanguages>jetbrains.mps.internal.collections</usedLanguages>
+    <usedLanguages>fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)</usedLanguages>
+    <usedLanguages>f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</usedLanguages>
+    <usedLanguages>562bb5cb-73ce-4c74-a5e5-9f72731d9ac6(jetbrains.mps.internal.collections)</usedLanguages>
   </usedLanguages>
 </solution>
 

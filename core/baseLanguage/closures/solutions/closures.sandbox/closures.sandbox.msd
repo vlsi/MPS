@@ -6,13 +6,13 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">jetbrains.mps.bootstrap.helgins</dependency>
-    <dependency reexport="false">jetbrains.mps.bootstrap.helgins</dependency>
+    <dependency reexport="false">7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)</dependency>
+    <dependency reexport="false">7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.bootstrap.helgins</usedLanguages>
-    <usedLanguages>jetbrains.mps.bootstrap.smodelLanguage</usedLanguages>
-    <usedLanguages>jetbrains.mps.quotation</usedLanguages>
+    <usedLanguages>7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)</usedLanguages>
+    <usedLanguages>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)</usedLanguages>
+    <usedLanguages>3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)</usedLanguages>
   </usedLanguages>
 </solution>
 

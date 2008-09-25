@@ -6,10 +6,10 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">readerConfigLanguage</dependency>
+    <dependency reexport="false">089e26c5-bfc3-4a60-9953-f68169a4608a(readerConfigLanguage)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>readerConfigLanguage</usedLanguages>
+    <usedLanguages>089e26c5-bfc3-4a60-9953-f68169a4608a(readerConfigLanguage)</usedLanguages>
   </usedLanguages>
 </solution>
 

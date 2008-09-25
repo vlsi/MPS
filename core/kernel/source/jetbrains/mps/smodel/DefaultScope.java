@@ -188,7 +188,7 @@ public abstract class DefaultScope extends BaseScope {
       myFqNameToLanguage.put(l.getNamespace(), l);
       if (l.getModuleId() != null) {
         myIdToLanguage.put(l.getModuleId(), l);
-      }
+      } 
     }
 
     for (IModule module : visibleModules) {

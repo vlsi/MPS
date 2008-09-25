@@ -8,10 +8,10 @@
   </classPath>
   <sourcePath />
   <dependencies>
-    <dependency reexport="true">jetbrains.mps.ypath</dependency>
+    <dependency reexport="true">d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
+    <usedLanguages>d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)</usedLanguages>
   </usedLanguages>
 </solution>
 

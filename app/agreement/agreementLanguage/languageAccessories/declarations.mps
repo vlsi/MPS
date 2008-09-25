@@ -2,7 +2,8 @@
 <model modelUID="r:00000000-0000-4000-0000-011c8959040b(agreementLanguage.declarations)">
   <persistence version="3" />
   <refactoringHistory />
-  <language namespace="agreementLanguage" />
+  <language namespace="144f7012-c2d5-43be-be2b-4bfb7dff6503(agreementLanguage)" />
+  <language namespace="144f7012-c2d5-43be-be2b-4bfb7dff6503(agreementLanguage)" />
   <maxImportIndex value="0" />
   <node type="agreementLanguage.structure.AgreementDeclarations" id="1112315976835">
     <node role="eventType" type="agreementLanguage.structure.EventType" id="1112316021402">

@@ -8,15 +8,15 @@
   </classPath>
   <sourcePath />
   <dependencies>
-    <dependency reexport="true">jetbrains.mps.ypath</dependency>
-    <dependency reexport="true">jetbrains.mps.baseLanguage.unitTest</dependency>
-    <dependency reexport="true">ypath.main</dependency>
+    <dependency reexport="true">d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)</dependency>
+    <dependency reexport="true">f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</dependency>
+    <dependency reexport="true">084f8779-0bb0-44bf-8a8b-1214d7acfbc5(ypath.main)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
-    <usedLanguages>jetbrains.mps.ypath</usedLanguages>
-    <usedLanguages>jetbrains.mps.bootstrap.helgins</usedLanguages>
-    <usedLanguages>jetbrains.mps.quotation</usedLanguages>
+    <usedLanguages>f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</usedLanguages>
+    <usedLanguages>d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)</usedLanguages>
+    <usedLanguages>7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)</usedLanguages>
+    <usedLanguages>3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)</usedLanguages>
   </usedLanguages>
 </solution>
 

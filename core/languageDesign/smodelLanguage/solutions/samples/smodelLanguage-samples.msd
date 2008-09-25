@@ -6,13 +6,13 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">jetbrains.mps.transformation.TLBase</dependency>
-    <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage</dependency>
-    <dependency reexport="false">MPS.Classpath</dependency>
+    <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)</dependency>
+    <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.bootstrap.editorLanguage)</dependency>
+    <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.bootstrap.smodelLanguage</usedLanguages>
-    <usedLanguages>jetbrains.mps.transformationTest</usedLanguages>
+    <usedLanguages>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)</usedLanguages>
+    <usedLanguages>8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.transformationTest)</usedLanguages>
   </usedLanguages>
 </solution>
 

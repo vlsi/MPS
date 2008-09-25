@@ -2,8 +2,10 @@
 <model modelUID="r:00000000-0000-4000-0000-011c8959040f(postingrules.agreement)">
   <persistence version="3" />
   <refactoringHistory />
-  <language namespace="agreementLanguage" />
-  <language namespace="jetbrains.mps.formulaLanguage" />
+  <language namespace="144f7012-c2d5-43be-be2b-4bfb7dff6503(agreementLanguage)" />
+  <language namespace="b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.formulaLanguage)" />
+  <language namespace="144f7012-c2d5-43be-be2b-4bfb7dff6503(agreementLanguage)" />
+  <language namespace="b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.formulaLanguage)" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959040b(agreementLanguage.declarations)" version="-1" />
   <node type="agreementLanguage.structure.Plan" id="1112303557868">

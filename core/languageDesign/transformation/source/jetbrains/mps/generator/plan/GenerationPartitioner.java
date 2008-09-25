@@ -1,8 +1,9 @@
 package jetbrains.mps.generator.plan;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.projectLanguage.structure.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
@@ -223,13 +224,13 @@ public class GenerationPartitioner {
     if (mappingRef instanceof MappingConfig_ExtRef) {
       GeneratorReference generatorRef = ((MappingConfig_ExtRef) mappingRef).getGenerator();
       if (generatorRef != null) {
-        String generatorUID = generatorRef.getGeneratorUID();
-        if (generatorUID != null) {
-          Generator newRefGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorUID);
+        jetbrains.mps.project.ModuleReference genRef = jetbrains.mps.project.ModuleReference.fromString(generatorRef.getGeneratorUID());
+        if (genRef != null) {
+          Generator newRefGenerator = (Generator) MPSModuleRepository.getInstance().getModule(genRef);
           if (newRefGenerator != null) {
             return getMappingsFromRef(((MappingConfig_ExtRef) mappingRef).getMappingConfig(), newRefGenerator);
           } else {
-            LOG.error("couldn't get generator by uid: '" + generatorUID + "'");
+            LOG.error("couldn't get generator by uid: '" + genRef + "'");
           }
         }
       }

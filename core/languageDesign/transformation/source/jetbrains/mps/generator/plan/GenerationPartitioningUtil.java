@@ -29,7 +29,7 @@ public class GenerationPartitioningUtil {
     collectedGenerators.add(editedGenerator);
     List<GeneratorReference> generatorRefs = descriptorWorkingCopy.getGeneratorReferences();
     for (GeneratorReference generatorRef : generatorRefs) {
-      Generator refGenerator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorRef.getGeneratorUID());
+      Generator refGenerator = (Generator) MPSModuleRepository.getInstance().getModule(ModuleReference.fromString(generatorRef.getGeneratorUID()));
       collectGenerators(refGenerator, true, collectedGenerators, processedLanguages);
     }
     for (SModelDescriptor model : editedGenerator.getOwnTemplateModels()) {
@@ -261,14 +261,14 @@ public class GenerationPartitioningUtil {
   }
 
   private static String asString(GeneratorReference generatorRef) {
-    String generatorUID = generatorRef.getGeneratorUID();
-    Generator generator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorUID);
+    ModuleReference genRef = ModuleReference.fromString(generatorRef.getGeneratorUID());
+    Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(genRef);
     return generator.getAlias();
   }
 
   private static String asString(GeneratorDescriptor generatorDescriptor) {
-    String generatorUID = generatorDescriptor.getGeneratorUID();
-    Generator generator = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorUID);
+    ModuleReference genRef = ModuleReference.fromString(generatorDescriptor.getGeneratorUID());
+    Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(genRef);
     return generator.getAlias();
   }
 }

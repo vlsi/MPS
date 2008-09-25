@@ -6,9 +6,9 @@
   <classPath />
   <sourcePath />
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.unitTest</usedLanguages>
-    <usedLanguages>jetbrains.mps.bootstrap.helgins</usedLanguages>
-    <usedLanguages>jetbrains.mps.baseLanguage.blTypes</usedLanguages>
+    <usedLanguages>f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</usedLanguages>
+    <usedLanguages>7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)</usedLanguages>
+    <usedLanguages>ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)</usedLanguages>
   </usedLanguages>
 </solution>
 

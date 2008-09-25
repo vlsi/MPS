@@ -14,9 +14,9 @@
       </models>
       <external-templates />
       <dependencies>
-        <dependency reexport="true">jetbrains.mps.formulaLanguage#1130266266255</dependency>
-        <dependency reexport="false">jetbrains.mps.formulaLanguage</dependency>
-        <dependency reexport="false">jetbrains.mps.formulaLanguage</dependency>
+        <dependency reexport="true">9e79e6dc-3005-4fdf-901d-d1d70047ef7b(jetbrains.mps.formulaLanguage#1130266266255)</dependency>
+        <dependency reexport="false">b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.formulaLanguage)</dependency>
+        <dependency reexport="false">b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.formulaLanguage)</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>
@@ -27,7 +27,7 @@
   <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">jetbrains.mps.formulaLanguage</dependency>
+    <dependency reexport="false">b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.formulaLanguage)</dependency>
   </dependencies>
   <extendedLanguages />
 </language>

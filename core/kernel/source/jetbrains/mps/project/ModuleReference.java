@@ -1,6 +1,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
@@ -11,21 +12,25 @@ public class ModuleReference implements Comparable<ModuleReference> {
   public static ModuleReference fromString(String text) {
     Matcher m = MODULE_REFERENCE.matcher(text);
     if (m.matches()) {
-      return new ModuleReference(m.group(2), ModuleId.fromString(m.group(1)));
+      return new ModuleReference(m.group(2), m.group(1));
     }
-    return new ModuleReference(text, null);
+    return new ModuleReference(text);
   }
 
   private String myModuleFqName;
   private ModuleId myModuleId;
 
   public ModuleReference(String moduleFqName) {
-    this(moduleFqName, null);
+    this(moduleFqName, (ModuleId) null);
+  }
+
+  public ModuleReference(String moduleFqName, String moduleId) {
+    this(moduleFqName, ModuleId.fromString(moduleId));
   }
 
   public ModuleReference(String moduleFqName, ModuleId moduleId) {
     myModuleFqName = moduleFqName;
-//    myModuleId = moduleId;
+    myModuleId = moduleId;
   }
 
   public String getModuleFqName() {
@@ -36,10 +41,18 @@ public class ModuleReference implements Comparable<ModuleReference> {
     return myModuleId;
   }
 
+  public ModuleReference update() {
+    IModule module = MPSModuleRepository.getInstance().getModule(this);
+    if (module == null) {
+      return this;
+    }
+    return module.getModuleReference();
+  }
+
   public int hashCode() {
-//    if (myModuleId != null) {
-//      return myModuleId.hashCode();
-//    }
+    if (myModuleId != null) {
+      return myModuleId.hashCode();
+    }
     return myModuleFqName.hashCode();
   }
 
@@ -50,22 +63,25 @@ public class ModuleReference implements Comparable<ModuleReference> {
 
     ModuleReference p = (ModuleReference) obj;
 
-//    if (myModuleId != null && p.myModuleId != null) {
-//      return EqualUtil.equals(myModuleId, myModuleId);
-//    }
+    if (myModuleId != null && p.myModuleId != null) {
+      return EqualUtil.equals(myModuleId, p.myModuleId);
+    }
 
-//    if (myModuleId == null && p.myModuleId != null) {
-//      return false;
-//    }
-//
-//    if (myModuleId != null && p.myModuleId == null) {
-//      return false;
-//    }
+    if (myModuleId == null && p.myModuleId != null) {
+      return false;
+    }
+
+    if (myModuleId != null && p.myModuleId == null) {
+      return false;
+    }
 
     return myModuleFqName.equals(p.myModuleFqName);
   }
 
   public String toString() {
+    if (myModuleId != null) {
+      return myModuleId.toString() + "(" + myModuleFqName + ")";
+    }
     return myModuleFqName;
   }
 

@@ -14,13 +14,13 @@
       </models>
       <external-templates />
       <dependencies>
-        <dependency reexport="true">jetbrains.mps.baseLanguage</dependency>
-        <dependency reexport="false">jetbrains.mps.quotation</dependency>
-        <dependency reexport="false">jetbrains.mps.quotation</dependency>
-        <dependency reexport="false">jetbrains.mps.patterns</dependency>
+        <dependency reexport="true">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
+        <dependency reexport="false">3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)</dependency>
+        <dependency reexport="false">3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)</dependency>
+        <dependency reexport="false">d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.patterns)</dependency>
       </dependencies>
       <usedLanguages>
-        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+        <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
@@ -42,20 +42,20 @@
   </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">jetbrains.mps.bootstrap.actionsLanguage</dependency>
-    <dependency reexport="false">jetbrains.mps.ide</dependency>
-    <dependency reexport="false">jetbrains.mps.bootstrap.pluginLanguage</dependency>
-    <dependency reexport="false">MPS.Classpath</dependency>
-    <dependency reexport="false">jetbrains.mps.bootstrap.sharedConcepts</dependency>
-    <dependency reexport="false">jetbrains.mps.bootstrap.editorLanguage</dependency>
-    <dependency reexport="false">jetbrains.mps.bootstrap.helgins#1174411220599</dependency>
+    <dependency reexport="false">aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.bootstrap.actionsLanguage)</dependency>
+    <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
+    <dependency reexport="false">28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.bootstrap.pluginLanguage)</dependency>
+    <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
+    <dependency reexport="false">13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.bootstrap.sharedConcepts)</dependency>
+    <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.bootstrap.editorLanguage)</dependency>
+    <dependency reexport="false">8fffa437-9500-4c6b-abfc-f4cb2335b059(jetbrains.mps.bootstrap.helgins#1174411220599)</dependency>
   </dependencies>
   <extendedLanguages>
-    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.bootstrap.structureLanguage</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.patterns</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.bootstrap.smodelLanguage</extendedLanguage>
+    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)</extendedLanguage>
+    <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
+    <extendedLanguage>c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)</extendedLanguage>
+    <extendedLanguage>d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.patterns)</extendedLanguage>
+    <extendedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)</extendedLanguage>
   </extendedLanguages>
 </language>
 

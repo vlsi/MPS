@@ -6,7 +6,7 @@
   <classPath />
   <sourcePath />
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.transformationTest</usedLanguages>
+    <usedLanguages>8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.transformationTest)</usedLanguages>
   </usedLanguages>
 </solution>
 

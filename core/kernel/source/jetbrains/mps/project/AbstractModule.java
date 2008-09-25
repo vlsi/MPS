@@ -700,31 +700,6 @@ public abstract class AbstractModule implements IModule {
     });
   }
 
-  private ModuleDescriptor renameUsedLanguage(final String oldLanguageNamespace, final String newLanguageNamespace, final boolean setModuleDescriptor) {
-    return ModelAccess.instance().runWriteActionInCommand(new Computable<ModuleDescriptor>() {
-      public ModuleDescriptor compute() {
-        ModuleDescriptor md = getModuleDescriptor();
-        if (md == null) return null;
-
-        for (LanguageReference r : md.getUsedLanguages()) {
-          if (oldLanguageNamespace.equals(r.getName())) {
-            md.removeChild(r);
-          }
-        }
-
-        LanguageReference ref = LanguageReference.newInstance(md.getModel());
-        ref.setName(newLanguageNamespace);
-        md.addUsedLanguage(ref);
-
-        if (setModuleDescriptor) {
-          setModuleDescriptor(md);
-          save();
-        }
-        return md;
-      }
-    });
-  }
-
   public void invalidateCaches() {
     myScope.invalidateCaches();
   }
@@ -762,8 +737,46 @@ public abstract class AbstractModule implements IModule {
   }
 
   public boolean updateModuleReferences() {
-    return false;
+    boolean changed = false;
 
+    if (getModuleDescriptor() == null) {
+      return false;
+    }
+
+    for (jetbrains.mps.projectLanguage.structure.ModuleReference ref : getModuleDescriptor().getDescendants(jetbrains.mps.projectLanguage.structure.ModuleReference.class)) {
+      ModuleReference oldRef = ModuleReference.fromString(ref.getName());
+      ModuleReference newRef = oldRef.update();
+      changed = changed || changed(oldRef, newRef);
+      ref.setName(newRef.toString());
+    }
+
+    for (LanguageReference ref : getModuleDescriptor().getDescendants(LanguageReference.class)) {
+      ModuleReference oldRef = ModuleReference.fromString(ref.getName());
+      ModuleReference newRef = oldRef.update();
+      changed = changed || changed(oldRef, newRef);
+      ref.setName(newRef.toString());
+    }
+
+    for (SolutionReference ref : getModuleDescriptor().getDescendants(SolutionReference.class)) {
+      ModuleReference oldRef = ModuleReference.fromString(ref.getName());
+      ModuleReference newRef = oldRef.update();
+      changed = changed || changed(oldRef, newRef);
+      ref.setName(newRef.toString());
+    }
+
+    for (GeneratorReference ref : getModuleDescriptor().getDescendants(GeneratorReference.class)) {
+      ModuleReference oldRef = ModuleReference.fromString(ref.getGeneratorUID());
+      ModuleReference newRef = oldRef.update();
+      changed = changed || changed(oldRef, newRef);
+      ref.setGeneratorUID(newRef.toString());
+    }
+
+    return changed;
+  }
+
+  private boolean changed(ModuleReference ref1, ModuleReference ref2) {
+    return !EqualUtil.equals(ref1.getModuleFqName(), ref2.getModuleFqName()) ||
+      !EqualUtil.equals(ref1.getModuleId(), ref2.getModuleId());
   }
 
   public class ModuleScope extends DefaultScope {

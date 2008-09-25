@@ -18,7 +18,7 @@ public abstract class BaseScope implements IScope {
   }
 
   public final Language getLanguage(String fqName) {
-    return getLanguage(new ModuleReference(fqName, null));
+    return getLanguage(new ModuleReference(fqName));
   }
 
   public final boolean isVisibleLanguage(ModuleReference ref) {
@@ -30,7 +30,7 @@ public abstract class BaseScope implements IScope {
   }
 
   public final boolean isVisibleLanguage(String fqName) {
-    return isVisibleLanguage(new ModuleReference(fqName, null));
+    return isVisibleLanguage(new ModuleReference(fqName));
   }
 
   public final DevKit getDevKit(ModuleId moduleId) {
@@ -38,7 +38,7 @@ public abstract class BaseScope implements IScope {
   }
 
   public final DevKit getDevKit(String fqName) {
-    return getDevKit(new ModuleReference(fqName, null));
+    return getDevKit(new ModuleReference(fqName));
   }
 
   public boolean isVisibleDevKit(ModuleReference ref) {
@@ -46,7 +46,7 @@ public abstract class BaseScope implements IScope {
   }
 
   public final boolean isVisibleDevKit(String fqName) {
-    return isVisibleDevKit(new ModuleReference(fqName, null));
+    return isVisibleDevKit(new ModuleReference(fqName));
   }
 
   public final boolean isVisibleDevKit(ModuleId moduleId) {

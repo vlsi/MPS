@@ -6,7 +6,7 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="true">testLogger</dependency>
+    <dependency reexport="true">2782f780-95c1-4361-ba5c-282dcebf6247(testLogger)</dependency>
   </dependencies>
 </solution>
 

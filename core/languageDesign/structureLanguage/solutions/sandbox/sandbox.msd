@@ -6,8 +6,8 @@
   <classPath />
   <sourcePath />
   <usedLanguages>
-    <usedLanguages>jetbrains.mps.bootstrap.structureLanguage</usedLanguages>
-    <usedLanguages>jetbrains.mps.annotations</usedLanguages>
+    <usedLanguages>c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)</usedLanguages>
+    <usedLanguages>ac2f1963-1b72-479d-bbf6-e8da39fb6f41(jetbrains.mps.annotations)</usedLanguages>
   </usedLanguages>
 </solution>
 

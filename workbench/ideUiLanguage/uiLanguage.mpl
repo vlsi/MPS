@@ -11,14 +11,14 @@
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template" />
       </models>
       <external-templates>
-        <generator generatorUID="jetbrains.mps.uiLanguage#1202393863737" />
+        <generator generatorUID="d1415f93-6c9c-4200-81f9-9205ed57131a(jetbrains.mps.uiLanguage#1202393863737)" />
       </external-templates>
       <dependencies>
-        <dependency reexport="false">jetbrains.mps.baseLanguage</dependency>
-        <dependency reexport="false">MPS.Classpath</dependency>
+        <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
+        <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
       </dependencies>
       <usedLanguages>
-        <usedLanguages>jetbrains.mps.baseLanguageInternal</usedLanguages>
+        <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
@@ -26,7 +26,7 @@
             <mapping-node modelUID="r:00000000-0000-4000-0000-011c895904b2(jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template.main@generator)" nodeID="*" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <generator generatorUID="jetbrains.mps.uiLanguage#1202393863737" />
+            <generator generatorUID="d1415f93-6c9c-4200-81f9-9205ed57131a(jetbrains.mps.uiLanguage#1202393863737)" />
             <external-mapping>
               <all-local-mappings />
             </external-mapping>
@@ -41,8 +41,8 @@
   <languageRuntimeClassPath />
   <sourcePath />
   <extendedLanguages>
-    <extendedLanguage>jetbrains.mps.baseLanguage</extendedLanguage>
-    <extendedLanguage>jetbrains.mps.uiLanguage</extendedLanguage>
+    <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
+    <extendedLanguage>5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)</extendedLanguage>
   </extendedLanguages>
 </language>
 
