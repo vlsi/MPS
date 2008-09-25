@@ -9,8 +9,8 @@ import static org.junit.Assert.*;
 public class BundleLoadingTest {
   @Test
   public void simpleBundleReloading() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
+    RuntimeEnvironment<String> re = new RuntimeEnvironment();
+    RBundle<String> a = bundle("a", A.class);
     re.add(a);
 
     re.init(a);
@@ -24,9 +24,9 @@ public class BundleLoadingTest {
 
   @Test
   public void dependenciesAreReloadedToo() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
-    RBundle b = bundle("b", B.class).addDependency("a");
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
+    RBundle<String> b = bundle("b", B.class).addDependency("a");
                                  
     re.add(a, b);
 
@@ -41,9 +41,9 @@ public class BundleLoadingTest {
 
   @Test
   public void massReload() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
-    RBundle b = bundle("b", B.class).addDependency("a");
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
+    RBundle<String> b = bundle("b", B.class).addDependency("a");
 
     re.add(a, b);
 
@@ -60,9 +60,9 @@ public class BundleLoadingTest {
 
   @Test
   public void dependOnBundlesArentReloaded() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
-    RBundle b = bundle("b", B.class).addDependency("a");
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
+    RBundle<String> b = bundle("b", B.class).addDependency("a");
 
     re.add(a, b);
 
@@ -77,8 +77,8 @@ public class BundleLoadingTest {
 
   @Test
   public void bundleUnloadTest() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
     re.add(a)
       .init(a);
 
@@ -89,8 +89,8 @@ public class BundleLoadingTest {
 
   @Test
   public void bundleUnloadByName() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
     re.add(a)
       .init(a);
 
@@ -101,9 +101,9 @@ public class BundleLoadingTest {
 
   @Test(expected = RuntimeEnvironmentException.class)
   public void bundleUnloadFailsIfItHasDependencies() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
-    RBundle b = bundle("b", B.class).addDependency("a");
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
+    RBundle<String> b = bundle("b", B.class).addDependency("a");
 
     re.add(a, b);
 
@@ -112,9 +112,9 @@ public class BundleLoadingTest {
 
   @Test
   public void massUnload() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
-    RBundle b = bundle("b", B.class).addDependency("a");
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
+    RBundle<String> b = bundle("b", B.class).addDependency("a");
 
     re.add(a, b);
 
@@ -126,12 +126,12 @@ public class BundleLoadingTest {
 
   @Test
   public void replace() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
     re.add(a)
       .init(a);
 
-    RBundle newA = bundle("a", A.class);
+    RBundle<String> newA = bundle("a", A.class);
 
     re.replace(newA);
 
@@ -140,9 +140,9 @@ public class BundleLoadingTest {
 
   @Test
   public void dependentsGetReloadedOnReplace() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
-    RBundle b = bundle("b", B.class).addDependency("a");
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
+    RBundle<String> b = bundle("b", B.class).addDependency("a");
 
     re.add(a, b).init(a, b);
 
@@ -158,8 +158,8 @@ public class BundleLoadingTest {
 
   @Test
   public void reloadAll() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
     re.add(a).init(a);
 
     Class ca = a.getClass(A.class.getName());
@@ -171,9 +171,9 @@ public class BundleLoadingTest {
 
   @Test
   public void doubleInitBug() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
-    RBundle b = bundle("b", B.class).addDependency("a");
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
+    RBundle<String> b = bundle("b", B.class).addDependency("a");
 
     re.add(a, b);
 

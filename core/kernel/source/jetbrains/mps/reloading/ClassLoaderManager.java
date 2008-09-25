@@ -2,24 +2,16 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.runtime.RBundle;
-import jetbrains.mps.runtime.BundleClassLoader;
-import jetbrains.mps.vfs.FileSystemFile;
-import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.NameUtil;
-import sun.misc.Launcher;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -38,10 +30,8 @@ public class ClassLoaderManager implements ApplicationComponent {
 
   private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
 
-  public static boolean ourUseOSGI = true;
-
   private final Object myLock = new Object();
-  private RuntimeEnvironment myRuntimeEnvironment;
+  private RuntimeEnvironment<ModuleReference> myRuntimeEnvironment;
 
 
   public ClassLoaderManager() {
@@ -59,22 +49,22 @@ public class ClassLoaderManager implements ApplicationComponent {
   public void disposeComponent() {
   }
 
-  private void addModule(String moduleUID) {
+  private void addModule(ModuleReference ref) {
     synchronized (myLock) {
-      IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
+      IModule module = MPSModuleRepository.getInstance().getModule(ref);
 
       if (module == null) {
-        throw new RuntimeException("Can't find module : " + moduleUID);
+        throw new RuntimeException("Can't find module : " + ref);
       }
 
-      RBundle bundle = new RBundle(moduleUID, module.getBytecodeLocator());
+      RBundle<ModuleReference> bundle = new RBundle<ModuleReference>(ref, module.getBytecodeLocator());
       myRuntimeEnvironment.add(bundle);
     }
   }
 
   public ClassLoader getClassLoaderFor(IModule m) {
     synchronized (myLock) {
-      RBundle result = myRuntimeEnvironment.get(m.getModuleUID());
+      RBundle<ModuleReference> result = myRuntimeEnvironment.get(m.getModuleReference());
       if (result == null) {
         return null;
       }
@@ -84,10 +74,10 @@ public class ClassLoaderManager implements ApplicationComponent {
 
   public Class getClassFor(IModule module, String classFqName) {
     synchronized (myLock) {
-      RBundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
+      RBundle<ModuleReference> bundle = myRuntimeEnvironment.get(module.getModuleReference());
 
       if (bundle == null) {
-        LOG.error("Can't find a bundle " + module.getModuleUID());
+        LOG.error("Can't find a bundle " + module.getModuleReference());
         return null;
       }
 
@@ -130,31 +120,31 @@ public class ClassLoaderManager implements ApplicationComponent {
         myRuntimeEnvironment = createRuntimeEnvironment();
       }
 
-      Set<String> added = new HashSet<String>();
+      Set<ModuleReference> added = new HashSet<ModuleReference>();
       for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-        if (!containsBundle(m.getModuleUID())) {
-          addModule(m.getModuleUID());
-          added.add(m.getModuleUID());
+        if (!containsBundle(m.getModuleReference())) {
+          addModule(m.getModuleReference());
+          added.add(m.getModuleReference());
         }
       }
 
-      for (String addedUID : added) {
-        IModule m = MPSModuleRepository.getInstance().getModuleByUID(addedUID);
-        RBundle b = myRuntimeEnvironment.get(addedUID);
+      for (ModuleReference addedUID : added) {
+        IModule m = MPSModuleRepository.getInstance().getModule(addedUID);
+        RBundle<ModuleReference> b = myRuntimeEnvironment.get(addedUID);
         for (IModule dep : m.getDesignTimeDependOnModules()) {
-          b.addDependency(dep.getModuleUID());
+          b.addDependency(dep.getModuleReference());
         }
       }
 
-      for (String addedBundle : added) {
-        RBundle bundle = myRuntimeEnvironment.get(addedBundle);
+      for (ModuleReference addedBundle : added) {
+        RBundle<ModuleReference> bundle = myRuntimeEnvironment.get(addedBundle);
         assert bundle != null : "Can't find " + addedBundle;
         myRuntimeEnvironment.init(bundle);
       }
 
       List<RBundle> toRemove = new ArrayList<RBundle>();
-      for (RBundle b : myRuntimeEnvironment.getBundles()) {
-        if (MPSModuleRepository.getInstance().getModuleByUID(b.getName()) == null) {
+      for (RBundle<ModuleReference> b : myRuntimeEnvironment.getBundles()) {
+        if (MPSModuleRepository.getInstance().getModule(b.getId()) == null) {
           toRemove.add(b);
         }
       }
@@ -168,13 +158,13 @@ public class ClassLoaderManager implements ApplicationComponent {
     }
   }
 
-  private boolean containsBundle(String uid) {
+  private boolean containsBundle(ModuleReference ref) {
     synchronized (myLock) {
-      return myRuntimeEnvironment.get(uid) != null;
+      return myRuntimeEnvironment.get(ref) != null;
     }
   }
 
-  private RuntimeEnvironment createRuntimeEnvironment() {
+  private RuntimeEnvironment<ModuleReference> createRuntimeEnvironment() {
     final Set<String> excludedPackages = new HashSet<String>();
     final Set<String> generatorPrefixes = new HashSet<String>();
     for (Language l : BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore()) {

@@ -1,22 +1,19 @@
 package jetbrains.mps.runtime;
 
 import java.net.URL;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Map;
 import java.util.HashMap;
 
-public class BundleClassLoader extends BaseClassLoader {
+public class BundleClassLoader<T> extends BaseClassLoader {
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
   private final Object myLock = new Object();
 
   private Boolean myDisposed;
-  private RBundle myBundle;
+  private RBundle<T> myBundle;
 
-  BundleClassLoader(RBundle bundle) {
+  BundleClassLoader(RBundle<T> bundle) {
     myBundle = bundle;
   }
-
 
   protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     checkDisposed();
@@ -52,9 +49,9 @@ public class BundleClassLoader extends BaseClassLoader {
   }
 
   protected Class loadAfterCurrent(String name) {
-    RuntimeEnvironment re = myBundle.getRuntimeEnvironment();
-    for (String dep : re.getAllDependencies(myBundle)) {
-      if (dep.equals(myBundle.getName())) continue;
+    RuntimeEnvironment<T> re = myBundle.getRuntimeEnvironment();
+    for (T dep : re.getAllDependencies(myBundle)) {
+      if (dep.equals(myBundle.getId())) continue;
       if (re.get(dep).hasClass(name)) {
         try {
           return Class.forName(name, false, re.get(dep).getClassLoader());
@@ -72,9 +69,9 @@ public class BundleClassLoader extends BaseClassLoader {
   }
 
   protected URL findResource(String name) {
-    RuntimeEnvironment re = myBundle.getRuntimeEnvironment();
+    RuntimeEnvironment<T> re = myBundle.getRuntimeEnvironment();
 
-    for (String dep : re.getAllDependencies(myBundle)) {
+    for (T dep : re.getAllDependencies(myBundle)) {
       if (re.get(dep).hasResource(name)) {
         return re.get(dep).getResource(name);
       }
@@ -103,6 +100,6 @@ public class BundleClassLoader extends BaseClassLoader {
   }
 
   public String toString() {
-    return myBundle.getName() + "'s class loader";
+    return myBundle.getId() + "'s class loader";
   }
 }

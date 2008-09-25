@@ -14,8 +14,8 @@ public class BundleTest {
 
   @Test
   public void simpleBundle() throws Exception {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
 
     re.add(a)
       .init(a);
@@ -26,9 +26,9 @@ public class BundleTest {
 
   @Test
   public void bundleDependency() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
-    RBundle b = bundle("b", B.class).addDependency("a");
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
+    RBundle<String> b = bundle("b", B.class).addDependency("a");
 
     re.add(a, b)
       .init(b);
@@ -42,10 +42,10 @@ public class BundleTest {
     
   @Test
   public void loadFromParent() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
     re.addLoadFromParent(A.class.getName());
 
-    RBundle a = bundle("a", A.class);
+    RBundle<String> a = bundle("a", A.class);
     re.add(a).init(a);
 
     assertClassLoader(a.getClassLoader(), A.class.getName(), getClass().getClassLoader());
@@ -53,10 +53,10 @@ public class BundleTest {
 
   @Test
   public void transitiveDependency() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class);
-    RBundle b = bundle("b", B.class).addDependency("a");
-    RBundle c = bundle("c").addDependency("b");
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
+    RBundle<String> b = bundle("b", B.class).addDependency("a");
+    RBundle<String> c = bundle("c").addDependency("b");
 
     re.add(a, b, c).init(c);
 
@@ -65,8 +65,8 @@ public class BundleTest {
 
   @Test(expected = UnsatisfiedDependencyException.class)
   public void unsatisfiedDependency() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a").addDependency("b");
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a").addDependency("b");
 
     re.add(a)
       .init(a);
@@ -74,9 +74,9 @@ public class BundleTest {
 
   @Test
   public void cyclesInDependency() {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", A.class).addDependency("b");
-    RBundle b = bundle("b", B.class).addDependency("a");
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class).addDependency("b");
+    RBundle<String> b = bundle("b", B.class).addDependency("a");
 
     re.add(a, b)
       .init(a);
@@ -90,8 +90,8 @@ public class BundleTest {
 
   @Test
   public void bundleResource() throws Exception {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", new StubLocator());
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", new StubLocator());
 
     re.add(a)
       .init(a);
@@ -101,9 +101,9 @@ public class BundleTest {
 
   @Test
   public void resourcesAreVisibleThroughtDependencies() throws Exception {
-    RuntimeEnvironment re = new RuntimeEnvironment();
-    RBundle a = bundle("a", new StubLocator());
-    RBundle b = bundle("b").addDependency("a");
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", new StubLocator());
+    RBundle<String> b = bundle("b").addDependency("a");
 
     re.add(a, b)
       .init(a, b);

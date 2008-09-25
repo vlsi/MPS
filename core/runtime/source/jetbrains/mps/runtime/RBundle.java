@@ -5,24 +5,24 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class RBundle {
-  private String myName;
+public class RBundle<T> {
+  private T myId;
   private BytecodeLocator myLocator;
-  private BundleClassLoader myClassLoader;
+  private BundleClassLoader<T> myClassLoader;
   private RuntimeEnvironment myRuntimeEnvironment;
-  private Set<String> myDependencies = new LinkedHashSet<String>();
+  private Set<T> myDependencies = new LinkedHashSet<T>();
 
-  public RBundle(String name, BytecodeLocator locator) {
-    myName = name;
+  public RBundle(T id, BytecodeLocator locator) {
+    myId = id;
     myLocator = locator;
   }
 
-  public String getName() {
-    return myName;
+  public T getId() {
+    return myId;
   }
 
-  public RBundle addDependency(String name) {
-    myDependencies.add(name);
+  public RBundle addDependency(T id) {
+    myDependencies.add(id);
     return this;
   }
 
@@ -30,7 +30,7 @@ public class RBundle {
     return myRuntimeEnvironment != null;
   }
 
-  public Set<String> getDependencies() {
+  public Set<T> getDependencies() {
     return Collections.unmodifiableSet(myDependencies);    
   }
 
@@ -77,7 +77,7 @@ public class RBundle {
     if (myClassLoader != null) {
       myClassLoader.dispose();
     }
-    myClassLoader = new BundleClassLoader(this);
+    myClassLoader = new BundleClassLoader<T>(this);
   }
 
   public BundleClassLoader getClassLoader() {
@@ -86,6 +86,6 @@ public class RBundle {
   }
 
   public String toString() {
-    return "RBundle " + getName();
+    return "RBundle " + getId();
   }
 }
