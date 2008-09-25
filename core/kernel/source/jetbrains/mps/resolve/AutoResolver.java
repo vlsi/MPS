@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
 import jetbrains.mps.ide.ThreadUtils;
 
@@ -19,7 +20,7 @@ import java.util.*;
  */
 public class AutoResolver extends EditorCheckerAdapter {
 
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext) {
+  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     // disable for transient models
     if(rootNode.getModel().getModelDescriptor().isTransient()) {

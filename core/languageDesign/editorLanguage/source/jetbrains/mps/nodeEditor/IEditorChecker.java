@@ -18,7 +18,7 @@ import java.util.List;
  */
 public interface IEditorChecker {
   
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext);
+  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce);
 
   public EditorMessageOwner getOwner(SNode rootNode);
 

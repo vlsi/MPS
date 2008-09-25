@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.IEditorChecker;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -193,7 +194,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     if (editedNode != null) {
 
       final Set<IEditorChecker> checkersToRecheck = new LinkedHashSet<IEditorChecker>();
-      if (!wasCheckedOnce(component)) {
+      boolean wasCheckedOnce = wasCheckedOnce(component);
+      if (!wasCheckedOnce) {
         checkersToRecheck.addAll(checkers);
       } else {
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -212,7 +214,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       }
 
       myCheckedOnceEditors.add(component);
-      if (updateEditor(component, checkersToRecheck, checkersToRemove)) {
+      if (updateEditor(component, events, wasCheckedOnce, checkersToRecheck, checkersToRemove)) {
         return true;
       }
     }
@@ -227,7 +229,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     myCheckedOnceEditors.remove(editorComponent);
   }
 
-  private boolean updateEditor(final EditorComponent editor, Set<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
+  private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce, Set<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
     if (editor == null || editor.getRootCell() == null) {
       return false;
     }
@@ -247,7 +249,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           SNode node = editor.getEditedNode();
           if (node == null) return;
           owners[0] = checker.getOwner(node);
-          messages.addAll(checker.createMessages(node, editor.getOperationContext()));
+          messages.addAll(checker.createMessages(node, editor.getOperationContext(), events, wasCheckedOnce));
         }
       };
       ModelAccess.instance().runReadAction(runnable);

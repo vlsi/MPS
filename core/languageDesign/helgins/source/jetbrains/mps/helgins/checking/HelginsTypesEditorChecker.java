@@ -4,6 +4,7 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.NodeTypesComponent;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
@@ -16,10 +17,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
 
 import java.awt.Color;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,17 +31,20 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
 
   private Timer myTimer = new Timer("helgins interruptor");
 
-  public Set<EditorMessage> createMessages(final SNode node, IOperationContext operationContext) {
+  public Set<EditorMessage> createMessages(final SNode node, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-    if (!TypeChecker.getInstance().isCheckedRoot(node.getContainingRoot())) {
-      try {
-        TypeChecker.getInstance().checkRoot(node.getContainingRoot());
-      } catch (Throwable t) {
-        LOG.error(t);
-        TypeChecker.getInstance().markAsChecked(node.getContainingRoot()); // for not to check again until the node will be changed
-        return messages;
+    if (!wasCheckedOnce || hasNonPropertyDramaticalEvent(events)) {
+      if (!TypeChecker.getInstance().isCheckedRoot(node.getContainingRoot())) {
+        try {
+          TypeChecker.getInstance().checkRoot(node.getContainingRoot());
+        } catch (Throwable t) {
+          LOG.error(t);
+          TypeChecker.getInstance().markAsChecked(node.getContainingRoot()); // for not to check again until the node will be changed
+          return messages;
+        }
       }
     }
+
 
     NodeTypesComponent typesComponent = getNodeTypesComponent(node);
 
@@ -90,6 +91,15 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
     return messages;
   }
 
+  private boolean hasNonPropertyDramaticalEvent(List<SModelEvent> events) {
+    for (SModelEvent event : events) {
+      if (event instanceof SModelRootEvent || event instanceof SModelChildEvent || event instanceof SModelReferenceEvent) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   private NodeTypesComponent getNodeTypesComponent(SNode node) {
     NodeTypesComponent typesComponent = NodeTypesComponentsRepository.getInstance().
       createNodeTypesComponent(node.getContainingRoot());
@@ -103,6 +113,10 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
   public EditorMessageOwner getOwner(SNode node) {
     if (node == null) return null;
     return getNodeTypesComponent(node);
+  }
+
+  protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {
+    return true;
   }
 
   public void dispose() {
