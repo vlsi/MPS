@@ -20,9 +20,7 @@ public class ProjectModels {
 
     @NotNull
     public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
-      SModel result = new SModel(modelDescriptor.getSModelReference());
-      result.addLanguage_internal(ModuleReference.fromString("jetbrains.mps.projectLanguage"));
-      return result;
+      return new SModel(modelDescriptor.getSModelReference());
     }
 
     public void saveModel(@NotNull SModelDescriptor modelDescriptor) {

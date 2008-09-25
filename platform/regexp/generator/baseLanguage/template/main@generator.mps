@@ -1961,7 +1961,7 @@
                               </node>
                             </node>
                           </node>
-                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1222326424030">
+                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1222328709026">
                             <link role="link" targetNodeId="1.1174653387388" />
                           </node>
                         </node>
