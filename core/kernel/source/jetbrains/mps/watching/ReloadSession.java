@@ -37,7 +37,7 @@ public class ReloadSession {
         public void run(@NotNull final ProgressIndicator progressIndicator) {
           if (!myNewModuleVFiles.isEmpty()) {
             LOG.info("reloading libraries");
-            progressIndicator.setText("Updating Modules");
+            progressIndicator.setText("Reloading libraries... Please wait.");
             LibraryManager.getInstance().update();
             return;
           }
@@ -52,13 +52,13 @@ public class ReloadSession {
   }
 
   private void updateModels(final ProgressIndicator progressIndicator) {
+    progressIndicator.setText("Reloading updated models... Please wait.");
     for (final SModelDescriptor model : myChangedModels) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           try {
-            progressIndicator.setText("Reloading " + model.getSModelReference());
+            progressIndicator.setText2("Reloading " + model.getSModelReference());
             model.reloadFromDisk();
-            progressIndicator.setText("Reloaded " + model.getSModelReference());
           } catch (RuntimeException e) {
             LOG.error(e);
           }
@@ -68,12 +68,12 @@ public class ReloadSession {
   }
 
   private void updateModules(final ProgressIndicator progressIndicator) {
+    progressIndicator.setText("Reloading updated modules... Please wait.");
     for (final IModule module : myChangedModules) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          progressIndicator.setText("Reloading " + module.getModuleFqName());
+          progressIndicator.setText2("Reloading " + module.getModuleFqName());
           module.reloadFromDisk();
-          progressIndicator.setText("Reloaded " + module.getModuleFqName());
         }
       });
     }
