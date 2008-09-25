@@ -11,6 +11,32 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class BaseLanguageStyle_StyleSheet {
+  public static final Style KEY_WORD = getKeyWord(null);
+  public static final Style COMPACT_KEY_WORD = getCompactKeyWord(null);
+  public static final Style COMMENT = getComment(null);
+  public static final Style FIELD = getField(null);
+  public static final Style LOCAL_VARIABLE = getLocalVariable(null);
+  public static final Style PARAMETER = getParameter(null);
+  public static final Style STATIC_FIELD = getStaticField(null);
+  public static final Style STRING_LITERAL = getStringLiteral(null);
+  public static final Style NUMERIC_LITERAL = getNumericLiteral(null);
+  public static final Style EMPTY_CELL = getEmptyCell(null);
+  public static final Style INSTANCE_METHOD = getInstanceMethod(null);
+  public static final Style STATIC_METHOD = getStaticMethod(null);
+  public static final Style ANNOTATION = getAnnotation(null);
+  public static final Style OPERATOR = getOperator(null);
+  public static final Style PARENTHESIS = getParenthesis(null);
+  public static final Style LEFT_PAREN = getLeftParen(null);
+  public static final Style RIGHT_PAREN = getRightParen(null);
+  public static final Style BRACE = getBrace(null);
+  public static final Style LEFT_BRACE = getLeftBrace(null);
+  public static final Style RIGHT_BRACE = getRightBrace(null);
+  public static final Style BRACKET = getBracket(null);
+  public static final Style METHOD_NAME = getMethodName(null);
+  public static final Style VARIABLE_NAME = getVariableName(null);
+  public static final Style CLASS_NAME = getClassName(null);
+  public static final Style SEMICOLON = getSemicolon(null);
+  public static final Style DOT = getDot(null);
 
   public static Style getKeyWord(final EditorCell cell) {
     return new Style(cell) {
