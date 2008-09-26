@@ -1,9 +1,10 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.ide.BootstrapLanguagesManager;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -22,8 +23,8 @@ public abstract class DefaultScope extends BaseScope {
 
   private Map<SModelFqName, SModelDescriptor> myFqNameToDescriptor = new HashMap<SModelFqName, SModelDescriptor>();
   private Map<SModelId, SModelDescriptor> myIdToDescriptor = new HashMap<SModelId, SModelDescriptor>();
-  
-  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
+
+  public SModelDescriptor getModelDescriptor(@NotNull SModelReference modelReference) {
     initialize();
     if (modelReference.getSModelId() != null) {
       return myIdToDescriptor.get(modelReference.getSModelId());
@@ -94,7 +95,7 @@ public abstract class DefaultScope extends BaseScope {
 
     myInitializationInProgress = true;
 
-    Set<IModule> visibleModules = new HashSet<IModule>();    
+    Set<IModule> visibleModules = new HashSet<IModule>();
     visibleModules.addAll(getInitialModules());
     for (IModule module : getInitialModules()) {
       for (Dependency d : module.getDependOn()) {
@@ -102,7 +103,7 @@ public abstract class DefaultScope extends BaseScope {
         if (dependency != null) {
           visibleModules.add(dependency);
         } else {
-          LOG.error("Can't find a module " +  d.getModuleReference() + " in " + this);
+          LOG.error("Can't find a module " + d.getModuleReference() + " in " + this);
         }
       }
     }
@@ -115,7 +116,7 @@ public abstract class DefaultScope extends BaseScope {
       for (DevKit dk : m.getUsedDevkits()) {
         usedDevkits.add(dk);
         usedLanguages.addAll(dk.getAllExportedLanguages());
-        visibleModules.addAll(dk.getAllExportedSolutions());        
+        visibleModules.addAll(dk.getAllExportedSolutions());
       }
     }
 
@@ -143,16 +144,16 @@ public abstract class DefaultScope extends BaseScope {
                 changed = true;
               }
             } else {
-              LOG.error("Can't find a module " +  dep.getModuleReference() + " in " + this);
+              LOG.error("Can't find a module " + dep.getModuleReference() + " in " + this);
             }
           }
         }
       }
-                                          
+
       for (Language language : new ArrayList<Language>(usedLanguages)) {
         for (Language extendedLanguage : language.getExtendedLanguages()) {
           if (extendedLanguage == null) {
-            LOG.error("One of extended language of " +  language.getModuleUID() + " in " + this + " is null.");
+            LOG.error("One of extended language of " + language.getModuleUID() + " in " + this + " is null.");
           } else if (!usedLanguages.contains(extendedLanguage)) {
             usedLanguages.add(extendedLanguage);
             changed = true;
@@ -188,7 +189,7 @@ public abstract class DefaultScope extends BaseScope {
       myFqNameToLanguage.put(l.getNamespace(), l);
       if (l.getModuleId() != null) {
         myIdToLanguage.put(l.getModuleId(), l);
-      } 
+      }
     }
 
     for (IModule module : visibleModules) {

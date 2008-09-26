@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
@@ -57,6 +58,7 @@ public abstract class SReference {
 
   protected abstract SNode getTargetNode_internal();
 
+  @Nullable
   public abstract SModelReference getTargetSModelReference();
 
   public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
