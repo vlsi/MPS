@@ -53,7 +53,7 @@ public abstract class AbstractModule implements IModule {
 
   private ModuleReference myModuleReference;
 
-  protected void setModulePointer(@NotNull ModuleReference reference) {    
+  protected void setModulePointer(@NotNull ModuleReference reference) {
     LOG.assertLog(myModuleReference == null || EqualUtil.equals(myModuleReference.getModuleId(), reference.getModuleId()), reference.getModuleFqName());
 
     ModuleReference oldValue = myModuleReference;
@@ -61,7 +61,7 @@ public abstract class AbstractModule implements IModule {
     if (oldValue != null &&
       oldValue.getModuleFqName() != null &&
       !oldValue.getModuleFqName().equals(myModuleReference.getModuleFqName())) {
-      
+
       MPSModuleRepository.getInstance().moduleFqNameChanged(this, oldValue.getModuleFqName());
     }
   }
@@ -716,9 +716,27 @@ public abstract class AbstractModule implements IModule {
     myScope.invalidateCaches();
   }
 
+  public boolean needReloading() {
+    if ((myDescriptorFile == null) || !myDescriptorFile.exists()) {
+      return false;
+    }
+    String timestampString;
+    if (ModelAccess.instance().canRead()) {
+      timestampString = getModuleDescriptor().getTimestamp();
+    } else {
+      timestampString = ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          return getModuleDescriptor().getTimestamp();
+        }
+      });
+    }
+    long timestamp = Long.decode(timestampString);
+    return timestamp != myDescriptorFile.lastModified();
+  }
+
   public final void reloadFromDisk() {
     // TODO listeners?
-    if (ApplicationLevelVcsManager.instance().isInConflict(myDescriptorFile, true)){
+    if (ApplicationLevelVcsManager.instance().isInConflict(myDescriptorFile, true)) {
       handleReadProblem(new ConflictException(myDescriptorFile), true);
     }
     try {
@@ -806,7 +824,7 @@ public abstract class AbstractModule implements IModule {
       !EqualUtil.equals(ref1.getModuleId(), ref2.getModuleId());
   }
 
-  protected ModuleDescriptor loadDescriptor(){
+  protected ModuleDescriptor loadDescriptor() {
     return null;
   }
 

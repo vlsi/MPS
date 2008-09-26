@@ -494,27 +494,38 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   private class ModelChangeListener extends SModelAdapter {
+    @Override
     public void modelChanged(SModel model) {
       markChanged(model);
     }
 
+    @Override
     public void modelChangedDramatically(SModel model) {
       markChanged(model);
     }
 
+    @Override
+    public void beforeModelRenamed(SModelRenamedEvent event) {
+      removeModelFromFileCache(event.getModelDescriptor());
+    }
+
+    @Override
     public void modelRenamed(SModelRenamedEvent event) {
       myFqNameToModelDescriptorMap.remove(event.getOldName());
       myFqNameToModelDescriptorMap.put(event.getNewName(), event.getModelDescriptor());
+      addModelToFileCache(event.getModelDescriptor());
       fireModelRenamed(event.getModelDescriptor());
 
       CleanupManager.getInstance().cleanup();
       MPSModuleRepository.getInstance().invalidateCaches();
     }
 
+    @Override
     public void beforeModelFileChanged(SModelFileChangedEvent event) {
       removeModelFromFileCache(event.getModelDescriptor());
     }
 
+    @Override
     public void modelFileChanged(SModelFileChangedEvent event) {
       addModelToFileCache(event.getModelDescriptor());
     }

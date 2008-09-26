@@ -17,7 +17,7 @@ public class ModuleFileProcessor extends EventProcessor {
   @Override
   protected void processContentChanged(VFileEvent event, ReloadSession reloadSession) {
     IModule module = MPSModuleRepository.getInstance().getModuleByFile(new File(event.getPath()));
-    if (module != null) { //TODO check timestamp
+    if ((module != null) && (module.needReloading())) {
       reloadSession.addChangedModule(module);
     }
   }

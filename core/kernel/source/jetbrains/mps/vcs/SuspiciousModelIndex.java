@@ -219,7 +219,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
 
     public boolean needReloading() {
-      return true;
+      return myModule.needReloading();
     }
   }
 }
