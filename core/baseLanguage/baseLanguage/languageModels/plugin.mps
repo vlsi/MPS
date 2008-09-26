@@ -5354,7 +5354,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1220962337091">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1220962346221">
               <link role="classifier" targetNodeId="17.~GridBagConstraints" resolveInfo="GridBagConstraints" />
-              <link role="variableDeclaration" targetNodeId="17.~GridBagConstraints.NONE" resolveInfo="NONE" />
+              <link role="variableDeclaration" targetNodeId="17.~GridBagConstraints.BOTH" resolveInfo="BOTH" />
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220962333272">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1220962335370">
@@ -5411,6 +5411,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222450381041">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1222450381042">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222450381043">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222450381044">
+                <link role="variableDeclaration" targetNodeId="1220962324463" resolveInfo="c" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1222450409950">
+                <link role="fieldDeclaration" targetNodeId="17.~GridBagConstraints.weightx" resolveInfo="weightx" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222453624531">
+              <property name="value" value="1" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220962526389">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1220962535537">
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220962526469">
@@ -5421,8 +5436,8 @@
                 <link role="fieldDeclaration" targetNodeId="17.~GridBagConstraints.weighty" resolveInfo="weighty" />
               </node>
             </node>
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220962535884">
-              <property name="value" value="1" />
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222450705471">
+              <property name="value" value="0" />
             </node>
           </node>
         </node>
@@ -5442,6 +5457,33 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222450951691">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222451352080">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222450951692">
+              <link role="variableDeclaration" targetNodeId="1220961203338" resolveInfo="parametersTable" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222451358834">
+              <link role="baseMethodDeclaration" targetNodeId="16.~JTable.setTableHeader(javax.swing.table.JTableHeader):void" resolveInfo="setTableHeader" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1222451360414" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1222451275345">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1222451275346">
+            <property name="name" value="scrollPane" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222451275347">
+              <link role="classifier" targetNodeId="16.~JScrollPane" resolveInfo="JScrollPane" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1222451275348">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1222451275349">
+                <link role="baseMethodDeclaration" targetNodeId="16.~JScrollPane.&lt;init&gt;(java.awt.Component)" resolveInfo="JScrollPane" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222451275350">
+                  <link role="variableDeclaration" targetNodeId="1220961203338" resolveInfo="parametersTable" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220962560671">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220962561518">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220962560672">
@@ -5449,8 +5491,8 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220962567881">
               <link role="baseMethodDeclaration" targetNodeId="17.~Container.add(java.awt.Component,java.lang.Object):void" resolveInfo="add" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220962573696">
-                <link role="variableDeclaration" targetNodeId="1220961203338" resolveInfo="parametersTable" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222451275351">
+                <link role="variableDeclaration" targetNodeId="1222451275346" resolveInfo="scrollPane" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220962578387">
                 <link role="variableDeclaration" targetNodeId="1220962324463" resolveInfo="c" />
