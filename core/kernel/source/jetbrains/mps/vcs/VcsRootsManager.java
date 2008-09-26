@@ -52,7 +52,7 @@ public class VcsRootsManager implements ProjectComponent {
           showAddVcsRootDialog(root, sm);
         }
       } catch (IllegalArgumentException e) {
-        LOG.error(e);
+//        LOG.error(e);
       }
     }
   };
