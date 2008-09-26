@@ -10,6 +10,7 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -30,7 +31,7 @@ public class VcsRootsManager implements ProjectComponent {
   private final Project myProject;
   private final ProjectLevelVcsManager myVcsManager;
   private final MPSVCSManager myMpsVcsManager;
-  private final Set<VirtualFile> myExcludedRoots = new HashSet<VirtualFile>();
+  private final Set<VirtualFile> myExcludedRoots = new ConcurrentHashSet<VirtualFile>();
   private final SModelAdapter myGlobalSModelListener = new SModelAdapter() {
     @Override
     public void modelSaved(SModelDescriptor sm) {
@@ -51,7 +52,7 @@ public class VcsRootsManager implements ProjectComponent {
           showAddVcsRootDialog(root, sm);
         }
       } catch (IllegalArgumentException e) {
-//        LOG.error(e);
+        LOG.error(e);
       }
     }
   };
@@ -70,6 +71,9 @@ public class VcsRootsManager implements ProjectComponent {
   private void showAddVcsRootDialog(final VirtualFile vcsRoot, final SModelDescriptor sm) {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
+        if (myExcludedRoots.contains(vcsRoot)) {
+          return;
+        }
         String message = "You have changed model " + sm + ".\n" +
           "Do you want to add folder " + vcsRoot.getPath() + " to the list of vcs roots so you would be able to commit your changes?\n" +
           "You can always do it later choosing Settings -> Project Settings -> Version Control.";
