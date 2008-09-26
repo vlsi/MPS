@@ -3,9 +3,10 @@ package jetbrains.mps.ide.dialogs;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.projectLanguage.structure.CloneModelProperties;
 import jetbrains.mps.projectLanguage.structure.DevKit;
 import jetbrains.mps.projectLanguage.structure.Model;
@@ -148,17 +149,23 @@ public class CloneModelDialog extends BaseNodeDialog {
         for (jetbrains.mps.projectLanguage.structure.Language l : myCloneModelProperties.getLanguages()) {
           String name = l.getName();
           assert name != null;
-          Language language = getOperationContext().getScope().getLanguage(name);
-          assert language != null;
-          model.addLanguage(language);
+          Language language = GlobalScope.getInstance().getLanguage(name);
+          if (language != null) {
+            model.addLanguage(language);
+          } else {
+            model.addLanguage(new ModuleReference(name));
+          }
         }
 
         for (DevKit d : myCloneModelProperties.getDevKits()) {
           String name = d.getName();
           assert name != null;
-          jetbrains.mps.project.DevKit devkit = getOperationContext().getScope().getDevKit(name);
-          assert devkit != null;
-          model.addDevKit(devkit);
+          jetbrains.mps.project.DevKit devKit = GlobalScope.getInstance().getDevKit(name);
+          if (devKit != null) {
+            model.addDevKit(devKit);
+          } else {
+            model.addDevKit(new ModuleReference(name));
+          }
         }
 
         for (jetbrains.mps.projectLanguage.structure.Language l : myCloneModelProperties.getEngagedOnGenerationLanguages()) {
