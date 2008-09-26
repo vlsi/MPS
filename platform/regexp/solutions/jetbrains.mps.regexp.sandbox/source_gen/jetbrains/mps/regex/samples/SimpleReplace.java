@@ -8,12 +8,12 @@ import jetbrains.mps.regexp.runtime.RegexpOperations;
 
   /* package */void simplestReplace() {
     String s;
-    s = RegexpOperations.replace(s, _PrecompiledPatterns.REGEXP3, new _Replacer0(SimpleReplace.this, null));
+    s = RegexpOperations.replace(s);
   }
 
   /* package */void replaceWithCapture() {
     String s;
-    s = RegexpOperations.replace(s, _PrecompiledPatterns.REGEXP4, new _Replacer1(SimpleReplace.this, null));
+    s = RegexpOperations.replace(s);
   }
 
 }

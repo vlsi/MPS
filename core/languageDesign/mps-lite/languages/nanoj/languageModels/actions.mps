@@ -9,12 +9,6 @@
   <language namespace="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.regexp)" />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.bootstrap.constraintsLanguage)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
-  <language namespace="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.regexp)" />
-  <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.bootstrap.actionsLanguage)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
-  <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.bootstrap.sharedConcepts)" />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.bootstrap.actionsLanguage.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.bootstrap.actionsLanguage.structure)" version="22" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -55,15 +49,17 @@
           <node role="canSubstitute" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_CanSubstitute" id="1197638405391">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197638405392">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197638405393">
-                <node role="expression" type="jetbrains.mps.regexp.structure.MatchRegexpExpression" id="1197638405394">
-                  <node role="regexp" type="jetbrains.mps.regexp.structure.InlineRegexpExpression" id="1197638405395">
-                    <node role="regexp" type="jetbrains.mps.regexp.structure.PlusRegexp" id="1197638405396">
-                      <node role="regexp" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp" id="1197638405397">
-                        <link role="symbolClass" targetNodeId="6.1174554674770" resolveInfo="\d" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222425143767">
+                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_pattern" id="1197638405398" />
+                  <node role="operation" type="jetbrains.mps.regexp.structure.MatchRegexpOperation" id="1222425143768">
+                    <node role="regexp" type="jetbrains.mps.regexp.structure.InlineRegexpExpression" id="1197638405395">
+                      <node role="regexp" type="jetbrains.mps.regexp.structure.PlusRegexp" id="1197638405396">
+                        <node role="regexp" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp" id="1197638405397">
+                          <link role="symbolClass" targetNodeId="6.1174554674770" resolveInfo="\d" />
+                        </node>
                       </node>
                     </node>
                   </node>
-                  <node role="inputExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_pattern" id="1197638405398" />
                 </node>
               </node>
             </node>

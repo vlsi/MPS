@@ -5,9 +5,6 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.regexp)" />
   <language namespace="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.regexp)" />
-  <language namespace="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.regexp.constraints)" version="3" />
@@ -556,46 +553,48 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178535219994">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178535227739">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1178535229904">
-            <node role="rValue" type="jetbrains.mps.regexp.structure.ReplaceWithRegexpExpression" id="1178535234172">
-              <node role="replaceBlock" type="jetbrains.mps.regexp.structure.ReplaceBlock" id="1178535234174">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178535234175">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178535270085">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178535272220">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178535274539">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178535275553">
-                          <property name="value" value="&gt;" />
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178535273685">
-                          <link role="match" targetNodeId="1178535247860" resolveInfo="content" />
-                        </node>
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178535270946">
-                        <property name="value" value="&lt;" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="regexp" type="jetbrains.mps.regexp.structure.InlineRegexpExpression" id="1178535238356">
-                <node role="regexp" type="jetbrains.mps.regexp.structure.SeqRegexp" id="1178535247857">
-                  <node role="left" type="jetbrains.mps.regexp.structure.StringLiteralRegexp" id="1178535241209">
-                    <property name="text" value="(" />
-                  </node>
-                  <node role="right" type="jetbrains.mps.regexp.structure.SeqRegexp" id="1178535266902">
-                    <node role="left" type="jetbrains.mps.regexp.structure.MatchParensRegexp" id="1178535247860">
-                      <property name="name" value="content" />
-                      <node role="regexp" type="jetbrains.mps.regexp.structure.LazyStarRegexp" id="1178535260940">
-                        <node role="regexp" type="jetbrains.mps.regexp.structure.DotRegexp" id="1178535252072" />
-                      </node>
-                    </node>
-                    <node role="right" type="jetbrains.mps.regexp.structure.StringLiteralRegexp" id="1178535266905">
-                      <property name="text" value=")" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="expr" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178535232320">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222417481621">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178535232320">
                 <link role="variableDeclaration" targetNodeId="1178535225064" resolveInfo="s" />
+              </node>
+              <node role="operation" type="jetbrains.mps.regexp.structure.ReplaceWithRegexpOperation" id="1222417481622">
+                <node role="regexp" type="jetbrains.mps.regexp.structure.InlineRegexpExpression" id="1178535238356">
+                  <node role="regexp" type="jetbrains.mps.regexp.structure.SeqRegexp" id="1178535247857">
+                    <node role="left" type="jetbrains.mps.regexp.structure.StringLiteralRegexp" id="1178535241209">
+                      <property name="text" value="(" />
+                    </node>
+                    <node role="right" type="jetbrains.mps.regexp.structure.SeqRegexp" id="1178535266902">
+                      <node role="left" type="jetbrains.mps.regexp.structure.MatchParensRegexp" id="1178535247860">
+                        <property name="name" value="content" />
+                        <node role="regexp" type="jetbrains.mps.regexp.structure.LazyStarRegexp" id="1178535260940">
+                          <node role="regexp" type="jetbrains.mps.regexp.structure.DotRegexp" id="1178535252072" />
+                        </node>
+                      </node>
+                      <node role="right" type="jetbrains.mps.regexp.structure.StringLiteralRegexp" id="1178535266905">
+                        <property name="text" value=")" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="replaceBlock" type="jetbrains.mps.regexp.structure.ReplaceBlock" id="1178535234174">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178535234175">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178535270085">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178535272220">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178535274539">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178535275553">
+                            <property name="value" value="&gt;" />
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.regexp.structure.MatchVariableReference" id="1178535273685">
+                            <link role="match" targetNodeId="1178535247860" resolveInfo="content" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178535270946">
+                          <property name="value" value="&lt;" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178535227740">
@@ -644,16 +643,18 @@
               </node>
             </node>
           </node>
-          <node role="iterable" type="jetbrains.mps.regexp.structure.SplitExpression" id="1178535303709">
-            <node role="regexp" type="jetbrains.mps.regexp.structure.InlineRegexpExpression" id="1178535309012">
-              <node role="regexp" type="jetbrains.mps.regexp.structure.PlusRegexp" id="1178535316675">
-                <node role="regexp" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp" id="1178535310954">
-                  <link role="symbolClass" targetNodeId="3.1174554710194" />
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222417481691">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178535302007">
+              <link role="variableDeclaration" targetNodeId="1178535293360" resolveInfo="s" />
+            </node>
+            <node role="operation" type="jetbrains.mps.regexp.structure.SplitOperation" id="1222417481692">
+              <node role="regexp" type="jetbrains.mps.regexp.structure.InlineRegexpExpression" id="1178535309012">
+                <node role="regexp" type="jetbrains.mps.regexp.structure.PlusRegexp" id="1178535316675">
+                  <node role="regexp" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp" id="1178535310954">
+                    <link role="symbolClass" targetNodeId="3.1174554710194" />
+                  </node>
                 </node>
               </node>
-            </node>
-            <node role="expr" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1178535302007">
-              <link role="variableDeclaration" targetNodeId="1178535293360" resolveInfo="s" />
             </node>
           </node>
         </node>
