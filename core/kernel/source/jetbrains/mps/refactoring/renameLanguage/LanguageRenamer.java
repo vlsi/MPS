@@ -25,6 +25,16 @@ public class LanguageRenamer {
 
     String oldFqName = myLanguage.getModuleFqName();
 
+    renameLanguage(oldFqName);
+    renameGenerators(oldFqName);
+
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+  }
+
+  private void renameLanguage(String oldFqName) {
+    for (SModelRoot root : myLanguage.getSModelRoots()) {
+      root.setPrefix(myNewName);
+    }
 
     SModelDescriptor structure = myLanguage.getStructureModelDescriptor();
     RefactoringContext context = new RefactoringContext(new MyRefactoring());
@@ -33,8 +43,13 @@ public class LanguageRenamer {
     }
     context.computeCaches();
 
-    for (SModelRoot root : myLanguage.getSModelRoots()) {
-      root.changePrefix(myNewName);
+    for (SModelDescriptor sm : myLanguage.getOwnModelDescriptors()) {
+      if (!SModelStereotype.isUserModel(sm)) continue;
+
+      if (sm.getSModelFqName().toString().startsWith(oldFqName + ".")) {
+        String suffix = sm.getSModelFqName().toString().  substring(oldFqName.length());
+        sm.rename(SModelFqName.fromString(myNewName + suffix), false);
+      }
     }
 
     LanguageDescriptor descriptor = myLanguage.getLanguageDescriptor();
@@ -42,14 +57,30 @@ public class LanguageRenamer {
     myLanguage.setLanguageDescriptor(descriptor, false);
     myLanguage.save();
 
-    SModelRepository.getInstance().updateReferences();
-    MPSModuleRepository.getInstance().updateReferences();
+    updateReferences();
 
     new RefactoringProcessor().writeInLogAndUpdateModels(structure.getSModelReference(), structure.getSModel(), context);
+  }
 
-    SModelRepository.getInstance().saveAll();
+  private void renameGenerators(String oldFqName) {
+    for (Generator g : myLanguage.getGenerators()) {
+      for (SModelRoot root : g.getSModelRoots()) {
+        String oldPrefix = root.getPrefix();
+        if (oldPrefix != null && oldPrefix.startsWith(oldFqName)) {
+          String newPrefix = myNewName + oldPrefix.substring(oldFqName.length());
+          root.changePrefix(newPrefix);
+        }
+      }
+    }
 
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+    updateReferences();
+
+    myLanguage.save();
+  }
+
+  private void updateReferences() {
+    SModelRepository.getInstance().updateReferences();
+    MPSModuleRepository.getInstance().updateReferences();
   }
 
   private void checkPreconditions() {

@@ -49,6 +49,10 @@ public class SModelRoot {
     return myModelRoot.getPrefix();
   }
 
+  public void setPrefix(String newPrefix) {
+    myModelRoot.setPrefix(newPrefix);
+  }
+
   public void changePrefix(String newPrefix) {
     String oldPrefix = getPrefix();
     myModelRoot.setPrefix(newPrefix);
