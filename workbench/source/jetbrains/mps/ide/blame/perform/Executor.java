@@ -27,6 +27,7 @@ public class Executor {
         }
 
         if (thread.isAlive()) {
+          thread.interrupt();
           response = new Response();
           response.setSuccess(false);
           response.setMessage("Bugtracker does not respond");

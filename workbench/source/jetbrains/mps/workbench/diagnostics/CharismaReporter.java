@@ -7,14 +7,11 @@ import com.intellij.openapi.diagnostic.SubmittedReportInfo.SubmissionStatus;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
-import jetbrains.mps.ide.blame.perform.Performer;
 import jetbrains.mps.ide.blame.perform.Response;
 import jetbrains.mps.ide.blame.perform.ResponseCallback;
 
 import javax.swing.JOptionPane;
 import java.awt.Component;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CharismaReporter extends ErrorReportSubmitter {
 
@@ -22,7 +19,7 @@ public class CharismaReporter extends ErrorReportSubmitter {
     return "Report To JetBrains MPS Tracker";
   }
 
-  public SubmittedReportInfo submit(IdeaLoggingEvent[] events, Component parentComponent) {
+  public SubmittedReportInfo submit(IdeaLoggingEvent[] events, final Component parentComponent) {
     assert ThreadUtils.isEventDispatchThread();
 
     if (events.length == 0) {
@@ -33,10 +30,10 @@ public class CharismaReporter extends ErrorReportSubmitter {
     blameDialog.setEx(events[0].getThrowable());
     blameDialog.setMessage(events[0].getMessage());
 
-    final SubmittedReportInfo[] reportInfo = new SubmittedReportInfo[1];
     blameDialog.setCallback(new ResponseCallback() {
       public void run(Response response) {
         if (response.isSuccess()) {
+          /*
           String responseString = response.getMessage();
           Pattern pattern = Pattern.compile("<id><!\\[CDATA\\[(.*?)\\]\\]></id>");
           Matcher matcher = pattern.matcher(responseString);
@@ -46,10 +43,10 @@ public class CharismaReporter extends ErrorReportSubmitter {
             issueId = matcher.group(1);
             url = Performer.teamsys + "/issue/" + issueId;
           }
-
-          JOptionPane.showMessageDialog(null, response.getMessage(), "Submit OK", JOptionPane.INFORMATION_MESSAGE);
+          */
+          JOptionPane.showMessageDialog(parentComponent, response.getMessage(), "Submit OK", JOptionPane.INFORMATION_MESSAGE);
         } else {
-          JOptionPane.showMessageDialog(null, response.getMessage(), "Submit Failed", JOptionPane.ERROR_MESSAGE);
+          JOptionPane.showMessageDialog(parentComponent, response.getMessage(), "Submit Failed", JOptionPane.ERROR_MESSAGE);
         }
       }
     });
