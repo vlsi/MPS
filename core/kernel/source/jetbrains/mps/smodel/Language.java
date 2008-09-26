@@ -7,6 +7,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.refactoring.structure.Refactoring;
@@ -564,12 +565,14 @@ public class Language extends AbstractModule {
 
   public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
     if (myNameToConceptCache.isEmpty()) {
-      SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
-      SModel structureModel = structureModelDescriptor.getSModel();
-      structureModel.allAdapters(INodeAdapter.class, new Condition<INodeAdapter>() {
-        public boolean met(INodeAdapter node) {
-          if (node instanceof AbstractConceptDeclaration) {
-            myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node);
+      SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();      
+      final String structureLangNamespace = BootstrapLanguagesManager.getInstance().getStructureLanguage().getNamespace();
+      SModel structureModel = structureModelDescriptor.getSModel();      
+      structureModel.allNodes(new Condition<SNode>() {
+        public boolean met(SNode node) {
+          if (!node.getLanguageNamespace().equals(structureLangNamespace)) return false;
+          if (node.getAdapter() instanceof AbstractConceptDeclaration) {
+            myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
           }
           return false;
         }
