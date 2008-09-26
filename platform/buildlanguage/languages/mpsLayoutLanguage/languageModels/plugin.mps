@@ -60,7 +60,6 @@
   <import index="31" modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.propertylanguage.structure)" version="-1" />
   <import index="32" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="16" />
   <import index="34" modelUID="f:java_stub#jetbrains.mps.build.packagingLanguage.structure(jetbrains.mps.build.packagingLanguage.structure@java_stub)" version="-1" />
-  <import index="35" modelUID="f:java_stub#jetbrains.mps.mpsLayoutLanguage.structure(jetbrains.mps.mpsLayoutLanguage.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1218726094600">
     <property name="name" value="ProjectPaneModelAddition" />
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents" id="1218726094601">
