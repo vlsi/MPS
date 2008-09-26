@@ -29,8 +29,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractConceptDeclaration_Behavior {
+  public static Class[] PARAMETERS_1222430305282 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -229,6 +231,14 @@ public class AbstractConceptDeclaration_Behavior {
       return SConceptOperations.isSuperConceptOf(expectedConcept, NameUtil.nodeFQName(thisNode));
     }
     return false;
+  }
+
+  public static List<SNode> call_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
+  }
+
+  public static List<SNode> callSuper_getImmediateSuperconcepts_1222430305282(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
   }
 
 }
