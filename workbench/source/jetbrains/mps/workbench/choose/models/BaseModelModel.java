@@ -1,9 +1,9 @@
-package jetbrains.mps.workbench.actions.goTo.framework.models;
+package jetbrains.mps.workbench.choose.models;
 
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.workbench.actions.goTo.framework.base.BaseMPSChooseModel;
+import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
 public abstract class BaseModelModel extends BaseMPSChooseModel<SModelDescriptor> {
   public BaseModelModel(MPSProject project) {

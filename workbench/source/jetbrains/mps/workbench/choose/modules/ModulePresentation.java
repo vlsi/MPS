@@ -1,10 +1,8 @@
-package jetbrains.mps.workbench.actions.goTo.framework.modules;
+package jetbrains.mps.workbench.choose.modules;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.actions.goTo.framework.base.BasePresentation;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.choose.base.BasePresentation;
 
 import javax.swing.Icon;
 

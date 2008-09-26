@@ -1,15 +1,14 @@
-package jetbrains.mps.workbench.actions.goTo.framework.base;
+package jetbrains.mps.workbench.choose.base;
 
 import com.intellij.ide.util.NavigationItemListCellRenderer;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.ListCellRenderer;

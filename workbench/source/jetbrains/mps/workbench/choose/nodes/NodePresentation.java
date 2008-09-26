@@ -1,13 +1,12 @@
-package jetbrains.mps.workbench.actions.goTo.framework.nodes;
-
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.actions.goTo.framework.base.BasePresentation;
-
-import javax.swing.Icon;
+package jetbrains.mps.workbench.choose.nodes;
 
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.choose.base.BasePresentation;
+
+import javax.swing.Icon;
 
 public class NodePresentation extends BasePresentation {
   private SNode myNode;

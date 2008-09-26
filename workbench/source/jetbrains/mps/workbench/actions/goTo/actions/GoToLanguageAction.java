@@ -7,8 +7,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
@@ -16,8 +14,9 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseLanguageModel;
-import jetbrains.mps.workbench.actions.goTo.framework.modules.BaseModuleItem;
+import jetbrains.mps.workbench.choose.base.FakePsiContext;
+import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
+import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,12 +37,6 @@ public class GoToLanguageAction extends BaseAction {
 
     //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
-
-    FakePsiElement fakePsiContext = new FakePsiElement() {
-      public PsiElement getParent() {
-        return null;
-      }
-    };
 
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(mpsProject) {
       public NavigationItem doGetNavigationItem(final IModule module) {
@@ -66,7 +59,7 @@ public class GoToLanguageAction extends BaseAction {
         return "Language name:";
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, fakePsiContext);
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, new FakePsiContext());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

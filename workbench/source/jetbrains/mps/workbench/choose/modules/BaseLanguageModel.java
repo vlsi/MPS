@@ -1,4 +1,4 @@
-package jetbrains.mps.workbench.actions.goTo.framework.modules;
+package jetbrains.mps.workbench.choose.modules;
 
 import jetbrains.mps.project.MPSProject;
 

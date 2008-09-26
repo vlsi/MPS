@@ -29,13 +29,12 @@
  * IF JETBRAINS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
  *
  */
-package jetbrains.mps.workbench.actions.goTo.framework.modules;
+package jetbrains.mps.workbench.choose.modules;
 
-import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.actions.goTo.framework.base.BaseMPSChooseModel;
+import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
 public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
   //---------------------FIND STUFF------------------------

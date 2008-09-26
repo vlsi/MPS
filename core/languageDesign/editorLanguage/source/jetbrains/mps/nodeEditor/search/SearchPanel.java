@@ -1,29 +1,31 @@
 package jetbrains.mps.nodeEditor.search;
 
-import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import com.intellij.openapi.actionSystem.*;
+import jetbrains.mps.ide.ui.CompletionTextField;
+import jetbrains.mps.nodeEditor.DefaultEditorMessage;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.search.icons.Icons;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.ide.ui.CompletionTextField;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.search.icons.Icons;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.*;
-import javax.swing.event.DocumentListener;
 import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.intellij.openapi.actionSystem.*;
 
 public class SearchPanel extends JPanel {
 
@@ -55,7 +57,7 @@ public class SearchPanel extends JPanel {
 
     mainPanel.add(new JLabel("Text:"));
     mainPanel.add(myText);
-    myText.setHideComplitionOnClick(true);
+    myText.setHideCompletionOnClick(true);
 
     DefaultActionGroup group = new DefaultActionGroup("search bar", false);
     group.add(new ShowHistoryAction());
@@ -179,7 +181,7 @@ public class SearchPanel extends JPanel {
     super.paintComponent(g);
 
     //copied from IDEA's class EditorSearchComponent
-    Graphics2D g2d = (Graphics2D)g;
+    Graphics2D g2d = (Graphics2D) g;
     final Color GRADIENT_C1 = getBackground();
     final Color GRADIENT_C2 = new Color(Math.max(0, GRADIENT_C1.getRed() - 0x18),
       Math.max(0, GRADIENT_C1.getGreen() - 0x18),
@@ -253,7 +255,7 @@ public class SearchPanel extends JPanel {
 
   private void updateSearchReport(int matches) {
     Font font = myFindResult.getFont().deriveFont(Font.PLAIN);
-    String text ;
+    String text;
     if (matches > 100) {
       font = font.deriveFont(Font.BOLD);
       text = "More than 100 matches";
@@ -262,7 +264,7 @@ public class SearchPanel extends JPanel {
     } else if (matches == 1) {
       text = String.valueOf(matches) + " match";
     } else {
-      text =  "No matches";
+      text = "No matches";
     }
     myFindResult.setFont(font);
     myFindResult.setText(text);
@@ -306,7 +308,7 @@ public class SearchPanel extends JPanel {
       }
       index--;
       if (cellLayout instanceof CellLayout_Horizontal
-        && !cellLayout.equals(cells.get(index).getParent().getCellLayout()))  {
+        && !cellLayout.equals(cells.get(index).getParent().getCellLayout())) {
         for (int i = 0; i < highlightLength; i++) {
           resultIndex.remove(resultIndex.size() - 1);
           startHighlightPosition.remove(startHighlightPosition.size() - 1);
@@ -315,7 +317,8 @@ public class SearchPanel extends JPanel {
         myCells.remove(myCells.size() - 1);
       }
     }
-    myOwner = new EditorMessageOwner() { };
+    myOwner = new EditorMessageOwner() {
+    };
     if (!myCells.isEmpty()) {
       highlight(resultIndex, startHighlightPosition, endHighlightPosition);
     }
@@ -333,34 +336,34 @@ public class SearchPanel extends JPanel {
 
   private void highlight(final List<Integer> resultIndex, final List<Integer> startPosition,
                          final List<Integer> endPosition) {
-      boolean selected = false;
-      final List<EditorCell_Label> cells = allCells();
-      for (int i = cells.indexOf(myEditor.getSelectedCell());
-           i < cells.size(); i++) {
+    boolean selected = false;
+    final List<EditorCell_Label> cells = allCells();
+    for (int i = cells.indexOf(myEditor.getSelectedCell());
+         i < cells.size(); i++) {
+      if (resultIndex.contains(i)) {
+        myEditor.changeSelection(cells.get(i));
+        selected = true;
+        break;
+      }
+    }
+    if (!selected) {
+      myEditor.changeSelection(myCells.get(0));
+    }
+    if (myCells.size() <= 100) {
+      myHighlightManager = myEditor.getHighlightManager();
+      for (int i = 0; i < cells.size(); i++) {
         if (resultIndex.contains(i)) {
-          myEditor.changeSelection(cells.get(i));
-          selected = true;
-          break;
+          final int index = i;
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              myHighlightManager.mark(new SearchPanelEditorMessage(cells.get(index),
+                startPosition.get(resultIndex.indexOf(index)),
+                endPosition.get(resultIndex.indexOf(index))));
+            }
+          });
         }
       }
-      if (!selected) {
-        myEditor.changeSelection(myCells.get(0));
-      }
-      if (myCells.size() <= 100) {
-         myHighlightManager = myEditor.getHighlightManager();
-         for (int i = 0; i < cells.size(); i++) {
-           if (resultIndex.contains(i)) {
-             final int index = i;
-             ModelAccess.instance().runReadAction(new Runnable() {
-               public void run() {
-                 myHighlightManager.mark(new SearchPanelEditorMessage(cells.get(index),
-                   startPosition.get(resultIndex.indexOf(index)),
-                   endPosition.get(resultIndex.indexOf(index))));
-               }
-            });
-           }
-         }
-      }
+    }
   }
 
   public void activate() {
@@ -368,9 +371,9 @@ public class SearchPanel extends JPanel {
       for (int i = getSearchHistory().getSearches().size() - 1; i >= 0; i--) {
         myText.addValue(getSearchHistory().getSearches().get(i));
       }
-    }   
+    }
     revalidate();
-    setVisible(true);    
+    setVisible(true);
     myText.requestFocus();
   }
 
@@ -393,7 +396,7 @@ public class SearchPanel extends JPanel {
     private List<String> myPossibleValues = new ArrayList<String>();
 
     public HistoryCompletionTextField() {
-       super();
+      super();
     }
 
     public HistoryCompletionTextField(List<String> possibleValues) {
@@ -452,8 +455,8 @@ public class SearchPanel extends JPanel {
         FontMetrics metrics = g.getFontMetrics();
         String text = editorCell.getRenderedText().substring(myStartPosition, myEndPosition);
         int prevStringWidth = metrics.stringWidth(editorCell.getRenderedText().
-              substring(0, editorCell.getRenderedText().toLowerCase().
-              indexOf(text.toLowerCase())));
+          substring(0, editorCell.getRenderedText().toLowerCase().
+          indexOf(text.toLowerCase())));
         int x = editorCell.getX() + editorCell.getLeftInternalInset()
           + prevStringWidth;
         int y = editorCell.getY();

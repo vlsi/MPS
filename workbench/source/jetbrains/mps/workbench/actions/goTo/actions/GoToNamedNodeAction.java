@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.actions.goTo.framework.nodes.BaseNodeModel;
+import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

@@ -7,15 +7,14 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.actions.goTo.framework.nodes.BaseNodeModel;
+import jetbrains.mps.workbench.choose.base.FakePsiContext;
+import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,12 +39,6 @@ public class GoToConceptNodeAction extends BaseAction {
     //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
-    FakePsiElement fakePsiContext = new FakePsiElement() {
-      public PsiElement getParent() {
-        return null;
-      }
-    };
-
     BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject) {
       public SNode[] find(IScope scope) {
         final List<SNode> nodes = new ArrayList<SNode>();
@@ -63,7 +56,7 @@ public class GoToConceptNodeAction extends BaseAction {
         return "Concept name:";
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, baseNodeModel, fakePsiContext);
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, baseNodeModel, new FakePsiContext());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -75,4 +68,5 @@ public class GoToConceptNodeAction extends BaseAction {
       }
     }, ModalityState.current(), true);
   }
+
 }

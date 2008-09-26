@@ -1,10 +1,10 @@
-package jetbrains.mps.workbench.actions.goTo.framework.models;
+package jetbrains.mps.workbench.choose.models;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.workbench.actions.goTo.framework.base.BasePresentation;
+import jetbrains.mps.workbench.choose.base.BasePresentation;
 
 import javax.swing.Icon;
 

@@ -7,8 +7,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.MPSProject;
@@ -19,8 +17,9 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelItem;
-import jetbrains.mps.workbench.actions.goTo.framework.models.BaseModelModel;
+import jetbrains.mps.workbench.choose.base.FakePsiContext;
+import jetbrains.mps.workbench.choose.models.BaseModelItem;
+import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -43,12 +42,6 @@ public class GoToModelAction extends BaseAction {
 
     //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
-
-    FakePsiElement fakePsiContext = new FakePsiElement() {
-      public PsiElement getParent() {
-        return null;
-      }
-    };
 
     BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
       public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
@@ -81,7 +74,7 @@ public class GoToModelAction extends BaseAction {
         return "Model name:";
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, fakePsiContext);
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, new FakePsiContext());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

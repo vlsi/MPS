@@ -29,12 +29,12 @@
  * IF JETBRAINS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
  *
  */
-package jetbrains.mps.workbench.actions.goTo.framework.nodes;
+package jetbrains.mps.workbench.choose.nodes;
 
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.actions.goTo.framework.base.BaseMPSChooseModel;
+import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {

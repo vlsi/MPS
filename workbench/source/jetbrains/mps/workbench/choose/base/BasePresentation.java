@@ -1,9 +1,8 @@
-package jetbrains.mps.workbench.actions.goTo.framework.base;
+package jetbrains.mps.workbench.choose.base;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 

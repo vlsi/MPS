@@ -1,12 +1,15 @@
 package jetbrains.mps.ide.ui;
 
 import javax.swing.*;
-import javax.swing.text.BadLocationException;
-import javax.swing.event.DocumentListener;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.CaretListener;
 import javax.swing.event.CaretEvent;
-import java.awt.*;
+import javax.swing.event.CaretListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.text.BadLocationException;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Point;
+import java.awt.Window;
 import java.awt.event.*;
 import java.util.List;
 
@@ -105,7 +108,7 @@ public abstract class CompletionTextField extends JTextField {
     return true;
   }
 
-  public void setHideComplitionOnClick(boolean hide) {
+  public void setHideCompletionOnClick(boolean hide) {
     if (hide) {
       addMouseListener(myMouseListener);
       getParent().addMouseListener(myMouseListener);
@@ -114,7 +117,7 @@ public abstract class CompletionTextField extends JTextField {
       getParent().removeMouseListener(myMouseListener);
     }
   }
-  
+
   public void addNotify() {
     super.addNotify();
     myContainerWindow = SwingUtilities.getWindowAncestor(this);

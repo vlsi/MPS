@@ -1,20 +1,23 @@
-package jetbrains.mps.workbench.actions.goTo.framework.models;
+package jetbrains.mps.workbench.choose.modules;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class BaseModelItem implements NavigationItem {
-  private SModelDescriptor myModelDescriptor;
+public abstract class BaseModuleItem implements NavigationItem {
+  private IModule myModule;
+  private String myShortName;
 
-  public BaseModelItem(SModelDescriptor modelDescriptor) {
-    myModelDescriptor = modelDescriptor;
+  public BaseModuleItem(IModule module) {
+    myModule = module;
+    myShortName = NameUtil.shortNameFromLongName(myModule.getModuleUID());
   }
 
-  public SModelDescriptor getModelDescriptor() {
-    return myModelDescriptor;
+  public IModule getModule() {
+    return myModule;
   }
 
   public String getName() {
@@ -24,7 +27,7 @@ public abstract class BaseModelItem implements NavigationItem {
 
   @Nullable
   public ItemPresentation getPresentation() {
-    return new ModelPresentation(myModelDescriptor);
+    return new ModulePresentation(myModule);
   }
 
   public FileStatus getFileStatus() {
@@ -38,5 +41,4 @@ public abstract class BaseModelItem implements NavigationItem {
   public boolean canNavigateToSource() {
     return true;
   }
-
 }
