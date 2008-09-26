@@ -440,13 +440,7 @@ public class Language extends AbstractModule {
   }
 
   public SModelDescriptor getStructureModelDescriptor() {
-    SModelDescriptor result = LanguageAspect.STRUCTURE.get(this);
-
-    if (result == null) {
-      LOG.error("Language has no structure model ", this);
-    }
-
-    return result;
+    return LanguageAspect.STRUCTURE.get(this);
   }
 
   public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
