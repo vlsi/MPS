@@ -21,7 +21,6 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
       this.add(new UncommentStatements_Action());
       this.add(new RunClassConcept_Action());
       this.addSeparator();
-      this.add(new _ExtractMethod_Action());
       this.add(new ExtractMethod_Action());
       this.add(new InlineMethod_Action());
       this.add(new ChangeMethodSignature_Action());

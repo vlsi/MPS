@@ -9,14 +9,10 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.baseLanguage.refactoring.extractMethod.ExtractMethodRefactoringAnalyzer;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.refactoring.extractMethod.ExtractMethodKind;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.refactoring.extractMethod.ExtractMethodDialog;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
@@ -27,7 +23,7 @@ public class ExtractMethod_Action extends GeneratedAction {
   private List<SNode> nodes;
 
   public ExtractMethod_Action() {
-    super("Extract Method", "", ICON);
+    super("New Extract Method", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -91,7 +87,7 @@ public class ExtractMethod_Action extends GeneratedAction {
         }
 
       });
-      ExtractMethodDialog dialog = new ExtractMethodDialog(kind.value, new ActionEventData(event));
+      ExtractMethodDialog dialog = new ExtractMethodDialog(kind.value, event.getData(MPSDataKeys.EDITOR_CONTEXT), ExtractMethod_Action.this.nodes);
       dialog.showDialog();
       dialog.pack();
     } catch (Throwable t) {
