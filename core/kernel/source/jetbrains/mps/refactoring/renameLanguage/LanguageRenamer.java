@@ -25,9 +25,6 @@ public class LanguageRenamer {
 
     String oldFqName = myLanguage.getModuleFqName();
 
-    for (SModelRoot root : myLanguage.getSModelRoots()) {
-      root.setPrefix(myNewName);
-    }
 
     SModelDescriptor structure = myLanguage.getStructureModelDescriptor();
     RefactoringContext context = new RefactoringContext(new MyRefactoring());
@@ -36,13 +33,8 @@ public class LanguageRenamer {
     }
     context.computeCaches();
 
-    for (SModelDescriptor sm : myLanguage.getOwnModelDescriptors()) {      
-      if (!SModelStereotype.isUserModel(sm)) continue;
-
-      if (sm.getSModelFqName().toString().startsWith(oldFqName + ".")) {
-        String suffix = sm.getSModelFqName().toString().  substring(oldFqName.length());
-        sm.rename(SModelFqName.fromString(myNewName + suffix), false);        
-      }
+    for (SModelRoot root : myLanguage.getSModelRoots()) {
+      root.changePrefix(myNewName);
     }
 
     LanguageDescriptor descriptor = myLanguage.getLanguageDescriptor();

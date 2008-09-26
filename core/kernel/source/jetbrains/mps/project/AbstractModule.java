@@ -448,7 +448,7 @@ public abstract class AbstractModule implements IModule {
 
       for (ModelRoot modelRoot : getModelRoots()) {
         try {
-          SModelRoot root = new SModelRoot(modelRoot);
+          SModelRoot root = new SModelRoot(this, modelRoot);
           mySModelRoots.add(root);
           IModelRootManager manager = root.getManager();
           manager.read(root, this);
@@ -578,7 +578,7 @@ public abstract class AbstractModule implements IModule {
     ModelRoot mr = ModelRoot.newInstance(sm);
     mr.setPrefix("");
 
-    myManager.read(new SModelRoot(mr), this);
+    myManager.read(new SModelRoot(this, mr), this);
   }
 
   private void loadJavaStubModelRoots() {

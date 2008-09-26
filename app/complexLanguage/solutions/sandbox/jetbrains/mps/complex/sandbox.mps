@@ -3,12 +3,12 @@
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.samples.complex)" />
+  <language namespace="ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.complex)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.complex.structure)" version="3" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="f:java_stub#java.lang.annotation(java.lang.annotation@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -23,10 +23,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196427466061">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196427466062">
             <property name="name" value="c1" />
-            <node role="type" type="jetbrains.mps.samples.complex.structure.ComplexType" id="1196427466063" />
+            <node role="type" type="jetbrains.mps.complex.structure.ComplexType" id="1196427466063" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1206619834578">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="1206619839644">
-                <node role="rightExpression" type="jetbrains.mps.samples.complex.structure.ImaginaryUnit" id="1206619842991" />
+                <node role="rightExpression" type="jetbrains.mps.complex.structure.ImaginaryUnit" id="1206619842991" />
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206621164653">
                   <property name="value" value="2" />
                 </node>
@@ -40,10 +40,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196430125278">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196430125279">
             <property name="name" value="c2" />
-            <node role="type" type="jetbrains.mps.samples.complex.structure.ComplexType" id="1196430125280" />
+            <node role="type" type="jetbrains.mps.complex.structure.ComplexType" id="1196430125280" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1206619850151">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="1206619853639">
-                <node role="rightExpression" type="jetbrains.mps.samples.complex.structure.ImaginaryUnit" id="1206619856673" />
+                <node role="rightExpression" type="jetbrains.mps.complex.structure.ImaginaryUnit" id="1206619856673" />
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206621147596">
                   <property name="value" value="2" />
                 </node>
@@ -115,7 +115,7 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1206620156181">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1206620163342">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1206620175423">
-                    <node role="expression" type="jetbrains.mps.samples.complex.structure.ConjugateComplexExpression" id="1206620175424">
+                    <node role="expression" type="jetbrains.mps.complex.structure.ConjugateComplexExpression" id="1206620175424">
                       <node role="complexExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206620179832">
                         <link role="variableDeclaration" targetNodeId="1196430125279" resolveInfo="c2" />
                       </node>

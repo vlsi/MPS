@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.complex.structure)">
   <persistence version="3" />
   <refactoringHistory>
-    <refactoringContext modelVersion="2">
+    <refactoringContext modelVersion="3">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
       <conceptFeatureMap>
         <entry>
-          <key featureName="AbsExpression" conceptFQName="jetbrains.mps.sample.complex.structure.AbsExpression" featureKind="CONCEPT" />
-          <value featureName="AbsExpression" conceptFQName="jetbrains.mps.samples.complex.structure.AbsExpression" featureKind="CONCEPT" />
+          <key featureName="AbsExpression" conceptFQName="jetbrains.mps.samples.complex.structure.AbsExpression" featureKind="CONCEPT" />
+          <value featureName="AbsExpression" conceptFQName="jetbrains.mps.complex.structure.AbsExpression" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ArgExpression" conceptFQName="jetbrains.mps.sample.complex.structure.ArgExpression" featureKind="CONCEPT" />
-          <value featureName="ArgExpression" conceptFQName="jetbrains.mps.samples.complex.structure.ArgExpression" featureKind="CONCEPT" />
+          <key featureName="ArgExpression" conceptFQName="jetbrains.mps.samples.complex.structure.ArgExpression" featureKind="CONCEPT" />
+          <value featureName="ArgExpression" conceptFQName="jetbrains.mps.complex.structure.ArgExpression" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ComplexType" conceptFQName="jetbrains.mps.sample.complex.structure.ComplexType" featureKind="CONCEPT" />
-          <value featureName="ComplexType" conceptFQName="jetbrains.mps.samples.complex.structure.ComplexType" featureKind="CONCEPT" />
+          <key featureName="ComplexType" conceptFQName="jetbrains.mps.samples.complex.structure.ComplexType" featureKind="CONCEPT" />
+          <value featureName="ComplexType" conceptFQName="jetbrains.mps.complex.structure.ComplexType" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ConjugateComplexExpression" conceptFQName="jetbrains.mps.sample.complex.structure.ConjugateComplexExpression" featureKind="CONCEPT" />
-          <value featureName="ConjugateComplexExpression" conceptFQName="jetbrains.mps.samples.complex.structure.ConjugateComplexExpression" featureKind="CONCEPT" />
+          <key featureName="ConjugateComplexExpression" conceptFQName="jetbrains.mps.samples.complex.structure.ConjugateComplexExpression" featureKind="CONCEPT" />
+          <value featureName="ConjugateComplexExpression" conceptFQName="jetbrains.mps.complex.structure.ConjugateComplexExpression" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="DegreeComplexExpression" conceptFQName="jetbrains.mps.sample.complex.structure.DegreeComplexExpression" featureKind="CONCEPT" />
-          <value featureName="DegreeComplexExpression" conceptFQName="jetbrains.mps.samples.complex.structure.DegreeComplexExpression" featureKind="CONCEPT" />
+          <key featureName="DegreeComplexExpression" conceptFQName="jetbrains.mps.samples.complex.structure.DegreeComplexExpression" featureKind="CONCEPT" />
+          <value featureName="DegreeComplexExpression" conceptFQName="jetbrains.mps.complex.structure.DegreeComplexExpression" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ImExpression" conceptFQName="jetbrains.mps.sample.complex.structure.ImExpression" featureKind="CONCEPT" />
-          <value featureName="ImExpression" conceptFQName="jetbrains.mps.samples.complex.structure.ImExpression" featureKind="CONCEPT" />
+          <key featureName="ImExpression" conceptFQName="jetbrains.mps.samples.complex.structure.ImExpression" featureKind="CONCEPT" />
+          <value featureName="ImExpression" conceptFQName="jetbrains.mps.complex.structure.ImExpression" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ImaginaryUnit" conceptFQName="jetbrains.mps.sample.complex.structure.ImaginaryUnit" featureKind="CONCEPT" />
-          <value featureName="ImaginaryUnit" conceptFQName="jetbrains.mps.samples.complex.structure.ImaginaryUnit" featureKind="CONCEPT" />
+          <key featureName="ImaginaryUnit" conceptFQName="jetbrains.mps.samples.complex.structure.ImaginaryUnit" featureKind="CONCEPT" />
+          <value featureName="ImaginaryUnit" conceptFQName="jetbrains.mps.complex.structure.ImaginaryUnit" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ReExpression" conceptFQName="jetbrains.mps.sample.complex.structure.ReExpression" featureKind="CONCEPT" />
-          <value featureName="ReExpression" conceptFQName="jetbrains.mps.samples.complex.structure.ReExpression" featureKind="CONCEPT" />
+          <key featureName="ReExpression" conceptFQName="jetbrains.mps.samples.complex.structure.ReExpression" featureKind="CONCEPT" />
+          <value featureName="ReExpression" conceptFQName="jetbrains.mps.complex.structure.ReExpression" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SingleComplexExpression" conceptFQName="jetbrains.mps.sample.complex.structure.SingleComplexExpression" featureKind="CONCEPT" />
-          <value featureName="SingleComplexExpression" conceptFQName="jetbrains.mps.samples.complex.structure.SingleComplexExpression" featureKind="CONCEPT" />
+          <key featureName="SingleComplexExpression" conceptFQName="jetbrains.mps.samples.complex.structure.SingleComplexExpression" featureKind="CONCEPT" />
+          <value featureName="SingleComplexExpression" conceptFQName="jetbrains.mps.complex.structure.SingleComplexExpression" featureKind="CONCEPT" />
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
@@ -48,7 +48,7 @@
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.samples.complex)" />
+  <language namespace="ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.complex)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -61,11 +61,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.complex.structure)" version="3" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)" version="2" />
+  <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.complex.structure)" version="3" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196259557930">
     <property name="name" value="ComplexType" />
     <link role="extends" targetNodeId="2.1164118113764" resolveInfo="PrimitiveType" />
@@ -143,7 +143,7 @@
     <link role="extends" targetNodeId="1196260832413" resolveInfo="SingleComplexExpression" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1196418940099">
       <link role="conceptLinkDeclaration" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.samples.complex.structure.ComplexType" id="1196419204127" />
+      <node role="target" type="jetbrains.mps.complex.structure.ComplexType" id="1196419204127" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196419247698">
       <property name="value" value="conj" />
@@ -161,7 +161,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1196421987391">
       <link role="conceptLinkDeclaration" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.samples.complex.structure.ComplexType" id="1196422002159" />
+      <node role="target" type="jetbrains.mps.complex.structure.ComplexType" id="1196422002159" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196422008098">
       <property name="value" value="deg" />
