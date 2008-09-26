@@ -44,7 +44,7 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
 
   @NotNull()
   public String getKeyStroke() {
-    return "ctrl shift T";
+    return "ctrl alt T";
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
