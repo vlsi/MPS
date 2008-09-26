@@ -1,12 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.mpsLayoutLanguage.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packagingLanguage.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="AbstractProjectComponent" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.AbstractProjectComponent" featureKind="CONCEPT" />
+          <value featureName="AbstractProjectComponent" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.AbstractProjectComponent" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Antcall" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Antcall" featureKind="CONCEPT" />
+          <value featureName="Antcall" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Antcall" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="BuildLanguageTargetReference" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.BuildLanguageTargetReference" featureKind="CONCEPT" />
+          <value featureName="BuildLanguageTargetReference" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.BuildLanguageTargetReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="CompositePathComponent" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.CompositePathComponent" featureKind="CONCEPT" />
+          <value featureName="CompositePathComponent" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.CompositePathComponent" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="CompositeString" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.CompositeString" featureKind="CONCEPT" />
+          <value featureName="CompositeString" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.CompositeString" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Configuration" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Configuration" featureKind="CONCEPT" />
+          <value featureName="Configuration" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Configuration" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConfigurationReference" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.ConfigurationReference" featureKind="CONCEPT" />
+          <value featureName="ConfigurationReference" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.ConfigurationReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Copy" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Copy" featureKind="CONCEPT" />
+          <value featureName="Copy" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Copy" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Delete" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Delete" featureKind="CONCEPT" />
+          <value featureName="Delete" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Delete" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Echo" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Echo" featureKind="CONCEPT" />
+          <value featureName="Echo" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Echo" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="File" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.File" featureKind="CONCEPT" />
+          <value featureName="File" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.File" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Folder" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Folder" featureKind="CONCEPT" />
+          <value featureName="Folder" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Folder" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ICompositeComponent" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.ICompositeComponent" featureKind="CONCEPT" />
+          <value featureName="ICompositeComponent" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.ICompositeComponent" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ILayoutComponent" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.ILayoutComponent" featureKind="CONCEPT" />
+          <value featureName="ILayoutComponent" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.ILayoutComponent" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="IStringExpression" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.IStringExpression" featureKind="CONCEPT" />
+          <value featureName="IStringExpression" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.IStringExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Jar" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Jar" featureKind="CONCEPT" />
+          <value featureName="Jar" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Jar" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MPSLayout" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.MPSLayout" featureKind="CONCEPT" />
+          <value featureName="MPSLayout" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.MPSLayout" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Macro" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Macro" featureKind="CONCEPT" />
+          <value featureName="Macro" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Macro" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MacroReference" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.MacroReference" featureKind="CONCEPT" />
+          <value featureName="MacroReference" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.MacroReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Module" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Module" featureKind="CONCEPT" />
+          <value featureName="Module" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Module" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ModuleCycle" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.ModuleCycle" featureKind="CONCEPT" />
+          <value featureName="ModuleCycle" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.ModuleCycle" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="NewModuleReference" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.NewModuleReference" featureKind="CONCEPT" />
+          <value featureName="NewModuleReference" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.NewModuleReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Pair" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Pair" featureKind="CONCEPT" />
+          <value featureName="Pair" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Pair" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Path" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Path" featureKind="CONCEPT" />
+          <value featureName="Path" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Path" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PathComponent" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.PathComponent" featureKind="CONCEPT" />
+          <value featureName="PathComponent" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.PathComponent" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PathHolder" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.PathHolder" featureKind="CONCEPT" />
+          <value featureName="PathHolder" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.PathHolder" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PostProcessingTask" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.PostProcessingTask" featureKind="CONCEPT" />
+          <value featureName="PostProcessingTask" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.PostProcessingTask" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Replace" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Replace" featureKind="CONCEPT" />
+          <value featureName="Replace" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Replace" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="SimpleString" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.SimpleString" featureKind="CONCEPT" />
+          <value featureName="SimpleString" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.SimpleString" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Variable" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Variable" featureKind="CONCEPT" />
+          <value featureName="Variable" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Variable" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="VariableReference" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.VariableReference" featureKind="CONCEPT" />
+          <value featureName="VariableReference" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.VariableReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Zip" conceptFQName="jetbrains.mps.mpsLayoutLanguage.structure.Zip" featureKind="CONCEPT" />
+          <value featureName="Zip" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.Zip" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
@@ -18,17 +152,19 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.mpsLayoutLanguage.constraints)" version="20" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packagingLanguage.constraints)" version="20" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904de(jetbrains.mps.propertylanguage.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <maxImportIndex value="4" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.mpsLayoutLanguage.structure)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packagingLanguage.structure)" version="2" />
+  <maxImportIndex value="5" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packagingLanguage.structure)" version="2" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="16" />
+  <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902f7(jetbrains.mps.projectLanguage.structure)" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1202916958754">
     <property name="name" value="MPSLayout" />
     <property name="rootable" value="true" />
@@ -191,8 +327,8 @@
       <property name="value" value="module" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1203607480207">
-      <property name="name" value="modulelUID" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1222447189012">
+      <property name="name" value="id" />
       <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217505618278">
@@ -482,7 +618,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1217524754911">
-    <property name="name" value="ModuleReference" />
+    <property name="name" value="NewModuleReference" />
     <property name="package" value="compile" />
     <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1217524800588">
