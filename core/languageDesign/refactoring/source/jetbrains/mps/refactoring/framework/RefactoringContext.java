@@ -5,6 +5,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -554,10 +555,18 @@ public class RefactoringContext {
       Element refactoringElement = element.getChild(REFACTORING);
       String className = refactoringElement.getAttributeValue(REFACTORING_CLASS);
       myRefactoringClassName = className;
+
       try {
         String namespace = NameUtil.namespaceFromLongName(
           NameUtil.namespaceFromLongName(className));//remove ".scripts.%ClassName%"
         Language l = MPSModuleRepository.getInstance().getLanguage(namespace);
+
+        if (l == null) {
+          //if we weren't able to find a language then it should be loaded from core
+          //we can use any bootstrap language for it, for example, refactoring lang
+          l = BootstrapModule.REFACTORING.getLanguage();
+        }
+
         if (l == null) {
           LOG.errorWithTrace("can't find a language " + namespace);
         } else {
