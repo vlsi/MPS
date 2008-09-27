@@ -31,7 +31,7 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
           if ((SNodeOperations.getNextSibling(matchedNode_2) != null)) {
             {
               BaseIntentionProvider intentionProvider = null;
-              TypeChecker.getInstance().reportTypeError(matchedNode_2, "parameter of variable arity must be a last one", "r:bc8f3d8c-cd86-4395-a4fd-dff8ee002a8e(jetbrains.mps.baseLanguage.helgins@21_0)", "1222361623343", intentionProvider);
+              TypeChecker.getInstance().reportTypeError(matchedNode_2, "parameter of variable arity must be a last one", "r:5a64985f-a19b-4354-b762-acddb6c1d0db(jetbrains.mps.baseLanguage.helgins@21_0)", "1222513912718", intentionProvider);
             }
           }
           break;
@@ -39,7 +39,7 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
       }
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(variableArityType, "variable arity types should only be used in method parameters", "r:bc8f3d8c-cd86-4395-a4fd-dff8ee002a8e(jetbrains.mps.baseLanguage.helgins@21_0)", "1222361623349", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(variableArityType, "variable arity types should only be used in method parameters", "r:5a64985f-a19b-4354-b762-acddb6c1d0db(jetbrains.mps.baseLanguage.helgins@21_0)", "1222513912740", intentionProvider);
       }
     } while(false);
   }

@@ -20,7 +20,7 @@ public class check_StringLiteral_NonTypesystemRule extends AbstractNonTypesystem
     if (!(StringLiteral_Behavior.call_isCorrect_1221565233201(stringLiteral))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(stringLiteral, "Incorrect string literal", "r:bc8f3d8c-cd86-4395-a4fd-dff8ee002a8e(jetbrains.mps.baseLanguage.helgins@21_0)", "1222361623911", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(stringLiteral, "Incorrect string literal", "r:5a64985f-a19b-4354-b762-acddb6c1d0db(jetbrains.mps.baseLanguage.helgins@21_0)", "1222513913255", intentionProvider);
       }
     }
   }
