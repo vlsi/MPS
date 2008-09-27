@@ -1,20 +1,19 @@
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleReference;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-
-import java.util.*;
-
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.SwingUtilities;
+import java.util.*;
 
 public class LanguagesKeymapManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(LanguagesKeymapManager.class);
@@ -46,14 +45,17 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
     myRepository.addModuleRepositoryListener(myListener);
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        for (Language l : myRepository.getAllLanguages()) {
-          registerLanguageKeyMaps(l);
-        }
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            for (Language l : myRepository.getAllLanguages()) {
+              registerLanguageKeyMaps(l);
+            }
+          }
+        });
       }
     });
-
   }
 
   @NonNls
@@ -129,7 +131,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     for (Language l : myLanguagesToKeyMaps.keySet()) {
       List<EditorCellKeyMap> keyMaps = myLanguagesToKeyMaps.get(l);
       if (keyMaps == null) continue;
-      for (EditorCellKeyMap keyMap : new ArrayList<EditorCellKeyMap>(keyMaps)) {        
+      for (EditorCellKeyMap keyMap : new ArrayList<EditorCellKeyMap>(keyMaps)) {
         if (keyMap.getClass().getPackage().getName().equals(modelName)) {
           keyMaps.remove(keyMap);
         }
@@ -150,7 +152,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   }
 
   private class MyModuleRepositoryListener implements ModuleRepositoryListener {
-    public void moduleInitialized(IModule module) {         
+    public void moduleInitialized(IModule module) {
       if (module instanceof Language) {
         myLanguagesToRegister.add((Language) module);
       }
