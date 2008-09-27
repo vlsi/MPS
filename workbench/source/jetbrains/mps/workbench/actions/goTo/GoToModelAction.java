@@ -1,5 +1,6 @@
 package jetbrains.mps.workbench.actions.goTo;
 
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
@@ -40,7 +41,7 @@ public class GoToModelAction extends BaseAction {
     assert project != null;
     final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
-    //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
     BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
