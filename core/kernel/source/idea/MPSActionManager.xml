@@ -23,7 +23,7 @@
     </group>
 
     <group id="MPSHelpMenu">
-      <add-to-group group-id="HelpMenu" anchor="after" relative-to-action="OnlineDocAction"/>
+      <add-to-group group-id="HelpMenu" anchor="after" relative-to-action="ProductivityGude"/>
     </group>
 
     <group id="EditorFix">
