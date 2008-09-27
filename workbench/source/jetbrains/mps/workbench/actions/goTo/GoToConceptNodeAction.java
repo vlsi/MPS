@@ -1,4 +1,4 @@
-package jetbrains.mps.workbench.actions.goTo.actions;
+package jetbrains.mps.workbench.actions.goTo;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
@@ -8,26 +8,27 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
-import jetbrains.mps.workbench.choose.modules.BaseDevkitModel;
-import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
+import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class GoToDevkitAction extends BaseAction {
-  public GoToDevkitAction() {
-    super("Go To Devkit");
+import java.util.ArrayList;
+import java.util.List;
+
+public class GoToConceptNodeAction extends BaseAction {
+  public GoToConceptNodeAction() {
+    super("Go To Concept");
   }
 
   @NotNull
   protected String getKeyStroke() {
-    return "control alt shift D";
+    return "control alt shift C";
   }
 
   public void doExecute(AnActionEvent e) {
@@ -38,28 +39,24 @@ public class GoToDevkitAction extends BaseAction {
     //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
-    BaseDevkitModel goToDevkitModel = new BaseDevkitModel(mpsProject) {
-      public NavigationItem doGetNavigationItem(final IModule module) {
-        return new BaseModuleItem(module) {
-          public void navigate(boolean requestFocus) {
-            ProjectPane projectPane = mpsProject.getComponentSafe(ProjectPane.class);
-            projectPane.selectModule(module);
-            projectPane.getComponent().requestFocus();
+    BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject) {
+      public SNode[] find(IScope scope) {
+        final List<SNode> nodes = new ArrayList<SNode>();
+        for (Language l : scope.getVisibleLanguages()) {
+          for (SNode node : l.getStructureModelDescriptor().getSModel().getRoots()) {
+            nodes.add(node);
           }
-        };
-      }
+        }
+        return nodes.toArray(new SNode[0]);
 
-      public DevKit[] find(IScope scope) {
-        return scope.getVisibleDevkits().toArray(new DevKit[0]);
       }
 
       @Nullable
       public String getPromptText() {
-        //return IdeBundle.message("prompt.gotoclass.enter.class.name");
-        return "Devkit name:";
+        return "Concept name:";
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToDevkitModel, new FakePsiContext());
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, baseNodeModel, new FakePsiContext());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -71,4 +68,5 @@ public class GoToDevkitAction extends BaseAction {
       }
     }, ModalityState.current(), true);
   }
+
 }

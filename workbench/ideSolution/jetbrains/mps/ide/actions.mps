@@ -37,7 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26"/>
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)"
                   version="0"/>
-  <maxImportIndex value="116"/>
+  <maxImportIndex value="117"/>
   <import index="1"
           modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)"
           version="-1"/>
@@ -87,9 +87,6 @@
   <import index="52" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1"/>
   <import index="53"
           modelUID="f:java_stub#jetbrains.mps.workbench.actions.generate(jetbrains.mps.workbench.actions.generate@java_stub)"
-          version="-1"/>
-  <import index="54"
-          modelUID="f:java_stub#jetbrains.mps.workbench.actions.goTo.actions(jetbrains.mps.workbench.actions.goTo.actions@java_stub)"
           version="-1"/>
   <import index="57" modelUID="f:java_stub#jetbrains.mps.workbench.actions(jetbrains.mps.workbench.actions@java_stub)"
           version="-1"/>
@@ -183,6 +180,9 @@
           version="-1"/>
   <import index="116"
           modelUID="f:java_stub#jetbrains.mps.refactoring.renameLanguage(jetbrains.mps.refactoring.renameLanguage@java_stub)"
+          version="-1"/>
+  <import index="117"
+          modelUID="f:java_stub#jetbrains.mps.workbench.actions.goTo(jetbrains.mps.workbench.actions.goTo@java_stub)"
           version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions"/>
@@ -1017,28 +1017,28 @@
           id="1207148357289">
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
             id="1217518715741">
-        <link role="constructorDeclaration" targetNodeId="54.~GoToActionAction.&lt;init&gt;()"
+        <link role="constructorDeclaration" targetNodeId="117.~GoToActionAction.&lt;init&gt;()"
               resolveInfo="GoToActionAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1215012058779"/>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
             id="1217518717356">
-        <link role="constructorDeclaration" targetNodeId="54.~GoToRootNodeAction.&lt;init&gt;()"
+        <link role="constructorDeclaration" targetNodeId="117.~GoToRootNodeAction.&lt;init&gt;()"
               resolveInfo="GoToRootNodeAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
             id="1217518716361">
-        <link role="constructorDeclaration" targetNodeId="54.~GoToNamedNodeAction.&lt;init&gt;()"
+        <link role="constructorDeclaration" targetNodeId="117.~GoToNamedNodeAction.&lt;init&gt;()"
               resolveInfo="GoToNamedNodeAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
             id="1217518717438">
-        <link role="constructorDeclaration" targetNodeId="54.~GoToConceptNodeAction.&lt;init&gt;()"
+        <link role="constructorDeclaration" targetNodeId="117.~GoToConceptNodeAction.&lt;init&gt;()"
               resolveInfo="GoToConceptNodeAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
             id="1217518717027">
-        <link role="constructorDeclaration" targetNodeId="54.~GoToNodeByIdAction.&lt;init&gt;()"
+        <link role="constructorDeclaration" targetNodeId="117.~GoToNodeByIdAction.&lt;init&gt;()"
               resolveInfo="GoToNodeByIdAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983564013"/>
@@ -1058,22 +1058,22 @@
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983581141"/>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
             id="1217518716393">
-        <link role="constructorDeclaration" targetNodeId="54.~GoToModelAction.&lt;init&gt;()"
+        <link role="constructorDeclaration" targetNodeId="117.~GoToModelAction.&lt;init&gt;()"
               resolveInfo="GoToModelAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
             id="1217518717685">
-        <link role="constructorDeclaration" targetNodeId="54.~GoToLanguageAction.&lt;init&gt;()"
+        <link role="constructorDeclaration" targetNodeId="117.~GoToLanguageAction.&lt;init&gt;()"
               resolveInfo="GoToLanguageAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
             id="1217518717867">
-        <link role="constructorDeclaration" targetNodeId="54.~GoToSolutionAction.&lt;init&gt;()"
+        <link role="constructorDeclaration" targetNodeId="117.~GoToSolutionAction.&lt;init&gt;()"
               resolveInfo="GoToSolutionAction"/>
       </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
             id="1217603971860">
-        <link role="constructorDeclaration" targetNodeId="54.~GoToDevkitAction.&lt;init&gt;()"
+        <link role="constructorDeclaration" targetNodeId="117.~GoToDevkitAction.&lt;init&gt;()"
               resolveInfo="GoToDevkitAction"/>
       </node>
     </node>

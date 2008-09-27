@@ -39,10 +39,8 @@ public class ApplicationsTest extends BaseMPSTest {
     assertTrue(res, res == null);
   }
 
-  /*
   public void testIDESolution() {
     String res = testProject(new File("workbench/ideSolution/ide.ipr"));
     assertTrue(res, res == null);
   }
-  */
 }
