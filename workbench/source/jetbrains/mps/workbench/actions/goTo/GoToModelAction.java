@@ -41,7 +41,7 @@ public class GoToModelAction extends BaseAction {
     assert project != null;
     final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
-    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("goto.model");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
     BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
