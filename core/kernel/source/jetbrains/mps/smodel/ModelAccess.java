@@ -144,18 +144,23 @@ public class ModelAccess {
     }
     getWriteLock().unlock();
 
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+    executeCommand(new Runnable() {
       public void run() {
-        if (getWriteLock().tryLock()) {
-          try {
-            executeCommand(r);
-          } finally {
-            getWriteLock().unlock();
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            if (getWriteLock().tryLock()) {
+              try {
+                r.run();
+              } finally {
+                getWriteLock().unlock();
+              }
+              res[0] = true;
+            }
           }
-          res[0] = true;
-        }
+        });
       }
     });
+
     return res[0];
   }
 
