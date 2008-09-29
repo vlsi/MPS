@@ -3,7 +3,7 @@
   <version codename="Yellow Fox" major="8" minor="0M1" eap="true"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
   <logo url="/jetbrains/mps/workbench/icons/splash3.png"/>
-  <about url="/idea_about.png"/>
+  <about url="/jetbrains/mps/workbench/icons/mpsAbout.png"/>
   <package code="__PACKAGE_CODE__"/>
   <names product="MPS" fullname="JetBrains MPS"/>
 
