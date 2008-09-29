@@ -156,9 +156,9 @@ public class ModuleMaker {
 
           String messageStirng = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();                    
           if (cp.isWarning()) {
-            LOG.warning(messageStirng + " (line: )" + cp.getSourceLineNumber(), new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
+            LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
           } else {
-            LOG.error(messageStirng + " (line: )" + cp.getSourceLineNumber(), new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
+            LOG.error(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
           }
         }
         
