@@ -16,16 +16,6 @@
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="library" name="httpclient" level="project" />
-    <orderEntry type="library" name="IDEA-plaform" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../MPS_BUILD/lib/idea-rt/forms_rt.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntryProperties />
   </component>
 </module>

@@ -50,6 +50,7 @@
     <orderEntry type="library" exported="" name="commons-lang" level="project" />
     <orderEntry type="module" module-name="Closures" exported="" />
     <orderEntry type="module" module-name="Closures-runtime" exported="" />
+    <orderEntry type="module" module-name="resources" exported="" />
     <orderEntry type="module" module-name="idea-patch" exported="" />
     <orderEntry type="module" module-name="transformationTest" exported="" />
     <orderEntry type="library" exported="" name="JDOM" level="project" />
