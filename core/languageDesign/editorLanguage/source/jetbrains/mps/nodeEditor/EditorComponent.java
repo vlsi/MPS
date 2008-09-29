@@ -592,6 +592,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public String getToolTipText(final MouseEvent event) {
     return ModelAccess.instance().tryRead(new Computable<String>() {
       public String compute() {
+        if (myRootCell == null) {
+          return null;
+        }
+
         EditorCell cell = myRootCell.findCell(event.getX(), event.getY());
         if (cell == null) {
           return null;
