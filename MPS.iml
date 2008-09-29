@@ -41,7 +41,6 @@
     <orderEntry type="module" module-name="quotation" exported="" />
     <orderEntry type="module" module-name="annotations" exported="" />
     <orderEntry type="module" module-name="projectLanguage" exported="" />
-    <orderEntry type="module" module-name="monitorLanguage" exported="" />
     <orderEntry type="module" module-name="workbench" exported="" />
     <orderEntry type="module" module-name="kernel" exported="" />
     <orderEntry type="module" module-name="pluginLanguage" exported="" />
