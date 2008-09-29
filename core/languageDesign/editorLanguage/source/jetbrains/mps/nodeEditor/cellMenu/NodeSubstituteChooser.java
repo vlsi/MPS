@@ -140,7 +140,21 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           if (null_s1 && null_s2) return 0;
           if (null_s1) return 1;
           if (null_s2) return -1;
-          return s1.compareTo(s2);
+          int comparisonResult = s1.compareTo(s2);
+
+          if (comparisonResult == 0) {
+            return 0;
+          }
+
+          if (s1.startsWith(s2)) {
+            return -1;
+          }
+
+          if (s2.startsWith(s1)) {
+            return 1;
+          }
+
+          return comparisonResult;
         }
       });
     } catch (Exception e) {
