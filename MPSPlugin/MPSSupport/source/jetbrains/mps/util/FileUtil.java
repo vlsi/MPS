@@ -214,6 +214,20 @@ public class FileUtil {
     return result && root.delete();
   }
 
+  public static boolean clear(File dir) {
+    File[] files = dir.listFiles();
+    if (files == null) return true;
+
+    boolean result = true;
+
+    for (File f : files) {
+      boolean r = delete(f);
+      result = result && r;
+    }
+
+    return result;
+  }
+
   public static long getNewestFileTime(File dir) {
     return getNewestFileTime(dir, true);
   }

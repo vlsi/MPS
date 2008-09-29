@@ -5,6 +5,7 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.renameModel.ModelRenamer;
+import jetbrains.mps.util.FileUtil;
 
 import javax.swing.*;
 import java.awt.Frame;
@@ -15,7 +16,7 @@ import java.awt.GridBagConstraints;
 public class RenameLanguageDialog extends BaseDialog {
   private JPanel myMainPanel;
   private JTextField myLanguageNameField;
-  private JCheckBox myUpdateAllReferences;
+  private JCheckBox myRegenerateLanguage;
 
   private Language myLanguage;
 
@@ -44,13 +45,14 @@ public class RenameLanguageDialog extends BaseDialog {
     myLanguageNameField = new JTextField(myLanguage.getModuleFqName(), 30);
     myMainPanel.add(myLanguageNameField, c);
 
+
     c = new GridBagConstraints();
     c.gridx = 0;
     c.gridy = 2;
     c.anchor = GridBagConstraints.FIRST_LINE_START;
-    myUpdateAllReferences = new JCheckBox("Update All References");
-    myUpdateAllReferences.getModel().setSelected(true);
-    myMainPanel.add(myUpdateAllReferences, c);
+    myRegenerateLanguage = new JCheckBox("Regenerate Language");
+    myRegenerateLanguage.getModel().setSelected(myLanguage.isBootstrap());
+    myMainPanel.add(myRegenerateLanguage, c);
 
 
     c = new GridBagConstraints();
@@ -82,9 +84,16 @@ public class RenameLanguageDialog extends BaseDialog {
         }
 
         new LanguageRenamer(myLanguage, fqName).rename();
-        dispose();
       }
     });
+
+    if (myRegenerateLanguage.getModel().isSelected()) {
+      FileUtil.clear(myLanguage.getSourceDir());
+
+      //todo      
+    }
+
+    dispose();
   }
 
 
