@@ -74,7 +74,7 @@ public class ChildSubstituteActionsHelper {
         resultActions = new ArrayList<INodeSubstituteAction>();
         ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, context.getScope());
         List<SNode> allVisibleConcepts = conceptsSearchScope.getNodes();
-        for (SNode visibleConcept : allVisibleConcepts) {
+        for (final SNode visibleConcept : allVisibleConcepts) {
           resultActions.add(new DefaultChildNodeSubstituteAction(visibleConcept, parentNode, currentChild, childSetter, context.getScope()) {
             public String getMatchingText(String pattern) {
               return getMatchingText(pattern, true, true);
@@ -85,7 +85,8 @@ public class ChildSubstituteActionsHelper {
             }
 
             public String getDescriptionText(String pattern) {
-              return "concept instance";
+              String fqName = NameUtil.nodeFQName(visibleConcept);
+              return "lang: " + NameUtil.compactNamespace(NameUtil.namespaceFromConceptFQName(fqName));
             }
 
             public Icon getIconFor(String pattern) {
