@@ -18,7 +18,6 @@
     <orderEntry type="library" exported="" name="asm" level="project" />
     <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntry type="library" name="stax" level="project" />
-    <orderEntry type="library" exported="" name="Alloy" level="project" />
     <orderEntry type="module" module-name="baseLanguage" exported="" />
     <orderEntry type="module" module-name="blTypes" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />

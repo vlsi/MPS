@@ -1495,13 +1495,6 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="Alloy">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/alloy/alloy.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
     <library name="ant-1.7.0">
       <CLASSES>
         <root url="file://$PROJECT_DIR$/lib/ant-1.7.0/lib" />
