@@ -147,11 +147,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           }
 
           if (s1.startsWith(s2)) {
-            return -1;
+            return 1;
           }
 
           if (s2.startsWith(s1)) {
-            return 1;
+            return -1;
           }
 
           return comparisonResult;
