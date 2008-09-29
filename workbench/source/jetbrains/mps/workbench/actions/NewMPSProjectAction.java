@@ -18,6 +18,12 @@ public class NewMPSProjectAction extends BaseAction {
   }
 
   public void doExecute(AnActionEvent e) {
+/*
+    Project project = e.getData(PlatformDataKeys.PROJECT);
+    NewProjectWizard wizard = new NewProjectWizard("New Project",project);
+    wizard.show();
+*/
+
     Project project = e.getData(PlatformDataKeys.PROJECT);
     JFrame frame = WindowManager.getInstance().getFrame(project);
 
