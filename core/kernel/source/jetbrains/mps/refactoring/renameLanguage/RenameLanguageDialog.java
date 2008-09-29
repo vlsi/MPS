@@ -51,7 +51,7 @@ public class RenameLanguageDialog extends BaseDialog {
     c.gridy = 2;
     c.anchor = GridBagConstraints.FIRST_LINE_START;
     myRegenerateLanguage = new JCheckBox("Regenerate Language");
-    myRegenerateLanguage.getModel().setSelected(myLanguage.isBootstrap());
+    myRegenerateLanguage.getModel().setSelected(!myLanguage.isBootstrap());
     myMainPanel.add(myRegenerateLanguage, c);
 
 
@@ -90,7 +90,8 @@ public class RenameLanguageDialog extends BaseDialog {
     if (myRegenerateLanguage.getModel().isSelected()) {
       FileUtil.clear(myLanguage.getSourceDir());
 
-      //todo      
+      
+
     }
 
     dispose();
