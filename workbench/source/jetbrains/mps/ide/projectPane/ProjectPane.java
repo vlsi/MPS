@@ -553,14 +553,14 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return findTreeNode(rootTreeNode,
       new Condition<MPSTreeNode>() {
         public boolean met(MPSTreeNode object) {
-          return !(object instanceof ProjectModuleTreeNode)
-            || object instanceof ProjectLanguageTreeNode;
+          return !(object instanceof ProjectModuleTreeNode);
         }
       },
       new Condition<MPSTreeNode>() {
         public boolean met(MPSTreeNode treeNode) {
+          if (!(treeNode instanceof ProjectModuleTreeNode)) return false;
           IOperationContext nodeContext = treeNode.getOperationContext();
-          return (nodeContext != null && nodeContext.getModule() == module);
+          return nodeContext != null && nodeContext.getModule() == module;
         }
       });
   }

@@ -116,7 +116,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
     }
   }
 
-  private static final class NamespaceNode extends TextTreeNode {
+  public static final class NamespaceNode extends TextTreeNode {
     private String myName;
 
     public NamespaceNode(String name, IOperationContext context) {
