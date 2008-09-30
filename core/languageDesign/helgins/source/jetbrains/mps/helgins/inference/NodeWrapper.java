@@ -28,24 +28,14 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
 
   public static IWrapper createWrapperFromNode(SNode node, EquationManager equationManager) {
     if (node == null) return null;
-    String conceptFqName = node.getConceptFqName();
-    if ("jetbrains.mps.bootstrap.helgins.structure.MeetType".equals(conceptFqName)) {
-      return new MeetWrapper(node.getChildren("argument"), equationManager);
-    } else if ("jetbrains.mps.bootstrap.helgins.structure.JoinType".equals(conceptFqName)) {
-      return new JoinWrapper(node.getChildren("argument"), equationManager);
-    } else {
-      return createNodeWrapper(node, equationManager);
-    }
-  }
-
-  public static NodeWrapper createNodeWrapper(SNode node, EquationManager equationManager) {
-    if (node == null) return null;
+    NodeWrapper result;
     String conceptFqName = node.getConceptFqName();
     if ("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable".equals(conceptFqName)) {
-      return new VariableWrapper(node, equationManager);
+      result = new VariableWrapper(node, equationManager);
     } else {
-      return new NodeWrapper(node);
+      result = new NodeWrapper(node);
     }
+    return result;
   }
 
   protected NodeWrapper(SNode node) {

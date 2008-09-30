@@ -3,6 +3,7 @@ package jetbrains.mps.helgins.inference;
 import jetbrains.mps.bootstrap.helgins.runtime.*;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.bootstrap.helgins.structure.MeetType;
+import jetbrains.mps.bootstrap.helgins.structure.JoinType;
 import jetbrains.mps.helgins.inference.util.*;
 import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.logging.Logger;
@@ -103,26 +104,30 @@ public class SubtypingManager {
       superRepresentator = equationManager.getRepresentatorWrapper(supertype);
     }
 
-    //meet-wrappers
-    if (subRepresentator instanceof MeetWrapper) {
-      for (IWrapper subWrapper : ((MeetWrapper)subRepresentator).getArguments()) {
-        if (isSubtype(subWrapper, supertype, equationManager, errorInfo, isWeak)) {
+    //joins
+    if (superRepresentator instanceof NodeWrapper) {
+      SNode node = superRepresentator.getNode();
+      for (SNode argument : node.getChildren(JoinType.ARGUMENT)) {
+        if (isSubtype(subRepresentator, NodeWrapper.createWrapperFromNode(argument, equationManager), equationManager, errorInfo, isWeak)) {
           return true;
         }
       }
     }
 
-    //join-wrappers
-    if (superRepresentator instanceof JoinWrapper) {
-      for (IWrapper superWrapper :((JoinWrapper)superRepresentator).getArguments()) {
-        if (isSubtype(subRepresentator, superWrapper, equationManager, errorInfo, isWeak)) {
-          return true;
-        }
-      }
-    }
 
-    //supertypes
     if (subRepresentator instanceof NodeWrapper) {
+      SNode node = subRepresentator.getNode();
+
+      //meets
+      if (BaseAdapter.isInstance(node, MeetType.class)) {
+        for (SNode argument : node.getChildren(MeetType.ARGUMENT)) {
+          if (isSubtype(NodeWrapper.createWrapperFromNode(argument, equationManager), supertype, equationManager, errorInfo, isWeak)) {
+            return true;
+          }
+        }
+      }
+
+      //supertypes
       if (searchInSupertypes((NodeWrapper) subRepresentator, superRepresentator, equationManager, errorInfo, isWeak)) return true;
     }
 
@@ -250,14 +255,16 @@ public class SubtypingManager {
       return result;
     }
 
-    if (term instanceof MeetWrapper) {
-      for (IWrapper argument : ((MeetWrapper)term).getArguments()) {
-        result.addStructurally(argument);
-      }
-    }
-
     if (term.isConcrete()) {
       SNode node = term.getNode();
+
+      if (BaseAdapter.isInstance(node, MeetType.class)) {
+        for (SNode argument : node.getChildren(MeetType.ARGUMENT)) {
+          result.addStructurally(NodeWrapper.createWrapperFromNode(argument, null));
+        }
+        return result;
+      }
+
       Set<SubtypingRule_Runtime> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(node, isWeak);
       if (subtypingRule_runtimes != null) {
         for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {

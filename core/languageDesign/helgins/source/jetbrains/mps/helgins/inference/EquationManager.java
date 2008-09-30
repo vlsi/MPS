@@ -1029,31 +1029,12 @@ public class EquationManager {
 
   /*package*/ IWrapper expandWrapper(SNode term, IWrapper representator, SModel typesModel,
                                      boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
-    if (representator instanceof MeetWrapper) {
-      MeetWrapper meetWrapper = (MeetWrapper) representator;
-      MeetType meetType = MeetType.newInstance(typesModel);
-      for (IWrapper wrapper : meetWrapper.getArguments()) {
-        BaseConcept argument = (BaseConcept) expandWrapper(term, wrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter();
-        meetType.addArgument(CopyUtil.copy(argument));
-      }
-      return NodeWrapper.createNodeWrapper(meetType.getNode(), this);
-    }
-    if (representator instanceof JoinWrapper) {
-      JoinWrapper joinWrapper = (JoinWrapper) representator;
-      JoinType joinType = JoinType.newInstance(typesModel);
-      for (IWrapper wrapper : joinWrapper.getArguments()) {
-        BaseConcept argument = (BaseConcept) expandWrapper(term, wrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter();
-        joinType.addArgument(CopyUtil.copy(argument));
-      }
-      return NodeWrapper.createNodeWrapper(joinType.getNode(), this);
-    }
     return expandNode(term, representator, representator, 0, new HashSet<IWrapper>(), typesModel, finalExpansion, nodeTypesComponent);
   }
 
   private NodeWrapper expandNode(SNode term, IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel,
                                  boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
     if (wrapper == null) return null;
-    wrapper = processJoinsAndMeets(term, wrapper, typesModel, finalExpansion, nodeTypesComponent);
 
     if (wrapper.isVariable()) {
       IWrapper type = this.getRepresentatorWrapper(wrapper);
@@ -1134,32 +1115,6 @@ public class EquationManager {
     }
 
     return (NodeWrapper) wrapper;
-  }
-
-  private NodeWrapper processJoinsAndMeets(SNode term, IWrapper wrapper, SModel typesModel, boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
-    if (wrapper instanceof MeetWrapper) {
-      MeetWrapper meetWrapper = (MeetWrapper) wrapper;
-      MeetType meetType = MeetType.newInstance(typesModel);
-      for (IWrapper argwrapper : meetWrapper.getArguments()) {
-        BaseConcept argument = (BaseConcept) expandWrapper(term, argwrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter();
-        meetType.addArgument(CopyUtil.copy(argument));
-      }
-      return NodeWrapper.createNodeWrapper(meetType.getNode(), this);
-    }
-    if (wrapper instanceof JoinWrapper) {
-      JoinWrapper joinWrapper = (JoinWrapper) wrapper;
-      JoinType joinType = JoinType.newInstance(typesModel);
-      for (IWrapper argwrapper : joinWrapper.getArguments()) {
-        BaseConcept argument = (BaseConcept) expandWrapper(term, argwrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter();
-        joinType.addArgument(CopyUtil.copy(argument));
-      }
-      return NodeWrapper.createNodeWrapper(joinType.getNode(), this);
-    }
-    if (wrapper instanceof NodeWrapper) {
-      return (NodeWrapper) wrapper;
-    }
-    //can't be true
-    return null;
   }
 
   private void processConcretes() {

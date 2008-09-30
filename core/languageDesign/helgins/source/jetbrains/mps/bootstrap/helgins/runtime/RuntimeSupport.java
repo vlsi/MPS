@@ -123,22 +123,6 @@ public class RuntimeSupport {
     }
   }
 
-  public JoinWrapper createJoinWrapper(SNode... arguments) {
-    JoinWrapper joinWrapper = new JoinWrapper();
-    for (SNode argument : arguments) {
-      joinWrapper.addArgument(NodeWrapper.createWrapperFromNode(argument, myTypeChecker.getEquationManager()));
-    }
-    return joinWrapper;
-  }
-
-  public MeetWrapper createMeetWrapper(SNode... arguments) {
-    MeetWrapper meetWrapper = new MeetWrapper();
-    for (SNode argument : arguments) {
-      meetWrapper.addArgument(NodeWrapper.createWrapperFromNode(argument, myTypeChecker.getEquationManager()));
-    }
-    return meetWrapper;
-  }
-
   //-------------------- equations
 
   @Deprecated

@@ -1,8 +1,10 @@
 package jetbrains.mps.helgins.inference.util;
 
-import jetbrains.mps.helgins.inference.IWrapper;
-import jetbrains.mps.helgins.inference.JoinWrapper;
-import jetbrains.mps.helgins.inference.MeetWrapper;
+import jetbrains.mps.helgins.inference.*;
+import jetbrains.mps.bootstrap.helgins.structure.MeetType;
+import jetbrains.mps.bootstrap.helgins.structure.JoinType;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.core.structure.BaseConcept;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -17,26 +19,35 @@ import java.util.Iterator;
  */
 public class LatticeUtil {
   public static IWrapper join(IWrapper wrapper1, IWrapper wrapper2) {
-    JoinWrapper joinWrapper = new JoinWrapper();
-    if (wrapper1 instanceof JoinWrapper) {
-      JoinWrapper joinWrapper1 = (JoinWrapper) wrapper1;
-      joinWrapper.addArguments(joinWrapper1);
-      if (wrapper2 instanceof JoinWrapper) {
-        JoinWrapper joinWrapper2 = (JoinWrapper) wrapper2;
-        joinWrapper.addArguments(joinWrapper2);
+    JoinType joinType = JoinType.newInstance(TypeChecker.getInstance().getRuntimeTypesModel());
+    if (BaseAdapter.isInstance(wrapper1.getNode(), JoinType.class)) {
+      JoinType joinWrapper1 = (JoinType) wrapper1.getNode().getAdapter();
+      for (BaseConcept bc : joinWrapper1.getArguments()) {
+        joinType.addArgument(bc);
+      }
+
+      if (BaseAdapter.isInstance(wrapper2.getNode(), JoinType.class)) {
+        JoinType joinWrapper2 = (JoinType) wrapper2.getNode().getAdapter();
+        for (BaseConcept bc : joinWrapper2.getArguments()) {
+          joinType.addArgument(bc);
+        }
       } else {
-        joinWrapper.addArgument(wrapper2);
+        joinType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode())));
       }
     } else
-    if (wrapper2 instanceof JoinWrapper) {
-      JoinWrapper joinWrapper2 = (JoinWrapper) wrapper2;
-      joinWrapper.addArgument(wrapper1);
-      joinWrapper.addArguments(joinWrapper2);
+
+    if (BaseAdapter.isInstance(wrapper2.getNode(), JoinType.class)) {
+      JoinType joinWrapper2 = (JoinType) wrapper2.getNode().getAdapter();
+      joinType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode())));
+      for (BaseConcept bc : joinWrapper2.getArguments()) {
+        joinType.addArgument(bc);
+      }
+
     } else {
-      joinWrapper.addArgument(wrapper1);
-      joinWrapper.addArgument(wrapper2);
+      joinType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode())));
+      joinType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode())));
     }
-    return joinWrapper;
+    return NodeWrapper.createWrapperFromNode(joinType.getNode(), null);
   }
 
   public static IWrapper join(Set<IWrapper> wrappers) {
@@ -55,26 +66,32 @@ public class LatticeUtil {
   }
 
   public static IWrapper meet(IWrapper wrapper1, IWrapper wrapper2) {
-    MeetWrapper meetWrapper = new MeetWrapper();
-    if (wrapper1 instanceof MeetWrapper) {
-      MeetWrapper meetWrapper1 = (MeetWrapper) wrapper1;
-      meetWrapper.addArguments(meetWrapper1);
-      if (wrapper2 instanceof MeetWrapper) {
-        MeetWrapper meetWrapper2 = (MeetWrapper) wrapper2;
-        meetWrapper.addArguments(meetWrapper2);
+    MeetType meetType = MeetType.newInstance(TypeChecker.getInstance().getRuntimeTypesModel());
+    if (BaseAdapter.isInstance(wrapper1.getNode(), MeetType.class)) {
+      MeetType meetWrapper1 = (MeetType) wrapper1.getNode().getAdapter();
+      for (BaseConcept bc : meetWrapper1.getArguments()) {
+        meetType.addArgument(bc);
+      }
+      if (BaseAdapter.isInstance(wrapper2.getNode(), MeetType.class)) {
+        MeetType meetWrapper2 = (MeetType) wrapper2.getNode().getAdapter();
+        for (BaseConcept bc : meetWrapper2.getArguments()) {
+          meetType.addArgument(bc);
+        }
       } else {
-        meetWrapper.addArgument(wrapper2);
+        meetType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode())));
       }
     } else
-    if (wrapper2 instanceof MeetWrapper) {
-      MeetWrapper meetWrapper2 = (MeetWrapper) wrapper2;
-      meetWrapper.addArgument(wrapper1);
-      meetWrapper.addArguments(meetWrapper2);
+    if (BaseAdapter.isInstance(wrapper2.getNode(), MeetType.class)) {
+      MeetType meetWrapper2 = (MeetType) wrapper2.getNode().getAdapter();
+      meetType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode())));
+      for (BaseConcept bc : meetWrapper2.getArguments()) {
+        meetType.addArgument(bc);
+      }
     } else {
-      meetWrapper.addArgument(wrapper1);
-      meetWrapper.addArgument(wrapper2);
+      meetType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode())));
+      meetType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode())));
     }
-    return meetWrapper;
+    return NodeWrapper.createWrapperFromNode(meetType.getNode(), null);
   }
 
   public static IWrapper meet(Set<IWrapper> wrappers) {
