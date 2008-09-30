@@ -22,7 +22,6 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/beansbinding" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/annotations" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/ant-1.7.0" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/asm" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/commons-lang" />
@@ -63,9 +62,6 @@
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/beansbinding">
       <fileset dir="lib/beansbinding" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.jar, **/*.class, **/*.png, **/*.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/annotations">
-      <fileset dir="lib/annotations" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/ant-1.7.0">
       <fileset dir="lib/ant-1.7.0" excludes="**/*.java, **/*.zip, **/*.iml, **/*.ipr" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, " />
