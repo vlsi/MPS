@@ -22,7 +22,7 @@ public class typeof_SNodeCreator_InferenceRule extends AbstractInferenceRule_Run
       if (SLinkOperations.getTarget(createdType, "concept", false) == null) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(createdType, "concrete node type is expected", "r:69286335-28bb-4a12-a808-45a17d6d932f(jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0)", "1222434610983", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(createdType, "concrete node type is expected", "r:c0ec52f5-cc93-4e4f-a292-9eebdf706c38(jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0)", "1222776162734", intentionProvider);
         }
         return;
       }

@@ -56,7 +56,7 @@ public class typeof_Property_HasValue_Simple_InferenceRule extends AbstractInfer
       {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(op, "unknown property datatype: " + dataType, "r:69286335-28bb-4a12-a808-45a17d6d932f(jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0)", "1222434606867", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(op, "unknown property datatype: " + dataType, "r:c0ec52f5-cc93-4e4f-a292-9eebdf706c38(jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0)", "1222776146786", intentionProvider);
         }
       }
     }

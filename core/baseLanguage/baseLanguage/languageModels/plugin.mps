@@ -2985,6 +2985,15 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220353713044">
     <property name="package" value="refactoring.extractMethod.dialog" />
     <property name="name" value="ExtractMethodDialog" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1222776897418">
+      <property name="name" value="MINIMUM_TABLE_COLUMN_WIDTH" />
+      <property name="isFinal" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1222776897419" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1222776910540" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222776915120">
+        <property name="value" value="50" />
+      </node>
+    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1220354294277">
       <property name="name" value="myPanel" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1220354294278" />
@@ -5945,8 +5954,8 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1220965939714">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220965939715">
                 <property name="name" value="max" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220965944470">
-                  <property name="value" value="50" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1222776998665">
+                  <link role="variableDeclaration" targetNodeId="1222776897418" resolveInfo="MINIMUM_TABLE_COLUMN_WIDTH" />
                 </node>
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1220965939716" />
               </node>
@@ -13268,6 +13277,33 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220963634826">
     <property name="package" value="refactoring.extractMethod.refactor" />
     <property name="name" value="ParametersTableModel" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1222777520591">
+      <property name="name" value="IS_SELECTED_COLUMN_INDEX" />
+      <property name="isFinal" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1222777520592" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1222777564797" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222777576817">
+        <property name="value" value="0" />
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1222777613389">
+      <property name="name" value="TYPE_COLUMN_INDEX" />
+      <property name="isFinal" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1222777613390" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1222777616378" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222777628132">
+        <property name="value" value="1" />
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1222777682394">
+      <property name="name" value="NAME_COLUMN_INDEX" />
+      <property name="isFinal" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1222777682395" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1222777686071" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222777695496">
+        <property name="value" value="2" />
+      </node>
+    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1220974375532">
       <property name="name" value="myParameters" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220974378926">
@@ -13322,20 +13358,20 @@
                 </node>
               </node>
             </node>
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220974275711">
-              <property name="value" value="0" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1222777593899">
+              <link role="variableDeclaration" targetNodeId="1222777520591" resolveInfo="IS_SELECTED_ROW_INDEX" />
             </node>
           </node>
           <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="1220974300267">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220974301910">
-              <property name="value" value="1" />
-            </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220974300269">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1220974308538">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1220974320134">
                   <link role="classifier" targetNodeId="9.~String" resolveInfo="String" />
                 </node>
               </node>
+            </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1222777666281">
+              <link role="variableDeclaration" targetNodeId="1222777613389" resolveInfo="TYPE_ROW_INDEX" />
             </node>
           </node>
           <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="1220974344643">
@@ -13346,8 +13382,8 @@
                 </node>
               </node>
             </node>
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220974346849">
-              <property name="value" value="2" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1222777707124">
+              <link role="variableDeclaration" targetNodeId="1222777682394" resolveInfo="NAME_COLUMN_INDEX" />
             </node>
           </node>
           <node role="defaultBlock" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220974262081">
@@ -13498,9 +13534,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220964509555">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SwitchStatement" id="1220974494924">
           <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="1220974501506">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220974502572">
-              <property name="value" value="0" />
-            </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220974501508">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1220974548856">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220974549998">
@@ -13523,6 +13556,9 @@
                   </node>
                 </node>
               </node>
+            </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1222777608934">
+              <link role="variableDeclaration" targetNodeId="1222777520591" resolveInfo="IS_SELECTED_ROW_INDEX" />
             </node>
           </node>
           <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="1220974558758">
@@ -13549,8 +13585,8 @@
                 </node>
               </node>
             </node>
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220974560276">
-              <property name="value" value="1" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1222777718955">
+              <link role="variableDeclaration" targetNodeId="1222777613389" resolveInfo="TYPE_COLUMN_INDEX" />
             </node>
           </node>
           <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="1220974573101">
@@ -13577,8 +13613,8 @@
                 </node>
               </node>
             </node>
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220974574604">
-              <property name="value" value="2" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1222777723895">
+              <link role="variableDeclaration" targetNodeId="1222777682394" resolveInfo="NAME_COLUMN_INDEX" />
             </node>
           </node>
           <node role="defaultBlock" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220974494926">
@@ -13646,8 +13682,8 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1221389773591" />
             </node>
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220974696750">
-              <property name="value" value="0" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1222777732382">
+              <link role="variableDeclaration" targetNodeId="1222777520591" resolveInfo="IS_SELECTED_COLUMN_INDEX" />
             </node>
           </node>
           <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="1220974696761">
@@ -13686,8 +13722,8 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1221389777561" />
             </node>
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220974696762">
-              <property name="value" value="1" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1222777737024">
+              <link role="variableDeclaration" targetNodeId="1222777613389" resolveInfo="TYPE_COLUMN_INDEX" />
             </node>
           </node>
           <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="1220974696773">
@@ -13723,8 +13759,8 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1221389783687" />
             </node>
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220974696774">
-              <property name="value" value="2" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1222777741042">
+              <link role="variableDeclaration" targetNodeId="1222777682394" resolveInfo="NAME_COLUMN_INDEX" />
             </node>
           </node>
           <node role="defaultBlock" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220974696746" />
@@ -15523,28 +15559,13 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221659077167">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221659077168">
             <property name="name" value="declaration" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221659077169">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1221659077170">
-                <link role="classConcept" targetNodeId="5.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.instantiateConceptDeclaration(jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration,jetbrains.mps.smodel.SModel):jetbrains.mps.smodel.INodeAdapter" resolveInfo="instantiateConceptDeclaration" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221659077171">
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1221659077172" />
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221659077173">
-                    <link role="variableDeclaration" targetNodeId="1221659077158" resolveInfo="methodConcept" />
-                  </node>
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221659179036">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221659173017">
-                    <link role="variableDeclaration" targetNodeId="1221659043788" resolveInfo="body" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1221659182774" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221659077177">
-                <link role="baseMethodDeclaration" targetNodeId="5.~INodeAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-              </node>
-            </node>
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1221659077178" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222777869505">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222777869506">
+                <link role="variableDeclaration" targetNodeId="1221659077158" resolveInfo="methodConcept" />
+              </node>
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_NewInstance" id="1222777869507" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221659077235">

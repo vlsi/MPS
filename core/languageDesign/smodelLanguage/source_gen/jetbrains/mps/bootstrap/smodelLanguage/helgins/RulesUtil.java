@@ -166,7 +166,7 @@ public class RulesUtil {
     }
     {
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().reportTypeError(nodeToReportError, "" + errorTextPrefix + "\nexpected: " + SPropertyOperations.getString(toConcept, "name") + "\nwas: " + SPropertyOperations.getString(fromConcept, "name"), "r:69286335-28bb-4a12-a808-45a17d6d932f(jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0)", "1179506569646", intentionProvider);
+      TypeChecker.getInstance().reportTypeError(nodeToReportError, "" + errorTextPrefix + "\nexpected: " + SPropertyOperations.getString(toConcept, "name") + "\nwas: " + SPropertyOperations.getString(fromConcept, "name"), "r:c0ec52f5-cc93-4e4f-a292-9eebdf706c38(jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0)", "1179506569646", intentionProvider);
     }
     return false;
   }
@@ -178,7 +178,7 @@ public class RulesUtil {
       if (!(ListSequence.fromList(applicableParmConcepts).contains(SNodeOperations.getConceptDeclaration(parm)))) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(parm, "not applicable here", "r:69286335-28bb-4a12-a808-45a17d6d932f(jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0)", "1222434621155", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(parm, "not applicable here", "r:c0ec52f5-cc93-4e4f-a292-9eebdf706c38(jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0)", "1222776177940", intentionProvider);
         }
         noProblem = false;
       }
