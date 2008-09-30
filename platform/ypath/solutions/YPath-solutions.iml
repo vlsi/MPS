@@ -12,7 +12,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
-    <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="YPath" />
     <orderEntry type="module" module-name="YPath-runtime" />
     <orderEntry type="module" module-name="Closures" />

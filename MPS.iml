@@ -10,7 +10,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="XStream" level="project" />
-    <orderEntry type="library" exported="" name="Log4j" level="project" />
     <orderEntry type="module" module-name="MPSSupport" exported="" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" exported="" name="asm" level="project" />

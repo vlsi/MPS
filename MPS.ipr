@@ -1379,15 +1379,6 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="Log4j">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/log4j/log4j-1.2.14.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/log4j/log4j-1.2.14-src.zip!/" />
-      </SOURCES>
-    </library>
     <library name="Eclipse-compiler">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/eclipse-compiler/ecj.jar!/" />
