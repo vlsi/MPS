@@ -1,12 +1,9 @@
 package jetbrains.mps.uiLanguage.runtime.events;
 
-import org.jetbrains.annotations.Nullable;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Events {
-  @Nullable
   private Events myParentEvents = null;
   private Map<String, Event> myEvents = new HashMap<String, Event>();
 
@@ -14,7 +11,7 @@ public abstract class Events {
 
   }
 
-  protected Events(@Nullable Events parentEvents) {
+  protected Events(Events parentEvents) {
     myParentEvents = parentEvents;
   }
 
