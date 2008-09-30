@@ -2072,21 +2072,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1222757986667">
-    <link role="conceptDeclaration" targetNodeId="1.1068498886296" resolveInfo="VariableReference" />
-    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1222757986668">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222757986669">
-        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitReadStatement" id="1222757986670">
-          <node role="variable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222757986671">
-            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1222757986672" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1222757986673">
-              <link role="link" targetNodeId="1.1068581517664" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1222758017511">
     <property name="package" value="method" />
     <link role="conceptDeclaration" targetNodeId="1.1068581242874" resolveInfo="ParameterReference" />

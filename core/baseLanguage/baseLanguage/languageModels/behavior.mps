@@ -3230,7 +3230,7 @@
                     <link role="link" targetNodeId="1.1068581517664" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation" id="1214501228183" />
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation" id="1222763147487" />
               </node>
               <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214501228184">
                 <property name="name" value="parent" />
@@ -3239,7 +3239,10 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214501228186">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1214501228187">
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1214823840157">
-                    <node role="rightExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1214823841774" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222763118763">
+                      <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1214823841774" />
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1222763120016" />
+                    </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1214501228190">
                       <link role="variableDeclaration" targetNodeId="1214501228184" resolveInfo="parent" />
                     </node>

@@ -42,13 +42,13 @@ public class StatementList_Behavior {
         if (nodeToSelect != null) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(nodeToSelect, "Return expected", "r:059b4662-517a-4664-965c-4a8f95afc58a(jetbrains.mps.baseLanguage.behavior@3_0)", "1215433086400", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(nodeToSelect, "Return expected", "r:312cf642-7239-4995-9ef8-a3666de35217(jetbrains.mps.baseLanguage.behavior@3_0)", "1215433086400", intentionProvider);
           }
         } else
         {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(n, "Return expected", "r:059b4662-517a-4664-965c-4a8f95afc58a(jetbrains.mps.baseLanguage.behavior@3_0)", "1215433086408", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(n, "Return expected", "r:312cf642-7239-4995-9ef8-a3666de35217(jetbrains.mps.baseLanguage.behavior@3_0)", "1215433086408", intentionProvider);
           }
         }
       }
@@ -60,7 +60,7 @@ public class StatementList_Behavior {
     for(SNode n : unreachable) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(n, "Unreachable node", "r:059b4662-517a-4664-965c-4a8f95afc58a(jetbrains.mps.baseLanguage.behavior@3_0)", "1213877327444", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(n, "Unreachable node", "r:312cf642-7239-4995-9ef8-a3666de35217(jetbrains.mps.baseLanguage.behavior@3_0)", "1213877327444", intentionProvider);
       }
     }
   }
@@ -76,7 +76,7 @@ public class StatementList_Behavior {
         }
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(read, "Variable used before it is initialized", "r:059b4662-517a-4664-965c-4a8f95afc58a(jetbrains.mps.baseLanguage.behavior@3_0)", "1213877327487", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(read, "Variable used before it is initialized", "r:312cf642-7239-4995-9ef8-a3666de35217(jetbrains.mps.baseLanguage.behavior@3_0)", "1213877327487", intentionProvider);
         }
       }
     }
@@ -153,7 +153,7 @@ public class StatementList_Behavior {
     for(SNode ref : reference) {
       boolean statementsContainsVar = false;
       for(SNode parent : SNodeOperations.getAncestors(SLinkOperations.getTarget(ref, "variableDeclaration", false), null, false)) {
-        if (parent == thisNode) {
+        if (parent == SNodeOperations.getParent(thisNode)) {
           statementsContainsVar = true;
         }
       }
