@@ -10,13 +10,11 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="XStream" level="project" />
-    <orderEntry type="library" exported="" name="JUnit" level="project" />
     <orderEntry type="library" exported="" name="Log4j" level="project" />
     <orderEntry type="module" module-name="MPSSupport" exported="" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" exported="" name="asm" level="project" />
     <orderEntry type="library" name="commons-logging" level="project" />
-    <orderEntry type="library" name="stax" level="project" />
     <orderEntry type="module" module-name="baseLanguage" exported="" />
     <orderEntry type="module" module-name="blTypes" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
