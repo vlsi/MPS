@@ -1407,6 +1407,7 @@ public class SModel implements Iterable<SNode> {
     for (SNode node : getAllNodesWithIds()) {
       for (SReference reference : node.getReferences()) {
         SModelReference oldReference = reference.getTargetSModelReference();
+        if (oldReference == null) continue;
         SModelReference newReference = oldReference.update();
         changed = changed || changed(oldReference, newReference);
         reference.setTargetSModelReference(newReference);
