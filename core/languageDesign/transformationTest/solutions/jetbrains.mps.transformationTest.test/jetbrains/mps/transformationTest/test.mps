@@ -149,6 +149,14 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1222759259560" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222759259561" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222759259562">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222778578606">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222778774510">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1222778578607" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1222778775575">
+              <link role="fieldDeclaration" targetNodeId="1222759520883" resolveInfo="a" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222759277736">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1222759277737">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1222759279962">
@@ -183,6 +191,9 @@
                                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222759644280">
                                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1222759620184">
                                       <link role="classConcept" targetNodeId="1222759259557" resolveInfo="AnonymousClassProblem" />
+                                    </node>
+                                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1222778762481">
+                                      <link role="fieldDeclaration" targetNodeId="1222759520883" resolveInfo="a" />
                                     </node>
                                   </node>
                                 </node>

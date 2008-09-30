@@ -16,7 +16,7 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1196260114546">
     <property name="name" value="Main" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1196260129312">
-      <property name="name" value="main" />
+      <property name="name" value="masssssssin" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1196260129313" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196260129314" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196260129315">

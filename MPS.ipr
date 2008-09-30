@@ -1386,9 +1386,7 @@
         <root url="jar://$PROJECT_DIR$/lib/idea-platform/jdom.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/jdom/jdom-1.0-src.zip!/" />
-      </SOURCES>
+      <SOURCES />
     </library>
     <library name="Log4j">
       <CLASSES>
@@ -1407,13 +1405,6 @@
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/eclipse-compiler/ecjsrc.zip!/" />
       </SOURCES>
-    </library>
-    <library name="Annotations">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/annotations/annotations.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
     </library>
     <library name="asm">
       <CLASSES>
@@ -1456,14 +1447,6 @@
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/joda-time/joda-time-1.4-src-ide.zip!/" />
       </SOURCES>
-    </library>
-    <library name="stax">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/stax/stax-api-1.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/stax/stax-1.1.1-dev.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
     </library>
     <library name="httpclient">
       <CLASSES>
@@ -1563,5 +1546,8 @@
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
   </component>
+  <UsedPathMacros>
+    <macro name="MPS_HOME" />
+  </UsedPathMacros>
 </project>
 
