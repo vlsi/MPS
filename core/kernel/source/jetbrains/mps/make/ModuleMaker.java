@@ -122,7 +122,7 @@ public class ModuleMaker {
       }
       
       if (!m.isCompileInMPS()) {
-        LOG.warning("Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleUID(), m);
+        LOG.warning("Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleFqName(), m);
         continue;
       }
 

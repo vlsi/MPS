@@ -269,7 +269,7 @@ public class Language extends AbstractModule {
     }
 
     File parent = getBundleHome().getParentFile();
-    String name = getModuleUID() + "." + RUNTIME_JAR_SUFFIX;
+    String name = getModuleFqName() + "." + RUNTIME_JAR_SUFFIX;
     File file = new File(parent, name);
 
     if (file.exists() && !visited.contains(file.getPath())) {
@@ -666,7 +666,7 @@ public class Language extends AbstractModule {
 
   public void save() {
     if (isPackaged()) {
-      LOG.warning("Trying to save packaged language " + getModuleUID());
+      LOG.warning("Trying to save packaged language " + getModuleFqName());
       return;
     }
     DescriptorsPersistence.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());

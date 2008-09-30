@@ -177,7 +177,7 @@ public class Generator extends AbstractModule {
   }
 
   public static String generateGeneratorUID(Language sourceLanguage) {
-    return sourceLanguage.getModuleUID() + "#" + SNode.generateUniqueId();
+    return sourceLanguage.getModuleFqName() + "#" + SNode.generateUniqueId();
   }
 
   public Language getSourceLanguage() {
@@ -233,9 +233,7 @@ public class Generator extends AbstractModule {
   }
 
   public File getBundleHome() {
-    //eclipse's OSGi implementation doesn't allow directories with #. Probably #s are
-    //forbidden inside urls
-    File home = new File(PathManager.getTmpPath() + "generators", getModuleUID().replace('#', '.'));
+    File home = new File(PathManager.getTmpPath() + "generators", getModuleFqName().replace('#', '.'));
     if (!home.exists()) {
       home.mkdirs();
     }

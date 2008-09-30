@@ -153,7 +153,7 @@ public abstract class DefaultScope extends BaseScope {
       for (Language language : new ArrayList<Language>(usedLanguages)) {
         for (Language extendedLanguage : language.getExtendedLanguages()) {
           if (extendedLanguage == null) {
-            LOG.error("One of extended language of " + language.getModuleUID() + " in " + this + " is null.");
+            LOG.error("One of extended language of " + language.getModuleFqName() + " in " + this + " is null.");
           } else if (!usedLanguages.contains(extendedLanguage)) {
             usedLanguages.add(extendedLanguage);
             changed = true;
@@ -178,7 +178,7 @@ public abstract class DefaultScope extends BaseScope {
 
     myFqNameToDevKit = new HashMap<String, DevKit>();
     for (DevKit dk : usedDevkits) {
-      myFqNameToDevKit.put(dk.getModuleUID(), dk);
+      myFqNameToDevKit.put(dk.getModuleFqName(), dk);
       if (dk.getModuleId() != null) {
         myIdToDevKit.put(dk.getModuleId(), dk);
       }

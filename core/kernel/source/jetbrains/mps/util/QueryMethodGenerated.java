@@ -75,7 +75,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
         }
         ourClassesReportedAsNotFound.add(queriesClassName);
       }
-      throw new ClassNotFoundException("'" + queriesClassName + "' in module " + module.getModuleUID());
+      throw new ClassNotFoundException("'" + queriesClassName + "' in module " + module.getModuleFqName());
     }
 
     Method method = null;

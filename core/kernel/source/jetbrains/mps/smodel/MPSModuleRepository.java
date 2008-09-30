@@ -227,7 +227,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   public void addModule(IModule module, MPSModuleOwner owner) {
     myDirtyFlag = true;
     if (existsModule(module, owner)) {
-      throw new RuntimeException("Couldn't add module \"" + module.getModuleUID() + "\" : this module is already registered with this very owner: " + owner);
+      throw new RuntimeException("Couldn't add module \"" + module.getModuleFqName() + "\" : this module is already registered with this very owner: " + owner);
     }
     IFile descriptorFile = module.getDescriptorFile();
     String canonicalDescriptorPath;
@@ -240,14 +240,14 @@ public class MPSModuleRepository implements ApplicationComponent {
       myFileToModuleMap.put(canonicalDescriptorPath, module);
     }
 
-    String moduleUID = module.getModuleUID();
+    String moduleFqName = module.getModuleFqName();
 
-    if (myFqNameToModulesMap.containsKey(moduleUID)) {
-      IModule m = myFqNameToModulesMap.get(moduleUID);
-      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
+    if (myFqNameToModulesMap.containsKey(moduleFqName)) {
+      IModule m = myFqNameToModulesMap.get(moduleFqName);
+      LOG.error("can't add module " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
     }
 
-    myFqNameToModulesMap.put(moduleUID, module);
+    myFqNameToModulesMap.put(moduleFqName, module);
 
     ModuleId moduleId = module.getModuleId();
     if (moduleId != null) {
@@ -334,7 +334,7 @@ public class MPSModuleRepository implements ApplicationComponent {
 
     myModuleToOwners.clearFirst(module);
     myModules.remove(module);
-    myFqNameToModulesMap.remove(module.getModuleUID());
+    myFqNameToModulesMap.remove(module.getModuleFqName());
     if (module.getModuleId() != null) {
       myIdToModuleMap.remove(module.getModuleId());
     }
