@@ -260,7 +260,7 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
             myTree.setCountNeeded(false);
           }
         };
-        add(myCountNeededButton);
+        /*add(myCountNeededButton);*/
 
         myAdditionalInfoNeededButton = new MyAnonymToggleButton(Icons.INFO_ICON, "Additional node info") {
           public void actionSelected() {
@@ -310,7 +310,7 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
       public void setViewOptions(ViewOptions options) {
         myTree.startAdjusting();
 
-        myCountNeededButton.setState(options.myCount);
+        myCountNeededButton.setState(true/*options.myCount*/);
         myAdditionalInfoNeededButton.setState(options.myInfo);
         myShowSearchedNodesButton.setState(options.myShowSearchedNodes);
         myGroupSearchedNodesButton.setState(options.myGroupSearchedNodes);
@@ -325,7 +325,7 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
       }
 
       public void getViewOptions(ViewOptions options) {
-        options.myCount = myCountNeededButton.getState();
+        options.myCount = true/*myCountNeededButton.getState()*/;
         options.myInfo = myAdditionalInfoNeededButton.getState();
         options.myShowSearchedNodes = myShowSearchedNodesButton.getState();
         options.myGroupSearchedNodes = myGroupSearchedNodesButton.getState();

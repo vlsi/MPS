@@ -24,7 +24,6 @@ public abstract class AnonymToggleButton extends JToggleButton {
 
   public void setState(boolean state) {
     if (getModel().isSelected() != state) {
-
       doClick();
     }
   }
