@@ -15,6 +15,8 @@ public interface IWrapper extends IMatcher {
   public boolean isVariable();
   public boolean isConcrete();
   public RuntimeTypeVariable getVariable();
+  public String getVariableName();
+  public boolean testVariableName(String pattern);
   public void fireRepresentatorSet(IWrapper representator, EquationManager equationManager);
 
   public void fireWeakParentAdded(IWrapper parent, EquationManager equationManager);

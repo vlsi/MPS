@@ -45,6 +45,15 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
     return (RuntimeTypeVariable) BaseAdapter.fromNode(getNode());
   }
 
+  public String getVariableName() {
+    return getVariable().getName();
+  }
+
+  public boolean testVariableName(String pattern) {
+    if (pattern == null) return false;
+    return pattern.equals(getVariableName());
+  }
+
   public void representatorSet(IWrapper wrapper, IWrapper representator, EquationManager equationManager) {
   /*  if ("n".equals(getNode().getProperty("name"))) {
       System.err.println("BINGO!");

@@ -169,6 +169,14 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     return null;
   }
 
+  public String getVariableName() {
+    return null;
+  }
+
+  public boolean testVariableName(String pattern) {
+    return false;
+  }
+
   public boolean isMetaType() {
     return false;
   }
