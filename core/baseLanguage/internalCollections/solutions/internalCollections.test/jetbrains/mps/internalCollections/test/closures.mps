@@ -1154,7 +1154,7 @@
                         <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1204129169628">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204129169629">
                             <link role="classConcept" targetNodeId="2.~String" resolveInfo="String" />
-                            <link role="baseMethodDeclaration" targetNodeId="2.~String.valueOf(java.lang.Object):java.lang.String" resolveInfo="valueOf" />
+                            <link role="baseMethodDeclaration" targetNodeId="2.~String.valueOf(int):java.lang.String" resolveInfo="valueOf" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204129169630">
                               <link role="variableDeclaration" targetNodeId="1221825185893" resolveInfo="it" />
                             </node>
