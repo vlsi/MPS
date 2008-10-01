@@ -255,7 +255,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12197457865601219745786560(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219745786560");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12197457865621219745786562(EditorCell editorCell, SNode node, EditorContext context) {
@@ -274,7 +274,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12197457865641219745786564(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219745786564");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_conceptDeclaration1219745786565(EditorCell editorCell, SNode node, EditorContext context) {
@@ -297,7 +297,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12197457865731219745786573(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219745786573");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12197457865741219745786574(EditorCell editorCell, SNode node, EditorContext context) {
@@ -333,7 +333,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12197458525241219745852524(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219745852524");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12197460887541219746088754(EditorCell editorCell, SNode node, EditorContext context) {

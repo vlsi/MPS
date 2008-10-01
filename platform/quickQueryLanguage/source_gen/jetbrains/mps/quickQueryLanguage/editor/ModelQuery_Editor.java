@@ -186,7 +186,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12187955049961218795504996(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218795504996");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12187955523151218795552315(EditorCell editorCell, SNode node, EditorContext context) {
@@ -205,7 +205,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12187955550841218795555084(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218795555084");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_conceptDeclaration1218795568071(EditorCell editorCell, SNode node, EditorContext context) {
@@ -227,7 +227,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12187959127441218795912744(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218795912744");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12187959186841218795918684(EditorCell editorCell, SNode node, EditorContext context) {

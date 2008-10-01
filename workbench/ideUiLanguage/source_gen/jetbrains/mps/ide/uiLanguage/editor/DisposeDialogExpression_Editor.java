@@ -4,33 +4,33 @@ package jetbrains.mps.ide.uiLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class DisposeDialogExpression_Editor extends DefaultNodeEditor {
 
-  private static void setupBasic_ConstantCell14101_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_ConstantCell14101_0");
-    BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
-  }
-
-  private static void setupLabel_ConstantCell14101_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.create_ConstantCell14101_0(context, node, "disposeDialog");
+    return this.createConstant1203606609555(context, node, "disposeDialog");
   }
 
-  public EditorCell create_ConstantCell14101_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant1203606609555(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_ConstantCell14101_0(editorCell, node, context);
-    setupLabel_ConstantCell14101_0(editorCell, node, context);
+    setupBasic_Constant_12036066095551203606609555(editorCell, node, context);
+    setupLabel_Constant_1203606609555_1203606609555(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+
+  private static void setupBasic_Constant_12036066095551203606609555(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203606609555");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+  }
+
+  private static void setupLabel_Constant_1203606609555_1203606609555(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }
