@@ -223,7 +223,9 @@ public class VcsRootsManager implements ProjectComponent {
 
   public void addNewVcsRoot(VirtualFile vcsRoot) {
     List<VcsDirectoryMapping> vcsDirectoryMappings = new ArrayList<VcsDirectoryMapping>(myVcsManager.getDirectoryMappings());
-    vcsDirectoryMappings.add(new VcsDirectoryMapping(vcsRoot.getPath(), myVcsManager.findVersioningVcs(vcsRoot).getName()));
+    AbstractVcs versioningVcs = myVcsManager.findVersioningVcs(vcsRoot);
+    assert versioningVcs != null;
+    vcsDirectoryMappings.add(new VcsDirectoryMapping(vcsRoot.getPath(), versioningVcs.getName()));
     myVcsManager.setDirectoryMappings(vcsDirectoryMappings);
   }
 
