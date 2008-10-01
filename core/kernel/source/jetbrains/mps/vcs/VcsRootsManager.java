@@ -6,7 +6,6 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
@@ -16,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
-import java.lang.reflect.InvocationTargetException;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -24,13 +22,13 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.vcs.ui.VcsUiHelper;
 import jetbrains.mps.logging.Logger;
 
 public class VcsRootsManager implements ProjectComponent {
   private final static Logger LOG = Logger.getLogger(VcsRootsManager.class);
   private final Project myProject;
   private final ProjectLevelVcsManager myVcsManager;
-  private final MPSVCSManager myMpsVcsManager;
   private final Set<VirtualFile> myExcludedRoots = new ConcurrentHashSet<VirtualFile>();
   private final SModelAdapter myGlobalSModelListener = new SModelAdapter() {
     @Override
@@ -56,11 +54,12 @@ public class VcsRootsManager implements ProjectComponent {
       }
     }
   };
+  private final VcsUiHelper myUiHelper;
 
-  public VcsRootsManager(Project project, ProjectLevelVcsManager manager, MPSVCSManager mpsManager) {
+  public VcsRootsManager(Project project, ProjectLevelVcsManager manager, VcsUiHelper helper) {
     myProject = project;
     myVcsManager = manager;
-    myMpsVcsManager = mpsManager;
+    myUiHelper = helper;
   }
 
   public void projectOpened() {
@@ -74,13 +73,8 @@ public class VcsRootsManager implements ProjectComponent {
         if (myExcludedRoots.contains(vcsRoot)) {
           return;
         }
-        String message = "You have changed model " + sm + ".\n" +
-          "Do you want to add folder " + vcsRoot.getPath() + " to the list of vcs roots so you would be able to commit your changes?\n" +
-          "You can always do it later choosing Settings -> Project Settings -> Version Control.";
-        String title = "Add folder " + vcsRoot.getPath() + " to the list of vcs roots?";
-        int result = Messages.showYesNoDialog(myProject, message, title, Messages.getQuestionIcon());
-
-        if (result == DialogWrapper.OK_EXIT_CODE) {
+        boolean result = myUiHelper.showAddVcsRootsDialog(myProject, vcsRoot, sm);
+        if (result) {
           List<VcsDirectoryMapping> vcsDirectoryMappings = new ArrayList<VcsDirectoryMapping>(myVcsManager.getDirectoryMappings());
           vcsDirectoryMappings.add(new VcsDirectoryMapping(vcsRoot.getPath(), myVcsManager.findVersioningVcs(vcsRoot).getName()));
           myVcsManager.setDirectoryMappings(vcsDirectoryMappings);

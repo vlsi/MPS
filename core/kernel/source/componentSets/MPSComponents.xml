@@ -58,6 +58,10 @@
     <component>
       <implementation-class>jetbrains.mps.vcs.SuspiciousModelIndex</implementation-class>
     </component>
+    <component>
+      <interface-class>jetbrains.mps.vcs.ui.VcsUiHelper</interface-class>
+      <implementation-class>jetbrains.mps.vcs.ui.VcsUiHelperImpl</implementation-class>
+    </component>
   </application-components>
 
   <xi:include href="/componentSets/Platform.xml" xpointer="xpointer(/components/*)"/>
