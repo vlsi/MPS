@@ -514,6 +514,9 @@ public class WelcomeScreen {
     panel.add(logoName, gBC);
 
     if (!StringUtil.isEmpty(description)) {
+
+      description = description.replaceAll("\\bIntelliJ IDEA\\b", "JetBrains MPS");
+
       description = description.trim();
       if (description.startsWith(ActionGroupDescriptor.HTML_PREFIX)) {
         description = description.replaceAll(ActionGroupDescriptor.HTML_PREFIX, "");
