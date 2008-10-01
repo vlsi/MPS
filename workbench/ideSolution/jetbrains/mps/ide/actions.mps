@@ -37,7 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26"/>
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)"
                   version="0"/>
-  <maxImportIndex value="117"/>
+  <maxImportIndex value="118"/>
   <import index="1"
           modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)"
           version="-1"/>
@@ -185,6 +185,7 @@
   <import index="117"
           modelUID="f:java_stub#jetbrains.mps.workbench.actions.goTo(jetbrains.mps.workbench.actions.goTo@java_stub)"
           version="-1"/>
+  <import index="118" modelUID="f:java_stub#com.intellij.ide(com.intellij.ide@java_stub)" version="-1"/>
   <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions"/>
     <property name="id" value="ProjectPaneNodeActions"/>
@@ -1153,6 +1154,10 @@
     </node>
     <node role="contents" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ElementListContents"
           id="1207148361812">
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1222862635686"/>
+      <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionReference" id="1222862632262">
+        <link role="action" targetNodeId="1222862438774" resolveInfo="ShowDefaultKeymap"/>
+      </node>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.Separator" id="1204983980877"/>
       <node role="reference" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ParameterizedActionCreator"
             id="1217518716474">
@@ -10975,6 +10980,44 @@
           id="1222856407515">
       <property name="name" value="project"/>
       <link role="key" targetNodeId="107.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.pluginLanguage.structure.ActionDeclaration" id="1222862438774">
+    <property name="package" value="Menu.MainMenu.HelpActions"/>
+    <property name="name" value="ShowDefaultKeymap"/>
+    <property name="outsideCommandExecution" value="true"/>
+    <property name="caption" value="Default Keymap Reference"/>
+    <property name="mnemonic" value="K"/>
+    <node role="executeFunction" type="jetbrains.mps.bootstrap.pluginLanguage.structure.ExecuteBlock"
+          id="1222862438775">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222862438776">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222862512702">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1222862518773">
+            <link role="baseMethodDeclaration" targetNodeId="118.~BrowserUtil.launchBrowser(java.lang.String):void"
+                  resolveInfo="launchBrowser"/>
+            <link role="classConcept" targetNodeId="118.~BrowserUtil" resolveInfo="BrowserUtil"/>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1222862544246">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression"
+                    id="1222862597613">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
+                      id="1222862599007">
+                  <property name="value" value="DefaultKeymap.pdf"/>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
+                      id="1222862544827">
+                  <property name="value" value="/docs/"/>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall"
+                    id="1222862534104">
+                <link role="baseMethodDeclaration" targetNodeId="76.~PathManager.getHelpPath():java.lang.String"
+                      resolveInfo="getHelpPath"/>
+                <link role="classConcept" targetNodeId="76.~PathManager" resolveInfo="PathManager"/>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
