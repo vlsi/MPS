@@ -182,6 +182,9 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1174939822895">
               <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1222875982511">
+              <property name="value" value="" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1174939824537">
@@ -223,6 +226,9 @@
             <property name="name" value="s" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1174939854684">
               <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1222874978705">
+              <property name="value" value="" />
             </node>
           </node>
         </node>

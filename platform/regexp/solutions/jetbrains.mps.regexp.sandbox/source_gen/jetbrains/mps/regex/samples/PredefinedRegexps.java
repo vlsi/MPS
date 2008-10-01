@@ -22,7 +22,7 @@ import jetbrains.mps.regexp.runtime.RegexpOperations;
 
   /* package */void replaceWithPredefined() {
     String s;
-    s = RegexpOperations.replace(s);
+    s = RegexpOperations.replace(s, _PrecompiledPatterns.REGEXP6, new _Replacer2(PredefinedRegexps.this, null));
   }
 
 }

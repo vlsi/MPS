@@ -41,6 +41,9 @@
     <entry path="${language_descriptor}\runtime\classes" />
   </languageRuntimeClassPath>
   <sourcePath />
+  <usedLanguages>
+    <usedLanguages>562bb5cb-73ce-4c74-a5e5-9f72731d9ac6(jetbrains.mps.internal.collections)</usedLanguages>
+  </usedLanguages>
   <usedDevKits>
     <usedDevKit>jetbrains.mps.devkit.language-design</usedDevKit>
   </usedDevKits>

@@ -14,10 +14,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.regexp.generator.baseLanguage.template.util.GeneratorUtil;
-import jetbrains.mps.regexp.structure.MatchParensRegexp;
 import java.util.ArrayList;
-import jetbrains.mps.regexp.RegexpProcessor;
-import jetbrains.mps.regexp.structure.Regexp;
 import jetbrains.mps.regexp.behavior.Regexp_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.regex.Pattern;
@@ -28,24 +25,14 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1194610104145(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    SModel smodel = _context.getGenerator().getSourceModel();
+    SModel smodel = _context.getInputModel();
     return ListSequence.fromList(SModelOperations.getNodes(smodel, "jetbrains.mps.regexp.structure.InlineRegexpExpression")).count() > 0;
   }
 
-  public static boolean baseMappingRule_Condition_1174659423207(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.MatchRegexpStatement") || SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.MatchRegexpOperation");
-  }
-
   public static boolean baseMappingRule_Condition_1174659531465(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.ReplaceWithRegexpExpression") || SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.ReplaceWithRegexpOperation");
-  }
-
-  public static boolean baseMappingRule_Condition_1175155943336(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.ForEachMatchStatement");
-  }
-
-  public static boolean baseMappingRule_Condition_1175170005292(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.FindMatchStatement");
+    boolean isReplaceExpression = SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.ReplaceWithRegexpExpression");
+    boolean isReplaceOperation = SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.ReplaceWithRegexpOperation");
+    return isReplaceExpression || isReplaceOperation;
   }
 
   public static boolean baseMappingRule_Condition_1222259398301(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -58,6 +45,14 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1222261663847(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.regexp.structure.MatchRegexpOperation");
+  }
+
+  public static boolean baseMappingRule_Condition_1222428491437(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    boolean isMatchStatement = SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.MatchRegexpStatement");
+    boolean isMatchOperation = SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.MatchRegexpOperation");
+    boolean isForEach = SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.ForEachMatchStatement");
+    boolean isFindMatch = SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.FindMatchStatement");
+    return isMatchStatement || isMatchOperation || isForEach || isFindMatch;
   }
 
   public static Object propertyMacro_GetPropertyValue_1174655168104(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -77,9 +72,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1174659618559(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
     SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
-    List<MatchParensRegexp> matchparens = new ArrayList<MatchParensRegexp>();
-    RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true))), matchparens);
-    return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
+    List<SNode> parensList = new ArrayList<SNode>();
+    Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true), parensList);
+    return 1 + parensList.indexOf(parens);
   }
 
   public static Object propertyMacro_GetPropertyValue_1175155526348(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -105,9 +100,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1175170026397(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
     SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
-    List<MatchParensRegexp> matchparens = new ArrayList<MatchParensRegexp>();
-    RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true))), matchparens);
-    return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
+    List<SNode> parensList = new ArrayList<SNode>();
+    Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true), parensList);
+    return 1 + parensList.indexOf(parens);
   }
 
   public static Object propertyMacro_GetPropertyValue_1194610282338(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -125,7 +120,7 @@ public class QueriesGenerated {
     if (SPropertyOperations.getBoolean(_context.getNode(), "caseInsensitive")) {
       result = result + Pattern.CASE_INSENSITIVE;
     }
-    return "" + result;
+    return result;
   }
 
   public static Object propertyMacro_GetPropertyValue_1194610650675(final IOperationContext operationContext, final PropertyMacroContext _context) {

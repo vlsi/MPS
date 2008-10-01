@@ -9,7 +9,7 @@ import jetbrains.mps.regexp.runtime.RegexpOperations;
   /* package */void m() {
     final zClosureContext0 _zClosureContext0 = new zClosureContext0();
     int i;
-    RegexpOperations.replace("");
+    RegexpOperations.replace("", _PrecompiledPatterns.REGEXP0, new _Replacer0(YYY.this, _zClosureContext0));
   }
 
 }

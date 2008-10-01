@@ -9,7 +9,6 @@ import jetbrains.mps.regexp.runtime.RegexpOperations;
 /* package */class BaseLanguageIntegration {
 
   public static void email(String emailToAnalyse) {
-    int i;
     {
       Pattern _pattern_0 = _PrecompiledPatterns.REGEXP2;
       Matcher _matcher_0 = _pattern_0.matcher(emailToAnalyse);
@@ -40,8 +39,9 @@ import jetbrains.mps.regexp.runtime.RegexpOperations;
     }
   }
 
-  public static void replaceAll(String s) {
+  public static String replaceAll(String s) {
     s = RegexpOperations.replace(s, _PrecompiledPatterns.REGEXP5, new _Replacer0(null, null));
+    return s;
   }
 
   public static void split(String s) {

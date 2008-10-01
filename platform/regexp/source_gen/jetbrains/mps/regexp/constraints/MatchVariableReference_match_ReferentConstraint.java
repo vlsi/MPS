@@ -13,9 +13,10 @@ import java.util.List;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MatchVariableReference_match_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -48,7 +49,7 @@ public class MatchVariableReference_match_ReferentConstraint implements IModelCo
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> matches = ListSequence.<SNode>fromArray();
+    List<SNode> matches = new ArrayList<SNode>();
     for(SNode ruc : SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false)) {
       for(SNode ref : SNodeOperations.getDescendants(ruc, "jetbrains.mps.regexp.structure.RegexpDeclarationReferenceRegexp", false)) {
         if (SLinkOperations.getTarget(ref, "regexp", false) != null) {

@@ -1276,19 +1276,6 @@
         <link role="concept" targetNodeId="1.1177673300966" resolveInfo="ConceptMethodDeclaration" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877345464">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877345465">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877345466">
-            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877345467" />
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1213877345468">
-              <link role="property" targetNodeId="1.1177676055874" resolveInfo="isVirtual" />
-            </node>
-          </node>
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877345469">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877345470">
-              <node role="expression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877345471" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877345472">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1213877345473">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1213877345474" />
@@ -1307,6 +1294,19 @@
                   <link role="link" targetNodeId="1.1177755346718" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877345465">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877345466">
+            <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877345467" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1213877345468">
+              <link role="property" targetNodeId="1.1177676055874" resolveInfo="isVirtual" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877345469">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877345470">
+              <node role="expression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877345471" />
             </node>
           </node>
         </node>
