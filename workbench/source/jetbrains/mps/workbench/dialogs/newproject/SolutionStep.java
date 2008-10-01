@@ -67,7 +67,7 @@ public class SolutionStep extends BaseStep {
   public String getCommentString() {
     return
       "<h4>Solution</h4>" +
-        "Solution is the simplest possible kind of module in MPS.<br>" +
+        "Solution is the simplest possible kind of module in MPS." +
         "It is just a set of models with a name.";
   }
 

@@ -11,7 +11,7 @@ public class DirectoryUtil {
   public static boolean askToCreateNewDirectory(Frame mainFrame, File dir, boolean showCancel) {
     if (!dir.exists()) {
       int mode = showCancel ? JOptionPane.YES_NO_CANCEL_OPTION : JOptionPane.YES_NO_OPTION;
-      int result = JOptionPane.showConfirmDialog(mainFrame, "Do you want to create directory " + dir, "Directory doesn't exist", JOptionPane.INFORMATION_MESSAGE, mode);
+      int result = JOptionPane.showConfirmDialog(mainFrame, "Do you want to create directory " + dir, "Directory doesn't exist", mode, JOptionPane.INFORMATION_MESSAGE);
       if (result != JOptionPane.OK_OPTION) {
         return false;
       }
