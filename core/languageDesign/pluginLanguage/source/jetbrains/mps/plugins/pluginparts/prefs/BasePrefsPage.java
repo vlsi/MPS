@@ -31,10 +31,10 @@ public abstract class BasePrefsPage implements Configurable, NonDefaultProjectCo
   }
 
   public void register() {
-    Extensions.getRootArea().getExtensionPoint(Configurable.APPLICATION_CONFIGURABLES).registerExtension(this);
+    Extensions.getArea(myProject).getExtensionPoint(Configurable.PROJECT_CONFIGURABLES).registerExtension(this);
   }
 
   public void unregister() {
-    Extensions.getRootArea().getExtensionPoint(Configurable.APPLICATION_CONFIGURABLES).unregisterExtension(this);
+    Extensions.getArea(myProject).getExtensionPoint(Configurable.PROJECT_CONFIGURABLES).unregisterExtension(this);
   }
 }
