@@ -107,4 +107,9 @@ public class BootstrapTest extends BaseMPSTest {
     String res = testProject(new File("platform/regexp/regexp.ipr"));
     assertTrue(res, res == null);
   }
+
+  public void testQuotation() {
+    String res = testProject(new File("core/languageDesign/quotation/quotation.ipr"));
+    assertTrue(res, res == null);
+  }
 }
