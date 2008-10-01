@@ -1,10 +1,8 @@
-package jetbrains.mps.vcs.ui;
+package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.diff.DiffRequest;
-import com.intellij.openapi.diff.SimpleContent;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModel;

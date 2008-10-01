@@ -11,7 +11,7 @@ import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 
 import java.util.Collections;
 
-public class BeforeEventProcessor extends EventProcessor {
+class BeforeEventProcessor extends EventProcessor {
   private static final BeforeEventProcessor INSTANCE = new BeforeEventProcessor();
 
   public static BeforeEventProcessor getInstance() {

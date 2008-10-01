@@ -1,4 +1,4 @@
-package jetbrains.mps.vcs.ui;
+package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.ide.ui.HeaderWrapper;
 import jetbrains.mps.smodel.ModelAccess;
@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
 
-public class MergeView extends JPanel {
+class MergeView extends JPanel {
   private MergeResultView myMergeResult;
 
   public MergeView(final SModel baseModel, final SModel mine, final SModel repo) {

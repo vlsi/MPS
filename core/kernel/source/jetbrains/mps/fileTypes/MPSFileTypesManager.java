@@ -12,8 +12,8 @@ import org.jetbrains.annotations.Nullable;
 
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.fileSystem.FileIcons;
-import jetbrains.mps.vcs.ui.ModelDiffTool;
-import jetbrains.mps.vcs.ui.ModelMergeTool;
+import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
+import jetbrains.mps.vcs.diff.ui.ModelMergeTool;
 import jetbrains.mps.vfs.MPSExtentions;
 
 import javax.swing.Icon;

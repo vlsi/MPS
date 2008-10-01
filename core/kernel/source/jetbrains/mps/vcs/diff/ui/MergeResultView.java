@@ -1,4 +1,4 @@
-package jetbrains.mps.vcs.ui;
+package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -30,7 +30,7 @@ import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
 
-public class MergeResultView extends JPanel {
+class MergeResultView extends JPanel {
   private MPSTree myResultTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
       // TODO ?

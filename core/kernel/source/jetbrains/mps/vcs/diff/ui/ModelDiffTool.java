@@ -1,4 +1,4 @@
-package jetbrains.mps.vcs.ui;
+package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.diff.DiffRequest;
@@ -6,7 +6,6 @@ import com.intellij.openapi.diff.DiffContent;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.fileTypes.FileType;
 
-import java.io.InputStream;
 import java.io.IOException;
 import java.io.ByteArrayInputStream;
 

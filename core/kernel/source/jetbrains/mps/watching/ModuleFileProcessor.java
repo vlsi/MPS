@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.io.File;
 
-public class ModuleFileProcessor extends EventProcessor {
+class ModuleFileProcessor extends EventProcessor {
   private static final ModuleFileProcessor INSTANCE = new ModuleFileProcessor();
 
   public static ModuleFileProcessor getInstance() {

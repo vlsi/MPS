@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class AbstractShowInFileWiew extends AbstractVcsAction {
+abstract class AbstractShowInFileWiew extends AbstractVcsAction {
 
   protected void actionPerformed(VcsContext e) {
     final Project project = e.getProject();

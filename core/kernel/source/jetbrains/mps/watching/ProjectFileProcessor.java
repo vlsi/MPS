@@ -6,7 +6,7 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 
-public class ProjectFileProcessor extends EventProcessor {
+class ProjectFileProcessor extends EventProcessor {
   private static final ProjectFileProcessor INSTANCE = new ProjectFileProcessor();
 
   public static ProjectFileProcessor getInstance() {

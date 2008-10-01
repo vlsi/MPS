@@ -16,7 +16,7 @@ import java.io.IOException;
 
 import jetbrains.mps.logging.Logger;
 
-public class RemoveOperation extends VcsOperation {
+class RemoveOperation extends VcsOperation {
   private final List<FilePath> myFilePathsToDelete = new ArrayList<FilePath>(10);
   private static final Logger LOG = Logger.getLogger(RemoveOperation.class);
 

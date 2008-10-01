@@ -1,4 +1,4 @@
-package jetbrains.mps.vcs.ui;
+package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
@@ -28,7 +28,7 @@ import java.util.Set;
  * Time: 18:49:18
  * To change this template use File | Settings | File Templates.
  */
-public class ModelDifferenceViewWithEditor extends JPanel implements EditorMessageOwner {
+class ModelDifferenceViewWithEditor extends JPanel implements EditorMessageOwner {
   private IOperationContext myOperationContext;
   private UIEditorComponent myModelEditorComponent;
   private InspectorEditorComponent myModelInspector;

@@ -19,7 +19,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task.Modal;
 import org.jetbrains.annotations.NotNull;
 
-public class ReloadSession {
+class ReloadSession {
   private final static Logger LOG = Logger.getLogger(ReloadSession.class);
   private final Set<SModelDescriptor> myChangedModels = new LinkedHashSet<SModelDescriptor>();
   private final Set<VirtualFile> myNewModelVFiles = new LinkedHashSet<VirtualFile>();

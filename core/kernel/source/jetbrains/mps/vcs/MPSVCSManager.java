@@ -47,7 +47,7 @@ public class MPSVCSManager implements ProjectComponent {
     }
   };
 
-  private final GenerationListener myGenerationListener = new GenerationWhatcher();
+  private final GenerationListener myGenerationListener = new GenerationWatcher();
   private final CompilationListener myCompilationListener = new CompilationWatcher();
   private final SModelRepositoryListener myModelRepositoryListener = new MySModelRepositoryListener();
   private final SModelAdapter myModelInitializationListener = new ModelSavedListener();
@@ -177,7 +177,7 @@ public class MPSVCSManager implements ProjectComponent {
     }
   }
 
-  private class GenerationWhatcher implements GenerationListener {
+  private class GenerationWatcher implements GenerationListener {
     public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
       myTasksQueue.prohibitAccess();
     }

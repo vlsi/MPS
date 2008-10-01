@@ -147,7 +147,7 @@
   <import index="97"
           modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def(jetbrains.mps.smodel.persistence.def@java_stub)"
           version="-1"/>
-  <import index="98" modelUID="f:java_stub#jetbrains.mps.vcs.ui(jetbrains.mps.vcs.ui@java_stub)" version="-1"/>
+  <import index="98" modelUID="f:java_stub#jetbrains.mps.vcs.diff.ui(jetbrains.mps.vcs.diff.ui@java_stub)" version="-1"/>
   <import index="99"
           modelUID="f:java_stub#jetbrains.mps.nodeEditor.inspector(jetbrains.mps.nodeEditor.inspector@java_stub)"
           version="-1"/>

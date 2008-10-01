@@ -12,7 +12,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.vcs.ui.ModelDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 
 public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(ShowDifferencesWithModelOnDisk_Action.class);

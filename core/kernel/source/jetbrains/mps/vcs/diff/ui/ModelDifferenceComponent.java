@@ -1,4 +1,4 @@
-package jetbrains.mps.vcs.ui;
+package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -26,7 +26,7 @@ import java.util.Set;
 
 import org.jetbrains.annotations.NotNull;
 
-public class ModelDifferenceComponent extends JPanel {
+class ModelDifferenceComponent extends JPanel {
   private MPSTree myModelTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
       if (myNewModel == null) {

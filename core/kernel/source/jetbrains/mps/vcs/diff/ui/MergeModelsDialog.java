@@ -1,4 +1,4 @@
-package jetbrains.mps.vcs.ui;
+package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
@@ -8,7 +8,7 @@ import javax.swing.JComponent;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 
-public class MergeModelsDialog extends BaseDialog {
+class MergeModelsDialog extends BaseDialog {
   private MergeView myMergeView;
   private boolean myCanceled;
 

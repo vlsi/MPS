@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Collections;
 
-public abstract class TaskQueue<T> {
+abstract class TaskQueue<T> {
   private final static Logger LOG = Logger.getLogger(TaskQueue.class);
   private final List<T> myTasks = new LinkedList<T>();
   private boolean myIsProcessingAllowed = true;

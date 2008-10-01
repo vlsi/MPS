@@ -3,7 +3,7 @@ package jetbrains.mps.watching;
 import com.intellij.openapi.vfs.newvfs.events.*;
 import com.intellij.openapi.vfs.VirtualFile;
 
-public abstract class EventProcessor {
+abstract class EventProcessor {
   public final void process(VFileEvent event, ReloadSession reloadSession) {
 //      System.out.println("processing event " + event);
     if (event instanceof VFileContentChangeEvent) {

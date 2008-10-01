@@ -18,9 +18,9 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
-public class AddOperation extends VcsOperation {
+class AddOperation extends VcsOperation {
   private static final Logger LOG = Logger.getLogger(AddOperation.class);
-  private final List<File> myFilesToAdd = new ArrayList<File>(10);
+  private final List<File> myFilesToAdd = new ArrayList<File>();
   private final Set<VirtualFile> myVirtualFilesToAdd = new HashSet<VirtualFile>();
 
   public AddOperation(Set<VirtualFile> filesToAdd, ProjectLevelVcsManager manager, Project project) {

@@ -87,7 +87,7 @@ public class FileGenerationUtil {
         }
       }
     }
-    MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
+    MPSVCSManager manager = context.getComponent(MPSVCSManager.class);
     manager.deleteFilesAndRemoveFromVcs(filesToDelete);
   }
 

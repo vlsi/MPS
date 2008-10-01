@@ -10,7 +10,7 @@ import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 
-public class ModelFileProcessor extends EventProcessor {
+class ModelFileProcessor extends EventProcessor {
   private static final ModelFileProcessor INSTANCE = new ModelFileProcessor();
 
   public static ModelFileProcessor getInstance() {
