@@ -73,6 +73,8 @@ public class SolutionStep extends StepAdapter {
   public void _init() {
     super._init();
 
+    if (myOptions.getSolutionNamespace() == null) myOptions.setSolutionNamespace(myOptions.getProjectName());
+
     myNamespace.setText(myOptions.getSolutionNamespace());
     myPath.setPath(myOptions.getSolutionPath());
     updateSolutionPath();
@@ -101,8 +103,9 @@ public class SolutionStep extends StepAdapter {
         throw new CommitStepException("Path should be absolute");
       }
       if (!(dir.exists())) {
-        if (!(DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(myComponent), dir))) {
-          throw new CommitStepException("Enter correct path");
+        boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(myComponent), dir);
+        if (!created) {
+          throw new CommitStepException("Specify another directory");
         }
       }
       final File descriptorFile = prepareToCreateNewSolutionDescriptorFile(descriptorPath);

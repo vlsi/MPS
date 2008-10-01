@@ -74,7 +74,10 @@ public class ProjectStep extends StepAdapter {
       throw new CommitStepException("Project name shouldn't be empty");
     }
     if (!(projectDirFile.exists())) {
-      DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(myComponent), projectDirFile);
+      boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(myComponent), projectDirFile);
+      if (!created) {
+        throw new CommitStepException("Specify another directory");
+      }
     }
 
     myOptions.setProjectName(myProjectName.getText());

@@ -65,6 +65,8 @@ public class LanguageStep extends StepAdapter {
   public void _init() {
     super._init();
 
+    if (myOptions.getLanguageNamespace() == null) myOptions.setLanguageNamespace(myOptions.getProjectName());
+
     myNamespace.setText(myOptions.getLanguageNamespace());
     myPath.setPath(myOptions.getLanguagePath());
     updateLanguagePath();
@@ -96,8 +98,9 @@ public class LanguageStep extends StepAdapter {
         throw new CommitStepException("Enter valid namespace");
       }
       if (!(dir.exists())) {
-        if (!(DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(myComponent), dir))) {
-          return;
+        boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(myComponent), dir);
+        if (!created) {
+          throw new CommitStepException("Specify another directory");
         }
       }
     }
