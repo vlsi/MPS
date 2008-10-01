@@ -945,7 +945,7 @@ public class EquationManager {
     thisLessThanType(var, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         // c :< T => c = T
-        addEquation(type, concreteSupertypes.iterator().next(), errorInfo);
+        addEquation(type,  /*concreteSupertypes.iterator().next()*/decideIfIsLineAndReturnInfimum(concreteSupertypes), errorInfo);
       }
     }, priority, minPriority);
   }
@@ -1152,4 +1152,29 @@ public class EquationManager {
   }
 
 
+  private IWrapper decideIfIsLineAndReturnInfimum(Set<IWrapper> wrappers) {
+    SubtypingManager subtypingManager = myTypeChecker.getSubtypingManager();
+    IWrapper result = null;
+    for (IWrapper wrapper : wrappers) {
+      result = minType(result, wrapper, subtypingManager);
+      if (result == null) return null;
+    }
+    return result;
+  }
+
+  private IWrapper minType(IWrapper wrapper1, IWrapper wrapper2, SubtypingManager subtypingManager) {
+    if (wrapper1 == null) {
+      return wrapper2;
+    }
+    if (wrapper2 == null) {
+      return wrapper1;
+    }
+    if (subtypingManager.isSubtype(wrapper1.getNode(), wrapper2.getNode())) {
+      return wrapper1;
+    }
+    if (subtypingManager.isSubtype(wrapper2.getNode(), wrapper1.getNode())) {
+      return wrapper2;
+    }
+    return null;
+  }
 }
