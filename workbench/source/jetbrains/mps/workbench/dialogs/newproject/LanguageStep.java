@@ -98,7 +98,7 @@ public class LanguageStep extends StepAdapter {
         throw new CommitStepException("Enter valid namespace");
       }
       if (!(dir.exists())) {
-        boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(myComponent), dir);
+        boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(myComponent), dir, false);
         if (!created) {
           throw new CommitStepException("Specify another directory");
         }
