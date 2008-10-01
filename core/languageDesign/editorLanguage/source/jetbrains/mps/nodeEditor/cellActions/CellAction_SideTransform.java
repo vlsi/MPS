@@ -92,7 +92,7 @@ public class CellAction_SideTransform extends EditorCellAction {
 
     EditorCell nodeCell = context.getNodeEditorComponent().findNodeCell(node);
     EditorCell rtHint = nodeCell.getSTHintCell();
-    assert rtHint != null;
+    assert rtHint != null : "can't find RT Hint for cell " + nodeCell + " with node " + node;
     context.getNodeEditorComponent().changeSelection(rtHint);
   }
 }
