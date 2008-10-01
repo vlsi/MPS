@@ -32,8 +32,6 @@ public class ExtendedDefaultVcsRootPolicy extends BasicDefaultVcsRootPolicy {
   @Override
   public boolean matchesDefaultMapping(VirtualFile file, Object matchContext) {
     if (ProjectBaseDirectory.getInstance(myIDEAProject).getBaseDir() == null) {
-      // fix MPS-2388
-      // java.lang.IllegalArgumentException: Argument 0 for @NotNull parameter of com/intellij/openapi/vfs/VfsUtil.isAncestor must not be null
       return false;
     }
     return super.matchesDefaultMapping(file, matchContext);
