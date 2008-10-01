@@ -4,6 +4,7 @@ import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.util.DirectoryUtil;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.workbench.dialogs.newproject.Icons.Icons;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
@@ -51,7 +52,7 @@ public class ProjectStep extends BaseStep {
   }
 
   public JComponent createImageComponent() {
-    return super.createImageComponent();
+    return new JLabel(Icons.PROJECT_ICON);
   }
 
   public String getCommentString() {

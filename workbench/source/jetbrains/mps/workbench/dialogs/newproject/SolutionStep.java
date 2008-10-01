@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.DirectoryUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.workbench.dialogs.newproject.Icons.Icons;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
@@ -60,7 +61,7 @@ public class SolutionStep extends BaseStep {
   }
 
   public JComponent createImageComponent() {
-    return super.createImageComponent();
+    return new JLabel(Icons.SOLUTION_ICON);
   }
 
   public String getCommentString() {
