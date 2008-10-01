@@ -1,23 +1,19 @@
 package jetbrains.mps.workbench.dialogs.newproject;
 
 import com.intellij.ide.wizard.CommitStepException;
-import com.intellij.ide.wizard.StepAdapter;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.util.DirectoryUtil;
 import jetbrains.mps.util.PathManager;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
-import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.io.File;
 
-public class ProjectStep extends StepAdapter {
+public class ProjectStep extends BaseStep {
   private ProjectOptions myOptions;
 
-  private JPanel myComponent;
   private JTextField myProjectName;
   private PathField myProjectPath;
 
@@ -25,10 +21,11 @@ public class ProjectStep extends StepAdapter {
     super();
     myOptions = options;
 
-    myComponent = new JPanel(new BorderLayout());
+    myOptions.setProjectName(getDefaultProjectName());
+  }
+
+  public JComponent createControlComponent() {
     JPanel panel = new JPanel(new GridLayout(4, 1));
-    myComponent.add(panel, BorderLayout.NORTH);
-    myComponent.add(new JPanel(), BorderLayout.CENTER);
 
     JLabel nameLabel = new JLabel();
     nameLabel.setText("Name:");
@@ -49,7 +46,18 @@ public class ProjectStep extends StepAdapter {
         updateProjectPath();
       }
     });
-    myOptions.setProjectName(getDefaultProjectName());
+
+    return panel;
+  }
+
+  public JComponent createImageComponent() {
+    return super.createImageComponent();
+  }
+
+  public String getCommentString() {
+    return
+      "<h4>Project</h4>" +
+        "Project is just a set of modules with which you work.";
   }
 
   public void _init() {
@@ -74,7 +82,7 @@ public class ProjectStep extends StepAdapter {
       throw new CommitStepException("Project name shouldn't be empty");
     }
     if (!(projectDirFile.exists())) {
-      boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(myComponent), projectDirFile, false);
+      boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(getComponent()), projectDirFile, false);
       if (!created) {
         throw new CommitStepException("Specify another directory");
       }
@@ -82,15 +90,6 @@ public class ProjectStep extends StepAdapter {
 
     myOptions.setProjectName(myProjectName.getText());
     myOptions.setProjectPath(myProjectPath.getPath());
-  }
-
-  public JComponent getComponent() {
-    return myComponent;
-  }
-
-  @Nullable
-  public Icon getIcon() {
-    return null;
   }
 
   private String getDefaultProjectName() {

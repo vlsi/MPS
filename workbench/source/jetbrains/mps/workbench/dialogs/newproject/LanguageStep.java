@@ -1,26 +1,22 @@
 package jetbrains.mps.workbench.dialogs.newproject;
 
 import com.intellij.ide.wizard.CommitStepException;
-import com.intellij.ide.wizard.StepAdapter;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.DirectoryUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
-import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.io.File;
 
-public class LanguageStep extends StepAdapter {
+public class LanguageStep extends BaseStep {
   private ProjectOptions myOptions;
 
-  private JPanel myComponent;
   private JTextField myNamespace;
   private PathField myPath;
   private JCheckBox myDontCreate;
@@ -28,11 +24,10 @@ public class LanguageStep extends StepAdapter {
   public LanguageStep(ProjectOptions options) {
     super();
     myOptions = options;
+  }
 
-    myComponent = new JPanel(new BorderLayout());
+  public JComponent createControlComponent() {
     JPanel panel = new JPanel(new GridLayout(5, 1));
-    myComponent.add(panel, BorderLayout.NORTH);
-    myComponent.add(new JPanel(), BorderLayout.CENTER);
 
     myDontCreate = new JCheckBox(new AbstractAction("Do not create language") {
       public void actionPerformed(ActionEvent e) {
@@ -60,6 +55,22 @@ public class LanguageStep extends StepAdapter {
         updateLanguagePath();
       }
     });
+
+    return panel;
+  }
+
+  public JComponent createImageComponent() {
+    return super.createImageComponent();
+  }
+
+  public String getCommentString() {
+    return
+      "<h4>Language</h4>" +
+        "Language is a module that is more complex than a solution. <br>" +
+        "It consists of aspect models: structure, editor, actions, typesystem, etc.<br>" +
+        "Languages can extend other languages, which means they can use concepts from <br>" +
+        "an extended language. They can derive concepts from an extended language, use<br>" +
+        "them as a target of a reference, and store them as children.";
   }
 
   public void _init() {
@@ -98,7 +109,7 @@ public class LanguageStep extends StepAdapter {
         throw new CommitStepException("Enter valid namespace");
       }
       if (!(dir.exists())) {
-        boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(myComponent), dir, false);
+        boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(getComponent()), dir, false);
         if (!created) {
           throw new CommitStepException("Specify another directory");
         }
@@ -113,14 +124,5 @@ public class LanguageStep extends StepAdapter {
     myOptions.setCreateNewLanguage(!value);
     myNamespace.setEnabled(!value);
     myPath.setEnabled(!value);
-  }
-
-  public JComponent getComponent() {
-    return myComponent;
-  }
-
-  @Nullable
-  public Icon getIcon() {
-    return null;
   }
 }

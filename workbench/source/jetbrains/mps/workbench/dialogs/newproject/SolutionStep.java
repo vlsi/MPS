@@ -1,26 +1,22 @@
 package jetbrains.mps.workbench.dialogs.newproject;
 
 import com.intellij.ide.wizard.CommitStepException;
-import com.intellij.ide.wizard.StepAdapter;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.DirectoryUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.MPSExtentions;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
-import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.io.File;
 
-public class SolutionStep extends StepAdapter {
+public class SolutionStep extends BaseStep {
   private ProjectOptions myOptions;
 
-  private JPanel myComponent;
   private JTextField myNamespace;
   private PathField myPath;
   private JCheckBox myDontCreate;
@@ -28,11 +24,10 @@ public class SolutionStep extends StepAdapter {
   public SolutionStep(ProjectOptions options) {
     super();
     myOptions = options;
+  }
 
-    myComponent = new JPanel(new BorderLayout());
+  public JComponent createControlComponent() {
     JPanel panel = new JPanel(new GridLayout(5, 1));
-    myComponent.add(panel, BorderLayout.NORTH);
-    myComponent.add(new JPanel(), BorderLayout.CENTER);
 
     myDontCreate = new JCheckBox(new AbstractAction("Do not create solution") {
       public void actionPerformed(ActionEvent e) {
@@ -60,6 +55,19 @@ public class SolutionStep extends StepAdapter {
         updateSolutionPath();
       }
     });
+
+    return panel;
+  }
+
+  public JComponent createImageComponent() {
+    return super.createImageComponent();
+  }
+
+  public String getCommentString() {
+    return
+      "<h4>Solution</h4>" +
+        "Solution is the simplest possible kind of module in MPS.<br>" +
+        "It is just a set of models with a name.";
   }
 
   private void updateSolutionPath() {
@@ -103,7 +111,7 @@ public class SolutionStep extends StepAdapter {
         throw new CommitStepException("Path should be absolute");
       }
       if (!(dir.exists())) {
-        boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(myComponent), dir, false);
+        boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(getComponent()), dir, false);
         if (!created) {
           throw new CommitStepException("Specify another directory");
         }
@@ -131,14 +139,5 @@ public class SolutionStep extends StepAdapter {
       dir.mkdirs();
     }
     return solutionDescriptorFile;
-  }
-
-  public JComponent getComponent() {
-    return myComponent;
-  }
-
-  @Nullable
-  public Icon getIcon() {
-    return null;
   }
 }
