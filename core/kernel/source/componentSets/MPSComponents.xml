@@ -45,6 +45,9 @@
       <implementation-class>jetbrains.mps.workbench.projectPaths.MPSProjectPaths</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.vcs.ui.ChangesNotificator</implementation-class>
+    </component>
+    <component>
       <interface-class>com.intellij.codeInsight.highlighting.HighlightManager</interface-class>
       <implementation-class>com.intellij.codeInsight.highlighting.HighlightManagerImpl</implementation-class>
       <skipForDummyProject/>
@@ -57,10 +60,6 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.SuspiciousModelIndex</implementation-class>
-    </component>
-    <component>
-      <interface-class>jetbrains.mps.vcs.ui.VcsUiHelper</interface-class>
-      <implementation-class>jetbrains.mps.vcs.ui.VcsUiHelperImpl</implementation-class>
     </component>
   </application-components>
 

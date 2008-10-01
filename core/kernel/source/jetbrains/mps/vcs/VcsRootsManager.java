@@ -6,9 +6,6 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -22,7 +19,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.vcs.ui.VcsUiHelper;
 import jetbrains.mps.logging.Logger;
 
 public class VcsRootsManager implements ProjectComponent {
@@ -30,6 +26,7 @@ public class VcsRootsManager implements ProjectComponent {
   private final Project myProject;
   private final ProjectLevelVcsManager myVcsManager;
   private final Set<VirtualFile> myExcludedRoots = new ConcurrentHashSet<VirtualFile>();
+  private final List<VcsRootsListener> myVcsRootsListeners = new ArrayList<VcsRootsListener>();
   private final SModelAdapter myGlobalSModelListener = new SModelAdapter() {
     @Override
     public void modelSaved(SModelDescriptor sm) {
@@ -47,19 +44,17 @@ public class VcsRootsManager implements ProjectComponent {
         }
         Set<VirtualFile> currentRoots = new HashSet<VirtualFile>(Arrays.asList(myVcsManager.getAllVersionedRoots()));
         if ((root != null) && (!myExcludedRoots.contains(root)) && (!currentRoots.contains(root))) {
-          showAddVcsRootDialog(root, sm);
+          fireModelOutsideVcsRootsChanged(root, sm);
         }
       } catch (IllegalArgumentException e) {
 //        LOG.error(e);
       }
     }
   };
-  private final VcsUiHelper myUiHelper;
 
-  public VcsRootsManager(Project project, ProjectLevelVcsManager manager, VcsUiHelper helper) {
+  public VcsRootsManager(Project project, ProjectLevelVcsManager manager) {
     myProject = project;
     myVcsManager = manager;
-    myUiHelper = helper;
   }
 
   public void projectOpened() {
@@ -67,26 +62,14 @@ public class VcsRootsManager implements ProjectComponent {
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalSModelListener);
   }
 
-  private void showAddVcsRootDialog(final VirtualFile vcsRoot, final SModelDescriptor sm) {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        if (myExcludedRoots.contains(vcsRoot)) {
-          return;
-        }
-        boolean result = myUiHelper.showAddVcsRootsDialog(myProject, vcsRoot, sm);
-        if (result) {
-          List<VcsDirectoryMapping> vcsDirectoryMappings = new ArrayList<VcsDirectoryMapping>(myVcsManager.getDirectoryMappings());
-          vcsDirectoryMappings.add(new VcsDirectoryMapping(vcsRoot.getPath(), myVcsManager.findVersioningVcs(vcsRoot).getName()));
-          myVcsManager.setDirectoryMappings(vcsDirectoryMappings);
-        } else {
-          myExcludedRoots.add(vcsRoot);
-        }
-      }
-    }, ModalityState.NON_MODAL);
+  private void fireModelOutsideVcsRootsChanged(VirtualFile vcsRoot, SModelDescriptor modelDescriptor) {
+    for (VcsRootsListener listener : myVcsRootsListeners) {
+      listener.modelOutsideVcsRootsChanged(vcsRoot, modelDescriptor);
+    }
   }
 
   public void projectClosed() {
-    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalSModelListener);
+    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalSModelListener);
   }
 
   @NonNls
@@ -228,5 +211,31 @@ public class VcsRootsManager implements ProjectComponent {
     VirtualFile parentOfChild = child.getParent();
     if (parentOfChild == null) return false;
     return isParent(parent, parentOfChild);
+  }
+
+  public void addListener(VcsRootsListener listener) {
+    myVcsRootsListeners.add(listener);
+  }
+
+  public void removeListener(VcsRootsListener listener) {
+    myVcsRootsListeners.remove(listener);
+  }
+
+  public void addNewVcsRoot(VirtualFile vcsRoot) {
+    List<VcsDirectoryMapping> vcsDirectoryMappings = new ArrayList<VcsDirectoryMapping>(myVcsManager.getDirectoryMappings());
+    vcsDirectoryMappings.add(new VcsDirectoryMapping(vcsRoot.getPath(), myVcsManager.findVersioningVcs(vcsRoot).getName()));
+    myVcsManager.setDirectoryMappings(vcsDirectoryMappings);
+  }
+
+  public boolean isExcluded(VirtualFile vcsRoot) {
+    return myExcludedRoots.contains(vcsRoot);
+  }
+
+  public void addExcludedRoot(VirtualFile vcsRoot) {
+    myExcludedRoots.add(vcsRoot);
+  }
+
+  public static interface VcsRootsListener {
+    void modelOutsideVcsRootsChanged(VirtualFile vcsRoot, SModelDescriptor sm);
   }
 }
