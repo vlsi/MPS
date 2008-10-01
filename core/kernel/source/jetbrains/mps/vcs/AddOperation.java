@@ -1,6 +1,7 @@
 package jetbrains.mps.vcs;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.VcsException;
@@ -65,7 +66,7 @@ class AddOperation extends VcsOperation {
 
   @Override
   public void runPerform(Runnable runnable) {
-    ApplicationManager.getApplication().invokeLater(runnable);
+    ApplicationManager.getApplication().invokeLater(runnable, ModalityState.NON_MODAL);
   }
 
   private void scheduleUnversionedFileForAdditionInternal(@NotNull VirtualFile vf) {
