@@ -3,9 +3,7 @@
   <models>
     <modelRoot path="${solution_descriptor}\" namespacePrefix="jetbrains.mps.baseLanguage.sandbox" />
   </models>
-  <classPath>
-    <entry path="${mps_home}\lib\annotations\annotations.jar" />
-  </classPath>
+  <classPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="true">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
