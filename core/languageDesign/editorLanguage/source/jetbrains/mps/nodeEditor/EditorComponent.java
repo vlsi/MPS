@@ -873,6 +873,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void dispose() {
+
+    hideMessageToolTip();
+
     myHighlightManager.dispose();
     myMPSActionsWithShortcuts.clear();
 
