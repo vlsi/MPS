@@ -2,17 +2,13 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.pathVariables.PathVariableManager;
 import jetbrains.mps.library.LibraryManager.MyState;
 import jetbrains.mps.cleanup.CleanupManager;
-import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nls;
@@ -143,6 +139,11 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
    result.add(new PredefinedLibrary("mps.app") {
       public String getPath() {
         return PathManager.getAppPath()  ;
+      }
+    });
+    result.add(new PredefinedLibrary("mps.samples") {
+      public String getPath() {
+        return PathManager.getSamplesPath();
       }
     });
     return result;

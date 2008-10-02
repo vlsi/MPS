@@ -925,24 +925,24 @@
       <module fileurl="file://$PROJECT_DIR$/platform/buildlanguage/BuildLanguage.iml" filepath="$PROJECT_DIR$/platform/buildlanguage/BuildLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/closures/Closures.iml" filepath="$PROJECT_DIR$/core/baseLanguage/closures/Closures.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/closures/runtime/Closures-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/closures/runtime/Closures-runtime.iml" group="core/baseLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/app/complexLanguage/ComplexNumbersLanguage.iml" filepath="$PROJECT_DIR$/app/complexLanguage/ComplexNumbersLanguage.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/samples/complexLanguage/ComplexNumbersLanguage.iml" filepath="$PROJECT_DIR$/samples/complexLanguage/ComplexNumbersLanguage.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/internalCollections/InternalCollections.iml" filepath="$PROJECT_DIR$/core/baseLanguage/internalCollections/InternalCollections.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/internalCollections/languages/collections/runtime/InternalCollections-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/internalCollections/languages/collections/runtime/InternalCollections-runtime.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/jetbrains.mps.matrixLanguage/MatrixLanguage.iml" filepath="$PROJECT_DIR$/app/jetbrains.mps.matrixLanguage/MatrixLanguage.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/samples/jetbrains.mps.matrixLanguage/MatrixLanguage.iml" filepath="$PROJECT_DIR$/samples/jetbrains.mps.matrixLanguage/MatrixLanguage.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/platform/panacea/Panacea.iml" filepath="$PROJECT_DIR$/platform/panacea/Panacea.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/YPath.iml" filepath="$PROJECT_DIR$/platform/ypath/YPath.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" filepath="$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/solutions/YPath-solutions.iml" filepath="$PROJECT_DIR$/platform/ypath/solutions/YPath-solutions.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/actionsLanguage/actionsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/actionsLanguage/actionsLanguage.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/app/agreement/agreement.iml" filepath="$PROJECT_DIR$/app/agreement/agreement.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/samples/agreement/agreement.iml" filepath="$PROJECT_DIR$/samples/agreement/agreement.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/annotations/annotations.iml" filepath="$PROJECT_DIR$/core/languageDesign/annotations/annotations.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguage/baseLanguage.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.iml" filepath="$PROJECT_DIR$/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/blTypes/blTypes.iml" filepath="$PROJECT_DIR$/core/baseLanguage/blTypes/blTypes.iml" group="core/baseLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/app/calculator/calculator.iml" filepath="$PROJECT_DIR$/app/calculator/calculator.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/samples/calculator/calculator.iml" filepath="$PROJECT_DIR$/samples/calculator/calculator.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/classifiers/classifiers.iml" filepath="$PROJECT_DIR$/core/baseLanguage/classifiers/classifiers.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" group="core/baseLanguage/collections" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" group="core/baseLanguage/collections" />
@@ -954,11 +954,11 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/dataFlow/runtime/dataFlow-runtime.iml" filepath="$PROJECT_DIR$/core/languageDesign/dataFlow/runtime/dataFlow-runtime.iml" group="core/languageDesign/dataFlow" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/dates/dates.iml" filepath="$PROJECT_DIR$/core/baseLanguage/dates/dates.iml" group="core/baseLanguage/dates" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/dates/runtime/dates-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/dates/runtime/dates-runtime.iml" group="core/baseLanguage/dates" />
-      <module fileurl="file://$PROJECT_DIR$/app/dslbook_example/dslbook_example.iml" filepath="$PROJECT_DIR$/app/dslbook_example/dslbook_example.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/samples/dslbook_example/dslbook_example.iml" filepath="$PROJECT_DIR$/samples/dslbook_example/dslbook_example.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/editorLanguage/editorLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/editorLanguage/editorLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/findUsagesLanguage/findUsagesLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/findUsagesLanguage/findUsagesLanguage.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" group="app" />
-      <module fileurl="file://$PROJECT_DIR$/app/formulaLanguage/formulaLanguage.iml" filepath="$PROJECT_DIR$/app/formulaLanguage/formulaLanguage.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/samples/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/samples/fixedLengthReader/fixedLengthReader.iml" group="samples" />
+      <module fileurl="file://$PROJECT_DIR$/samples/formulaLanguage/formulaLanguage.iml" filepath="$PROJECT_DIR$/samples/formulaLanguage/formulaLanguage.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/app/functional/functional.iml" filepath="$PROJECT_DIR$/app/functional/functional.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/app/mf/gothic/gothic.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" filepath="$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" group="core/languageDesign" />

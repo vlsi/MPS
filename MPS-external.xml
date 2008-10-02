@@ -236,22 +236,22 @@
       <fileset dir="plugins" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/agreement">
-      <fileset dir="app/agreement" excludes="**/*.iml, **/*.ipr" includes="" />
+      <fileset dir="samples/agreement" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/complexLanguage">
-      <fileset dir="app/complexLanguage" excludes="**/*.iml, **/*.ipr" includes="" />
+      <fileset dir="samples/complexLanguage" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/dslbook_example">
-      <fileset dir="app/dslbook_example" excludes="**/*.iml, **/*.ipr" includes="" />
+      <fileset dir="samples/dslbook_example" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/fixedLengthReader">
-      <fileset dir="app/fixedLengthReader" excludes="**/*.iml, **/*.ipr" includes="" />
+      <fileset dir="samples/fixedLengthReader" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/formulaLanguage">
-      <fileset dir="app/formulaLanguage" excludes="**/*.iml, **/*.ipr" includes="" />
+      <fileset dir="samples/formulaLanguage" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/app/jetbrains.mps.matrixLanguage">
-      <fileset dir="app/jetbrains.mps.matrixLanguage" excludes="**/*.iml, **/*.ipr" includes="" />
+      <fileset dir="samples/jetbrains.mps.matrixLanguage" excludes="**/*.iml, **/*.ipr" includes="" />
     </copy>
     <antcall target="pack.jetbrains.mps.devkit.general-purpose" />
     <antcall target="pack.jetbrains.mps.devkit.language-design" />

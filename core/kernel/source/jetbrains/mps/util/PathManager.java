@@ -163,6 +163,11 @@ public class PathManager {
     return getHomePath() + File.separator + "core" + File.separator + "languageDesign";
   }
 
+
+  public static String getSamplesPath() {
+    return getHomePath() + File.separator + "samples";
+  }
+
   public static String getPlatformPath() {
     return getHomePath() + File.separator + "platform";
   }
