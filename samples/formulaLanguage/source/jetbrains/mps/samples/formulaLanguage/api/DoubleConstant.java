@@ -1,6 +1,6 @@
-package jetbrains.mps.formulaLanguage.api;
+package jetbrains.mps.samples.formulaLanguage.api;
 
-import jetbrains.mps.formulaLanguage.api.Function;
+import jetbrains.mps.samples.formulaLanguage.api.Function;
 
 /**
  * Created by IntelliJ IDEA.

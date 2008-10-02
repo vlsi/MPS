@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959043d(jetbrains.mps.formulaLanguage.generator.baseLanguage@generator)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959043d(jetbrains.mps.samples.formulaLanguage.generator.baseLanguage@generator)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
-  <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.transformation.TLBase.constraints)" version="16" />
@@ -20,11 +17,12 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <maxImportIndex value="5" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" version="0" />
+  <maxImportIndex value="7" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <import index="4" modelUID="f:java_stub#jetbrains.mps.formulaLanguage.api(jetbrains.mps.formulaLanguage.api@java_stub)" version="-1" />
-  <import index="5" modelUID="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.formulaLanguage.structure)" version="-1" />
+  <import index="5" modelUID="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" version="0" />
+  <import index="6" modelUID="f:java_stub#jetbrains.mps.samples.formulaLanguage.api(jetbrains.mps.samples.formulaLanguage.api@java_stub)" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.TemplateSwitch" id="1112818835473">
     <property name="name" value="SWITCH_Expression_NewFunction_Default" />
     <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1200427732199">
@@ -58,7 +56,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214259270629">
       <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1214259270631" />
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214259270632">
-        <link role="baseMethodDeclaration" targetNodeId="4.~DoubleConstant.&lt;init&gt;(double)" resolveInfo="DoubleConstant" />
+        <link role="baseMethodDeclaration" targetNodeId="6.~DoubleConstant.&lt;init&gt;(double)" resolveInfo="DoubleConstant" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1113000385880">
           <property name="value" value="0.0" />
           <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1113259187703">
@@ -85,7 +83,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214259270578">
       <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1214259270580" />
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214259270581">
-        <link role="baseMethodDeclaration" targetNodeId="4.~MultiplyOperation.&lt;init&gt;(jetbrains.mps.formulaLanguage.api.Function,jetbrains.mps.formulaLanguage.api.Function)" resolveInfo="MultiplyOperation" />
+        <link role="baseMethodDeclaration" targetNodeId="6.~MultiplyOperation.&lt;init&gt;(jetbrains.mps.samples.formulaLanguage.api.Function,jetbrains.mps.samples.formulaLanguage.api.Function)" resolveInfo="MultiplyOperation" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1112819851630">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.SwitchMacro" id="1112820006930">
             <link role="templateSwitch" targetNodeId="1112979325952" />
@@ -129,7 +127,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214259270543">
       <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1214259270545" />
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214259270546">
-        <link role="baseMethodDeclaration" targetNodeId="4.~IfFunction.&lt;init&gt;(jetbrains.mps.formulaLanguage.api.Function,jetbrains.mps.formulaLanguage.api.Function,jetbrains.mps.formulaLanguage.api.Function)" resolveInfo="IfFunction" />
+        <link role="baseMethodDeclaration" targetNodeId="6.~IfFunction.&lt;init&gt;(jetbrains.mps.samples.formulaLanguage.api.Function,jetbrains.mps.samples.formulaLanguage.api.Function,jetbrains.mps.samples.formulaLanguage.api.Function)" resolveInfo="IfFunction" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1112820099529">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.SwitchMacro" id="1112820163066">
             <link role="templateSwitch" targetNodeId="1112818835473" />
@@ -217,7 +215,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214259270476">
       <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1214259270478" />
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214259270479">
-        <link role="baseMethodDeclaration" targetNodeId="4.~IfFunction.&lt;init&gt;(jetbrains.mps.formulaLanguage.api.Function,jetbrains.mps.formulaLanguage.api.Function,jetbrains.mps.formulaLanguage.api.Function)" resolveInfo="IfFunction" />
+        <link role="baseMethodDeclaration" targetNodeId="6.~IfFunction.&lt;init&gt;(jetbrains.mps.samples.formulaLanguage.api.Function,jetbrains.mps.samples.formulaLanguage.api.Function,jetbrains.mps.samples.formulaLanguage.api.Function)" resolveInfo="IfFunction" />
         <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1112979600996">
           <link role="classifier" targetNodeId="2.~Double" resolveInfo="Double" />
         </node>
@@ -281,7 +279,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214259270426">
       <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1214259270428" />
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214259270444">
-        <link role="baseMethodDeclaration" targetNodeId="4.~DoubleConstant.&lt;init&gt;(double)" resolveInfo="DoubleConstant" />
+        <link role="baseMethodDeclaration" targetNodeId="6.~DoubleConstant.&lt;init&gt;(double)" resolveInfo="DoubleConstant" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1113000581975">
           <property name="value" value="0.0" />
           <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1113259187704">

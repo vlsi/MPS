@@ -1,6 +1,6 @@
 package formulaAdapter;
 
-import jetbrains.mps.formulaLanguage.api.Function;
+import jetbrains.mps.samples.formulaLanguage.api.Function;
 import postingrules.Usage;
 
 /**

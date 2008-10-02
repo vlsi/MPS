@@ -7,9 +7,9 @@ import postingrules.AgreementRegistry;
 import postingrules.ServiceAgreement;
 import postingrules.EventType;
 import postingrules.AccountType;
-import jetbrains.mps.formulaLanguage.api.MultiplyOperation;
-import jetbrains.mps.formulaLanguage.api.DoubleConstant;
-import jetbrains.mps.formulaLanguage.api.IfFunction;
+import jetbrains.mps.samples.formulaLanguage.api.MultiplyOperation;
+import jetbrains.mps.samples.formulaLanguage.api.DoubleConstant;
+import jetbrains.mps.samples.formulaLanguage.api.IfFunction;
 import formulaAdapter.*;
 import mf.*;
 

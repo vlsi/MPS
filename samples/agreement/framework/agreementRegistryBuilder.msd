@@ -6,11 +6,11 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="true">b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.formulaLanguage)</dependency>
+    <dependency reexport="true">b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.samples.formulaLanguage)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>144f7012-c2d5-43be-be2b-4bfb7dff6503(jetbrains.mps.samples.agreementLanguage)</usedLanguages>
-    <usedLanguages>b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.formulaLanguage)</usedLanguages>
+    <usedLanguages>b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.samples.formulaLanguage)</usedLanguages>
   </usedLanguages>
 </solution>
 

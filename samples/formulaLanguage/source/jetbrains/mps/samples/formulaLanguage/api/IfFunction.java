@@ -1,4 +1,4 @@
-package jetbrains.mps.formulaLanguage.api;
+package jetbrains.mps.samples.formulaLanguage.api;
 
 /**
  * Created by IntelliJ IDEA.

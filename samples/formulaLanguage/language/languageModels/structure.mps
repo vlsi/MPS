@@ -1,8 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.formulaLanguage.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)">
   <persistence version="3" />
-  <refactoringHistory />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="AndOperation" conceptFQName="jetbrains.mps.formulaLanguage.structure.AndOperation" featureKind="CONCEPT" />
+          <value featureName="AndOperation" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.AndOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Constant" conceptFQName="jetbrains.mps.formulaLanguage.structure.Constant" featureKind="CONCEPT" />
+          <value featureName="Constant" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.Constant" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="EqualsOperation" conceptFQName="jetbrains.mps.formulaLanguage.structure.EqualsOperation" featureKind="CONCEPT" />
+          <value featureName="EqualsOperation" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Expression" conceptFQName="jetbrains.mps.formulaLanguage.structure.Expression" featureKind="CONCEPT" />
+          <value featureName="Expression" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.Expression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="FloatingPointConstant" conceptFQName="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" featureKind="CONCEPT" />
+          <value featureName="FloatingPointConstant" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Formula" conceptFQName="jetbrains.mps.formulaLanguage.structure.Formula" featureKind="CONCEPT" />
+          <value featureName="Formula" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.Formula" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Function" conceptFQName="jetbrains.mps.formulaLanguage.structure.Function" featureKind="CONCEPT" />
+          <value featureName="Function" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.Function" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GreaterThanOperation" conceptFQName="jetbrains.mps.formulaLanguage.structure.GreaterThanOperation" featureKind="CONCEPT" />
+          <value featureName="GreaterThanOperation" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="IfFunction" conceptFQName="jetbrains.mps.formulaLanguage.structure.IfFunction" featureKind="CONCEPT" />
+          <value featureName="IfFunction" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.IfFunction" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="IntegerConstant" conceptFQName="jetbrains.mps.formulaLanguage.structure.IntegerConstant" featureKind="CONCEPT" />
+          <value featureName="IntegerConstant" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="IsNullOperation" conceptFQName="jetbrains.mps.formulaLanguage.structure.IsNullOperation" featureKind="CONCEPT" />
+          <value featureName="IsNullOperation" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="LessThanOperation" conceptFQName="jetbrains.mps.formulaLanguage.structure.LessThanOperation" featureKind="CONCEPT" />
+          <value featureName="LessThanOperation" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MinusOperation" conceptFQName="jetbrains.mps.formulaLanguage.structure.MinusOperation" featureKind="CONCEPT" />
+          <value featureName="MinusOperation" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.MinusOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MultOperation" conceptFQName="jetbrains.mps.formulaLanguage.structure.MultOperation" featureKind="CONCEPT" />
+          <value featureName="MultOperation" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.MultOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="NotOperation" conceptFQName="jetbrains.mps.formulaLanguage.structure.NotOperation" featureKind="CONCEPT" />
+          <value featureName="NotOperation" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.NotOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="NullConstant" conceptFQName="jetbrains.mps.formulaLanguage.structure.NullConstant" featureKind="CONCEPT" />
+          <value featureName="NullConstant" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.NullConstant" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Operation" conceptFQName="jetbrains.mps.formulaLanguage.structure.Operation" featureKind="CONCEPT" />
+          <value featureName="Operation" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.Operation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="OrOperation" conceptFQName="jetbrains.mps.formulaLanguage.structure.OrOperation" featureKind="CONCEPT" />
+          <value featureName="OrOperation" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.OrOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ParenthisizedExpression" conceptFQName="jetbrains.mps.formulaLanguage.structure.ParenthisizedExpression" featureKind="CONCEPT" />
+          <value featureName="ParenthisizedExpression" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PlusOperation" conceptFQName="jetbrains.mps.formulaLanguage.structure.PlusOperation" featureKind="CONCEPT" />
+          <value featureName="PlusOperation" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.PlusOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Reference" conceptFQName="jetbrains.mps.formulaLanguage.structure.Reference" featureKind="CONCEPT" />
+          <value featureName="Reference" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.Reference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="StringConstant" conceptFQName="jetbrains.mps.formulaLanguage.structure.StringConstant" featureKind="CONCEPT" />
+          <value featureName="StringConstant" conceptFQName="jetbrains.mps.samples.formulaLanguage.structure.StringConstant" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
@@ -15,6 +109,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" version="0" />
   <maxImportIndex value="2" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1111784210516">

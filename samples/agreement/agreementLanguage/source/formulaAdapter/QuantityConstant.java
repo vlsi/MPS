@@ -1,6 +1,6 @@
 package formulaAdapter;
 
-import jetbrains.mps.formulaLanguage.api.Function;
+import jetbrains.mps.samples.formulaLanguage.api.Function;
 import mf.Quantity;
 import mf.Unit;
 
@@ -11,7 +11,7 @@ import mf.Unit;
  * Time: 8:53:41 PM
  * To change this template use File | Settings | File Templates.
  */
-public class QuantityConstant implements Function <Quantity> {
+public class QuantityConstant implements Function<Quantity> {
   private Quantity myQuantity;
 
   public QuantityConstant(double amount, Unit unit) {

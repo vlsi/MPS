@@ -4,9 +4,9 @@ package postingrules;
 
 
 import formulaAdapter.*;
-import jetbrains.mps.formulaLanguage.api.DoubleConstant;
-import jetbrains.mps.formulaLanguage.api.IfFunction;
-import jetbrains.mps.formulaLanguage.api.MultiplyOperation;
+import jetbrains.mps.samples.formulaLanguage.api.DoubleConstant;
+import jetbrains.mps.samples.formulaLanguage.api.IfFunction;
+import jetbrains.mps.samples.formulaLanguage.api.MultiplyOperation;
 import mf.*;
 import postingrules.AccountType;
 import postingrules.AgreementRegistry;

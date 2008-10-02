@@ -26,12 +26,12 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)" version="0" />
-  <maxImportIndex value="19" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" version="0" />
+  <maxImportIndex value="21" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <import index="6" modelUID="r:00000000-0000-4000-0000-011c8959043d(jetbrains.mps.formulaLanguage.generator.baseLanguage@generator)" version="-1" />
+  <import index="6" modelUID="r:00000000-0000-4000-0000-011c8959043d(jetbrains.mps.samples.formulaLanguage.generator.baseLanguage@generator)" version="-1" />
   <import index="8" modelUID="f:java_stub#mf(mf@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#formulaAdapter(formulaAdapter@java_stub)" version="-1" />
-  <import index="10" modelUID="f:java_stub#jetbrains.mps.formulaLanguage.api(jetbrains.mps.formulaLanguage.api@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#postingrules(postingrules@java_stub)" version="-1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)" version="0" />
   <import index="13" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -39,8 +39,9 @@
   <import index="15" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="16" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
-  <import index="18" modelUID="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.formulaLanguage.structure)" version="-1" />
+  <import index="18" modelUID="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" version="0" />
   <import index="19" modelUID="r:00000000-0000-4000-0000-011c8959040d(jetbrains.mps.samples.agreementLanguage.generator.util)" version="-1" />
+  <import index="20" modelUID="f:java_stub#jetbrains.mps.samples.formulaLanguage.api(jetbrains.mps.samples.formulaLanguage.api@java_stub)" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1112303804151">
     <property name="name" value="MAPPING_Agreement_BaseLanguage" />
     <node role="createRootRule" type="jetbrains.mps.transformation.TLBase.structure.CreateRootRule" id="1197658381645">
@@ -503,7 +504,7 @@
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214253959025">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214253959027">
-                  <link role="baseMethodDeclaration" targetNodeId="9.~PostingRule_Formula.&lt;init&gt;(postingrules.AccountType,boolean,jetbrains.mps.formulaLanguage.api.Function)" resolveInfo="PostingRule_Formula" />
+                  <link role="baseMethodDeclaration" targetNodeId="9.~PostingRule_Formula.&lt;init&gt;(postingrules.AccountType,boolean,jetbrains.mps.samples.formulaLanguage.api.Function)" resolveInfo="PostingRule_Formula" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1197661235316">
                     <link role="enumClass" targetNodeId="11.~AccountType" resolveInfo="AccountType" />
                     <link role="enumConstantDeclaration" targetNodeId="11.~AccountType.TAX" resolveInfo="TAX" />
@@ -1108,7 +1109,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214253958375">
       <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1214253958377" />
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214253958378">
-        <link role="baseMethodDeclaration" targetNodeId="9.~MoneyAddOperation.&lt;init&gt;(jetbrains.mps.formulaLanguage.api.Function,jetbrains.mps.formulaLanguage.api.Function)" resolveInfo="MoneyAddOperation" />
+        <link role="baseMethodDeclaration" targetNodeId="9.~MoneyAddOperation.&lt;init&gt;(jetbrains.mps.samples.formulaLanguage.api.Function,jetbrains.mps.samples.formulaLanguage.api.Function)" resolveInfo="MoneyAddOperation" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1112804541135">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.SwitchMacro" id="1112804671521">
             <link role="templateSwitch" targetNodeId="1112733851363" />
@@ -1190,7 +1191,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214253959257">
       <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1214253959259" />
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214253959260">
-        <link role="baseMethodDeclaration" targetNodeId="9.~MoneyMultiplyOperation.&lt;init&gt;(jetbrains.mps.formulaLanguage.api.Function,jetbrains.mps.formulaLanguage.api.Function)" resolveInfo="MoneyMultiplyOperation" />
+        <link role="baseMethodDeclaration" targetNodeId="9.~MoneyMultiplyOperation.&lt;init&gt;(jetbrains.mps.samples.formulaLanguage.api.Function,jetbrains.mps.samples.formulaLanguage.api.Function)" resolveInfo="MoneyMultiplyOperation" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1112894129940">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.SwitchMacro" id="1112894241007">
             <link role="templateSwitch" targetNodeId="1112733851363" />
@@ -1272,7 +1273,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214253958507">
       <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1214253958509" />
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214253958510">
-        <link role="baseMethodDeclaration" targetNodeId="9.~QuantityGreaterThanOperation.&lt;init&gt;(jetbrains.mps.formulaLanguage.api.Function,jetbrains.mps.formulaLanguage.api.Function)" resolveInfo="QuantityGreaterThanOperation" />
+        <link role="baseMethodDeclaration" targetNodeId="9.~QuantityGreaterThanOperation.&lt;init&gt;(jetbrains.mps.samples.formulaLanguage.api.Function,jetbrains.mps.samples.formulaLanguage.api.Function)" resolveInfo="QuantityGreaterThanOperation" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1112902637460">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.SwitchMacro" id="1112902693652">
             <link role="templateSwitch" targetNodeId="1112916267895" />
@@ -1520,7 +1521,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214253958558">
       <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1214253958560" />
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214253958561">
-        <link role="baseMethodDeclaration" targetNodeId="10.~DoubleConstant.&lt;init&gt;(double)" resolveInfo="DoubleConstant" />
+        <link role="baseMethodDeclaration" targetNodeId="20.~DoubleConstant.&lt;init&gt;(double)" resolveInfo="DoubleConstant" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1112996174765">
           <property name="value" value="0.0" />
           <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1113259356569">
@@ -1680,7 +1681,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214253958309">
       <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1214253958311" />
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214253958312">
-        <link role="baseMethodDeclaration" targetNodeId="10.~IfFunction.&lt;init&gt;(jetbrains.mps.formulaLanguage.api.Function,jetbrains.mps.formulaLanguage.api.Function,jetbrains.mps.formulaLanguage.api.Function)" resolveInfo="IfFunction" />
+        <link role="baseMethodDeclaration" targetNodeId="20.~IfFunction.&lt;init&gt;(jetbrains.mps.samples.formulaLanguage.api.Function,jetbrains.mps.samples.formulaLanguage.api.Function,jetbrains.mps.samples.formulaLanguage.api.Function)" resolveInfo="IfFunction" />
         <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1112985512536">
           <link role="classifier" targetNodeId="8.~Money" resolveInfo="Money" />
         </node>
@@ -1744,7 +1745,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214253959141">
       <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1214253959143" />
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214253959144">
-        <link role="baseMethodDeclaration" targetNodeId="9.~MoneyAdapter.&lt;init&gt;(jetbrains.mps.formulaLanguage.api.Function,mf.Currency)" resolveInfo="MoneyAdapter" />
+        <link role="baseMethodDeclaration" targetNodeId="9.~MoneyAdapter.&lt;init&gt;(jetbrains.mps.samples.formulaLanguage.api.Function,mf.Currency)" resolveInfo="MoneyAdapter" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1112988416115">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.SwitchMacro" id="1112988515668">
             <link role="templateSwitch" targetNodeId="1112915076342" />

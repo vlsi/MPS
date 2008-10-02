@@ -26,7 +26,7 @@ public class QueriesGenerated {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode fpConstant = SConceptOperations.createNewNode("jetbrains.mps.formulaLanguage.structure.FloatingPointConstant", null);
+            SNode fpConstant = SConceptOperations.createNewNode("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
             SPropertyOperations.set(fpConstant, "value", "0.0");
             if (pattern.length() > 1) {
               if (pattern.endsWith(".")) {
@@ -72,7 +72,7 @@ public class QueriesGenerated {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode fpConstant = SConceptOperations.createNewNode("jetbrains.mps.formulaLanguage.structure.FloatingPointConstant", null);
+            SNode fpConstant = SConceptOperations.createNewNode("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
             if (pattern.endsWith(".")) {
               SPropertyOperations.set(fpConstant, "value", pattern + 1);
             } else

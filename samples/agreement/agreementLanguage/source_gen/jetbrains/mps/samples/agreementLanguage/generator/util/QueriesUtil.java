@@ -10,7 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 public class QueriesUtil {
 
   public static boolean isMoney(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.formulaLanguage.structure.Operation")) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.formulaLanguage.structure.Operation")) {
       return isMoney(SLinkOperations.getTarget(node, "leftOperand", true));
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference")) {
@@ -24,7 +24,7 @@ public class QueriesUtil {
   }
 
   public static boolean isQuantity(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.formulaLanguage.structure.Operation")) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.formulaLanguage.structure.Operation")) {
       return isQuantity(SLinkOperations.getTarget(node, "leftOperand", true));
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference")) {
