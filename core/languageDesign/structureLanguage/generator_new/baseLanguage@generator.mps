@@ -2051,7 +2051,7 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1222952613644" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1222953094153" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1095702615121">
         <property name="name" value="value" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1095702615120">
