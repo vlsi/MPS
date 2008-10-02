@@ -116,5 +116,31 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221651222645" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1222958673994">
+    <property name="name" value="MyWorker" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222958673995" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1222958673996">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1222958673997" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222958673998" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222958673999" />
+    </node>
+    <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222958682313">
+      <link role="classifier" targetNodeId="1221651222638" resolveInfo="Worker" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1222958686689">
+      <property name="name" value="doWork" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1222958686690">
+        <property name="name" value="duration" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222958686691">
+          <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222958686692">
+        <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222958686693" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222958686694" />
+    </node>
+  </node>
 </model>
 
