@@ -5,8 +5,8 @@
   <language namespace="f8fecd49-3abe-4733-9741-0c637123d219(jetbrains.mps.samples.theSimplestLanguage)" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestConcept" id="1222955054650">
-    <property name="name" value="Hello" />
     <property name="text" value="hello text" />
+    <property name="name" value="Hello" />
   </node>
 </model>
 

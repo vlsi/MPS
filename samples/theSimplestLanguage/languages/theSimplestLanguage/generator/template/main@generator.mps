@@ -4,7 +4,7 @@
   <refactoringHistory />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
-  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
@@ -21,7 +21,7 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="r:7621c011-92d8-4afe-81d5-6da125ff596f(jetbrains.mps.samples.theSimplestLanguage.structure)" version="-1" />
-  <import index="2" modelUID="java.lang@java_stub" version="-1" />
+  <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1222955939856">
     <property name="name" value="main" />
@@ -30,8 +30,7 @@
       <link role="template" targetNodeId="1222955948389" resolveInfo="Test" />
     </node>
   </node>
-  <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" />
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1222955948389">
     <property name="name" value="Hello" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222955948390" />
@@ -51,8 +50,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222955993369">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222956023329">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1222955993370">
-              <link role="classifier" targetNodeId="2v.~System" resolveInfo="System" />
-              <link role="variableDeclaration" targetNodeId="2v.~System.out" resolveInfo="out" />
+              <link role="classifier" targetNodeId="2.~System" resolveInfo="System" />
+              <link role="variableDeclaration" targetNodeId="2.~System.out" resolveInfo="out" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222956028067">
               <link role="baseMethodDeclaration" targetNodeId="3.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
@@ -81,7 +80,7 @@
         <property name="name" value="args" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1222955978207">
           <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222955970711">
-            <link role="classifier" targetNodeId="2v.~String" resolveInfo="String" />
+            <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
           </node>
         </node>
       </node>
@@ -93,7 +92,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222956039771">
               <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1222956039723" />
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1222956040430">
-                <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+                <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
               </node>
             </node>
           </node>
