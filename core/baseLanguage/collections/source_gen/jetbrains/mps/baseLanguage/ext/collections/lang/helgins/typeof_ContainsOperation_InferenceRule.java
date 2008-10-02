@@ -39,7 +39,7 @@ public class typeof_ContainsOperation_InferenceRule extends AbstractInferenceRul
       }
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(op, "not expected here", "r:64f7439a-9bb2-421d-8b6e-57fdfd59adf2(jetbrains.mps.baseLanguage.ext.collections.lang.helgins@17_0)", "1222259653940", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(op, "not expected here", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1178725705180", intentionProvider);
       }
     } while(false);
   }

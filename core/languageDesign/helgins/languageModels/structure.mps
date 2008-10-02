@@ -7,9 +7,6 @@
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
@@ -1330,6 +1327,35 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1221225725391">
       <property name="value" value="when concrete (internal)" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1222948723278">
+    <property name="name" value="ReportErrorStatement_internal" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1222948974814">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="errorString" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1222948974815">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="nodeToReport" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1222948974816">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="helginsIntention" />
+      <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1222948753920">
+      <property name="name" value="modelId" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1222948753921">
+      <property name="name" value="nodeId" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     </node>
   </node>
 </model>
