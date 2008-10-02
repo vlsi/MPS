@@ -23,8 +23,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.regexp.constraints)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.regexp.structure)" version="4" />
   <maxImportIndex value="8" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.regexp.structure)" version="-1" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.regexp.structure)" version="4" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.regexp(jetbrains.mps.regexp@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -150,15 +151,26 @@
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222857178961">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1222857244355">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1222859952194">
-            <link role="baseMethodDeclaration" targetNodeId="7.~Pattern.quote(java.lang.String):java.lang.String" resolveInfo="quote" />
-            <link role="classConcept" targetNodeId="7.~Pattern" resolveInfo="Pattern" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1222859998776">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1222860000404">
-                <property name="value" value="" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222969559795">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1222859952194">
+              <link role="baseMethodDeclaration" targetNodeId="7.~Pattern.quote(java.lang.String):java.lang.String" resolveInfo="quote" />
+              <link role="classConcept" targetNodeId="7.~Pattern" resolveInfo="Pattern" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1222859998776">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1222860000404">
+                  <property name="value" value="" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222859989805">
+                  <link role="variableDeclaration" targetNodeId="1222857212132" resolveInfo="ch" />
+                </node>
               </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222859989805">
-                <link role="variableDeclaration" targetNodeId="1222857212132" resolveInfo="ch" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222969573141">
+              <link role="baseMethodDeclaration" targetNodeId="2.~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolveInfo="replace" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1222969589657">
+                <property name="value" value="\\" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1222969592143">
+                <property name="value" value="\\\\" />
               </node>
             </node>
           </node>

@@ -33,7 +33,7 @@ public class Regexp_Behavior {
   }
 
   public static String call_quote_1222857178958(SNode thisNode, char ch) {
-    return Pattern.quote("" + ch);
+    return Pattern.quote("" + ch).replace("\\", "\\\\");
   }
 
   public static String call_toString_1213877429451(SNode thisNode) {
