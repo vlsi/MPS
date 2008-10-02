@@ -6,10 +6,10 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="true">ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.complex)</dependency>
+    <dependency reexport="true">ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.samples.complex)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.complex)</usedLanguages>
+    <usedLanguages>ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.samples.complex)</usedLanguages>
   </usedLanguages>
 </solution>
 
