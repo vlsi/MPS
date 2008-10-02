@@ -9,6 +9,7 @@ import jetbrains.mps.bootstrap.helgins.structure.MeetType;
 import jetbrains.mps.bootstrap.helgins.structure.JoinType;
 import jetbrains.mps.bootstrap.helgins.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.intentions.IntentionProvider;
 
 import java.util.*;
 
@@ -226,14 +227,17 @@ public class EquationManager {
       return;
     }
 
-    if (equationInfo.getErrorString() != null) {
-      myTypeChecker.reportTypeError(equationInfo.getNodeWithError(), equationInfo.getErrorString());
-      return;
+    IErrorReporter errorReporter;
+    String errorString = equationInfo.getErrorString();
+    String ruleModel = equationInfo.getRuleModel();
+    String ruleId = equationInfo.getRuleId();
+    if (errorString == null) {
+      String strongString = isWeak ? "" : " strong";
+      errorReporter = new EquationErrorReporter(this, "type ", subtypeRepresentator,
+        " is not a" + strongString + " subtype of ", supertypeRepresentator, "", ruleModel, ruleId);
+    } else {
+      errorReporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
     }
-    String strongString = isWeak ? "" : " strong";
-    EquationErrorReporter errorReporter =
-      new EquationErrorReporter(this, "type ", subtypeRepresentator,
-        " is not a" + strongString + " subtype of ", supertypeRepresentator, "", equationInfo.getRuleModel(), equationInfo.getRuleId());
     errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
     myTypeChecker.reportTypeError(equationInfo.getNodeWithError(), errorReporter);
 
@@ -301,14 +305,17 @@ public class EquationManager {
       return;
     }
 
-    if (errorInfo.getErrorString() != null) {
-      myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorInfo.getErrorString());
-      return;
+    String ruleModel = errorInfo.getRuleModel();
+    String ruleId = errorInfo.getRuleId();
+    String errorString = errorInfo.getErrorString();
+    IErrorReporter errorReporter;
+    if (errorString == null) {
+      String strongString = isWeak ? "" : " strongly";
+      errorReporter = new EquationErrorReporter(this, "type ", representator1, " is not" + strongString + " comparable with ",
+        representator2, "", ruleModel, ruleId);
+    } else {
+      errorReporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
     }
-    String strongString = isWeak ? "" : " strongly";
-    EquationErrorReporter errorReporter =
-      new EquationErrorReporter(this, "type ", representator1, " is not" + strongString + " comparable with ",
-        representator2, "", errorInfo.getRuleModel(), errorInfo.getRuleId());
     errorReporter.setIntentionProvider(errorInfo.getIntentionProvider());
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
   }
@@ -431,18 +438,19 @@ public class EquationManager {
     if (!compareWrappers(rhsRepresentator, lhsRepresentator, errorInfo)) {
       IErrorReporter errorReporter;
       SNode nodeWithError = errorInfo == null ? null : errorInfo.getNodeWithError();
-      if (errorInfo != null && errorInfo.getErrorString() != null) {
-        errorReporter = new SimpleErrorReporter(errorInfo.getErrorString(), errorInfo.getRuleModel(), errorInfo.getRuleId());
+      IntentionProvider intentionProvider = errorInfo == null ? null : errorInfo.getIntentionProvider();
+      String errorString = errorInfo == null ? null : errorInfo.getErrorString();
+      String ruleModel = errorInfo == null ? null : errorInfo.getRuleModel();
+      String ruleId = errorInfo == null ? null : errorInfo.getRuleId();
+
+      if (errorString != null) {
+        errorReporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
       } else {
-        String ruleModel = errorInfo == null ? null : errorInfo.getRuleModel();
-        String ruleId = errorInfo == null ? null : errorInfo.getRuleId();
         errorReporter =
           new EquationErrorReporter(this, "incompatible types: ",
             rhsRepresentator, " and ", lhsRepresentator, "", ruleModel, ruleId);
       }
-      if (errorInfo != null) {
-        errorReporter.setIntentionProvider(errorInfo.getIntentionProvider());
-      }
+      errorReporter.setIntentionProvider(intentionProvider);
       processErrorEquation(lhsRepresentator, rhsRepresentator, errorReporter, nodeWithError);
       return;
     }
