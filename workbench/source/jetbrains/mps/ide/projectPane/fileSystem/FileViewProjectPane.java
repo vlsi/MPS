@@ -49,6 +49,8 @@ import javax.swing.tree.TreePath;
 import java.awt.event.*;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Collection;
+import java.util.ArrayList;
 
 public abstract class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
   private final Logger LOG = Logger.getLogger(FileViewProjectPane.class);
@@ -239,13 +241,28 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
           Object lastPathComponent = tp.getLastPathComponent();
           if (lastPathComponent instanceof FileNode) {
             FileNode node = (FileNode) lastPathComponent;
-            files.add(node.getFile());
+            getFiles(node, files);
           }
         }
       }
       return files.toArray(new VirtualFile[files.size()]);
+    } else if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE.getName())) {
+      TreePath tp = getSelectedPath();
+      Object lastPathComponent = tp.getLastPathComponent();
+      if (lastPathComponent instanceof FileNode) {
+        FileNode node = (FileNode) lastPathComponent;
+        return node.getFile();
+      }
     }
     return super.getData(dataId);
+  }
+
+  private void getFiles(FileNode node, Collection<VirtualFile> files) {
+    files.add(node.getFile());
+    ((MPSTreeNode)node).init();
+    for (FileNode child : node.getChildren()) {
+      getFiles(child, files);
+    }
   }
 
   private void openEditor() {

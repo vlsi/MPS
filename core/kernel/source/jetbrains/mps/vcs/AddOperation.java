@@ -70,19 +70,21 @@ class AddOperation extends VcsOperation {
   }
 
   private void scheduleUnversionedFileForAdditionInternal(@NotNull VirtualFile vf) {
-    AbstractVcs vcs = myManager.getVcsFor(vf);
-    if (vcs != null) {
-      CheckinEnvironment ci = vcs.getCheckinEnvironment();
-      if (ci != null) {
-        List<VirtualFile> vfs = new ArrayList<VirtualFile>();
-        vfs.add(vf);
-        List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
-        if (result != null) {
-          for (VcsException e : result) {
-            LOG.error(e);
+    if (vf.exists()) {
+      AbstractVcs vcs = myManager.getVcsFor(vf);
+      if (vcs != null) {
+        CheckinEnvironment ci = vcs.getCheckinEnvironment();
+        if (ci != null) {
+          List<VirtualFile> vfs = new ArrayList<VirtualFile>();
+          vfs.add(vf);
+          List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
+          if (result != null) {
+            for (VcsException e : result) {
+              LOG.error(e);
+            }
           }
+          VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
         }
-        VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
       }
     }
   }

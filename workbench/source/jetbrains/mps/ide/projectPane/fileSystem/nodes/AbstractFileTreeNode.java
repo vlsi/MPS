@@ -11,6 +11,11 @@ import jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.vcs.MPSExcludedFileIndex;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNode {
   protected final VirtualFile myFile;
   protected VcsFileStatusProvider myProvider;
@@ -60,5 +65,13 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNo
 
   public String toString(){
     return myFile.getUrl();
+  }
+
+  public Collection<? extends FileNode> getChildren() {
+    List<FileNode> children = new LinkedList<FileNode>();
+      for (int i = 0; i < getChildCount(); i++){
+        children.add((FileNode) getChildAt(i));
+      }
+    return children;
   }
 }
