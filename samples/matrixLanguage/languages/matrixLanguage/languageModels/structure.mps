@@ -1,7 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590454(jetbrains.mps.matrixLanguage.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590454(jetbrains.mps.samples.matrixLanguage.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="DeterminantExpression" conceptFQName="jetbrains.mps.matrixLanguage.structure.DeterminantExpression" featureKind="CONCEPT" />
+          <value featureName="DeterminantExpression" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ForEachMatrixElement" conceptFQName="jetbrains.mps.matrixLanguage.structure.ForEachMatrixElement" featureKind="CONCEPT" />
+          <value featureName="ForEachMatrixElement" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MatrixAddExpression" conceptFQName="jetbrains.mps.matrixLanguage.structure.MatrixAddExpression" featureKind="CONCEPT" />
+          <value featureName="MatrixAddExpression" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.MatrixAddExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MatrixDivExpression" conceptFQName="jetbrains.mps.matrixLanguage.structure.MatrixDivExpression" featureKind="CONCEPT" />
+          <value featureName="MatrixDivExpression" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MatrixElementVariableDeclaration" conceptFQName="jetbrains.mps.matrixLanguage.structure.MatrixElementVariableDeclaration" featureKind="CONCEPT" />
+          <value featureName="MatrixElementVariableDeclaration" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableDeclaration" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MatrixElementVariableReference" conceptFQName="jetbrains.mps.matrixLanguage.structure.MatrixElementVariableReference" featureKind="CONCEPT" />
+          <value featureName="MatrixElementVariableReference" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MatrixIndexVariableDeclaration" conceptFQName="jetbrains.mps.matrixLanguage.structure.MatrixIndexVariableDeclaration" featureKind="CONCEPT" />
+          <value featureName="MatrixIndexVariableDeclaration" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MatrixIndexVariableRefirence" conceptFQName="jetbrains.mps.matrixLanguage.structure.MatrixIndexVariableRefirence" featureKind="CONCEPT" />
+          <value featureName="MatrixIndexVariableRefirence" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableRefirence" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MatrixLiteral" conceptFQName="jetbrains.mps.matrixLanguage.structure.MatrixLiteral" featureKind="CONCEPT" />
+          <value featureName="MatrixLiteral" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MatrixMultExpression" conceptFQName="jetbrains.mps.matrixLanguage.structure.MatrixMultExpression" featureKind="CONCEPT" />
+          <value featureName="MatrixMultExpression" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.MatrixMultExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MatrixRow" conceptFQName="jetbrains.mps.matrixLanguage.structure.MatrixRow" featureKind="CONCEPT" />
+          <value featureName="MatrixRow" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.MatrixRow" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MatrixSubExpression" conceptFQName="jetbrains.mps.matrixLanguage.structure.MatrixSubExpression" featureKind="CONCEPT" />
+          <value featureName="MatrixSubExpression" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.MatrixSubExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MatrixType" conceptFQName="jetbrains.mps.matrixLanguage.structure.MatrixType" featureKind="CONCEPT" />
+          <value featureName="MatrixType" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.MatrixType" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="TransposeExpression" conceptFQName="jetbrains.mps.matrixLanguage.structure.TransposeExpression" featureKind="CONCEPT" />
+          <value featureName="TransposeExpression" conceptFQName="jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
@@ -10,9 +73,8 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)" />
-  <language namespace="aeb98137-c8ec-4c86-a51b-f00c080e4652(jetbrains.mps.matrixLanguage)" />
+  <language namespace="aeb98137-c8ec-4c86-a51b-f00c080e4652(jetbrains.mps.samples.matrixLanguage)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.patterns)" />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
@@ -27,8 +89,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590454(jetbrains.mps.samples.matrixLanguage.structure)" version="0" />
   <maxImportIndex value="17" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590454(jetbrains.mps.matrixLanguage.structure)" version="-1" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590454(jetbrains.mps.samples.matrixLanguage.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" />
@@ -44,7 +107,7 @@
   <import index="14" modelUID="f:java_stub#jetbrains.mps.dataFlow(jetbrains.mps.dataFlow@java_stub)" version="-1" />
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)" version="-1" />
-  <import index="17" modelUID="r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.matrixLanguage.helgins)" version="-1" />
+  <import index="17" modelUID="r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1209978821264">
     <property name="name" value="MatrixType" />
     <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
