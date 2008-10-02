@@ -930,7 +930,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/internalCollections/languages/collections/runtime/InternalCollections-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/internalCollections/languages/collections/runtime/InternalCollections-runtime.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
-      <module fileurl="file://$PROJECT_DIR$/samples/jetbrains.mps.matrixLanguage/MatrixLanguage.iml" filepath="$PROJECT_DIR$/samples/jetbrains.mps.matrixLanguage/MatrixLanguage.iml" group="samples" />
+      <module fileurl="file://$PROJECT_DIR$/samples/matrixLanguage/MatrixLanguage.iml" filepath="$PROJECT_DIR$/samples/matrixLanguage/MatrixLanguage.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/platform/panacea/Panacea.iml" filepath="$PROJECT_DIR$/platform/panacea/Panacea.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/YPath.iml" filepath="$PROJECT_DIR$/platform/ypath/YPath.iml" group="platform/YPath-Panacea" />
