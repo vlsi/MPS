@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959042e(secretCompartmentLanguage.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959042e(jetbrains.mps.samples.secretCompartmentLanguage.structure)">
   <persistence version="3" />
-  <refactoringHistory />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
+  <refactoringHistory>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="Event" conceptFQName="secretCompartmentLanguage.structure.Event" featureKind="CONCEPT" />
+          <value featureName="Event" conceptFQName="jetbrains.mps.samples.secretCompartmentLanguage.structure.Event" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="HandleEvent" conceptFQName="secretCompartmentLanguage.structure.HandleEvent" featureKind="CONCEPT" />
+          <value featureName="HandleEvent" conceptFQName="jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="State" conceptFQName="secretCompartmentLanguage.structure.State" featureKind="CONCEPT" />
+          <value featureName="State" conceptFQName="jetbrains.mps.samples.secretCompartmentLanguage.structure.State" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="StateMachine" conceptFQName="secretCompartmentLanguage.structure.StateMachine" featureKind="CONCEPT" />
+          <value featureName="StateMachine" conceptFQName="jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="StateMachineTest" conceptFQName="secretCompartmentLanguage.structure.StateMachineTest" featureKind="CONCEPT" />
+          <value featureName="StateMachineTest" conceptFQName="jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="StateMachineTestMethod" conceptFQName="secretCompartmentLanguage.structure.StateMachineTestMethod" featureKind="CONCEPT" />
+          <value featureName="StateMachineTestMethod" conceptFQName="jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Transition" conceptFQName="secretCompartmentLanguage.structure.Transition" featureKind="CONCEPT" />
+          <value featureName="Transition" conceptFQName="jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
@@ -15,6 +49,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959042e(jetbrains.mps.samples.secretCompartmentLanguage.structure)" version="1" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197149564476">
