@@ -4,7 +4,6 @@
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="ac2f1963-1b72-479d-bbf6-e8da39fb6f41(jetbrains.mps.annotations)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
@@ -59,7 +58,37 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216120601189">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216126951868">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216126951869">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1216126951870" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1222951722582">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222951722583">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1222951727509">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1222951728903">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1222951729688">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222951729800">
+                            <property name="value" value="23" />
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222951728999">
+                            <property name="value" value="23" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222951727808">
+                          <property name="value" value="239" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1222951722774">
+                    <property name="value" value="true" />
+                  </node>
+                  <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1222952017366">
+                    <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222952017367">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1222952018165">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1222952019338">
+                          <property name="value" value="true" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1216126952981">
                 <property name="value" value="true" />

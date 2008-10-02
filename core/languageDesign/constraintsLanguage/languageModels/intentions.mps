@@ -5,9 +5,6 @@
   <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.bootstrap.intentionsLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.bootstrap.intentionsLanguage)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.bootstrap.intentionsLanguage.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -133,6 +130,33 @@
     </node>
     <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1194282157774">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194282157775">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1222953623381">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222953623382">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222953631834">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222953633871">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222953631898">
+                  <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1222953631835" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1222953633417">
+                    <link role="property" targetNodeId="1.1177676055874" resolveInfo="isVirtual" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1222953634140">
+                  <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1222953634736">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1222953625197">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222953626622">
+              <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1222953626355" />
+              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1222953630395">
+                <link role="property" targetNodeId="1.1177758833703" resolveInfo="isAbstract" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1194282186779">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227943066">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227896396">
