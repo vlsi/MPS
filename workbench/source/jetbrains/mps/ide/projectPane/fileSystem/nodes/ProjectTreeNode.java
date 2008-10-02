@@ -6,6 +6,7 @@ import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -17,6 +18,8 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Collections;
 import java.util.Comparator;
+
+import org.jetbrains.annotations.NotNull;
 
 public class ProjectTreeNode extends AbstractFileTreeNode {
   private final Project myProject;
@@ -52,9 +55,12 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
       }
     });
 
+
+    MyNamespaceTreeBuilder builder = new MyNamespaceTreeBuilder();
     for (ModuleTreeNode mtn : moduleNodes){
-      add(mtn);
+      builder.addNode(mtn);
     }
+    builder.fillNode(this);
 
     VirtualFile baseDir = project.getBaseDir();
     if (baseDir != null) {
@@ -73,6 +79,20 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
   protected void updatePresentation() {
     super.updatePresentation();
     setText(myProject.getName());
+  }
+
+  private class MyNamespaceTreeBuilder extends NamespaceTreeBuilder {
+
+    protected String getNamespace(@NotNull MPSTreeNode node) {
+      String folder = "";
+      if (node instanceof ModuleTreeNode){
+        folder = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getFolderFor(((ModuleTreeNode) node).getModule());
+      }
+      if (folder == null) {
+        return "";
+      }
+      return folder;
+    }
   }
 
 }

@@ -315,6 +315,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     getProjectDescriptor().addProjectLanguage(path);
   }
 
+  @Nullable
   public String getFolderFor(IModule module) {
     IFile file = module.getDescriptorFile();
     assert file != null;
