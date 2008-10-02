@@ -1,4 +1,4 @@
-package reader;
+package jetbrains.mps.samples.readerConfigLanguage.reader;
 
 /**
  * Created by IntelliJ IDEA.

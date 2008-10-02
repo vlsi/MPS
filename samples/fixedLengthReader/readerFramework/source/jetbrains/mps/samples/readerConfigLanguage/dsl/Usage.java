@@ -1,14 +1,11 @@
-package reader;
+package jetbrains.mps.samples.readerConfigLanguage.dsl;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Igoor
  * Date: May 19, 2005
- * Time: 7:06:43 PM
+ * Time: 4:18:13 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Reader {
-  public void AddStrategy(ReaderStrategy strategy) {
-    
-  }
+public class Usage {
 }

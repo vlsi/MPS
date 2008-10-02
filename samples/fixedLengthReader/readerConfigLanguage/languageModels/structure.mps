@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590436(readerConfigLanguage.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)">
   <persistence version="3" />
-  <refactoringHistory />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="Field" conceptFQName="readerConfigLanguage.structure.Field" featureKind="CONCEPT" />
+          <value featureName="Field" conceptFQName="jetbrains.mps.samples.readerConfigLanguage.structure.Field" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Mapping" conceptFQName="readerConfigLanguage.structure.Mapping" featureKind="CONCEPT" />
+          <value featureName="Mapping" conceptFQName="jetbrains.mps.samples.readerConfigLanguage.structure.Mapping" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ReaderConfiguration" conceptFQName="readerConfigLanguage.structure.ReaderConfiguration" featureKind="CONCEPT" />
+          <value featureName="ReaderConfiguration" conceptFQName="jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
@@ -15,6 +33,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1116534870455">

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590437(readerConfigLanguage.generator.baseLanguage.templates@generator)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590437(jetbrains.mps.samples.readerConfigLanguage.generator.baseLanguage.templates@generator)">
   <persistence version="3" />
   <refactoringHistory />
-  <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
-  <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
@@ -22,16 +18,17 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <maxImportIndex value="10" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)" version="0" />
+  <maxImportIndex value="15" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <import index="3" modelUID="f:java_stub#dsl(dsl@java_stub)" version="-1" />
-  <import index="4" modelUID="f:java_stub#reader(reader@java_stub)" version="-1" />
-  <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590436(readerConfigLanguage.structure)" version="-1" />
+  <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)" version="0" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" version="-1" />
   <import index="7" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#jetbrains.mps.samples.readerConfigLanguage.dsl(jetbrains.mps.samples.readerConfigLanguage.dsl@java_stub)" version="-1" />
+  <import index="13" modelUID="f:java_stub#jetbrains.mps.samples.readerConfigLanguage.reader(jetbrains.mps.samples.readerConfigLanguage.reader@java_stub)" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1116541567703">
     <property name="name" value="MAPPING_main" />
     <node role="rootMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Root_MappingRule" id="1197680609403">
@@ -54,7 +51,7 @@
               <link role="variableDeclaration" targetNodeId="1116544365778" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204578546811">
-              <link role="baseMethodDeclaration" targetNodeId="4.~Reader.AddStrategy(reader.ReaderStrategy):void" resolveInfo="AddStrategy" />
+              <link role="baseMethodDeclaration" targetNodeId="13.~Reader.AddStrategy(jetbrains.mps.samples.readerConfigLanguage.reader.ReaderStrategy):void" resolveInfo="AddStrategy" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204578546853">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1116544445978" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204578546854">
@@ -82,8 +79,8 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1116544329518" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1116544365778">
         <property name="name" value="target" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1127348613221">
-          <link role="classifier" targetNodeId="4.~Reader" resolveInfo="Reader" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222949248071">
+          <link role="classifier" targetNodeId="13.~Reader" resolveInfo="Reader" />
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1197681000352" />
@@ -95,11 +92,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1116614709851">
             <property name="name" value="result" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1116614709852">
-              <link role="classifier" targetNodeId="4.~ReaderStrategy" resolveInfo="ReaderStrategy" />
+              <link role="classifier" targetNodeId="13.~ReaderStrategy" resolveInfo="ReaderStrategy" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217377579969">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217377579986">
-                <link role="baseMethodDeclaration" targetNodeId="4.~ReaderStrategy.&lt;init&gt;(java.lang.String,java.lang.Class)" resolveInfo="ReaderStrategy" />
+                <link role="baseMethodDeclaration" targetNodeId="13.~ReaderStrategy.&lt;init&gt;(java.lang.String,java.lang.Class)" resolveInfo="ReaderStrategy" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1116614751481">
                   <property name="value" value="_CODE_" />
                   <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1116614766999">
@@ -118,7 +115,7 @@
                   </node>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1116616386375">
-                  <link role="classifier" targetNodeId="3.~Usage" resolveInfo="Usage" />
+                  <link role="classifier" targetNodeId="11.~Usage" resolveInfo="Usage" />
                   <node role="referenceMacro$link_attribute$classifier" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1116616402501">
                     <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1197681322565">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197681322566">
@@ -218,7 +215,7 @@
               <link role="variableDeclaration" targetNodeId="1116614709851" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204578546835">
-              <link role="baseMethodDeclaration" targetNodeId="4.~ReaderStrategy.AddFieldExtractor(int,int,java.lang.String):void" resolveInfo="AddFieldExtractor" />
+              <link role="baseMethodDeclaration" targetNodeId="13.~ReaderStrategy.AddFieldExtractor(int,int,java.lang.String):void" resolveInfo="AddFieldExtractor" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1116617164036">
                 <property name="value" value="0" />
                 <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1116617332765">
@@ -294,7 +291,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1116544416834">
-        <link role="classifier" targetNodeId="4.~ReaderStrategy" resolveInfo="ReaderStrategy" />
+        <link role="classifier" targetNodeId="13.~ReaderStrategy" resolveInfo="ReaderStrategy" />
       </node>
       <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1116544437304">
         <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1197681064561">
