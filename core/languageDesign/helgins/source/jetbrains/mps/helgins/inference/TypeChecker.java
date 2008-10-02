@@ -467,7 +467,9 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public IErrorReporter getTypeErrorDontCheck(SNode node) {
-    return NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node.getContainingRoot()).getError(node);
+    SNode root = node.getContainingRoot();
+    if (root == null) return null;
+    return NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(root).getError(node);
   }
 
   public boolean isIncrementalMode() {
