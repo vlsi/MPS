@@ -28,6 +28,7 @@
 
     <group id="MPSWelcomeDoducmentationMenu">
       <action id="ShowMPSDocumentation" class="jetbrains.mps.workbench.actions.help.ShowMPSDocumentationSiteAction" text="Show MPS Documentation" description="You can read MPS Documentation here" />
+      <action id="ShowTheSimplestLanguageScreenCast" class="jetbrains.mps.workbench.actions.help.ShowTheSimplestLanguageScreenCastAction" text="Show The Simplest Language Screencast" description="You can watch how a simple language is created. (Thanks to Sebastien Arbogast)" />
       <add-to-group group-id="WelcomeScreen.Documentation" anchor="last"/>
     </group>
 
