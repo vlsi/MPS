@@ -38,12 +38,6 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/license" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/plugins" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples/agreement" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples/complexLanguage" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples/dslbook_example" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples/fixedLengthReader" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples/formulaLanguage" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples/jetbrains.mps.matrixLanguage" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/devkits" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/baseLanguage" />
@@ -235,23 +229,8 @@
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/plugins">
       <fileset dir="plugins" excludes="**/*.iml, **/*.iws" includes="" />
     </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples/agreement">
-      <fileset dir="samples/agreement" excludes="**/*.iml, **/*.iws" includes="" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples/complexLanguage">
-      <fileset dir="samples/complexLanguage" excludes="**/*.iml, **/*.iws" includes="" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples/dslbook_example">
-      <fileset dir="samples/dslbook_example" excludes="**/*.iml, **/*.iws" includes="" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples/fixedLengthReader">
-      <fileset dir="samples/fixedLengthReader" excludes="**/*.iml, **/*.iws" includes="" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples/formulaLanguage">
-      <fileset dir="samples/formulaLanguage" excludes="**/*.iml, **/*.iws" includes="" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples/jetbrains.mps.matrixLanguage">
-      <fileset dir="samples/jetbrains.mps.matrixLanguage" excludes="**/*.iml, **/*.iws" includes="" />
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples">
+      <fileset dir="samples" excludes="**/*.iml, **/*.iws" includes="" />
     </copy>
     <antcall target="pack.jetbrains.mps.devkit.general-purpose" />
     <antcall target="pack.jetbrains.mps.devkit.language-design" />
