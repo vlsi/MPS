@@ -26,10 +26,25 @@
       <add-to-group group-id="HelpMenu" anchor="after" relative-to-action="ProductivityGude"/>
     </group>
 
-    <group id="MPSWelcomeDoducmentationMenu">
+    <group id="MPSWelcomeDocumentationMenu">
       <action id="ShowMPSDocumentation" class="jetbrains.mps.workbench.actions.help.ShowMPSDocumentationSiteAction" text="Show MPS Documentation" description="You can read MPS Documentation here" />
       <action id="ShowTheSimplestLanguageScreenCast" class="jetbrains.mps.workbench.actions.help.ShowTheSimplestLanguageScreenCastAction" text="Show The Simplest Language Screencast" description="You can watch how a simple language is created. (Thanks to Sebastien Arbogast)" />
-      <add-to-group group-id="WelcomeScreen.Documentation" anchor="last"/>
+      <add-to-group group-id="WelcomeScreen.Documentation" anchor="first"/>
+    </group>
+
+    <group id="MPSWelcomeGettingStartedMenu">
+      <action
+        id="OpenTheSimplestLanguageProject"
+        class="jetbrains.mps.workbench.actions.welcomeScreen.OpenTheSimplestLanguageProjectAction"
+        text="Open The Simplest Language's Project"
+        description="You can take a look at the simplest possible language which contains many aspects that most of the languages have" />
+
+      <action id="OpenTheComplexNumberLanguageProject"
+         class="jetbrains.mps.workbench.actions.welcomeScreen.OpenComplexLanguageProjectAction" 
+         text="Open Complex Numbers Support Language's Project"
+         description="This language is a simple baseLanguage's extension. You can learn how to extend baseLanguage in order to add first class support for domain specific notions to it" />
+
+      <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
     </group>
 
     <group id="EditorFix">
