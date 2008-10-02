@@ -26,6 +26,11 @@
       <add-to-group group-id="HelpMenu" anchor="after" relative-to-action="ProductivityGude"/>
     </group>
 
+    <group id="MPSWelcomeDoducmentationMenu">
+      <action id="ShowMPSDocumentation" class="jetbrains.mps.workbench.actions.help.ShowMPSDocumentationSiteAction" text="Show MPS Documentation" description="You can read MPS Documentation here" />
+      <add-to-group group-id="WelcomeScreen.Documentation" anchor="last"/>
+    </group>
+
     <group id="EditorFix">
       <!--We need this only cause platform requires this action, and NPE is thrown if
       the action is not in its place (see MPS-2081 for further details) -->
