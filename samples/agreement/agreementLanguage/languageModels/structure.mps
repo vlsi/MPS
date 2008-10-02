@@ -1,8 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959040a(agreementLanguage.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)">
   <persistence version="3" />
-  <refactoringHistory />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="AccountType" conceptFQName="agreementLanguage.structure.AccountType" featureKind="CONCEPT" />
+          <value featureName="AccountType" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.AccountType" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="AgreementDeclarations" conceptFQName="agreementLanguage.structure.AgreementDeclarations" featureKind="CONCEPT" />
+          <value featureName="AgreementDeclarations" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Date" conceptFQName="agreementLanguage.structure.Date" featureKind="CONCEPT" />
+          <value featureName="Date" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.Date" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Date_Future" conceptFQName="agreementLanguage.structure.Date_Future" featureKind="CONCEPT" />
+          <value featureName="Date_Future" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.Date_Future" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Date_Past" conceptFQName="agreementLanguage.structure.Date_Past" featureKind="CONCEPT" />
+          <value featureName="Date_Past" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.Date_Past" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Event" conceptFQName="agreementLanguage.structure.Event" featureKind="CONCEPT" />
+          <value featureName="Event" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.Event" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="EventType" conceptFQName="agreementLanguage.structure.EventType" featureKind="CONCEPT" />
+          <value featureName="EventType" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.EventType" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="EventVariable" conceptFQName="agreementLanguage.structure.EventVariable" featureKind="CONCEPT" />
+          <value featureName="EventVariable" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.EventVariable" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="EventVariableReference" conceptFQName="agreementLanguage.structure.EventVariableReference" featureKind="CONCEPT" />
+          <value featureName="EventVariableReference" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Plan" conceptFQName="agreementLanguage.structure.Plan" featureKind="CONCEPT" />
+          <value featureName="Plan" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.Plan" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PostingRule" conceptFQName="agreementLanguage.structure.PostingRule" featureKind="CONCEPT" />
+          <value featureName="PostingRule" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.PostingRule" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PostingRuleTemporalProperty" conceptFQName="agreementLanguage.structure.PostingRuleTemporalProperty" featureKind="CONCEPT" />
+          <value featureName="PostingRuleTemporalProperty" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Quantity" conceptFQName="agreementLanguage.structure.Quantity" featureKind="CONCEPT" />
+          <value featureName="Quantity" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.Quantity" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="QuantityTemporalProperty" conceptFQName="agreementLanguage.structure.QuantityTemporalProperty" featureKind="CONCEPT" />
+          <value featureName="QuantityTemporalProperty" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="TemporalProperty" conceptFQName="agreementLanguage.structure.TemporalProperty" featureKind="CONCEPT" />
+          <value featureName="TemporalProperty" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Value" conceptFQName="agreementLanguage.structure.Value" featureKind="CONCEPT" />
+          <value featureName="Value" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.Value" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ValueReference" conceptFQName="agreementLanguage.structure.ValueReference" featureKind="CONCEPT" />
+          <value featureName="ValueReference" conceptFQName="jetbrains.mps.samples.agreementLanguage.structure.ValueReference" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -15,6 +89,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)" version="0" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.formulaLanguage.structure)" version="-1" />

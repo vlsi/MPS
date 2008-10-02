@@ -102,7 +102,7 @@ public class RenameLanguageDialog extends BaseDialog {
       final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
       GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
         public GenParameters compute() {
-          FileUtil.clear(myLanguage.getSourceDir());
+//          FileUtil.clear(myLanguage.getSourceDir());
 
           SModel model = AuxilaryRuntimeModel.getDescriptor().getSModel();
 

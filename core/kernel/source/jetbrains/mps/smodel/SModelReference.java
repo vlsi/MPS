@@ -16,6 +16,7 @@ public class SModelReference implements Comparable<Object> {
   private static Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
 
   public static SModelReference fromString(String s) {
+    if (s == null) return null;
     Matcher matcher = MODEL_UID_PATTERN.matcher(s);
     if (matcher.matches()) {
       return new SModelReference(SModelFqName.fromString(matcher.group(2)), SModelId.fromString(matcher.group(1)));
