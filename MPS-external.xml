@@ -282,6 +282,7 @@
     <antcall target="pack.jetbrains.mps.ypath" />
     <antcall target="pack.jetbrains.mps.buildlanguage" />
     <antcall target="pack.jetbrains.mps.build.packagingLanguage" />
+    <antcall target="pack.jetbrains.mps.build.packagingLanguage.runtime" />
     <antcall target="pack.jetbrains.mps.build.moduleDependencyLanguage" />
     <antcall target="pack.jetbrains.mps.propertylanguage" />
     <antcall target="pack.jetbrains.mps.bookLanguage" />
