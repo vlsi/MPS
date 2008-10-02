@@ -933,7 +933,6 @@
       <module fileurl="file://$PROJECT_DIR$/app/jetbrains.mps.matrixLanguage/MatrixLanguage.iml" filepath="$PROJECT_DIR$/app/jetbrains.mps.matrixLanguage/MatrixLanguage.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/platform/panacea/Panacea.iml" filepath="$PROJECT_DIR$/platform/panacea/Panacea.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" group="app" />
-      <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" filepath="$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" group="app/PubMedDB" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/YPath.iml" filepath="$PROJECT_DIR$/platform/ypath/YPath.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" filepath="$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/solutions/YPath-solutions.iml" filepath="$PROJECT_DIR$/platform/ypath/solutions/YPath-solutions.iml" group="platform/YPath-Panacea" />
