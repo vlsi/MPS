@@ -39,7 +39,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "r:0ca390b3-126a-4837-b799-270e36ecde5f(jetbrains.mps.baseLanguage.helgins@3_0)", "1222942414144", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1186053278842", intentionProvider);
           }
         }
       }
@@ -52,7 +52,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "r:0ca390b3-126a-4837-b799-270e36ecde5f(jetbrains.mps.baseLanguage.helgins@3_0)", "1222942414159", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1186053304501", intentionProvider);
           }
         } else
         {
@@ -81,7 +81,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
         );
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(func, "function should return " + whatExpected, "r:0ca390b3-126a-4837-b799-270e36ecde5f(jetbrains.mps.baseLanguage.helgins@3_0)", "1222942394158", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(func, "function should return " + whatExpected, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1179436928064", intentionProvider);
         }
       }
       {

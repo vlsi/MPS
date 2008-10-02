@@ -27,7 +27,7 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
     if (SNodeOperations.isInstanceOf(conceptFunction, "jetbrains.mps.baseLanguage.structure.Closure")) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(parameter, "concept function parameter can not be used in closure", "r:0ca390b3-126a-4837-b799-270e36ecde5f(jetbrains.mps.baseLanguage.helgins@3_0)", "1222942395161", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(parameter, "concept function parameter can not be used in closure", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1197313614703", intentionProvider);
       }
     } else
     {
@@ -42,7 +42,7 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
       if (Sequence.fromIterable(seq).isEmpty()) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(parameter, "not applicable in this context", "r:0ca390b3-126a-4837-b799-270e36ecde5f(jetbrains.mps.baseLanguage.helgins@3_0)", "1222942395194", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(parameter, "not applicable in this context", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1197313958459", intentionProvider);
         }
       }
     }

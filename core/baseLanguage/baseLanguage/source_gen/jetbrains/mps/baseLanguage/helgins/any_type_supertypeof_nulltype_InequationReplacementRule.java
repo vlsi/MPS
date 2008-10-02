@@ -19,7 +19,7 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Ine
     if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), "null type is not a subtype of primitive type", "r:0ca390b3-126a-4837-b799-270e36ecde5f(jetbrains.mps.baseLanguage.helgins@3_0)", "1222942399554", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), "null type is not a subtype of primitive type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1215774901982", intentionProvider);
       }
     }
   }

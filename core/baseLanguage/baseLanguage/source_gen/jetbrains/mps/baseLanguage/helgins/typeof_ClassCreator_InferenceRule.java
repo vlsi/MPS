@@ -28,7 +28,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     if (!(SLinkOperations.getCount(creator, "typeParameter") == 0 || SLinkOperations.getCount(creator, "typeParameter") == SLinkOperations.getCount(SNodeOperations.getAncestor(SLinkOperations.getTarget(creator, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "typeVariableDeclaration"))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "r:0ca390b3-126a-4837-b799-270e36ecde5f(jetbrains.mps.baseLanguage.helgins@3_0)", "1222942397584", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(creator, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1216200944338", intentionProvider);
       }
     }
     for(SNode parameter : SLinkOperations.getTargets(creator, "typeParameter", true)) {
