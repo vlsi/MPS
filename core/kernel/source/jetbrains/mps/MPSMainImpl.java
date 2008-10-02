@@ -14,9 +14,6 @@ public class MPSMainImpl {
     try {
       LicenseManager.setInstance(new MPSLicenseManager());
 
-      //we need this in order to disable import settings dialog
-      PathManager.ensureConfigFolderExists(true);
-
       Class mainImplCls = MainImpl.class;
       Method method = mainImplCls.getDeclaredMethod("start", String[].class);
       method.setAccessible(true);
