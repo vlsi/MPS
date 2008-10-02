@@ -82,7 +82,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
             {
               {
                 BaseIntentionProvider intentionProvider = null;
-                TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:5a64985f-a19b-4354-b762-acddb6c1d0db(jetbrains.mps.baseLanguage.helgins@21_0)", "1222513914146", intentionProvider);
+                TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:0ca390b3-126a-4837-b799-270e36ecde5f(jetbrains.mps.baseLanguage.helgins@3_0)", "1222942399894", intentionProvider);
               }
             }
           }

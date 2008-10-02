@@ -212,5 +212,54 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1222939281833">
+    <property name="name" value="TryCatch" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1222939315248">
+      <property name="name" value="method" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222939315250" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222939315251">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="1222939337440">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222939337441">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1222939349652">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1222939351951">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+          <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1222939337442">
+            <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1222939337443">
+              <property name="name" value="e" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222939340461">
+                <link role="classifier" targetNodeId="3.~Exception" resolveInfo="Exception" />
+              </node>
+            </node>
+            <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222939337445">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1222939344837">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1222939346964" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222939322846">
+        <link role="classifier" targetNodeId="3.~Boolean" resolveInfo="Boolean" />
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222939281834" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1222939281835">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1222939281836" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222939281837" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222939281838">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222939361155">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222939361156">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222939361157">
+              <link role="baseMethodDeclaration" targetNodeId="1222939315248" resolveInfo="method" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1222939361158" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

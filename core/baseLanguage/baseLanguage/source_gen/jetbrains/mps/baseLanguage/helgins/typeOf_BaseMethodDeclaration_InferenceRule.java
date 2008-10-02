@@ -53,7 +53,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "r:5a64985f-a19b-4354-b762-acddb6c1d0db(jetbrains.mps.baseLanguage.helgins@21_0)", "1222513925632", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "r:0ca390b3-126a-4837-b799-270e36ecde5f(jetbrains.mps.baseLanguage.helgins@3_0)", "1222942413624", intentionProvider);
           }
         }
       }
@@ -64,7 +64,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "r:5a64985f-a19b-4354-b762-acddb6c1d0db(jetbrains.mps.baseLanguage.helgins@21_0)", "1222513925647", intentionProvider);
+            TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "r:0ca390b3-126a-4837-b799-270e36ecde5f(jetbrains.mps.baseLanguage.helgins@3_0)", "1222942413639", intentionProvider);
           }
         } else
         {
