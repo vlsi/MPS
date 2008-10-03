@@ -284,7 +284,11 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       }
 
       public void selectIn(final SelectInContext context, boolean requestFocus) {
-        selectNode(myNode);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            selectNode(myNode);
+          }
+        });
         activate();
       }
 
