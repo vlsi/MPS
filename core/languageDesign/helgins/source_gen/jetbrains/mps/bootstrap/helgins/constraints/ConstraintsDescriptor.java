@@ -24,6 +24,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new ApplicableNodeReference_applicableNode_ReferentConstraint());
     this.myConstraints.add(new HelginsIntentionArgument_quickFixArgument_ReferentConstraint());
     this.myConstraints.add(new QuickFixArgumentReference_quickFixArgument_ReferentConstraint());
+    this.myConstraints.add(new SimpleRule_VarRef_link_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

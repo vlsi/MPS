@@ -10,19 +10,19 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_ErrorInfoExpression_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+public class check_SimpleRuleAnnotatedParameterApplicable_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
 
-  public check_ErrorInfoExpression_NonTypesystemRule() {
+  public check_SimpleRuleAnnotatedParameterApplicable_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode errorInfoExpression, final TypeCheckingContext typeCheckingContext) {
-    if (!((SNodeOperations.getAncestor(errorInfoExpression, "jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule", false, false) != null))) {
-      TypeChecker.getInstance().reportTypeError(errorInfoExpression, "error info expression allowed only inside replacement rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1201618438931");
+  public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext) {
+    if (!((SNodeOperations.getAncestor(parameter, "jetbrains.mps.bootstrap.helgins.structure.SimpleRule_Annotated", false, false) != null))) {
+      TypeChecker.getInstance().reportTypeError(parameter, "not applicable here", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1223036669831");
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.helgins.structure.ErrorInfoExpression";
+    return "jetbrains.mps.bootstrap.helgins.structure.SimpleRule_Annotated_Parameter";
   }
 
   public boolean isApplicable(SNode argument) {
