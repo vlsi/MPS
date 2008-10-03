@@ -7,6 +7,8 @@ import jetbrains.mps.util.DirectoryUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.workbench.dialogs.newproject.Icons.Icons;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
@@ -64,11 +66,21 @@ public class SolutionStep extends BaseStep {
     return Icons.SOLUTION_ICON;
   }
 
+  @NotNull
+  public String getImageText() {
+    return "New solution";
+  }
+
   public String getCommentString() {
     return
       "<h4>Solution</h4>" +
         "Solution is the simplest possible kind of module in MPS." +
         "It is just a set of models with a name.";
+  }
+
+  @Nullable
+  public String getURL() {
+    return "http://www.jetbrains.net/confluence/display/MPS/MPS+project+structure#MPSprojectstructure-solutions";
   }
 
   private void updateSolutionPath() {

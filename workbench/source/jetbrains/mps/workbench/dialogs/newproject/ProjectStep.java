@@ -5,6 +5,8 @@ import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.util.DirectoryUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.workbench.dialogs.newproject.Icons.Icons;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
@@ -55,10 +57,20 @@ public class ProjectStep extends BaseStep {
     return Icons.PROJECT_ICON;
   }
 
+  @NotNull
+  public String getImageText() {
+    return "New project";
+  }
+
   public String getCommentString() {
     return
       "<h4>Project</h4>" +
         "Project is just a set of modules with which you work.";
+  }
+
+  @Nullable
+  public String getURL() {
+    return "http://www.jetbrains.net/confluence/display/MPS/MPS+project+structure#MPSprojectstructure-projects";
   }
 
   public void _init() {

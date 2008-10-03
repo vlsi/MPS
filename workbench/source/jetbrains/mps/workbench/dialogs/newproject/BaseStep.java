@@ -1,15 +1,16 @@
 package jetbrains.mps.workbench.dialogs.newproject;
 
+import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.wizard.StepAdapter;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public abstract class BaseStep extends StepAdapter {
   private JPanel myComponent;
@@ -31,10 +32,23 @@ public abstract class BaseStep extends StepAdapter {
     }
 
     if (comment != null) {
-      JLabel commentLabel = new JLabel("<html>" + comment + "</html>");
+      final String url = getURL();
+      boolean refSet = url != null;
+      String ref = " " + "(<a href=\"\">Read more</a>)";
+
+      JLabel commentLabel = new JLabel("<html>" + comment + (refSet ? ref : "") + "</html>");
+      commentLabel.setCursor(refSet ? Cursor.getPredefinedCursor(Cursor.HAND_CURSOR) : Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+      if (refSet) {
+        commentLabel.addMouseListener(new MouseAdapter() {
+          public void mouseClicked(MouseEvent e) {
+            launchBrowserAction(url, "");
+          }
+        });
+      }
       commentLabel.setBorder(BorderFactory.createEmptyBorder(0, 3, 6, 3));
-      GridBagConstraints cLabel = new GridBagConstraints(imageComponent == null ? 0 : 1, 0, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
-      bagLayout.setConstraints(commentLabel, cLabel);
+
+      GridBagConstraints cComment = new GridBagConstraints(imageComponent == null ? 0 : 1, 0, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
+      bagLayout.setConstraints(commentLabel, cComment);
       myComponent.add(commentLabel);
     }
 
@@ -56,6 +70,15 @@ public abstract class BaseStep extends StepAdapter {
     myComponent.setPreferredSize(new Dimension(w, h));
   }
 
+  private static void launchBrowserAction(String cmd, String prefix) {
+    if (cmd != null && cmd.trim().length() > 0) {
+      try {
+        BrowserUtil.launchBrowser(prefix + cmd.trim());
+      }
+      catch (IllegalThreadStateException ex) {/* not a problem */}
+    }
+  }
+
   public final JComponent getComponent() {
     return myComponent;
   }
@@ -67,8 +90,18 @@ public abstract class BaseStep extends StepAdapter {
     return null;
   }
 
+  @NotNull
+  public String getImageText() {
+    return "";
+  }
+
   @Nullable
   public String getCommentString() {
+    return null;
+  }
+
+  @Nullable
+  public String getURL() {
     return null;
   }
 

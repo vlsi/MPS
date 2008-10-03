@@ -7,6 +7,8 @@ import jetbrains.mps.util.DirectoryUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.dialogs.newproject.Icons.Icons;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
@@ -64,6 +66,11 @@ public class LanguageStep extends BaseStep {
     return Icons.LANGUAGE_ICON;
   }
 
+  @NotNull
+  public String getImageText() {
+    return "New language";
+  }
+
   public String getCommentString() {
     return
       "<h4>Language</h4>" +
@@ -72,6 +79,11 @@ public class LanguageStep extends BaseStep {
         "Languages can extend other languages, which means they can use concepts from " +
         "an extended language. They can derive concepts from an extended language, use" +
         "them as a target of a reference, and store them as children.";
+  }
+
+  @Nullable
+  public String getURL() {
+    return "http://www.jetbrains.net/confluence/display/MPS/MPS+project+structure#MPSprojectstructure-languages";
   }
 
   public void _init() {
