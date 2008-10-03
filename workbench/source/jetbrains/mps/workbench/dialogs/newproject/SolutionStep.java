@@ -74,8 +74,7 @@ public class SolutionStep extends BaseStep {
 
   public String getCommentString() {
     return
-      "<h4>Solution</h4>" +
-        "Solution is the simplest possible kind of module in MPS." +
+      "Solution is the simplest possible kind of module in MPS." +
         "It is just a set of models with a name.";
   }
 
@@ -95,7 +94,8 @@ public class SolutionStep extends BaseStep {
   public void _init() {
     super._init();
 
-    if (myOptions.getSolutionNamespace() == null) myOptions.setSolutionNamespace(myOptions.getProjectName());
+    if (myOptions.getSolutionNamespace() == null)
+      myOptions.setSolutionNamespace(myOptions.getProjectName() + ".sandbox");
 
     myNamespace.setText(myOptions.getSolutionNamespace());
     myPath.setPath(myOptions.getSolutionPath());

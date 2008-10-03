@@ -65,8 +65,7 @@ public class ProjectStep extends BaseStep {
 
   public String getCommentString() {
     return
-      "<h4>Project</h4>" +
-        "Project is just a set of modules with which you work.";
+      "Project is just a set of modules with which you work.";
   }
 
   @Nullable

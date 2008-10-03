@@ -43,7 +43,7 @@ public abstract class BaseStep extends StepAdapter {
       assert bim != null;
       Graphics graphics = bim.getGraphics();
       graphics.setColor(Color.BLACK);
-      graphics.setFont(new Font("Times New Roman", Font.BOLD, 20));
+      graphics.setFont(new Font("Helvetica", Font.BOLD, 18));
       int textWidth = graphics.getFontMetrics().charsWidth(imageText.toCharArray(), 0, imageText.length());
       int x = (info.getIconWidth() - textWidth) / 2;
       int y = info.getIconHeight() * 4 / 5;
