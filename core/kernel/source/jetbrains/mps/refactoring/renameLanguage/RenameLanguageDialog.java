@@ -85,18 +85,23 @@ public class RenameLanguageDialog extends BaseDialog {
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOk() {
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
+    boolean renamed = ModelAccess.instance().runWriteActionInCommand(new Computable<Boolean>() {
+      public Boolean compute() {
         final String fqName = myLanguageNameField.getText();
 
         if (MPSModuleRepository.getInstance().getModuleByUID(fqName) != null) {
           setErrorText("Duplicate language name");
-          return;
+          return false;
         }
 
         new LanguageRenamer(myLanguage, fqName).rename();
+        return true;
       }
     });
+
+    if (!renamed) {
+      return;
+    }
 
     if (myRegenerateLanguage.getModel().isSelected()) {
       final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
