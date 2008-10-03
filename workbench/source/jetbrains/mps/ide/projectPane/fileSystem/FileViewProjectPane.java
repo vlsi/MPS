@@ -241,7 +241,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
           Object lastPathComponent = tp.getLastPathComponent();
           if (lastPathComponent instanceof FileNode) {
             FileNode node = (FileNode) lastPathComponent;
-            getFiles(node, files);
+            files.add(node.getFile());
           }
         }
       }
