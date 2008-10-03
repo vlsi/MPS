@@ -787,7 +787,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1203249962201(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode ft = TypeChecker.getInstance().getTypeOf(_context.getNode());
-    return (SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"));
+    return (SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(FunctionTypeUtil.unmeet(SLinkOperations.getTarget(ft, "resultType", true)), "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
 
   public static boolean ifMacro_Condition_1203250587999(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -797,7 +797,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1203250743336(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode ft = TypeChecker.getInstance().getTypeOf(_context.getNode());
-    return (SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"));
+    return (SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(FunctionTypeUtil.unmeet(SLinkOperations.getTarget(ft, "resultType", true)), "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
 
   public static boolean ifMacro_Condition_1203250752443(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -860,7 +860,7 @@ public class QueriesGenerated {
         return ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(imds.get(0), "returnType", true), ct);
       }
     }
-    return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(TypeChecker.getInstance().getTypeOf(_context.getNode()));
+    return FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(TypeChecker.getInstance().getTypeOf(_context.getNode())));
   }
 
   public static SNode sourceNodeQuery_1199625045481(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -944,7 +944,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1201435446113(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(TypeChecker.getInstance().getTypeOf(_context.getNode()));
+    return FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(TypeChecker.getInstance().getTypeOf(_context.getNode())));
   }
 
   public static SNode sourceNodeQuery_1201781007784(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -986,19 +986,19 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1203249955325(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(TypeChecker.getInstance().getTypeOf(_context.getNode()));
+    return FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(TypeChecker.getInstance().getTypeOf(_context.getNode())));
   }
 
   public static SNode sourceNodeQuery_1203250576826(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
+    return FunctionTypeUtil.unmeet(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1203250738235(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(TypeChecker.getInstance().getTypeOf(_context.getNode()));
+    return FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(TypeChecker.getInstance().getTypeOf(_context.getNode())));
   }
 
   public static SNode sourceNodeQuery_1203250773532(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
+    return FunctionTypeUtil.unmeet(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_1203251634844(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1119,7 +1119,7 @@ public class QueriesGenerated {
     List<SNode> res = new ArrayList<SNode>();
     for(SNode ft : FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(TypeChecker.getInstance().getTypeOf(_context.getNode()))) {
       SNode pd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
-      SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(ft), true);
+      SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(FunctionTypeUtil.unmeet(ft)), true);
       SPropertyOperations.set(pd, "name", SPropertyOperations.getString(paramDecls.get(idx), "name"));
       idx = idx + 1;
       res.add(pd);
@@ -1141,7 +1141,7 @@ public class QueriesGenerated {
     List<SNode> res = new ArrayList<SNode>();
     for(SNode ft : FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(TypeChecker.getInstance().getTypeOf(_context.getNode()))) {
       SNode pd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
-      SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(ft), true);
+      SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(FunctionTypeUtil.unmeet(ft)), true);
       SPropertyOperations.set(pd, "name", SPropertyOperations.getString(paramDecls.get(idx), "name"));
       SPropertyOperations.set(pd, "isFinal", "" + (true));
       res.add(pd);
@@ -1363,7 +1363,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1203686370624(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode ct = ClosureLiteralUtil.getAdaptableClosureLiteralTarget(_context.getNode(), _context.getGenerator());
     if (true || ct == null || ((SNode)ct).getUserObject("returnType") == null) {
-      return Collections.singletonList(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(TypeChecker.getInstance().getTypeOf(_context.getNode())));
+      return Collections.singletonList(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(TypeChecker.getInstance().getTypeOf(_context.getNode()))));
     } else
     {
       Object retClassifier = ((SNode)ct).getUserObject("returnType");
