@@ -6,10 +6,11 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.logging.*;
 
 import java.io.File;
 import java.util.List;
+import java.util.ArrayList;
 
 public class ReferencesTest extends BaseMPSTest {
   private static Logger LOG = Logger.getLogger(ReferencesTest.class);
@@ -17,6 +18,32 @@ public class ReferencesTest extends BaseMPSTest {
   public void testBrokenReferences() {
     IdeMain.setTestMode(true);
     TestMain.configureMPS();
+
+    final List<String> errors = new ArrayList<String>();
+    final List<String> fatals = new ArrayList<String>();
+
+    ILoggingHandler handler = new ILoggingHandler() {
+      public void info(LogEntry e) {
+      }
+
+      public void warning(LogEntry e) {
+      }
+
+      public void debug(LogEntry e) {
+      }
+
+      public void error(LogEntry e) {
+        System.out.println("error: " + e.getMessage());
+        errors.add(e.getMessage());
+      }
+
+      public void fatal(LogEntry e) {
+        System.out.println("fatal: " + e.getMessage());
+        fatals.add(e.getMessage());
+      }
+    };
+
+    Logger.addLoggingHandler(handler);
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -30,11 +57,14 @@ public class ReferencesTest extends BaseMPSTest {
         }
       }
     });
+
+    Logger.removeLoggingHandler(handler);
+
+    assertTrue(errors.isEmpty());
+    assertTrue(fatals.isEmpty());
   }
 
   private void checkModel(SModelDescriptor sm) {
-    System.out.println("checking model" + sm.getSModelFqName());
-
     IScope scope = sm.getModule().getScope();
     List<String> validationResult = sm.validate(scope);
     for (String item : validationResult) {
@@ -57,8 +87,6 @@ public class ReferencesTest extends BaseMPSTest {
   }
 
   private void checkModule(IModule m) {
-    System.out.println("checking module " + m.getModuleFqName());
-
     List<String> messages = m.validate();
     for (String msg : messages) {
       LOG.error("Error in module " + m + " : " + msg);
