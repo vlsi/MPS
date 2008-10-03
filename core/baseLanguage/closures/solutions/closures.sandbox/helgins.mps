@@ -59,6 +59,14 @@
         </node>
       </node>
     </node>
+    <node role="simpleRule" type="jetbrains.mps.bootstrap.helgins.structure.SimpleRule_ProcedureCall" id="1223057935317">
+      <link role="actualArgumentsLink" targetNodeId="8.1068499141038" />
+      <link role="procedureDeclaration" targetNodeId="8.1068499141037" />
+      <link role="parametersLink" targetNodeId="8.1068580123134" />
+      <node role="conceptReference" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference" id="1223057943292">
+        <link role="concept" targetNodeId="8.1068499141036" resolveInfo="BaseMethodCall" />
+      </node>
+    </node>
   </node>
 </model>
 

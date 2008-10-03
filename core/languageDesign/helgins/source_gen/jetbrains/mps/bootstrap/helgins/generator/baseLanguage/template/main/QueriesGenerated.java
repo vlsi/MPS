@@ -749,6 +749,14 @@ public class QueriesGenerated {
     return _context.createUniqueName("typeOf_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name") + "_Annotated", null);
   }
 
+  public static Object propertyMacro_GetPropertyValue_1223059020984(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("parameter_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name"), null);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1223059021001(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("typeOf_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name") + "_ProcedureCall", null);
+  }
+
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
     SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "mainMethodForRule");
@@ -1065,6 +1073,22 @@ public class QueriesGenerated {
     SNode annotated = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.SimpleRule_Annotated", false, false);
     SNode inferenceRule = _context.getOutputNodeByInputNodeAndMappingLabel(annotated, "simpleRuleToInferenceRule");
     return SLinkOperations.getTarget(inferenceRule, "applicableNode", true);
+  }
+
+  public static Object referenceMacro_GetReferent_1223059020975(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false);
+  }
+
+  public static Object referenceMacro_GetReferent_1223059359252(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "actualArgumentsLink", false);
+  }
+
+  public static Object referenceMacro_GetReferent_1223059377835(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "procedureDeclaration", false);
+  }
+
+  public static Object referenceMacro_GetReferent_1223059404804(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "parametersLink", false);
   }
 
   public static boolean ifMacro_Condition_1174643945663(final IOperationContext operationContext, final IfMacroContext _context) {

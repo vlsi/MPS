@@ -3180,5 +3180,85 @@
       <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1223056682128">
+    <link role="conceptDeclaration" targetNodeId="1.1223056507746" resolveInfo="SimpleRule_ProcedureCall" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1223056723826">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1223056723827">
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1223056723828">
+          <property name="text" value="procedure call" />
+          <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1223056723829">
+          <link role="relationDeclaration" targetNodeId="1.1223056556065" />
+          <link role="styleClass" targetNodeId="30.1203541385314" resolveInfo="ReferenceOnConcept" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1223056735565">
+          <property name="text" value="has arguments" />
+          <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1223056852685">
+            <property name="value" value="1.0" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1223056748889">
+          <link role="relationDeclaration" targetNodeId="1.1223056618750" />
+          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1223056748890">
+            <link role="conceptDeclaration" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
+            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1223056756729">
+              <property name="readOnly" value="true" />
+              <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
+              <link role="styleClass" targetNodeId="30.1221170124867" resolveInfo="ReferenceOnConceptualFeature" />
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1223056723830">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1223056761659">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1223056761660">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1223056763092">
+          <property name="text" value="its procedure declaration" />
+          <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1223056781582">
+          <link role="relationDeclaration" targetNodeId="1.1223056595771" />
+          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1223056781583">
+            <link role="conceptDeclaration" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
+            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1223056783746">
+              <property name="readOnly" value="true" />
+              <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
+              <link role="styleClass" targetNodeId="30.1221170124867" resolveInfo="ReferenceOnConceptualFeature" />
+            </node>
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1223056794525">
+          <property name="text" value="has parameters" />
+          <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1223056875849">
+            <property name="value" value="1.0" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1223056821393">
+          <link role="relationDeclaration" targetNodeId="1.1223056618509" />
+          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1223056821394">
+            <link role="conceptDeclaration" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
+            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1223056824695">
+              <property name="readOnly" value="true" />
+              <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
+              <link role="styleClass" targetNodeId="30.1221170124867" resolveInfo="ReferenceOnConceptualFeature" />
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1223056761662">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
