@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -18,6 +19,8 @@ import jetbrains.mps.core.structure.BaseConcept;
  * To change this template use File | Settings | File Templates.
  */
 public class ConceptPropertyCellProvider extends CellProviderWithRole {
+  public static final int DEFAULT_FONT_STYLE = MPSFonts.BOLD;
+
 
   private String myConceptPropertyName;
   private ConceptPropertyDeclaration myConceptPropertyDeclaration;
@@ -45,6 +48,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
     editorCell = EditorCell_Property.create(myEditorContext, new ConstantModelAccessor(text), getSNode());
     ((EditorCell_Property) editorCell).setDefaultText(errorText);
     editorCell.setEditable(true);
+    editorCell.getStyle().set(StyleAttributes.FONT_STYLE, DEFAULT_FONT_STYLE);
     return editorCell;
   }
 

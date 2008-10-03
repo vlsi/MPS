@@ -113,30 +113,38 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1222257928767">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1222257928768">
-            <property name="name" value="s" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222257928769">
-              <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1222260338412">
-              <property name="value" value="username@domain.com" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1222878814653">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222878814654">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1222878814655" />
-          </node>
-          <node role="condition" type="jetbrains.mps.regexp.structure.MatchRegexpExpression" id="1222878826772">
-            <node role="regexp" type="jetbrains.mps.regexp.structure.InlineRegexpExpression" id="1222878828916">
-              <node role="regexp" type="jetbrains.mps.regexp.structure.MatchParensRegexp" id="1222878833590">
-                <property name="name" value="fdsdf" />
-                <node role="regexp" type="jetbrains.mps.regexp.structure.Regexp" id="1222878833591" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223028394775">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223028394776">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1223028394777">
+                  <link role="classifier" targetNodeId="1.~System" />
+                  <link role="variableDeclaration" targetNodeId="1.~System.out" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223028394778">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(java.lang.String):void" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1223028394779">
+                    <property name="value" value="" />
+                  </node>
+                </node>
               </node>
             </node>
-            <node role="inputExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222878818596">
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223028564661">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222878818596">
               <link role="variableDeclaration" targetNodeId="1178529113481" resolveInfo="emailToAnalyse" />
+            </node>
+            <node role="operation" type="jetbrains.mps.regexp.structure.MatchRegexpOperation" id="1223028564662">
+              <node role="regexp" type="jetbrains.mps.regexp.structure.InlineRegexpExpression" id="1222878828916">
+                <node role="regexp" type="jetbrains.mps.regexp.structure.MatchParensRegexp" id="1222878833590">
+                  <property name="name" value="unusedVariable" />
+                  <node role="regexp" type="jetbrains.mps.regexp.structure.PlusRegexp" id="1223028391523">
+                    <node role="regexp" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp" id="1223028386475">
+                      <link role="symbolClass" targetNodeId="3.1202318494398" resolveInfo="\A" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

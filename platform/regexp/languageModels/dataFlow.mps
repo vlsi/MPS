@@ -4,6 +4,7 @@
   <refactoringHistory />
   <language namespace="7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.bootstrap.dataFlow)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -203,6 +204,245 @@
           <node role="emitStatement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitJumpStatement" id="1222882660146">
             <node role="jumpTo" type="jetbrains.mps.bootstrap.dataFlow.structure.LabelPosition" id="1222882670651">
               <link role="label" targetNodeId="1222882383625" resolveInfo="condition" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1223044979251">
+    <property name="package" value="Operations" />
+    <link role="conceptDeclaration" targetNodeId="1.1222260469397" resolveInfo="MatchRegexpOperation" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1223044979252">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223044979253">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223044982771">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223044984243">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223044984148" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1223044990201">
+              <link role="link" targetNodeId="1.1174653387388" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1223045071367">
+    <link role="conceptDeclaration" targetNodeId="1.1174510540317" resolveInfo="InlineRegexpExpression" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1223045071368">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223045071369">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223045077527">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223045078687">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223045078608" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1223045082968">
+              <link role="link" targetNodeId="1.1174510571016" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1223045512026">
+    <property name="package" value="Operations" />
+    <link role="conceptDeclaration" targetNodeId="1.1222260556146" resolveInfo="ReplaceWithRegexpOperation" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1223045512027">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223045512028">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223045515326">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223045523958">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223045517453" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1223045526680">
+              <link role="link" targetNodeId="1.1174653387388" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223045528760">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223045531404">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223045530403" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1223045533704">
+              <link role="link" targetNodeId="1.1222261033031" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1223045543003">
+    <property name="package" value="Operations" />
+    <link role="conceptDeclaration" targetNodeId="1.1222256539755" resolveInfo="SplitOperation" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1223045543004">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223045543005">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223045546115">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223046061316">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223046060471" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1223046062975">
+              <link role="link" targetNodeId="1.1174653387388" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1223046603457">
+    <link role="conceptDeclaration" targetNodeId="1.1174662351725" resolveInfo="Regexps" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1223046603458">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223046603459">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1223047840936">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223047840937">
+            <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223047870258">
+              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223047872150">
+                <link role="variableDeclaration" targetNodeId="1223047840940" resolveInfo="regexp" />
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223047864515">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223047863559" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1223047865551">
+              <link role="link" targetNodeId="1.1174662369010" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1223047840940">
+            <property name="name" value="regexp" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1223047848866">
+              <link role="concept" targetNodeId="1.1174483125581" resolveInfo="RegexpDeclaration" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1223046630436">
+    <link role="conceptDeclaration" targetNodeId="1.1174919147781" resolveInfo="RegexpExpression" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1223046630437">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223046630438">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitNopStatement" id="1223046634673" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1223046876718">
+    <link role="conceptDeclaration" targetNodeId="1.1174483125581" resolveInfo="RegexpDeclaration" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1223046876719">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223046876720">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223046881550">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223046884240">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223046883364" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1223046886103">
+              <link role="link" targetNodeId="1.1174483133849" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1223047350586">
+    <property name="package" value="Regexps" />
+    <link role="conceptDeclaration" targetNodeId="1.1174485235885" resolveInfo="UnaryRegexp" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1223047350587">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223047350588">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223047353276">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223047356232">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223047355356" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1223047357376">
+              <link role="link" targetNodeId="1.1174485243418" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1223047413847">
+    <property name="package" value="Regexps" />
+    <link role="conceptDeclaration" targetNodeId="1.1174554186090" resolveInfo="SymbolClassRegexp" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1223047413848">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223047413849">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1223047897807">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223047897808">
+            <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223047417241">
+              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223047931131">
+                <link role="variableDeclaration" targetNodeId="1223047897811" resolveInfo="part" />
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223047915886">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223047913648" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1223047919066">
+              <link role="link" targetNodeId="1.1174557628217" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1223047897811">
+            <property name="name" value="part" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1223047900143">
+              <link role="concept" targetNodeId="1.1174557861378" resolveInfo="SymbolClassPart" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1223047488830">
+    <property name="package" value="Regexps" />
+    <link role="conceptDeclaration" targetNodeId="1.1174662605354" resolveInfo="RegexpDeclarationReferenceRegexp" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1223047488831">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223047488832">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223047537982">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223047540313">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223047539656" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1223047541363">
+              <link role="link" targetNodeId="1.1174662628918" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1223047583396">
+    <property name="package" value="Regexps" />
+    <link role="conceptDeclaration" targetNodeId="1.1174906544517" resolveInfo="LookRegexp" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1223047583397">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223047583398">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223047588055">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223047590355">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223047589729" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1223047591343">
+              <link role="link" targetNodeId="1.1174906566584" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1223047610860">
+    <property name="package" value="Regexps" />
+    <link role="conceptDeclaration" targetNodeId="1.1174491169200" resolveInfo="ParensRegexp" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1223047610861">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223047610862">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223047613347">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223047615350">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223047614677" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1223047623181">
+              <link role="link" targetNodeId="1.1174491174779" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration" id="1223047727950">
+    <property name="package" value="Regexps" />
+    <link role="conceptDeclaration" targetNodeId="1.1174485167097" resolveInfo="BinaryRegexp" />
+    <node role="builderBlock" type="jetbrains.mps.bootstrap.dataFlow.structure.BuilderBlock" id="1223047727951">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223047727952">
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223047733188">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223047735159">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223047734502" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1223047736162">
+              <link role="link" targetNodeId="1.1174485176897" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.bootstrap.dataFlow.structure.EmitCodeForStatement" id="1223047738086">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223047740027">
+            <node role="operand" type="jetbrains.mps.bootstrap.dataFlow.structure.NodeParameter" id="1223047739463" />
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1223047740983">
+              <link role="link" targetNodeId="1.1174485181039" />
             </node>
           </node>
         </node>

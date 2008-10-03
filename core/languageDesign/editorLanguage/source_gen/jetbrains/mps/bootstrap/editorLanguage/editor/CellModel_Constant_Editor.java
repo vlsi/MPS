@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.editorLanguage.behavior.EditorCellModel_Behavior;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_Constant_Editor extends DefaultNodeEditor {
@@ -452,6 +453,21 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12144794151731214479415173(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1214479415173");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return CellModel_Constant_Editor.calculateFontStyle6752_1(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_property_text_1080742871174(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -516,6 +532,12 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
       null :
       cell.getEditorContext()
     ));
+    return result;
+  }
+
+  private static Integer calculateFontStyle6752_1(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
     return result;
   }
 

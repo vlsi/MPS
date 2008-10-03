@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ModelAccessor_Editor extends DefaultNodeEditor {
@@ -381,6 +382,13 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ModelAccessor_Editor.calculateFontStyle8108_0(cell);
+            }
+
+          });
         }
 
       };
@@ -426,6 +434,13 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ModelAccessor_Editor.calculateFontStyle8108_1(cell);
+            }
+
+          });
         }
 
       };
@@ -468,6 +483,13 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
 
             public Color calculate(EditorCell cell) {
               return ModelAccessor_Editor.calculateColor8108_2(cell);
+            }
+
+          });
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ModelAccessor_Editor.calculateFontStyle8108_3(cell);
             }
 
           });
@@ -538,6 +560,13 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ModelAccessor_Editor.calculateFontStyle8108_2(cell);
+            }
+
+          });
         }
 
       };
@@ -602,6 +631,13 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
 
             public Color calculate(EditorCell cell) {
               return ModelAccessor_Editor.calculateColor8108_3(cell);
+            }
+
+          });
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return ModelAccessor_Editor.calculateFontStyle8108_4(cell);
             }
 
           });
@@ -705,6 +741,36 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1176718101939_1176718101939(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Integer calculateFontStyle8108_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
+  }
+
+  private static Integer calculateFontStyle8108_1(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
+  }
+
+  private static Integer calculateFontStyle8108_2(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
+  }
+
+  private static Integer calculateFontStyle8108_3(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
+  }
+
+  private static Integer calculateFontStyle8108_4(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
   }
 
   private static Color calculateColor8108_0(EditorCell cell) {

@@ -22,6 +22,7 @@ import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.editorLanguage.behavior.EditorCellModel_Behavior;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
@@ -488,6 +489,13 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateFontStyle6697_1(cell);
+            }
+
+          });
         }
 
       };
@@ -605,6 +613,12 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       null :
       cell.getEditorContext()
     ));
+    return result;
+  }
+
+  private static Integer calculateFontStyle6697_1(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
     return result;
   }
 

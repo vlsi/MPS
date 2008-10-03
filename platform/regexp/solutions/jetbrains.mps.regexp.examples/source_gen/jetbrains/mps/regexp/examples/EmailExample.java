@@ -4,8 +4,6 @@ package jetbrains.mps.regexp.examples;
 
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import java.util.List;
-import jetbrains.mps.regexp.runtime.RegexpOperations;
 
 /* package */class EmailExample {
 
@@ -18,8 +16,9 @@ import jetbrains.mps.regexp.runtime.RegexpOperations;
         System.out.println("Domain = " + _matcher_0.group(2));
       }
     }
-    String s = "username@domain.com";
-    List<String> list = RegexpOperations.split(s, _PrecompiledPatterns.REGEXP1);
+    if (_PrecompiledPatterns.REGEXP1.matcher(emailToAnalyse).matches()) {
+      System.out.println("");
+    }
   }
 
 }

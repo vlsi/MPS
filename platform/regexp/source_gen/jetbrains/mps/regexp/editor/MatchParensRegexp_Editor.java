@@ -131,6 +131,13 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return MatchParensRegexp_Editor.calculateFontStyle4405_1(cell);
+            }
+
+          });
         }
 
       };
@@ -147,6 +154,13 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
 
             public Color calculate(EditorCell cell) {
               return MatchParensRegexp_Editor.calculateColor4405_0(cell);
+            }
+
+          });
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return MatchParensRegexp_Editor.calculateFontStyle4405_2(cell);
             }
 
           });
@@ -201,6 +215,18 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
   private static Integer calculateFontStyle4405_0(EditorCell cell) {
     int result;
     result = MPSFonts.ITALIC;
+    return result;
+  }
+
+  private static Integer calculateFontStyle4405_1(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
+  }
+
+  private static Integer calculateFontStyle4405_2(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
     return result;
   }
 

@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.bootstrap.editorLanguage.behavior.EditorCellModel_Behavior;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
@@ -358,6 +359,13 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return CellModel_TransactionalProperty_Editor.calculateFontStyle3190_1(cell);
+            }
+
+          });
         }
 
       };
@@ -490,6 +498,12 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       null :
       cell.getEditorContext()
     ));
+    return result;
+  }
+
+  private static Integer calculateFontStyle3190_1(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
     return result;
   }
 

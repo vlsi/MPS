@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.structureLanguage.behavior.ConceptPropertyDeclaration_Behavior;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 
 public class CellModel_ConceptProperty_Behavior {
 
@@ -26,6 +28,10 @@ public class CellModel_ConceptProperty_Behavior {
 
   public static String virtual_getClosingText_1220339738643(SNode thisNode) {
     return "}}";
+  }
+
+  public static int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
+    return ConceptPropertyCellProvider.DEFAULT_FONT_STYLE;
   }
 
 }

@@ -15,6 +15,19 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.regexp.structure.MatchRegexpStatement", new MatchRegexpStatement_DataFlow());
     manager.register("jetbrains.mps.regexp.structure.FindMatchStatement", new FindMatchStatement_DataFlow());
     manager.register("jetbrains.mps.regexp.structure.ForEachMatchStatement", new ForEachMatchStatement_DataFlow());
+    manager.register("jetbrains.mps.regexp.structure.MatchRegexpOperation", new MatchRegexpOperation_DataFlow());
+    manager.register("jetbrains.mps.regexp.structure.InlineRegexpExpression", new InlineRegexpExpression_DataFlow());
+    manager.register("jetbrains.mps.regexp.structure.ReplaceWithRegexpOperation", new ReplaceWithRegexpOperation_DataFlow());
+    manager.register("jetbrains.mps.regexp.structure.SplitOperation", new SplitOperation_DataFlow());
+    manager.register("jetbrains.mps.regexp.structure.Regexps", new Regexps_DataFlow());
+    manager.register("jetbrains.mps.regexp.structure.RegexpExpression", new RegexpExpression_DataFlow());
+    manager.register("jetbrains.mps.regexp.structure.RegexpDeclaration", new RegexpDeclaration_DataFlow());
+    manager.register("jetbrains.mps.regexp.structure.UnaryRegexp", new UnaryRegexp_DataFlow());
+    manager.register("jetbrains.mps.regexp.structure.SymbolClassRegexp", new SymbolClassRegexp_DataFlow());
+    manager.register("jetbrains.mps.regexp.structure.RegexpDeclarationReferenceRegexp", new RegexpDeclarationReferenceRegexp_DataFlow());
+    manager.register("jetbrains.mps.regexp.structure.LookRegexp", new LookRegexp_DataFlow());
+    manager.register("jetbrains.mps.regexp.structure.ParensRegexp", new ParensRegexp_DataFlow());
+    manager.register("jetbrains.mps.regexp.structure.BinaryRegexp", new BinaryRegexp_DataFlow());
   }
 
 }

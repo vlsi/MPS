@@ -11,7 +11,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class EditorCellModel_Editor extends DefaultNodeEditor {
 
@@ -69,6 +71,13 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+            public Integer calculate(EditorCell cell) {
+              return EditorCellModel_Editor.calculateFontStyle1982_0(cell);
+            }
+
+          });
         }
 
       };
@@ -93,6 +102,12 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Error_1080925357598_1080925357598(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Integer calculateFontStyle1982_0(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD;
+    return result;
   }
 
 }

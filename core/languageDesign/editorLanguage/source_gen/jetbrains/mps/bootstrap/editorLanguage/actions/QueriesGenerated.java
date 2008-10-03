@@ -580,7 +580,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return SLinkOperations.getTargets(SNodeOperations.getNode("r:1222075024030(jetbrains.mps.bootstrap.editorLanguage.structure)", "1139535328871"), "member", true);
+            return SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.bootstrap.editorLanguage.structure)", "1139535328871"), "member", true);
           }
 
         };
