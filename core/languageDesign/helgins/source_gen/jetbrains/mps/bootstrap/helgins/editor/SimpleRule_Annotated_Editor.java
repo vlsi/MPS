@@ -14,6 +14,9 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.bootstrap.sharedConcepts.editor.SharedStyles_StyleSheet;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class SimpleRule_Annotated_Editor extends DefaultNodeEditor {
 
@@ -119,11 +122,21 @@ public class SimpleRule_Annotated_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNode_conceptReference1223036050085(EditorCell editorCell, SNode node, EditorContext context) {
+    SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12230360521271223036052127(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1223036052127");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_refNode_pathExpression1223036061772(EditorCell editorCell, SNode node, EditorContext context) {

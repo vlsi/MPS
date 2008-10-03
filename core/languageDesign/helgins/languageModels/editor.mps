@@ -3103,10 +3103,14 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1223034894843">
         <link role="relationDeclaration" targetNodeId="1.1223034817050" />
+        <link role="styleClass" targetNodeId="30.1203541385314" resolveInfo="ReferenceOnConcept" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1223034906202">
         <property name="text" value="has type" />
         <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1223041729441">
+          <property name="value" value="1.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1223034913525">
         <link role="relationDeclaration" targetNodeId="1.1223034846331" />
@@ -3123,10 +3127,14 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1223035160241">
         <link role="relationDeclaration" targetNodeId="1.1223034994049" />
+        <link role="styleClass" targetNodeId="30.1203541385314" resolveInfo="ReferenceOnConcept" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1223035169214">
         <property name="text" value="has var decl role" />
         <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1223041676712">
+          <property name="value" value="1.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1223035186573">
         <link role="relationDeclaration" targetNodeId="1.1223035057290" />
@@ -3135,6 +3143,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1223035190126">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
+            <link role="styleClass" targetNodeId="30.1221170124867" resolveInfo="ReferenceOnConceptualFeature" />
           </node>
         </node>
       </node>
@@ -3150,10 +3159,14 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1223036050085">
         <link role="relationDeclaration" targetNodeId="1.1223035943051" />
+        <link role="styleClass" targetNodeId="30.1203541385314" resolveInfo="ReferenceOnConcept" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1223036052127">
         <property name="text" value="has type annotation" />
         <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingLeftStyleClassItem" id="1223041745073">
+          <property name="value" value="1.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1223036061772">
         <link role="relationDeclaration" targetNodeId="1.1223035961414" />
