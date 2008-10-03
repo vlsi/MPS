@@ -60,8 +60,8 @@ public class LanguageStep extends BaseStep {
     return panel;
   }
 
-  public JComponent createImageComponent() {
-    return new JLabel(Icons.LANGUAGE_ICON);
+  public Icon getImageIcon() {
+    return Icons.LANGUAGE_ICON;
   }
 
   public String getCommentString() {

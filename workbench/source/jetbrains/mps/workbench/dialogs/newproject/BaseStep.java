@@ -18,7 +18,9 @@ public abstract class BaseStep extends StepAdapter {
     GridBagLayout bagLayout = new GridBagLayout();
     myComponent = new JPanel(bagLayout);
 
-    JComponent imageComponent = createImageComponent();
+
+    Icon image = getImageIcon();
+    JComponent imageComponent = image == null ? null : new JLabel(image);
     String comment = getCommentString();
     JComponent controlComponent = createControlComponent();
 
@@ -61,7 +63,7 @@ public abstract class BaseStep extends StepAdapter {
   public abstract JComponent createControlComponent();
 
   @Nullable
-  public JComponent createImageComponent() {
+  public Icon getImageIcon() {
     return null;
   }
 

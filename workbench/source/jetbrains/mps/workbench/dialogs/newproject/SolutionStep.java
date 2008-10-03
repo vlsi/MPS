@@ -60,8 +60,8 @@ public class SolutionStep extends BaseStep {
     return panel;
   }
 
-  public JComponent createImageComponent() {
-    return new JLabel(Icons.SOLUTION_ICON);
+  public Icon getImageIcon() {
+    return Icons.SOLUTION_ICON;
   }
 
   public String getCommentString() {

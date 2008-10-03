@@ -51,8 +51,8 @@ public class ProjectStep extends BaseStep {
     return panel;
   }
 
-  public JComponent createImageComponent() {
-    return new JLabel(Icons.PROJECT_ICON);
+  public Icon getImageIcon() {
+    return Icons.PROJECT_ICON;
   }
 
   public String getCommentString() {
