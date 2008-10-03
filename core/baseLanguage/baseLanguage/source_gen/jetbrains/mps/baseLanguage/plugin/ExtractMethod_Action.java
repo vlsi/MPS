@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -21,6 +22,7 @@ public class ExtractMethod_Action extends GeneratedAction {
   public static final Icon ICON = null;
 
   private List<SNode> nodes;
+  public Frame frame;
 
   public ExtractMethod_Action() {
     super("New Extract Method", "", ICON);
@@ -69,6 +71,10 @@ public class ExtractMethod_Action extends GeneratedAction {
     if (this.nodes == null) {
       return false;
     }
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
+      return false;
+    }
     return true;
   }
 
@@ -87,7 +93,7 @@ public class ExtractMethod_Action extends GeneratedAction {
         }
 
       });
-      ExtractMethodDialog dialog = new ExtractMethodDialog(kind.value, event.getData(MPSDataKeys.EDITOR_CONTEXT), ExtractMethod_Action.this.nodes);
+      ExtractMethodDialog dialog = new ExtractMethodDialog(kind.value, event.getData(MPSDataKeys.EDITOR_CONTEXT), ExtractMethod_Action.this.nodes, ExtractMethod_Action.this.frame);
       dialog.showDialog();
       dialog.pack();
     } catch (Throwable t) {
