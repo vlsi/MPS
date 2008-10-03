@@ -8,10 +8,6 @@
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.patterns)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)" />
-  <language namespace="562bb5cb-73ce-4c74-a5e5-9f72731d9ac6(jetbrains.mps.internal.collections)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)" />
-  <language namespace="562bb5cb-73ce-4c74-a5e5-9f72731d9ac6(jetbrains.mps.internal.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
@@ -59,56 +55,11 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220541864964">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220541864965">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220541864966">
-              <link role="classConcept" targetNodeId="8.~Sequence" resolveInfo="Sequence" />
-              <link role="baseMethodDeclaration" targetNodeId="8.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220541864967">
-                <link role="variableDeclaration" targetNodeId="1220541864961" resolveInfo="nums" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220541864968">
-              <link role="baseMethodDeclaration" targetNodeId="8.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
-              <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1220542117432">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220542117433">
-                  <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1220542117445">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220542117446">
-                      <property name="value" value="1" />
-                    </node>
-                  </node>
-                  <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1220542117455">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1220542117456">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1220542117457">
-                        <link role="variableDeclaration" targetNodeId="1220542117472" resolveInfo="n" />
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220542117458">
-                        <property name="value" value="2" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="statement" type="jetbrains.mps.closures.structure.YieldStatement" id="1220542117459">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1220542117460">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1220542862941">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="1220542862942">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1220542862943">
-                            <link role="variableDeclaration" targetNodeId="1220542117472" resolveInfo="n" />
-                          </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1220542862944">
-                            <property name="value" value="100" />
-                          </node>
-                        </node>
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220542117465">
-                        <property name="value" value="3" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="parameter" type="jetbrains.mps.internal.collections.structure.SmartClosureParameterDeclaration" id="1220542117472">
-                  <property name="name" value="n" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1220542117473" />
-                </node>
-              </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220541864966">
+            <link role="classConcept" targetNodeId="8.~Sequence" resolveInfo="Sequence" />
+            <link role="baseMethodDeclaration" targetNodeId="8.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220541864967">
+              <link role="variableDeclaration" targetNodeId="1220541864961" resolveInfo="nums" />
             </node>
           </node>
         </node>

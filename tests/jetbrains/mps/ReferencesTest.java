@@ -7,6 +7,9 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.logging.*;
+import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
+import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_AnnotationLink;
+import jetbrains.mps.core.structure.BaseConcept;
 
 import java.io.File;
 import java.util.List;
@@ -78,7 +81,12 @@ public class ReferencesTest extends BaseMPSTest {
     }
 
     for (SNode node : sm.getSModel().allNodes()) {
+
       for (SReference ref : node.getReferences()) {
+        if (ReferenceMacro_AnnotationLink.getReferenceMacro((BaseConcept) node.getAdapter(), ref.getRole()) != null) {
+          continue;
+        }                      
+
         if (ref.getTargetNode() == null) {
           LOG.error("Error in model " + sm.getSModelFqName() + " : Broken reference in node " + node);
         }
