@@ -5,12 +5,16 @@ import com.intellij.ide.wizard.StepAdapter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 
 public abstract class BaseStep extends StepAdapter {
   private JPanel myComponent;
@@ -20,13 +24,32 @@ public abstract class BaseStep extends StepAdapter {
     myComponent = new JPanel(bagLayout);
 
 
-    Icon image = getImageIcon();
-    JComponent imageComponent = image == null ? null : new JLabel(image);
+    URL imageUrl = getImageURL();
     String comment = getCommentString();
     JComponent controlComponent = createControlComponent();
+    JLabel imageComponent = imageUrl == null ? null : new JLabel();
+    String imageText = getImageText();
 
-    if (imageComponent != null) {
+    if (imageUrl != null) {
       GridBagConstraints cImage = new GridBagConstraints(0, 0, 1, 2, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+      ImageIcon info = new ImageIcon(imageUrl);
+
+      BufferedImage bim = null;
+      try {
+        bim = ImageIO.read(imageUrl);
+      } catch (IOException e) {
+        /*should not happen*/
+      }
+      assert bim != null;
+      Graphics graphics = bim.getGraphics();
+      graphics.setColor(Color.BLACK);
+      graphics.setFont(new Font("Times New Roman", Font.BOLD, 20));
+      int textWidth = graphics.getFontMetrics().charsWidth(imageText.toCharArray(), 0, imageText.length());
+      int x = (info.getIconWidth() - textWidth) / 2;
+      int y = info.getIconHeight() - 50;
+      graphics.drawChars(imageText.toCharArray(), 0, imageText.length(), x, y);
+
+      imageComponent.setIcon(new ImageIcon(bim));
       bagLayout.setConstraints(imageComponent, cImage);
       myComponent.add(imageComponent);
     }
@@ -86,7 +109,7 @@ public abstract class BaseStep extends StepAdapter {
   public abstract JComponent createControlComponent();
 
   @Nullable
-  public Icon getImageIcon() {
+  public URL getImageURL() {
     return null;
   }
 

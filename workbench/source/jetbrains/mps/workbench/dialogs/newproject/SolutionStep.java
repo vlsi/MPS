@@ -16,6 +16,7 @@ import javax.swing.event.CaretListener;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.net.URL;
 
 public class SolutionStep extends BaseStep {
   private ProjectOptions myOptions;
@@ -62,8 +63,8 @@ public class SolutionStep extends BaseStep {
     return panel;
   }
 
-  public Icon getImageIcon() {
-    return Icons.SOLUTION_ICON;
+  public URL getImageURL() {
+    return Icons.NEW_PROJECT_IMAGE_URL;
   }
 
   @NotNull
