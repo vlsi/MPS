@@ -10,14 +10,6 @@
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <language namespace="d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
-  <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
-  <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
-  <language namespace="d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.transformation.TLBase.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.transformation.TLBase.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -3535,7 +3527,7 @@
       </node>
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216934019880">
         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216934019882">
-          <link role="baseMethodDeclaration" targetNodeId="2.~CompositeFilter.&lt;init&gt;(jetbrains.mps.ypath.runtime.IFilter[])" resolveInfo="CompositeFilter" />
+          <link role="baseMethodDeclaration" targetNodeId="2.~CompositeFilter.&lt;init&gt;(jetbrains.mps.ypath.runtime.IFilter...)" resolveInfo="CompositeFilter" />
           <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1179337226239">
             <link role="classifier" targetNodeId="3.~Object" resolveInfo="Object" />
             <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1179337232898">
@@ -3697,7 +3689,7 @@
       </node>
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216934019401">
         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216934019403">
-          <link role="baseMethodDeclaration" targetNodeId="2.~CompositeFilter.&lt;init&gt;(jetbrains.mps.ypath.runtime.IFilter[])" resolveInfo="CompositeFilter" />
+          <link role="baseMethodDeclaration" targetNodeId="2.~CompositeFilter.&lt;init&gt;(jetbrains.mps.ypath.runtime.IFilter...)" resolveInfo="CompositeFilter" />
           <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1179334572061">
             <link role="classifier" targetNodeId="3.~Object" resolveInfo="Object" />
             <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1179334580326">

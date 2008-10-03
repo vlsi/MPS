@@ -5,9 +5,6 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)" />
-  <language namespace="d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
@@ -202,7 +199,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1187792810192">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888349092">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888349094">
-                    <link role="baseMethodDeclaration" targetNodeId="2.~ChainedIterable.&lt;init&gt;(java.lang.Iterable[])" resolveInfo="ChainedIterable" />
+                    <link role="baseMethodDeclaration" targetNodeId="2.~ChainedIterable.&lt;init&gt;(java.lang.Iterable...)" resolveInfo="ChainedIterable" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888415539">
                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888415560">
                         <link role="baseMethodDeclaration" targetNodeId="2.~NamedNodeMapIterableAdapter.&lt;init&gt;(org.w3c.dom.NamedNodeMap)" resolveInfo="NamedNodeMapIterableAdapter" />
