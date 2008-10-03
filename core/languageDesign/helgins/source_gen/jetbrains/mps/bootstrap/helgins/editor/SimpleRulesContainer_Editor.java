@@ -10,11 +10,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
@@ -33,6 +36,7 @@ public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1223034679000(context, node, "simple rules container"));
+    editorCell.addEditorCell(this.createConstant1223059927949(context, node, ""));
     editorCell.addEditorCell(this.createRefNodeList1223034714783(context, node));
     return editorCell;
   }
@@ -41,6 +45,14 @@ public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12230346790001223034679000(editorCell, node, context);
     setupLabel_Constant_1223034679000_1223034679000(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1223059927949(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12230599279491223059927949(editorCell, node, context);
+    setupLabel_Constant_1223059927949_1223059927949(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -71,10 +83,26 @@ public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_simpleRule");
   }
 
+  private static void setupBasic_Constant_12230599279491223059927949(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1223059927949");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_Constant_1223034679000_1223034679000(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_refNodeList_simpleRule_1223034714783(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1223059927949_1223059927949(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class simpleRuleListHandler_7856_0 extends RefNodeListHandler {
@@ -108,6 +136,7 @@ public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
         if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, "---"));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
@@ -116,7 +145,11 @@ public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createSeparatorCell(EditorContext context) {
-      return super.createSeparatorCell(context);
+      {
+        EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), "---");
+        editorCell.setSelectable(false);
+        return editorCell;
+      }
     }
 
 }

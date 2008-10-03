@@ -3087,8 +3087,12 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1223034679000">
         <property name="text" value="simple rules container" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1223059927949">
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1223059947568" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1223034714783">
         <property name="vertical" value="true" />
+        <property name="separatorText" value="---" />
         <link role="relationDeclaration" targetNodeId="1.1223034653805" />
       </node>
     </node>
