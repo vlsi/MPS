@@ -50,7 +50,7 @@ public class GoToModelAction extends BaseAction {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = mpsProject.getComponentSafe(ProjectPane.class);
             projectPane.selectModel(modelDescriptor);
-            projectPane.getComponent().requestFocus();
+            projectPane.activate();
           }
         };
       }

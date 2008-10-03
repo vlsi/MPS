@@ -44,7 +44,7 @@ public class GoToLanguageAction extends BaseAction {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = mpsProject.getComponentSafe(ProjectPane.class);
             projectPane.selectModule(module);
-            projectPane.getComponent().requestFocus();
+            projectPane.activate();
           }
         };
       }

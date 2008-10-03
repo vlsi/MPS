@@ -284,17 +284,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       }
 
       public void selectIn(final SelectInContext context, boolean requestFocus) {
-        final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
-        manager.getToolWindow(ToolWindowId.PROJECT_VIEW).activate(new Runnable() {
-          public void run() {
-            manager.getFocusManager().requestFocus(myTree, false);
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                selectNode(myNode, true);
-              }
-            });
-          }
-        }, false);
+        selectNode(myNode);
+        activate();
       }
 
       public String getToolWindowId() {
@@ -480,9 +471,42 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     getTree().rebuildNow();
   }
 
-  public void selectNode(final SNode node, boolean changeView) {
-    if (changeView) myProjectView.changeView(getId());
-    selectNode(node);
+  public void selectNextTreeNode(SNode node) {
+    MPSTreeNode mpsTreeNode = findNextTreeNode(node);
+    getTree().selectNode(mpsTreeNode);
+  }
+
+  public void selectNextTreeModel(SModelDescriptor modelDescriptor) {
+    MPSTreeNode mpsTreeNode = findNextTreeNode(modelDescriptor);
+    getTree().selectNode(mpsTreeNode);
+  }
+
+  public void selectModel(SModelDescriptor modelDescriptor) {
+    DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
+    MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
+    SModelTreeNode modelTreeNode = findSModelTreeNode(rootNode, modelDescriptor);
+    if (modelTreeNode != null) {
+      TreePath treePath = new TreePath(modelTreeNode.getPath());
+      getTree().setSelectionPath(treePath);
+      getTree().scrollPathToVisible(treePath);
+    } else {
+      LOG.warning("Couldn't select model \"" + modelDescriptor + "\" : tree node not found.");
+    }
+  }
+
+  public void selectModule(final IModule module) {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        MPSTreeNode languageTreeNode = findModuleTreeNode(module);
+        if (languageTreeNode != null) {
+          TreePath treePath = new TreePath(languageTreeNode.getPath());
+          getTree().setSelectionPath(treePath);
+          getTree().scrollPathToVisible(treePath);
+        } else {
+          LOG.warning("Couldn't select module \"" + module + "\" : tree node not found.");
+        }
+      }
+    });
   }
 
   public void selectNode(final SNode node, final IOperationContext context) {
@@ -529,6 +553,37 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         });
       }
     });
+  }
+
+  public void selectNode(final SNode node) {
+    DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
+    MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
+    SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+    assert modelDescriptor != null;
+    SModelTreeNode modelTreeNode = findSModelTreeNode(rootNode, modelDescriptor);
+    if (modelTreeNode == null) {
+      LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node for model \"" + modelDescriptor.getSModelReference() + "\" not found.");
+      return;
+    }
+    modelTreeNode.flush();
+    MPSTreeNodeEx treeNodeToSelect = findTreeNode(modelTreeNode, node);
+    if (treeNodeToSelect != null) {
+      TreePath treePath = new TreePath(treeNodeToSelect.getPath());
+      getTree().setSelectionPath(treePath);
+      getTree().scrollPathToVisible(treePath);
+    } else {
+      LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node not found.");
+    }
+  }
+
+  public void activate() {
+    myProjectView.changeView(getId());
+    final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
+    manager.getToolWindow(ToolWindowId.PROJECT_VIEW).activate(new Runnable() {
+      public void run() {
+        manager.getFocusManager().requestFocus(myTree, false);
+      }
+    }, false);
   }
 
   public MPSTreeNode findModuleTreeNode(final IModule module) {
@@ -587,31 +642,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     selectModule(m);
   }
 
-  public void selectNode(SNode node) {
-    DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
-    MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
-    SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
-    assert modelDescriptor != null;
-    SModelTreeNode modelTreeNode = findSModelTreeNode(rootNode, modelDescriptor);
-    if (modelTreeNode == null) {
-      LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node for model \"" + modelDescriptor.getSModelReference() + "\" not found.");
-      return;
-    }
-    modelTreeNode.flush();
-    MPSTreeNodeEx treeNodeToSelect = findTreeNode(modelTreeNode, node);
-    if (treeNodeToSelect != null) {
-      TreePath treePath = new TreePath(treeNodeToSelect.getPath());
-      getTree().setSelectionPath(treePath);
-      getTree().scrollPathToVisible(treePath);
-    } else {
-      LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node not found.");
-    }
-  }
-
-  public void selectRoot() {
-    getTree().setSelectionPath(new TreePath(getTree().getRootNode()));
-  }
-
   public MPSTreeNode findNextTreeNode(SNode node) {
     DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
@@ -637,45 +667,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     if (result == null) result = parentNode.getChildBefore(sModelNode);
     if (result == null) result = parentNode;
     return (MPSTreeNode) result;
-  }
-
-  public void selectNextTreeNode(SNode node) {
-    MPSTreeNode mpsTreeNode = findNextTreeNode(node);
-    getTree().selectNode(mpsTreeNode);
-  }
-
-  public void selectNextTreeModel(SModelDescriptor modelDescriptor) {
-    MPSTreeNode mpsTreeNode = findNextTreeNode(modelDescriptor);
-    getTree().selectNode(mpsTreeNode);
-  }
-
-  public void selectModel(SModelDescriptor modelDescriptor) {
-    DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
-    MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
-    SModelTreeNode modelTreeNode = findSModelTreeNode(rootNode, modelDescriptor);
-    if (modelTreeNode != null) {
-      TreePath treePath = new TreePath(modelTreeNode.getPath());
-      getTree().setSelectionPath(treePath);
-      getTree().scrollPathToVisible(treePath);
-    } else {
-      LOG.warning("Couldn't select model \"" + modelDescriptor + "\" : tree node not found.");
-    }
-  }
-
-  public void selectModule(final IModule module) {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      public void run() {
-        DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
-        MPSTreeNode languageTreeNode = findModuleTreeNode(module);
-        if (languageTreeNode != null) {
-          TreePath treePath = new TreePath(languageTreeNode.getPath());
-          getTree().setSelectionPath(treePath);
-          getTree().scrollPathToVisible(treePath);
-        } else {
-          LOG.warning("Couldn't select module \"" + module + "\" : tree node not found.");
-        }
-      }
-    });
   }
 
   public SModelDescriptor getSelectedModel() {
