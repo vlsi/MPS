@@ -11,7 +11,6 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -154,7 +153,6 @@ public abstract class BaseTool {
     if (isAvailable()) getToolWindow().setAvailable(false, null);
   }
 
-  @NotNull
   public ToolWindow getToolWindow() {
     LOG.checkEDT();
 
@@ -242,9 +240,11 @@ public abstract class BaseTool {
     }
 
     ToolWindow toolWindow = getToolWindow();
-    ContentManager contentManager = toolWindow.getContentManager();
-    if (contentManager != null && !contentManager.isDisposed()) {
-      contentManager.removeAllContents(true);
+    if (toolWindow != null) {
+      ContentManager contentManager = toolWindow.getContentManager();
+      if (contentManager != null && !contentManager.isDisposed()) {
+        contentManager.removeAllContents(true);
+      }
     }
 
     myWindowManager.unregisterToolWindow(myId);
