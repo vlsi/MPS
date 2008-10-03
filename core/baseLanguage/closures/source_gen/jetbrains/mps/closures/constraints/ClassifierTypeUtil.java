@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import java.util.List;
@@ -25,6 +26,18 @@ public class ClassifierTypeUtil {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
       SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
       SLinkOperations.setTarget(res, "bound", getTypeCoercedToClassifierType(SLinkOperations.getTarget(type, "bound", true)), true);
+    }
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.bootstrap.helgins.structure.MeetType")) {
+      SNode res = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.helgins.structure.MeetType", null);
+      for(SNode arg : SLinkOperations.getTargets(type, "argument", true)) {
+        if (SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.Type")) {
+          SLinkOperations.addChild(res, "argument", getTypeCoercedToClassifierType(arg));
+        } else
+        {
+          Logger.getLogger(ClassifierTypeUtil.class).error("Argument of an instance of MEET type is not a subconcept of Type");
+        }
+      }
+      return res;
     }
     SNode ct = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     if ((ct != null)) {
@@ -220,6 +233,12 @@ public class ClassifierTypeUtil {
       SLinkOperations.setTarget(copy, "classifier", SLinkOperations.getTarget(type, "classifier", false), false);
       for(SNode pt : SLinkOperations.getTargets(type, "parameter", true)) {
         SLinkOperations.addChild(copy, "parameter", copyTypeRecursively(pt));
+      }
+      return copy;
+    } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.bootstrap.helgins.structure.MeetType")) {
+      SNode copy = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.helgins.structure.MeetType", null);
+      for(SNode arg : SLinkOperations.getTargets(type, "argument", true)) {
+        SLinkOperations.addChild(copy, "argument", copyTypeRecursively(arg));
       }
       return copy;
     } else

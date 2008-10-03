@@ -69,7 +69,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     }
     {
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "r:ebfb11ce-842d-43eb-9298-51d676d810c3(jetbrains.mps.closures.helgins@3_0)", "1222270600679", intentionProvider);
+      TypeChecker.getInstance().reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "r:4f094646-fd7d-4bfe-a538-69cfb4950fe1(jetbrains.mps.closures.helgins@17_0)", "1222885404160", intentionProvider);
     }
   }
 
