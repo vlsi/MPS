@@ -3180,7 +3180,7 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1220550283229">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220550283230">
-                  <property name="name" value="good" />
+                  <property name="name" value="nameIsGood" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220550346501">
                     <link role="classConcept" targetNodeId="9.~Character" resolveInfo="Character" />
                     <link role="baseMethodDeclaration" targetNodeId="9.~Character.isJavaIdentifierStart(char):boolean" resolveInfo="isJavaIdentifierStart" />
@@ -7026,6 +7026,28 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220970403452" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1220970403451" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1223047685411">
+      <property name="name" value="getPreferredSize" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1223047685413" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223047685414">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223047705718">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223047715505">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223047712952">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1223047712953">
+                <link role="fieldDeclaration" targetNodeId="1220354294277" resolveInfo="myPanel" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223047712954" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223047722087">
+              <link role="baseMethodDeclaration" targetNodeId="16.~JComponent.getPreferredSize():java.awt.Dimension" resolveInfo="getPreferredSize" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223047731590">
+        <link role="classifier" targetNodeId="17.~Dimension" resolveInfo="Dimension" />
+      </node>
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1220353713046">
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1220353779518">
