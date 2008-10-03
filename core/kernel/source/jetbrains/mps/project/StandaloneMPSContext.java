@@ -1,20 +1,17 @@
 package jetbrains.mps.project;
 
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import java.awt.Frame;
 
 public abstract class StandaloneMPSContext implements IOperationContext {
   public Frame getMainFrame() {
-    //todo IDEA platform hack
-    if (getComponent(Frame.class) != null) {
-      return getComponent(Frame.class);
-    }
-
-    return null;
+    return MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
   }
 
   public Project getProject() {
