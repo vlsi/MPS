@@ -46,7 +46,7 @@ public abstract class BaseStep extends StepAdapter {
       graphics.setFont(new Font("Times New Roman", Font.BOLD, 20));
       int textWidth = graphics.getFontMetrics().charsWidth(imageText.toCharArray(), 0, imageText.length());
       int x = (info.getIconWidth() - textWidth) / 2;
-      int y = info.getIconHeight() - 50;
+      int y = info.getIconHeight() * 4 / 5;
       graphics.drawChars(imageText.toCharArray(), 0, imageText.length(), x, y);
 
       imageComponent.setIcon(new ImageIcon(bim));
