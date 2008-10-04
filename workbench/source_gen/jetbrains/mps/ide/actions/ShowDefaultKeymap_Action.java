@@ -46,7 +46,7 @@ public class ShowDefaultKeymap_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      BrowserUtil.launchBrowser(PathManager.getHomePath() + "/docs/" + "DefaultKeymap.html");
+      BrowserUtil.launchBrowser(PathManager.getHomePath() + "/docs/" + "DefaultKeymap.pdf");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowDefaultKeymap", t);
     }

@@ -11014,7 +11014,7 @@
                     id="1222862597613">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
                       id="1222862599007">
-                  <property name="value" value="DefaultKeymap.html"/>
+                  <property name="value" value="DefaultKeymap.pdf"/>
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
                       id="1222862544827">
