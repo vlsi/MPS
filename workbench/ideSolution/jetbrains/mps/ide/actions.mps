@@ -11014,7 +11014,7 @@
                     id="1222862597613">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
                       id="1222862599007">
-                  <property name="value" value="DefaultKeymap.pdf"/>
+                  <property name="value" value="DefaultKeymap.html"/>
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
                       id="1222862544827">
@@ -11023,9 +11023,9 @@
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall"
                     id="1222862534104">
-                <link role="baseMethodDeclaration" targetNodeId="76.~PathManager.getHelpPath():java.lang.String"
-                      resolveInfo="getHelpPath"/>
                 <link role="classConcept" targetNodeId="76.~PathManager" resolveInfo="PathManager"/>
+                <link role="baseMethodDeclaration" targetNodeId="76.~PathManager.getHomePath():java.lang.String"
+                      resolveInfo="getHomePath"/>
               </node>
             </node>
           </node>
