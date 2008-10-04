@@ -1,10 +1,10 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.EqualUtil;
 
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ModuleReference implements Comparable<ModuleReference> {
   private static Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");
@@ -86,7 +86,7 @@ public class ModuleReference implements Comparable<ModuleReference> {
   }
 
   public int compareTo(ModuleReference o) {
-    return toString().compareTo(o.toString());
+    return this.getModuleFqName().compareTo(((ModuleReference) o).getModuleFqName());
   }
 }
 

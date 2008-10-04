@@ -25,8 +25,8 @@ public class SortUtil {
         if (o == o1) {
           return 0;
         }
-        String name1 = o.getSModelReference().toString();
-        String name2 = o1.getSModelReference().toString();
+        String name1 = o.getLongName();
+        String name2 = o1.getLongName();
         if (name1 == null) name1 = "";
         if (name2 == null) name2 = "";
         return name1.compareTo(name2);
@@ -43,7 +43,7 @@ public class SortUtil {
           return 0;
         }
         String name1 = ((IModule) o1).getModuleUID();
-        String name2 = ((IModule) o2).getModuleUID();        
+        String name2 = ((IModule) o2).getModuleUID();
         return name1.compareTo(name2);
       }
     });

@@ -4,8 +4,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.BootstrapModule;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -717,7 +717,7 @@ public class RefactoringContext {
 
     public int compareTo(FullNodeId o) {
       int i1 = myNodeId.toString().compareTo(o.myNodeId.toString());
-      int i2 = myModelReference.toString().compareTo(o.myModelReference.toString());
+      int i2 = myModelReference.getLongName().compareTo(o.myModelReference.getLongName());
       return Math.round(Math.signum(i1) + Math.signum(i2) * 10);
     }
 

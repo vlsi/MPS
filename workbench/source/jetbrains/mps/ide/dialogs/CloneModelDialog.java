@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.dialogs;
 
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
@@ -115,12 +116,12 @@ public class CloneModelDialog extends BaseNodeDialog {
   }
 
   protected boolean saveChanges() {
-    String stereotype = myCloneModelProperties.getStereotype();
-    String modelName = myCloneModelProperties.getLongName();
+    final String stereotype = myCloneModelProperties.getStereotype();
+    final String modelName = myCloneModelProperties.getLongName();
     RootReference reference = myCloneModelProperties.getRoot();
 
     IOperationContext operationContext = getOperationContext();
-    IModule module = operationContext.getModule();
+    final IModule module = operationContext.getModule();
     assert module != null;
 
     for (SModelDescriptor model : module.getOwnModelDescriptors()) {
@@ -130,8 +131,12 @@ public class CloneModelDialog extends BaseNodeDialog {
       }
     }
 
-    SModelRoot modelRoot = module.findModelRoot(reference.getPath());
-    final SModelDescriptor modelDescriptor = module.createModel(new SModelFqName(modelName, stereotype), modelRoot);
+    final SModelRoot modelRoot = module.findModelRoot(reference.getPath());
+    final SModelDescriptor modelDescriptor = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
+      public SModelDescriptor compute() {
+        return module.createModel(new SModelFqName(modelName, stereotype), modelRoot);
+      }
+    });
     if (modelDescriptor == null) {
       setErrorText("You can't create a model in the model root that you specified");
       return false;

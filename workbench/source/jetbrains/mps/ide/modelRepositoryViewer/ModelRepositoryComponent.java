@@ -6,13 +6,13 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
@@ -110,8 +110,8 @@ public class ModelRepositoryComponent {
           setColor(new Color(0x00, 0x00, 0x90));
         }
         setColor(Color.BLACK);
-        setNodeIdentifier(myModelDescriptor.getSModelReference().toString());
-        setText(myModelDescriptor.getSModelReference().toString() + (myModelDescriptor.isInitialized() ? " (initialized)" : " (not initialized)"));
+        setNodeIdentifier(myModelDescriptor.getLongName());
+        setText(myModelDescriptor.getLongName() + (myModelDescriptor.isInitialized() ? " (initialized)" : " (not initialized)"));
       }
     }
 

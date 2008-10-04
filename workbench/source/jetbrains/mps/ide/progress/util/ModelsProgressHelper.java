@@ -1,10 +1,10 @@
 package jetbrains.mps.ide.progress.util;
 
+import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.ide.progress.TaskProgressSettings;
 
-import java.util.*;
+import java.util.Collection;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,7 +25,7 @@ public class ModelsProgressHelper {
   }
 
   public String modelTaskName(SModelReference modelReference) {
-    return modelReference.toString() + "_" + myTaskKind;
+    return modelReference.getLongName() + "_" + myTaskKind;
   }
 
   public String modelTaskKind() {

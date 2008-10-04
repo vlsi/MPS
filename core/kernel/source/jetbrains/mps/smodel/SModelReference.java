@@ -2,8 +2,8 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.GlobalScope;
 
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by IntelliJ IDEA.
@@ -117,8 +117,8 @@ public class SModelReference implements Comparable<Object> {
   }
 
   public int compareTo(Object o) {
-    int compareStereotypes = this.getStereotype().compareTo(((SModelReference)o).getStereotype());
+    int compareStereotypes = this.getStereotype().compareTo(((SModelReference) o).getStereotype());
     if (compareStereotypes != 0) return compareStereotypes;
-    return this.toString().compareTo(o.toString());
+    return this.getLongName().compareTo(((SModelReference) o).getLongName());
   }
 }
