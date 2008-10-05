@@ -39,7 +39,7 @@ public class GoToRulesAction extends BaseAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "control shift R";
+    return "control alt R";
   }
 
   protected void doExecute(AnActionEvent e) {
