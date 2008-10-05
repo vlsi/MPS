@@ -101,7 +101,7 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "control shift E";
+    return "control alt E";
   }
 
   protected boolean collectActionData(AnActionEvent e) {
