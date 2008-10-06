@@ -6,7 +6,6 @@ import com.intellij.ide.BrowserUtil;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -46,7 +45,7 @@ public class ShowDefaultKeymap_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      BrowserUtil.launchBrowser(PathManager.getHomePath() + "/docs/" + "DefaultKeymap.pdf");
+      BrowserUtil.launchBrowser("http://www.jetbrains.net/confluence/display/MPS/Default+Keymap+Reference");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowDefaultKeymap", t);
     }
