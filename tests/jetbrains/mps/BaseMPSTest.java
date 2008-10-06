@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 
 import java.io.File;
 import java.lang.reflect.Method;
+import java.util.Map;
 
 import jetbrains.mps.bootstrap.helgins.tests.HelginsTestUtil;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
@@ -35,8 +36,17 @@ public class BaseMPSTest extends TestCase {
     return TestMain.testProject(project);
   }
 
+  protected String testProject(File project, Map<String, String> pathVariables) {
+    return TestMain.testProject(project, pathVariables);
+  }
+
+
   protected String testProject(File project, String message) {
     return TestMain.testProject(project, message);
+  }
+
+  protected String testProject(File project, String message, Map<String, String> pathVariables) {
+    return TestMain.testProject(project, message, pathVariables);
   }
 
   protected boolean testProjectGenerationForLeaks(File project) {

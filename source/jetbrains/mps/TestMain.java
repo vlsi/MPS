@@ -15,10 +15,12 @@ import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.structure.ClassPathEntry;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.pathVariables.PathVariableManager;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashSet;
+import java.util.Map;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
@@ -318,7 +320,15 @@ public class TestMain {
   }
 
   public static String testProject(File projectFile) {
-    return testProject(projectFile, (String) null);
+    return testProject(projectFile, (String) null, null);
+  }
+
+  public static String testProject(File projectFile, Map<String, String> pathVariables) {
+    return testProject(projectFile, (String) null, pathVariables);
+  }
+
+  public static String testProject(File projectFile, String treatThisWarningAsError) {
+    return testProject(projectFile, treatThisWarningAsError, null);
   }
 
   /**
@@ -327,10 +337,15 @@ public class TestMain {
    * @param treatThisWarningAsError
    * @return
    */
-  public static String testProject(File projectFile, String treatThisWarningAsError) {
+  public static String testProject(File projectFile, String treatThisWarningAsError, Map<String, String> pathVariables) {
     IdeMain.setTestMode(true);
     long start = System.currentTimeMillis();
     configureMPS();
+
+    if (pathVariables != null) {
+      PathVariableManager.getInstance().setPathVariables(pathVariables);
+    }
+
     System.out.println("loading project...");
     if (!projectFile.exists()) {
       throw new RuntimeException("Can't find a project in file " + projectFile.getAbsolutePath());
