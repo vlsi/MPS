@@ -7,7 +7,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.structureLanguage.behavior.ConceptPropertyDeclaration_Behavior;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 
 public class CellModel_ConceptProperty_Behavior {
 

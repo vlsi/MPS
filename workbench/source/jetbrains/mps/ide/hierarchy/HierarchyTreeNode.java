@@ -36,7 +36,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
   protected void updatePresentation() {
     setIcon(IconManager.getIconFor(myNodePointer.getNode()));
-    setNodeIdentifier(calculateNodeIdentifier());
+    setNodeIdentifier(calculateNodeIdentifier());                  
     setAdditionalText(calculateAdditionalText());
     setAutoExpandable(false);
   }
