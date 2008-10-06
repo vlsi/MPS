@@ -3261,7 +3261,7 @@
                       <link role="baseMethodDeclaration" targetNodeId="3.~String.endsWith(java.lang.String):boolean" resolveInfo="endsWith" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1217854945686">
                         <link role="classifier" targetNodeId="7.~MPSExtentions" resolveInfo="MPSExtentions" />
-                        <link role="variableDeclaration" targetNodeId="7.~MPSExtentions.DOT_IDEAPROJECT" resolveInfo="DOT_IDEAPROJECT" />
+                        <link role="variableDeclaration" targetNodeId="7.~MPSExtentions.DOT_MPS_PROJECT" resolveInfo="DOT_MPS_PROJECT" />
                       </node>
                     </node>
                   </node>
