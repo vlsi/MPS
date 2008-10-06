@@ -30,7 +30,7 @@ public class OpenMPSProjectAction extends BaseAction {
 
     chooser.setFileFilter(new IFileFilter() {
       public boolean accept(IFile file) {
-        return file.isDirectory() || file.getName().toLowerCase().endsWith(".ipr");
+        return file.isDirectory() || file.getName().toLowerCase().endsWith(MPSExtentions.DOT_MPS_PROJECT);
       }
     });
 
