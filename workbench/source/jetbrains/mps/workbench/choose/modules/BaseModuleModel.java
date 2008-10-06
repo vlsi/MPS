@@ -31,6 +31,7 @@
  */
 package jetbrains.mps.workbench.choose.modules;
 
+import com.intellij.ide.util.gotoByName.UseIdeaChooser;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.NameUtil;
@@ -48,7 +49,7 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
   }
 
   public String doGetObjectName(IModule module) {
-    return NameUtil.shortNameFromLongName(module.getModuleUID());
+    return UseIdeaChooser.useIdeaChooser() ? NameUtil.shortNameFromLongName(module.getModuleUID()) : module.getModuleFqName();
   }
 
   //---------------------INTERFACE STUFF------------------------

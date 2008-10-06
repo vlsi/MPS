@@ -31,6 +31,7 @@
  */
 package jetbrains.mps.workbench.choose.nodes;
 
+import com.intellij.ide.util.gotoByName.UseIdeaChooser;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
@@ -51,7 +52,7 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
   }
 
   public String doGetObjectName(SNode node) {
-    return node.getName();
+    return UseIdeaChooser.useIdeaChooser() ? node.getName() : node.getModel().getLongName() + "." + node.getName();
   }
 
   public NavigationItem doGetNavigationItem(SNode node) {
