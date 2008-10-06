@@ -50,6 +50,10 @@ public class SNodeOperation_Behavior {
 
   public static SNode getLeftNodeConcept_1213877508847(SNode parent) {
     SNode operand = SLinkOperations.getTarget(parent, "operand", true);
+    SNode result = SModelLanguageUtil.getConcept(operand);
+    if ((result != null)) {
+      return result;
+    }
     SNode operandType = TypeChecker.getInstance().getTypeOf(operand);
     if (SNodeOperations.isInstanceOf(operandType, "jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT")) {
       return SLinkOperations.getTarget(operandType, "targetConcept", false);

@@ -8,5 +8,18 @@ package jetbrains.mps.helgins.inference;
  * To change this template use File | Settings | File Templates.
  */
 public enum TypeCheckingMode {
-  GENERATION, RESOLVE, COMPLETION
-}
+  GENERATION {
+    public boolean inEditorQueries() {
+      return false;
+    }},
+  RESOLVE {
+    public boolean inEditorQueries() {
+      return true;
+    }},
+  COMPLETION {
+    public boolean inEditorQueries() {
+      return true;
+    }};
+
+  public abstract boolean inEditorQueries();
+  }

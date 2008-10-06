@@ -28,4 +28,26 @@ public class SModelLanguageUtil {
     return null;
   }
 
+  public static SNode getConcept(SNode expression) {
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+      SNode operation = SLinkOperations.getTarget(expression, "operation", true);
+      if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
+        return SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "link", false), "target", false);
+      }
+      if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
+        return SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "link", false), "target", false);
+      }
+    }
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
+      SNode type = SLinkOperations.getTarget(SLinkOperations.getTarget(expression, "variableDeclaration", false), "type", true);
+      if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
+        return SLinkOperations.getTarget(type, "concept", false);
+      }
+      if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
+        return SLinkOperations.getTarget(type, "conceptDeclaraton", false);
+      }
+    }
+    return null;
+  }
+
 }

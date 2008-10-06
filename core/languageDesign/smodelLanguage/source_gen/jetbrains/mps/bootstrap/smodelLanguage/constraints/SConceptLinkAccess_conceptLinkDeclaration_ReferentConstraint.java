@@ -13,8 +13,9 @@ import java.util.List;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.behavior.SModelLanguageUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
@@ -51,13 +52,15 @@ public class SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint implem
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     // concept links from hierarchy
-    SNode operandConcept;
-    SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true));
-    if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
-      operandConcept = SLinkOperations.getTarget(leftType, "conceptDeclaraton", false);
-    } else
-    {
-      operandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(_context.getEnclosingNode());
+    SNode operandConcept = SModelLanguageUtil.getConcept(SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true));
+    if ((operandConcept == null)) {
+      SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true));
+      if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
+        operandConcept = SLinkOperations.getTarget(leftType, "conceptDeclaraton", false);
+      } else
+      {
+        operandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(_context.getEnclosingNode());
+      }
     }
     return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getConceptLinkDeclarations_1213877394578(operandConcept));
   }

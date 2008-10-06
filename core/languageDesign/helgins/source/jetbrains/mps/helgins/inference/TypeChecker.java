@@ -55,6 +55,8 @@ public class TypeChecker implements ApplicationComponent {
 
   private SubtypingCache mySubtypingCache = null;
 
+  private Map<SNode, SNode> myComputedTypesForCompletion = null;
+
   @ForDebug
   private Set<SNode> myResolveModeNodesBeingChecked = new HashSet<SNode>();
   @ForDebug
@@ -195,6 +197,9 @@ public class TypeChecker implements ApplicationComponent {
     if (myTypeCheckingMode == TypeCheckingMode.GENERATION) {
       mySubtypingCache = new SubtypingCache();
     }
+    if (myTypeCheckingMode != null && myTypeCheckingMode.inEditorQueries()) {
+      myComputedTypesForCompletion = new HashMap<SNode, SNode>();
+    }
     if (typeCheckingMode != null) {
       setIncrementalMode(false);
     }
@@ -202,6 +207,7 @@ public class TypeChecker implements ApplicationComponent {
 
   public void resetTypeCheckingMode() {
     myTypeCheckingMode = null;
+    myComputedTypesForCompletion = null; //is it true?
     if (!myTypesCheckingModesStack.isEmpty()) {
       myTypeCheckingMode = myTypesCheckingModesStack.pop();
     }
@@ -341,6 +347,9 @@ public class TypeChecker implements ApplicationComponent {
     if (node == null) return null;
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
+    if (myComputedTypesForCompletion.containsKey(node)) {
+      return myComputedTypesForCompletion.get(node);
+    }
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
       getNodeTypesComponent(node.getContainingRoot());
     if (nodeIsNotChecked || !myCheckedRoots.contains(containingRoot) || component == null) {
@@ -370,9 +379,13 @@ public class TypeChecker implements ApplicationComponent {
         NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, oldComponent);
         clearCurrentTypesComponent();
       }
-      return result[0];
+      SNode resultType = result[0];
+      myComputedTypesForCompletion.put(node, resultType);
+      return resultType;
     }
-    return getTypeDontCheck(node);
+    SNode resultType = getTypeDontCheck(node);
+    myComputedTypesForCompletion.put(node, resultType);
+    return resultType;
   }
 
   public void markAsChecked(SNode node) {
