@@ -24,8 +24,6 @@ public class OpenMPSProjectAction extends BaseAction {
   }
 
   public void doExecute(AnActionEvent e) {
-    final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
-
     TreeFileChooser chooser = new TreeFileChooser();
 
     chooser.setFileFilter(new IFileFilter() {
