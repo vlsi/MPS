@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project relativePaths="false" version="4">
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSMessagesViewTool">
+    <option name="dialogState">
+      <MyState>
+        <option name="anonymous" value="true" />
+        <option name="password" value="" />
+        <option name="username" value="" />
+      </MyState>
+    </option>
+    <option name="errors" value="true" />
+    <option name="info" value="true" />
+    <option name="warnings" value="true" />
+  </component>
+  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+    <projectSolutions>
+      <solutionPath path="${project}\solutions\jetbrains.mps.uiLanguage.samples\jetbrains.mps.uiLanguage.saamples.msd" />
+      <solutionPath path="${mps_home}\workbench\ideSolution\jetbrains.mps.ide.msd" />
+      <solutionPath path="${project}\solutions\jetbrains.mps.uiLanguage.sandbox\jetbrains.mps.uiLanguage.sandbox.msd" />
+    </projectSolutions>
+    <projectLanguages>
+      <languagePath path="${project}\uiLanguage.mpl" />
+      <languagePath path="${mps_home}\workbench\ideUiLanguage\uiLanguage.mpl" />
+      <languagePath path="${mps_home}\platform\wizards\wizards.mpl" />
+    </projectLanguages>
+    <projectDevkits />
+    <libraries />
+    <genConfs>
+      <genConfSolution name="samples" solution="jetbrains.mps.uiLanguage.samples" />
+      <genConfLanguage name="uiLanguage" language="jetbrains.mps.ide.uiLanguage" />
+      <genConfLanguage name="ideUILanguage" language="jetbrains.mps.ide.uiLanguage" />
+      <genConfLanguage name="classifiers" language="jetbrains.mps.baseLanguage.classifiers" />
+    </genConfs>
+  </component>
+  <component name="ProjectDetails">
+    <option name="projectName" value="uiLanguage" />
+  </component>
+  <component name="Shalom">
+    <subPane>
+      <PATH>
+        <PATH_ELEMENT USER_OBJECT="JTree">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$APPLICATION_HOME_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://svn.jetbrains.org/mps/branches" />
+                  <option value="http://svn.jetbrains.org/mps/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="myVersion" value="124" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+  </component>
+</project>
+

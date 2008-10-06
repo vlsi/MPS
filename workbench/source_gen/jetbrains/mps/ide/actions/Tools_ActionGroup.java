@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.actions.ReloadAllAction;
 import jetbrains.mps.workbench.actions.tools.InstallIDEAPluginAction;
 import jetbrains.mps.smodel.persistence.def.v3.UpgradeModelsAction;
+import jetbrains.mps.project.actions.UpgradeProjectsAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -30,6 +31,7 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.add(new InstallIDEAPluginAction());
       this.add(new UpgradeModelsAction());
+      this.add(new UpgradeProjectsAction());
       this.addSeparator();
       this.addAnchor(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal);
     } catch (Throwable t) {

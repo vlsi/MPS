@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project relativePaths="false" version="4">
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+    <option name="REVERSE_PATCH" value="false" />
+  </component>
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+    <projectSolutions />
+    <projectLanguages>
+      <languagePath path="${project}\findUsagesLanguage.mpl" />
+    </projectLanguages>
+    <projectDevkits />
+    <libraries />
+    <genConfs>
+      <genConfLanguage name="Generation" language="jetbrains.mps.bootstrap.findUsagesLanguage" />
+    </genConfs>
+  </component>
+  <component name="ProjectDetails">
+    <option name="projectName" value="findUsagesLanguage" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$APPLICATION_HOME_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://svn.jetbrains.org/mps/branches" />
+                  <option value="http://svn.jetbrains.org/mps/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="myVersion" value="124" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+  </component>
+</project>
+

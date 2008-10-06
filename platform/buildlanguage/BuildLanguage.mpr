@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project relativePaths="false" version="4">
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="FileProjectViewPane">
+    <subPane />
+  </component>
+  <component name="MPSMessagesViewTool">
+    <option name="dialogState">
+      <MyState>
+        <option name="anonymous" value="true" />
+        <option name="password" value="" />
+        <option name="username" value="" />
+      </MyState>
+    </option>
+    <option name="errors" value="true" />
+    <option name="info" value="true" />
+    <option name="warnings" value="true" />
+  </component>
+  <component name="MPSProject" auto-import-from-idea="true" testAllLanguages="false">
+    <projectSolutions>
+      <solutionPath path="${project}\solutions\jetbrains.mps.mpsLayoutLanguage.mpsbuild\jetbrains.mps.mpsLayoutLanguage.mpsbuild.msd" />
+      <solutionPath path="${project}\solutions\jetbrains.mps.build.packagingLanguage.runtime\jetbrains.mps.build.packagingLanguage.runtime.msd" />
+    </projectSolutions>
+    <projectLanguages>
+      <languagePath path="${project}\languages\buildlanguage\buildlanguage.mpl" />
+      <languagePath path="${project}\languages\propertylanguage\propertylanguage.mpl" />
+      <languagePath path="${project}\languages\mpsLayoutLanguage\mpsLayoutLanguage.mpl" />
+      <languagePath path="${project}\languages\moduleDependencyLanguage\moduleDependencyLanguage.mpl" />
+    </projectLanguages>
+    <projectDevkits />
+    <libraries />
+    <genConfs>
+      <genConfLanguage name="generate buildLanguage" language="jetbrains.mps.buildlanguage" />
+    </genConfs>
+  </component>
+  <component name="ProjectDetails">
+    <option name="projectName" value="BuildLanguage" />
+  </component>
+  <component name="Shalom">
+    <subPane>
+      <PATH>
+        <PATH_ELEMENT USER_OBJECT="JTree">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$APPLICATION_HOME_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://svn.jetbrains.org/mps/branches" />
+                  <option value="http://svn.jetbrains.org/mps/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="myVersion" value="124" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+  </component>
+</project>
+

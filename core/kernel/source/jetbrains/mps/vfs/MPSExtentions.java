@@ -1,7 +1,7 @@
 package jetbrains.mps.vfs;
 
 public class MPSExtentions {
-  public static final String IDEAPROJECT = "ipr";
+  public static final String IDEAPROJECT = "mpr";
   public static final String IDEAWORKSPACE = "iws";
   public static final String WORKSPACE = "mws";
   public static final String IDEAMODULE = "iml";

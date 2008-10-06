@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project relativePaths="false" version="4">
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+    <option name="REVERSE_PATCH" value="false" />
+  </component>
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+    <projectSolutions>
+      <solutionPath path="${project}\solutions\jetbrains.mps.bootstrap.helgins.sandbox\jetbrains.mps.bootstrap.helgins.sandbox.msd" />
+    </projectSolutions>
+    <projectLanguages>
+      <languagePath path="${project}\helgins.mpl" />
+    </projectLanguages>
+    <projectDevkits />
+    <libraries />
+    <genConfs>
+      <genConfLanguage name="helgins" language="jetbrains.mps.bootstrap.helgins" />
+    </genConfs>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+  </component>
+</project>
+

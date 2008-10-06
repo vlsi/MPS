@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project relativePaths="false" version="4">
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSMessagesViewTool">
+    <option name="dialogState">
+      <MyState>
+        <option name="anonymous" value="true" />
+        <option name="password" value="" />
+        <option name="username" value="" />
+      </MyState>
+    </option>
+    <option name="errors" value="true" />
+    <option name="info" value="true" />
+    <option name="warnings" value="true" />
+  </component>
+  <component name="MPSProject" auto-import-from-idea="true" testAllLanguages="false">
+    <projectSolutions />
+    <projectLanguages>
+      <languagePath path="${project}\language\formulaLanguage.mpl" />
+    </projectLanguages>
+    <projectDevkits />
+    <libraries />
+    <genConfs />
+  </component>
+  <component name="ProjectDetails">
+    <option name="projectName" value="formulaLanguage" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myVersion" value="124" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+  </component>
+</project>
+

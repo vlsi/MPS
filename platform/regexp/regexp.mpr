@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project relativePaths="false" version="4">
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+    <projectSolutions>
+      <solutionPath path="${project}\solutions\jetbrains.mps.regexp.examples\jetbrains.mps.regexp.examples.msd" />
+      <solutionPath path="${project}\solutions\jetbrains.mps.regexp.sandbox\jetbrains.mps.regexp.sandbox.msd" />
+      <solutionPath path="${project}\outputModels\outputModels.msd" />
+      <solutionPath path="${project}\solutions\NewSolution\NewSolution.msd" folder="samples" />
+    </projectSolutions>
+    <projectLanguages>
+      <languagePath path="${project}\regexp.mpl" />
+    </projectLanguages>
+    <projectDevkits />
+    <libraries />
+    <genConfs>
+      <genConfLanguage name="regexp" language="jetbrains.mps.regexp" />
+    </genConfs>
+  </component>
+  <component name="ProjectDetails">
+    <option name="projectName" value="regexp" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myVersion" value="124" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+  </component>
+</project>
+
