@@ -15,12 +15,11 @@ import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.structure.ClassPathEntry;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.pathVariables.PathVariableManager;
+import jetbrains.mps.vfs.MPSExtentions;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashSet;
-import java.util.Map;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
@@ -183,7 +182,7 @@ public class TestMain {
     try {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          File projectFile = new File(destination, "testRefactoring.ipr");
+          File projectFile = new File(destination, "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT);
           projectArray[0] = loadProject(projectFile);
         }
       });

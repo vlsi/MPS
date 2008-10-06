@@ -65,7 +65,7 @@ public class MPSFileTypesManager implements ApplicationComponent {
     }
   };
   private final FileType[] myFileTypes = {MODEL_FILE_TYPE, SOLUTION_FILE_TYPE, LANGUAGE_FILE_TYPE, DEVKIT_FILE_TYPE, CLASS_FILE_TYPE, JAVA_FILE_TYPE, XML_FILE_TYPE};
-  private static final String[] XML_EXTENSIONS = {MPSExtentions.IDEAPROJECT,
+  private static final String[] XML_EXTENSIONS = {MPSExtentions.MPS_PROJECT,
     MPSExtentions.IDEAWORKSPACE,
     MPSExtentions.WORKSPACE,
     MPSExtentions.IDEAMODULE};

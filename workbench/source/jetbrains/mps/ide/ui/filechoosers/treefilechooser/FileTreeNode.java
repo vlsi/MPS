@@ -1,26 +1,17 @@
 package jetbrains.mps.ide.ui.filechoosers.treefilechooser;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
 import jetbrains.mps.vfs.MPSExtentions;
 
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.plaf.IconUIResource;
-import javax.swing.plaf.synth.SynthContext;
-import javax.swing.text.IconView;
 import javax.swing.filechooser.FileSystemView;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.awt.Graphics;
-import java.awt.Component;
-import java.awt.Image;
 
-import sun.swing.plaf.synth.SynthIcon;
 import com.intellij.openapi.util.io.FileUtil;
 
 public abstract class FileTreeNode extends MPSTreeNode {
@@ -45,7 +36,7 @@ public abstract class FileTreeNode extends MPSTreeNode {
     Icon icon;
     String extension = FileUtil.getExtension(file.getName());
 
-    if (extension.equals(MPSExtentions.IDEAPROJECT)){
+    if (extension.equals(MPSExtentions.MPS_PROJECT)){
       icon = Icons.PROJECT_ICON;
     }else if (extension.equals(MPSExtentions.LANGUAGE)){
       icon = Icons.LANGUAGE_ICON;
