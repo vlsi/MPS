@@ -31,6 +31,7 @@ import com.intellij.util.Alarm;
 import com.intellij.util.SmartList;
 import com.intellij.util.diff.Diff;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.ide.ChooseItemComponent;
 import org.apache.oro.text.regex.*;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -1250,86 +1251,9 @@ public abstract class ChooseByNameBase {
         return p;
       }
 
-      private StringBuilder getExactItemPatternBuilder(String text) {
-        StringBuilder b = new StringBuilder();
-        int state = 0;
-        for (int i = 0; i < text.length(); i++) {
-          char c = text.charAt(i);
 
-          switch (state) {
-            case 0: // no quoting
-              if (c == '*') {
-                b.append(".*");
-              } else if (c == '?') {
-                b.append(".");
-              } else if (c == '.') {
-                b.append("[^\\.]*\\.");
-              } else if (c == '@') {
-                b.append("[^\\@\\.]*\\@");
-              } else if (Character.isLetterOrDigit(c) || c == '_') {
-                b.append(c);
-                state = 2;
-              } else {
-                b.append("\\Q");
-                b.append(c);
-                state = 1;
-              }
-              break;
-            case 1: // quoting
-              if (c == '*') {
-                b.append("\\E");
-                b.append(".*");
-                state = 0;
-              } else if (c == '?') {
-                b.append("\\E");
-                b.append(".");
-                state = 0;
-              } else if (c == '.') {
-                b.append("\\E");
-                b.append("[^\\.]*\\.");
-                state = 0;
-              } else if (c == '@') {
-                b.append("\\E");
-                b.append("[^\\@\\.]*\\@");
-                state = 0;
-              } else if (Character.isLetterOrDigit(c) || c == '_') {
-                b.append("\\E");
-                b.append(c);
-                state = 2;
-              } else {
-                b.append(c);
-              }
-              break;
-            case 2: // Sequence of letters, digits and underscores
-              if (c == '*') {
-                b.append(".*");
-                state = 0;
-              } else if (c == '?') {
-                b.append(".");
-                state = 0;
-              } else if (c == '.') {
-                b.append("[^\\.]*\\.");
-                state = 0;
-              } else if (c == '@') {
-                b.append("[^\\@\\.]*\\@");
-                state = 0;
-              } else if (Character.isUpperCase(c)) {
-                b.append("[a-z0-9_]*");
-                b.append(c);
-              } else if (Character.isLetterOrDigit(c) || c == '_') {
-                b.append(c);
-              } else {
-                b.append("\\Q");
-                b.append(c);
-                state = 1;
-              }
-              break;
-          }
-        }
-        if (state == 1) {
-          b.append("\\E");
-        }
-        return b;
+      private StringBuilder getExactItemPatternBuilder(String text) {
+        return ChooseItemComponent.getExactItemPatternBuilder(text);
       }
     }
   }
