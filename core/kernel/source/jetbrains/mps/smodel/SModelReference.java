@@ -121,4 +121,5 @@ public class SModelReference implements Comparable<Object> {
     if (compareStereotypes != 0) return compareStereotypes;
     return this.getLongName().compareTo(((SModelReference) o).getLongName());
   }
+
 }

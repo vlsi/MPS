@@ -37,7 +37,13 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
   protected void updatePresentation() {
     setIcon(IconManager.getIconFor(myNodePointer.getNode()));
     setNodeIdentifier(calculateNodeIdentifier());
+    setAdditionalText(calculateAdditionalText());
     setAutoExpandable(false);
+  }
+
+  private String calculateAdditionalText() {
+    if (getNode() == null) return "null";    
+    return getNode().getModel().getSModelFqName().toString();
   }
 
   protected void onRemove() {
@@ -67,8 +73,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     if (myHierarchyTree.overridesNodeIdentifierCalculation()) {
       return myHierarchyTree.calculateNodeIdentifier(this);
     }
-    String namespace = getNode().getModel().toString();
-    return getNode().getName() + "  (" + namespace + ")";
+    return getNode().getName();
   }
 
   public ActionGroup getActionGroup() {
