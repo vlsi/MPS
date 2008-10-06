@@ -69,11 +69,10 @@ public class TestMain {
     final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
 
     String filePath = projectFile.getAbsolutePath();
-    String iprfilePath = filePath.replaceAll("(.*)(\\.mpr)", "$1.ipr");
 
     Project ideaProject = null;
     try {
-      ideaProject = projectManager.loadAndOpenProject(iprfilePath, false);
+      ideaProject = projectManager.loadAndOpenProject(filePath, false);
     } catch (IOException e) {
       throw new RuntimeException(e);
     } catch (JDOMException e) {
@@ -117,7 +116,7 @@ public class TestMain {
   public static boolean testRefactoringTestEnvironment(File projectDirectory) {
     IdeMain.setTestMode(true);
     TestMain.configureMPS();
-    File projectFile = new File(projectDirectory, "testRefactoring.ipr");
+    File projectFile = new File(projectDirectory, "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT);
     final MPSProject project = loadProject(projectFile);
     final boolean[] b = new boolean[]{true};
     ModelAccess.instance().runReadAction(new Runnable() {
