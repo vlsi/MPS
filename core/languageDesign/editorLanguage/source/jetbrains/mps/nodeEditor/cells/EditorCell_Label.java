@@ -145,6 +145,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     setCaretPosition(position, false);
   }
 
+  public void setCaretPositionIfPossible(int position) {
+    if (isCaretPositionAllowed(position)) {
+      setCaretPosition(position, false);
+    }
+  }
+
+
   public void setCaretPosition(int position, boolean selection) {
     assert isCaretPositionAllowed(position);    
     myTextLine.setCaretPosition(position, selection);
@@ -513,7 +520,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       }
 
       changeText(newText);
-      setCaretPosition(startSelection + 1);
+      setCaretPositionIfPossible(startSelection + 1);
       myTextLine.resetSelection();
       editor.resetLastCaretX();
       ensureCaretVisible();
