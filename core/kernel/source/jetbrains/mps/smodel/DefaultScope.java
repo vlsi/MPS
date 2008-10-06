@@ -115,12 +115,23 @@ public abstract class DefaultScope extends BaseScope {
     usedLanguages.addAll(getInitialUsedLanguages());
 
     Set<DevKit> usedDevkits = new HashSet<DevKit>();
+
+    usedDevkits.addAll(BootstrapLanguagesManager.getInstance().getDevkits());
+
     for (IModule m : getInitialModules()) {
+      if (m instanceof DevKit) {
+        DevKit dk = (DevKit) m;
+        usedDevkits.add(dk);
+      }
+
       for (DevKit dk : m.getUsedDevkits()) {
         usedDevkits.add(dk);
-        usedLanguages.addAll(dk.getAllExportedLanguages());
-        visibleModules.addAll(dk.getAllExportedSolutions());
       }
+    }
+
+    for (DevKit dk : usedDevkits) {
+      usedLanguages.addAll(dk.getAllExportedLanguages());
+      visibleModules.addAll(dk.getAllExportedSolutions());
     }
 
     boolean changed = true;
