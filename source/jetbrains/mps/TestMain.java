@@ -320,15 +320,7 @@ public class TestMain {
   }
 
   public static String testProject(File projectFile) {
-    return testProject(projectFile, (String) null, null);
-  }
-
-  public static String testProject(File projectFile, Map<String, String> pathVariables) {
-    return testProject(projectFile, (String) null, pathVariables);
-  }
-
-  public static String testProject(File projectFile, String treatThisWarningAsError) {
-    return testProject(projectFile, treatThisWarningAsError, null);
+    return testProject(projectFile, (String) null);
   }
 
   /**
@@ -337,14 +329,10 @@ public class TestMain {
    * @param treatThisWarningAsError
    * @return
    */
-  public static String testProject(File projectFile, String treatThisWarningAsError, Map<String, String> pathVariables) {
+  public static String testProject(File projectFile, String treatThisWarningAsError) {
     IdeMain.setTestMode(true);
     long start = System.currentTimeMillis();
     configureMPS();
-
-    if (pathVariables != null) {
-      PathVariableManager.getInstance().setPathVariables(pathVariables);
-    }
 
     System.out.println("loading project...");
     if (!projectFile.exists()) {
@@ -403,6 +391,7 @@ public class TestMain {
 
     return message;
   }
+    
 
   public static void configureMPS() {
     System.setProperty("idea.is.internal", "true");

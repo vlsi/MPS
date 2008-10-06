@@ -36,17 +36,8 @@ public class BaseMPSTest extends TestCase {
     return TestMain.testProject(project);
   }
 
-  protected String testProject(File project, Map<String, String> pathVariables) {
-    return TestMain.testProject(project, pathVariables);
-  }
-
-
   protected String testProject(File project, String message) {
     return TestMain.testProject(project, message);
-  }
-
-  protected String testProject(File project, String message, Map<String, String> pathVariables) {
-    return TestMain.testProject(project, message, pathVariables);
   }
 
   protected boolean testProjectGenerationForLeaks(File project) {

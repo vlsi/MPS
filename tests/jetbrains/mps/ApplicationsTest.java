@@ -1,5 +1,7 @@
 package jetbrains.mps;
 
+import jetbrains.mps.pathVariables.PathVariableManager;
+
 import java.io.File;
 
 public class ApplicationsTest extends BaseMPSTest {
@@ -24,7 +26,7 @@ public class ApplicationsTest extends BaseMPSTest {
     assertTrue(res, res == null);
   }
 
-  public void testTextLanguage() {
+  public void testTextLanguage() {                 
     String res = testProject(new File("platform/textLanguage/jetbrains.mps.textLanguage.ipr"));
     assertTrue(res, res == null);
   }
