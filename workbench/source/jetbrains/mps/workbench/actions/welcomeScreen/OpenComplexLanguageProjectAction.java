@@ -11,7 +11,7 @@ import java.io.File;
 
 public class OpenComplexLanguageProjectAction extends AnAction {
   public void actionPerformed(AnActionEvent e) {
-    String projectFile = PathManager.getSamplesPath() + File.separator + "complexLanguage" + File.separator + "Complex.ipr";
+    String projectFile = PathManager.getSamplesPath() + File.separator + "complexLanguage" + File.separator + "Complex.mpr";
     ProjectUtil.openProject(projectFile, e.getData(PlatformDataKeys.PROJECT), false);
   }
 }

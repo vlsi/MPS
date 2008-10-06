@@ -11,7 +11,7 @@ import java.io.File;
 
 public class OpenTheSimplestLanguageProjectAction extends AnAction {
   public void actionPerformed(AnActionEvent e) {
-    String projectFile = PathManager.getSamplesPath() + File.separator + "theSimplestLanguage" + File.separator + "theSimplestLanguage.ipr";
+    String projectFile = PathManager.getSamplesPath() + File.separator + "theSimplestLanguage" + File.separator + "theSimplestLanguage.mpr";
     ProjectUtil.openProject(projectFile, e.getData(PlatformDataKeys.PROJECT), false);
   }
 }
