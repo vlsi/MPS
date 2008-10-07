@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ComplexText extends BaseText {
-  public static final String concept = "webr.xml.structure.ComplexText";
+  public static final String concept = "jetbrains.mps.xml.structure.ComplexText";
   public static String TEXT = "text";
 
   public ComplexText(SNode node) {
@@ -39,7 +39,7 @@ public class ComplexText extends BaseText {
 
 
   public static ComplexText newInstance(SModel sm, boolean init) {
-    return (ComplexText)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.ComplexText", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComplexText)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.ComplexText", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComplexText newInstance(SModel sm) {

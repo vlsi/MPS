@@ -8,14 +8,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BaseText extends Content {
-  public static final String concept = "webr.xml.structure.BaseText";
+  public static final String concept = "jetbrains.mps.xml.structure.BaseText";
 
   public BaseText(SNode node) {
     super(node);
   }
 
   public static BaseText newInstance(SModel sm, boolean init) {
-    return (BaseText)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.BaseText", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseText)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.BaseText", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseText newInstance(SModel sm) {

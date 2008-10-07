@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ContentList extends Content {
-  public static final String concept = "webr.xml.structure.ContentList";
+  public static final String concept = "jetbrains.mps.xml.structure.ContentList";
   public static String IS_HORIZONTAL = "isHorizontal";
   public static String CONTENT = "content";
 
@@ -48,7 +48,7 @@ public class ContentList extends Content {
 
 
   public static ContentList newInstance(SModel sm, boolean init) {
-    return (ContentList)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.ContentList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContentList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.ContentList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ContentList newInstance(SModel sm) {

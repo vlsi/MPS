@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class EntityReference extends BaseText {
-  public static final String concept = "webr.xml.structure.EntityReference";
+  public static final String concept = "jetbrains.mps.xml.structure.EntityReference";
   public static String ENTITY_DECLARATION = "entityDeclaration";
 
   public EntityReference(SNode node) {
@@ -26,7 +26,7 @@ public class EntityReference extends BaseText {
 
 
   public static EntityReference newInstance(SModel sm, boolean init) {
-    return (EntityReference)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.EntityReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EntityReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.EntityReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EntityReference newInstance(SModel sm) {

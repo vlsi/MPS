@@ -9,14 +9,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BaseAttribute extends BaseConcept {
-  public static final String concept = "webr.xml.structure.BaseAttribute";
+  public static final String concept = "jetbrains.mps.xml.structure.BaseAttribute";
 
   public BaseAttribute(SNode node) {
     super(node);
   }
 
   public static BaseAttribute newInstance(SModel sm, boolean init) {
-    return (BaseAttribute)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.BaseAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.BaseAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseAttribute newInstance(SModel sm) {

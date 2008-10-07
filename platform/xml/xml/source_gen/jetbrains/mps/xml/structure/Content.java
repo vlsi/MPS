@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Content extends BaseConcept {
-  public static final String concept = "webr.xml.structure.Content";
+  public static final String concept = "jetbrains.mps.xml.structure.Content";
   public static String CPR_IsComplex = "isComplex";
   public static String CLNK_CorrespondingElement = "correspondingElement";
 
@@ -18,7 +18,7 @@ public class Content extends BaseConcept {
   }
 
   public static Content newInstance(SModel sm, boolean init) {
-    return (Content)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.Content", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Content)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.Content", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Content newInstance(SModel sm) {

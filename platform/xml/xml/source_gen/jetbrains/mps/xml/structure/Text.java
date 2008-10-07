@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Text extends BaseText {
-  public static final String concept = "webr.xml.structure.Text";
+  public static final String concept = "jetbrains.mps.xml.structure.Text";
   public static String TEXT = "text";
 
   public Text(SNode node) {
@@ -25,7 +25,7 @@ public class Text extends BaseText {
 
 
   public static Text newInstance(SModel sm, boolean init) {
-    return (Text)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.Text", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Text)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.Text", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Text newInstance(SModel sm) {

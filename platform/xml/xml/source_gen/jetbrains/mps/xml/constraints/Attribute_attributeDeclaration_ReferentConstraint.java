@@ -24,11 +24,11 @@ public class Attribute_attributeDeclaration_ReferentConstraint implements IModel
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("webr.xml.structure.Attribute", "attributeDeclaration", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.xml.structure.Attribute", "attributeDeclaration", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("webr.xml.structure.Attribute", "attributeDeclaration");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.xml.structure.Attribute", "attributeDeclaration");
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
@@ -50,7 +50,7 @@ public class Attribute_attributeDeclaration_ReferentConstraint implements IModel
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     ISearchScope searchScope;
-    SNode element = SNodeOperations.getAncestor(_context.getEnclosingNode(), "webr.xml.structure.Element", false, false);
+    SNode element = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.xml.structure.Element", false, false);
     if ((element == null)) {
       searchScope = SModelSearchUtil.createModelAndImportedModelsScope(_context.getModel(), operationContext.getScope());
     } else

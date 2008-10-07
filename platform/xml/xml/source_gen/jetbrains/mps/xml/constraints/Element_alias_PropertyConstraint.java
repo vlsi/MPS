@@ -16,11 +16,11 @@ public class Element_alias_PropertyConstraint implements IModelConstraints, INod
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("webr.xml.structure.Element", "alias", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.xml.structure.Element", "alias", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("webr.xml.structure.Element", "alias");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.xml.structure.Element", "alias");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {

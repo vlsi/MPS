@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Element extends BaseElement {
-  public static final String concept = "webr.xml.structure.Element";
+  public static final String concept = "jetbrains.mps.xml.structure.Element";
   public static String IS_EMPTY = "isEmpty";
   public static String ELEMENT_DECLARATION = "elementDeclaration";
 
@@ -35,7 +35,7 @@ public class Element extends BaseElement {
 
 
   public static Element newInstance(SModel sm, boolean init) {
-    return (Element)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.Element", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Element)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.Element", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Element newInstance(SModel sm) {

@@ -5,5 +5,5 @@ package jetbrains.mps.xml.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface XmlRoot extends INodeAdapter {
-  public static final String concept = "webr.xml.structure.XmlRoot";
+  public static final String concept = "jetbrains.mps.xml.structure.XmlRoot";
 }

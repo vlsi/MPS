@@ -25,11 +25,11 @@ public class Element_elementDeclaration_ReferentConstraint implements IModelCons
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("webr.xml.structure.Element", "elementDeclaration", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.xml.structure.Element", "elementDeclaration", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("webr.xml.structure.Element", "elementDeclaration");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.xml.structure.Element", "elementDeclaration");
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
@@ -51,7 +51,7 @@ public class Element_elementDeclaration_ReferentConstraint implements IModelCons
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     ISearchScope searchScope;
-    SNode element = SNodeOperations.getAncestor(_context.getEnclosingNode(), "webr.xml.structure.Element", false, false);
+    SNode element = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.xml.structure.Element", false, false);
     List<SNode> elementDeclarations = ElementUtil.getElementDeclarations(SLinkOperations.getTarget(element, "elementDeclaration", false), _context.getEnclosingNode(), operationContext.getScope());
     if (ListSequence.fromList(elementDeclarations).isEmpty()) {
       searchScope = SModelSearchUtil.createModelAndImportedModelsScope(_context.getModel(), operationContext.getScope());

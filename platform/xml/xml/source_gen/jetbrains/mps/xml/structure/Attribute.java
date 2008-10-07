@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Attribute extends BaseAttribute {
-  public static final String concept = "webr.xml.structure.Attribute";
+  public static final String concept = "jetbrains.mps.xml.structure.Attribute";
   public static String ATTRIBUTE_DECLARATION = "attributeDeclaration";
   public static String VALUE = "value";
 
@@ -35,7 +35,7 @@ public class Attribute extends BaseAttribute {
 
 
   public static Attribute newInstance(SModel sm, boolean init) {
-    return (Attribute)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Attribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Attribute newInstance(SModel sm) {

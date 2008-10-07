@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CDATA extends Content {
-  public static final String concept = "webr.xml.structure.CDATA";
+  public static final String concept = "jetbrains.mps.xml.structure.CDATA";
   public static String CONTENT_LIST = "contentList";
 
   public CDATA(SNode node) {
@@ -25,7 +25,7 @@ public class CDATA extends Content {
 
 
   public static CDATA newInstance(SModel sm, boolean init) {
-    return (CDATA)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.CDATA", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CDATA)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.CDATA", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CDATA newInstance(SModel sm) {
