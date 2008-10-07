@@ -70,12 +70,12 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628994244">
                   <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1174939734570">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference" id="1174939735460">
-                      <link role="match" targetNodeId="1174939699130" resolveInfo="user" />
-                    </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1223382413313">
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1174939732210">
                       <property name="value" value="user = " />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference" id="1223382414769">
+                      <link role="match" targetNodeId="1174939699130" resolveInfo="user" />
                     </node>
                   </node>
                 </node>
