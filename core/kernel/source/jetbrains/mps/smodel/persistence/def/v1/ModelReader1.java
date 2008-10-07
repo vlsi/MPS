@@ -144,16 +144,6 @@ public class ModelReader1 implements IModelReader {
 
     ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
 
-    // log
-    Element logElement = rootElement.getChild(ModelPersistence.REFACTORING_LOG);
-    if (logElement != null) {
-      SNode log = readNode(logElement, model, referenceDescriptors, false);
-      if (log != null) {
-        model.setLog(log);
-
-      }
-    }
-
     // nodes
     List children = rootElement.getChildren(ModelPersistence.NODE);
     for (Object child : children) {

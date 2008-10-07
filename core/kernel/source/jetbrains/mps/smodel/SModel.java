@@ -56,7 +56,6 @@ public class SModel implements Iterable<SNode> {
   private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
 
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
-  private SNode myLog;
   private RefactoringHistory myRefactoringHistory = new RefactoringHistory();
   private boolean myUsesLog;
   private boolean myRegistrationsForbidden = false;
@@ -124,17 +123,6 @@ public class SModel implements Iterable<SNode> {
 
   public int getNameVersion() {
     return getModelDescriptor().getNameVersion();
-  }
-
-  @Deprecated
-  public void setLog(SNode log) {
-    myLog = log;
-  }
-
-  @Nullable
-  @Deprecated
-  public SNode getLog() {
-    return myLog;
   }
 
   public void setUsesLog(boolean usesLog) {

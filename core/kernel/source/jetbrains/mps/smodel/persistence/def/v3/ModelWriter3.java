@@ -89,10 +89,6 @@ public class ModelWriter3 implements IModelWriter {
     }
 
     VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
-    SNode log = sourceModel.getLog();
-    if (log != null) {
-      saveNode(rootElement, ModelPersistence.REFACTORING_LOG, log, false, visibleModelElements);
-    }
 
     Iterator<SNode> iterator = sourceModel.roots();
     while (iterator.hasNext()) {
