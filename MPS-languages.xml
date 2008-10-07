@@ -1154,15 +1154,15 @@
   <target name="pack.jetbrains.mps.xml">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.tmp/module" />
-    <mkdir dir="platform/xml/classes" />
+    <mkdir dir="platform/xmlDeprecated/classes" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.tmp/module">
-      <fileset file="platform/xml/languageDescriptor.mpl" />
+      <fileset file="platform/xmlDeprecated/languageDescriptor.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.tmp/module">
-      <fileset dir="platform/xml" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="platform/xmlDeprecated" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.tmp">
-      <fileset dir="platform/xml/classes" />
+      <fileset dir="platform/xmlDeprecated/classes" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/jetbrains.mps.xml.tmp" />

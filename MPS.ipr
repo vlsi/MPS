@@ -1002,12 +1002,8 @@
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" filepath="$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/web-query.iml" filepath="$PROJECT_DIR$/platform/web-query/web-query.iml" group="platform/web-query" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" filepath="$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" group="platform/web-query" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/xml/webr_xml.iml" filepath="$PROJECT_DIR$/platform/webr/languages/xml/webr_xml.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/xmlInternal/webr_xmlInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/xmlInternal/webr_xmlInternal.iml" group="platform/webr/languages" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/xmlSchema/webr_xmlSchema.iml" filepath="$PROJECT_DIR$/platform/webr/languages/xmlSchema/webr_xmlSchema.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/wizards/wizards.iml" filepath="$PROJECT_DIR$/platform/wizards/wizards.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/workbench/workbench.iml" filepath="$PROJECT_DIR$/workbench/workbench.iml" group="workbench" />
-      <module fileurl="file://$PROJECT_DIR$/platform/xml/xml.iml" filepath="$PROJECT_DIR$/platform/xml/xml.iml" group="platform" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK">
