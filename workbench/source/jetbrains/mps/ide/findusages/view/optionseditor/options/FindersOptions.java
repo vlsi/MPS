@@ -64,7 +64,7 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
       Language l = GlobalScope.getInstance().getLanguage(languageNamespace);
 
       if (l == null) {
-        LOG.error("Can't find a language " + l);
+        LOG.error("Can't find a language " + l.getModuleFqName());
         continue;
       }
 

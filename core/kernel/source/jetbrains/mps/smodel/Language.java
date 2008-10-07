@@ -1,13 +1,11 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.refactoring.structure.Refactoring;
@@ -175,7 +173,7 @@ public class Language extends AbstractModule {
       if (language != null) {
         result.add(language);
       } else {
-        LOG.error("Can't find a language " + ref + " which is referenced in " + this);
+        LOG.error("Can't find language " + ref.getModuleFqName() + " which is referenced in " + this);
       }
     }
     return result;
@@ -219,7 +217,7 @@ public class Language extends AbstractModule {
     List<String> errors = new ArrayList<String>(super.validate());
     for (ModuleReference lang : getExtendedLanguageNamespaces()) {
       if (MPSModuleRepository.getInstance().getModule(lang) == null) {
-        errors.add("Can't find extended language " + lang);
+        errors.add("Can't find extended language " + lang.getModuleFqName());
       }
     }
     return errors;
@@ -565,9 +563,9 @@ public class Language extends AbstractModule {
 
   public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
     if (myNameToConceptCache.isEmpty()) {
-      SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();      
+      SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
       final String structureLangNamespace = BootstrapLanguagesManager.getInstance().getStructureLanguage().getNamespace();
-      SModel structureModel = structureModelDescriptor.getSModel();      
+      SModel structureModel = structureModelDescriptor.getSModel();
       structureModel.allNodes(new Condition<SNode>() {
         public boolean met(SNode node) {
           if (!node.getLanguageNamespace().equals(structureLangNamespace)) return false;

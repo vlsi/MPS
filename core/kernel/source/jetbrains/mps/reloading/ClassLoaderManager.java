@@ -1,25 +1,27 @@
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.runtime.RuntimeEnvironment;
-import jetbrains.mps.runtime.RBundle;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.runtime.RBundle;
+import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.NameUtil;
-
-import java.util.*;
-import java.util.concurrent.CopyOnWriteArrayList;
-
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.application.ApplicationManager;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ClassLoaderManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
@@ -54,7 +56,7 @@ public class ClassLoaderManager implements ApplicationComponent {
       IModule module = MPSModuleRepository.getInstance().getModule(ref);
 
       if (module == null) {
-        throw new RuntimeException("Can't find module : " + ref);
+        throw new RuntimeException("Can't find module : " + ref.getModuleFqName());
       }
 
       RBundle<ModuleReference> bundle = new RBundle<ModuleReference>(ref, module.getBytecodeLocator());
@@ -77,7 +79,7 @@ public class ClassLoaderManager implements ApplicationComponent {
       RBundle<ModuleReference> bundle = myRuntimeEnvironment.get(module.getModuleReference());
 
       if (bundle == null) {
-        LOG.error("Can't find a bundle " + module.getModuleReference());
+        LOG.error("Can't find a bundle " + module.getModuleReference().getModuleFqName());
         return null;
       }
 
@@ -138,7 +140,7 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       for (ModuleReference addedBundle : added) {
         RBundle<ModuleReference> bundle = myRuntimeEnvironment.get(addedBundle);
-        assert bundle != null : "Can't find " + addedBundle;
+        assert bundle != null : "Can't find " + addedBundle.getModuleFqName();
         myRuntimeEnvironment.init(bundle);
       }
 

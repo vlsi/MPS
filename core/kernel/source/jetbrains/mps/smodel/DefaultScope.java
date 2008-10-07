@@ -105,7 +105,7 @@ public abstract class DefaultScope extends BaseScope {
         if (dependency != null) {
           visibleModules.add(dependency);
         } else {
-          LOG.error("Can't find a module " + d.getModuleReference().getModuleFqName() + " in " + this);
+          LOG.error("Can't find module " + d.getModuleReference().getModuleFqName() + " in " + this);
         }
       }
     }
@@ -157,7 +157,7 @@ public abstract class DefaultScope extends BaseScope {
                 changed = true;
               }
             } else {
-              LOG.error("Can't find a module " + dep.getModuleReference().getModuleFqName() + " in " + this);
+              LOG.error("Can't find module " + dep.getModuleReference().getModuleFqName() + " in " + this);
             }
           }
         }

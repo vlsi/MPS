@@ -4,28 +4,27 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.javastub.classpath.ClassPathModelRootManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.projectLanguage.ModuleReadException;
+import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.ConflictException;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
-import jetbrains.mps.vcs.SuspiciousModelIndex;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
 
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
@@ -157,12 +156,12 @@ public abstract class AbstractModule implements IModule {
     for (Dependency dep : getDependOn()) {
       ModuleReference moduleRef = dep.getModuleReference();
       if (MPSModuleRepository.getInstance().getModule(moduleRef) == null) {
-        errors.add("Can't find dependency: " + moduleRef);
+        errors.add("Can't find dependency: " + moduleRef.getModuleFqName());
       }
     }
     for (ModuleReference reference : getUsedLanguagesReferences()) {
       if (MPSModuleRepository.getInstance().getLanguage(reference) == null) {
-        errors.add("Can't find used language: " + reference);
+        errors.add("Can't find used language: " + reference.getModuleFqName());
       }
     }
     return errors;
@@ -309,7 +308,7 @@ public abstract class AbstractModule implements IModule {
       if (m != null) {
         result.add(m);
       } else {
-        LOG.error("Can't load module " + dep.getModuleReference() + " from " + this);
+        LOG.error("Can't load module " + dep.getModuleReference().getModuleFqName() + " from " + this);
       }
     }
     return result;
@@ -342,7 +341,7 @@ public abstract class AbstractModule implements IModule {
       if (l != null) {
         result.add(l);
       } else {
-        LOG.error("Can't load language " + ref + " from " + this);
+        LOG.error("Can't load language " + ref.getModuleFqName() + " from " + this);
       }
     }
 
@@ -383,7 +382,7 @@ public abstract class AbstractModule implements IModule {
       if (dk != null) {
         result.add(dk);
       } else {
-        LOG.error("Can't load devkit " + dk + " from " + this);
+        LOG.error("Can't load devkit " + ref.getModuleFqName() + " from " + this);
       }
     }
 

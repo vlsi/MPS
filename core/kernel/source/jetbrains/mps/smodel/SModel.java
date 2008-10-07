@@ -13,9 +13,9 @@ import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.util.annotation.UseCarefully;
+import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jdom.Element;
 
 import java.util.*;
 
@@ -34,7 +34,7 @@ public class SModel implements Iterable<SNode> {
   private Set<SModelListener> myWeakListeners = new WeakSet<SModelListener>(0);
   private Set<SModelListener> myListeners = new LinkedHashSet<SModelListener>(0);
   private Set<SModelCommandListener> myCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
-                                                    
+
   private List<ModuleReference> myVersionedLanguages = new ArrayList<ModuleReference>();
 
   private List<SNode> myRoots = new ArrayList<SNode>();
@@ -138,7 +138,7 @@ public class SModel implements Iterable<SNode> {
   @NotNull
   public List<SNode> getRoots() {
     return Collections.unmodifiableList(myRoots);
-  }    
+  }
 
   public boolean isRoot(@Nullable SNode node) {
     return myRoots.contains(node);
@@ -214,7 +214,7 @@ public class SModel implements Iterable<SNode> {
       fireRootRemovedEvent(node);
     }
   }
-    
+
   public void addWeakSModelListener(@NotNull SModelListener listener) {
     synchronized (myListenersLock) {
       LOG.assertLog(!myWeakListeners.contains(listener), "Duplicated weak listener");
@@ -711,8 +711,8 @@ public class SModel implements Iterable<SNode> {
         //addAspectModelsVersions(languageNamespace, language);
       } else {
         if (!isLoading()) {
-         LOG.error("Language \"" + lang + "\" isn't visible in scope " + scope + " . Used by model \"" + getSModelReference() +
-                "\"\nAdd this language to the LANGUAGES section of the module properties");
+          LOG.error("Language \"" + lang + "\" isn't visible in scope " + scope + " . Used by model \"" + getSModelReference() +
+            "\"\nAdd this language to the LANGUAGES section of the module properties");
         }
       }
 
@@ -732,7 +732,7 @@ public class SModel implements Iterable<SNode> {
     }
 
     if (getModelDescriptor() != null && getModelDescriptor().getModule() != null) {
-      IModule module = getModelDescriptor().getModule();      
+      IModule module = getModelDescriptor().getModule();
       languages.addAll(module.getImplicitlyImportedLanguages(getModelDescriptor()));
     }
 
@@ -747,7 +747,7 @@ public class SModel implements Iterable<SNode> {
         //addDevkitModelsVersions(dk, devKit);
         result.add(devKit);
       } else {
-        LOG.error("Can't find devkit " + dk + " in scope " + scope);
+        LOG.error("Can't find devkit " + dk.getModuleFqName() + " in scope " + scope);
       }
     }
     return result;
@@ -1077,8 +1077,8 @@ public class SModel implements Iterable<SNode> {
     for (SNode node : nodes) {
       Language lang = node.getLanguage(scope);
       if (lang == null) {
-        LOG.error("Can't find a language " + node.getLanguageNamespace());
-        continue;        
+        LOG.error("Can't find language " + node.getLanguageNamespace());
+        continue;
       }
       ModuleReference ref = lang.getModuleReference();
       if (!usedLanguages.contains(ref)) {
@@ -1192,7 +1192,7 @@ public class SModel implements Iterable<SNode> {
     ImportElement importElement = getImportElement(sModelReference);
     if (importElement != null) {
       importElement.myUsedVersion = currentVersion;
-    } 
+    }
 
     importElement = getAdditionalModelElement(sModelReference);
     if (importElement != null) {
@@ -1313,7 +1313,7 @@ public class SModel implements Iterable<SNode> {
     myRegistrationsForbidden = registrationsForbidden;
   }
 
-  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {    
+  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
     return BaseAdapter.toAdapters(allNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         return cls.isInstance(BaseAdapter.fromNode(object));
@@ -1460,7 +1460,7 @@ public class SModel implements Iterable<SNode> {
         refs.set(i, newRef);
         changed = changed || changed(ref, newRef);
       } else {
-        LOG.error("Can't load module " + ref + " in model " + getSModelReference());
+        LOG.error("Can't load module " + ref.getModuleFqName() + " in model " + getSModelReference().getLongName());
       }
     }
     return changed;

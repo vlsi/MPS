@@ -1,37 +1,36 @@
 package jetbrains.mps.workbench.editors;
 
-import com.intellij.openapi.util.UserDataHolderBase;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.fileEditor.*;
-import com.intellij.openapi.project.Project;
+import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
+import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.undo.DocumentReferenceByVirtualFile;
 import com.intellij.openapi.editor.Document;
-import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
-import com.intellij.ide.structureView.StructureViewBuilder;
+import com.intellij.openapi.fileEditor.*;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.UserDataHolderBase;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.NodeEditor;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NonNls;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import java.awt.BorderLayout;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
-import java.awt.BorderLayout;
-
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.NodeEditor;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.*;
 
 public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentReferenceEditor, DocumentsEditor {
   private static Logger LOG = Logger.getLogger(MPSFileNodeEditor.class);
@@ -63,7 +62,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
     myProject = project;
     myFile = file;
     myContext = context;
-    
+
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         recreateEditor();
@@ -104,7 +103,8 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
     return myNodeEditor.getCurrentEditorComponent();
   }
 
-  @NonNls @NotNull
+  @NonNls
+  @NotNull
   public String getName() {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
@@ -202,7 +202,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
     SModelDescriptor sm = myFile.getNode().getModel().getModelDescriptor();
 
     if (sm == null) {
-      throw new IllegalStateException("Can't find a model descriptor for model " + myFile.getNode().getModel().getSModelReference());
+      throw new IllegalStateException("Can't find a model descriptor for model " + myFile.getNode().getModel().getLongName());
     }
 
 
