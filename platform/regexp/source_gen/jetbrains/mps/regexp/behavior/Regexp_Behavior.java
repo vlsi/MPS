@@ -4,6 +4,7 @@ package jetbrains.mps.regexp.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.regex.Pattern;
@@ -14,6 +15,13 @@ public class Regexp_Behavior {
   public static Class[] PARAMETERS_1222432436326 = {SNode.class ,List.class};
 
   public static void init(SNode thisNode) {
+  }
+
+  public static SNode call_getTopLevelRegexp_1223362823237(SNode thisNode) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.regexp.structure.Regexp")) {
+      return Regexp_Behavior.call_getTopLevelRegexp_1223362823237(SNodeOperations.getParent(thisNode));
+    }
+    return thisNode;
   }
 
   public static String virtual_toString_1213877429451(SNode thisNode) {

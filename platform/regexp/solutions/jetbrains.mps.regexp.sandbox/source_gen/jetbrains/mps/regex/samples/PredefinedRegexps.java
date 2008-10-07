@@ -15,7 +15,7 @@ import jetbrains.mps.regexp.runtime.RegexpOperations;
       Matcher _matcher_0 = _pattern_0.matcher(s);
       if (_matcher_0.matches()) {
         System.out.println("user = " + _matcher_0.group(1));
-        System.out.println("domain = " + _matcher_0.group(2));
+        System.out.println("domain = " + _matcher_0.group(1));
       }
     }
   }

@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="testRefactoringTargetLang" compileInMPS="false">
+<language namespace="testRefactoringTargetLang" uuid="7bb4f305-7fb7-495b-be9c-5777cd6ab9d6" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="testRefactoringTargetLang" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="testRefactoringTargetLang" />
   </models>
   <accessoryModels />
   <generators />
-  <classPath />
-  <runtimeClassPath>
+  <classPath>
     <entry path="${mps_home}\app\testRefactoring\classes" />
-  </runtimeClassPath>
+  </classPath>
+  <languageRuntimeClassPath />
   <sourcePath />
-  <osgiOptions>
-    <requiredBundles />
-    <exportedPackage />
-  </osgiOptions>
   <extendedLanguages>
-    <extendedLanguage>jetbrains.mps.core</extendedLanguage>
+    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)</extendedLanguage>
   </extendedLanguages>
 </language>
 

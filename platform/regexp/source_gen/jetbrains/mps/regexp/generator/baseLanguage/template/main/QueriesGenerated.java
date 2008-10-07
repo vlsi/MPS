@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.regexp.generator.baseLanguage.template.util.GeneratorUtil;
 import java.util.ArrayList;
 import jetbrains.mps.regexp.behavior.Regexp_Behavior;
+import jetbrains.mps.regexp.behavior.MatchParensRegexp_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.regex.Pattern;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -99,10 +100,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1175170026397(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
-    SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
-    List<SNode> parensList = new ArrayList<SNode>();
-    Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true), parensList);
-    return 1 + parensList.indexOf(parens);
+    return MatchParensRegexp_Behavior.call_getIndex_1223361984345(parens);
   }
 
   public static Object propertyMacro_GetPropertyValue_1194610282338(final IOperationContext operationContext, final PropertyMacroContext _context) {
