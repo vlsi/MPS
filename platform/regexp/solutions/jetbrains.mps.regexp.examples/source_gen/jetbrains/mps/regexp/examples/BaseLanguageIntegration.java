@@ -4,7 +4,7 @@ package jetbrains.mps.regexp.examples;
 
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import jetbrains.mps.regexp.runtime.RegexpOperations;
+import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 
 /* package */class BaseLanguageIntegration {
 

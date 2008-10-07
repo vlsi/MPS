@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.regexp.generator.baseLanguage.template.main@generator)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -7,7 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
-  <language namespace="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.regexp)" />
+  <language namespace="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.transformation.TLBase.constraints)" version="16" />
@@ -22,23 +22,22 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.regexp.constraints)" version="3" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <maxImportIndex value="17" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.regexp.structure)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
+  <maxImportIndex value="21" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.util.regex(java.util.regex@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <import index="5" modelUID="f:java_stub#jetbrains.mps.regexp(jetbrains.mps.regexp@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="8" modelUID="f:java_stub#jetbrains.mps.regexp.structure(jetbrains.mps.regexp.structure@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
-  <import index="11" modelUID="f:java_stub#jetbrains.mps.regexp.runtime(jetbrains.mps.regexp.runtime@java_stub)" version="-1" />
-  <import index="12" modelUID="r:00000000-0000-4000-0000-011c8959051b(jetbrains.mps.regexp.generator.baseLanguage.template.util)" version="-1" />
-  <import index="16" modelUID="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.regexp.behavior)" version="-1" />
+  <import index="12" modelUID="r:00000000-0000-4000-0000-011c8959051b(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util)" version="-1" />
+  <import index="16" modelUID="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" version="-1" />
   <import index="17" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="18" modelUID="f:java_stub#jetbrains.mps.baseLanguage.regexp.runtime(jetbrains.mps.baseLanguage.regexp.runtime@java_stub)" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1174510749043">
     <property name="name" value="main" />
     <node role="rootMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Root_MappingRule" id="1174658358307">
@@ -631,8 +630,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1174659136524">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1174659151731">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1174659155342">
-            <link role="classConcept" targetNodeId="11.~RegexpOperations" resolveInfo="RegexpOperations" />
-            <link role="baseMethodDeclaration" targetNodeId="11.~RegexpOperations.replace(java.lang.String,java.util.regex.Pattern,jetbrains.mps.regexp.runtime.Replacer):java.lang.String" resolveInfo="replace" />
+            <link role="classConcept" targetNodeId="18.~RegexpOperations" resolveInfo="RegexpOperations" />
+            <link role="baseMethodDeclaration" targetNodeId="18.~RegexpOperations.replace(java.lang.String,java.util.regex.Pattern,jetbrains.mps.baseLanguage.regexp.runtime.Replacer):java.lang.String" resolveInfo="replace" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1174659160734">
               <property name="value" value="string" />
               <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1174659183902">
@@ -740,8 +739,8 @@
     <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.transformation.TLBase.structure.RootTemplateAnnotation" id="1174658315503">
       <link role="applicableConcept" targetNodeId="1.1174656254036" />
     </node>
-    <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1174660122058">
-      <link role="classifier" targetNodeId="11.~Replacer" resolveInfo="Replacer" />
+    <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223371963246">
+      <link role="classifier" targetNodeId="18.~Replacer" resolveInfo="Replacer" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550080958" />
   </node>
@@ -1051,8 +1050,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175164929274">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1175164932648">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1175164941760">
-            <link role="baseMethodDeclaration" targetNodeId="11.~RegexpOperations.split(java.lang.String,java.util.regex.Pattern):java.util.List" resolveInfo="split" />
-            <link role="classConcept" targetNodeId="11.~RegexpOperations" resolveInfo="RegexpOperations" />
+            <link role="classConcept" targetNodeId="18.~RegexpOperations" resolveInfo="RegexpOperations" />
+            <link role="baseMethodDeclaration" targetNodeId="18.~RegexpOperations.split(java.lang.String,java.util.regex.Pattern):java.util.List" resolveInfo="split" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1175164943594">
               <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1175164955451">
                 <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1175164955452">
@@ -1590,8 +1589,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222257140544">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1222257141467">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1222257141468">
-              <link role="baseMethodDeclaration" targetNodeId="11.~RegexpOperations.split(java.lang.String,java.util.regex.Pattern):java.util.List" resolveInfo="split" />
-              <link role="classConcept" targetNodeId="11.~RegexpOperations" resolveInfo="RegexpOperations" />
+              <link role="classConcept" targetNodeId="18.~RegexpOperations" resolveInfo="RegexpOperations" />
+              <link role="baseMethodDeclaration" targetNodeId="18.~RegexpOperations.split(java.lang.String,java.util.regex.Pattern):java.util.List" resolveInfo="split" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1222257141469">
                 <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1222257141470">
                   <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1222257141471">
@@ -1658,8 +1657,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222261258855">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222261273747">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1222261273748">
-              <link role="classConcept" targetNodeId="11.~RegexpOperations" resolveInfo="RegexpOperations" />
-              <link role="baseMethodDeclaration" targetNodeId="11.~RegexpOperations.replace(java.lang.String,java.util.regex.Pattern,jetbrains.mps.regexp.runtime.Replacer):java.lang.String" resolveInfo="replace" />
+              <link role="classConcept" targetNodeId="18.~RegexpOperations" resolveInfo="RegexpOperations" />
+              <link role="baseMethodDeclaration" targetNodeId="18.~RegexpOperations.replace(java.lang.String,java.util.regex.Pattern,jetbrains.mps.baseLanguage.regexp.runtime.Replacer):java.lang.String" resolveInfo="replace" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1222418933988">
                 <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1222418938522">
                   <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1222418938523">
