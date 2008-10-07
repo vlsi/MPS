@@ -970,6 +970,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" filepath="$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/kernel.iml" filepath="$PROJECT_DIR$/core/kernel/kernel.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/lair1/lair1.iml" filepath="$PROJECT_DIR$/app/mf/lair1/lair1.iml" group="app/mf" />
+      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/logging/logging.iml" filepath="$PROJECT_DIR$/platform/webr/languages/logging/logging.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/money.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/money.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" filepath="$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" group="core/languageDesign" />
@@ -1001,7 +1002,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" filepath="$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/web-query.iml" filepath="$PROJECT_DIR$/platform/web-query/web-query.iml" group="platform/web-query" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" filepath="$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" group="platform/web-query" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/logging/webr_logging.iml" filepath="$PROJECT_DIR$/platform/webr/languages/logging/webr_logging.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/xml/webr_xml.iml" filepath="$PROJECT_DIR$/platform/webr/languages/xml/webr_xml.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/xmlInternal/webr_xmlInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/xmlInternal/webr_xmlInternal.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/xmlSchema/webr_xmlSchema.iml" filepath="$PROJECT_DIR$/platform/webr/languages/xmlSchema/webr_xmlSchema.iml" group="platform/webr/languages" />
