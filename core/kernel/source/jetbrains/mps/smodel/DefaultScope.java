@@ -4,7 +4,6 @@ import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.util.CollectionUtil;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -106,7 +105,7 @@ public abstract class DefaultScope extends BaseScope {
         if (dependency != null) {
           visibleModules.add(dependency);
         } else {
-          LOG.error("Can't find a module " + d.getModuleReference() + " in " + this);
+          LOG.error("Can't find a module " + d.getModuleReference().getModuleFqName() + " in " + this);
         }
       }
     }
@@ -158,7 +157,7 @@ public abstract class DefaultScope extends BaseScope {
                 changed = true;
               }
             } else {
-              LOG.error("Can't find a module " + dep.getModuleReference() + " in " + this);
+              LOG.error("Can't find a module " + dep.getModuleReference().getModuleFqName() + " in " + this);
             }
           }
         }
@@ -182,7 +181,7 @@ public abstract class DefaultScope extends BaseScope {
               changed = true;
             }
           } else {
-            LOG.error("Can't load " + dep.getModuleReference() + " from " + language);
+            LOG.error("Can't load " + dep.getModuleReference().getModuleFqName() + " from " + language);
           }
         }
       }
