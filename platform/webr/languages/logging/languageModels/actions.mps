@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959057c(webr.logging.actions)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959057c(jetbrains.mps.baseLanguage.logging.actions)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.bootstrap.actionsLanguage)" />
@@ -22,10 +22,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <maxImportIndex value="3" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959057f(webr.logging.structure)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
+  <maxImportIndex value="5" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <import index="3" modelUID="f:java_stub#webr.logging.structure(webr.logging.structure@java_stub)" version="-1" />
+  <import index="4" modelUID="f:java_stub#jetbrains.mps.baseLanguage.logging.structure(jetbrains.mps.baseLanguage.logging.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1167245922666">
     <property name="name" value="logging_nodeSubstitue" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1167245930434">
@@ -38,8 +39,8 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178200228689">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178200307875">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1178200310146">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Severity.getConstants():java.util.List" resolveInfo="getConstants" />
-                  <link role="classConcept" targetNodeId="3.~Severity" resolveInfo="Severity" />
+                  <link role="classConcept" targetNodeId="4.~Severity" resolveInfo="Severity" />
+                  <link role="baseMethodDeclaration" targetNodeId="4.~Severity.getConstants():java.util.List" resolveInfo="getConstants" />
                 </node>
               </node>
             </node>
@@ -74,7 +75,7 @@
                     <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207737787257">
                       <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1178200515706" />
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207737787258">
-                        <link role="baseMethodDeclaration" targetNodeId="3.~Severity.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
+                        <link role="baseMethodDeclaration" targetNodeId="4.~Severity.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
                       </node>
                     </node>
                   </node>
@@ -204,8 +205,8 @@
               </node>
             </node>
           </node>
-          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178200299701">
-            <link role="classifier" targetNodeId="3.~Severity" resolveInfo="Severity" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223379437400">
+            <link role="classifier" targetNodeId="4.~Severity" resolveInfo="Severity" />
           </node>
           <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSubstitute_String" id="1178200323241">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178200323242">
@@ -213,7 +214,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207737791866">
                   <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1178200350844" />
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207737791867">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~Severity.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.~Severity.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
                   </node>
                 </node>
               </node>
