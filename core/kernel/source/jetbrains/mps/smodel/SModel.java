@@ -1222,7 +1222,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void setRefactoringHistory(RefactoringHistory refactoringHistory) {
-    myRefactoringHistory = new RefactoringHistory();
+    myRefactoringHistory = refactoringHistory;
   }
 
   /*package*/
