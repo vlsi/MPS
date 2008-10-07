@@ -113,8 +113,8 @@ public abstract class ChooseByNameBase {
     return 30;
   }
 
-  protected void getNamePattern(String pattern) {
-
+  public String getNamePattern(String pattern) {
+    return "";
   }
 
   /**
