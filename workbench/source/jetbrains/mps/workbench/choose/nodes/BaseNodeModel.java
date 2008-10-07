@@ -52,7 +52,7 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
   }
 
   public String doGetObjectName(SNode node) {
-    return UseIdeaChooser.useIdeaChooser() ? node.getName() : node.getModel().getLongName() + "." + node.getName();
+    return node.getName();
   }
 
   public NavigationItem doGetNavigationItem(SNode node) {
