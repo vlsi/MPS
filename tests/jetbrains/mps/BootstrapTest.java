@@ -99,7 +99,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testXML() {
-    String res = testProject(new File("platform/xml/xml.mpr"));
+    String res = testProject(new File("platform/xmlDeprecated/xmlDeprecated.mpr"));
     assertTrue(res, res == null);
   }
 
