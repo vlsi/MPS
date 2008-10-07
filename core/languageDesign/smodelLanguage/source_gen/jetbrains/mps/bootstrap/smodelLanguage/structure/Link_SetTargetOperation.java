@@ -10,18 +10,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Link_SetTargetOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation";
-  public static String PARAMETER = "parameter";
+  public static String LINK_TARGET = "linkTarget";
 
   public Link_SetTargetOperation(SNode node) {
     super(node);
   }
 
-  public Expression getParameter() {
-    return (Expression)this.getChild(Link_SetTargetOperation.PARAMETER);
+  public Expression getLinkTarget() {
+    return (Expression)this.getChild(Link_SetTargetOperation.LINK_TARGET);
   }
 
-  public void setParameter(Expression node) {
-    super.setChild(Link_SetTargetOperation.PARAMETER, node);
+  public void setLinkTarget(Expression node) {
+    super.setChild(Link_SetTargetOperation.LINK_TARGET, node);
   }
 
 

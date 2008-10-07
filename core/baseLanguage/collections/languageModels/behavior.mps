@@ -11,7 +11,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
@@ -377,7 +377,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1213877511350">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877511351">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877511351">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877511352">
                   <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877511353" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1213877511354">
@@ -487,7 +487,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1213877520393">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877520394">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877520394">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877520395">
                   <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877520396" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1213877520397">
@@ -510,7 +510,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1213877520404">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877520405">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877520405">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877520406">
                   <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1213877520407" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1213877520408">

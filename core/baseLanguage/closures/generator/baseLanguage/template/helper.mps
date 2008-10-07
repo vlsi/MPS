@@ -12,7 +12,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.transformation.TLBase.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.transformation.TLBase.structure)" version="1" />
@@ -6647,7 +6647,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1203337463967">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227934013">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227934013">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203337466704">
                   <link role="variableDeclaration" targetNodeId="1203244633040" resolveInfo="target" />
                 </node>
@@ -7341,7 +7341,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1203686053372">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203686061156">
+                          <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203686061156">
                             <link role="variableDeclaration" targetNodeId="1203685693442" resolveInfo="cls" />
                           </node>
                         </node>

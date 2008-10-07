@@ -5,15 +5,12 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.transformation.TLBase.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
@@ -260,7 +257,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1205436517312">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205436522205" />
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205436522205" />
             </node>
           </node>
         </node>
@@ -280,7 +277,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1205441586499">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205441589048" />
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205441589048" />
             </node>
           </node>
         </node>
@@ -302,7 +299,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1205441677369">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1205441683292">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1205441683292">
                 <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1205441685624">
                   <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1205441685625">
                     <link role="concept" targetNodeId="2.1088761943574" resolveInfo="ReferenceMacro" />
@@ -869,7 +866,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1206057566581">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206057571802">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206057571802">
                 <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1206057594648">
                   <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206057594649">
                     <link role="concept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
@@ -890,7 +887,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1206057902486">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206057906207">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1206057906207">
                 <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1206057909021">
                   <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1206057909022">
                     <link role="concept" targetNodeId="4.1068580123165" resolveInfo="InstanceMethodDeclaration" />

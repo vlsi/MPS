@@ -22,7 +22,7 @@ public class typeof_PropertyRefQualifier_InferenceRule extends AbstractInference
     if (op == null || propAAQ == null) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(nodeToCheck, "not expected here", "r:c0ec52f5-cc93-4e4f-a292-9eebdf706c38(jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0)", "1222776164285", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(nodeToCheck, "not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.bootstrap.smodelLanguage.helgins)", "1204909225630", intentionProvider);
       }
       return;
     }

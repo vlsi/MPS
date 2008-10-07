@@ -9,18 +9,11 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.bootstrap.sharedConcepts)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.bootstrap.editorLanguage)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.bootstrap.intentionsLanguage)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
-  <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.bootstrap.sharedConcepts)" />
-  <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.bootstrap.editorLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.bootstrap.intentionsLanguage.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
@@ -142,7 +135,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1193396861585">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227845260">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227845260">
                 <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1193396867840" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1193396869466">
                   <link role="link" targetNodeId="2.1154032183016" />
@@ -162,7 +155,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1193396918279">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227852965">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227852965">
                 <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1193396919536" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1193396946723">
                   <link role="link" targetNodeId="1.1153944424730" />
@@ -243,7 +236,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1193397470227">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193397770170">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193397770170">
                 <link role="variableDeclaration" targetNodeId="1193397770168" resolveInfo="type" />
               </node>
             </node>
@@ -270,7 +263,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1193397315664">
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193397321490">
+                  <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193397321490">
                     <link role="variableDeclaration" targetNodeId="1193397029397" resolveInfo="newVariable" />
                   </node>
                 </node>
@@ -389,7 +382,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1204742085513">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204742088551">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204742088551">
                 <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1204742087725" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1204742110533">
                   <link role="conceptMethodDeclaration" targetNodeId="23.1213877497463" resolveInfo="getLeft" />
@@ -455,7 +448,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1204742575947">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204742610315">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204742610315">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204742579941">
                   <node role="operand" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1204742578799" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1204742584704">
@@ -528,7 +521,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1204742535593">
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204742539091">
+                  <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204742539091">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1204742538267">
                       <link role="variableDeclaration" targetNodeId="1204742022648" resolveInfo="forEachStatement" />
                     </node>
@@ -653,7 +646,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1207757578073">
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207757582279">
+                  <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207757582279">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207757580783">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207757580424">
                         <link role="variableDeclaration" targetNodeId="1207757536636" resolveInfo="st" />

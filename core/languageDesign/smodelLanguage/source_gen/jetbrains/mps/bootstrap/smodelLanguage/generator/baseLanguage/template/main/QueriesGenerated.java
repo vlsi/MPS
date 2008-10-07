@@ -919,7 +919,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1205440400398(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameter", true);
+    return SLinkOperations.getTarget(_context.getNode(), "linkTarget", true);
   }
 
   public static SNode sourceNodeQuery_1205440672657(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

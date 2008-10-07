@@ -61,7 +61,7 @@ public class typeof_SConceptPropertyAccess_InferenceRule extends AbstractInferen
     {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "r:c0ec52f5-cc93-4e4f-a292-9eebdf706c38(jetbrains.mps.bootstrap.smodelLanguage.helgins@3_0)", "1222776148147", intentionProvider);
+        TypeChecker.getInstance().reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.bootstrap.smodelLanguage.helgins)", "1186059822707", intentionProvider);
       }
     }
   }

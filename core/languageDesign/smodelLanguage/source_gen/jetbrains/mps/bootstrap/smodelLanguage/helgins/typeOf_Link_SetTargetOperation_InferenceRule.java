@@ -18,7 +18,7 @@ public class typeOf_Link_SetTargetOperation_InferenceRule extends AbstractInfere
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     RulesUtil.checkAppliedCorrectly_generic(op);
-    SNode parameter = SLinkOperations.getTarget(op, "parameter", true);
+    SNode parameter = SLinkOperations.getTarget(op, "linkTarget", true);
     if ((parameter != null)) {
       final SNode ExpectedType_typevar_1206101371703 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
       RulesUtil.equate_inputNodeType(op, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101371703));
