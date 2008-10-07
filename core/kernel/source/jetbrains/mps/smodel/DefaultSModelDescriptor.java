@@ -6,11 +6,9 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDecla
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.refactoring.PlayRefactoringsFlag;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import jetbrains.mps.refactoring.PlayRefactoringsFlag;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -127,7 +125,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   private void doPostLoadStuff() {
     myModelRootManager.updateAfterLoad(this);
-    LOG.assertLog(mySModel != null, "Couldn't load model \"" + getSModelReference() + "\"");
+    LOG.assertLog(mySModel != null, "Couldn't load model \"" + getSModelReference().getLongName() + "\"");
 
     updateModelWithRefactorings();
 
@@ -168,7 +166,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     int currentVersion = modelDescriptor.getVersion();
     int usedVersion = mySModel.getUsedVersion(modelDescriptor.getSModelReference());
     if (myIsTestRefactoringMode) {
-      System.err.println(this + ": current version of used model " + modelDescriptor + " is " + currentVersion + ", used version is " + usedVersion);
+      System.err.println(this + ": current version of used model " + modelDescriptor.getLongName() + " is " + currentVersion + ", used version is " + usedVersion);
     }
 
     if (currentVersion > usedVersion) {

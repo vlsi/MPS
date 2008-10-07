@@ -494,7 +494,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       getTree().setSelectionPath(treePath);
       getTree().scrollPathToVisible(treePath);
     } else {
-      LOG.warning("Couldn't select model \"" + modelDescriptor + "\" : tree node not found.");
+      LOG.warning("Couldn't select model \"" + modelDescriptor.getLongName() + "\" : tree node not found.");
     }
   }
 
@@ -507,7 +507,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
           getTree().setSelectionPath(treePath);
           getTree().scrollPathToVisible(treePath);
         } else {
-          LOG.warning("Couldn't select module \"" + module + "\" : tree node not found.");
+          LOG.warning("Couldn't select module \"" + module.getModuleFqName() + "\" : tree node not found.");
         }
       }
     });
@@ -528,7 +528,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
             MPSTreeNode moduleTreeNode = findModuleTreeNode(module);
             if (moduleTreeNode == null) {
-              LOG.error("Couldn't find tree node for module: " + module);
+              LOG.error("Couldn't find tree node for module: " + module.getModuleFqName());
               selectNode(node);
               return;
             }
@@ -566,7 +566,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     assert modelDescriptor != null;
     SModelTreeNode modelTreeNode = findSModelTreeNode(rootNode, modelDescriptor);
     if (modelTreeNode == null) {
-      LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node for model \"" + modelDescriptor.getSModelReference() + "\" not found.");
+      LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node for model \"" + modelDescriptor.getSModelReference().getLongName() + "\" not found.");
       return;
     }
     modelTreeNode.flush();
