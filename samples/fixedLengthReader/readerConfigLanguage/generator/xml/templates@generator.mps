@@ -3,7 +3,7 @@
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
-  <language namespace="823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml)" />
+  <language namespace="823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml.deprecated)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.transformation.TLBase.constraints)" version="16" />
@@ -19,9 +19,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" version="0" />
   <maxImportIndex value="5" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" version="-1" />
-  <import index="4" modelUID="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.structure)" version="-1" />
+  <import index="4" modelUID="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" version="0" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)" version="0" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1119983655225">
     <property name="name" value="MAPPING_main" />
@@ -34,15 +35,15 @@
       <property name="name" value="readerConfigClass" />
     </node>
   </node>
-  <node type="jetbrains.mps.xml.structure.Document" id="1119984020281">
+  <node type="jetbrains.mps.xml.deprecated.structure.Document" id="1119984020281">
     <property name="name" value="_reader_configuration_" />
-    <node role="rootElement" type="jetbrains.mps.xml.structure.Element" id="1119984020282">
+    <node role="rootElement" type="jetbrains.mps.xml.deprecated.structure.Element" id="1119984020282">
       <property name="name" value="ReaderConfiguration" />
-      <node role="content" type="jetbrains.mps.xml.structure.Element" id="1119984568656">
+      <node role="content" type="jetbrains.mps.xml.deprecated.structure.Element" id="1119984568656">
         <property name="name" value="Mapping" />
-        <node role="content" type="jetbrains.mps.xml.structure.Element" id="1119984791664">
+        <node role="content" type="jetbrains.mps.xml.deprecated.structure.Element" id="1119984791664">
           <property name="name" value="Field" />
-          <node role="attribute" type="jetbrains.mps.xml.structure.Attribute" id="1119984801852">
+          <node role="attribute" type="jetbrains.mps.xml.deprecated.structure.Attribute" id="1119984801852">
             <property name="value" value="_field_name_" />
             <property name="name" value="name" />
             <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1119984826775">
@@ -60,7 +61,7 @@
               </node>
             </node>
           </node>
-          <node role="attribute" type="jetbrains.mps.xml.structure.Attribute" id="1119984862276">
+          <node role="attribute" type="jetbrains.mps.xml.deprecated.structure.Attribute" id="1119984862276">
             <property name="value" value="0" />
             <property name="name" value="start" />
             <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1119984898684">
@@ -83,7 +84,7 @@
               </node>
             </node>
           </node>
-          <node role="attribute" type="jetbrains.mps.xml.structure.Attribute" id="1119984867590">
+          <node role="attribute" type="jetbrains.mps.xml.deprecated.structure.Attribute" id="1119984867590">
             <property name="value" value="0" />
             <property name="name" value="end" />
             <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1119984906326">
@@ -121,7 +122,7 @@
             </node>
           </node>
         </node>
-        <node role="attribute" type="jetbrains.mps.xml.structure.Attribute" id="1119984597891">
+        <node role="attribute" type="jetbrains.mps.xml.deprecated.structure.Attribute" id="1119984597891">
           <property name="value" value="_CODE_" />
           <property name="name" value="Code" />
           <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1119984640455">
@@ -139,7 +140,7 @@
             </node>
           </node>
         </node>
-        <node role="attribute" type="jetbrains.mps.xml.structure.Attribute" id="1119984660284">
+        <node role="attribute" type="jetbrains.mps.xml.deprecated.structure.Attribute" id="1119984660284">
           <property name="value" value="_target_class_" />
           <property name="name" value="TargetClass" />
           <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1119984700660">
