@@ -113,6 +113,10 @@ public abstract class ChooseByNameBase {
     return 30;
   }
 
+  protected void getNamePattern(String pattern) {
+
+  }
+
   /**
    * @return get tool area
    */
