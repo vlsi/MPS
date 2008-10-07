@@ -285,6 +285,8 @@ public abstract class ChooseByNameBase {
       // if too area was set, add it to hbox
       hBox.add(myToolArea);
     }
+
+    hBox.add(new JPanel());
     myTextFieldPanel.add(hBox);
 
     myHistory = new ArrayList<Pair<String, Integer>>();
