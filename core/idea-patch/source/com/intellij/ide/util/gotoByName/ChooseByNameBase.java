@@ -113,6 +113,7 @@ public abstract class ChooseByNameBase {
     return 30;
   }
 
+  //this method is needed by our obfuscator since IDEA class ChooseByNamePopup requires it
   public String getNamePattern(String pattern) {
     return "";
   }
