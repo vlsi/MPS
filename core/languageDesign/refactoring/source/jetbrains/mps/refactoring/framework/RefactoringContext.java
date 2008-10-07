@@ -315,7 +315,7 @@ public class RefactoringContext {
       Language l;
       l = SModelUtil_new.getDeclaringLanguage(node.getConceptFqName(), GlobalScope.getInstance());
       if (l == null) {
-        LOG.warning("language for node " + node.toString() + " is null; concept is " + node.getConceptFqName());
+        //todo add warning
         continue;
       }
       for (String parentConceptFQName : l.getAncestorsNames(conceptFQName)) {
