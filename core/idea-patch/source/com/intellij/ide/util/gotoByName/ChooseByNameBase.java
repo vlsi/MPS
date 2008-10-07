@@ -88,7 +88,7 @@ public abstract class ChooseByNameBase {
   private CalcElementsThread myCalcElementsThread;
   private static int VISIBLE_LIST_SIZE_LIMIT = 10;
   private static final int MAXIMUM_LIST_SIZE_LIMIT = 30;
-  private int myMaximumListSizeLimit = MAXIMUM_LIST_SIZE_LIMIT;
+  protected int myMaximumListSizeLimit = MAXIMUM_LIST_SIZE_LIMIT;
   @NonNls
   private static final String NOT_FOUND_IN_PROJECT_CARD = "syslib";
   @NonNls
