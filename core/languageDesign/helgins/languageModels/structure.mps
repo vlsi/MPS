@@ -1476,5 +1476,14 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1223381117053">
+    <property name="name" value="Processed" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration" id="1223381132288">
+    <property name="role" value="processed" />
+    <link role="source" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <link role="target" targetNodeId="1223381117053" resolveInfo="Processed" />
+  </node>
 </model>
 

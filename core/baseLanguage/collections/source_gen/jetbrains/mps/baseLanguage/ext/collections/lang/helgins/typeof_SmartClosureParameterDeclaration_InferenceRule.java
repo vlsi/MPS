@@ -67,8 +67,8 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
             // attempt to resolve type using static method call with type parameters
             // code copied from typeOf_BaseMethodCall
             Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();
-            RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(bmc, SLinkOperations.getTarget(SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false), "returnType", true), mmap);
-            RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
+            RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, bmc, SLinkOperations.getTarget(SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false), "returnType", true), mmap);
+            RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
             List<SNode> vars = new ArrayList<SNode>();
             vars.addAll(mmap.keySet());
             List<SNode> actualTypes = new ArrayList<SNode>();

@@ -56,9 +56,9 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
 
         public void run() {
           Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();
-          RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(creator, null, mmap);
-          RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(methodClassifier, TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1212781606045), mmap);
-          RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(mmap);
+          RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, creator, null, mmap);
+          RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1212781606045), mmap);
+          RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
         }
 
       }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1212781606052");

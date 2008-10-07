@@ -88,7 +88,6 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
       }
       messages.add(message);
     }
-
     return messages;
   }
 

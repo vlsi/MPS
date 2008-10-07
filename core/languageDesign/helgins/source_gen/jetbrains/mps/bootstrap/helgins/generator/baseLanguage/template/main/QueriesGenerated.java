@@ -13,10 +13,11 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.genUtil.HelginsGenUtil;
+import jetbrains.mps.smodel.AttributesRolesUtil;
+import java.util.List;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import java.util.List;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SearchScopeOperations;
@@ -40,6 +41,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule;
 import jetbrains.mps.bootstrap.helgins.structure.InequationReplacementRule;
+import jetbrains.mps.generator.template.MappingScriptContext;
 
 public class QueriesGenerated {
 
@@ -239,6 +241,36 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1220519791975(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return !(HelginsGenUtil.isInCheckEquation(_context.getNode()));
+  }
+
+  public static boolean baseMappingRule_Condition_1223379424268(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    /*
+      if ((SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("processed"), true) != null)) {
+        return false;
+      }
+      List<SNode> annotationInstances = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "annotation", true);
+      for(SNode annotationInstance : annotationInstances) {
+        if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new QuotationClass_2().createNode(), "classifier", false)) {
+          return true;
+        }
+      }
+    */
+    return false;
+  }
+
+  public static boolean baseMappingRule_Condition_1223379447210(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    /*
+      if ((SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("processed"), true) != null)) {
+        return false;
+      }
+      List<SNode> annotationInstances = SLinkOperations.getTargets(_context.getNode(), "annotation", true);
+      for(SNode annotationInstance : annotationInstances) {
+        if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new QuotationClass_3().createNode(), "classifier", false)) {
+          return true;
+        }
+      }
+    */
+    return false;
   }
 
   public static Object propertyMacro_GetPropertyValue_1174643589864(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -808,15 +840,15 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1175002064909(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode clt;
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.InferenceRule")) {
-      return SLinkOperations.getTarget(new QuotationClass_2().createNode(_context.getOutputModel()), "classifier", false);
-    }
-    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule")) {
-      return SLinkOperations.getTarget(new QuotationClass_3().createNode(_context.getOutputModel()), "classifier", false);
-    }
-    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule")) {
       return SLinkOperations.getTarget(new QuotationClass_4().createNode(_context.getOutputModel()), "classifier", false);
     }
-    return SLinkOperations.getTarget(new QuotationClass_5().createNode(_context.getOutputModel()), "classifier", false);
+    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule")) {
+      return SLinkOperations.getTarget(new QuotationClass_5().createNode(_context.getOutputModel()), "classifier", false);
+    }
+    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule")) {
+      return SLinkOperations.getTarget(new QuotationClass_6().createNode(_context.getOutputModel()), "classifier", false);
+    }
+    return SLinkOperations.getTarget(new QuotationClass_7().createNode(_context.getOutputModel()), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_1175249167916(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1045,12 +1077,12 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1222182391879(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.SubtypingRule")) {
-      return SLinkOperations.getTarget(new QuotationClass_6().createNode(), "classifier", false);
+      return SLinkOperations.getTarget(new QuotationClass_8().createNode(), "classifier", false);
     }
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
-      return SLinkOperations.getTarget(new QuotationClass_7().createNode(), "classifier", false);
+      return SLinkOperations.getTarget(new QuotationClass_9().createNode(), "classifier", false);
     }
-    return SLinkOperations.getTarget(new QuotationClass_8().createNode(), "classifier", false);
+    return SLinkOperations.getTarget(new QuotationClass_10().createNode(), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_1223044000311(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1811,6 +1843,20 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "pathExpression", true);
   }
 
+  public static SNode sourceNodeQuery_1223374838180(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode methodDeclaration = SNodeOperations.copyNode(_context.getNode());
+    SLinkOperations.insertChildFirst(methodDeclaration, "parameter", new QuotationClass_11().createNode());
+    SLinkOperations.setNewChild(methodDeclaration, AttributesRolesUtil.childRoleFromAttributeRole("processed"), "jetbrains.mps.bootstrap.helgins.structure.Processed");
+    return methodDeclaration;
+  }
+
+  public static SNode sourceNodeQuery_1223378950940(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode methodCall = SNodeOperations.copyNode(_context.getNode());
+    SLinkOperations.insertChildFirst(methodCall, "actualArgument", new QuotationClass_12().createNode());
+    SLinkOperations.setNewChild(methodCall, AttributesRolesUtil.childRoleFromAttributeRole("processed"), "jetbrains.mps.bootstrap.helgins.structure.Processed");
+    return methodCall;
+  }
+
   public static Iterable sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "judgement", true);
   }
@@ -1952,6 +1998,36 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1216206633159(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "actualArgument", true);
+  }
+
+  public static void mappingScript_CodeBlock_1223389174474(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for(SNode methodCall : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+      SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
+      boolean toProcess = false;
+      List<SNode> annotationInstances = SLinkOperations.getTargets(baseMethodDeclaration, "annotation", true);
+      for(SNode annotationInstance : annotationInstances) {
+        if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new QuotationClass_13().createNode(), "classifier", false)) {
+          toProcess = true;
+          break;
+        }
+      }
+      if (toProcess) {
+        SLinkOperations.insertChildFirst(methodCall, "actualArgument", new QuotationClass_14().createNode());
+      }
+    }
+    for(SNode baseMethodDeclaration : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      boolean toProcess = false;
+      List<SNode> annotationInstances = SLinkOperations.getTargets(baseMethodDeclaration, "annotation", true);
+      for(SNode annotationInstance : annotationInstances) {
+        if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new QuotationClass_15().createNode(), "classifier", false)) {
+          toProcess = true;
+          break;
+        }
+      }
+      if (toProcess) {
+        SLinkOperations.insertChildFirst(baseMethodDeclaration, "parameter", new QuotationClass_16().createNode());
+      }
+    }
   }
 
 }
