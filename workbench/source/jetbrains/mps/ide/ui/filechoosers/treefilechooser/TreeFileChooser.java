@@ -1,11 +1,16 @@
 package jetbrains.mps.ide.ui.filechoosers.treefilechooser;
 
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.fileChooser.FileChooserDialog;
+import com.intellij.openapi.fileChooser.FileChooserFactory;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
@@ -53,11 +58,35 @@ public class TreeFileChooser {
   public IFile showDialog(Frame owner) {
     if (owner == null) owner = JOptionPane.getRootFrame();
     setAdditionalModeFilter(myMode);
-    TreeFileChooserDialog dialog = new TreeFileChooserDialog(owner, myMode, myFileFilter, myContext, ourInitialSelectedFile);
-    dialog.setVisible(true);
+
     IFile res = null;
-    if (!dialog.isCancelled()) {
-      res = dialog.getSelectedFile();
+
+    if (UseIdeaFileChooser.useIdeaFileChooser()) {
+      FileChooserDescriptor descriptor = new FileChooserDescriptor(myMode != MODE_DIRECTORIES, myMode != MODE_FILES, true, true, false, false) {
+        public boolean isFileVisible(VirtualFile file, boolean showHiddenFiles) {
+          if (!super.isFileVisible(file, showHiddenFiles)) return false;
+          return myFileFilter.accept(new FileSystemFile(file.getUrl()));
+        }
+      };
+      descriptor.setTitle("Select File");
+      descriptor.setShowFileSystemRoots(true);
+
+      FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, owner);
+
+      VirtualFile selection = LocalFileSystem.getInstance().findFileByIoFile(ourInitialSelectedFile.toFile());
+      VirtualFile[] files = dialog.choose(selection, null);
+      if (files.length == 0) {
+        res = null;
+      } else {
+        res = new FileSystemFile(files[0].getUrl());
+      }
+    } else {
+      TreeFileChooserDialog dialog = new TreeFileChooserDialog(owner, myMode, myFileFilter, myContext, ourInitialSelectedFile);
+      dialog.setVisible(true);
+
+      if (!dialog.isCancelled()) {
+        res = dialog.getSelectedFile();
+      }
     }
     if (res != null) ourInitialSelectedFile = res;
     return res;
