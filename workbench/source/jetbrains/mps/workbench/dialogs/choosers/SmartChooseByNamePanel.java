@@ -19,7 +19,10 @@ public class SmartChooseByNamePanel extends ChooseByNameBase {
 
   public SmartChooseByNamePanel(ChooseByNameModel model) {
     super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, "", new FakePsiContext());
-    myMaximumListSizeLimit = 500;
+  }
+
+  protected int getVisibleItemsCount() {
+    return 500;
   }
 
   protected void initUI(Callback callback, ModalityState modalityState, boolean allowMultipleSelection) {

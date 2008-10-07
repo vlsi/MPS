@@ -87,8 +87,7 @@ public abstract class ChooseByNameBase {
   private final String[][] myNames = new String[2][];
   private CalcElementsThread myCalcElementsThread;
   private static int VISIBLE_LIST_SIZE_LIMIT = 10;
-  private static final int MAXIMUM_LIST_SIZE_LIMIT = 30;
-  protected int myMaximumListSizeLimit = MAXIMUM_LIST_SIZE_LIMIT;
+  protected int myMaximumListSizeLimit = getVisibleItemsCount();
   @NonNls
   private static final String NOT_FOUND_IN_PROJECT_CARD = "syslib";
   @NonNls
@@ -108,6 +107,10 @@ public abstract class ChooseByNameBase {
     myModel = model;
     myInitialText = initialText;
     myContext = new WeakReference<PsiElement>(context);
+  }
+
+  protected int getVisibleItemsCount() {
+    return 30;
   }
 
   /**
@@ -360,7 +363,7 @@ public abstract class ChooseByNameBase {
             break;
           case KeyEvent.VK_ENTER:
             if (myList.getSelectedValue() == EXTRA_ELEM) {
-              myMaximumListSizeLimit += MAXIMUM_LIST_SIZE_LIMIT;
+              myMaximumListSizeLimit += getVisibleItemsCount();
               rebuildList(myList.getSelectedIndex(), REBUILD_DELAY, null, ModalityState.current());
               e.consume();
             }
@@ -388,7 +391,7 @@ public abstract class ChooseByNameBase {
 
         if (e.getClickCount() == 2) {
           if (myList.getSelectedValue() == EXTRA_ELEM) {
-            myMaximumListSizeLimit += MAXIMUM_LIST_SIZE_LIMIT;
+            myMaximumListSizeLimit += getVisibleItemsCount();
             rebuildList(myList.getSelectedIndex(), REBUILD_DELAY, null, ModalityState.current());
             e.consume();
           } else {
