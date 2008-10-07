@@ -970,7 +970,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" filepath="$PROJECT_DIR$/core/languageDesign/core/jetbrains.mps.core.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/kernel.iml" filepath="$PROJECT_DIR$/core/kernel/kernel.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/lair1/lair1.iml" filepath="$PROJECT_DIR$/app/mf/lair1/lair1.iml" group="app/mf" />
-      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/logging/logging.iml" filepath="$PROJECT_DIR$/platform/webr/languages/logging/logging.iml" group="platform" />
+      <module fileurl="file://$PROJECT_DIR$/platform/logging/logging.iml" filepath="$PROJECT_DIR$/platform/logging/logging.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/money.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/money.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" filepath="$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" group="core/languageDesign" />
@@ -1004,6 +1004,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" filepath="$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" group="platform/web-query" />
       <module fileurl="file://$PROJECT_DIR$/platform/wizards/wizards.iml" filepath="$PROJECT_DIR$/platform/wizards/wizards.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/workbench/workbench.iml" filepath="$PROJECT_DIR$/workbench/workbench.iml" group="workbench" />
+      <module fileurl="file://$PROJECT_DIR$/platform/xmlDeprecated/xmlDeprecated.iml" filepath="$PROJECT_DIR$/platform/xmlDeprecated/xmlDeprecated.iml" group="platform" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK">

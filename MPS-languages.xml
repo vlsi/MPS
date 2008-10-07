@@ -1228,15 +1228,15 @@
   <target name="pack.webr.logging">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.tmp/module" />
-    <mkdir dir="platform/webr/languages/logging/classes_gen" />
+    <mkdir dir="platform/logging/classes_gen" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.tmp/module">
-      <fileset file="platform/webr/languages/logging/logging.mpl" />
+      <fileset file="platform/logging/logging.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.tmp/module">
-      <fileset dir="platform/webr/languages/logging" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="platform/logging" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.tmp">
-      <fileset dir="platform/webr/languages/logging/classes_gen" />
+      <fileset dir="platform/logging/classes_gen" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.logging.tmp" />
@@ -1246,15 +1246,15 @@
   <target name="pack.webr.xml">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.tmp/module" />
-    <mkdir dir="platform/webr/languages/xml/classes_gen" />
+    <mkdir dir="platform/xml/xml/classes_gen" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.tmp/module">
-      <fileset file="platform/webr/languages/xml/xml.mpl" />
+      <fileset file="platform/xml/xml/xml.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.tmp/module">
-      <fileset dir="platform/webr/languages/xml" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="platform/xml/xml" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.tmp">
-      <fileset dir="platform/webr/languages/xml/classes_gen" />
+      <fileset dir="platform/xml/xml/classes_gen" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xml.tmp" />
@@ -1284,15 +1284,15 @@
   <target name="pack.webr.xmlInternal">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.tmp/module" />
-    <mkdir dir="platform/webr/languages/xmlInternal/classes_gen" />
+    <mkdir dir="platform/xml/xmlInternal/classes_gen" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.tmp/module">
-      <fileset file="platform/webr/languages/xmlInternal/xmlInternal.mpl" />
+      <fileset file="platform/xml/xmlInternal/xmlInternal.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.tmp/module">
-      <fileset dir="platform/webr/languages/xmlInternal" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="platform/xml/xmlInternal" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.tmp">
-      <fileset dir="platform/webr/languages/xmlInternal/classes_gen" />
+      <fileset dir="platform/xml/xmlInternal/classes_gen" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlInternal.tmp" />
@@ -1302,15 +1302,15 @@
   <target name="pack.webr.xmlSchema">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.tmp/module" />
-    <mkdir dir="platform/webr/languages/xmlSchema/classes_gen" />
+    <mkdir dir="platform/xml/xmlSchema/classes_gen" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.tmp/module">
-      <fileset file="platform/webr/languages/xmlSchema/xmlSchema.mpl" />
+      <fileset file="platform/xml/xmlSchema/xmlSchema.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.tmp/module">
-      <fileset dir="platform/webr/languages/xmlSchema" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="platform/xml/xmlSchema" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.tmp">
-      <fileset dir="platform/webr/languages/xmlSchema/classes_gen" />
+      <fileset dir="platform/xml/xmlSchema/classes_gen" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform/webr.xmlSchema.tmp" />
