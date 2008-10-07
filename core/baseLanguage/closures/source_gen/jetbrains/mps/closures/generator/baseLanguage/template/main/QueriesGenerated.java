@@ -1240,7 +1240,7 @@ public class QueriesGenerated {
     int idx = 1;
     List<SNode> res = new ArrayList<SNode>();
     for(SNode pdecls : SLinkOperations.getTargets(mds.get(0), "parameter", true)) {
-      SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null);
+      SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference", null);
       SPropertyOperations.set(ref, "name", "param" + idx);
       idx = idx + 1;
       res.add(ref);
@@ -1751,15 +1751,15 @@ public class QueriesGenerated {
               if (SNodeOperations.isInstanceOf(thisCC, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
                 SNode parent = SNodeOperations.getParent(te);
                 if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.FieldReference")) {
-                  SNode ifr = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference");
-                  SLinkOperations.setNewChild(ifr, "instance", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression");
+                  SNode ifr = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguage.internal.structure.InternalPartialFieldReference");
+                  SLinkOperations.setNewChild(ifr, "instance", "jetbrains.mps.baseLanguage.internal.structure.InternalThisExpression");
                   SPropertyOperations.set(ifr, "fieldName", SPropertyOperations.getString(SLinkOperations.getTarget(parent, "variableDeclaration", false), "name"));
                 } else
                 if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
                   SNode op = SLinkOperations.getTarget(parent, "operation", true);
                   if (SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {
-                    SNode ifr = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference");
-                    SLinkOperations.setNewChild(ifr, "instance", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression");
+                    SNode ifr = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguage.internal.structure.InternalPartialFieldReference");
+                    SLinkOperations.setNewChild(ifr, "instance", "jetbrains.mps.baseLanguage.internal.structure.InternalThisExpression");
                     SPropertyOperations.set(ifr, "fieldName", SPropertyOperations.getString(SLinkOperations.getTarget(op, "fieldDeclaration", false), "name"));
                   } else
                   if (SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
