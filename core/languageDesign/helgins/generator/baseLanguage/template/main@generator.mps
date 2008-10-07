@@ -15622,7 +15622,10 @@
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_InsertChildFirstOperation" id="1223389577949">
                       <node role="parameter" type="jetbrains.mps.quotation.structure.Quotation" id="1223389582373">
                         <node role="quotedNode" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1223392622905">
-                          <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1223392622906" />
+                          <property name="name" value="typeCheckingContext" />
+                          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223393867216">
+                            <link role="classifier" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
+                          </node>
                         </node>
                       </node>
                     </node>
