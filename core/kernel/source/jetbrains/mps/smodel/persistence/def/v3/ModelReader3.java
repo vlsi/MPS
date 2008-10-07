@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import org.jdom.Element;
 import org.jdom.Document;
 import org.jetbrains.annotations.Nullable;
@@ -153,6 +154,10 @@ public class ModelReader3 implements IModelReader {
 
       }
     }
+
+    RefactoringHistory history = new RefactoringHistory();
+    model.setRefactoringHistory(history);
+    history.fromElement(rootElement.getChild(RefactoringHistory.REFACTORING_HISTORY));
 
     // nodes
     List children = rootElement.getChildren(ModelPersistence.NODE);

@@ -1233,6 +1233,10 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  public void setRefactoringHistory(RefactoringHistory refactoringHistory) {
+    myRefactoringHistory = new RefactoringHistory();
+  }
+
   /*package*/
   public static class ImportElement {
     private SModelReference myModelDescriptor;
