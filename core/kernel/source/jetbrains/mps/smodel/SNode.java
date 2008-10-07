@@ -1289,7 +1289,7 @@ public final class SNode {
       //e.printStackTrace();
       nameText = "<??name??>";
     }
-    return roleText + " " + NameUtil.shortNameFromLongName(getConceptShortName()) + " " + nameText + " in " + myModel.getSModelReference();
+    return roleText + " " + NameUtil.shortNameFromLongName(getConceptShortName()) + " " + nameText + " in " + myModel.getSModelFqName();
   }
 
   public boolean hasId() {

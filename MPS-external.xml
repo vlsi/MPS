@@ -248,7 +248,7 @@
     <antcall target="pack.jetbrains.mps.baseLanguage" />
     <antcall target="pack.jetbrains.mps.baseLanguage.strings" />
     <antcall target="pack.MPS.Classpath" />
-    <antcall target="pack.refactoring" />
+    <antcall target="pack.jetbrains.mps.baseLanguage.refactoring" />
     <antcall target="pack.jetbrains.mps.baseLanguage.classifiers" />
     <antcall target="pack.jetbrains.mps.baseLanguage.unitTest" />
     <antcall target="pack.jetbrains.mps.baseLanguage.unitTest.runtime" />
