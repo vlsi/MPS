@@ -9,7 +9,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.patterns)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.transformation.TLBase.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.transformation.TLBase.structure)" version="1" />
@@ -35,6 +35,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.bootstrap.editorLanguage.structure)" version="26" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <maxImportIndex value="35" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.logging.refactoring.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -511,7 +512,7 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199462152347">
-          <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1199462192035">
+          <node role="expression" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1199462192035">
             <property name="methodName" value="getKeyStroke_static" />
             <property name="fqClassName" value="overridenRefactoringClassFQName" />
             <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199464553526">
@@ -732,7 +733,7 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199464052274">
-                <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1199464064652">
+                <node role="expression" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1199464064652">
                   <property name="methodName" value="isApplicableWRTConcept_static" />
                   <property name="fqClassName" value="overridenRefactoringClassFQName" />
                   <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1199464561558" />
@@ -1401,7 +1402,7 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199468168865">
-          <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1199468168866">
+          <node role="expression" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1199468168866">
             <property name="methodName" value="getClass_static" />
             <property name="fqClassName" value="overridenRefactoringClassFQName" />
             <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199468179948">

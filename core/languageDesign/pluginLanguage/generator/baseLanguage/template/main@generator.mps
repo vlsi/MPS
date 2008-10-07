@@ -7,7 +7,7 @@
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)" />
@@ -31,6 +31,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.bootstrap.pluginLanguage.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <maxImportIndex value="84" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.bootstrap.pluginLanguage.structure)" version="14" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -966,7 +967,7 @@
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1220623961268">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1220623961269" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1220623961270">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialFieldReference" id="1220623961270">
                   <property name="fieldName" value="nodeField" />
                   <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220623961271">
                     <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
@@ -1080,7 +1081,7 @@
                     </node>
                   </node>
                 </node>
-                <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1220623961315">
+                <node role="lValue" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialFieldReference" id="1220623961315">
                   <property name="fieldName" value="nodeField" />
                   <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220623961316">
                     <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
@@ -1119,7 +1120,7 @@
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1220623961330">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1220623961331" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1220623961332">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialFieldReference" id="1220623961332">
                   <property name="fieldName" value="nodeField" />
                   <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220623961333">
                     <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
@@ -1752,7 +1753,7 @@
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213287558153">
                       <link role="classConcept" targetNodeId="63.~ActionUtils" resolveInfo="ActionUtils" />
                       <link role="baseMethodDeclaration" targetNodeId="63.~ActionUtils.getGroup(java.lang.String):jetbrains.mps.workbench.action.BaseGroup" resolveInfo="getGroup" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference" id="1215001715274">
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticFieldReference" id="1215001715274">
                         <property name="fieldName" value="ID" />
                         <property name="fqClassName" value="ClassName" />
                         <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1215001715275">
@@ -1978,7 +1979,7 @@
                         <node role="alternativeConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1215001979940">
                           <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215001985505">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215001985506">
-                              <node role="rValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference" id="1215001985507">
+                              <node role="rValue" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticFieldReference" id="1215001985507">
                                 <property name="fqClassName" value="ToGroup" />
                                 <property name="fieldName" value="field" />
                                 <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1215001985508">
@@ -2292,7 +2293,7 @@
                         <link role="classifier" targetNodeId="61.~Anchor" resolveInfo="Anchor" />
                         <link role="variableDeclaration" targetNodeId="61.~Anchor.AFTER" resolveInfo="AFTER" />
                       </node>
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference" id="1213291647589">
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticFieldReference" id="1213291647589">
                         <property name="fqClassName" value="OuterName" />
                         <property name="fieldName" value="INTERNAL_LABEL_ID" />
                         <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1213291647590">
@@ -2611,7 +2612,7 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1213291020630" />
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213291020631">
                       <link role="baseMethodDeclaration" targetNodeId="63.~BaseGroup.addAnchor(java.lang.String):void" resolveInfo="addAnchor" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference" id="1217516334467">
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticFieldReference" id="1217516334467">
                         <property name="fqClassName" value="this" />
                         <property name="fieldName" value="LABEL_ID" />
                         <node role="propertyMacro$property_attribute$fieldName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1217516334468">
@@ -2684,7 +2685,7 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1213291020666" />
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213291020667">
                       <link role="baseMethodDeclaration" targetNodeId="63.~BaseGroup.addAnchor(java.lang.String):void" resolveInfo="addAnchor" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference" id="1217516373284">
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticFieldReference" id="1217516373284">
                         <property name="fqClassName" value="this" />
                         <property name="fieldName" value="INTERNAL_LABEL_ID" />
                         <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1217516373285">
@@ -5281,7 +5282,7 @@
         </node>
       </node>
       <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1217435519363">
-        <node role="templateNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1217435551905">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1217435551905">
           <property name="name" value="super" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217435568443">
             <link role="classifier" targetNodeId="59.~BaseTool" resolveInfo="BaseTool" />
@@ -5543,7 +5544,7 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205855778762" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205855778763">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205856778776">
-            <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall" id="1205856778777">
+            <node role="expression" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialInstanceMethodCall" id="1205856778777">
               <property name="methodName" value="methodName" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205856835803">
                 <property name="value" value="0" />
@@ -5603,7 +5604,7 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206093513481" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206093513482">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206093513483">
-            <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1206093513484">
+            <node role="expression" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialFieldReference" id="1206093513484">
               <property name="fieldName" value="fieldName" />
               <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1206093513500" />
               <node role="propertyMacro$property_attribute$fieldName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1206093513501">
@@ -5886,7 +5887,7 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207497757057">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1207497764742">
                       <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207497766448" />
-                      <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1207497757324">
+                      <node role="lValue" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialFieldReference" id="1207497757324">
                         <property name="fieldName" value="nodeField" />
                         <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1207497757325" />
                         <node role="propertyMacro$property_attribute$fieldName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1207497757326">
@@ -5928,7 +5929,7 @@
                   <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207497745600">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207497749665">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1207497749666">
-                        <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1207497749667">
+                        <node role="lValue" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialFieldReference" id="1207497749667">
                           <property name="fieldName" value="nodeField" />
                           <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1207497749668" />
                           <node role="propertyMacro$property_attribute$fieldName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1207497749669">
@@ -6107,7 +6108,7 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206097752218">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1206097752219">
-                  <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1206097752220">
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialFieldReference" id="1206097752220">
                     <property name="fieldName" value="nodeField" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1206097752221" />
                     <node role="propertyMacro$property_attribute$fieldName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1206097752223">
@@ -6191,7 +6192,7 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206185427679">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1213872850722">
-                  <node role="lValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1206185427681">
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialFieldReference" id="1206185427681">
                     <property name="fieldName" value="nodeField" />
                     <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206185427682">
                       <link role="classifier" targetNodeId="24.~SModel" resolveInfo="SModel" />
@@ -7763,7 +7764,7 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1214003389766" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214003389767">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214003404585">
-            <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1214003404586">
+            <node role="expression" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialFieldReference" id="1214003404586">
               <property name="fieldName" value="abc" />
               <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1214003404587" />
               <node role="propertyMacro$property_attribute$fieldName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1214003418901">
@@ -8084,7 +8085,7 @@
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218031829512">
                       <link role="classConcept" targetNodeId="63.~ActionUtils" resolveInfo="ActionUtils" />
                       <link role="baseMethodDeclaration" targetNodeId="63.~ActionUtils.getGroup(java.lang.String):jetbrains.mps.workbench.action.BaseGroup" resolveInfo="getGroup" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference" id="1218031829513">
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticFieldReference" id="1218031829513">
                         <property name="fieldName" value="ID" />
                         <property name="fqClassName" value="ClassName" />
                         <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1218031829514">
@@ -8284,7 +8285,7 @@
                         <node role="alternativeConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1218031829604">
                           <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218031829605">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1218031829606">
-                              <node role="rValue" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference" id="1218031829607">
+                              <node role="rValue" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticFieldReference" id="1218031829607">
                                 <property name="fqClassName" value="ToGroup" />
                                 <property name="fieldName" value="field" />
                                 <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1218031829608">
@@ -8946,7 +8947,7 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217256933281" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217256933282">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217256933283">
-            <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1217256933284">
+            <node role="expression" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialFieldReference" id="1217256933284">
               <property name="fieldName" value="fieldName" />
               <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1217256933285" />
               <node role="propertyMacro$property_attribute$fieldName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1217256933286">

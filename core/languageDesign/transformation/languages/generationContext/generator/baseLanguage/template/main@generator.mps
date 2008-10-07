@@ -8,7 +8,7 @@
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.bootstrap.sharedConcepts)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.transformation.TLBase.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.transformation.TLBase.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -21,6 +21,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <maxImportIndex value="9" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.transformation.generationContext.structure)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
@@ -484,7 +485,7 @@
                 </node>
               </node>
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1221220128908">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1221220128908">
               <property name="name" value="operationContext" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221220273392">
                 <link role="classifier" targetNodeId="9.~IOperationContext" resolveInfo="IOperationContext" />

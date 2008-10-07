@@ -5,7 +5,7 @@
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)" />
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.bootstrap.actionsLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
@@ -29,6 +29,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <maxImportIndex value="31" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -41,7 +42,7 @@
   <import index="9" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps.core.structure(jetbrains.mps.core.structure@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
-  <import index="14" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="-1" />
+  <import index="14" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c895902aa(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.util)" version="-1" />
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" version="-1" />
@@ -223,7 +224,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1177415428893">
       <link role="applicableConcept" targetNodeId="4.1177414026667" />
       <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1181735906538">
-        <node role="templateNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1181735942638">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1181735942638">
           <property name="name" value="concept" />
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1181735948535" />
         </node>
@@ -304,7 +305,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1203349219715">
       <link role="applicableConcept" targetNodeId="4.1203348041101" resolveInfo="RightTransformVariableReference" />
       <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1203349226233">
-        <node role="templateNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1203349242157">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1203349242157">
           <property name="name" value="name" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1203349242158" />
           <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1203349256425">
@@ -1742,7 +1743,7 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177357360382">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177357388281">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1177357391233">
-              <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1203011466554">
+              <node role="expression" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1203011466554">
                 <property name="name" value="item" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1203011466555" />
               </node>
@@ -4423,7 +4424,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1210018107217">
       <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210018107218">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210018108531">
-          <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1210018108532">
+          <node role="expression" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1210018108532">
             <property name="name" value="name" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210018108533">
               <link role="classifier" targetNodeId="9.~Object" resolveInfo="Object" />

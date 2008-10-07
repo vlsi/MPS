@@ -15,7 +15,7 @@
         <generator generatorUID="857d0a79-6f44-4f46-84ed-9c5b42632011(jetbrains.mps.closures#1199623535494)" />
       </external-templates>
       <usedLanguages>
-        <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
+        <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">
@@ -118,7 +118,7 @@
     <dependency reexport="false">562bb5cb-73ce-4c74-a5e5-9f72731d9ac6(jetbrains.mps.internal.collections)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
+    <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)</usedLanguages>
   </usedLanguages>
   <extendedLanguages>
     <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)</extendedLanguage>

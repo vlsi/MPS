@@ -8,7 +8,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)" />
@@ -32,6 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <maxImportIndex value="20" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="12" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895905b2(jetbrains.mps.ypath.generator.baseLanguage.template.helper)" version="-1" />
@@ -41,7 +42,7 @@
   <import index="7" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="10" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="-1" />
+  <import index="10" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="14" modelUID="r:00000000-0000-4000-0000-011c895905a6(jetbrains.mps.ypath.actions)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.ypath.runtime(jetbrains.mps.ypath.runtime@java_stub)" version="-1" />
@@ -8828,7 +8829,7 @@
                         <property name="name" value="_cnt" />
                         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1197299931257" />
                         <node role="initializer" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1197299931258">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1197299931259">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1197299931259">
                             <property name="name" value="_idx" />
                             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1197299931260" />
                           </node>
@@ -8927,7 +8928,7 @@
                           <node role="range" type="jetbrains.mps.ypath.structure.IndexRange" id="1197299931336">
                             <property name="has_start" value="true" />
                             <property name="includes_start" value="true" />
-                            <node role="start" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1197299931337">
+                            <node role="start" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1197299931337">
                               <property name="name" value="_idx" />
                               <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1197299931338" />
                             </node>
@@ -9185,7 +9186,7 @@
                           <node role="range" type="jetbrains.mps.ypath.structure.IndexRange" id="1197304288683">
                             <property name="has_start" value="true" />
                             <property name="includes_start" value="true" />
-                            <node role="start" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1197304288684">
+                            <node role="start" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1197304288684">
                               <property name="name" value="_idx" />
                               <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1197304288685" />
                             </node>

@@ -33,10 +33,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packagingLanguage.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.bootstrap.editorLanguage.structure)" version="26" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.bootstrap.editorLanguage.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <maxImportIndex value="12" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packagingLanguage.structure)" version="2" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="-1" />
-  <import index="3" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="-1" />
+  <import index="3" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />

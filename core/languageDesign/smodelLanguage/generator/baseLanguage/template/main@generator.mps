@@ -9,7 +9,7 @@
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -30,6 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <maxImportIndex value="56" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter(jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter@java_stub)" version="-1" />
@@ -5299,7 +5300,7 @@
   <node type="jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration" id="1179411798670">
     <property name="name" value="reduce_ConceptMethodCall_NonVirtual" />
     <link role="applicableConcept" targetNodeId="6.1179409122411" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1179411963747">
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1179411963747">
       <property name="methodName" value="methodName" />
       <property name="fqClassName" value="ConceptName_Behavior" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1179412264958">
@@ -5421,7 +5422,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1179412539351">
       <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179412539352">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1179412613212">
-          <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1183618936163">
+          <node role="expression" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1183618936163">
             <property name="fqClassName" value="ConceptName_Behavior" />
             <property name="methodName" value="methodName" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1183618936164">
@@ -6381,7 +6382,7 @@
   <node type="jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration" id="1206021199576">
     <property name="name" value="reduce_StaticConceptMethodCall" />
     <link role="applicableConcept" targetNodeId="6.1206019730951" resolveInfo="StaticConceptMethodCall" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1206021219599">
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1206021219599">
       <property name="fqClassName" value="class.name" />
       <property name="methodName" value="method_name" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1206021219600" />

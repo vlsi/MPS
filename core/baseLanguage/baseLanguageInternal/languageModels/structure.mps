@@ -1,8 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)">
   <persistence version="3" />
-  <refactoringHistory />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="InternalClassExpression" conceptFQName="jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression" featureKind="CONCEPT" />
+          <value featureName="InternalClassExpression" conceptFQName="jetbrains.mps.baseLanguage.internal.structure.InternalClassExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="InternalClassifierType" conceptFQName="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType" featureKind="CONCEPT" />
+          <value featureName="InternalClassifierType" conceptFQName="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="InternalNewExpression" conceptFQName="jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression" featureKind="CONCEPT" />
+          <value featureName="InternalNewExpression" conceptFQName="jetbrains.mps.baseLanguage.internal.structure.InternalNewExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="InternalPartialFieldReference" conceptFQName="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" featureKind="CONCEPT" />
+          <value featureName="InternalPartialFieldReference" conceptFQName="jetbrains.mps.baseLanguage.internal.structure.InternalPartialFieldReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="InternalPartialInstanceMethodCall" conceptFQName="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall" featureKind="CONCEPT" />
+          <value featureName="InternalPartialInstanceMethodCall" conceptFQName="jetbrains.mps.baseLanguage.internal.structure.InternalPartialInstanceMethodCall" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="InternalStaticFieldReference" conceptFQName="jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference" featureKind="CONCEPT" />
+          <value featureName="InternalStaticFieldReference" conceptFQName="jetbrains.mps.baseLanguage.internal.structure.InternalStaticFieldReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="InternalStaticMethodCall" conceptFQName="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" featureKind="CONCEPT" />
+          <value featureName="InternalStaticMethodCall" conceptFQName="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="InternalThisExpression" conceptFQName="jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression" featureKind="CONCEPT" />
+          <value featureName="InternalThisExpression" conceptFQName="jetbrains.mps.baseLanguage.internal.structure.InternalThisExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="InternalVariableReference" conceptFQName="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" featureKind="CONCEPT" />
+          <value featureName="InternalVariableReference" conceptFQName="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="TypeHintExpression" conceptFQName="jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression" featureKind="CONCEPT" />
+          <value featureName="TypeHintExpression" conceptFQName="jetbrains.mps.baseLanguage.internal.structure.TypeHintExpression" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
@@ -15,6 +61,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />

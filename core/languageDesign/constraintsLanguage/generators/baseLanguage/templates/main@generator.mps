@@ -7,7 +7,7 @@
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -29,6 +29,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <maxImportIndex value="34" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel.constraints(jetbrains.mps.smodel.constraints@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -2584,7 +2585,7 @@
                     </node>
                   </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1181727075712">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1181727075712">
                   <property name="name" value="name" />
                   <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1181727078961">
                     <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
@@ -2730,7 +2731,7 @@
                   </node>
                 </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1182162752925">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1182162752925">
                 <property name="name" value="name" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1182162752926">
                   <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
@@ -3030,7 +3031,7 @@
                     </node>
                   </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1193402330862">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1193402330862">
                   <property name="name" value="name" />
                   <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193402330863">
                     <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
@@ -3179,7 +3180,7 @@
                   </node>
                 </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1193402330920">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1193402330920">
                 <property name="name" value="name" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193402330921">
                   <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
