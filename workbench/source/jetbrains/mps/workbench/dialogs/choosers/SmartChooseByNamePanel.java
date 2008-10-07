@@ -31,6 +31,8 @@ public class SmartChooseByNamePanel extends ChooseByNameBase {
     myPanel.add(myTextFieldPanel, new GridBagConstraints(0, 0, 1, 1, 1, 0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
     myPanel.add(myListScrollPane, new GridBagConstraints(0, 1, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
     myPanel.add(new JPanel(), new GridBagConstraints(0, 2, 1, 1, 1, 0.001, GridBagConstraints.WEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
+
+    myTextFieldPanel.setOpaque(false);
   }
 
   public JComponent getPreferredFocusedComponent() {
@@ -38,13 +40,9 @@ public class SmartChooseByNamePanel extends ChooseByNameBase {
   }
 
   protected void showList() {
-    myListScrollPane.setVisible(true);
-    myPanel.validate();
   }
 
   protected void hideList() {
-    myListScrollPane.setVisible(false);
-    myPanel.validate();
   }
 
   protected void close(boolean isOk) {
@@ -54,7 +52,7 @@ public class SmartChooseByNamePanel extends ChooseByNameBase {
   }
 
   protected boolean isShowListForEmptyPattern() {
-    return false;
+    return true;
   }
 
   protected boolean isCloseByFocusLost() {
