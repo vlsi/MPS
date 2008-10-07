@@ -4,6 +4,7 @@ import com.intellij.ide.DataManager;
 import com.intellij.ide.dnd.aware.DnDAwareTree;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Pair;
 import com.intellij.ui.TreeToolTipHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
@@ -136,7 +137,7 @@ public abstract class MPSTree extends DnDAwareTree {
           node.keyPressed(e);
         }
         final KeyStroke eventKeyStroke = KeyStroke.getKeyStrokeForEvent(e);
-        Pair pair = new Pair(eventKeyStroke, selNode.getClass());
+        TreePair pair = new TreePair(eventKeyStroke, selNode.getClass());
         final BaseAction action = myKeyStrokesToActionsMap.get(pair);
 
         final DataContext dataContext = DataManager.getInstance().getDataContext();
@@ -303,33 +304,19 @@ public abstract class MPSTree extends DnDAwareTree {
     return null;
   }
 
-  private static class Pair {
-    KeyStroke myKeyStroke;
-    Class<? extends MPSTreeNode> myNodeClass;
-
-    public Pair(KeyStroke keyStroke, Class<? extends MPSTreeNode> nodeClass) {
-      myKeyStroke = keyStroke;
-      myNodeClass = nodeClass;
-    }
-
-    public int hashCode() {
-      return myKeyStroke.hashCode() + myNodeClass.hashCode();
-    }
-
-    public boolean equals(Object o) {
-      if (!(o instanceof Pair)) return false;
-      Pair pair = ((Pair) o);
-      return pair.myKeyStroke.equals(myKeyStroke) && pair.myNodeClass.equals(myNodeClass);
+  private static class TreePair extends Pair<KeyStroke, Class<? extends MPSTreeNode>> {
+    public TreePair(KeyStroke keyStroke, Class<? extends MPSTreeNode> nodeClass) {
+      super(keyStroke, nodeClass);
     }
   }
 
-  private HashMap<Pair, BaseAction> myKeyStrokesToActionsMap = new HashMap<Pair, BaseAction>();
+  private HashMap<TreePair, BaseAction> myKeyStrokesToActionsMap = new HashMap<TreePair, BaseAction>();
 
   public final void registerMPSAction(BaseAction action, Class<? extends MPSTreeNode> nodeClass) {
     Shortcut[] shortcuts = action.getShortcutSet().getShortcuts();
     for (Shortcut shortcut : shortcuts) {
       KeyStroke keyStroke = ((KeyboardShortcut) shortcut).getFirstKeyStroke();
-      Pair pair = new Pair(keyStroke, nodeClass);
+      TreePair pair = new TreePair(keyStroke, nodeClass);
       myKeyStrokesToActionsMap.put(pair, action);
     }
   }
