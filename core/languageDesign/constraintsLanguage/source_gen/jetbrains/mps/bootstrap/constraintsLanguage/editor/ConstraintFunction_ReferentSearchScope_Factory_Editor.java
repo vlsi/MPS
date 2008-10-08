@@ -240,7 +240,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateBoolean2342_2(cell);
+            }
+
+          });
         }
 
       };
@@ -279,7 +285,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateBoolean2342_4(cell);
+            }
+
+          });
         }
 
       };
@@ -311,7 +323,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateBoolean2342_1(cell);
+            }
+
+          });
         }
 
       };
@@ -343,7 +361,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateBoolean2342_6(cell);
+            }
+
+          });
         }
 
       };
@@ -356,7 +380,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateBoolean2342_3(cell);
+            }
+
+          });
         }
 
       };
@@ -392,7 +422,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateBoolean2342_0(cell);
+            }
+
+          });
         }
 
       };
@@ -428,7 +464,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateBoolean2342_8(cell);
+            }
+
+          });
         }
 
       };
@@ -445,7 +487,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateBoolean2342_5(cell);
+            }
+
+          });
         }
 
       };
@@ -503,7 +551,13 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstraintFunction_ReferentSearchScope_Factory_Editor.calculateBoolean2342_7(cell);
+            }
+
+          });
         }
 
       };
@@ -637,6 +691,60 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static Color calculateColor2342_2(EditorCell cell) {
     Color result;
     result = MPSColors.pink;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2342_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2342_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2342_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2342_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2342_4(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2342_5(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2342_6(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2342_7(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2342_8(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 
