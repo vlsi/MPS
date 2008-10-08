@@ -36,11 +36,12 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
     public static final int LAST_REVISION = 2;
     private final VirtualFile myFile;
 
-    protected ModelMergeRequest(String leftText, String rightText, String originalContent, VirtualFile file, Project project, ActionButtonPresentation actionButtonPresentation) {
+    protected ModelMergeRequest(String leftText, String rightText, String originalContent,@NotNull VirtualFile file, Project project, ActionButtonPresentation actionButtonPresentation) {
       super(leftText, originalContent, rightText, project, actionButtonPresentation);
       myFile = file;
     }
 
+    @NotNull
     public VirtualFile getFile() {
       return myFile;
     }
