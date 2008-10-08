@@ -7,7 +7,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.scripts.SafeDelete;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
@@ -24,6 +23,7 @@ import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 public class SafeDeleteLink extends AbstractLoggableRefactoring {
   public static final String sourceLanguage = "sourceLanguage";
@@ -51,7 +51,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration";
+    return "jetbrains.mps.lang.structure.structure.LinkDeclaration";
   }
 
   public Class getOverridenRefactoringClass() {
@@ -80,7 +80,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
 
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
     refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor()));
-    return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.LinkExamples_Finder", "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
+    return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.LinkExamples_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
   public void doRefactor(RefactoringContext refactoringContext) {
@@ -141,7 +141,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
       return true;
     } else
     {

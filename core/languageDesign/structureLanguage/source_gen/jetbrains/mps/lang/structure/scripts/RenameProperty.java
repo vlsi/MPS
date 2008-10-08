@@ -55,7 +55,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration";
+    return "jetbrains.mps.lang.structure.structure.PropertyDeclaration";
   }
 
   public Class getOverridenRefactoringClass() {
@@ -65,7 +65,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   public boolean isApplicable(RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
-      return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration");
+      return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
     }
   }
 
@@ -92,7 +92,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   public void doRefactor(RefactoringContext refactoringContext) {
     {
       SNode propertyDeclaration = (SNode)refactoringContext.getSelectedNode();
-      SNode concept = SNodeOperations.getAncestor(propertyDeclaration, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
+      SNode concept = SNodeOperations.getAncestor(propertyDeclaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
       refactoringContext.changeFeatureName(propertyDeclaration, SNodeOperations.getModel(concept) + "" + SPropertyOperations.getString(concept, "name"), ((String)refactoringContext.getParameter("newName")));
     }
   }
@@ -134,7 +134,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
 
   public String newName_initialValue(RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
-    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"))) {
       return "";
     }
     return SPropertyOperations.getString(node, "name");
@@ -176,7 +176,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.lang.structure.structure.PropertyDeclaration")) {
       return true;
     } else
     {

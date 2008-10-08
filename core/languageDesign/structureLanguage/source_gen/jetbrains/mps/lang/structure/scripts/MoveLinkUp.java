@@ -61,7 +61,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration";
+    return "jetbrains.mps.lang.structure.structure.LinkDeclaration";
   }
 
   public Class getOverridenRefactoringClass() {
@@ -71,10 +71,10 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   public boolean isApplicable(RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
-      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"))) {
+      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
         return false;
       }
-      SNode concept = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
+      SNode concept = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
       if (concept == null) {
         return false;
       }
@@ -99,7 +99,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   }
 
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
+    return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
   public void doRefactor(RefactoringContext refactoringContext) {
@@ -159,7 +159,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
 
   public IChooseComponent<SNode> targetConcept_componentCreator(RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
-    SNode abstractConceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
+    SNode abstractConceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
     return new HierarchicalChooseNodeComponent(refactoringContext.getCurrentOperationContext(), new ConceptAncestorsProvider(), abstractConceptDeclaration);
   }
 
@@ -198,7 +198,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
       return true;
     } else
     {

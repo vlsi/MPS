@@ -58,7 +58,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration";
+    return "jetbrains.mps.lang.structure.structure.LinkDeclaration";
   }
 
   public Class getOverridenRefactoringClass() {
@@ -68,7 +68,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
   public boolean isApplicable(RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
-      return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
+      return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     }
   }
 
@@ -89,13 +89,13 @@ public class RenameLink extends AbstractLoggableRefactoring {
   }
 
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.LinkExamples_Finder", "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
+    return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.LinkExamples_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
   public void doRefactor(RefactoringContext refactoringContext) {
     {
       SNode linkDeclaration = (SNode)refactoringContext.getSelectedNode();
-      SNode concept = SNodeOperations.getAncestor(linkDeclaration, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
+      SNode concept = SNodeOperations.getAncestor(linkDeclaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
       refactoringContext.changeFeatureName(linkDeclaration, SNodeOperations.getModel(concept) + "" + SPropertyOperations.getString(concept, "name"), ((String)refactoringContext.getParameter("newName")));
     }
   }
@@ -137,7 +137,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
 
   public String newName_initialValue(RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
-    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
       return "";
     }
     return SPropertyOperations.getString(node, "role");
@@ -179,7 +179,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
       return true;
     } else
     {

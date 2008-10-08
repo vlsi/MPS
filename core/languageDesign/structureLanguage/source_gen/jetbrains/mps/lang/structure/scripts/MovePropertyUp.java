@@ -58,7 +58,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration";
+    return "jetbrains.mps.lang.structure.structure.PropertyDeclaration";
   }
 
   public Class getOverridenRefactoringClass() {
@@ -68,10 +68,10 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
   public boolean isApplicable(RefactoringContext refactoringContext) {
     {
       SNode node = refactoringContext.getSelectedNode();
-      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"))) {
+      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"))) {
         return false;
       }
-      SNode concept = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
+      SNode concept = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
       if (concept == null) {
         return false;
       }
@@ -156,7 +156,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
 
   public IChooseComponent<SNode> targetConcept_componentCreator(RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
-    SNode abstractConceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
+    SNode abstractConceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
     return new HierarchicalChooseNodeComponent(refactoringContext.getCurrentOperationContext(), new ConceptAncestorsProvider(), abstractConceptDeclaration);
   }
 
@@ -195,7 +195,7 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.lang.structure.structure.PropertyDeclaration")) {
       return true;
     } else
     {
