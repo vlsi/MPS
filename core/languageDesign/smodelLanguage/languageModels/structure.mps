@@ -1400,6 +1400,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1179409132561">
       <link role="conceptPropertyDeclaration" targetNodeId="1172326539502" resolveInfo="applicable_to_concept" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1223392206007">
+      <link role="intfc" targetNodeId="2.1223390653335" resolveInfo="IRefactarableMethodCall" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1180028149140">
     <property name="name" value="Concept_IsSuperConceptOfOperation" />

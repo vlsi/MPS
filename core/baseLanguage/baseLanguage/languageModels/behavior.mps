@@ -10169,5 +10169,26 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222174362470" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1223390669633">
+    <property name="package" value="refactoring" />
+    <link role="concept" targetNodeId="1.1223390653335" resolveInfo="IMethodCall" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1223390672636">
+      <property name="name" value="getMethodCallParameters" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1223390672637" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223390922664">
+        <link role="classifier" targetNodeId="18.1223390898240" resolveInfo="MethodCallParameters" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223390672639">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223390928715">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1223390931061" />
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1223390669634">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223390669635" />
+    </node>
+  </node>
 </model>
 

@@ -2752,5 +2752,9 @@
     <property name="package" value="refactoring" />
     <property name="name" value="IStaticContainerForMethods" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1223390653335">
+    <property name="package" value="refactoring" />
+    <property name="name" value="IRefactarableMethodCall" />
+  </node>
 </model>
 
