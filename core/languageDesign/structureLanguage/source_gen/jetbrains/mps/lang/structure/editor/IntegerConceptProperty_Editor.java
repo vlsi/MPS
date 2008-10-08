@@ -120,7 +120,13 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IntegerConceptProperty_Editor.calculateBoolean9683_0(cell);
+            }
+
+          });
         }
 
       };
@@ -171,6 +177,12 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
   private static Color calculateColor9683_1(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9683_0(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

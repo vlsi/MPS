@@ -8,14 +8,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AggregationConceptLinkDeclaration extends ConceptLinkDeclaration {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLinkDeclaration";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration";
 
   public AggregationConceptLinkDeclaration(SNode node) {
     super(node);
   }
 
   public static AggregationConceptLinkDeclaration newInstance(SModel sm, boolean init) {
-    return (AggregationConceptLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AggregationConceptLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AggregationConceptLinkDeclaration newInstance(SModel sm) {

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LinkDeclaration extends BaseConcept {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.LinkDeclaration";
   public static String ROLE = "role";
   public static String META_CLASS = "metaClass";
   public static String SOURCE_CARDINALITY = "sourceCardinality";
@@ -64,7 +64,7 @@ public class LinkDeclaration extends BaseConcept {
 
 
   public static LinkDeclaration newInstance(SModel sm, boolean init) {
-    return (LinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkDeclaration newInstance(SModel sm) {

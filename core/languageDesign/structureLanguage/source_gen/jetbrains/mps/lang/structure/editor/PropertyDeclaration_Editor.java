@@ -142,7 +142,13 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return PropertyDeclaration_Editor.calculateBoolean5641_0(cell);
+            }
+
+          });
         }
 
       };
@@ -172,6 +178,12 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   private static Color calculateColor5641_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5641_0(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

@@ -93,7 +93,13 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return PrimitiveDataTypeDeclaration_Editor.calculateBoolean3949_1(cell);
+            }
+
+          });
         }
 
       };
@@ -106,8 +112,20 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return PrimitiveDataTypeDeclaration_Editor.calculateBoolean3949_0(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return PrimitiveDataTypeDeclaration_Editor.calculateBoolean3949_2(cell);
+            }
+
+          });
         }
 
       };
@@ -156,6 +174,24 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static Color calculateColor3949_1(EditorCell cell) {
     Color result;
     result = MPSColors.cyan;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3949_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3949_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3949_2(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

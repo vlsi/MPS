@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration";
   public static String NO_VALUE_TEXT = "noValueText";
   public static String HAS_NO_DEFAULT_MEMBER = "hasNoDefaultMember";
   public static String MEMBER_IDENTIFIER_POLICY = "memberIdentifierPolicy";
@@ -85,7 +85,7 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
 
 
   public static EnumerationDataTypeDeclaration newInstance(SModel sm, boolean init) {
-    return (EnumerationDataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumerationDataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EnumerationDataTypeDeclaration newInstance(SModel sm) {

@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptDeclaration extends AbstractConceptDeclaration {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
   public static String ICON_PATH = "iconPath";
   public static String ROOTABLE = "rootable";
   public static String EXTENDS = "extends";
@@ -66,7 +66,7 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
 
 
   public static ConceptDeclaration newInstance(SModel sm, boolean init) {
-    return (ConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptDeclaration newInstance(SModel sm) {

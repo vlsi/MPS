@@ -491,7 +491,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_15(cell);
+            }
+
+          });
         }
 
       };
@@ -504,7 +510,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_4(cell);
+            }
+
+          });
         }
 
       };
@@ -521,7 +533,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_17(cell);
+            }
+
+          });
         }
 
       };
@@ -534,7 +552,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_11(cell);
+            }
+
+          });
         }
 
       };
@@ -547,7 +571,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_8(cell);
+            }
+
+          });
         }
 
       };
@@ -560,7 +590,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_5(cell);
+            }
+
+          });
         }
 
       };
@@ -573,7 +609,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_16(cell);
+            }
+
+          });
         }
 
       };
@@ -590,7 +632,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_9(cell);
+            }
+
+          });
         }
 
       };
@@ -603,7 +651,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_6(cell);
+            }
+
+          });
         }
 
       };
@@ -616,7 +670,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_20(cell);
+            }
+
+          });
         }
 
       };
@@ -629,7 +689,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_18(cell);
+            }
+
+          });
         }
 
       };
@@ -642,7 +708,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_10(cell);
+            }
+
+          });
         }
 
       };
@@ -655,7 +727,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_2(cell);
+            }
+
+          });
         }
 
       };
@@ -668,7 +746,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_3(cell);
+            }
+
+          });
         }
 
       };
@@ -681,7 +765,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_21(cell);
+            }
+
+          });
         }
 
       };
@@ -694,7 +784,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_7(cell);
+            }
+
+          });
         }
 
       };
@@ -707,7 +803,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_19(cell);
+            }
+
+          });
         }
 
       };
@@ -772,7 +874,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_22(cell);
+            }
+
+          });
         }
 
       };
@@ -785,7 +893,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_1(cell);
+            }
+
+          });
         }
 
       };
@@ -798,7 +912,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_0(cell);
+            }
+
+          });
         }
 
       };
@@ -819,7 +939,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_13(cell);
+            }
+
+          });
         }
 
       };
@@ -832,7 +958,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_14(cell);
+            }
+
+          });
         }
 
       };
@@ -845,7 +977,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_12(cell);
+            }
+
+          });
         }
 
       };
@@ -881,7 +1019,13 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumerationDataTypeDeclaration_Editor.calculateBoolean4339_23(cell);
+            }
+
+          });
         }
 
       };
@@ -1006,6 +1150,150 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static Color calculateColor4339_3(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_4(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_5(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_6(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_7(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_8(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_9(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_10(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_11(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_12(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_13(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_14(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_15(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_16(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_17(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_18(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_19(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_20(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_21(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_22(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4339_23(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

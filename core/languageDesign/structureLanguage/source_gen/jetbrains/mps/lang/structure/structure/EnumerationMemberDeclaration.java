@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class EnumerationMemberDeclaration extends BaseConcept {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration";
   public static String INTERNAL_VALUE = "internalValue";
   public static String EXTERNAL_VALUE = "externalValue";
   public static String JAVA_IDENTIFIER = "javaIdentifier";
@@ -44,7 +44,7 @@ public class EnumerationMemberDeclaration extends BaseConcept {
 
 
   public static EnumerationMemberDeclaration newInstance(SModel sm, boolean init) {
-    return (EnumerationMemberDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumerationMemberDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EnumerationMemberDeclaration newInstance(SModel sm) {

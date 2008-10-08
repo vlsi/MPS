@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PropertyDeclaration extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.PropertyDeclaration";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -63,7 +63,7 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept {
 
 
   public static PropertyDeclaration newInstance(SModel sm, boolean init) {
-    return (PropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyDeclaration newInstance(SModel sm) {

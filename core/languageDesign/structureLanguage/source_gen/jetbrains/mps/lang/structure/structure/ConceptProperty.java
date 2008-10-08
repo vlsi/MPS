@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptProperty extends BaseConcept {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.ConceptProperty";
   public static String CONCEPT_PROPERTY_DECLARATION = "conceptPropertyDeclaration";
 
   public ConceptProperty(SNode node) {
@@ -26,7 +26,7 @@ public class ConceptProperty extends BaseConcept {
 
 
   public static ConceptProperty newInstance(SModel sm, boolean init) {
-    return (ConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptProperty newInstance(SModel sm) {

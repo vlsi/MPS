@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class StringConceptProperty extends ConceptProperty {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.StringConceptProperty";
   public static String VALUE = "value";
 
   public StringConceptProperty(SNode node) {
@@ -33,7 +33,7 @@ public class StringConceptProperty extends ConceptProperty {
 
 
   public static StringConceptProperty newInstance(SModel sm, boolean init) {
-    return (StringConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.StringConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StringConceptProperty newInstance(SModel sm) {

@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DataTypeDeclaration extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.DataTypeDeclaration";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -54,7 +54,7 @@ public class DataTypeDeclaration extends BaseConcept implements INamedConcept {
 
 
   public static DataTypeDeclaration newInstance(SModel sm, boolean init) {
-    return (DataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.DataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DataTypeDeclaration newInstance(SModel sm) {

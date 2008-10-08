@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AnnotationLinkDeclaration extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration";
   public static String ROLE = "role";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
@@ -101,7 +101,7 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
 
 
   public static AnnotationLinkDeclaration newInstance(SModel sm, boolean init) {
-    return (AnnotationLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AnnotationLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AnnotationLinkDeclaration newInstance(SModel sm) {

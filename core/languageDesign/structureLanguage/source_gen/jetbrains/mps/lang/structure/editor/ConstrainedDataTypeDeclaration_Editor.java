@@ -151,7 +151,13 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstrainedDataTypeDeclaration_Editor.calculateBoolean5532_2(cell);
+            }
+
+          });
         }
 
       };
@@ -164,8 +170,20 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstrainedDataTypeDeclaration_Editor.calculateBoolean5532_0(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstrainedDataTypeDeclaration_Editor.calculateBoolean5532_4(cell);
+            }
+
+          });
         }
 
       };
@@ -182,7 +200,13 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstrainedDataTypeDeclaration_Editor.calculateBoolean5532_3(cell);
+            }
+
+          });
         }
 
       };
@@ -195,7 +219,13 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstrainedDataTypeDeclaration_Editor.calculateBoolean5532_1(cell);
+            }
+
+          });
         }
 
       };
@@ -244,6 +274,36 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static Color calculateColor5532_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5532_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5532_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5532_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5532_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5532_4(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

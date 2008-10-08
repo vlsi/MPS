@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class InterfaceConceptReference extends BaseConcept {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.InterfaceConceptReference";
   public static String INTFC = "intfc";
 
   public InterfaceConceptReference(SNode node) {
@@ -26,7 +26,7 @@ public class InterfaceConceptReference extends BaseConcept {
 
 
   public static InterfaceConceptReference newInstance(SModel sm, boolean init) {
-    return (InterfaceConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InterfaceConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InterfaceConceptReference newInstance(SModel sm) {

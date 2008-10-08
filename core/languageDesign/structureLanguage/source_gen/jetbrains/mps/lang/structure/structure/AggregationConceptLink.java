@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AggregationConceptLink extends ConceptLink {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.AggregationConceptLink";
   public static String TARGET = "target";
 
   public AggregationConceptLink(SNode node) {
@@ -34,7 +34,7 @@ public class AggregationConceptLink extends ConceptLink {
 
 
   public static AggregationConceptLink newInstance(SModel sm, boolean init) {
-    return (AggregationConceptLink)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AggregationConceptLink)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.AggregationConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AggregationConceptLink newInstance(SModel sm) {

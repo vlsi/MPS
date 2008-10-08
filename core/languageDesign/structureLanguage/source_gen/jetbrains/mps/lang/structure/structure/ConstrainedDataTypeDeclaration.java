@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConstrainedDataTypeDeclaration extends DataTypeDeclaration {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration";
   public static String CONSTRAINT = "constraint";
 
   public ConstrainedDataTypeDeclaration(SNode node) {
@@ -25,7 +25,7 @@ public class ConstrainedDataTypeDeclaration extends DataTypeDeclaration {
 
 
   public static ConstrainedDataTypeDeclaration newInstance(SModel sm, boolean init) {
-    return (ConstrainedDataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstrainedDataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstrainedDataTypeDeclaration newInstance(SModel sm) {

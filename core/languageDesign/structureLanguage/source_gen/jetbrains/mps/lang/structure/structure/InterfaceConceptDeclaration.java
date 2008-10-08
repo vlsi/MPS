@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class InterfaceConceptDeclaration extends AbstractConceptDeclaration {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration";
   public static String EXTENDS = "extends";
 
   public InterfaceConceptDeclaration(SNode node) {
@@ -39,7 +39,7 @@ public class InterfaceConceptDeclaration extends AbstractConceptDeclaration {
 
 
   public static InterfaceConceptDeclaration newInstance(SModel sm, boolean init) {
-    return (InterfaceConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InterfaceConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InterfaceConceptDeclaration newInstance(SModel sm) {

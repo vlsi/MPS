@@ -40,7 +40,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210673906863">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210673948048">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210673948049">
-            <property name="value" value="Add test annotation" />
+            <property name="value" value="Add test label annotation" />
           </node>
         </node>
       </node>

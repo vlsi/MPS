@@ -25,7 +25,7 @@ public class ExtractMethod_Action extends GeneratedAction {
   public Frame frame;
 
   public ExtractMethod_Action() {
-    super("New Extract Method", "", ICON);
+    super("Extract Method", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

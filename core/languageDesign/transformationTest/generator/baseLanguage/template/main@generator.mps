@@ -997,9 +997,6 @@
             </node>
           </node>
         </node>
-        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1221567851314">
-          <link role="annotation" targetNodeId="28.~Test" resolveInfo="Test" />
-        </node>
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221567851315">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221567851379">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221567851380">
@@ -1470,9 +1467,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1221567884878">
-          <link role="annotation" targetNodeId="28.~Test" resolveInfo="Test" />
         </node>
         <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221567884879">
           <link role="classifier" targetNodeId="2.~Exception" resolveInfo="Exception" />

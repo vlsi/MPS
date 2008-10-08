@@ -8,14 +8,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BooleanConceptPropertyDeclaration extends ConceptPropertyDeclaration {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration";
 
   public BooleanConceptPropertyDeclaration(SNode node) {
     super(node);
   }
 
   public static BooleanConceptPropertyDeclaration newInstance(SModel sm, boolean init) {
-    return (BooleanConceptPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BooleanConceptPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BooleanConceptPropertyDeclaration newInstance(SModel sm) {

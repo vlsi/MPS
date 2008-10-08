@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BooleanConceptProperty extends ConceptProperty {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.BooleanConceptProperty";
 
   public BooleanConceptProperty(SNode node) {
     super(node);
@@ -24,7 +24,7 @@ public class BooleanConceptProperty extends ConceptProperty {
 
 
   public static BooleanConceptProperty newInstance(SModel sm, boolean init) {
-    return (BooleanConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BooleanConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.BooleanConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BooleanConceptProperty newInstance(SModel sm) {

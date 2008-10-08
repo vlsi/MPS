@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -63,7 +63,7 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
 
 
   public static ConceptLinkDeclaration newInstance(SModel sm, boolean init) {
-    return (ConceptLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptLinkDeclaration newInstance(SModel sm) {
