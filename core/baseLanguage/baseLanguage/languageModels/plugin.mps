@@ -23128,23 +23128,7 @@
       <property name="isAbstract" value="true" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1223473609878" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1223473609879" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223473609880">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223473609881">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223473609882">
-            <link role="classConcept" targetNodeId="1221578571953" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
-            <link role="baseMethodDeclaration" targetNodeId="1222174582491" resolveInfo="universalAddMethod" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223473609883">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1223473609884">
-                <link role="fieldDeclaration" targetNodeId="null" resolveInfo="myStaticContainer" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223473609885" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223473609886">
-              <link role="variableDeclaration" targetNodeId="1223473609887" resolveInfo="method" />
-            </node>
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223473609880" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1223473609887">
         <property name="name" value="method" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1223473609888" />
