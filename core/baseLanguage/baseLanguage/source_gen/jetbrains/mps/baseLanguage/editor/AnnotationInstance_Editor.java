@@ -175,7 +175,13 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AnnotationInstance_Editor.calculateBoolean4312_0(cell);
+            }
+
+          });
         }
 
       };
@@ -219,6 +225,12 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   private static Color calculateColor4312_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4312_0(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

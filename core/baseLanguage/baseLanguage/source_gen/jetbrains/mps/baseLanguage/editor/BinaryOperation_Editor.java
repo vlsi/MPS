@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class BinaryOperation_Editor extends DefaultNodeEditor {
@@ -144,8 +145,20 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return BinaryOperation_Editor.calculateBoolean4282_0(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return BinaryOperation_Editor.calculateBoolean4282_1(cell);
+            }
+
+          });
         }
 
       };
@@ -161,6 +174,18 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_conceptProperty_alias_1166063984223(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean4282_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4282_1(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
   }
 
   public static class BinaryOperation_Editor_replaceWith_BinaryOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

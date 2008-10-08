@@ -160,6 +160,18 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
     return result;
   }
 
+  public static Boolean calculateBoolean2124_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2124_1(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
   public static class _Inline2124_0 extends AbstractCellProvider {
 
     public _Inline2124_0() {
@@ -294,8 +306,20 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.SELECTABLE, true);
-            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return LocalStaticMethodCall_Editor.calculateBoolean2124_0(cell);
+              }
+
+            });
+            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return LocalStaticMethodCall_Editor.calculateBoolean2124_1(cell);
+              }
+
+            });
             this.set(StyleAttributes.PADDING_LEFT, 0.0);
             this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }

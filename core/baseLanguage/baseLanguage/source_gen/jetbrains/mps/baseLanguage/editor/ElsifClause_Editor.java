@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -193,7 +194,13 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ElsifClause_Editor.calculateBoolean1596_1(cell);
+            }
+
+          });
         }
 
       };
@@ -213,7 +220,13 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ElsifClause_Editor.calculateBoolean1596_3(cell);
+            }
+
+          });
         }
 
       };
@@ -244,7 +257,13 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ElsifClause_Editor.calculateBoolean1596_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.POSITION, "indented");
         }
 
@@ -258,7 +277,13 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ElsifClause_Editor.calculateBoolean1596_2(cell);
+            }
+
+          });
         }
 
       };
@@ -288,6 +313,30 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_statementList_1206061106547(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean1596_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1596_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1596_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1596_3(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
   }
 
   public static class ElsifClause_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {

@@ -177,6 +177,18 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     return result;
   }
 
+  public static Boolean calculateBoolean4713_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4713_1(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
   public static class actualArgumentListHandler_4713_0 extends RefNodeListHandler {
 
     public actualArgumentListHandler_4713_0(SNode ownerNode, String childRole, EditorContext context) {
@@ -242,8 +254,20 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.SELECTABLE, true);
-            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return EnumConstantDeclaration_Editor.calculateBoolean4713_0(cell);
+              }
+
+            });
+            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return EnumConstantDeclaration_Editor.calculateBoolean4713_1(cell);
+              }
+
+            });
           }
 
         };

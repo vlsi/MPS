@@ -83,7 +83,13 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return GenericNewExpression_Editor.calculateBoolean0475_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
             public Integer calculate(EditorCell cell) {
@@ -110,6 +116,12 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
   private static Integer calculateFontStyle0475_0(EditorCell cell) {
     int result;
     result = MPSFonts.BOLD;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0475_0(EditorCell cell) {
+    boolean result;
+    result = true;
     return result;
   }
 

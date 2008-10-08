@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -361,7 +362,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AnonymousClass_Editor.calculateBoolean1871_0(cell);
+            }
+
+          });
         }
 
       };
@@ -374,7 +381,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AnonymousClass_Editor.calculateBoolean1871_4(cell);
+            }
+
+          });
         }
 
       };
@@ -392,7 +405,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AnonymousClass_Editor.calculateBoolean1871_9(cell);
+            }
+
+          });
         }
 
       };
@@ -405,7 +424,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AnonymousClass_Editor.calculateBoolean1871_1(cell);
+            }
+
+          });
         }
 
       };
@@ -418,7 +443,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AnonymousClass_Editor.calculateBoolean1871_10(cell);
+            }
+
+          });
         }
 
       };
@@ -431,7 +462,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AnonymousClass_Editor.calculateBoolean1871_5(cell);
+            }
+
+          });
         }
 
       };
@@ -445,7 +482,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AnonymousClass_Editor.calculateBoolean1871_2(cell);
+            }
+
+          });
         }
 
       };
@@ -488,7 +531,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AnonymousClass_Editor.calculateBoolean1871_3(cell);
+            }
+
+          });
         }
 
       };
@@ -521,7 +570,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AnonymousClass_Editor.calculateBoolean1871_6(cell);
+            }
+
+          });
         }
 
       };
@@ -538,7 +593,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AnonymousClass_Editor.calculateBoolean1871_11(cell);
+            }
+
+          });
         }
 
       };
@@ -640,6 +701,78 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition1871_7(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty();
+  }
+
+  public static Boolean calculateBoolean1871_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1871_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1871_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1871_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1871_4(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1871_5(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1871_6(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1871_7(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1871_8(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1871_9(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1871_10(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1871_11(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class _Inline1871_0 extends AbstractCellProvider {
@@ -765,7 +898,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.SELECTABLE, true);
+            this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return AnonymousClass_Editor.calculateBoolean1871_7(cell);
+              }
+
+            });
           }
 
         };
@@ -843,7 +982,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.SELECTABLE, true);
+            this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return AnonymousClass_Editor.calculateBoolean1871_8(cell);
+              }
+
+            });
           }
 
         };

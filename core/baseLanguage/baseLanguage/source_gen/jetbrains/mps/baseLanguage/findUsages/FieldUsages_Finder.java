@@ -48,7 +48,7 @@ public class FieldUsages_Finder extends GeneratedFinder {
     }
     // 
     for(SNode fieldDeclaration : fieldDeclarations) {
-      for(SNode fieldUsage : FindUtils.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", fieldDeclaration, scope, indicator)) {
+      for(SNode fieldUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", fieldDeclaration, scope, indicator)) {
         ListOperations.addElement(_results, fieldUsage);
       }
     }

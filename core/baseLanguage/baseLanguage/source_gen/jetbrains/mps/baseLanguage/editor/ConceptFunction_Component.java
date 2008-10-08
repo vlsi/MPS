@@ -198,7 +198,13 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConceptFunction_Component.calculateBoolean8338_4(cell);
+            }
+
+          });
         }
 
       };
@@ -211,7 +217,13 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConceptFunction_Component.calculateBoolean8338_2(cell);
+            }
+
+          });
         }
 
       };
@@ -224,8 +236,20 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConceptFunction_Component.calculateBoolean8338_0(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConceptFunction_Component.calculateBoolean8338_1(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
@@ -251,7 +275,13 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConceptFunction_Component.calculateBoolean8338_3(cell);
+            }
+
+          });
         }
 
       };
@@ -286,6 +316,36 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   private static Color calculateColor8338_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8338_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8338_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8338_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8338_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8338_4(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Group;
@@ -136,7 +137,13 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return BreakStatement_Editor.calculateBoolean0420_0(cell);
+            }
+
+          });
         }
 
       };
@@ -149,8 +156,20 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return BreakStatement_Editor.calculateBoolean0420_1(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return BreakStatement_Editor.calculateBoolean0420_2(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_LEFT, 1.0);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
@@ -172,6 +191,24 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition0420_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
+  }
+
+  public static Boolean calculateBoolean0420_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0420_1(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0420_2(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
   }
 
   public static class BreakStatement_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {

@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
@@ -323,7 +324,13 @@ public class Interface_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Interface_Editor.calculateBoolean8963_10(cell);
+            }
+
+          });
         }
 
       };
@@ -336,7 +343,13 @@ public class Interface_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Interface_Editor.calculateBoolean8963_9(cell);
+            }
+
+          });
         }
 
       };
@@ -349,7 +362,13 @@ public class Interface_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Interface_Editor.calculateBoolean8963_6(cell);
+            }
+
+          });
         }
 
       };
@@ -362,7 +381,13 @@ public class Interface_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Interface_Editor.calculateBoolean8963_3(cell);
+            }
+
+          });
         }
 
       };
@@ -376,7 +401,13 @@ public class Interface_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Interface_Editor.calculateBoolean8963_7(cell);
+            }
+
+          });
         }
 
       };
@@ -390,7 +421,13 @@ public class Interface_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Interface_Editor.calculateBoolean8963_0(cell);
+            }
+
+          });
         }
 
       };
@@ -403,7 +440,13 @@ public class Interface_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Interface_Editor.calculateBoolean8963_1(cell);
+            }
+
+          });
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
 
@@ -423,7 +466,13 @@ public class Interface_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Interface_Editor.calculateBoolean8963_5(cell);
+            }
+
+          });
         }
 
       };
@@ -436,7 +485,13 @@ public class Interface_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Interface_Editor.calculateBoolean8963_2(cell);
+            }
+
+          });
         }
 
       };
@@ -469,7 +524,13 @@ public class Interface_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Interface_Editor.calculateBoolean8963_4(cell);
+            }
+
+          });
         }
 
       };
@@ -490,7 +551,13 @@ public class Interface_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Interface_Editor.calculateBoolean8963_8(cell);
+            }
+
+          });
         }
 
       };
@@ -561,6 +628,90 @@ public class Interface_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
+  public static Boolean calculateBoolean8963_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_1(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_4(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_5(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_6(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_7(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_8(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_9(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_10(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_11(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_12(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_13(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
   public static class methodListHandler_8963_0 extends RefNodeListHandler {
 
     public methodListHandler_8963_0(SNode ownerNode, String childRole, EditorContext context) {
@@ -621,7 +772,13 @@ public class Interface_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return Interface_Editor.calculateBoolean8963_13(cell);
+              }
+
+            });
           }
 
         };
@@ -693,7 +850,13 @@ public class Interface_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return Interface_Editor.calculateBoolean8963_11(cell);
+              }
+
+            });
           }
 
         };
@@ -765,7 +928,13 @@ public class Interface_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return Interface_Editor.calculateBoolean8963_12(cell);
+              }
+
+            });
           }
 
         };

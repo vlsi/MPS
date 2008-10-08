@@ -108,7 +108,13 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
             }
 
           });
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StringLiteral_Editor.calculateBoolean3246_3(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
         }
@@ -123,7 +129,13 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StringLiteral_Editor.calculateBoolean3246_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
             public Integer calculate(EditorCell cell) {
@@ -131,7 +143,13 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
             }
 
           });
-          this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StringLiteral_Editor.calculateBoolean3246_2(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -156,7 +174,13 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StringLiteral_Editor.calculateBoolean3246_1(cell);
+            }
+
+          });
           this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
             public Integer calculate(EditorCell cell) {
@@ -171,7 +195,13 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
             }
 
           });
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StringLiteral_Editor.calculateBoolean3246_4(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
@@ -223,6 +253,36 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
   private static Color calculateColor3246_2(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3246_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3246_1(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3246_2(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3246_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3246_4(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

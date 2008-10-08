@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -422,7 +423,13 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfStatement_Editor.calculateBoolean1754_4(cell);
+            }
+
+          });
         }
 
       };
@@ -435,7 +442,13 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfStatement_Editor.calculateBoolean1754_0(cell);
+            }
+
+          });
         }
 
       };
@@ -478,7 +491,13 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfStatement_Editor.calculateBoolean1754_5(cell);
+            }
+
+          });
           this.set(StyleAttributes.POSITION, "indented");
         }
 
@@ -499,7 +518,13 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfStatement_Editor.calculateBoolean1754_2(cell);
+            }
+
+          });
           this.set(StyleAttributes.POSITION, "next-line");
         }
 
@@ -513,7 +538,13 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfStatement_Editor.calculateBoolean1754_6(cell);
+            }
+
+          });
           this.set(StyleAttributes.POSITION, "next-line");
         }
 
@@ -533,7 +564,13 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfStatement_Editor.calculateBoolean1754_12(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -555,7 +592,13 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfStatement_Editor.calculateBoolean1754_1(cell);
+            }
+
+          });
           this.set(StyleAttributes.POSITION, "next-line");
         }
 
@@ -581,7 +624,13 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfStatement_Editor.calculateBoolean1754_3(cell);
+            }
+
+          });
           this.set(StyleAttributes.POSITION, "next-line");
         }
 
@@ -596,7 +645,13 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfStatement_Editor.calculateBoolean1754_11(cell);
+            }
+
+          });
           this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
         }
 
@@ -640,8 +695,20 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfStatement_Editor.calculateBoolean1754_7(cell);
+            }
+
+          });
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfStatement_Editor.calculateBoolean1754_9(cell);
+            }
+
+          });
           this.set(StyleAttributes.POSITION, "next-line");
         }
 
@@ -656,8 +723,20 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, true);
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfStatement_Editor.calculateBoolean1754_10(cell);
+            }
+
+          });
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfStatement_Editor.calculateBoolean1754_8(cell);
+            }
+
+          });
           this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
         }
 
@@ -742,6 +821,84 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition1754_6(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "ifFalseStatement", true) == null;
+  }
+
+  public static Boolean calculateBoolean1754_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1754_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1754_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1754_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1754_4(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1754_5(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1754_6(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1754_7(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1754_8(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1754_9(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1754_10(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1754_11(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1754_12(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
   }
 
   public static class elsifClausesListHandler_1754_0 extends RefNodeListHandler {

@@ -4672,7 +4672,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332454873">
-                          <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getLinkDeclaration(java.lang.String):jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" resolveInfo="getLinkDeclaration" />
+                          <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getLinkDeclaration(java.lang.String):jetbrains.mps.lang.structure.structure.LinkDeclaration" resolveInfo="getLinkDeclaration" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199893568959">
                             <link role="variableDeclaration" targetNodeId="1199893164708" resolveInfo="role" />
                           </node>

@@ -154,7 +154,13 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return SetAccessor_Editor.calculateBoolean4227_2(cell);
+            }
+
+          });
         }
 
       };
@@ -167,7 +173,13 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return SetAccessor_Editor.calculateBoolean4227_1(cell);
+            }
+
+          });
         }
 
       };
@@ -188,7 +200,13 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return SetAccessor_Editor.calculateBoolean4227_0(cell);
+            }
+
+          });
         }
 
       };
@@ -260,6 +278,24 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
   private static Integer calculateFontStyle4227_0(EditorCell cell) {
     int result;
     result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4227_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4227_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4227_2(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

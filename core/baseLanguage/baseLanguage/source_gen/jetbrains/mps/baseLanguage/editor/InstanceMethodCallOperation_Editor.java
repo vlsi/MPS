@@ -151,7 +151,13 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InstanceMethodCallOperation_Editor.calculateBoolean2215_1(cell);
+            }
+
+          });
           this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
             public Integer calculate(EditorCell cell) {
@@ -159,7 +165,13 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
             }
 
           });
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InstanceMethodCallOperation_Editor.calculateBoolean2215_3(cell);
+            }
+
+          });
         }
 
       };
@@ -195,6 +207,30 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
   private static Integer calculateFontStyle2215_1(EditorCell cell) {
     int result;
     result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2215_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2215_1(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2215_2(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2215_3(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 
@@ -318,8 +354,20 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.PADDING_LEFT, 0.0);
             this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-            this.set(StyleAttributes.SELECTABLE, true);
-            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return InstanceMethodCallOperation_Editor.calculateBoolean2215_0(cell);
+              }
+
+            });
+            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return InstanceMethodCallOperation_Editor.calculateBoolean2215_2(cell);
+              }
+
+            });
           }
 
         };

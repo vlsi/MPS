@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class Visibility_Editor extends DefaultNodeEditor {
 
@@ -56,7 +57,13 @@ public class Visibility_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Visibility_Editor.calculateBoolean7242_0(cell);
+            }
+
+          });
         }
 
       };
@@ -65,6 +72,12 @@ public class Visibility_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_conceptProperty_alias_1217329434998(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean7242_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
   }
 
 }

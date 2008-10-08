@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class PostfixIncrementExpression_Editor extends DefaultNodeEditor {
@@ -84,7 +85,13 @@ public class PostfixIncrementExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return PostfixIncrementExpression_Editor.calculateBoolean2042_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -100,6 +107,12 @@ public class PostfixIncrementExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1214918929704_1214918929704(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean2042_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
 }

@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -134,7 +135,13 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ClassifierType_Editor.calculateBoolean9185_0(cell);
+            }
+
+          });
         }
 
       };
@@ -147,7 +154,13 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ClassifierType_Editor.calculateBoolean9185_2(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
@@ -166,8 +179,20 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ClassifierType_Editor.calculateBoolean9185_1(cell);
+            }
+
+          });
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ClassifierType_Editor.calculateBoolean9185_3(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -190,6 +215,30 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition9185_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "parameter") > 0;
+  }
+
+  public static Boolean calculateBoolean9185_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9185_1(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9185_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9185_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class _Inline9185_0 extends AbstractCellProvider {

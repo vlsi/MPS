@@ -36,7 +36,7 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
     // 
     List<SNode> derivedInterfacesUsages = new ArrayList<SNode>();
     for(SNode derivedInterface : derivedInterfaces) {
-      ListSequence.fromList(derivedInterfacesUsages).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", derivedInterface, scope, indicator)));
+      ListSequence.fromList(derivedInterfacesUsages).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", derivedInterface, scope, indicator)));
     }
     // 
     for(SNode interfaceNode : derivedInterfacesUsages) {

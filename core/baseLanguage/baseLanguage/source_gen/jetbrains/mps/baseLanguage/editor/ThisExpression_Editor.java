@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -168,8 +169,20 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ThisExpression_Editor.calculateBoolean6954_1(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ThisExpression_Editor.calculateBoolean6954_2(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
         }
 
@@ -188,8 +201,20 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ThisExpression_Editor.calculateBoolean6954_0(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ThisExpression_Editor.calculateBoolean6954_3(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
@@ -241,6 +266,30 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition6954_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "classConcept", false) != null);
+  }
+
+  public static Boolean calculateBoolean6954_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6954_1(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6954_2(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6954_3(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
   }
 
   public static class _Inline6954_0 extends AbstractCellProvider {

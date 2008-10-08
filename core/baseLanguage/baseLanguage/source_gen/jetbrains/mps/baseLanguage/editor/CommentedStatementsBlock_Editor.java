@@ -141,7 +141,13 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CommentedStatementsBlock_Editor.calculateBoolean9553_1(cell);
+            }
+
+          });
         }
 
       };
@@ -154,7 +160,13 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CommentedStatementsBlock_Editor.calculateBoolean9553_0(cell);
+            }
+
+          });
         }
 
       };
@@ -208,6 +220,18 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   private static Color calculateColor9553_2(EditorCell cell) {
     Color result;
     result = MPSColors.gray;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9553_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9553_1(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

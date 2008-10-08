@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -336,7 +337,13 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StaticFieldDeclaration_Editor.calculateBoolean6130_3(cell);
+            }
+
+          });
         }
 
       };
@@ -371,7 +378,13 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StaticFieldDeclaration_Editor.calculateBoolean6130_1(cell);
+            }
+
+          });
         }
 
       };
@@ -388,7 +401,13 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.AUTO_DELETABLE, false);
+          this.set(StyleAttributes.AUTO_DELETABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StaticFieldDeclaration_Editor.calculateBoolean6130_4(cell);
+            }
+
+          });
         }
 
       };
@@ -406,7 +425,13 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StaticFieldDeclaration_Editor.calculateBoolean6130_0(cell);
+            }
+
+          });
         }
 
       };
@@ -423,7 +448,13 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StaticFieldDeclaration_Editor.calculateBoolean6130_2(cell);
+            }
+
+          });
         }
 
       };
@@ -482,6 +513,36 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition6130_2(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
+  }
+
+  public static Boolean calculateBoolean6130_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6130_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6130_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6130_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6130_4(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class annotationListHandler_6130_0 extends RefNodeListHandler {

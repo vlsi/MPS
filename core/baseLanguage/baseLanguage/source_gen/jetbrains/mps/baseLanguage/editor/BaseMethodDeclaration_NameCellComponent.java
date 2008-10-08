@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -93,7 +94,13 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return BaseMethodDeclaration_NameCellComponent.calculateBoolean4313_1(cell);
+            }
+
+          });
         }
 
       };
@@ -111,7 +118,13 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return BaseMethodDeclaration_NameCellComponent.calculateBoolean4313_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
@@ -125,6 +138,18 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
   }
 
   private static void setupLabel_Constant_1215517346795_1215517346795(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean4313_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4313_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class BaseMethodDeclaration_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {

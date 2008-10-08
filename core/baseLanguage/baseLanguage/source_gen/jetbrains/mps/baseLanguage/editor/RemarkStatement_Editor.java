@@ -136,7 +136,13 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
             }
 
           });
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return RemarkStatement_Editor.calculateBoolean6285_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -241,6 +247,12 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   private static Color calculateColor6285_2(EditorCell cell) {
     Color result;
     result = MPSColors.blue;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6285_0(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

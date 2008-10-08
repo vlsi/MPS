@@ -39,7 +39,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     // search for straight usages & search for SUPER calls
     // BUG IN BASE LANGUAGE -- AT THE TIME THIS THING DOES NOT FIND SUPER() CALLS
-    for(SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", node, scope, indicator)) {
+    for(SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator)) {
       ListOperations.addElement(_results, nodeUsage);
     }
     // WORKAROUND - FIND SUPER() CALLS

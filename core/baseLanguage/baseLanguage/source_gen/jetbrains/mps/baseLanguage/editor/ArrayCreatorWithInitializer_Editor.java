@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -140,7 +141,13 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ArrayCreatorWithInitializer_Editor.calculateBoolean0557_1(cell);
+            }
+
+          });
         }
 
       };
@@ -166,6 +173,24 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1154543071509_1154543071509(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean0557_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0557_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0557_2(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
   }
 
   public static class initValueListHandler_0557_0 extends RefNodeListHandler {
@@ -233,8 +258,20 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.SELECTABLE, true);
-            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return ArrayCreatorWithInitializer_Editor.calculateBoolean0557_0(cell);
+              }
+
+            });
+            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return ArrayCreatorWithInitializer_Editor.calculateBoolean0557_2(cell);
+              }
+
+            });
           }
 
         };

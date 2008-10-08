@@ -167,7 +167,13 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return SuperMethodCall_Editor.calculateBoolean4254_2(cell);
+            }
+
+          });
         }
 
       };
@@ -220,6 +226,24 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   private static Color calculateColor4254_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4254_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4254_1(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4254_2(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 
@@ -349,8 +373,20 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.SELECTABLE, true);
-            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return SuperMethodCall_Editor.calculateBoolean4254_0(cell);
+              }
+
+            });
+            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return SuperMethodCall_Editor.calculateBoolean4254_1(cell);
+              }
+
+            });
           }
 
         };

@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
 
@@ -153,7 +154,13 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TernaryOperatorExpression_Editor.calculateBoolean2869_1(cell);
+            }
+
+          });
         }
 
       };
@@ -170,7 +177,13 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TernaryOperatorExpression_Editor.calculateBoolean2869_0(cell);
+            }
+
+          });
         }
 
       };
@@ -194,6 +207,18 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_ifFalse_1163668962067(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean2869_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2869_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
 }

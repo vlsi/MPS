@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
@@ -150,8 +151,20 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ClassCreator_Editor.calculateBoolean9368_2(cell);
+            }
+
+          });
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ClassCreator_Editor.calculateBoolean9368_0(cell);
+            }
+
+          });
         }
 
       };
@@ -169,7 +182,13 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ClassCreator_Editor.calculateBoolean9368_1(cell);
+            }
+
+          });
         }
 
       };
@@ -195,6 +214,24 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition9368_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeParameter") > 0;
+  }
+
+  public static Boolean calculateBoolean9368_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9368_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9368_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class _Inline9368_0 extends AbstractCellProvider {

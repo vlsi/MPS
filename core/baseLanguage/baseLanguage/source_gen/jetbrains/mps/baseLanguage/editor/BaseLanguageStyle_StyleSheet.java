@@ -253,7 +253,13 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
-        this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+        this.set(StyleAttributes.LAST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return BaseLanguageStyle_StyleSheet.calculateBoolean0216_3(cell);
+          }
+
+        });
         this.set(StyleAttributes.PADDING_LEFT, 0.0);
         this.set(StyleAttributes.PADDING_RIGHT, 0.0);
       }
@@ -265,7 +271,13 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
-        this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+        this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return BaseLanguageStyle_StyleSheet.calculateBoolean0216_0(cell);
+          }
+
+        });
         this.set(StyleAttributes.PADDING_LEFT, 0.0);
         this.set(StyleAttributes.PADDING_RIGHT, 0.0);
       }
@@ -358,7 +370,13 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.set(StyleAttributes.PADDING_LEFT, 0.0);
         this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-        this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+        this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return BaseLanguageStyle_StyleSheet.calculateBoolean0216_2(cell);
+          }
+
+        });
       }
 
     };
@@ -369,7 +387,13 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.set(StyleAttributes.PADDING_LEFT, 0.0);
         this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-        this.set(StyleAttributes.SELECTABLE, false);
+        this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return BaseLanguageStyle_StyleSheet.calculateBoolean0216_1(cell);
+          }
+
+        });
       }
 
     };
@@ -480,6 +504,30 @@ public class BaseLanguageStyle_StyleSheet {
   private static Color calculateColor0216_7(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0216_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0216_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0216_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0216_3(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

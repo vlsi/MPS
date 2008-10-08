@@ -90,7 +90,13 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IMethodCall_actualArguments.calculateBoolean4497_1(cell);
+            }
+
+          });
         }
 
       };
@@ -104,7 +110,13 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IMethodCall_actualArguments.calculateBoolean4497_5(cell);
+            }
+
+          });
           this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
             public Integer calculate(EditorCell cell) {
@@ -129,7 +141,13 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IMethodCall_actualArguments.calculateBoolean4497_2(cell);
+            }
+
+          });
           this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
             public Integer calculate(EditorCell cell) {
@@ -137,7 +155,13 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
             }
 
           });
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IMethodCall_actualArguments.calculateBoolean4497_3(cell);
+            }
+
+          });
         }
 
       };
@@ -173,6 +197,42 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
   private static Integer calculateFontStyle4497_1(EditorCell cell) {
     int result;
     result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4497_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4497_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4497_2(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4497_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4497_4(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4497_5(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 
@@ -241,8 +301,20 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.SELECTABLE, true);
-            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return IMethodCall_actualArguments.calculateBoolean4497_0(cell);
+              }
+
+            });
+            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return IMethodCall_actualArguments.calculateBoolean4497_4(cell);
+              }
+
+            });
             this.set(StyleAttributes.PADDING_RIGHT, 0.0);
             this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }

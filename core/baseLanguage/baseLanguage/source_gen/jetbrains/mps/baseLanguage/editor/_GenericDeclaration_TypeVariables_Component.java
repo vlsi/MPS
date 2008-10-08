@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -84,7 +85,13 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _GenericDeclaration_TypeVariables_Component.calculateBoolean9618_2(cell);
+            }
+
+          });
         }
 
       };
@@ -98,7 +105,13 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _GenericDeclaration_TypeVariables_Component.calculateBoolean9618_1(cell);
+            }
+
+          });
         }
 
       };
@@ -115,7 +128,13 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _GenericDeclaration_TypeVariables_Component.calculateBoolean9618_0(cell);
+            }
+
+          });
         }
 
       };
@@ -130,6 +149,24 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
 
   private static void setupLabel_Constant_1140573670194_1140573670194(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean9618_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9618_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9618_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class typeVariableDeclarationListHandler_9618_0 extends RefNodeListHandler {

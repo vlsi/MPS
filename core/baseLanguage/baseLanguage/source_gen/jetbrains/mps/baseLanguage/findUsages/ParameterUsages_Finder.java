@@ -42,7 +42,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     // 
     for(SNode methodNode : overridingMethods) {
       SNode parameterNode = ListSequence.fromList(SLinkOperations.getTargets(methodNode, "parameter", true)).getElement(SNodeOperations.getIndexInParent(node));
-      for(SNode parameterUsage : FindUtils.executeFinder("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder", parameterNode, scope, indicator)) {
+      for(SNode parameterUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", parameterNode, scope, indicator)) {
         ListOperations.addElement(_results, parameterUsage);
       }
     }

@@ -109,7 +109,13 @@ public class NotExpression_Editor extends DefaultNodeEditor {
           });
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return NotExpression_Editor.calculateBoolean5487_1(cell);
+            }
+
+          });
         }
 
       };
@@ -127,7 +133,13 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return NotExpression_Editor.calculateBoolean5487_0(cell);
+            }
+
+          });
         }
 
       };
@@ -156,6 +168,18 @@ public class NotExpression_Editor extends DefaultNodeEditor {
   private static Integer calculateFontStyle5487_0(EditorCell cell) {
     int result;
     result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5487_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5487_1(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 
