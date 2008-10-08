@@ -9603,7 +9603,7 @@
                                                   </node>
                                                 </node>
                                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929835534">
-                                                  <link role="baseMethodDeclaration" targetNodeId="4.~SNode.getConceptDeclarationAdapter():jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration" resolveInfo="getConceptDeclarationAdapter" />
+                                                  <link role="baseMethodDeclaration" targetNodeId="4.~SNode.getConceptDeclarationAdapter():jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" resolveInfo="getConceptDeclarationAdapter" />
                                                 </node>
                                               </node>
                                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929830560">
