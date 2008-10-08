@@ -1,4 +1,4 @@
-package jetbrains.mps.baseLanguage.money;
+package jetbrains.mps.baseLanguage.money.runtime;
 
 import java.math.BigDecimal;
 

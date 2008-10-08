@@ -23,22 +23,22 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903f7(jetbrains.mps.baseLanguage.money.structure)" version="0" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="10" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895903f7(jetbrains.mps.baseLanguage.money.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <import index="4" modelUID="f:java_stub#jetbrains.accounting.money(jetbrains.accounting.money@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895903f9(jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util)" version="-1" />
   <import index="6" modelUID="f:java_stub#java.math(java.math@java_stub)" version="-1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.bootstrap.structureLanguage.structure)" version="-1" />
+  <import index="9" modelUID="f:java_stub#jetbrains.mps.baseLanguage.money.runtime(jetbrains.mps.baseLanguage.money.runtime@java_stub)" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1186668581590">
     <property name="name" value="main" />
     <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1187343068549">
       <link role="applicableConcept" targetNodeId="1.1186669599053" />
       <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1187343204331">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1187347068833">
-          <link role="classifier" targetNodeId="4.~Currency" resolveInfo="Currency" />
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223451733577">
+          <link role="classifier" targetNodeId="9.~Currency" resolveInfo="Currency" />
         </node>
       </node>
     </node>
@@ -155,7 +155,7 @@
       <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1187347260618">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888417854">
           <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888417856">
-            <link role="baseMethodDeclaration" targetNodeId="4.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
+            <link role="baseMethodDeclaration" targetNodeId="9.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1187347343014">
               <property name="value" value="0" />
               <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1187347392063">
@@ -260,7 +260,7 @@
               </node>
             </node>
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888347516">
-              <link role="baseMethodDeclaration" targetNodeId="4.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
+              <link role="baseMethodDeclaration" targetNodeId="9.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193153964532">
                 <property name="value" value="" />
               </node>
@@ -270,7 +270,7 @@
             </node>
           </node>
           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628899725">
-            <link role="baseMethodDeclaration" targetNodeId="4.~Currency.add(jetbrains.accounting.money.Currency):jetbrains.accounting.money.Currency" resolveInfo="add" />
+            <link role="baseMethodDeclaration" targetNodeId="9.~Currency.add(jetbrains.mps.baseLanguage.money.runtime.Currency):jetbrains.mps.baseLanguage.money.runtime.Currency" resolveInfo="add" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888349957">
               <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1217888349959">
                 <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1217888349960">
@@ -287,7 +287,7 @@
                 </node>
               </node>
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888349966">
-                <link role="baseMethodDeclaration" targetNodeId="4.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
+                <link role="baseMethodDeclaration" targetNodeId="9.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193154005817">
                   <property name="value" value="" />
                 </node>
@@ -320,7 +320,7 @@
               </node>
             </node>
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888375672">
-              <link role="baseMethodDeclaration" targetNodeId="4.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
+              <link role="baseMethodDeclaration" targetNodeId="9.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193154027226">
                 <property name="value" value="" />
               </node>
@@ -330,7 +330,7 @@
             </node>
           </node>
           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628887853">
-            <link role="baseMethodDeclaration" targetNodeId="4.~Currency.sub(jetbrains.accounting.money.Currency):jetbrains.accounting.money.Currency" resolveInfo="sub" />
+            <link role="baseMethodDeclaration" targetNodeId="9.~Currency.sub(jetbrains.mps.baseLanguage.money.runtime.Currency):jetbrains.mps.baseLanguage.money.runtime.Currency" resolveInfo="sub" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888321095">
               <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1217888321097">
                 <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1217888321098">
@@ -347,7 +347,7 @@
                 </node>
               </node>
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888321104">
-                <link role="baseMethodDeclaration" targetNodeId="4.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
+                <link role="baseMethodDeclaration" targetNodeId="9.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193154139213">
                   <property name="value" value="" />
                 </node>
@@ -402,7 +402,7 @@
               </node>
             </node>
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888394957">
-              <link role="baseMethodDeclaration" targetNodeId="4.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
+              <link role="baseMethodDeclaration" targetNodeId="9.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193154063120">
                 <property name="value" value="" />
               </node>
@@ -412,7 +412,7 @@
             </node>
           </node>
           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628919251">
-            <link role="baseMethodDeclaration" targetNodeId="4.~Currency.mul(int):jetbrains.accounting.money.Currency" resolveInfo="mul" />
+            <link role="baseMethodDeclaration" targetNodeId="9.~Currency.mul(int):jetbrains.mps.baseLanguage.money.runtime.Currency" resolveInfo="mul" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1187350361332">
               <property name="value" value="0" />
               <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1187350367396">
@@ -465,7 +465,7 @@
               </node>
             </node>
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888412285">
-              <link role="baseMethodDeclaration" targetNodeId="4.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
+              <link role="baseMethodDeclaration" targetNodeId="9.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193154070763">
                 <property name="value" value="" />
               </node>
@@ -475,7 +475,7 @@
             </node>
           </node>
           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628905431">
-            <link role="baseMethodDeclaration" targetNodeId="4.~Currency.div(int):jetbrains.accounting.money.Currency" resolveInfo="div" />
+            <link role="baseMethodDeclaration" targetNodeId="9.~Currency.div(int):jetbrains.mps.baseLanguage.money.runtime.Currency" resolveInfo="div" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1187350342368">
               <property name="value" value="0" />
               <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1187350349292">
@@ -517,7 +517,7 @@
               </node>
             </node>
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888432998">
-              <link role="baseMethodDeclaration" targetNodeId="4.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
+              <link role="baseMethodDeclaration" targetNodeId="9.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193154079001">
                 <property name="value" value="" />
               </node>
@@ -527,7 +527,7 @@
             </node>
           </node>
           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628891097">
-            <link role="baseMethodDeclaration" targetNodeId="4.~Currency.getAmount():java.lang.String" resolveInfo="getAmount" />
+            <link role="baseMethodDeclaration" targetNodeId="9.~Currency.getAmount():java.lang.String" resolveInfo="getAmount" />
           </node>
         </node>
       </node>
@@ -552,7 +552,7 @@
               </node>
             </node>
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888379138">
-              <link role="baseMethodDeclaration" targetNodeId="4.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
+              <link role="baseMethodDeclaration" targetNodeId="9.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193154094176" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193154097397">
                 <property name="value" value="" />
@@ -560,7 +560,7 @@
             </node>
           </node>
           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628856511">
-            <link role="baseMethodDeclaration" targetNodeId="4.~Currency.getCurrency():java.lang.String" resolveInfo="getCurrency" />
+            <link role="baseMethodDeclaration" targetNodeId="9.~Currency.getCurrency():java.lang.String" resolveInfo="getCurrency" />
           </node>
         </node>
       </node>
@@ -585,7 +585,7 @@
               </node>
             </node>
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888377430">
-              <link role="baseMethodDeclaration" targetNodeId="4.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
+              <link role="baseMethodDeclaration" targetNodeId="9.~Currency.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Currency" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193154110679">
                 <property name="value" value="" />
               </node>
@@ -595,7 +595,7 @@
             </node>
           </node>
           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628855300">
-            <link role="baseMethodDeclaration" targetNodeId="4.~Currency.isZero():boolean" resolveInfo="isZero" />
+            <link role="baseMethodDeclaration" targetNodeId="9.~Currency.isZero():boolean" resolveInfo="isZero" />
           </node>
         </node>
       </node>
