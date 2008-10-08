@@ -33,7 +33,6 @@
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.bootstrap.editorLanguage.behavior)" version="-1" />
-  <import index="5" modelUID="f:java_stub#jetbrains.mps.bootstrap.structureLanguage.structure(jetbrains.mps.bootstrap.structureLanguage.structure@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.bootstrap.editorLanguage.cellProviders(jetbrains.mps.bootstrap.editorLanguage.cellProviders@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellProviders(jetbrains.mps.nodeEditor.cellProviders@java_stub)" version="-1" />
@@ -1990,17 +1989,17 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1223390711848">
             <property name="name" value="firstItem" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1223390711849">
-              <link role="concept" targetNodeId="1.1186414536763" resolveInfo="BooleanStyleSheetItem" />
+              <link role="concept" targetNodeId="1.1223386653097" resolveInfo="DeprecatedStyleSheet" />
             </node>
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1223390744756">
-              <link role="concept" targetNodeId="1.1186414536763" resolveInfo="BooleanStyleSheetItem" />
+              <link role="concept" targetNodeId="1.1223386653097" resolveInfo="DeprecatedStyleSheet" />
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223390737810">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223390727290">
                   <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1223390727291" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1223390727292">
                     <link role="conceptMethodDeclaration" targetNodeId="1219419901278" resolveInfo="getClassItems" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1223390730590">
-                      <link role="conceptDeclaration" targetNodeId="1.1186414536763" resolveInfo="BooleanStyleSheetItem" />
+                      <link role="conceptDeclaration" targetNodeId="1.1223386653097" resolveInfo="DeprecatedStyleSheet" />
                     </node>
                   </node>
                 </node>

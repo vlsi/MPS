@@ -37,7 +37,6 @@
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.bootstrap.editorLanguage.constraints(jetbrains.mps.bootstrap.editorLanguage.constraints@java_stub)" version="-1" />
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <import index="15" modelUID="f:java_stub#jetbrains.mps.bootstrap.structureLanguage.structure(jetbrains.mps.bootstrap.structureLanguage.structure@java_stub)" version="-1" />
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="17" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />

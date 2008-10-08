@@ -106,7 +106,7 @@ public class EditorCellModel_Behavior {
   }
 
   public static boolean call_isDeprecated_1223390694337(SNode thisNode) {
-    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.BooleanStyleSheetItem"))).first();
+    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.DeprecatedStyleSheet"))).first();
     if ((firstItem == null)) {
       return false;
     }
