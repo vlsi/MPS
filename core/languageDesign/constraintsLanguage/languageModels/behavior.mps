@@ -900,7 +900,7 @@
                           <link role="variableDeclaration" targetNodeId="1222175050109" resolveInfo="type" />
                         </node>
                         <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222175158820">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222175157495">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223473892482">
                             <link role="variableDeclaration" targetNodeId="1222175117272" resolveInfo="method" />
                           </node>
                           <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1222175165679">

@@ -11,7 +11,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoringProcessor;
+import jetbrains.mps.baseLanguage.plugin.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -79,8 +79,8 @@ public class IClassifier_Behavior {
     return result;
   }
 
-  public static ExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
-    return new ExtractMethodRefactoringProcessor(thisNode, nodesToRefactor) {
+  public static AbstractExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
+    return new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToRefactor) {
 
       public SNode createNewMethod(SNode returntType, List<SNode> params, SNode body) {
         SNode methodDeclaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", null);

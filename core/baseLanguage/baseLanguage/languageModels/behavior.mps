@@ -10136,8 +10136,8 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221393367930" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221579439827">
-        <link role="classifier" targetNodeId="18.1221578571953" resolveInfo="ExtractMethodRefactoringProcessor" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223471794311">
+        <link role="classifier" targetNodeId="18.1223471722196" resolveInfo="ExtractMethodRefactoringProcessor" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221668414343">
         <property name="name" value="nodesToExtract" />
@@ -10156,8 +10156,8 @@
       <property name="isVirtual" value="true" />
       <property name="isAbstract" value="true" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222174378301" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222174387710">
-        <link role="classifier" targetNodeId="18.1222173596072" resolveInfo="StaticContainerProcessor" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223473358160">
+        <link role="classifier" targetNodeId="18.1223473318065" resolveInfo="StaticContainerProcessor" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222174378303" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1222174402102">
