@@ -3,6 +3,8 @@ package jetbrains.mps.vcs.diff.ui;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -29,6 +31,8 @@ import java.awt.BorderLayout;
 import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NonNls;
 
 class MergeResultView extends JPanel {
   private MPSTree myResultTree = new MPSTree() {
@@ -433,7 +437,6 @@ class MergeResultView extends JPanel {
     return result;
   }
 
-
   private class MySNodeTreeNode extends SNodeTreeNode {
     public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
       super(node, role, operationContext);
@@ -539,7 +542,7 @@ class MergeResultView extends JPanel {
       String text = myExcludedChanges.contains(myChange) ? "Include" : "Exclude";
 
       DefaultActionGroup group = new DefaultActionGroup();
-      group.add(new BaseAction(text) {
+      BaseAction action = new BaseAction(text) {
         protected void doExecute(AnActionEvent e) {
           if (myExcludedChanges.contains(myChange)) {
             myExcludedChanges.remove(myChange);
@@ -548,7 +551,9 @@ class MergeResultView extends JPanel {
           }
           rebuildData();
         }
-      });
+      };
+      action.setDisableOnNoProject(false);
+      group.add(action);
 
       return group;
     }
