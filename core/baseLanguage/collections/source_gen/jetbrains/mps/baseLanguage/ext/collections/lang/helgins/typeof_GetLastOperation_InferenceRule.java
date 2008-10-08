@@ -14,7 +14,7 @@ public class typeof_GetLastOperation_InferenceRule extends AbstractInferenceRule
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesFunctions_Collections.setInputElementType(op, op);
+    RulesFunctions_Collections.setInputElementType(typeCheckingContext, op, op);
   }
 
   public String getApplicableConceptFQName() {

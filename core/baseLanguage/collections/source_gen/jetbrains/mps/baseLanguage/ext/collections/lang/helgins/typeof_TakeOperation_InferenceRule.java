@@ -17,7 +17,7 @@ public class typeof_TakeOperation_InferenceRule extends AbstractInferenceRule_Ru
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesFunctions_Collections.setInputSequenceType(op, op);
+    RulesFunctions_Collections.setInputSequenceType(typeCheckingContext, op, op);
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;

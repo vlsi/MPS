@@ -22,7 +22,7 @@ public class typeof_SkipOperation_InferenceRule extends AbstractInferenceRule_Ru
       BaseIntentionProvider intentionProvider = null;
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "elementsToSkip", true), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1184847100456", true), new QuotationClass_6().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1184847107857", false, 0, intentionProvider);
     }
-    RulesFunctions_Collections.setInputSequenceType(op, op);
+    RulesFunctions_Collections.setInputSequenceType(typeCheckingContext, op, op);
   }
 
   public String getApplicableConceptFQName() {

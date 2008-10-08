@@ -17,7 +17,7 @@ public class typeof_GetElementOperation_InferenceRule extends AbstractInferenceR
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesFunctions_Collections.setInputElementType(op, op);
+    RulesFunctions_Collections.setInputElementType(typeCheckingContext, op, op);
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;

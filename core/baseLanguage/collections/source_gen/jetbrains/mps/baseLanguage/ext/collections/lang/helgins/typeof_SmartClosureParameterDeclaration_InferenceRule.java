@@ -28,7 +28,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
 
   public void applyRule(final SNode scpd, final TypeCheckingContext typeCheckingContext) {
     final SNode sampleTypeVar_typevar_1204072172194 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    SmartClosureParameterTypeUtil.equateInputType(scpd, TypeChecker.getInstance().getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194));
+    SmartClosureParameterTypeUtil.equateInputType(typeCheckingContext, scpd, TypeChecker.getInstance().getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194));
     {
       final SNode foo = TypeChecker.getInstance().getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(foo, new Runnable() {
@@ -36,7 +36,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
         public void run() {
           if (SmartClosureParameterTypeUtil.hasResolveType(scpd)) {
             final SNode resolveTypeVar_typevar_1204072273983 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-            SmartClosureParameterTypeUtil.equateResolveType(scpd, TypeChecker.getInstance().getEquationManager().getRepresentator(resolveTypeVar_typevar_1204072273983));
+            SmartClosureParameterTypeUtil.equateResolveType(typeCheckingContext, scpd, TypeChecker.getInstance().getEquationManager().getRepresentator(resolveTypeVar_typevar_1204072273983));
             {
               final SNode bar = TypeChecker.getInstance().getEquationManager().getRepresentator(resolveTypeVar_typevar_1204072273983);
               TypeChecker.getInstance().getRuntimeSupport().whenConcrete(bar, new Runnable() {

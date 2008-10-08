@@ -105,9 +105,11 @@ public class SubtypingManager {
     //joins
     if (superRepresentator instanceof NodeWrapper) {
       SNode node = superRepresentator.getNode();
-      for (SNode argument : node.getChildren(JoinType.ARGUMENT)) {
-        if (isSubtype(subRepresentator, NodeWrapper.createWrapperFromNode(argument, equationManager), equationManager, errorInfo, isWeak)) {
-          return true;
+      if (BaseAdapter.isInstance(node, JoinType.class)) {
+        for (SNode argument : node.getChildren(JoinType.ARGUMENT)) {
+          if (isSubtype(subRepresentator, NodeWrapper.createWrapperFromNode(argument, equationManager), equationManager, errorInfo, isWeak)) {
+            return true;
+          }
         }
       }
     }

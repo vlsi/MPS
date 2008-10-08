@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.inference.TypeCheckingContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
@@ -14,7 +15,7 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 public class SmartClosureParameterTypeUtil {
 
   @InferenceMethod()
-  public static void equateInputType(SNode scpd, SNode InputType) {
+  public static void equateInputType(TypeCheckingContext typeCheckingContext, SNode scpd, SNode InputType) {
     SNode vabs = SNodeOperations.getAncestorWhereConceptInList(scpd, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration","jetbrains.mps.baseLanguage.structure.AssignmentExpression","jetbrains.mps.baseLanguage.structure.IMethodCall","jetbrains.mps.baseLanguage.structure.DotExpression"}, false, false);
     if (SNodeOperations.isInstanceOf(vabs, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       {
@@ -52,7 +53,7 @@ public class SmartClosureParameterTypeUtil {
   }
 
   @InferenceMethod()
-  public static void equateResolveType(SNode scpd, SNode InputType) {
+  public static void equateResolveType(TypeCheckingContext typeCheckingContext, SNode scpd, SNode InputType) {
     SNode bmc = SNodeOperations.getAncestorWhereConceptInList(scpd, new String[]{"jetbrains.mps.baseLanguage.structure.IMethodCall"}, false, false);
     if (SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       {

@@ -15,7 +15,7 @@ public class typeof_AddElementOperation_InferenceRule extends AbstractInferenceR
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesFunctions_Collections.isInputElementType(op, SLinkOperations.getTarget(op, "argument", true));
+    RulesFunctions_Collections.isInputElementType(typeCheckingContext, op, SLinkOperations.getTarget(op, "argument", true));
   }
 
   public String getApplicableConceptFQName() {

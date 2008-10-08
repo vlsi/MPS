@@ -14,7 +14,7 @@ public class typeof_DistinctOperation_InferenceRule extends AbstractInferenceRul
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesFunctions_Collections.setInputSequenceType(op, op);
+    RulesFunctions_Collections.setInputSequenceType(typeCheckingContext, op, op);
   }
 
   public String getApplicableConceptFQName() {
