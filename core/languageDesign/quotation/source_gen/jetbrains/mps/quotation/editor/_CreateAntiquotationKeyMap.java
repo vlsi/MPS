@@ -12,7 +12,7 @@ import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.quotation.structure.Antiquotation_AnnotationLink;
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.quotation.structure.ListAntiquotation;

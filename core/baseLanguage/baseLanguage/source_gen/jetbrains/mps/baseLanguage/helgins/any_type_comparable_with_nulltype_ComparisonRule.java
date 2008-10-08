@@ -32,7 +32,7 @@ public class any_type_comparable_with_nulltype_ComparisonRule extends Comparison
   }
 
   public String getApplicableConceptFQName1() {
-    return "jetbrains.mps.core.structure.BaseConcept";
+    return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
 
   public String getApplicableConceptFQName2() {

@@ -5,7 +5,7 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.structureLanguage" />
   </models>
   <accessoryModels>
-    <model modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" />
+    <model modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.bootstrap.structureLanguage#1170324972255" uuid="b8e4beec-8383-4fb9-b0bb-9d1c9c159cfc">
@@ -35,7 +35,7 @@
     <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)</usedLanguages>
   </usedLanguages>
   <extendedLanguages>
-    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)</extendedLanguage>
+    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>
   </extendedLanguages>
 </language>
 

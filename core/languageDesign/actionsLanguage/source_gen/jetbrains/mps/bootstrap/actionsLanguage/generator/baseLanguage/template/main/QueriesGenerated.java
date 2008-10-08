@@ -15,7 +15,7 @@ import jetbrains.mps.bootstrap.actionsLanguage.behavior.SideTransformHintSubstit
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.actionsLanguage.behavior.RemoveSTByConditionPart_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;

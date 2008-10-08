@@ -6,19 +6,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Setter;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.core.structure.INamedConcept;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
@@ -27,13 +22,9 @@ import com.intellij.ide.DataManager;
 import com.intellij.ide.IdeBundle;
 import com.intellij.ui.awt.RelativePoint;
 
-import javax.swing.JPopupMenu;
 import javax.swing.Icon;
-import java.awt.event.KeyEvent;
-import java.awt.Rectangle;
 import java.awt.Point;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.Collections;
 
 public final class CreateFromUsageUtil {

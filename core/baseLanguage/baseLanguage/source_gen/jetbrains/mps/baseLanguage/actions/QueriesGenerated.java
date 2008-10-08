@@ -65,7 +65,7 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
-import jetbrains.mps.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class QueriesGenerated {
 

@@ -2,8 +2,6 @@ package jetbrains.mps.generator.plan;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
-import jetbrains.mps.core.structure.BaseConcept;
 
 import java.util.Set;
 import java.util.List;

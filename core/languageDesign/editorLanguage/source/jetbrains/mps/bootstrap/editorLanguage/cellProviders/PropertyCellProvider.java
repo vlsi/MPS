@@ -4,7 +4,7 @@ import jetbrains.mps.annotations.structure.PropertyAttributeConcept;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;

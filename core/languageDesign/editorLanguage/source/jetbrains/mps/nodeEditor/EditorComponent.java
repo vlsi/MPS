@@ -10,7 +10,7 @@ import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
-import jetbrains.mps.core.structure.INamedConcept;
+import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.SystemInfo;

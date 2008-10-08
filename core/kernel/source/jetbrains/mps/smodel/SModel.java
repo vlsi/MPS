@@ -942,7 +942,7 @@ public class SModel implements Iterable<SNode> {
       if (modelDescriptor != null) {
         modelsList.add(modelDescriptor);
       } else {
-        LOG.error("Couldn't find model descriptor for imported model: \"" + modelReference.getLongName() + "\" in: \"" + getSModelReference().getLongName() + "\"");
+        LOG.error("Couldn't find model descriptor for imported model: \"" + modelReference.getSModelFqName() + "\" in: \"" + getSModelReference().getSModelFqName() + "\"");
       }
     }
     return modelsList.iterator();

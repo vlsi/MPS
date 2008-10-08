@@ -1,6 +1,6 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -10,7 +10,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 /**
  * Provides default matchingText and descriptionText based on the given concept declaration.
  * {@link #doSubstitute(String)} instantiates new node of type {@link T}, takes parent of source node
- * and substitutes sourceNode with newly created node, invokes {@link #setSourceToNewInstance(String, jetbrains.mps.core.structure.BaseConcept, jetbrains.mps.core.structure.BaseConcept)}.
+ * and substitutes sourceNode with newly created node, invokes {@link #setSourceToNewInstance(String, jetbrains.mps.lang.core.structure.BaseConcept, jetbrains.mps.lang.core.structure.BaseConcept)}.
  * T is a type of node adapter to create
  * S is a type of node adapter to substitute
  */

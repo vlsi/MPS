@@ -220,7 +220,7 @@ public class RulesUtil {
             }
           }
           if (conceptDeclaration == null) {
-            conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
+            conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
           }
           {
             SNode _nodeToCheck_1029348928467 = op;
@@ -253,7 +253,7 @@ public class RulesUtil {
         {
           SNode _nodeToCheck_1029348928467 = op;
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.bootstrap.smodelLanguage.helgins)", "1207352395113", intentionProvider);
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.bootstrap.smodelLanguage.helgins)", "1207352395113", intentionProvider);
         }
       } else
       {
@@ -293,7 +293,7 @@ public class RulesUtil {
               {
                 SNode _nodeToCheck_1029348928467 = op;
                 BaseIntentionProvider intentionProvider = null;
-                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.bootstrap.smodelLanguage.helgins)", "1219348182120", intentionProvider);
+                TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeToEquate, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.bootstrap.smodelLanguage.helgins)", "1219348182120", intentionProvider);
               }
             }
           }
@@ -357,7 +357,7 @@ public class RulesUtil {
       result.add(leastCommonSuperconcept(a, b, subTypesToSuperTypes));
     }
     if (result.isEmpty()) {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
+      return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
     }
     return result.iterator().next();
   }
@@ -405,7 +405,7 @@ public class RulesUtil {
       }
     }
     if (commonSupertypes.size() != 1) {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
+      return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
     }
     return commonSupertypes.iterator().next();
   }

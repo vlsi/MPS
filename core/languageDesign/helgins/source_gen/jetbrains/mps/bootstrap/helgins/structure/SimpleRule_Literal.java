@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference;
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

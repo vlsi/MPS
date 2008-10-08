@@ -6,7 +6,7 @@ import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.core.scripts.SafeDelete;
+import jetbrains.mps.lang.core.scripts.SafeDelete;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;

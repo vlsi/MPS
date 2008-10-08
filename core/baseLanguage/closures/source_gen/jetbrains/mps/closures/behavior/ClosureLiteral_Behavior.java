@@ -4,7 +4,7 @@ package jetbrains.mps.closures.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class ClosureLiteral_Behavior {
 

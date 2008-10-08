@@ -6,7 +6,7 @@ import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.core.scripts.MoveNodes;
+import jetbrains.mps.lang.core.scripts.MoveNodes;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;

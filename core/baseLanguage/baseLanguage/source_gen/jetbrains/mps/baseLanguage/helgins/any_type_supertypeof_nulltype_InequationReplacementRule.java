@@ -49,7 +49,7 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Ine
   }
 
   public String getApplicableSupertypeConceptFQName() {
-    return "jetbrains.mps.core.structure.BaseConcept";
+    return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
 
 }

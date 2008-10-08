@@ -218,12 +218,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1198507396463(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if ("jetbrains.mps.core.structure.BaseConcept".equals(NameUtil.nodeFQName(_context.getNode()))) {
+    if ("jetbrains.mps.lang.core.structure.BaseConcept".equals(NameUtil.nodeFQName(_context.getNode()))) {
       return "jetbrains.mps.smodel.BaseAdapter";
     }
     SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "extends", false);
     if ((conceptDeclaration == null)) {
-      return "jetbrains.mps.core.structure.BaseConcept";
+      return "jetbrains.mps.lang.core.structure.BaseConcept";
     }
     return SNodeOperations.getModel(conceptDeclaration).getLongName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }

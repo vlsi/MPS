@@ -27,7 +27,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.core.structure.BaseConcept";
+    return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {

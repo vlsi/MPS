@@ -41,7 +41,7 @@ public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesyst
       if (notImplementedMethods) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(nodeToCheck, "Concept " + SPropertyOperations.getString(SLinkOperations.getTarget(nodeToCheck, "concept", false), "name") + " doesn't implement " + methodDeclarations, "r:948c08f9-066b-4867-9045-5538d22bcd76(jetbrains.mps.bootstrap.constraintsLanguage.helgins@13_0)", "1222439216218", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(nodeToCheck, "Concept " + SPropertyOperations.getString(SLinkOperations.getTarget(nodeToCheck, "concept", false), "name") + " doesn't implement " + methodDeclarations, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.bootstrap.constraintsLanguage.helgins)", "1198950378289", intentionProvider);
         }
       }
     }
@@ -49,7 +49,7 @@ public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesyst
       if (SConceptPropertyOperations.getBoolean(cmd, "abstract")) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(cmd, "Abstract method in non abstract concept", "r:948c08f9-066b-4867-9045-5538d22bcd76(jetbrains.mps.bootstrap.constraintsLanguage.helgins@13_0)", "1222439216238", intentionProvider);
+          TypeChecker.getInstance().reportTypeError(cmd, "Abstract method in non abstract concept", "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.bootstrap.constraintsLanguage.helgins)", "1198949983025", intentionProvider);
         }
       }
     }

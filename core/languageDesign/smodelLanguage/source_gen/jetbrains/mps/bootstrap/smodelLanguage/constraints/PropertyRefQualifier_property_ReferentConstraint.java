@@ -59,7 +59,7 @@ public class PropertyRefQualifier_property_ReferentConstraint implements IModelC
     }
     SNode dotOperandConcept = SLinkOperations.getTarget(nodeType, "concept", false);
     if (dotOperandConcept == null) {
-      dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
+      dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
     }
     return new SimpleSearchScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(dotOperandConcept));
   }

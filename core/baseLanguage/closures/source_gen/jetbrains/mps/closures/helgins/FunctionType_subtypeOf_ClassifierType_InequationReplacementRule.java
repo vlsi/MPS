@@ -12,7 +12,7 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.closures.constraints.ClassifierTypeUtil;
 import java.util.Iterator;
-import jetbrains.mps.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule extends InequationReplacementRule_Runtime {

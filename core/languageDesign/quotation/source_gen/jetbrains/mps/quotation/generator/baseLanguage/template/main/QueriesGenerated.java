@@ -22,7 +22,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.quotation.structure.PropertyAntiquotation_AnnotationLink;
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

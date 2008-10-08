@@ -15,7 +15,7 @@ import jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink;
 import jetbrains.mps.quotation.structure.AbstractAntiquotation;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.patterns.structure.AsPattern_AnnotationLink;
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.patterns.structure.AsPattern;

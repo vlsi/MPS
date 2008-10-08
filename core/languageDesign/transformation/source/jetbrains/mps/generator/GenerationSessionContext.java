@@ -8,7 +8,7 @@ import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.transformation.TLBase.structure.MappingScriptReference;
-import jetbrains.mps.core.structure.INamedConcept;
+import jetbrains.mps.lang.core.structure.INamedConcept;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;

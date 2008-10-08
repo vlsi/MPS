@@ -1,6 +1,6 @@
 package jetbrains.mps.generator.plan;
 
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.structure.*;

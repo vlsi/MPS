@@ -4,7 +4,7 @@ import jetbrains.mps.helgins.inference.*;
 import jetbrains.mps.bootstrap.helgins.structure.MeetType;
 import jetbrains.mps.bootstrap.helgins.structure.JoinType;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 
 import java.util.Set;
 import java.util.HashSet;

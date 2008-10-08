@@ -1,8 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)">
   <persistence version="3" />
-  <refactoringHistory />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="BaseConcept" conceptFQName="jetbrains.mps.core.structure.BaseConcept" featureKind="CONCEPT" />
+          <value featureName="BaseConcept" conceptFQName="jetbrains.mps.lang.core.structure.BaseConcept" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="INamedConcept" conceptFQName="jetbrains.mps.core.structure.INamedConcept" featureKind="CONCEPT" />
+          <value featureName="INamedConcept" conceptFQName="jetbrains.mps.lang.core.structure.INamedConcept" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="IResolveInfo" conceptFQName="jetbrains.mps.core.structure.IResolveInfo" featureKind="CONCEPT" />
+          <value featureName="IResolveInfo" conceptFQName="jetbrains.mps.lang.core.structure.IResolveInfo" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="IWrapper" conceptFQName="jetbrains.mps.core.structure.IWrapper" featureKind="CONCEPT" />
+          <value featureName="IWrapper" conceptFQName="jetbrains.mps.lang.core.structure.IWrapper" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="NamedConcept" conceptFQName="jetbrains.mps.core.structure.NamedConcept" featureKind="CONCEPT" />
+          <value featureName="NamedConcept" conceptFQName="jetbrains.mps.lang.core.structure.NamedConcept" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -13,8 +39,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <maxImportIndex value="25" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1078489098625">
     <property name="name" value="NamedConcept" />

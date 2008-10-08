@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.core" uuid="ceab5195-25ea-4f22-9b92-103b95ca8c0c" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.lang.core" uuid="ceab5195-25ea-4f22-9b92-103b95ca8c0c" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.core" />
+    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.lang.core" />
   </models>
   <accessoryModels />
   <generators />

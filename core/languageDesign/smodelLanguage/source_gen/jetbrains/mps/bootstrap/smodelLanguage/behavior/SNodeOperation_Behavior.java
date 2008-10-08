@@ -64,7 +64,7 @@ public class SNodeOperation_Behavior {
         return SLinkOperations.getTarget(nodeType, "concept", false);
       }
     }
-    return SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
+    return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
   }
 
 }

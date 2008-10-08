@@ -18,7 +18,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import java.util.Set;
 import java.util.HashSet;
 import java.util.LinkedList;
-import jetbrains.mps.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import java.util.HashMap;
 
 public class ClosureLiteralUtil {

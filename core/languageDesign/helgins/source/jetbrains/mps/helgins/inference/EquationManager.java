@@ -5,10 +5,7 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
-import jetbrains.mps.bootstrap.helgins.structure.MeetType;
-import jetbrains.mps.bootstrap.helgins.structure.JoinType;
 import jetbrains.mps.bootstrap.helgins.runtime.InequationReplacementRule_Runtime;
-import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.intentions.IntentionProvider;
 
 import java.util.*;

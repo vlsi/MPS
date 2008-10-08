@@ -10,7 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOp
 public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_ConceptDeclaration_1163111194509(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.setTarget(_context.getNewNode(), "extends", SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept"), false);
+    SLinkOperations.setTarget(_context.getNewNode(), "extends", SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), false);
   }
 
 }

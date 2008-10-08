@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor.cellProviders;
 
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;

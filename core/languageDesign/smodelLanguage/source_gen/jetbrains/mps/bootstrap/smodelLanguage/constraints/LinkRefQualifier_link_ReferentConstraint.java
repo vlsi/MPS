@@ -62,7 +62,7 @@ public class LinkRefQualifier_link_ReferentConstraint implements IModelConstrain
     }
     SNode dotOperandConcept = SLinkOperations.getTarget(nodeType, "concept", false);
     if (dotOperandConcept == null) {
-      dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept");
+      dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
     }
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(dotOperandConcept);
     // reference only?

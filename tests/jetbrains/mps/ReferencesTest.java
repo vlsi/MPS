@@ -2,16 +2,12 @@ package jetbrains.mps;
 
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.logging.*;
-import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_AnnotationLink;
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 
-import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
 

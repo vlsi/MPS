@@ -5,7 +5,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.core.scripts.SafeDelete;
+import jetbrains.mps.lang.core.scripts.SafeDelete;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.refactoring.framework.GenericRefactoringAction;

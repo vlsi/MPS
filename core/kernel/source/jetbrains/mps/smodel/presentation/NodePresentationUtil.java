@@ -1,8 +1,8 @@
 package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.core.structure.IResolveInfo;
+import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;

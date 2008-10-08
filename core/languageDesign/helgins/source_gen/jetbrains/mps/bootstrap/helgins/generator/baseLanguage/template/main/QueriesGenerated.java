@@ -1931,7 +1931,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     SModel targetModel = _context.getOutputModel();
     for(SNode leaf : leaves) {
-      SNode composite = SModelOperations.createNewNode(targetModel, "jetbrains.mps.core.structure.BaseConcept", null);
+      SNode composite = SModelOperations.createNewNode(targetModel, "jetbrains.mps.lang.core.structure.BaseConcept", null);
       composite.setReferent("leaf", leaf);
       SNode current = leaf;
       while (dependencies.get(current) != null) {

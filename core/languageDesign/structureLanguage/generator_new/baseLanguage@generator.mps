@@ -24,24 +24,25 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
-  <maxImportIndex value="29" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <maxImportIndex value="31" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="15" modelUID="f:java_stub#jetbrains.mps.core.structure(jetbrains.mps.core.structure@java_stub)" version="-1" />
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.bootstrap.structureLanguage.structure)" version="-1" />
   <import index="19" modelUID="r:00000000-0000-4000-0000-011c89590294(jetbrains.mps.bootstrap.structureLanguage.generator_new.util)" version="-1" />
-  <import index="20" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" version="-1" />
+  <import index="20" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="24" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="25" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <import index="29" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.bootstrap.structureLanguage.behavior)" version="-1" />
+  <import index="30" modelUID="f:java_stub#jetbrains.mps.lang.core.structure(jetbrains.mps.lang.core.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1095423876828">
     <property name="name" value="MAPPING_main" />
     <node role="rootMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Root_MappingRule" id="1167753468269">
@@ -611,7 +612,7 @@
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198507255529">
       <property name="fqClassName" value="extendedConcept" />
-      <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+      <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
       <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198507396462">
         <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198507396463">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198507396464">
@@ -625,7 +626,7 @@
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216299655080">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216299653998">
-                  <property name="value" value="jetbrains.mps.core.structure.BaseConcept" />
+                  <property name="value" value="jetbrains.mps.lang.core.structure.BaseConcept" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216299656794">
                   <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
@@ -655,7 +656,7 @@
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198507600569">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198507621115">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198507622288">
-                    <property name="value" value="jetbrains.mps.core.structure.BaseConcept" />
+                    <property name="value" value="jetbrains.mps.lang.core.structure.BaseConcept" />
                   </node>
                 </node>
               </node>
@@ -4369,13 +4370,13 @@
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1142005439639">
         <property name="name" value="getAttributedNode_internal" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1142005447298">
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1142005439641">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1142005481144">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1142005491304">
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1142005494010">
-                <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+                <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
               </node>
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740459726">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1142005497168" />
@@ -4554,7 +4555,7 @@
         <property name="name" value="source" />
         <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512632059">
           <property name="fqClassName" value="sourceClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512649466">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512649467">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512649468">
@@ -4579,7 +4580,7 @@
         <property name="name" value="target" />
         <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512270990">
           <property name="fqClassName" value="targetClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512295085">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512295086">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512295087">
@@ -4655,7 +4656,7 @@
             </node>
             <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512344469">
               <property name="fqClassName" value="targetClassifier" />
-              <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+              <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
               <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512344470">
                 <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512344471">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512344472">
@@ -4682,7 +4683,7 @@
         <property name="name" value="source" />
         <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512699156">
           <property name="fqClassName" value="sourceClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512699157">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512699158">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512699159">
@@ -4732,7 +4733,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546096913" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512334944">
         <property name="fqClassName" value="targetClassifier" />
-        <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+        <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
         <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512334945">
           <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512334946">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512334947">
@@ -4759,7 +4760,7 @@
         <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
         <node role="parameter" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512366916">
           <property name="fqClassName" value="targetClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512366917">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512366918">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512366919">
@@ -4799,7 +4800,7 @@
               <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512398090">
                 <property name="fqClassName" value="targetClassifier" />
-                <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+                <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
                 <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512398091">
                   <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512398092">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512398093">
@@ -4827,7 +4828,7 @@
         <property name="name" value="source" />
         <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512711227">
           <property name="fqClassName" value="sourceClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512711228">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512711229">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512711230">
@@ -4951,7 +4952,7 @@
         <property name="name" value="source" />
         <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512728705">
           <property name="fqClassName" value="sourceClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512728706">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512728707">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512728708">
@@ -4982,7 +4983,7 @@
         <property name="name" value="target" />
         <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512429161">
           <property name="fqClassName" value="targetClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512429162">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512429163">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512429164">
@@ -5061,7 +5062,7 @@
             </node>
             <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512443601">
               <property name="fqClassName" value="targetClassifier" />
-              <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+              <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
               <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512443602">
                 <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512443603">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512443604">
@@ -5088,7 +5089,7 @@
         <property name="name" value="source" />
         <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512748480">
           <property name="fqClassName" value="sourceClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512748481">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512748482">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512748483">
@@ -5144,7 +5145,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546097062" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512438686">
         <property name="fqClassName" value="targetClassifier" />
-        <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+        <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
         <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512438687">
           <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512438688">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512438689">
@@ -5171,7 +5172,7 @@
         <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
         <node role="parameter" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512461111">
           <property name="fqClassName" value="targetClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512461112">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512461113">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512461114">
@@ -5214,7 +5215,7 @@
               <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512471895">
                 <property name="fqClassName" value="targetClassifier" />
-                <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+                <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
                 <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512471896">
                   <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512471897">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512471898">
@@ -5242,7 +5243,7 @@
         <property name="name" value="source" />
         <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512758177">
           <property name="fqClassName" value="sourceClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512758178">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512758179">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512758180">
@@ -5372,7 +5373,7 @@
         <property name="name" value="source" />
         <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512771264">
           <property name="fqClassName" value="sourceClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512771265">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512771266">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512771267">
@@ -5403,7 +5404,7 @@
         <property name="name" value="target" />
         <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512505889">
           <property name="fqClassName" value="targetClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512505890">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512505891">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512505892">
@@ -5482,7 +5483,7 @@
             </node>
             <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512581970">
               <property name="fqClassName" value="targetClassifier" />
-              <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+              <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
               <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512581971">
                 <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512581972">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512581973">
@@ -5509,7 +5510,7 @@
         <property name="name" value="source" />
         <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512780851">
           <property name="fqClassName" value="sourceClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512780852">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512780853">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512780854">
@@ -5565,7 +5566,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546096720" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512575164">
         <property name="fqClassName" value="targetClassifier" />
-        <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+        <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
         <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512575165">
           <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512575166">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512575167">
@@ -5592,7 +5593,7 @@
         <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
         <node role="parameter" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512594531">
           <property name="fqClassName" value="targetClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512594532">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512594533">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512594534">
@@ -5635,7 +5636,7 @@
               <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512606096">
                 <property name="fqClassName" value="targetClassifier" />
-                <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+                <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
                 <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512606097">
                   <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512606098">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512606099">
@@ -5663,7 +5664,7 @@
         <property name="name" value="source" />
         <node role="type" type="jetbrains.mps.baseLanguage.internal.structure.InternalClassifierType" id="1198512784532">
           <property name="fqClassName" value="sourceClassifier" />
-          <link role="classifier" targetNodeId="15.~BaseConcept" resolveInfo="BaseConcept" />
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
           <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198512784533">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198512784534">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198512784535">

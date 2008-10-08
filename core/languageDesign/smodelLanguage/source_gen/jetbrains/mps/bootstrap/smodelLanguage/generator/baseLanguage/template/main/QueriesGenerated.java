@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.behavior.ConceptMethodDeclaration_Behavior;
-import jetbrains.mps.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.bootstrap.structureLanguage.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.behavior.StaticConceptMethodDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;

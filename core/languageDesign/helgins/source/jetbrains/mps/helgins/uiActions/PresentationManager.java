@@ -1,15 +1,12 @@
 package jetbrains.mps.helgins.uiActions;
 
 import jetbrains.mps.helgins.inference.NodeWrapper;
-import jetbrains.mps.helgins.inference.IWrapper;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
-
-import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.

@@ -1,10 +1,10 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
-import jetbrains.mps.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.core.structure.INamedConcept;
-import jetbrains.mps.core.structure.IResolveInfo;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;

@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.core.structure.IWrapper;
+import jetbrains.mps.lang.core.structure.IWrapper;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.BaseAdapter;

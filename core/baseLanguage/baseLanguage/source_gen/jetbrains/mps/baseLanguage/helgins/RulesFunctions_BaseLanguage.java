@@ -17,7 +17,7 @@ import java.util.Iterator;
 import jetbrains.mps.closures.runtime.YieldingIterator;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.ArrayList;
 import java.util.Set;

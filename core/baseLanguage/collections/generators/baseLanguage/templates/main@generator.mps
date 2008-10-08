@@ -8,7 +8,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
@@ -22,7 +22,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.patterns.constraints)" version="2" />
@@ -31,10 +31,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <maxImportIndex value="28" />
   <import index="1" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" version="-1" />
+  <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.baseLanguage.ext.collections.internal.query(jetbrains.mps.baseLanguage.ext.collections.internal.query@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.baseLanguage.ext.collections.internal(jetbrains.mps.baseLanguage.ext.collections.internal@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -6014,7 +6015,7 @@
       <property name="applyToConceptInheritors" value="true" />
       <link role="applicableConcept" targetNodeId="6.1197027756228" resolveInfo="DotExpression" />
       <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1203340469434">
-        <node role="templateNode" type="jetbrains.mps.core.structure.BaseConcept" id="1203340469435">
+        <node role="templateNode" type="jetbrains.mps.lang.core.structure.BaseConcept" id="1203340469435">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1203340469436">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1203340469437">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203340469438">
@@ -6197,7 +6198,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1208699246757">
       <link role="applicableConcept" targetNodeId="6.1081236700937" resolveInfo="StaticMethodCall" />
       <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1208699270913">
-        <node role="templateNode" type="jetbrains.mps.core.structure.BaseConcept" id="1208699270914">
+        <node role="templateNode" type="jetbrains.mps.lang.core.structure.BaseConcept" id="1208699270914">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1208699274744">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1208699274745">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208699274746">
@@ -8620,7 +8621,7 @@
       <property name="applyToConceptInheritors" value="true" />
       <link role="applicableConcept" targetNodeId="6.1197027756228" resolveInfo="DotExpression" />
       <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1208440989708">
-        <node role="templateNode" type="jetbrains.mps.core.structure.BaseConcept" id="1208440989709">
+        <node role="templateNode" type="jetbrains.mps.lang.core.structure.BaseConcept" id="1208440989709">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1208440989710">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1208440989711">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208440989712">
@@ -8769,7 +8770,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1208699299547">
       <link role="applicableConcept" targetNodeId="6.1081236700937" resolveInfo="StaticMethodCall" />
       <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1208699306947">
-        <node role="templateNode" type="jetbrains.mps.core.structure.BaseConcept" id="1208699306948">
+        <node role="templateNode" type="jetbrains.mps.lang.core.structure.BaseConcept" id="1208699306948">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1208699308947">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1208699308948">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208699308949">
@@ -8908,7 +8909,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1208699318944">
       <link role="applicableConcept" targetNodeId="6.1081236700937" resolveInfo="StaticMethodCall" />
       <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1208699325560">
-        <node role="templateNode" type="jetbrains.mps.core.structure.BaseConcept" id="1208699325561">
+        <node role="templateNode" type="jetbrains.mps.lang.core.structure.BaseConcept" id="1208699325561">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1208699327584">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1208699327585">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208699327586">

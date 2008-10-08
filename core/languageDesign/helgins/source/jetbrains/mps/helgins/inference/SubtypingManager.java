@@ -9,13 +9,11 @@ import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.IMatchingPattern;
-import jetbrains.mps.patterns.ConceptMatchingPattern;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.Hack;
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 
 import java.util.*;
 

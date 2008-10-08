@@ -11,8 +11,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.core.structure.INamedConcept;
+import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.logging.Logger;
