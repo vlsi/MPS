@@ -4,7 +4,7 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
-import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
+import jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import com.intellij.openapi.progress.ProgressIndicator;

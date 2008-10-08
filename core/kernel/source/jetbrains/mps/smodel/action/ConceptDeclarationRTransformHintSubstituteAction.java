@@ -1,11 +1,11 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 /**
  * Provides default matchingText and descriptionText based on the given concept declaration.

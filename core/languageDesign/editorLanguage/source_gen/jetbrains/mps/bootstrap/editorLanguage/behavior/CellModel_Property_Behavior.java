@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.editorLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.structureLanguage.behavior.PropertyDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior;
 
 public class CellModel_Property_Behavior {
 

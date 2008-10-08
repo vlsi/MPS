@@ -1,6 +1,6 @@
 package jetbrains.mps.smodel.presentation;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.ide.icons.IconManager;

@@ -1,6 +1,6 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 

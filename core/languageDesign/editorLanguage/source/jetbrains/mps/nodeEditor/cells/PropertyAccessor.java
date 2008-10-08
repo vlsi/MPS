@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
+import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.nodeEditor.EditorContext;

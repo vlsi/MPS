@@ -6,7 +6,7 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.structure.*;
@@ -14,7 +14,6 @@ import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.GenerationCanceledException;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class RuleManager {

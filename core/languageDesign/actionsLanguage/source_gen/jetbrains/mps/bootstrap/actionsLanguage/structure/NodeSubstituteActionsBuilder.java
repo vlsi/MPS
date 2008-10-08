@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.actionsLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;

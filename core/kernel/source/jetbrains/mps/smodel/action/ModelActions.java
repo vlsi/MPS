@@ -1,7 +1,7 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
@@ -46,7 +46,7 @@ public class ModelActions {
   //-------------------
 
   public static List<INodeSubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IOperationContext context) {
-    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, (jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration) linkDeclaration, context);
+    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, (LinkDeclaration) linkDeclaration, context);
   }
 
   //-------------------

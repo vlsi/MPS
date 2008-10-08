@@ -14,7 +14,7 @@ public class interface_node_types_are_comparable_ComparisonRule extends Comparis
   }
 
   public boolean areComparable(SNode node1, SNode node2) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node1, "concept", false), "jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node2, "concept", false), "jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node1, "concept", false), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node2, "concept", false), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
       return true;
     }
     return false;

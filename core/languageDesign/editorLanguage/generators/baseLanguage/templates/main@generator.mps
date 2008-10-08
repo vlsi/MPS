@@ -25,7 +25,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.bootstrap.constraintsLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.patterns.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
@@ -33,6 +33,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <maxImportIndex value="69" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -50,7 +51,7 @@
   <import index="37" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
   <import index="38" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.bootstrap.editorLanguage.structure)" version="26" />
   <import index="40" modelUID="f:java_stub#jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.template.main(jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.template.main@java_stub)" version="-1" />
-  <import index="45" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.bootstrap.structureLanguage.structure)" version="-1" />
+  <import index="45" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="46" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="47" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="48" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
@@ -3044,8 +3045,8 @@
                               </node>
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1212799812204">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212799823348">
-                                  <link role="baseMethodDeclaration" targetNodeId="23.~RefNodeListHandler.getRoleByRelationDeclaration(jetbrains.mps.core.structure.BaseConcept):java.lang.String" resolveInfo="getRoleByRelationDeclaration" />
                                   <link role="classConcept" targetNodeId="23.~RefNodeListHandler" resolveInfo="RefNodeListHandler" />
+                                  <link role="baseMethodDeclaration" targetNodeId="23.~RefNodeListHandler.getRoleByRelationDeclaration(jetbrains.mps.lang.core.structure.BaseConcept):java.lang.String" resolveInfo="getRoleByRelationDeclaration" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212799839209">
                                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212800072014">
                                       <link role="variableDeclaration" targetNodeId="1212799793573" resolveInfo="relationDeclaration" />
@@ -4962,8 +4963,8 @@
                                       <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1187029968385" />
                                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208995308909">
                                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1187029968387">
-                                          <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.getBaseConcept():jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" resolveInfo="getBaseConcept" />
                                           <link role="classConcept" targetNodeId="5.~SModelUtil_new" resolveInfo="SModelUtil_new" />
+                                          <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.getBaseConcept():jetbrains.mps.lang.structure.structure.ConceptDeclaration" resolveInfo="getBaseConcept" />
                                         </node>
                                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995308910">
                                           <link role="baseMethodDeclaration" targetNodeId="5.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
@@ -11561,7 +11562,7 @@
                           </node>
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213036598735">
                             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213036598737">
-                              <link role="baseMethodDeclaration" targetNodeId="23.~AggregationCellContext.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration)" resolveInfo="AggregationCellContext" />
+                              <link role="baseMethodDeclaration" targetNodeId="23.~AggregationCellContext.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.lang.structure.structure.LinkDeclaration)" resolveInfo="AggregationCellContext" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1184142273541">
                                 <link role="variableDeclaration" targetNodeId="1184142273576" resolveInfo="listOwner" />
                               </node>
@@ -11569,7 +11570,7 @@
                                 <link role="variableDeclaration" targetNodeId="1184142273578" resolveInfo="elementNode" />
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall" id="1184142273543">
-                                <link role="baseMethodDeclaration" targetNodeId="23.~RefNodeListHandler.getLinkDeclaration():jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" resolveInfo="getLinkDeclaration" />
+                                <link role="baseMethodDeclaration" targetNodeId="23.~RefNodeListHandler.getLinkDeclaration():jetbrains.mps.lang.structure.structure.LinkDeclaration" resolveInfo="getLinkDeclaration" />
                               </node>
                             </node>
                           </node>
@@ -11678,7 +11679,7 @@
                           <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell.setSubstituteInfo(jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo):void" resolveInfo="setSubstituteInfo" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213036598203">
                             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213036598205">
-                              <link role="baseMethodDeclaration" targetNodeId="37.~DefaultChildSubstituteInfo.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration,jetbrains.mps.nodeEditor.EditorContext)" resolveInfo="DefaultChildSubstituteInfo" />
+                              <link role="baseMethodDeclaration" targetNodeId="37.~DefaultChildSubstituteInfo.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.lang.structure.structure.LinkDeclaration,jetbrains.mps.nodeEditor.EditorContext)" resolveInfo="DefaultChildSubstituteInfo" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1184142273557">
                                 <link role="variableDeclaration" targetNodeId="1184142273576" resolveInfo="listOwner" />
                               </node>
@@ -11686,7 +11687,7 @@
                                 <link role="variableDeclaration" targetNodeId="1184142273578" resolveInfo="elementNode" />
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall" id="1184142273559">
-                                <link role="baseMethodDeclaration" targetNodeId="23.~RefNodeListHandler.getLinkDeclaration():jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" resolveInfo="getLinkDeclaration" />
+                                <link role="baseMethodDeclaration" targetNodeId="23.~RefNodeListHandler.getLinkDeclaration():jetbrains.mps.lang.structure.structure.LinkDeclaration" resolveInfo="getLinkDeclaration" />
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1184142273560">
                                 <link role="variableDeclaration" targetNodeId="1184142273582" resolveInfo="context" />

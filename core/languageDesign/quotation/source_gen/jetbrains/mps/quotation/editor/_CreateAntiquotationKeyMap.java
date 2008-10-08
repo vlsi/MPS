@@ -13,11 +13,11 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.quotation.structure.Antiquotation_AnnotationLink;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.quotation.structure.ListAntiquotation;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink;
 import jetbrains.mps.quotation.structure.ReferenceAntiquotation;

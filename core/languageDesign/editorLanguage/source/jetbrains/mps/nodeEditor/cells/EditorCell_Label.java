@@ -11,11 +11,10 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.Calculable;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.TextPasteUtil;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;

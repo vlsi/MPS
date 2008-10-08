@@ -1,7 +1,7 @@
 package jetbrains.mps.bootstrap.editorLanguage.cellProviders;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
+import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 
 /**

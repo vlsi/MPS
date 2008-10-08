@@ -1,8 +1,8 @@
 package jetbrains.mps.smodel.search;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.lang.structure.structure.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;

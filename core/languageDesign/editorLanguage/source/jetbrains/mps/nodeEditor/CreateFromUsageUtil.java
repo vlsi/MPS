@@ -13,7 +13,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Setter;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;

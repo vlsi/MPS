@@ -15,7 +15,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.behavior.SModelLanguageUtil;
-import jetbrains.mps.bootstrap.structureLanguage.behavior.DataTypeDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class EnumMemberReference_enumMember_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {

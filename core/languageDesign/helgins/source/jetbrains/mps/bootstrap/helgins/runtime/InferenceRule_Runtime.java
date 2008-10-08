@@ -1,9 +1,5 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko

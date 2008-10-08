@@ -2,7 +2,7 @@ package jetbrains.mps.bootstrap.editorLanguage.cellProviders;
 
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
 /**
  * Igor Alshannikov

@@ -1,6 +1,6 @@
 package jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;

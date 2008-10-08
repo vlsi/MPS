@@ -1,9 +1,9 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
-import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class ChildrenCollectionFinder {

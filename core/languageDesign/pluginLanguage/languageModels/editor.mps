@@ -21,7 +21,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.bootstrap.pluginLanguage.structure)" version="14" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.bootstrap.pluginLanguage.constraints)" version="19" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
@@ -30,12 +30,12 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.patterns.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <maxImportIndex value="25" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <maxImportIndex value="29" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.bootstrap.pluginLanguage.structure)" version="14" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
-  <import index="5" modelUID="f:java_stub#jetbrains.mps.bootstrap.structureLanguage.editor(jetbrains.mps.bootstrap.structureLanguage.editor@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.bootstrap.structureLanguage.structure)" version="-1" />
+  <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="14" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
@@ -45,6 +45,8 @@
   <import index="22" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="24" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="25" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.bootstrap.pluginLanguage.behavior)" version="-1" />
+  <import index="27" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
+  <import index="28" modelUID="f:java_stub#jetbrains.mps.lang.structure.editor(jetbrains.mps.lang.structure.editor@java_stub)" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1203083734526">
     <property name="package" value="Actions.Action" />
     <link role="conceptDeclaration" targetNodeId="1.1203071646776" resolveInfo="Action" />
@@ -158,8 +160,8 @@
                         <link role="classifier" targetNodeId="21.~IModule" resolveInfo="IModule" />
                       </node>
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218984772539">
-                        <link role="classConcept" targetNodeId="5.~EditorUtil" resolveInfo="EditorUtil" />
-                        <link role="baseMethodDeclaration" targetNodeId="5.~EditorUtil.findAnchorModule(jetbrains.mps.smodel.SNode):jetbrains.mps.project.IModule" resolveInfo="findAnchorModule" />
+                        <link role="classConcept" targetNodeId="28.~EditorUtil" resolveInfo="EditorUtil" />
+                        <link role="baseMethodDeclaration" targetNodeId="28.~EditorUtil.findAnchorModule(jetbrains.mps.smodel.SNode):jetbrains.mps.project.IModule" resolveInfo="findAnchorModule" />
                         <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1218984772540" />
                       </node>
                     </node>
@@ -259,8 +261,8 @@
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218984772579">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218984772580">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218984772581">
-                      <link role="baseMethodDeclaration" targetNodeId="5.~EditorUtil.createSelectIconButton(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.nodeEditor.EditorContext):javax.swing.JComponent" resolveInfo="createSelectIconButton" />
-                      <link role="classConcept" targetNodeId="5.~EditorUtil" resolveInfo="EditorUtil" />
+                      <link role="classConcept" targetNodeId="28.~EditorUtil" resolveInfo="EditorUtil" />
+                      <link role="baseMethodDeclaration" targetNodeId="28.~EditorUtil.createSelectIconButton(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext):javax.swing.JComponent" resolveInfo="createSelectIconButton" />
                       <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1218984772582" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1218984772583">
                         <property name="value" value="iconPath" />
@@ -967,8 +969,8 @@
                       <link role="classifier" targetNodeId="21.~IModule" resolveInfo="IModule" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1214668852850">
-                      <link role="baseMethodDeclaration" targetNodeId="5.~EditorUtil.findAnchorModule(jetbrains.mps.smodel.SNode):jetbrains.mps.project.IModule" resolveInfo="findAnchorModule" />
-                      <link role="classConcept" targetNodeId="5.~EditorUtil" resolveInfo="EditorUtil" />
+                      <link role="classConcept" targetNodeId="28.~EditorUtil" resolveInfo="EditorUtil" />
+                      <link role="baseMethodDeclaration" targetNodeId="28.~EditorUtil.findAnchorModule(jetbrains.mps.smodel.SNode):jetbrains.mps.project.IModule" resolveInfo="findAnchorModule" />
                       <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1214668852851" />
                     </node>
                   </node>
@@ -1068,8 +1070,8 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208950262072">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1208950262073">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1208950262074">
-                    <link role="classConcept" targetNodeId="5.~EditorUtil" resolveInfo="EditorUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="5.~EditorUtil.createSelectIconButton(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.nodeEditor.EditorContext):javax.swing.JComponent" resolveInfo="createSelectIconButton" />
+                    <link role="classConcept" targetNodeId="28.~EditorUtil" resolveInfo="EditorUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="28.~EditorUtil.createSelectIconButton(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext):javax.swing.JComponent" resolveInfo="createSelectIconButton" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1208950262075" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1208950262076">
                       <property name="value" value="icon" />
@@ -2060,8 +2062,8 @@
                       <link role="classifier" targetNodeId="21.~IModule" resolveInfo="IModule" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1217681682200">
-                      <link role="classConcept" targetNodeId="5.~EditorUtil" resolveInfo="EditorUtil" />
-                      <link role="baseMethodDeclaration" targetNodeId="5.~EditorUtil.findAnchorModule(jetbrains.mps.smodel.SNode):jetbrains.mps.project.IModule" resolveInfo="findAnchorModule" />
+                      <link role="classConcept" targetNodeId="28.~EditorUtil" resolveInfo="EditorUtil" />
+                      <link role="baseMethodDeclaration" targetNodeId="28.~EditorUtil.findAnchorModule(jetbrains.mps.smodel.SNode):jetbrains.mps.project.IModule" resolveInfo="findAnchorModule" />
                       <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1217681682201" />
                     </node>
                   </node>
@@ -2162,8 +2164,8 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210687257463">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210687257464">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1210687257465">
-                    <link role="classConcept" targetNodeId="5.~EditorUtil" resolveInfo="EditorUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="5.~EditorUtil.createSelectIconButton(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.nodeEditor.EditorContext):javax.swing.JComponent" resolveInfo="createSelectIconButton" />
+                    <link role="classConcept" targetNodeId="28.~EditorUtil" resolveInfo="EditorUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="28.~EditorUtil.createSelectIconButton(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext):javax.swing.JComponent" resolveInfo="createSelectIconButton" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1210687257466" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210687257467">
                       <property name="value" value="icon" />

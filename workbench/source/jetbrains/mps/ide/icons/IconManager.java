@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.icons;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;

@@ -1,10 +1,10 @@
 package jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty;
-import jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty;
-import jetbrains.mps.bootstrap.structureLanguage.structure.IntegerConceptProperty;
-import jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty;
+import jetbrains.mps.lang.structure.structure.StringConceptProperty;
+import jetbrains.mps.lang.structure.structure.ConceptProperty;
+import jetbrains.mps.lang.structure.structure.IntegerConceptProperty;
+import jetbrains.mps.lang.structure.structure.*;
 
 /**
  * Igor Alshannikov

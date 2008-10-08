@@ -1,6 +1,6 @@
 package jetbrains.mps.refactoring.framework.tests;
 
-import jetbrains.mps.bootstrap.structureLanguage.scripts.MoveConcepts;
+import jetbrains.mps.lang.structure.scripts.MoveConcepts;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;

@@ -20,9 +20,9 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInfe
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedTo_LinkAccess_aggregation(op);
+    RulesUtil.checkAppliedTo_LinkAccess_aggregation(typeCheckingContext, op);
     final SNode Concept_typevar_1206099875685 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    RulesUtil.equate_inputNodeConcept(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099875685));
+    RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099875685));
     {
       final SNode concreteConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099875685);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(concreteConcept, new Runnable() {

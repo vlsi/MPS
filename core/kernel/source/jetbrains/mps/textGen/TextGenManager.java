@@ -1,7 +1,7 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.baseLanguage.textGen.BaseLangTextGen;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IOperationContext;

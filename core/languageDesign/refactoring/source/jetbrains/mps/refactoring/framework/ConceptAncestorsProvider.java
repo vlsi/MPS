@@ -1,11 +1,11 @@
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
+import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 
 import java.util.Set;
 import java.util.HashSet;

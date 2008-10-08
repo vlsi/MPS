@@ -1,10 +1,10 @@
 package jetbrains.mps.bootstrap.editorLanguage.cellProviders;
 
 import jetbrains.mps.annotations.structure.PropertyAttributeConcept;
-import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
+import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.structure.structure.DataTypeDeclaration;
+import jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;

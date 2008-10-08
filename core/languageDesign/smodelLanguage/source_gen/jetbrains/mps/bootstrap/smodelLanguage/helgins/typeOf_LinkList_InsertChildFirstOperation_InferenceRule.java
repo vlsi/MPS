@@ -17,11 +17,11 @@ public class typeOf_LinkList_InsertChildFirstOperation_InferenceRule extends Abs
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedTo_LinkListAccess_aggregation(op);
+    RulesUtil.checkAppliedTo_LinkListAccess_aggregation(typeCheckingContext, op);
     SNode parameter = SLinkOperations.getTarget(op, "parameter", true);
     if ((parameter != null)) {
       final SNode ExpectedType_typevar_1206101286415 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-      RulesUtil.equate_inputNodeType(op, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101286415));
+      RulesUtil.equate_inputNodeType(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101286415));
       SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.bootstrap.smodelLanguage.helgins)", "1205272570106", true);
       {
         SNode _nodeToCheck_1029348928467 = op;

@@ -5,11 +5,9 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 
 import java.util.List;
-import java.util.Collections;
 import java.util.ArrayList;
 
 import org.jetbrains.annotations.NotNull;

@@ -2,7 +2,7 @@ package jetbrains.mps.workbench.actions.model;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;

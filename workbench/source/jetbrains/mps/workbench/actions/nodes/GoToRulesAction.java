@@ -4,7 +4,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.bootstrap.helgins.structure.AbstractRule;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.bootstrap.helgins.structure.PatternCondition;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell;

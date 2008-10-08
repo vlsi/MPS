@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.scriptLanguage.plugin.migrationtool;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.scriptLanguage.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.ide.scriptLanguage.runtime.BaseMigrationScript;
 import jetbrains.mps.ide.scriptLanguage.util.ScriptNameUtil;

@@ -1,7 +1,7 @@
 package jetbrains.mps.bootstrap.editorLanguage.cellProviders;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty;
+import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptProperty;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;

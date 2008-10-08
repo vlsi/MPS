@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
+import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.ypath.design.IGenericFeatureDesign;
 
 public class SNODE_GEN_Design {

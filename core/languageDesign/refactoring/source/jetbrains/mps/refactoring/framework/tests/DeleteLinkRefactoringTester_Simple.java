@@ -1,7 +1,7 @@
 package jetbrains.mps.refactoring.framework.tests;
 
-import jetbrains.mps.bootstrap.structureLanguage.scripts.SafeDeleteLink;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.scripts.SafeDeleteLink;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;

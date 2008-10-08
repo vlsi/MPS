@@ -2,7 +2,6 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class NodeSubstituteActionsFactoryContext {
   private SNode myParentNode;

@@ -30,7 +30,7 @@ import jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclarat
 import jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 public class QueriesGenerated {
 

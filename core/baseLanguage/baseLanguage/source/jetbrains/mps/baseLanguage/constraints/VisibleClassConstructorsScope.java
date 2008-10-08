@@ -5,7 +5,7 @@ import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;

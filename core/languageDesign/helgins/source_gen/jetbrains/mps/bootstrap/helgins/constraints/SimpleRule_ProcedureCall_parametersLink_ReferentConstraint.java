@@ -14,9 +14,9 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import java.util.ArrayList;
-import jetbrains.mps.bootstrap.structureLanguage.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class SimpleRule_ProcedureCall_parametersLink_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {

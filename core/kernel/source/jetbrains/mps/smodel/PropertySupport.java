@@ -6,10 +6,10 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
+import jetbrains.mps.lang.structure.structure.DataTypeDeclaration;
+import jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration;
+import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;

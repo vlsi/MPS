@@ -1,7 +1,7 @@
 package jetbrains.mps.generator.template;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.GenerationSessionContext;

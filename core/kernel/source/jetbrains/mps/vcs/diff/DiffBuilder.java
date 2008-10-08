@@ -2,8 +2,8 @@ package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.project.GlobalScope;
 
 import java.util.ArrayList;

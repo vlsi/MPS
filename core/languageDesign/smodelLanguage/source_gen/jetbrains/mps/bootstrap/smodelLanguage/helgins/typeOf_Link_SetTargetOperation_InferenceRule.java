@@ -17,11 +17,11 @@ public class typeOf_Link_SetTargetOperation_InferenceRule extends AbstractInfere
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedCorrectly_generic(op);
+    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     SNode parameter = SLinkOperations.getTarget(op, "linkTarget", true);
     if ((parameter != null)) {
       final SNode ExpectedType_typevar_1206101371703 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-      RulesUtil.equate_inputNodeType(op, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101371703));
+      RulesUtil.equate_inputNodeType(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101371703));
       SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.bootstrap.smodelLanguage.helgins)", "1186060393994", true);
       {
         SNode _nodeToCheck_1029348928467 = op;

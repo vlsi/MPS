@@ -18,13 +18,13 @@ public class typeof_SConceptLinkAccess_InferenceRule extends AbstractInferenceRu
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedCorrectly_generic(op);
+    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     final SNode conceptLinkDecl = SLinkOperations.getTarget(op, "conceptLinkDeclaration", false);
     if (conceptLinkDecl == null) {
       return;
     }
     final SNode Concept_typevar_1208191126316 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    RulesUtil.equate_inputNodeConceptOrInputConceptType(op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1208191126316));
+    RulesUtil.equate_inputNodeConceptOrInputConceptType(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1208191126316));
     {
       final SNode concreteConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1208191126316);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(concreteConcept, new Runnable() {

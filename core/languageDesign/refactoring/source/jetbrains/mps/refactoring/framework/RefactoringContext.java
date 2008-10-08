@@ -1,9 +1,7 @@
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
@@ -12,6 +10,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,7 +26,9 @@ import java.util.Map.Entry;
  * Time: 17:29:39
  * To change this template use File | Settings | File Templates.
  */
-public class RefactoringContext {
+public class RefactoringContext {  
+  private static final String OLD_STRUCTURE_LANGUAGE_NAMESPACE = "jetbrains.mps.bootstrap.structureLanguage";
+
   private static final Logger LOG = Logger.getLogger(RefactoringContext.class);
 
   //elements names
@@ -554,6 +556,11 @@ public class RefactoringContext {
       myRefactoring = null;
       Element refactoringElement = element.getChild(REFACTORING);
       String className = refactoringElement.getAttributeValue(REFACTORING_CLASS);
+
+      if (className.startsWith(OLD_STRUCTURE_LANGUAGE_NAMESPACE + ".")) {
+        className = "jetbrains.mps.lang.structure" + className.substring(OLD_STRUCTURE_LANGUAGE_NAMESPACE.length());
+      }
+
       myRefactoringClassName = className;
 
       try {

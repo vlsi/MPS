@@ -1,13 +1,7 @@
 package jetbrains.mps.bootstrap.smodelLanguage;
 
-import jetbrains.mps.baseLanguage.structure.DotExpression;
-import jetbrains.mps.baseLanguage.structure.Expression;
-import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.AbstractOperationParameter;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
-import jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess;
-import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 
 import java.util.Iterator;
 

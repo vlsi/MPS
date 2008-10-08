@@ -2,7 +2,7 @@ package jetbrains.mps.resolve;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 
 /**
  * Created by IntelliJ IDEA.

@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 public class SafeDelete extends AbstractLoggableRefactoring {
 
@@ -81,7 +81,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeAndDescendantsUsages_Finder");
+    return FindUtils.getSearchResults(ActionEventData.createProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
   public void doRefactor(RefactoringContext refactoringContext) {

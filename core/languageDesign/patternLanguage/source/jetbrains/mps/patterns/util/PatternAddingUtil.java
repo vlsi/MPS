@@ -6,8 +6,8 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.patterns.structure.PatternExpression;
 import jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration;
 import jetbrains.mps.patterns.structure.PatternVariableDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 
 /**
  * Created by IntelliJ IDEA.

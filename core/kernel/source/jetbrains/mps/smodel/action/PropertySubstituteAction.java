@@ -2,7 +2,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
+import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 
 public class PropertySubstituteAction extends AbstractNodeSubstituteAction {
   private String myPropertyName;

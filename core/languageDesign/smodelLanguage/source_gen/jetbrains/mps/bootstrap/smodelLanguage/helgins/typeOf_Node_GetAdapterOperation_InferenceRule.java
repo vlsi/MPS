@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.bootstrap.structureLanguage.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -17,9 +17,9 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInfer
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedCorrectly_generic(node);
+    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, node);
     final SNode Concept_typevar_1205967245422 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    RulesUtil.equate_inputNodeConcept(node, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1205967245422));
+    RulesUtil.equate_inputNodeConcept(typeCheckingContext, node, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1205967245422));
     {
       final SNode C = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1205967245422);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(C, new Runnable() {

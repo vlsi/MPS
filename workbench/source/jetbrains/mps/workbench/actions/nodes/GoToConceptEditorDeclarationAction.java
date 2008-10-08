@@ -2,7 +2,7 @@ package jetbrains.mps.workbench.actions.nodes;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;

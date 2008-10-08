@@ -20,7 +20,7 @@ public class typeof_Node_GetConceptOperation_InferenceRule extends AbstractInfer
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedCorrectly_generic(op);
+    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     RulesUtil.checkOpParameters_generic(op);
     {
       SNode _nodeToCheck_1029348928467 = op;

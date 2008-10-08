@@ -10,9 +10,6 @@ import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.NameUtil;
 
 import java.util.List;
 import java.util.Set;

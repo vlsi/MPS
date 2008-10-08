@@ -1,12 +1,11 @@
 package jetbrains.mps.bootstrap.editorLanguage.constraints;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.util.Condition;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
 

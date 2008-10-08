@@ -4,12 +4,12 @@ package jetbrains.mps.bootstrap.constraintsLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.baseLanguage.structure.IMemberContainer;
 import jetbrains.mps.baseLanguage.structure.IExtarctMethodAvailable;
 import jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
