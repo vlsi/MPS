@@ -248,6 +248,9 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       return files.toArray(new VirtualFile[files.size()]);
     } else if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE.getName())) {
       TreePath tp = getSelectedPath();
+      if (tp == null) {
+        return super.getData(dataId);
+      }
       Object lastPathComponent = tp.getLastPathComponent();
       if (lastPathComponent instanceof FileNode) {
         FileNode node = (FileNode) lastPathComponent;
