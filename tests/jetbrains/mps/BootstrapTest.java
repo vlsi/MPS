@@ -2,7 +2,7 @@ package jetbrains.mps;
 
 import java.io.File;
 
-public class BootstrapTest extends BaseMPSTest {
+public class BootstrapTest extends BaseMPSTest {                                                       
   public void testBaseLanguage() {
     String res = testProject(new File("core/baseLanguage/baseLanguage/baseLanguage.mpr"));
     assertTrue(res, res == null);
