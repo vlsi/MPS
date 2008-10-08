@@ -55,7 +55,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     {
       SNode node = event.getData(MPSDataKeys.SNODE);
       if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"))) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
           node = null;
         }
       }
