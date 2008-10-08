@@ -235,11 +235,11 @@
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.collections.lang" />
     <antcall target="pack.collections_samples" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.csharp" />
-    <antcall target="pack.jetbrains.mps.baseLanguage.ext.dates.lang" />
-    <antcall target="pack.jetbrains.mps.baseLanguage.ext.dates.internal" />
+    <antcall target="pack.jetbrains.mps.baseLanguage.dates" />
+    <antcall target="pack.jetbrains.mps.baseLanguage.dates.internal" />
     <antcall target="pack.jetbrains.mps.baseLanguage.dates.runtime" />
     <antcall target="pack.jetbrains.mps.internal.collections" />
-    <antcall target="pack.jetbrains.accounting.money" />
+    <antcall target="pack.jetbrains.mps.baseLanguage.money" />
     <antcall target="pack.JDK" />
     <antcall target="pack.jetbrains.mps.baseLanguage.blTypes" />
     <antcall target="pack.jetbrains.mps.baseLanguage" />
@@ -265,8 +265,8 @@
     <antcall target="pack.jetbrains.mps.bootstrap.sharedConcepts" />
     <antcall target="pack.jetbrains.mps.bootstrap.smodelLanguage" />
     <antcall target="pack.jetbrains.mps.ide.scriptLanguage" />
-    <antcall target="pack.jetbrains.mps.bootstrap.structureLanguage" />
-    <antcall target="pack.jetbrains.mps.core" />
+    <antcall target="pack.jetbrains.mps.lang.structure" />
+    <antcall target="pack.jetbrains.mps.lang.core" />
     <antcall target="pack.jetbrains.mps.logging.refactoring" />
     <antcall target="pack.jetbrains.mps.transformation.TLBase" />
     <antcall target="pack.jetbrains.mps.transformationTest" />
