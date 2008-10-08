@@ -211,7 +211,13 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellActionMapItem_Editor.calculateBoolean7515_5(cell);
+            }
+
+          });
         }
 
       };
@@ -224,7 +230,13 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellActionMapItem_Editor.calculateBoolean7515_1(cell);
+            }
+
+          });
         }
 
       };
@@ -237,7 +249,13 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellActionMapItem_Editor.calculateBoolean7515_3(cell);
+            }
+
+          });
         }
 
       };
@@ -254,7 +272,13 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellActionMapItem_Editor.calculateBoolean7515_0(cell);
+            }
+
+          });
         }
 
       };
@@ -289,7 +313,13 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellActionMapItem_Editor.calculateBoolean7515_2(cell);
+            }
+
+          });
         }
 
       };
@@ -306,7 +336,13 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellActionMapItem_Editor.calculateBoolean7515_4(cell);
+            }
+
+          });
         }
 
       };
@@ -379,6 +415,42 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
   private static Color calculateColor7515_1(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7515_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7515_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7515_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7515_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7515_4(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7515_5(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

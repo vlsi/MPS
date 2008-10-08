@@ -213,7 +213,13 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Block_Editor.calculateBoolean0905_2(cell);
+            }
+
+          });
         }
 
       };
@@ -226,8 +232,20 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Block_Editor.calculateBoolean0905_0(cell);
+            }
+
+          });
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Block_Editor.calculateBoolean0905_3(cell);
+            }
+
+          });
         }
 
       };
@@ -240,8 +258,20 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Block_Editor.calculateBoolean0905_1(cell);
+            }
+
+          });
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Block_Editor.calculateBoolean0905_6(cell);
+            }
+
+          });
         }
 
       };
@@ -268,7 +298,13 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Block_Editor.calculateBoolean0905_5(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -295,7 +331,13 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Block_Editor.calculateBoolean0905_4(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -354,6 +396,48 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   private static Color calculateColor0905_3(EditorCell cell) {
     Color result;
     result = MPSColors.blue;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0905_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0905_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0905_2(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0905_3(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0905_4(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0905_5(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0905_6(EditorCell cell) {
+    boolean result;
+    result = true;
     return result;
   }
 

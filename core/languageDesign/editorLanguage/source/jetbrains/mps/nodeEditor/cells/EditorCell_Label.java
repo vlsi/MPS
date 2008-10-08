@@ -596,10 +596,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return true;
   }
 
-  public boolean isUnderlined() {
-    return getRenderedTextLine().isUnderlined();
-  }
-
   public void setUnderlined(boolean b) {
     getStyle().set(StyleAttributes.UNDERLINED, b);
   }

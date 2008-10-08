@@ -95,6 +95,12 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     return result;
   }
 
+  public static Boolean calculateBoolean1820_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
   public static class cellMenuPartListHandler_1820_0 extends RefNodeListHandler {
 
     public cellMenuPartListHandler_1820_0(SNode ownerNode, String childRole, EditorContext context) {
@@ -162,7 +168,13 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
               }
 
             });
-            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return CellMenuDescriptor_Editor.calculateBoolean1820_0(cell);
+              }
+
+            });
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {

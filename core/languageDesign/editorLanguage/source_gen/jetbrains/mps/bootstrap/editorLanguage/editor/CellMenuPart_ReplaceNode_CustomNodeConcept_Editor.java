@@ -132,7 +132,13 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.calculateBoolean7061_1(cell);
+            }
+
+          });
         }
 
       };
@@ -145,7 +151,13 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.calculateBoolean7061_3(cell);
+            }
+
+          });
         }
 
       };
@@ -158,7 +170,13 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.calculateBoolean7061_0(cell);
+            }
+
+          });
         }
 
       };
@@ -175,7 +193,13 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.calculateBoolean7061_4(cell);
+            }
+
+          });
         }
 
       };
@@ -214,7 +238,13 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_ReplaceNode_CustomNodeConcept_Editor.calculateBoolean7061_2(cell);
+            }
+
+          });
         }
 
       };
@@ -252,6 +282,36 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
   private static Color calculateColor7061_2(EditorCell cell) {
     Color result;
     result = MPSColors.lightGray;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7061_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7061_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7061_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7061_3(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7061_4(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

@@ -6,6 +6,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -2475,6 +2476,11 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="BooleanStyleSheetItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1223387335081">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="query" />
+      <link role="target" targetNodeId="1223387125302" resolveInfo="QueryFunction_Boolean" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1186414551515">
       <property name="name" value="flag" />
       <link role="dataType" targetNodeId="3.1082983657063" />
@@ -3078,7 +3084,7 @@
       <node role="target" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1221057195673" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1221057173654">
-      <property name="value" value="font size function" />
+      <property name="value" value="int function" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
@@ -3119,6 +3125,35 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1221062811502">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" resolveInfo="conceptFunctionReturnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1221062816176" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1223386653097">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="DeprecatedStyleSheet" />
+    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1223386894103">
+      <property name="value" value="deprecated" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1223388842734">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1223388868719">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.DEPRECATED" resolveInfo="DEPRECATED" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1223387125302">
+    <property name="package" value="QueryFunction.Style" />
+    <property name="name" value="QueryFunction_Boolean" />
+    <link role="extends" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1223387147820">
+      <property name="value" value="boolean function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1223387210120">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1223387224419" />
     </node>
   </node>
 </model>

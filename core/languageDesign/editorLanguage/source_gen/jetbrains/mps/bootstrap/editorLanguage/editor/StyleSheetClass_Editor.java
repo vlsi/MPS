@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -204,7 +205,13 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StyleSheetClass_Editor.calculateBoolean9826_2(cell);
+            }
+
+          });
         }
 
       };
@@ -232,7 +239,13 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StyleSheetClass_Editor.calculateBoolean9826_1(cell);
+            }
+
+          });
         }
 
       };
@@ -249,7 +262,13 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StyleSheetClass_Editor.calculateBoolean9826_0(cell);
+            }
+
+          });
         }
 
       };
@@ -297,6 +316,24 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition9826_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "extendedClass", true) != null;
+  }
+
+  public static Boolean calculateBoolean9826_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9826_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9826_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class styleItemListHandler_9826_0 extends RefNodeListHandler {

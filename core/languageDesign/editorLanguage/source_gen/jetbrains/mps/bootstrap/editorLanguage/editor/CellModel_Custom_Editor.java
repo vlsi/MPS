@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class CellModel_Custom_Editor extends DefaultNodeEditor {
 
@@ -171,7 +172,13 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Custom_Editor.calculateBoolean8637_2(cell);
+            }
+
+          });
         }
 
       };
@@ -184,7 +191,13 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Custom_Editor.calculateBoolean8637_0(cell);
+            }
+
+          });
         }
 
       };
@@ -209,7 +222,13 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Custom_Editor.calculateBoolean8637_1(cell);
+            }
+
+          });
         }
 
       };
@@ -238,7 +257,13 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Custom_Editor.calculateBoolean8637_3(cell);
+            }
+
+          });
         }
 
       };
@@ -251,7 +276,13 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Custom_Editor.calculateBoolean8637_4(cell);
+            }
+
+          });
         }
 
       };
@@ -272,6 +303,36 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1214478684731_1214478684731(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean8637_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8637_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8637_2(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8637_3(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8637_4(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
 }

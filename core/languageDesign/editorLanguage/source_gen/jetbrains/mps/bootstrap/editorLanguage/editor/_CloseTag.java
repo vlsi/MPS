@@ -71,8 +71,20 @@ public class _CloseTag extends AbstractCellProvider {
             }
 
           });
-          this.set(StyleAttributes.EDITABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CloseTag.calculateBoolean6449_0(cell);
+            }
+
+          });
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CloseTag.calculateBoolean6449_1(cell);
+            }
+
+          });
         }
 
       };
@@ -96,6 +108,18 @@ public class _CloseTag extends AbstractCellProvider {
       null :
       cell.getEditorContext()
     ));
+    return result;
+  }
+
+  public static Boolean calculateBoolean6449_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6449_1(EditorCell cell) {
+    boolean result;
+    result = true;
     return result;
   }
 

@@ -81,7 +81,13 @@ public class Styles_StyleSheet {
           }
 
         });
-        this.set(StyleAttributes.SELECTABLE, false);
+        this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return Styles_StyleSheet.calculateBoolean7582_0(cell);
+          }
+
+        });
         this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
 
           public Boolean calculate(EditorCell cell) {
@@ -104,8 +110,20 @@ public class Styles_StyleSheet {
   public static Style getProperty(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.SELECTABLE, false);
-        this.set(StyleAttributes.DRAW_BORDER, true);
+        this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return Styles_StyleSheet.calculateBoolean7582_1(cell);
+          }
+
+        });
+        this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return Styles_StyleSheet.calculateBoolean7582_2(cell);
+          }
+
+        });
         this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
           public Integer calculate(EditorCell cell) {
@@ -180,6 +198,24 @@ public class Styles_StyleSheet {
   }
 
   private static boolean calculateUnderlined7582_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7582_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7582_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7582_2(EditorCell cell) {
     boolean result;
     result = true;
     return result;

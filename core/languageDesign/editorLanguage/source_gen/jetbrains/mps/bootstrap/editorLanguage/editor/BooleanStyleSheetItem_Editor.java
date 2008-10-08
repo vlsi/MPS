@@ -16,6 +16,10 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.ConceptPropertyCellP
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.editorLanguage.behavior.BooleanStyleSheetItem_Behavior;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
@@ -32,7 +36,12 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty1186414565427(context, node));
     editorCell.addEditorCell(this.createConstant1186414568289(context, node, ":"));
-    editorCell.addEditorCell(this.createProperty1186414570275(context, node));
+    if (renderingCondition2675_0(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createProperty1186414570275(context, node));
+    }
+    if (renderingCondition2675_1(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode1223461953254(context, node));
+    }
     return editorCell;
   }
 
@@ -103,6 +112,35 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public EditorCell createRefNode1223461953254_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_refNode_query1223461953254(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_refNode_query_1223461953254((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createRefNode1223461953254(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("query");
+    provider.setNoTargetText("<no query>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createRefNode1223461953254_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
 
   private static void setupBasic_Collection_11864145640661186414564066(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1186414564066");
@@ -121,6 +159,9 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_flag");
   }
 
+  private static void setupBasic_refNode_query1223461953254(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_conceptProperty_alias_1186414565427(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -128,6 +169,17 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_flag_1186414570275(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_query_1223461953254(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean renderingCondition2675_0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "query", true) == null);
+  }
+
+  public static boolean renderingCondition2675_1(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "query", true) != null) && BooleanStyleSheetItem_Behavior.call_useQuery_1223387362946(node);
   }
 
   public static class BooleanStyleSheetItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

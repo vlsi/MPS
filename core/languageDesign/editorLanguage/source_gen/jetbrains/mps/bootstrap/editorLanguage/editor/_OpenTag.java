@@ -64,7 +64,13 @@ public class _OpenTag extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _OpenTag.calculateBoolean4575_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -72,7 +78,13 @@ public class _OpenTag extends AbstractCellProvider {
             }
 
           });
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _OpenTag.calculateBoolean4575_1(cell);
+            }
+
+          });
         }
 
       };
@@ -96,6 +108,18 @@ public class _OpenTag extends AbstractCellProvider {
       null :
       cell.getEditorContext()
     ));
+    return result;
+  }
+
+  public static Boolean calculateBoolean4575_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4575_1(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

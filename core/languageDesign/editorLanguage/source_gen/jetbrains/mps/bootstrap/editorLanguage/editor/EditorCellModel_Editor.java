@@ -56,7 +56,13 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EditorCellModel_Editor.calculateBoolean1982_0(cell);
+            }
+
+          });
         }
 
       };
@@ -69,8 +75,20 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EditorCellModel_Editor.calculateBoolean1982_1(cell);
+            }
+
+          });
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EditorCellModel_Editor.calculateBoolean1982_3(cell);
+            }
+
+          });
           this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
             public Integer calculate(EditorCell cell) {
@@ -90,7 +108,13 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EditorCellModel_Editor.calculateBoolean1982_2(cell);
+            }
+
+          });
         }
 
       };
@@ -107,6 +131,30 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
   private static Integer calculateFontStyle1982_0(EditorCell cell) {
     int result;
     result = MPSFonts.BOLD;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1982_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1982_1(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1982_2(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1982_3(EditorCell cell) {
+    boolean result;
+    result = true;
     return result;
   }
 

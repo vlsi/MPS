@@ -1980,6 +1980,61 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1223390694337">
+      <property name="name" value="isDeprecated" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1223390694338" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1223390700531" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223390694340">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1223390711847">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1223390711848">
+            <property name="name" value="firstItem" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1223390711849">
+              <link role="concept" targetNodeId="1.1186414536763" resolveInfo="BooleanStyleSheetItem" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1223390744756">
+              <link role="concept" targetNodeId="1.1186414536763" resolveInfo="BooleanStyleSheetItem" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223390737810">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223390727290">
+                  <node role="operand" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1223390727291" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1223390727292">
+                    <link role="conceptMethodDeclaration" targetNodeId="1219419901278" resolveInfo="getClassItems" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1223390730590">
+                      <link role="conceptDeclaration" targetNodeId="1.1186414536763" resolveInfo="BooleanStyleSheetItem" />
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1223390740501" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1223390751917">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223390751918">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223390760812">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1223390764548">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223390755424">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223390753906">
+              <link role="variableDeclaration" targetNodeId="1223390711848" resolveInfo="firstItem" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNullOperation" id="1223390758889" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223390775285">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223390779071">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223390777756">
+              <link role="variableDeclaration" targetNodeId="1223390711848" resolveInfo="firstItem" />
+            </node>
+            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1223390783473">
+              <link role="property" targetNodeId="1.1186414551515" resolveInfo="flag" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1221216397365">
       <property name="name" value="getFontSize" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221216397366" />
@@ -4324,6 +4379,46 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1221482169626">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221482169627" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1223387282640">
+    <property name="package" value="Stylesheet" />
+    <link role="concept" targetNodeId="1.1223386653097" resolveInfo="DeprecatedStyleSheet" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1223387282641">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223387282642" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1223387401972">
+      <property name="name" value="useQuery" />
+      <link role="overriddenMethod" targetNodeId="1223387362946" resolveInfo="useQuery" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223387401975">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223387411964">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1223387415107">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1223387409431" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1223388039093" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1223387360724">
+    <property name="package" value="Stylesheet" />
+    <link role="concept" targetNodeId="1.1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1223387362946">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="useQuery" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1223388008700" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1223387374732" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223387362949">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223387385077">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1223387390893">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1223387360725">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223387360726" />
     </node>
   </node>
 </model>

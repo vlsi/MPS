@@ -344,7 +344,13 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return QueryMethodIdEditorProviderExpression_Editor.calculateBoolean9522_0(cell);
+            }
+
+          });
         }
 
       };
@@ -376,7 +382,13 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return QueryMethodIdEditorProviderExpression_Editor.calculateBoolean9522_3(cell);
+            }
+
+          });
         }
 
       };
@@ -416,7 +428,13 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return QueryMethodIdEditorProviderExpression_Editor.calculateBoolean9522_1(cell);
+            }
+
+          });
         }
 
       };
@@ -437,7 +455,13 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return QueryMethodIdEditorProviderExpression_Editor.calculateBoolean9522_2(cell);
+            }
+
+          });
         }
 
       };
@@ -501,6 +525,30 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   private static Color calculateColor9522_1(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9522_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9522_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9522_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9522_3(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

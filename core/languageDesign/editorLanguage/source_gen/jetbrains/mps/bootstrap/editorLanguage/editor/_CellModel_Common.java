@@ -20,6 +20,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
@@ -505,8 +506,20 @@ public class _CellModel_Common extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_2(cell);
+            }
+
+          });
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_3(cell);
+            }
+
+          });
         }
 
       };
@@ -524,7 +537,13 @@ public class _CellModel_Common extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_1(cell);
+            }
+
+          });
         }
 
       };
@@ -537,8 +556,20 @@ public class _CellModel_Common extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_6(cell);
+            }
+
+          });
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_7(cell);
+            }
+
+          });
         }
 
       };
@@ -556,7 +587,13 @@ public class _CellModel_Common extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_5(cell);
+            }
+
+          });
         }
 
       };
@@ -569,7 +606,13 @@ public class _CellModel_Common extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_9(cell);
+            }
+
+          });
         }
 
       };
@@ -586,7 +629,13 @@ public class _CellModel_Common extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_8(cell);
+            }
+
+          });
         }
 
       };
@@ -599,8 +648,20 @@ public class _CellModel_Common extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_11(cell);
+            }
+
+          });
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_12(cell);
+            }
+
+          });
         }
 
       };
@@ -618,7 +679,13 @@ public class _CellModel_Common extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_10(cell);
+            }
+
+          });
         }
 
       };
@@ -631,7 +698,13 @@ public class _CellModel_Common extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_13(cell);
+            }
+
+          });
         }
 
       };
@@ -652,7 +725,13 @@ public class _CellModel_Common extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_17(cell);
+            }
+
+          });
         }
 
       };
@@ -677,7 +756,13 @@ public class _CellModel_Common extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_14(cell);
+            }
+
+          });
         }
 
       };
@@ -699,7 +784,13 @@ public class _CellModel_Common extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_15(cell);
+            }
+
+          });
         }
 
       };
@@ -725,7 +816,13 @@ public class _CellModel_Common extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _CellModel_Common.calculateBoolean7442_16(cell);
+            }
+
+          });
         }
 
       };
@@ -799,6 +896,114 @@ public class _CellModel_Common extends AbstractCellProvider {
     return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
 
+  public static Boolean calculateBoolean7442_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_1(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_3(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_4(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_5(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_6(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_7(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_8(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_9(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_10(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_11(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_12(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_13(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_14(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_15(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_16(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean7442_17(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
   public static class _Inline7442_0 extends AbstractCellProvider {
 
     public _Inline7442_0() {
@@ -848,7 +1053,13 @@ public class _CellModel_Common extends AbstractCellProvider {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.DRAW_BORDER, true);
+            this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return _CellModel_Common.calculateBoolean7442_0(cell);
+              }
+
+            });
           }
 
         };
@@ -909,7 +1120,13 @@ public class _CellModel_Common extends AbstractCellProvider {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.DRAW_BORDER, true);
+            this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return _CellModel_Common.calculateBoolean7442_4(cell);
+              }
+
+            });
           }
 
         };

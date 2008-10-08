@@ -130,7 +130,13 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_ReplaceChild_CustomChildConcept_Editor.calculateBoolean9987_1(cell);
+            }
+
+          });
         }
 
       };
@@ -169,7 +175,13 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_ReplaceChild_CustomChildConcept_Editor.calculateBoolean9987_0(cell);
+            }
+
+          });
         }
 
       };
@@ -182,7 +194,13 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_ReplaceChild_CustomChildConcept_Editor.calculateBoolean9987_2(cell);
+            }
+
+          });
         }
 
       };
@@ -195,7 +213,13 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_ReplaceChild_CustomChildConcept_Editor.calculateBoolean9987_3(cell);
+            }
+
+          });
         }
 
       };
@@ -208,7 +232,13 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_ReplaceChild_CustomChildConcept_Editor.calculateBoolean9987_4(cell);
+            }
+
+          });
         }
 
       };
@@ -243,6 +273,36 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
   private static Color calculateColor9987_1(EditorCell cell) {
     Color result;
     result = MPSColors.lightGray;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9987_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9987_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9987_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9987_3(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9987_4(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

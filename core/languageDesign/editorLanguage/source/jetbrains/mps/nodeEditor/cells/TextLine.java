@@ -276,17 +276,24 @@ public class TextLine {
     int deltaShiftX_StartSelection = getCaretX(0, myStartTextSelectionPosition);
     int endLine = getCaretX(shiftX, myText.length());
     int baselineY = shiftY + myHeight - myDescent;
+    int centerLineY = shiftY + myHeight / 2;
 
     if (myStartTextSelectionPosition > 0) {
       g.drawString(myText.substring(0, myStartTextSelectionPosition), shiftX + getLeftInternalInset(), baselineY);
       if (isUnderlined()) {
         g.drawLine(shiftX + getLeftInternalInset(), baselineY + 1, shiftX + deltaShiftX_StartSelection, baselineY + 1);
       }
+      if (isDeprecated()) {
+        drawDeprecatedLine(g, shiftX + getLeftInternalInset(), shiftX + deltaShiftX_StartSelection, centerLineY);
+      }
     }
     if (myEndTextSelectionPosition <= myText.length()) {
       g.drawString(myText.substring(myEndTextSelectionPosition), shiftX + deltaShiftX_EndSelection, baselineY);
       if (isUnderlined()) {
         g.drawLine(shiftX + deltaShiftX_EndSelection, baselineY + 1, endLine, baselineY + 1);
+      }
+      if (isDeprecated()) {
+        drawDeprecatedLine(g, shiftX + deltaShiftX_EndSelection, endLine, centerLineY);
       }
     }
 
@@ -301,6 +308,9 @@ public class TextLine {
       if (isUnderlined()) {
         g.drawLine(shiftX + deltaShiftX_StartSelection, baselineY + 1, shiftX + deltaShiftX_EndSelection, baselineY + 1);
       }
+      if (isDeprecated()) {
+        drawDeprecatedLine(g, shiftX + deltaShiftX_StartSelection, shiftX + deltaShiftX_EndSelection, centerLineY);
+      }
 
       g.setColor(textColor);
     }
@@ -309,6 +319,13 @@ public class TextLine {
     if (toShowCaret) {
       drawCaret(g, shiftX, shiftY);
     }
+  }
+
+  private void drawDeprecatedLine(Graphics g, int beginX, int endX, int constY) {
+    Color textColor = g.getColor();
+    g.setColor(Color.DARK_GRAY);
+    g.drawLine(beginX, constY + 1, endX, constY + 1);
+    g.setColor(textColor);
   }
 
   private void drawCaret(Graphics g, int shiftX, int shiftY) {
@@ -452,6 +469,10 @@ public class TextLine {
     }
 
     return myStyle.get(StyleAttributes.UNDERLINED);
+  }
+
+  public boolean isDeprecated() {
+    return myStyle.get(StyleAttributes.DEPRECATED);
   }
 
   public int getAscent() {

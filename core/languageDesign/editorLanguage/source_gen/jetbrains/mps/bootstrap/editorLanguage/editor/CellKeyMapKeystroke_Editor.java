@@ -140,7 +140,13 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellKeyMapKeystroke_Editor.calculateBoolean3628_1(cell);
+            }
+
+          });
         }
 
       };
@@ -179,7 +185,13 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellKeyMapKeystroke_Editor.calculateBoolean3628_0(cell);
+            }
+
+          });
         }
 
       };
@@ -218,7 +230,13 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellKeyMapKeystroke_Editor.calculateBoolean3628_2(cell);
+            }
+
+          });
         }
 
       };
@@ -262,6 +280,24 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
   private static Color calculateColor3628_3(EditorCell cell) {
     Color result;
     result = MPSColors.cyan;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3628_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3628_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3628_2(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

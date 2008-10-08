@@ -85,7 +85,13 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_BlockEnd_Editor.calculateBoolean3910_0(cell);
+            }
+
+          });
         }
 
       };
@@ -98,7 +104,13 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_BlockEnd_Editor.calculateBoolean3910_1(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -136,6 +148,18 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
   private static Color calculateColor3910_1(EditorCell cell) {
     Color result;
     result = MPSColors.blue;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3910_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3910_1(EditorCell cell) {
+    boolean result;
+    result = true;
     return result;
   }
 

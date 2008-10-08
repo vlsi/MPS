@@ -132,7 +132,13 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_CellMenuComponent_Editor.calculateBoolean8123_0(cell);
+            }
+
+          });
         }
 
       };
@@ -171,7 +177,13 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_CellMenuComponent_Editor.calculateBoolean8123_4(cell);
+            }
+
+          });
         }
 
       };
@@ -184,7 +196,13 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_CellMenuComponent_Editor.calculateBoolean8123_1(cell);
+            }
+
+          });
         }
 
       };
@@ -197,7 +215,13 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_CellMenuComponent_Editor.calculateBoolean8123_3(cell);
+            }
+
+          });
         }
 
       };
@@ -210,7 +234,13 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_CellMenuComponent_Editor.calculateBoolean8123_2(cell);
+            }
+
+          });
         }
 
       };
@@ -246,6 +276,36 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
   private static Color calculateColor8123_1(EditorCell cell) {
     Color result;
     result = MPSColors.lightGray;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8123_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8123_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8123_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8123_3(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8123_4(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

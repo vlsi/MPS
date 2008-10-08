@@ -209,7 +209,13 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_Generic_Item_Editor.calculateBoolean8838_4(cell);
+            }
+
+          });
         }
 
       };
@@ -248,7 +254,13 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_Generic_Item_Editor.calculateBoolean8838_2(cell);
+            }
+
+          });
         }
 
       };
@@ -261,7 +273,13 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_Generic_Item_Editor.calculateBoolean8838_1(cell);
+            }
+
+          });
         }
 
       };
@@ -274,7 +292,13 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_Generic_Item_Editor.calculateBoolean8838_6(cell);
+            }
+
+          });
         }
 
       };
@@ -287,7 +311,13 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_Generic_Item_Editor.calculateBoolean8838_3(cell);
+            }
+
+          });
         }
 
       };
@@ -304,7 +334,13 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_Generic_Item_Editor.calculateBoolean8838_0(cell);
+            }
+
+          });
         }
 
       };
@@ -336,7 +372,13 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_Generic_Item_Editor.calculateBoolean8838_5(cell);
+            }
+
+          });
         }
 
       };
@@ -353,7 +395,13 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_Generic_Item_Editor.calculateBoolean8838_7(cell);
+            }
+
+          });
         }
 
       };
@@ -403,6 +451,54 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
   private static Color calculateColor8838_2(EditorCell cell) {
     Color result;
     result = MPSColors.lightGray;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8838_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8838_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8838_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8838_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8838_4(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8838_5(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8838_6(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8838_7(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

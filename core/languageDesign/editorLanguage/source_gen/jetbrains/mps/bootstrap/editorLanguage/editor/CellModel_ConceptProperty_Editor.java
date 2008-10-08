@@ -300,7 +300,13 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_7(cell);
+            }
+
+          });
         }
 
       };
@@ -313,7 +319,13 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_9(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -349,6 +361,13 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.DEPRECATED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_18(cell);
+            }
+
+          });
         }
 
       };
@@ -361,7 +380,13 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_0(cell);
+            }
+
+          });
         }
 
       };
@@ -379,8 +404,20 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_2(cell);
+            }
+
+          });
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_8(cell);
+            }
+
+          });
         }
 
       };
@@ -393,8 +430,20 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_3(cell);
+            }
+
+          });
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_6(cell);
+            }
+
+          });
         }
 
       };
@@ -412,8 +461,20 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_1(cell);
+            }
+
+          });
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_13(cell);
+            }
+
+          });
         }
 
       };
@@ -431,7 +492,13 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_11(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -458,7 +525,13 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_12(cell);
+            }
+
+          });
         }
 
       };
@@ -475,7 +548,13 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_5(cell);
+            }
+
+          });
         }
 
       };
@@ -488,7 +567,13 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_14(cell);
+            }
+
+          });
           this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
             public Integer calculate(EditorCell cell) {
@@ -512,8 +597,20 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_16(cell);
+            }
+
+          });
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_17(cell);
+            }
+
+          });
         }
 
       };
@@ -531,7 +628,13 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_ConceptProperty_Editor.calculateBoolean6697_15(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -602,6 +705,10 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
 
   public static boolean _StyleParameter_QueryFunction_1221239216381(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1223464984645(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isDeprecated_1223390694337(node);
   }
 
   private static Integer calculateFontStyle6697_0(EditorCell cell) {
@@ -694,6 +801,126 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return result;
   }
 
+  public static Boolean calculateBoolean6697_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_4(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_5(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_6(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_7(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_8(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_9(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_10(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_11(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_12(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_13(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_14(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_15(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_16(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_17(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6697_18(EditorCell cell) {
+    boolean result;
+    result = CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_1223464984645((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
+    return result;
+  }
+
   public static class _Inline6697_0 extends AbstractCellProvider {
 
     public _Inline6697_0() {
@@ -743,7 +970,13 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.DRAW_BORDER, true);
+            this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return CellModel_ConceptProperty_Editor.calculateBoolean6697_10(cell);
+              }
+
+            });
           }
 
         };
@@ -804,7 +1037,13 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.DRAW_BORDER, true);
+            this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return CellModel_ConceptProperty_Editor.calculateBoolean6697_4(cell);
+              }
+
+            });
           }
 
         };

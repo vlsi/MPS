@@ -34,7 +34,13 @@ public class CellModel_Indent_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellModel_Indent_Editor.calculateBoolean8904_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -55,6 +61,12 @@ public class CellModel_Indent_Editor extends DefaultNodeEditor {
   private static Color calculateColor8904_0(EditorCell cell) {
     Color result;
     result = MPSColors.lightGray;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8904_0(EditorCell cell) {
+    boolean result;
+    result = true;
     return result;
   }
 

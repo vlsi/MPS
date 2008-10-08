@@ -88,7 +88,13 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_ReferentPrimary_Editor.calculateBoolean2608_1(cell);
+            }
+
+          });
         }
 
       };
@@ -127,7 +133,13 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_ReferentPrimary_Editor.calculateBoolean2608_0(cell);
+            }
+
+          });
         }
 
       };
@@ -166,7 +178,13 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return CellMenuPart_ReferentPrimary_Editor.calculateBoolean2608_2(cell);
+            }
+
+          });
         }
 
       };
@@ -204,6 +222,24 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   private static Color calculateColor2608_2(EditorCell cell) {
     Color result;
     result = MPSColors.lightGray;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2608_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2608_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2608_2(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

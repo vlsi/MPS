@@ -105,6 +105,14 @@ public class EditorCellModel_Behavior {
     return SPropertyOperations.hasValue(firstItem, "underlined", "2", "0");
   }
 
+  public static boolean call_isDeprecated_1223390694337(SNode thisNode) {
+    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.BooleanStyleSheetItem"))).first();
+    if ((firstItem == null)) {
+      return false;
+    }
+    return SPropertyOperations.getBoolean(firstItem, "flag");
+  }
+
   public static int call_getFontSize_1221216397365(SNode thisNode) {
     SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.FontSizeStyleClassItem"))).first();
     if ((firstItem == null)) {
