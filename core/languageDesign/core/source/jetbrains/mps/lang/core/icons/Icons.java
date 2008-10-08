@@ -1,4 +1,4 @@
-package jetbrains.mps.core.icons;
+package jetbrains.mps.lang.core.icons;
 
 import javax.swing.*;
 
