@@ -882,7 +882,7 @@
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1184610007589">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1184610007590">
                             <link role="classConcept" targetNodeId="3.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                            <link role="baseMethodDeclaration" targetNodeId="3.~SModelUtil_new.getGenuineLinkRole(jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration):java.lang.String" resolveInfo="getGenuineLinkRole" />
+                            <link role="baseMethodDeclaration" targetNodeId="3.~SModelUtil_new.getGenuineLinkRole(jetbrains.mps.lang.structure.structure.LinkDeclaration):java.lang.String" resolveInfo="getGenuineLinkRole" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721585">
                               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184610007593">
                                 <link role="variableDeclaration" targetNodeId="1184610007584" resolveInfo="applicableLink" />
@@ -977,8 +977,8 @@
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1184610013901">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1184610013902">
-                            <link role="baseMethodDeclaration" targetNodeId="3.~SModelUtil_new.getGenuineLinkRole(jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration):java.lang.String" resolveInfo="getGenuineLinkRole" />
                             <link role="classConcept" targetNodeId="3.~SModelUtil_new" resolveInfo="SModelUtil_new" />
+                            <link role="baseMethodDeclaration" targetNodeId="3.~SModelUtil_new.getGenuineLinkRole(jetbrains.mps.lang.structure.structure.LinkDeclaration):java.lang.String" resolveInfo="getGenuineLinkRole" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721561">
                               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184610013905">
                                 <link role="variableDeclaration" targetNodeId="1184610013896" resolveInfo="applicableLink" />
