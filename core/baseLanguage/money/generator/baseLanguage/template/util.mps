@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c895903f9(jetbrains.accounting.money.generator.baseLanguage.template.util)">
+<model modelUID="r:00000000-0000-4000-0000-011c895903f9(jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -8,7 +8,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.core)" />
-  <language namespace="f43135f9-b833-4685-8d26-ffb6c8215f72(jetbrains.accounting.money)" />
+  <language namespace="f43135f9-b833-4685-8d26-ffb6c8215f72(jetbrains.mps.baseLanguage.money)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -19,18 +19,19 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903f4(jetbrains.accounting.money.constraints)" version="3" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903f4(jetbrains.mps.baseLanguage.money.constraints)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.bootstrap.constraintsLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.patterns.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903f7(jetbrains.mps.baseLanguage.money.structure)" version="0" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" />
-  <import index="4" modelUID="r:00000000-0000-4000-0000-011c895903f7(jetbrains.accounting.money.structure)" version="-1" />
+  <import index="4" modelUID="r:00000000-0000-4000-0000-011c895903f7(jetbrains.mps.baseLanguage.money.structure)" version="0" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1187345071733">
     <property name="name" value="Util" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1187345082782">
@@ -86,7 +87,7 @@
                 <link role="variableDeclaration" targetNodeId="1187347794780" resolveInfo="rtype" />
               </node>
               <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1197379725523">
-                <node role="quotedNode" type="jetbrains.accounting.money.structure.MoneyType" id="1197379725524" />
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.money.structure.MoneyType" id="1197379725524" />
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1187699814997">
@@ -94,7 +95,7 @@
                 <link role="variableDeclaration" targetNodeId="1187347814745" resolveInfo="ltype" />
               </node>
               <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1197379725540">
-                <node role="quotedNode" type="jetbrains.accounting.money.structure.MoneyType" id="1197379725541" />
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.money.structure.MoneyType" id="1197379725541" />
               </node>
             </node>
           </node>
@@ -173,7 +174,7 @@
                 <link role="variableDeclaration" targetNodeId="1187352032278" resolveInfo="ltype" />
               </node>
               <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1197379725544">
-                <node role="quotedNode" type="jetbrains.accounting.money.structure.MoneyType" id="1197379725545" />
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.money.structure.MoneyType" id="1197379725545" />
               </node>
             </node>
           </node>

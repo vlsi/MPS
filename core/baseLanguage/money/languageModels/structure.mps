@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c895903f7(jetbrains.accounting.money.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c895903f7(jetbrains.mps.baseLanguage.money.structure)">
   <persistence version="3" />
-  <refactoringHistory />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="MoneyCreator" conceptFQName="jetbrains.accounting.money.structure.MoneyCreator" featureKind="CONCEPT" />
+          <value featureName="MoneyCreator" conceptFQName="jetbrains.mps.baseLanguage.money.structure.MoneyCreator" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MoneyGetAmountMethodCall" conceptFQName="jetbrains.accounting.money.structure.MoneyGetAmountMethodCall" featureKind="CONCEPT" />
+          <value featureName="MoneyGetAmountMethodCall" conceptFQName="jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MoneyGetCurrencyMethodCall" conceptFQName="jetbrains.accounting.money.structure.MoneyGetCurrencyMethodCall" featureKind="CONCEPT" />
+          <value featureName="MoneyGetCurrencyMethodCall" conceptFQName="jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MoneyIsZeroMethodCall" conceptFQName="jetbrains.accounting.money.structure.MoneyIsZeroMethodCall" featureKind="CONCEPT" />
+          <value featureName="MoneyIsZeroMethodCall" conceptFQName="jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MoneyLiteral" conceptFQName="jetbrains.accounting.money.structure.MoneyLiteral" featureKind="CONCEPT" />
+          <value featureName="MoneyLiteral" conceptFQName="jetbrains.mps.baseLanguage.money.structure.MoneyLiteral" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MoneyMethodCall" conceptFQName="jetbrains.accounting.money.structure.MoneyMethodCall" featureKind="CONCEPT" />
+          <value featureName="MoneyMethodCall" conceptFQName="jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MoneyType" conceptFQName="jetbrains.accounting.money.structure.MoneyType" featureKind="CONCEPT" />
+          <value featureName="MoneyType" conceptFQName="jetbrains.mps.baseLanguage.money.structure.MoneyType" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.bootstrap.structureLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.bootstrap.structureLanguage.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
@@ -11,11 +45,12 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903f4(jetbrains.accounting.money.constraints)" version="3" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903f4(jetbrains.mps.baseLanguage.money.constraints)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903f7(jetbrains.mps.baseLanguage.money.structure)" version="0" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.core.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.math(java.math@java_stub)" version="-1" />
