@@ -580,7 +580,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
             }
 
           });
-          this.set(StyleAttributes.DEPRECATED, new AttributeCalculator <Boolean>() {
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
 
             public Boolean calculate(EditorCell cell) {
               return CellModel_Property_Editor.calculateBoolean3263_24(cell);
@@ -931,8 +931,8 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
 
-  public static boolean _StyleParameter_QueryFunction_1223478994794(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_isDeprecated_1223390694337(node);
+  public static boolean _StyleParameter_QueryFunction_1223482349120(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
   }
 
   private static Integer calculateFontStyle3263_0(EditorCell cell) {
@@ -1171,7 +1171,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
 
   public static Boolean calculateBoolean3263_24(EditorCell cell) {
     boolean result;
-    result = CellModel_Property_Editor._StyleParameter_QueryFunction_1223478994794((cell == null ?
+    result = CellModel_Property_Editor._StyleParameter_QueryFunction_1223482349120((cell == null ?
       null :
       cell.getSNode()
     ), (cell == null ?

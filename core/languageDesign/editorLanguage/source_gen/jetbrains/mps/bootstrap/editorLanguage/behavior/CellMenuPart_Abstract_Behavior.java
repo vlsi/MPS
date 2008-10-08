@@ -17,7 +17,7 @@ public class CellMenuPart_Abstract_Behavior {
 
   public static SNode call_getEditedLink_1219409839992(SNode thisNode) {
     SNode editedFeature = CellMenuPart_Abstract_Behavior.call_getEditedFeature_1219409924597(thisNode);
-    if (SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration")) {
+    if (SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
       return editedFeature;
     }
     return null;

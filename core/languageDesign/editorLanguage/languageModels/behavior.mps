@@ -1981,7 +1981,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1223390694337">
-      <property name="name" value="isDeprecated" />
+      <property name="name" value="isStrikeOut" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1223390694338" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1223390700531" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223390694340">

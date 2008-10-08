@@ -3130,17 +3130,17 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1223386653097">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="DeprecatedStyleSheet" />
+    <property name="name" value="StrikeOutStyleSheet" />
     <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1223386894103">
-      <property name="value" value="deprecated" />
+      <property name="value" value="strike-out" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1223388842734">
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1223388868719">
         <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.DEPRECATED" resolveInfo="DEPRECATED" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.STRIKE_OUT" resolveInfo="STRIKE_OUT" />
       </node>
     </node>
   </node>

@@ -283,8 +283,8 @@ public class TextLine {
       if (isUnderlined()) {
         g.drawLine(shiftX + getLeftInternalInset(), baselineY + 1, shiftX + deltaShiftX_StartSelection, baselineY + 1);
       }
-      if (isDeprecated()) {
-        drawDeprecatedLine(g, shiftX + getLeftInternalInset(), shiftX + deltaShiftX_StartSelection, centerLineY);
+      if (isStrikeOut()) {
+        drawStrikeOutLine(g, shiftX + getLeftInternalInset(), shiftX + deltaShiftX_StartSelection, centerLineY);
       }
     }
     if (myEndTextSelectionPosition <= myText.length()) {
@@ -292,8 +292,8 @@ public class TextLine {
       if (isUnderlined()) {
         g.drawLine(shiftX + deltaShiftX_EndSelection, baselineY + 1, endLine, baselineY + 1);
       }
-      if (isDeprecated()) {
-        drawDeprecatedLine(g, shiftX + deltaShiftX_EndSelection, endLine, centerLineY);
+      if (isStrikeOut()) {
+        drawStrikeOutLine(g, shiftX + deltaShiftX_EndSelection, endLine, centerLineY);
       }
     }
 
@@ -308,8 +308,8 @@ public class TextLine {
       if (isUnderlined()) {
         g.drawLine(shiftX + deltaShiftX_StartSelection, baselineY + 1, shiftX + deltaShiftX_EndSelection, baselineY + 1);
       }
-      if (isDeprecated()) {
-        drawDeprecatedLine(g, shiftX + deltaShiftX_StartSelection, shiftX + deltaShiftX_EndSelection, centerLineY);
+      if (isStrikeOut()) {
+        drawStrikeOutLine(g, shiftX + deltaShiftX_StartSelection, shiftX + deltaShiftX_EndSelection, centerLineY);
       }
 
       g.setColor(textColor);
@@ -321,7 +321,7 @@ public class TextLine {
     }
   }
 
-  private void drawDeprecatedLine(Graphics g, int beginX, int endX, int constY) {
+  private void drawStrikeOutLine(Graphics g, int beginX, int endX, int constY) {
     Color textColor = g.getColor();
     g.setColor(Color.DARK_GRAY);
     g.drawLine(beginX, constY + 1, endX, constY + 1);
@@ -471,8 +471,8 @@ public class TextLine {
     return myStyle.get(StyleAttributes.UNDERLINED);
   }
 
-  public boolean isDeprecated() {
-    return myStyle.get(StyleAttributes.DEPRECATED);
+  public boolean isStrikeOut() {
+    return myStyle.get(StyleAttributes.STRIKE_OUT);
   }
 
   public int getAscent() {

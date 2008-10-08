@@ -807,13 +807,13 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DeprecatedStyleSheet" id="1223477079995">
-          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Boolean" id="1223477152903">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223477152904">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223477177101">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223477178806">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1223477177102" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1223477183153">
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.StrikeOutStyleSheet" id="1223482209647">
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Boolean" id="1223482212351">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223482212352">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223482248159">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223482249489">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1223482248160" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1223482256852">
                     <link role="conceptMethodDeclaration" targetNodeId="30.1223390694337" resolveInfo="isDeprecated" />
                   </node>
                 </node>
@@ -1080,20 +1080,6 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DeprecatedStyleSheet" id="1223464948986">
-          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Boolean" id="1223464952096">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223464952097">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223464955364">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223464956663">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1223464955365" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1223464958932">
-                    <link role="conceptMethodDeclaration" targetNodeId="30.1223390694337" resolveInfo="isDeprecated" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1176717135427">
         <link role="editorComponent" targetNodeId="1176716904723" resolveInfo="_CloseTag" />
@@ -1270,14 +1256,14 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DeprecatedStyleSheet" id="1223478991449">
-          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Boolean" id="1223478994794">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223478994795">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223479032673">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223479033003">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1223479032674" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1223479037537">
-                    <link role="conceptMethodDeclaration" targetNodeId="30.1223390694337" resolveInfo="isDeprecated" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.StrikeOutStyleSheet" id="1223482334774">
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Boolean" id="1223482349120">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223482349121">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223482352075">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223482352968">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1223482352076" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1223482358252">
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1223390694337" resolveInfo="isStrikeOut" />
                   </node>
                 </node>
               </node>
@@ -3064,14 +3050,14 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DeprecatedStyleSheet" id="1223464982050">
-          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Boolean" id="1223464984645">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223464984646">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223464989788">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223464990790">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1223464989789" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1223464993480">
-                    <link role="conceptMethodDeclaration" targetNodeId="30.1223390694337" resolveInfo="isDeprecated" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.StrikeOutStyleSheet" id="1223482287808">
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Boolean" id="1223482294966">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223482294967">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223482297609">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223482298517">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1223482297610" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1223482302317">
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1223390694337" resolveInfo="isStrikeOut" />
                   </node>
                 </node>
               </node>
@@ -7450,14 +7436,14 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.DeprecatedStyleSheet" id="1223461791817">
-          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Boolean" id="1223461841180">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223461841181">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223464708737">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223464726694">
-                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1223464725052" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1223464729275">
-                    <link role="conceptMethodDeclaration" targetNodeId="30.1223390694337" resolveInfo="isDeprecated" />
+        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.StrikeOutStyleSheet" id="1223482368333">
+          <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Boolean" id="1223482371662">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223482371663">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223482383586">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223482390730">
+                  <node role="operand" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1223482389838" />
+                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1223482394155">
+                    <link role="conceptMethodDeclaration" targetNodeId="30.1223390694337" resolveInfo="isStrikeOut" />
                   </node>
                 </node>
               </node>

@@ -105,8 +105,8 @@ public class EditorCellModel_Behavior {
     return SPropertyOperations.hasValue(firstItem, "underlined", "2", "0");
   }
 
-  public static boolean call_isDeprecated_1223390694337(SNode thisNode) {
-    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.DeprecatedStyleSheet"))).first();
+  public static boolean call_isStrikeOut_1223390694337(SNode thisNode) {
+    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.StrikeOutStyleSheet"))).first();
     if ((firstItem == null)) {
       return false;
     }
