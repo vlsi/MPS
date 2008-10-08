@@ -44,7 +44,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202117999936">
                   <link role="variableDeclaration" targetNodeId="1202117990534" resolveInfo="seq" />
                 </node>
-                <node role="operation" type="jetbrains.mps.internal.collections.structure.TranslateOperation" id="1202118002768">
+                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.TranslateOperation" id="1223467470179">
                   <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1202118032635">
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1202118040179">
                       <property name="name" value="i" />
@@ -60,7 +60,7 @@
                   </node>
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.internal.collections.structure.WhereOperation" id="1202128839611">
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperationNew" id="1223467470226">
                 <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1202128928368">
                   <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1202128933842">
                     <property name="name" value="i" />
@@ -76,7 +76,7 @@
                 </node>
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.internal.collections.structure.SelectOperation" id="1202129394762">
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SelectOperationNew" id="1223467470125">
               <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1202129396703">
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1202129399843">
                   <property name="name" value="i" />
