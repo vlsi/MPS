@@ -38,7 +38,7 @@ public class LanguageRenamer {
 
     SModelDescriptor structure = myLanguage.getStructureModelDescriptor();
     RefactoringContext context = new RefactoringContext(new MyRefactoring());
-    for (AbstractConceptDeclaration concept : structure.getSModel().getRootsAdapters(AbstractConceptDeclaration.class)) {
+    for (AbstractConceptDeclaration concept : structure.getSModel().allAdapters(AbstractConceptDeclaration.class)) {
       context.changeFeatureName(concept.getNode(), myNewName + ".structure." + concept.getName(), concept.getName());
     }
     context.computeCaches();
@@ -47,7 +47,7 @@ public class LanguageRenamer {
       if (!SModelStereotype.isUserModel(sm)) continue;
 
       if (sm.getSModelFqName().toString().startsWith(oldFqName + ".")) {
-        String suffix = sm.getSModelFqName().toString().  substring(oldFqName.length());
+        String suffix = sm.getSModelFqName().toString().substring(oldFqName.length());
         sm.rename(SModelFqName.fromString(myNewName + suffix), false);
       }
     }
