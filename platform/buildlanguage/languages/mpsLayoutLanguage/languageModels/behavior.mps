@@ -4769,11 +4769,10 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218648416995">
                       <link role="variableDeclaration" targetNodeId="1218648416969" resolveInfo="result" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation" id="1218648416996">
-                      <node role="argument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218648619640">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation" id="1223485658020">
+                      <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1223485672983">
                         <link role="baseMethodDeclaration" targetNodeId="1218648402975" resolveInfo="retrieveClassPath" />
-                        <link role="classConcept" targetNodeId="1218647682296" resolveInfo="ModuleUtil" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1218648624974">
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1223485678249">
                           <link role="variable" targetNodeId="1218648416990" resolveInfo="item" />
                         </node>
                       </node>

@@ -11,7 +11,9 @@
       <sourceFolder url="file://$MODULE_DIR$/languages/mpsProjectLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/propertylanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/taskLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/BuildLanguage.build/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.build.moduleDependencyLanguage.sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.build.packagingLanguage.runtime/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.build.packagingLanguage.runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.build.taskLanguage.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.buildlanguage.sandbox/source_gen" isTestSource="false" />
