@@ -166,7 +166,13 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ReplaceableAliasAndParms_Comp.calculateBoolean4484_1(cell);
+            }
+
+          });
         }
 
       };
@@ -179,7 +185,13 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ReplaceableAliasAndParms_Comp.calculateBoolean4484_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
             public Integer calculate(EditorCell cell) {
@@ -219,7 +231,13 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
           });
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ReplaceableAliasAndParms_Comp.calculateBoolean4484_3(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -289,6 +307,30 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   private static Color calculateColor4484_2(EditorCell cell) {
     Color result;
     result = MPSColors.lightGray;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4484_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4484_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4484_2(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4484_3(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 
@@ -364,7 +406,13 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
               }
 
             });
-            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return ReplaceableAliasAndParms_Comp.calculateBoolean4484_2(cell);
+              }
+
+            });
             this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
               public Color calculate(EditorCell cell) {

@@ -89,7 +89,13 @@ public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
             }
 
           });
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AttributeAccessOperation_Editor.calculateBoolean8939_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -110,6 +116,12 @@ public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
   private static Integer calculateFontStyle8939_0(EditorCell cell) {
     int result;
     result = MPSFonts.PLAIN;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8939_0(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

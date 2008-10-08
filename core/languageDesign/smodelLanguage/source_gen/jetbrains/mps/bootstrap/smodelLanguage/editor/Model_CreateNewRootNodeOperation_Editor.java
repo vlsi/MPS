@@ -17,11 +17,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
 
@@ -160,7 +160,13 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Model_CreateNewRootNodeOperation_Editor.calculateBoolean8073_0(cell);
+            }
+
+          });
         }
 
       };
@@ -212,6 +218,12 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
   private static Color calculateColor8073_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8073_0(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

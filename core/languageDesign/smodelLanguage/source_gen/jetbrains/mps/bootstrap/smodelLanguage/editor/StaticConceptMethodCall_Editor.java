@@ -27,6 +27,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
 
@@ -194,6 +195,12 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1206019920053_1206019920053(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean5843_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
   }
 
   public static class _Inline5843_0 extends AbstractCellProvider {
@@ -385,7 +392,13 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return StaticConceptMethodCall_Editor.calculateBoolean5843_0(cell);
+              }
+
+            });
           }
 
         };

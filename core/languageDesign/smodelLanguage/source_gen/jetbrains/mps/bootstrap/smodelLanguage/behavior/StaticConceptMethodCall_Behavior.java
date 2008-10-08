@@ -19,7 +19,7 @@ public class StaticConceptMethodCall_Behavior {
 
   public static List<SNode> getClassifiersWithStaticMethods_1213877485028(SModel model, IScope scope, SNode enclosingNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode concept : SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
+    for(SNode concept : SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       SNode behavior = AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(concept, scope);
       if (behavior != null && ListSequence.fromList(ConceptBehavior_Behavior.call_getVisibleStaticMethods_1213877272451(behavior, enclosingNode)).isNotEmpty()) {
         ListSequence.fromList(result).addElement(concept);

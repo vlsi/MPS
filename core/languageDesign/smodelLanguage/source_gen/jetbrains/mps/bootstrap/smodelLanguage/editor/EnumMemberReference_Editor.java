@@ -114,7 +114,13 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
             }
 
           });
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumMemberReference_Editor.calculateBoolean9300_0(cell);
+            }
+
+          });
         }
 
       };
@@ -142,7 +148,13 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
             }
 
           });
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return EnumMemberReference_Editor.calculateBoolean9300_1(cell);
+            }
+
+          });
         }
 
       };
@@ -192,6 +204,18 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
   private static Color calculateColor9300_2(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9300_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9300_1(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

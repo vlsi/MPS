@@ -91,7 +91,13 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
             }
 
           });
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return PoundExpression_Editor.calculateBoolean9048_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -100,7 +106,13 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
 
           });
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return PoundExpression_Editor.calculateBoolean9048_1(cell);
+            }
+
+          });
         }
 
       };
@@ -126,6 +138,18 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
   private static Color calculateColor9048_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9048_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9048_1(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

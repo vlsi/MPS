@@ -296,7 +296,13 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Node_GetAncestorOperation_Editor.calculateBoolean1569_3(cell);
+            }
+
+          });
         }
 
       };
@@ -309,7 +315,13 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Node_GetAncestorOperation_Editor.calculateBoolean1569_2(cell);
+            }
+
+          });
         }
 
       };
@@ -345,7 +357,13 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Node_GetAncestorOperation_Editor.calculateBoolean1569_4(cell);
+            }
+
+          });
         }
 
       };
@@ -381,7 +399,13 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Node_GetAncestorOperation_Editor.calculateBoolean1569_1(cell);
+            }
+
+          });
         }
 
       };
@@ -417,7 +441,13 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Node_GetAncestorOperation_Editor.calculateBoolean1569_0(cell);
+            }
+
+          });
         }
 
       };
@@ -536,6 +566,36 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   private static Color calculateColor1569_1(EditorCell cell) {
     Color result;
     result = MPSColors.lightGray;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1569_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1569_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1569_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1569_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1569_4(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

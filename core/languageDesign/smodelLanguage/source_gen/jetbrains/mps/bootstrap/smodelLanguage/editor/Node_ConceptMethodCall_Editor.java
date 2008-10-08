@@ -30,6 +30,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
@@ -150,6 +151,12 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition6574_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false), "parameter") == 0;
+  }
+
+  public static Boolean calculateBoolean6574_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
   }
 
   public static class _Inline6574_0 extends AbstractCellProvider {
@@ -278,7 +285,13 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return Node_ConceptMethodCall_Editor.calculateBoolean6574_0(cell);
+              }
+
+            });
             this.set(StyleAttributes.PADDING_RIGHT, 0.0);
             this.set(StyleAttributes.PADDING_LEFT, 0.0);
           }

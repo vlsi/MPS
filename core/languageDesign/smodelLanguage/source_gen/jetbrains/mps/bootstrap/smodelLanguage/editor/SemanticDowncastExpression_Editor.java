@@ -87,7 +87,13 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return SemanticDowncastExpression_Editor.calculateBoolean8499_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -96,7 +102,13 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
 
           });
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return SemanticDowncastExpression_Editor.calculateBoolean8499_1(cell);
+            }
+
+          });
         }
 
       };
@@ -117,6 +129,18 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
   private static Color calculateColor8499_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8499_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8499_1(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 
