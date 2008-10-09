@@ -1,7 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.bootstrap.findUsagesLanguage.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="AbstractFinderDeclaration" conceptFQName="jetbrains.mps.bootstrap.findUsagesLanguage.structure.AbstractFinderDeclaration" featureKind="CONCEPT" />
+          <value featureName="AbstractFinderDeclaration" conceptFQName="jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="CategorizeBlock" conceptFQName="jetbrains.mps.bootstrap.findUsagesLanguage.structure.CategorizeBlock" featureKind="CONCEPT" />
+          <value featureName="CategorizeBlock" conceptFQName="jetbrains.mps.lang.findUsages.structure.CategorizeBlock" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="CheckCancelledStatusStatement" conceptFQName="jetbrains.mps.bootstrap.findUsagesLanguage.structure.CheckCancelledStatusStatement" featureKind="CONCEPT" />
+          <value featureName="CheckCancelledStatusStatement" conceptFQName="jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConceptFunctionParameter_node" conceptFQName="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ConceptFunctionParameter_node" featureKind="CONCEPT" />
+          <value featureName="ConceptFunctionParameter_node" conceptFQName="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ExecuteFinderExpression" conceptFQName="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderExpression" featureKind="CONCEPT" />
+          <value featureName="ExecuteFinderExpression" conceptFQName="jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="FindBlock" conceptFQName="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FindBlock" featureKind="CONCEPT" />
+          <value featureName="FindBlock" conceptFQName="jetbrains.mps.lang.findUsages.structure.FindBlock" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="FinderDeclaration" conceptFQName="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" featureKind="CONCEPT" />
+          <value featureName="FinderDeclaration" conceptFQName="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="IsApplicableBlock" conceptFQName="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock" featureKind="CONCEPT" />
+          <value featureName="IsApplicableBlock" conceptFQName="jetbrains.mps.lang.findUsages.structure.IsApplicableBlock" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="IsVisibleBlock" conceptFQName="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsVisibleBlock" featureKind="CONCEPT" />
+          <value featureName="IsVisibleBlock" conceptFQName="jetbrains.mps.lang.findUsages.structure.IsVisibleBlock" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="NodeStatement" conceptFQName="jetbrains.mps.bootstrap.findUsagesLanguage.structure.NodeStatement" featureKind="CONCEPT" />
+          <value featureName="NodeStatement" conceptFQName="jetbrains.mps.lang.findUsages.structure.NodeStatement" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ResultStatement" conceptFQName="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ResultStatement" featureKind="CONCEPT" />
+          <value featureName="ResultStatement" conceptFQName="jetbrains.mps.lang.findUsages.structure.ResultStatement" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="SearchedNodesBlock" conceptFQName="jetbrains.mps.bootstrap.findUsagesLanguage.structure.SearchedNodesBlock" featureKind="CONCEPT" />
+          <value featureName="SearchedNodesBlock" conceptFQName="jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
@@ -13,7 +68,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.bootstrap.intentionsLanguage.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.bootstrap.findUsagesLanguage.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -21,6 +76,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
   <maxImportIndex value="15" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
