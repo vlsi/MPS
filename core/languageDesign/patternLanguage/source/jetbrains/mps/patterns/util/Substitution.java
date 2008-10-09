@@ -4,7 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.patterns.structure.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.annotations.structure.AttributeConcept;
+import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 

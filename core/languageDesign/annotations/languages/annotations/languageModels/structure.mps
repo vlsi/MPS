@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.annotations.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="AttributeConcept" conceptFQName="jetbrains.mps.annotations.structure.AttributeConcept" featureKind="CONCEPT" />
+          <value featureName="AttributeConcept" conceptFQName="jetbrains.mps.lang.annotations.structure.AttributeConcept" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="LinkAttributeConcept" conceptFQName="jetbrains.mps.annotations.structure.LinkAttributeConcept" featureKind="CONCEPT" />
+          <value featureName="LinkAttributeConcept" conceptFQName="jetbrains.mps.lang.annotations.structure.LinkAttributeConcept" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PropertyAttributeConcept" conceptFQName="jetbrains.mps.annotations.structure.PropertyAttributeConcept" featureKind="CONCEPT" />
+          <value featureName="PropertyAttributeConcept" conceptFQName="jetbrains.mps.lang.annotations.structure.PropertyAttributeConcept" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -16,6 +35,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1136027476087">

@@ -1,6 +1,6 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
-import jetbrains.mps.annotations.structure.LinkAttributeConcept;
+import jetbrains.mps.lang.annotations.structure.LinkAttributeConcept;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;

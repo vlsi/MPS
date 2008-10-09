@@ -6,7 +6,7 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="true">ac2f1963-1b72-479d-bbf6-e8da39fb6f41(jetbrains.mps.annotations)</dependency>
+    <dependency reexport="true">ac2f1963-1b72-479d-bbf6-e8da39fb6f41(jetbrains.mps.lang.annotations)</dependency>
   </dependencies>
 </solution>
 

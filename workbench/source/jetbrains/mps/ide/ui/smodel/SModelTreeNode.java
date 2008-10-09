@@ -3,7 +3,7 @@ package jetbrains.mps.ide.ui.smodel;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import jetbrains.mps.annotations.structure.AttributeConcept;
+import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.ThreadUtils;

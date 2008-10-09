@@ -1,6 +1,6 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
-import jetbrains.mps.annotations.structure.PropertyAttributeConcept;
+import jetbrains.mps.lang.annotations.structure.PropertyAttributeConcept;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.structure.structure.DataTypeDeclaration;
