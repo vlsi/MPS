@@ -29,7 +29,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testConstraintsLanguage() {
-    String res = testProject(new File("core/languageDesign/constraintsLanguage/constraintsLanguage.mpr"));
+    String res = testProject(new File("core/languageDesign/constraints/constraints.mpr"));
     assertTrue(res, res == null);
   }
 

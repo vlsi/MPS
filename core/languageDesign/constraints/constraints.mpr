@@ -29,7 +29,7 @@
     <projectDevkits />
     <libraries />
     <genConfs>
-      <genConfLanguage name="Constraints language" language="jetbrains.mps.bootstrap.constraintsLanguage" />
+      <genConfLanguage name="Constraints language" language="jetbrains.mps.lang.constraints" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
