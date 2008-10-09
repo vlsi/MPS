@@ -94,7 +94,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testPluginLanguage() {
-    String res = testProject(new File("core/languageDesign/pluginLanguage/plugin.mpr"));
+    String res = testProject(new File("core/languageDesign/plugin/plugin.mpr"));
     assertTrue(res, res == null);
   }
 
