@@ -1,7 +1,7 @@
 package jetbrains.mps.workbench.actions.nodes;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
+import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -33,7 +33,7 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
     super("Go To Concept Editor Declaration");
     setExecuteOutsideCommand(true);
     setIsAlwaysVisible(false);
-    getTemplatePresentation().setIcon(jetbrains.mps.bootstrap.editorLanguage.icons.Icons.EDITOR_ICON);
+    getTemplatePresentation().setIcon(jetbrains.mps.lang.editor.icons.Icons.EDITOR_ICON);
   }
 
   protected void doExecute(AnActionEvent e) {

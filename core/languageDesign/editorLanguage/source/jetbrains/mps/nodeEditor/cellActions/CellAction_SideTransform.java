@@ -3,7 +3,7 @@ package jetbrains.mps.nodeEditor.cellActions;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.bootstrap.editorLanguage.structure.RightTransformAnchorTag;
+import jetbrains.mps.lang.editor.structure.RightTransformAnchorTag;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.CellFinders;

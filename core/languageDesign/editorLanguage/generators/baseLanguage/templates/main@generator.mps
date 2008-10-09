@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.template.main@generator)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
@@ -8,7 +8,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
-  <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.bootstrap.editorLanguage)" />
+  <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.transformation.TLBase.constraints)" version="16" />
@@ -19,8 +19,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.bootstrap.editorLanguage.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.bootstrap.editorLanguage.structure)" version="26" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.bootstrap.constraintsLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
@@ -34,7 +34,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <maxImportIndex value="69" />
+  <maxImportIndex value="73" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -44,13 +44,10 @@
   <import index="20" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="21" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellProviders(jetbrains.mps.nodeEditor.cellProviders@java_stub)" version="-1" />
-  <import index="23" modelUID="f:java_stub#jetbrains.mps.bootstrap.editorLanguage.cellProviders(jetbrains.mps.bootstrap.editorLanguage.cellProviders@java_stub)" version="-1" />
   <import index="25" modelUID="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" version="-1" />
   <import index="28" modelUID="f:java_stub#jetbrains.mps.smodel.action(jetbrains.mps.smodel.action@java_stub)" version="-1" />
-  <import index="31" modelUID="f:java_stub#jetbrains.mps.bootstrap.editorLanguage.generator.internal(jetbrains.mps.bootstrap.editorLanguage.generator.internal@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
-  <import index="38" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.bootstrap.editorLanguage.structure)" version="26" />
-  <import index="40" modelUID="f:java_stub#jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.template.main(jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.template.main@java_stub)" version="-1" />
+  <import index="38" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
   <import index="45" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="46" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="47" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
@@ -58,13 +55,12 @@
   <import index="49" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="50" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="52" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
-  <import index="54" modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.bootstrap.editorLanguage.constraints)" version="21" />
+  <import index="54" modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <import index="56" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
-  <import index="57" modelUID="r:00000000-0000-4000-0000-011c895902a0(jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.template.util)" version="-1" />
+  <import index="57" modelUID="r:00000000-0000-4000-0000-011c895902a0(jetbrains.mps.lang.editor.generator.baseLanguage.template.util)" version="-1" />
   <import index="59" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.bootstrap.sharedConcepts.structure)" version="-1" />
-  <import index="60" modelUID="f:java_stub#jetbrains.mps.bootstrap.editorLanguage.structure(jetbrains.mps.bootstrap.editorLanguage.structure@java_stub)" version="-1" />
   <import index="61" modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
-  <import index="62" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.bootstrap.editorLanguage.behavior)" version="-1" />
+  <import index="62" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" />
   <import index="63" modelUID="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.bootstrap.smodelLanguage.behavior)" version="-1" />
   <import index="64" modelUID="f:java_stub#jetbrains.mps.nodeEditor.style(jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <import index="65" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellActions(jetbrains.mps.nodeEditor.cellActions@java_stub)" version="-1" />
@@ -72,6 +68,10 @@
   <import index="67" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="68" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="69" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
+  <import index="70" modelUID="f:java_stub#jetbrains.mps.lang.editor.cellProviders(jetbrains.mps.lang.editor.cellProviders@java_stub)" version="-1" />
+  <import index="71" modelUID="f:java_stub#jetbrains.mps.lang.editor.structure(jetbrains.mps.lang.editor.structure@java_stub)" version="-1" />
+  <import index="72" modelUID="f:java_stub#jetbrains.mps.lang.editor.generator.baseLanguage.template.main(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@java_stub)" version="-1" />
+  <import index="73" modelUID="f:java_stub#jetbrains.mps.lang.editor.generator.internal(jetbrains.mps.lang.editor.generator.internal@java_stub)" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1096629760203">
     <property name="name" value="MAPPING_main" />
     <node role="rootMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Root_MappingRule" id="1168474141361">
@@ -3045,8 +3045,8 @@
                               </node>
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1212799812204">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212799823348">
-                                  <link role="classConcept" targetNodeId="23.~RefNodeListHandler" resolveInfo="RefNodeListHandler" />
-                                  <link role="baseMethodDeclaration" targetNodeId="23.~RefNodeListHandler.getRoleByRelationDeclaration(jetbrains.mps.lang.core.structure.BaseConcept):java.lang.String" resolveInfo="getRoleByRelationDeclaration" />
+                                  <link role="classConcept" targetNodeId="70.~RefNodeListHandler" resolveInfo="RefNodeListHandler" />
+                                  <link role="baseMethodDeclaration" targetNodeId="70.~RefNodeListHandler.getRoleByRelationDeclaration(jetbrains.mps.lang.core.structure.BaseConcept):java.lang.String" resolveInfo="getRoleByRelationDeclaration" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212799839209">
                                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212800072014">
                                       <link role="variableDeclaration" targetNodeId="1212799793573" resolveInfo="relationDeclaration" />
@@ -7668,12 +7668,12 @@
                         <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1212798092875" />
                         <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1212798092876" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212798092877">
-                        <link role="baseMethodDeclaration" targetNodeId="60.~CellActionMapItem.getActionId():jetbrains.mps.bootstrap.editorLanguage.structure.CellActionId" resolveInfo="getActionId" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223544739001">
+                        <link role="baseMethodDeclaration" targetNodeId="71.~CellActionMapItem.getActionId():jetbrains.mps.lang.editor.structure.CellActionId" resolveInfo="getActionId" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212798092878">
-                      <link role="baseMethodDeclaration" targetNodeId="60.~CellActionId.getName():java.lang.String" resolveInfo="getName" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223544740549">
+                      <link role="baseMethodDeclaration" targetNodeId="71.~CellActionId.getName():java.lang.String" resolveInfo="getName" />
                     </node>
                   </node>
                 </node>
@@ -7763,12 +7763,12 @@
                               <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1217443090402" />
                               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1217443090403" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217443090404">
-                              <link role="baseMethodDeclaration" targetNodeId="60.~CellActionMapItem.getActionId():jetbrains.mps.bootstrap.editorLanguage.structure.CellActionId" resolveInfo="getActionId" />
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223544749082">
+                              <link role="baseMethodDeclaration" targetNodeId="71.~CellActionMapItem.getActionId():jetbrains.mps.lang.editor.structure.CellActionId" resolveInfo="getActionId" />
                             </node>
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217443090405">
-                            <link role="baseMethodDeclaration" targetNodeId="60.~CellActionId.getName():java.lang.String" resolveInfo="getName" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223544751114">
+                            <link role="baseMethodDeclaration" targetNodeId="71.~CellActionId.getName():java.lang.String" resolveInfo="getName" />
                           </node>
                         </node>
                       </node>
@@ -9157,8 +9157,8 @@
         </node>
       </node>
     </node>
-    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1166062966989">
-      <link role="classifier" targetNodeId="31.~AbstractCellMenuComponent" resolveInfo="AbstractCellMenuComponent" />
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544768096">
+      <link role="classifier" targetNodeId="73.~AbstractCellMenuComponent" resolveInfo="AbstractCellMenuComponent" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081303" />
     <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.transformation.TLBase.structure.RootTemplateAnnotation" id="1197583696466">
@@ -11143,7 +11143,7 @@
                   <link role="classifier" targetNodeId="67.~EditorCell" resolveInfo="EditorCell" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall" id="1184142273415">
-                  <link role="baseMethodDeclaration" targetNodeId="23.~RefNodeListHandler.createNodeCell(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="createNodeCell" />
+                  <link role="baseMethodDeclaration" targetNodeId="70.~RefNodeListHandler.createNodeCell(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="createNodeCell" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1184142273416">
                     <link role="variableDeclaration" targetNodeId="1184142273406" resolveInfo="context" />
                   </node>
@@ -11244,7 +11244,7 @@
                   <link role="variableDeclaration" targetNodeId="1184142273433" resolveInfo="emptyCell" />
                 </node>
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall" id="1184142273456">
-                  <link role="baseMethodDeclaration" targetNodeId="23.~RefNodeListHandler.createEmptyCell(jetbrains.mps.nodeEditor.EditorContext):jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="createEmptyCell" />
+                  <link role="baseMethodDeclaration" targetNodeId="70.~RefNodeListHandler.createEmptyCell(jetbrains.mps.nodeEditor.EditorContext):jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="createEmptyCell" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1184142273457">
                     <link role="variableDeclaration" targetNodeId="1184142273476" resolveInfo="context" />
                   </node>
@@ -11504,7 +11504,7 @@
                           <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell.addKeyMap(jetbrains.mps.nodeEditor.EditorCellKeyMap):void" resolveInfo="addKeyMap" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213036598929">
                             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213036598931">
-                              <link role="baseMethodDeclaration" targetNodeId="23.~RefNodeListHandlerElementKeyMap.&lt;init&gt;(jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler,java.lang.String)" resolveInfo="RefNodeListHandlerElementKeyMap" />
+                              <link role="baseMethodDeclaration" targetNodeId="70.~RefNodeListHandlerElementKeyMap.&lt;init&gt;(jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler,java.lang.String)" resolveInfo="RefNodeListHandlerElementKeyMap" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1184142273531" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1184142273532">
                                 <property name="value" value="_separator_" />
@@ -11562,7 +11562,7 @@
                           </node>
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213036598735">
                             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213036598737">
-                              <link role="baseMethodDeclaration" targetNodeId="23.~AggregationCellContext.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.lang.structure.structure.LinkDeclaration)" resolveInfo="AggregationCellContext" />
+                              <link role="baseMethodDeclaration" targetNodeId="70.~AggregationCellContext.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.lang.structure.structure.LinkDeclaration)" resolveInfo="AggregationCellContext" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1184142273541">
                                 <link role="variableDeclaration" targetNodeId="1184142273576" resolveInfo="listOwner" />
                               </node>
@@ -11570,7 +11570,7 @@
                                 <link role="variableDeclaration" targetNodeId="1184142273578" resolveInfo="elementNode" />
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall" id="1184142273543">
-                                <link role="baseMethodDeclaration" targetNodeId="23.~RefNodeListHandler.getLinkDeclaration():jetbrains.mps.lang.structure.structure.LinkDeclaration" resolveInfo="getLinkDeclaration" />
+                                <link role="baseMethodDeclaration" targetNodeId="70.~RefNodeListHandler.getLinkDeclaration():jetbrains.mps.lang.structure.structure.LinkDeclaration" resolveInfo="getLinkDeclaration" />
                               </node>
                             </node>
                           </node>
@@ -11687,7 +11687,7 @@
                                 <link role="variableDeclaration" targetNodeId="1184142273578" resolveInfo="elementNode" />
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall" id="1184142273559">
-                                <link role="baseMethodDeclaration" targetNodeId="23.~RefNodeListHandler.getLinkDeclaration():jetbrains.mps.lang.structure.structure.LinkDeclaration" resolveInfo="getLinkDeclaration" />
+                                <link role="baseMethodDeclaration" targetNodeId="70.~RefNodeListHandler.getLinkDeclaration():jetbrains.mps.lang.structure.structure.LinkDeclaration" resolveInfo="getLinkDeclaration" />
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1184142273560">
                                 <link role="variableDeclaration" targetNodeId="1184142273582" resolveInfo="context" />
@@ -12051,8 +12051,8 @@
             </node>
           </node>
         </node>
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184142273689">
-          <link role="classifier" targetNodeId="23.~RefNodeListHandler" resolveInfo="RefNodeListHandler" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544838726">
+          <link role="classifier" targetNodeId="70.~RefNodeListHandler" resolveInfo="RefNodeListHandler" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184142273691" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1184142298903">
@@ -12238,8 +12238,8 @@
             </node>
           </node>
         </node>
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184143722137">
-          <link role="classifier" targetNodeId="31.~AbstractCellMenuPart_PropertyValues" resolveInfo="AbstractCellMenuPart_PropertyValues" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544788852">
+          <link role="classifier" targetNodeId="73.~AbstractCellMenuPart_PropertyValues" resolveInfo="AbstractCellMenuPart_PropertyValues" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184143722138" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1184143729225">
@@ -12316,8 +12316,8 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184144008718" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184144008719" />
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184144008720">
-          <link role="classifier" targetNodeId="31.~AbstractCellMenuPart_PropertyPostfixHints" resolveInfo="AbstractCellMenuPart_PropertyPostfixHints" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544781241">
+          <link role="classifier" targetNodeId="73.~AbstractCellMenuPart_PropertyPostfixHints" resolveInfo="AbstractCellMenuPart_PropertyPostfixHints" />
         </node>
         <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1184144008722">
           <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1184144008723">
@@ -12583,8 +12583,8 @@
             </node>
           </node>
         </node>
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184144125796">
-          <link role="classifier" targetNodeId="31.~AbstractCellMenuPart_ReplaceNode_CustomNodeConcept" resolveInfo="AbstractCellMenuPart_ReplaceNode_CustomNodeConcept" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544808155">
+          <link role="classifier" targetNodeId="73.~AbstractCellMenuPart_ReplaceNode_CustomNodeConcept" resolveInfo="AbstractCellMenuPart_ReplaceNode_CustomNodeConcept" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184144125797" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1184144128126">
@@ -12884,8 +12884,8 @@
             </node>
           </node>
         </node>
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184144460463">
-          <link role="classifier" targetNodeId="31.~AbstractCellMenuPart_ReplaceNode_Group" resolveInfo="AbstractCellMenuPart_ReplaceNode_Group" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544811391">
+          <link role="classifier" targetNodeId="73.~AbstractCellMenuPart_ReplaceNode_Group" resolveInfo="AbstractCellMenuPart_ReplaceNode_Group" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184144460464" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1184144462559">
@@ -13011,8 +13011,8 @@
             </node>
           </node>
         </node>
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184144549354">
-          <link role="classifier" targetNodeId="31.~PrimaryReferentMenuCellMenuPart" resolveInfo="PrimaryReferentMenuCellMenuPart" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544792259">
+          <link role="classifier" targetNodeId="73.~PrimaryReferentMenuCellMenuPart" resolveInfo="PrimaryReferentMenuCellMenuPart" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184144549355" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1184144550919">
@@ -13139,8 +13139,8 @@
             </node>
           </node>
         </node>
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184144840627">
-          <link role="classifier" targetNodeId="31.~PrimaryReplaceChildMenuCellMenuPart" resolveInfo="PrimaryReplaceChildMenuCellMenuPart" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544794870">
+          <link role="classifier" targetNodeId="73.~PrimaryReplaceChildMenuCellMenuPart" resolveInfo="PrimaryReplaceChildMenuCellMenuPart" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184144840629" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1184144844490">
@@ -13576,8 +13576,8 @@
             </node>
           </node>
         </node>
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184144929030">
-          <link role="classifier" targetNodeId="31.~AbstractCellMenuPart_ReplaceChild_Group" resolveInfo="AbstractCellMenuPart_ReplaceChild_Group" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544800262">
+          <link role="classifier" targetNodeId="73.~AbstractCellMenuPart_ReplaceChild_Group" resolveInfo="AbstractCellMenuPart_ReplaceChild_Group" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184144929031" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1184144930345">
@@ -13888,8 +13888,8 @@
             </node>
           </node>
         </node>
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184145018804">
-          <link role="classifier" targetNodeId="31.~AbstractCellMenuPart_ReplaceChild_Item" resolveInfo="AbstractCellMenuPart_ReplaceChild_Item" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544805263">
+          <link role="classifier" targetNodeId="73.~AbstractCellMenuPart_ReplaceChild_Item" resolveInfo="AbstractCellMenuPart_ReplaceChild_Item" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184145018806" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1184145029331">
@@ -14076,8 +14076,8 @@
             </node>
           </node>
         </node>
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184145119660">
-          <link role="classifier" targetNodeId="31.~AbstractCellMenuPart_ReplaceChild_CustomChildConcept" resolveInfo="AbstractCellMenuPart_ReplaceChild_CustomChildConcept" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544797683">
+          <link role="classifier" targetNodeId="73.~AbstractCellMenuPart_ReplaceChild_CustomChildConcept" resolveInfo="AbstractCellMenuPart_ReplaceChild_CustomChildConcept" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184145119661" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1184145121146">
@@ -14371,8 +14371,8 @@
             </node>
           </node>
         </node>
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184145254450">
-          <link role="classifier" targetNodeId="31.~AbstractCellMenuPart_Generic_Group" resolveInfo="AbstractCellMenuPart_Generic_Group" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544773474">
+          <link role="classifier" targetNodeId="73.~AbstractCellMenuPart_Generic_Group" resolveInfo="AbstractCellMenuPart_Generic_Group" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184145254451" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1184145256374">
@@ -14546,8 +14546,8 @@
             </node>
           </node>
         </node>
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184145338795">
-          <link role="classifier" targetNodeId="31.~AbstractCellMenuPart_Generic_Item" resolveInfo="AbstractCellMenuPart_Generic_Item" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544776756">
+          <link role="classifier" targetNodeId="73.~AbstractCellMenuPart_Generic_Group" resolveInfo="AbstractCellMenuPart_Generic_Group" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184145338796" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1184145340813">
@@ -14648,7 +14648,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995325025">
-                  <link role="baseMethodDeclaration" targetNodeId="31.~AbstractCellMenuComponent.createActions(jetbrains.mps.nodeEditor.cellMenu.CellContext,jetbrains.mps.nodeEditor.EditorContext):java.util.List" resolveInfo="createActions" />
+                  <link role="baseMethodDeclaration" targetNodeId="73.~AbstractCellMenuComponent.createActions(jetbrains.mps.nodeEditor.cellMenu.CellContext,jetbrains.mps.nodeEditor.EditorContext):java.util.List" resolveInfo="createActions" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1184145427478">
                     <link role="variableDeclaration" targetNodeId="1184145427469" resolveInfo="cellContext" />
                   </node>
@@ -16157,13 +16157,13 @@
     <property name="name" value="reduce_CellModel_BlockStart" />
     <property name="package" value="sugar" />
     <link role="applicableConcept" targetNodeId="38.1198257632966" resolveInfo="CellModel_BlockStart" />
-    <node role="contentNode" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198258236630">
+    <node role="contentNode" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1198258236630">
       <property name="name" value="nodeCellPanel" />
       <property name="vertical" value="true" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198258236631">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1198258236631">
         <property name="text" value="{" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1198258244121" />
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198258249513">
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1198258249513">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198258249514">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198258258594">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198258259690">
@@ -16229,7 +16229,7 @@
             </node>
           </node>
         </node>
-        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1198505156445">
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1198505156445">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1198505160490">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1198505160491">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198505160492">
@@ -16290,7 +16290,7 @@
           </node>
         </node>
       </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310993862">
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310993862">
         <property name="flag" value="false" />
       </node>
     </node>
@@ -16356,13 +16356,13 @@
     <property name="name" value="reduce_CellModel_BlockEnd" />
     <property name="package" value="sugar" />
     <link role="applicableConcept" targetNodeId="38.1198257747917" resolveInfo="CellModel_BlockEnd" />
-    <node role="contentNode" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198506850252">
+    <node role="contentNode" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1198506850252">
       <property name="name" value="nodeCellPanel" />
       <property name="vertical" value="true" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198506850253">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1198506850253">
         <property name="text" value="}" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1198506850254" />
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198506850255">
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1198506850255">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198506850256">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198506850257">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198506850258">
@@ -16428,7 +16428,7 @@
             </node>
           </node>
         </node>
-        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1198506850308">
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1198506850308">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1198506850309">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1198506850310">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198506850311">
@@ -16489,7 +16489,7 @@
           </node>
         </node>
       </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310998173">
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310998173">
         <property name="flag" value="false" />
       </node>
     </node>
@@ -16498,17 +16498,17 @@
     <property name="package" value="sugar" />
     <property name="name" value="reduce_CellModel_Block" />
     <link role="applicableConcept" targetNodeId="38.1198489924438" resolveInfo="CellModel_Block" />
-    <node role="contentNode" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198490711938">
+    <node role="contentNode" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1198490711938">
       <property name="attractsFocus" value="0" />
       <property name="name" value="nodeBox" />
       <property name="vertical" value="true" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198490721273">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1198490721273">
         <property name="vertical" value="true" />
         <property name="name" value="name" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1198490722587" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198490739668">
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1198490739668">
           <property name="vertical" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198490739669">
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1198490739669">
             <property name="text" value="header" />
             <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1198490755633">
               <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1198490755634">
@@ -16524,11 +16524,11 @@
                 </node>
               </node>
             </node>
-            <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.PaddingRightStyleClassItem" id="1217939273565">
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1217939273565">
               <property name="value" value="0.0" />
             </node>
           </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_BlockStart" id="1198490742359">
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_BlockStart" id="1198490742359">
             <link role="styleClass" targetNodeId="68.1215091279307" resolveInfo="LeftBrace" />
             <node role="propertyMacro$property_attribute$openBrace" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198509093262">
               <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198509093263">
@@ -16545,14 +16545,14 @@
               </node>
             </node>
           </node>
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994149">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994149">
             <property name="flag" value="false" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198490744563">
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1198490744563">
           <property name="vertical" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Indent" id="1198490746205" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198490748004">
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1198490746205" />
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1198490748004">
             <property name="text" value="body" />
             <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1198490767597">
               <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1198490767598">
@@ -16569,11 +16569,11 @@
               </node>
             </node>
           </node>
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310995429">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995429">
             <property name="flag" value="false" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_BlockEnd" id="1198490751788">
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_BlockEnd" id="1198490751788">
           <link role="styleClass" targetNodeId="68.1215091331565" resolveInfo="RightBrace" />
           <node role="propertyMacro$property_attribute$closeBrace" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1198509096993">
             <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1198509096994">
@@ -16646,7 +16646,7 @@
             </node>
           </node>
         </node>
-        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1198502994308">
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1198502994308">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1198502998164">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1198502998165">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198502998166">
@@ -16676,7 +16676,7 @@
             </node>
           </node>
         </node>
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198503014668">
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1198503014668">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198503014669" />
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1198503018141">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1198503018142">
@@ -16693,7 +16693,7 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310998023">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310998023">
           <property name="flag" value="false" />
         </node>
       </node>
@@ -17036,12 +17036,12 @@
     <property name="package" value="sugar" />
     <property name="name" value="reduce_WrapRootConditionCell" />
     <link role="applicableConcept" targetNodeId="38.1073389214265" resolveInfo="EditorCellModel" />
-    <node role="contentNode" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204307957345">
+    <node role="contentNode" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1204307957345">
       <property name="name" value="nodeCellPanel" />
       <property name="vertical" value="true" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1204307986661">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1204307986661">
         <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1204307992898">
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1204307992898">
           <property name="text" value="abcdef" />
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1204308047623">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1204308047624">
@@ -17055,16 +17055,16 @@
               </node>
             </node>
           </node>
-          <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleClassItem" id="1223037471900">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1223037471900">
             <property name="style" value="BOLD" />
           </node>
         </node>
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1204307994040" />
-        <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310996568">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996568">
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="styleItem" type="jetbrains.mps.bootstrap.editorLanguage.structure.SelectableStyleSheetItem" id="1214310994880">
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994880">
         <property name="flag" value="false" />
       </node>
     </node>

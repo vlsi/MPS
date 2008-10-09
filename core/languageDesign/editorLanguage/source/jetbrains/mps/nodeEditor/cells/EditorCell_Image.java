@@ -1,7 +1,7 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.bootstrap.editorLanguage.structure._ImageAlignment_Enum;
+import jetbrains.mps.lang.editor.structure._ImageAlignment_Enum;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;

@@ -19,7 +19,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import java.util.List;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
+import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.ArrayList;
 import java.util.Collection;

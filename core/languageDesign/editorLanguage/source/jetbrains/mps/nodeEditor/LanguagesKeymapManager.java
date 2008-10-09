@@ -2,7 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapDeclaration;
+import jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;

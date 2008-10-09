@@ -20,7 +20,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
-import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
+import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;

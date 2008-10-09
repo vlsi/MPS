@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.bootstrap.editorLanguage.structure._Layout_Constraints_Enum;
+import jetbrains.mps.lang.editor.structure._Layout_Constraints_Enum;
 
 /**
  * Created by IntelliJ IDEA.

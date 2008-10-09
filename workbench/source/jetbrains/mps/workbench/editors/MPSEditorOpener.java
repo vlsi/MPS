@@ -14,7 +14,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints;
 import jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration;
-import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
+import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.ide.ConceptDeclarationEditor;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;

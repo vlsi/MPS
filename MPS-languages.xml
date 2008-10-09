@@ -695,15 +695,15 @@
   <target name="pack.jetbrains.mps.lang.structure">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.structure.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.structure.tmp/module" />
-    <mkdir dir="core/languageDesign/structureLanguage/classes" />
+    <mkdir dir="core/languageDesign/structure/classes" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.structure.tmp/module">
-      <fileset file="core/languageDesign/structureLanguage/languageDescriptor.mpl" />
+      <fileset file="core/languageDesign/structure/languageDescriptor.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.structure.tmp/module">
-      <fileset dir="core/languageDesign/structureLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="core/languageDesign/structure" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.structure.tmp">
-      <fileset dir="core/languageDesign/structureLanguage/classes" />
+      <fileset dir="core/languageDesign/structure/classes" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.structure.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.structure.tmp" />
