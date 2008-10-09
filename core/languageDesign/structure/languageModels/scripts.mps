@@ -32,7 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
-  <maxImportIndex value="29" />
+  <maxImportIndex value="30" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -42,11 +42,11 @@
   <import index="10" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
-  <import index="16" modelUID="f:java_stub#jetbrains.mps.bootstrap.constraintsLanguage.structure(jetbrains.mps.bootstrap.constraintsLanguage.structure@java_stub)" version="-1" />
   <import index="23" modelUID="f:java_stub#jetbrains.mps.ide.findusages.model(jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
   <import index="29" modelUID="f:java_stub#jetbrains.mps.lang.editor.structure(jetbrains.mps.lang.editor.structure@java_stub)" version="-1" />
+  <import index="30" modelUID="f:java_stub#jetbrains.mps.lang.constraints.structure(jetbrains.mps.lang.constraints.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1198085953023">
     <property name="name" value="RenameConcept" />
     <property name="userFriendlyName" value="Rename Concept" />
@@ -727,11 +727,11 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199636033790">
                     <property name="name" value="conceptBehavior" />
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199636033791">
-                      <link role="classifier" targetNodeId="16.~ConceptBehavior" resolveInfo="ConceptBehavior" />
+                      <link role="classifier" targetNodeId="30.~ConceptBehavior" resolveInfo="ConceptBehavior" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1199636033792">
                       <link role="classConcept" targetNodeId="5.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                      <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.findBehaviorDeclaration(jetbrains.mps.smodel.SModel,jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration):jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" resolveInfo="findBehaviorDeclaration" />
+                      <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.findBehaviorDeclaration(jetbrains.mps.smodel.SModel,jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration):jetbrains.mps.lang.constraints.structure.ConceptBehavior" resolveInfo="findBehaviorDeclaration" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202172">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199636033794">
                           <link role="variableDeclaration" targetNodeId="1198521635841" resolveInfo="constraintsModelDescriptor" />
@@ -3028,7 +3028,7 @@
     <node role="internalArguments" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument" id="1201283870600">
       <property name="name" value="conceptBehavior" />
       <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201283882649">
-        <link role="classifier" targetNodeId="16.~ConceptBehavior" resolveInfo="ConceptBehavior" />
+        <link role="classifier" targetNodeId="30.~ConceptBehavior" resolveInfo="ConceptBehavior" />
       </node>
     </node>
     <node role="internalArguments" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument" id="1201283883838">
@@ -3276,7 +3276,7 @@
                     </node>
                     <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201284197610">
                       <link role="classConcept" targetNodeId="5.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                      <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.findBehaviorDeclaration(jetbrains.mps.smodel.SModel,jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration):jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" resolveInfo="findBehaviorDeclaration" />
+                      <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.findBehaviorDeclaration(jetbrains.mps.smodel.SModel,jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration):jetbrains.mps.lang.constraints.structure.ConceptBehavior" resolveInfo="findBehaviorDeclaration" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202537">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201284197612">
                           <link role="variableDeclaration" targetNodeId="1201283912537" resolveInfo="constraintsModelDescriptor" />
