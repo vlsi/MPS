@@ -119,7 +119,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1220285436693(final IOperationContext operationContext, final PropertyMacroContext _context) {
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation")) {
+      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         return true;
       }
     }
@@ -348,7 +348,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1176737298135(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation")) {
+      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         result.add(SLinkOperations.getTarget(child, "expression", true));
       }
     }
@@ -358,7 +358,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1176737399740(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation")) {
+      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         result.add(SLinkOperations.getTarget(child, "expression", true));
       }
     }
@@ -368,7 +368,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1176737411271(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation")) {
+      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         result.add(SLinkOperations.getTarget(child, "expression", true));
       }
     }

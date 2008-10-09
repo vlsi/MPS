@@ -14,11 +14,11 @@ public class PatternExpression_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode antiquotation : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.quotation.structure.AbstractAntiquotation", false)) {
-      _context.getBuilder().build(antiquotation);
+    for(SNode antiquotation : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", false)) {
+      _context.getBuilder().build((SNode)antiquotation);
     }
     for(SNode patternVar : SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.patterns.structure.PatternVariableDeclaration","jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration"}, false)) {
-      _context.getBuilder().build(patternVar);
+      _context.getBuilder().build((SNode)patternVar);
     }
   }
 

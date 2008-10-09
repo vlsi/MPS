@@ -14,7 +14,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.patterns.structure.AsPattern_AnnotationLink;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.patterns.structure.AsPattern;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
@@ -25,6 +24,7 @@ import jetbrains.mps.lang.quotation.structure.Antiquotation_AnnotationLink;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.quotation.structure.ListAntiquotation;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation_AnnotationLink;
 import jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation;
@@ -317,7 +317,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       if (contextNode == null) {
         return;
       }
-      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.annotations.structure.AttributeConcept")) {
+      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.annotations.structure.AttributeConcept")) {
         SNode attributedNode = SLinkOperations.getTarget((contextNode), "attributedNode", false);
         attributedNode.setAttribute(null);
         return;
@@ -326,7 +326,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       if (Antiquotation_AnnotationLink.getAntiquotation(((BaseConcept)SNodeOperations.getAdapter(contextNode))) != null) {
         contextNode.setAttribute(null);
       } else
-      contextNode.setAttribute(SModelOperations.createNewNode(model, "jetbrains.mps.quotation.structure.Antiquotation", null));
+      contextNode.setAttribute(SModelOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.Antiquotation", null));
     }
 
     public String getKeyStroke() {
@@ -374,7 +374,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       if (contextNode == null) {
         return;
       }
-      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.ListAntiquotation")) {
+      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
         SNode attributedNode = SNodeOperations.getParent(contextNode);
         assert attributedNode != null;
         attributedNode.setAttribute(null);
@@ -384,7 +384,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       if (BaseAdapter.isInstance(contextNode.getAttribute(), ListAntiquotation.class)) {
         contextNode.setAttribute(null);
       } else
-      contextNode.setAttribute(SModelOperations.createNewNode(model, "jetbrains.mps.quotation.structure.ListAntiquotation", null));
+      contextNode.setAttribute(SModelOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.ListAntiquotation", null));
     }
 
     public String getKeyStroke() {
@@ -442,7 +442,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
         return;
       }
       String role = SPropertyOperations.getString(link, "role");
-      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.ReferenceAntiquotation")) {
+      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")) {
         SNode attributedNode = SNodeOperations.getParent(contextNode);
         assert attributedNode != null;
         ReferenceAntiquotation_AnnotationLink.setReferenceAntiquotation(((BaseConcept)SNodeOperations.getAdapter(attributedNode)), role, null);
@@ -454,7 +454,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
         ReferenceAntiquotation_AnnotationLink.setReferenceAntiquotation(((BaseConcept)SNodeOperations.getAdapter(contextNode)), role, null);
       } else
       {
-        ReferenceAntiquotation_AnnotationLink.setReferenceAntiquotation(((BaseConcept)SNodeOperations.getAdapter(contextNode)), role, ((ReferenceAntiquotation)SNodeOperations.getAdapter(SModelOperations.createNewNode(model, "jetbrains.mps.quotation.structure.ReferenceAntiquotation", null))));
+        ReferenceAntiquotation_AnnotationLink.setReferenceAntiquotation(((BaseConcept)SNodeOperations.getAdapter(contextNode)), role, ((ReferenceAntiquotation)SNodeOperations.getAdapter(SModelOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", null))));
       }
     }
 
