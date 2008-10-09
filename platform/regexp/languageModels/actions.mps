@@ -958,7 +958,7 @@
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186083020595">
                     <link role="classConcept" targetNodeId="9.~ModelConstraintsUtil" resolveInfo="ModelConstraintsUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="9.~ModelConstraintsUtil.getSearchScope(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration,java.lang.String,jetbrains.mps.smodel.IOperationContext):jetbrains.mps.smodel.constraints.SearchScopeStatus" resolveInfo="getSearchScope" />
+                    <link role="baseMethodDeclaration" targetNodeId="9.~ModelConstraintsUtil.getSearchScope(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.lang.structure.structure.LinkDeclaration,jetbrains.mps.smodel.IOperationContext):jetbrains.mps.smodel.constraints.SearchScopeStatus" resolveInfo="getSearchScope" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1186083130909" />
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1186083134880" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721567">

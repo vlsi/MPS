@@ -16,8 +16,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 
@@ -225,7 +225,13 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ForEachMatchStatement_Editor.calculateBoolean2168_0(cell);
+            }
+
+          });
         }
 
       };
@@ -302,7 +308,13 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ForEachMatchStatement_Editor.calculateBoolean2168_1(cell);
+            }
+
+          });
         }
 
       };
@@ -350,6 +362,18 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
   private static Color calculateColor2168_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2168_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2168_1(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

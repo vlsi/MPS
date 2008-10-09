@@ -381,7 +381,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BRACKETS, true);
+          this.set(StyleAttributes.DRAW_BRACKETS, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateBoolean6834_9(cell);
+            }
+
+          });
           this.set(StyleAttributes.BRACKETS_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -409,7 +415,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateBoolean6834_8(cell);
+            }
+
+          });
         }
 
       };
@@ -430,7 +442,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateBoolean6834_6(cell);
+            }
+
+          });
         }
 
       };
@@ -443,7 +461,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateBoolean6834_1(cell);
+            }
+
+          });
         }
 
       };
@@ -479,7 +503,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateBoolean6834_4(cell);
+            }
+
+          });
         }
 
       };
@@ -500,7 +530,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateBoolean6834_5(cell);
+            }
+
+          });
         }
 
       };
@@ -513,7 +549,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateBoolean6834_7(cell);
+            }
+
+          });
         }
 
       };
@@ -545,7 +587,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateBoolean6834_2(cell);
+            }
+
+          });
         }
 
       };
@@ -558,7 +606,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateBoolean6834_3(cell);
+            }
+
+          });
         }
 
       };
@@ -594,7 +648,13 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InlineRegexpExpression_Editor.calculateBoolean6834_0(cell);
+            }
+
+          });
         }
 
       };
@@ -775,6 +835,66 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   private static Color calculateColor6834_3(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6834_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6834_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6834_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6834_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6834_4(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6834_5(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6834_6(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6834_7(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6834_8(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6834_9(EditorCell cell) {
+    boolean result;
+    result = true;
     return result;
   }
 

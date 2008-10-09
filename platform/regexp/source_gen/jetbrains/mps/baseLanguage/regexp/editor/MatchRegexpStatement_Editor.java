@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
@@ -214,7 +215,13 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PADDING_LEFT, 1.0);
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchRegexpStatement_Editor.calculateBoolean5755_1(cell);
+            }
+
+          });
         }
 
       };
@@ -242,7 +249,13 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchRegexpStatement_Editor.calculateBoolean5755_0(cell);
+            }
+
+          });
         }
 
       };
@@ -312,6 +325,18 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1174595121109_1174595121109(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean5755_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5755_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
 }

@@ -169,7 +169,13 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return PredefinedSymbolClassDeclaration_Editor.calculateBoolean9156_1(cell);
+            }
+
+          });
         }
 
       };
@@ -205,7 +211,13 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return PredefinedSymbolClassDeclaration_Editor.calculateBoolean9156_0(cell);
+            }
+
+          });
         }
 
       };
@@ -257,6 +269,18 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
   private static Color calculateColor9156_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9156_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9156_1(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

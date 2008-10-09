@@ -128,7 +128,7 @@ public class QueriesGenerated {
       Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
       concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
       for(final SNode subconcept : concepts) {
-        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration"))) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           continue;
         }
         if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
@@ -156,7 +156,7 @@ public class QueriesGenerated {
       Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
       concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
       for(final SNode subconcept : concepts) {
-        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration"))) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           continue;
         }
         if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {

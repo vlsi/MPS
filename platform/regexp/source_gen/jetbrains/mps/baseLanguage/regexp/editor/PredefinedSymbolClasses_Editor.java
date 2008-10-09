@@ -120,7 +120,13 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return PredefinedSymbolClasses_Editor.calculateBoolean0524_2(cell);
+            }
+
+          });
         }
 
       };
@@ -133,7 +139,13 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return PredefinedSymbolClasses_Editor.calculateBoolean0524_1(cell);
+            }
+
+          });
         }
 
       };
@@ -173,7 +185,13 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return PredefinedSymbolClasses_Editor.calculateBoolean0524_0(cell);
+            }
+
+          });
         }
 
       };
@@ -203,6 +221,24 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
   private static Color calculateColor0524_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0524_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0524_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0524_2(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

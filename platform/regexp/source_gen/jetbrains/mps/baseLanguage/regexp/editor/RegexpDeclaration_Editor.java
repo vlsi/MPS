@@ -254,7 +254,13 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return RegexpDeclaration_Editor.calculateBoolean4843_0(cell);
+            }
+
+          });
         }
 
       };
@@ -267,7 +273,13 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return RegexpDeclaration_Editor.calculateBoolean4843_3(cell);
+            }
+
+          });
         }
 
       };
@@ -283,7 +295,13 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return RegexpDeclaration_Editor.calculateBoolean4843_1(cell);
+            }
+
+          });
         }
 
       };
@@ -296,7 +314,13 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return RegexpDeclaration_Editor.calculateBoolean4843_2(cell);
+            }
+
+          });
         }
 
       };
@@ -384,6 +408,30 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   private static Color calculateColor4843_2(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4843_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4843_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4843_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4843_3(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

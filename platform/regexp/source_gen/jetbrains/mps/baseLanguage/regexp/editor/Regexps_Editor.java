@@ -154,7 +154,13 @@ public class Regexps_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Regexps_Editor.calculateBoolean2642_2(cell);
+            }
+
+          });
         }
 
       };
@@ -198,7 +204,13 @@ public class Regexps_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Regexps_Editor.calculateBoolean2642_0(cell);
+            }
+
+          });
         }
 
       };
@@ -211,7 +223,13 @@ public class Regexps_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Regexps_Editor.calculateBoolean2642_1(cell);
+            }
+
+          });
         }
 
       };
@@ -244,6 +262,24 @@ public class Regexps_Editor extends DefaultNodeEditor {
   private static Color calculateColor2642_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2642_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2642_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2642_2(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 
