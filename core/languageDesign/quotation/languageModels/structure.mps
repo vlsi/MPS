@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.quotation.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="AbstractAntiquotation" conceptFQName="jetbrains.mps.quotation.structure.AbstractAntiquotation" featureKind="CONCEPT" />
+          <value featureName="AbstractAntiquotation" conceptFQName="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Antiquotation" conceptFQName="jetbrains.mps.quotation.structure.Antiquotation" featureKind="CONCEPT" />
+          <value featureName="Antiquotation" conceptFQName="jetbrains.mps.lang.quotation.structure.Antiquotation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ListAntiquotation" conceptFQName="jetbrains.mps.quotation.structure.ListAntiquotation" featureKind="CONCEPT" />
+          <value featureName="ListAntiquotation" conceptFQName="jetbrains.mps.lang.quotation.structure.ListAntiquotation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PropertyAntiquotation" conceptFQName="jetbrains.mps.quotation.structure.PropertyAntiquotation" featureKind="CONCEPT" />
+          <value featureName="PropertyAntiquotation" conceptFQName="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Quotation" conceptFQName="jetbrains.mps.quotation.structure.Quotation" featureKind="CONCEPT" />
+          <value featureName="Quotation" conceptFQName="jetbrains.mps.lang.quotation.structure.Quotation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ReferenceAntiquotation" conceptFQName="jetbrains.mps.quotation.structure.ReferenceAntiquotation" featureKind="CONCEPT" />
+          <value featureName="ReferenceAntiquotation" conceptFQName="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
@@ -18,12 +49,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.bootstrap.helgins.structure)" version="7" />
-  <import index="7" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.quotation.structure)" version="-1" />
+  <import index="7" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1196350785110">
     <property name="name" value="AbstractAntiquotation" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />

@@ -11,7 +11,7 @@
   </dependencies>
   <usedLanguages>
     <usedLanguages>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)</usedLanguages>
-    <usedLanguages>3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)</usedLanguages>
+    <usedLanguages>3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)</usedLanguages>
   </usedLanguages>
 </solution>
 

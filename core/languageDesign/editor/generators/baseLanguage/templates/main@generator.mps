@@ -7,7 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
@@ -36,6 +36,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="73" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -736,7 +737,7 @@
                             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197573457829">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197573485790">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227897348">
-                                  <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197573489339">
+                                  <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197573489339">
                                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197573517513">
                                       <link role="classConcept" targetNodeId="67.~EditorCell_Collection" resolveInfo="EditorCell_Collection" />
                                       <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Collection.createVertical(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.cells.EditorCell_Collection" resolveInfo="createVertical" />
@@ -759,7 +760,7 @@
                           </node>
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197573605648">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227883726">
-                              <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197573605651">
+                              <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197573605651">
                                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197573605652">
                                   <link role="classConcept" targetNodeId="67.~EditorCell_Collection" resolveInfo="EditorCell_Collection" />
                                   <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Collection.createHorizontal(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.cells.EditorCell_Collection" resolveInfo="createHorizontal" />
@@ -800,7 +801,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197573368219">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197573697971">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227923612">
-                              <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197573697974">
+                              <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197573697974">
                                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197573697975">
                                   <link role="classConcept" targetNodeId="67.~EditorCell_Collection" resolveInfo="EditorCell_Collection" />
                                   <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Collection.createVertical(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorCellListHandler):jetbrains.mps.nodeEditor.cells.EditorCell_Collection" resolveInfo="createVertical" />
@@ -832,7 +833,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197573705922">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197573705923">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227929048">
-                              <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197573705926">
+                              <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197573705926">
                                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197573705927">
                                   <link role="classConcept" targetNodeId="67.~EditorCell_Collection" resolveInfo="EditorCell_Collection" />
                                   <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Collection.createHorizontal(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorCellListHandler):jetbrains.mps.nodeEditor.cells.EditorCell_Collection" resolveInfo="createHorizontal" />
@@ -864,7 +865,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197574050376">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197574050377">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227930201">
-                              <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197574050380">
+                              <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197574050380">
                                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197574050381">
                                   <link role="classConcept" targetNodeId="67.~EditorCell_Collection" resolveInfo="EditorCell_Collection" />
                                   <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Collection.createFlow(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorCellListHandler):jetbrains.mps.nodeEditor.cells.EditorCell_Collection" resolveInfo="createFlow" />
@@ -884,7 +885,7 @@
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197574122950">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227916852">
-                          <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197574122953">
+                          <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197574122953">
                             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197574122954">
                               <link role="classConcept" targetNodeId="67.~EditorCell_Collection" resolveInfo="EditorCell_Collection" />
                               <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Collection.createVertical(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorCellListHandler):jetbrains.mps.nodeEditor.cells.EditorCell_Collection" resolveInfo="createVertical" />
@@ -3170,7 +3171,7 @@
                                         <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1212800316314">
                                           <link role="concept" targetNodeId="10.1212685548494" resolveInfo="ClassCreator" />
                                           <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212800293310">
-                                            <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197580257894">
+                                            <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197580257894">
                                               <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212800241203">
                                                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1212800241220">
                                                   <link role="baseMethodDeclaration" targetNodeId="66.~CellLayout_Vertical.&lt;init&gt;()" resolveInfo="CellLayout_Vertical" />
@@ -3200,7 +3201,7 @@
                                     <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1212800397873">
                                       <link role="concept" targetNodeId="10.1212685548494" resolveInfo="ClassCreator" />
                                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212800391166">
-                                        <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197580378829">
+                                        <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197580378829">
                                           <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212800243924">
                                             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1212800243926">
                                               <link role="baseMethodDeclaration" targetNodeId="66.~CellLayout_Horizontal.&lt;init&gt;()" resolveInfo="CellLayout_Horizontal" />
@@ -3235,7 +3236,7 @@
                                     <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1212800479906">
                                       <link role="concept" targetNodeId="10.1212685548494" resolveInfo="ClassCreator" />
                                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212800474215">
-                                        <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197580462598">
+                                        <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197580462598">
                                           <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212800247240">
                                             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1212800247242">
                                               <link role="baseMethodDeclaration" targetNodeId="66.~CellLayout_Vertical.&lt;init&gt;()" resolveInfo="CellLayout_Vertical" />
@@ -3271,7 +3272,7 @@
                                     <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1212800495085">
                                       <link role="concept" targetNodeId="10.1212685548494" resolveInfo="ClassCreator" />
                                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212800490206">
-                                        <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197580469199">
+                                        <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197580469199">
                                           <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212800278226">
                                             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1212800278228">
                                               <link role="baseMethodDeclaration" targetNodeId="66.~CellLayout_Horizontal.&lt;init&gt;()" resolveInfo="CellLayout_Horizontal" />
@@ -3307,7 +3308,7 @@
                                     <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1212800509764">
                                       <link role="concept" targetNodeId="10.1212685548494" resolveInfo="ClassCreator" />
                                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212800505041">
-                                        <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197580489617">
+                                        <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197580489617">
                                           <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1212800280901">
                                             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1212800280903">
                                               <link role="baseMethodDeclaration" targetNodeId="66.~CellLayout_Flow.&lt;init&gt;()" resolveInfo="CellLayout_Flow" />
@@ -4442,7 +4443,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197568946319">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197570240368">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227924896">
-                              <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197570240370">
+                              <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197570240370">
                                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1197570240371">
                                   <link role="classifier" targetNodeId="11.~EditorCellKeyMapAction" resolveInfo="EditorCellKeyMapAction" />
                                   <link role="variableDeclaration" targetNodeId="11.~EditorCellKeyMapAction.CARET_AT_FIRST_POSITION" resolveInfo="CARET_AT_FIRST_POSITION" />
@@ -4472,7 +4473,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197571225426">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197571225427">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227865627">
-                              <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197571225429">
+                              <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197571225429">
                                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1197571225430">
                                   <link role="classifier" targetNodeId="11.~EditorCellKeyMapAction" resolveInfo="EditorCellKeyMapAction" />
                                   <link role="variableDeclaration" targetNodeId="11.~EditorCellKeyMapAction.CARET_AT_LAST_POSITION" resolveInfo="CARET_AT_LAST_POSITION" />
@@ -4502,7 +4503,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197571252345">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197571252346">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227922646">
-                              <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197571252348">
+                              <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197571252348">
                                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1197571252349">
                                   <link role="classifier" targetNodeId="11.~EditorCellKeyMapAction" resolveInfo="EditorCellKeyMapAction" />
                                   <link role="variableDeclaration" targetNodeId="11.~EditorCellKeyMapAction.CARET_AT_INTERMEDIATE_POSITION" resolveInfo="CARET_AT_INTERMEDIATE_POSITION" />
@@ -4530,7 +4531,7 @@
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197571333780">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227901962">
-                          <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197571333782">
+                          <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197571333782">
                             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1197571333783">
                               <link role="classifier" targetNodeId="11.~EditorCellKeyMapAction" resolveInfo="EditorCellKeyMapAction" />
                               <link role="variableDeclaration" targetNodeId="11.~EditorCellKeyMapAction.CARET_AT_ANY_POSITION" resolveInfo="CARET_AT_ANY_POSITION" />

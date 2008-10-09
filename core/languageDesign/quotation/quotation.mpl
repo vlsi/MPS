@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.quotation" uuid="3a13115c-633c-4c5c-bbcc-75c4219e9555" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.lang.quotation" uuid="3a13115c-633c-4c5c-bbcc-75c4219e9555" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.quotation" />
-    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.quotation" />
+    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.lang.quotation" />
+    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.lang.quotation" />
   </models>
   <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.quotation#1196351859310" uuid="b736a816-59a2-4796-a8e6-372fc0a096ce">
       <models>
-        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.quotation.generator.baseLanguage.template" />
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.lang.quotation.generator.baseLanguage.template" />
       </models>
       <external-templates />
       <dependencies>

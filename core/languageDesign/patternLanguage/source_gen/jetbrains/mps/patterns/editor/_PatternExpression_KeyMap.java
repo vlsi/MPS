@@ -21,13 +21,13 @@ import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.patterns.structure.ListPattern;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.quotation.structure.Antiquotation_AnnotationLink;
+import jetbrains.mps.lang.quotation.structure.Antiquotation_AnnotationLink;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.quotation.structure.ListAntiquotation;
+import jetbrains.mps.lang.quotation.structure.ListAntiquotation;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink;
-import jetbrains.mps.quotation.structure.ReferenceAntiquotation;
+import jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation_AnnotationLink;
+import jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation;
 
 public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 

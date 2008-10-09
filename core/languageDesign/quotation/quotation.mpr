@@ -27,7 +27,7 @@
     <projectDevkits />
     <libraries />
     <genConfs>
-      <genConfLanguage name="testQuotation" language="jetbrains.mps.quotation" />
+      <genConfLanguage name="testQuotation" language="jetbrains.mps.lang.quotation" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
@@ -48,6 +48,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
     <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
 </project>

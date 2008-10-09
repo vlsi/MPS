@@ -8,7 +8,7 @@
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -34,6 +34,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="34" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel.constraints(jetbrains.mps.smodel.constraints@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -2537,7 +2538,7 @@
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218803399303">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218803422535">
-                            <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1218803403341">
+                            <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1218803403341">
                               <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218803421175">
                                 <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
                               </node>
@@ -2980,7 +2981,7 @@
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218803483563">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218803483564">
-                            <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1218803483565">
+                            <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1218803483565">
                               <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218803483566">
                                 <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
                               </node>
@@ -3935,7 +3936,7 @@
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198586321003">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198586367063">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227848516">
-                            <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1198586388643">
+                            <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1198586388643">
                               <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198586426246">
                                 <link role="classConcept" targetNodeId="28.~SPropertyOperations" resolveInfo="SPropertyOperations" />
                                 <link role="baseMethodDeclaration" targetNodeId="28.~SPropertyOperations.getInteger(java.lang.String):int" resolveInfo="getInteger" />
@@ -3962,7 +3963,7 @@
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198586454081">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198586463544">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227866449">
-                            <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1198586471205">
+                            <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1198586471205">
                               <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198586471206">
                                 <link role="classConcept" targetNodeId="28.~SPropertyOperations" resolveInfo="SPropertyOperations" />
                                 <link role="baseMethodDeclaration" targetNodeId="28.~SPropertyOperations.getBoolean(java.lang.String):boolean" resolveInfo="getBoolean" />
@@ -3987,7 +3988,7 @@
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198586485723">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227911813">
-                        <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1198586498714">
+                        <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1198586498714">
                           <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198586498715">
                             <link role="classConcept" targetNodeId="28.~SPropertyOperations" resolveInfo="SPropertyOperations" />
                             <link role="baseMethodDeclaration" targetNodeId="28.~SPropertyOperations.getString(java.lang.String):java.lang.String" resolveInfo="getString" />

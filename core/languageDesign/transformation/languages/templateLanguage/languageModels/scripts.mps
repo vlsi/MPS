@@ -7,7 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
@@ -32,6 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="18" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.transformation.TLBase.structure)" version="1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -2981,7 +2982,7 @@
                   <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218219809459">
                     <link role="variableDeclaration" targetNodeId="1218219674829" resolveInfo="operandType" />
                   </node>
-                  <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1218219813741">
+                  <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1218219813741">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218219819227">
                       <link role="classifier" targetNodeId="15.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
                     </node>
@@ -3154,7 +3155,7 @@
                   <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218221496560">
                     <link role="variableDeclaration" targetNodeId="1218221496548" resolveInfo="operandType" />
                   </node>
-                  <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1218221496561">
+                  <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1218221496561">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218221496562">
                       <link role="classifier" targetNodeId="15.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
                     </node>
@@ -3410,7 +3411,7 @@
                   <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218225937124">
                     <link role="variableDeclaration" targetNodeId="1218225937112" resolveInfo="operandType" />
                   </node>
-                  <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1218225937125">
+                  <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1218225937125">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218225937126">
                       <link role="classifier" targetNodeId="16.~GenerationSessionContext" resolveInfo="GenerationSessionContext" />
                     </node>
@@ -3666,7 +3667,7 @@
                   <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218228550176">
                     <link role="variableDeclaration" targetNodeId="1218228550164" resolveInfo="operandType" />
                   </node>
-                  <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1218228550177">
+                  <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1218228550177">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218228550178">
                       <link role="classifier" targetNodeId="16.~GenerationSessionContext" resolveInfo="GenerationSessionContext" />
                     </node>
@@ -3922,7 +3923,7 @@
                   <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218228611937">
                     <link role="variableDeclaration" targetNodeId="1218228611925" resolveInfo="operandType" />
                   </node>
-                  <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1218228611938">
+                  <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1218228611938">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218228611939">
                       <link role="classifier" targetNodeId="16.~GenerationSessionContext" resolveInfo="GenerationSessionContext" />
                     </node>
@@ -4127,7 +4128,7 @@
                   <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218227052370">
                     <link role="variableDeclaration" targetNodeId="1218227052358" resolveInfo="operandType" />
                   </node>
-                  <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1218227052371">
+                  <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1218227052371">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218227052372">
                       <link role="classifier" targetNodeId="16.~GenerationSessionContext" resolveInfo="GenerationSessionContext" />
                     </node>
@@ -4332,7 +4333,7 @@
                   <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218228657722">
                     <link role="variableDeclaration" targetNodeId="1218228657710" resolveInfo="operandType" />
                   </node>
-                  <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1218228657723">
+                  <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1218228657723">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218228657724">
                       <link role="classifier" targetNodeId="16.~GenerationSessionContext" resolveInfo="GenerationSessionContext" />
                     </node>
@@ -4537,7 +4538,7 @@
                   <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218228694350">
                     <link role="variableDeclaration" targetNodeId="1218228694338" resolveInfo="operandType" />
                   </node>
-                  <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1218228694351">
+                  <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1218228694351">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218228694352">
                       <link role="classifier" targetNodeId="16.~GenerationSessionContext" resolveInfo="GenerationSessionContext" />
                     </node>

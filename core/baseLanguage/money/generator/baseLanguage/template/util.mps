@@ -9,7 +9,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="f43135f9-b833-4685-8d26-ffb6c8215f72(jetbrains.mps.baseLanguage.money)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
@@ -30,6 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -89,7 +90,7 @@
               <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1187699919391">
                 <link role="variableDeclaration" targetNodeId="1187347794780" resolveInfo="rtype" />
               </node>
-              <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1197379725523">
+              <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197379725523">
                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.money.structure.MoneyType" id="1197379725524" />
               </node>
             </node>
@@ -97,7 +98,7 @@
               <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1187699818795">
                 <link role="variableDeclaration" targetNodeId="1187347814745" resolveInfo="ltype" />
               </node>
-              <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1197379725540">
+              <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197379725540">
                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.money.structure.MoneyType" id="1197379725541" />
               </node>
             </node>
@@ -168,7 +169,7 @@
               <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1187699966115">
                 <link role="variableDeclaration" targetNodeId="1187352032270" resolveInfo="rtype" />
               </node>
-              <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1197379725542">
+              <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197379725542">
                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1197379725543" />
               </node>
             </node>
@@ -176,7 +177,7 @@
               <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1187699946899">
                 <link role="variableDeclaration" targetNodeId="1187352032278" resolveInfo="ltype" />
               </node>
-              <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1197379725544">
+              <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197379725544">
                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.money.structure.MoneyType" id="1197379725545" />
               </node>
             </node>

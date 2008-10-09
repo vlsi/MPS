@@ -7,7 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -34,6 +34,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="33" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="15" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -100,7 +101,7 @@
                     <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1213104857003">
                       <link role="concept" targetNodeId="10.1068390468198" resolveInfo="ClassConcept" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104857004">
-                        <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1213104857005">
+                        <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1213104857005">
                           <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213104857006">
                             <link role="classifier" targetNodeId="29.~AnAction" resolveInfo="AnAction" />
                           </node>
@@ -499,7 +500,7 @@
                     </node>
                     <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1213107437788" />
                   </node>
-                  <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1213107437789">
+                  <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1213107437789">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213107437790">
                       <link role="classifier" targetNodeId="21.~MPSProject" resolveInfo="MPSProject" />
                     </node>
@@ -624,7 +625,7 @@
               <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1218808282527">
                 <link role="concept" targetNodeId="10.1068390468198" resolveInfo="ClassConcept" />
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218808282528">
-                  <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1218808282529">
+                  <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1218808282529">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218808282530">
                       <link role="classifier" targetNodeId="33.~MPSDataKeys" resolveInfo="MPSDataKeys" />
                     </node>

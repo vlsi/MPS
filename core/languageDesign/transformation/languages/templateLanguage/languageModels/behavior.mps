@@ -6,7 +6,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.patterns)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
@@ -32,6 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.transformation.TLBase.structure)" version="1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -186,9 +187,9 @@
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877219592">
               <link role="concept" targetNodeId="10.1138055754698" resolveInfo="SNodeType" />
             </node>
-            <node role="initializer" type="jetbrains.mps.quotation.structure.Quotation" id="1213877219593">
+            <node role="initializer" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1213877219593">
               <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877219594">
-                <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1213877219595">
+                <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="1213877219595">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877219596">
                     <link role="variableDeclaration" targetNodeId="1213877219585" resolveInfo="targetConcept" />
                   </node>
@@ -203,10 +204,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877219598">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877219599">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877219600">
-              <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1213877219601">
+              <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1213877219601">
                 <node role="quotedNode" type="jetbrains.mps.bootstrap.helgins.structure.JoinType" id="1213877219602">
                   <node role="argument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877219603">
-                    <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1213877219604">
+                    <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="1213877219604">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877219605">
                         <link role="variableDeclaration" targetNodeId="1213877219585" resolveInfo="targetConcept" />
                       </node>
@@ -1282,7 +1283,7 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877473062">
-          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1213877473063">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1213877473063">
             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877473064">
               <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
             </node>

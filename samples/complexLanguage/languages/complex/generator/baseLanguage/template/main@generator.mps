@@ -9,7 +9,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.samples.complex)" />
   <language namespace="ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.transformation.TLBase.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.transformation.TLBase.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -29,6 +29,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)" version="4" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -186,7 +187,7 @@
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1196432934367">
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1196864336609">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196864336609">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1196864336610" />
                 </node>
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625365000">
@@ -214,7 +215,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196428788647">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1196428788648">
               <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1196432513506">
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1196864336611">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196864336611">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1196864336612" />
                 </node>
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625376045">
@@ -355,7 +356,7 @@
                 </node>
               </node>
               <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1196432951015">
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1196864336613">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196864336613">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1196864336614" />
                 </node>
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625362792">
@@ -399,7 +400,7 @@
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1196432957398">
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1196864336615">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196864336615">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1196864336616" />
                 </node>
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625353724">
@@ -524,7 +525,7 @@
                 </node>
               </node>
               <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1196433584671">
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1196864336617">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196864336617">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1196864336618" />
                 </node>
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625356725">
@@ -568,7 +569,7 @@
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1196433594036">
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1196864336619">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196864336619">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1196864336620" />
                 </node>
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625353470">
@@ -688,7 +689,7 @@
                 </node>
               </node>
               <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1196433607479">
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1196864336621">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196864336621">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1196864336622" />
                 </node>
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625375234">
@@ -732,7 +733,7 @@
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1196433613908">
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1196864336623">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196864336623">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1196864336624" />
                 </node>
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625364635">

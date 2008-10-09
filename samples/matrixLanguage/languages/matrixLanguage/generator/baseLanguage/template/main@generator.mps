@@ -7,7 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="aeb98137-c8ec-4c86-a51b-f00c080e4652(jetbrains.mps.samples.matrixLanguage)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
@@ -34,6 +34,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590454(jetbrains.mps.samples.matrixLanguage.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -95,7 +96,7 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210007347474" />
                 </node>
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1210007329534">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210007329534">
                   <node role="quotedNode" type="jetbrains.mps.samples.matrixLanguage.structure.MatrixType" id="1210007329535">
                     <node role="scalarType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210165916902">
                       <link role="classifier" targetNodeId="2.~Double" resolveInfo="Double" />
@@ -113,7 +114,7 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210007186293" />
                 </node>
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1210007291345">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210007291345">
                   <node role="quotedNode" type="jetbrains.mps.samples.matrixLanguage.structure.MatrixType" id="1210007299307">
                     <node role="scalarType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210165910588">
                       <link role="classifier" targetNodeId="2.~Double" resolveInfo="Double" />
@@ -145,7 +146,7 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210007890619" />
                 </node>
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1210007899849">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210007899849">
                   <node role="quotedNode" type="jetbrains.mps.samples.matrixLanguage.structure.MatrixType" id="1210007907659">
                     <node role="scalarType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210165923013">
                       <link role="classifier" targetNodeId="2.~Double" resolveInfo="Double" />
@@ -163,7 +164,7 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210007850936" />
                 </node>
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1210007858027">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210007858027">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1210007865618" />
                 </node>
               </node>
@@ -191,7 +192,7 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210008907879" />
                 </node>
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1210008214718">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210008214718">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1210008221956" />
                 </node>
               </node>
@@ -205,7 +206,7 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210008156063" />
                 </node>
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1210008239993">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210008239993">
                   <node role="quotedNode" type="jetbrains.mps.samples.matrixLanguage.structure.MatrixType" id="1210008250779">
                     <node role="scalarType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210165930906">
                       <link role="classifier" targetNodeId="2.~Double" resolveInfo="Double" />

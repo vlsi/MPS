@@ -9,7 +9,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
@@ -37,6 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="20" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="12" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895905b2(jetbrains.mps.ypath.generator.baseLanguage.template.helper)" version="-1" />
@@ -563,10 +564,10 @@
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194727715018">
                   <link role="variableDeclaration" targetNodeId="1194727686515" resolveInfo="type" />
                 </node>
-                <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1196777968110">
+                <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196777968110">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1196777968111">
                     <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1196777968112">
-                      <node role="_attr_$attribute" type="jetbrains.mps.quotation.structure.Antiquotation" id="1196777968115">
+                      <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1196777968115">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196777968116">
                           <link role="variableDeclaration" targetNodeId="1194727743557" resolveInfo="targType" />
                         </node>
@@ -632,10 +633,10 @@
               <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194727979141">
                 <link role="variableDeclaration" targetNodeId="1194727971252" resolveInfo="type" />
               </node>
-              <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1196777968117">
+              <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196777968117">
                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1196777968118">
                   <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1196777968119">
-                    <node role="_attr_$attribute" type="jetbrains.mps.quotation.structure.Antiquotation" id="1196777968122">
+                    <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1196777968122">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196777968123">
                         <link role="variableDeclaration" targetNodeId="1194727971261" resolveInfo="targType" />
                       </node>
@@ -3619,7 +3620,7 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196716403239">
-                      <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196777968140">
+                      <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196777968140">
                         <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.AssertStatement" id="1196777968141">
                           <node role="message" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1196777968142">
                             <property name="value" value="Couldn't reduce to a statement: no valid candidate" />

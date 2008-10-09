@@ -9,7 +9,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
@@ -34,6 +34,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="51" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -4664,7 +4665,7 @@
                       <node role="rValue" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1212605442040">
                         <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212605425896">
-                          <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1212605402158">
+                          <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1212605402158">
                             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212605409660">
                               <link role="classifier" targetNodeId="20.~Object" resolveInfo="Object" />
                             </node>
@@ -5669,7 +5670,7 @@
           <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler" id="1210680291216">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210680291217">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210681170199">
-                <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1210681207222">
+                <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210681207222">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210681207223">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210681207224">
                       <link role="classifier" targetNodeId="20.~System" resolveInfo="System" />
@@ -5710,7 +5711,7 @@
           <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler" id="1210681211686">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210681211687">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210681211688">
-                <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1210681211689">
+                <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210681211689">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210681211690">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210681211691">
                       <link role="classifier" targetNodeId="20.~System" resolveInfo="System" />
@@ -6094,7 +6095,7 @@
                         <link role="variable" targetNodeId="1212777244693" resolveInfo="typeVar" />
                       </node>
                       <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1212777270980">
-                        <node role="parameter" type="jetbrains.mps.quotation.structure.Quotation" id="1212777494464">
+                        <node role="parameter" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1212777494464">
                           <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212777494465">
                             <link role="classifier" targetNodeId="20.~Object" resolveInfo="Object" />
                           </node>

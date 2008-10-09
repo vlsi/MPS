@@ -6,7 +6,7 @@
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -31,6 +31,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="21" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c8959043d(jetbrains.mps.samples.formulaLanguage.generator.baseLanguage@generator)" version="-1" />
@@ -404,7 +405,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197660036731">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197660085893">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214252621071">
-                              <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197660100926">
+                              <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197660100926">
                                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1197660157709">
                                   <link role="classifier" targetNodeId="11.~EventType" resolveInfo="EventType" />
                                   <link role="variableDeclaration" targetNodeId="11.~EventType.SERVICE_CALL" resolveInfo="SERVICE_CALL" />
@@ -437,7 +438,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197660227590">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197660227591">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214252623460">
-                              <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197660227594">
+                              <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197660227594">
                                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1197660227595">
                                   <link role="classifier" targetNodeId="11.~EventType" resolveInfo="EventType" />
                                   <link role="variableDeclaration" targetNodeId="11.~EventType.USAGE" resolveInfo="USAGE" />
@@ -470,7 +471,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197660289400">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197660289401">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214252624513">
-                              <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197660289404">
+                              <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197660289404">
                                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1197660289405">
                                   <link role="classifier" targetNodeId="11.~EventType" resolveInfo="EventType" />
                                   <link role="variableDeclaration" targetNodeId="11.~EventType.TAX" resolveInfo="TAX" />
@@ -552,7 +553,7 @@
                             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197661270697">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197661270698">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214252621200">
-                                  <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197661270701">
+                                  <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197661270701">
                                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1197661270702">
                                       <link role="enumClass" targetNodeId="11.~AccountType" resolveInfo="AccountType" />
                                       <link role="enumConstantDeclaration" targetNodeId="11.~AccountType.BASE_USAGE" resolveInfo="BASE_USAGE" />
@@ -585,7 +586,7 @@
                             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197661270709">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197661270710">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214252621298">
-                                  <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197661270713">
+                                  <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197661270713">
                                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1197661270714">
                                       <link role="enumClass" targetNodeId="11.~AccountType" resolveInfo="AccountType" />
                                       <link role="enumConstantDeclaration" targetNodeId="11.~AccountType.SERVICE" resolveInfo="SERVICE" />
@@ -618,7 +619,7 @@
                             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197661270721">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197661270722">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214252625149">
-                                  <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1197661270725">
+                                  <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197661270725">
                                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1197661270726">
                                       <link role="enumClass" targetNodeId="11.~AccountType" resolveInfo="AccountType" />
                                       <link role="enumConstantDeclaration" targetNodeId="11.~AccountType.TAX" resolveInfo="TAX" />

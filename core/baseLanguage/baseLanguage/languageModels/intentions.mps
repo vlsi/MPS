@@ -7,7 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
@@ -37,6 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="29" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -1578,7 +1579,7 @@
                 <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1205517996911">
                   <link role="concept" targetNodeId="1.1202948039474" resolveInfo="InstanceMethodCallOperation" />
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977964302">
-                    <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1199558928255">
+                    <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1199558928255">
                       <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332444531">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034543043">
                           <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034543060">
@@ -2657,7 +2658,7 @@
                 <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1213035089175">
                   <link role="concept" targetNodeId="1.1212685548494" resolveInfo="ClassCreator" />
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213035073345">
-                    <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1199623212546">
+                    <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1199623212546">
                       <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213035058716">
                         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213035058718">
                           <link role="baseMethodDeclaration" targetNodeId="2.~IllegalArgumentException.&lt;init&gt;()" resolveInfo="IllegalArgumentException" />
@@ -3315,7 +3316,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1201094589896">
-              <node role="linkTarget" type="jetbrains.mps.quotation.structure.Quotation" id="1201094610820">
+              <node role="linkTarget" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1201094610820">
                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1201094612838" />
               </node>
             </node>
@@ -4524,7 +4525,7 @@
                     <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
                   </node>
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977954194">
-                    <node role="operand" type="jetbrains.mps.quotation.structure.Quotation" id="1199633278641">
+                    <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1199633278641">
                       <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199633319764">
                         <link role="classifier" targetNodeId="2.~RuntimeException" resolveInfo="RuntimeException" />
                       </node>

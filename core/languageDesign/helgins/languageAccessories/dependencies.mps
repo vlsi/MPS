@@ -5,7 +5,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -24,6 +24,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="10" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.bootstrap.helgins.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -319,7 +320,7 @@
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194609028034">
                                       <link role="variableDeclaration" targetNodeId="1194538082896" resolveInfo="node" />
                                     </node>
-                                    <node role="actualArgument" type="jetbrains.mps.quotation.structure.Quotation" id="1197037602113">
+                                    <node role="actualArgument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197037602113">
                                       <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1197037602114">
                                         <property name="name" value="getNode" />
                                         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1197037602115" />
@@ -407,7 +408,7 @@
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194964769887">
                                       <link role="variableDeclaration" targetNodeId="1194538082896" resolveInfo="node" />
                                     </node>
-                                    <node role="actualArgument" type="jetbrains.mps.quotation.structure.Quotation" id="1197037602124">
+                                    <node role="actualArgument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197037602124">
                                       <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1197037602125">
                                         <property name="name" value="getNode" />
                                         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1197037602126" />
@@ -475,7 +476,7 @@
                                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194966986153">
                                             <link role="variableDeclaration" targetNodeId="1194538082896" resolveInfo="node" />
                                           </node>
-                                          <node role="actualArgument" type="jetbrains.mps.quotation.structure.Quotation" id="1197037602147">
+                                          <node role="actualArgument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197037602147">
                                             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1197037602148">
                                               <property name="name" value="getNode" />
                                               <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1197037602149" />
@@ -731,7 +732,7 @@
                                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194970212047">
                                                 <link role="variableDeclaration" targetNodeId="1194538082896" resolveInfo="node" />
                                               </node>
-                                              <node role="actualArgument" type="jetbrains.mps.quotation.structure.Quotation" id="1197037602158">
+                                              <node role="actualArgument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197037602158">
                                                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1197037602159">
                                                   <property name="name" value="getNode" />
                                                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1197037602160" />

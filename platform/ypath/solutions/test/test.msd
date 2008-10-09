@@ -16,7 +16,7 @@
     <usedLanguages>f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</usedLanguages>
     <usedLanguages>d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)</usedLanguages>
     <usedLanguages>7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)</usedLanguages>
-    <usedLanguages>3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)</usedLanguages>
+    <usedLanguages>3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)</usedLanguages>
   </usedLanguages>
 </solution>
 

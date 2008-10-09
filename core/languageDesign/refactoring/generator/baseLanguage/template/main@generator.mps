@@ -7,7 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
-  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.quotation)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.patterns)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
@@ -42,6 +42,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="35" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -2793,7 +2794,7 @@
                                                   <link role="link" targetNodeId="1.1190637130098" />
                                                 </node>
                                               </node>
-                                              <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1215507182417">
+                                              <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1215507182417">
                                                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215507182418">
                                                   <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                                                 </node>
@@ -2923,7 +2924,7 @@
                                                   <link role="link" targetNodeId="1.1190637130098" />
                                                 </node>
                                               </node>
-                                              <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1215507182474">
+                                              <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1215507182474">
                                                 <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1215507182475" />
                                               </node>
                                             </node>
@@ -2973,7 +2974,7 @@
                                                   <link role="link" targetNodeId="1.1190637130098" />
                                                 </node>
                                               </node>
-                                              <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1215507182498">
+                                              <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1215507182498">
                                                 <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1215507182499" />
                                               </node>
                                             </node>
@@ -3023,7 +3024,7 @@
                                                   <link role="link" targetNodeId="1.1190637130098" />
                                                 </node>
                                               </node>
-                                              <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1215507182522">
+                                              <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1215507182522">
                                                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215507182523">
                                                   <link role="classifier" targetNodeId="10.~SModelDescriptor" resolveInfo="SModelDescriptor" />
                                                 </node>
