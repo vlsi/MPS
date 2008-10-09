@@ -19,7 +19,6 @@
     <orderEntry type="module" module-name="blTypes" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
     <orderEntry type="module" module-name="InternalCollections-runtime" exported="" />
-    <orderEntry type="module" module-name="actionsLanguage" exported="" />
     <orderEntry type="module" module-name="constraintsLanguage" exported="" />
     <orderEntry type="module" module-name="editor" exported="" />
     <orderEntry type="module" module-name="helgins" exported="" />
@@ -52,6 +51,7 @@
     <orderEntry type="library" exported="" name="IDEA-plaform" level="project" />
     <orderEntry type="library" exported="" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="unitTest" exported="" />
+    <orderEntry type="module" module-name="actions" exported="" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
