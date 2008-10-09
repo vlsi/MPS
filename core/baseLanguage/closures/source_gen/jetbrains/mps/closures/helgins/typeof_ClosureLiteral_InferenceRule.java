@@ -13,7 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.LinkedList;
-import jetbrains.mps.patterns.util.MatchingUtil;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 

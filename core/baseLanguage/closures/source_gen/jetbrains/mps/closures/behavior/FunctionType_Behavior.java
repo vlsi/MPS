@@ -13,7 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPr
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.closures.constraints.ClassifierTypeUtil;
-import jetbrains.mps.patterns.IMatchingPattern;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class FunctionType_Behavior {
 

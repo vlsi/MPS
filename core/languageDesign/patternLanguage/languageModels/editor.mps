@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590342(jetbrains.mps.patterns.editor)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590342(jetbrains.mps.lang.pattern.editor)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
@@ -14,7 +14,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.patterns.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
@@ -27,15 +27,14 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <maxImportIndex value="34" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.patterns.structure)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <maxImportIndex value="36" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.patterns.util(jetbrains.mps.patterns.util@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="14" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="18" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="22" modelUID="f:java_stub#jetbrains.mps.patterns.structure(jetbrains.mps.patterns.structure@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#jetbrains.mps.bootstrap.helgins.structure(jetbrains.mps.bootstrap.helgins.structure@java_stub)" version="-1" />
   <import index="26" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.bootstrap.helgins.structure)" version="-1" />
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -45,6 +44,8 @@
   <import index="32" modelUID="f:java_stub#jetbrains.mps.lang.core.structure(jetbrains.mps.lang.core.structure@java_stub)" version="-1" />
   <import index="33" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
   <import index="34" modelUID="f:java_stub#jetbrains.mps.lang.quotation.structure(jetbrains.mps.lang.quotation.structure@java_stub)" version="-1" />
+  <import index="35" modelUID="f:java_stub#jetbrains.mps.lang.pattern.structure(jetbrains.mps.lang.pattern.structure@java_stub)" version="-1" />
+  <import index="36" modelUID="f:java_stub#jetbrains.mps.lang.pattern.util(jetbrains.mps.lang.pattern.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1136720096744">
     <link role="conceptDeclaration" targetNodeId="1.1136720037773" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1136720096745">
@@ -216,8 +217,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1163601040239">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1163601043079">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1163601149576">
-              <link role="baseMethodDeclaration" targetNodeId="6.~PatternAddingUtil.isPatternApplicable(jetbrains.mps.nodeEditor.EditorContext):boolean" resolveInfo="isPatternApplicable" />
-              <link role="classConcept" targetNodeId="6.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+              <link role="classConcept" targetNodeId="36.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="36.~PatternAddingUtil.isPatternApplicable(jetbrains.mps.nodeEditor.EditorContext):boolean" resolveInfo="isPatternApplicable" />
               <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1163601163749" />
             </node>
           </node>
@@ -233,8 +234,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1163600736768">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1163601506949">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1163601508436">
-              <link role="classConcept" targetNodeId="22.~AsPattern_AnnotationLink" resolveInfo="AsPattern_AnnotationLink" />
-              <link role="baseMethodDeclaration" targetNodeId="22.~AsPattern_AnnotationLink.setAsPattern(jetbrains.mps.lang.core.structure.BaseConcept,jetbrains.mps.patterns.structure.AsPattern):void" resolveInfo="setAsPattern" />
+              <link role="classConcept" targetNodeId="35.~AsPattern_AnnotationLink" resolveInfo="AsPattern_AnnotationLink" />
+              <link role="baseMethodDeclaration" targetNodeId="35.~AsPattern_AnnotationLink.setAsPattern(jetbrains.mps.lang.core.structure.BaseConcept,jetbrains.mps.lang.pattern.structure.AsPattern):void" resolveInfo="setAsPattern" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1163601969003">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672722036">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1163601978694" />
@@ -264,8 +265,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1163601481958">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1163601484194">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1163601490212">
-              <link role="baseMethodDeclaration" targetNodeId="6.~PatternAddingUtil.isPatternApplicable(jetbrains.mps.nodeEditor.EditorContext):boolean" resolveInfo="isPatternApplicable" />
-              <link role="classConcept" targetNodeId="6.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+              <link role="classConcept" targetNodeId="36.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="36.~PatternAddingUtil.isPatternApplicable(jetbrains.mps.nodeEditor.EditorContext):boolean" resolveInfo="isPatternApplicable" />
               <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1163601492589" />
             </node>
           </node>
@@ -281,8 +282,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1163600763507">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1163602232887">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1163602681023">
-              <link role="baseMethodDeclaration" targetNodeId="6.~PatternAddingUtil.addVariablePattern(jetbrains.mps.nodeEditor.EditorContext):void" resolveInfo="addVariablePattern" />
-              <link role="classConcept" targetNodeId="6.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+              <link role="classConcept" targetNodeId="36.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="36.~PatternAddingUtil.addVariablePattern(jetbrains.mps.nodeEditor.EditorContext):void" resolveInfo="addVariablePattern" />
               <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1163602702743" />
             </node>
           </node>
@@ -292,8 +293,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1163602203411">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1163602205428">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1163602214149">
-              <link role="baseMethodDeclaration" targetNodeId="6.~PatternAddingUtil.isPatternApplicable(jetbrains.mps.nodeEditor.EditorContext):boolean" resolveInfo="isPatternApplicable" />
-              <link role="classConcept" targetNodeId="6.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+              <link role="classConcept" targetNodeId="36.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="36.~PatternAddingUtil.isPatternApplicable(jetbrains.mps.nodeEditor.EditorContext):boolean" resolveInfo="isPatternApplicable" />
               <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1163602215900" />
             </node>
           </node>
@@ -383,8 +384,8 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1163602977578">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1163603040388">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1163603068237">
-                <link role="baseMethodDeclaration" targetNodeId="6.~PatternAddingUtil.isPatternApplicable(jetbrains.mps.nodeEditor.EditorContext):boolean" resolveInfo="isPatternApplicable" />
-                <link role="classConcept" targetNodeId="6.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+                <link role="classConcept" targetNodeId="36.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="36.~PatternAddingUtil.isPatternApplicable(jetbrains.mps.nodeEditor.EditorContext):boolean" resolveInfo="isPatternApplicable" />
                 <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1163603072910" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1163603090979">
@@ -424,8 +425,8 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1163603816923">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1163603830769">
-              <link role="classConcept" targetNodeId="22.~AsPattern_AnnotationLink" resolveInfo="AsPattern_AnnotationLink" />
-              <link role="baseMethodDeclaration" targetNodeId="22.~AsPattern_AnnotationLink.setAsPattern(jetbrains.mps.lang.core.structure.BaseConcept,jetbrains.mps.patterns.structure.AsPattern):void" resolveInfo="setAsPattern" />
+              <link role="classConcept" targetNodeId="35.~AsPattern_AnnotationLink" resolveInfo="AsPattern_AnnotationLink" />
+              <link role="baseMethodDeclaration" targetNodeId="35.~AsPattern_AnnotationLink.setAsPattern(jetbrains.mps.lang.core.structure.BaseConcept,jetbrains.mps.lang.pattern.structure.AsPattern):void" resolveInfo="setAsPattern" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1163603840848">
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1171552849742">
                   <link role="classifier" targetNodeId="32.~BaseConcept" resolveInfo="BaseConcept" />
@@ -482,8 +483,8 @@
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1163603539498">
-                <link role="baseMethodDeclaration" targetNodeId="6.~PatternAddingUtil.isPatternApplicable(jetbrains.mps.nodeEditor.EditorContext):boolean" resolveInfo="isPatternApplicable" />
-                <link role="classConcept" targetNodeId="6.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+                <link role="classConcept" targetNodeId="36.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="36.~PatternAddingUtil.isPatternApplicable(jetbrains.mps.nodeEditor.EditorContext):boolean" resolveInfo="isPatternApplicable" />
                 <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1163603542936" />
               </node>
             </node>

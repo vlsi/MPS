@@ -11,7 +11,7 @@ import java.util.Iterator;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.patterns.util.MatchingUtil;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extends InequationReplacementRule_Runtime {

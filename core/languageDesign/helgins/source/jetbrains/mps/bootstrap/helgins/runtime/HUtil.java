@@ -4,8 +4,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.patterns.IMatchingPattern;
-import jetbrains.mps.patterns.ConceptMatchingPattern;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.helgins.inference.TypeChecker;
 

@@ -14,7 +14,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.Iterator;
-import jetbrains.mps.patterns.util.MatchingUtil;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ClassifierType_Behavior {
 

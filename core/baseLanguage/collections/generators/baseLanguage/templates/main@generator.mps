@@ -12,7 +12,7 @@
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
-  <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.patterns)" />
+  <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.transformation.TLBase.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.transformation.TLBase.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -25,7 +25,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.patterns.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
@@ -36,6 +36,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <maxImportIndex value="28" />
   <import index="1" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -6221,7 +6222,7 @@
               <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1208699550912">
                 <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1208699557488">
                   <property name="name" value="ignored" />
-                  <node role="pattern" type="jetbrains.mps.patterns.structure.PatternExpression" id="1208699557489">
+                  <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1208699557489">
                     <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208699564839">
                       <link role="classifier" targetNodeId="13.~ISequence" resolveInfo="ISequence" />
                     </node>
@@ -8793,7 +8794,7 @@
               <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1208699582497">
                 <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1208699582498">
                   <property name="name" value="ignored" />
-                  <node role="pattern" type="jetbrains.mps.patterns.structure.PatternExpression" id="1208699582499">
+                  <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1208699582499">
                     <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208699585986">
                       <link role="classifier" targetNodeId="13.~IListSequence" resolveInfo="IListSequence" />
                     </node>
@@ -8932,7 +8933,7 @@
               <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1208699591720">
                 <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1208699591721">
                   <property name="name" value="ignored" />
-                  <node role="pattern" type="jetbrains.mps.patterns.structure.PatternExpression" id="1208699591722">
+                  <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1208699591722">
                     <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208699595281">
                       <link role="classifier" targetNodeId="13.~IMapSequence" resolveInfo="IMapSequence" />
                     </node>

@@ -1,14 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.patterns.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="AsPattern" conceptFQName="jetbrains.mps.patterns.structure.AsPattern" featureKind="CONCEPT" />
+          <value featureName="AsPattern" conceptFQName="jetbrains.mps.lang.pattern.structure.AsPattern" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="IPatternVarReference" conceptFQName="jetbrains.mps.patterns.structure.IPatternVarReference" featureKind="CONCEPT" />
+          <value featureName="IPatternVarReference" conceptFQName="jetbrains.mps.lang.pattern.structure.IPatternVarReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="LinkPatternVariableDeclaration" conceptFQName="jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration" featureKind="CONCEPT" />
+          <value featureName="LinkPatternVariableDeclaration" conceptFQName="jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="LinkPatternVariableReference" conceptFQName="jetbrains.mps.patterns.structure.LinkPatternVariableReference" featureKind="CONCEPT" />
+          <value featureName="LinkPatternVariableReference" conceptFQName="jetbrains.mps.lang.pattern.structure.LinkPatternVariableReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ListPattern" conceptFQName="jetbrains.mps.patterns.structure.ListPattern" featureKind="CONCEPT" />
+          <value featureName="ListPattern" conceptFQName="jetbrains.mps.lang.pattern.structure.ListPattern" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Pattern" conceptFQName="jetbrains.mps.patterns.structure.Pattern" featureKind="CONCEPT" />
+          <value featureName="Pattern" conceptFQName="jetbrains.mps.lang.pattern.structure.Pattern" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PatternExpression" conceptFQName="jetbrains.mps.patterns.structure.PatternExpression" featureKind="CONCEPT" />
+          <value featureName="PatternExpression" conceptFQName="jetbrains.mps.lang.pattern.structure.PatternExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PatternVariableDeclaration" conceptFQName="jetbrains.mps.patterns.structure.PatternVariableDeclaration" featureKind="CONCEPT" />
+          <value featureName="PatternVariableDeclaration" conceptFQName="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PatternVariableReference" conceptFQName="jetbrains.mps.patterns.structure.PatternVariableReference" featureKind="CONCEPT" />
+          <value featureName="PatternVariableReference" conceptFQName="jetbrains.mps.lang.pattern.structure.PatternVariableReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PropertyPatternVariableDeclaration" conceptFQName="jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration" featureKind="CONCEPT" />
+          <value featureName="PropertyPatternVariableDeclaration" conceptFQName="jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PropertyPatternVariableReference" conceptFQName="jetbrains.mps.patterns.structure.PropertyPatternVariableReference" featureKind="CONCEPT" />
+          <value featureName="PropertyPatternVariableReference" conceptFQName="jetbrains.mps.lang.pattern.structure.PropertyPatternVariableReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="SubstitutionItem" conceptFQName="jetbrains.mps.patterns.structure.SubstitutionItem" featureKind="CONCEPT" />
+          <value featureName="SubstitutionItem" conceptFQName="jetbrains.mps.lang.pattern.structure.SubstitutionItem" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="SubstitutionOperation" conceptFQName="jetbrains.mps.patterns.structure.SubstitutionOperation" featureKind="CONCEPT" />
+          <value featureName="SubstitutionOperation" conceptFQName="jetbrains.mps.lang.pattern.structure.SubstitutionOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="WildcardPattern" conceptFQName="jetbrains.mps.patterns.structure.WildcardPattern" featureKind="CONCEPT" />
+          <value featureName="WildcardPattern" conceptFQName="jetbrains.mps.lang.pattern.structure.WildcardPattern" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.patterns.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
@@ -18,6 +81,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />

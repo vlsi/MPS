@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.actions;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
-import jetbrains.mps.patterns.util.MatchingUtil;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ExpectedType_FactoryUtil {
 

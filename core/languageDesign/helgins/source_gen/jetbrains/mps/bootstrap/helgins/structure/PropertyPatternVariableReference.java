@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.helgins.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration;
+import jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

@@ -17,7 +17,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.patterns.IMatchingPattern;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;

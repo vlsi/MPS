@@ -7,7 +7,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
-  <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.patterns)" />
+  <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
@@ -21,7 +21,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.patterns.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
@@ -33,7 +33,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <maxImportIndex value="80" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <maxImportIndex value="81" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -69,7 +70,6 @@
   <import index="56" modelUID="f:java_stub#javax.swing.text(javax.swing.text@java_stub)" version="-1" />
   <import index="57" modelUID="f:java_stub#javax.swing.border(javax.swing.border@java_stub)" version="-1" />
   <import index="58" modelUID="f:java_stub#jetbrains.mps.helgins.inference(jetbrains.mps.helgins.inference@java_stub)" version="-1" />
-  <import index="59" modelUID="f:java_stub#jetbrains.mps.patterns.util(jetbrains.mps.patterns.util@java_stub)" version="-1" />
   <import index="60" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="61" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="62" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
@@ -89,6 +89,7 @@
   <import index="78" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
   <import index="79" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="80" modelUID="f:java_stub#jetbrains.mps.baseLanguage.plugin(jetbrains.mps.baseLanguage.plugin@java_stub)" version="-1" />
+  <import index="81" modelUID="f:java_stub#jetbrains.mps.lang.pattern.util(jetbrains.mps.lang.pattern.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup" />
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247338363">
@@ -8623,8 +8624,8 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1220358809664">
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1220358814558">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220359000264">
-                  <link role="baseMethodDeclaration" targetNodeId="59.~MatchingUtil.matchNodes(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="matchNodes" />
-                  <link role="classConcept" targetNodeId="59.~MatchingUtil" resolveInfo="MatchingUtil" />
+                  <link role="classConcept" targetNodeId="81.~MatchingUtil" resolveInfo="MatchingUtil" />
+                  <link role="baseMethodDeclaration" targetNodeId="81.~MatchingUtil.matchNodes(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="matchNodes" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220359014395">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220359012956">
                       <link role="variableDeclaration" targetNodeId="1220358712582" resolveInfo="exits" />
@@ -10391,8 +10392,8 @@
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1220978437331">
                           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1220978439731">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220978448325">
-                              <link role="baseMethodDeclaration" targetNodeId="59.~MatchingUtil.matchNodes(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="matchNodes" />
-                              <link role="classConcept" targetNodeId="59.~MatchingUtil" resolveInfo="MatchingUtil" />
+                              <link role="classConcept" targetNodeId="81.~MatchingUtil" resolveInfo="MatchingUtil" />
+                              <link role="baseMethodDeclaration" targetNodeId="81.~MatchingUtil.matchNodes(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="matchNodes" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220982893878">
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220982896604">
                                   <link role="baseMethodDeclaration" targetNodeId="1220981397815" resolveInfo="getObject" />
@@ -12690,19 +12691,19 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220025790032">
             <property name="name" value="result" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220025790034">
-              <node role="operation" type="jetbrains.mps.patterns.structure.SubstitutionOperation" id="1220025790036">
-                <node role="substitutionItem" type="jetbrains.mps.patterns.structure.SubstitutionItem" id="1220025790037">
-                  <node role="pattern" type="jetbrains.mps.patterns.structure.PatternExpression" id="1220025790038">
+              <node role="operation" type="jetbrains.mps.lang.pattern.structure.SubstitutionOperation" id="1220025790036">
+                <node role="substitutionItem" type="jetbrains.mps.lang.pattern.structure.SubstitutionItem" id="1220025790037">
+                  <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1220025790038">
                     <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220025790039">
                       <link role="classifier" targetNodeId="4.~List" resolveInfo="List" />
                       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1220025790040">
-                        <node role="_attr_$attribute" type="jetbrains.mps.patterns.structure.PatternVariableDeclaration" id="1220025790041">
+                        <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1220025790041">
                           <property name="varName" value="p" />
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node role="expression" type="jetbrains.mps.patterns.structure.PatternVariableReference" id="1220025790042">
+                  <node role="expression" type="jetbrains.mps.lang.pattern.structure.PatternVariableReference" id="1220025790042">
                     <link role="variableDeclaration" targetNodeId="1220025790041" resolveInfo="#p" />
                   </node>
                 </node>

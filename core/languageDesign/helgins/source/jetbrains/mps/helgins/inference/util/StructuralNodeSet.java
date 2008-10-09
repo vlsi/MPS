@@ -1,7 +1,7 @@
 package jetbrains.mps.helgins.inference.util;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.patterns.util.MatchingUtil;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 import java.util.*;
 

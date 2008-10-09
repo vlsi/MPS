@@ -117,4 +117,9 @@ public class BootstrapTest extends BaseMPSTest {
     String res = testProject(new File("core/languageDesign/annotations/annotations.mpr"));
     assertTrue(res, res == null);
   }
+
+
+  public void testPatterns() {
+    String res = testProject(new File("core/languageDesign/patternsLanguage/patternLanguage.mpr"));
+  }
 }

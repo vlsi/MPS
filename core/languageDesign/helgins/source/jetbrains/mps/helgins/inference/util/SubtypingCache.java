@@ -2,10 +2,10 @@ package jetbrains.mps.helgins.inference.util;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.patterns.GeneratedMatchingPattern;
-import jetbrains.mps.patterns.IMatchingPattern;
-import jetbrains.mps.patterns.ConceptMatchingPattern;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
+import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 
 import java.util.Map;
 import java.util.HashMap;

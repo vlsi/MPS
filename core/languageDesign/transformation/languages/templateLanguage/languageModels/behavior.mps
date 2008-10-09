@@ -8,7 +8,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
-  <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.patterns)" />
+  <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
@@ -18,7 +18,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.patterns.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.transformation.TLBase.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -33,6 +33,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.transformation.TLBase.structure)" version="1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -285,10 +286,10 @@
           </node>
           <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1213877222926">
             <property name="name" value="_" />
-            <node role="pattern" type="jetbrains.mps.patterns.structure.PatternExpression" id="1213877222927">
+            <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1213877222927">
               <node role="patternNode" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1213877222928">
                 <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877222929">
-                  <node role="_attr_$link_attribute$concept" type="jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration" id="1213877222930">
+                  <node role="_attr_$link_attribute$concept" type="jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration" id="1213877222930">
                     <property name="varName" value="concept" />
                   </node>
                 </node>
@@ -479,10 +480,10 @@
         <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CoerceStatement" id="1213877284684">
           <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1213877284685">
             <property name="name" value="abc" />
-            <node role="pattern" type="jetbrains.mps.patterns.structure.PatternExpression" id="1213877284686">
+            <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1213877284686">
               <node role="patternNode" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1213877284687">
                 <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877284688">
-                  <node role="_attr_$link_attribute$concept" type="jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration" id="1213877284689">
+                  <node role="_attr_$link_attribute$concept" type="jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration" id="1213877284689">
                     <property name="varName" value="concept" />
                   </node>
                 </node>
@@ -994,10 +995,10 @@
         <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CoerceStatement" id="1213877361822">
           <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1213877361823">
             <property name="name" value="abc" />
-            <node role="pattern" type="jetbrains.mps.patterns.structure.PatternExpression" id="1213877361824">
+            <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1213877361824">
               <node role="patternNode" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1213877361825">
                 <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877361826">
-                  <node role="_attr_$link_attribute$concept" type="jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration" id="1213877361827">
+                  <node role="_attr_$link_attribute$concept" type="jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration" id="1213877361827">
                     <property name="varName" value="concept" />
                   </node>
                 </node>
@@ -1043,9 +1044,9 @@
         <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CoerceStatement" id="1213877378069">
           <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1213877378070">
             <property name="name" value="abc" />
-            <node role="pattern" type="jetbrains.mps.patterns.structure.PatternExpression" id="1213877378071">
+            <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1213877378071">
               <node role="patternNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877378072">
-                <node role="_attr_$link_attribute$concept" type="jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration" id="1213877378073">
+                <node role="_attr_$link_attribute$concept" type="jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration" id="1213877378073">
                   <property name="varName" value="concept" />
                 </node>
               </node>
@@ -1096,9 +1097,9 @@
         <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CoerceStatement" id="1213877426761">
           <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1213877426762">
             <property name="name" value="aa" />
-            <node role="pattern" type="jetbrains.mps.patterns.structure.PatternExpression" id="1213877426763">
+            <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1213877426763">
               <node role="patternNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877426764">
-                <node role="_attr_$link_attribute$concept" type="jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration" id="1213877426765">
+                <node role="_attr_$link_attribute$concept" type="jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration" id="1213877426765">
                   <property name="varName" value="concept" />
                 </node>
               </node>
@@ -1530,9 +1531,9 @@
         <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CoerceStatement" id="1213877522465">
           <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1213877522466">
             <property name="name" value="abc" />
-            <node role="pattern" type="jetbrains.mps.patterns.structure.PatternExpression" id="1213877522467">
+            <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1213877522467">
               <node role="patternNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213877522468">
-                <node role="_attr_$link_attribute$concept" type="jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration" id="1213877522469">
+                <node role="_attr_$link_attribute$concept" type="jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration" id="1213877522469">
                   <property name="varName" value="concept" />
                 </node>
               </node>

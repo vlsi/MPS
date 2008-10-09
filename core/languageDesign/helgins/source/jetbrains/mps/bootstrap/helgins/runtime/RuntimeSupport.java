@@ -4,8 +4,8 @@ import jetbrains.mps.helgins.inference.*;
 import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.patterns.IMatchingPattern;
-import jetbrains.mps.patterns.util.MatchingUtil;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.intentions.IntentionProvider;
 

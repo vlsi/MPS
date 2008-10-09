@@ -10,7 +10,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
-  <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.patterns)" />
+  <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.transformation.TLBase.constraints)" version="16" />
@@ -23,7 +23,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.patterns.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
@@ -38,7 +38,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <maxImportIndex value="42" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <maxImportIndex value="44" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.bootstrap.helgins.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -52,8 +53,7 @@
   <import index="14" modelUID="f:java_stub#jetbrains.mps.bootstrap.helgins.structure(jetbrains.mps.bootstrap.helgins.structure@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.bootstrap.helgins.runtime(jetbrains.mps.bootstrap.helgins.runtime@java_stub)" version="-1" />
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.patterns.structure)" version="-1" />
-  <import index="21" modelUID="f:java_stub#jetbrains.mps.patterns(jetbrains.mps.patterns@java_stub)" version="-1" />
+  <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="23" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <import index="29" modelUID="f:java_stub#jetbrains.mps.helgins.inference.util(jetbrains.mps.helgins.inference.util@java_stub)" version="-1" />
@@ -65,10 +65,11 @@
   <import index="36" modelUID="f:java_stub#jetbrains.mps.intentions(jetbrains.mps.intentions@java_stub)" version="-1" />
   <import index="37" modelUID="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.bootstrap.helgins.behavior)" version="-1" />
   <import index="38" modelUID="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.bootstrap.smodelLanguage.behavior)" version="-1" />
-  <import index="39" modelUID="f:java_stub#jetbrains.mps.patterns.util(jetbrains.mps.patterns.util@java_stub)" version="-1" />
   <import index="40" modelUID="f:java_stub#jetbrains.mps.bootstrap.helgins.runtime.quickfix(jetbrains.mps.bootstrap.helgins.runtime.quickfix@java_stub)" version="-1" />
   <import index="41" modelUID="r:00000000-0000-4000-0000-011c895902b6(jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.genUtil)" version="-1" />
   <import index="42" modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
+  <import index="43" modelUID="f:java_stub#jetbrains.mps.lang.pattern(jetbrains.mps.lang.pattern@java_stub)" version="-1" />
+  <import index="44" modelUID="f:java_stub#jetbrains.mps.lang.pattern.util(jetbrains.mps.lang.pattern.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1174411222995">
     <property name="name" value="main" />
     <property name="topPriorityGroup" value="true" />
@@ -1272,7 +1273,7 @@
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1174998292690">
       <property name="name" value="myMatchingPattern" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1174998314520">
-        <link role="classifier" targetNodeId="21.~IMatchingPattern" resolveInfo="IMatchingPattern" />
+        <link role="classifier" targetNodeId="43.~IMatchingPattern" resolveInfo="IMatchingPattern" />
         <node role="referenceMacro$link_attribute$classifier" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1175002013259">
           <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1175002013260">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175002013261">
@@ -1621,7 +1622,7 @@
                 </node>
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930472998">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930473000">
-                    <link role="baseMethodDeclaration" targetNodeId="21.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
+                    <link role="baseMethodDeclaration" targetNodeId="43.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
                     <node role="referenceMacro$link_attribute$baseMethodDeclaration" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1174998489629">
                       <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1174998489630">
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1174998489631">
@@ -1671,7 +1672,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929836373">
-                  <link role="baseMethodDeclaration" targetNodeId="21.~IMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
+                  <link role="baseMethodDeclaration" targetNodeId="43.~IMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1174988617166">
                     <link role="variableDeclaration" targetNodeId="1174647804235" resolveInfo="argument" />
                   </node>
@@ -2988,7 +2989,7 @@
             <node role="item" type="jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem" id="1215598911143">
               <node role="condition" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1215598940002">
                 <property name="name" value="_node" />
-                <node role="pattern" type="jetbrains.mps.patterns.structure.PatternExpression" id="1215598940003">
+                <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1215598940003">
                   <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215598955488">
                     <link role="classifier" targetNodeId="4.~SNode" resolveInfo="SNode" />
                   </node>
@@ -3005,9 +3006,9 @@
             <node role="item" type="jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem" id="1215696837612">
               <node role="condition" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1215696843694">
                 <property name="name" value="_node" />
-                <node role="pattern" type="jetbrains.mps.patterns.structure.PatternExpression" id="1215696843695">
+                <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1215696843695">
                   <node role="patternNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1215696855899">
-                    <node role="_attr_$link_attribute$concept" type="jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration" id="1215696858463">
+                    <node role="_attr_$link_attribute$concept" type="jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration" id="1215696858463">
                       <property name="varName" value="_" />
                     </node>
                   </node>
@@ -3368,11 +3369,11 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1174916422975">
                 <property name="name" value="pattern" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1174916422976">
-                  <link role="classifier" targetNodeId="21.~IMatchingPattern" resolveInfo="IMatchingPattern" />
+                  <link role="classifier" targetNodeId="43.~IMatchingPattern" resolveInfo="IMatchingPattern" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930471459">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930471461">
-                    <link role="baseMethodDeclaration" targetNodeId="21.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
+                    <link role="baseMethodDeclaration" targetNodeId="43.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
                     <node role="referenceMacro$link_attribute$baseMethodDeclaration" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1174916691300">
                       <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1174916691301">
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1174916691302">
@@ -3432,7 +3433,7 @@
                     <link role="variableDeclaration" targetNodeId="1174916422975" resolveInfo="pattern" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929829818">
-                    <link role="baseMethodDeclaration" targetNodeId="21.~IMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
+                    <link role="baseMethodDeclaration" targetNodeId="43.~IMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1174917056268">
                       <link role="variableDeclaration" targetNodeId="1174917039560" resolveInfo="nodeToMatch" />
                     </node>
@@ -3584,7 +3585,7 @@
       <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1174999241807">
         <property name="name" value="myPatternField" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1174999248809">
-          <link role="classifier" targetNodeId="21.~IMatchingPattern" resolveInfo="IMatchingPattern" />
+          <link role="classifier" targetNodeId="43.~IMatchingPattern" resolveInfo="IMatchingPattern" />
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081159" />
@@ -3698,7 +3699,7 @@
       <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1174999849197">
         <property name="name" value="myPatternField" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1174999849198">
-          <link role="classifier" targetNodeId="21.~IMatchingPattern" resolveInfo="IMatchingPattern" />
+          <link role="classifier" targetNodeId="43.~IMatchingPattern" resolveInfo="IMatchingPattern" />
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550080886" />
@@ -3812,7 +3813,7 @@
       <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1174999907230">
         <property name="name" value="myPatternField" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1174999907231">
-          <link role="classifier" targetNodeId="21.~IMatchingPattern" resolveInfo="IMatchingPattern" />
+          <link role="classifier" targetNodeId="43.~IMatchingPattern" resolveInfo="IMatchingPattern" />
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081283" />
@@ -5863,7 +5864,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1176815393663">
             <property name="name" value="pattern" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1177335311634">
-              <link role="classifier" targetNodeId="21.~DefaultMatchingPattern" resolveInfo="DefaultMatchingPattern" />
+              <link role="classifier" targetNodeId="43.~DefaultMatchingPattern" resolveInfo="DefaultMatchingPattern" />
               <node role="referenceMacro$link_attribute$classifier" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1177335329570">
                 <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1177335329571">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177335329572">
@@ -5895,7 +5896,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930471564">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930471566">
-                <link role="baseMethodDeclaration" targetNodeId="21.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
+                <link role="baseMethodDeclaration" targetNodeId="43.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1176816582179">
                   <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.LoopMacro" id="1176816586185">
                     <node role="sourceNodesQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodesQuery" id="1176816586186">
@@ -6101,7 +6102,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929833237">
-                <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.coerce(jetbrains.mps.smodel.SNode,jetbrains.mps.patterns.IMatchingPattern):jetbrains.mps.smodel.SNode" resolveInfo="coerce" />
+                <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.coerce(jetbrains.mps.smodel.SNode,jetbrains.mps.lang.pattern.IMatchingPattern,boolean):jetbrains.mps.smodel.SNode" resolveInfo="coerce" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1176817329587">
                   <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1176819525340">
                     <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1176819525341">
@@ -6852,7 +6853,7 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206451286904">
                 <property name="name" value="matchingPattern" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206451286905">
-                  <link role="classifier" targetNodeId="21.~DefaultMatchingPattern" resolveInfo="DefaultMatchingPattern" />
+                  <link role="classifier" targetNodeId="43.~DefaultMatchingPattern" resolveInfo="DefaultMatchingPattern" />
                   <node role="referenceMacro$link_attribute$classifier" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1206451534748">
                     <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1206451534749">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206451534750">
@@ -6887,7 +6888,7 @@
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215078779998">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215078780000">
-                    <link role="baseMethodDeclaration" targetNodeId="21.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
+                    <link role="baseMethodDeclaration" targetNodeId="43.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206451286907">
                       <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.LoopMacro" id="1206451286908">
                         <node role="sourceNodesQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodesQuery" id="1206451286909">
@@ -7250,7 +7251,7 @@
                         <link role="variableDeclaration" targetNodeId="1206451286904" resolveInfo="matchingPattern" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206451246242">
-                        <link role="baseMethodDeclaration" targetNodeId="21.~IMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
+                        <link role="baseMethodDeclaration" targetNodeId="43.~DefaultMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1177675788391">
                           <link role="variableDeclaration" targetNodeId="1177675756827" resolveInfo="matchedNode" />
                         </node>
@@ -7515,11 +7516,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178874415058">
             <property name="name" value="pattern" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178874453182">
-              <link role="classifier" targetNodeId="21.~IMatchingPattern" resolveInfo="IMatchingPattern" />
+              <link role="classifier" targetNodeId="43.~IMatchingPattern" resolveInfo="IMatchingPattern" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1178874468343">
-              <link role="baseMethodDeclaration" targetNodeId="15.~HUtil.createMatchingPatternByConceptFQName(java.lang.String):jetbrains.mps.patterns.IMatchingPattern" resolveInfo="createMatchingPatternByConceptFQName" />
               <link role="classConcept" targetNodeId="15.~HUtil" resolveInfo="HUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="15.~HUtil.createMatchingPatternByConceptFQName(java.lang.String):jetbrains.mps.lang.pattern.IMatchingPattern" resolveInfo="createMatchingPatternByConceptFQName" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178874515928">
                 <property name="value" value="conceptFQName" />
                 <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1178874523173">
@@ -7631,7 +7632,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929837653">
-                <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.coerce(jetbrains.mps.smodel.SNode,jetbrains.mps.patterns.IMatchingPattern):jetbrains.mps.smodel.SNode" resolveInfo="coerce" />
+                <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.coerce(jetbrains.mps.smodel.SNode,jetbrains.mps.lang.pattern.IMatchingPattern,boolean):jetbrains.mps.smodel.SNode" resolveInfo="coerce" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1178874415151">
                   <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1178874415152">
                     <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1178874415153">
@@ -7725,7 +7726,7 @@
         </node>
       </node>
       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929836453">
-        <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.coerce(jetbrains.mps.smodel.SNode,jetbrains.mps.patterns.IMatchingPattern,boolean):jetbrains.mps.smodel.SNode" resolveInfo="coerce" />
+        <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.coerce(jetbrains.mps.smodel.SNode,jetbrains.mps.lang.pattern.IMatchingPattern,boolean):jetbrains.mps.smodel.SNode" resolveInfo="coerce" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1178875672350">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1178875672351">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1178875672352">
@@ -7743,8 +7744,8 @@
           </node>
         </node>
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1178875710526">
-          <link role="baseMethodDeclaration" targetNodeId="15.~HUtil.createMatchingPatternByConceptFQName(java.lang.String):jetbrains.mps.patterns.IMatchingPattern" resolveInfo="createMatchingPatternByConceptFQName" />
           <link role="classConcept" targetNodeId="15.~HUtil" resolveInfo="HUtil" />
+          <link role="baseMethodDeclaration" targetNodeId="15.~HUtil.createMatchingPatternByConceptFQName(java.lang.String):jetbrains.mps.lang.pattern.IMatchingPattern" resolveInfo="createMatchingPatternByConceptFQName" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1178875710527">
             <property name="value" value="conceptFQName" />
             <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1178875710528">
@@ -7851,7 +7852,7 @@
         </node>
       </node>
       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929835716">
-        <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.coerce(jetbrains.mps.smodel.SNode,jetbrains.mps.patterns.IMatchingPattern,boolean):jetbrains.mps.smodel.SNode" resolveInfo="coerce" />
+        <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.coerce(jetbrains.mps.smodel.SNode,jetbrains.mps.lang.pattern.IMatchingPattern,boolean):jetbrains.mps.smodel.SNode" resolveInfo="coerce" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1178876385974">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1178876385975">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1178876385976">
@@ -7870,7 +7871,7 @@
         </node>
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930472393">
           <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930472395">
-            <link role="baseMethodDeclaration" targetNodeId="21.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
+            <link role="baseMethodDeclaration" targetNodeId="43.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1178876429099">
               <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.LoopMacro" id="1178876429100">
                 <node role="sourceNodesQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodesQuery" id="1178876429101">
@@ -8240,7 +8241,7 @@
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1188831540300">
       <property name="name" value="myMatchingPattern1" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1188831540301">
-        <link role="classifier" targetNodeId="21.~IMatchingPattern" resolveInfo="IMatchingPattern" />
+        <link role="classifier" targetNodeId="43.~IMatchingPattern" resolveInfo="IMatchingPattern" />
         <node role="referenceMacro$link_attribute$classifier" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1188831540302">
           <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1188831540303">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188831540304">
@@ -8296,7 +8297,7 @@
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1188831543934">
       <property name="name" value="myMatchingPattern2" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1188831543935">
-        <link role="classifier" targetNodeId="21.~IMatchingPattern" resolveInfo="IMatchingPattern" />
+        <link role="classifier" targetNodeId="43.~IMatchingPattern" resolveInfo="IMatchingPattern" />
         <node role="referenceMacro$link_attribute$classifier" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1188831543936">
           <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1188831543937">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188831543938">
@@ -8468,7 +8469,7 @@
                 </node>
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930473067">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930473069">
-                    <link role="baseMethodDeclaration" targetNodeId="21.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
+                    <link role="baseMethodDeclaration" targetNodeId="43.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
                     <node role="referenceMacro$link_attribute$baseMethodDeclaration" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1188831499567">
                       <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1188831499568">
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188831499569">
@@ -8518,7 +8519,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929837915">
-                  <link role="baseMethodDeclaration" targetNodeId="21.~IMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
+                  <link role="baseMethodDeclaration" targetNodeId="43.~IMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1188831675586">
                     <link role="variableDeclaration" targetNodeId="1188830701290" resolveInfo="node" />
                   </node>
@@ -8618,7 +8619,7 @@
                 </node>
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930472185">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930472187">
-                    <link role="baseMethodDeclaration" targetNodeId="21.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
+                    <link role="baseMethodDeclaration" targetNodeId="43.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
                     <node role="referenceMacro$link_attribute$baseMethodDeclaration" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1188831717143">
                       <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1188831717144">
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188831717145">
@@ -8668,7 +8669,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929835092">
-                  <link role="baseMethodDeclaration" targetNodeId="21.~IMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
+                  <link role="baseMethodDeclaration" targetNodeId="43.~IMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1188831717162">
                     <link role="variableDeclaration" targetNodeId="1188830715358" resolveInfo="node" />
                   </node>
@@ -10596,7 +10597,7 @@
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1201609469667">
       <property name="name" value="myMatchingPattern1" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201609469668">
-        <link role="classifier" targetNodeId="21.~IMatchingPattern" resolveInfo="IMatchingPattern" />
+        <link role="classifier" targetNodeId="43.~IMatchingPattern" resolveInfo="IMatchingPattern" />
         <node role="referenceMacro$link_attribute$classifier" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1201609469669">
           <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1201609469670">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201609469671">
@@ -10652,7 +10653,7 @@
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1201609469692">
       <property name="name" value="myMatchingPattern2" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201609469693">
-        <link role="classifier" targetNodeId="21.~IMatchingPattern" resolveInfo="IMatchingPattern" />
+        <link role="classifier" targetNodeId="43.~IMatchingPattern" resolveInfo="IMatchingPattern" />
         <node role="referenceMacro$link_attribute$classifier" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1201609469694">
           <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1201609469695">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201609469696">
@@ -10905,7 +10906,7 @@
                 </node>
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930471390">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930471392">
-                    <link role="baseMethodDeclaration" targetNodeId="21.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
+                    <link role="baseMethodDeclaration" targetNodeId="43.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
                     <node role="referenceMacro$link_attribute$baseMethodDeclaration" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1201609469772">
                       <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1201609469773">
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201609469774">
@@ -10955,7 +10956,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929832363">
-                  <link role="baseMethodDeclaration" targetNodeId="21.~IMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
+                  <link role="baseMethodDeclaration" targetNodeId="43.~IMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201609469791">
                     <link role="variableDeclaration" targetNodeId="1201609469802" resolveInfo="node" />
                   </node>
@@ -11055,7 +11056,7 @@
                 </node>
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930472254">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930472256">
-                    <link role="baseMethodDeclaration" targetNodeId="21.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
+                    <link role="baseMethodDeclaration" targetNodeId="43.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
                     <node role="referenceMacro$link_attribute$baseMethodDeclaration" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1201609469833">
                       <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1201609469834">
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201609469835">
@@ -11105,7 +11106,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929832721">
-                  <link role="baseMethodDeclaration" targetNodeId="21.~IMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
+                  <link role="baseMethodDeclaration" targetNodeId="43.~IMatchingPattern.match(jetbrains.mps.smodel.SNode):boolean" resolveInfo="match" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201609469852">
                     <link role="variableDeclaration" targetNodeId="1201609469863" resolveInfo="node" />
                   </node>
@@ -13702,8 +13703,8 @@
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1215531842893" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215531842894">
-                <link role="baseMethodDeclaration" targetNodeId="39.~MatchingUtil.matchNodes(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="matchNodes" />
-                <link role="classConcept" targetNodeId="39.~MatchingUtil" resolveInfo="MatchingUtil" />
+                <link role="classConcept" targetNodeId="44.~MatchingUtil" resolveInfo="MatchingUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="44.~MatchingUtil.matchNodes(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="matchNodes" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215531842895">
                   <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1215531842896">
                     <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1215531842897">

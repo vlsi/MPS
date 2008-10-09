@@ -10,7 +10,7 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.patterns.IMatchingPattern;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 

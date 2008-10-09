@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590346(jetbrains.mps.patterns.generator.baseLanguage.template.main@generator)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590346(jetbrains.mps.lang.pattern.generator.baseLanguage.template.main@generator)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
@@ -21,7 +21,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.patterns.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
@@ -32,8 +32,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <maxImportIndex value="29" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.patterns.structure)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <maxImportIndex value="32" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -41,12 +42,9 @@
   <import index="7" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
-  <import index="10" modelUID="f:java_stub#jetbrains.mps.patterns.structure(jetbrains.mps.patterns.structure@java_stub)" version="-1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="13" modelUID="f:java_stub#jetbrains.mps.patterns(jetbrains.mps.patterns@java_stub)" version="-1" />
   <import index="14" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.bootstrap.helgins.structure)" version="-1" />
-  <import index="17" modelUID="f:java_stub#jetbrains.mps.patterns.util(jetbrains.mps.patterns.util@java_stub)" version="-1" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.bootstrap.helgins.structure(jetbrains.mps.bootstrap.helgins.structure@java_stub)" version="-1" />
   <import index="19" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <import index="21" modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
@@ -56,6 +54,9 @@
   <import index="25" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="27" modelUID="f:java_stub#jetbrains.mps.lang.core.structure(jetbrains.mps.lang.core.structure@java_stub)" version="-1" />
   <import index="28" modelUID="f:java_stub#jetbrains.mps.lang.quotation.structure(jetbrains.mps.lang.quotation.structure@java_stub)" version="-1" />
+  <import index="30" modelUID="f:java_stub#jetbrains.mps.lang.pattern(jetbrains.mps.lang.pattern@java_stub)" version="-1" />
+  <import index="31" modelUID="f:java_stub#jetbrains.mps.lang.pattern.structure(jetbrains.mps.lang.pattern.structure@java_stub)" version="-1" />
+  <import index="32" modelUID="f:java_stub#jetbrains.mps.lang.pattern.util(jetbrains.mps.lang.pattern.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1174810951049">
     <property name="name" value="main" />
     <property name="topPriorityGroup" value="true" />
@@ -714,7 +715,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1220343554607">
         <property name="name" value="pattern" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220343554608">
-          <link role="classifier" targetNodeId="13.~GeneratedMatchingPattern" resolveInfo="GeneratedMatchingPattern" />
+          <link role="classifier" targetNodeId="30.~GeneratedMatchingPattern" resolveInfo="GeneratedMatchingPattern" />
         </node>
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220343554609">
@@ -1086,11 +1087,11 @@
       </node>
     </node>
     <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1174915563044">
-      <link role="classifier" targetNodeId="13.~IMatchingPattern" resolveInfo="IMatchingPattern" />
+      <link role="classifier" targetNodeId="30.~IMatchingPattern" resolveInfo="IMatchingPattern" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081239" />
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220021527174">
-      <link role="classifier" targetNodeId="13.~GeneratedMatchingPattern" resolveInfo="GeneratedMatchingPattern" />
+      <link role="classifier" targetNodeId="30.~GeneratedMatchingPattern" resolveInfo="GeneratedMatchingPattern" />
     </node>
   </node>
   <node type="jetbrains.mps.transformation.TLBase.structure.TemplateSwitch" id="1174811191396">
@@ -1346,8 +1347,8 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1190931377010">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1190931377011">
-              <link role="baseMethodDeclaration" targetNodeId="17.~MatchingUtil.matchNodes(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="matchNodes" />
-              <link role="classConcept" targetNodeId="17.~MatchingUtil" resolveInfo="MatchingUtil" />
+              <link role="classConcept" targetNodeId="32.~MatchingUtil" resolveInfo="MatchingUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="32.~MatchingUtil.matchNodes(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):boolean" resolveInfo="matchNodes" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1190931377012">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216932765457">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1190931377014" />
@@ -1592,7 +1593,7 @@
                                     </node>
                                   </node>
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1190931377122">
-                                    <link role="classifier" targetNodeId="10.~PropertyPatternVariableDeclaration" resolveInfo="PropertyPatternVariableDeclaration" />
+                                    <link role="classifier" targetNodeId="31.~PropertyPatternVariableDeclaration" resolveInfo="PropertyPatternVariableDeclaration" />
                                   </node>
                                 </node>
                               </node>
@@ -1920,7 +1921,7 @@
                                     </node>
                                   </node>
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1190931377236">
-                                    <link role="classifier" targetNodeId="10.~PropertyPatternVariableDeclaration" resolveInfo="PropertyPatternVariableDeclaration" />
+                                    <link role="classifier" targetNodeId="31.~PropertyPatternVariableDeclaration" resolveInfo="PropertyPatternVariableDeclaration" />
                                   </node>
                                 </node>
                               </node>
@@ -2332,7 +2333,7 @@
                                     </node>
                                   </node>
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1190931377413">
-                                    <link role="classifier" targetNodeId="10.~LinkPatternVariableDeclaration" resolveInfo="LinkPatternVariableDeclaration" />
+                                    <link role="classifier" targetNodeId="31.~LinkPatternVariableDeclaration" resolveInfo="LinkPatternVariableDeclaration" />
                                   </node>
                                 </node>
                               </node>
@@ -2712,7 +2713,7 @@
                                     </node>
                                   </node>
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1190931377579">
-                                    <link role="classifier" targetNodeId="10.~LinkPatternVariableDeclaration" resolveInfo="LinkPatternVariableDeclaration" />
+                                    <link role="classifier" targetNodeId="31.~LinkPatternVariableDeclaration" resolveInfo="LinkPatternVariableDeclaration" />
                                   </node>
                                 </node>
                               </node>
@@ -3057,7 +3058,7 @@
                                                   </node>
                                                 </node>
                                                 <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190931377709">
-                                                  <link role="classifier" targetNodeId="10.~Pattern" resolveInfo="Pattern" />
+                                                  <link role="classifier" targetNodeId="31.~Pattern" resolveInfo="Pattern" />
                                                 </node>
                                               </node>
                                             </node>
@@ -3071,7 +3072,7 @@
                                                 </node>
                                               </node>
                                               <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190931377713">
-                                                <link role="classifier" targetNodeId="10.~AsPattern" resolveInfo="AsPattern" />
+                                                <link role="classifier" targetNodeId="31.~AsPattern" resolveInfo="AsPattern" />
                                               </node>
                                             </node>
                                           </node>
@@ -3159,7 +3160,7 @@
                                             </node>
                                           </node>
                                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1190931377750">
-                                            <link role="classifier" targetNodeId="10.~PatternVariableDeclaration" resolveInfo="PatternVariableDeclaration" />
+                                            <link role="classifier" targetNodeId="31.~PatternVariableDeclaration" resolveInfo="PatternVariableDeclaration" />
                                           </node>
                                         </node>
                                       </node>
@@ -3292,8 +3293,8 @@
                                     <link role="classConcept" targetNodeId="3.~BaseAdapter" resolveInfo="BaseAdapter" />
                                     <link role="baseMethodDeclaration" targetNodeId="3.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1190931377796">
-                                      <link role="classConcept" targetNodeId="10.~AsPattern_AnnotationLink" resolveInfo="AsPattern_AnnotationLink" />
-                                      <link role="baseMethodDeclaration" targetNodeId="10.~AsPattern_AnnotationLink.getAsPattern(jetbrains.mps.lang.core.structure.BaseConcept):jetbrains.mps.patterns.structure.AsPattern" resolveInfo="getAsPattern" />
+                                      <link role="classConcept" targetNodeId="31.~AsPattern_AnnotationLink" resolveInfo="AsPattern_AnnotationLink" />
+                                      <link role="baseMethodDeclaration" targetNodeId="31.~AsPattern_AnnotationLink.getAsPattern(jetbrains.mps.lang.core.structure.BaseConcept):jetbrains.mps.lang.pattern.structure.AsPattern" resolveInfo="getAsPattern" />
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1190931377797">
                                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216932768244">
                                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216932769958">
@@ -3328,7 +3329,7 @@
                                       <link role="variableDeclaration" targetNodeId="1190931377793" resolveInfo="attribute" />
                                     </node>
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1190931377807">
-                                      <link role="classifier" targetNodeId="10.~ListPattern" resolveInfo="ListPattern" />
+                                      <link role="classifier" targetNodeId="31.~ListPattern" resolveInfo="ListPattern" />
                                     </node>
                                   </node>
                                 </node>
@@ -3360,8 +3361,8 @@
                                                   <link role="classConcept" targetNodeId="3.~BaseAdapter" resolveInfo="BaseAdapter" />
                                                   <link role="baseMethodDeclaration" targetNodeId="3.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
                                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1190931377823">
-                                                    <link role="classConcept" targetNodeId="10.~AsPattern_AnnotationLink" resolveInfo="AsPattern_AnnotationLink" />
-                                                    <link role="baseMethodDeclaration" targetNodeId="10.~AsPattern_AnnotationLink.getAsPattern(jetbrains.mps.lang.core.structure.BaseConcept):jetbrains.mps.patterns.structure.AsPattern" resolveInfo="getAsPattern" />
+                                                    <link role="classConcept" targetNodeId="31.~AsPattern_AnnotationLink" resolveInfo="AsPattern_AnnotationLink" />
+                                                    <link role="baseMethodDeclaration" targetNodeId="31.~AsPattern_AnnotationLink.getAsPattern(jetbrains.mps.lang.core.structure.BaseConcept):jetbrains.mps.lang.pattern.structure.AsPattern" resolveInfo="getAsPattern" />
                                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1190931377824">
                                                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721968">
                                                         <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1190931377826" />
@@ -3500,7 +3501,7 @@
                                                       </node>
                                                     </node>
                                                     <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190931377881">
-                                                      <link role="classifier" targetNodeId="10.~Pattern" resolveInfo="Pattern" />
+                                                      <link role="classifier" targetNodeId="31.~Pattern" resolveInfo="Pattern" />
                                                     </node>
                                                   </node>
                                                 </node>
@@ -3514,7 +3515,7 @@
                                                     </node>
                                                   </node>
                                                   <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190931377885">
-                                                    <link role="classifier" targetNodeId="10.~AsPattern" resolveInfo="AsPattern" />
+                                                    <link role="classifier" targetNodeId="31.~AsPattern" resolveInfo="AsPattern" />
                                                   </node>
                                                 </node>
                                               </node>
@@ -3587,7 +3588,7 @@
                                                 </node>
                                               </node>
                                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1190931377914">
-                                                <link role="classifier" targetNodeId="10.~PatternVariableDeclaration" resolveInfo="PatternVariableDeclaration" />
+                                                <link role="classifier" targetNodeId="31.~PatternVariableDeclaration" resolveInfo="PatternVariableDeclaration" />
                                               </node>
                                             </node>
                                           </node>
@@ -3614,8 +3615,8 @@
                                                       <link role="baseMethodDeclaration" targetNodeId="3.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
                                                       <link role="classConcept" targetNodeId="3.~BaseAdapter" resolveInfo="BaseAdapter" />
                                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1190931377926">
-                                                        <link role="classConcept" targetNodeId="10.~AsPattern_AnnotationLink" resolveInfo="AsPattern_AnnotationLink" />
-                                                        <link role="baseMethodDeclaration" targetNodeId="10.~AsPattern_AnnotationLink.getAsPattern(jetbrains.mps.lang.core.structure.BaseConcept):jetbrains.mps.patterns.structure.AsPattern" resolveInfo="getAsPattern" />
+                                                        <link role="classConcept" targetNodeId="31.~AsPattern_AnnotationLink" resolveInfo="AsPattern_AnnotationLink" />
+                                                        <link role="baseMethodDeclaration" targetNodeId="31.~AsPattern_AnnotationLink.getAsPattern(jetbrains.mps.lang.core.structure.BaseConcept):jetbrains.mps.lang.pattern.structure.AsPattern" resolveInfo="getAsPattern" />
                                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1190931377927">
                                                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721920">
                                                             <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1190931377929" />
@@ -3849,8 +3850,8 @@
                                     <link role="baseMethodDeclaration" targetNodeId="3.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
                                     <link role="classConcept" targetNodeId="3.~BaseAdapter" resolveInfo="BaseAdapter" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1190931378008">
-                                      <link role="classConcept" targetNodeId="10.~AsPattern_AnnotationLink" resolveInfo="AsPattern_AnnotationLink" />
-                                      <link role="baseMethodDeclaration" targetNodeId="10.~AsPattern_AnnotationLink.getAsPattern(jetbrains.mps.lang.core.structure.BaseConcept):jetbrains.mps.patterns.structure.AsPattern" resolveInfo="getAsPattern" />
+                                      <link role="classConcept" targetNodeId="31.~AsPattern_AnnotationLink" resolveInfo="AsPattern_AnnotationLink" />
+                                      <link role="baseMethodDeclaration" targetNodeId="31.~AsPattern_AnnotationLink.getAsPattern(jetbrains.mps.lang.core.structure.BaseConcept):jetbrains.mps.lang.pattern.structure.AsPattern" resolveInfo="getAsPattern" />
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1190931378009">
                                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216932767573">
                                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216932767170">
@@ -3884,7 +3885,7 @@
                                     <link role="variableDeclaration" targetNodeId="1190931378005" resolveInfo="attribute" />
                                   </node>
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1190931378018">
-                                    <link role="classifier" targetNodeId="10.~ListPattern" resolveInfo="ListPattern" />
+                                    <link role="classifier" targetNodeId="31.~ListPattern" resolveInfo="ListPattern" />
                                   </node>
                                 </node>
                               </node>
@@ -4085,22 +4086,22 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220011859335">
       <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220011863884">
         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1220011961124">
-          <link role="baseMethodDeclaration" targetNodeId="13.~Substitution.&lt;init&gt;(jetbrains.mps.util.Pair...)" resolveInfo="Substitution" />
+          <link role="baseMethodDeclaration" targetNodeId="30.~Substitution.&lt;init&gt;(jetbrains.mps.util.Pair...)" resolveInfo="Substitution" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220011966500">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1220012028735">
               <link role="baseMethodDeclaration" targetNodeId="23.~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolveInfo="Pair" />
               <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220012092416">
-                <link role="classifier" targetNodeId="13.~IMatchingPattern" resolveInfo="IMatchingPattern" />
+                <link role="classifier" targetNodeId="30.~IMatchingPattern" resolveInfo="IMatchingPattern" />
               </node>
               <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220012097465">
-                <link role="classifier" targetNodeId="13.~SubstitutionComputable" resolveInfo="SubstitutionComputable" />
+                <link role="classifier" targetNodeId="30.~SubstitutionComputable" resolveInfo="SubstitutionComputable" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220015614331">
                   <link role="classifier" targetNodeId="3.~SNode" resolveInfo="SNode" />
                 </node>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220012276128">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1220012281253">
-                  <link role="baseMethodDeclaration" targetNodeId="13.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
+                  <link role="baseMethodDeclaration" targetNodeId="30.~DefaultMatchingPattern.&lt;init&gt;()" resolveInfo="DefaultMatchingPattern" />
                   <node role="referenceMacro$link_attribute$baseMethodDeclaration" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1220012287426">
                     <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1220012287427">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220012287428">
@@ -4139,7 +4140,7 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220015645410">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1220015651944">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1220015651945">
-                    <link role="classifier" targetNodeId="13.~SubstitutionComputable" resolveInfo="SubstitutionComputable" />
+                    <link role="classifier" targetNodeId="30.~SubstitutionComputable" resolveInfo="SubstitutionComputable" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220015651946" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1220015651947">
                       <property name="isAbstract" value="false" />
@@ -4171,7 +4172,7 @@
                       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1220021243161">
                         <property name="name" value="substitution239" />
                         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220021243162">
-                          <link role="classifier" targetNodeId="13.~Substitution" resolveInfo="Substitution" />
+                          <link role="classifier" targetNodeId="30.~Substitution" resolveInfo="Substitution" />
                         </node>
                       </node>
                     </node>
@@ -4200,7 +4201,7 @@
         </node>
       </node>
       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220012112657">
-        <link role="baseMethodDeclaration" targetNodeId="13.~Substitution.substitute(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="substitute" />
+        <link role="baseMethodDeclaration" targetNodeId="30.~Substitution.substitute(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="substitute" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1220012114392">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1220012125645">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1220012125646">
@@ -4227,7 +4228,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220025178857">
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1220025184875">
         <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1220025184876">
-          <link role="classifier" targetNodeId="13.~SubstitutionComputable" resolveInfo="SubstitutionComputable" />
+          <link role="classifier" targetNodeId="30.~SubstitutionComputable" resolveInfo="SubstitutionComputable" />
           <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220025184877" />
           <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1220025184878">
             <property name="isAbstract" value="false" />
@@ -4239,7 +4240,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1220025184881">
               <property name="name" value="substitution239" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220025184882">
-                <link role="classifier" targetNodeId="13.~Substitution" resolveInfo="Substitution" />
+                <link role="classifier" targetNodeId="30.~Substitution" resolveInfo="Substitution" />
               </node>
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220025184883">
@@ -4269,7 +4270,7 @@
                         <link role="variableDeclaration" targetNodeId="1220025184881" resolveInfo="substitution239" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220025308858">
-                        <link role="baseMethodDeclaration" targetNodeId="13.~Substitution.getFieldValue(java.lang.String,jetbrains.mps.patterns.SubstitutionComputable):java.lang.Object" resolveInfo="getFieldValue" />
+                        <link role="baseMethodDeclaration" targetNodeId="30.~Substitution.getFieldValue(java.lang.String,jetbrains.mps.lang.pattern.SubstitutionComputable):java.lang.Object" resolveInfo="getFieldValue" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220025308859">
                           <property name="value" value="" />
                           <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1220025335237">
