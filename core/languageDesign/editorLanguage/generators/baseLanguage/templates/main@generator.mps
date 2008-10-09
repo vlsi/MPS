@@ -14546,8 +14546,8 @@
             </node>
           </node>
         </node>
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223544776756">
-          <link role="classifier" targetNodeId="73.~AbstractCellMenuPart_Generic_Group" resolveInfo="AbstractCellMenuPart_Generic_Group" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223547261334">
+          <link role="classifier" targetNodeId="73.~AbstractCellMenuPart_Generic_Item" resolveInfo="AbstractCellMenuPart_Generic_Item" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184145338796" />
         <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1184145340813">
