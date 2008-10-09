@@ -18,11 +18,11 @@ public class typeof_PatternExpression_InferenceRule extends AbstractInferenceRul
 
   public void applyRule(final SNode patternExpression, final TypeCheckingContext typeCheckingContext) {
     SNode patternExpression1 = patternExpression;
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_0().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpression1, "patternNode", true))), patternExpression1, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.patterns.helgins)", "1196515055997");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_0().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpression1, "patternNode", true))), patternExpression1, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.helgins)", "1196515055997");
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.patterns.structure.PatternExpression";
+    return "jetbrains.mps.lang.pattern.structure.PatternExpression";
   }
 
   public boolean isApplicable(SNode argument) {

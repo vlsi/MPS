@@ -19,12 +19,12 @@ public class typeof_PropertyPatternVariableDeclaration_InferenceRule extends Abs
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.patterns.helgins)", "1202488170860", true), new QuotationClass_2().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.patterns.helgins)", "1202488174301", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.helgins)", "1202488170860", true), new QuotationClass_2().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.helgins)", "1202488174301", intentionProvider);
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration";
+    return "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration";
   }
 
   public boolean isApplicable(SNode argument) {

@@ -20,12 +20,12 @@ public class typeof_AsPattern_InferenceRule extends AbstractInferenceRule_Runtim
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.patterns.helgins)", "1202491120336", true), new QuotationClass_5().createNode(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(nodeToCheck))), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.patterns.helgins)", "1202491123370", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.helgins)", "1202491120336", true), new QuotationClass_5().createNode(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(nodeToCheck))), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.helgins)", "1202491123370", intentionProvider);
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.patterns.structure.AsPattern";
+    return "jetbrains.mps.lang.pattern.structure.AsPattern";
   }
 
   public boolean isApplicable(SNode argument) {
