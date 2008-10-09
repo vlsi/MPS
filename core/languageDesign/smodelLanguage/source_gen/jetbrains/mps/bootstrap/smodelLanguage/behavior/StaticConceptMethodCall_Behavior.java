@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.bootstrap.constraintsLanguage.behavior.ConceptBehavior_Behavior;
+import jetbrains.mps.lang.constraints.behavior.ConceptBehavior_Behavior;
 
 public class StaticConceptMethodCall_Behavior {
 

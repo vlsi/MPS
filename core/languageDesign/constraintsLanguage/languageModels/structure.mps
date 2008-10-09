@@ -1,7 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.bootstrap.constraintsLanguage.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ConceptBehavior" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" featureKind="CONCEPT" />
+          <value featureName="ConceptBehavior" conceptFQName="jetbrains.mps.lang.constraints.structure.ConceptBehavior" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConceptConstraints" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints" featureKind="CONCEPT" />
+          <value featureName="ConceptConstraints" conceptFQName="jetbrains.mps.lang.constraints.structure.ConceptConstraints" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConceptConstructorDeclaration" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" featureKind="CONCEPT" />
+          <value featureName="ConceptConstructorDeclaration" conceptFQName="jetbrains.mps.lang.constraints.structure.ConceptConstructorDeclaration" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConceptMethodDeclaration" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" featureKind="CONCEPT" />
+          <value featureName="ConceptMethodDeclaration" conceptFQName="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConceptParameter_ReferentSearchScope_enclosingNode" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptParameter_ReferentSearchScope_enclosingNode" featureKind="CONCEPT" />
+          <value featureName="ConceptParameter_ReferentSearchScope_enclosingNode" conceptFQName="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunctionParameter_childConcept" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_childConcept" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunctionParameter_childConcept" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunctionParameter_link" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_link" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunctionParameter_link" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunctionParameter_linkTarget" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_linkTarget" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunctionParameter_linkTarget" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunctionParameter_newReferentNode" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_newReferentNode" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunctionParameter_newReferentNode" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_newReferentNode" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunctionParameter_oldReferentNode" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_oldReferentNode" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunctionParameter_oldReferentNode" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunctionParameter_parentNode" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_parentNode" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunctionParameter_parentNode" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunctionParameter_referenceNode" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_referenceNode" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunctionParameter_referenceNode" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunction_CanBeAChild" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAChild" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunction_CanBeAChild" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunction_CanBeAParent" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_CanBeAParent" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunction_CanBeAParent" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunction_PropertyGetter" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunction_PropertyGetter" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunction_PropertySetter" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertySetter" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunction_PropertySetter" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunction_PropertyValidator" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyValidator" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunction_PropertyValidator" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunction_ReferentSearchScope_AbstractBase" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_AbstractBase" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunction_ReferentSearchScope_AbstractBase" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunction_ReferentSearchScope_CanCreate" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_CanCreate" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunction_ReferentSearchScope_CanCreate" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_CanCreate" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunction_ReferentSearchScope_Factory" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunction_ReferentSearchScope_Factory" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintFunction_ReferentSetHandler" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSetHandler" featureKind="CONCEPT" />
+          <value featureName="ConstraintFunction_ReferentSetHandler" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintsFunctionParameter_node" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_node" featureKind="CONCEPT" />
+          <value featureName="ConstraintsFunctionParameter_node" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConstraintsFunctionParameter_propertyValue" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintsFunctionParameter_propertyValue" featureKind="CONCEPT" />
+          <value featureName="ConstraintsFunctionParameter_propertyValue" conceptFQName="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="NodeDefaultSearchScope" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeDefaultSearchScope" featureKind="CONCEPT" />
+          <value featureName="NodeDefaultSearchScope" conceptFQName="jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="NodePropertyConstraint" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" featureKind="CONCEPT" />
+          <value featureName="NodePropertyConstraint" conceptFQName="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="NodeReferentConstraint" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint" featureKind="CONCEPT" />
+          <value featureName="NodeReferentConstraint" conceptFQName="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PropertySetter_FunctionParm_node" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_node" featureKind="CONCEPT" />
+          <value featureName="PropertySetter_FunctionParm_node" conceptFQName="jetbrains.mps.lang.constraints.structure.PropertySetter_FunctionParm_node" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="StaticConceptMethodDeclaration" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.StaticConceptMethodDeclaration" featureKind="CONCEPT" />
+          <value featureName="StaticConceptMethodDeclaration" conceptFQName="jetbrains.mps.lang.constraints.structure.StaticConceptMethodDeclaration" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="SuperNodeExpression" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.SuperNodeExpression" featureKind="CONCEPT" />
+          <value featureName="SuperNodeExpression" conceptFQName="jetbrains.mps.lang.constraints.structure.SuperNodeExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ThisNodeExpression" conceptFQName="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" featureKind="CONCEPT" />
+          <value featureName="ThisNodeExpression" conceptFQName="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
@@ -12,11 +139,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.bootstrap.constraintsLanguage.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.bootstrap.constraintsLanguage.constraints)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />

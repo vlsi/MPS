@@ -19,7 +19,7 @@
     <orderEntry type="module" module-name="blTypes" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
     <orderEntry type="module" module-name="InternalCollections-runtime" exported="" />
-    <orderEntry type="module" module-name="constraintsLanguage" exported="" />
+    <orderEntry type="module" module-name="constraints" exported="" />
     <orderEntry type="module" module-name="editor" exported="" />
     <orderEntry type="module" module-name="helgins" exported="" />
     <orderEntry type="module" module-name="scriptLanguage" exported="" />

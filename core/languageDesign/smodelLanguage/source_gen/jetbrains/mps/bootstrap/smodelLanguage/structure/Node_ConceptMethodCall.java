@@ -4,7 +4,7 @@ package jetbrains.mps.bootstrap.smodelLanguage.structure;
 
 import jetbrains.mps.baseLanguage.structure.IRefactarableMethodCall;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration;
+import jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.List;

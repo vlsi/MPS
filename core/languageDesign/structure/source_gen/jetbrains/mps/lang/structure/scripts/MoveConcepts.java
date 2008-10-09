@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
+import jetbrains.mps.lang.constraints.structure.ConceptBehavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Map;
