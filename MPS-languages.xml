@@ -455,15 +455,15 @@
   <target name="pack.jetbrains.mps.bootstrap.findUsagesLanguage">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.tmp/module" />
-    <mkdir dir="core/languageDesign/findUsagesLanguage/classes" />
+    <mkdir dir="core/languageDesign/findUsages/classes" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.tmp/module">
-      <fileset file="core/languageDesign/findUsagesLanguage/findUsagesLanguage.mpl" />
+      <fileset file="core/languageDesign/findUsages/findUsagesLanguage.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.tmp/module">
-      <fileset dir="core/languageDesign/findUsagesLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="core/languageDesign/findUsages" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.tmp">
-      <fileset dir="core/languageDesign/findUsagesLanguage/classes" />
+      <fileset dir="core/languageDesign/findUsages/classes" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.findUsagesLanguage.tmp" />
