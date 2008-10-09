@@ -24,7 +24,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testEditorLanguage() {
-    String res = testProject(new File("core/languageDesign/editorLanguage/editorLanguage.mpr"));
+    String res = testProject(new File("core/languageDesign/editor/editor.mpr"));
     assertTrue(res, res == null);
   }
 
@@ -39,7 +39,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testActionsLanguage() {
-    String res = testProject(new File("core/languageDesign/actionsLanguage/actionsLanguage.mpr"));
+    String res = testProject(new File("core/languageDesign/actions/actions.mpr"));
     assertTrue(res, res == null);
   }
 

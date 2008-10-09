@@ -13,7 +13,7 @@
     <projectDevkits />
     <libraries />
     <genConfs>
-      <genConfLanguage name="actions language" language="jetbrains.mps.bootstrap.actionsLanguage" />
+      <genConfLanguage name="actions language" language="jetbrains.mps.lang.actions" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
