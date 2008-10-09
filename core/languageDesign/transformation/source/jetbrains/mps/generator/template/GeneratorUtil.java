@@ -6,7 +6,7 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
+import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.core.structure.BaseConcept;
