@@ -112,7 +112,7 @@ public class RenameLanguageDialog extends BaseDialog {
       final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
       GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
         public GenParameters compute() {
-          MPSVCSManager.getInstance(myProject).deleteFilesAndRemoveFromVcs(getFilesToDelete());
+//          MPSVCSManager.getInstance(myProject).deleteFilesAndRemoveFromVcs(getFilesToDelete());
 
           SModel model = AuxilaryRuntimeModel.getDescriptor().getSModel();
 
