@@ -37,7 +37,7 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="library" name="asm" level="project" />
     <orderEntry type="module" module-name="xmlDeprecated" />
-    <orderEntry type="module" module-name="pluginLanguage" />
+    <orderEntry type="module" module-name="plugin" />
     <orderEntryProperties />
   </component>
 </module>

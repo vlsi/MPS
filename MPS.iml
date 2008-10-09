@@ -38,7 +38,7 @@
     <orderEntry type="module" module-name="projectLanguage" exported="" />
     <orderEntry type="module" module-name="workbench" exported="" />
     <orderEntry type="module" module-name="kernel" exported="" />
-    <orderEntry type="module" module-name="pluginLanguage" exported="" />
+    <orderEntry type="module" module-name="plugin" exported="" />
     <orderEntry type="module" module-name="classifiers" exported="" />
     <orderEntry type="module" module-name="dataFlow" exported="" />
     <orderEntry type="library" exported="" name="commons-lang" level="project" />

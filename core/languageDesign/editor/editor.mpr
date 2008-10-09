@@ -19,11 +19,13 @@
   <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
     <projectSolutions />
     <projectLanguages>
-      <languagePath path="${project}\editorLanguage.mpl" />
+      <languagePath path="${project}\editor.mpl" />
     </projectLanguages>
     <projectDevkits />
     <libraries />
-    <genConfs />
+    <genConfs>
+      <genConfLanguage name="editor" language="jetbrains.mps.lang.editor" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="editorLanguage" />

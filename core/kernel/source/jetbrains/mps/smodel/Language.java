@@ -1,7 +1,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.util.PluginNameUtils;
+import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
