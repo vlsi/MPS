@@ -9,7 +9,7 @@
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
-  <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.bootstrap.actionsLanguage)" />
+  <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.bootstrap.sharedConcepts)" />
   <language namespace="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)" />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.bootstrap.constraintsLanguage)" />
@@ -30,8 +30,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.bootstrap.actionsLanguage.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.bootstrap.actionsLanguage.structure)" version="22" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.bootstrap.constraintsLanguage.constraints)" version="9" />
@@ -60,7 +60,7 @@
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c895905d0(jetbrains.mpslite.constraints)" version="27" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <import index="13" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.bootstrap.actionsLanguage.structure)" version="22" />
+  <import index="13" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
   <import index="14" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
   <import index="16" modelUID="f:java_stub#jetbrains.mps.helgins.inference(jetbrains.mps.helgins.inference@java_stub)" version="-1" />
@@ -2058,15 +2058,15 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1183015439651">
+  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1183015439651">
     <property name="name" value="RT_Start" />
     <property name="package" value="Actions" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1183015459231">
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1183015459231">
       <link role="applicableConcept" targetNodeId="1182950617466" resolveInfo="_StubConcept" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1183015503860">
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1183015503860">
         <link role="concept" targetNodeId="1182950617466" resolveInfo="_StubConcept" />
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleSideTransformMenuPart" id="1183015507876">
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_Handler" id="1183015507877">
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="1183015507876">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="1183015507877">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1183015507878">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1183015542044">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1183015542045">
@@ -2114,7 +2114,7 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1183019487195">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227880404">
-                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1183019487196" />
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1183019487196" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1183019489997">
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1183019492437">
                       <link role="variableDeclaration" targetNodeId="1183015542045" resolveInfo="newNode" />
@@ -2161,7 +2161,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1183015645192">
-                    <node role="linkTarget" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1183015647929" />
+                    <node role="linkTarget" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1183015647929" />
                   </node>
                 </node>
               </node>
@@ -2172,7 +2172,7 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_String" id="1183015514614">
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String" id="1183015514614">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1183015514615">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1183015515413">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1183015516805">
@@ -2308,15 +2308,15 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1183116556161">
+  <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="1183116556161">
     <property name="name" value="RT_NumberConcept" />
     <property name="package" value="Actions" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1183116560411">
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1183116560411">
       <link role="applicableConcept" targetNodeId="1182950617466" resolveInfo="_StubConcept" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1183116590213">
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1183116590213">
         <link role="concept" targetNodeId="1182950617466" resolveInfo="_StubConcept" />
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleItemSubstitutePart" id="1183116595355">
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_Substitute_Handler" id="1183116595356">
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart" id="1183116595355">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler" id="1183116595356">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1183116595357">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1183116672158">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1183116672159">
@@ -2325,7 +2325,7 @@
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1183116678506">
                     <link role="baseMethodDeclaration" targetNodeId="2.~Integer.parseInt(java.lang.String):int" resolveInfo="parseInt" />
                     <link role="classConcept" targetNodeId="2.~Integer" resolveInfo="Integer" />
-                    <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_pattern" id="1183116680256" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern" id="1183116680256" />
                   </node>
                 </node>
               </node>
@@ -2420,11 +2420,11 @@
               </node>
             </node>
           </node>
-          <node role="canSubstitute" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_CanSubstitute" id="1183116632542">
+          <node role="canSubstitute" type="jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute" id="1183116632542">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1183116632543">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1183116633296">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222425143618">
-                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_pattern" id="1183116633301" />
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern" id="1183116633301" />
                   <node role="operation" type="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation" id="1222425143619">
                     <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression" id="1183116633298">
                       <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="1183116633299">
@@ -2509,16 +2509,16 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1183120841566">
+  <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="1183120841566">
     <property name="name" value="Wrapper" />
     <property name="package" value="Actions" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1183120848684">
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1183120848684">
       <link role="applicableConcept" targetNodeId="1182950617466" resolveInfo="_StubConcept" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1183120886465">
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1183120886465">
         <link role="concept" targetNodeId="1182950617466" resolveInfo="_StubConcept" />
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.WrapperSubstituteMenuPart" id="1183120891206">
+        <node role="part" type="jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart" id="1183120891206">
           <link role="wrappedConcept" targetNodeId="1182950617466" resolveInfo="_StubConcept" />
-          <node role="wrapperBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SubstituteWrapper" id="1183120891207">
+          <node role="wrapperBlock" type="jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper" id="1183120891207">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1183120891208">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1183120893885">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1183120893886">
@@ -2614,7 +2614,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1183120911283">
-                    <node role="linkTarget" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_nodeToWrap" id="1183120914460" />
+                    <node role="linkTarget" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap" id="1183120914460" />
                   </node>
                 </node>
               </node>
@@ -5571,14 +5571,14 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1197552137549">
+  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1197552137549">
     <property name="package" value="Actions" />
     <property name="name" value="RT_DotExpression" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1197552191010">
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1197552191010">
       <link role="applicableConcept" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197552302342">
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleSideTransformMenuPart" id="1197552304093">
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_Handler" id="1197552304094">
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1197552302342">
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="1197552304093">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="1197552304094">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197552304095">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197552510868">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197552510869">
@@ -5627,7 +5627,7 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197552550545">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227851053">
-                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1197552550546" />
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1197552550546" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1197552553205">
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197552554315">
                       <link role="variableDeclaration" targetNodeId="1197552510869" resolveInfo="dotConceptInstance" />
@@ -5646,7 +5646,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1197552576721">
-                    <node role="linkTarget" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1197552577988" />
+                    <node role="linkTarget" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1197552577988" />
                   </node>
                 </node>
               </node>
@@ -5657,7 +5657,7 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransform_SimpleString" id="1197552310378">
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1197552310378">
             <property name="text" value=". dot" />
           </node>
         </node>
@@ -5678,7 +5678,7 @@
         </node>
       </node>
     </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1197555367940">
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1197555367940">
       <link role="applicableConcept" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
       <node role="referenceMacro$link_attribute$applicableConcept" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1197555371849">
         <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1197555371850">
@@ -5695,12 +5695,12 @@
           </node>
         </node>
       </node>
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart" id="1197555394956">
-        <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_NodeQuery" id="1197555394957">
+      <node role="part" type="jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart" id="1197555394956">
+        <node role="nodeBlock" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery" id="1197555394957">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197555394958">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197555398445">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227958881">
-                <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1197555398446" />
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1197555398446" />
                 <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1197555400481" />
               </node>
             </node>
@@ -5894,16 +5894,16 @@
     <property name="package" value="Common" />
     <property name="name" value="reduce_LeftPartExpressionInsideOfIsApplicable" />
     <link role="applicableConcept" targetNodeId="1.1197553987381" resolveInfo="LeftPartExpression" />
-    <node role="contentNode" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1197559290986">
+    <node role="contentNode" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1197559290986">
       <link role="applicableConcept" targetNodeId="1182950617466" resolveInfo="_StubConcept" />
-      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1197559304395">
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" id="1197559304395">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197559304396">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197559309162">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227921454">
               <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1204227921456" />
               <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1197559316217">
                 <link role="concept" targetNodeId="12.1081773326031" resolveInfo="BinaryOperation" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1197559321737" />
+                <node role="leftExpression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1197559321737" />
                 <node role="referenceMacro$link_attribute$concept" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1197559316219">
                   <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1197559316220">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197559316221">
@@ -5994,10 +5994,10 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1197559495115">
+  <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="1197559495115">
     <property name="package" value="Actions" />
     <property name="name" value="Substitute_ConceptWithIsApplicable" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1197559534068">
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1197559534068">
       <link role="applicableConcept" targetNodeId="12.1068431790191" resolveInfo="Expression" />
       <node role="referenceMacro$link_attribute$applicableConcept" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1197559540772">
         <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1197559540773">
@@ -6014,7 +6014,7 @@
           </node>
         </node>
       </node>
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1197559554911">
+      <node role="part" type="jetbrains.mps.lang.actions.structure.ConceptSubstitutePart" id="1197559554911">
         <link role="concept" targetNodeId="33.1176923520476" resolveInfo="ExcludeOperation" />
         <node role="referenceMacro$link_attribute$concept" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1197559559022">
           <node role="referentFunction" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent" id="1197559559023">
@@ -6032,7 +6032,7 @@
           </node>
         </node>
       </node>
-      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1197559567938">
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" id="1197559567938">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197559567939">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1197559570285">
             <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1197559570286">
@@ -6748,13 +6748,13 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActions" id="1197630208205">
+  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1197630208205">
     <property name="package" value="Actions" />
     <property name="name" value="RT_BinaryOperation" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransformHintSubstituteActionsBuilder" id="1197630226864">
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1197630226864">
       <link role="applicableConcept" targetNodeId="12.1068431790191" resolveInfo="Expression" />
-      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1197630243610">
-        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSideTransformMenuPart" id="1197630245205">
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1197630243610">
+        <node role="part" type="jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart" id="1197630245205">
           <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" id="1197630247398">
             <link role="conceptDeclaraton" targetNodeId="1197625351134" resolveInfo="BinaryOperation" />
             <node role="referenceMacro$link_attribute$conceptDeclaraton" type="jetbrains.mps.transformation.TLBase.structure.ReferenceMacro" id="1197630412008">
@@ -6773,7 +6773,7 @@
               </node>
             </node>
           </node>
-          <node role="query" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSideTransform_Query" id="1197630245207">
+          <node role="query" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query" id="1197630245207">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197630245208">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197630252118">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227939551">
@@ -6808,7 +6808,7 @@
               </node>
             </node>
           </node>
-          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSideTransform_Handler" id="1197630245209">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Handler" id="1197630245209">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197630245210">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197636535034">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197636535035">
@@ -6831,7 +6831,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="initializer" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1197636597949" />
+                  <node role="initializer" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1197636597949" />
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="1197636639711">
@@ -6963,7 +6963,7 @@
                             </node>
                           </node>
                           <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227927835">
-                            <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1197636844705" />
+                            <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1197636844705" />
                             <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1197636846569">
                               <link role="conceptProperty" targetNodeId="1197636042056" resolveInfo="priority" />
                             </node>
@@ -7006,7 +7006,7 @@
                     </node>
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227908605">
-                    <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1197630717378" />
+                    <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1197630717378" />
                     <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_NewInstance" id="1197630719913" />
                   </node>
                 </node>
@@ -7062,11 +7062,11 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SideTransform_String" id="1197630450187">
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String" id="1197630450187">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197630450188">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197630453080">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227922213">
-                  <node role="operand" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1197630453081" />
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1197630453081" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1197630454648">
                     <link role="conceptProperty" targetNodeId="1197625386338" resolveInfo="sign" />
                   </node>
@@ -7074,7 +7074,7 @@
               </node>
             </node>
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SideTransform_SimpleString" id="1197630568248">
+          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1197630568248">
             <property name="text" value="binary operation" />
           </node>
         </node>

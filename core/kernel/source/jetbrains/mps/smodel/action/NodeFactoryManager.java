@@ -1,9 +1,9 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction;
-import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactories;
-import jetbrains.mps.bootstrap.actionsLanguage.behavior.NodeFactory_Behavior;
+import jetbrains.mps.lang.actions.structure.NodeFactory;
+import jetbrains.mps.lang.actions.structure.NodeSetupFunction;
+import jetbrains.mps.lang.actions.structure.NodeFactories;
+import jetbrains.mps.lang.actions.behavior.NodeFactory_Behavior;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;

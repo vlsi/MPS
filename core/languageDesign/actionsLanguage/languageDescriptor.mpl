@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.actionsLanguage" uuid="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.lang.actions" uuid="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.actionsLanguage" />
+    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.lang.actions" />
   </models>
   <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.bootstrap.actionsLanguage#1154466409006" uuid="018659ff-d3ef-4215-97e0-bcfeeb111145">
       <models>
-        <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template" />
+        <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.lang.actions.generator.baseLanguage.template" />
       </models>
       <external-templates>
         <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />
@@ -23,15 +23,15 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1196434407478" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" nodeID="1196434407478" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1154466410557" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" nodeID="1154466410557" />
           </lesser-priority-mapping>
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
-            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1154466410557" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" nodeID="1154466410557" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <generator generatorUID="51736086-833e-4b0d-b9a6-a1dbbfda2131(jetbrains.mps.bootstrap.sharedConcepts#1161623873951)" />
@@ -42,10 +42,10 @@
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
-            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1154466410557" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" nodeID="1154466410557" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@generator)" nodeID="1221137101806" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" nodeID="1221137101806" />
           </lesser-priority-mapping>
         </mapping-priority-rule>
       </mapping-priorities>
