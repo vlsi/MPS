@@ -89,7 +89,6 @@ public class RenameLanguageDialog extends BaseDialog {
   public void buttonOk() {
     final boolean needToRegenerate = myRegenerateLanguage.getModel().isSelected();
 
-    final List<File>[] oldModelRootsContainer = new List[]{null};
     boolean renamed = ModelAccess.instance().runWriteActionInCommand(new Computable<Boolean>() {
       public Boolean compute() {
         final String fqName = myLanguageNameField.getText();
@@ -99,10 +98,7 @@ public class RenameLanguageDialog extends BaseDialog {
           return false;
         }
 
-        if (needToRegenerate) {
-          oldModelRootsContainer[0] = getModelOutputRoots();
-        }
-        new LanguageRenamer(myLanguage, fqName).rename();
+        new LanguageRenamer(myProject, myLanguage, fqName).rename(needToRegenerate);
         return true;
       }
     });
@@ -115,12 +111,6 @@ public class RenameLanguageDialog extends BaseDialog {
       final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
       GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
         public GenParameters compute() {
-          if (oldModelRootsContainer[0] != null) {
-            List<File> oldModelRoots = oldModelRootsContainer[0];
-            List<File> newModelRoots = getModelOutputRoots();
-            MPSVCSManager.getInstance(myProject).deleteFilesAndRemoveFromVcs(getFilesToDelete(oldModelRoots, newModelRoots));
-          }
-
           SModel model = AuxilaryRuntimeModel.getDescriptor().getSModel();
 
           LanguageGeneratorConfiguration languageConfig = LanguageGeneratorConfiguration.newInstance(model);
@@ -142,51 +132,7 @@ public class RenameLanguageDialog extends BaseDialog {
     dispose();
   }
 
-  private List<File> getFilesToDelete(List<File> oldModelRoots, List<File> newModelRoots) {
-    if (oldModelRoots.size() == 0) return Collections.emptyList();
-    if (newModelRoots.size() == 0) return Arrays.asList(myLanguage.getSourceDir().listFiles());
 
-    File oldFile = FileUtil.getMaxContainingFile(oldModelRoots);
-    assert FileUtil.isParentUp(myLanguage.getSourceDir(), oldFile);
-    File newFile = FileUtil.getMaxContainingFile(newModelRoots);
-    assert FileUtil.isParentUp(myLanguage.getSourceDir(), newFile);
-
-    if (FileUtil.isParentUp(oldFile, newFile)) {
-      List<File> filesToRemove = new ArrayList<File>();
-      for (File f : oldModelRoots) {
-        File containingFile = FileUtil.getMaxContainingFile(newFile, f);
-        filesToRemove.add(getContainingChildren(containingFile, f));
-      }
-      return filesToRemove;
-    }
-
-    File containingFile = FileUtil.getMaxContainingFile(oldFile, newFile);
-    assert containingFile != null;
-    assert FileUtil.isParentUp(myLanguage.getSourceDir(), containingFile);
-    return Collections.singletonList(getContainingChildren(containingFile, oldFile));
-  }
-
-  private File getContainingChildren(File parent, File children) {
-    for (File child : parent.listFiles()) {
-      if (FileUtil.isParentUp(child, children)) {
-        return child;
-      }
-    }
-    return children;
-  }
-
-  private List<File> getModelOutputRoots() {
-    List<File> result = new ArrayList<File>();
-    File sourceDir = myLanguage.getSourceDir();
-
-    List<SModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(myLanguage);
-
-    for (SModelDescriptor d : inputModels) {
-      result.add(FileGenerationUtil.getDefaultOutputDir(d, sourceDir));
-    }
-
-    return result;
-  }
 
   @BaseDialog.Button(position = 1, name = "Cancel")
   public void buttonCancel() {
