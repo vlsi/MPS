@@ -84,7 +84,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testIntentionsLanguage() {
-    String res = testProject(new File("core/languageDesign/intentionsLanguage/intentionsLanguage.mpr"));
+    String res = testProject(new File("core/languageDesign/intentions/intentions.mpr"));
     assertTrue(res, res == null);
   }
 

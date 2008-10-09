@@ -134,6 +134,10 @@ public class ProjectTester {
               conf.setLanguageNamespace(l.getNamespace());
               configurations.add(conf);
             }
+          } else {
+            if (configurations.isEmpty()) {
+              throw new RuntimeException("tested project has no test configurations");
+            }
           }
 
           for (BaseGeneratorConfiguration t : configurations) {
