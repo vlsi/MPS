@@ -151,17 +151,28 @@ public class RenameLanguageDialog extends BaseDialog {
     File newFile = FileUtil.getMaxContainingFile(newModelRoots);
     assert FileUtil.isParentUp(myLanguage.getSourceDir(), newFile);
 
-    if (FileUtil.isParentUp(oldFile, newFile)) return oldModelRoots;
+    if (FileUtil.isParentUp(oldFile, newFile)) {
+      List<File> filesToRemove = new ArrayList<File>();
+      for (File f : oldModelRoots) {
+        File containingFile = FileUtil.getMaxContainingFile(newFile, f);
+        filesToRemove.add(getContainingChildren(containingFile, f));
+      }
+      return filesToRemove;
+    }
 
     File containingFile = FileUtil.getMaxContainingFile(oldFile, newFile);
     assert containingFile != null;
     assert FileUtil.isParentUp(myLanguage.getSourceDir(), containingFile);
-    for (File child : containingFile.listFiles()) {
-      if (FileUtil.isParentUp(child, oldFile)) {
-        return Collections.singletonList(child);
+    return Collections.singletonList(getContainingChildren(containingFile, oldFile));
+  }
+
+  private File getContainingChildren(File parent, File children) {
+    for (File child : parent.listFiles()) {
+      if (FileUtil.isParentUp(child, children)) {
+        return child;
       }
     }
-    return Collections.singletonList(oldFile);
+    return children;
   }
 
   private List<File> getModelOutputRoots() {
