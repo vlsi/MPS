@@ -153,7 +153,7 @@
       <fileset dir="core/languageDesign/smodelLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="core/languageDesign/structureLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="core/languageDesign/structure/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="core/languageDesign/transformation/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
@@ -250,19 +250,19 @@
     <antcall target="pack.jetbrains.mps.baseLanguage.unitTest" />
     <antcall target="pack.jetbrains.mps.baseLanguage.unitTest.runtime" />
     <antcall target="pack.jetbrains.mps.lang.actions" />
-    <antcall target="pack.jetbrains.mps.annotations" />
+    <antcall target="pack.jetbrains.mps.lang.annotations" />
     <antcall target="pack.jetbrains.mps.lang.constraints" />
     <antcall target="pack.jetbrains.mps.lang.editor" />
-    <antcall target="pack.jetbrains.mps.bootstrap.findUsagesLanguage" />
+    <antcall target="pack.jetbrains.mps.lang.findUsages" />
     <antcall target="pack.jetbrains.mps.bootstrap.helgins" />
-    <antcall target="pack.jetbrains.mps.bootstrap.intentionsLanguage" />
+    <antcall target="pack.jetbrains.mps.lang.intentions" />
     <antcall target="pack.jetbrains.mps.bootstrap.dataFlow" />
     <antcall target="pack.jetbrains.mpslite" />
     <antcall target="pack.jetbrains.mps.nanoj" />
-    <antcall target="pack.jetbrains.mps.patterns" />
-    <antcall target="pack.jetbrains.mps.quotation" />
-    <antcall target="pack.jetbrains.mps.bootstrap.pluginLanguage" />
-    <antcall target="pack.jetbrains.mps.bootstrap.sharedConcepts" />
+    <antcall target="pack.jetbrains.mps.lang.pattern" />
+    <antcall target="pack.jetbrains.mps.lang.quotation" />
+    <antcall target="pack.jetbrains.mps.lang.plugin" />
+    <antcall target="pack.jetbrains.mps.lang.sharedConcepts" />
     <antcall target="pack.jetbrains.mps.bootstrap.smodelLanguage" />
     <antcall target="pack.jetbrains.mps.ide.scriptLanguage" />
     <antcall target="pack.jetbrains.mps.lang.structure" />
