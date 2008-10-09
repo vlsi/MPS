@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -169,7 +170,13 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MultipleForeachLoop_Editor.calculateBoolean4210_0(cell);
+            }
+
+          });
         }
 
       };
@@ -201,7 +208,13 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MultipleForeachLoop_Editor.calculateBoolean4210_1(cell);
+            }
+
+          });
         }
 
       };
@@ -245,6 +258,18 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1217334619979_1217334619979(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean4210_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4210_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class loopVariableListHandler_4210_0 extends RefNodeListHandler {

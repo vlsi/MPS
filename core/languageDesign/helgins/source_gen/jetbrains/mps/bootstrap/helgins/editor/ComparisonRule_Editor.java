@@ -17,6 +17,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class ComparisonRule_Editor extends DefaultNodeEditor {
 
@@ -357,7 +358,13 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ComparisonRule_Editor.calculateBoolean2871_8(cell);
+            }
+
+          });
         }
 
       };
@@ -374,7 +381,13 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ComparisonRule_Editor.calculateBoolean2871_2(cell);
+            }
+
+          });
         }
 
       };
@@ -392,7 +405,13 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ComparisonRule_Editor.calculateBoolean2871_4(cell);
+            }
+
+          });
         }
 
       };
@@ -408,7 +427,13 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ComparisonRule_Editor.calculateBoolean2871_0(cell);
+            }
+
+          });
         }
 
       };
@@ -425,7 +450,13 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ComparisonRule_Editor.calculateBoolean2871_1(cell);
+            }
+
+          });
         }
 
       };
@@ -441,7 +472,13 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ComparisonRule_Editor.calculateBoolean2871_7(cell);
+            }
+
+          });
         }
 
       };
@@ -454,7 +491,13 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ComparisonRule_Editor.calculateBoolean2871_3(cell);
+            }
+
+          });
         }
 
       };
@@ -496,7 +539,13 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ComparisonRule_Editor.calculateBoolean2871_5(cell);
+            }
+
+          });
         }
 
       };
@@ -509,7 +558,13 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ComparisonRule_Editor.calculateBoolean2871_6(cell);
+            }
+
+          });
         }
 
       };
@@ -563,6 +618,60 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1201607970985_1201607970985(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean2871_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2871_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2871_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2871_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2871_4(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2871_5(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2871_6(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2871_7(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2871_8(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
 }

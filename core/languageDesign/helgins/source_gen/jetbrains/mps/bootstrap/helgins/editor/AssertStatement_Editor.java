@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class AssertStatement_Editor extends DefaultNodeEditor {
 
@@ -206,7 +207,13 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AssertStatement_Editor.calculateBoolean7459_0(cell);
+            }
+
+          });
         }
 
       };
@@ -236,6 +243,12 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1215434142595_1215434142595(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean7459_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
 }

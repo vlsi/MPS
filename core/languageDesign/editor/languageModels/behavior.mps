@@ -3517,7 +3517,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216378461652">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216378465264">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216378466828">
-            <property name="value" value="jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider" />
+            <property name="value" value="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
           </node>
         </node>
       </node>

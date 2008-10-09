@@ -189,7 +189,13 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return GivetypeStatement_Editor.calculateBoolean0808_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -231,6 +237,12 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
   private static Color calculateColor0808_0(EditorCell cell) {
     Color result;
     result = MPSColors.red;
+    return result;
+  }
+
+  public static Boolean calculateBoolean0808_0(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

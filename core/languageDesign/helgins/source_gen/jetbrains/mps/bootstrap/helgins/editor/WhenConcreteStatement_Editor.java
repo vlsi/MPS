@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
 
@@ -241,7 +242,13 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return WhenConcreteStatement_Editor.calculateBoolean1140_0(cell);
+            }
+
+          });
         }
 
       };
@@ -298,6 +305,12 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1215440899256_1215440899256(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean1140_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
 }

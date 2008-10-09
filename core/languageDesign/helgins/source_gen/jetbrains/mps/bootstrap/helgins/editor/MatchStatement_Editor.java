@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -275,7 +276,13 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchStatement_Editor.calculateBoolean5822_7(cell);
+            }
+
+          });
         }
 
       };
@@ -319,7 +326,13 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchStatement_Editor.calculateBoolean5822_5(cell);
+            }
+
+          });
         }
 
       };
@@ -332,7 +345,13 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchStatement_Editor.calculateBoolean5822_6(cell);
+            }
+
+          });
         }
 
       };
@@ -345,7 +364,13 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchStatement_Editor.calculateBoolean5822_4(cell);
+            }
+
+          });
         }
 
       };
@@ -358,7 +383,13 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchStatement_Editor.calculateBoolean5822_2(cell);
+            }
+
+          });
         }
 
       };
@@ -371,7 +402,13 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchStatement_Editor.calculateBoolean5822_1(cell);
+            }
+
+          });
         }
 
       };
@@ -393,7 +430,13 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchStatement_Editor.calculateBoolean5822_3(cell);
+            }
+
+          });
         }
 
       };
@@ -409,7 +452,13 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchStatement_Editor.calculateBoolean5822_0(cell);
+            }
+
+          });
         }
 
       };
@@ -427,7 +476,13 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchStatement_Editor.calculateBoolean5822_8(cell);
+            }
+
+          });
         }
 
       };
@@ -479,6 +534,60 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1215446257385_1215446257385(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean5822_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5822_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5822_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5822_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5822_4(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5822_5(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5822_6(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5822_7(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5822_8(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class itemListHandler_5822_0 extends RefNodeListHandler {

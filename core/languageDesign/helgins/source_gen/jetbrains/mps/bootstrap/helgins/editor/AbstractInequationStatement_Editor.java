@@ -314,7 +314,13 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return AbstractInequationStatement_Editor.calculateBoolean9248_0(cell);
+            }
+
+          });
         }
 
       };
@@ -375,6 +381,12 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   private static Integer calculateFontSize9248_0(EditorCell cell) {
     int result;
     result = 6;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9248_0(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 
