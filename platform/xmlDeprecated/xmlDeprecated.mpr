@@ -11,7 +11,9 @@
     </projectLanguages>
     <projectDevkits />
     <libraries />
-    <genConfs />
+    <genConfs>
+      <genConfLanguage name="xmlDeprecated" language="jetbrains.mps.xml.deprecated" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="xml" />

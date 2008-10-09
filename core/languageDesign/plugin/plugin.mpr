@@ -7,7 +7,7 @@
   <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
     <projectSolutions />
     <projectLanguages>
-      <languagePath path="${project}\pluginLanguage.mpl" />
+      <languagePath path="${project}\plugin.mpl" />
     </projectLanguages>
     <projectDevkits />
     <libraries />
