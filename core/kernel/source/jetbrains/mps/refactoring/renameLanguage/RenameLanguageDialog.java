@@ -11,9 +11,12 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.transformation.TemplateLanguageGenerationUtil;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
 import javax.swing.*;
@@ -90,6 +93,7 @@ public class RenameLanguageDialog extends BaseDialog {
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOk() {
 
+    final List<File>[] oldModelRoots = new List[]{null};
     boolean renamed = ModelAccess.instance().runWriteActionInCommand(new Computable<Boolean>() {
       public Boolean compute() {
         final String fqName = myLanguageNameField.getText();
@@ -99,6 +103,7 @@ public class RenameLanguageDialog extends BaseDialog {
           return false;
         }
 
+        oldModelRoots[0] = getFilesToDelete();
         new LanguageRenamer(myLanguage, fqName).rename();
         return true;
       }
@@ -112,7 +117,7 @@ public class RenameLanguageDialog extends BaseDialog {
       final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
       GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
         public GenParameters compute() {
-//          MPSVCSManager.getInstance(myProject).deleteFilesAndRemoveFromVcs(getFilesToDelete());
+          MPSVCSManager.getInstance(myProject).deleteFilesAndRemoveFromVcs(oldModelRoots[0]);
 
           SModel model = AuxilaryRuntimeModel.getDescriptor().getSModel();
 
@@ -138,11 +143,13 @@ public class RenameLanguageDialog extends BaseDialog {
   private List<File> getFilesToDelete() {
     List<File> result = new ArrayList<File>();
     File sourceDir = myLanguage.getSourceDir();
-    List<SModelDescriptor> sModelDescriptorList = myLanguage.getOwnModelDescriptors();
-    for (SModelDescriptor modelDescriptor : sModelDescriptorList) {
-      File modelOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor.getSModel(), sourceDir);
-      result.add(modelOutputDir);
+
+    List<SModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(myLanguage);
+
+    for (SModelDescriptor d : inputModels) {
+      result.add(FileGenerationUtil.getDefaultOutputDir(d, sourceDir));
     }
+
     return result;
   }
 

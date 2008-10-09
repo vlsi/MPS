@@ -52,10 +52,19 @@ public class FileGenerationUtil {
     return ok;
   }
 
-  public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
-    String packageName = JavaNameUtil.packageNameForModelUID(inputModel.getSModelReference());
+  public static File getDefaultOutputDir(SModelDescriptor inputModelDescriptor, File outputRootDir) {
+    SModelReference reference = inputModelDescriptor.getSModelReference();
+    return getDefaultOutputDir(reference, outputRootDir);
+  }
+
+  private static File getDefaultOutputDir(SModelReference reference, File outputRootDir) {
+    String packageName = JavaNameUtil.packageNameForModelUID(reference);
     File file = new File(outputRootDir, packageName.replace('.', File.separatorChar));
     return file;
+  }
+
+  public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
+    return getDefaultOutputDir(inputModel.getSModelReference(), outputRootDir);
   }
 
   public static boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
