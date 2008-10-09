@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class ToListOperation_Editor extends DefaultNodeEditor {
@@ -32,7 +33,13 @@ public class ToListOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ToListOperation_Editor.calculateBoolean1502_0(cell);
+            }
+
+          });
         }
 
       };
@@ -41,6 +48,12 @@ public class ToListOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1151703486466_1151703486466(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean1502_0(EditorCell cell) {
+    boolean result;
+    result = true;
+    return result;
   }
 
 }

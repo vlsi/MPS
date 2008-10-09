@@ -29,7 +29,13 @@ public class Collections_Style_StyleSheet {
   public static Style getAngleBracket(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.SELECTABLE, false);
+        this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return Collections_Style_StyleSheet.calculateBoolean6167_0(cell);
+          }
+
+        });
       }
 
     };
@@ -60,6 +66,12 @@ public class Collections_Style_StyleSheet {
   private static Integer calculateFontStyle6167_0(EditorCell cell) {
     int result;
     result = MPSFonts.BOLD;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6167_0(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

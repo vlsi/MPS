@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -83,7 +84,13 @@ public class MapInitializer_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MapInitializer_Editor.calculateBoolean4662_0(cell);
+            }
+
+          });
         }
 
       };
@@ -116,6 +123,12 @@ public class MapInitializer_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNodeList_entries_1206657763839(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean4662_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class entriesListHandler_4662_0 extends RefNodeListHandler {
