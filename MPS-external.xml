@@ -108,19 +108,19 @@
       <fileset dir="core/languageDesign/core/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="core/languageDesign/actions/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="core/languageDesign/actionsLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="core/languageDesign/editor/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="core/languageDesign/editorLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="core/languageDesign/annotations/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="core/languageDesign/constraints/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="core/languageDesign/constraintsLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="core/languageDesign/editor/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="core/languageDesign/editorLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="core/languageDesign/findUsagesLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
@@ -153,7 +153,7 @@
       <fileset dir="core/languageDesign/smodelLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="core/languageDesign/structure/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="core/languageDesign/structureLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="core/languageDesign/transformation/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
@@ -249,10 +249,10 @@
     <antcall target="pack.jetbrains.mps.baseLanguage.classifiers" />
     <antcall target="pack.jetbrains.mps.baseLanguage.unitTest" />
     <antcall target="pack.jetbrains.mps.baseLanguage.unitTest.runtime" />
-    <antcall target="pack.jetbrains.mps.bootstrap.actionsLanguage" />
+    <antcall target="pack.jetbrains.mps.lang.actions" />
     <antcall target="pack.jetbrains.mps.annotations" />
-    <antcall target="pack.jetbrains.mps.bootstrap.constraintsLanguage" />
-    <antcall target="pack.jetbrains.mps.bootstrap.editorLanguage" />
+    <antcall target="pack.jetbrains.mps.lang.constraints" />
+    <antcall target="pack.jetbrains.mps.lang.editor" />
     <antcall target="pack.jetbrains.mps.bootstrap.findUsagesLanguage" />
     <antcall target="pack.jetbrains.mps.bootstrap.helgins" />
     <antcall target="pack.jetbrains.mps.bootstrap.intentionsLanguage" />
@@ -267,7 +267,7 @@
     <antcall target="pack.jetbrains.mps.ide.scriptLanguage" />
     <antcall target="pack.jetbrains.mps.lang.structure" />
     <antcall target="pack.jetbrains.mps.lang.core" />
-    <antcall target="pack.jetbrains.mps.logging.refactoring" />
+    <antcall target="pack.jetbrains.mps.lang.refactoring" />
     <antcall target="pack.jetbrains.mps.transformation.TLBase" />
     <antcall target="pack.jetbrains.mps.transformationTest" />
     <antcall target="pack.jetbrains.mps.transformationTest.runtime" />
