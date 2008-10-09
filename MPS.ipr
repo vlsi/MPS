@@ -974,7 +974,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/money.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/money.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/money/runtime/moneyRuntime.iml" group="core/baseLanguage/money" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" filepath="$PROJECT_DIR$/core/languageDesign/mps-lite/mps-lite.iml" group="core/languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/patternLanguage/patternLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/patternLanguage/patternLanguage.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/pattern/pattern.iml" filepath="$PROJECT_DIR$/core/languageDesign/pattern/pattern.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/plugin/plugin.iml" filepath="$PROJECT_DIR$/core/languageDesign/plugin/plugin.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/projectLanguage/projectLanguage.iml" filepath="$PROJECT_DIR$/core/projectLanguage/projectLanguage.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/quickQueryLanguage/quickQueryLanguage.iml" filepath="$PROJECT_DIR$/platform/quickQueryLanguage/quickQueryLanguage.iml" group="platform" />

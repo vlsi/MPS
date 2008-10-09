@@ -32,7 +32,7 @@
     <orderEntry type="module" module-name="transformation" exported="" />
     <orderEntry type="module" module-name="core" exported="" />
     <orderEntry type="module" module-name="collections" exported="" />
-    <orderEntry type="module" module-name="patternLanguage" exported="" />
+    <orderEntry type="module" module-name="pattern" exported="" />
     <orderEntry type="module" module-name="quotation" exported="" />
     <orderEntry type="module" module-name="annotations" exported="" />
     <orderEntry type="module" module-name="projectLanguage" exported="" />
