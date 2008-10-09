@@ -416,15 +416,15 @@
   <target name="pack.jetbrains.mps.bootstrap.constraintsLanguage">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.tmp/module" />
-    <mkdir dir="core/languageDesign/constraintsLanguage/classes" />
+    <mkdir dir="core/languageDesign/constraints/classes" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.tmp/module">
-      <fileset file="core/languageDesign/constraintsLanguage/constraintsLanguage.mpl" />
+      <fileset file="core/languageDesign/constraints/constraints.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.tmp/module">
-      <fileset dir="core/languageDesign/constraintsLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="core/languageDesign/constraints" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.tmp">
-      <fileset dir="core/languageDesign/constraintsLanguage/classes" />
+      <fileset dir="core/languageDesign/constraints/classes" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.constraintsLanguage.tmp" />
