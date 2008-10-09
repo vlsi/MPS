@@ -496,7 +496,7 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.tmp/module" />
     <mkdir dir="core/languageDesign/intentionsLanguage/classes" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.tmp/module">
-      <fileset file="core/languageDesign/intentionsLanguage/intentionsLanguage.mpl" />
+      <fileset file="core/languageDesign/intentionsLanguage/intentions.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.intentionsLanguage.tmp/module">
       <fileset dir="core/languageDesign/intentionsLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />

@@ -967,7 +967,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" filepath="$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" filepath="$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/core/idea-patch/idea-patch.iml" filepath="$PROJECT_DIR$/core/idea-patch/idea-patch.iml" group="core/kernel" />
-      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/intentionsLanguage/intentionsLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/intentionsLanguage/intentionsLanguage.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/intentionsLanguage/intentions.iml" filepath="$PROJECT_DIR$/core/languageDesign/intentionsLanguage/intentions.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/kernel.iml" filepath="$PROJECT_DIR$/core/kernel/kernel.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/lair1/lair1.iml" filepath="$PROJECT_DIR$/app/mf/lair1/lair1.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/platform/logging/logging.iml" filepath="$PROJECT_DIR$/platform/logging/logging.iml" group="platform" />

@@ -34,6 +34,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
   <maxImportIndex value="42" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.bootstrap.helgins.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -57,7 +58,7 @@
   <import index="31" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.bootstrap.helgins.dependencies)" version="-1" />
   <import index="32" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.quotation.structure)" version="-1" />
   <import index="34" modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
-  <import index="35" modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.bootstrap.intentionsLanguage.structure)" version="-1" />
+  <import index="35" modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
   <import index="36" modelUID="f:java_stub#jetbrains.mps.intentions(jetbrains.mps.intentions@java_stub)" version="-1" />
   <import index="37" modelUID="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.bootstrap.helgins.behavior)" version="-1" />
   <import index="38" modelUID="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.bootstrap.smodelLanguage.behavior)" version="-1" />

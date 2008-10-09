@@ -7,16 +7,23 @@
   <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
     <projectSolutions />
     <projectLanguages>
-      <languagePath path="${project}\intentionsLanguage.mpl" />
+      <languagePath path="${project}\intentions.mpl" />
     </projectLanguages>
     <projectDevkits />
     <libraries />
     <genConfs>
-      <genConfLanguage name="intentions language" language="jetbrains.mps.bootstrap.intentionsLanguage" />
+      <genConfLanguage name="intentions language" language="jetbrains.mps.lang.intentions" />
     </genConfs>
+  </component>
+  <component name="ProjectDetails">
+    <option name="projectName" value="intentionsLanguage.mpr" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myVersion" value="124" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
     <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
 </project>

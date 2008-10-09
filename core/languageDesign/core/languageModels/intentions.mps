@@ -2,11 +2,11 @@
 <model modelUID="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)">
   <persistence version="3" />
   <refactoringHistory />
-  <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.bootstrap.intentionsLanguage)" />
+  <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.bootstrap.sharedConcepts)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.bootstrap.intentionsLanguage.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -22,17 +22,18 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1209383918929">
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1209383918929">
     <property name="name" value="AddMissingLanguageImport" />
     <property name="isErrorIntention" value="true" />
     <link role="forConcept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1209383918930">
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1209383918930">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209383918931">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209383934311">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1209383938673">
@@ -42,7 +43,7 @@
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209383946791">
                 <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1209383946445">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1209383940129" />
+                  <node role="leftExpression" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1209383940129" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209383950488">
                   <link role="baseMethodDeclaration" targetNodeId="2.~SNode.getLanguageNamespace():java.lang.String" resolveInfo="getLanguageNamespace" />
@@ -56,7 +57,7 @@
         </node>
       </node>
     </node>
-    <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1209383918932">
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1209383918932">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209383918933">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209383995632">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209384001893">
@@ -76,7 +77,7 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222268400854">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209384011866">
                   <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1209384010708">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1209384007485" />
+                    <node role="leftExpression" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1209384007485" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222268391701">
                     <link role="baseMethodDeclaration" targetNodeId="2.~SNode.getLanguage(jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.Language" resolveInfo="getLanguage" />
@@ -97,14 +98,14 @@
         </node>
       </node>
     </node>
-    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IsApplicableBlock" id="1209383961978">
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1209383961978">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209383961979">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209383977800">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1209383990097">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1209383991428" />
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209383983275">
               <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1209383982961">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1209383977801" />
+                <node role="leftExpression" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1209383977801" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209383986935">
                 <link role="baseMethodDeclaration" targetNodeId="2.~SNode.getLanguage(jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.Language" resolveInfo="getLanguage" />
@@ -121,11 +122,11 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration" id="1209384963618">
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1209384963618">
     <property name="name" value="AddMissingDependency" />
     <property name="isErrorIntention" value="true" />
     <link role="forConcept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="descriptionFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.DescriptionBlock" id="1209384963619">
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1209384963619">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209384963620">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1209384987919">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1209384987920">
@@ -144,7 +145,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1209384972498">
           <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209384979085">
             <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1209384977878">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1209384975789" />
+              <node role="leftExpression" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1209384975789" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209384982627">
               <link role="baseMethodDeclaration" targetNodeId="2.~SNode.getReferences():java.util.List" resolveInfo="getReferences" />
@@ -254,7 +255,7 @@
         </node>
       </node>
     </node>
-    <node role="executeFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ExecuteBlock" id="1209384963621">
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1209384963621">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209384963622">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1209385300976">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1209385300977">
@@ -273,7 +274,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1209385300982">
           <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209385300983">
             <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1209385300984">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1209385300985" />
+              <node role="leftExpression" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1209385300985" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209385300986">
               <link role="baseMethodDeclaration" targetNodeId="2.~SNode.getReferences():java.util.List" resolveInfo="getReferences" />
@@ -395,7 +396,7 @@
         </node>
       </node>
     </node>
-    <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IsApplicableBlock" id="1209385272886">
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1209385272886">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209385272887">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1209385285846">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1209385285847">
@@ -414,7 +415,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1209385276361">
           <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209385276362">
             <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1209385276363">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.ConceptFunctionParameter_node" id="1209385276364" />
+              <node role="leftExpression" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1209385276364" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209385276365">
               <link role="baseMethodDeclaration" targetNodeId="2.~SNode.getReferences():java.util.List" resolveInfo="getReferences" />
