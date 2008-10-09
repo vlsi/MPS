@@ -366,7 +366,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1183618936210(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
-    if (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.constraintsLanguage.structure.SuperNodeExpression")) {
+    if (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.lang.constraints.structure.SuperNodeExpression")) {
       return ConceptMethodDeclaration_Behavior.call_getSuperCallerMethodName_1213877345551(SLinkOperations.getTarget(_context.getNode(), "conceptMethodDeclaration", false));
     } else
     {
@@ -375,7 +375,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1194958637809(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode conceptBehavior = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", false, false);
+    SNode conceptBehavior = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.constraints.structure.ConceptBehavior", false, false);
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(conceptBehavior, "concept", false));
   }
 
@@ -542,7 +542,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1194958602508(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
-    return SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.constraintsLanguage.structure.SuperNodeExpression");
+    return SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.lang.constraints.structure.SuperNodeExpression");
   }
 
   public static boolean ifMacro_Condition_1195001009876(final IOperationContext operationContext, final IfMacroContext _context) {

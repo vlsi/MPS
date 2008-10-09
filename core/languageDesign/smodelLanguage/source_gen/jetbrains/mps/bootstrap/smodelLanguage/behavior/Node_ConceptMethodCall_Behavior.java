@@ -66,7 +66,7 @@ public class Node_ConceptMethodCall_Behavior {
       }
 
       public boolean isThisExpression(SNode node) {
-        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression");
+        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.constraints.structure.ThisNodeExpression");
       }
 
     };
