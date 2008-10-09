@@ -434,21 +434,21 @@
   <target name="pack.jetbrains.mps.bootstrap.editorLanguage">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.tmp/module" />
-    <mkdir dir="core/languageDesign/editorLanguage/classes" />
+    <mkdir dir="core/languageDesign/editor/classes" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.tmp/module">
-      <fileset file="core/languageDesign/editorLanguage/editorLanguage.mpl" />
+      <fileset file="core/languageDesign/editor/editor.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.tmp/module">
-      <fileset dir="core/languageDesign/editorLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="core/languageDesign/editor" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.tmp">
-      <fileset dir="core/languageDesign/editorLanguage/classes" />
+      <fileset dir="core/languageDesign/editor/classes" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.tmp" />
     </jar>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="core/languageDesign/editorLanguage/classes" />
+      <fileset dir="core/languageDesign/editor/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.editorLanguage.tmp" />
   </target>
