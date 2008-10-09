@@ -9,15 +9,20 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.refactoring.renameModel.ModelRenamer;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
 import javax.swing.*;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.util.*;
+import java.io.File;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
@@ -107,7 +112,7 @@ public class RenameLanguageDialog extends BaseDialog {
       final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
       GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
         public GenParameters compute() {
-//          FileUtil.clear(myLanguage.getSourceDir());
+          MPSVCSManager.getInstance(myProject).deleteFilesAndRemoveFromVcs(getFilesToDelete());
 
           SModel model = AuxilaryRuntimeModel.getDescriptor().getSModel();
 
@@ -128,6 +133,17 @@ public class RenameLanguageDialog extends BaseDialog {
     }
 
     dispose();
+  }
+
+  private List<File> getFilesToDelete() {
+    List<File> result = new ArrayList<File>();
+    File sourceDir = myLanguage.getSourceDir();
+    List<SModelDescriptor> sModelDescriptorList = myLanguage.getOwnModelDescriptors();
+    for (SModelDescriptor modelDescriptor : sModelDescriptorList) {
+      File modelOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor.getSModel(), sourceDir);
+      result.add(modelOutputDir);
+    }
+    return result;
   }
 
 

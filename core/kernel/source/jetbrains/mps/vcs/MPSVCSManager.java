@@ -66,6 +66,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean deleteFilesAndRemoveFromVcs(List<File> files) {
+    if (files.size() == 0) return true;
     final List<File> copiedFileList = new ArrayList<File>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
@@ -76,6 +77,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean deleteVirtualFilesAndRemoveFromVcs(List<VirtualFile> files) {
+    if (files.size() == 0) return true;
     final HashSet<VirtualFile> filesCopy = new HashSet<VirtualFile>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
@@ -86,6 +88,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean addFilesToVcs(List<File> files) {
+    if (files.size() == 0) return true;
     final List<File> copiedFileList = new ArrayList<File>(files); //a list "files" can be modified by caller before invokeLater calls its runnable
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
@@ -96,6 +99,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean addVirtualFilesToVcs(List<VirtualFile> files) {
+    if (files.size() == 0) return true;
     final HashSet<VirtualFile> filesCopy = new HashSet<VirtualFile>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
