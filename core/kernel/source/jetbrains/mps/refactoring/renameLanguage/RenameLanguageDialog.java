@@ -6,17 +6,12 @@ import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.*;
-import jetbrains.mps.refactoring.renameModel.ModelRenamer;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.transformation.TemplateLanguageGenerationUtil;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
 import javax.swing.*;
@@ -92,8 +87,9 @@ public class RenameLanguageDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOk() {
+    final boolean needToRegenerate = myRegenerateLanguage.getModel().isSelected();
 
-    final List<File>[] oldModelRoots = new List[]{null};
+    final List<File>[] oldModelRootsContainer = new List[]{null};
     boolean renamed = ModelAccess.instance().runWriteActionInCommand(new Computable<Boolean>() {
       public Boolean compute() {
         final String fqName = myLanguageNameField.getText();
@@ -103,7 +99,9 @@ public class RenameLanguageDialog extends BaseDialog {
           return false;
         }
 
-        oldModelRoots[0] = getFilesToDelete();
+        if (needToRegenerate) {
+          oldModelRootsContainer[0] = getModelOutputRoots();
+        }
         new LanguageRenamer(myLanguage, fqName).rename();
         return true;
       }
@@ -113,11 +111,15 @@ public class RenameLanguageDialog extends BaseDialog {
       return;
     }
 
-    if (myRegenerateLanguage.getModel().isSelected()) {
+    if (needToRegenerate) {
       final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
       GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
         public GenParameters compute() {
-          MPSVCSManager.getInstance(myProject).deleteFilesAndRemoveFromVcs(oldModelRoots[0]);
+          if (oldModelRootsContainer[0] != null) {
+            List<File> oldModelRoots = oldModelRootsContainer[0];
+            List<File> newModelRoots = getModelOutputRoots();
+            MPSVCSManager.getInstance(myProject).deleteFilesAndRemoveFromVcs(getFilesToDelete(oldModelRoots, newModelRoots));
+          }
 
           SModel model = AuxilaryRuntimeModel.getDescriptor().getSModel();
 
@@ -140,7 +142,29 @@ public class RenameLanguageDialog extends BaseDialog {
     dispose();
   }
 
-  private List<File> getFilesToDelete() {
+  private List<File> getFilesToDelete(List<File> oldModelRoots, List<File> newModelRoots) {
+    if (oldModelRoots.size() == 0) return Collections.emptyList();
+    if (newModelRoots.size() == 0) return Arrays.asList(myLanguage.getSourceDir().listFiles());
+
+    File oldFile = FileUtil.getMaxContainingFile(oldModelRoots);
+    assert FileUtil.isParentUp(myLanguage.getSourceDir(), oldFile);
+    File newFile = FileUtil.getMaxContainingFile(newModelRoots);
+    assert FileUtil.isParentUp(myLanguage.getSourceDir(), newFile);
+
+    if (FileUtil.isParentUp(oldFile, newFile)) return oldModelRoots;
+
+    File containingFile = FileUtil.getMaxContainingFile(oldFile, newFile);
+    assert containingFile != null;
+    assert FileUtil.isParentUp(myLanguage.getSourceDir(), containingFile);
+    for (File child : containingFile.listFiles()) {
+      if (FileUtil.isParentUp(child, oldFile)) {
+        return Collections.singletonList(child);
+      }
+    }
+    return Collections.singletonList(oldFile);
+  }
+
+  private List<File> getModelOutputRoots() {
     List<File> result = new ArrayList<File>();
     File sourceDir = myLanguage.getSourceDir();
 
@@ -152,7 +176,6 @@ public class RenameLanguageDialog extends BaseDialog {
 
     return result;
   }
-
 
   @BaseDialog.Button(position = 1, name = "Cancel")
   public void buttonCancel() {

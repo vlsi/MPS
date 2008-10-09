@@ -8,6 +8,8 @@ import java.util.jar.JarOutputStream;
 import java.util.jar.Manifest;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+import java.util.List;
+import java.util.Iterator;
 import java.net.URL;
 import java.net.URISyntaxException;
 
@@ -347,6 +349,48 @@ public class FileUtil {
     }
 
     return false;
+  }
+
+  public static File getMaxContainingFile(List<File> files) {
+    if (files.size() == 0) return null;
+    Iterator<File> fileIterator = files.iterator();
+    File max = fileIterator.next();
+    while (fileIterator.hasNext()) {
+      if (max == null) return null;
+      max = getMaxContainingFile(max, fileIterator.next());
+    }
+
+    return max;
+  }
+
+  public static File getMaxContainingFile(File file1, File file2) {
+    if (isParentUp(file1, file2)) return file1;
+    if (isParentUp(file2, file1)) return file2;
+
+    File parent1 = file1.getParentFile();
+    File parent2 = file2.getParentFile();
+
+    if ((parent1 == null) && (parent2 == null)) {
+      return null;
+    } else if (parent1 == null) {
+      return getMaxContainingFile(file1, parent2);
+    } else if (parent2 == null) {
+      return getMaxContainingFile(parent1, file2);
+    }
+
+    return getMaxContainingFile(parent1, parent2);
+  }
+
+  public static boolean isParentUp(File parent, File child) {
+    if (!parent.isDirectory()) {
+      return false;
+    }
+
+    if (parent.getPath().equals(child.getPath())) return true;
+
+    File parentOfChild = child.getParentFile();
+    if (parentOfChild == null) return false;
+    return isParentUp(parent, parentOfChild);
   }
 
   public static void main(String[] args) {
