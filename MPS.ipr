@@ -990,7 +990,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/springframework/springframework.iml" filepath="$PROJECT_DIR$/platform/springframework/springframework.iml" group="platform/spring-framework" />
       <module fileurl="file://$PROJECT_DIR$/platform/springframework/runtime/springframework-runtime.iml" filepath="$PROJECT_DIR$/platform/springframework/runtime/springframework-runtime.iml" group="platform/spring-framework" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/strings/strings.iml" filepath="$PROJECT_DIR$/core/baseLanguage/strings/strings.iml" group="core/baseLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/structureLanguage/structureLanguage.iml" filepath="$PROJECT_DIR$/core/languageDesign/structureLanguage/structureLanguage.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/structure/structure.iml" filepath="$PROJECT_DIR$/core/languageDesign/structure/structure.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/testMaterial/testRefactoring/testRefactoring.iml" filepath="$PROJECT_DIR$/testMaterial/testRefactoring/testRefactoring.iml" group="core/languageDesign/refactoring" />
       <module fileurl="file://$PROJECT_DIR$/testMaterial/testRenameLanguage/testRenameLanguage.iml" filepath="$PROJECT_DIR$/testMaterial/testRenameLanguage/testRenameLanguage.iml" group="core/languageDesign/refactoring" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />

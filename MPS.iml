@@ -26,7 +26,7 @@
     <orderEntry type="module" module-name="scriptLanguage" exported="" />
     <orderEntry type="module" module-name="sharedConcepts" exported="" />
     <orderEntry type="module" module-name="smodeLanguage" exported="" />
-    <orderEntry type="module" module-name="structureLanguage" exported="" />
+    <orderEntry type="module" module-name="structure" exported="" />
     <orderEntry type="module" module-name="intentionsLanguage" exported="" />
     <orderEntry type="module" module-name="findUsagesLanguage" exported="" />
     <orderEntry type="module" module-name="refactoringLanguage" exported="" />
