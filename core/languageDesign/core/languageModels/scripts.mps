@@ -3,7 +3,7 @@
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.logging.refactoring)" />
+  <language namespace="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
@@ -13,7 +13,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.logging.refactoring.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
@@ -33,6 +33,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="0" />
   <maxImportIndex value="37" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -49,35 +50,35 @@
   <import index="35" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="36" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
-  <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198076144993">
+  <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1198076144993">
     <property name="name" value="MoveNodes" />
     <property name="userFriendlyName" value="Move Nodes" />
     <link role="applicableConcept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="internalArguments" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1198079405212">
+    <node role="internalArguments" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument" id="1198079405212">
       <property name="name" value="role" />
       <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198079409620">
         <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
       </node>
     </node>
-    <node role="internalArguments" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1213099173577">
+    <node role="internalArguments" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument" id="1213099173577">
       <property name="name" value="nodeToOpen" />
       <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213099184774">
         <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
       </node>
     </node>
-    <node role="arguments" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1198076162946">
+    <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1198076162946">
       <property name="name" value="target" />
       <property name="presentation" value="choose target" />
       <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198076213171">
         <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
       </node>
-      <node role="chooseComponentClause" type="jetbrains.mps.logging.refactoring.structure.ChooseComponentClause" id="1198076218734">
+      <node role="chooseComponentClause" type="jetbrains.mps.lang.refactoring.structure.ChooseComponentClause" id="1198076218734">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198076218735">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198076221377">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213019919921">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213019919923">
                 <link role="baseMethodDeclaration" targetNodeId="8.~ChooseNodeOrModelComponent.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,java.lang.String,boolean,boolean)" resolveInfo="ChooseNodeOrModelComponent" />
-                <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.OperationContextExpression" id="1215096163381" />
+                <node role="actualArgument" type="jetbrains.mps.lang.refactoring.structure.OperationContextExpression" id="1215096163381" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198076884972" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198076889505">
                   <property name="value" value="true" />
@@ -91,7 +92,7 @@
         </node>
       </node>
     </node>
-    <node role="isApplicableClause" type="jetbrains.mps.logging.refactoring.structure.IsApplicableClause" id="1198077595126">
+    <node role="isApplicableClause" type="jetbrains.mps.lang.refactoring.structure.IsApplicableClause" id="1198077595126">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198077595127">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198077659039">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198077659040">
@@ -102,7 +103,7 @@
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207782886125">
-            <node role="operand" type="jetbrains.mps.logging.refactoring.structure.NodesExpression" id="1215086367921" />
+            <node role="operand" type="jetbrains.mps.lang.refactoring.structure.NodesExpression" id="1215086367921" />
             <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsEmptyOperation" id="1215086378675" />
           </node>
         </node>
@@ -115,7 +116,7 @@
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1198077958401">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198077958402">
                     <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198077958403" />
-                    <node role="expression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198077963030">
+                    <node role="expression" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198077963030">
                       <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
                     </node>
                   </node>
@@ -393,7 +394,7 @@
                   </node>
                 </node>
               </node>
-              <node role="iterable" type="jetbrains.mps.logging.refactoring.structure.NodesExpression" id="1215086389707" />
+              <node role="iterable" type="jetbrains.mps.lang.refactoring.structure.NodesExpression" id="1215086389707" />
               <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198078082613">
                 <property name="name" value="node" />
                 <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198078086943" />
@@ -409,7 +410,7 @@
             <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198078059755">
               <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198078007813">
+            <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198078007813">
               <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
             </node>
           </node>
@@ -444,7 +445,7 @@
                   </node>
                 </node>
               </node>
-              <node role="iterable" type="jetbrains.mps.logging.refactoring.structure.NodesExpression" id="1215086399992" />
+              <node role="iterable" type="jetbrains.mps.lang.refactoring.structure.NodesExpression" id="1215086399992" />
               <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198077826667">
                 <property name="name" value="node" />
                 <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198078215778" />
@@ -460,7 +461,7 @@
             <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202822847908">
               <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198077802014">
+            <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198077802014">
               <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
             </node>
           </node>
@@ -472,13 +473,13 @@
         </node>
       </node>
     </node>
-    <node role="doRefactorClause" type="jetbrains.mps.logging.refactoring.structure.DoRefactorClause" id="1198082838885">
+    <node role="doRefactorClause" type="jetbrains.mps.lang.refactoring.structure.DoRefactorClause" id="1198082838885">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198082838886">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198082944516">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198082944517">
             <property name="name" value="nodes" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1198082944518" />
-            <node role="initializer" type="jetbrains.mps.logging.refactoring.structure.NodesExpression" id="1215001262250" />
+            <node role="initializer" type="jetbrains.mps.lang.refactoring.structure.NodesExpression" id="1215001262250" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199555206075">
@@ -510,7 +511,7 @@
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202822987264">
                         <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
                       </node>
-                      <node role="expression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1202822987265">
+                      <node role="expression" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1202822987265">
                         <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
                       </node>
                     </node>
@@ -526,7 +527,7 @@
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199627188715">
                   <link role="variableDeclaration" targetNodeId="1199625160586" resolveInfo="movedNodes" />
                 </node>
-                <node role="rValue" type="jetbrains.mps.logging.refactoring.structure.MoveNodesToModelExpression" id="1199627194735">
+                <node role="rValue" type="jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression" id="1199627194735">
                   <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199627194736">
                     <link role="variableDeclaration" targetNodeId="1198082944517" resolveInfo="nodes" />
                   </node>
@@ -541,7 +542,7 @@
             <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202822858676">
               <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198082991405">
+            <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198082991405">
               <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
             </node>
           </node>
@@ -553,7 +554,7 @@
                 <property name="name" value="targetNode" />
                 <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213027913404" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1213027913405">
-                  <node role="expression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1213027913406">
+                  <node role="expression" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1213027913406">
                     <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
                   </node>
                   <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1213027913407" />
@@ -565,7 +566,7 @@
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199627204242">
                   <link role="variableDeclaration" targetNodeId="1199625160586" resolveInfo="movedNodes" />
                 </node>
-                <node role="rValue" type="jetbrains.mps.logging.refactoring.structure.MoveNodesToNodeExpression" id="1199627210637">
+                <node role="rValue" type="jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression" id="1199627210637">
                   <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199627210638">
                     <link role="variableDeclaration" targetNodeId="1198082944517" resolveInfo="nodes" />
                   </node>
@@ -614,7 +615,7 @@
             <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198083029909">
               <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198083021530">
+            <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198083021530">
               <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
             </node>
           </node>
@@ -648,7 +649,7 @@
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213704059807">
                   <link role="classifier" targetNodeId="18.~MPSProject" resolveInfo="MPSProject" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.logging.refactoring.structure.ProjectExpression" id="1215086410339" />
+                <node role="initializer" type="jetbrains.mps.lang.refactoring.structure.ProjectExpression" id="1215086410339" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213704091027">
@@ -683,7 +684,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1213099320685" />
                         </node>
-                        <node role="lValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1213099312701">
+                        <node role="lValue" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1213099312701">
                           <link role="argument" targetNodeId="1213099173577" resolveInfo="nodeToOpen" />
                         </node>
                       </node>
@@ -714,26 +715,26 @@
         </node>
       </node>
     </node>
-    <node role="updateModelClause" type="jetbrains.mps.logging.refactoring.structure.UpdateModelClause" id="1198082847528">
+    <node role="updateModelClause" type="jetbrains.mps.lang.refactoring.structure.UpdateModelClause" id="1198082847528">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198082847529">
-        <node role="statement" type="jetbrains.mps.logging.refactoring.structure.UpdateModelByDefaultOperation" id="1198082938234" />
+        <node role="statement" type="jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation" id="1198082938234" />
       </node>
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="1199457345803">
       <property name="keycode" value="VK_F6" />
     </node>
-    <node role="affectedNodesClause" type="jetbrains.mps.logging.refactoring.structure.AffectedNodesClause" id="1201528947033">
+    <node role="affectedNodesClause" type="jetbrains.mps.lang.refactoring.structure.AffectedNodesClause" id="1201528947033">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201528947034">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201529692995">
-          <node role="expression" type="jetbrains.mps.logging.refactoring.structure.ExecuteFindersExpression" id="1212246488331">
-            <node role="finders" type="jetbrains.mps.logging.refactoring.structure.FinderReference" id="1212246503239">
+          <node role="expression" type="jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression" id="1212246488331">
+            <node role="finders" type="jetbrains.mps.lang.refactoring.structure.FinderReference" id="1212246503239">
               <link role="finderDeclaration" targetNodeId="33.1198430852441" resolveInfo="NodeAndDescendantsUsages" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node role="nodesToOpenClause" type="jetbrains.mps.logging.refactoring.structure.NodesToOpenClause" id="1213099166609">
+    <node role="nodesToOpenClause" type="jetbrains.mps.lang.refactoring.structure.NodesToOpenClause" id="1213099166609">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213099166610">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213099253017">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213099253018">
@@ -764,7 +765,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213099300651">
               <link role="baseMethodDeclaration" targetNodeId="7.~ArrayList.add(java.lang.Object):boolean" resolveInfo="add" />
-              <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1213099304417">
+              <node role="actualArgument" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1213099304417">
                 <link role="argument" targetNodeId="1213099173577" resolveInfo="nodeToOpen" />
               </node>
             </node>
@@ -778,22 +779,22 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1199457919461">
+  <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1199457919461">
     <property name="name" value="Rename" />
     <property name="userFriendlyName" value="Rename" />
     <link role="applicableConcept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="arguments" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1199457954885">
+    <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1199457954885">
       <property name="name" value="newName" />
       <property name="presentation" value="new name:" />
       <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199457964231">
         <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
       </node>
-      <node role="initialValue" type="jetbrains.mps.logging.refactoring.structure.InitialValueClause" id="1199457987467">
+      <node role="initialValue" type="jetbrains.mps.lang.refactoring.structure.InitialValueClause" id="1199457987467">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199457987468">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199457990515">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207782882980">
               <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1215086310200">
-                <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.NodeExpression" id="1215086306746" />
+                <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215086306746" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207782882981">
                 <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getName():java.lang.String" resolveInfo="getName" />
@@ -807,17 +808,17 @@
       <property name="modifiers" value="shift" />
       <property name="keycode" value="VK_F6" />
     </node>
-    <node role="isApplicableClause" type="jetbrains.mps.logging.refactoring.structure.IsApplicableClause" id="1199458011650">
+    <node role="isApplicableClause" type="jetbrains.mps.lang.refactoring.structure.IsApplicableClause" id="1199458011650">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199458011651">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199458013855">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1199458018282">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1199458020176" />
-            <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.NodeExpression" id="1215086302338" />
+            <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215086302338" />
           </node>
         </node>
       </node>
     </node>
-    <node role="doRefactorClause" type="jetbrains.mps.logging.refactoring.structure.DoRefactorClause" id="1199458026193">
+    <node role="doRefactorClause" type="jetbrains.mps.lang.refactoring.structure.DoRefactorClause" id="1199458026193">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199458026194">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199458037888">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199458037889">
@@ -825,7 +826,7 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199458037890">
               <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
             </node>
-            <node role="initializer" type="jetbrains.mps.logging.refactoring.structure.NodeExpression" id="1215001214598" />
+            <node role="initializer" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215001214598" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199458047098">
@@ -835,7 +836,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207782886105">
               <link role="baseMethodDeclaration" targetNodeId="5.~SNode.setName(java.lang.String):void" resolveInfo="setName" />
-              <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1199458052916">
+              <node role="actualArgument" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1199458052916">
                 <link role="argument" targetNodeId="1199457954885" resolveInfo="newName" />
               </node>
             </node>
@@ -843,11 +844,11 @@
         </node>
       </node>
     </node>
-    <node role="affectedNodesClause" type="jetbrains.mps.logging.refactoring.structure.AffectedNodesClause" id="1201529733849">
+    <node role="affectedNodesClause" type="jetbrains.mps.lang.refactoring.structure.AffectedNodesClause" id="1201529733849">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201529733850">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1201529734873">
-          <node role="expression" type="jetbrains.mps.logging.refactoring.structure.ExecuteFindersExpression" id="1212246515069">
-            <node role="finders" type="jetbrains.mps.logging.refactoring.structure.FinderReference" id="1212246521462">
+          <node role="expression" type="jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression" id="1212246515069">
+            <node role="finders" type="jetbrains.mps.lang.refactoring.structure.FinderReference" id="1212246521462">
               <link role="finderDeclaration" targetNodeId="33.1198430852441" resolveInfo="NodeAndDescendantsUsages" />
             </node>
           </node>
@@ -855,18 +856,18 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1200665013408">
+  <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1200665013408">
     <property name="name" value="SafeDelete" />
     <property name="userFriendlyName" value="Safe Delete Node" />
     <property name="refactorImmediatelyIfNoUsages" value="true" />
     <link role="applicableConcept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="isApplicableClause" type="jetbrains.mps.logging.refactoring.structure.IsApplicableClause" id="1200666435294">
+    <node role="isApplicableClause" type="jetbrains.mps.lang.refactoring.structure.IsApplicableClause" id="1200666435294">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200666435295">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1200666590002">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1200666590003">
             <property name="name" value="node" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1200666590004" />
-            <node role="initializer" type="jetbrains.mps.logging.refactoring.structure.NodeExpression" id="1215085805736" />
+            <node role="initializer" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215085805736" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1200666600808">
@@ -891,13 +892,13 @@
         </node>
       </node>
     </node>
-    <node role="doRefactorClause" type="jetbrains.mps.logging.refactoring.structure.DoRefactorClause" id="1200667302899">
+    <node role="doRefactorClause" type="jetbrains.mps.lang.refactoring.structure.DoRefactorClause" id="1200667302899">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200667302900">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1200667305558">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1200667305559">
             <property name="name" value="node" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1200667305560" />
-            <node role="initializer" type="jetbrains.mps.logging.refactoring.structure.NodeExpression" id="1215001047519" />
+            <node role="initializer" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215001047519" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1200667315254">
@@ -914,11 +915,11 @@
       <property name="modifiers" value="alt" />
       <property name="keycode" value="VK_DELETE" />
     </node>
-    <node role="affectedNodesClause" type="jetbrains.mps.logging.refactoring.structure.AffectedNodesClause" id="1200933346055">
+    <node role="affectedNodesClause" type="jetbrains.mps.lang.refactoring.structure.AffectedNodesClause" id="1200933346055">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200933346056">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210943477712">
-          <node role="expression" type="jetbrains.mps.logging.refactoring.structure.ExecuteFindersExpression" id="1212246578655">
-            <node role="finders" type="jetbrains.mps.logging.refactoring.structure.FinderReference" id="1212246582939">
+          <node role="expression" type="jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression" id="1212246578655">
+            <node role="finders" type="jetbrains.mps.lang.refactoring.structure.FinderReference" id="1212246582939">
               <link role="finderDeclaration" targetNodeId="33.1198430852441" resolveInfo="NodeAndDescendantsUsages" />
             </node>
           </node>

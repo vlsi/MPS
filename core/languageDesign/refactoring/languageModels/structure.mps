@@ -1,7 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.logging.refactoring.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="AbstractMoveExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.AbstractMoveExpression" featureKind="CONCEPT" />
+          <value featureName="AbstractMoveExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="AbstractMoveNodeExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.AbstractMoveNodeExpression" featureKind="CONCEPT" />
+          <value featureName="AbstractMoveNodeExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="AbstractMoveNodesExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.AbstractMoveNodesExpression" featureKind="CONCEPT" />
+          <value featureName="AbstractMoveNodesExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="AbstractUIArgumentExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.AbstractUIArgumentExpression" featureKind="CONCEPT" />
+          <value featureName="AbstractUIArgumentExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="AffectedNodesClause" conceptFQName="jetbrains.mps.logging.refactoring.structure.AffectedNodesClause" featureKind="CONCEPT" />
+          <value featureName="AffectedNodesClause" conceptFQName="jetbrains.mps.lang.refactoring.structure.AffectedNodesClause" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ChangeFeatureNameOperation" conceptFQName="jetbrains.mps.logging.refactoring.structure.ChangeFeatureNameOperation" featureKind="CONCEPT" />
+          <value featureName="ChangeFeatureNameOperation" conceptFQName="jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ChooseComponentClause" conceptFQName="jetbrains.mps.logging.refactoring.structure.ChooseComponentClause" featureKind="CONCEPT" />
+          <value featureName="ChooseComponentClause" conceptFQName="jetbrains.mps.lang.refactoring.structure.ChooseComponentClause" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConceptFunctionParameter_SModel" conceptFQName="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_SModel" featureKind="CONCEPT" />
+          <value featureName="ConceptFunctionParameter_SModel" conceptFQName="jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConceptFunctionParameter_SModelDescriptor" conceptFQName="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_SModelDescriptor" featureKind="CONCEPT" />
+          <value featureName="ConceptFunctionParameter_SModelDescriptor" conceptFQName="jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModelDescriptor" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ConceptFunctionParameter_UserArgument" conceptFQName="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_UserArgument" featureKind="CONCEPT" />
+          <value featureName="ConceptFunctionParameter_UserArgument" conceptFQName="jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_UserArgument" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="DeleteFeatureOperation" conceptFQName="jetbrains.mps.logging.refactoring.structure.DeleteFeatureOperation" featureKind="CONCEPT" />
+          <value featureName="DeleteFeatureOperation" conceptFQName="jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="DoRefactorClause" conceptFQName="jetbrains.mps.logging.refactoring.structure.DoRefactorClause" featureKind="CONCEPT" />
+          <value featureName="DoRefactorClause" conceptFQName="jetbrains.mps.lang.refactoring.structure.DoRefactorClause" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ExecuteFindersExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.ExecuteFindersExpression" featureKind="CONCEPT" />
+          <value featureName="ExecuteFindersExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="FilterArgumentClause" conceptFQName="jetbrains.mps.logging.refactoring.structure.FilterArgumentClause" featureKind="CONCEPT" />
+          <value featureName="FilterArgumentClause" conceptFQName="jetbrains.mps.lang.refactoring.structure.FilterArgumentClause" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="FinderReference" conceptFQName="jetbrains.mps.logging.refactoring.structure.FinderReference" featureKind="CONCEPT" />
+          <value featureName="FinderReference" conceptFQName="jetbrains.mps.lang.refactoring.structure.FinderReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GetModelsToGenerateClause" conceptFQName="jetbrains.mps.logging.refactoring.structure.GetModelsToGenerateClause" featureKind="CONCEPT" />
+          <value featureName="GetModelsToGenerateClause" conceptFQName="jetbrains.mps.lang.refactoring.structure.GetModelsToGenerateClause" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GetModelsToUpdateClause" conceptFQName="jetbrains.mps.logging.refactoring.structure.GetModelsToUpdateClause" featureKind="CONCEPT" />
+          <value featureName="GetModelsToUpdateClause" conceptFQName="jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GetNodeIdOperation" conceptFQName="jetbrains.mps.logging.refactoring.structure.GetNodeIdOperation" featureKind="CONCEPT" />
+          <value featureName="GetNodeIdOperation" conceptFQName="jetbrains.mps.lang.refactoring.structure.GetNodeIdOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="InitialValueClause" conceptFQName="jetbrains.mps.logging.refactoring.structure.InitialValueClause" featureKind="CONCEPT" />
+          <value featureName="InitialValueClause" conceptFQName="jetbrains.mps.lang.refactoring.structure.InitialValueClause" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="IsApplicableClause" conceptFQName="jetbrains.mps.logging.refactoring.structure.IsApplicableClause" featureKind="CONCEPT" />
+          <value featureName="IsApplicableClause" conceptFQName="jetbrains.mps.lang.refactoring.structure.IsApplicableClause" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="IsApplicableToModelClause" conceptFQName="jetbrains.mps.logging.refactoring.structure.IsApplicableToModelClause" featureKind="CONCEPT" />
+          <value featureName="IsApplicableToModelClause" conceptFQName="jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ModelDescriptorExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.ModelDescriptorExpression" featureKind="CONCEPT" />
+          <value featureName="ModelDescriptorExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.ModelDescriptorExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ModuleExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.ModuleExpression" featureKind="CONCEPT" />
+          <value featureName="ModuleExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.ModuleExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MoveNodeToModelExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.MoveNodeToModelExpression" featureKind="CONCEPT" />
+          <value featureName="MoveNodeToModelExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MoveNodeToNodeExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.MoveNodeToNodeExpression" featureKind="CONCEPT" />
+          <value featureName="MoveNodeToNodeExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MoveNodesToModelExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.MoveNodesToModelExpression" featureKind="CONCEPT" />
+          <value featureName="MoveNodesToModelExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="MoveNodesToNodeExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.MoveNodesToNodeExpression" featureKind="CONCEPT" />
+          <value featureName="MoveNodesToNodeExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="NodeExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.NodeExpression" featureKind="CONCEPT" />
+          <value featureName="NodeExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.NodeExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="NodesExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.NodesExpression" featureKind="CONCEPT" />
+          <value featureName="NodesExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.NodesExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="NodesToOpenClause" conceptFQName="jetbrains.mps.logging.refactoring.structure.NodesToOpenClause" featureKind="CONCEPT" />
+          <value featureName="NodesToOpenClause" conceptFQName="jetbrains.mps.lang.refactoring.structure.NodesToOpenClause" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="OperationContextExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.OperationContextExpression" featureKind="CONCEPT" />
+          <value featureName="OperationContextExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.OperationContextExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ProjectExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.ProjectExpression" featureKind="CONCEPT" />
+          <value featureName="ProjectExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.ProjectExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="Refactoring" conceptFQName="jetbrains.mps.logging.refactoring.structure.Refactoring" featureKind="CONCEPT" />
+          <value featureName="Refactoring" conceptFQName="jetbrains.mps.lang.refactoring.structure.Refactoring" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="RequiredAdditionalArgument" conceptFQName="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" featureKind="CONCEPT" />
+          <value featureName="RequiredAdditionalArgument" conceptFQName="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="RequiredAdditionalArgumentReference" conceptFQName="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" featureKind="CONCEPT" />
+          <value featureName="RequiredAdditionalArgumentReference" conceptFQName="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="RequiredUserEnteredArgument" conceptFQName="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" featureKind="CONCEPT" />
+          <value featureName="RequiredUserEnteredArgument" conceptFQName="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ScopeExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.ScopeExpression" featureKind="CONCEPT" />
+          <value featureName="ScopeExpression" conceptFQName="jetbrains.mps.lang.refactoring.structure.ScopeExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="UpdateModelByDefaultOperation" conceptFQName="jetbrains.mps.logging.refactoring.structure.UpdateModelByDefaultOperation" featureKind="CONCEPT" />
+          <value featureName="UpdateModelByDefaultOperation" conceptFQName="jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="UpdateModelClause" conceptFQName="jetbrains.mps.logging.refactoring.structure.UpdateModelClause" featureKind="CONCEPT" />
+          <value featureName="UpdateModelClause" conceptFQName="jetbrains.mps.lang.refactoring.structure.UpdateModelClause" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="UpdateModelProcedure" conceptFQName="jetbrains.mps.logging.refactoring.structure.UpdateModelProcedure" featureKind="CONCEPT" />
+          <value featureName="UpdateModelProcedure" conceptFQName="jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
@@ -18,13 +185,14 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.bootstrap.findUsagesLanguage.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.logging.refactoring.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="0" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />

@@ -5,7 +5,7 @@ import jetbrains.mps.bootstrap.pluginLanguage.generator.baseLanguage.template.ut
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.logging.refactoring.structure.Refactoring;
+import jetbrains.mps.lang.refactoring.structure.Refactoring;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
