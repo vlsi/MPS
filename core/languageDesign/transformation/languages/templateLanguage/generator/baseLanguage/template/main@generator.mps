@@ -6,7 +6,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
-  <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.bootstrap.sharedConcepts)" />
+  <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
@@ -17,7 +17,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
@@ -31,6 +31,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <maxImportIndex value="27" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -43,7 +44,7 @@
   <import index="15" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="21" modelUID="r:00000000-0000-4000-0000-011c895902ea(jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util)" version="-1" />
   <import index="22" modelUID="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" version="-1" />
-  <import index="23" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.bootstrap.sharedConcepts.structure)" version="-1" />
+  <import index="23" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <import index="24" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
   <import index="25" modelUID="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.bootstrap.smodelLanguage.behavior)" version="-1" />
   <import index="26" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.transformation.generationContext.structure)" version="-1" />
@@ -1040,7 +1041,7 @@
               <link role="elementConcept" targetNodeId="7.1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227906392">
-              <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1199965817937" />
+              <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1199965817937" />
               <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_NodesOperation" id="1199965817938">
                 <link role="concept" targetNodeId="7.1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
               </node>
@@ -1404,7 +1405,7 @@
                   <link role="elementConcept" targetNodeId="26.1216860049622" resolveInfo="GenerationContextOp_GetOutputByLabel" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217270954482">
-                  <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1217270954483" />
+                  <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1217270954483" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_NodesOperation" id="1217270954484">
                     <link role="concept" targetNodeId="26.1216860049622" resolveInfo="GenerationContextOp_GetOutputByLabel" />
                   </node>
@@ -1511,7 +1512,7 @@
                   <link role="elementConcept" targetNodeId="26.1216860049627" resolveInfo="GenerationContextOp_GetOutputByLabelAndInput" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217271687153">
-                  <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1217271687154" />
+                  <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1217271687154" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_NodesOperation" id="1217271687155">
                     <link role="concept" targetNodeId="26.1216860049627" resolveInfo="GenerationContextOp_GetOutputByLabelAndInput" />
                   </node>
@@ -1618,7 +1619,7 @@
                   <link role="elementConcept" targetNodeId="26.1221218985173" resolveInfo="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221219837891">
-                  <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1221219837892" />
+                  <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1221219837892" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_NodesOperation" id="1221219837893">
                     <link role="concept" targetNodeId="26.1221218985173" resolveInfo="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" />
                   </node>
@@ -1725,7 +1726,7 @@
                   <link role="elementConcept" targetNodeId="26.1221156564099" resolveInfo="GenerationContextOp_GetOutputListByLabelAndInput" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221158464683">
-                  <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1221158464684" />
+                  <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1221158464684" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_NodesOperation" id="1221158464685">
                     <link role="concept" targetNodeId="26.1221156564099" resolveInfo="GenerationContextOp_GetOutputListByLabelAndInput" />
                   </node>
@@ -1832,7 +1833,7 @@
                   <link role="elementConcept" targetNodeId="26.1217881979074" resolveInfo="GenerationContextOp_GetPrevInputByLabel" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217882410840">
-                  <node role="operand" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1217882410841" />
+                  <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1217882410841" />
                   <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_NodesOperation" id="1217882410842">
                     <link role="concept" targetNodeId="26.1217881979074" resolveInfo="GenerationContextOp_GetPrevInputByLabel" />
                   </node>

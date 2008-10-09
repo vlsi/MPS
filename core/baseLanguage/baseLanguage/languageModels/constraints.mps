@@ -5,7 +5,7 @@
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
-  <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.bootstrap.sharedConcepts)" />
+  <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
@@ -16,7 +16,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.bootstrap.sharedConcepts.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
@@ -32,6 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <maxImportIndex value="50" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -302,12 +303,12 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104840489">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104840490">
                 <link role="baseMethodDeclaration" targetNodeId="10.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104840491" />
+                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104840491" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213104840492">
                   <link role="classifier" targetNodeId="10.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
                   <link role="variableDeclaration" targetNodeId="10.~IClassifiersSearchScope.ANNOTATION" resolveInfo="ANNOTATION" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104840493" />
+                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104840493" />
               </node>
             </node>
           </node>
@@ -325,8 +326,8 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104844203">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104844204">
                 <link role="baseMethodDeclaration" targetNodeId="32.~VisibleClassConstructorsScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassConstructorsScope" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104844205" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104844206" />
+                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104844205" />
+                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104844206" />
               </node>
             </node>
           </node>
@@ -604,12 +605,12 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104846416">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104846417">
                 <link role="baseMethodDeclaration" targetNodeId="10.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104846418" />
+                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104846418" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213104846419">
                   <link role="classifier" targetNodeId="10.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
                   <link role="variableDeclaration" targetNodeId="10.~IClassifiersSearchScope.CLASSIFFIER" resolveInfo="CLASSIFFIER" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104846420" />
+                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104846420" />
               </node>
             </node>
           </node>
@@ -627,8 +628,8 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104846930">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104846931">
                 <link role="baseMethodDeclaration" targetNodeId="32.~VisibleClassConstructorsScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassConstructorsScope" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104846932" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104846933" />
+                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104846932" />
+                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104846933" />
               </node>
             </node>
           </node>
@@ -860,12 +861,12 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104847538">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104847539">
                 <link role="baseMethodDeclaration" targetNodeId="10.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104847540" />
+                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104847540" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213104847541">
                   <link role="classifier" targetNodeId="10.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
                   <link role="variableDeclaration" targetNodeId="10.~IClassifiersSearchScope.INTERFACE" resolveInfo="INTERFACE" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104847542" />
+                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104847542" />
               </node>
             </node>
           </node>
@@ -883,12 +884,12 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104847630">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104847631">
                 <link role="baseMethodDeclaration" targetNodeId="10.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104847632" />
+                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1213104847632" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213104847633">
                   <link role="classifier" targetNodeId="10.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
                   <link role="variableDeclaration" targetNodeId="10.~IClassifiersSearchScope.CLASS" resolveInfo="CLASS" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104847634" />
+                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1213104847634" />
               </node>
             </node>
           </node>

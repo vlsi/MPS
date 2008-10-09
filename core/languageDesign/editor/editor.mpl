@@ -101,7 +101,7 @@
           <lesser-priority-mapping>
             <generator generatorUID="51736086-833e-4b0d-b9a6-a1dbbfda2131(jetbrains.mps.bootstrap.sharedConcepts#1161623873951)" />
             <external-mapping>
-              <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902bd(jetbrains.mps.bootstrap.sharedConcepts.generator.baseLanguage.template.main@generator)" nodeID="1161623876737" />
+              <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902bd(jetbrains.mps.lang.sharedConcepts.generator.baseLanguage.template.main@generator)" nodeID="1161623876737" />
             </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>
@@ -126,7 +126,7 @@
     <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>
     <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
     <extendedLanguage>ac2f1963-1b72-479d-bbf6-e8da39fb6f41(jetbrains.mps.annotations)</extendedLanguage>
-    <extendedLanguage>13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.bootstrap.sharedConcepts)</extendedLanguage>
+    <extendedLanguage>13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)</extendedLanguage>
     <extendedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)</extendedLanguage>
   </extendedLanguages>
 </language>
