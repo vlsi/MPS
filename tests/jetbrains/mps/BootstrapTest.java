@@ -34,7 +34,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testSModelLanguage() {
-    String res = testProject(new File("core/languageDesign/smodelLanguage/smodelLanguage.mpr"));
+    String res = testProject(new File("core/languageDesign/smodel/smodel.mpr"));
     assertTrue(res, res == null);
   }
 

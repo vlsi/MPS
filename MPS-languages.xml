@@ -657,21 +657,21 @@
   <target name="pack.jetbrains.mps.bootstrap.smodelLanguage">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.tmp/module" />
-    <mkdir dir="core/languageDesign/smodelLanguage/classes" />
+    <mkdir dir="core/languageDesign/smodel/classes" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.tmp/module">
-      <fileset file="core/languageDesign/smodelLanguage/smodelLanguage.mpl" />
+      <fileset file="core/languageDesign/smodel/smodel.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.tmp/module">
-      <fileset dir="core/languageDesign/smodelLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="core/languageDesign/smodel" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.tmp">
-      <fileset dir="core/languageDesign/smodelLanguage/classes" />
+      <fileset dir="core/languageDesign/smodel/classes" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.tmp" />
     </jar>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="core/languageDesign/smodelLanguage/classes" />
+      <fileset dir="core/languageDesign/smodel/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.smodelLanguage.tmp" />
   </target>

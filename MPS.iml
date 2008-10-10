@@ -24,7 +24,7 @@
     <orderEntry type="module" module-name="helgins" exported="" />
     <orderEntry type="module" module-name="scriptLanguage" exported="" />
     <orderEntry type="module" module-name="sharedConcepts" exported="" />
-    <orderEntry type="module" module-name="smodeLanguage" exported="" />
+    <orderEntry type="module" module-name="smodel" exported="" />
     <orderEntry type="module" module-name="structure" exported="" />
     <orderEntry type="module" module-name="intentions" exported="" />
     <orderEntry type="module" module-name="findUsages" exported="" />
