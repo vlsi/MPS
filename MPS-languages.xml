@@ -678,21 +678,21 @@
   <target name="pack.jetbrains.mps.ide.scriptLanguage">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.tmp/module" />
-    <mkdir dir="core/languageDesign/scriptLanguage/classes" />
+    <mkdir dir="core/languageDesign/script/classes" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.tmp/module">
-      <fileset file="core/languageDesign/scriptLanguage/scriptLanguage.mpl" />
+      <fileset file="core/languageDesign/script/script.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.tmp/module">
-      <fileset dir="core/languageDesign/scriptLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="core/languageDesign/script" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.tmp">
-      <fileset dir="core/languageDesign/scriptLanguage/classes" />
+      <fileset dir="core/languageDesign/script/classes" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.tmp" />
     </jar>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="core/languageDesign/scriptLanguage/classes" />
+      <fileset dir="core/languageDesign/script/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.ide.scriptLanguage.tmp" />
   </target>
