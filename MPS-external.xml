@@ -157,7 +157,7 @@
       <fileset dir="core/languageDesign/structure/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="core/languageDesign/transformation/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="core/languageDesign/generator/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="core/languageDesign/dataFlow/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
@@ -269,10 +269,10 @@
     <antcall target="pack.jetbrains.mps.lang.structure" />
     <antcall target="pack.jetbrains.mps.lang.core" />
     <antcall target="pack.jetbrains.mps.lang.refactoring" />
-    <antcall target="pack.jetbrains.mps.transformation.TLBase" />
+    <antcall target="pack.jetbrains.mps.lang.generator" />
     <antcall target="pack.jetbrains.mps.transformationTest" />
     <antcall target="pack.jetbrains.mps.transformationTest.runtime" />
-    <antcall target="pack.jetbrains.mps.transformation.generationContext" />
+    <antcall target="pack.jetbrains.mps.lang.generator.generationContext" />
     <antcall target="pack.jetbrains.mps.projectLanguage" />
     <antcall target="pack.transform" />
     <antcall target="pack.ypath.main" />
