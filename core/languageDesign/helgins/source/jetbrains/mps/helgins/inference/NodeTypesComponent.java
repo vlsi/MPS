@@ -99,7 +99,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     result.myNodesToNonTypesystemErrorsMap = new HashMap<SNode, IErrorReporter>();
     result.myFullyCheckedNodes = new WeakSet<SNode>();
     result.myPartlyCheckedNodes = new WeakSet<SNode>();
-    result.myEquationManager = new EquationManager(result.myTypeChecker, new TypeCheckingContext(result));
+    result.myTypeCheckingContext = new TypeCheckingContext(result);
+    result.myEquationManager = new EquationManager(result.myTypeChecker, result.myTypeCheckingContext);
     result.myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
     result.myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
     result.myModelListener = new MyModelListener();
