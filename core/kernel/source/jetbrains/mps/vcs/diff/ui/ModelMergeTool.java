@@ -3,9 +3,11 @@ package jetbrains.mps.vcs.diff.ui;
 import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffContent;
+import com.intellij.openapi.diff.DiffManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
+import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
@@ -60,10 +62,16 @@ public class ModelMergeTool implements DiffTool {
         JDOMUtil.writeDocument(document, baos);
         mrequest.resolved(baos.toByteArray());
       }
-    } catch (JDOMException e) {
-      LOG.error(e);
     } catch (IOException e) {
       LOG.error(e);
+    } catch (ReadException e) {
+      // if we cant read model from file
+      // we try to use idea diff tool instead
+      LOG.warning("Can't read models. Using text based diff...", e);
+      DiffTool ideaDiffTool = DiffManager.getInstance().getIdeaDiffTool();
+      if (ideaDiffTool.canShow(request)){
+        ideaDiffTool.show(request);
+      }
     }
   }
 

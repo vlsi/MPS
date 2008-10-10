@@ -5,6 +5,8 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -15,6 +17,7 @@ import java.util.regex.Pattern;
 public class SModelReference implements Comparable<Object> {
   private static Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
 
+  @Nullable
   public static SModelReference fromString(String s) {
     if (s == null) return null;
     Matcher matcher = MODEL_UID_PATTERN.matcher(s);

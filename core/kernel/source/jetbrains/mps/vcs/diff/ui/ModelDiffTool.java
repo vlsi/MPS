@@ -3,6 +3,7 @@ package jetbrains.mps.vcs.diff.ui;
 import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffContent;
+import com.intellij.openapi.diff.DiffManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.fileTypes.FileType;
 
@@ -14,11 +15,13 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import jetbrains.mps.logging.Logger;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 
 public class ModelDiffTool implements DiffTool {
+  private final static Logger LOG = Logger.getLogger(ModelDiffTool.class);
 
   public void show(final DiffRequest request) {
     DiffContent[] contents = request.getContents();
@@ -34,10 +37,16 @@ public class ModelDiffTool implements DiffTool {
       });
       d.showDialog();
 
-    } catch (JDOMException e) {
-      e.printStackTrace();
     } catch (IOException e) {
       e.printStackTrace();
+    } catch (ReadException e) {
+      // if we cant read model from file
+      // we try to use idea diff tool instead
+      LOG.warning("Can't read models. Using text based merge...", e);
+      DiffTool ideaDiffTool = DiffManager.getInstance().getIdeaDiffTool();
+      if (ideaDiffTool.canShow(request)){
+        ideaDiffTool.show(request);
+      }
     }
   }
 
@@ -53,9 +62,9 @@ public class ModelDiffTool implements DiffTool {
   public static String[] getModelNameAndStereotype(String modelPath) {
     int index = modelPath.lastIndexOf("/");
     String shortName = modelPath;
-    if (index != -1) shortName = modelPath.substring(index+1);
+    if (index != -1) shortName = modelPath.substring(index + 1);
     index = shortName.lastIndexOf("\\");
-    if (index != -1) shortName = shortName.substring(index+1);
+    if (index != -1) shortName = shortName.substring(index + 1);
 
     index = shortName.indexOf('.');
     shortName = (index >= 0) ? shortName.substring(0, index) : shortName;
@@ -70,14 +79,19 @@ public class ModelDiffTool implements DiffTool {
     return new String[]{modelName, modelStereotype};
   }
 
-  public static SModel readModel(DiffContent content, String path) throws JDOMException, IOException {
+  public static SModel readModel(DiffContent content, String path) throws IOException, ReadException {
     final String[] modelNameAndStereotype = getModelNameAndStereotype(path);
-    final Document document = JDOMUtil.loadDocument(new ByteArrayInputStream(content.getBytes()));
-    return ModelAccess.instance().runReadAction(new Computable<SModel>() {
-      public SModel compute() {
-        return ModelPersistence.readModel(document, modelNameAndStereotype[0], modelNameAndStereotype[1]);
-      }
-    });
+    byte[] bytes = content.getBytes();
+    try {
+      final Document document = JDOMUtil.loadDocument(new ByteArrayInputStream(bytes));
+      return ModelAccess.instance().runReadAction(new Computable<SModel>() {
+        public SModel compute() {
+          return ModelPersistence.readModel(document, modelNameAndStereotype[0], modelNameAndStereotype[1]);
+        }
+      });
+    } catch (Throwable t) {
+      throw new ReadException(t);
+    }
   }
 
   public boolean canShow(DiffRequest request) {
@@ -91,5 +105,11 @@ public class ModelDiffTool implements DiffTool {
       return false;
     }
     return type.equals(MPSFileTypesManager.MODEL_FILE_TYPE);
+  }
+
+  static class ReadException extends Throwable {
+    public ReadException(Throwable t) {
+      super(t);
+    }
   }
 }
