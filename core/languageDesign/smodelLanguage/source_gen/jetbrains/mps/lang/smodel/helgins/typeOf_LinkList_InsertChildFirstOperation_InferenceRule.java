@@ -22,11 +22,11 @@ public class typeOf_LinkList_InsertChildFirstOperation_InferenceRule extends Abs
     if ((parameter != null)) {
       final SNode ExpectedType_typevar_1206101286415 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
       RulesUtil.equate_inputNodeType(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101286415));
-      SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.bootstrap.smodelLanguage.helgins)", "1205272570106", true);
+      SNode parmType = typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205272570106", true);
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101286415), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.bootstrap.smodelLanguage.helgins)", "1205272570108", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(parmType, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101286415), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205272570108", false, 0, intentionProvider);
       }
     }
   }
