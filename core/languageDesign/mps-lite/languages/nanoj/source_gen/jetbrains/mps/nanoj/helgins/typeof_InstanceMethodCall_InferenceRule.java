@@ -5,7 +5,7 @@ package jetbrains.mps.nanoj.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;

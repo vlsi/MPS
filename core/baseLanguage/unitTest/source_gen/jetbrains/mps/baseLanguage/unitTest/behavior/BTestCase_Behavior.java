@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BTestCase_Behavior {
 

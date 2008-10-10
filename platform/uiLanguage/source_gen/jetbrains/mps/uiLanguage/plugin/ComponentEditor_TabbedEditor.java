@@ -9,10 +9,10 @@ import jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseSingleTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.uiLanguage.behavior.ComponentDeclaration_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
 public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {

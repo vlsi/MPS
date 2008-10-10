@@ -4,15 +4,15 @@
   <refactoringHistory />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -153,7 +153,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1217025941076">
       <link role="conceptLinkDeclaration" targetNodeId="3.1217022095863" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1217025946859" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1217025946859" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1217026863835">
@@ -169,7 +169,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1217026863838">
       <link role="conceptLinkDeclaration" targetNodeId="3.1217022095863" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1217026863839" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1217026863839" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1217282130234">
@@ -185,7 +185,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1217282130238">
       <link role="conceptLinkDeclaration" targetNodeId="3.1217022095863" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1217282130239" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1217282130239" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1217369610610">
@@ -201,7 +201,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1217369610614">
       <link role="conceptLinkDeclaration" targetNodeId="3.1217022095863" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1217369699850" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1217369699850" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1217881979074">

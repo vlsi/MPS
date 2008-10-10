@@ -13,10 +13,10 @@ import java.util.List;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.xml.schema.behavior.ElementDeclaration_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Attribute_attributeDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DefaultClassifierType_Behavior {
 

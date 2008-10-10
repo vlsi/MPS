@@ -6,14 +6,14 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.plugin.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.plugin.AbstractStaticContainerProcessor;
 import jetbrains.mps.baseLanguage.plugin.VisibilityLevel;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConceptBehavior_Behavior {
 
@@ -60,7 +60,7 @@ public class ConceptBehavior_Behavior {
 
       public SNode createMethodCall(SNode declaration, List<SNode> arguments) {
         if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration")) {
-          SNode call = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall", null);
+          SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
           SLinkOperations.setTarget(call, "conceptMethodDeclaration", (SNode)declaration, false);
           SLinkOperations.addAll(call, "actualArgument", arguments);
           SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
@@ -69,7 +69,7 @@ public class ConceptBehavior_Behavior {
           return result;
         }
         if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.constraints.structure.StaticConceptMethodDeclaration")) {
-          SNode call = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall", null);
+          SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null);
           SLinkOperations.setTarget(call, "baseMethodDeclaration", (SNode)declaration, false);
           SLinkOperations.addAll(call, "actualArgument", arguments);
           SLinkOperations.setTarget(call, "concept", SLinkOperations.getTarget(((SNode)this.myNode), "concept", false), false);
@@ -96,7 +96,7 @@ public class ConceptBehavior_Behavior {
       }
 
       public SNode createMethodCall(SNode method, List<SNode> arguments) {
-        SNode call = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall", null);
+        SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null);
         SLinkOperations.setTarget(call, "baseMethodDeclaration", ((SNode)method), false);
         SLinkOperations.setTarget(call, "concept", SLinkOperations.getTarget(((SNode)this.myStaticContainer), "concept", false), false);
         SLinkOperations.addAll(call, "actualArgument", arguments);

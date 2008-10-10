@@ -5,7 +5,7 @@ package jetbrains.mps.ypath.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IterateOperation_Behavior {
 

@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.buildlanguage.behavior.IPropertyHolder_Behavior;
 

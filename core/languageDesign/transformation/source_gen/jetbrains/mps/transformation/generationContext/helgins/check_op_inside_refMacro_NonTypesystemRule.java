@@ -4,7 +4,7 @@ package jetbrains.mps.transformation.generationContext.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 

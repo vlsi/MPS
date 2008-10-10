@@ -13,11 +13,11 @@ import java.util.List;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 
 public class IterateOperation_usedFeature_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {

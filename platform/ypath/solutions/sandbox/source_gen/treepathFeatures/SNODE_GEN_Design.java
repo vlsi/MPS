@@ -5,11 +5,11 @@ package treepathFeatures;
 import jetbrains.mps.ypath.design.IGenericParameterizedFeatureDesign;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.ypath.design.IGenericFeatureDesign;
 
@@ -42,11 +42,11 @@ public class SNODE_GEN_Design {
       SLinkOperations.setTarget(opExpr, "operand", expression, true);
       Cardinality card = Cardinality.parseValue(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"));
       if (card == Cardinality._0__1 || card == Cardinality._1) {
-        op = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess", null);
+        op = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkAccess", null);
         SLinkOperations.setTarget(op, "link", param, false);
       } else
       {
-        op = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess", null);
+        op = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkListAccess", null);
         SLinkOperations.setTarget(op, "link", param, false);
       }
       SLinkOperations.setTarget(opExpr, "operation", op, true);
@@ -87,11 +87,11 @@ public class SNODE_GEN_Design {
       SLinkOperations.setTarget(opExpr, "operand", expression, true);
       Cardinality card = Cardinality.parseValue(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"));
       if (card == Cardinality._0__1 || card == Cardinality._1) {
-        op = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess", null);
+        op = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkAccess", null);
         SLinkOperations.setTarget(op, "link", param, false);
       } else
       {
-        op = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess", null);
+        op = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkListAccess", null);
         SLinkOperations.setTarget(op, "link", param, false);
       }
       SLinkOperations.setTarget(opExpr, "operation", op, true);

@@ -25,7 +25,7 @@ import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.behavior.ElsifClause_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 
 public class ElsifClause_Editor extends DefaultNodeEditor {

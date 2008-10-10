@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ypath.actions.TreePathAspectUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TreePathAdapterExpression_treepathAspect_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 

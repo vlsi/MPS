@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderNameUtil;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator;
@@ -16,8 +16,8 @@ import java.util.Iterator;
 import jetbrains.mps.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesUtil {
   public static Object CELL_READABLE_ID = new Object();

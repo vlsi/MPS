@@ -4,10 +4,10 @@ package jetbrains.mps.lang.core.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseConcept_Behavior {

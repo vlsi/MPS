@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.project.GlobalScope;

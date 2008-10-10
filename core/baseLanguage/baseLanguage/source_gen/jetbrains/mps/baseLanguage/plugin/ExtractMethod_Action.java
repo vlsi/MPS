@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import jetbrains.mps.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExtractMethod_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(ExtractMethod_Action.class);

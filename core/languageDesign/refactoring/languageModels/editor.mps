@@ -3,14 +3,14 @@
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
@@ -124,12 +124,12 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209559621070">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209559614035">
                     <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1209559613690" />
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1209559619819">
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1209559619819">
                       <link role="property" targetNodeId="1.1209559372957" resolveInfo="refactoringTargetKind" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1209559621808">
-                    <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1209559621809">
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1209559621808">
+                    <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1209559621809">
                       <link role="enumMember" targetNodeId="1.1209559274359" />
                     </node>
                   </node>
@@ -144,7 +144,7 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209560206200">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209560206546">
                       <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1209560206201" />
-                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1209560207830">
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1209560207830">
                         <link role="property" targetNodeId="1.1209559372957" resolveInfo="refactoringTargetKind" />
                       </node>
                     </node>
@@ -163,7 +163,7 @@
                         <link role="baseMethodDeclaration" targetNodeId="5.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209560186070">
                           <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1209560183100" />
-                          <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1209560188573">
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1209560188573">
                             <link role="property" targetNodeId="1.1209559372957" resolveInfo="refactoringTargetKind" />
                           </node>
                         </node>
@@ -227,11 +227,11 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227935164">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227932315">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1199455520104" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1199455523452">
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1199455523452">
                     <link role="link" targetNodeId="1.1199455378190" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNullOperation" id="1199455528706" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="1199455528706" />
               </node>
             </node>
           </node>
@@ -260,12 +260,12 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209560532430">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209560526911">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1209560526894" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1209560531523">
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1209560531523">
                     <link role="property" targetNodeId="1.1209559372957" resolveInfo="refactoringTargetKind" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1209560532871">
-                  <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1209560532872">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1209560532871">
+                  <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1209560532872">
                     <link role="enumMember" targetNodeId="1.1209559325846" />
                   </node>
                 </node>

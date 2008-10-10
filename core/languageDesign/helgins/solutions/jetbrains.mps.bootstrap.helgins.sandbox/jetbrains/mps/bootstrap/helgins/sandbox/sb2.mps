@@ -4,13 +4,13 @@
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
@@ -32,14 +32,14 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1194962413882">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1194962413883">
           <property name="name" value="patternCondition" />
-          <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1194962413884">
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1194962413884">
             <link role="concept" targetNodeId="8.1174642900584" resolveInfo="PatternCondition" />
           </node>
           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227928474">
             <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference" id="1194965123603">
               <link role="applicableNode" targetNodeId="1194962193426" resolveInfo="inferenceRule" />
             </node>
-            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1194965123602">
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1194965123602">
               <link role="link" targetNodeId="8.1174648101952" />
             </node>
           </node>
@@ -48,7 +48,7 @@
       <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement" id="1194962407096">
         <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1194962483116">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196785395219">
-            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196785395220" />
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1196785395220" />
           </node>
         </node>
         <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1194962407098">
@@ -57,7 +57,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194962453657">
                 <link role="variableDeclaration" targetNodeId="1194962413883" resolveInfo="patternCondition" />
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1194962458677">
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1194962458677">
                 <link role="link" targetNodeId="8.1174642936809" />
               </node>
             </node>

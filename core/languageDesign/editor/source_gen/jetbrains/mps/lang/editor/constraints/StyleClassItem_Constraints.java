@@ -4,9 +4,9 @@ package jetbrains.mps.lang.editor.constraints;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior;
 

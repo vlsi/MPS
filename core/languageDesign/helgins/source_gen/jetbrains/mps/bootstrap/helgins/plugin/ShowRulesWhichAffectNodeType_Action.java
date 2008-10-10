@@ -15,7 +15,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.helgins.inference.NodeTypesComponent;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.util.Pair;
 import java.util.List;

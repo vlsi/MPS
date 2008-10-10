@@ -8,8 +8,8 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandler;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.IEditor;
 
 public class UiLanguage_ProjectPlugin extends BaseProjectPlugin {

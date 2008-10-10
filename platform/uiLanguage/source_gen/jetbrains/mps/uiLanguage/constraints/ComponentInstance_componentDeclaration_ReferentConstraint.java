@@ -15,9 +15,9 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ComponentInstance_componentDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 

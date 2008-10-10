@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.generator_new.util;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LinkDeclarationUtil {
 

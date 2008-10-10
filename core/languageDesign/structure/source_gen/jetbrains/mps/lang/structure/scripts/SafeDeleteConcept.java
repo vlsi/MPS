@@ -15,7 +15,7 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;

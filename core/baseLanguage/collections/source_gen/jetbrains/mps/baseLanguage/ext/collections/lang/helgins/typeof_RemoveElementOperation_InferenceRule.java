@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_RemoveElementOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {

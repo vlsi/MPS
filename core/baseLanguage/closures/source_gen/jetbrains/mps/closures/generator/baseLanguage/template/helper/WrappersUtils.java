@@ -5,8 +5,8 @@ package jetbrains.mps.closures.generator.baseLanguage.template.helper;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 

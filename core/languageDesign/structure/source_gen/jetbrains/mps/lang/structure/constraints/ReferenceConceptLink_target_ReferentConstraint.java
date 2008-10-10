@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.search.EmptySearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ReferenceConceptLink_target_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 

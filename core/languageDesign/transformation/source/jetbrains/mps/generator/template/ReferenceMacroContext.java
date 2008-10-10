@@ -1,14 +1,11 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SearchScopeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SearchScopeOperations;
 
 import java.util.List;
 

@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.bootstrap.smodelLanguage.editor.Styles_StyleSheet;
+import jetbrains.mps.lang.smodel.editor.Styles_StyleSheet;
 
 public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
 

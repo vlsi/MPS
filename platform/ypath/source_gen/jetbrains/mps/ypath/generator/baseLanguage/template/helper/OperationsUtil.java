@@ -4,13 +4,13 @@ package jetbrains.mps.ypath.generator.baseLanguage.template.helper;
 
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.internal.collections.runtime.ITranslator;
@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
 import java.util.Iterator;
 import jetbrains.mps.closures.runtime.YieldingIterator;
 import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class OperationsUtil {
 

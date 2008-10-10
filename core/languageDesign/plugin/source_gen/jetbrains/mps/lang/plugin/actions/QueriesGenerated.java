@@ -4,22 +4,22 @@ package jetbrains.mps.lang.plugin.actions;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
@@ -62,11 +62,11 @@ public class QueriesGenerated {
               }
 
               public String getDescriptionText(String pattern) {
-                if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
+                if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
                   return "current node";
-                } else if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType")) {
+                } else if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.lang.smodel.structure.SNodeListType")) {
                   return "current nodes";
-                } else if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType")) {
+                } else if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.lang.smodel.structure.SModelType")) {
                   return "current model";
                 }
                 return "";
@@ -215,9 +215,9 @@ public class QueriesGenerated {
       Condition cond = new Condition() {
 
         public boolean met(Object object) {
-          boolean isNode = SConceptOperations.isExactly(concept, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType");
-          boolean isNList = SConceptOperations.isExactly(concept, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType");
-          boolean isModel = SConceptOperations.isExactly(concept, "jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType");
+          boolean isNode = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.SNodeType");
+          boolean isNList = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.SNodeListType");
+          boolean isModel = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.SModelType");
           return !(isNode || isNList || isModel);
         }
 

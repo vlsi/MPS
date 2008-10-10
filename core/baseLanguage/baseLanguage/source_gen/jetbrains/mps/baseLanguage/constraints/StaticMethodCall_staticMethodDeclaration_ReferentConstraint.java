@@ -14,8 +14,8 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class StaticMethodCall_staticMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.classifiers.constraints;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 

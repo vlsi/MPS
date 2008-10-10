@@ -3,12 +3,12 @@
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
@@ -31,7 +31,7 @@
   <import index="7" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <import index="9" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
+  <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.transformation.generationContext.structure)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1087833241328">
     <property name="name" value="PropertyMacro" />
@@ -443,7 +443,7 @@
     <link role="extends" targetNodeId="6.1107135704075" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1166749096861">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1166749224020" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1166749224020" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1166749069874">
       <property name="value" value="sourceModel" />
@@ -743,7 +743,7 @@
     <link role="extends" targetNodeId="6.1107135704075" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1167770229867">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1167770253215" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1167770253215" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1167770229869">
       <property name="value" value="templateValue" />
@@ -759,7 +759,7 @@
     <link role="extends" targetNodeId="6.1107135704075" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1167782639068">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1167782642914" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1167782642914" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1167774355441">
       <property name="value" value="templateNode" />
@@ -816,7 +816,7 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1167954020900">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1217618581005">
-        <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1217618584335" />
+        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1217618584335" />
       </node>
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1167951910406">
@@ -845,7 +845,7 @@
     <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1168024337013">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1168024360319" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1168024360319" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1168024337016">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -978,7 +978,7 @@
     <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1170725621273">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1170725621274" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1170725621274" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1170725621275">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -1025,7 +1025,7 @@
     <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1184373935794">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1184373935795" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1184373935795" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1184373935796">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -1064,7 +1064,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1184374690382">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1184374694259" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1184374694259" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1184616041890">
@@ -1073,7 +1073,7 @@
     <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1184616041891">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1184616041892" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1184616041892" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1184616041893">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
@@ -1120,7 +1120,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1184792613453">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" />
-      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1184792613454" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1184792613454" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1194565793557">

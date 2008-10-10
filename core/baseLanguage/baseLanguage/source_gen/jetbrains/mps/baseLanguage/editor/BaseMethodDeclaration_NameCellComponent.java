@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 

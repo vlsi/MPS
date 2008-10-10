@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.commons.lang.ObjectUtils;
 
 public class TestCaseRow extends TestContainerRow {

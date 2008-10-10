@@ -17,7 +17,7 @@ public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime imple
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType";
+    return "jetbrains.mps.lang.smodel.structure.SNodeType";
   }
 
   public boolean isApplicable(SNode argument) {

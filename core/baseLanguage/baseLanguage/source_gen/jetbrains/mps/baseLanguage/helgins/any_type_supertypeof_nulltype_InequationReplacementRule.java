@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.AbstractInequationReplacementRule
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Util {
 

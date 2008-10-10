@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.editor.structure.CellModel_Image;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CellModel_Image_Editor extends DefaultNodeEditor {
 

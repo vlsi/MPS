@@ -3,15 +3,15 @@
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.bootstrap.smodelLanguage)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.bootstrap.smodelLanguage.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
@@ -72,9 +72,9 @@
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206126161228">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206126157163">
                               <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" id="1206126156583" />
-                              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1206126159915" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1206126159915" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_RootsOperation" id="1206129055619">
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1206129055619">
                               <link role="concept" targetNodeId="1.1177457067821" resolveInfo="MigrationScript" />
                             </node>
                           </node>
@@ -89,7 +89,7 @@
                                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1206126281625">
                                       <link role="closureParameter" targetNodeId="1206126278105" resolveInfo="it" />
                                     </node>
-                                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1206126284492">
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1206126284492">
                                       <link role="property" targetNodeId="1.1206123296179" resolveInfo="category" />
                                     </node>
                                   </node>
@@ -163,9 +163,9 @@
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209062055843">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209062055844">
                               <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" id="1209062055845" />
-                              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1209062055846" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1209062055846" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_RootsOperation" id="1209062055847">
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1209062055847">
                               <link role="concept" targetNodeId="1.1177457067821" resolveInfo="MigrationScript" />
                             </node>
                           </node>
@@ -180,7 +180,7 @@
                                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1209062055854">
                                       <link role="closureParameter" targetNodeId="1209062055850" resolveInfo="it" />
                                     </node>
-                                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1209062055855">
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1209062055855">
                                       <link role="property" targetNodeId="1.1206123256132" resolveInfo="migrationFromBuild" />
                                     </node>
                                   </node>

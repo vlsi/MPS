@@ -5,7 +5,7 @@ package jetbrains.mps.lang.editor.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_Behavior;
 
 public class BooleanQuery_Intention extends BaseIntention {

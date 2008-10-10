@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import javax.swing.Icon;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.ide.icons.IconManager;
 

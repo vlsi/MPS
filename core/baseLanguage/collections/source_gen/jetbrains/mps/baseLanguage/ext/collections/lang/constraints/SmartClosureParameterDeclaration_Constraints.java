@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.constraints;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SmartClosureParameterDeclaration_Constraints {
 

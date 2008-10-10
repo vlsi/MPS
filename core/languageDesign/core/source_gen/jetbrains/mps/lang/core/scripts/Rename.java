@@ -25,7 +25,7 @@ import jetbrains.mps.refactoring.framework.ChooseStringComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Rename extends AbstractLoggableRefactoring {
   public static final String newName = "newName";

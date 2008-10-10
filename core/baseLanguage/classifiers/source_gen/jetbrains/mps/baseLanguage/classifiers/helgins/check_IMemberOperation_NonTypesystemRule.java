@@ -12,7 +12,7 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 

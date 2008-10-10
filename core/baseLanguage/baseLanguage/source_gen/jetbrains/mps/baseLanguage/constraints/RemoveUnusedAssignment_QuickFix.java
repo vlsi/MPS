@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.constraints;
 
 import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RemoveUnusedAssignment_QuickFix extends QuickFix_Runtime {
 
