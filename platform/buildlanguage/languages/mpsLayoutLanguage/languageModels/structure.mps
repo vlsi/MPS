@@ -26,6 +26,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packagingLanguage.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.propertylanguage.structure)" version="0" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packagingLanguage.structure)" version="2" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
@@ -353,12 +354,13 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1205339413506">
       <link role="intfc" targetNodeId="1205339194346" resolveInfo="IStringExpression" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1205339448280">
-      <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1205339063563">
       <property name="value" value="string" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1223641503366">
+      <property name="name" value="name" />
+      <link role="dataType" targetNodeId="1223640176546" resolveInfo="StringWithoutSpaces" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1205339194346">
@@ -554,6 +556,11 @@
       <property name="name" value="path" />
       <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="1223640176546">
+    <property name="package" value="variables" />
+    <property name="name" value="StringWithoutSpaces" />
+    <property name="constraint" value="[^\\s]*" />
   </node>
 </model>
 
