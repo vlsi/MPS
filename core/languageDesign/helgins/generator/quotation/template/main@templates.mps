@@ -54,8 +54,8 @@
           <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1196356047870">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196356047871">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196356051091">
-                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196356051827">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1196356054206">
+                <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeOperationExpression" id="1196356051827">
+                  <node role="nodeOperation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1196356054206">
                     <link role="link" targetNodeId="1.1174385607291" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1196356051092" />
@@ -77,8 +77,8 @@
           <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1196356130049">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196356130050">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196356133879">
-                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196356134740">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1196356136634">
+                <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeOperationExpression" id="1196356134740">
+                  <node role="nodeOperation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1196356136634">
                     <link role="link" targetNodeId="1.1174386365404" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1196356133880" />
@@ -100,8 +100,8 @@
           <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1196356200447">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196356200448">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196356203262">
-                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196356204233">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1196356207361">
+                <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeOperationExpression" id="1196356204233">
+                  <node role="nodeOperation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1196356207361">
                     <link role="link" targetNodeId="1.1174386365404" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1196356203263" />
@@ -123,8 +123,8 @@
           <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1196356235526">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196356235527">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196356238325">
-                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196356238593">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1196356240987">
+                <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeOperationExpression" id="1196356238593">
+                  <node role="nodeOperation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1196356240987">
                     <link role="link" targetNodeId="1.1174386365404" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1196356238326" />

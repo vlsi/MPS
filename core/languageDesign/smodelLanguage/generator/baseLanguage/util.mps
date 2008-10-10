@@ -27,7 +27,7 @@
   <import index="25" modelUID="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" version="-1" />
   <import index="26" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <import index="27" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
-  <import index="28" modelUID="f:java_stub#jetbrains.mps.bootstrap.smodelLanguage.structure(jetbrains.mps.bootstrap.smodelLanguage.structure@java_stub)" version="-1" />
+  <import index="28" modelUID="f:java_stub#jetbrains.mps.lang.smodel.structure(jetbrains.mps.lang.smodel.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1168968323635">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1168968334480">
@@ -42,7 +42,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1168968584618">
               <link role="classConcept" targetNodeId="2.~SModelLanguageUtil" resolveInfo="SModelLanguageUtil" />
-              <link role="baseMethodDeclaration" targetNodeId="2.~SModelLanguageUtil.findNodeOperationParameter(jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation,java.lang.Class):java.lang.Object" resolveInfo="findNodeOperationParameter" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~SModelLanguageUtil.findNodeOperationParameter(jetbrains.mps.lang.smodel.structure.SNodeOperation,java.lang.Class):java.lang.Object" resolveInfo="findNodeOperationParameter" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499974">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1168968620254">
                   <link role="variableDeclaration" targetNodeId="1168968445647" resolveInfo="op" />
@@ -77,7 +77,7 @@
             </node>
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1168968856837">
               <link role="classConcept" targetNodeId="2.~SModelLanguageUtil" resolveInfo="SModelLanguageUtil" />
-              <link role="baseMethodDeclaration" targetNodeId="2.~SModelLanguageUtil.findNodeOperationParameter(jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation,java.lang.Class):java.lang.Object" resolveInfo="findNodeOperationParameter" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~SModelLanguageUtil.findNodeOperationParameter(jetbrains.mps.lang.smodel.structure.SNodeOperation,java.lang.Class):java.lang.Object" resolveInfo="findNodeOperationParameter" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499946">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1168968856839">
                   <link role="variableDeclaration" targetNodeId="1168968445647" resolveInfo="op" />
@@ -119,7 +119,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1168969209245">
               <link role="classConcept" targetNodeId="2.~SModelLanguageUtil" resolveInfo="SModelLanguageUtil" />
-              <link role="baseMethodDeclaration" targetNodeId="2.~SModelLanguageUtil.findNodeOperationParameter(jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation,java.lang.Class):java.lang.Object" resolveInfo="findNodeOperationParameter" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~SModelLanguageUtil.findNodeOperationParameter(jetbrains.mps.lang.smodel.structure.SNodeOperation,java.lang.Class):java.lang.Object" resolveInfo="findNodeOperationParameter" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499940">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1168969209247">
                   <link role="variableDeclaration" targetNodeId="1168969209269" resolveInfo="op" />
@@ -152,7 +152,7 @@
             </node>
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1168969209260">
               <link role="classConcept" targetNodeId="2.~SModelLanguageUtil" resolveInfo="SModelLanguageUtil" />
-              <link role="baseMethodDeclaration" targetNodeId="2.~SModelLanguageUtil.findNodeOperationParameter(jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation,java.lang.Class):java.lang.Object" resolveInfo="findNodeOperationParameter" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~SModelLanguageUtil.findNodeOperationParameter(jetbrains.mps.lang.smodel.structure.SNodeOperation,java.lang.Class):java.lang.Object" resolveInfo="findNodeOperationParameter" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499921">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1168969209262">
                   <link role="variableDeclaration" targetNodeId="1168969209269" resolveInfo="op" />

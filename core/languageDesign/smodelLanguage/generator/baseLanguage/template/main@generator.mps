@@ -39,12 +39,12 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <maxImportIndex value="57" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="2" modelUID="f:java_stub#jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter(jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter@java_stub)" version="-1" />
+  <import index="2" modelUID="f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
-  <import index="7" modelUID="f:java_stub#jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.template.main(jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.template.main@java_stub)" version="-1" />
+  <import index="7" modelUID="f:java_stub#jetbrains.mps.lang.smodel.generator.baseLanguage.template.main(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@java_stub)" version="-1" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="14" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)" version="-1" />
@@ -889,7 +889,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218221816550">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170457398698">
                 <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.get_SPropertyAccess_simple_getterMethod(jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="get_SPropertyAccess_simple_getterMethod" />
+                <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.get_SPropertyAccess_simple_getterMethod(jetbrains.mps.lang.smodel.structure.SPropertyAccess,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="get_SPropertyAccess_simple_getterMethod" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499964">
                   <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1170457427626" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1170816518132" />
@@ -3169,7 +3169,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218221811345">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170461143002">
                 <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.get_SPropertyAccess_enum_getterMethod(jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="get_SPropertyAccess_enum_getterMethod" />
+                <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.get_SPropertyAccess_enum_getterMethod(jetbrains.mps.lang.smodel.structure.SPropertyAccess,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="get_SPropertyAccess_enum_getterMethod" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499968">
                   <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1170461143004" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1170793397514" />
@@ -3920,7 +3920,7 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168984233975">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218221807780">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1168985030645">
-                <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.get_SConceptPropertyAccess_GetMethod(jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="get_SConceptPropertyAccess_GetMethod" />
+                <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.get_SConceptPropertyAccess_GetMethod(jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="get_SConceptPropertyAccess_GetMethod" />
                 <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499915">
                   <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1168985043967" />
@@ -4403,7 +4403,7 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203118699856">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1203118699857">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203118699858">
-                        <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.getNodeOperation_ConceptList_concepts(jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation):java.util.List" resolveInfo="getNodeOperation_ConceptList_concepts" />
+                        <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.getNodeOperation_ConceptList_concepts(jetbrains.mps.lang.smodel.structure.SNodeOperation):java.util.List" resolveInfo="getNodeOperation_ConceptList_concepts" />
                         <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499944">
                           <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1203118727796" />
@@ -4975,7 +4975,7 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203457995020">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1203457995021">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203457995022">
-                        <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.getNodeOperation_ConceptList_concepts(jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation):java.util.List" resolveInfo="getNodeOperation_ConceptList_concepts" />
+                        <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.getNodeOperation_ConceptList_concepts(jetbrains.mps.lang.smodel.structure.SNodeOperation):java.util.List" resolveInfo="getNodeOperation_ConceptList_concepts" />
                         <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499942">
                           <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1203458012606" />
@@ -5112,7 +5112,7 @@
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1203119709459">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203119709460">
                         <link role="classConcept" targetNodeId="7.~_QueriesUtil" resolveInfo="_QueriesUtil" />
-                        <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.getNodeOperation_ConceptList_concepts(jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation):java.util.List" resolveInfo="getNodeOperation_ConceptList_concepts" />
+                        <link role="baseMethodDeclaration" targetNodeId="7.~_QueriesUtil.getNodeOperation_ConceptList_concepts(jetbrains.mps.lang.smodel.structure.SNodeOperation):java.util.List" resolveInfo="getNodeOperation_ConceptList_concepts" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204668499972">
                           <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1203119732095" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1203119709462" />
