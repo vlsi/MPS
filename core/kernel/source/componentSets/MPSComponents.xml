@@ -416,7 +416,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.scriptLanguage.plugin.migrationtool.MigrationScriptsTool
+      <implementation-class>jetbrains.mps.lang.script.plugin.migrationtool.MigrationScriptsTool
       </implementation-class>
     </component>
 

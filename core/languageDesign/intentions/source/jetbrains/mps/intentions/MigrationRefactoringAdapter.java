@@ -1,7 +1,7 @@
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.ide.scriptLanguage.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.ide.scriptLanguage.structure.MigrationScript;
+import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import jetbrains.mps.lang.script.structure.MigrationScript;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;

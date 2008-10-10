@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590321(jetbrains.mps.ide.scriptLanguage.plugin)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590321(jetbrains.mps.lang.script.plugin)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -19,19 +19,18 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.ide.scriptLanguage.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <maxImportIndex value="14" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.ide.scriptLanguage.structure)" version="-1" />
-  <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.scriptLanguage.plugin(jetbrains.mps.ide.scriptLanguage.plugin@java_stub)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
+  <maxImportIndex value="17" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.ide.scriptLanguage.structure(jetbrains.mps.ide.scriptLanguage.structure@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
@@ -39,6 +38,8 @@
   <import index="12" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="14" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
+  <import index="15" modelUID="f:java_stub#jetbrains.mps.lang.script.structure(jetbrains.mps.lang.script.structure@java_stub)" version="-1" />
+  <import index="17" modelUID="f:java_stub#jetbrains.mps.lang.script.plugin(jetbrains.mps.lang.script.plugin@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1207489199158">
     <property name="name" value="ScriptsForSelection" />
     <property name="caption" value="Scripts" />
@@ -243,7 +244,7 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215714014598">
         <link role="classifier" targetNodeId="4.~List" resolveInfo="List" />
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215714018553">
-          <link role="classifier" targetNodeId="6.~MigrationScript" resolveInfo="MigrationScript" />
+          <link role="classifier" targetNodeId="15.~MigrationScript" resolveInfo="MigrationScript" />
         </node>
       </node>
     </node>
@@ -360,8 +361,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215714181279">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215714181280">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215714165227">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.getMigrationScripts(java.util.List):java.util.List" resolveInfo="getMigrationScripts" />
-              <link role="classConcept" targetNodeId="2.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
+              <link role="classConcept" targetNodeId="17.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
+              <link role="baseMethodDeclaration" targetNodeId="17.~ScriptsActionGroupHelper.getMigrationScripts(java.util.List):java.util.List" resolveInfo="getMigrationScripts" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215714173869">
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1215714173870">
                   <link role="fieldDeclaration" targetNodeId="1215713983855" resolveInfo="allLanguages" />
@@ -421,8 +422,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215714585270">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215714585271">
-            <link role="classConcept" targetNodeId="2.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
-            <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByCategoryGroup(java.util.List,jetbrains.mps.workbench.action.BaseGroup,boolean):void" resolveInfo="populateByCategoryGroup" />
+            <link role="classConcept" targetNodeId="17.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
+            <link role="baseMethodDeclaration" targetNodeId="17.~ScriptsActionGroupHelper.populateByCategoryGroup(java.util.List,jetbrains.mps.workbench.action.BaseGroup,boolean):void" resolveInfo="populateByCategoryGroup" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215714592289">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1215714592290">
                 <link role="fieldDeclaration" targetNodeId="1215714011501" resolveInfo="allScripts" />
@@ -485,8 +486,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215714650285">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215714650286">
-            <link role="classConcept" targetNodeId="2.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
-            <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByBuildGroup(java.util.List,jetbrains.mps.workbench.action.BaseGroup,boolean):void" resolveInfo="populateByBuildGroup" />
+            <link role="classConcept" targetNodeId="17.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
+            <link role="baseMethodDeclaration" targetNodeId="17.~ScriptsActionGroupHelper.populateByBuildGroup(java.util.List,jetbrains.mps.workbench.action.BaseGroup,boolean):void" resolveInfo="populateByBuildGroup" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215714657976">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1215714657977">
                 <link role="fieldDeclaration" targetNodeId="1215714011501" resolveInfo="allScripts" />
@@ -560,8 +561,8 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215714705989">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215714705990">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215714705991">
-                <link role="classConcept" targetNodeId="2.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
-                <link role="baseMethodDeclaration" targetNodeId="2.~ScriptsActionGroupHelper.populateByLanguageGroup(jetbrains.mps.smodel.Language,jetbrains.mps.workbench.action.BaseGroup,boolean):void" resolveInfo="populateByLanguageGroup" />
+                <link role="classConcept" targetNodeId="17.~ScriptsActionGroupHelper" resolveInfo="ScriptsActionGroupHelper" />
+                <link role="baseMethodDeclaration" targetNodeId="17.~ScriptsActionGroupHelper.populateByLanguageGroup(jetbrains.mps.smodel.Language,jetbrains.mps.workbench.action.BaseGroup,boolean):void" resolveInfo="populateByLanguageGroup" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1215714705992">
                   <link role="variable" targetNodeId="1215714705987" resolveInfo="language" />
                 </node>
@@ -595,7 +596,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215715015306">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215715095785">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215715095786">
-              <link role="baseMethodDeclaration" targetNodeId="2.~RunMigrationScriptsAction.&lt;init&gt;(java.util.List,java.lang.String,boolean)" resolveInfo="RunMigrationScriptsAction" />
+              <link role="baseMethodDeclaration" targetNodeId="17.~RunMigrationScriptsAction.&lt;init&gt;(java.util.List,java.lang.String,boolean)" resolveInfo="RunMigrationScriptsAction" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215715101633">
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1215715101634">
                   <link role="fieldDeclaration" targetNodeId="1215714011501" resolveInfo="allScripts" />

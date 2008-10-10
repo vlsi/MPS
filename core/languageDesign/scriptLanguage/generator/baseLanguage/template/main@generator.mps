@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590324(jetbrains.mps.ide.scriptLanguage.generator.baseLanguage.template.main@generator)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590324(jetbrains.mps.lang.script.generator.baseLanguage.template.main@generator)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)" />
@@ -17,18 +17,19 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.ide.scriptLanguage.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <maxImportIndex value="10" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.ide.scriptLanguage.structure)" version="-1" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="5" modelUID="f:java_stub#jetbrains.mps.ide.scriptLanguage.util(jetbrains.mps.ide.scriptLanguage.util@java_stub)" version="-1" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.ide.scriptLanguage.runtime(jetbrains.mps.ide.scriptLanguage.runtime@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#jetbrains.mps.lang.script.util(jetbrains.mps.lang.script.util@java_stub)" version="-1" />
+  <import index="6" modelUID="f:java_stub#jetbrains.mps.lang.script.runtime(jetbrains.mps.lang.script.runtime@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" version="-1" />
@@ -73,7 +74,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209063913083">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1177464921008" />
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209063913084">
-              <link role="baseMethodDeclaration" targetNodeId="6.~BaseMigrationScript.addRefactoring(jetbrains.mps.ide.scriptLanguage.runtime.AbstractMigrationRefactoring):void" resolveInfo="addRefactoring" />
+              <link role="baseMethodDeclaration" targetNodeId="6.~BaseMigrationScript.addRefactoring(jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring):void" resolveInfo="addRefactoring" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1182161166528">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1182161166529">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1177465195992">
