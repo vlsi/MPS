@@ -961,6 +961,7 @@
       <module fileurl="file://$PROJECT_DIR$/samples/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/samples/fixedLengthReader/fixedLengthReader.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/samples/formulaLanguage/formulaLanguage.iml" filepath="$PROJECT_DIR$/samples/formulaLanguage/formulaLanguage.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/app/functional/functional.iml" filepath="$PROJECT_DIR$/app/functional/functional.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/generator/generator.iml" filepath="$PROJECT_DIR$/core/languageDesign/generator/generator.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/app/mf/gothic/gothic.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/platform/gtext/gtext.iml" filepath="$PROJECT_DIR$/platform/gtext/gtext.iml" group="platform/gtext" />
       <module fileurl="file://$PROJECT_DIR$/platform/gtext/runtime/gtext_runtime.iml" filepath="$PROJECT_DIR$/platform/gtext/runtime/gtext_runtime.iml" group="platform/gtext" />
@@ -995,7 +996,6 @@
       <module fileurl="file://$PROJECT_DIR$/testMaterial/testRenameLanguage/testRenameLanguage.iml" filepath="$PROJECT_DIR$/testMaterial/testRenameLanguage/testRenameLanguage.iml" group="core/languageDesign/refactoring" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/samples/theSimplestLanguage/theSimplestLanguage.iml" filepath="$PROJECT_DIR$/samples/theSimplestLanguage/theSimplestLanguage.iml" group="samples" />
-      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" filepath="$PROJECT_DIR$/core/languageDesign/transformation/transformation.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/transformationTest/transformationTest.iml" filepath="$PROJECT_DIR$/core/languageDesign/transformationTest/transformationTest.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" filepath="$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" group="platform/uiLanguage" />
       <module fileurl="file://$PROJECT_DIR$/platform/uiLanguage/runtime/uiLanguage-runtime.iml" filepath="$PROJECT_DIR$/platform/uiLanguage/runtime/uiLanguage-runtime.iml" group="platform/uiLanguage" />
