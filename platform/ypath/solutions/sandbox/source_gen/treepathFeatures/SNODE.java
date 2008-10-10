@@ -39,7 +39,7 @@ public class SNODE extends TreePath<SNode> {
     }
 
     public static SNode parent(SNode node) {
-      return SNodeOperations.getParent(node, null, false, false);
+      return SNodeOperations.getParent(node);
     }
 
 }

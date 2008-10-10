@@ -30,16 +30,16 @@ public class FILE_NG extends TreePath<File> {
       this._closureContext = (Object)closureContext;
     }
 
+    public boolean accept(File node) {
+      return node.isDirectory();
+    }
+
+
     public static IFilter<File> getInstance() {
       if (instance == null) {
         instance = new FILE_NG.DIR_NodeKindTrigger();
       }
       return instance;
-    }
-
-
-    public boolean accept(File node) {
-      return node.isDirectory();
     }
 
 }

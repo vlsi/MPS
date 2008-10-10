@@ -6,7 +6,6 @@ import jetbrains.mps.ypath.runtime.TreePath;
 import org.w3c.dom.Node;
 import jetbrains.mps.ypath.runtime.IFilter;
 import org.w3c.dom.Element;
-import featuresDemo.DOM_NG.ELEMENT_tag_Property;
 import java.util.AbstractList;
 import java.util.AbstractCollection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -37,16 +36,16 @@ public class DOM_NG extends TreePath<Node> {
       this._closureContext = (Object)closureContext;
     }
 
+    public boolean accept(Node e) {
+      return e instanceof Element;
+    }
+
+
     public static IFilter<Node> getInstance() {
       if (instance == null) {
         instance = new DOM_NG.ELEMENT_NodeKindTrigger();
       }
       return instance;
-    }
-
-
-    public boolean accept(Node e) {
-      return e instanceof Element;
     }
 
 }

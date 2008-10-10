@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class stylesheet_Feature_StyleSheet {
 
-  public static Style getOpposite(final EditorCell cell) {
+  public static Style getOPPOSITE(final EditorCell cell) {
     return new Style(cell) {
       {
         this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {

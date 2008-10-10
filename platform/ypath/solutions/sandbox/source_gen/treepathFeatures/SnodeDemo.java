@@ -13,7 +13,7 @@ import jetbrains.mps.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-
+import jetbrains.mps.closures.runtime._FunctionTypes;
 import java.util.List;
 import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
 
@@ -262,20 +262,85 @@ __switch__:
 
     });
     // Another pair of tests
-//    ListSequence.fromList(ListSequence.<SNode>fromArray(SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator <SNode>() {
-//
-//      public ISequence<S> translate(SNode it) {
-//with_parents:
-//        for(SNode p : ListSequence.<SNode>fromArray(SNodeOperations.getParent(it, null, false, false))) {
-//          for(SNode c : SNodeOperations.getChildren(p)) {
-//            if (it == c) {
-//              break with_parents;
-//            }
-//          }
-//        }
-//      }
-//
-//    });
+    ListSequence.fromList(ListSequence.<SNode>fromArray(SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator <SNode, SNode>() {
+
+      public ISequence<SNode> translate(final SNode it) {
+        return new ISequenceIterableAdapter <SNode>() {
+
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator <SNode>() {
+
+              private int __CP__ = 0;
+              private SNode _2_p;
+              private Iterator<SNode> _2_p_it;
+              private SNode _5_c;
+              private Iterator<SNode> _5_c_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_p_it = ListSequence.<SNode>fromArray(SNodeOperations.getParent(it)).iterator();
+                    case 3:
+                      if (!(this._2_p_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_p = this._2_p_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this._5_c_it = SNodeOperations.getChildren(this._2_p).iterator();
+                    case 6:
+                      if (!(this._5_c_it.hasNext())) {
+                        this.__CP__ = 3;
+                        break;
+                      }
+                      this._5_c = this._5_c_it.next();
+                      this.__CP__ = 7;
+                      break;
+                    case 8:
+                      if (it == this._5_c) {
+                        this.__CP__ = 9;
+                        break;
+                      }
+                      this.__CP__ = 10;
+                      break;
+                    case 10:
+                      this.__CP__ = 6;
+                      this.yield(this._5_c);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 7:
+                      this.__CP__ = 8;
+                      break;
+                    case 9:
+                      this.__CP__ = 1;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
     ListSequence.fromList(ListSequence.<SNode>fromArray(SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator <SNode, SNode>() {
 
       public ISequence<SNode> translate(final SNode it) {
@@ -299,7 +364,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2__zzz__it = ListSequence.<SNode>fromArray(SNodeOperations.getParent(it, null, false, false)).iterator();
+                      this._2__zzz__it = ListSequence.<SNode>fromArray(SNodeOperations.getParent(it)).iterator();
                     case 3:
                       if (!(this._2__zzz__it.hasNext())) {
                         this.__CP__ = 1;
@@ -356,70 +421,73 @@ __switch__:
 
     });
     // And another one
-//    ListSequence.fromList(ListSequence.<SNode>fromArray(foo)).translate(new ITranslator <SNode, SNode>() {
-//
-//      public ISequence<SNode> translate(SNode it) {
-//        return new _FunctionTypes._return_P1_E0 <Iterable<SNode>, SNode>() {
-//
-//          public Iterable<SNode> invoke(final SNode _zzz_) {
-//            return new Iterable <SNode>() {
-//
-//              public Iterator<SNode> iterator() {
-//                return new YieldingIterator <SNode>() {
-//
-//                  private int __CP__ = 0;
-//                  private SNode _2__yyy_;
-//                  private Iterator<SNode> _2__yyy__it;
-//
-//                  protected boolean moveToNext() {
-//__loop__:
-//                    do {
-//__switch__:
-//                      switch (this.__CP__) {
-//                        case -1:
-//                          assert false : "Internal error";
-//                          return false;
-//                        case 2:
-//                          this._2__yyy__it = SNodeOperations.getChildren(_zzz_).iterator();
-//                        case 3:
-//                          if (!(this._2__yyy__it.hasNext())) {
-//                            this.__CP__ = 1;
-//                            break;
-//                          }
-//                          this._2__yyy_ = this._2__yyy__it.next();
-//                          this.__CP__ = 4;
-//                          break;
-//                        case 5:
-//                          this.__CP__ = 6;
-//                          this.yield(this._2__yyy_);
-//                          return true;
-//                        case 0:
-//                          this.__CP__ = 2;
-//                          break;
-//                        case 4:
-//                          this.__CP__ = 5;
-//                          break;
-//                        case 6:
-//                          invoke(this._2__yyy_);
-//                          this.__CP__ = 3;
-//                          break;
-//                        default:
-//                          break __loop__;
-//                      }
-//                    } while(true);
-//                    return false;
-//                  }
-//
-//                };
-//              }
-//
-//            };
-//          }
-//
-//        }.invoke(it);
-//      }
-//
-//    });
+    /*
+      //  way too complicated
+      ListSequence.fromList(ListSequence.<SNode>fromArray(foo)).translate(new ITranslator <SNode, SNode>() {
+
+        public ISequence<SNode> translate(SNode it) {
+          return new _FunctionTypes._return_P1_E0 <Iterable<SNode>, SNode>() {
+
+            public Iterable<SNode> invoke(final SNode _zzz_) {
+              return new Iterable <SNode>() {
+
+                public Iterator<SNode> iterator() {
+                  return new YieldingIterator <SNode>() {
+
+                    private int __CP__ = 0;
+                    private SNode _2__yyy_;
+                    private Iterator<SNode> _2__yyy__it;
+
+                    protected boolean moveToNext() {
+__loop__:
+                      do {
+__switch__:
+                        switch (this.__CP__) {
+                          case -1:
+                            assert false : "Internal error";
+                            return false;
+                          case 2:
+                            this._2__yyy__it = SNodeOperations.getChildren(_zzz_).iterator();
+                          case 3:
+                            if (!(this._2__yyy__it.hasNext())) {
+                              this.__CP__ = 1;
+                              break;
+                            }
+                            this._2__yyy_ = this._2__yyy__it.next();
+                            this.__CP__ = 4;
+                            break;
+                          case 5:
+                            this.__CP__ = 6;
+                            this.yield(this._2__yyy_);
+                            return true;
+                          case 0:
+                            this.__CP__ = 2;
+                            break;
+                          case 4:
+                            this.__CP__ = 5;
+                            break;
+                          case 6:
+                            invoke(this._2__yyy_);
+                            this.__CP__ = 3;
+                            break;
+                          default:
+                            break __loop__;
+                        }
+                      } while(true);
+                      return false;
+                    }
+
+                  };
+                }
+
+              };
+            }
+
+          }.invoke(it);
+        }
+
+      });
+    */
     Sequence.fromClosure(new ISequenceClosure <SNode>() {
 
       public Iterable<SNode> iterable() {

@@ -994,7 +994,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11979225445081197922544508(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197922544508");
-    stylesheet_Feature_StyleSheet.getOpposite(editorCell).apply(editorCell);
+    stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_ModelAccess_11979225445111197922544511(EditorCell editorCell, SNode node, EditorContext context) {
@@ -1025,13 +1025,13 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11979225445601197922544560(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197922544560");
-    stylesheet_Feature_StyleSheet.getOpposite(editorCell).apply(editorCell);
+    stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Constant_11979225445791197922544579(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197922544579");
-    stylesheet_Feature_StyleSheet.getOpposite(editorCell).apply(editorCell);
+    stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, context);
   }
 

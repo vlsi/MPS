@@ -17,7 +17,7 @@ public class FileDemo {
 
   public static void main(String[] args) {
     final File f = new File(Arrays.asList(args).get(0));
-    for(File dir : TreeTraversalFactory.Filter(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new File_TreePath().startTraversal(f), TreeTraversalFactory.Axis("DESCENDANTS")), File_TreePath.DIR_NodeKindTrigger.getInstance()), new WhereFilter(null, null))) {
+    for(File dir : TreeTraversalFactory.Filter(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new File_TreePath().startTraversal(f), TreeTraversalFactory.Axis("DESCENDANTS")), File_TreePath.DIR_NodeKindTrigger.getInstance()), new WhereFilter0(null, null))) {
       System.out.println(dir);
     }
     for(File d : TreeTraversalFactory.Filter(new File_TreePath().startTraversal(f), File_TreePath.DIR_NodeKindTrigger.getInstance())) {

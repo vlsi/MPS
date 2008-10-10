@@ -5,7 +5,6 @@ package sample2;
 import jetbrains.mps.ypath.runtime.TreePath;
 import java.io.File;
 import jetbrains.mps.ypath.runtime.IFilter;
-import sample2.File_TreePath.FILE_name_Property;
 
 public class File_TreePath extends TreePath<File> {
 
@@ -63,16 +62,16 @@ public class File_TreePath extends TreePath<File> {
       this._closureContext = (Object)closureContext;
     }
 
+    public boolean accept(File f) {
+      return f.isFile();
+    }
+
+
     public static IFilter<File> getInstance() {
       if (instance == null) {
         instance = new File_TreePath.FILE_NodeKindTrigger();
       }
       return instance;
-    }
-
-
-    public boolean accept(File f) {
-      return f.isFile();
     }
 
 }
@@ -89,16 +88,16 @@ public class File_TreePath extends TreePath<File> {
       this._closureContext = (Object)closureContext;
     }
 
+    public boolean accept(File f) {
+      return f.isDirectory();
+    }
+
+
     public static IFilter<File> getInstance() {
       if (instance == null) {
         instance = new File_TreePath.DIR_NodeKindTrigger();
       }
       return instance;
-    }
-
-
-    public boolean accept(File f) {
-      return f.isDirectory();
     }
 
 }
