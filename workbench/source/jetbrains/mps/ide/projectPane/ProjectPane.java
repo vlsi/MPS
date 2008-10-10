@@ -947,10 +947,10 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
   }
 
-  private class ModulesNamespaceTreeBuilder extends NamespaceTreeBuilder {
+  private class ModulesNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
     private MPSProject myProject;
 
-    private ModulesNamespaceTreeBuilder(MPSProject project) {
+    protected ModulesNamespaceTreeBuilder(MPSProject project) {
       myProject = project;
     }
 

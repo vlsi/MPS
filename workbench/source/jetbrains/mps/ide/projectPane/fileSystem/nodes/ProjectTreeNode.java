@@ -6,7 +6,7 @@ import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder;
+import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -81,8 +81,7 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
     setText(myProject.getName());
   }
 
-  private class MyNamespaceTreeBuilder extends NamespaceTreeBuilder {
-
+  private class MyNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
     protected String getNamespace(@NotNull MPSTreeNode node) {
       String folder = "";
       if (node instanceof ModuleTreeNode){

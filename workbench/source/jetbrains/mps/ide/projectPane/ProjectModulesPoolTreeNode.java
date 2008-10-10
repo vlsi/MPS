@@ -53,7 +53,8 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
     return MPSModuleRepository.getInstance().getAllModules();
   }
 
-  private class ModulePoolNamespaceBuilder extends NamespaceTreeBuilder<ProjectModuleTreeNode> {
+  private class ModulePoolNamespaceBuilder extends DefaultNamespaceTreeBuilder<ProjectModuleTreeNode> {
+
     protected String getNamespace(ProjectModuleTreeNode node) {
       if (node.getModule() instanceof Generator) {
         Generator generator = (Generator) node.getModule();

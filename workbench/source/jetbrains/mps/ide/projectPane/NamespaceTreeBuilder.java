@@ -11,6 +11,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -25,16 +26,20 @@ import jetbrains.mps.workbench.actions.project.NewLanguageAction;
 import jetbrains.mps.workbench.actions.project.NewSolutionAction;
 
 import javax.swing.JOptionPane;
+import javax.swing.tree.MutableTreeNode;
 import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
-  private NamespaceNode myRootNamespace = new NamespaceNode("", null);
+public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends NamespaceNode> {
+  private T myRootNamespace;
+  private NamespaceNodeBuilder<T> myBuilder;
 
-  protected NamespaceTreeBuilder() {
+  protected NamespaceTreeBuilder(NamespaceNodeBuilder<T> builder) {
+    myBuilder = builder;
+    myRootNamespace = myBuilder.createNamespaceNode("", null);
   }
 
   protected abstract String getNamespace(N node);
@@ -47,7 +52,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
       pathElements.remove(0);
     }
 
-    myRootNamespace.getSubnamespace(pathElements, node.getOperationContext()).add(node);
+    getSubnamespace(myRootNamespace, pathElements, node.getOperationContext()).add(node);
   }
 
   public void fillNode(MPSTreeNode root) {
@@ -116,163 +121,37 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
     }
   }
 
-  public static final class NamespaceNode extends TextTreeNode {
-    private String myName;
+  private T getSubnamespace(T sourceNode, List<String> pathElements, IOperationContext context) {
+    if (pathElements.size() == 0) return sourceNode;
 
-    public NamespaceNode(String name, IOperationContext context) {
-      super(name, context);
-      setName(name);
-    }
+    String first = pathElements.get(0);
+    List<String> otherElements = pathElements.subList(1, pathElements.size());
 
-    private void setName(String newName) {
-      myName = newName;
-      setText(newName);
-    }
-
-    protected boolean canBeOpened() {
-      return false;
-    }
-
-    private NamespaceNode getSubnamespace(List<String> pathElements, IOperationContext context) {
-      if (pathElements.size() == 0) return this;
-
-      String first = pathElements.get(0);
-      List<String> otherElements = pathElements.subList(1, pathElements.size());
-
-      for (int i = 0; i < getChildCount(); i++) {
-        if (getChildAt(i) instanceof NamespaceNode) {
-          NamespaceNode child = (NamespaceNode) getChildAt(i);
-          if (first.equals(child.getName())) {
-            return child.getSubnamespace(otherElements, context);
-          }
+    for (int i = 0; i < sourceNode.getChildCount(); i++) {
+      if (sourceNode.getChildAt(i) instanceof NamespaceNode) {
+        T child = (T) sourceNode.getChildAt(i);
+        if (first.equals(child.getName())) {
+          return getSubnamespace(child, otherElements, context);
         }
       }
-
-      NamespaceNode newChild = new NamespaceNode(first, new MyContext(null, context));
-
-      add(newChild);
-
-      return newChild.getSubnamespace(otherElements, context);
     }
 
-    public ActionGroup getActionGroup() {
-      DefaultActionGroup group = new DefaultActionGroup();
+    T newChild = myBuilder.createNamespaceNode(first, new MyContext(null, context));
 
-      DefaultActionGroup newGroup = createNewGroup();
-      if (newGroup != null) {
-        group.add(newGroup);
-        group.addSeparator();
-      }
+    sourceNode.add(newChild);
 
-      group.add(new BaseAction("Generate files", "Generate files from all models under this namespace", IconManager.EMPTY_ICON) {
-        {
-          setExecuteOutsideCommand(true);
-        }
+    return getSubnamespace(newChild, otherElements, context);
+  }
 
-        protected void doExecute(AnActionEvent e) {
-          DataContext dataContext = DataManager.getInstance().getDataContext();
-          Project ideaProject = PlatformDataKeys.PROJECT.getData(dataContext);
-          if (ideaProject == null) return;
-          MPSProjectHolder holder = ideaProject.getComponent(MPSProjectHolder.class);
-          if (holder == null) return;
-          MPSProject project = holder.getMPSProject();
-          GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
-          List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-          for (SModelDescriptor modelDescriptor : getModelsUnder(NamespaceNode.this)) {
-            if (!modelDescriptor.isTransient() && (modelDescriptor instanceof DefaultSModelDescriptor)) {
-              models.add(modelDescriptor);
-            }
-          }
-          manager.generateModelsFromDifferentModules(project.createOperationContext(), models, IGenerationType.FILES);
-        }
-      });
+  public static interface NamespaceNode extends MutableTreeNode {
+    String getName();
+    void setName(String name);
+    void add(MutableTreeNode newChild);
+    void removeAllChildren();
+  }
 
-      group.addSeparator();
-      group.add(new BaseAction("Rename") {
-        protected void doExecute(AnActionEvent e) {
-          Frame frame = NamespaceNode.this.getOperationContext().getMainFrame();
-          String newFolder = JOptionPane.showInputDialog(frame, "Enter new Folder", myName);
-          if (newFolder != null) {
-            if (newFolder.equals("")) {
-
-              newFolder = null;
-            }
-
-            ActionEventData data = new ActionEventData(e);
-
-            for (IModule m : getModulesUnder(NamespaceNode.this)) {
-              data.getMPSProject().setFolderFor(m, newFolder);
-            }
-
-            data.getMPSProject().getComponent(ProjectPane.class).rebuild();
-          }
-        }
-      });
-
-      return group;
-    }
-
-    private DefaultActionGroup createNewGroup() {
-      boolean hasModulesUnder = hasModulesUnder();
-      boolean hasModelsUnder = hasModelsUnder();
-
-      if (!hasModelsUnder && !hasModulesUnder) return null;
-
-      DefaultActionGroup newGroup = new DefaultActionGroup("New", true);
-
-      if (hasModulesUnder) {
-        newGroup.add(new NewSolutionAction(myName));
-        newGroup.add(new NewLanguageAction(myName));
-      }
-      if (hasModelsUnder && hasModulesUnder) {
-        newGroup.addSeparator();
-      }
-      if (hasModelsUnder) {
-        newGroup.add(new NewModel_Action() {
-          protected String getNamespace() {
-            return myName;
-          }
-        });
-      }
-      return newGroup;
-    }
-
-    private List<SModelDescriptor> getModelsUnder(MPSTreeNode node) {
-      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      for (MPSTreeNode child : node) {
-        if (child instanceof SModelTreeNode) {
-          models.add(((SModelTreeNode) child).getSModelDescriptor());
-        } else {
-          models.addAll(getModelsUnder(child));
-        }
-      }
-
-      return models;
-    }
-
-    private boolean hasModelsUnder() {
-      return getModelsUnder(this).size() > 0;
-    }
-
-    private boolean hasModulesUnder() {
-      return getModulesUnder(this).size() > 0;
-    }
-
-    private List<IModule> getModulesUnder(MPSTreeNode node) {
-      List<IModule> modules = new ArrayList<IModule>();
-      for (MPSTreeNode child : node) {
-        if (child instanceof ProjectModuleTreeNode) {
-          modules.add(((ProjectModuleTreeNode) child).getModule());
-        } else {
-          if (child instanceof NamespaceNode) modules.addAll(getModulesUnder(child));
-        }
-      }
-      return modules;
-    }
-
-    public String getName() {
-      return myName;
-    }
+  public static interface NamespaceNodeBuilder<N extends NamespaceNode> {
+    N createNamespaceNode(String text, IOperationContext context);
   }
 
   private static class MyContext implements IOperationContext {
