@@ -68,7 +68,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
           }
         } else
         {
-          SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178765405776", true);
+          SNode returnType = typeCheckingContext.typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178765405776", true);
           {
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
             BaseIntentionProvider intentionProvider = null;
@@ -82,7 +82,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       // last expression statement can serve as return statement
       SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(bmd, "body", true), "statement", true)).last();
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-        SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStatement, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178765601477", true);
+        SNode returnType = typeCheckingContext.typeOf(SLinkOperations.getTarget(lastStatement, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178765601477", true);
         {
           SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(lastStatement, "expression", true);
           BaseIntentionProvider intentionProvider = null;

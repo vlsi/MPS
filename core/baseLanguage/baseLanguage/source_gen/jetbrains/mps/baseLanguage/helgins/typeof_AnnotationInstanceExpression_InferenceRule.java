@@ -21,7 +21,7 @@ public class typeof_AnnotationInstanceExpression_InferenceRule extends AbstractI
     {
       SNode _nodeToCheck_1029348928467 = annotationInstanceExpression;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(annotationInstanceExpression, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1188221584618", true), new QuotationClass_64().createNode(annotation), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1188221689320", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(typeCheckingContext.typeOf(annotationInstanceExpression, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1188221584618", true), new QuotationClass_64().createNode(annotation), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1188221689320", intentionProvider);
     }
   }
 

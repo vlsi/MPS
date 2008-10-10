@@ -20,7 +20,7 @@ public class typeOf_notEqualsExpression_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = notEqExpr;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(notEqExpr, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606239715", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(notEqExpr, "rightExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606261733", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606237774", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(typeCheckingContext.typeOf(SLinkOperations.getTarget(notEqExpr, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606239715", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(notEqExpr, "rightExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606261733", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606237774", intentionProvider);
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_13().createNode(), notEqExpr, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606302946");
   }

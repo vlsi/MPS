@@ -20,7 +20,7 @@ public class typeof_ValueParameter_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = valueParameter;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(valueParameter, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1202594390188", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getAncestor(valueParameter, "jetbrains.mps.baseLanguage.structure.Property", false, false), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1202594397696", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1202594395129", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(typeCheckingContext.typeOf(valueParameter, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1202594390188", true), typeCheckingContext.typeOf(SNodeOperations.getAncestor(valueParameter, "jetbrains.mps.baseLanguage.structure.Property", false, false), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1202594397696", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1202594395129", intentionProvider);
     }
   }
 

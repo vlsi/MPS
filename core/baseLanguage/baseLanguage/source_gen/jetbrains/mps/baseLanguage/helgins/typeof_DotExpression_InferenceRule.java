@@ -20,7 +20,7 @@ public class typeof_DotExpression_InferenceRule extends AbstractInferenceRule_Ru
     {
       SNode _nodeToCheck_1029348928467 = dotExpression;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(dotExpression, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1197028434327", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(dotExpression, "operation", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1197028440830", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1197028438070", intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(typeCheckingContext.typeOf(dotExpression, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1197028434327", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(dotExpression, "operation", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1197028440830", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1197028438070", intentionProvider);
     }
   }
 

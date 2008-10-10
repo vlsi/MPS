@@ -16,7 +16,7 @@ public class typeOf_ClosureParameterReference_InferenceRule extends AbstractInfe
   }
 
   public void applyRule(final SNode closureParmRef, final TypeCheckingContext typeCheckingContext) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(closureParmRef, "closureParameter", false), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1177075613260", true), closureParmRef, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1177075609741");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(typeCheckingContext.typeOf(SLinkOperations.getTarget(closureParmRef, "closureParameter", false), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1177075613260", true), closureParmRef, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1177075609741");
   }
 
   public String getApplicableConceptFQName() {

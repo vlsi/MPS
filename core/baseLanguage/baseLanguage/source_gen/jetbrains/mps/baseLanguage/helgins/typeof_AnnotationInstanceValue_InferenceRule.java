@@ -20,7 +20,7 @@ public class typeof_AnnotationInstanceValue_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = annotationInstanceValue;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(annotationInstanceValue, "value", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1188221904889", true), SLinkOperations.getTarget(SLinkOperations.getTarget(annotationInstanceValue, "key", false), "returnType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1188221827926", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(annotationInstanceValue, "value", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1188221904889", true), SLinkOperations.getTarget(SLinkOperations.getTarget(annotationInstanceValue, "key", false), "returnType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1188221827926", false, 0, intentionProvider);
     }
   }
 

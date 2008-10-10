@@ -22,7 +22,7 @@ public class typeOf_Switch_InferenceRule extends AbstractInferenceRule_Runtime i
       {
         SNode _nodeToCheck_1029348928467 = switchStatement;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(switchCase, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175520598041", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(switchSt, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175520609108", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175520590975", false, 0, intentionProvider);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(switchCase, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175520598041", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(switchSt, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175520609108", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175520590975", false, 0, intentionProvider);
       }
     }
   }

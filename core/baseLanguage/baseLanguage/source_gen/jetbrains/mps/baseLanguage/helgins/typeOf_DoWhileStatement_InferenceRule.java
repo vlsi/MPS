@@ -20,7 +20,7 @@ public class typeOf_DoWhileStatement_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = doWhileStatement;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(doWhileStatement, "condition", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1177667395190", true), new QuotationClass_61().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1177667395187", false, 0, intentionProvider);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(doWhileStatement, "condition", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1177667395190", true), new QuotationClass_61().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1177667395187", false, 0, intentionProvider);
     }
   }
 

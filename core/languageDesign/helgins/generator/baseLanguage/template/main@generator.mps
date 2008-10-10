@@ -2280,17 +2280,14 @@
     <property name="name" value="Typeof_to_expression" />
     <link role="applicableConcept" targetNodeId="1.1215686999346" resolveInfo="TypeOfExpression_internal" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214930993046">
-      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214930990434">
-        <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1174657695115">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
-          <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
-        </node>
-        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214930990435">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getRuntimeSupport():jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport" resolveInfo="getRuntimeSupport" />
+      <node role="operand" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1223635555143">
+        <property name="name" value="typeCheckingContext" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223635558598">
+          <link role="classifier" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
         </node>
       </node>
       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214930993047">
-        <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.typeOf(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,boolean):jetbrains.mps.smodel.SNode" resolveInfo="typeOf" />
+        <link role="baseMethodDeclaration" targetNodeId="6.~TypeCheckingContext.typeOf(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,boolean):jetbrains.mps.smodel.SNode" resolveInfo="typeOf" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1174657717266">
           <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.IfMacro" id="1214931035051">
             <node role="conditionFunction" type="jetbrains.mps.transformation.TLBase.structure.IfMacro_Condition" id="1214931879685">
@@ -15738,6 +15735,7 @@
                       <node role="parameter" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1223389540575">
                         <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1223389540576">
                           <property name="name" value="typeCheckingContext" />
+                          <property name="isFinal" value="true" />
                           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223389540577">
                             <link role="classifier" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
                           </node>
