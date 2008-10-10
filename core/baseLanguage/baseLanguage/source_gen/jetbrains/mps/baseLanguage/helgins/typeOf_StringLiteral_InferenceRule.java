@@ -7,7 +7,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_StringLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -19,7 +18,7 @@ public class typeOf_StringLiteral_InferenceRule extends AbstractInferenceRule_Ru
     {
       SNode _nodeToCheck_1029348928467 = stringLiteral;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(typeCheckingContext.typeOf(stringLiteral, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1221565956916", true), new QuotationClass_15().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1221565956914", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(stringLiteral, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1221565956916", true), new QuotationClass_15().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1221565956914", intentionProvider);
     }
   }
 

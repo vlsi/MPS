@@ -7,7 +7,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -20,7 +19,7 @@ public class typeof_AnnotationInstanceValue_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = annotationInstanceValue;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(annotationInstanceValue, "value", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1188221904889", true), SLinkOperations.getTarget(SLinkOperations.getTarget(annotationInstanceValue, "key", false), "returnType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1188221827926", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(annotationInstanceValue, "value", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1188221904889", true), SLinkOperations.getTarget(SLinkOperations.getTarget(annotationInstanceValue, "key", false), "returnType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1188221827926", false, 0, intentionProvider);
     }
   }
 

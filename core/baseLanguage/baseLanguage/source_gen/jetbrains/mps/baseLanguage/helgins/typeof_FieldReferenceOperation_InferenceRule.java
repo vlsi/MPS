@@ -31,13 +31,13 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = fieldReference;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(fieldReference), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1206554174339", true), TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1206554174335", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(fieldReference), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1206554174339", true), TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1206554174335", intentionProvider);
     }
     final SNode fieldClassifier = SNodeOperations.getAncestor(fieldDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     {
       SNode _nodeToCheck_1029348928467 = fieldReference;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new QuotationClass_73().createNode(fieldClassifier), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1206554174350", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), new QuotationClass_73().createNode(fieldClassifier), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1206554174350", false, 0, intentionProvider);
     }
     {
       final SNode IT = TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334);
@@ -50,7 +50,7 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
           {
             SNode _nodeToCheck_1029348928467 = fieldReference;
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(typeCheckingContext.typeOf(fieldReference, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1206554174385", true), matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1206554174383", intentionProvider);
+            typeCheckingContext.createEquation(typeCheckingContext.typeOf(fieldReference, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1206554174385", true), matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1206554174383", intentionProvider);
           }
           RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, fieldClassifier, TypeChecker.getInstance().getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), mmap);
           RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);

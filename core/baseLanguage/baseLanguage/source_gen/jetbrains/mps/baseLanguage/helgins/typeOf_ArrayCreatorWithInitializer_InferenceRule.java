@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -22,13 +21,13 @@ public class typeOf_ArrayCreatorWithInitializer_InferenceRule extends AbstractIn
       {
         SNode _nodeToCheck_1029348928467 = arrayCreator;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(typeCheckingContext.typeOf(value, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175600272400", true), SLinkOperations.getTarget(arrayCreator, "componentType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175600269225", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(value, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175600272400", true), SLinkOperations.getTarget(arrayCreator, "componentType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175600269225", false, 0, intentionProvider);
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = arrayCreator;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(typeCheckingContext.typeOf(arrayCreator, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1205279600881", true), new QuotationClass_8().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(arrayCreator, "componentType", true))), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1205279600879", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(arrayCreator, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1205279600881", true), new QuotationClass_8().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(arrayCreator, "componentType", true))), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1205279600879", intentionProvider);
     }
   }
 

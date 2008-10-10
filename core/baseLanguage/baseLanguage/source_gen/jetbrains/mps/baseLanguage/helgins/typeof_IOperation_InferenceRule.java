@@ -9,7 +9,6 @@ import jetbrains.mps.helgins.inference.TypeCheckingContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_IOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -23,7 +22,7 @@ public class typeof_IOperation_InferenceRule extends AbstractInferenceRule_Runti
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1217023680306", true), returnType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1217023680304", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1217023680306", true), returnType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1217023680304", intentionProvider);
       }
     }
   }

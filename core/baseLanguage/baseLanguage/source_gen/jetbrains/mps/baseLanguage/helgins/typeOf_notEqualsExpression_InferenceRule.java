@@ -7,8 +7,8 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_notEqualsExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -20,7 +20,7 @@ public class typeOf_notEqualsExpression_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = notEqExpr;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(typeCheckingContext.typeOf(SLinkOperations.getTarget(notEqExpr, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606239715", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(notEqExpr, "rightExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606261733", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606237774", intentionProvider);
+      typeCheckingContext.createComparableEquation(typeCheckingContext.typeOf(SLinkOperations.getTarget(notEqExpr, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606239715", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(notEqExpr, "rightExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606261733", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606237774", intentionProvider);
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_13().createNode(), notEqExpr, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175606302946");
   }

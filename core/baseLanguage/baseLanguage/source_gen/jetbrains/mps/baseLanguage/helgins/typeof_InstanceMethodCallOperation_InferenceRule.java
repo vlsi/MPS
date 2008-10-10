@@ -31,12 +31,12 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
     {
       SNode _nodeToCheck_1029348928467 = imco;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(imco), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1204064784351", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1204064763142", intentionProvider);
+      typeCheckingContext.createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(imco), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1204064784351", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1204064763142", intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = imco;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_69().createNode(methodClassifier), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1204065906120", true, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_69().createNode(methodClassifier), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1204065906120", true, 0, intentionProvider);
     }
     // --- following piece of cake is identical for any method call ---
     {

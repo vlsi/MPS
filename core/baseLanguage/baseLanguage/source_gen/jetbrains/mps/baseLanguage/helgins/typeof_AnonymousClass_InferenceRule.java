@@ -7,7 +7,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -20,7 +19,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1194623855703", true), new QuotationClass_65().createNode(SLinkOperations.getTargets(nodeToCheck, "typeParameter", true), SLinkOperations.getTarget(nodeToCheck, "classifier", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1194623862628", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1194623855703", true), new QuotationClass_65().createNode(SLinkOperations.getTargets(nodeToCheck, "typeParameter", true), SLinkOperations.getTarget(nodeToCheck, "classifier", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1194623862628", intentionProvider);
     }
   }
 

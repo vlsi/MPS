@@ -8,8 +8,8 @@ import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtypesOfUpperBoundType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
@@ -22,14 +22,14 @@ public class subtypesOfUpperBoundType_InequationReplacementRule extends Abstract
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(SLinkOperations.getTarget(subtype, "bound", true), SLinkOperations.getTarget(supertype, "bound", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1220443995701", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(SLinkOperations.getTarget(subtype, "bound", true), SLinkOperations.getTarget(supertype, "bound", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1220443995701", false, 0, intentionProvider);
       }
     } else
     {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(subtype, SLinkOperations.getTarget(supertype, "bound", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1220444030637", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(subtype, SLinkOperations.getTarget(supertype, "bound", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1220444030637", false, 0, intentionProvider);
       }
     }
   }

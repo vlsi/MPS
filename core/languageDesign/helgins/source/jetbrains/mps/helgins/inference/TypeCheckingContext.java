@@ -133,4 +133,95 @@ public class TypeCheckingContext {
     if (representator != null) return representator;
     return type;
   }
+
+  public void createEquation(SNode node1,
+                             SNode node2,
+                             SNode nodeToCheck,
+                             String errorString,
+                             String ruleModel,
+                             String ruleId,
+                             IntentionProvider intentionProvider) {
+    myNodeTypesComponent.getEquationManager().addEquation(
+      node1,
+      node2,
+      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
+  }
+
+   public void createLessThanInequation(SNode node1,
+                                       SNode node2,
+                                       SNode nodeToCheck,
+                                       String errorString,
+                                       String ruleModel,
+                                       String ruleId,
+                                       boolean checkOnly,
+                                       int inequationPriority,
+                                       IntentionProvider intentionProvider) {
+    myNodeTypesComponent.getEquationManager().addInequation(
+      node1,
+      node2,
+      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority, intentionProvider),
+      true,
+      checkOnly);
+  }
+
+  public void createLessThanInequationStrong(SNode node1,
+                                             SNode node2,
+                                             SNode nodeToCheck,
+                                             String errorString,
+                                             String ruleModel,
+                                             String ruleId,
+                                             boolean checkOnly,
+                                             int inequationPriority,
+                                             IntentionProvider intentionProvider) {
+    myNodeTypesComponent.getEquationManager().addInequation(
+      node1,
+      node2,
+      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority, intentionProvider),
+      false,
+      checkOnly);
+  }
+
+  public void createGreaterThanInequation(SNode node1,
+                                          SNode node2,
+                                          SNode nodeToCheck,
+                                          String errorString,
+                                          String ruleModel,
+                                          String ruleId,
+                                          boolean checkOnly,
+                                          int inequationPriority,
+                                          IntentionProvider intentionProvider) {
+    myNodeTypesComponent.getEquationManager().addInequation(
+      node2,
+      node1,
+      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority, intentionProvider),
+      true,
+      checkOnly);
+  }
+
+  public void createComparableEquation(SNode node1,
+                                       SNode node2,
+                                       SNode nodeToCheck,
+                                       String errorString,
+                                       String ruleModel,
+                                       String ruleId,
+                                       IntentionProvider intentionProvider) {
+    myNodeTypesComponent.getEquationManager().addInequationComparable(
+      node1,
+      node2,
+      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
+  }
+
+  public void createComparableEquationStrong(SNode node1,
+                                             SNode node2,
+                                             SNode nodeToCheck,
+                                             String errorString,
+                                             String ruleModel,
+                                             String ruleId,
+                                             IntentionProvider intentionProvider) {
+    myNodeTypesComponent.getEquationManager().addInequationComparable(
+      node1,
+      node2,
+      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider),
+      false);
+  }
 }

@@ -22,7 +22,7 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
       {
         SNode _nodeToCheck_1029348928467 = castExpression;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(typeCheckingContext.typeOf(SLinkOperations.getTarget(castExpression, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178271928128", true), SLinkOperations.getTarget(castExpression, "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178271928127", intentionProvider);
+        typeCheckingContext.createComparableEquation(typeCheckingContext.typeOf(SLinkOperations.getTarget(castExpression, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178271928128", true), SLinkOperations.getTarget(castExpression, "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178271928127", intentionProvider);
       }
     }
   }

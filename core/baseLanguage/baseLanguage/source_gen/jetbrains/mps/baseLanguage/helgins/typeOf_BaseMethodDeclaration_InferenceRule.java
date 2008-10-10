@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
@@ -26,7 +25,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       {
         SNode _nodeToCheck_1029348928467 = bmd;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_98().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1215105338790", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(throwsItem, new QuotationClass_98().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1215105338790", false, 0, intentionProvider);
       }
     }
     // ==========
@@ -72,7 +71,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
           {
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1185363921400", false, 0, intentionProvider);
+            typeCheckingContext.createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1185363921400", false, 0, intentionProvider);
           }
         }
       }
@@ -86,7 +85,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         {
           SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(lastStatement, "expression", true);
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1185363855090", false, 0, intentionProvider);
+          typeCheckingContext.createLessThanInequation(returnType, expectedRetType, _nodeToCheck_1029348928467, expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1185363855090", false, 0, intentionProvider);
         }
       }
     }

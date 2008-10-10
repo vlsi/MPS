@@ -13168,13 +13168,10 @@
               <link role="variableDeclaration" targetNodeId="1216206633075" resolveInfo="intentionProvider" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1214926015794" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214925575686">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1214925568653">
-                <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
-                <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1214925578861">
-                <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getRuntimeSupport():jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport" resolveInfo="getRuntimeSupport" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1223638617739">
+              <property name="name" value="typeCheckingContext" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223638621116">
+                <link role="classifier" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
               </node>
             </node>
             <node role="propertyMacro$property_attribute$methodName" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1214927051991">
