@@ -31,7 +31,7 @@ public class Replace_ListType_withNodeListType_Intention extends BaseIntention {
   }
 
   public String getLocationString() {
-    return "jetbrains.mps.bootstrap.smodelLanguage.intentions";
+    return "jetbrains.mps.lang.smodel.intentions";
   }
 
 }
