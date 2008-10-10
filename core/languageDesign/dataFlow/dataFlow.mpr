@@ -29,7 +29,9 @@
     </projectLanguages>
     <projectDevkits />
     <libraries />
-    <genConfs />
+    <genConfs>
+      <genConfLanguage name="dataFlow" language="jetbrains.mps.lang.dataFlow" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="dataFlow.mpr" />
