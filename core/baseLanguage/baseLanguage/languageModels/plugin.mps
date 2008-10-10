@@ -47,10 +47,10 @@
   <import index="15" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="16" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
-  <import index="25" modelUID="f:java_stub#jetbrains.mps.dataFlow.framework(jetbrains.mps.dataFlow.framework@java_stub)" version="-1" />
-  <import index="26" modelUID="f:java_stub#jetbrains.mps.dataFlow(jetbrains.mps.dataFlow@java_stub)" version="-1" />
-  <import index="27" modelUID="f:java_stub#jetbrains.mps.dataFlow.framework.analyzers(jetbrains.mps.dataFlow.framework.analyzers@java_stub)" version="-1" />
-  <import index="28" modelUID="f:java_stub#jetbrains.mps.dataFlow.framework.instructions(jetbrains.mps.dataFlow.framework.instructions@java_stub)" version="-1" />
+  <import index="25" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
+  <import index="26" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow(jetbrains.mps.lang.dataFlow@java_stub)" version="-1" />
+  <import index="27" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework.analyzers(jetbrains.mps.lang.dataFlow.framework.analyzers@java_stub)" version="-1" />
+  <import index="28" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework.instructions(jetbrains.mps.lang.dataFlow.framework.instructions@java_stub)" version="-1" />
   <import index="30" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
   <import index="35" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="36" modelUID="f:java_stub#jetbrains.mps.helgins.checking(jetbrains.mps.helgins.checking@java_stub)" version="-1" />
