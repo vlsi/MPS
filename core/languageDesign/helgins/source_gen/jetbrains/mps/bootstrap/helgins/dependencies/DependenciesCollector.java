@@ -35,7 +35,7 @@ public class DependenciesCollector {
       prevSize = dependencies.size();
       leavesSize = leaves.size();
       for(SNode node : new HashSet<SNode>(dependencies.keySet())) {
-        SNode parent = SNodeOperations.getParent(node, null, false, false);
+        SNode parent = SNodeOperations.getParent(node);
         do {
           SNode matchedNode_0 = parent;
           {
@@ -117,10 +117,10 @@ public class DependenciesCollector {
                     if (SLinkOperations.getTarget(matchedNode_1, "variableDeclaration", false) == variableDeclaration) {
                       SNode nodeStatement = SNodeOperations.getAncestor(matchedNode_1, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
                       SNode usageStatement = SNodeOperations.getAncestor(reference, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-                      while (SNodeOperations.getParent(nodeStatement, null, false, false) != SNodeOperations.getParent(usageStatement, null, false, false)) {
+                      while (SNodeOperations.getParent(nodeStatement) != SNodeOperations.getParent(usageStatement)) {
                         usageStatement = SNodeOperations.getAncestor(usageStatement, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
                       }
-                      List list = CollectionUtil.filter(SNodeOperations.getParent(nodeStatement, null, false, false).getChildren(), new Condition() {
+                      List list = CollectionUtil.filter(SNodeOperations.getParent(nodeStatement).getChildren(), new Condition() {
 
                         public boolean met(Object p0) {
                           return SNodeOperations.isInstanceOf(((SNode)p0), "jetbrains.mps.baseLanguage.structure.Statement");

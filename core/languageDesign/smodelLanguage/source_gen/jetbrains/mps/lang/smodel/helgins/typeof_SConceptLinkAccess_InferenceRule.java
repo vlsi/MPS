@@ -31,7 +31,7 @@ public class typeof_SConceptLinkAccess_InferenceRule extends AbstractInferenceRu
 
         public void run() {
           SNode declaringConcept = SNodeOperations.getParent(conceptLinkDecl);
-          RulesUtil.checkAssignableConcept((SNode)TypeChecker.getInstance().getEquationManager().getRepresentator(concreteConcept), declaringConcept, op, "operation is applied to wrong concept");
+          RulesUtil.checkAssignableConcept(typeCheckingContext, (SNode)TypeChecker.getInstance().getEquationManager().getRepresentator(concreteConcept), declaringConcept, op, "operation is applied to wrong concept");
         }
 
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1208191126321");

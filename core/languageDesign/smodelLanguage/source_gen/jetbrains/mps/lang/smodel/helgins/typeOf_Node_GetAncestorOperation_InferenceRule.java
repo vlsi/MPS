@@ -17,7 +17,7 @@ public class typeOf_Node_GetAncestorOperation_InferenceRule extends AbstractInfe
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
-    RulesUtil.checkOpParameters_generic(op);
+    RulesUtil.checkOpParameters_generic(typeCheckingContext, op);
     final SNode ConceptFromOpParm_typevar_1207354629107 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     RulesUtil.equate_conceptFromOpParm(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207354629107));
     {

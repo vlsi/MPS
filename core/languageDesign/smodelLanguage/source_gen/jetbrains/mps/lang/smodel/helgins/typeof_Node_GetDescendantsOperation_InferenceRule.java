@@ -17,7 +17,7 @@ public class typeof_Node_GetDescendantsOperation_InferenceRule extends AbstractI
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
-    RulesUtil.checkOpParameters_generic(op);
+    RulesUtil.checkOpParameters_generic(typeCheckingContext, op);
     final SNode ConceptFromOpParm_typevar_1207353217271 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
     RulesUtil.equate_conceptFromOpParm(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207353217271));
     {
