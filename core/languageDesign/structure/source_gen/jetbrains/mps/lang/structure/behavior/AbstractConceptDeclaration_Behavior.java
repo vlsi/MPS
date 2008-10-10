@@ -65,7 +65,7 @@ public class AbstractConceptDeclaration_Behavior {
       return null;
     }
     SModel model = constraints.getSModel();
-    for(SNode constraintsRoot : SModelOperations.getRoots(model, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstraints")) {
+    for(SNode constraintsRoot : SModelOperations.getRoots(model, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")) {
       if (SLinkOperations.getTarget(constraintsRoot, "concept", false) == thisNode) {
         return constraintsRoot;
       }
@@ -83,7 +83,7 @@ public class AbstractConceptDeclaration_Behavior {
       return null;
     }
     SModel model = dataFlow.getSModel();
-    for(SNode behaviour : SModelOperations.getRoots(model, "jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration")) {
+    for(SNode behaviour : SModelOperations.getRoots(model, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration")) {
       if (SLinkOperations.getTarget(behaviour, "conceptDeclaration", false) == thisNode) {
         return behaviour;
       }
@@ -96,7 +96,7 @@ public class AbstractConceptDeclaration_Behavior {
     if (thisNode == null) {
       return methods;
     }
-    SNode contextBehaviour = SNodeOperations.getAncestor(context, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", true, false);
+    SNode contextBehaviour = SNodeOperations.getAncestor(context, "jetbrains.mps.lang.constraints.structure.ConceptBehavior", true, false);
     for(SNode concept : SConceptOperations.getConceptHierarchy(thisNode)) {
       SNode behaviour = AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(concept, scope);
       if (behaviour != null) {
@@ -110,7 +110,7 @@ public class AbstractConceptDeclaration_Behavior {
             }
           }
           if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
-            if (SNodeOperations.getAncestor(method, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", true, false) == contextBehaviour) {
+            if (SNodeOperations.getAncestor(method, "jetbrains.mps.lang.constraints.structure.ConceptBehavior", true, false) == contextBehaviour) {
               ListSequence.fromList(methods).addElement(method);
             }
           }
@@ -118,7 +118,7 @@ public class AbstractConceptDeclaration_Behavior {
             ListSequence.fromList(methods).addElement(method);
           }
           if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
-            if (SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(contextBehaviour, "concept", false), NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getAncestor(method, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", true, false), "concept", false)))) {
+            if (SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(contextBehaviour, "concept", false), NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.getAncestor(method, "jetbrains.mps.lang.constraints.structure.ConceptBehavior", true, false), "concept", false)))) {
               ListSequence.fromList(methods).addElement(method);
             }
           }

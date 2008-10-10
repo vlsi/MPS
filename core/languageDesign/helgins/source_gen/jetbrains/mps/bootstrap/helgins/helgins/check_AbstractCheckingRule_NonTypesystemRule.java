@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.AbstractNonTypesystemRule_Runtime
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
-import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
+import jetbrains.mps.baseLanguage.helgins.DataFlowUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -16,7 +16,7 @@ public class check_AbstractCheckingRule_NonTypesystemRule extends AbstractNonTyp
   }
 
   public void applyRule(final SNode abstractCheckingRule, final TypeCheckingContext typeCheckingContext) {
-    StatementList_Behavior.call_checkDataFlow_1213877327382(SLinkOperations.getTarget(abstractCheckingRule, "body", true));
+    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(abstractCheckingRule, "body", true));
   }
 
   public String getApplicableConceptFQName() {

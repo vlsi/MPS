@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -23,7 +22,7 @@ public class typeof_FindSourceBlockParameter_InferenceRule extends AbstractInfer
       {
         SNode _nodeToCheck_1029348928467 = findSourceBlockParameter;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(findSourceBlockParameter, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1193734407573", true), new QuotationClass_17().createNode(SLinkOperations.getTarget(dependency, "targetConcept", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1193734407570", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(findSourceBlockParameter, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1193734407573", true), new QuotationClass_17().createNode(SLinkOperations.getTarget(dependency, "targetConcept", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1193734407570", intentionProvider);
       }
     }
   }

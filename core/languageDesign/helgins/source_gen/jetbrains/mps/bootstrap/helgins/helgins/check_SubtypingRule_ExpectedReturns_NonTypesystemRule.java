@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.AbstractNonTypesystemRule_Runtime
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
-import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
+import jetbrains.mps.baseLanguage.helgins.DataFlowUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -16,7 +16,7 @@ public class check_SubtypingRule_ExpectedReturns_NonTypesystemRule extends Abstr
   }
 
   public void applyRule(final SNode subtypingRule, final TypeCheckingContext typeCheckingContext) {
-    StatementList_Behavior.call_checkReturns_1213877327397(SLinkOperations.getTarget(subtypingRule, "body", true));
+    DataFlowUtil.checkReturns(typeCheckingContext, SLinkOperations.getTarget(subtypingRule, "body", true));
   }
 
   public String getApplicableConceptFQName() {

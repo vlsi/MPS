@@ -17,7 +17,7 @@ public class typeOf_applicableNodeReference_InferenceRule extends AbstractInfere
 
   public void applyRule(final SNode anr, final TypeCheckingContext typeCheckingContext) {
     SNode applicableNodeRef = anr;
-    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(applicableNodeRef, "applicableNode", false), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1175522385423", true), applicableNodeRef, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1175522380873");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(typeCheckingContext.typeOf(SLinkOperations.getTarget(applicableNodeRef, "applicableNode", false), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1175522385423", true), applicableNodeRef, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1175522380873");
   }
 
   public String getApplicableConceptFQName() {

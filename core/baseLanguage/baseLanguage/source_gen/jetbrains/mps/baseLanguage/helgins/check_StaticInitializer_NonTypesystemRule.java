@@ -6,7 +6,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.AbstractNonTypesystemRule_Runtime
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
-import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -16,7 +15,7 @@ public class check_StaticInitializer_NonTypesystemRule extends AbstractNonTypesy
   }
 
   public void applyRule(final SNode staticInitializer, final TypeCheckingContext typeCheckingContext) {
-    StatementList_Behavior.call_checkDataFlow_1213877327382(SLinkOperations.getTarget(staticInitializer, "statementList", true));
+    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(staticInitializer, "statementList", true));
   }
 
   public String getApplicableConceptFQName() {

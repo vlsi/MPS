@@ -17,7 +17,7 @@ public class typeOf_PatternCondition_InferenceRule extends AbstractInferenceRule
 
   public void applyRule(final SNode pc, final TypeCheckingContext typeCheckingContext) {
     SNode paternCondition = pc;
-    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(paternCondition, "pattern", true), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1175521901932", true), paternCondition, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1175521900492");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(typeCheckingContext.typeOf(SLinkOperations.getTarget(paternCondition, "pattern", true), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1175521901932", true), paternCondition, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.bootstrap.helgins.helgins)", "1175521900492");
   }
 
   public String getApplicableConceptFQName() {

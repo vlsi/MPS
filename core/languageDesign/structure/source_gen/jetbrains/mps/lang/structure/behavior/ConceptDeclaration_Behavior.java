@@ -27,7 +27,7 @@ public class ConceptDeclaration_Behavior {
       return null;
     }
     SModel model = constraints.getSModel();
-    for(SNode editor : SModelOperations.getRoots(model, "jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration")) {
+    for(SNode editor : SModelOperations.getRoots(model, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")) {
       if (SLinkOperations.getTarget(editor, "conceptDeclaration", false) == thisNode) {
         return editor;
       }
