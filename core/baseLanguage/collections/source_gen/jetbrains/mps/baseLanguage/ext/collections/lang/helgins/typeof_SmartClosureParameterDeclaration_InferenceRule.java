@@ -136,7 +136,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
   }
 
   public boolean overrides() {
-    return true;
+    return false;
   }
 
 }

@@ -219,7 +219,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1208699492548(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(_context.getNode()), new Pattern_0(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(_context.getNode()), new Pattern_0(), true) != null) && SLinkOperations.getTarget(_context.getNode(), "classConcept", false).getModel().getLongName().startsWith("jetbrains.mps.internal.collections.runtime");
   }
 
   public static boolean baseMappingRule_Condition_1208699581854(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

@@ -64,6 +64,7 @@
                         </node>
                       </node>
                     </node>
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1223205687474" />
                   </node>
                 </node>
               </node>

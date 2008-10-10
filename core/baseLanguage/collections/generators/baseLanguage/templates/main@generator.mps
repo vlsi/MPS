@@ -37,7 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <maxImportIndex value="28" />
+  <maxImportIndex value="29" />
   <import index="1" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -56,6 +56,7 @@
   <import index="25" modelUID="f:java_stub#jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.main(jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.main@java_stub)" version="-1" />
   <import index="27" modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
+  <import index="29" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1151699678608">
     <property name="name" value="MAPPING_main_collections" />
     <node role="mappingLabel" type="jetbrains.mps.transformation.TLBase.structure.MappingLabelDeclaration" id="1207789369972">
@@ -6218,22 +6219,50 @@
       <node role="conditionFunction" type="jetbrains.mps.transformation.TLBase.structure.BaseMappingRule_Condition" id="1208699492548">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208699492549">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208699550911">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208699570150">
-              <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1208699550912">
-                <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1208699557488">
-                  <property name="name" value="ignored" />
-                  <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1208699557489">
-                    <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208699564839">
-                      <link role="classifier" targetNodeId="13.~ISequence" resolveInfo="ISequence" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1223634894202">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223636663836">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223636592872">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223636587697">
+                    <node role="operand" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1223636586595">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223634899462">
+                        <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1223634899411" />
+                        <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1223634901395">
+                          <link role="link" targetNodeId="6.1144433194310" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223636590990">
+                      <link role="baseMethodDeclaration" targetNodeId="12.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
                     </node>
                   </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223636628931">
+                    <link role="baseMethodDeclaration" targetNodeId="12.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
+                  </node>
                 </node>
-                <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208699552748">
-                  <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1208699552390" />
-                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1208699553956" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223636666438">
+                  <link role="baseMethodDeclaration" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1223636667963">
+                    <property name="value" value="jetbrains.mps.internal.collections.runtime" />
+                  </node>
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1208699571197" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208699570150">
+                <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1208699550912">
+                  <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1208699557488">
+                    <property name="name" value="ignored" />
+                    <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1208699557489">
+                      <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208699564839">
+                        <link role="classifier" targetNodeId="13.~ISequence" resolveInfo="ISequence" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208699552748">
+                    <node role="operand" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1208699552390" />
+                    <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1208699553956" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" id="1208699571197" />
+              </node>
             </node>
           </node>
         </node>

@@ -39,18 +39,22 @@ public class ClassifierTypeUtil {
       }
       return res;
     }
-    SNode ct = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
-    if ((ct != null)) {
-      List<SNode> params = SLinkOperations.getTargets(ct, "parameter", true);
+    SNode ctw = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    SNode cts = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+    if ((cts == null)) {
+      cts = ctw;
+    }
+    if ((cts != null)) {
+      List<SNode> params = SLinkOperations.getTargets(cts, "parameter", true);
       if (params != null && params.size() > 0) {
         SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-        SLinkOperations.setTarget(res, "classifier", SLinkOperations.getTarget(ct, "classifier", false), false);
+        SLinkOperations.setTarget(res, "classifier", SLinkOperations.getTarget(cts, "classifier", false), false);
         for(SNode p : params) {
           SLinkOperations.addChild(res, "parameter", SNodeOperations.copyNode(getTypeCoercedToClassifierType(p)));
         }
         return res;
       }
-      return ct;
+      return cts;
     }
     return type;
   }

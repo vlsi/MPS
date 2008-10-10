@@ -145,7 +145,7 @@ public class QueriesGenerated {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", _context.getCurrentTargetNode());
+            SNode direction = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", _context.getCurrentTargetNode());
             SPropertyOperations.set(direction, "value", "" + (true));
             return direction;
           }
@@ -172,7 +172,7 @@ public class QueriesGenerated {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", _context.getCurrentTargetNode());
+            SNode direction = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", _context.getCurrentTargetNode());
             SPropertyOperations.set(direction, "value", "" + (false));
             return direction;
           }

@@ -7257,12 +7257,16 @@
                 </node>
                 <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1203685630115">
                   <link role="concept" targetNodeId="14.1107535904670" resolveInfo="ClassifierType" />
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227903220">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203685630117">
-                      <link role="variableDeclaration" targetNodeId="1203337796679" resolveInfo="ft" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1203685630118">
-                      <link role="conceptMethodDeclaration" targetNodeId="28.1213877405252" resolveInfo="getNormalizedReturnType" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223549105799">
+                    <link role="baseMethodDeclaration" targetNodeId="1223029226944" resolveInfo="unmeet" />
+                    <link role="classConcept" targetNodeId="1201646588418" resolveInfo="FunctionTypeUtil" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223549106407">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223549106408">
+                        <link role="variableDeclaration" targetNodeId="1203337796679" resolveInfo="ft" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1223549106409">
+                        <link role="conceptMethodDeclaration" targetNodeId="28.1213877405252" resolveInfo="getNormalizedReturnType" />
+                      </node>
                     </node>
                   </node>
                 </node>
