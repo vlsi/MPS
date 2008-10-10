@@ -7,34 +7,24 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.BaseAdapter;
 
 public class AttributeConcept extends BaseConcept {
-  public static final String concept = "jetbrains.mps.annotations.structure.AttributeConcept";
+  public static final String concept = "jetbrains.mps.lang.annotations.structure.AttributeConcept";
   public static String ATTRIBUTED_NODE = "attributedNode";
 
   public AttributeConcept(SNode node) {
     super(node);
   }
 
-  public static AttributeConcept newInstance(SModel sm, boolean init) {
-    return (AttributeConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.annotations.structure.AttributeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static AttributeConcept newInstance(SModel sm) {
-    return AttributeConcept.newInstance(sm, false);
-  }
-
-
   public BaseConcept getAttributedNode_internal() {
     return (BaseConcept)this.getParent();
   }
 
-  public BaseAdapter getReferent(String role) {
+  public BaseConcept getReferent(String role) {
     if ("attributedNode".equals(role)) {
       return this.getAttributedNode_internal();
     } else
-    return (BaseAdapter) super.getReferent(role);    // cast to BaseAdapter added manually
+    return (BaseConcept)super.getReferent(role);
   }
 
   public BaseConcept getAttributedNode() {
@@ -43,6 +33,15 @@ public class AttributeConcept extends BaseConcept {
 
   public void setAttributedNode(BaseConcept node) {
     super.setReferent(AttributeConcept.ATTRIBUTED_NODE, node);
+  }
+
+
+  public static AttributeConcept newInstance(SModel sm, boolean init) {
+    return (AttributeConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.annotations.structure.AttributeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static AttributeConcept newInstance(SModel sm) {
+    return AttributeConcept.newInstance(sm, false);
   }
 
 }

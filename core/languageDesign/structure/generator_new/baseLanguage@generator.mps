@@ -4398,8 +4398,8 @@
       </node>
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1142005838245">
         <property name="name" value="getReferent" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170359363811">
-          <link role="classifier" targetNodeId="5.~BaseAdapter" resolveInfo="BaseAdapter" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223666299278">
+          <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1142005838247">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1142005871865">
@@ -4425,10 +4425,15 @@
               </node>
             </node>
             <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1142005935173">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall" id="1142005936581">
-                <link role="baseMethodDeclaration" targetNodeId="5.~BaseAdapter.getReferent(java.lang.String):jetbrains.mps.smodel.INodeAdapter" resolveInfo="getReferent" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1142005945379">
-                  <link role="variableDeclaration" targetNodeId="1142005866910" resolveInfo="role" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1223666438232">
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223666438233">
+                  <link role="classifier" targetNodeId="30.~BaseConcept" resolveInfo="BaseConcept" />
+                </node>
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall" id="1223666438234">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~BaseAdapter.getReferent(java.lang.String):jetbrains.mps.smodel.INodeAdapter" resolveInfo="getReferent" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223666438235">
+                    <link role="variableDeclaration" targetNodeId="1142005866910" resolveInfo="role" />
+                  </node>
                 </node>
               </node>
             </node>

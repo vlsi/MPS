@@ -8,21 +8,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LinkAttributeConcept extends AttributeConcept {
-  public static final String concept = "jetbrains.mps.annotations.structure.LinkAttributeConcept";
+  public static final String concept = "jetbrains.mps.lang.annotations.structure.LinkAttributeConcept";
   public static String LINK_ROLE = "linkRole";
 
   public LinkAttributeConcept(SNode node) {
     super(node);
   }
-
-  public static LinkAttributeConcept newInstance(SModel sm, boolean init) {
-    return (LinkAttributeConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.annotations.structure.LinkAttributeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static LinkAttributeConcept newInstance(SModel sm) {
-    return LinkAttributeConcept.newInstance(sm, false);
-  }
-
 
   public String getLinkRole() {
     return this.getProperty(LinkAttributeConcept.LINK_ROLE);
@@ -30,6 +21,15 @@ public class LinkAttributeConcept extends AttributeConcept {
 
   public void setLinkRole(String value) {
     this.setProperty(LinkAttributeConcept.LINK_ROLE, value);
+  }
+
+
+  public static LinkAttributeConcept newInstance(SModel sm, boolean init) {
+    return (LinkAttributeConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.annotations.structure.LinkAttributeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static LinkAttributeConcept newInstance(SModel sm) {
+    return LinkAttributeConcept.newInstance(sm, false);
   }
 
 }
