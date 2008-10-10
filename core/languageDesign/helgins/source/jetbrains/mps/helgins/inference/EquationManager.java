@@ -6,6 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.bootstrap.helgins.runtime.InequationReplacementRule_Runtime;
+import jetbrains.mps.bootstrap.helgins.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.intentions.IntentionProvider;
 
 import java.util.*;
@@ -190,7 +191,7 @@ public class EquationManager {
       SNode node2 = supertypeRepresentator.getNode();
       Set<InequationReplacementRule_Runtime> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(node1, node2);
       for (InequationReplacementRule_Runtime inequationReplacementRule : inequationReplacementRules) {
-        inequationReplacementRule.processInequation(node1, node2, equationInfo);
+        processInequationWithReplacementRule(inequationReplacementRule, node1, node2, equationInfo, myTypeCheckingContext);
         return;
       }
     }
@@ -240,6 +241,14 @@ public class EquationManager {
 
     //4debug
    //  myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, equationInfo, isWeak);
+  }
+
+  private static void processInequationWithReplacementRule(InequationReplacementRule_Runtime rule, SNode node1, SNode node2, EquationInfo equationInfo, TypeCheckingContext typeCheckingContext) {
+    if (rule instanceof AbstractInequationReplacementRule_Runtime) {
+      ((AbstractInequationReplacementRule_Runtime)rule).processInequation(node1, node2, equationInfo, typeCheckingContext);
+    } else {
+      rule.processInequation(node1, node2, equationInfo);
+    }
   }
 
   public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck) {

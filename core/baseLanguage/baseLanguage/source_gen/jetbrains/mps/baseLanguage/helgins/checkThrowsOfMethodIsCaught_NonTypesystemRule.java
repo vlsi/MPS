@@ -26,7 +26,7 @@ public class checkThrowsOfMethodIsCaught_NonTypesystemRule extends AbstractNonTy
       return;
     }
     Set<SNode> throwables = new HashSet<SNode>(SLinkOperations.getTargets(method, "throwsItem", true));
-    RulesFunctions_BaseLanguage.check(throwables, methodCall);
+    RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, methodCall);
   }
 
   public String getApplicableConceptFQName() {

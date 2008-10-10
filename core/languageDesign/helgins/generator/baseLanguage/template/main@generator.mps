@@ -5366,12 +5366,14 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210837852059">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210837860503">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1210837852061">
-              <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
-              <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1223636664057">
+              <property name="name" value="typeCheckingContext" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223636670543">
+                <link role="classifier" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
+              </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210837860504">
-              <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.reportTypeError(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.intentions.IntentionProvider):void" resolveInfo="reportTypeError" />
+              <link role="baseMethodDeclaration" targetNodeId="6.~TypeCheckingContext.reportTypeError(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.intentions.IntentionProvider):void" resolveInfo="reportTypeError" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1210837852062">
                 <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1210837852063">
                   <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1210837852064">
@@ -10744,6 +10746,13 @@
           <link role="classifier" targetNodeId="6.~EquationInfo" resolveInfo="EquationInfo" />
         </node>
       </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1223638078990">
+        <property name="name" value="typeCheckingContext" />
+        <property name="isFinal" value="true" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223638088367">
+          <link role="classifier" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
+        </node>
+      </node>
       <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.IfMacro" id="1201609469732">
         <link role="mappingLabel" targetNodeId="1215479299583" resolveInfo="mainMethodForRule" />
         <node role="conditionFunction" type="jetbrains.mps.transformation.TLBase.structure.IfMacro_Condition" id="1201609469733">
@@ -11581,8 +11590,8 @@
     <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.transformation.TLBase.structure.RootTemplateAnnotation" id="1201609470050">
       <link role="applicableConcept" targetNodeId="1.1201607707634" resolveInfo="EliminationRule" />
     </node>
-    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201619245078">
-      <link role="classifier" targetNodeId="15.~InequationReplacementRule_Runtime" resolveInfo="InequationReplacementRule_Runtime" />
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223638069551">
+      <link role="classifier" targetNodeId="15.~AbstractInequationReplacementRule_Runtime" resolveInfo="AbstractInequationReplacementRule_Runtime" />
     </node>
     <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1201609470052">
       <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1201609470053">
@@ -12063,12 +12072,14 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210840004725">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210840004726">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1210840004727">
-              <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
-              <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1223636745343">
+              <property name="name" value="typeCheckingContext" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223636747860">
+                <link role="classifier" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
+              </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210840004728">
-              <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.reportWarning(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.intentions.IntentionProvider):void" resolveInfo="reportWarning" />
+              <link role="baseMethodDeclaration" targetNodeId="6.~TypeCheckingContext.reportWarning(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.intentions.IntentionProvider):void" resolveInfo="reportWarning" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1210840004729">
                 <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.CopySrcNodeMacro" id="1210840004730">
                   <node role="sourceNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodeQuery" id="1210840004731">
