@@ -7528,7 +7528,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1220359717387">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220359728905">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220359731377">
-                <link role="baseMethodDeclaration" targetNodeId="26.~DataFlowManager.buildProgramFor(jetbrains.mps.smodel.SNode):jetbrains.mps.dataFlow.framework.Program" resolveInfo="buildProgramFor" />
+                <link role="baseMethodDeclaration" targetNodeId="26.~DataFlowManager.buildProgramFor(jetbrains.mps.smodel.SNode):jetbrains.mps.lang.dataFlow.framework.Program" resolveInfo="buildProgramFor" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221666926535">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221666925469">
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1221666925470">
@@ -7542,7 +7542,7 @@
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220359727873">
-                <link role="baseMethodDeclaration" targetNodeId="26.~DataFlowManager.getInstance():jetbrains.mps.dataFlow.DataFlowManager" resolveInfo="getInstance" />
+                <link role="baseMethodDeclaration" targetNodeId="26.~DataFlowManager.getInstance():jetbrains.mps.lang.dataFlow.DataFlowManager" resolveInfo="getInstance" />
                 <link role="classConcept" targetNodeId="26.~DataFlowManager" resolveInfo="DataFlowManager" />
               </node>
             </node>
@@ -7570,7 +7570,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1220360543740" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220360545307">
-                <link role="baseMethodDeclaration" targetNodeId="25.~Program.analyze(jetbrains.mps.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
+                <link role="baseMethodDeclaration" targetNodeId="25.~Program.analyze(jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.lang.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220360547762">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1220360576563">
                     <link role="baseMethodDeclaration" targetNodeId="27.~ReachabilityAnalyzer.&lt;init&gt;()" resolveInfo="ReachabilityAnalyzer" />
@@ -7612,7 +7612,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1220370907520" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220370909445">
-                <link role="baseMethodDeclaration" targetNodeId="25.~Program.analyze(jetbrains.mps.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
+                <link role="baseMethodDeclaration" targetNodeId="25.~Program.analyze(jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.lang.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220370911572">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1220370916028">
                     <link role="baseMethodDeclaration" targetNodeId="27.~LivenessAnalyzer.&lt;init&gt;()" resolveInfo="LivenessAnalyzer" />
@@ -7632,7 +7632,7 @@
             </node>
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220374034109">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220374034550">
-                <link role="baseMethodDeclaration" targetNodeId="25.~Program.analyze(jetbrains.mps.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
+                <link role="baseMethodDeclaration" targetNodeId="25.~Program.analyze(jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.lang.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220374044692">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1220374051571">
                     <link role="baseMethodDeclaration" targetNodeId="27.~ReachingDefinitionsAnalyzer.&lt;init&gt;()" resolveInfo="ReachingDefinitionsAnalyzer" />
@@ -8241,7 +8241,7 @@
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223472097098" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223472097099">
-                      <link role="baseMethodDeclaration" targetNodeId="25.~AnalysisResult.get(jetbrains.mps.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
+                      <link role="baseMethodDeclaration" targetNodeId="25.~AnalysisResult.get(jetbrains.mps.lang.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1223472097100">
                         <link role="variable" targetNodeId="1221220762206" resolveInfo="preExit" />
                       </node>
@@ -8352,7 +8352,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223472127920">
-                  <link role="baseMethodDeclaration" targetNodeId="25.~AnalysisResult.get(jetbrains.mps.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
+                  <link role="baseMethodDeclaration" targetNodeId="25.~AnalysisResult.get(jetbrains.mps.lang.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1223472127921">
                     <link role="variable" targetNodeId="1220370761343" resolveInfo="exitPoint" />
                   </node>
@@ -8818,7 +8818,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1222509003305" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222509003306">
-                  <link role="baseMethodDeclaration" targetNodeId="25.~AnalysisResult.get(jetbrains.mps.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
+                  <link role="baseMethodDeclaration" targetNodeId="25.~AnalysisResult.get(jetbrains.mps.lang.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1222509003307">
                     <link role="variable" targetNodeId="1220359389569" resolveInfo="instruction" />
                   </node>
@@ -8976,7 +8976,7 @@
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223472160736">
-                      <link role="baseMethodDeclaration" targetNodeId="25.~AnalysisResult.get(jetbrains.mps.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
+                      <link role="baseMethodDeclaration" targetNodeId="25.~AnalysisResult.get(jetbrains.mps.lang.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1223472160737">
                         <link role="variable" targetNodeId="1220373886633" resolveInfo="instruction" />
                       </node>
@@ -9097,7 +9097,7 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1221225346475" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221225346476">
-                        <link role="baseMethodDeclaration" targetNodeId="25.~AnalysisResult.get(jetbrains.mps.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
+                        <link role="baseMethodDeclaration" targetNodeId="25.~AnalysisResult.get(jetbrains.mps.lang.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221225346477">
                           <link role="variableDeclaration" targetNodeId="1221225118015" resolveInfo="read" />
                         </node>
@@ -19886,11 +19886,11 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1222781528061">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222781540156">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1222781537828">
-                <link role="baseMethodDeclaration" targetNodeId="26.~DataFlowManager.getInstance():jetbrains.mps.dataFlow.DataFlowManager" resolveInfo="getInstance" />
+                <link role="baseMethodDeclaration" targetNodeId="26.~DataFlowManager.getInstance():jetbrains.mps.lang.dataFlow.DataFlowManager" resolveInfo="getInstance" />
                 <link role="classConcept" targetNodeId="26.~DataFlowManager" resolveInfo="DataFlowManager" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222781546221">
-                <link role="baseMethodDeclaration" targetNodeId="26.~DataFlowManager.buildProgramFor(jetbrains.mps.smodel.SNode):jetbrains.mps.dataFlow.framework.Program" resolveInfo="buildProgramFor" />
+                <link role="baseMethodDeclaration" targetNodeId="26.~DataFlowManager.buildProgramFor(jetbrains.mps.smodel.SNode):jetbrains.mps.lang.dataFlow.framework.Program" resolveInfo="buildProgramFor" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223467598649">
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223467603543">
                     <link role="baseMethodDeclaration" targetNodeId="1223391380271" resolveInfo="getDeclaration" />
