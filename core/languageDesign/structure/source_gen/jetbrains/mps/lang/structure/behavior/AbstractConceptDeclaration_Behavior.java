@@ -47,7 +47,7 @@ public class AbstractConceptDeclaration_Behavior {
       return null;
     }
     SModel model = constraints.getSModel();
-    for(SNode behaviour : SModelOperations.getRoots(model, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior")) {
+    for(SNode behaviour : SModelOperations.getRoots(model, "jetbrains.mps.lang.constraints.structure.ConceptBehavior")) {
       if (SLinkOperations.getTarget(behaviour, "concept", false) == thisNode) {
         return behaviour;
       }
