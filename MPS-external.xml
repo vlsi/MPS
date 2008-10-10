@@ -145,7 +145,7 @@
       <fileset dir="core/languageDesign/refactoring/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="core/languageDesign/scriptLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="core/languageDesign/script/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="core/languageDesign/sharedConcepts/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
