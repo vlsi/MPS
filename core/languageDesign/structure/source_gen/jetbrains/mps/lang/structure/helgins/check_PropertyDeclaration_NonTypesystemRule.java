@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_PropertyDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -28,7 +27,7 @@ public class check_PropertyDeclaration_NonTypesystemRule extends AbstractNonType
     if (prop != propInConcept) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(prop, "property '" + SPropertyOperations.getString(prop, "name") + "' is already declared in " + SPropertyOperations.getString(SNodeOperations.getAncestor(propInConcept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false), "name"), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.helgins)", "1212182341577", intentionProvider);
+        typeCheckingContext.reportTypeError(prop, "property '" + SPropertyOperations.getString(prop, "name") + "' is already declared in " + SPropertyOperations.getString(SNodeOperations.getAncestor(propInConcept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false), "name"), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.helgins)", "1212182341577", intentionProvider);
       }
     }
   }

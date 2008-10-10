@@ -9,10 +9,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import java.util.List;
 import jetbrains.mps.closures.generator.baseLanguage.template.helper.FunctionTypeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -41,6 +42,9 @@ public class ClassifierTypeUtil {
     }
     SNode ctw = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     SNode cts = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType") && !("Iterable".equals(SPropertyOperations.getString(SLinkOperations.getTarget(cts, "classifier", false), "name")))) {
+      System.err.println("*** Gotcha! *** coerceStrong( " + BaseConcept_Behavior.call_getPresentation_1213877396640(type) + " <: concept = ClassifierType) == " + BaseConcept_Behavior.call_getPresentation_1213877396640(cts) + ", coerce( " + BaseConcept_Behavior.call_getPresentation_1213877396640(type) + " <: concept = ClassifierType) == " + BaseConcept_Behavior.call_getPresentation_1213877396640(ctw));
+    }
     if ((cts == null)) {
       cts = ctw;
     }

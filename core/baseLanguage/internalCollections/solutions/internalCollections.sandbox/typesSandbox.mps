@@ -27,7 +27,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <maxImportIndex value="10" />
+  <maxImportIndex value="11" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
@@ -35,6 +35,7 @@
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="-1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590536(jetbrains.mps.bookLanguage.structure)" version="-1" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
+  <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1210602261632">
     <property name="testCaseName" value="Sort" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210602261633" />
@@ -254,16 +255,6 @@
                     </node>
                   </node>
                 </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223635888910">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223636452706">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.NodeRefExpression" id="1223635888911">
-                <link role="referentNode" targetNodeId="10.1107461130800" resolveInfo="Classifier" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1223636535189">
-                <link role="conceptMethodDeclaration" targetNodeId="null" resolveInfo="getFqName" />
               </node>
             </node>
           </node>

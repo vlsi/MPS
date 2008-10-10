@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
-
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
