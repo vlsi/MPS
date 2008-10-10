@@ -5,7 +5,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
-  <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
+  <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -28,6 +28,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
@@ -130,7 +131,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216920022296">
               <link role="variableDeclaration" targetNodeId="1216919983462" resolveInfo="genctx" />
             </node>
-            <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216920028832">
+            <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216920028832">
               <link role="label" targetNodeId="14.1215475930256" resolveInfo="generatedClass" />
               <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216920312306">
                 <link role="variableDeclaration" targetNodeId="1186771602771" resolveInfo="containingRoot" />
@@ -145,7 +146,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216919983462">
         <property name="name" value="genctx" />
-        <node role="type" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextType" id="1216919988605" />
+        <node role="type" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType" id="1216919988605" />
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1186773435542">
@@ -184,7 +185,7 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216920706679">
                       <link role="variableDeclaration" targetNodeId="1216920687268" resolveInfo="genctx" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216920713902">
+                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216920713902">
                       <link role="label" targetNodeId="14.1215478114887" resolveInfo="nodeListHandler" />
                       <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216920734968">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216920733342">
@@ -227,7 +228,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216920755037">
               <link role="variableDeclaration" targetNodeId="1216920687268" resolveInfo="genctx" />
             </node>
-            <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216920763197">
+            <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216920763197">
               <link role="label" targetNodeId="14.1215475930256" resolveInfo="generatedClass" />
               <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216920775231">
                 <link role="variableDeclaration" targetNodeId="1186775150070" resolveInfo="ancestor" />
@@ -244,7 +245,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216920687268">
         <property name="name" value="genctx" />
-        <node role="type" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextType" id="1216920687269" />
+        <node role="type" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType" id="1216920687269" />
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1186775920903">
@@ -288,7 +289,7 @@
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216921963557">
                             <link role="variableDeclaration" targetNodeId="1216921955896" resolveInfo="genctx" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216921971067">
+                          <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216921971067">
                             <link role="label" targetNodeId="14.1215475930256" resolveInfo="generatedClass" />
                             <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1216921978388">
                               <link role="closureParameter" targetNodeId="1186776072210" resolveInfo="it" />
@@ -334,7 +335,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216921955896">
         <property name="name" value="genctx" />
-        <node role="type" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextType" id="1216921955897" />
+        <node role="type" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType" id="1216921955897" />
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1189585733348">

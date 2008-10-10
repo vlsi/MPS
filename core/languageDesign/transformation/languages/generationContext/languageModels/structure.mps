@@ -1,13 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.transformation.generationContext.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="GenerationContextOp_Base" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_Base" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_Base" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_CreateUniqueName" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_CreateUniqueName" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_CreateUniqueName" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_GetCopiedOutputByInput" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_GetCopiedOutputByInput" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_GetInputModel" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_GetInputModel" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_GetOriginalInputModel" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOriginalInputModel" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_GetOriginalInputModel" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_GetOutputByLabel" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabel" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_GetOutputByLabel" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_GetOutputByLabelAndInput" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_GetOutputByLabelAndInput" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_GetOutputListByLabelAndInput" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_GetOutputListByLabelAndInput" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_GetOutputModel" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputModel" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_GetOutputModel" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_GetPrevInputByLabel" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetPrevInputByLabel" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_GetPrevInputByLabel" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_GetScope" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetScope" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_GetScope" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_GetTemplateNode" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetTemplateNode" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_GetTemplateNode" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_SessionObjectAccess" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_SessionObjectAccess" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_SessionObjectAccess" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_ShowErrorMessage" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_ShowErrorMessage" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_ShowErrorMessage" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_ShowInfoMessage" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_ShowInfoMessage" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_ShowInfoMessage" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_ShowMessageBase" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_ShowMessageBase" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_ShowMessageBase" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_ShowWarningMessage" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_ShowWarningMessage" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_ShowWarningMessage" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_StepObjectAccess" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_StepObjectAccess" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_StepObjectAccess" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_TransientObjectAccess" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_TransientObjectAccess" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_TransientObjectAccess" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextOp_UserObjectAccessBase" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_UserObjectAccessBase" featureKind="CONCEPT" />
+          <value featureName="GenerationContextOp_UserObjectAccessBase" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="GenerationContextType" conceptFQName="jetbrains.mps.transformation.generationContext.structure.GenerationContextType" featureKind="CONCEPT" />
+          <value featureName="GenerationContextType" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="TemplateFunctionParameter_generationContext" conceptFQName="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" featureKind="CONCEPT" />
+          <value featureName="TemplateFunctionParameter_generationContext" conceptFQName="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
+  <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
@@ -23,8 +122,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <maxImportIndex value="6" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.transformation.generationContext.structure)" version="-1" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -119,7 +219,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1216861920336">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextType" id="1216861951775" />
+      <node role="target" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType" id="1216861951775" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1216945228272">

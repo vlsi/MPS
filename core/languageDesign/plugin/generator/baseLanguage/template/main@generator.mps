@@ -5,7 +5,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
-  <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.transformation.generationContext)" />
+  <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
@@ -38,6 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <maxImportIndex value="84" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="15" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -106,8 +107,8 @@
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216227985705">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216227985706">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217019437043">
-                  <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019437045" />
-                  <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019437046" />
+                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019437045" />
+                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019437046" />
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1216227985708">
                   <link role="concept" targetNodeId="1.1216225441716" resolveInfo="NoPlugin" />
@@ -122,8 +123,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216228003726">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216228003727">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217019435678">
-                      <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019435680" />
-                      <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019435697" />
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019435680" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019435697" />
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1216228003729">
                       <link role="concept" targetNodeId="1.1216225441716" resolveInfo="NoPlugin" />
@@ -1825,8 +1826,8 @@
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213287587488">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213287587489">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216849635273">
-                                  <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867029443" />
-                                  <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867019886">
+                                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867029443" />
+                                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867019886">
                                     <link role="label" targetNodeId="1205525636998" resolveInfo="map_GroupIDConstant" />
                                     <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213287587493">
                                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1213287587494" />
@@ -1849,8 +1850,8 @@
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213287587499">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213287587500">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216849635281">
-                                  <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867022330" />
-                                  <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867020702">
+                                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867022330" />
+                                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867020702">
                                     <link role="label" targetNodeId="1204736579308" resolveInfo="map_ActionGroup" />
                                     <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213287587504">
                                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1213287587505" />
@@ -2244,8 +2245,8 @@
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213288003709">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213288026233">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216849635155">
-                              <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867021754" />
-                              <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867019480">
+                              <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867021754" />
+                              <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867019480">
                                 <link role="label" targetNodeId="1205525636998" resolveInfo="map_GroupIDConstant" />
                                 <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213288026237">
                                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1213288026238" />
@@ -2268,8 +2269,8 @@
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213288006982">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213288016446">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216849635234">
-                              <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867026924" />
-                              <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867018129">
+                              <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867026924" />
+                              <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867018129">
                                 <link role="label" targetNodeId="1204736579308" resolveInfo="map_ActionGroup" />
                                 <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213288016450">
                                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1213288016451" />
@@ -2796,8 +2797,8 @@
                               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217516417409">
                                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217516417410">
                                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217516417411">
-                                    <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217516417412" />
-                                    <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1217516417413">
+                                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217516417412" />
+                                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1217516417413">
                                       <link role="label" targetNodeId="1204736642575" resolveInfo="map_ActionConstructor" />
                                       <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217516417414">
                                         <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1217516417415">
@@ -3100,8 +3101,8 @@
                           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204045292433">
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204737315100">
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216849635242">
-                                <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867029668" />
-                                <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867019153">
+                                <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867029668" />
+                                <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867019153">
                                   <link role="label" targetNodeId="1204736981184" resolveInfo="map_SingleTabConstructor" />
                                   <node role="inputNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1204737315712">
                                     <link role="concept" targetNodeId="1.1203071663527" resolveInfo="SingletabbedEditorTab" />
@@ -3164,8 +3165,8 @@
                           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204737334163">
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204737334164">
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216849635226">
-                                <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867028480" />
-                                <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867014991">
+                                <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867028480" />
+                                <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867014991">
                                   <link role="label" targetNodeId="1204736986732" resolveInfo="map_MultiTabConstructor" />
                                   <node role="inputNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1204737334166">
                                     <link role="concept" targetNodeId="1.1203780151140" resolveInfo="MultitabbedEditorTab" />
@@ -3276,8 +3277,8 @@
                     <link role="concept" targetNodeId="1.1203866019489" resolveInfo="TabbedEditorDeclaration" />
                   </node>
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218028315890">
-                    <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218028315891" />
-                    <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218028315892" />
+                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218028315891" />
+                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218028315892" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1218028324959" />
@@ -3430,8 +3431,8 @@
                                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218031031890">
                                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218031031891">
                                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218031031892">
-                                        <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218031031893" />
-                                        <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218031031894">
+                                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218031031893" />
+                                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218031031894">
                                           <link role="label" targetNodeId="1204736970385" resolveInfo="map_EditorConstructor" />
                                           <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1218031031895" />
                                         </node>
@@ -3473,8 +3474,8 @@
                       <link role="concept" targetNodeId="1.1203866019489" resolveInfo="TabbedEditorDeclaration" />
                     </node>
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218031051522">
-                      <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218031051523" />
-                      <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218031051524" />
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218031051523" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218031051524" />
                     </node>
                   </node>
                 </node>
@@ -3537,8 +3538,8 @@
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218030866851">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218030866852">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218030866853">
-                            <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218030866854" />
-                            <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218030866855">
+                            <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218030866854" />
+                            <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218030866855">
                               <link role="label" targetNodeId="1204737391751" resolveInfo="map_ToolConstructor" />
                               <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1218030866856" />
                             </node>
@@ -3560,8 +3561,8 @@
                       <link role="concept" targetNodeId="1.1203071677434" resolveInfo="ToolDeclaration" />
                     </node>
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218030894116">
-                      <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218030894117" />
-                      <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218030894118" />
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218030894117" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218030894118" />
                     </node>
                   </node>
                 </node>
@@ -3585,8 +3586,8 @@
                     <link role="concept" targetNodeId="1.1203071677434" resolveInfo="ToolDeclaration" />
                   </node>
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218030158154">
-                    <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218030158155" />
-                    <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218030158156" />
+                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218030158155" />
+                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218030158156" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1218030158157" />
@@ -3641,8 +3642,8 @@
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215283464730">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215283472487">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216849635202">
-                              <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867022953" />
-                              <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867012038">
+                              <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867022953" />
+                              <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867012038">
                                 <link role="label" targetNodeId="1206118279212" resolveInfo="map_ProjectPluginConstructor" />
                                 <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1215283472489" />
                               </node>
@@ -3691,8 +3692,8 @@
                       <link role="concept" targetNodeId="1.1206110063106" resolveInfo="CustomPluginDeclaration" />
                     </node>
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217019437211">
-                      <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019437213" />
-                      <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019437214" />
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019437213" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019437214" />
                     </node>
                   </node>
                 </node>
@@ -3722,8 +3723,8 @@
                     <link role="concept" targetNodeId="1.1206110063106" resolveInfo="ProjectPluginDeclaration" />
                   </node>
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218028234318">
-                    <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218028234319" />
-                    <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218028234320" />
+                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218028234319" />
+                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218028234320" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1218028274016" />
@@ -3774,8 +3775,8 @@
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218028766824">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218028766825">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218028766826">
-                            <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218028766827" />
-                            <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218028766828">
+                            <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218028766827" />
+                            <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218028766828">
                               <link role="label" targetNodeId="1210181311095" resolveInfo="map_PreferenceComponentClass" />
                               <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1218028766829" />
                             </node>
@@ -3797,8 +3798,8 @@
                       <link role="concept" targetNodeId="1.1210179134063" resolveInfo="PreferencesComponentDeclaration" />
                     </node>
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218029169260">
-                      <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218029169261" />
-                      <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218029169262" />
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218029169261" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218029169262" />
                     </node>
                   </node>
                 </node>
@@ -3834,8 +3835,8 @@
                     <link role="concept" targetNodeId="1.1210179134063" resolveInfo="PreferencesComponentDeclaration" />
                   </node>
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218028358622">
-                    <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218028358623" />
-                    <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218028358624" />
+                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218028358623" />
+                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218028358624" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1218028366268" />
@@ -3872,8 +3873,8 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218025276088">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218025276089">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218025276090">
-                    <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218025276091" />
-                    <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218025276092" />
+                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218025276091" />
+                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218025276092" />
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1218025276093">
                     <link role="concept" targetNodeId="1.1207320991007" resolveInfo="FileGeneratorPluginDeclaration" />
@@ -3908,8 +3909,8 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218039990266">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218039990267">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218039990268">
-                    <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218039990269" />
-                    <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218039990270" />
+                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218039990269" />
+                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218039990270" />
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1218039990271">
                     <link role="concept" targetNodeId="1.1218035894314" resolveInfo="FileGeneratorDeclaration" />
@@ -3963,8 +3964,8 @@
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218025374507">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218025374508">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218025374509">
-                            <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218025374510" />
-                            <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218025374511">
+                            <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218025374510" />
+                            <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218025374511">
                               <link role="label" targetNodeId="1210071362621" resolveInfo="map_GenerationListenerConstructor" />
                               <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1218025374512" />
                             </node>
@@ -3989,8 +3990,8 @@
                       <link role="concept" targetNodeId="1.1210070489991" resolveInfo="GenerationListenerDeclaration" />
                     </node>
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218025164869">
-                      <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218025164870" />
-                      <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218025164871" />
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218025164870" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218025164871" />
                     </node>
                   </node>
                 </node>
@@ -4020,8 +4021,8 @@
                     <link role="concept" targetNodeId="1.1210070489991" resolveInfo="GenerationListenerDeclaration" />
                   </node>
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218028292946">
-                    <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218028292947" />
-                    <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218028292948" />
+                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218028292947" />
+                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218028292948" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1218028297483" />
@@ -6669,8 +6670,8 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214489951992">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1214489956337">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216849635285">
-                <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867029508" />
-                <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867016405">
+                <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867029508" />
+                <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867016405">
                   <link role="label" targetNodeId="1208525846612" resolveInfo="map_Tool" />
                   <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214489997095">
                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1214489956338" />
@@ -6725,8 +6726,8 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209910342307">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209910360440">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216849635190">
-                    <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867023721" />
-                    <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867013189">
+                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867023721" />
+                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867013189">
                       <link role="label" targetNodeId="1208525846612" resolveInfo="map_Tool" />
                       <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209910361332">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1209910360441" />
@@ -7468,8 +7469,8 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211566960486">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1211566961847">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216849635163">
-                    <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867029909" />
-                    <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867017576">
+                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867029909" />
+                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867017576">
                       <link role="label" targetNodeId="1210181311095" resolveInfo="map_PreferenceComponentClass" />
                       <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211566961849">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1211566961850" />
@@ -7552,8 +7553,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217678861867">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217678919953">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217678921251">
-              <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217678919954" />
-              <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1217678938175">
+              <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217678919954" />
+              <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1217678938175">
                 <link role="label" targetNodeId="1217678683829" resolveInfo="map_CreatePages" />
                 <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217678963740">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1217678963129" />
@@ -7595,8 +7596,8 @@
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210181278367">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210181281150">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216849635246">
-                        <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867022857" />
-                        <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867017527">
+                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867022857" />
+                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867017527">
                           <link role="label" targetNodeId="1210180725364" resolveInfo="map_PersistentField" />
                           <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210181292520">
                             <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1217683063777">
@@ -7708,8 +7709,8 @@
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217690597853">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1217690621392">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217690635661">
-                          <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217690634222" />
-                          <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1217690637305">
+                          <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217690634222" />
+                          <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1217690637305">
                             <link role="label" targetNodeId="1210181311095" resolveInfo="map_PreferenceComponentClass" />
                             <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217690651947">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1217690651948" />
@@ -7819,8 +7820,8 @@
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216227940527">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216227940528">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217019435960">
-                  <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019435962" />
-                  <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019435963" />
+                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019435962" />
+                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019435963" />
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1216227940530">
                   <link role="concept" targetNodeId="1.1216225441716" resolveInfo="NoPlugin" />
@@ -7835,8 +7836,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216228017082">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216228017083">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217019435181">
-                      <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019435199" />
-                      <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019435200" />
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019435199" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019435200" />
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1216228017085">
                       <link role="concept" targetNodeId="1.1216225441716" resolveInfo="NoPlugin" />
@@ -7895,8 +7896,8 @@
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218031586957">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218031586958">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218031586959">
-                            <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218031586960" />
-                            <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218031586961">
+                            <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218031586960" />
+                            <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218031586961">
                               <link role="label" targetNodeId="1204736740814" resolveInfo="map_GroupConstructor" />
                               <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1218031586962" />
                             </node>
@@ -7922,8 +7923,8 @@
                         <link role="concept" targetNodeId="1.1203087890642" resolveInfo="ActionGroupDeclaration" />
                       </node>
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218034712632">
-                        <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218034712633" />
-                        <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218034712634" />
+                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218034712633" />
+                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218034712634" />
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation" id="1218034712635">
@@ -7973,8 +7974,8 @@
                       <link role="concept" targetNodeId="1.1203087890642" resolveInfo="ActionGroupDeclaration" />
                     </node>
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218034285828">
-                      <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218034285829" />
-                      <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218034285830" />
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218034285829" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218034285830" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation" id="1218034285831">
@@ -8529,8 +8530,8 @@
                       <link role="concept" targetNodeId="1.1204383956737" resolveInfo="InterfaceGroup" />
                     </node>
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218031848643">
-                      <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218031848644" />
-                      <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218031848645" />
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218031848644" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218031848645" />
                     </node>
                   </node>
                 </node>
@@ -8563,8 +8564,8 @@
                     <link role="concept" targetNodeId="1.1204383956737" resolveInfo="InterfaceGroup" />
                   </node>
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218034216954">
-                    <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218034216955" />
-                    <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218034216956" />
+                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218034216955" />
+                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218034216956" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1218034216957" />
@@ -8619,8 +8620,8 @@
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215283528063">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215283528064">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216849635230">
-                              <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867022074" />
-                              <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867019935">
+                              <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216867022074" />
+                              <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1216867019935">
                                 <link role="label" targetNodeId="1215283652343" resolveInfo="map_ApplicationPluginConstructor" />
                                 <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1215283528066" />
                               </node>
@@ -8666,8 +8667,8 @@
                       <link role="concept" targetNodeId="1.1215279937187" resolveInfo="ApplicationPluginDeclaration" />
                     </node>
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217019435330">
-                      <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019435332" />
-                      <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019435333" />
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217019435332" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1217019435333" />
                     </node>
                   </node>
                 </node>
@@ -8691,8 +8692,8 @@
                     <link role="concept" targetNodeId="1.1215279937187" resolveInfo="ApplicationPluginDeclaration" />
                   </node>
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218035169573">
-                    <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218035169574" />
-                    <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetInputModel" id="1218035169575" />
+                    <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218035169574" />
+                    <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" id="1218035169575" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1218035169576" />
@@ -9031,8 +9032,8 @@
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217679346471">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217679365582">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217679367584">
-                              <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217679365583" />
-                              <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1217679370775">
+                              <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217679365583" />
+                              <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1217679370775">
                                 <link role="label" targetNodeId="1217679406654" resolveInfo="map_PageClass" />
                                 <node role="inputNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1217679461061" />
                               </node>
@@ -9702,8 +9703,8 @@
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217691172313">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217691179861">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217691181160">
-                            <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217691179862" />
-                            <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1217691182319">
+                            <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217691179862" />
+                            <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1217691182319">
                               <link role="label" targetNodeId="1210181311095" resolveInfo="map_PreferenceComponentClass" />
                               <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217691203323">
                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1217691202775" />
@@ -10035,8 +10036,8 @@
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218740528473">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218740538505">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218740540336">
-                        <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218740538506" />
-                        <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218740549526">
+                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218740538506" />
+                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218740549526">
                           <link role="label" targetNodeId="1218739871545" resolveInfo="map_Action" />
                           <node role="inputNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1218740579471">
                             <link role="concept" targetNodeId="1.1203071646776" resolveInfo="ActionDeclaration" />
@@ -10081,8 +10082,8 @@
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218740597853">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218740597854">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218740597855">
-                        <node role="operand" type="jetbrains.mps.transformation.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218740597856" />
-                        <node role="operation" type="jetbrains.mps.transformation.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218740597857">
+                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1218740597856" />
+                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1218740597857">
                           <link role="label" targetNodeId="1204736579308" resolveInfo="map_ActionGroup" />
                           <node role="inputNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1218740597858">
                             <link role="concept" targetNodeId="1.1203087890642" resolveInfo="ActionGroupDeclaration" />
