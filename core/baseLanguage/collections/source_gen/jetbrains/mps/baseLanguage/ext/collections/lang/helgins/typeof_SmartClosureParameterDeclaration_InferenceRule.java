@@ -52,7 +52,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
                         {
                           SNode _nodeToCheck_1029348928467 = scpd;
                           BaseIntentionProvider intentionProvider = null;
-                          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(scpd, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1204072627891", true), params.get(0), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1204072627885", intentionProvider);
+                          typeCheckingContext.createEquation(typeCheckingContext.typeOf(scpd, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1204072627891", true), params.get(0), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1204072627885", intentionProvider);
                         }
                       }
                       return;
@@ -85,7 +85,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
                   {
                     SNode _nodeToCheck_1029348928467 = scpd;
                     BaseIntentionProvider intentionProvider = null;
-                    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(scpd, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1210677438644", true), params.get(0), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1210677438638", intentionProvider);
+                    typeCheckingContext.createEquation(typeCheckingContext.typeOf(scpd, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1210677438644", true), params.get(0), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1210677438638", intentionProvider);
                   }
                 }
                 return;
@@ -102,7 +102,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
                   {
                     SNode _nodeToCheck_1029348928467 = scpd;
                     BaseIntentionProvider intentionProvider = null;
-                    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(scpd, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1204072411309", true), params.get(0), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1204072415594", intentionProvider);
+                    typeCheckingContext.createEquation(typeCheckingContext.typeOf(scpd, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1204072411309", true), params.get(0), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1204072415594", intentionProvider);
                   }
                 }
                 return;
@@ -115,7 +115,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
                 {
                   SNode _nodeToCheck_1029348928467 = scpd;
                   BaseIntentionProvider intentionProvider = null;
-                  TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(scpd, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1204072500672", true), SLinkOperations.getTarget(coercedNode_2, "elementType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1204072507050", intentionProvider);
+                  typeCheckingContext.createEquation(typeCheckingContext.typeOf(scpd, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1204072500672", true), SLinkOperations.getTarget(coercedNode_2, "elementType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1204072507050", intentionProvider);
                 }
                 return;
               }

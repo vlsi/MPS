@@ -22,7 +22,7 @@ public class typeof_MapClearOperation_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1213877410070(nodeToCheck), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1208542413612", true), new QuotationClass_79().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(VALUE_typevar_1208542413609), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1208542413607)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1208542413610", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(nodeToCheck), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1208542413612", true), new QuotationClass_79().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(VALUE_typevar_1208542413609), TypeChecker.getInstance().getEquationManager().getRepresentator(KEY_typevar_1208542413607)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1208542413610", false, 0, intentionProvider);
     }
   }
 

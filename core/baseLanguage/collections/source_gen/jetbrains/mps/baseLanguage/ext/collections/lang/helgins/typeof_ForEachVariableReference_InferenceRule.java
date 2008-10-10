@@ -16,7 +16,7 @@ public class typeof_ForEachVariableReference_InferenceRule extends AbstractInfer
   }
 
   public void applyRule(final SNode var, final TypeCheckingContext typeCheckingContext) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(var, "variable", false), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1178725705454", true), var, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1178725705453");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(typeCheckingContext.typeOf(SLinkOperations.getTarget(var, "variable", false), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1178725705454", true), var, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.ext.collections.lang.helgins)", "1178725705453");
   }
 
   public String getApplicableConceptFQName() {
