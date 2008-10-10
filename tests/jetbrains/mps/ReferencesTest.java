@@ -5,7 +5,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.logging.*;
-import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_AnnotationLink;
+import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 import java.util.List;

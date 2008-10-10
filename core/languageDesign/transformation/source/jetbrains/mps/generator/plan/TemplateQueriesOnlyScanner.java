@@ -2,10 +2,10 @@ package jetbrains.mps.generator.plan;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
-import jetbrains.mps.transformation.TLBase.structure.NodeMacro;
-import jetbrains.mps.transformation.TLBase.structure.PropertyMacro;
-import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
+import jetbrains.mps.lang.generator.structure.TemplateDeclaration;
+import jetbrains.mps.lang.generator.structure.NodeMacro;
+import jetbrains.mps.lang.generator.structure.PropertyMacro;
+import jetbrains.mps.lang.generator.structure.ReferenceMacro;
 import jetbrains.mps.util.Condition;
 
 import java.util.List;

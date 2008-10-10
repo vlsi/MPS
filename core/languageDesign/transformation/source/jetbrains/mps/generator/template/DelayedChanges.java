@@ -4,7 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.transformation.TLBase.structure.NodeMacro;
+import jetbrains.mps.lang.generator.structure.NodeMacro;
 
 import java.util.ArrayList;
 import java.util.Map;

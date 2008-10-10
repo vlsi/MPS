@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.output.OutputViewTool;

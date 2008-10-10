@@ -2,7 +2,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
+import jetbrains.mps.lang.generator.structure.TemplateSwitch;
 
 import java.util.*;
 

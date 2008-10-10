@@ -1,12 +1,11 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
-import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_AnnotationLink;
+import jetbrains.mps.lang.generator.structure.ReferenceMacro;
+import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.HashSet;
 
 public final class RefactoringUtil {
 

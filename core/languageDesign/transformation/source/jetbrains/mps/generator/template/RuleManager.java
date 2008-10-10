@@ -9,7 +9,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.transformation.TLBase.structure.*;
+import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.GenerationCanceledException;
 

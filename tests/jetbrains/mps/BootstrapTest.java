@@ -118,7 +118,6 @@ public class BootstrapTest extends BaseMPSTest {
     assertTrue(res, res == null);
   }
 
-
   public void testPatterns() {
     String res = testProject(new File("core/languageDesign/pattern/pattern.mpr"));
     assertTrue(res, res == null);

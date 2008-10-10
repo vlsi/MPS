@@ -9,13 +9,11 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.transformation.TLBase.structure.RuleConsequence;
-import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
-import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
+import jetbrains.mps.lang.generator.structure.RuleConsequence;
+import jetbrains.mps.lang.generator.structure.TemplateSwitch;
 
 import java.util.List;
 

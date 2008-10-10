@@ -6,9 +6,9 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule;
-import jetbrains.mps.transformation.TLBase.structure.RuleConsequence;
-import jetbrains.mps.transformation.TLBase.structure.TemplateSwitch;
+import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
+import jetbrains.mps.lang.generator.structure.RuleConsequence;
+import jetbrains.mps.lang.generator.structure.TemplateSwitch;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.logging.Logger;
 

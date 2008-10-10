@@ -13,8 +13,8 @@ import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.structure.MappingScript;
-import jetbrains.mps.transformation.TLBase.structure.MappingScriptKind;
+import jetbrains.mps.lang.generator.structure.MappingScript;
+import jetbrains.mps.lang.generator.structure.MappingScriptKind;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.project.ModuleReference;
 

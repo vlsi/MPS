@@ -4,7 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.projectLanguage.structure.*;
-import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.BootstrapLanguagesManager;

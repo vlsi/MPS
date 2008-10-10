@@ -6,10 +6,10 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="true">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)</dependency>
+    <dependency reexport="true">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)</usedLanguages>
+    <usedLanguages>b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</usedLanguages>
   </usedLanguages>
 </solution>
 

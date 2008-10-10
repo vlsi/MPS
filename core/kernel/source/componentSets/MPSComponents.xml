@@ -251,7 +251,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.transformation.TLBase.plugin.RootTemplateAnnotator</implementation-class>
+      <implementation-class>jetbrains.mps.lang.generator.plugin.RootTemplateAnnotator</implementation-class>
     </component>
 
     <component>
@@ -346,7 +346,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracerViewTool
+      <implementation-class>jetbrains.mps.lang.generator.plugin.debug.GenerationTracerViewTool
       </implementation-class>
       <skipForDummyProject/>
     </component>
@@ -388,7 +388,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer</implementation-class>
+      <implementation-class>jetbrains.mps.lang.generator.plugin.debug.GenerationTracer</implementation-class>
     </component>
 
     <component>

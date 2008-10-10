@@ -4,10 +4,10 @@ import jetbrains.mps.generator.plan.AbstractGenerationStepController;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
-import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
-import jetbrains.mps.transformation.TLBase.structure.MappingScript;
-import jetbrains.mps.transformation.TLBase.structure.MappingScriptReference;
+import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
+import jetbrains.mps.lang.generator.structure.MappingConfiguration;
+import jetbrains.mps.lang.generator.structure.MappingScript;
+import jetbrains.mps.lang.generator.structure.MappingScriptReference;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import org.jetbrains.annotations.NotNull;
 

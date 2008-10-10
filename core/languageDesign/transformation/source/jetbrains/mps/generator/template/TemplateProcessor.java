@@ -4,8 +4,8 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailueException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
-import jetbrains.mps.transformation.TLBase.structure.*;
+import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
+import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 

@@ -124,7 +124,7 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
 
   private static void setupBasic_refCell_label1216860146341(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_label");
-    jetbrains.mps.transformation.TLBase.editor.Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
+    jetbrains.mps.lang.generator.editor.Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12168601463441216860146344(EditorCell editorCell, SNode node, EditorContext context) {

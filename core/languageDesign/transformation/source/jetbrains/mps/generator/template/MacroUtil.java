@@ -5,8 +5,8 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
-import jetbrains.mps.transformation.TLBase.structure.*;
+import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
+import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.ArrayList;

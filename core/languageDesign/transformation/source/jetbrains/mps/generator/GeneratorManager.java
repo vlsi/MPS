@@ -1,7 +1,6 @@
 package jetbrains.mps.generator;
 
 import com.intellij.ide.IdeEventQueue;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -19,7 +18,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
+import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;

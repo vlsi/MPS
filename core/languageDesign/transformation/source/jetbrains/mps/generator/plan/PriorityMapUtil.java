@@ -1,6 +1,6 @@
 package jetbrains.mps.generator.plan;
 
-import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 
 import java.util.*;
 

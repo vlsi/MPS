@@ -12,7 +12,7 @@
     <dependency reexport="true">fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)</dependency>
     <dependency reexport="true">084f8779-0bb0-44bf-8a8b-1214d7acfbc5(ypath.main)</dependency>
     <dependency reexport="true">c13beb70-150a-461e-b6de-05489d7b1dd3(ypath.sandbox)</dependency>
-    <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.transformation.TLBase)</dependency>
+    <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)</usedLanguages>

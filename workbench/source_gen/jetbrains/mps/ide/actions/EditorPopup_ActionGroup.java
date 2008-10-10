@@ -13,7 +13,7 @@ import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationAction;
 import jetbrains.mps.workbench.actions.nodes.GoToRulesAction;
 import jetbrains.mps.workbench.actions.generate.GenerateFilesFromCurrentModelAction;
 import jetbrains.mps.workbench.actions.generate.GenerateTextFromCurrentModelAction;
-import jetbrains.mps.transformation.TLBase.plugin.debug.actions.ShowGenerationTraceAction;
+import jetbrains.mps.lang.generator.plugin.debug.actions.ShowGenerationTraceAction;
 import jetbrains.mps.workbench.actions.nodes.FindSpecificNodeUsagesAction;
 import jetbrains.mps.workbench.actions.nodes.FastFindUsagesNodeAction;
 import jetbrains.mps.workbench.actions.cells.ShowCellKeymapsAction;

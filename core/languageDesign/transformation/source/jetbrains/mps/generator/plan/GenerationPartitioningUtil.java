@@ -6,8 +6,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
-import jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration;
+import jetbrains.mps.lang.generator.structure.MappingConfiguration;
+import jetbrains.mps.lang.generator.structure.TemplateDeclaration;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.project.ModuleReference;
 
@@ -117,7 +117,7 @@ public class GenerationPartitioningUtil {
 
   private static void collectLanguageNamespaces(SNode node, Set<ModuleReference> namespaces, boolean excludeTLBase) {
     ModuleReference namespace = node.getConceptLanguage();
-    if (!namespace.getModuleFqName().equals("jetbrains.mps.transformation.TLBase")) {
+    if (!namespace.getModuleFqName().equals("jetbrains.mps.lang.generator")) {
       namespaces.add(namespace);
       for (SNode child : node.getChildren()) {
         collectLanguageNamespaces(child, namespaces, excludeTLBase);

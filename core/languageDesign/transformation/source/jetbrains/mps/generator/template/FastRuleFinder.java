@@ -4,7 +4,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule;
+import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.generator.template.GeneratorUtil;
 import jetbrains.mps.generator.GenerationFailueException;
 

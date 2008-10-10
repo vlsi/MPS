@@ -3,9 +3,8 @@ package jetbrains.mps.generator.plan;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.*;
-import jetbrains.mps.projectLanguage.structure.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
