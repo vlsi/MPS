@@ -128,4 +128,9 @@ public class BootstrapTest extends BaseMPSTest {
     String res = testProject(new File("core/languageDesign/dataFlow/dataFlow.mpr"));
     assertTrue(res, res == null);
   }
+
+  public void testScript() {
+    String res = testProject(new File("core/languageDesign/script/script.mpr"));
+    assertTrue(res, res == null);
+  }
 }
