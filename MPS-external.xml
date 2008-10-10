@@ -151,7 +151,7 @@
       <fileset dir="core/languageDesign/sharedConcepts/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="core/languageDesign/smodelLanguage/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="core/languageDesign/smodel/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="core/languageDesign/structure/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
@@ -265,7 +265,7 @@
     <antcall target="pack.jetbrains.mps.lang.plugin" />
     <antcall target="pack.jetbrains.mps.lang.sharedConcepts" />
     <antcall target="pack.jetbrains.mps.lang.smodel" />
-    <antcall target="pack.jetbrains.mps.ide.scriptLanguage" />
+    <antcall target="pack.jetbrains.mps.lang.script" />
     <antcall target="pack.jetbrains.mps.lang.structure" />
     <antcall target="pack.jetbrains.mps.lang.core" />
     <antcall target="pack.jetbrains.mps.lang.refactoring" />
