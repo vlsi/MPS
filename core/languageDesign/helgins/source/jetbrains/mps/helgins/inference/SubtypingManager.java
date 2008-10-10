@@ -142,7 +142,7 @@ public class SubtypingManager {
     }
 
     //asking a cache
-    Boolean answer = getCacheAnswer(subRepresentator, superRepresentator);
+    Boolean answer = getCacheAnswer(subRepresentator, superRepresentator, isWeak);
     if (answer != null) {
       return answer;
     }
@@ -176,7 +176,7 @@ public class SubtypingManager {
         if (superRepresentator.matchesWith(NodeWrapper.createWrapperFromNode(ancestor, equationManager),
           equationManager, errorInfo, matchParameter)) {
           if (matchParameter.o2.keySet().isEmpty()) { //no vars in superRepresentator!
-            addToCache(subRepresentator, superRepresentator, true);
+            addToCache(subRepresentator, superRepresentator, true, isWeak);
             return true;
           } else {
             wasMatch = true;
@@ -201,28 +201,28 @@ public class SubtypingManager {
       frontier = newFrontier;
       newFrontier = new StructuralNodeSet();
     }
-    addToCache(subRepresentator, superRepresentator, false);
+    addToCache(subRepresentator, superRepresentator, false, isWeak);
     return false;
   }
 
-  private Boolean getCacheAnswer(NodeWrapper subRepresentator, IMatcher superRepresentator) {
+  private Boolean getCacheAnswer(NodeWrapper subRepresentator, IMatcher superRepresentator, boolean isWeak) {
     if (myTypeChecker.isGenerationMode()) {
       SubtypingCache cache = myTypeChecker.getSubtypingCache();
       if (cache != null) {
         if (superRepresentator instanceof NodeWrapper) {
-          return cache.getAnswer(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode());
+          return cache.getAnswer(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), isWeak);
         }
       }
     }
     return null;
   }
 
-  private void addToCache(NodeWrapper subRepresentator, IMatcher superRepresentator, boolean answer) {
+  private void addToCache(NodeWrapper subRepresentator, IMatcher superRepresentator, boolean answer, boolean isWeak) {
     if (myTypeChecker.isGenerationMode()) {
       SubtypingCache cache = myTypeChecker.getSubtypingCache();
       if (cache != null) {
         if (superRepresentator instanceof NodeWrapper) {
-          cache.addCacheEntry(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), answer);
+          cache.addCacheEntry(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), answer, isWeak);
         }
       }
     }
@@ -453,7 +453,7 @@ public class SubtypingManager {
     if (myTypeChecker.isGenerationMode()) {
       SubtypingCache cache = myTypeChecker.getSubtypingCache();
       if (cache != null) {
-        Pair<Boolean,SNode> nodePair = cache.getCoerced(subtype, pattern);
+        Pair<Boolean,SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
         if (nodePair.o1) {
           return nodePair.o2;
         }
@@ -473,7 +473,7 @@ public class SubtypingManager {
     if (myTypeChecker.isGenerationMode()) {
       SubtypingCache cache = myTypeChecker.getSubtypingCache();
       if (cache != null) {
-        cache.addCacheEntry(subtype, pattern, result);
+        cache.addCacheEntry(subtype, pattern, result, isWeak);
       }
     }
 

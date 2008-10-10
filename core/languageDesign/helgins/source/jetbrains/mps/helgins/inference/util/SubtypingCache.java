@@ -23,37 +23,56 @@ public class SubtypingCache {
   private Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCache
     = new HashMap<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>>();
 
+  private Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> myCacheWeak = new HashMap<CacheNodeHandler, Map<CacheNodeHandler, Boolean>>();
+  private Map<CacheNodeHandler, Map<String, SNode>> myCoerceToConceptsCacheWeak = new HashMap<CacheNodeHandler, Map<String, SNode>>();
+  private Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCacheWeak
+    = new HashMap<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>>();
+
   private boolean myCoersionSimpleCached = HelginsPreferencesComponent.getInstance().isCoersionSimpleCached();
   private boolean myCoersionPatternCached = HelginsPreferencesComponent.getInstance().isCoersionPatternCached();
   private boolean mySubtypingCached = HelginsPreferencesComponent.getInstance().isSubtypingCached();
 
-  public void addCacheEntry(SNode subtype, SNode supertype, boolean answer) {
+  public void addCacheEntry(SNode subtype, SNode supertype, boolean answer, boolean isWeak) {
     if (!mySubtypingCached) {
       return;
     }
+    Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> cache = myCache;
     CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
-    Map<CacheNodeHandler, Boolean> supertypes = myCache.get(subtypeHandler);
+    Map<CacheNodeHandler, Boolean> supertypes = cache.get(subtypeHandler);
     if (supertypes == null) {
       supertypes = new HashMap<CacheNodeHandler, Boolean>();
-      myCache.put(subtypeHandler, supertypes);
+      cache.put(subtypeHandler, supertypes);
     }
     supertypes.put(new CacheNodeHandler(supertype), answer);
+
+    if (isWeak) {
+      cache = myCacheWeak;
+      CacheNodeHandler subtypeHandlerWeak = new CacheNodeHandler(subtype);
+      Map<CacheNodeHandler, Boolean> supertypesWeak = cache.get(subtypeHandlerWeak);
+      if (supertypesWeak == null) {
+        supertypesWeak = new HashMap<CacheNodeHandler, Boolean>();
+        cache.put(subtypeHandlerWeak, supertypesWeak);
+      }
+    }
   }
 
-  public Boolean getAnswer(SNode subtype, SNode supertype) {
+  public Boolean getAnswer(SNode subtype, SNode supertype, boolean isWeak) {
     if (!mySubtypingCached) {
       return null;
     }
-    Map<CacheNodeHandler, Boolean> supertypes = myCache.get(new CacheNodeHandler(subtype));
+    Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> cache = isWeak ? myCacheWeak : myCache;
+    Map<CacheNodeHandler, Boolean> supertypes = cache.get(new CacheNodeHandler(subtype));
     if (supertypes == null) return null;
     return supertypes.get(new CacheNodeHandler(supertype));
   }
 
-  private Pair<Boolean, SNode> getCoerced(SNode subtype, String conceptFQName) {
+  private Pair<Boolean, SNode> getCoerced(SNode subtype, String conceptFQName, boolean isWeak) {
     if (!myCoersionSimpleCached) {
       return new Pair<Boolean, SNode>(false, null);
     }
-    Map<String, SNode> map = myCoerceToConceptsCache.get(new CacheNodeHandler(subtype));
+
+    Map<CacheNodeHandler, Map<String, SNode>> cache = isWeak ? myCoerceToConceptsCacheWeak : myCoerceToConceptsCache;
+    Map<String, SNode> map = cache.get(new CacheNodeHandler(subtype));
     if (map != null && map.containsKey(conceptFQName)) {
       return new Pair<Boolean, SNode>(true, map.get(conceptFQName));
     } else {
@@ -61,66 +80,92 @@ public class SubtypingCache {
     }
   }
 
-  private Pair<Boolean, SNode> getCoerced(SNode subtype, Class c, GeneratedMatchingPattern pattern) {
+  private Pair<Boolean, SNode> getCoerced(SNode subtype, Class c, GeneratedMatchingPattern pattern, boolean isWeak) {
     if (!myCoersionPatternCached) {
       return new Pair<Boolean, SNode>(false, null);
     }
-    Map<Class, Pair<SNode, GeneratedMatchingPattern>> map = myCoerceToPatternsCache.get(new CacheNodeHandler(subtype));
+    Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> cache
+      = isWeak ? myCoerceToPatternsCacheWeak : myCoerceToPatternsCache;
+    Map<Class, Pair<SNode, GeneratedMatchingPattern>> map = cache.get(new CacheNodeHandler(subtype));
     if (map != null && map.containsKey(c)) {
       Pair<SNode, GeneratedMatchingPattern> patternPair = map.get(c);
       pattern.fillFieldValuesFrom(patternPair.o2);
-      return new Pair<Boolean, SNode>(true, patternPair.o1); 
+      return new Pair<Boolean, SNode>(true, patternPair.o1);
     } else {
       return new Pair<Boolean, SNode>(false, null);
     }
   }
 
-  private void addCacheEntry(SNode subtype, String conceptFQName, SNode result) {
+  private void addCacheEntry(SNode subtype, String conceptFQName, SNode result, boolean isWeak) {
     if (!myCoersionSimpleCached) {
       return;
     }
+    Map<CacheNodeHandler, Map<String, SNode>> cache = myCoerceToConceptsCache;
     CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
-    Map<String, SNode> map = myCoerceToConceptsCache.get(subtypeHandler);
+    Map<String, SNode> map = cache.get(subtypeHandler);
     if (map == null) {
       map = new HashMap<String, SNode>();
-      myCoerceToConceptsCache.put(subtypeHandler, map);
+      cache.put(subtypeHandler, map);
     }
     map.put(conceptFQName, result);
+
+    if (isWeak) {
+      cache = myCoerceToConceptsCacheWeak;
+      CacheNodeHandler subtypeHandlerWeak = new CacheNodeHandler(subtype);
+      Map<String, SNode> mapWeak = cache.get(subtypeHandlerWeak);
+      if (mapWeak == null) {
+        mapWeak = new HashMap<String, SNode>();
+        cache.put(subtypeHandlerWeak, mapWeak);
+      }
+      mapWeak.put(conceptFQName, result);
+    }
   }
 
-  private void addCacheEntry(SNode subtype, Class c, SNode result, GeneratedMatchingPattern pattern) {
+  private void addCacheEntry(SNode subtype, Class c, SNode result, GeneratedMatchingPattern pattern, boolean isWeak) {
     if (!myCoersionPatternCached) {
       return;
     }
+    Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> cache = myCoerceToPatternsCache;
     CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
-    Map<Class, Pair<SNode, GeneratedMatchingPattern>> map = myCoerceToPatternsCache.get(subtypeHandler);
+    Map<Class, Pair<SNode, GeneratedMatchingPattern>> map = cache.get(subtypeHandler);
     if (map == null) {
       map = new HashMap<Class, Pair<SNode, GeneratedMatchingPattern>>();
-      myCoerceToPatternsCache.put(subtypeHandler, map);
+      cache.put(subtypeHandler, map);
     }
     map.put(c, new Pair<SNode, GeneratedMatchingPattern>(result, pattern));
+
+    if (isWeak) {
+      cache = myCoerceToPatternsCacheWeak;
+      CacheNodeHandler subtypeHandlerWeak = new CacheNodeHandler(subtype);
+      Map<Class, Pair<SNode, GeneratedMatchingPattern>> mapWeak = cache.get(subtypeHandlerWeak);
+      if (mapWeak == null) {
+        mapWeak = new HashMap<Class, Pair<SNode, GeneratedMatchingPattern>>();
+        cache.put(subtypeHandlerWeak, mapWeak);
+      }
+      mapWeak.put(c, new Pair<SNode, GeneratedMatchingPattern>(result, pattern));
+    }
   }
 
-  public void addCacheEntry(SNode subtype, IMatchingPattern pattern, SNode result) {
+  public void addCacheEntry(SNode subtype, IMatchingPattern pattern, SNode result, boolean isWeak) {
     if (pattern instanceof ConceptMatchingPattern) {
-      addCacheEntry(subtype, ((ConceptMatchingPattern)pattern).getConceptFQName(), result);
+      addCacheEntry(subtype, ((ConceptMatchingPattern)pattern).getConceptFQName(), result, isWeak);
       return;
     }
     if (pattern instanceof GeneratedMatchingPattern) {
       if (!((GeneratedMatchingPattern)pattern).hasAntiquotations()) {
-        addCacheEntry(subtype, pattern.getClass(), result, (GeneratedMatchingPattern) pattern);
+        addCacheEntry(subtype, pattern.getClass(), result, (GeneratedMatchingPattern) pattern, isWeak);
         return;
       }
     }
   }
 
-  public Pair<Boolean, SNode> getCoerced(SNode subtype, IMatchingPattern pattern) {
+  public Pair<Boolean, SNode> getCoerced(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
     if (pattern instanceof ConceptMatchingPattern) {
-      return getCoerced(subtype, ((ConceptMatchingPattern)pattern).getConceptFQName());
+      return getCoerced(subtype, ((ConceptMatchingPattern)pattern).getConceptFQName(), isWeak);
     }
     if (pattern instanceof GeneratedMatchingPattern) {
       if (!((GeneratedMatchingPattern)pattern).hasAntiquotations()) {
-        return getCoerced(subtype, pattern.getClass(), (GeneratedMatchingPattern) pattern);
+        return getCoerced(subtype, pattern.getClass(), (GeneratedMatchingPattern) pattern, isWeak);
       }
     }
     return new Pair<Boolean, SNode>(false, null);

@@ -239,7 +239,7 @@ public class EquationManager {
     myTypeChecker.reportTypeError(equationInfo.getNodeWithError(), errorReporter);
 
     //4debug
-     myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, equationInfo, isWeak);
+   //  myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, equationInfo, isWeak);
   }
 
   public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck) {
