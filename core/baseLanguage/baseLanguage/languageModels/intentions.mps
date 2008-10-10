@@ -7406,5 +7406,85 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1223648378225">
+    <property name="name" value="DeprecatedJavaDoc" />
+    <link role="forConcept" targetNodeId="1.1223637189742" resolveInfo="IDeprecatable" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1223648378226">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223648378227">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1223648710434">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223648710435">
+            <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1223648710436" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1223648710437">
+              <link role="property" targetNodeId="1.1223637196134" resolveInfo="isDeprecated" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223648710438">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223648721564">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1223648726896">
+                <property name="value" value="Remove deprecated java doc" />
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1223648710446">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223648710447">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223648724051">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1223648728475">
+                  <property name="value" value="Add deprecated java doc" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1223648378228">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223648378229">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1223648539628">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223648559616">
+            <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1223648556052" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1223648587026">
+              <link role="property" targetNodeId="1.1223637196134" resolveInfo="isDeprecated" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223648539630">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223648603371">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223648620079">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223648604810">
+                  <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1223648603372" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1223648618453">
+                    <link role="property" targetNodeId="1.1223637196134" resolveInfo="isDeprecated" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1223648623692">
+                  <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1223648631210">
+                    <property name="value" value="false" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1223648642509">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223648642510">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223648646026">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223648652704">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223648647669">
+                    <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1223648646027" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1223648651578">
+                      <link role="property" targetNodeId="1.1223637196134" resolveInfo="isDeprecated" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1223648655097">
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1223648657209">
+                      <property name="value" value="true" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -67,6 +67,35 @@ public class BaseLanguageStyle_StyleSheet {
     };
   }
 
+  public static Style getJavaDoc(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+          public Color calculate(EditorCell cell) {
+            return BaseLanguageStyle_StyleSheet.calculateColor0216_8(cell);
+          }
+
+        });
+        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
+
+          public Integer calculate(EditorCell cell) {
+            return BaseLanguageStyle_StyleSheet.calculateFontStyle0216_10(cell);
+          }
+
+        });
+        this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return BaseLanguageStyle_StyleSheet.calculateUnderlined0216_0(cell);
+          }
+
+        });
+      }
+
+    };
+  }
+
   public static Style getField(final EditorCell cell) {
     return new Style(cell) {
       {
@@ -459,6 +488,12 @@ public class BaseLanguageStyle_StyleSheet {
     return result;
   }
 
+  private static Integer calculateFontStyle0216_10(EditorCell cell) {
+    int result;
+    result = MPSFonts.BOLD_ITALIC;
+    return result;
+  }
+
   private static Color calculateColor0216_0(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
@@ -485,7 +520,7 @@ public class BaseLanguageStyle_StyleSheet {
 
   private static Color calculateColor0216_4(EditorCell cell) {
     Color result;
-    result = MPSColors.darkGray;
+    result = MPSColors.gray;
     return result;
   }
 
@@ -504,6 +539,18 @@ public class BaseLanguageStyle_StyleSheet {
   private static Color calculateColor0216_7(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor0216_8(EditorCell cell) {
+    Color result;
+    result = MPSColors.gray;
+    return result;
+  }
+
+  private static boolean calculateUnderlined0216_0(EditorCell cell) {
+    boolean result;
+    result = true;
     return result;
   }
 

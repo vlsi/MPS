@@ -18,6 +18,7 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String RESOLVE_INFO = "resolveInfo";
   public static String NAME = "name";
+  public static String IS_DEPRECATED = "isDeprecated";
   public static String VISIBILITY = "visibility";
   public static String STATIC_FIELD = "staticField";
   public static String METHOD = "method";
@@ -73,6 +74,14 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
 
   public void setName(String value) {
     this.setProperty(Classifier.NAME, value);
+  }
+
+  public boolean getIsDeprecated() {
+    return this.getBooleanProperty(Classifier.IS_DEPRECATED);
+  }
+
+  public void setIsDeprecated(boolean value) {
+    this.setBooleanProperty(Classifier.IS_DEPRECATED, value);
   }
 
   public Visibility getVisibility() {

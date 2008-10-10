@@ -28,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -41,6 +42,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider myBaseMethodDeclaration_NameCellComponent5704_0;
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component5704_0;
   /* package */AbstractCellProvider my_Component_Visibility5704_0;
+  /* package */AbstractCellProvider my_DeprecatedPart5704_0;
   /* package */AbstractCellListHandler myListHandler_1138337135190;
   /* package */AbstractCellListHandler myListHandler_1178609159857;
   /* package */AbstractCellListHandler myListHandler_1188210506456;
@@ -60,6 +62,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createComponent1223637477699(context, node));
     if (renderingCondition5704_5(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188210514739(context, node));
     }
@@ -207,6 +210,15 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     }
     EditorCell editorCell = this.my_Component_Visibility5704_0.createEditorCell(context);
     setupBasic_component__Component_Visibility1217333745851(editorCell, node, context);
+    return editorCell;
+  }
+
+  public EditorCell createComponent1223637477699(EditorContext context, SNode node) {
+    if (this.my_DeprecatedPart5704_0 == null) {
+      this.my_DeprecatedPart5704_0 = new _DeprecatedPart(node);
+    }
+    EditorCell editorCell = this.my_DeprecatedPart5704_0.createEditorCell(context);
+    setupBasic_component__DeprecatedPart1223637477699(editorCell, node, context);
     return editorCell;
   }
 
@@ -625,6 +637,21 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_component_BaseMethodDeclaration_NameCellComponent1185275109560(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "component_BaseMethodDeclaration_NameCellComponent");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InstanceMethodDeclaration_Editor.calculateBoolean5704_15(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Collection_11882105052771188210505277(EditorCell editorCell, SNode node, EditorContext context) {
@@ -757,6 +784,10 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     _InstanceMethodDeclaration_RemoveAbstract.setCellActions(editorCell, node, context);
   }
 
+  private static void setupBasic_component__DeprecatedPart1223637477699(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "component__DeprecatedPart");
+  }
+
   private static void setupLabel_Constant_1075233459442_1075233459442(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -848,6 +879,10 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"));
   }
 
+  public static boolean _StyleParameter_QueryFunction_1223647643375(SNode node, EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+  }
+
   public static Boolean calculateBoolean5704_0(EditorCell cell) {
     boolean result;
     result = true;
@@ -935,6 +970,18 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   public static Boolean calculateBoolean5704_14(EditorCell cell) {
     boolean result;
     result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5704_15(EditorCell cell) {
+    boolean result;
+    result = InstanceMethodDeclaration_Editor._StyleParameter_QueryFunction_1223647643375((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

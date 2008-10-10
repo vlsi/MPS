@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -119,6 +120,21 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_instanceMethodDeclaration1202948938317(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_instanceMethodDeclaration");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return InstanceMethodCallOperation_Editor.calculateBoolean2215_4(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_12029489383351202948938335(EditorCell editorCell, SNode node, EditorContext context) {
@@ -198,6 +214,10 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
   }
 
+  public static boolean _StyleParameter_QueryFunction_1223653778710(SNode node, EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "baseMethodDeclaration", false));
+  }
+
   private static Integer calculateFontStyle2215_0(EditorCell cell) {
     int result;
     result = MPSFonts.PLAIN;
@@ -231,6 +251,18 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
   public static Boolean calculateBoolean2215_3(EditorCell cell) {
     boolean result;
     result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2215_4(EditorCell cell) {
+    boolean result;
+    result = InstanceMethodCallOperation_Editor._StyleParameter_QueryFunction_1223653778710((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

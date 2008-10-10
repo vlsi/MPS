@@ -26,6 +26,7 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -38,6 +39,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_Component_Visibility5292_0;
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component5292_0;
+  /* package */AbstractCellProvider my_DeprecatedPart5292_0;
   /* package */AbstractCellListHandler myListHandler_1138337100850;
   /* package */AbstractCellListHandler myListHandler_1165410808126;
   /* package */AbstractCellListHandler myListHandler_1188210475918;
@@ -71,6 +73,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createComponent1223638558798(context, node));
     if (renderingCondition5292_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188210475917(context, node));
     }
@@ -170,6 +173,15 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     }
     EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component5292_0.createEditorCell(context);
     setupBasic_component__GenericDeclaration_TypeVariables_Component1203413371733(editorCell, node, context);
+    return editorCell;
+  }
+
+  public EditorCell createComponent1223638558798(EditorContext context, SNode node) {
+    if (this.my_DeprecatedPart5292_0 == null) {
+      this.my_DeprecatedPart5292_0 = new _DeprecatedPart(node);
+    }
+    EditorCell editorCell = this.my_DeprecatedPart5292_0.createEditorCell(context);
+    setupBasic_component__DeprecatedPart1223638558798(editorCell, node, context);
     return editorCell;
   }
 
@@ -499,6 +511,13 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ConstructorDeclaration_Editor.calculateBoolean5292_13(cell);
+            }
+
+          });
         }
 
       };
@@ -624,6 +643,10 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1215011854491");
   }
 
+  private static void setupBasic_component__DeprecatedPart1223638558798(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "component__DeprecatedPart");
+  }
+
   private static void setupLabel_Constant_1075139395584_1075139395584(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -680,6 +703,10 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition5292_3(SNode node, EditorContext editorContext, IScope scope) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false) == null;
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1223647945660(SNode node, EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
   }
 
   public static Boolean calculateBoolean5292_0(EditorCell cell) {
@@ -757,6 +784,18 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   public static Boolean calculateBoolean5292_12(EditorCell cell) {
     boolean result;
     result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5292_13(EditorCell cell) {
+    boolean result;
+    result = ConstructorDeclaration_Editor._StyleParameter_QueryFunction_1223647945660((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

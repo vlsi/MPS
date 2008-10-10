@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -33,6 +34,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_Component_Visibility6732_0;
   /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent6732_0;
+  /* package */AbstractCellProvider my_DeprecatedPart6732_0;
   /* package */AbstractCellListHandler myListHandler_1188210583261;
   /* package */AbstractCellListHandler myListHandler_1188210594842;
 
@@ -50,6 +52,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createComponent1223639195172(context, node));
     if (renderingCondition6732_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188210594841(context, node));
     }
@@ -133,6 +136,15 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     }
     EditorCell editorCell = this.myVariableDeclaration_NameCellComponent6732_0.createEditorCell(context);
     setupBasic_component_VariableDeclaration_NameCellComponent1188210576816(editorCell, node, context);
+    return editorCell;
+  }
+
+  public EditorCell createComponent1223639195172(EditorContext context, SNode node) {
+    if (this.my_DeprecatedPart6732_0 == null) {
+      this.my_DeprecatedPart6732_0 = new _DeprecatedPart(node);
+    }
+    EditorCell editorCell = this.my_DeprecatedPart6732_0.createEditorCell(context);
+    setupBasic_component__DeprecatedPart1223639195172(editorCell, node, context);
     return editorCell;
   }
 
@@ -287,6 +299,21 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_component_VariableDeclaration_NameCellComponent1188210576816(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "component_VariableDeclaration_NameCellComponent");
     BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return FieldDeclaration_Editor.calculateBoolean6732_5(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Collection_11882105768171188210576817(EditorCell editorCell, SNode node, EditorContext context) {
@@ -394,6 +421,10 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
+  private static void setupBasic_component__DeprecatedPart1223639195172(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "component__DeprecatedPart");
+  }
+
   private static void setupLabel_refNode_type_1188210576815(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -430,6 +461,10 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
+  public static boolean _StyleParameter_QueryFunction_1223647866983(SNode node, EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+  }
+
   public static Boolean calculateBoolean6732_0(EditorCell cell) {
     boolean result;
     result = false;
@@ -457,6 +492,18 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   public static Boolean calculateBoolean6732_4(EditorCell cell) {
     boolean result;
     result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6732_5(EditorCell cell) {
+    boolean result;
+    result = FieldDeclaration_Editor._StyleParameter_QueryFunction_1223647866983((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

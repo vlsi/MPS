@@ -30,6 +30,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -775,6 +777,18 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return result;
   }
 
+  public static Boolean calculateBoolean1871_12(EditorCell cell) {
+    boolean result;
+    result = AnonymousClass_Editor._Inline1871_0._StyleParameter_QueryFunction_1223652722144((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
+    return result;
+  }
+
   public static class _Inline1871_0 extends AbstractCellProvider {
 
     public _Inline1871_0() {
@@ -826,6 +840,13 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
             this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+            this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return AnonymousClass_Editor.calculateBoolean1871_12(cell);
+              }
+
+            });
           }
 
         };
@@ -834,6 +855,16 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_property_name_1170346092162(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    }
+
+    public static boolean _StyleParameter_QueryFunction_1223652722144(SNode node, EditorContext editorContext) {
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+        return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+      }
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
+        return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+      }
+      return false;
     }
 
 }

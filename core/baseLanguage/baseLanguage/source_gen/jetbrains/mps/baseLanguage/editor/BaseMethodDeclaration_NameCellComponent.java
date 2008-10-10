@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -111,6 +112,21 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
   private static void setupBasic_property_name1215517344868(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
     BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return BaseMethodDeclaration_NameCellComponent.calculateBoolean4313_2(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_12155173467951215517346795(EditorCell editorCell, SNode node, EditorContext context) {
@@ -140,6 +156,10 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
   private static void setupLabel_Constant_1215517346795_1215517346795(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  public static boolean _StyleParameter_QueryFunction_1223655957671(SNode node, EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+  }
+
   public static Boolean calculateBoolean4313_0(EditorCell cell) {
     boolean result;
     result = false;
@@ -149,6 +169,18 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
   public static Boolean calculateBoolean4313_1(EditorCell cell) {
     boolean result;
     result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4313_2(EditorCell cell) {
+    boolean result;
+    result = BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_1223655957671((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

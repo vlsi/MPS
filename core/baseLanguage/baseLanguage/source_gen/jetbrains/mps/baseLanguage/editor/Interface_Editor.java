@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -448,6 +449,13 @@ public class Interface_Editor extends DefaultNodeEditor {
 
           });
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Interface_Editor.calculateBoolean8963_14(cell);
+            }
+
+          });
         }
 
       };
@@ -628,6 +636,10 @@ public class Interface_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
+  public static boolean _StyleParameter_QueryFunction_1223647993030(SNode node, EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+  }
+
   public static Boolean calculateBoolean8963_0(EditorCell cell) {
     boolean result;
     result = false;
@@ -709,6 +721,18 @@ public class Interface_Editor extends DefaultNodeEditor {
   public static Boolean calculateBoolean8963_13(EditorCell cell) {
     boolean result;
     result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8963_14(EditorCell cell) {
+    boolean result;
+    result = Interface_Editor._StyleParameter_QueryFunction_1223647993030((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

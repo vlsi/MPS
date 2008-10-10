@@ -9,13 +9,14 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BaseMethodDeclaration extends GenericDeclaration implements IValidIdentifier, HasAnnotation {
+public class BaseMethodDeclaration extends GenericDeclaration implements IValidIdentifier, HasAnnotation, IDeprecatable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String IS_FINAL = "isFinal";
+  public static String IS_DEPRECATED = "isDeprecated";
   public static String RETURN_TYPE = "returnType";
   public static String BODY = "body";
   public static String PARAMETER = "parameter";
@@ -64,6 +65,14 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
 
   public void setIsFinal(boolean value) {
     this.setBooleanProperty(BaseMethodDeclaration.IS_FINAL, value);
+  }
+
+  public boolean getIsDeprecated() {
+    return this.getBooleanProperty(BaseMethodDeclaration.IS_DEPRECATED);
+  }
+
+  public void setIsDeprecated(boolean value) {
+    this.setBooleanProperty(BaseMethodDeclaration.IS_DEPRECATED, value);
   }
 
   public Type getReturnType() {

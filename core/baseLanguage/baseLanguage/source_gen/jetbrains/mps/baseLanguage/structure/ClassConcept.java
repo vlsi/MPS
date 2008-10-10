@@ -9,10 +9,14 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ClassConcept extends Classifier {
+public class ClassConcept extends Classifier implements IDeprecatable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ClassConcept";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String ABSTRACT_CLASS = "abstractClass";
   public static String IS_FINAL = "isFinal";
+  public static String IS_DEPRECATED = "isDeprecated";
   public static String SUPERCLASS = "superclass";
   public static String INSTANCE_INITIALIZER = "instanceInitializer";
   public static String CLASS_INITIALIZER = "classInitializer";
@@ -26,6 +30,30 @@ public class ClassConcept extends Classifier {
 
   public ClassConcept(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ClassConcept.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ClassConcept.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ClassConcept.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ClassConcept.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ClassConcept.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ClassConcept.VIRTUAL_PACKAGE, value);
   }
 
   public boolean getAbstractClass() {
@@ -42,6 +70,14 @@ public class ClassConcept extends Classifier {
 
   public void setIsFinal(boolean value) {
     this.setBooleanProperty(ClassConcept.IS_FINAL, value);
+  }
+
+  public boolean getIsDeprecated() {
+    return this.getBooleanProperty(ClassConcept.IS_DEPRECATED);
+  }
+
+  public void setIsDeprecated(boolean value) {
+    this.setBooleanProperty(ClassConcept.IS_DEPRECATED, value);
   }
 
   public ClassifierType getSuperclass() {

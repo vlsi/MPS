@@ -26,6 +26,7 @@ import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -39,6 +40,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component8372_0;
   /* package */AbstractCellProvider my_Component_Visibility8372_0;
+  /* package */AbstractCellProvider my_DeprecatedPart8372_0;
   /* package */AbstractCellListHandler myListHandler_1074866421486;
   /* package */AbstractCellListHandler myListHandler_1074867634396;
   /* package */AbstractCellListHandler myListHandler_1074868243547;
@@ -64,6 +66,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createComponent1223638409169(context, node));
     if (renderingCondition8372_2(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188208584323(context, node));
     }
@@ -377,6 +380,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     EditorCell editorCell = this.my_Component_Visibility8372_0.createEditorCell(context);
     setupBasic_component__Component_Visibility1178550101404(editorCell, node, context);
+    return editorCell;
+  }
+
+  public EditorCell createComponent1223638409169(EditorContext context, SNode node) {
+    if (this.my_DeprecatedPart8372_0 == null) {
+      this.my_DeprecatedPart8372_0 = new _DeprecatedPart(node);
+    }
+    EditorCell editorCell = this.my_DeprecatedPart8372_0.createEditorCell(context);
+    setupBasic_component__DeprecatedPart1223638409169(editorCell, node, context);
     return editorCell;
   }
 
@@ -1030,6 +1042,13 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
           });
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ClassConcept_Editor.calculateBoolean8372_43(cell);
+            }
+
+          });
         }
 
       };
@@ -1928,6 +1947,10 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
+  private static void setupBasic_component__DeprecatedPart1223638409169(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "component__DeprecatedPart");
+  }
+
   private static void setupLabel_Constant_1074794604362_1074794604362(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -2070,6 +2093,10 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition8372_5(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "staticInitializer", true) != null);
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1223644109053(SNode node, EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
   }
 
   private static Color calculateColor8372_0(EditorCell cell) {
@@ -2345,6 +2372,18 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   public static Boolean calculateBoolean8372_42(EditorCell cell) {
     boolean result;
     result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8372_43(EditorCell cell) {
+    boolean result;
+    result = ClassConcept_Editor._StyleParameter_QueryFunction_1223644109053((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

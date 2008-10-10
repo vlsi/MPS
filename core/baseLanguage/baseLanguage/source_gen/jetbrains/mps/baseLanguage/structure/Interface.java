@@ -9,12 +9,48 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Interface extends Classifier {
+public class Interface extends Classifier implements IDeprecatable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Interface";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String IS_DEPRECATED = "isDeprecated";
   public static String EXTENDED_INTERFACE = "extendedInterface";
 
   public Interface(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(Interface.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(Interface.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(Interface.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(Interface.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(Interface.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(Interface.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getIsDeprecated() {
+    return this.getBooleanProperty(Interface.IS_DEPRECATED);
+  }
+
+  public void setIsDeprecated(boolean value) {
+    this.setBooleanProperty(Interface.IS_DEPRECATED, value);
   }
 
   public int getExtendedInterfacesCount() {

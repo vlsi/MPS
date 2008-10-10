@@ -20,6 +20,8 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -128,6 +130,21 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_classifier1211505069982(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_classifier");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ClassifierType_Editor.calculateBoolean9185_4(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Collection_12115051688561211505168856(EditorCell editorCell, SNode node, EditorContext context) {
@@ -217,6 +234,16 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "parameter") > 0;
   }
 
+  public static boolean _StyleParameter_QueryFunction_1223653171179(SNode node, EditorContext editorContext) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+    }
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
+      return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+    }
+    return false;
+  }
+
   public static Boolean calculateBoolean9185_0(EditorCell cell) {
     boolean result;
     result = false;
@@ -238,6 +265,18 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
   public static Boolean calculateBoolean9185_3(EditorCell cell) {
     boolean result;
     result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9185_4(EditorCell cell) {
+    boolean result;
+    result = ClassifierType_Editor._StyleParameter_QueryFunction_1223653171179((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

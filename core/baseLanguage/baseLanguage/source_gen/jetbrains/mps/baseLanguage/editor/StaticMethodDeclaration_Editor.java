@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -39,6 +40,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_Component_Visibility5695_0;
   /* package */AbstractCellProvider myBaseMethodDeclaration_NameCellComponent5695_0;
   /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component5695_0;
+  /* package */AbstractCellProvider my_DeprecatedPart5695_0;
   /* package */AbstractCellListHandler myListHandler_1138337151587;
   /* package */AbstractCellListHandler myListHandler_1164891084596;
   /* package */AbstractCellListHandler myListHandler_1188210533000;
@@ -72,6 +74,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createComponent1223638595035(context, node));
     if (renderingCondition5695_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1188210532999(context, node));
     }
@@ -180,6 +183,15 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     }
     EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component5695_0.createEditorCell(context);
     setupBasic_component__GenericDeclaration_TypeVariables_Component1203413131108(editorCell, node, context);
+    return editorCell;
+  }
+
+  public EditorCell createComponent1223638595035(EditorContext context, SNode node) {
+    if (this.my_DeprecatedPart5695_0 == null) {
+      this.my_DeprecatedPart5695_0 = new _DeprecatedPart(node);
+    }
+    EditorCell editorCell = this.my_DeprecatedPart5695_0.createEditorCell(context);
+    setupBasic_component__DeprecatedPart1223638595035(editorCell, node, context);
     return editorCell;
   }
 
@@ -591,6 +603,21 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_component_BaseMethodDeclaration_NameCellComponent1185275167058(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "component_BaseMethodDeclaration_NameCellComponent");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StaticMethodDeclaration_Editor.calculateBoolean5695_12(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Collection_11882105279701188210527970(EditorCell editorCell, SNode node, EditorContext context) {
@@ -659,6 +686,10 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1215093779075");
   }
 
+  private static void setupBasic_component__DeprecatedPart1223638595035(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "component__DeprecatedPart");
+  }
+
   private static void setupLabel_Constant_1075287750856_1075287750856(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -714,6 +745,10 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition5695_2(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1223647721112(SNode node, EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
   }
 
   private static Color calculateColor5695_0(EditorCell cell) {
@@ -791,6 +826,18 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   public static Boolean calculateBoolean5695_11(EditorCell cell) {
     boolean result;
     result = true;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5695_12(EditorCell cell) {
+    boolean result;
+    result = StaticMethodDeclaration_Editor._StyleParameter_QueryFunction_1223647721112((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
     return result;
   }
 

@@ -8,12 +8,13 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class StaticFieldDeclaration extends VariableDeclaration implements ClassifierMember, IResolveInfo {
+public class StaticFieldDeclaration extends VariableDeclaration implements ClassifierMember, IResolveInfo, IDeprecatable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String RESOLVE_INFO = "resolveInfo";
+  public static String IS_DEPRECATED = "isDeprecated";
   public static String VISIBILITY = "visibility";
 
   public StaticFieldDeclaration(SNode node) {
@@ -50,6 +51,14 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
 
   public void setResolveInfo(String value) {
     this.setProperty(StaticFieldDeclaration.RESOLVE_INFO, value);
+  }
+
+  public boolean getIsDeprecated() {
+    return this.getBooleanProperty(StaticFieldDeclaration.IS_DEPRECATED);
+  }
+
+  public void setIsDeprecated(boolean value) {
+    this.setBooleanProperty(StaticFieldDeclaration.IS_DEPRECATED, value);
   }
 
   public Visibility getVisibility() {

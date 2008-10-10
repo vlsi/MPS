@@ -17,6 +17,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
@@ -126,6 +129,13 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StaticFieldReference_Editor.calculateBoolean6051_0(cell);
+            }
+
+          });
         }
 
       };
@@ -135,6 +145,21 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_classifier1144433124322(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_classifier");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return StaticFieldReference_Editor.calculateBoolean6051_1(cell);
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     StaticFieldReference_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -145,6 +170,38 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refCell_classifier_1144433124322(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1223653587333(SNode node, EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "variableDeclaration", false));
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1223653650998(SNode node, EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "classifier", false));
+  }
+
+  public static Boolean calculateBoolean6051_0(EditorCell cell) {
+    boolean result;
+    result = StaticFieldReference_Editor._StyleParameter_QueryFunction_1223653587333((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
+    return result;
+  }
+
+  public static Boolean calculateBoolean6051_1(EditorCell cell) {
+    boolean result;
+    result = StaticFieldReference_Editor._StyleParameter_QueryFunction_1223653650998((cell == null ?
+      null :
+      cell.getSNode()
+    ), (cell == null ?
+      null :
+      cell.getEditorContext()
+    ));
+    return result;
   }
 
   public static class _Inline6051_0 extends AbstractCellProvider {
