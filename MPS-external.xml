@@ -46,6 +46,7 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/plugin" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/log" />
+    <mkdir dir="${deploy.dir}/MPS-${build.number}.src.zip.tmp" />
   </target>
   <target name="do.the.job" depends="folders.create">
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/Contents">
@@ -256,7 +257,7 @@
     <antcall target="pack.jetbrains.mps.lang.findUsages" />
     <antcall target="pack.jetbrains.mps.bootstrap.helgins" />
     <antcall target="pack.jetbrains.mps.lang.intentions" />
-    <antcall target="pack.jetbrains.mps.bootstrap.dataFlow" />
+    <antcall target="pack.jetbrains.mps.lang.dataFlow" />
     <antcall target="pack.jetbrains.mpslite" />
     <antcall target="pack.jetbrains.mps.nanoj" />
     <antcall target="pack.jetbrains.mps.lang.pattern" />
@@ -312,16 +313,26 @@
     <copy file="readme.txt" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/readme.txt" />
     <copy file="mps.sh" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/mps.sh" />
     <copy file="mps.bat" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/mps.bat" />
-    <copy file="bin/log4j.dtd" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/log4j.dtd" />
     <zip destfile="${deploy.dir}/MPS-${build.number}.zip" duplicate="preserve" filesonly="true">
       <zipfileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp" excludes="**/*.iml, **/*.iws" includes="" filemode="755" />
     </zip>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp" />
+    <copy todir="${deploy.dir}/MPS-${build.number}.src.zip.tmp">
+      <fileset dir="core/kernel/source" excludes="" includes="" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-${build.number}.src.zip.tmp">
+      <fileset dir="workbench/source" excludes="" includes="" />
+    </copy>
+    <zip destfile="${deploy.dir}/MPS-${build.number}.src.zip" duplicate="preserve" filesonly="true">
+      <zipfileset dir="${deploy.dir}/MPS-${build.number}.src.zip.tmp" excludes="" includes="" />
+    </zip>
+    <delete dir="${deploy.dir}/MPS-${build.number}.src.zip.tmp" />
   </target>
   <target name="clean.after" depends="do.the.job">
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp" />
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/idea-patch.jar.tmp" />
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS-${build.number}.src.zip.tmp" />
   </target>
 </project>
 
