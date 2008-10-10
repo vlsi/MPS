@@ -12342,14 +12342,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212766833034">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212766833035">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212766833036">
-                  <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
-                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212766833037">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getRuntimeSupport():jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport" resolveInfo="getRuntimeSupport" />
-                </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223639394784">
+                <link role="variableDeclaration" targetNodeId="1222180308351" resolveInfo="typeCheckingContext" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212766833038">
                 <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.typeOf(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="typeOf" />

@@ -29,12 +29,9 @@ public class RuntimeSupport {
     myTypeChecker = typeChecker;
   }
 
+  @Deprecated
   public SNode typeOf(SNode node) {
-    return typeOf(node, null, null);
-  }
-
-  public SNode typeOf(SNode node, String ruleModel, String ruleId) {
-    return typeOf(node, ruleModel, ruleId, true);
+    return typeOf(node, null, null, true);
   }
 
   @Deprecated

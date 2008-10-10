@@ -85,6 +85,11 @@ public class TypeCheckingContext {
     myNodeTypesComponent.registerTypeVariable(variable);
   }
 
+  //for special cases
+  public SNode typeOf(SNode node) {
+    return typeOf(node, null, null, true);
+  }
+
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     if (node == null) return null;
     SNode type;
