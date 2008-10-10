@@ -127,7 +127,18 @@
               <link role="variableDeclaration" targetNodeId="1222169248202" resolveInfo="param" />
             </node>
           </node>
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222169241778" />
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222169241778">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223651429798">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223651431643">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1223651429799">
+                  <property name="value" value="d" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223651433709">
+                  <link role="baseMethodDeclaration" targetNodeId="3.~String.hashCode():int" resolveInfo="hashCode" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1222169248202">
