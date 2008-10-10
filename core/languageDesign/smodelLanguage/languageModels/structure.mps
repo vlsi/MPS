@@ -7,8 +7,8 @@
       <moveMap />
       <conceptFeatureMap>
         <entry>
-          <key featureName="parameter" conceptFQName="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" featureKind="CHILD" />
-          <value featureName="linkTarget" conceptFQName="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)Link_SetTargetOperation" featureKind="CHILD" />
+          <key featureName="parameter" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" featureKind="CHILD" />
+          <value featureName="linkTarget" conceptFQName="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)Link_SetTargetOperation" featureKind="CHILD" />
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
@@ -17,431 +17,431 @@
       <moveMap />
       <conceptFeatureMap>
         <entry>
-          <key featureName="AbstractOperationParameter" conceptFQName="jetbrains.mps.lang.smodel.structure.AbstractOperationParameter" featureKind="CONCEPT" />
+          <key featureName="AbstractOperationParameter" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.AbstractOperationParameter" featureKind="CONCEPT" />
           <value featureName="AbstractOperationParameter" conceptFQName="jetbrains.mps.lang.smodel.structure.AbstractOperationParameter" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="AllAttributesQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.AllAttributesQualifier" featureKind="CONCEPT" />
+          <key featureName="AllAttributesQualifier" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.AllAttributesQualifier" featureKind="CONCEPT" />
           <value featureName="AllAttributesQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.AllAttributesQualifier" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="AttributeAccessOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" featureKind="CONCEPT" />
+          <key featureName="AttributeAccessOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.AttributeAccessOperation" featureKind="CONCEPT" />
           <value featureName="AttributeAccessOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="BaseExecuteCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.BaseExecuteCommandStatement" featureKind="CONCEPT" />
+          <key featureName="BaseExecuteCommandStatement" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.BaseExecuteCommandStatement" featureKind="CONCEPT" />
           <value featureName="BaseExecuteCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.BaseExecuteCommandStatement" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="CommandClosureLiteral" conceptFQName="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" featureKind="CONCEPT" />
+          <key featureName="CommandClosureLiteral" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.CommandClosureLiteral" featureKind="CONCEPT" />
           <value featureName="CommandClosureLiteral" conceptFQName="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ConceptRefExpression" conceptFQName="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" featureKind="CONCEPT" />
+          <key featureName="ConceptRefExpression" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" featureKind="CONCEPT" />
           <value featureName="ConceptRefExpression" conceptFQName="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ConceptReference" conceptFQName="jetbrains.mps.lang.smodel.structure.ConceptReference" featureKind="CONCEPT" />
+          <key featureName="ConceptReference" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference" featureKind="CONCEPT" />
           <value featureName="ConceptReference" conceptFQName="jetbrains.mps.lang.smodel.structure.ConceptReference" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Concept_FindInstances" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_FindInstances" featureKind="CONCEPT" />
+          <key featureName="Concept_FindInstances" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_FindInstances" featureKind="CONCEPT" />
           <value featureName="Concept_FindInstances" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_FindInstances" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Concept_GetAllSubConcepts" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts" featureKind="CONCEPT" />
+          <key featureName="Concept_GetAllSubConcepts" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_GetAllSubConcepts" featureKind="CONCEPT" />
           <value featureName="Concept_GetAllSubConcepts" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Concept_GetAllSuperConcepts" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts" featureKind="CONCEPT" />
+          <key featureName="Concept_GetAllSuperConcepts" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_GetAllSuperConcepts" featureKind="CONCEPT" />
           <value featureName="Concept_GetAllSuperConcepts" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Concept_GetDirectSuperConcepts" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts" featureKind="CONCEPT" />
+          <key featureName="Concept_GetDirectSuperConcepts" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_GetDirectSuperConcepts" featureKind="CONCEPT" />
           <value featureName="Concept_GetDirectSuperConcepts" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Concept_GetHierarchy" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy" featureKind="CONCEPT" />
+          <key featureName="Concept_GetHierarchy" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_GetHierarchy" featureKind="CONCEPT" />
           <value featureName="Concept_GetHierarchy" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Concept_IsExactlyOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" featureKind="CONCEPT" />
+          <key featureName="Concept_IsExactlyOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation" featureKind="CONCEPT" />
           <value featureName="Concept_IsExactlyOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Concept_IsSubConceptOfOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" featureKind="CONCEPT" />
+          <key featureName="Concept_IsSubConceptOfOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSubConceptOfOperation" featureKind="CONCEPT" />
           <value featureName="Concept_IsSubConceptOfOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Concept_IsSuperConceptOfOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation" featureKind="CONCEPT" />
+          <key featureName="Concept_IsSuperConceptOfOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsSuperConceptOfOperation" featureKind="CONCEPT" />
           <value featureName="Concept_IsSuperConceptOfOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Concept_NewInstance" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_NewInstance" featureKind="CONCEPT" />
+          <key featureName="Concept_NewInstance" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_NewInstance" featureKind="CONCEPT" />
           <value featureName="Concept_NewInstance" conceptFQName="jetbrains.mps.lang.smodel.structure.Concept_NewInstance" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="EnumMemberReference" conceptFQName="jetbrains.mps.lang.smodel.structure.EnumMemberReference" featureKind="CONCEPT" />
+          <key featureName="EnumMemberReference" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" featureKind="CONCEPT" />
           <value featureName="EnumMemberReference" conceptFQName="jetbrains.mps.lang.smodel.structure.EnumMemberReference" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ExecuteCommandInEDTStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteCommandInEDTStatement" featureKind="CONCEPT" />
+          <key featureName="ExecuteCommandInEDTStatement" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.ExecuteCommandInEDTStatement" featureKind="CONCEPT" />
           <value featureName="ExecuteCommandInEDTStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteCommandInEDTStatement" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ExecuteCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteCommandStatement" featureKind="CONCEPT" />
+          <key featureName="ExecuteCommandStatement" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.ExecuteCommandStatement" featureKind="CONCEPT" />
           <value featureName="ExecuteCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteCommandStatement" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ExecuteEDTCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteEDTCommandStatement" featureKind="CONCEPT" />
+          <key featureName="ExecuteEDTCommandStatement" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.ExecuteEDTCommandStatement" featureKind="CONCEPT" />
           <value featureName="ExecuteEDTCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteEDTCommandStatement" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ExecuteLightweightCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" featureKind="CONCEPT" />
+          <key featureName="ExecuteLightweightCommandStatement" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.ExecuteLightweightCommandStatement" featureKind="CONCEPT" />
           <value featureName="ExecuteLightweightCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ExecuteWriteActionStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteWriteActionStatement" featureKind="CONCEPT" />
+          <key featureName="ExecuteWriteActionStatement" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.ExecuteWriteActionStatement" featureKind="CONCEPT" />
           <value featureName="ExecuteWriteActionStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteWriteActionStatement" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="IAttributeAccessQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier" featureKind="CONCEPT" />
+          <key featureName="IAttributeAccessQualifier" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.IAttributeAccessQualifier" featureKind="CONCEPT" />
           <value featureName="IAttributeAccessQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="ILinkAccessQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.ILinkAccessQualifier" featureKind="CONCEPT" />
+          <key featureName="ILinkAccessQualifier" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.ILinkAccessQualifier" featureKind="CONCEPT" />
           <value featureName="ILinkAccessQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.ILinkAccessQualifier" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="IPropertyAccessQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.IPropertyAccessQualifier" featureKind="CONCEPT" />
+          <key featureName="IPropertyAccessQualifier" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.IPropertyAccessQualifier" featureKind="CONCEPT" />
           <value featureName="IPropertyAccessQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.IPropertyAccessQualifier" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="IRefConceptArg" conceptFQName="jetbrains.mps.lang.smodel.structure.IRefConceptArg" featureKind="CONCEPT" />
+          <key featureName="IRefConceptArg" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.IRefConceptArg" featureKind="CONCEPT" />
           <value featureName="IRefConceptArg" conceptFQName="jetbrains.mps.lang.smodel.structure.IRefConceptArg" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="LinkAttributeAccessQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier" featureKind="CONCEPT" />
+          <key featureName="LinkAttributeAccessQualifier" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkAttributeAccessQualifier" featureKind="CONCEPT" />
           <value featureName="LinkAttributeAccessQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="LinkList_AddAllOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation" featureKind="CONCEPT" />
+          <key featureName="LinkList_AddAllOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddAllOperation" featureKind="CONCEPT" />
           <value featureName="LinkList_AddAllOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="LinkList_AddChildOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" featureKind="CONCEPT" />
+          <key featureName="LinkList_AddChildOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation" featureKind="CONCEPT" />
           <value featureName="LinkList_AddChildOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="LinkList_AddNewChildOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" featureKind="CONCEPT" />
+          <key featureName="LinkList_AddNewChildOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation" featureKind="CONCEPT" />
           <value featureName="LinkList_AddNewChildOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="LinkList_GetCountOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation" featureKind="CONCEPT" />
+          <key featureName="LinkList_GetCountOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_GetCountOperation" featureKind="CONCEPT" />
           <value featureName="LinkList_GetCountOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="LinkList_InsertChildFirstOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation" featureKind="CONCEPT" />
+          <key featureName="LinkList_InsertChildFirstOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_InsertChildFirstOperation" featureKind="CONCEPT" />
           <value featureName="LinkList_InsertChildFirstOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="LinkList_RemoveAllChildrenOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation" featureKind="CONCEPT" />
+          <key featureName="LinkList_RemoveAllChildrenOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_RemoveAllChildrenOperation" featureKind="CONCEPT" />
           <value featureName="LinkList_RemoveAllChildrenOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="LinkRefQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" featureKind="CONCEPT" />
+          <key featureName="LinkRefQualifier" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.LinkRefQualifier" featureKind="CONCEPT" />
           <value featureName="LinkRefQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Link_DeleteChildOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" featureKind="CONCEPT" />
+          <key featureName="Link_DeleteChildOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation" featureKind="CONCEPT" />
           <value featureName="Link_DeleteChildOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Link_SetNewChildOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" featureKind="CONCEPT" />
+          <key featureName="Link_SetNewChildOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" featureKind="CONCEPT" />
           <value featureName="Link_SetNewChildOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Link_SetTargetOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" featureKind="CONCEPT" />
+          <key featureName="Link_SetTargetOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" featureKind="CONCEPT" />
           <value featureName="Link_SetTargetOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Model_AddRootOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" featureKind="CONCEPT" />
+          <key featureName="Model_AddRootOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_AddRootOperation" featureKind="CONCEPT" />
           <value featureName="Model_AddRootOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Model_CreateNewNodeOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" featureKind="CONCEPT" />
+          <key featureName="Model_CreateNewNodeOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewNodeOperation" featureKind="CONCEPT" />
           <value featureName="Model_CreateNewNodeOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Model_CreateNewRootNodeOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation" featureKind="CONCEPT" />
+          <key featureName="Model_CreateNewRootNodeOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewRootNodeOperation" featureKind="CONCEPT" />
           <value featureName="Model_CreateNewRootNodeOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Model_GetLongNameOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" featureKind="CONCEPT" />
+          <key featureName="Model_GetLongNameOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_GetLongNameOperation" featureKind="CONCEPT" />
           <value featureName="Model_GetLongNameOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Model_NodesIncludingImportedOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation" featureKind="CONCEPT" />
+          <key featureName="Model_NodesIncludingImportedOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_NodesIncludingImportedOperation" featureKind="CONCEPT" />
           <value featureName="Model_NodesIncludingImportedOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Model_NodesOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" featureKind="CONCEPT" />
+          <key featureName="Model_NodesOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_NodesOperation" featureKind="CONCEPT" />
           <value featureName="Model_NodesOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Model_RootsIncludingImportedOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation" featureKind="CONCEPT" />
+          <key featureName="Model_RootsIncludingImportedOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_RootsIncludingImportedOperation" featureKind="CONCEPT" />
           <value featureName="Model_RootsIncludingImportedOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Model_RootsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" featureKind="CONCEPT" />
+          <key featureName="Model_RootsOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_RootsOperation" featureKind="CONCEPT" />
           <value featureName="Model_RootsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="NodeAttributeAccessQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" featureKind="CONCEPT" />
+          <key featureName="NodeAttributeAccessQualifier" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.NodeAttributeAccessQualifier" featureKind="CONCEPT" />
           <value featureName="NodeAttributeAccessQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="NodeRefExpression" conceptFQName="jetbrains.mps.lang.smodel.structure.NodeRefExpression" featureKind="CONCEPT" />
+          <key featureName="NodeRefExpression" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.NodeRefExpression" featureKind="CONCEPT" />
           <value featureName="NodeRefExpression" conceptFQName="jetbrains.mps.lang.smodel.structure.NodeRefExpression" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_ConceptMethodCall" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" featureKind="CONCEPT" />
+          <key featureName="Node_ConceptMethodCall" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" featureKind="CONCEPT" />
           <value featureName="Node_ConceptMethodCall" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_CopyOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" featureKind="CONCEPT" />
+          <key featureName="Node_CopyOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" featureKind="CONCEPT" />
           <value featureName="Node_CopyOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_DeleteOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" featureKind="CONCEPT" />
+          <key featureName="Node_DeleteOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_DeleteOperation" featureKind="CONCEPT" />
           <value featureName="Node_DeleteOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetAdapterOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetAdapterOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetAdapterOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetAllSiblingsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetAllSiblingsOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAllSiblingsOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetAllSiblingsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetAncestorOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetAncestorOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetAncestorOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetAncestorsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetAncestorsOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetAncestorsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetChildrenOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetChildrenOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetChildrenOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetChildrenOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetConceptOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetConceptOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetConceptOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetConceptOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetContainingRootOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetContainingRootOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetContainingRootOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetContainingRootOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetDescendantsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetDescendantsOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetDescendantsOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetDescendantsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetIndexInParentOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetIndexInParentOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetIndexInParentOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetIndexInParentOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetModelOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetModelOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetModelOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetNextSiblingOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetNextSiblingOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetNextSiblingOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetNextSiblingOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetNextSiblingsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetNextSiblingsOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetNextSiblingsOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetNextSiblingsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetParentOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetParentOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetParentOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetPrevSiblingOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetPrevSiblingOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetPrevSiblingOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetPrevSiblingOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetPrevSiblingsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetPrevSiblingsOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetPrevSiblingsOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetPrevSiblingsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_GetReferentSearchScopeOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation" featureKind="CONCEPT" />
+          <key featureName="Node_GetReferentSearchScopeOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetReferentSearchScopeOperation" featureKind="CONCEPT" />
           <value featureName="Node_GetReferentSearchScopeOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_InsertNewNextSiblingOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation" featureKind="CONCEPT" />
+          <key featureName="Node_InsertNewNextSiblingOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNewNextSiblingOperation" featureKind="CONCEPT" />
           <value featureName="Node_InsertNewNextSiblingOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_InsertNewPrevSiblingOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation" featureKind="CONCEPT" />
+          <key featureName="Node_InsertNewPrevSiblingOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNewPrevSiblingOperation" featureKind="CONCEPT" />
           <value featureName="Node_InsertNewPrevSiblingOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_InsertNextSiblingOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" featureKind="CONCEPT" />
+          <key featureName="Node_InsertNextSiblingOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNextSiblingOperation" featureKind="CONCEPT" />
           <value featureName="Node_InsertNextSiblingOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_InsertPrevSiblingOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" featureKind="CONCEPT" />
+          <key featureName="Node_InsertPrevSiblingOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertPrevSiblingOperation" featureKind="CONCEPT" />
           <value featureName="Node_InsertPrevSiblingOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_IsAttributeOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation" featureKind="CONCEPT" />
+          <key featureName="Node_IsAttributeOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsAttributeOperation" featureKind="CONCEPT" />
           <value featureName="Node_IsAttributeOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_IsInstanceOfOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" featureKind="CONCEPT" />
+          <key featureName="Node_IsInstanceOfOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" featureKind="CONCEPT" />
           <value featureName="Node_IsInstanceOfOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_IsNotNullOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" featureKind="CONCEPT" />
+          <key featureName="Node_IsNotNullOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNotNullOperation" featureKind="CONCEPT" />
           <value featureName="Node_IsNotNullOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_IsNullOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" featureKind="CONCEPT" />
+          <key featureName="Node_IsNullOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNullOperation" featureKind="CONCEPT" />
           <value featureName="Node_IsNullOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_IsRoleOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" featureKind="CONCEPT" />
+          <key featureName="Node_IsRoleOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsRoleOperation" featureKind="CONCEPT" />
           <value featureName="Node_IsRoleOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_ReplaceWithAnotherOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" featureKind="CONCEPT" />
+          <key featureName="Node_ReplaceWithAnotherOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" featureKind="CONCEPT" />
           <value featureName="Node_ReplaceWithAnotherOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Node_ReplaceWithNewOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" featureKind="CONCEPT" />
+          <key featureName="Node_ReplaceWithNewOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithNewOperation" featureKind="CONCEPT" />
           <value featureName="Node_ReplaceWithNewOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="OperationParm_Concept" conceptFQName="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" featureKind="CONCEPT" />
+          <key featureName="OperationParm_Concept" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" featureKind="CONCEPT" />
           <value featureName="OperationParm_Concept" conceptFQName="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="OperationParm_ConceptList" conceptFQName="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" featureKind="CONCEPT" />
+          <key featureName="OperationParm_ConceptList" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptList" featureKind="CONCEPT" />
           <value featureName="OperationParm_ConceptList" conceptFQName="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="OperationParm_Inclusion" conceptFQName="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" featureKind="CONCEPT" />
+          <key featureName="OperationParm_Inclusion" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" featureKind="CONCEPT" />
           <value featureName="OperationParm_Inclusion" conceptFQName="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="OperationParm_Root" conceptFQName="jetbrains.mps.lang.smodel.structure.OperationParm_Root" featureKind="CONCEPT" />
+          <key featureName="OperationParm_Root" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Root" featureKind="CONCEPT" />
           <value featureName="OperationParm_Root" conceptFQName="jetbrains.mps.lang.smodel.structure.OperationParm_Root" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="PoundExpression" conceptFQName="jetbrains.mps.lang.smodel.structure.PoundExpression" featureKind="CONCEPT" />
+          <key featureName="PoundExpression" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.PoundExpression" featureKind="CONCEPT" />
           <value featureName="PoundExpression" conceptFQName="jetbrains.mps.lang.smodel.structure.PoundExpression" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="PropertyAttributeAccessQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier" featureKind="CONCEPT" />
+          <key featureName="PropertyAttributeAccessQualifier" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyAttributeAccessQualifier" featureKind="CONCEPT" />
           <value featureName="PropertyAttributeAccessQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="PropertyRefQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.PropertyRefQualifier" featureKind="CONCEPT" />
+          <key featureName="PropertyRefQualifier" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.PropertyRefQualifier" featureKind="CONCEPT" />
           <value featureName="PropertyRefQualifier" conceptFQName="jetbrains.mps.lang.smodel.structure.PropertyRefQualifier" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Property_HasValue_Enum" conceptFQName="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" featureKind="CONCEPT" />
+          <key featureName="Property_HasValue_Enum" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" featureKind="CONCEPT" />
           <value featureName="Property_HasValue_Enum" conceptFQName="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Property_HasValue_Simple" conceptFQName="jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple" featureKind="CONCEPT" />
+          <key featureName="Property_HasValue_Simple" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Simple" featureKind="CONCEPT" />
           <value featureName="Property_HasValue_Simple" conceptFQName="jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Property_RemoveOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Property_RemoveOperation" featureKind="CONCEPT" />
+          <key featureName="Property_RemoveOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_RemoveOperation" featureKind="CONCEPT" />
           <value featureName="Property_RemoveOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Property_RemoveOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="Property_SetOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Property_SetOperation" featureKind="CONCEPT" />
+          <key featureName="Property_SetOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" featureKind="CONCEPT" />
           <value featureName="Property_SetOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.Property_SetOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="RefConcept_Reference" conceptFQName="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" featureKind="CONCEPT" />
+          <key featureName="RefConcept_Reference" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" featureKind="CONCEPT" />
           <value featureName="RefConcept_Reference" conceptFQName="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SConceptLinkAccess" conceptFQName="jetbrains.mps.lang.smodel.structure.SConceptLinkAccess" featureKind="CONCEPT" />
+          <key featureName="SConceptLinkAccess" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptLinkAccess" featureKind="CONCEPT" />
           <value featureName="SConceptLinkAccess" conceptFQName="jetbrains.mps.lang.smodel.structure.SConceptLinkAccess" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SConceptPropertyAccess" conceptFQName="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" featureKind="CONCEPT" />
+          <key featureName="SConceptPropertyAccess" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" featureKind="CONCEPT" />
           <value featureName="SConceptPropertyAccess" conceptFQName="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SConceptType" conceptFQName="jetbrains.mps.lang.smodel.structure.SConceptType" featureKind="CONCEPT" />
+          <key featureName="SConceptType" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType" featureKind="CONCEPT" />
           <value featureName="SConceptType" conceptFQName="jetbrains.mps.lang.smodel.structure.SConceptType" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SLinkAccess" conceptFQName="jetbrains.mps.lang.smodel.structure.SLinkAccess" featureKind="CONCEPT" />
+          <key featureName="SLinkAccess" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" featureKind="CONCEPT" />
           <value featureName="SLinkAccess" conceptFQName="jetbrains.mps.lang.smodel.structure.SLinkAccess" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SLinkListAccess" conceptFQName="jetbrains.mps.lang.smodel.structure.SLinkListAccess" featureKind="CONCEPT" />
+          <key featureName="SLinkListAccess" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" featureKind="CONCEPT" />
           <value featureName="SLinkListAccess" conceptFQName="jetbrains.mps.lang.smodel.structure.SLinkListAccess" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SModelType" conceptFQName="jetbrains.mps.lang.smodel.structure.SModelType" featureKind="CONCEPT" />
+          <key featureName="SModelType" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" featureKind="CONCEPT" />
           <value featureName="SModelType" conceptFQName="jetbrains.mps.lang.smodel.structure.SModelType" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SNodeCreator" conceptFQName="jetbrains.mps.lang.smodel.structure.SNodeCreator" featureKind="CONCEPT" />
+          <key featureName="SNodeCreator" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" featureKind="CONCEPT" />
           <value featureName="SNodeCreator" conceptFQName="jetbrains.mps.lang.smodel.structure.SNodeCreator" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SNodeListCreator" conceptFQName="jetbrains.mps.lang.smodel.structure.SNodeListCreator" featureKind="CONCEPT" />
+          <key featureName="SNodeListCreator" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListCreator" featureKind="CONCEPT" />
           <value featureName="SNodeListCreator" conceptFQName="jetbrains.mps.lang.smodel.structure.SNodeListCreator" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SNodeListType" conceptFQName="jetbrains.mps.lang.smodel.structure.SNodeListType" featureKind="CONCEPT" />
+          <key featureName="SNodeListType" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" featureKind="CONCEPT" />
           <value featureName="SNodeListType" conceptFQName="jetbrains.mps.lang.smodel.structure.SNodeListType" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SNodeOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.SNodeOperation" featureKind="CONCEPT" />
+          <key featureName="SNodeOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation" featureKind="CONCEPT" />
           <value featureName="SNodeOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.SNodeOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SNodeType" conceptFQName="jetbrains.mps.lang.smodel.structure.SNodeType" featureKind="CONCEPT" />
+          <key featureName="SNodeType" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" featureKind="CONCEPT" />
           <value featureName="SNodeType" conceptFQName="jetbrains.mps.lang.smodel.structure.SNodeType" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SNodeTypeCastExpression" conceptFQName="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" featureKind="CONCEPT" />
+          <key featureName="SNodeTypeCastExpression" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" featureKind="CONCEPT" />
           <value featureName="SNodeTypeCastExpression" conceptFQName="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SPropertyAccess" conceptFQName="jetbrains.mps.lang.smodel.structure.SPropertyAccess" featureKind="CONCEPT" />
+          <key featureName="SPropertyAccess" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" featureKind="CONCEPT" />
           <value featureName="SPropertyAccess" conceptFQName="jetbrains.mps.lang.smodel.structure.SPropertyAccess" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SearchScopeType" conceptFQName="jetbrains.mps.lang.smodel.structure.SearchScopeType" featureKind="CONCEPT" />
+          <key featureName="SearchScopeType" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SearchScopeType" featureKind="CONCEPT" />
           <value featureName="SearchScopeType" conceptFQName="jetbrains.mps.lang.smodel.structure.SearchScopeType" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SearchScope_ContainsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation" featureKind="CONCEPT" />
+          <key featureName="SearchScope_ContainsOperation" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SearchScope_ContainsOperation" featureKind="CONCEPT" />
           <value featureName="SearchScope_ContainsOperation" conceptFQName="jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="SemanticDowncastExpression" conceptFQName="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" featureKind="CONCEPT" />
+          <key featureName="SemanticDowncastExpression" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" featureKind="CONCEPT" />
           <value featureName="SemanticDowncastExpression" conceptFQName="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="StaticConceptMethodCall" conceptFQName="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" featureKind="CONCEPT" />
+          <key featureName="StaticConceptMethodCall" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.StaticConceptMethodCall" featureKind="CONCEPT" />
           <value featureName="StaticConceptMethodCall" conceptFQName="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" featureKind="CONCEPT" />
         </entry>
         <entry>
-          <key featureName="_LinkAccessT" conceptFQName="jetbrains.mps.lang.smodel.structure._LinkAccessT" featureKind="CONCEPT" />
+          <key featureName="_LinkAccessT" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure._LinkAccessT" featureKind="CONCEPT" />
           <value featureName="_LinkAccessT" conceptFQName="jetbrains.mps.lang.smodel.structure._LinkAccessT" featureKind="CONCEPT" />
         </entry>
       </conceptFeatureMap>
