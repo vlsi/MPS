@@ -20,7 +20,7 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
   }
 
   public String getLongDescription() {
-    return "";
+    return "";                                                             
   }
 
   public String getConcept() {
