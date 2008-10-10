@@ -21,10 +21,10 @@
   </component>
   <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
     <projectSolutions>
-      <solutionPath path="${mps_home}\core\languageDesign\dataFlow\solutions\jetbrains.mps.bootstrap.dataFlow.sandbox\jetbrains.mps.bootstrap.dataFlow.sandbox.msd" />
+      <solutionPath path="${project}\solutions\jetbrains.mps.bootstrap.dataFlow.sandbox\jetbrains.mps.bootstrap.dataFlow.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${mps_home}\core\languageDesign\dataFlow\dataFlow.mpl" />
+      <languagePath path="${project}\dataFlow.mpl" />
       <languagePath path="${mps_home}\core\baseLanguage\baseLanguage\baseLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
@@ -45,38 +45,11 @@
     </subPane>
   </component>
   <component name="SvnBranchConfigurationManager">
-    <option name="myVersion" value="123" />
+    <option name="myVersion" value="124" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-  </component>
-  <component name="masterDetails">
-    <option name="states">
-      <map>
-        <entry key="ScopeChooserConfigurable.UI">
-          <value>
-            <UIState>
-              <option name="proportions">
-                <SplitterProportionsDataImpl />
-              </option>
-            </UIState>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="myStates">
-      <map>
-        <entry key="ScopeChooserConfigurable.UI">
-          <value>
-            <UIState>
-              <option name="proportions">
-                <SplitterProportionsDataImpl />
-              </option>
-            </UIState>
-          </value>
-        </entry>
-      </map>
-    </option>
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
 </project>
 

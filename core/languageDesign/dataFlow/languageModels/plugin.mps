@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959037c(jetbrains.mps.bootstrap.dataFlow.plugin)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959037c(jetbrains.mps.lang.dataFlow.plugin)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -18,23 +18,24 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.bootstrap.dataFlow.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <maxImportIndex value="18" />
-  <import index="2" modelUID="f:java_stub#jetbrains.mps.dataFlow(jetbrains.mps.dataFlow@java_stub)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
+  <maxImportIndex value="23" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="5" modelUID="f:java_stub#jetbrains.mps.dataFlow.framework(jetbrains.mps.dataFlow.framework@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
-  <import index="8" modelUID="f:java_stub#jetbrains.mps.dataFlow.presentation(jetbrains.mps.dataFlow.presentation@java_stub)" version="-1" />
-  <import index="10" modelUID="f:java_stub#jetbrains.mps.dataFlow.framework.analyzers(jetbrains.mps.dataFlow.framework.analyzers@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="15" modelUID="f:java_stub#jetbrains.mps.dataFlow.framework.instructions(jetbrains.mps.dataFlow.framework.instructions@java_stub)" version="-1" />
   <import index="16" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
+  <import index="19" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework.instructions(jetbrains.mps.lang.dataFlow.framework.instructions@java_stub)" version="-1" />
+  <import index="20" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework.analyzers(jetbrains.mps.lang.dataFlow.framework.analyzers@java_stub)" version="-1" />
+  <import index="21" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
+  <import index="22" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow(jetbrains.mps.lang.dataFlow@java_stub)" version="-1" />
+  <import index="23" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.presentation(jetbrains.mps.lang.dataFlow.presentation@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1206459480619">
     <property name="name" value="PrintDFAResult" />
     <property name="caption" value="Print DFA" />
@@ -44,11 +45,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206459712473">
             <property name="name" value="program" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206459712474">
-              <link role="classifier" targetNodeId="5.~Program" resolveInfo="Program" />
+              <link role="classifier" targetNodeId="21.~Program" resolveInfo="Program" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206459712475">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206459712476">
-                <link role="baseMethodDeclaration" targetNodeId="2.~DataFlowManager.buildProgramFor(jetbrains.mps.smodel.SNode):jetbrains.mps.dataFlow.framework.Program" resolveInfo="buildProgramFor" />
+                <link role="baseMethodDeclaration" targetNodeId="22.~DataFlowManager.buildProgramFor(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.lang.dataFlow.framework.Program" resolveInfo="buildProgramFor" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206459712477">
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1206459712478">
                     <link role="member" targetNodeId="1206459493888" resolveInfo="node" />
@@ -57,8 +58,8 @@
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206459712480">
-                <link role="baseMethodDeclaration" targetNodeId="2.~DataFlowManager.getInstance():jetbrains.mps.dataFlow.DataFlowManager" resolveInfo="getInstance" />
-                <link role="classConcept" targetNodeId="2.~DataFlowManager" resolveInfo="DataFlowManager" />
+                <link role="classConcept" targetNodeId="22.~DataFlowManager" resolveInfo="DataFlowManager" />
+                <link role="baseMethodDeclaration" targetNodeId="22.~DataFlowManager.getInstance():jetbrains.mps.lang.dataFlow.DataFlowManager" resolveInfo="getInstance" />
               </node>
             </node>
           </node>
@@ -76,7 +77,7 @@
                   <link role="variableDeclaration" targetNodeId="1206459712473" resolveInfo="program" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206459897228">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~Program.toString(boolean):java.lang.String" resolveInfo="toString" />
+                  <link role="baseMethodDeclaration" targetNodeId="21.~Program.toString():java.lang.String" resolveInfo="toString" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206465823487">
                     <property name="value" value="true" />
                   </node>
@@ -122,11 +123,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206642304931">
             <property name="name" value="program" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206642304932">
-              <link role="classifier" targetNodeId="5.~Program" resolveInfo="Program" />
+              <link role="classifier" targetNodeId="21.~Program" resolveInfo="Program" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206642304933">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206642304934">
-                <link role="baseMethodDeclaration" targetNodeId="2.~DataFlowManager.buildProgramFor(jetbrains.mps.smodel.SNode):jetbrains.mps.dataFlow.framework.Program" resolveInfo="buildProgramFor" />
+                <link role="baseMethodDeclaration" targetNodeId="22.~DataFlowManager.buildProgramFor(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.lang.dataFlow.framework.Program" resolveInfo="buildProgramFor" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206642304935">
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1206642304936">
                     <link role="member" targetNodeId="1206642293488" resolveInfo="node" />
@@ -135,8 +136,8 @@
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206642304938">
-                <link role="classConcept" targetNodeId="2.~DataFlowManager" resolveInfo="DataFlowManager" />
-                <link role="baseMethodDeclaration" targetNodeId="2.~DataFlowManager.getInstance():jetbrains.mps.dataFlow.DataFlowManager" resolveInfo="getInstance" />
+                <link role="classConcept" targetNodeId="22.~DataFlowManager" resolveInfo="DataFlowManager" />
+                <link role="baseMethodDeclaration" targetNodeId="22.~DataFlowManager.getInstance():jetbrains.mps.lang.dataFlow.DataFlowManager" resolveInfo="getInstance" />
               </node>
             </node>
           </node>
@@ -144,7 +145,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206642324441">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213875405924">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213875405926">
-              <link role="baseMethodDeclaration" targetNodeId="8.~ShowCFGDialog.&lt;init&gt;(jetbrains.mps.dataFlow.framework.Program,jetbrains.mps.smodel.IOperationContext)" resolveInfo="ShowCFGDialog" />
+              <link role="baseMethodDeclaration" targetNodeId="23.~ShowCFGDialog.&lt;init&gt;(jetbrains.mps.lang.dataFlow.framework.Program,jetbrains.mps.smodel.IOperationContext)" resolveInfo="ShowCFGDialog" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206642517900">
                 <link role="variableDeclaration" targetNodeId="1206642304931" resolveInfo="program" />
               </node>
@@ -178,11 +179,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207220002438">
             <property name="name" value="program" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207220002439">
-              <link role="classifier" targetNodeId="5.~Program" resolveInfo="Program" />
+              <link role="classifier" targetNodeId="21.~Program" resolveInfo="Program" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207220002440">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207220002441">
-                <link role="baseMethodDeclaration" targetNodeId="2.~DataFlowManager.buildProgramFor(jetbrains.mps.smodel.SNode):jetbrains.mps.dataFlow.framework.Program" resolveInfo="buildProgramFor" />
+                <link role="baseMethodDeclaration" targetNodeId="22.~DataFlowManager.buildProgramFor(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.lang.dataFlow.framework.Program" resolveInfo="buildProgramFor" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207220002442">
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1207220002443">
                     <link role="member" targetNodeId="1207219987386" resolveInfo="node" />
@@ -191,8 +192,8 @@
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207220002445">
-                <link role="baseMethodDeclaration" targetNodeId="2.~DataFlowManager.getInstance():jetbrains.mps.dataFlow.DataFlowManager" resolveInfo="getInstance" />
-                <link role="classConcept" targetNodeId="2.~DataFlowManager" resolveInfo="DataFlowManager" />
+                <link role="classConcept" targetNodeId="22.~DataFlowManager" resolveInfo="DataFlowManager" />
+                <link role="baseMethodDeclaration" targetNodeId="22.~DataFlowManager.getInstance():jetbrains.mps.lang.dataFlow.DataFlowManager" resolveInfo="getInstance" />
               </node>
             </node>
           </node>
@@ -201,20 +202,20 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207220045710">
             <property name="name" value="result" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207220045711">
-              <link role="classifier" targetNodeId="5.~AnalysisResult" resolveInfo="AnalysisResult" />
+              <link role="classifier" targetNodeId="21.~AnalysisResult" resolveInfo="AnalysisResult" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207220045712">
                 <link role="classifier" targetNodeId="11.~Set" resolveInfo="Set" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211452043636">
-                  <link role="classifier" targetNodeId="15.~WriteInstruction" resolveInfo="WriteInstruction" />
+                  <link role="classifier" targetNodeId="19.~WriteInstruction" resolveInfo="WriteInstruction" />
                 </node>
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207220045713">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207220045714">
-                <link role="baseMethodDeclaration" targetNodeId="5.~Program.analyze(jetbrains.mps.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~Program.analyze(jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.lang.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213875329900">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213875329902">
-                    <link role="baseMethodDeclaration" targetNodeId="10.~ReachingDefinitionsAnalyzer.&lt;init&gt;()" resolveInfo="ReachingDefinitionsAnalyzer" />
+                    <link role="baseMethodDeclaration" targetNodeId="20.~ReachingDefinitionsAnalyzer.&lt;init&gt;()" resolveInfo="ReachingDefinitionsAnalyzer" />
                   </node>
                 </node>
               </node>
@@ -237,7 +238,7 @@
                   <link role="variableDeclaration" targetNodeId="1207220045710" resolveInfo="result" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207220055909">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~AnalysisResult.toString():java.lang.String" resolveInfo="toString" />
+                  <link role="baseMethodDeclaration" targetNodeId="21.~AnalysisResult.toString():java.lang.String" resolveInfo="toString" />
                 </node>
               </node>
             </node>
@@ -260,11 +261,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1211451948546">
             <property name="name" value="program" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211451948547">
-              <link role="classifier" targetNodeId="5.~Program" resolveInfo="Program" />
+              <link role="classifier" targetNodeId="21.~Program" resolveInfo="Program" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211451948548">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1211451948549">
-                <link role="baseMethodDeclaration" targetNodeId="2.~DataFlowManager.buildProgramFor(jetbrains.mps.smodel.SNode):jetbrains.mps.dataFlow.framework.Program" resolveInfo="buildProgramFor" />
+                <link role="baseMethodDeclaration" targetNodeId="22.~DataFlowManager.buildProgramFor(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.lang.dataFlow.framework.Program" resolveInfo="buildProgramFor" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211451948550">
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1211451948551">
                     <link role="member" targetNodeId="1211451948540" resolveInfo="node" />
@@ -273,8 +274,8 @@
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1211451948553">
-                <link role="classConcept" targetNodeId="2.~DataFlowManager" resolveInfo="DataFlowManager" />
-                <link role="baseMethodDeclaration" targetNodeId="2.~DataFlowManager.getInstance():jetbrains.mps.dataFlow.DataFlowManager" resolveInfo="getInstance" />
+                <link role="classConcept" targetNodeId="22.~DataFlowManager" resolveInfo="DataFlowManager" />
+                <link role="baseMethodDeclaration" targetNodeId="22.~DataFlowManager.getInstance():jetbrains.mps.lang.dataFlow.DataFlowManager" resolveInfo="getInstance" />
               </node>
             </node>
           </node>
@@ -283,7 +284,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1211451948555">
             <property name="name" value="result" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211451948556">
-              <link role="classifier" targetNodeId="5.~AnalysisResult" resolveInfo="AnalysisResult" />
+              <link role="classifier" targetNodeId="21.~AnalysisResult" resolveInfo="AnalysisResult" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211451948557">
                 <link role="classifier" targetNodeId="11.~Set" resolveInfo="Set" />
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211451948558">
@@ -293,10 +294,10 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211451948559">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1211451948560">
-                <link role="baseMethodDeclaration" targetNodeId="5.~Program.analyze(jetbrains.mps.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~Program.analyze(jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.lang.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213727358714">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213727358716">
-                    <link role="baseMethodDeclaration" targetNodeId="10.~InitializedVariablesAnalyzer.&lt;init&gt;()" resolveInfo="InitializedVariablesAnalyzer" />
+                    <link role="baseMethodDeclaration" targetNodeId="20.~InitializedVariablesAnalyzer.&lt;init&gt;()" resolveInfo="InitializedVariablesAnalyzer" />
                   </node>
                 </node>
               </node>
@@ -319,7 +320,7 @@
                   <link role="variableDeclaration" targetNodeId="1211451948555" resolveInfo="result" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1211451948569">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~AnalysisResult.toString():java.lang.String" resolveInfo="toString" />
+                  <link role="baseMethodDeclaration" targetNodeId="21.~AnalysisResult.toString():java.lang.String" resolveInfo="toString" />
                 </node>
               </node>
             </node>

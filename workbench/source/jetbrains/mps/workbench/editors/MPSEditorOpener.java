@@ -13,7 +13,7 @@ import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.constraints.structure.ConceptBehavior;
 import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
-import jetbrains.mps.bootstrap.dataFlow.structure.DataFlowBuilderDeclaration;
+import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.ide.ConceptDeclarationEditor;
 import jetbrains.mps.ide.IEditor;

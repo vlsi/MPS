@@ -161,7 +161,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.dataFlow.DataFlowManager</implementation-class>
+      <implementation-class>jetbrains.mps.lang.dataFlow.DataFlowManager</implementation-class>
     </component>
 
     <component>
