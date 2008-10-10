@@ -20,7 +20,8 @@
     <projectDevkits />
     <libraries />
     <genConfs>
-      <genConfLanguage name="TLBase" language="jetbrains.mps.transformation.TLBase" />
+      <genConfLanguage name="generator" language="jetbrains.mps.lang.generator" />
+      <genConfLanguage name="generatorContext" language="jetbrains.mps.lang.generator.generatorContext" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
