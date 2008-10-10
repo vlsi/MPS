@@ -43,7 +43,7 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\core\languageDesign\transformation\classes" />
+    <entry path="${mps_home}\core\languageDesign\generator\classes" />
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
