@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.dataFlow.framework.Program;
+import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.DataFlowManager;
 import jetbrains.mps.dataFlow.presentation.ShowCFGDialog;
 

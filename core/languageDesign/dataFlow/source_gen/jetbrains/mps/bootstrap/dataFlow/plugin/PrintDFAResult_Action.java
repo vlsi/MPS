@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.dataFlow.framework.Program;
+import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.DataFlowManager;
 
 public class PrintDFAResult_Action extends GeneratedAction {

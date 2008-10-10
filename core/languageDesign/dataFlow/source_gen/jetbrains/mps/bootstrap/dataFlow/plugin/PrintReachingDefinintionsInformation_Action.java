@@ -9,12 +9,12 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.dataFlow.framework.Program;
+import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.dataFlow.DataFlowManager;
-import jetbrains.mps.dataFlow.framework.AnalysisResult;
+import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import java.util.Set;
-import jetbrains.mps.dataFlow.framework.instructions.WriteInstruction;
-import jetbrains.mps.dataFlow.framework.analyzers.ReachingDefinitionsAnalyzer;
+import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
+import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingDefinitionsAnalyzer;
 
 public class PrintReachingDefinintionsInformation_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(PrintReachingDefinintionsInformation_Action.class);
