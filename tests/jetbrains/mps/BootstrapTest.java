@@ -134,7 +134,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testLanguageTest() {
-    String res = testProject(new File("core/languageDesign/transformationTest/test.mpr"));
+    String res = testProject(new File("core/languageDesign/test/test.mpr"));
     assertTrue(res, res == null);
   }
 

@@ -1,4 +1,4 @@
-package jetbrains.mps.transformationTest.matcher;
+package jetbrains.mps.lang.test.matcher;
 
 import org.junit.Test;
 import jetbrains.mps.smodel.*;
@@ -68,7 +68,7 @@ public class TransformationTests {
     }, project);
   }
 
-  private NodeDifference difference(String name, DifferanceItem ... items) {
+  private NodeDifference difference(String name, DifferanceItem... items) {
     return new NodeDifference(name, Arrays.asList(items));
   }
 

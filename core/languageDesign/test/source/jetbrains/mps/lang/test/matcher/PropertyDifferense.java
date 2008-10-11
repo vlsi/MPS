@@ -1,4 +1,4 @@
-package jetbrains.mps.transformationTest.matcher;
+package jetbrains.mps.lang.test.matcher;
 
 /**
  * Created by IntelliJ IDEA.
