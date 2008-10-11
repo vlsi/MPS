@@ -51,7 +51,6 @@
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)" version="-1" />
-  <import index="7" modelUID="f:java_stub#jetbrains.mps.transformationTest.matcher(jetbrains.mps.transformationTest.matcher@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
 </model>
 

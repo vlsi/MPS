@@ -32,7 +32,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="transformationTest" />
+    <orderEntry type="module" module-name="test" />
     <orderEntryProperties />
   </component>
 </module>

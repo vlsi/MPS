@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.test.runtime.TransformationTestRuner;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import com.intellij.util.lang.UrlClassLoader;
 import java.net.URL;
-import jetbrains.mps.transformationTest.runtime.TransformationTestRuner;
 
 public class NodesTestCase_Behavior {
 

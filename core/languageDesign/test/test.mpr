@@ -26,12 +26,14 @@
       <solutionPath path="${mps_home}\core\baseLanguage\baseLanguage\solutions\jetbrains.mps.transformationTest.runtime\jetbrains.mps.transformationTest.runtime.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\transformationTest.mpl" />
       <languagePath path="${mps_home}\core\baseLanguage\unitTest\unitTest.mpl" />
+      <languagePath path="${project}\test.mpl" />
     </projectLanguages>
     <projectDevkits />
     <libraries />
-    <genConfs />
+    <genConfs>
+      <genConfLanguage name="test" language="jetbrains.mps.lang.test" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="transformationTest.mpr" />
@@ -47,7 +49,7 @@
     </subPane>
   </component>
   <component name="SvnBranchConfigurationManager">
-    <option name="myVersion" value="123" />
+    <option name="myVersion" value="124" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
