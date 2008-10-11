@@ -6,8 +6,8 @@ import jetbrains.mps.bootstrap.helgins.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -19,15 +19,15 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
 
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext) {
     {
-      final SNode _representatorVar0 = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(invoke, "function", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199567116884", true);
+      final SNode _representatorVar0 = typeCheckingContext.typeOf(SLinkOperations.getTarget(invoke, "function", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199567116884", true);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar0, new Runnable() {
 
         public void run() {
-          SNode ft = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(invoke, "function", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199567532549", true);
+          SNode ft = typeCheckingContext.typeOf(SLinkOperations.getTarget(invoke, "function", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199567532549", true);
           {
             SNode _nodeToCheck_1029348928467 = invoke;
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(invoke, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711684834", true), SLinkOperations.getTarget(ft, "resultType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711681931", intentionProvider);
+            typeCheckingContext.createEquation(typeCheckingContext.typeOf(invoke, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711684834", true), SLinkOperations.getTarget(ft, "resultType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711681931", intentionProvider);
           }
           if (!(SLinkOperations.getCount(ft, "parameterType") == SLinkOperations.getCount(invoke, "parameter"))) {
             TypeChecker.getInstance().reportTypeError(invoke, "Wrong parameters number", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199568419784");
@@ -49,7 +49,7 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
               {
                 SNode _nodeToCheck_1029348928467 = invoke;
                 BaseIntentionProvider intentionProvider = null;
-                TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1202920138888", true), pt, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1202920135673", false, 0, intentionProvider);
+                typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1202920138888", true), pt, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1202920135673", false, 0, intentionProvider);
               }
             }
           }

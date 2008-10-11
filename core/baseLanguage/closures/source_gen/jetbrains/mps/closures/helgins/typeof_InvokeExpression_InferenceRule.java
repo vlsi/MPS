@@ -24,15 +24,15 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
       TypeChecker.getInstance().reportTypeError(invoke, "Must be within ClosureLiteral", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711581032");
     }
     {
-      final SNode _representatorVar1 = TypeChecker.getInstance().getRuntimeSupport().typeOf(cl, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711625694", true);
+      final SNode _representatorVar1 = typeCheckingContext.typeOf(cl, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711625694", true);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar1, new Runnable() {
 
         public void run() {
-          SNode ft = TypeChecker.getInstance().getRuntimeSupport().typeOf(cl, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711616632", true);
+          SNode ft = typeCheckingContext.typeOf(cl, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711616632", true);
           {
             SNode _nodeToCheck_1029348928467 = invoke;
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(invoke, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711815333", true), SLinkOperations.getTarget(ft, "resultType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711813747", intentionProvider);
+            typeCheckingContext.createEquation(typeCheckingContext.typeOf(invoke, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711815333", true), SLinkOperations.getTarget(ft, "resultType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711813747", intentionProvider);
           }
           if (!(SLinkOperations.getCount(ft, "parameterType") == SLinkOperations.getCount(invoke, "parameter"))) {
             TypeChecker.getInstance().reportTypeError(invoke, "Wrong parameters number", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1199711857568");
@@ -54,7 +54,7 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
               {
                 SNode _nodeToCheck_1029348928467 = invoke;
                 BaseIntentionProvider intentionProvider = null;
-                TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1202920161360", true), pt, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1202920161358", false, 0, intentionProvider);
+                typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1202920161360", true), pt, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.closures.helgins)", "1202920161358", false, 0, intentionProvider);
               }
             }
           }
