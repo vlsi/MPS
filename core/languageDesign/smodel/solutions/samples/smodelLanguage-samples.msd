@@ -12,7 +12,7 @@
   </dependencies>
   <usedLanguages>
     <usedLanguages>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguages>
-    <usedLanguages>8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.transformationTest)</usedLanguages>
+    <usedLanguages>8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)</usedLanguages>
   </usedLanguages>
 </solution>
 
