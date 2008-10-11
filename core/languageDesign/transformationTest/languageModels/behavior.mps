@@ -39,7 +39,7 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.helgins.inference(jetbrains.mps.helgins.inference@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.transformationTest.runtime(jetbrains.mps.transformationTest.runtime@java_stub)" version="-1" />
-  <import index="9" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.transformationTest.runtime)" version="-1" />
+  <import index="9" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" version="-1" />
   <import index="10" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#com.intellij.util.lang(com.intellij.util.lang@java_stub)" version="-1" />
