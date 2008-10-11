@@ -55,4 +55,8 @@ public class CacheNodeHandler {
       return false;
     }
   }
+
+  public String toString() {
+    return "handler " + myNode.toString();
+  }
 }

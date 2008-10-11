@@ -36,22 +36,23 @@ public class SubtypingCache {
     if (!mySubtypingCached) {
       return;
     }
-    Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> cache = myCache;
+    boolean bothMaps = answer != isWeak;
+    Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> cache1 = isWeak ? myCacheWeak : myCache;
+    Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> cache2 = isWeak ? myCache : myCacheWeak;
     CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
-    Map<CacheNodeHandler, Boolean> supertypes = cache.get(subtypeHandler);
+    Map<CacheNodeHandler, Boolean> supertypes = cache1.get(subtypeHandler);
     if (supertypes == null) {
       supertypes = new HashMap<CacheNodeHandler, Boolean>();
-      cache.put(subtypeHandler, supertypes);
+      cache1.put(subtypeHandler, supertypes);
     }
     supertypes.put(new CacheNodeHandler(supertype), answer);
 
-    if (isWeak) {
-      cache = myCacheWeak;
-      CacheNodeHandler subtypeHandlerWeak = new CacheNodeHandler(subtype);
-      Map<CacheNodeHandler, Boolean> supertypesWeak = cache.get(subtypeHandlerWeak);
-      if (supertypesWeak == null) {
-        supertypesWeak = new HashMap<CacheNodeHandler, Boolean>();
-        cache.put(subtypeHandlerWeak, supertypesWeak);
+    if (bothMaps) {
+      CacheNodeHandler subtypeHandler2 = new CacheNodeHandler(subtype);
+      Map<CacheNodeHandler, Boolean> supertypes2 = cache2.get(subtypeHandler2);
+      if (supertypes2 == null) {
+        supertypes2 = new HashMap<CacheNodeHandler, Boolean>();
+        cache2.put(subtypeHandler2, supertypes2);
       }
     }
   }
@@ -100,24 +101,28 @@ public class SubtypingCache {
     if (!myCoersionSimpleCached) {
       return;
     }
-    Map<CacheNodeHandler, Map<String, SNode>> cache = myCoerceToConceptsCache;
+
+    boolean answer = result != null;
+    boolean bothMaps = answer != isWeak;
+    Map<CacheNodeHandler, Map<String, SNode>> cache1 = isWeak ? myCoerceToConceptsCacheWeak : myCoerceToConceptsCache;
+    Map<CacheNodeHandler, Map<String, SNode>> cache2 = isWeak ? myCoerceToConceptsCache : myCoerceToConceptsCacheWeak;
+
     CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
-    Map<String, SNode> map = cache.get(subtypeHandler);
+    Map<String, SNode> map = cache1.get(subtypeHandler);
     if (map == null) {
       map = new HashMap<String, SNode>();
-      cache.put(subtypeHandler, map);
+      cache1.put(subtypeHandler, map);
     }
     map.put(conceptFQName, result);
 
-    if (isWeak) {
-      cache = myCoerceToConceptsCacheWeak;
-      CacheNodeHandler subtypeHandlerWeak = new CacheNodeHandler(subtype);
-      Map<String, SNode> mapWeak = cache.get(subtypeHandlerWeak);
-      if (mapWeak == null) {
-        mapWeak = new HashMap<String, SNode>();
-        cache.put(subtypeHandlerWeak, mapWeak);
+    if (bothMaps) {
+      CacheNodeHandler subtypeHandler2 = new CacheNodeHandler(subtype);
+      Map<String, SNode> map2 = cache2.get(subtypeHandler2);
+      if (map2 == null) {
+        map2 = new HashMap<String, SNode>();
+        cache2.put(subtypeHandler2, map2);
       }
-      mapWeak.put(conceptFQName, result);
+      map2.put(conceptFQName, result);
     }
   }
 
@@ -125,24 +130,28 @@ public class SubtypingCache {
     if (!myCoersionPatternCached) {
       return;
     }
-    Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> cache = myCoerceToPatternsCache;
+
+    boolean answer = result != null;
+    boolean bothMaps = answer != isWeak;
+    Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> cache1 = isWeak ? myCoerceToPatternsCacheWeak : myCoerceToPatternsCache;
+    Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> cache2 = isWeak ? myCoerceToPatternsCache: myCoerceToPatternsCacheWeak;
+
     CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
-    Map<Class, Pair<SNode, GeneratedMatchingPattern>> map = cache.get(subtypeHandler);
+    Map<Class, Pair<SNode, GeneratedMatchingPattern>> map = cache1.get(subtypeHandler);
     if (map == null) {
       map = new HashMap<Class, Pair<SNode, GeneratedMatchingPattern>>();
-      cache.put(subtypeHandler, map);
+      cache1.put(subtypeHandler, map);
     }
     map.put(c, new Pair<SNode, GeneratedMatchingPattern>(result, pattern));
 
-    if (isWeak) {
-      cache = myCoerceToPatternsCacheWeak;
-      CacheNodeHandler subtypeHandlerWeak = new CacheNodeHandler(subtype);
-      Map<Class, Pair<SNode, GeneratedMatchingPattern>> mapWeak = cache.get(subtypeHandlerWeak);
-      if (mapWeak == null) {
-        mapWeak = new HashMap<Class, Pair<SNode, GeneratedMatchingPattern>>();
-        cache.put(subtypeHandlerWeak, mapWeak);
+    if (bothMaps) {
+      CacheNodeHandler subtypeHandler2 = new CacheNodeHandler(subtype);
+      Map<Class, Pair<SNode, GeneratedMatchingPattern>> map2 = cache2.get(subtypeHandler2);
+      if (map2 == null) {
+        map2 = new HashMap<Class, Pair<SNode, GeneratedMatchingPattern>>();
+        cache2.put(subtypeHandler2, map2);
       }
-      mapWeak.put(c, new Pair<SNode, GeneratedMatchingPattern>(result, pattern));
+      map2.put(c, new Pair<SNode, GeneratedMatchingPattern>(result, pattern));
     }
   }
 
