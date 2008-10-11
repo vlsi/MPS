@@ -17,7 +17,9 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath />
+  <classPath>
+    <entry path="${language_descriptor}\classes" />
+  </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>
