@@ -43,7 +43,7 @@
   <import index="21" modelUID="f:java_stub#jetbrains.mps.workbench.actions.help(jetbrains.mps.workbench.actions.help@java_stub)" version="-1" />
   <import index="40" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="42" modelUID="f:java_stub#jetbrains.mps.ide.classpath(jetbrains.mps.ide.classpath@java_stub)" version="-1" />
-  <import index="43" modelUID="f:java_stub#jetbrains.mps.transformation.TLBase.plugin.debug.actions(jetbrains.mps.transformation.TLBase.plugin.debug.actions@java_stub)" version="-1" />
+  <import index="43" modelUID="f:java_stub#jetbrains.mps.lang.generator.plugin.debug.actions(jetbrains.mps.lang.generator.plugin.debug.actions@java_stub)" version="-1" />
   <import index="46" modelUID="f:java_stub#jetbrains.mps.workbench.actions.imports(jetbrains.mps.workbench.actions.imports@java_stub)" version="-1" />
   <import index="52" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="53" modelUID="f:java_stub#jetbrains.mps.workbench.actions.generate(jetbrains.mps.workbench.actions.generate@java_stub)" version="-1" />
@@ -83,7 +83,7 @@
   <import index="98" modelUID="f:java_stub#jetbrains.mps.vcs.diff.ui(jetbrains.mps.vcs.diff.ui@java_stub)" version="-1" />
   <import index="99" modelUID="f:java_stub#jetbrains.mps.nodeEditor.inspector(jetbrains.mps.nodeEditor.inspector@java_stub)" version="-1" />
   <import index="100" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
-  <import index="101" modelUID="f:java_stub#jetbrains.mps.transformation.TLBase.plugin.debug(jetbrains.mps.transformation.TLBase.plugin.debug@java_stub)" version="-1" />
+  <import index="101" modelUID="f:java_stub#jetbrains.mps.lang.generator.plugin.debug(jetbrains.mps.lang.generator.plugin.debug@java_stub)" version="-1" />
   <import index="105" modelUID="f:java_stub#jetbrains.mps.ide.moduleRepositoryViewer(jetbrains.mps.ide.moduleRepositoryViewer@java_stub)" version="-1" />
   <import index="106" modelUID="f:java_stub#jetbrains.mps.ide.modelRepositoryViewer(jetbrains.mps.ide.modelRepositoryViewer@java_stub)" version="-1" />
   <import index="107" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
