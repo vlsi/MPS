@@ -21,7 +21,7 @@
     <libraries />
     <genConfs>
       <genConfLanguage name="generator" language="jetbrains.mps.lang.generator" />
-      <genConfLanguage name="generator.generatorContext" language="jetbrains.mps.lang.generator.generatorContext" />
+      <genConfLanguage name="generator.generatorationContext" language="jetbrains.mps.lang.generator.generationContext" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
