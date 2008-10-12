@@ -1,7 +1,7 @@
 package jetbrains.mps.workbench.actions.nodes;
 
-import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRuleUtil;
-import jetbrains.mps.bootstrap.helgins.plugin.GoToTypeErrorRule_Action;
+import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
+import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.helgins.uiActions.SupertypesViewTool;
 import jetbrains.mps.ide.dialogs.BaseNodeDialog;

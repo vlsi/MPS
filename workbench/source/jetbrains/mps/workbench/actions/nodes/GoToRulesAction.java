@@ -1,9 +1,9 @@
 package jetbrains.mps.workbench.actions.nodes;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.bootstrap.helgins.structure.AbstractRule;
-import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
-import jetbrains.mps.bootstrap.helgins.structure.PatternCondition;
+import jetbrains.mps.lang.typesystem.structure.AbstractRule;
+import jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition;
+import jetbrains.mps.lang.typesystem.structure.PatternCondition;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.ide.icons.IconManager;
@@ -99,9 +99,9 @@ public class GoToRulesAction extends BaseAction {
   }
 
   private static boolean maybeApplicable_new(AbstractConceptDeclaration conceptDeclaration, ApplicableNodeCondition applicableNode, IScope scope) {
-    if (applicableNode instanceof jetbrains.mps.bootstrap.helgins.structure.ConceptReference) {
-      jetbrains.mps.bootstrap.helgins.structure.ConceptReference conceptReference =
-        (jetbrains.mps.bootstrap.helgins.structure.ConceptReference) applicableNode;
+    if (applicableNode instanceof jetbrains.mps.lang.typesystem.structure.ConceptReference) {
+      jetbrains.mps.lang.typesystem.structure.ConceptReference conceptReference =
+        (jetbrains.mps.lang.typesystem.structure.ConceptReference) applicableNode;
       return SModelUtil_new.isAssignableConcept(conceptDeclaration, conceptReference.getConcept());
     } else if (applicableNode instanceof PatternCondition) {
       BaseConcept baseConcept = ((PatternCondition) applicableNode).getPattern().getPatternNode();

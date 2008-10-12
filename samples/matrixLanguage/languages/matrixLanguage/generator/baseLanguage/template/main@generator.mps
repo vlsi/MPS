@@ -6,7 +6,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
+  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="aeb98137-c8ec-4c86-a51b-f00c080e4652(jetbrains.mps.samples.matrixLanguage)" />
@@ -19,7 +19,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
@@ -37,6 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590454(jetbrains.mps.samples.matrixLanguage.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -88,7 +89,7 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210006619051">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210006901382">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1210007313572">
-              <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1210007329528">
+              <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="1210007329528">
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210007344781">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210007329530">
                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1210007329531" />
@@ -96,7 +97,7 @@
                       <link role="link" targetNodeId="4.1081773367579" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210007347474" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1210007347474" />
                 </node>
                 <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210007329534">
                   <node role="quotedNode" type="jetbrains.mps.samples.matrixLanguage.structure.MatrixType" id="1210007329535">
@@ -106,7 +107,7 @@
                   </node>
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1210007080562">
+              <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="1210007080562">
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210007183913">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210007096316">
                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1210007095048" />
@@ -114,7 +115,7 @@
                       <link role="link" targetNodeId="4.1081773367580" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210007186293" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1210007186293" />
                 </node>
                 <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210007291345">
                   <node role="quotedNode" type="jetbrains.mps.samples.matrixLanguage.structure.MatrixType" id="1210007299307">
@@ -138,7 +139,7 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210007827935">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210007831341">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1210007871444">
-              <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1210007876663">
+              <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="1210007876663">
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210007887883">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210007880430">
                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1210007879164" />
@@ -146,7 +147,7 @@
                       <link role="link" targetNodeId="4.1081773367579" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210007890619" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1210007890619" />
                 </node>
                 <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210007899849">
                   <node role="quotedNode" type="jetbrains.mps.samples.matrixLanguage.structure.MatrixType" id="1210007907659">
@@ -156,7 +157,7 @@
                   </node>
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1210007836012">
+              <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="1210007836012">
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210007849028">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210007844886">
                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1210007843214" />
@@ -164,7 +165,7 @@
                       <link role="link" targetNodeId="4.1081773367580" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210007850936" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1210007850936" />
                 </node>
                 <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210007858027">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1210007865618" />
@@ -184,7 +185,7 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210008136767">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210008139331">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1210008183058">
-              <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1210008190735">
+              <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="1210008190735">
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210008904999">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210008203649">
                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1210008201210" />
@@ -192,13 +193,13 @@
                       <link role="link" targetNodeId="4.1081773367579" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210008907879" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1210008907879" />
                 </node>
                 <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210008214718">
                   <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1210008221956" />
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1210008143115">
+              <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="1210008143115">
                 <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210008153825">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210008148261">
                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1210008146760" />
@@ -206,7 +207,7 @@
                       <link role="link" targetNodeId="4.1081773367580" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210008156063" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1210008156063" />
                 </node>
                 <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1210008239993">
                   <node role="quotedNode" type="jetbrains.mps.samples.matrixLanguage.structure.MatrixType" id="1210008250779">
@@ -1302,7 +1303,7 @@
                               <link role="link" targetNodeId="1.1210234933941" />
                             </node>
                           </node>
-                          <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210252221386" />
+                          <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1210252221386" />
                         </node>
                       </node>
                     </node>
@@ -1326,7 +1327,7 @@
                                 <link role="link" targetNodeId="1.1210234933941" />
                               </node>
                             </node>
-                            <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210244560172" />
+                            <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1210244560172" />
                           </node>
                         </node>
                       </node>
@@ -1467,7 +1468,7 @@
                                 <link role="link" targetNodeId="1.1210234933941" />
                               </node>
                             </node>
-                            <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1210244621767" />
+                            <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1210244621767" />
                           </node>
                         </node>
                       </node>

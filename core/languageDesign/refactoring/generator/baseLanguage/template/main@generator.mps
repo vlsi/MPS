@@ -6,7 +6,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
+  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
@@ -19,7 +19,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
@@ -45,6 +45,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <maxImportIndex value="35" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -2789,7 +2790,7 @@
                                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215507182410">
                                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215507182411">
                                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1215507182412">
-                                            <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1215507182413">
+                                            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="1215507182413">
                                               <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215507182414">
                                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1215507182415" />
                                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215507182416">
@@ -2835,8 +2836,8 @@
                                           <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1215507182432">
                                             <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1215507182433">
                                               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215507182434">
-                                                <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CoerceStatement" id="1215507182435">
-                                                  <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.PatternCondition" id="1215507182436">
+                                                <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CoerceStatement" id="1215507182435">
+                                                  <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1215507182436">
                                                     <property name="name" value="nodeType" />
                                                     <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1215507182437">
                                                       <node role="patternNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215507182438">
@@ -2863,7 +2864,7 @@
                                                           <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215507182448">
                                                             <link role="concept" targetNodeId="22.1169125787135" resolveInfo="AbstractConceptDeclaration" />
                                                           </node>
-                                                          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.LinkPatternVariableReference" id="1215507182449">
+                                                          <node role="expression" type="jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference" id="1215507182449">
                                                             <link role="patternVarDecl" targetNodeId="1215507182439" resolveInfo="#concept" />
                                                           </node>
                                                         </node>
@@ -2919,7 +2920,7 @@
                                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215507182467">
                                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215507182468">
                                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1215507182469">
-                                            <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1215507182470">
+                                            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="1215507182470">
                                               <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215507182471">
                                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1215507182472" />
                                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215507182473">
@@ -2969,7 +2970,7 @@
                                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215507182491">
                                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215507182492">
                                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1215507182493">
-                                            <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1215507182494">
+                                            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="1215507182494">
                                               <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215507182495">
                                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1215507182496" />
                                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215507182497">
@@ -3019,7 +3020,7 @@
                                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215507182515">
                                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215507182516">
                                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1215507182517">
-                                            <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression" id="1215507182518">
+                                            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="1215507182518">
                                               <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215507182519">
                                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1215507182520" />
                                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215507182521">
@@ -3529,7 +3530,7 @@
                             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1200935760156">
                               <link role="concept" targetNodeId="5.1107535904670" resolveInfo="ClassifierType" />
                             </node>
-                            <node role="initializer" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1200935760157">
+                            <node role="initializer" type="jetbrains.mps.lang.typesystem.structure.CoerceExpression" id="1200935760157">
                               <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227957422">
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227919698">
                                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1200935760160" />
@@ -3541,7 +3542,7 @@
                                   <link role="link" targetNodeId="1.1190637130098" />
                                 </node>
                               </node>
-                              <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1200935760163">
+                              <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1200935760163">
                                 <property name="name" value="classifierType" />
                                 <link role="concept" targetNodeId="5.1107535904670" resolveInfo="ClassifierType" />
                               </node>

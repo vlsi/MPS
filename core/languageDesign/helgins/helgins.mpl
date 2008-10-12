@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.helgins" uuid="7a5dda62-9140-4668-ab76-d5ed1746f2b2" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.lang.typesystem" uuid="7a5dda62-9140-4668-ab76-d5ed1746f2b2" generatorOutputPath="${language_descriptor}\source_gen" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.helgins" />
-    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.helgins" />
+    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.lang.typesystem" />
+    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.lang.typesystem" />
   </models>
   <accessoryModels>
-    <model modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.bootstrap.helgins.dependencies)" />
+    <model modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" />
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.bootstrap.helgins#1174411220599" uuid="8fffa437-9500-4c6b-abfc-f4cb2335b059">
       <models>
-        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template" />
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.lang.typesystem.generator.baseLanguage.template" />
       </models>
       <external-templates />
       <dependencies>
@@ -25,10 +25,10 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main@generator)" nodeID="1174411222995" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" nodeID="1174411222995" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main@generator)" nodeID="1215528394348" />
+            <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" nodeID="1215528394348" />
           </lesser-priority-mapping>
         </mapping-priority-rule>
       </mapping-priorities>

@@ -82,12 +82,12 @@ public class FunctionTypeUtil {
   }
 
   public static SNode unmeet(SNode possiblyMeet) {
-    if (SNodeOperations.isInstanceOf(possiblyMeet, "jetbrains.mps.bootstrap.helgins.structure.MeetType")) {
+    if (SNodeOperations.isInstanceOf(possiblyMeet, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       SNode last = null;
       for(SNode arg : SLinkOperations.getTargets(possiblyMeet, "argument", true)) {
         if (!(SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
           for(SNode dsc : SNodeOperations.getDescendants(arg, null, false)) {
-            if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.bootstrap.helgins.structure.MeetType")) {
+            if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
               return unmeetRecursively(SNodeOperations.copyNode(arg));
             }
           }
@@ -102,7 +102,7 @@ public class FunctionTypeUtil {
 
   public static SNode unmeetRecursively(SNode nodeWithMeetDescendants) {
     for(SNode dsc : SNodeOperations.getDescendants(nodeWithMeetDescendants, null, false)) {
-      if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.bootstrap.helgins.structure.MeetType")) {
+      if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
         SNodeOperations.replaceWithAnother(dsc, SNodeOperations.copyNode(unmeet(dsc)));
       }
     }

@@ -1,7 +1,7 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeListVariable;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.lang.typesystem.structure.RuntimeListVariable;
 import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
@@ -30,7 +30,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     if (node == null) return null;
     NodeWrapper result;
     String conceptFqName = node.getConceptFqName();
-    if ("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable".equals(conceptFqName)) {
+    if ("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable".equals(conceptFqName)) {
       result = new VariableWrapper(node, equationManager);
     } else {
       result = new NodeWrapper(node);

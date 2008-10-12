@@ -17,7 +17,7 @@ public class AConcept extends BaseConcept {
   }
 
   public static AConcept newInstance(SModel sm, boolean init) {
-    return (AConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.test.AConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.test.AConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AConcept newInstance(SModel sm) {

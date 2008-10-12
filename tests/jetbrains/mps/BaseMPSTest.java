@@ -3,12 +3,9 @@ package jetbrains.mps;
 import junit.framework.TestCase;
 
 import java.io.File;
-import java.lang.reflect.Method;
-import java.util.Map;
 
-import jetbrains.mps.bootstrap.helgins.tests.HelginsTestUtil;
+import jetbrains.mps.lang.typesystem.tests.HelginsTestUtil;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
-import jetbrains.mps.ide.IdeMain;
 
 import javax.swing.SwingUtilities;
 

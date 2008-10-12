@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.bootstrap.helgins.dependencies)">
+<model modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)">
   <persistence version="3" />
   <refactoringHistory />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
+  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -26,8 +26,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <maxImportIndex value="10" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.bootstrap.helgins.structure)" version="-1" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
@@ -246,12 +247,12 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.MatchStatement" id="1194538774943">
+                <node role="statement" type="jetbrains.mps.lang.typesystem.structure.MatchStatement" id="1194538774943">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194538778229">
                     <link role="variableDeclaration" targetNodeId="1194538105511" resolveInfo="parent" />
                   </node>
-                  <node role="item" type="jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem" id="1194538774945">
-                    <node role="condition" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1194538839278">
+                  <node role="item" type="jetbrains.mps.lang.typesystem.structure.MatchStatementItem" id="1194538774945">
+                    <node role="condition" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1194538839278">
                       <property name="name" value="typeOfExpression" />
                       <link role="concept" targetNodeId="1.1174657487114" resolveInfo="TypeOfExpression" />
                     </node>
@@ -288,8 +289,8 @@
                       </node>
                     </node>
                   </node>
-                  <node role="item" type="jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem" id="1194538897614">
-                    <node role="condition" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1194538900149">
+                  <node role="item" type="jetbrains.mps.lang.typesystem.structure.MatchStatementItem" id="1194538897614">
+                    <node role="condition" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1194538900149">
                       <property name="name" value="assignmentExpression" />
                       <link role="concept" targetNodeId="3.1068498886294" resolveInfo="AssignmentExpression" />
                     </node>
@@ -304,7 +305,7 @@
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628900774">
                                 <link role="baseMethodDeclaration" targetNodeId="2.~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolveInfo="put" />
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227886318">
-                                  <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference" id="1194539036470">
+                                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1194539036470">
                                     <link role="applicableNode" targetNodeId="1194538900149" resolveInfo="assignmentExpression" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1194608951880">
@@ -357,7 +358,7 @@
                             <link role="variableDeclaration" targetNodeId="1194538082896" resolveInfo="node" />
                           </node>
                           <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227883703">
-                            <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference" id="1194539001164">
+                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1194539001164">
                               <link role="applicableNode" targetNodeId="1194538900149" resolveInfo="assignmentExpression" />
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1194539020012">
@@ -368,8 +369,8 @@
                       </node>
                     </node>
                   </node>
-                  <node role="item" type="jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem" id="1194964521497">
-                    <node role="condition" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1194964523656">
+                  <node role="item" type="jetbrains.mps.lang.typesystem.structure.MatchStatementItem" id="1194964521497">
+                    <node role="condition" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1194964523656">
                       <property name="name" value="variableDeclaration" />
                       <link role="concept" targetNodeId="3.1068431474542" resolveInfo="VariableDeclaration" />
                     </node>
@@ -380,7 +381,7 @@
                             <link role="variableDeclaration" targetNodeId="1194538082896" resolveInfo="node" />
                           </node>
                           <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227822250">
-                            <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference" id="1194964538754">
+                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1194964538754">
                               <link role="applicableNode" targetNodeId="1194964523656" resolveInfo="variableDeclaration" />
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1194964740622">
@@ -396,7 +397,7 @@
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628902652">
                                 <link role="baseMethodDeclaration" targetNodeId="2.~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolveInfo="put" />
-                                <node role="actualArgument" type="jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference" id="1194964780308">
+                                <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1194964780308">
                                   <link role="applicableNode" targetNodeId="1194964523656" resolveInfo="variableDeclaration" />
                                 </node>
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888417373">
@@ -443,12 +444,12 @@
                       </node>
                     </node>
                   </node>
-                  <node role="ifFalseStatement" type="jetbrains.mps.bootstrap.helgins.structure.MatchStatement" id="1194966957317">
+                  <node role="ifFalseStatement" type="jetbrains.mps.lang.typesystem.structure.MatchStatement" id="1194966957317">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194966960041">
                       <link role="variableDeclaration" targetNodeId="1194538082896" resolveInfo="node" />
                     </node>
-                    <node role="item" type="jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem" id="1194966957319">
-                      <node role="condition" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1194966961855">
+                    <node role="item" type="jetbrains.mps.lang.typesystem.structure.MatchStatementItem" id="1194966957319">
+                      <node role="condition" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1194966961855">
                         <property name="name" value="variableDeclaration" />
                         <link role="concept" targetNodeId="3.1068431474542" resolveInfo="VariableDeclaration" />
                       </node>
@@ -544,8 +545,8 @@
                         </node>
                       </node>
                     </node>
-                    <node role="item" type="jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem" id="1194967010187">
-                      <node role="condition" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1194967011565">
+                    <node role="item" type="jetbrains.mps.lang.typesystem.structure.MatchStatementItem" id="1194967010187">
+                      <node role="condition" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1194967011565">
                         <property name="name" value="variableReference" />
                         <link role="concept" targetNodeId="3.1068498886296" resolveInfo="VariableReference" />
                       </node>
@@ -557,7 +558,7 @@
                               <link role="concept" targetNodeId="3.1068431474542" resolveInfo="VariableDeclaration" />
                             </node>
                             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227889873">
-                              <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference" id="1194967032790">
+                              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1194967032790">
                                 <link role="applicableNode" targetNodeId="1194967011565" resolveInfo="variableReference" />
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1194967035466">
@@ -577,7 +578,7 @@
                                       <link role="concept" targetNodeId="3.1068580123157" resolveInfo="Statement" />
                                     </node>
                                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227894638">
-                                      <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference" id="1194967923744">
+                                      <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1194967923744">
                                         <link role="applicableNode" targetNodeId="1194967011565" resolveInfo="variableReference" />
                                       </node>
                                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1194967928576">
@@ -795,7 +796,7 @@
                                   <link role="variableDeclaration" targetNodeId="1194967022396" resolveInfo="variableDeclaration" />
                                 </node>
                                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227914048">
-                                  <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference" id="1194967106722">
+                                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1194967106722">
                                     <link role="applicableNode" targetNodeId="1194967011565" resolveInfo="variableReference" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1194967109851">

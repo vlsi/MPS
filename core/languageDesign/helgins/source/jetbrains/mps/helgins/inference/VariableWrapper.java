@@ -2,11 +2,9 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
-
-import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.

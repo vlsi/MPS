@@ -6,7 +6,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
+  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
@@ -18,7 +18,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -34,6 +34,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
@@ -46,7 +47,7 @@
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="12" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="13" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.bootstrap.helgins.dependencies)" version="-1" />
+  <import index="13" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" />
   <import index="14" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104847098">
     <link role="concept" targetNodeId="1.1153944233411" resolveInfo="ForEachVariableReference" />
@@ -96,8 +97,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107434874">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1213107434875">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107434876">
-              <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1213107434877">
-                <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1213107434878">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.CoerceExpression" id="1213107434877">
+                <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1213107434878">
                   <property name="name" value="mapType" />
                   <link role="concept" targetNodeId="1.1197683403723" resolveInfo="MapType" />
                 </node>
@@ -111,7 +112,7 @@
                       <link role="link" targetNodeId="4.1197027771414" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1213107434884" />
+                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1213107434884" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1213107434885" />
@@ -165,14 +166,14 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1204071322859">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204071322860">
-            <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement" id="1206111352089">
-              <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1206111355781">
+            <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1206111352089">
+              <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206111355781">
                 <node role="normalType" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206111355782">
                   <link role="variableDeclaration" targetNodeId="1206111025993" resolveInfo="InputType" />
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1206111352092">
-                <node role="normalType" type="jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression" id="1206111346115">
+              <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206111352092">
+                <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1206111346115">
                   <node role="term" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206111348993">
                     <link role="variableDeclaration" targetNodeId="1204071322848" resolveInfo="vabs" />
                   </node>
@@ -192,9 +193,9 @@
           </node>
           <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1204071322881">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204071322882">
-              <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement" id="1206111366159">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1206111369695">
-                  <node role="normalType" type="jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression" id="1206111371042">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1206111366159">
+                <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206111369695">
+                  <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1206111371042">
                     <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206111371043">
                       <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1206111371044">
                         <link role="concept" targetNodeId="4.1068498886294" resolveInfo="AssignmentExpression" />
@@ -208,7 +209,7 @@
                     </node>
                   </node>
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1206111376720">
+                <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206111376720">
                   <node role="normalType" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206111376721">
                     <link role="variableDeclaration" targetNodeId="1206111025993" resolveInfo="InputType" />
                   </node>
@@ -291,13 +292,13 @@
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1204071782607">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204071782608">
-                    <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement" id="1206111460144">
-                      <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1206111462602">
+                    <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1206111460144">
+                      <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206111462602">
                         <node role="normalType" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206111462603">
                           <link role="variableDeclaration" targetNodeId="1204071774617" resolveInfo="ptype" />
                         </node>
                       </node>
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1206111460147">
+                      <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206111460147">
                         <node role="normalType" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206111457767">
                           <link role="variableDeclaration" targetNodeId="1206111025993" resolveInfo="InputType" />
                         </node>
@@ -344,14 +345,14 @@
               </node>
               <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205318856995">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205318856996">
-                  <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement" id="1206111479241">
-                    <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1206111482434">
+                  <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1206111479241">
+                    <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206111482434">
                       <node role="normalType" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206111482435">
                         <link role="variableDeclaration" targetNodeId="1206111025993" resolveInfo="InputType" />
                       </node>
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1206111479244">
-                      <node role="normalType" type="jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression" id="1206111474860">
+                    <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206111479244">
+                      <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1206111474860">
                         <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206111474861">
                           <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1206111474862">
                             <link role="concept" targetNodeId="4.1197027756228" resolveInfo="DotExpression" />
@@ -421,14 +422,14 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1204071887537">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204071887538">
-            <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement" id="1206111787726">
-              <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1206111790433">
+            <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1206111787726">
+              <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206111790433">
                 <node role="normalType" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1206111790434">
                   <link role="variableDeclaration" targetNodeId="1206111554322" resolveInfo="InputType" />
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1206111787729">
-                <node role="normalType" type="jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression" id="1204110524611">
+              <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206111787729">
+                <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1204110524611">
                   <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204110527051">
                     <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1204110525487">
                       <link role="concept" targetNodeId="4.1202948039474" resolveInfo="InstanceMethodCallOperation" />
@@ -456,14 +457,14 @@
           </node>
           <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1204110267819">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204110267820">
-              <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement" id="1219273747134">
-                <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1219273747135">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1219273747134">
+                <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1219273747135">
                   <node role="normalType" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219273747136">
                     <link role="variableDeclaration" targetNodeId="1206111554322" resolveInfo="InputType" />
                   </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1219273747137">
-                  <node role="normalType" type="jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression" id="1219273747138">
+                <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1219273747137">
+                  <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1219273747138">
                     <node role="term" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219273747139">
                       <link role="variableDeclaration" targetNodeId="1204071875783" resolveInfo="bmc" />
                     </node>
@@ -473,14 +474,14 @@
             </node>
             <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1209672844914">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209672844915">
-                <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement" id="1219273765212">
-                  <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1219273765213">
+                <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1219273765212">
+                  <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1219273765213">
                     <node role="normalType" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219273765214">
                       <link role="variableDeclaration" targetNodeId="1206111554322" resolveInfo="InputType" />
                     </node>
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1219273765215">
-                    <node role="normalType" type="jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression" id="1219273765216">
+                  <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1219273765215">
+                    <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1219273765216">
                       <node role="term" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219273765217">
                         <link role="variableDeclaration" targetNodeId="1204071875783" resolveInfo="bmc" />
                       </node>

@@ -28,8 +28,8 @@ public class ClassifierTypeUtil {
       SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
       SLinkOperations.setTarget(res, "bound", getTypeCoercedToClassifierType(SLinkOperations.getTarget(type, "bound", true)), true);
     }
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.bootstrap.helgins.structure.MeetType")) {
-      SNode res = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.helgins.structure.MeetType", null);
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+      SNode res = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MeetType", null);
       for(SNode arg : SLinkOperations.getTargets(type, "argument", true)) {
         if (SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.Type")) {
           SLinkOperations.addChild(res, "argument", getTypeCoercedToClassifierType(arg));
@@ -243,8 +243,8 @@ public class ClassifierTypeUtil {
         SLinkOperations.addChild(copy, "parameter", copyTypeRecursively(pt));
       }
       return copy;
-    } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.bootstrap.helgins.structure.MeetType")) {
-      SNode copy = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.helgins.structure.MeetType", null);
+    } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+      SNode copy = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MeetType", null);
       for(SNode arg : SLinkOperations.getTargets(type, "argument", true)) {
         SLinkOperations.addChild(copy, "argument", copyTypeRecursively(arg));
       }

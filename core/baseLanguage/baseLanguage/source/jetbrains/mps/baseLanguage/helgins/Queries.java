@@ -4,7 +4,7 @@ import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
+import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 
 import java.util.Set;
 

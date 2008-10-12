@@ -148,7 +148,7 @@ public class ClosureLiteralUtil {
       SNode candidate = queue.removeFirst();
       if (!(visited.contains(BaseConcept_Behavior.call_getPresentation_1213877396640(candidate)))) {
         SNode matched = null;
-        if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.bootstrap.helgins.structure.MeetType")) {
+        if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
           matched = whichTypeMatching(SLinkOperations.getTargets(realType, "argument", true), candidate);
         } else if (isTypeMatching(realType, candidate)) {
           matched = realType;
@@ -193,7 +193,7 @@ public class ClosureLiteralUtil {
 
   private static Map<String, SNode> matchType(SNode absType, SNode realType, Map<String, SNode> map) {
     SNode matched = null;
-    if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.bootstrap.helgins.structure.MeetType")) {
+    if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       matched = whichTypeMatching(SLinkOperations.getTargets(realType, "argument", true), absType);
     } else if (isTypeMatching(realType, absType)) {
       matched = realType;

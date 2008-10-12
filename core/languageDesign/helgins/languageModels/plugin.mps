@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c895902b3(jetbrains.mps.bootstrap.helgins.plugin)">
+<model modelUID="r:00000000-0000-4000-0000-011c895902b3(jetbrains.mps.lang.typesystem.plugin)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
@@ -20,7 +20,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -29,12 +29,12 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <maxImportIndex value="35" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.bootstrap.helgins.structure)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
+  <maxImportIndex value="37" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.helgins.uiActions(jetbrains.mps.helgins.uiActions@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.bootstrap.helgins.dependencies(jetbrains.mps.bootstrap.helgins.dependencies@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
@@ -56,6 +56,7 @@
   <import index="33" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="34" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="35" modelUID="f:java_stub#jetbrains.mps.helgins.statistics(jetbrains.mps.helgins.statistics@java_stub)" version="-1" />
+  <import index="36" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205244087094">
     <property name="name" value="TypesystemActions" />
     <property name="caption" value="Type System" />
@@ -122,11 +123,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205605688761">
             <property name="name" value="dependenciesCollector" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205605688762">
-              <link role="classifier" targetNodeId="6.~DependenciesCollector" resolveInfo="DependenciesCollector" />
+              <link role="classifier" targetNodeId="36.1194533670612" resolveInfo="DependenciesCollector" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213727693448">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213727693450">
-                <link role="baseMethodDeclaration" targetNodeId="6.~DependenciesCollector.&lt;init&gt;()" resolveInfo="DependenciesCollector" />
+                <link role="baseMethodDeclaration" targetNodeId="36.1194870678778" resolveInfo="DependenciesCollector" />
               </node>
             </node>
           </node>
@@ -156,7 +157,7 @@
               <link role="variableDeclaration" targetNodeId="1205605688761" resolveInfo="dependenciesCollector" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205605778032">
-              <link role="baseMethodDeclaration" targetNodeId="6.~DependenciesCollector.collectDependencies(jetbrains.mps.smodel.SNode,java.util.Map,java.util.Set):void" resolveInfo="collectDependencies" />
+              <link role="baseMethodDeclaration" targetNodeId="36.1194535086641" resolveInfo="collectDependencies" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205870938914">
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" id="1205870940603" />
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206094523674">
@@ -303,12 +304,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206101064407">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206101064408">
             <property name="name" value="dependenciesCollector" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206101064409">
-              <link role="classifier" targetNodeId="6.~DependenciesCollector" resolveInfo="DependenciesCollector" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223801695169">
+              <link role="classifier" targetNodeId="36.1194533670612" resolveInfo="DependenciesCollector" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213874760593">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213874760595">
-                <link role="baseMethodDeclaration" targetNodeId="6.~DependenciesCollector.&lt;init&gt;()" resolveInfo="DependenciesCollector" />
+                <link role="baseMethodDeclaration" targetNodeId="36.1194870678778" resolveInfo="DependenciesCollector" />
               </node>
             </node>
           </node>
@@ -375,7 +376,7 @@
               <link role="variableDeclaration" targetNodeId="1206101064408" resolveInfo="dependenciesCollector" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206101167151">
-              <link role="baseMethodDeclaration" targetNodeId="6.~DependenciesCollector.collectDependencies(jetbrains.mps.smodel.SNode,java.util.Map,java.util.Set):void" resolveInfo="collectDependencies" />
+              <link role="baseMethodDeclaration" targetNodeId="36.1194535086641" resolveInfo="collectDependencies" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206101182862">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206101180921">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206101179795" />

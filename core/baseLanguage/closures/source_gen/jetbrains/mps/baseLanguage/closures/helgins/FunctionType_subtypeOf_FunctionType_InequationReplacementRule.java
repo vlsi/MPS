@@ -53,7 +53,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         }
       }
     }
-    SNode join = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.helgins.structure.JoinType", null);
+    SNode join = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
     for(SNode superThrows : SLinkOperations.getTargets(supertype, "throwsType", true)) {
       SLinkOperations.addChild(join, "argument", SNodeOperations.copyNode(superThrows));
     }
@@ -91,7 +91,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
           result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(paramType2, paramType1, true);
         }
       }
-      SNode join = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.helgins.structure.JoinType", null);
+      SNode join = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
       for(SNode superThrows : SLinkOperations.getTargets(supertype, "throwsType", true)) {
         SLinkOperations.addChild(join, "argument", SNodeOperations.copyNode(superThrows));
       }

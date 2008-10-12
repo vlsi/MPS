@@ -1,9 +1,9 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.bootstrap.helgins.runtime.*;
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
-import jetbrains.mps.bootstrap.helgins.structure.MeetType;
-import jetbrains.mps.bootstrap.helgins.structure.JoinType;
+import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
+import jetbrains.mps.lang.typesystem.structure.MeetType;
+import jetbrains.mps.lang.typesystem.structure.JoinType;
 import jetbrains.mps.helgins.inference.util.*;
 import jetbrains.mps.helgins.inference.EquationInfo;
 import jetbrains.mps.logging.Logger;
@@ -440,7 +440,7 @@ public class SubtypingManager {
   public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern, boolean isWeak, EquationManager equationManager) {
     if (subtype == null) return null;
     if (pattern.match(subtype)) return subtype;
-    if ("jetbrains.mps.bootstrap.helgins.structure.MeetType".equals(subtype.getConceptFqName())) {
+    if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConceptFqName())) {
       List<SNode> children = subtype.getChildren("argument");
       for (SNode child : children) {
         SNode result = coerceSubtyping(child, pattern, isWeak, equationManager);

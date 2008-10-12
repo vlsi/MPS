@@ -7,7 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
+  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -16,7 +16,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
@@ -31,6 +31,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <maxImportIndex value="11" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -972,8 +973,8 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877405128">
               <link role="concept" targetNodeId="8.1107535904670" resolveInfo="ClassifierType" />
             </node>
-            <node role="initializer" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1213877405129">
-              <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1213877405130">
+            <node role="initializer" type="jetbrains.mps.lang.typesystem.structure.CoerceExpression" id="1213877405129">
+              <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1213877405130">
                 <property name="name" value="classifierType" />
                 <link role="concept" targetNodeId="8.1107535904670" resolveInfo="ClassifierType" />
               </node>
@@ -1307,14 +1308,14 @@
         <link role="concept" targetNodeId="8.1068431790189" resolveInfo="Type" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877405262">
-        <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CoerceStatement" id="1213877405263">
+        <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CoerceStatement" id="1213877405263">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877405264">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877405265">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213877405266">
                 <link role="baseMethodDeclaration" targetNodeId="11.1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
                 <link role="classConcept" targetNodeId="11.1201536121399" resolveInfo="ClassifierTypeUtil" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877405267">
-                  <node role="operand" type="jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference" id="1213877405268">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1213877405268">
                     <link role="applicableNode" targetNodeId="1213877405273" resolveInfo="sequenceType" />
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213877405269">
@@ -1330,7 +1331,7 @@
               <link role="link" targetNodeId="1.1199542457201" />
             </node>
           </node>
-          <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1213877405273">
+          <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1213877405273">
             <property name="name" value="sequenceType" />
             <link role="concept" targetNodeId="6.1151689724996" resolveInfo="SequenceType" />
           </node>

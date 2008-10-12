@@ -1,8 +1,8 @@
 package jetbrains.mps.helgins.inference.util;
 
 import jetbrains.mps.helgins.inference.*;
-import jetbrains.mps.bootstrap.helgins.structure.MeetType;
-import jetbrains.mps.bootstrap.helgins.structure.JoinType;
+import jetbrains.mps.lang.typesystem.structure.MeetType;
+import jetbrains.mps.lang.typesystem.structure.JoinType;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 

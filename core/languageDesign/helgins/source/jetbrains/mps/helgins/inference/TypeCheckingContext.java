@@ -71,7 +71,7 @@ public class TypeCheckingContext {
   //~
 
    public SNode createNewRuntimeTypesVariable() {
-    SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable", getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+    SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", getRuntimeTypesModel(), GlobalScope.getInstance(), false);
     typeVar.setName(getNewVarName());
     registerTypeVariable(typeVar);
     return typeVar;

@@ -4,26 +4,16 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
 import jetbrains.mps.bootstrap.helgins.runtime.*;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
+import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.NodeEditorWithInspectorComponent;
 
 import java.util.*;
 import java.util.Map.Entry;
-import java.awt.Color;
-
-import org.jetbrains.annotations.Nullable;
-
-import javax.swing.SwingUtilities;
 
 /**
  * Created by IntelliJ IDEA.

@@ -1,7 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.bootstrap.helgins.editor.Colors;
-
 import java.awt.*;
 
 public class MPSColors extends Color {

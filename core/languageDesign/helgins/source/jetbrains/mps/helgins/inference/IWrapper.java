@@ -1,7 +1,7 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 
 /**
  * Created by IntelliJ IDEA.

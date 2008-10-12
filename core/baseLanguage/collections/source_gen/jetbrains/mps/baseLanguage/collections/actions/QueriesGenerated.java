@@ -205,7 +205,7 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode mo = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.TranslateOperation", null);
-            SNode cl = SLinkOperations.setNewChild(mo, "closure", "jetbrains.mps.closures.structure.ClosureLiteral");
+            SNode cl = SLinkOperations.setNewChild(mo, "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
             SNode scpd = SLinkOperations.addNewChild(cl, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
             SPropertyOperations.set(scpd, "name", "it");
             return mo;
