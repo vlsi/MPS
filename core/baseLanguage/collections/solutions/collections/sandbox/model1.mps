@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c895903ba(jetbrains.mps.baseLanguage.ext.collections.sandbox.model1)">
+<model modelUID="r:00000000-0000-4000-0000-011c895903ba(jetbrains.mps.baseLanguage.collections.sandbox.model1)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
