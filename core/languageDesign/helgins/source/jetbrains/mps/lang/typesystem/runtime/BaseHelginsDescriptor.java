@@ -1,4 +1,4 @@
-package jetbrains.mps.bootstrap.helgins.runtime;
+package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
 import jetbrains.mps.typesystem.inference.IVariableProvider;

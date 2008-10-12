@@ -26,7 +26,7 @@ import java.util.Comparator;
 import jetbrains.mps.internal.collections.runtime.CaseInsensitiveStringComparison;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;

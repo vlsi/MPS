@@ -1,7 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
+import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
 
 import java.util.Stack;
 

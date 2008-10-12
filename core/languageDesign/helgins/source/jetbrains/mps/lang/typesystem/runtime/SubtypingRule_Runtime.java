@@ -1,6 +1,4 @@
-package jetbrains.mps.bootstrap.helgins.runtime;
-
-import jetbrains.mps.smodel.SNode;
+package jetbrains.mps.lang.typesystem.runtime;
 
 /**
  * Created by IntelliJ IDEA.

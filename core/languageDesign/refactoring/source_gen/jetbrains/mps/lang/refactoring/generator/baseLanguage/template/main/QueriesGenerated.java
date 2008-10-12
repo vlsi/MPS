@@ -13,7 +13,7 @@ import jetbrains.mps.lang.editor.behavior.CellKeyMapKeystroke_Behavior;
 import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;

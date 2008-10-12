@@ -1,7 +1,7 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.bootstrap.helgins.runtime.*;
+import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;

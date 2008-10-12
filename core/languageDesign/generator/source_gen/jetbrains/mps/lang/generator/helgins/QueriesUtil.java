@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.List;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink;
 
 public class QueriesUtil {

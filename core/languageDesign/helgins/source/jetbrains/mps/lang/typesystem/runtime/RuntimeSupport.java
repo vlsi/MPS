@@ -1,4 +1,4 @@
-package jetbrains.mps.bootstrap.helgins.runtime;
+package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.typesystem.inference.EquationInfo;

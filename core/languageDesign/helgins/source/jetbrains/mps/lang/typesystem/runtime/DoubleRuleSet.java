@@ -1,4 +1,4 @@
-package jetbrains.mps.bootstrap.helgins.runtime;
+package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;

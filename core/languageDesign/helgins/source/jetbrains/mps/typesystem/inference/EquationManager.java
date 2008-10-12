@@ -5,8 +5,8 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
-import jetbrains.mps.bootstrap.helgins.runtime.InequationReplacementRule_Runtime;
-import jetbrains.mps.bootstrap.helgins.runtime.AbstractInequationReplacementRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.intentions.IntentionProvider;
 
 import java.util.*;

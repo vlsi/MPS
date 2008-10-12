@@ -1,6 +1,6 @@
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport;
+import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.smodel.*;

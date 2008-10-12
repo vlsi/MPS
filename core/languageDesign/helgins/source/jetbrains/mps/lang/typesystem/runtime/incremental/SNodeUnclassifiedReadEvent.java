@@ -1,4 +1,4 @@
-package jetbrains.mps.bootstrap.helgins.runtime.incremental;
+package jetbrains.mps.lang.typesystem.runtime.incremental;
 
 import jetbrains.mps.smodel.SNode;
 

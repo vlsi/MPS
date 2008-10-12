@@ -1,6 +1,6 @@
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.MPSModuleRepository;

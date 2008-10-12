@@ -1,6 +1,6 @@
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.bootstrap.helgins.runtime.*;
+import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.MeetType;
 import jetbrains.mps.lang.typesystem.structure.JoinType;

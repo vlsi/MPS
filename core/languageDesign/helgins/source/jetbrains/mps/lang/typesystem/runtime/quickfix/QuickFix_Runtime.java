@@ -1,4 +1,4 @@
-package jetbrains.mps.bootstrap.helgins.runtime.quickfix;
+package jetbrains.mps.lang.typesystem.runtime.quickfix;
 
 import jetbrains.mps.smodel.SNode;
 

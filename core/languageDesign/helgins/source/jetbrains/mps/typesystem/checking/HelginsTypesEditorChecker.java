@@ -13,7 +13,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.bootstrap.helgins.runtime.quickfix.QuickFix_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 
 import java.awt.Color;
 import java.util.*;

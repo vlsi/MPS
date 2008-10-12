@@ -1,6 +1,6 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
+import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
 import jetbrains.mps.util.ManyToManyMap;
 
 import java.util.*;
