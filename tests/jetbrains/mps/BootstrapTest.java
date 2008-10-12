@@ -98,7 +98,7 @@ public class BootstrapTest extends BaseMPSTest {
     assertTrue(res, res == null);
   }
 
-  public void testXML() {
+  public void testDeprecatedXML() {
     String res = testProject(new File("platform/xmlDeprecated/xmlDeprecated.mpr"));
     assertTrue(res, res == null);
   }
@@ -138,4 +138,9 @@ public class BootstrapTest extends BaseMPSTest {
     assertTrue(res, res == null);
   }
 
+
+  public void testXML() {
+    String res = testProject(new File("core/platform/xml/xml.mpr"));
+    assertTrue(res, res == null);
+  }
 }

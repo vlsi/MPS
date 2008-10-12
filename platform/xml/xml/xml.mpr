@@ -10,13 +10,19 @@
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}\xml.mpl" />
+      <languagePath path="${mps_home}\platform\xml\xmlInternal\xmlInternal.mpl" />
+      <languagePath path="${mps_home}\platform\xml\xmlSchema\xmlSchema.mpl" />
     </projectLanguages>
     <projectDevkits />
     <libraries />
-    <genConfs />
+    <genConfs>
+      <genConfLanguage name="xml" language="jetbrains.mps.xml" />
+      <genConfLanguage name="xmlInternal" language="jetbrains.mps.xmlInternal" />
+      <genConfLanguage name="xmlSchema" language="jetbrains.mps.xmlSchema" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
-    <option name="projectName" value="webr_xml" />
+    <option name="projectName" value="xml" />
   </component>
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
