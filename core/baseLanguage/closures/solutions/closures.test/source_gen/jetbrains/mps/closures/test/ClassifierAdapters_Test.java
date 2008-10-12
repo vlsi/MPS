@@ -4,16 +4,16 @@ package jetbrains.mps.closures.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import jetbrains.mps.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-import jetbrains.mps.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class ClassifierAdapters_Test extends TestCase {
 
@@ -120,7 +120,7 @@ __switch__:
         return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
+            return new YieldingIterator<Integer>() {
 
               private int __CP__ = 0;
 

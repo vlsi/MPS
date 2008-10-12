@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.collections.samples.fibonacci;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class FibonacciSequence {
 
@@ -19,7 +19,7 @@ public class FibonacciSequence {
         return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
+            return new YieldingIterator<Integer>() {
 
               private int __CP__ = 0;
               private int _6_n_;

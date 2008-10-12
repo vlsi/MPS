@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.CaseInsensitiveStringCompariso
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class Distinct_Test extends TestCase {
 
@@ -66,7 +66,7 @@ public class Distinct_Test extends TestCase {
         return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
+            return new YieldingIterator<Integer>() {
 
               private int __CP__ = 0;
 

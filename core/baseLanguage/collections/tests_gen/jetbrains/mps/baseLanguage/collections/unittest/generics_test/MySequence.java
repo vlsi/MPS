@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.collections.unittest.generics_test;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 /* package */class MySequence <T> {
 

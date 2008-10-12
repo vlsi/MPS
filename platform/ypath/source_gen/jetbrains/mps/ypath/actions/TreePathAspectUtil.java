@@ -6,7 +6,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.ArrayList;
-import jetbrains.mps.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.collections.helgins.TypeUtil_Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;

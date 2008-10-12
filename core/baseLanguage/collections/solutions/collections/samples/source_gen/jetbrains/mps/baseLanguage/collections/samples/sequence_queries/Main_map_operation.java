@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.collections.samples.sequence_queries;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
-import jetbrains.mps.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ITranslator;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
@@ -80,7 +80,7 @@ __switch__:
         return new ISequenceIterableAdapter <String>() {
 
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
+            return new YieldingIterator<String>() {
 
               private int __CP__ = 0;
 

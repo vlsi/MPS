@@ -9,7 +9,7 @@ import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class ForEach_loop_Test1 extends TestCase {
 

@@ -7,14 +7,12 @@ import org.w3c.dom.Node;
 import jetbrains.mps.ypath.runtime.IFilter;
 import org.w3c.dom.Element;
 import org.w3c.dom.Attr;
-import treepath_dom.DOM2.ELEMENT_tag_Property;
-import treepath_dom.DOM2.ATTR_name_Property;
-import treepath_dom.DOM2.ATTR_value_Property;
+
 import java.util.AbstractCollection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import org.w3c.dom.NamedNodeMap;
 import java.util.AbstractList;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
@@ -261,7 +259,7 @@ public class DOM2 extends TreePath<Node> {
           return new Iterable <Node>() {
 
             public Iterator<Node> iterator() {
-              return new YieldingIterator <Node>() {
+              return new YieldingIterator<Node>() {
 
                 private int __CP__ = 0;
                 private NamedNodeMap _3_attributes;

@@ -7,7 +7,7 @@ import org.junit.Test;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import junit.framework.Assert;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,7 +22,7 @@ public class Contains_Test extends TestCase {
         return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
+            return new YieldingIterator<Integer>() {
 
               private int __CP__ = 0;
 

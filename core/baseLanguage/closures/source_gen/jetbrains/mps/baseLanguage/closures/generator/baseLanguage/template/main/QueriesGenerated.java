@@ -46,7 +46,7 @@ public class QueriesGenerated {
   }
 
   public static boolean createRootRule_Condition_1216996889747(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return "jetbrains.mps.closures.runtime".equals(SModelOperations.getModelName(_context.getInputModel()));
+    return "jetbrains.mps.baseLanguage.closures.runtime".equals(SModelOperations.getModelName(_context.getInputModel()));
   }
 
   public static boolean baseMappingRule_Condition_1201016704101(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -533,7 +533,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1202148938791(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "jetbrains.mps.closures.runtime.FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(_context.getNode());
+    return "jetbrains.mps.baseLanguage.closures.runtime.FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1202752698043(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -681,7 +681,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1215446201280(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return "jetbrains.mps.closures.runtime._FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(_context.getNode());
+    return "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_1215604429123(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -845,11 +845,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1215605038732(final IOperationContext operationContext, final IfMacroContext _context) {
-    return "jetbrains.mps.closures.runtime".equals(SModelOperations.getModelName(_context.getInputModel()));
+    return "jetbrains.mps.baseLanguage.closures.runtime".equals(SModelOperations.getModelName(_context.getInputModel()));
   }
 
   public static boolean ifMacro_Condition_1215605064512(final IOperationContext operationContext, final IfMacroContext _context) {
-    return "jetbrains.mps.closures.runtime".equals(SModelOperations.getModelName(_context.getInputModel()));
+    return "jetbrains.mps.baseLanguage.closures.runtime".equals(SModelOperations.getModelName(_context.getInputModel()));
   }
 
   public static SNode sourceNodeQuery_1199624915150(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

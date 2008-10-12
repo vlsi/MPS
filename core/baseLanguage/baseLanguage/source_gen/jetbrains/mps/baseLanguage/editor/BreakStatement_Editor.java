@@ -28,7 +28,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.smodel.SModel;
 
 public class BreakStatement_Editor extends DefaultNodeEditor {
@@ -223,7 +223,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
           return new ISequenceIterableAdapter <String>() {
 
             public Iterator<String> iterator() {
-              return new YieldingIterator <String>() {
+              return new YieldingIterator<String>() {
 
                 private int __CP__ = 0;
 

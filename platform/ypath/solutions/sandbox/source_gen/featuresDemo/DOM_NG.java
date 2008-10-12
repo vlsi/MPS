@@ -11,7 +11,7 @@ import java.util.AbstractCollection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import org.w3c.dom.NamedNodeMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;

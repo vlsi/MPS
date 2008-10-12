@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.ypath.runtime.ITreeTraversal;
 
 public class FileDemo {
@@ -38,7 +38,7 @@ public class FileDemo {
         return new Iterable <File>() {
 
           public Iterator<File> iterator() {
-            return new YieldingIterator <File>() {
+            return new YieldingIterator<File>() {
 
               private int __CP__ = 0;
 

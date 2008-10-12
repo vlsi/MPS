@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;

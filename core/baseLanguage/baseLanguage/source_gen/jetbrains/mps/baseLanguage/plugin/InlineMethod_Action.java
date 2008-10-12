@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.refactoring.inlineMethod.InlineMethodRefactoringAnalyzer;
 import jetbrains.mps.workbench.MPSDataKeys;

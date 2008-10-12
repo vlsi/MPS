@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.smodel.action.NodeSetupContext;
@@ -2055,7 +2055,7 @@ __switch__:
               return new ISequenceIterableAdapter <String>() {
 
                 public Iterator<String> iterator() {
-                  return new YieldingIterator <String>() {
+                  return new YieldingIterator<String>() {
 
                     private int __CP__ = 0;
 

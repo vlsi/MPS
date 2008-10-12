@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
-import jetbrains.mps.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import java.awt.Dimension;
 import javax.swing.JComponent;

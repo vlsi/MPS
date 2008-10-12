@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.collections.samples.sequence_queries;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
-import jetbrains.mps.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
         return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
+            return new YieldingIterator<Integer>() {
 
               private int __CP__ = 0;
               private int _2_i;

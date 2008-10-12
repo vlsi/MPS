@@ -1,7 +1,7 @@
 /*
  * Created Feb 4, 2008 at 6:56:09 PM
  */
-package jetbrains.mps.closures.runtime;
+package jetbrains.mps.baseLanguage.closures.runtime;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

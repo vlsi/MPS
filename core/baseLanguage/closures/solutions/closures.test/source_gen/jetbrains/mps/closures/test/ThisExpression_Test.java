@@ -4,7 +4,7 @@ package jetbrains.mps.closures.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import jetbrains.mps.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
 
 public class ThisExpression_Test extends TestCase {

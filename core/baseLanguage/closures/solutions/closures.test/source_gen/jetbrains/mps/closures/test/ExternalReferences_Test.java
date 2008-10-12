@@ -4,11 +4,11 @@ package jetbrains.mps.closures.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import jetbrains.mps.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
-import jetbrains.mps.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class ExternalReferences_Test extends TestCase {
 

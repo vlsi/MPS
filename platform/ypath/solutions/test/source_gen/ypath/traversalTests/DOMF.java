@@ -10,7 +10,7 @@ import org.w3c.dom.NodeList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import org.w3c.dom.Element;
 
 public class DOMF extends TreePath<Node> {
@@ -229,7 +229,7 @@ __switch__:
           return new Iterable <Node>() {
 
             public Iterator<Node> iterator() {
-              return new YieldingIterator <Node>() {
+              return new YieldingIterator<Node>() {
 
                 private int __CP__ = 0;
                 private int _2_i;

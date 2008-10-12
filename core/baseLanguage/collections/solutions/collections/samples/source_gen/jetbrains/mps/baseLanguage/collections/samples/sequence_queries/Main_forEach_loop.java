@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.collections.samples.sequence_queries;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 /* package */class Main_forEach_loop {
 
@@ -16,7 +16,7 @@ import jetbrains.mps.closures.runtime.YieldingIterator;
         return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
+            return new YieldingIterator<Integer>() {
 
               private int __CP__ = 0;
               private int _3_num;

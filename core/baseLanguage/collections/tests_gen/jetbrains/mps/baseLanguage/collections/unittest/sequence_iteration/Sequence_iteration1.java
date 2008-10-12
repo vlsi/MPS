@@ -6,9 +6,9 @@ import junit.framework.TestCase;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import junit.framework.Assert;
-import jetbrains.mps.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class Sequence_iteration1 extends TestCase {
 
@@ -20,7 +20,7 @@ public class Sequence_iteration1 extends TestCase {
         return new Iterable <String>() {
 
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
+            return new YieldingIterator<String>() {
 
               private int __CP__ = 0;
 

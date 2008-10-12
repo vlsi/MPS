@@ -9,11 +9,11 @@ import jetbrains.mps.internal.collections.runtime.ITranslator;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.closures.runtime._FunctionTypes;
+
 import java.util.List;
 import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
 
@@ -120,7 +120,7 @@ __switch__:
         return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
+            return new YieldingIterator<SNode>() {
 
               private int __CP__ = 0;
               private SNode _3__zzz_;

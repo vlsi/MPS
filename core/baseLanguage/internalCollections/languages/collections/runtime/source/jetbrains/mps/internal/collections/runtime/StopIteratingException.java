@@ -3,7 +3,7 @@
  */
 package jetbrains.mps.internal.collections.runtime;
 
-import jetbrains.mps.closures.runtime.DelayedException;
+import jetbrains.mps.baseLanguage.closures.runtime.DelayedException;
 
 
 /**

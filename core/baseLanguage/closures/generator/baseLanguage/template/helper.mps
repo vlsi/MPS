@@ -41,7 +41,7 @@
   <import index="21" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#java.text(java.text@java_stub)" version="-1" />
   <import index="23" modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <import index="24" modelUID="f:java_stub#jetbrains.mps.closures.runtime(jetbrains.mps.closures.runtime@java_stub)" version="-1" />
+  <import index="24" modelUID="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" version="-1" />
   <import index="25" modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <import index="26" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="27" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />

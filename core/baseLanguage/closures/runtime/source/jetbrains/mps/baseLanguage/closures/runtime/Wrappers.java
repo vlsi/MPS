@@ -1,7 +1,7 @@
 /*
  * Created Apr 1, 2008 at 8:34:41 PM
  */
-package jetbrains.mps.closures.runtime;
+package jetbrains.mps.baseLanguage.closures.runtime;
 
 
 /**

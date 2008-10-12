@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.SModel;
@@ -1097,7 +1097,7 @@ __switch__:
         return new ISequenceIterableAdapter <SNode>() {
 
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
+            return new YieldingIterator<SNode>() {
 
               private int __CP__ = 0;
               private SNode _2_link;

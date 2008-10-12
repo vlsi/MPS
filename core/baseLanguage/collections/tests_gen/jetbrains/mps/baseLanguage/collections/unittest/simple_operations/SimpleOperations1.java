@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Collections;
 import junit.framework.Assert;
 import java.util.Iterator;
-import jetbrains.mps.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -37,7 +37,7 @@ public class SimpleOperations1 extends TestCase {
         return new Iterable <String>() {
 
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
+            return new YieldingIterator<String>() {
 
               private int __CP__ = 0;
 

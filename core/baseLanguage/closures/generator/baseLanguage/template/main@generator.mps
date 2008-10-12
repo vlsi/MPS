@@ -49,7 +49,7 @@
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <import index="19" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="21" modelUID="f:java_stub#jetbrains.mps.closures.runtime(jetbrains.mps.closures.runtime@java_stub)" version="-1" />
+  <import index="21" modelUID="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" version="-1" />
   <import index="22" modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <import index="23" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="24" modelUID="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)" version="-1" />
@@ -1665,7 +1665,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215446247934">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1215446248494">
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215446248495">
-                      <property name="value" value="jetbrains.mps.closures.runtime._FunctionTypes." />
+                      <property name="value" value="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes." />
                     </node>
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215446248496">
                       <link role="baseMethodDeclaration" targetNodeId="13.1202150292558" resolveInfo="getRuntimeSignature" />
@@ -2483,7 +2483,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216996889749">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216996889750">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216996889751">
-                <property name="value" value="jetbrains.mps.closures.runtime" />
+                <property name="value" value="jetbrains.mps.baseLanguage.closures.runtime" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216996889752">
                 <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
@@ -3150,7 +3150,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215605064514">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215605064515">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215605064516">
-                  <property name="value" value="jetbrains.mps.closures.runtime" />
+                  <property name="value" value="jetbrains.mps.baseLanguage.closures.runtime" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215605064517">
                   <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
@@ -3968,7 +3968,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215605051373">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215605051374">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1215605051375">
-                  <property name="value" value="jetbrains.mps.closures.runtime" />
+                  <property name="value" value="jetbrains.mps.baseLanguage.closures.runtime" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215605051376">
                   <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
@@ -11676,7 +11676,7 @@
                       <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1202150867433" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1202150837921">
-                      <property name="value" value="jetbrains.mps.closures.runtime.FunctionTypes." />
+                      <property name="value" value="jetbrains.mps.baseLanguage.closures.runtime.FunctionTypes." />
                     </node>
                   </node>
                 </node>
