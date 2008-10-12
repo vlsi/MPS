@@ -53,13 +53,12 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
-  <maxImportIndex value="39" />
+  <maxImportIndex value="42" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.bootstrap.structureLanguage.structure(jetbrains.mps.bootstrap.structureLanguage.structure@java_stub)" version="-1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -69,7 +68,6 @@
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
   <import index="14" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
-  <import index="16" modelUID="f:java_stub#jetbrains.mps.helgins.inference(jetbrains.mps.helgins.inference@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.baseLanguage(jetbrains.mps.baseLanguage@java_stub)" version="-1" />
@@ -89,6 +87,7 @@
   <import index="37" modelUID="r:00000000-0000-4000-0000-011c895905cf(jetbrains.mpslite.behavior)" version="-1" />
   <import index="38" modelUID="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)" version="-1" />
   <import index="39" modelUID="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" version="-1" />
+  <import index="41" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1182846583683">
     <property name="name" value="structure" />
     <property name="package" value="Structure" />
@@ -354,11 +353,11 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1182850976014">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209004085005">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1188231359795">
-                      <link role="enumClass" targetNodeId="6.~Cardinality" resolveInfo="Cardinality" />
-                      <link role="enumConstantDeclaration" targetNodeId="6.~Cardinality._0__1" resolveInfo="_0__1" />
+                      <link role="enumClass" targetNodeId="41.~Cardinality" resolveInfo="Cardinality" />
+                      <link role="enumConstantDeclaration" targetNodeId="41.~Cardinality._0__1" resolveInfo="_0__1" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209004085006">
-                      <link role="baseMethodDeclaration" targetNodeId="6.~Cardinality.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
+                      <link role="baseMethodDeclaration" targetNodeId="41.~Cardinality.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
                     </node>
                   </node>
                 </node>
@@ -368,11 +367,11 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1182850988624">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209004080837">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1188231362486">
-                        <link role="enumConstantDeclaration" targetNodeId="6.~Cardinality._1" resolveInfo="_1" />
-                        <link role="enumClass" targetNodeId="6.~Cardinality" resolveInfo="Cardinality" />
+                        <link role="enumClass" targetNodeId="41.~Cardinality" resolveInfo="Cardinality" />
+                        <link role="enumConstantDeclaration" targetNodeId="41.~Cardinality._1" resolveInfo="_1" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209004080838">
-                        <link role="baseMethodDeclaration" targetNodeId="6.~Cardinality.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
+                        <link role="baseMethodDeclaration" targetNodeId="41.~Cardinality.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
                       </node>
                     </node>
                   </node>
@@ -454,11 +453,11 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1182850373536">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209004084145">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1188231366412">
-                      <link role="enumClass" targetNodeId="6.~Cardinality" resolveInfo="Cardinality" />
-                      <link role="enumConstantDeclaration" targetNodeId="6.~Cardinality._0__n" resolveInfo="_0__n" />
+                      <link role="enumClass" targetNodeId="41.~Cardinality" resolveInfo="Cardinality" />
+                      <link role="enumConstantDeclaration" targetNodeId="41.~Cardinality._0__n" resolveInfo="_0__n" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209004084146">
-                      <link role="baseMethodDeclaration" targetNodeId="6.~Cardinality.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
+                      <link role="baseMethodDeclaration" targetNodeId="41.~Cardinality.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
                     </node>
                   </node>
                 </node>
@@ -470,11 +469,11 @@
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197380832372">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209004084483">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1197380832374">
-                            <link role="enumClass" targetNodeId="6.~Cardinality" resolveInfo="Cardinality" />
-                            <link role="enumConstantDeclaration" targetNodeId="6.~Cardinality._0__1" resolveInfo="_0__1" />
+                            <link role="enumClass" targetNodeId="41.~Cardinality" resolveInfo="Cardinality" />
+                            <link role="enumConstantDeclaration" targetNodeId="41.~Cardinality._0__1" resolveInfo="_0__1" />
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209004084484">
-                            <link role="baseMethodDeclaration" targetNodeId="6.~Cardinality.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
+                            <link role="baseMethodDeclaration" targetNodeId="41.~Cardinality.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
                           </node>
                         </node>
                       </node>
@@ -490,11 +489,11 @@
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197380829540">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209004083918">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1197380829542">
-                              <link role="enumClass" targetNodeId="6.~Cardinality" resolveInfo="Cardinality" />
-                              <link role="enumConstantDeclaration" targetNodeId="6.~Cardinality._1" resolveInfo="_1" />
+                              <link role="enumClass" targetNodeId="41.~Cardinality" resolveInfo="Cardinality" />
+                              <link role="enumConstantDeclaration" targetNodeId="41.~Cardinality._1" resolveInfo="_1" />
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209004083919">
-                              <link role="baseMethodDeclaration" targetNodeId="6.~Cardinality.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
+                              <link role="baseMethodDeclaration" targetNodeId="41.~Cardinality.getValueAsString():java.lang.String" resolveInfo="getValueAsString" />
                             </node>
                           </node>
                         </node>

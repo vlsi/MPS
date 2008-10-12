@@ -34,7 +34,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
-  <maxImportIndex value="16" />
+  <maxImportIndex value="18" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895905a7(jetbrains.mps.ypath.behavior)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
@@ -49,7 +49,7 @@
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="14" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="16" modelUID="f:java_stub#jetbrains.mps.helgins.uiActions(jetbrains.mps.helgins.uiActions@java_stub)" version="-1" />
+  <import index="18" modelUID="f:java_stub#jetbrains.mps.typesystem.uiActions(jetbrains.mps.typesystem.uiActions@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptBehavior" id="1213877187422">
     <property name="package" value="treePath.features" />
     <link role="concept" targetNodeId="1.1196865276807" resolveInfo="GenericFeature" />
@@ -2129,8 +2129,8 @@
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877284306">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213877284307">
-                <link role="baseMethodDeclaration" targetNodeId="16.~PresentationManager.toString_1(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="toString_1" />
-                <link role="classConcept" targetNodeId="16.~PresentationManager" resolveInfo="PresentationManager" />
+                <link role="classConcept" targetNodeId="18.~PresentationManager" resolveInfo="PresentationManager" />
+                <link role="baseMethodDeclaration" targetNodeId="18.~PresentationManager.toString_1(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="toString_1" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877284308">
                   <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1213877284309" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213877284310">
@@ -2144,8 +2144,8 @@
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877284313">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213877284314">
-                    <link role="classConcept" targetNodeId="16.~PresentationManager" resolveInfo="PresentationManager" />
-                    <link role="baseMethodDeclaration" targetNodeId="16.~PresentationManager.toString_1(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="toString_1" />
+                    <link role="classConcept" targetNodeId="18.~PresentationManager" resolveInfo="PresentationManager" />
+                    <link role="baseMethodDeclaration" targetNodeId="18.~PresentationManager.toString_1(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="toString_1" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877284315">
                       <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1213877284316" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213877284317">
