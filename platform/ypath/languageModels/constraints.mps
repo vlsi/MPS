@@ -47,7 +47,6 @@
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <import index="13" modelUID="f:java_stub#jetbrains.mps.helgins.uiActions(jetbrains.mps.helgins.uiActions@java_stub)" version="-1" />
   <import index="14" modelUID="f:java_stub#jetbrains.mps.ypath.design(jetbrains.mps.ypath.design@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.ypath.runtime(jetbrains.mps.ypath.runtime@java_stub)" version="-1" />
