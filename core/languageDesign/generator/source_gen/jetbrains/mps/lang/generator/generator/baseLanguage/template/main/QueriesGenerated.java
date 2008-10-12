@@ -18,7 +18,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class QueriesGenerated {
 

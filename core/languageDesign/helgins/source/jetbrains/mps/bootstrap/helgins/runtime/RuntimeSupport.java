@@ -1,7 +1,7 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
-import jetbrains.mps.helgins.inference.*;
-import jetbrains.mps.helgins.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.*;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;

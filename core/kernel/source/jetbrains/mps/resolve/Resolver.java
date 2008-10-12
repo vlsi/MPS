@@ -1,8 +1,8 @@
 package jetbrains.mps.resolve;
 
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.inference.TypeCheckingMode;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeCheckingMode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;

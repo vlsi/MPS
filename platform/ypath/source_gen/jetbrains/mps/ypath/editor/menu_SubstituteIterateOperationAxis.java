@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Triplet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
 import jetbrains.mps.ypath.behavior.TreePath_Behavior;

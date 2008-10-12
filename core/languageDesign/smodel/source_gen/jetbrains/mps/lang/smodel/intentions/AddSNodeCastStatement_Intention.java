@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class AddSNodeCastStatement_Intention extends BaseIntention {
 

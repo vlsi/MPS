@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 import java.util.HashMap;
 

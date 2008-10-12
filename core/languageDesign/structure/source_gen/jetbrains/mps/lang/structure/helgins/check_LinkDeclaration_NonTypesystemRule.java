@@ -5,7 +5,7 @@ package jetbrains.mps.lang.structure.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;

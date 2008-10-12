@@ -209,15 +209,15 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.helgins.inference.TypeChecker</implementation-class>
+      <implementation-class>jetbrains.mps.typesystem.inference.TypeChecker</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.helgins.inference.NodeTypesComponentsRepository</implementation-class>
+      <implementation-class>jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.helgins.integration.HelginsPreferencesComponent</implementation-class>
+      <implementation-class>jetbrains.mps.typesystem.integration.HelginsPreferencesComponent</implementation-class>
     </component>
 
     <component>
@@ -367,7 +367,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.helgins.uiActions.SupertypesViewTool</implementation-class>
+      <implementation-class>jetbrains.mps.typesystem.uiActions.SupertypesViewTool</implementation-class>
       <skipForDummyProject/>
     </component>
 

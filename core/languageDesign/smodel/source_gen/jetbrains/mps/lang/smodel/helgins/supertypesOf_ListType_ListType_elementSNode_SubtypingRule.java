@@ -7,7 +7,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

@@ -10,8 +10,8 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.helgins.inference.IErrorReporter;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.IErrorReporter;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class GoToTypeErrorRule_Action extends GeneratedAction {

@@ -14,7 +14,7 @@ import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class ConstructorUsages_Finder extends GeneratedFinder {
   public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder");

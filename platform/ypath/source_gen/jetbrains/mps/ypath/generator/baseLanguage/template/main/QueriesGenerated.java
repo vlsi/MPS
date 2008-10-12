@@ -23,7 +23,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.ypath.behavior.ChildrenBlock_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.ypath.behavior.TreePath_Behavior;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;

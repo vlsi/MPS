@@ -5,7 +5,7 @@ package jetbrains.mps.lang.generator.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TemplateFunctionParameter_sourceNode_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {

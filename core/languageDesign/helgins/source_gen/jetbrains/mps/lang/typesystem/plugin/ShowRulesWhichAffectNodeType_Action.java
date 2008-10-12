@@ -13,8 +13,8 @@ import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.helgins.inference.NodeTypesComponent;
-import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.typesystem.inference.NodeTypesComponent;
+import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.util.Pair;
@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.helgins.uiActions.MyMenu;
+import jetbrains.mps.typesystem.uiActions.MyMenu;
 
 public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(ShowRulesWhichAffectNodeType_Action.class);

@@ -15,7 +15,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.behavior.SModelLanguageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;

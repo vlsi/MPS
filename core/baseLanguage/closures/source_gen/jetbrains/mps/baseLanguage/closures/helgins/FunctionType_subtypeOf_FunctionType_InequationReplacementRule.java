@@ -4,14 +4,14 @@ package jetbrains.mps.baseLanguage.closures.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.EquationInfo;
-import jetbrains.mps.helgins.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {

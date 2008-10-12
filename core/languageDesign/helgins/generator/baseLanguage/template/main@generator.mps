@@ -47,7 +47,7 @@
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.helgins.inference(jetbrains.mps.helgins.inference@java_stub)" version="-1" />
+  <import index="6" modelUID="f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
@@ -57,7 +57,7 @@
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="23" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
-  <import index="29" modelUID="f:java_stub#jetbrains.mps.helgins.inference.util(jetbrains.mps.helgins.inference.util@java_stub)" version="-1" />
+  <import index="29" modelUID="f:java_stub#jetbrains.mps.typesystem.inference.util(jetbrains.mps.typesystem.inference.util@java_stub)" version="-1" />
   <import index="30" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="31" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" />
   <import index="32" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
@@ -2116,7 +2116,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929833500">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1175150708317">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
                   <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929833501">
@@ -2137,10 +2137,10 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929831337">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1175150719520">
                     <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
-                    <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+                    <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929831338">
-                    <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getSubtypingManager():jetbrains.mps.helgins.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
+                    <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getSubtypingManager():jetbrains.mps.typesystem.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929832330">
@@ -2176,7 +2176,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929833122">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1175150677164">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
                   <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929833123">
@@ -2195,11 +2195,11 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929831124">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929835093">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1175150554692">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
                   <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929835094">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getSubtypingManager():jetbrains.mps.helgins.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
+                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getSubtypingManager():jetbrains.mps.typesystem.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929831125">
@@ -3167,7 +3167,7 @@
         <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213018793013">
           <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213018791027">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1174665996312">
-              <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
               <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213018791028">
@@ -3225,11 +3225,11 @@
         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929835402">
           <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929835783">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1185876196541">
-              <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
               <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929835784">
-              <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getEquationManager():jetbrains.mps.helgins.inference.EquationManager" resolveInfo="getEquationManager" />
+              <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getEquationManager():jetbrains.mps.typesystem.inference.EquationManager" resolveInfo="getEquationManager" />
             </node>
           </node>
           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929835403">
@@ -4960,7 +4960,7 @@
       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929832800">
         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929835095">
           <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1175496420359">
-            <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+            <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
             <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
           </node>
           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929835096">
@@ -5074,7 +5074,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1175518545480">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929835451">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1175518550560">
-              <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
               <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929835452">
@@ -5456,7 +5456,7 @@
     <property name="name" value="TypeCheckerAccess_to_Expression" />
     <link role="applicableConcept" targetNodeId="1.1175594888091" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1175595175072">
-      <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+      <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
       <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
       <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1175595178526" />
     </node>
@@ -5466,7 +5466,7 @@
     <link role="applicableConcept" targetNodeId="1.1176544042499" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929837304">
       <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176544934312">
-        <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+        <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
         <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
       </node>
       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929837305">
@@ -5497,11 +5497,11 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929831044">
       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929831339">
         <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176545085385">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
           <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
         </node>
         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929831340">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getSubtypingManager():jetbrains.mps.helgins.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getSubtypingManager():jetbrains.mps.typesystem.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
         </node>
       </node>
       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929831045">
@@ -6095,7 +6095,7 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929833236">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929834309">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176817271755">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
                   <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929834310">
@@ -6554,15 +6554,15 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929835042">
       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929832524">
         <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1177069380249">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
           <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
         </node>
         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929832525">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getSubtypingManager():jetbrains.mps.helgins.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getSubtypingManager():jetbrains.mps.typesystem.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
         </node>
       </node>
       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929835059">
-        <link role="baseMethodDeclaration" targetNodeId="6.~SubtypingManager.collectImmediateSupertypes(jetbrains.mps.smodel.SNode):jetbrains.mps.helgins.inference.util.StructuralNodeSet" resolveInfo="collectImmediateSupertypes" />
+        <link role="baseMethodDeclaration" targetNodeId="6.~SubtypingManager.collectImmediateSupertypes(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.util.StructuralNodeSet" resolveInfo="collectImmediateSupertypes" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1177069396126">
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1177069447755">
             <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1177069447756">
@@ -6713,10 +6713,10 @@
       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929836938">
         <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1177406558035">
           <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
         </node>
         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929836939">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getSubtypingManager():jetbrains.mps.helgins.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getSubtypingManager():jetbrains.mps.typesystem.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
         </node>
       </node>
       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929834605">
@@ -7626,7 +7626,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929837619">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1178874415150">
                   <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
-                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929837620">
                   <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getRuntimeSupport():jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport" resolveInfo="getRuntimeSupport" />
@@ -7719,7 +7719,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929836452">
       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929837222">
         <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1178875672349">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
           <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
         </node>
         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929837223">
@@ -7846,7 +7846,7 @@
       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929834637">
         <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1178876385973">
           <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
         </node>
         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929834638">
           <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getRuntimeSupport():jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport" resolveInfo="getRuntimeSupport" />
@@ -8150,7 +8150,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205769698948">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205769696961">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205764543413">
-                <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+                <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
                 <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205769696962">
@@ -11850,11 +11850,11 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205766329451">
       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205766329452">
         <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205766329453">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
           <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
         </node>
         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205766329454">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getEquationManager():jetbrains.mps.helgins.inference.EquationManager" resolveInfo="getEquationManager" />
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getEquationManager():jetbrains.mps.typesystem.inference.EquationManager" resolveInfo="getEquationManager" />
         </node>
       </node>
       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205766329455">
@@ -12539,7 +12539,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212596128150">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212596128151">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212596128152">
-                <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+                <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
                 <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212596128153">
@@ -12626,11 +12626,11 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212766512596">
       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212766493154">
         <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212766502829">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
           <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
         </node>
         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212766511642">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getEquationManager():jetbrains.mps.helgins.inference.EquationManager" resolveInfo="getEquationManager" />
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getEquationManager():jetbrains.mps.typesystem.inference.EquationManager" resolveInfo="getEquationManager" />
         </node>
       </node>
       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212766515756">
@@ -13610,11 +13610,11 @@
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215531866902">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215531866903">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215531866904">
-                    <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+                    <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
                     <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215531866905">
-                    <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getSubtypingManager():jetbrains.mps.helgins.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
+                    <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getSubtypingManager():jetbrains.mps.typesystem.inference.SubtypingManager" resolveInfo="getSubtypingManager" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215531866906">
@@ -14279,7 +14279,7 @@
       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220358453749">
         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220358453750">
           <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220358453751">
-            <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+            <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
             <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
           </node>
           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220358453752">

@@ -2,8 +2,8 @@ package jetbrains.mps.workbench.actions.nodes;
 
 import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action;
-import jetbrains.mps.helgins.inference.IErrorReporter;
-import jetbrains.mps.helgins.uiActions.SupertypesViewTool;
+import jetbrains.mps.typesystem.inference.IErrorReporter;
+import jetbrains.mps.typesystem.uiActions.SupertypesViewTool;
 import jetbrains.mps.ide.dialogs.BaseNodeDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.IOperationContext;

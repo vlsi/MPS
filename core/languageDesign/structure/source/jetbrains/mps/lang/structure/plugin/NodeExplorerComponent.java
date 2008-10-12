@@ -1,7 +1,7 @@
 package jetbrains.mps.lang.structure.plugin;
 
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.uiActions.PresentationManager;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.uiActions.PresentationManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;

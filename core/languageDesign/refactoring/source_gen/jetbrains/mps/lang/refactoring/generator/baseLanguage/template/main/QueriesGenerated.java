@@ -11,7 +11,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.behavior.CellKeyMapKeystroke_Behavior;
 import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

@@ -11,7 +11,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.helgins.uiActions.RefactorModelUtil;
+import jetbrains.mps.typesystem.uiActions.RefactorModelUtil;
 
 public class RefactorModel_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(RefactorModel_Action.class);

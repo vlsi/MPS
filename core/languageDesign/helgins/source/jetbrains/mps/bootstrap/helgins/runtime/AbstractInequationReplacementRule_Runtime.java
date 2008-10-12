@@ -1,8 +1,8 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.EquationInfo;
-import jetbrains.mps.helgins.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 /**
  * Created by IntelliJ IDEA.

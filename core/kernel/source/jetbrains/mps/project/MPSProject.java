@@ -5,7 +5,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;

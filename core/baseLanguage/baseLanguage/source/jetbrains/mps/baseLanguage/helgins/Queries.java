@@ -1,7 +1,7 @@
 package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.baseLanguage.structure.*;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;

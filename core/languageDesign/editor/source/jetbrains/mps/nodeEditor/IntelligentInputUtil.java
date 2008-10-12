@@ -8,9 +8,8 @@ import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_SideTransform;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.inference.TypeCheckingMode;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeCheckingMode;
 
 import java.util.List;
 

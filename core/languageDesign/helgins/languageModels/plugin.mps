@@ -32,7 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <maxImportIndex value="37" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
-  <import index="2" modelUID="f:java_stub#jetbrains.mps.helgins.uiActions(jetbrains.mps.helgins.uiActions@java_stub)" version="-1" />
+  <import index="2" modelUID="f:java_stub#jetbrains.mps.typesystem.uiActions(jetbrains.mps.typesystem.uiActions@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="7" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -43,19 +43,19 @@
   <import index="14" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
-  <import index="21" modelUID="f:java_stub#jetbrains.mps.helgins.inference(jetbrains.mps.helgins.inference@java_stub)" version="-1" />
+  <import index="21" modelUID="f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" />
-  <import index="25" modelUID="f:java_stub#jetbrains.mps.helgins.integration(jetbrains.mps.helgins.integration@java_stub)" version="-1" />
+  <import index="25" modelUID="f:java_stub#jetbrains.mps.typesystem.integration(jetbrains.mps.typesystem.integration@java_stub)" version="-1" />
   <import index="27" modelUID="f:java_stub#jetbrains.mps.ide.messages(jetbrains.mps.ide.messages@java_stub)" version="-1" />
-  <import index="28" modelUID="f:java_stub#jetbrains.mps.helgins.checking(jetbrains.mps.helgins.checking@java_stub)" version="-1" />
+  <import index="28" modelUID="f:java_stub#jetbrains.mps.typesystem.checking(jetbrains.mps.typesystem.checking@java_stub)" version="-1" />
   <import index="29" modelUID="f:java_stub#jetbrains.mps.workbench.tools(jetbrains.mps.workbench.tools@java_stub)" version="-1" />
   <import index="30" modelUID="f:java_stub#jetbrains.mps.workbench.editors(jetbrains.mps.workbench.editors@java_stub)" version="-1" />
   <import index="31" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <import index="32" modelUID="f:java_stub#jetbrains.mps.plugins.projectplugins(jetbrains.mps.plugins.projectplugins@java_stub)" version="-1" />
   <import index="33" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="34" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
-  <import index="35" modelUID="f:java_stub#jetbrains.mps.helgins.statistics(jetbrains.mps.helgins.statistics@java_stub)" version="-1" />
+  <import index="35" modelUID="f:java_stub#jetbrains.mps.typesystem.statistics(jetbrains.mps.typesystem.statistics@java_stub)" version="-1" />
   <import index="36" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205244087094">
     <property name="name" value="TypesystemActions" />
@@ -113,7 +113,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1205605492950">
-    <property name="name" value="HighlightDependentLeaves" />
+    <property name="name" value="bHighlightDependentLeaves" />
     <property name="caption" value="Highlight Dependent Leaves" />
     <property name="package" value="Actions" />
     <property name="isAlwaysVisible" value="true" />
@@ -562,10 +562,10 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206105385971">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206105385972">
                 <link role="classConcept" targetNodeId="21.~TypeChecker" resolveInfo="TypeChecker" />
-                <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206105385973">
-                <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.helgins.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206105385974">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206105385975" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420649642">
@@ -604,11 +604,11 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206105154776">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206105151150">
-                <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getInstance():jetbrains.mps.helgins.inference.TypeChecker" resolveInfo="getInstance" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
                 <link role="classConcept" targetNodeId="21.~TypeChecker" resolveInfo="TypeChecker" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206105159032">
-                <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.helgins.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206105163612">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206105161221" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420649643">
@@ -976,11 +976,11 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184179431">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206184178461">
-                <link role="baseMethodDeclaration" targetNodeId="21.~NodeTypesComponentsRepository.getInstance():jetbrains.mps.helgins.inference.NodeTypesComponentsRepository" resolveInfo="getInstance" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~NodeTypesComponentsRepository.getInstance():jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository" resolveInfo="getInstance" />
                 <link role="classConcept" targetNodeId="21.~NodeTypesComponentsRepository" resolveInfo="NodeTypesComponentsRepository" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206184189872">
-                <link role="baseMethodDeclaration" targetNodeId="21.~NodeTypesComponentsRepository.getNodeTypesComponent(jetbrains.mps.smodel.SNode):jetbrains.mps.helgins.inference.NodeTypesComponent" resolveInfo="getNodeTypesComponent" />
+                <link role="baseMethodDeclaration" targetNodeId="21.~NodeTypesComponentsRepository.getNodeTypesComponent(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.NodeTypesComponent" resolveInfo="getNodeTypesComponent" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184203988">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206184203157">
                     <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1206184203158" />

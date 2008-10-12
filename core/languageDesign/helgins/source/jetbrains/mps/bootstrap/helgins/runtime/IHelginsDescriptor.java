@@ -1,7 +1,7 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
-import jetbrains.mps.helgins.inference.util.IDependency_Runtime;
-import jetbrains.mps.helgins.inference.IVariableProvider;
+import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
+import jetbrains.mps.typesystem.inference.IVariableProvider;
 
 import java.util.Set;
 import java.util.Map;

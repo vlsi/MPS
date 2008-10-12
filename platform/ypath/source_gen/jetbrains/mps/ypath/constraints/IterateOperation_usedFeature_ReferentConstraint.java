@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class IterateOperation_usedFeature_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
