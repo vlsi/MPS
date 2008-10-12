@@ -8,13 +8,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <maxImportIndex value="30" />
+  <maxImportIndex value="32" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="26" modelUID="r:00000000-0000-4000-0000-011c89590397(jetbrains.mps.baseLanguage.sandbox.misc)" version="0" />
   <import index="27" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="28" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="29" modelUID="f:java_stub#java.applet(java.applet@java_stub)" version="-1" />
-  <import index="30" modelUID="f:java_stub#jetbrains.mps.closures.runtime(jetbrains.mps.closures.runtime@java_stub)" version="-1" />
+  <import index="32" modelUID="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.Interface" id="1115766127296">
     <property name="name" value="IBaseInterface" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1115766147547">
@@ -1387,8 +1387,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1211503203833">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1211503203834">
             <property name="name" value="_byte" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211503203835">
-              <link role="classifier" targetNodeId="30.~Wrappers$_byte" resolveInfo="Wrappers._byte" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223829782209">
+              <link role="classifier" targetNodeId="32.~Wrappers$_byte" resolveInfo="Wrappers._byte" />
             </node>
           </node>
         </node>
