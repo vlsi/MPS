@@ -8,7 +8,7 @@
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -19,8 +19,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
@@ -1859,7 +1859,7 @@
             <link role="baseMethodDeclaration" targetNodeId="5.~CreateFromUsageUtil.showCreateNewRootMenu(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.util.Condition,jetbrains.mps.util.Setter):void" resolveInfo="showCreateNewRootMenu" />
             <link role="classConcept" targetNodeId="5.~CreateFromUsageUtil" resolveInfo="CreateFromUsageUtil" />
             <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1216334756147" />
-            <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1216334966291">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1216334966291">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216334966292">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216335239559">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216335239560">
@@ -1948,7 +1948,7 @@
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1216334993654" />
               </node>
             </node>
-            <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1216335413270">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1216335413270">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216335413271">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216335666216">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216335666217">
@@ -2132,7 +2132,7 @@
             <link role="baseMethodDeclaration" targetNodeId="5.~CreateFromUsageUtil.showCreateNewRootMenu(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.util.Condition,jetbrains.mps.util.Setter):void" resolveInfo="showCreateNewRootMenu" />
             <link role="classConcept" targetNodeId="5.~CreateFromUsageUtil" resolveInfo="CreateFromUsageUtil" />
             <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1216337594156" />
-            <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1216337594157">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1216337594157">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216337594158">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216337594159">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216337594160">
@@ -2221,7 +2221,7 @@
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1216337594194" />
               </node>
             </node>
-            <node role="actualArgument" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1216337594195">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1216337594195">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216337594196">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216337594197">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216337594198">

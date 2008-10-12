@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeCheckingContext;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.collections.constraints.SmartClosureParameterTypeUtil;
-import jetbrains.mps.closures.constraints.ClassifierTypeUtil;
+import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import java.util.List;

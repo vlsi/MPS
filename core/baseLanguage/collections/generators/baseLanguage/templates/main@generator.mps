@@ -10,7 +10,7 @@
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
-  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
@@ -23,8 +23,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
@@ -51,7 +51,7 @@
   <import index="11" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
-  <import index="14" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
+  <import index="14" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="19" modelUID="r:00000000-0000-4000-0000-011c89590330(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util)" version="-1" />
   <import index="27" modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -4889,7 +4889,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1206979648706">
       <link role="applicableConcept" targetNodeId="8.1152125346253" resolveInfo="ValueSupplierBlock" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1206979720441">
-        <node role="templateNode" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1206979728136">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1206979728136">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206979728137">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1207067124105">
               <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1207067124106">
@@ -5076,7 +5076,7 @@
       <link role="applicableConcept" targetNodeId="8.1153513461623" resolveInfo="ForEachBlock" />
       <link role="labelDeclaration" targetNodeId="1203176163661" resolveInfo="closure" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1209824855879">
-        <node role="templateNode" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1209824855880">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1209824855880">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209824855881">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="1209824855882">
               <link role="templateSwitch" targetNodeId="1205836166464" resolveInfo="switch_closure_body" />
@@ -5124,7 +5124,7 @@
       <link role="applicableConcept" targetNodeId="8.1152906997013" resolveInfo="MapperBlock" />
       <link role="labelDeclaration" targetNodeId="1203176163661" resolveInfo="closure" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1209824872027">
-        <node role="templateNode" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1209824872028">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1209824872028">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209824872029">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="1209824872030">
               <link role="templateSwitch" targetNodeId="1205836166464" resolveInfo="switch_closure_body" />
@@ -5172,7 +5172,7 @@
       <link role="applicableConcept" targetNodeId="8.1153779885165" resolveInfo="SelectorBlock" />
       <link role="labelDeclaration" targetNodeId="1203176163661" resolveInfo="closure" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1209824885395">
-        <node role="templateNode" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1209824885396">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1209824885396">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209824885397">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="1209824885398">
               <link role="templateSwitch" targetNodeId="1205836166464" resolveInfo="switch_closure_body" />
@@ -5220,7 +5220,7 @@
       <link role="applicableConcept" targetNodeId="8.1153760673252" resolveInfo="WhereBlock" />
       <link role="labelDeclaration" targetNodeId="1203176163661" resolveInfo="closure" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1209824899871">
-        <node role="templateNode" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1209824899872">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1209824899872">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209824899873">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="1209824899874">
               <link role="templateSwitch" targetNodeId="1205836166464" resolveInfo="switch_closure_body" />
@@ -5311,7 +5311,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1210182290599">
       <link role="applicableConcept" targetNodeId="8.1168502774204" resolveInfo="SortBlock" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1210182301929">
-        <node role="templateNode" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1210182306219">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1210182306219">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210182306220">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210203545092">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1210203550795">
@@ -5511,7 +5511,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1205836785599">
       <link role="applicableConcept" targetNodeId="8.1152141063573" resolveInfo="TraversalYieldStatement" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1205836795030">
-        <node role="templateNode" type="jetbrains.mps.closures.structure.YieldStatement" id="1205836800142">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" id="1205836800142">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1205836800143">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1205836802922">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1205836802923">
@@ -5813,7 +5813,7 @@
       <link role="applicableConcept" targetNodeId="8.1168502632000" resolveInfo="SortOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1209728576477">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation" id="1209728579691">
-          <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1209728579692">
+          <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1209728579692">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209728579693">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209728639468">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1209728639469">
@@ -9080,7 +9080,7 @@
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1209650255309">
     <property name="name" value="frag_closure_for_SortBlock" />
     <link role="applicableConcept" targetNodeId="8.1168502774204" resolveInfo="SortBlock" />
-    <node role="contentNode" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1209650289145">
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1209650289145">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209650289146">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1209650334233">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1209650334234">

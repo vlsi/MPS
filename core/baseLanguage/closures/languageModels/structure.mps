@@ -1,16 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ClosureLiteral" conceptFQName="jetbrains.mps.closures.structure.ClosureLiteral" featureKind="CONCEPT" />
+          <value featureName="ClosureLiteral" conceptFQName="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="FunctionType" conceptFQName="jetbrains.mps.closures.structure.FunctionType" featureKind="CONCEPT" />
+          <value featureName="FunctionType" conceptFQName="jetbrains.mps.baseLanguage.closures.structure.FunctionType" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="InvokeExpression" conceptFQName="jetbrains.mps.closures.structure.InvokeExpression" featureKind="CONCEPT" />
+          <value featureName="InvokeExpression" conceptFQName="jetbrains.mps.baseLanguage.closures.structure.InvokeExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="InvokeFunctionExpression" conceptFQName="jetbrains.mps.closures.structure.InvokeFunctionExpression" featureKind="CONCEPT" />
+          <value featureName="InvokeFunctionExpression" conceptFQName="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="PairOfInts" conceptFQName="jetbrains.mps.closures.structure.PairOfInts" featureKind="CONCEPT" />
+          <value featureName="PairOfInts" conceptFQName="jetbrains.mps.baseLanguage.closures.structure.PairOfInts" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="StringPropertyHolder" conceptFQName="jetbrains.mps.closures.structure.StringPropertyHolder" featureKind="CONCEPT" />
+          <value featureName="StringPropertyHolder" conceptFQName="jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="UnboundClosureParameterDeclaration" conceptFQName="jetbrains.mps.closures.structure.UnboundClosureParameterDeclaration" featureKind="CONCEPT" />
+          <value featureName="UnboundClosureParameterDeclaration" conceptFQName="jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="YieldStatement" conceptFQName="jetbrains.mps.closures.structure.YieldStatement" featureKind="CONCEPT" />
+          <value featureName="YieldStatement" conceptFQName="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />

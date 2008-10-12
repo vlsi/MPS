@@ -6,7 +6,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
-  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
@@ -17,8 +17,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)" version="49" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
@@ -1321,11 +1321,11 @@
                   </node>
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199714416059">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199714442646">
-                      <node role="expression" type="jetbrains.mps.closures.structure.InvokeFunctionExpression" id="1199722260838">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" id="1199722260838">
                         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1199722277142">
                           <link role="closureParameter" targetNodeId="1199714416058" resolveInfo="it" />
                         </node>
-                        <node role="function" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1199714442647">
+                        <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1199714442647">
                           <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1199714914525">
                             <property name="name" value="_zzz_" />
                             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1199714917213" />
@@ -1348,7 +1348,7 @@
                                   </node>
                                 </node>
                                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199714953256">
-                                  <node role="expression" type="jetbrains.mps.closures.structure.InvokeExpression" id="1199714953257">
+                                  <node role="expression" type="jetbrains.mps.baseLanguage.closures.structure.InvokeExpression" id="1199714953257">
                                     <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1199714956889">
                                       <link role="variable" targetNodeId="1199714647704" resolveInfo="c" />
                                     </node>
