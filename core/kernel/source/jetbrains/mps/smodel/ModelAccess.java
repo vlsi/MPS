@@ -4,7 +4,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorWithContinuation;
+import jetbrains.mps.baseLanguage.collections.internal.CursorWithContinuation;
 import jetbrains.mps.ide.ThreadUtils;
 
 import javax.swing.SwingUtilities;

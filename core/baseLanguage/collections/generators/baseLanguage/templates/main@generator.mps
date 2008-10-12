@@ -42,8 +42,8 @@
   <import index="1" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="4" modelUID="f:java_stub#jetbrains.mps.baseLanguage.ext.collections.internal.query(jetbrains.mps.baseLanguage.ext.collections.internal.query@java_stub)" version="-1" />
-  <import index="5" modelUID="f:java_stub#jetbrains.mps.baseLanguage.ext.collections.internal(jetbrains.mps.baseLanguage.ext.collections.internal@java_stub)" version="-1" />
+  <import index="4" modelUID="f:java_stub#jetbrains.mps.baseLanguage.collections.internal.query(jetbrains.mps.baseLanguage.collections.internal.query@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#jetbrains.mps.baseLanguage.collections.internal(jetbrains.mps.baseLanguage.collections.internal@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
@@ -757,7 +757,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888336588">
               <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1217888336590" />
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888336591">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SequenceWithSupplier.&lt;init&gt;(jetbrains.mps.baseLanguage.ext.collections.internal.IValuesSupplier)" resolveInfo="SequenceWithSupplier" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~SequenceWithSupplier.&lt;init&gt;(jetbrains.mps.baseLanguage.collections.internal.IValuesSupplier)" resolveInfo="SequenceWithSupplier" />
                 <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1152823353818">
                   <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
                   <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1185925113417">
@@ -1036,7 +1036,7 @@
     <link role="applicableConcept" targetNodeId="8.1152906680026" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1153355927518">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
-      <link role="baseMethodDeclaration" targetNodeId="4.~SequenceOperations.map(java.lang.Iterable,jetbrains.mps.baseLanguage.ext.collections.internal.query.IMapper):java.lang.Iterable" resolveInfo="map" />
+      <link role="baseMethodDeclaration" targetNodeId="4.~SequenceOperations.map(java.lang.Iterable,jetbrains.mps.baseLanguage.collections.internal.query.IMapper):java.lang.Iterable" resolveInfo="map" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1153355927519">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1153355927520">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1170984709164">
@@ -1210,7 +1210,7 @@
     <link role="applicableConcept" targetNodeId="8.1153513495343" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1153519333107">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
-      <link role="baseMethodDeclaration" targetNodeId="4.~SequenceOperations.forEach(java.lang.Iterable,jetbrains.mps.baseLanguage.ext.collections.internal.query.IForEach):void" resolveInfo="forEach" />
+      <link role="baseMethodDeclaration" targetNodeId="4.~SequenceOperations.forEach(java.lang.Iterable,jetbrains.mps.baseLanguage.collections.internal.query.IForEach):void" resolveInfo="forEach" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1153519333108">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1153519333109">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1170983576308">
@@ -1363,7 +1363,7 @@
     <link role="applicableConcept" targetNodeId="8.1153760737019" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1153772042681">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
-      <link role="baseMethodDeclaration" targetNodeId="4.~SequenceOperations.where(java.lang.Iterable,jetbrains.mps.baseLanguage.ext.collections.internal.query.IPredicate):java.lang.Iterable" resolveInfo="where" />
+      <link role="baseMethodDeclaration" targetNodeId="4.~SequenceOperations.where(java.lang.Iterable,jetbrains.mps.baseLanguage.collections.internal.query.IPredicate):java.lang.Iterable" resolveInfo="where" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1153772042682">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1153772042683">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1170984741354">
@@ -1549,7 +1549,7 @@
     <link role="applicableConcept" targetNodeId="8.1153779905654" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1153782857851">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
-      <link role="baseMethodDeclaration" targetNodeId="4.~SequenceOperations.select(java.lang.Iterable,jetbrains.mps.baseLanguage.ext.collections.internal.query.ISelector):java.lang.Iterable" resolveInfo="select" />
+      <link role="baseMethodDeclaration" targetNodeId="4.~SequenceOperations.select(java.lang.Iterable,jetbrains.mps.baseLanguage.collections.internal.query.ISelector):java.lang.Iterable" resolveInfo="select" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1153782857852">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1153782857853">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1170984722931">
@@ -1643,7 +1643,7 @@
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1154022032808">
                     <link role="classConcept" targetNodeId="5.~CursorFactory" resolveInfo="CursorFactory" />
-                    <link role="baseMethodDeclaration" targetNodeId="5.~CursorFactory.createCursor(java.lang.Iterable):jetbrains.mps.baseLanguage.ext.collections.internal.ICursor" resolveInfo="createCursor" />
+                    <link role="baseMethodDeclaration" targetNodeId="5.~CursorFactory.createCursor(java.lang.Iterable):jetbrains.mps.baseLanguage.collections.internal.ICursor" resolveInfo="createCursor" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1154022032809">
                       <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1154022941378">
                         <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1168287937464">
@@ -1874,7 +1874,7 @@
     <property name="name" value="reduce_NewListWithInit" />
     <link role="applicableConcept" targetNodeId="6.1145552977093" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1200500151277">
-      <property name="fqClassName" value="jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations" />
+      <property name="fqClassName" value="jetbrains.mps.baseLanguage.collections.internal.query.ListOperations" />
       <property name="methodName" value="createList" />
       <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1200500262042">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1200500362532">
