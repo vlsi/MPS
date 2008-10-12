@@ -965,7 +965,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/app/mf/gothic/gothic.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/platform/gtext/gtext.iml" filepath="$PROJECT_DIR$/platform/gtext/gtext.iml" group="platform/gtext" />
       <module fileurl="file://$PROJECT_DIR$/platform/gtext/runtime/gtext_runtime.iml" filepath="$PROJECT_DIR$/platform/gtext/runtime/gtext_runtime.iml" group="platform/gtext" />
-      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" filepath="$PROJECT_DIR$/core/languageDesign/helgins/helgins.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/core/languageDesign/typesystem/helgins.iml" filepath="$PROJECT_DIR$/core/languageDesign/typesystem/helgins.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" filepath="$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/core/idea-patch/idea-patch.iml" filepath="$PROJECT_DIR$/core/idea-patch/idea-patch.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/intentions/intentions.iml" filepath="$PROJECT_DIR$/core/languageDesign/intentions/intentions.iml" group="core/languageDesign" />

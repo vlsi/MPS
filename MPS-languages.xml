@@ -477,21 +477,21 @@
   <target name="pack.jetbrains.mps.bootstrap.helgins">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.tmp/module" />
-    <mkdir dir="core/languageDesign/helgins/classes" />
+    <mkdir dir="core/languageDesign/typesystem/classes" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.tmp/module">
-      <fileset file="core/languageDesign/helgins/helgins.mpl" />
+      <fileset file="core/languageDesign/typesystem/helgins.mpl" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.tmp/module">
-      <fileset dir="core/languageDesign/helgins" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+      <fileset dir="core/languageDesign/typesystem" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.tmp">
-      <fileset dir="core/languageDesign/helgins/classes" />
+      <fileset dir="core/languageDesign/typesystem/classes" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.tmp" />
     </jar>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="core/languageDesign/helgins/classes" />
+      <fileset dir="core/languageDesign/typesystem/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.bootstrap.helgins.tmp" />
   </target>
