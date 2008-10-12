@@ -49,7 +49,7 @@
   </dependencies>
   <usedLanguages>
     <usedLanguages>fd392034-7849-419d-9071-12563d152375(jetbrains.mps.closures)</usedLanguages>
-    <usedLanguages>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)</usedLanguages>
+    <usedLanguages>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</usedLanguages>
   </usedLanguages>
   <extendedLanguages>
     <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>

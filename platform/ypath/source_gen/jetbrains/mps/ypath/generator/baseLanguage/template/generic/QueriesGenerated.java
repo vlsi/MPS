@@ -682,7 +682,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197288625705(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_0);
       if (coercedNode_0 != null) {
         return SLinkOperations.getTarget(coercedNode_0, "elementType", true);
@@ -705,7 +705,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197288625785(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_1);
       if (coercedNode_1 != null) {
         return SLinkOperations.getTarget(coercedNode_1, "elementType", true);
@@ -754,7 +754,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197288626102(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_2 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      IMatchingPattern pattern_2 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_2);
       if (coercedNode_2 != null) {
         return SLinkOperations.getTarget(coercedNode_2, "elementType", true);
@@ -777,7 +777,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197288626181(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_3 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      IMatchingPattern pattern_3 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_3);
       if (coercedNode_3 != null) {
         return SLinkOperations.getTarget(coercedNode_3, "elementType", true);
@@ -852,7 +852,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197288626627(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_4 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      IMatchingPattern pattern_4 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_4 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_4);
       if (coercedNode_4 != null) {
         return SLinkOperations.getTarget(coercedNode_4, "elementType", true);
@@ -875,7 +875,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197288626707(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_5 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      IMatchingPattern pattern_5 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_5 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_5);
       if (coercedNode_5 != null) {
         return SLinkOperations.getTarget(coercedNode_5, "elementType", true);
@@ -987,7 +987,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197299914489(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_6 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      IMatchingPattern pattern_6 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_6 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_6);
       if (coercedNode_6 != null) {
         return SLinkOperations.getTarget(coercedNode_6, "elementType", true);
@@ -1659,7 +1659,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1200059504866(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceCreatorWithSupplier", true, false), null, false)).where(new IWhereFilter <SNode>() {
+    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreatorWithSupplier", true, false), null, false)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") && "_zzz_".equals(SPropertyOperations.getString(it, "name"));
@@ -1672,7 +1672,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1200059510402(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceCreatorWithSupplier", true, false), null, false)).where(new IWhereFilter <SNode>() {
+    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreatorWithSupplier", true, false), null, false)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") && "_zzz_".equals(SPropertyOperations.getString(it, "name"));
@@ -1685,14 +1685,14 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1200059598735(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode cp = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock", false, false), "defaultInputElement", true);
+    SNode cp = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.MapperBlock", false, false), "defaultInputElement", true);
     SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", null);
     SLinkOperations.setTarget(cpr, "closureParameter", cp, false);
     return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1200059605106(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode cp = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock", false, false), "defaultInputElement", true);
+    SNode cp = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.MapperBlock", false, false), "defaultInputElement", true);
     SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", null);
     SLinkOperations.setTarget(cpr, "closureParameter", cp, false);
     return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
@@ -1725,7 +1725,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1200060036685(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode cp = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock", false, false), "defaultInputElement", true);
+    SNode cp = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.MapperBlock", false, false), "defaultInputElement", true);
     SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", null);
     SLinkOperations.setTarget(cpr, "closureParameter", cp, false);
     return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
@@ -1739,14 +1739,14 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1200060390957(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode yyy = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", true, false), "variable", true);
-    SNode ref_yyy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", null);
+    SNode yyy = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", true, false), "variable", true);
+    SNode ref_yyy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", null);
     SLinkOperations.setTarget(ref_yyy, "variable", yyy, false);
     return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_yyy, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1200060476931(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceCreatorWithSupplier", true, false), null, false)).where(new IWhereFilter <SNode>() {
+    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreatorWithSupplier", true, false), null, false)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") && "_zzz_".equals(SPropertyOperations.getString(it, "name"));

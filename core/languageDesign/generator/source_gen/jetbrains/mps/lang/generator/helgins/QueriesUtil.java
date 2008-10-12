@@ -157,7 +157,7 @@ public class QueriesUtil {
               }
             } else
             {
-              SNode outputSequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(OutputType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), true);
+              SNode outputSequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(OutputType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
               if (outputSequenceType != null) {
                 SNode elementType = SLinkOperations.getTarget(outputSequenceType, "elementType", true);
                 SNode outputSNodeType2 = TypeChecker.getInstance().getRuntimeSupport().coerce(elementType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);

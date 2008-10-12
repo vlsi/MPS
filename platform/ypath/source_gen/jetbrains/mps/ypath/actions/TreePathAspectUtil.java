@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.IScope;
 import java.util.ArrayList;
 import jetbrains.mps.closures.runtime.Wrappers;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.ext.collections.lang.helgins.TypeUtil_Collections;
+import jetbrains.mps.baseLanguage.collections.helgins.TypeUtil_Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;

@@ -3,13 +3,13 @@
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
@@ -238,7 +238,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200150593582">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1200150617938">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1200150621161">
-                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1200150621162">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1200150621162">
                   <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1200150621163">
                     <link role="concept" targetNodeId="5.1168524996431" resolveInfo="IterateOperation" />
                   </node>
@@ -367,7 +367,7 @@
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="1199879911115" />
               </node>
               <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1199879911105">
-                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1199879911106">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1199879911106">
                   <node role="initValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227844992">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199879950316">
                       <link role="variableDeclaration" targetNodeId="1199879877239" resolveInfo="node" />
@@ -389,8 +389,8 @@
                       <link role="link" targetNodeId="5.1183980376561" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation" id="1199879911094">
-                    <node role="whereClosure" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereBlock" id="1199879911095">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1199879911094">
+                    <node role="whereClosure" type="jetbrains.mps.baseLanguage.collections.structure.WhereBlock" id="1199879911095">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199879911097">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199879911098">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1199879911099">
@@ -405,16 +405,16 @@
                           </node>
                         </node>
                       </node>
-                      <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1199879911096">
+                      <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.collections.structure.DefaultInputElement" id="1199879911096">
                         <property name="name" value="it" />
                       </node>
                     </node>
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1199879911092" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" id="1199879911092" />
               </node>
             </node>
-            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1199879911088">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1199879911088">
               <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1199879911089">
                 <link role="concept" targetNodeId="5.1184066209434" resolveInfo="IFeature" />
               </node>
@@ -427,12 +427,12 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199879911118">
                 <link role="variableDeclaration" targetNodeId="1199879911087" resolveInfo="features" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MappingOperation" id="1199879911119">
-                <node role="mapper" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock" id="1199879911120">
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.MappingOperation" id="1199879911119">
+                <node role="mapper" type="jetbrains.mps.baseLanguage.collections.structure.MapperBlock" id="1199879911120">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199879911122">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199972574520">
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199972574521">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement" id="1199972574522">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1199972574522">
                           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199972574529">
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199972574530">
                               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199972574531">
@@ -499,13 +499,13 @@
                                   </node>
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1199972574553">
-                                  <node role="linkTarget" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1199972574554">
+                                  <node role="linkTarget" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1199972574554">
                                     <link role="variable" targetNodeId="1199972574523" resolveInfo="po" />
                                   </node>
                                 </node>
                               </node>
                             </node>
-                            <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalYieldStatement" id="1199972574558">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.TraversalYieldStatement" id="1199972574558">
                               <node role="value" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199972574559">
                                 <link role="variableDeclaration" targetNodeId="1199972574531" resolveInfo="io" />
                               </node>
@@ -525,7 +525,7 @@
                               </node>
                             </node>
                           </node>
-                          <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable" id="1199972574523">
+                          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1199972574523">
                             <property name="name" value="po" />
                           </node>
                         </node>
@@ -566,7 +566,7 @@
                                   </node>
                                 </node>
                                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199972930586">
-                                  <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalSkipStatement" id="1199972930587" />
+                                  <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.TraversalSkipStatement" id="1199972930587" />
                                 </node>
                               </node>
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199972930596">
@@ -623,7 +623,7 @@
                                   </node>
                                 </node>
                               </node>
-                              <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalYieldStatement" id="1199972930617">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.TraversalYieldStatement" id="1199972930617">
                                 <node role="value" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199972930618">
                                   <link role="variableDeclaration" targetNodeId="1199972930597" resolveInfo="io" />
                                 </node>
@@ -634,18 +634,18 @@
                       </node>
                     </node>
                   </node>
-                  <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.DefaultInputElement" id="1199879911121">
+                  <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.collections.structure.DefaultInputElement" id="1199879911121">
                     <property name="name" value="it" />
                   </node>
                 </node>
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation" id="1199879977440" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" id="1199879977440" />
           </node>
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1199879793931" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1199879796923">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1199879796923">
         <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1199879811716">
           <link role="concept" targetNodeId="5.1168524996431" resolveInfo="IterateOperation" />
         </node>

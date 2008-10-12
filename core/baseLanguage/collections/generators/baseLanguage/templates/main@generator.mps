@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.main@generator)">
+<model modelUID="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
@@ -19,8 +19,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.closures.constraints)" version="2" />
@@ -45,7 +45,7 @@
   <import index="4" modelUID="f:java_stub#jetbrains.mps.baseLanguage.ext.collections.internal.query(jetbrains.mps.baseLanguage.ext.collections.internal.query@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.baseLanguage.ext.collections.internal(jetbrains.mps.baseLanguage.ext.collections.internal@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <import index="8" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
+  <import index="8" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
@@ -53,8 +53,7 @@
   <import index="13" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="14" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.closures.structure)" version="0" />
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <import index="19" modelUID="r:00000000-0000-4000-0000-011c89590330(jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.util)" version="-1" />
-  <import index="25" modelUID="f:java_stub#jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.main(jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.main@java_stub)" version="-1" />
+  <import index="19" modelUID="r:00000000-0000-4000-0000-011c89590330(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util)" version="-1" />
   <import index="27" modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="29" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
@@ -2508,7 +2507,7 @@
                             <link role="link" targetNodeId="6.1068581517665" />
                           </node>
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1170978558529" />
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1170978558529" />
                       </node>
                     </node>
                   </node>
@@ -2833,7 +2832,7 @@
                             <link role="link" targetNodeId="6.1068581517665" />
                           </node>
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1170979555033" />
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1170979555033" />
                       </node>
                     </node>
                   </node>
@@ -4202,7 +4201,7 @@
       <link role="classConcept" targetNodeId="4.~MapOperations" resolveInfo="MapOperations" />
       <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1201654463513" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1201654466546">
-        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator" id="1201654469048">
+        <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1201654469048">
           <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201654470535">
             <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
           </node>
@@ -4253,7 +4252,7 @@
       <link role="baseMethodDeclaration" targetNodeId="4.~MapOperations.keys(java.util.Map):java.util.Set" resolveInfo="keys" />
       <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1201874961293" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1201874961294">
-        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator" id="1201874961295">
+        <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1201874961295">
           <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201874961296">
             <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
           </node>
@@ -4437,7 +4436,7 @@
             </node>
           </node>
         </node>
-        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator" id="1207233911401">
+        <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1207233911401">
           <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207233911402">
             <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
           </node>
@@ -4513,7 +4512,7 @@
             </node>
           </node>
         </node>
-        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator" id="1208542076206">
+        <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1208542076206">
           <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208542076207">
             <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
           </node>
@@ -4533,7 +4532,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1210015273026">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1210015273027">
             <property name="name" value="s" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType" id="1210015273028">
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1210015273028">
               <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1210015273029">
                 <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
               </node>
@@ -4566,7 +4565,7 @@
                   </node>
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SkipOperation" id="1210015273044">
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SkipOperation" id="1210015273044">
                 <node role="elementsToSkip" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1210015273045">
                   <property name="value" value="10" />
                   <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1210015273046">
@@ -4586,7 +4585,7 @@
                 </node>
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.TakeOperation" id="1210015273053">
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.TakeOperation" id="1210015273053">
               <node role="elementsToTake" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1210015273054">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1210015273055">
                   <property name="value" value="10" />
@@ -5095,7 +5094,7 @@
               </node>
             </node>
           </node>
-          <node role="parameter" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SmartClosureParameterDeclaration" id="1209824855889">
+          <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1209824855889">
             <property name="name" value="it" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1209824855890" />
             <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1209824855891">
@@ -5143,7 +5142,7 @@
               </node>
             </node>
           </node>
-          <node role="parameter" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SmartClosureParameterDeclaration" id="1209824872037">
+          <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1209824872037">
             <property name="name" value="it" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1209824872038" />
             <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1209824872039">
@@ -5191,7 +5190,7 @@
               </node>
             </node>
           </node>
-          <node role="parameter" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SmartClosureParameterDeclaration" id="1209824885405">
+          <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1209824885405">
             <property name="name" value="it" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1209824885406" />
             <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1209824885407">
@@ -5239,7 +5238,7 @@
               </node>
             </node>
           </node>
-          <node role="parameter" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SmartClosureParameterDeclaration" id="1209824899881">
+          <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1209824899881">
             <property name="name" value="it" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1209824899882" />
             <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1209824899883">
@@ -5333,11 +5332,11 @@
               </node>
             </node>
           </node>
-          <node role="parameter" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SmartClosureParameterDeclaration" id="1210182309809">
+          <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1210182309809">
             <property name="name" value="a" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1210182309810" />
           </node>
-          <node role="parameter" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SmartClosureParameterDeclaration" id="1210182313186">
+          <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1210182313186">
             <property name="name" value="b" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1210182313187" />
           </node>
@@ -5673,7 +5672,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1202904653922">
       <link role="applicableConcept" targetNodeId="8.1152906680026" resolveInfo="MappingOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1202906032085">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.TranslateOperation" id="1202906894891">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" id="1202906894891">
           <node role="closure" type="jetbrains.mps.baseLanguage.structure.Expression" id="1202906894892">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1202906907642">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1202906907643">
@@ -5696,7 +5695,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1203175117824">
       <link role="applicableConcept" targetNodeId="8.1153779905654" resolveInfo="SelectOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1203175147500">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SelectOperationNew" id="1203175151331">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="1203175151331">
           <node role="closure" type="jetbrains.mps.baseLanguage.structure.Expression" id="1203175151332">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1203175156977">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1203175156978">
@@ -5719,7 +5718,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1203175482730">
       <link role="applicableConcept" targetNodeId="8.1153760737019" resolveInfo="WhereOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1203175492159">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperationNew" id="1203175495383">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1203175495383">
           <node role="closure" type="jetbrains.mps.baseLanguage.structure.Expression" id="1203175495384">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1203175499834">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1203175499835">
@@ -5742,7 +5741,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1204980905510">
       <link role="applicableConcept" targetNodeId="8.1153513495343" resolveInfo="ForEachOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1204980912040">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.VisitAllOperation" id="1204980971272">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation" id="1204980971272">
           <node role="closure" type="jetbrains.mps.baseLanguage.structure.Expression" id="1205841907633">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1205841907634">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1205841907635">
@@ -5765,7 +5764,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1205841249652">
       <link role="applicableConcept" targetNodeId="8.1168502632000" resolveInfo="SortOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1205841259156">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperationNew" id="1205841275600">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.collections.structure.SortOperationNew" id="1205841275600">
           <node role="ascending" type="jetbrains.mps.baseLanguage.structure.Expression" id="1205841275605">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1205841787450">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1205841787451">
@@ -5813,7 +5812,7 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1209728567986">
       <link role="applicableConcept" targetNodeId="8.1168502632000" resolveInfo="SortOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1209728576477">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ComparatorSortOperation" id="1209728579691">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation" id="1209728579691">
           <node role="closure" type="jetbrains.mps.closures.structure.ClosureLiteral" id="1209728579692">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209728579693">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209728639468">
@@ -5822,11 +5821,11 @@
                 </node>
               </node>
             </node>
-            <node role="parameter" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SmartClosureParameterDeclaration" id="1209728579694">
+            <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1209728579694">
               <property name="name" value="it" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1209728579695" />
             </node>
-            <node role="parameter" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SmartClosureParameterDeclaration" id="1209728603299">
+            <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1209728603299">
               <property name="name" value="it" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1209728603300" />
             </node>
@@ -9098,7 +9097,7 @@
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SmartClosureParameterDeclaration" id="1209650296674">
+      <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1209650296674">
         <property name="name" value="it" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1209650296675" />
         <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1209650326604">

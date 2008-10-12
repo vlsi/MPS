@@ -34,7 +34,7 @@
     <libraries />
     <genConfs>
       <genConfSolution name="UnitTests" solution="collections_unittest" />
-      <genConfLanguage name="collections lang test" language="jetbrains.mps.baseLanguage.ext.collections.lang" />
+      <genConfLanguage name="collections lang test" language="jetbrains.mps.baseLanguage.collections" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

@@ -17,7 +17,7 @@ public class ChildrenBlock_Behavior {
   }
 
   public static boolean call_returnsSequence_1213877442111(SNode thisNode) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(thisNode), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(thisNode), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true) != null);
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {

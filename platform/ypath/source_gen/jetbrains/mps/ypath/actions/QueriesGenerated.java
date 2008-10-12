@@ -1250,7 +1250,7 @@ public class QueriesGenerated {
       Condition condition = new Condition() {
 
         public boolean met(Object p0) {
-          return !(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation") || SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.ypath.structure.TreePathOperationExpression"));
+          return !(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation") || SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.ypath.structure.TreePathOperationExpression"));
         }
 
       };

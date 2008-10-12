@@ -44,7 +44,7 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1201777188086(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    SNode anc = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.ext.collections.lang.structure.ClosureWithInputElement","jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock"}, true, false);
+    SNode anc = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.collections.structure.ClosureWithInputElement","jetbrains.mps.baseLanguage.collections.structure.ValueSupplierBlock"}, true, false);
     return !(SNodeOperations.isInstanceOf(anc, "jetbrains.mps.closures.structure.ClosureLiteral"));
   }
 

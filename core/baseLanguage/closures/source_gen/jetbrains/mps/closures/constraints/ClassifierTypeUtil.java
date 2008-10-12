@@ -42,7 +42,7 @@ public class ClassifierTypeUtil {
     }
     SNode ctw = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     SNode cts = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType") && !("Iterable".equals(SPropertyOperations.getString(SLinkOperations.getTarget(cts, "classifier", false), "name")))) {
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SequenceType") && !("Iterable".equals(SPropertyOperations.getString(SLinkOperations.getTarget(cts, "classifier", false), "name")))) {
       System.err.println("*** Gotcha! *** coerceStrong( " + BaseConcept_Behavior.call_getPresentation_1213877396640(type) + " <: concept = ClassifierType) == " + BaseConcept_Behavior.call_getPresentation_1213877396640(cts) + ", coerce( " + BaseConcept_Behavior.call_getPresentation_1213877396640(type) + " <: concept = ClassifierType) == " + BaseConcept_Behavior.call_getPresentation_1213877396640(ctw));
     }
     if ((cts == null)) {

@@ -5,7 +5,7 @@
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.bootstrap.helgins)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
@@ -17,8 +17,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.bootstrap.helgins.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -328,7 +328,7 @@
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201177971591">
                               <link role="variableDeclaration" targetNodeId="1201177842250" resolveInfo="result" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1201177974423">
+                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1201177974423">
                               <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201177977237">
                                 <link role="variableDeclaration" targetNodeId="1201177865544" resolveInfo="argument" />
                               </node>
@@ -368,7 +368,7 @@
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201177990983">
                               <link role="variableDeclaration" targetNodeId="1201177842250" resolveInfo="result" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1201177994393">
+                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1201177994393">
                               <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201177996630">
                                 <link role="variableDeclaration" targetNodeId="1201177939749" resolveInfo="argument" />
                               </node>
@@ -949,7 +949,7 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198673856762">
                           <link role="variableDeclaration" targetNodeId="1198673856745" resolveInfo="result" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1198673856763">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1198673856763">
                           <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198673856764">
                             <link role="variableDeclaration" targetNodeId="1198673856771" resolveInfo="argument" />
                           </node>
@@ -2427,7 +2427,7 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197992520964">
                           <link role="variableDeclaration" targetNodeId="1197992501751" resolveInfo="result" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1197992523575">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1197992523575">
                           <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197992525389">
                             <link role="variableDeclaration" targetNodeId="1197992363697" resolveInfo="argument" />
                           </node>
@@ -2575,7 +2575,7 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198600062760">
                           <link role="variableDeclaration" targetNodeId="1198600062743" resolveInfo="result" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddElementOperation" id="1198600062761">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1198600062761">
                           <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198600062762">
                             <link role="variableDeclaration" targetNodeId="1198600062769" resolveInfo="argument" />
                           </node>
@@ -3313,7 +3313,7 @@
                         <link role="link" targetNodeId="1.1189693888592" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1200668761399" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1200668761399" />
                   </node>
                 </node>
               </node>
@@ -3345,7 +3345,7 @@
                         <link role="link" targetNodeId="1.1189693888592" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsEmptyOperation" id="1200668816620" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1200668816620" />
                   </node>
                 </node>
               </node>
@@ -4350,7 +4350,7 @@
                               <link role="link" targetNodeId="5.1068580123134" />
                             </node>
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetElementOperation" id="1217265384080">
+                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" id="1217265384080">
                             <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1217265384081">
                               <property name="value" value="0" />
                             </node>

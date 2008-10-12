@@ -94,13 +94,13 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_SNodeListType_1205353787834(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType")) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceType")) {
       SNode elementType = SLinkOperations.getTarget(_context.getSampleNode(), "elementType", true);
       if (SNodeOperations.isInstanceOf(elementType, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
         SLinkOperations.setTarget(_context.getNewNode(), "elementConcept", SLinkOperations.getTarget(elementType, "concept", false), false);
       }
     }
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType")) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.ListType")) {
       SNode elementType = SLinkOperations.getTarget(_context.getSampleNode(), "elementType", true);
       if (SNodeOperations.isInstanceOf(elementType, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
         SLinkOperations.setTarget(_context.getNewNode(), "elementConcept", SLinkOperations.getTarget(elementType, "concept", false), false);

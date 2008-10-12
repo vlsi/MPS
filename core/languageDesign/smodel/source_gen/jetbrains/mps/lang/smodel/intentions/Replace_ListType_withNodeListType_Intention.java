@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class Replace_ListType_withNodeListType_Intention extends BaseIntention {
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType";
+    return "jetbrains.mps.baseLanguage.collections.structure.ListType";
   }
 
   public boolean isErrorIntention() {

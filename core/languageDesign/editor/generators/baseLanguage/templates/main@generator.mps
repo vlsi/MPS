@@ -5,7 +5,7 @@
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.ext.collections.lang)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
@@ -17,8 +17,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.ext.collections.lang.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.ext.collections.lang.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -1100,7 +1100,7 @@
                                           <link role="link" targetNodeId="10.1068390468201" />
                                         </node>
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1182977558703" />
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1182977558703" />
                                     </node>
                                   </node>
                                 </node>
@@ -1744,7 +1744,7 @@
                                           <link role="link" targetNodeId="10.1068390468201" />
                                         </node>
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1182994761694" />
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1182994761694" />
                                     </node>
                                   </node>
                                 </node>
@@ -2186,7 +2186,7 @@
                                           <link role="link" targetNodeId="10.1068390468201" />
                                         </node>
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1182980078038" />
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1182980078038" />
                                     </node>
                                   </node>
                                 </node>
@@ -2496,7 +2496,7 @@
                                           <link role="link" targetNodeId="10.1068390468201" />
                                         </node>
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1182995695147" />
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1182995695147" />
                                     </node>
                                   </node>
                                 </node>
@@ -2877,7 +2877,7 @@
                                           <link role="link" targetNodeId="10.1068390468201" />
                                         </node>
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1182996256855" />
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1182996256855" />
                                     </node>
                                   </node>
                                 </node>
@@ -3102,7 +3102,7 @@
                                     <link role="link" targetNodeId="10.1068390468201" />
                                   </node>
                                 </node>
-                                <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1197580870574" />
+                                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1197580870574" />
                               </node>
                             </node>
                           </node>
@@ -3803,7 +3803,7 @@
                                           <link role="link" targetNodeId="10.1068390468201" />
                                         </node>
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1182995427186" />
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1182995427186" />
                                     </node>
                                   </node>
                                 </node>
@@ -4171,7 +4171,7 @@
                                           <link role="link" targetNodeId="10.1068390468201" />
                                         </node>
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1183058085372" />
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1183058085372" />
                                     </node>
                                   </node>
                                 </node>
@@ -5386,7 +5386,7 @@
                                   <link role="link" targetNodeId="10.1068390468201" />
                                 </node>
                               </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1216852432050" />
+                              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1216852432050" />
                             </node>
                           </node>
                         </node>
@@ -6430,7 +6430,7 @@
                                           <link role="link" targetNodeId="10.1068390468201" />
                                         </node>
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1182996959583" />
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1182996959583" />
                                     </node>
                                   </node>
                                 </node>
@@ -6664,7 +6664,7 @@
                                   <link role="link" targetNodeId="10.1068390468201" />
                                 </node>
                               </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1183078763009" />
+                              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1183078763009" />
                             </node>
                           </node>
                         </node>
@@ -6894,7 +6894,7 @@
                                           <link role="link" targetNodeId="10.1068390468201" />
                                         </node>
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1183066468846" />
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1183066468846" />
                                     </node>
                                   </node>
                                 </node>
@@ -7822,7 +7822,7 @@
                                 <link role="link" targetNodeId="10.1068390468201" />
                               </node>
                             </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1197568368629" />
+                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1197568368629" />
                           </node>
                         </node>
                       </node>
@@ -9134,7 +9134,7 @@
                                 <link role="link" targetNodeId="10.1068390468201" />
                               </node>
                             </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1197572194160" />
+                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1197572194160" />
                           </node>
                         </node>
                       </node>
@@ -10056,7 +10056,7 @@
                         <link role="conceptLinkDeclaration" targetNodeId="10.1137545148427" resolveInfo="conceptFunctionReturnType" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1221060375047" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1221060375047" />
                   </node>
                 </node>
               </node>
@@ -10324,7 +10324,7 @@
                           <link role="link" targetNodeId="38.1219418656006" />
                         </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation" id="1214307726766" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1214307726766" />
                     </node>
                   </node>
                 </node>
@@ -11641,7 +11641,7 @@
                                                 <link role="link" targetNodeId="10.1068390468201" />
                                               </node>
                                             </node>
-                                            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1197572493164" />
+                                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1197572493164" />
                                           </node>
                                         </node>
                                       </node>
@@ -17814,7 +17814,7 @@
                                           <link role="link" targetNodeId="10.1068390468201" />
                                         </node>
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1216382671672" />
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1216382671672" />
                                     </node>
                                   </node>
                                 </node>

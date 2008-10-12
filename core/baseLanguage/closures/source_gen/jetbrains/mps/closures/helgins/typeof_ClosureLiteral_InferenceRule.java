@@ -166,7 +166,7 @@ with_allThrows:
       }
     } else
     if (yieldsValue) {
-      SNode st = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType", null);
+      SNode st = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null);
       SLinkOperations.setTarget(st, "elementType", TypeChecker.getInstance().getEquationManager().getRepresentator(YLCS_typevar_1221579075693), true);
       {
         SNode _nodeToCheck_1029348928467 = closure;

@@ -28,7 +28,7 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType";
+    return "jetbrains.mps.baseLanguage.collections.structure.ListType";
   }
 
   public boolean isApplicable(SNode argument) {
