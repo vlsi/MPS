@@ -72,7 +72,7 @@ public enum LanguageAspect {
 
   SCRIPTS("scripts") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.IDESCRIPT.getModuleReference());
+      return CollectionUtil.asList(BootstrapModule.SCRIPT.getModuleReference());
     }
   },
 
@@ -116,7 +116,7 @@ public enum LanguageAspect {
 
   LANGUAGE_TEST("languageTest") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.LANGUAGE_TEST.getModuleReference());
+      return CollectionUtil.asList(BootstrapModule.TEST.getModuleReference());
     }
   };
 
