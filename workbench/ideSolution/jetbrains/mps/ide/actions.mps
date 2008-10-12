@@ -7,7 +7,7 @@
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="15" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -24,7 +24,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904ae(jetbrains.mps.ide.uiLanguage.constraints)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <maxImportIndex value="122" />
@@ -7237,10 +7237,10 @@
                       </node>
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216658041998">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216658156964">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialInstanceMethodCall" id="1216658156965">
+                          <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall" id="1216658156965">
                             <property name="methodName" value="doExecute" />
                             <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1216658156966" />
-                            <node role="instance" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1216658221064">
+                            <node role="instance" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1216658221064">
                               <property name="name" value="super" />
                               <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1216658221065" />
                             </node>
@@ -7254,7 +7254,7 @@
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216658261628">
                               <link role="baseMethodDeclaration" targetNodeId="121.~NodeExplorerComponent.clear():void" resolveInfo="clear" />
                             </node>
-                            <node role="operand" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1216658449353">
+                            <node role="operand" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1216658449353">
                               <property name="name" value="myNodeExplorer" />
                               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216658458120">
                                 <link role="classifier" targetNodeId="121.~NodeExplorerComponent" resolveInfo="NodeExplorerComponent" />

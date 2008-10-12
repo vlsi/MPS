@@ -202,7 +202,7 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_1199965771120(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> nodes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode");
     for(SNode node : nodes) {
-      SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.internal.structure.TypeHintExpression", null);
+      SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
       SLinkOperations.setTarget(replacement, "typeHint", SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(node)), true);
       SNodeOperations.replaceWithAnother(node, replacement);
       SLinkOperations.setTarget(replacement, "expression", node, true);

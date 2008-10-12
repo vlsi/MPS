@@ -6,7 +6,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
@@ -25,7 +25,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
@@ -83,7 +83,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216398116788">
                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216398116790">
                         <link role="baseMethodDeclaration" targetNodeId="5.~FindUsagesManager$ProgressAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)" resolveInfo="FindUsagesManager.ProgressAdapter" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1212595713478">
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1212595713478">
                           <property name="name" value="indicator" />
                           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212595748964">
                             <link role="classifier" targetNodeId="17.~ProgressIndicator" resolveInfo="ProgressIndicator" />
@@ -178,7 +178,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216398148420">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216398148422">
                     <link role="baseMethodDeclaration" targetNodeId="5.~FindUsagesManager$ProgressAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)" resolveInfo="FindUsagesManager.ProgressAdapter" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1212595819941">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1212595819941">
                       <property name="name" value="indicator" />
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212595819942">
                         <link role="classifier" targetNodeId="17.~ProgressIndicator" resolveInfo="ProgressIndicator" />
@@ -313,7 +313,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216398141133">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216398141135">
                     <link role="baseMethodDeclaration" targetNodeId="5.~FindUsagesManager$ProgressAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)" resolveInfo="FindUsagesManager.ProgressAdapter" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1212595810142">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1212595810142">
                       <property name="name" value="indicator" />
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212595810143">
                         <link role="classifier" targetNodeId="17.~ProgressIndicator" resolveInfo="ProgressIndicator" />
@@ -636,7 +636,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216398126906">
                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216398126908">
                         <link role="baseMethodDeclaration" targetNodeId="5.~FindUsagesManager$ProgressAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)" resolveInfo="FindUsagesManager.ProgressAdapter" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1212595800267">
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1212595800267">
                           <property name="name" value="indicator" />
                           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212595800268">
                             <link role="classifier" targetNodeId="17.~ProgressIndicator" resolveInfo="ProgressIndicator" />

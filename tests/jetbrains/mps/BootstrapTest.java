@@ -13,6 +13,11 @@ public class BootstrapTest extends BaseMPSTest {
     assertTrue(res, res == null);
   }
 
+  public void testBaseLanguageInternal() {
+    String res = testProject(new File("core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr"));
+    assertTrue(res, res == null);
+  }
+
   public void testCoreLanguage() {
     String res = testProject(new File("core/languageDesign/core/core.mpr"));
     assertTrue(res, res == null);

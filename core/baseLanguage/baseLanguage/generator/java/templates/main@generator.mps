@@ -6,7 +6,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -20,7 +20,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
@@ -522,7 +522,7 @@
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1206152999436">
     <property name="name" value="reduce_AssignmentExpression_propertySet" />
     <link role="applicableConcept" targetNodeId="1.1068498886294" resolveInfo="AssignmentExpression" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialInstanceMethodCall" id="1206153090473">
+    <node role="contentNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall" id="1206153090473">
       <property name="methodName" value="setProperty" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206153152898">
         <property name="value" value="value" />
@@ -619,7 +619,7 @@
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1206154637872">
     <property name="name" value="reduce_DotExpression_propertyGet" />
     <link role="applicableConcept" targetNodeId="1.1197027756228" resolveInfo="DotExpression" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.internal.structure.InternalPartialInstanceMethodCall" id="1206154679453">
+    <node role="contentNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall" id="1206154679453">
       <property name="methodName" value="getProperty" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206154722294">
         <link role="classifier" targetNodeId="5.~Object" resolveInfo="Object" />

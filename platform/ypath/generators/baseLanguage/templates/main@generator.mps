@@ -7,7 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <language namespace="d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
@@ -29,7 +29,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
@@ -1816,7 +1816,7 @@
     <property name="name" value="reduce_TreePathAdapterExpression" />
     <link role="applicableConcept" targetNodeId="1.1168890168054" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216933995664">
-      <node role="operand" type="jetbrains.mps.baseLanguage.internal.structure.InternalNewExpression" id="1179325367006">
+      <node role="operand" type="jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression" id="1179325367006">
         <property name="fqClassName" value="TreePathAspect" />
         <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1179325434071">
           <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1179325434072">
@@ -3462,7 +3462,7 @@
           </node>
         </node>
       </node>
-      <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1179739554543">
+      <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1179739554543">
         <property name="methodName" value="getInstance" />
         <property name="fqClassName" value="TreePath_aspect.NodeKind" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1179739559824">
@@ -3567,7 +3567,7 @@
               </node>
             </node>
           </node>
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1179739767000">
+          <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1179739767000">
             <property name="methodName" value="getInstance" />
             <property name="fqClassName" value="TreePath_aspect.NodeKind" />
             <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1179739767001">
@@ -3605,7 +3605,7 @@
               </node>
             </node>
           </node>
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1179398619951">
+          <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1179398619951">
             <property name="methodName" value="getMatcher" />
             <property name="fqClassName" value="TreePath_aspect.Property" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1179398698392">
@@ -3785,7 +3785,7 @@
               </node>
             </node>
           </node>
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1179739700825">
+          <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1179739700825">
             <property name="methodName" value="getInstance" />
             <property name="fqClassName" value="TreePath_aspect.NodeKind" />
             <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1179739700826">
@@ -3823,7 +3823,7 @@
               </node>
             </node>
           </node>
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1179398930380">
+          <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1179398930380">
             <property name="methodName" value="getMatcher" />
             <property name="fqClassName" value="TreePath_aspect.Property" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1179398930381">
@@ -4891,7 +4891,7 @@
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1179741104409">
     <property name="name" value="reduce_TreeNodeKindReference" />
     <link role="applicableConcept" targetNodeId="1.1179740189248" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1179741172861">
+    <node role="contentNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1179741172861">
       <property name="methodName" value="getInstance" />
       <property name="fqClassName" value="TreePath_aspect.NodeKind" />
       <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1179741172864">
@@ -5065,7 +5065,7 @@
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1180087418199">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216934000374">
-              <node role="operand" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1180087820029">
+              <node role="operand" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1180087820029">
                 <property name="methodName" value="getInstance" />
                 <property name="fqClassName" value="TreePath_aspect.NodeKind" />
                 <node role="propertyMacro$property_attribute$fqClassName" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1180087820030">
@@ -5795,7 +5795,7 @@
     <property name="package" value="treeOperation.visit" />
     <property name="name" value="reduce_VisitParameterReference" />
     <link role="applicableConcept" targetNodeId="1.1180014258612" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1180090818473">
+    <node role="contentNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1180090818473">
       <property name="name" value="visitParameter" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1180090823506">
         <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
@@ -5909,7 +5909,7 @@
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216934003487">
                       <link role="baseMethodDeclaration" targetNodeId="2.~TreePath.startTraversal(java.lang.Object):jetbrains.mps.ypath.runtime.ITreeTraversal" resolveInfo="startTraversal" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalVariableReference" id="1180097346198">
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1180097346198">
                         <property name="name" value="node" />
                         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1180097346199">
                           <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
@@ -14691,7 +14691,7 @@
           </node>
         </node>
       </node>
-      <node role="actualArgument" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1185030130664">
+      <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1185030130664">
         <property name="fqClassName" value="TreePathAspect" />
         <property name="methodName" value="feature" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1185030508338">

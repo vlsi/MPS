@@ -7,7 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguage.internal)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
@@ -30,7 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguage.internal.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
@@ -1874,7 +1874,7 @@
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1160609713462">
     <property name="name" value="reduce_NewListWithInit" />
     <link role="applicableConcept" targetNodeId="6.1145552977093" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1200500151277">
+    <node role="contentNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1200500151277">
       <property name="fqClassName" value="jetbrains.mps.baseLanguage.collections.internal.query.ListOperations" />
       <property name="methodName" value="createList" />
       <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1200500262042">
@@ -4921,7 +4921,7 @@
               <node role="alternativeConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1207067174675">
                 <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207067186228">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207067187083">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1207324214121">
+                    <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1207324214121">
                       <property name="fqClassName" value="java.util.Collections" />
                       <property name="methodName" value="emptyList" />
                       <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1207324222859">
@@ -7596,7 +7596,7 @@
         </node>
       </node>
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1205945659581">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1205945678608">
+        <node role="templateNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1205945678608">
           <property name="fqClassName" value="ListSequence" />
           <property name="methodName" value="fromArray" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="1205946065568">
@@ -8132,7 +8132,7 @@
                   </node>
                 </node>
               </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.internal.structure.InternalStaticMethodCall" id="1206971457737">
+              <node role="operand" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1206971457737">
                 <property name="fqClassName" value="MapSequence" />
                 <property name="methodName" value="fromKeysArray" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="1206971563256">
