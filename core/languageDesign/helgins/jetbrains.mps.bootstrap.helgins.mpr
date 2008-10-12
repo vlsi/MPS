@@ -14,7 +14,7 @@
     <projectDevkits />
     <libraries />
     <genConfs>
-      <genConfLanguage name="helgins" language="jetbrains.mps.bootstrap.helgins" />
+      <genConfLanguage name="helgins" language="jetbrains.mps.lang.typesystem" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
