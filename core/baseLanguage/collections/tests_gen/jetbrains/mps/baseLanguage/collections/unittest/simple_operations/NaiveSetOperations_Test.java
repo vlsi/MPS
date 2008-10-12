@@ -436,7 +436,7 @@ __switch__:
       return new Iterable <String>() {
 
         public Iterator<String> iterator() {
-          return new YieldingIterator<String>() {
+          return new YieldingIterator <String>() {
 
             private int __CP__ = 0;
 

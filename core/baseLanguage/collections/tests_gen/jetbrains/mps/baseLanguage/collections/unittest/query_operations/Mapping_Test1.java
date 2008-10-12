@@ -25,7 +25,7 @@ public class Mapping_Test1 extends TestCase {
         return new Iterable <Integer>() {
 
           public Iterator<Integer> iterator() {
-            return new YieldingIterator<Integer>() {
+            return new YieldingIterator <Integer>() {
 
               private int __CP__ = 0;
               private int _3_num;

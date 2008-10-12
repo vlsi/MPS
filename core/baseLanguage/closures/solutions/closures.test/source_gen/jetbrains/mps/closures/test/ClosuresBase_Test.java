@@ -5,7 +5,6 @@ package jetbrains.mps.closures.test;
 import junit.framework.TestCase;
 import org.junit.Test;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-
 import java.util.List;
 import java.util.ArrayList;
 import junit.framework.Assert;

@@ -37,7 +37,7 @@ public class SimpleOperations1 extends TestCase {
         return new Iterable <String>() {
 
           public Iterator<String> iterator() {
-            return new YieldingIterator<String>() {
+            return new YieldingIterator <String>() {
 
               private int __CP__ = 0;
 
