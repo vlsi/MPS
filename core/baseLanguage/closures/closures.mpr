@@ -16,7 +16,7 @@
     <libraries />
     <genConfs>
       <genConfSolution name="closures.test" solution="closures.test" />
-      <genConfLanguage name="closures" language="jetbrains.mps.baseLanguage.closures" />
+      <genConfLanguage name="closures" language="jetbrains.mps.baseLanguage.closures" />  
     </genConfs>
   </component>
   <component name="ProjectDetails">
