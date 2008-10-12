@@ -44,7 +44,7 @@ public class BootstrapTest extends BaseMPSTest {
   }
 
   public void testHelgins() {
-    String res = testProject(new File("core/languageDesign/helgins/jetbrains.mps.bootstrap.helgins.mpr"));
+    String res = testProject(new File("core/languageDesign/typesystem/typesystem.mpr"));
     assertTrue(res, res == null);
   }
 

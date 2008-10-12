@@ -9,7 +9,7 @@
       <solutionPath path="${project}\solutions\jetbrains.mps.bootstrap.helgins.sandbox\jetbrains.mps.bootstrap.helgins.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\helgins.mpl" />
+      <languagePath path="${project}\typesystem.mpl" />
     </projectLanguages>
     <projectDevkits />
     <libraries />
