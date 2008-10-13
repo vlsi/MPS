@@ -231,13 +231,13 @@
     </copy>
     <antcall target="pack.jetbrains.mps.devkit.general-purpose" />
     <antcall target="pack.jetbrains.mps.devkit.language-design" />
-    <antcall target="pack.jetbrains.mps.baseLanguage.internal" />
-    <antcall target="pack.jetbrains.mps.closures" />
-    <antcall target="pack.jetbrains.mps.baseLanguage.ext.collections.lang" />
+    <antcall target="pack.jetbrains.mps.baseLanguageInternal" />
+    <antcall target="pack.jetbrains.mps.baseLanguage.closures" />
+    <antcall target="pack.jetbrains.mps.baseLanguage.collections" />
     <antcall target="pack.collections_samples" />
     <antcall target="pack.jetbrains.mps.baseLanguage.ext.csharp" />
     <antcall target="pack.jetbrains.mps.baseLanguage.dates" />
-    <antcall target="pack.jetbrains.mps.baseLanguage.dates.internal" />
+    <antcall target="pack.jetbrains.mps.baseLanguage.datesInternal" />
     <antcall target="pack.jetbrains.mps.baseLanguage.dates.runtime" />
     <antcall target="pack.jetbrains.mps.internal.collections" />
     <antcall target="pack.jetbrains.mps.baseLanguage.money" />
@@ -255,7 +255,7 @@
     <antcall target="pack.jetbrains.mps.lang.constraints" />
     <antcall target="pack.jetbrains.mps.lang.editor" />
     <antcall target="pack.jetbrains.mps.lang.findUsages" />
-    <antcall target="pack.jetbrains.mps.bootstrap.helgins" />
+    <antcall target="pack.jetbrains.mps.lang.typesystem" />
     <antcall target="pack.jetbrains.mps.lang.intentions" />
     <antcall target="pack.jetbrains.mps.lang.dataFlow" />
     <antcall target="pack.jetbrains.mpslite" />
@@ -270,8 +270,8 @@
     <antcall target="pack.jetbrains.mps.lang.core" />
     <antcall target="pack.jetbrains.mps.lang.refactoring" />
     <antcall target="pack.jetbrains.mps.lang.generator" />
-    <antcall target="pack.jetbrains.mps.transformationTest" />
-    <antcall target="pack.jetbrains.mps.transformationTest.runtime" />
+    <antcall target="pack.jetbrains.mps.lang.test" />
+    <antcall target="pack.jetbrains.mps.lang.test.runtime" />
     <antcall target="pack.jetbrains.mps.lang.generator.generationContext" />
     <antcall target="pack.jetbrains.mps.projectLanguage" />
     <antcall target="pack.transform" />
@@ -296,8 +296,8 @@
     <antcall target="pack.jetbrains.mps.baseLanguage.logging" />
     <antcall target="pack.jetbrains.mps.xml" />
     <antcall target="pack.jetbrains.mps.gtext" />
-    <antcall target="pack.jetbrains.mps.xml.internal" />
-    <antcall target="pack.jetbrains.mps.xml.schema" />
+    <antcall target="pack.jetbrains.mps.xmlInternal" />
+    <antcall target="pack.jetbrains.mps.xmlSchema" />
     <antcall target="pack.jetbrains.mps.gtext.runtime" />
     <antcall target="pack.jetbrains.mps.quickQueryLanguage" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/plugin">
