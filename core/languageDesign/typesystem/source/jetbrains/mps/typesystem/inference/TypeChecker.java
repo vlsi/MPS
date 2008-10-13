@@ -193,7 +193,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void clearTypesComputedForCompletion() {
-     myComputedTypesForCompletion = null;
+    myComputedTypesForCompletion = null;
   }
 
   public void setTypeCheckingMode(TypeCheckingMode typeCheckingMode) {
@@ -358,6 +358,13 @@ public class TypeChecker implements ApplicationComponent {
     if (nodeIsNotChecked || !myCheckedRoots.contains(containingRoot) || component == null) {
       final SNode[] result = new SNode[1];
       final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
+      SNode computedType = component1.getType(node);
+      if (computedType != null) {
+        if (myComputedTypesForCompletion != null) {
+          myComputedTypesForCompletion.put(node, computedType);
+        }
+        return computedType;
+      }
       final NodeTypesComponent temporaryComponent;
       try {
         temporaryComponent = component1.clone();
