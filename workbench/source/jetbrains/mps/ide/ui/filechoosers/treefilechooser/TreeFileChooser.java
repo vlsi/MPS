@@ -15,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import java.io.File;
 
 public class TreeFileChooser {
   public static final int MODE_FILES = TreeFileChooserDialog.MODE_FILES;
@@ -65,7 +66,7 @@ public class TreeFileChooser {
       FileChooserDescriptor descriptor = new FileChooserDescriptor(myMode != MODE_DIRECTORIES, myMode != MODE_FILES, true, true, false, false) {
         public boolean isFileVisible(VirtualFile file, boolean showHiddenFiles) {
           if (!super.isFileVisible(file, showHiddenFiles)) return false;
-          return myFileFilter.accept(new FileSystemFile(file.getUrl()));
+          return myFileFilter.accept(new FileSystemFile(file.getPath()));
         }
       };
       descriptor.setTitle("Select File");
@@ -78,7 +79,7 @@ public class TreeFileChooser {
       if (files.length == 0) {
         res = null;
       } else {
-        res = new FileSystemFile(files[0].getUrl());
+        res = new FileSystemFile(files[0].getPath());
       }
     } else {
       TreeFileChooserDialog dialog = new TreeFileChooserDialog(owner, myMode, myFileFilter, myContext, ourInitialSelectedFile);
