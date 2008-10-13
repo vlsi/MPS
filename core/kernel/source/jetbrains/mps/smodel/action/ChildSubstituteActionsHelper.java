@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 import javax.swing.Icon;
 import java.util.*;
@@ -53,7 +54,9 @@ public class ChildSubstituteActionsHelper {
     // enable R/O access
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        TypeChecker.getInstance().enableTypesComputingForCompletion();
         result[0] = createActions_internal(parentNode, currentChild, childConcept, childSetter, context);
+        TypeChecker.getInstance().clearTypesComputedForCompletion();
       }
     });
 

@@ -188,6 +188,14 @@ public class TypeChecker implements ApplicationComponent {
     myIsIncrementalMode = isIncrementalMode;
   }
 
+  public void enableTypesComputingForCompletion() {
+    myComputedTypesForCompletion = new HashMap<SNode, SNode>();
+  }
+
+  public void clearTypesComputedForCompletion() {
+     myComputedTypesForCompletion = null;
+  }
+
   public void setTypeCheckingMode(TypeCheckingMode typeCheckingMode) {
     if (myTypeCheckingMode != null) {
       myTypesCheckingModesStack.push(myTypeCheckingMode);
@@ -196,9 +204,6 @@ public class TypeChecker implements ApplicationComponent {
     if (myTypeCheckingMode == TypeCheckingMode.GENERATION) {
       mySubtypingCache = new SubtypingCache();
     }
-    if (myTypeCheckingMode != null && myTypeCheckingMode.inEditorQueries()) {
-      myComputedTypesForCompletion = new HashMap<SNode, SNode>();
-    }
     if (typeCheckingMode != null) {
       setIncrementalMode(false);
     }
@@ -206,7 +211,6 @@ public class TypeChecker implements ApplicationComponent {
 
   public void resetTypeCheckingMode() {
     myTypeCheckingMode = null;
-    myComputedTypesForCompletion = null; //is it true?
     if (!myTypesCheckingModesStack.isEmpty()) {
       myTypeCheckingMode = myTypesCheckingModesStack.pop();
     }
@@ -346,7 +350,7 @@ public class TypeChecker implements ApplicationComponent {
     if (node == null) return null;
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
-    if (myComputedTypesForCompletion.containsKey(node)) {
+    if (myComputedTypesForCompletion != null && myComputedTypesForCompletion.containsKey(node)) {
       return myComputedTypesForCompletion.get(node);
     }
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
@@ -379,11 +383,15 @@ public class TypeChecker implements ApplicationComponent {
         clearCurrentTypesComponent();
       }
       SNode resultType = result[0];
-      myComputedTypesForCompletion.put(node, resultType);
+      if (myComputedTypesForCompletion != null) {
+        myComputedTypesForCompletion.put(node, resultType);
+      }
       return resultType;
     }
     SNode resultType = getTypeDontCheck(node);
-    myComputedTypesForCompletion.put(node, resultType);
+    if (myComputedTypesForCompletion != null) {
+      myComputedTypesForCompletion.put(node, resultType);
+    }
     return resultType;
   }
 
