@@ -789,6 +789,10 @@ public class QueriesGenerated {
     return _context.createUniqueName("typeOf_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name") + "_ProcedureCall", null);
   }
 
+  public static Object propertyMacro_GetPropertyValue_1223922835693(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName(SPropertyOperations.getString(_context.getNode(), "name") + "_typevar", null);
+  }
+
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
     SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "mainMethodForRule");
@@ -1121,6 +1125,11 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1223059404804(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "parametersLink", false);
+  }
+
+  public static Object referenceMacro_GetReferent_1223922569732(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode statement = (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "typeVarDeclaration", false), "typeVarDeclaration");
+    return SLinkOperations.getTarget(statement, "localVariableDeclaration", true);
   }
 
   public static boolean ifMacro_Condition_1174643945663(final IOperationContext operationContext, final IfMacroContext _context) {

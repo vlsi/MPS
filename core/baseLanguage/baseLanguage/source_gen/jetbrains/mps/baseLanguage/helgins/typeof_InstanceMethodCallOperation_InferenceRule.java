@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
@@ -27,26 +27,26 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
     }
     final SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     // ---
-    final SNode instanceType_typevar_1204064731338 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
+    final SNode instanceType_typevar_1204064731338 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = imco;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(imco), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1204064784351", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1204064763142", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(imco), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1204064784351", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1204064763142", intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = imco;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequationStrong(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_69().createNode(methodClassifier), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1204065906120", true, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), new QuotationClass_69().createNode(methodClassifier), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1204065906120", true, 0, intentionProvider);
     }
     // --- following piece of cake is identical for any method call ---
     {
-      final SNode _representatorVar1 = TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338);
+      final SNode _representatorVar1 = typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar1, new Runnable() {
 
         public void run() {
           Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();
           RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, imco, SLinkOperations.getTarget(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "returnType", true), mmap);
-          RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1204064731338), mmap);
+          RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), mmap);
           RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
         }
 

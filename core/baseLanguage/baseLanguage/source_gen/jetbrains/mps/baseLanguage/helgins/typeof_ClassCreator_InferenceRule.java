@@ -43,21 +43,21 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createEquation(typeCheckingContext.typeOf(creator, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1212781606043", true), constructedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1212781606039", intentionProvider);
     }
-    final SNode instanceType_typevar_1212781606045 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
+    final SNode instanceType_typevar_1212781606045 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = creator;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1212781606045), constructedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1212781606046", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1212781606045), constructedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1212781606046", intentionProvider);
     }
     // --- following piece of cake is identical for any method call ---
     {
-      final SNode _representatorVar2 = TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1212781606045);
+      final SNode _representatorVar2 = typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1212781606045);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar2, new Runnable() {
 
         public void run() {
           Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();
           RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, creator, null, mmap);
-          RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, TypeChecker.getInstance().getEquationManager().getRepresentator(instanceType_typevar_1212781606045), mmap);
+          RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1212781606045), mmap);
           RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
         }
 
