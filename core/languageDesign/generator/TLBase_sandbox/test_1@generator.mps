@@ -433,9 +433,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1216150474694" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216150636515">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216150636516">
-            <link role="variableDeclaration" targetNodeId="1216150474693" resolveInfo="ij" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223895750591">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223895750999">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223895750592" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223895752815">
+              <link role="baseMethodDeclaration" targetNodeId="1211368737872" resolveInfo="aaa" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216150475820">
