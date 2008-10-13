@@ -10,10 +10,12 @@
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/internalCollections.test/source_gen" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
+    <orderEntry type="module" module-name="collections-runtime" />
     <orderEntryProperties />
   </component>
 </module>

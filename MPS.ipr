@@ -927,7 +927,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/closures/runtime/Closures-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/closures/runtime/Closures-runtime.iml" group="core/baseLanguage/closures" />
       <module fileurl="file://$PROJECT_DIR$/samples/complexLanguage/ComplexNumbersLanguage.iml" filepath="$PROJECT_DIR$/samples/complexLanguage/ComplexNumbersLanguage.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/internalCollections/InternalCollections.iml" filepath="$PROJECT_DIR$/core/baseLanguage/internalCollections/InternalCollections.iml" group="core/baseLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/internalCollections/languages/collections/runtime/InternalCollections-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/internalCollections/languages/collections/runtime/InternalCollections-runtime.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
       <module fileurl="file://$PROJECT_DIR$/samples/matrixLanguage/MatrixLanguage.iml" filepath="$PROJECT_DIR$/samples/matrixLanguage/MatrixLanguage.iml" group="samples" />
