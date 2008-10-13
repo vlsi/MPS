@@ -12204,6 +12204,9 @@
             </node>
           </node>
         </node>
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223898479268">
+          <link role="classifier" targetNodeId="9.~Object" resolveInfo="Object" />
+        </node>
       </node>
       <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1199998541500" />
     </node>
@@ -13236,6 +13239,9 @@
                 </node>
               </node>
             </node>
+            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223898480859">
+              <link role="classifier" targetNodeId="9.~Object" resolveInfo="Object" />
+            </node>
           </node>
           <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1200060377197" />
         </node>
@@ -14239,6 +14245,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223898480575">
+          <link role="classifier" targetNodeId="9.~Object" resolveInfo="Object" />
         </node>
       </node>
       <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1210075197031" />

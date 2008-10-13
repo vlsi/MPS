@@ -499,6 +499,9 @@
                     </node>
                   </node>
                 </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223898194398">
+                  <link role="classifier" targetNodeId="1.~Node" resolveInfo="Node" />
+                </node>
               </node>
             </node>
           </node>

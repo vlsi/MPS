@@ -754,6 +754,9 @@
                       </node>
                     </node>
                   </node>
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223898436593">
+                    <link role="classifier" targetNodeId="1.~Node" resolveInfo="Node" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -864,6 +867,9 @@
                     </node>
                   </node>
                 </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223898436599">
+                  <link role="classifier" targetNodeId="1.~Node" resolveInfo="Node" />
+                </node>
               </node>
             </node>
           </node>
@@ -933,6 +939,9 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223898436597">
+                  <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
                 </node>
               </node>
             </node>
@@ -1033,6 +1042,9 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223898436595">
+                  <link role="classifier" targetNodeId="1.~Node" resolveInfo="Node" />
                 </node>
               </node>
             </node>

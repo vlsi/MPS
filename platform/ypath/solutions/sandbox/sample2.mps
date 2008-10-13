@@ -397,6 +397,9 @@
                     </node>
                   </node>
                 </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223898245298">
+                  <link role="classifier" targetNodeId="1.~File" resolveInfo="File" />
+                </node>
               </node>
             </node>
           </node>

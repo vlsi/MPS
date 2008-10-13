@@ -1382,7 +1382,7 @@ __switch__:
         return new ISequenceIterableAdapter <SNode>() {
 
           public Iterator<SNode> iterator() {
-            return new YieldingIterator<SNode>() {
+            return new YieldingIterator <SNode>() {
 
               private int __CP__ = 0;
               private SNode _3_opp;
@@ -1699,7 +1699,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1200059825971(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.closures.structure.ClosureLiteral", true, false), null, false)).where(new IWhereFilter <SNode>() {
+    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false), null, false)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") && "_zzz_".equals(SPropertyOperations.getString(it, "name"));
@@ -1712,7 +1712,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1200059862831(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.closures.structure.ClosureLiteral", true, false), null, false)).where(new IWhereFilter <SNode>() {
+    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false), null, false)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") && "_zzz_".equals(SPropertyOperations.getString(it, "name"));

@@ -38,7 +38,7 @@ public class FileDemo {
         return new Iterable <File>() {
 
           public Iterator<File> iterator() {
-            return new YieldingIterator<File>() {
+            return new YieldingIterator <File>() {
 
               private int __CP__ = 0;
 

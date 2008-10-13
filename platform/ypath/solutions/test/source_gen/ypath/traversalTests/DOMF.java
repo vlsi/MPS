@@ -229,7 +229,7 @@ __switch__:
           return new Iterable <Node>() {
 
             public Iterator<Node> iterator() {
-              return new YieldingIterator<Node>() {
+              return new YieldingIterator <Node>() {
 
                 private int __CP__ = 0;
                 private int _2_i;
