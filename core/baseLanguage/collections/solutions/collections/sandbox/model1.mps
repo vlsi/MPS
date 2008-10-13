@@ -199,6 +199,9 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.TraversalStopStatement" id="1160672802500" />
                   </node>
                 </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223897765518">
+                  <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+                </node>
               </node>
             </node>
           </node>
@@ -299,6 +302,9 @@
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.TraversalStopStatement" id="1170868189841" />
                   </node>
+                </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1223897765381">
+                  <link role="typeVariableDeclaration" targetNodeId="1170868165314" resolveInfo="T2" />
                 </node>
               </node>
             </node>
