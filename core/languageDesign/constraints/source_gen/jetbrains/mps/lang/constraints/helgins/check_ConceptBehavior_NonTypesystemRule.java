@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -41,7 +40,7 @@ public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesyst
       if (notImplementedMethods) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(nodeToCheck, "Concept " + SPropertyOperations.getString(SLinkOperations.getTarget(nodeToCheck, "concept", false), "name") + " doesn't implement " + methodDeclarations, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.helgins)", "1198950378289", intentionProvider);
+          typeCheckingContext.reportTypeError(nodeToCheck, "Concept " + SPropertyOperations.getString(SLinkOperations.getTarget(nodeToCheck, "concept", false), "name") + " doesn't implement " + methodDeclarations, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.helgins)", "1198950378289", intentionProvider);
         }
       }
     }
@@ -49,7 +48,7 @@ public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesyst
       if (SConceptPropertyOperations.getBoolean(cmd, "abstract")) {
         {
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().reportTypeError(cmd, "Abstract method in non abstract concept", "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.helgins)", "1198949983025", intentionProvider);
+          typeCheckingContext.reportTypeError(cmd, "Abstract method in non abstract concept", "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.helgins)", "1198949983025", intentionProvider);
         }
       }
     }

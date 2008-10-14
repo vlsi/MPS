@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class check_ListAntiquotation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
 
@@ -33,7 +32,7 @@ public class check_ListAntiquotation_NonTypesystemRule extends AbstractNonTypesy
           if (SLinkOperations.getTarget(matchedNode_1, "quotedNode", true) == annotatedNode) {
             {
               BaseIntentionProvider intentionProvider = null;
-              TypeChecker.getInstance().reportTypeError(listAntiquotation, "list antiquotation should not be used on a quoted node itself", "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.helgins)", "1202840835255", intentionProvider);
+              typeCheckingContext.reportTypeError(listAntiquotation, "list antiquotation should not be used on a quoted node itself", "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.helgins)", "1202840835255", intentionProvider);
             }
           }
           break;

@@ -226,6 +226,7 @@ public class TypeChecker implements ApplicationComponent {
     reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId));
   }
 
+  @Deprecated
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
     reporter.setIntentionProvider(intentionProvider);
