@@ -33,7 +33,8 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     }
     for(SNode parameter : SLinkOperations.getTargets(creator, "typeParameter", true)) {
       if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(new QuotationClass_92().createNode(), "descriptor", false), false, false)))) {
-        TypeChecker.getInstance().reportTypeError(parameter, "primitive type not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1212781606006");
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.reportTypeError(parameter, "primitive type not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1212781606006", intentionProvider);
       }
     }
     // ---

@@ -995,6 +995,16 @@
         <property name="text" value=";" />
       </node>
     </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1223995251199">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1223995251200">
+        <property name="text" value="intention to fix an error(optional)" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1223995251201">
+        <property name="noTargetText" value="&lt;no intention&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1210784718411" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1175594923155">
     <link role="conceptDeclaration" targetNodeId="1.1175594888091" />
@@ -3266,6 +3276,54 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1223056761662">
           <property name="flag" value="false" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1223995803829">
+    <link role="conceptDeclaration" targetNodeId="1.1223995273390" resolveInfo="AssertStatement_internal" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1223995805660">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1223995805661">
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1223995837603">
+          <property name="text" value="ensure" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1223995845121">
+          <link role="relationDeclaration" targetNodeId="1.1223995331830" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1223995805662">
+          <property name="text" value="error" />
+          <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1223995805663">
+          <link role="relationDeclaration" targetNodeId="1.1223995779374" resolveInfo="modelId" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1223995805664">
+          <link role="relationDeclaration" targetNodeId="1.1223995779375" resolveInfo="nodeId" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1223995805665">
+          <property name="noTargetText" value="&lt;error string&gt;" />
+          <link role="relationDeclaration" targetNodeId="1.1223995386457" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1223995805666">
+          <property name="text" value="-&gt;" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1223995805667">
+          <property name="noTargetText" value="&lt;node to highlight&gt;" />
+          <link role="relationDeclaration" targetNodeId="1.1223995386458" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1223995805668">
+          <property name="text" value=";" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1223995805669">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1223995805670">
+        <property name="text" value="intention to fix an error(optional)" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1223995805671">
+        <property name="noTargetText" value="&lt;no intention&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1223995386459" />
       </node>
     </node>
   </node>
