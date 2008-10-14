@@ -23,8 +23,8 @@
       <solutionPath path="${project}\solutions\typetest\smodelLanguage_typetest.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\smodelLanguage.mpl" />
-      <languagePath path="${mps_home}\core\languageDesign\structureLanguage\languageDescriptor.mpl" />
+      <languagePath path="${project}\smodel.mpl" />
+      <languagePath path="${mps_home}\core\languageDesign\structure\languageDescriptor.mpl" />
       <languagePath path="${mps_home}\core\baseLanguage\baseLanguage\baseLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
