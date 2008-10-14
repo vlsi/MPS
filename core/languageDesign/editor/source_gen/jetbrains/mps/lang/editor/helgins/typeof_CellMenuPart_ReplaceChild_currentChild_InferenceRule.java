@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -23,14 +22,22 @@ public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule extends
     SNode editedFeature = CellMenuUtil.getEditedFeature(hostMenuPart);
     if (SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
       SNode conceptOfChild = SLinkOperations.getTarget(editedFeature, "target", false);
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_3().createNode(conceptOfChild), node, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.helgins)", "1179782398208");
+      {
+        SNode _nodeToCheck_1029348928467 = node;
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.helgins)", "1223982086168", true), new QuotationClass_3().createNode(conceptOfChild), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.helgins)", "1223982086163", intentionProvider);
+      }
       return;
     }
     {
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().reportTypeError(node, "couldn't define concept of child node", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.helgins)", "1179782438058", intentionProvider);
+      typeCheckingContext.reportTypeError(node, "couldn't define concept of child node", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.helgins)", "1179782438058", intentionProvider);
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_4().createNode(), node, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.helgins)", "1179766709137");
+    {
+      SNode _nodeToCheck_1029348928467 = node;
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.helgins)", "1223982086251", true), new QuotationClass_4().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.helgins)", "1223982086246", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {

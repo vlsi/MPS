@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ConceptFunctionParameter_node_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -18,7 +18,11 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
 
   public void applyRule(final SNode conceptFunctionParameter_node, final TypeCheckingContext typeCheckingContext) {
     SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(conceptFunctionParameter_node, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", false, false), "forConcept", false);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_0().createNode(applicableConcept), conceptFunctionParameter_node, "r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.helgins)", "1192798450074");
+    {
+      SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_node;
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(conceptFunctionParameter_node, "r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.helgins)", "1223982145703", true), new QuotationClass_0().createNode(applicableConcept), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.helgins)", "1223982145698", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {
