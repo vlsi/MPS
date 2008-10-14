@@ -30,7 +30,8 @@ public class typeof_TreePathAdapterExpression_InferenceRule extends AbstractInfe
         public void run() {
           final SNode treePathType = SLinkOperations.getTarget(SLinkOperations.getTarget(exp, "treepathAspect", false), "treePathType", true);
           if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521), SLinkOperations.getTarget(treePathType, "nodeType", true)))) {
-            TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(exp, "expression", true), "Incompatible type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1196166858319");
+            BaseIntentionProvider intentionProvider = null;
+            typeCheckingContext.reportTypeError(SLinkOperations.getTarget(exp, "expression", true), "Incompatible type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1196166858319", intentionProvider);
           }
           if ((SLinkOperations.getTarget(treePathType, "nodeType", true) != null)) {
             {

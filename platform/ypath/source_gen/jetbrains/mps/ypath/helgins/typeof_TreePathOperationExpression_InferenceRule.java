@@ -39,7 +39,8 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
               public void run() {
                 SNode targetType = FeatureTargetTypeUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1213877312166(SLinkOperations.getTarget(op, "paramObject", true)));
                 if (!((targetType != null))) {
-                  TypeChecker.getInstance().reportTypeError(tpoe, "Received null target type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1196269826366");
+                  BaseIntentionProvider intentionProvider = null;
+                  typeCheckingContext.reportTypeError(tpoe, "Received null target type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1196269826366", intentionProvider);
                 }
                 if ((targetType != null)) {
                   {
@@ -64,7 +65,8 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
           }
         } else
         if (!(false)) {
-          TypeChecker.getInstance().reportTypeError(tpoe, "No treepath found", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1196942498551");
+          BaseIntentionProvider intentionProvider = null;
+          typeCheckingContext.reportTypeError(tpoe, "No treepath found", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1196942498551", intentionProvider);
         }
       }
     } else
