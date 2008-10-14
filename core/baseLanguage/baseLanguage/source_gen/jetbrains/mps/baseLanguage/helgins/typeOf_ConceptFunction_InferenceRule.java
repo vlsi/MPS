@@ -43,7 +43,11 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
           }
         }
       }
-      TypeChecker.getInstance().getRuntimeSupport().givetype(null, func, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1179436909754");
+      {
+        SNode _nodeToCheck_1029348928467 = func;
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(func, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223981485210", true), null, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223981485205", intentionProvider);
+      }
     } else
     {
       // should return subtypes of the 'expected type'

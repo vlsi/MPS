@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -18,7 +17,11 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
 
   public void applyRule(final SNode castExpression, final TypeCheckingContext typeCheckingContext) {
     if ((SLinkOperations.getTarget(castExpression, "type", true) != null)) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(castExpression, "type", true), castExpression, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1178271952457");
+      {
+        SNode _nodeToCheck_1029348928467 = castExpression;
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(castExpression, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223981485160", true), SLinkOperations.getTarget(castExpression, "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223981485155", intentionProvider);
+      }
       {
         SNode _nodeToCheck_1029348928467 = castExpression;
         BaseIntentionProvider intentionProvider = null;

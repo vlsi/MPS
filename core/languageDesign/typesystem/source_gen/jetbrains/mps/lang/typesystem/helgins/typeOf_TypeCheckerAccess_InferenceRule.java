@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_TypeCheckerAccess_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -15,7 +15,11 @@ public class typeOf_TypeCheckerAccess_InferenceRule extends AbstractInferenceRul
   }
 
   public void applyRule(final SNode typeCheckerAccess, final TypeCheckingContext typeCheckingContext) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(), typeCheckerAccess, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1175595994022");
+    {
+      SNode _nodeToCheck_1029348928467 = typeCheckerAccess;
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(typeCheckerAccess, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1223981205019", true), new QuotationClass_2().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1223981205014", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {

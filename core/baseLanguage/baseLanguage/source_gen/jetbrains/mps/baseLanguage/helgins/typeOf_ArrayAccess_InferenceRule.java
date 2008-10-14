@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -23,7 +22,11 @@ public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runt
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(arrayAccess, "array", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175601850481", true), new QuotationClass_9().createNode(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1175601836165)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175601848462", false, 0, intentionProvider);
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1175601836165), arrayAccess, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175601928121");
+    {
+      SNode _nodeToCheck_1029348928467 = arrayAccess;
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(arrayAccess, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223981484981", true), typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1175601836165), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223981484976", intentionProvider);
+    }
     {
       SNode _nodeToCheck_1029348928467 = arrayAccess;
       BaseIntentionProvider intentionProvider = null;

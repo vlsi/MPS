@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ConceptFunctionParameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -20,7 +20,11 @@ public class typeOf_ConceptFunctionParameter_InferenceRule extends AbstractInfer
   public void applyRule(final SNode conceptFunctionParameter, final TypeCheckingContext typeCheckingContext) {
     List<SNode> conceptFunctionParameters = SLinkOperations.getConceptLinkTargets(conceptFunctionParameter, "conceptFunctionParameterType");
     if (!(ListSequence.fromList(conceptFunctionParameters).isEmpty())) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(ListSequence.fromList(conceptFunctionParameters).getElement(0), conceptFunctionParameter, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1177326121286");
+      {
+        SNode _nodeToCheck_1029348928467 = conceptFunctionParameter;
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(conceptFunctionParameter, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223981484852", true), ListSequence.fromList(conceptFunctionParameters).getElement(0), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223981484847", intentionProvider);
+      }
     }
   }
 
