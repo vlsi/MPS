@@ -17,6 +17,7 @@ import java.util.*;
 
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import org.jetbrains.annotations.NotNull;
 
 class AddOperation extends VcsOperation {
@@ -102,6 +103,12 @@ class AddOperation extends VcsOperation {
       if (isUnderVCS(parent)) {
         break;
       } else {
+        VirtualFile[] files = parent.getChildren();
+        for (VirtualFile child : files) {
+          if (MPSFileTypesManager.instance().isModuleFile(child)){
+            return Collections.EMPTY_LIST;
+          }
+        }
         path.add(0, parent);
       }
     }
@@ -118,10 +125,12 @@ class AddOperation extends VcsOperation {
    * @return
    */
   @Deprecated
-  private boolean isUnderVCS(VirtualFile f) {
+  private boolean isUnderVCS(@NotNull VirtualFile f) {
     if (myProject.isDisposed()) return false;
     if (f.isDirectory()) {
-      return ProjectLevelVcsManager.getInstance(myProject).findVersioningVcs(f) != null;
+      if (!(myManager.findVersioningVcs(f) != null)) {
+        return false;
+      }
     }
 
     VcsFileStatusProvider provider = myProject.getComponent(VcsFileStatusProvider.class);
