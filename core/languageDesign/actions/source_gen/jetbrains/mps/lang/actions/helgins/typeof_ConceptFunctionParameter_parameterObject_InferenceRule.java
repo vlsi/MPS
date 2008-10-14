@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ConceptFunctionParameter_parameterObject_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -18,11 +18,19 @@ public class typeof_ConceptFunctionParameter_parameterObject_InferenceRule exten
 
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext) {
     if (SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", false, false), "type", true) != null) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", false, false), "type", true), parameter, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.helgins)", "1180046146642");
+      {
+        SNode _nodeToCheck_1029348928467 = parameter;
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.helgins)", "1223982503209", true), SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", false, false), "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.helgins)", "1223982503204", intentionProvider);
+      }
       return;
     }
     if (SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", false, false), "type", true) != null) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", false, false), "type", true), parameter, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.helgins)", "1180046146661");
+      {
+        SNode _nodeToCheck_1029348928467 = parameter;
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.helgins)", "1223982503126", true), SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", false, false), "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.helgins)", "1223982503121", intentionProvider);
+      }
       return;
     }
   }

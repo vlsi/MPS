@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -27,7 +26,7 @@ public class check_ConceptSubstitutePart_NonTypesystemRule extends AbstractNonTy
     if (!(SConceptOperations.isSubConceptOf(conceptToAdd, NameUtil.nodeFQName(substituteConcept)))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(nodeToCheck, "Wrong concept to add. Use subtype of " + SPropertyOperations.getString(substituteConcept, "name"), "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.helgins)", "1197896061431", intentionProvider);
+        typeCheckingContext.reportTypeError(nodeToCheck, "Wrong concept to add. Use subtype of " + SPropertyOperations.getString(substituteConcept, "name"), "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.helgins)", "1197896061431", intentionProvider);
       }
     }
   }
