@@ -6,7 +6,6 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -21,7 +20,7 @@ public class typeof_LinkList_RemoveAllChildrenOperation_InferenceRule extends Ab
     RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1215104325493));
     {
       final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1215104325493);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(C, new Runnable() {
+      typeCheckingContext.whenConcrete(C, new Runnable() {
 
         public void run() {
           {

@@ -6,7 +6,6 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
@@ -25,7 +24,7 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInfe
     RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099875685));
     {
       final SNode concreteConcept = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099875685);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(concreteConcept, new Runnable() {
+      typeCheckingContext.whenConcrete(concreteConcept, new Runnable() {
 
         public void run() {
           SNode resultConcept;

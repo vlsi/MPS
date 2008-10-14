@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -39,7 +39,7 @@ public class RulesUtil {
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     {
       final SNode LeftType = typeCheckingContext.typeOf(leftExpression, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1206099323449", false);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {
+      typeCheckingContext.whenConcrete(LeftType, new Runnable() {
 
         public void run() {
           boolean isGood = false;
@@ -117,7 +117,7 @@ public class RulesUtil {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     {
       final SNode LeftType = typeCheckingContext.typeOf(leftExpression, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1206099228546", false);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {
+      typeCheckingContext.whenConcrete(LeftType, new Runnable() {
 
         public void run() {
           boolean isGood = false;
@@ -144,7 +144,7 @@ public class RulesUtil {
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     {
       final SNode LeftType = typeCheckingContext.typeOf(leftExpression, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1206099156468", false);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {
+      typeCheckingContext.whenConcrete(LeftType, new Runnable() {
 
         public void run() {
           boolean isGood = false;
@@ -208,7 +208,7 @@ public class RulesUtil {
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     {
       final SNode LeftType = typeCheckingContext.typeOf(leftExpression, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1208202100499", false);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(LeftType, new Runnable() {
+      typeCheckingContext.whenConcrete(LeftType, new Runnable() {
 
         public void run() {
           SNode conceptDeclaration = null;
@@ -285,7 +285,7 @@ public class RulesUtil {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.PoundExpression")) {
       {
         final SNode poundExpressionType = typeCheckingContext.typeOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1219348182125", false);
-        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(poundExpressionType, new Runnable() {
+        typeCheckingContext.whenConcrete(poundExpressionType, new Runnable() {
 
           public void run() {
             SNode conceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(poundExpressionType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true);

@@ -7,10 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.baseLanguage.collections.constraints.SmartClosureParameterTypeUtil;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -31,7 +31,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
     SmartClosureParameterTypeUtil.equateInputType(typeCheckingContext, scpd, typeCheckingContext.getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194));
     {
       final SNode foo = typeCheckingContext.getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(foo, new Runnable() {
+      typeCheckingContext.whenConcrete(foo, new Runnable() {
 
         public void run() {
           if (SmartClosureParameterTypeUtil.hasResolveType(scpd)) {
@@ -39,7 +39,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
             SmartClosureParameterTypeUtil.equateResolveType(typeCheckingContext, scpd, typeCheckingContext.getEquationManager().getRepresentator(resolveTypeVar_typevar_1204072273983));
             {
               final SNode bar = typeCheckingContext.getEquationManager().getRepresentator(resolveTypeVar_typevar_1204072273983);
-              TypeChecker.getInstance().getRuntimeSupport().whenConcrete(bar, new Runnable() {
+              typeCheckingContext.whenConcrete(bar, new Runnable() {
 
                 public void run() {
                   SNode resType = ClassifierTypeUtil.resolveTypeUsingSupertypes(typeCheckingContext.getEquationManager().getRepresentator(foo), typeCheckingContext.getEquationManager().getRepresentator(bar));

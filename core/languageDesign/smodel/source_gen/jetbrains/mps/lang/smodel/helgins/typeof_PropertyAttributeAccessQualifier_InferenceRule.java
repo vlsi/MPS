@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -53,7 +52,7 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule extends Abstr
       RulesUtil.equate_inputNodeConcept(typeCheckingContext, SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, false), typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1204914077372));
       {
         final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1204914077372);
-        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(C, new Runnable() {
+        typeCheckingContext.whenConcrete(C, new Runnable() {
 
           public void run() {
             SNode inputNodeConcept = typeCheckingContext.getEquationManager().getRepresentator(C);

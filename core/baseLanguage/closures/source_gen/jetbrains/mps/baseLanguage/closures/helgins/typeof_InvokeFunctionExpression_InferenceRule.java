@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,7 +19,7 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext) {
     {
       final SNode _representatorVar0 = typeCheckingContext.typeOf(SLinkOperations.getTarget(invoke, "function", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.helgins)", "1199567116884", true);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar0, new Runnable() {
+      typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
 
         public void run() {
           SNode ft = typeCheckingContext.typeOf(SLinkOperations.getTarget(invoke, "function", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.helgins)", "1199567532549", true);

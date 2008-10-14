@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
@@ -41,7 +40,7 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
     }
     {
       final SNode IT = typeCheckingContext.getEquationManager().getRepresentator(InstanceType_typevar_1206554174334);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(IT, new Runnable() {
+      typeCheckingContext.whenConcrete(IT, new Runnable() {
 
         public void run() {
           Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();

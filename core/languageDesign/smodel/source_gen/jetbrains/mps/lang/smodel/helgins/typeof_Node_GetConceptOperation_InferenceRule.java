@@ -9,9 +9,9 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Node_GetConceptOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -30,7 +30,7 @@ public class typeof_Node_GetConceptOperation_InferenceRule extends AbstractInfer
     SNode operand = SLinkOperations.getTarget(SNodeOperations.getParent(op), "operand", true);
     {
       final SNode operandType = typeCheckingContext.typeOf(operand, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1210625639214", false);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(operandType, new Runnable() {
+      typeCheckingContext.whenConcrete(operandType, new Runnable() {
 
         public void run() {
           {

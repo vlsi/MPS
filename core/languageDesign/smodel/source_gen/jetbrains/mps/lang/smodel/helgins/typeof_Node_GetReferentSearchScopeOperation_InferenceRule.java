@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -45,7 +44,7 @@ public class typeof_Node_GetReferentSearchScopeOperation_InferenceRule extends A
       RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1221168662799));
       {
         final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1221168662799);
-        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(C, new Runnable() {
+        typeCheckingContext.whenConcrete(C, new Runnable() {
 
           public void run() {
             SNode inputNodeConcept = typeCheckingContext.getEquationManager().getRepresentator(C);

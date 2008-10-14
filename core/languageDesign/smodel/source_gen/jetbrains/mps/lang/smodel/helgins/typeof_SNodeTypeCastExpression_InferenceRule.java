@@ -25,7 +25,7 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
     }
     {
       final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar0, new Runnable() {
+      typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
 
         public void run() {
           if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), new QuotationClass_1().createNode(), false, false)) {

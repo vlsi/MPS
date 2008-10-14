@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -28,7 +27,7 @@ public class typeof_SPropertyAccess_InferenceRule extends AbstractInferenceRule_
       RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1186062582563));
       {
         final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1186062582563);
-        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(C, new Runnable() {
+        typeCheckingContext.whenConcrete(C, new Runnable() {
 
           public void run() {
             SNode inputNodeConcept = typeCheckingContext.getEquationManager().getRepresentator(C);

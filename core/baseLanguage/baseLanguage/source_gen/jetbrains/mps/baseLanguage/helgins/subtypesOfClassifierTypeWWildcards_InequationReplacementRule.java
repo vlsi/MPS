@@ -6,8 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_R
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -23,7 +23,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext) {
     {
       final SNode t = subtype;
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(t, new Runnable() {
+      typeCheckingContext.whenConcrete(t, new Runnable() {
 
         public void run() {
           {
@@ -53,7 +53,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                     }
                     {
                       final SNode concreteParam = myParam;
-                      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(concreteParam, new Runnable() {
+                      typeCheckingContext.whenConcrete(concreteParam, new Runnable() {
 
                         public void run() {
                           if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {

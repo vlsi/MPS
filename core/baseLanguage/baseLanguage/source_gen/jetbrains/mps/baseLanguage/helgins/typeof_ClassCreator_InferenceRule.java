@@ -53,7 +53,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     // --- following piece of cake is identical for any method call ---
     {
       final SNode _representatorVar2 = typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1212781606045);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar2, new Runnable() {
+      typeCheckingContext.whenConcrete(_representatorVar2, new Runnable() {
 
         public void run() {
           Map<SNode, List<SNode>> mmap = new HashMap<SNode, List<SNode>>();
