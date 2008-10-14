@@ -131,7 +131,7 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
 
   public static ConceptEditorDeclaration createEditorDeclaration(ConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {
     SModel editorModel = editorModelDescriptor.getSModel();
-    ConceptEditorDeclaration editorDeclaration = (ConceptEditorDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration", editorModel, scope).getAdapter();
+    ConceptEditorDeclaration editorDeclaration = (ConceptEditorDeclaration) SModelUtil_new.instantiateConceptDeclaration(ConceptEditorDeclaration.concept, editorModel, scope).getAdapter();
     editorDeclaration.setConceptDeclaration(conceptDeclaration);
     editorModel.addRoot(editorDeclaration);
     return editorDeclaration;
