@@ -109,6 +109,7 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addEquation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0));
   }
 
+  @Deprecated
   public void createEquation(SNode node1,
                              SNode node2,
                              SNode nodeToCheck,
@@ -132,6 +133,7 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority), true, checkOnly);
   }
 
+  @Deprecated
   public void createLessThanInequation(SNode node1,
                                        SNode node2,
                                        SNode nodeToCheck,
@@ -160,6 +162,7 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority), false, checkOnly);
   }
 
+  @Deprecated
   public void createLessThanInequationStrong(SNode node1,
                                              SNode node2,
                                              SNode nodeToCheck,
@@ -187,6 +190,7 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequation(node2, node1, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority), true, checkOnly);
   }
 
+  @Deprecated
   public void createGreaterThanInequation(SNode node1,
                                           SNode node2,
                                           SNode nodeToCheck,
@@ -209,6 +213,7 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequationComparable(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId));
   }
 
+  @Deprecated
   public void createComparableEquation(SNode node1,
                                        SNode node2,
                                        SNode nodeToCheck,
@@ -227,6 +232,7 @@ public class RuntimeSupport {
     myTypeChecker.getEquationManager().addInequationComparable(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId), false);
   }
 
+  @Deprecated
   public void createComparableEquationStrong(SNode node1,
                                              SNode node2,
                                              SNode nodeToCheck,
