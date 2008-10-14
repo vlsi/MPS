@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
 import jetbrains.mps.ypath.behavior.ParameterWrapper_Behavior;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
@@ -34,7 +33,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
           }
           {
             final SNode _representatorVar1 = typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005);
-            TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar1, new Runnable() {
+            typeCheckingContext.whenConcrete(_representatorVar1, new Runnable() {
 
               public void run() {
                 SNode targetType = FeatureTargetTypeUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1213877312166(SLinkOperations.getTarget(op, "paramObject", true)));

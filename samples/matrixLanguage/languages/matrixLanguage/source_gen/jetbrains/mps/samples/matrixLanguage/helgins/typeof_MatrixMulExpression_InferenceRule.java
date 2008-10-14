@@ -22,12 +22,12 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
     {
       final SNode left = typeCheckingContext.typeOf(SLinkOperations.getTarget(nodeToCheck, "leftExpression", true), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210005562793", true);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(left, new Runnable() {
+      typeCheckingContext.whenConcrete(left, new Runnable() {
 
         public void run() {
           {
             final SNode right = typeCheckingContext.typeOf(SLinkOperations.getTarget(nodeToCheck, "rightExpression", true), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210005567145", true);
-            TypeChecker.getInstance().getRuntimeSupport().whenConcrete(right, new Runnable() {
+            typeCheckingContext.whenConcrete(right, new Runnable() {
 
               public void run() {
                 boolean done = false;

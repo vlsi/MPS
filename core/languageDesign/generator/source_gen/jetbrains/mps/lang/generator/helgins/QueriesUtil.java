@@ -132,7 +132,7 @@ public class QueriesUtil {
     }
     {
       final SNode OutputType = typeCheckingContext.typeOf(query, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1206283548589", false);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(OutputType, new Runnable() {
+      typeCheckingContext.whenConcrete(OutputType, new Runnable() {
 
         public void run() {
           {

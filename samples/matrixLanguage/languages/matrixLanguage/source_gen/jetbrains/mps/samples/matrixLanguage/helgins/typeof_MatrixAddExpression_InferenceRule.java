@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -21,12 +20,12 @@ public class typeof_MatrixAddExpression_InferenceRule extends AbstractInferenceR
     final SNode v_typevar_1215411668136 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       final SNode left = SLinkOperations.getTarget(nodeToCheck, "leftExpression", true);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(left, new Runnable() {
+      typeCheckingContext.whenConcrete(left, new Runnable() {
 
         public void run() {
           {
             final SNode right = SLinkOperations.getTarget(nodeToCheck, "rightExpression", true);
-            TypeChecker.getInstance().getRuntimeSupport().whenConcrete(right, new Runnable() {
+            typeCheckingContext.whenConcrete(right, new Runnable() {
 
               public void run() {
                 {
@@ -54,7 +53,7 @@ public class typeof_MatrixAddExpression_InferenceRule extends AbstractInferenceR
     }
     {
       final SNode type = typeCheckingContext.getEquationManager().getRepresentator(v_typevar_1215411668136);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(type, new Runnable() {
+      typeCheckingContext.whenConcrete(type, new Runnable() {
 
         public void run() {
           if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(type), "jetbrains.mps.samples.matrixLanguage.structure.MatrixType"))) {

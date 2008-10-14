@@ -25,7 +25,7 @@ public class typeof_TreePathAdapterExpression_InferenceRule extends AbstractInfe
     }
     {
       final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521);
-      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar0, new Runnable() {
+      typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
 
         public void run() {
           final SNode treePathType = SLinkOperations.getTarget(SLinkOperations.getTarget(exp, "treepathAspect", false), "treePathType", true);
