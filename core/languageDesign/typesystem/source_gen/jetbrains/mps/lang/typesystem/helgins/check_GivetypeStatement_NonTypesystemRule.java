@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_GivetypeStatement_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -16,7 +16,8 @@ public class check_GivetypeStatement_NonTypesystemRule extends AbstractNonTypesy
 
   public void applyRule(final SNode givetypeStatement, final TypeCheckingContext typeCheckingContext) {
     if (!(RulesUtil.withinInferenceItem(givetypeStatement))) {
-      TypeChecker.getInstance().reportTypeError(givetypeStatement, "GIVETYPE should be used only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1195217450603");
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.reportTypeError(givetypeStatement, "GIVETYPE should be used only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1195217450603", intentionProvider);
     }
   }
 

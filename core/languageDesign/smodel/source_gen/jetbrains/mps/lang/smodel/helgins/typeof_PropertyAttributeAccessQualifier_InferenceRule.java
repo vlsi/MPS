@@ -9,8 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -34,7 +34,8 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule extends Abstr
     }
     // ---
     if (!(SPropertyOperations.hasValue(annotationLink, "stereotype", "property", "node"))) {
-      TypeChecker.getInstance().reportTypeError(nodeToCheck, "property annotation link is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1204832870610");
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.reportTypeError(nodeToCheck, "property annotation link is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1204832870610", intentionProvider);
     }
     final SNode propQ = SLinkOperations.getTarget(nodeToCheck, "propertyQualifier", true);
     if (SNodeOperations.isInstanceOf(propQ, "jetbrains.mps.lang.smodel.structure.PoundExpression")) {
@@ -58,7 +59,8 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule extends Abstr
             SNode inputNodeConcept = typeCheckingContext.getEquationManager().getRepresentator(C);
             List<SNode> declaredProperties = AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(inputNodeConcept);
             if (!(ListSequence.fromList(declaredProperties).contains(property))) {
-              TypeChecker.getInstance().reportTypeError(propQ, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1204914077394");
+              BaseIntentionProvider intentionProvider = null;
+              typeCheckingContext.reportTypeError(propQ, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1204914077394", intentionProvider);
             }
           }
 

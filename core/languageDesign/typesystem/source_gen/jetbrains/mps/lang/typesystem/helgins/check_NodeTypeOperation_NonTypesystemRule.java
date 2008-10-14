@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_NodeTypeOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -16,7 +16,8 @@ public class check_NodeTypeOperation_NonTypesystemRule extends AbstractNonTypesy
 
   public void applyRule(final SNode node_TypeOperation, final TypeCheckingContext typeCheckingContext) {
     if (!(!(RulesUtil.withinInferenceItem(node_TypeOperation)))) {
-      TypeChecker.getInstance().reportTypeError(node_TypeOperation, "don't use typeOperation within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1196099140505");
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.reportTypeError(node_TypeOperation, "don't use typeOperation within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1196099140505", intentionProvider);
     }
   }
 

@@ -36,7 +36,8 @@ public class typeof_SPropertyAccess_InferenceRule extends AbstractInferenceRule_
             SNode property = SLinkOperations.getTarget(op, "property", false);
             String conceptName = SPropertyOperations.getString(inputNodeConcept, "name");
             if (!(ListSequence.fromList(declaredProperties).contains(property))) {
-              TypeChecker.getInstance().reportTypeError(op, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected for an instance of " + conceptName, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1186062616321");
+              BaseIntentionProvider intentionProvider = null;
+              typeCheckingContext.reportTypeError(op, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected for an instance of " + conceptName, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1186062616321", intentionProvider);
             }
           }
 

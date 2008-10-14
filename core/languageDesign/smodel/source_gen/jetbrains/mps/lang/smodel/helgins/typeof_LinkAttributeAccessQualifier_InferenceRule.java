@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -36,7 +35,8 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule extends AbstractI
     }
     // ---
     if (!(SPropertyOperations.hasValue(annotationLink, "stereotype", "link", "node"))) {
-      TypeChecker.getInstance().reportTypeError(nodeToCheck, "link annotation link is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1204849792143");
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.reportTypeError(nodeToCheck, "link annotation link is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1204849792143", intentionProvider);
     }
     SNode linkQualifier = SLinkOperations.getTarget(nodeToCheck, "linkQualifier", true);
     if (SNodeOperations.isInstanceOf(linkQualifier, "jetbrains.mps.lang.smodel.structure.PoundExpression")) {

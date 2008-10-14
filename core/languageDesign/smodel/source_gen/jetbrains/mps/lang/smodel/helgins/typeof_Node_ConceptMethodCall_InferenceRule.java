@@ -7,9 +7,8 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import java.util.Iterator;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Node_ConceptMethodCall_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -19,12 +18,14 @@ public class typeof_Node_ConceptMethodCall_InferenceRule extends AbstractInferen
 
   public void applyRule(final SNode conceptMethodCall, final TypeCheckingContext typeCheckingContext) {
     if (!((SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false) != null))) {
-      TypeChecker.getInstance().reportTypeError(conceptMethodCall, "no method declaration", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1179410829052");
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.reportTypeError(conceptMethodCall, "no method declaration", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1179410829052", intentionProvider);
     }
     int actCount = SLinkOperations.getCount(conceptMethodCall, "actualArgument");
     int expCount = SLinkOperations.getCount(SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false), "parameter");
     if (!(actCount == expCount)) {
-      TypeChecker.getInstance().reportTypeError(conceptMethodCall, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1179410886099");
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.reportTypeError(conceptMethodCall, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1179410886099", intentionProvider);
     }
     {
       SNode arg;

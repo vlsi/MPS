@@ -14,9 +14,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -101,7 +101,8 @@ public class RulesUtil {
             }
           }
           if (!(isGood)) {
-            TypeChecker.getInstance().reportTypeError(op, "operation is not applicable to " + typeCheckingContext.getEquationManager().getRepresentator(LeftType), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1186067417054");
+            BaseIntentionProvider intentionProvider = null;
+            typeCheckingContext.reportTypeError(op, "operation is not applicable to " + typeCheckingContext.getEquationManager().getRepresentator(LeftType), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1186067417054", intentionProvider);
           }
         }
 
@@ -127,7 +128,8 @@ public class RulesUtil {
             }
           }
           if (!(isGood)) {
-            TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-list-access", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205271287931");
+            BaseIntentionProvider intentionProvider = null;
+            typeCheckingContext.reportTypeError(op, "operation is only applicable to aggregation-link-list-access", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205271287931", intentionProvider);
           }
         }
 
@@ -154,7 +156,8 @@ public class RulesUtil {
           }
           // ----
           if (!(isGood)) {
-            TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-access", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205272067893");
+            BaseIntentionProvider intentionProvider = null;
+            typeCheckingContext.reportTypeError(op, "operation is only applicable to aggregation-link-access", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205272067893", intentionProvider);
           }
         }
 

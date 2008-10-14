@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_VarRef_in_WhenConcreteStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -37,7 +37,8 @@ public class check_VarRef_in_WhenConcreteStatement_InferenceRule extends Abstrac
       }
       if (variableDeclaration != null && !(ListSequence.fromList(SNodeOperations.getAncestors(variableDeclaration, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", false)).contains(ancestor))) {
         if (!(SPropertyOperations.getBoolean(variableDeclaration, "isFinal"))) {
-          TypeChecker.getInstance().reportTypeError(variableReference, "variable is used inside WHEN CONCRETE block. should be declared final", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1185875417873");
+          BaseIntentionProvider intentionProvider = null;
+          typeCheckingContext.reportTypeError(variableReference, "variable is used inside WHEN CONCRETE block. should be declared final", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1185875417873", intentionProvider);
         }
       }
     }

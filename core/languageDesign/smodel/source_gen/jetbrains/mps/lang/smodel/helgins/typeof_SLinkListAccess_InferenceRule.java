@@ -43,7 +43,8 @@ public class typeof_SLinkListAccess_InferenceRule extends AbstractInferenceRule_
           SNode inputNodeConcept = typeCheckingContext.getEquationManager().getRepresentator(C);
           List<SNode> declaredLinks = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(inputNodeConcept);
           if (!(ListSequence.fromList(declaredLinks).contains(linkDecl))) {
-            TypeChecker.getInstance().reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1186062887864");
+            BaseIntentionProvider intentionProvider = null;
+            typeCheckingContext.reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1186062887864", intentionProvider);
           }
         }
 
