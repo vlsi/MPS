@@ -222,6 +222,7 @@ public class TypeChecker implements ApplicationComponent {
     reportTypeError(nodeWithError, errorString, null, null);
   }
 
+  @Deprecated
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId));
   }

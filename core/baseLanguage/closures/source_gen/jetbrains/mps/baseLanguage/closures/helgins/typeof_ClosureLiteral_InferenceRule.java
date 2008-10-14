@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.LinkedList;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -155,7 +154,8 @@ with_allThrows:
     }
     if (returnsValue && yieldsValue) {
       if (!(false)) {
-        TypeChecker.getInstance().reportTypeError(closure, "closure must either return or yield value", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.helgins)", "1221579075859");
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.reportTypeError(closure, "closure must either return or yield value", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.helgins)", "1221579075859", intentionProvider);
       }
     } else
     if (returnsValue) {
