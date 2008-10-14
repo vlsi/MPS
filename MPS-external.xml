@@ -184,9 +184,6 @@
       <fileset dir="core/baseLanguage/closures/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="core/baseLanguage/internalCollections/languages/collections/runtime/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
       <fileset dir="core/baseLanguage/internalCollections/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
