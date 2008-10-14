@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -17,7 +17,11 @@ public class typeof_ValueFunctionParam_InferenceRule extends AbstractInferenceRu
   }
 
   public void applyRule(final SNode value, final TypeCheckingContext typeCheckingContext) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(value, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true), value, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1183982168880");
+    {
+      SNode _nodeToCheck_1029348928467 = value;
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(value, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223982595255", true), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(value, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223982595250", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {

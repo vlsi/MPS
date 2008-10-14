@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -20,7 +19,7 @@ public class typeof_TreePathAspect_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = aspect;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(aspect, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1184578634207", true), SLinkOperations.getTarget(aspect, "treePathType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1184578634206", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(aspect, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1184578634207", true), SLinkOperations.getTarget(aspect, "treePathType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1184578634206", intentionProvider);
     }
   }
 

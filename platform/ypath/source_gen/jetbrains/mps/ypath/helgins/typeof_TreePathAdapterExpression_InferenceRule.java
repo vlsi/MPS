@@ -6,9 +6,9 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TreePathAdapterExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -17,23 +17,27 @@ public class typeof_TreePathAdapterExpression_InferenceRule extends AbstractInfe
   }
 
   public void applyRule(final SNode exp, final TypeCheckingContext typeCheckingContext) {
-    final SNode ExpType_typevar_1190288659521 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
+    final SNode ExpType_typevar_1190288659521 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = exp;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(exp, "expression", true), "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1190288685890", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1190288669877", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521), typeCheckingContext.typeOf(SLinkOperations.getTarget(exp, "expression", true), "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1190288685890", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1190288669877", intentionProvider);
     }
     {
-      final SNode _representatorVar0 = TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521);
+      final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(_representatorVar0, new Runnable() {
 
         public void run() {
           final SNode treePathType = SLinkOperations.getTarget(SLinkOperations.getTarget(exp, "treepathAspect", false), "treePathType", true);
-          if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521), SLinkOperations.getTarget(treePathType, "nodeType", true)))) {
+          if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521), SLinkOperations.getTarget(treePathType, "nodeType", true)))) {
             TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(exp, "expression", true), "Incompatible type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1196166858319");
           }
           if ((SLinkOperations.getTarget(treePathType, "nodeType", true) != null)) {
-            TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_0().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521)), exp, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1196715484404");
+            {
+              SNode _nodeToCheck_1029348928467 = exp;
+              BaseIntentionProvider intentionProvider = null;
+              typeCheckingContext.createEquation(typeCheckingContext.typeOf(exp, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223982595295", true), new QuotationClass_0().createNode(typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223982595290", intentionProvider);
+            }
           }
         }
 
