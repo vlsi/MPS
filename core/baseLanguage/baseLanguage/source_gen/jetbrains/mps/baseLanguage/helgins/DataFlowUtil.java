@@ -11,9 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import java.util.List;
-import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
-import jetbrains.mps.baseLanguage.behavior.VariableReference_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
 
 public class DataFlowUtil {
@@ -72,13 +69,9 @@ public class DataFlowUtil {
   @InferenceMethod()
   private static void checkUninitializedReads(final TypeCheckingContext typeCheckingContext, SNode statementList) {
     Set<SNode> uninitializedReads = DataFlow.getUninitializedReads(statementList);
-    List<SNode> referencedInClosures = StatementList_Behavior.call_getVariablesReferencedInClosures_1213877327584(statementList);
     for(SNode read : uninitializedReads) {
       if (SNodeOperations.isInstanceOf(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) {
         SNode ref = read;
-        if (ListSequence.fromList(referencedInClosures).contains(SLinkOperations.getTarget(ref, "variableDeclaration", false)) || VariableReference_Behavior.call_isClosureReference_1213877348225(ref)) {
-          continue;
-        }
         {
           BaseIntentionProvider intentionProvider = null;
           typeCheckingContext.reportTypeError(read, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223640624825", intentionProvider);
@@ -90,30 +83,15 @@ public class DataFlowUtil {
   @InferenceMethod()
   private static void checkUnusedAssignments(final TypeCheckingContext typeCheckingContext, SNode statementList) {
     Set<SNode> unusedAssignments = DataFlow.getUnusedAssignments(statementList);
-    List<SNode> referencedInClosure = StatementList_Behavior.call_getVariablesReferencedInClosures_1213877327584(statementList);
     for(SNode write : unusedAssignments) {
       if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
         SNode assignment = write;
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, "lValue", true), "jetbrains.mps.baseLanguage.structure.ParameterReference")) {
-          SNode ref = SLinkOperations.getTarget(assignment, "lValue", true);
-          if (ListSequence.fromList(referencedInClosure).contains(SLinkOperations.getTarget(ref, "variableDeclaration", false)) || VariableReference_Behavior.call_isClosureReference_1213877348225(ref)) {
-            continue;
-          }
           {
             BaseIntentionProvider intentionProvider = null;
             intentionProvider = new BaseIntentionProvider("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints).RemoveUnusedAssignment_QuickFix");
             typeCheckingContext.reportWarning(assignment, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223642282236", intentionProvider);
           }
-        }
-      }
-      if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-        if (ListSequence.fromList(referencedInClosure).contains(write)) {
-          continue;
-        }
-        {
-          BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints).RemoveUnusedAssignment_QuickFix");
-          typeCheckingContext.reportWarning(write, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223642282266", intentionProvider);
         }
       }
       if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment")) {

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LocalVariableDeclaration extends VariableDeclaration implements IResolveInfo {
+public class LocalVariableDeclaration extends VariableDeclaration implements IResolveInfo, IVariableAssignment {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
   public static String RESOLVE_INFO = "resolveInfo";
   public static String SHORT_DESCRIPTION = "shortDescription";

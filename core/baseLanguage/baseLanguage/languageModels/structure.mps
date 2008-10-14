@@ -481,6 +481,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1199995262261">
       <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IResolveInfo" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1223988934029">
+      <link role="intfc" targetNodeId="1223985693348" resolveInfo="IVariableAssignment" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068581242864">
     <property name="name" value="LocalVariableDeclarationStatement" />

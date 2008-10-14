@@ -64,9 +64,9 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.StaticInitializer", new StaticInitializer_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", new ConceptFunctionParameter_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ConceptFunction", new ConceptFunction_DataFlow());
-    manager.register("jetbrains.mps.baseLanguage.structure.Closure", new Closure_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.LocalVariableReference", new LocalVariableReference_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ParameterReference", new ParameterReference_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.Closure", new Closure_DataFlow());
   }
 
 }
