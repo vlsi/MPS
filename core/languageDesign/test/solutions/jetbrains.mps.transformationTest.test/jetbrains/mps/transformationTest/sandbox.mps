@@ -26,7 +26,7 @@
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1223650621400">
-    <property name="name" value="Overrided" />
+    <property name="name" value="Overriden" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1223650675715">
       <property name="name" value="m1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1223650675716" />
