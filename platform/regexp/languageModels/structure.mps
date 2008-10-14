@@ -605,6 +605,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1174564103895">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1223986770000">
+      <link role="intfc" targetNodeId="2.1223985693348" resolveInfo="IVariableAssignment" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1174565027678">
     <property name="name" value="MatchVariableReference" />

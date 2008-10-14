@@ -110,7 +110,6 @@
   <classPath>
     <entry path="${language_descriptor}\classes" />
     <entry path="${language_descriptor}\runtime\classes" />
-    <entry path="${mps_home}\core\baseLanguage\internalCollections\languages\collections\runtime\classes" />
   </classPath>
   <languageRuntimeClassPath>
     <entry path="${language_descriptor}\runtime\classes" />

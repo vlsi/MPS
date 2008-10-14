@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ParameterDeclaration_Behavior {
 
@@ -15,6 +17,14 @@ public class ParameterDeclaration_Behavior {
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
     SLinkOperations.setTarget(ref, "variableDeclaration", thisNode, false);
     return ref;
+  }
+
+  public static boolean virtual_isCanBeUnused_1223985713603(SNode thisNode) {
+    SNode method = ((SNode)SNodeOperations.getParent(thisNode));
+    if (SPropertyOperations.getBoolean(method, "isFinal") || SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.Visible") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(((SNode)method), "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+      return true;
+    }
+    return false;
   }
 
 }

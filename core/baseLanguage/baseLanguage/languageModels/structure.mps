@@ -163,6 +163,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1196979381892">
       <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IRefInfo" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1223986289456">
+      <link role="intfc" targetNodeId="1223985693348" resolveInfo="IVariableAssignment" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068431790189">
     <property name="name" value="Type" />
@@ -2782,6 +2785,9 @@
       <property name="name" value="isDeprecated" />
       <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1223985693348">
+    <property name="name" value="IVariableAssignment" />
   </node>
 </model>
 

@@ -14,7 +14,7 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.baseLanguage.behavior.VariableReference_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
 
 public class DataFlowUtil {
 
@@ -116,12 +116,12 @@ public class DataFlowUtil {
           typeCheckingContext.reportWarning(write, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223642282266", intentionProvider);
         }
       }
-      if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-        SNode method = ((SNode)SNodeOperations.getParent(write));
-        if (SPropertyOperations.getBoolean(method, "isFinal") || SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.Visible") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(((SNode)method), "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+      if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment")) {
+        SNode variableAssignment = (SNode)write;
+        if (IVariableAssignment_Behavior.call_isCanBeUnused_1223985713603(variableAssignment)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportWarning(write, "Unused parameter", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223642282287", intentionProvider);
+            typeCheckingContext.reportWarning(write, "Unused parameter", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223986255355", intentionProvider);
           }
         }
       }
