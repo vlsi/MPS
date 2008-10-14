@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_NewExecuteFinderExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -19,7 +18,7 @@ public class typeof_NewExecuteFinderExpression_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = executeFinderExpression;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(executeFinderExpression, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.helgins)", "1206450509047", true), new QuotationClass_3().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.helgins)", "1206450517331", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(executeFinderExpression, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.helgins)", "1206450509047", true), new QuotationClass_3().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.helgins)", "1206450517331", intentionProvider);
     }
   }
 
