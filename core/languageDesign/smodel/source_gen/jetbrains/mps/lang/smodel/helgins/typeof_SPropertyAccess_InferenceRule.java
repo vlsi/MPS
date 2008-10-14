@@ -24,14 +24,14 @@ public class typeof_SPropertyAccess_InferenceRule extends AbstractInferenceRule_
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     if ((SLinkOperations.getTarget(op, "property", false) != null)) {
-      final SNode Concept_typevar_1186062582563 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-      RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1186062582563));
+      final SNode Concept_typevar_1186062582563 = typeCheckingContext.createNewRuntimeTypesVariable();
+      RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1186062582563));
       {
-        final SNode C = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1186062582563);
+        final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1186062582563);
         TypeChecker.getInstance().getRuntimeSupport().whenConcrete(C, new Runnable() {
 
           public void run() {
-            SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C);
+            SNode inputNodeConcept = typeCheckingContext.getEquationManager().getRepresentator(C);
             List<SNode> declaredProperties = AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(inputNodeConcept);
             SNode property = SLinkOperations.getTarget(op, "property", false);
             String conceptName = SPropertyOperations.getString(inputNodeConcept, "name");

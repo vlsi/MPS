@@ -35,7 +35,7 @@ public class typeOf_Concept_FindInstances_InferenceRule extends AbstractInferenc
         public void run() {
           {
             IMatchingPattern pattern_2 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType");
-            SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), pattern_2);
+            SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(LeftType), pattern_2);
             if (coercedNode_2 != null) {
               {
                 SNode _nodeToCheck_1029348928467 = node;

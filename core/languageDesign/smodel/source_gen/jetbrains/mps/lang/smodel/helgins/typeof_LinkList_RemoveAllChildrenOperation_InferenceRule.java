@@ -17,17 +17,17 @@ public class typeof_LinkList_RemoveAllChildrenOperation_InferenceRule extends Ab
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     RulesUtil.checkAppliedTo_LinkListAccess_aggregation(typeCheckingContext, op);
-    final SNode Concept_typevar_1215104325493 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1215104325493));
+    final SNode Concept_typevar_1215104325493 = typeCheckingContext.createNewRuntimeTypesVariable();
+    RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1215104325493));
     {
-      final SNode C = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1215104325493);
+      final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1215104325493);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(C, new Runnable() {
 
         public void run() {
           {
             SNode _nodeToCheck_1029348928467 = op;
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1215104325502", true), new QuotationClass_95().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1215104325500", intentionProvider);
+            typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1215104325502", true), new QuotationClass_95().createNode(typeCheckingContext.getEquationManager().getRepresentator(C)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1215104325500", intentionProvider);
           }
         }
 

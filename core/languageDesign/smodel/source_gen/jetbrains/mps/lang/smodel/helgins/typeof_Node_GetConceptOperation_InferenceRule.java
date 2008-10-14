@@ -35,7 +35,7 @@ public class typeof_Node_GetConceptOperation_InferenceRule extends AbstractInfer
         public void run() {
           {
             IMatchingPattern pattern_3 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType");
-            SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(operandType), pattern_3);
+            SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(operandType), pattern_3);
             if (coercedNode_3 != null) {
               if (SLinkOperations.getTarget(coercedNode_3, "concept", false) != null) {
                 {

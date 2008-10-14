@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -20,13 +19,13 @@ public class typeOf_LinkList_AddChildOperation_InferenceRule extends AbstractInf
     RulesUtil.checkAppliedTo_LinkListAccess_aggregation(typeCheckingContext, op);
     SNode parameter = SLinkOperations.getTarget(op, "parameter", true);
     if ((parameter != null)) {
-      final SNode ExpectedType_typevar_1206101161890 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-      RulesUtil.equate_inputNodeType(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101161890));
+      final SNode ExpectedType_typevar_1206101161890 = typeCheckingContext.createNewRuntimeTypesVariable();
+      RulesUtil.equate_inputNodeType(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(ExpectedType_typevar_1206101161890));
       SNode parmType = typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205272443654", true);
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(parmType, TypeChecker.getInstance().getEquationManager().getRepresentator(ExpectedType_typevar_1206101161890), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205272443656", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(parmType, typeCheckingContext.getEquationManager().getRepresentator(ExpectedType_typevar_1206101161890), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205272443656", false, 0, intentionProvider);
       }
     }
   }

@@ -40,14 +40,14 @@ public class typeof_Node_GetReferentSearchScopeOperation_InferenceRule extends A
       if (!(SPropertyOperations.hasValue(linkDecl, "metaClass", "reference", "reference"))) {
         TypeChecker.getInstance().reportTypeError(op, "reference link is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1221168677396");
       }
-      final SNode Concept_typevar_1221168662799 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-      RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1221168662799));
+      final SNode Concept_typevar_1221168662799 = typeCheckingContext.createNewRuntimeTypesVariable();
+      RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1221168662799));
       {
-        final SNode C = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1221168662799);
+        final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1221168662799);
         TypeChecker.getInstance().getRuntimeSupport().whenConcrete(C, new Runnable() {
 
           public void run() {
-            SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C);
+            SNode inputNodeConcept = typeCheckingContext.getEquationManager().getRepresentator(C);
             List<SNode> declaredLinks = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(inputNodeConcept);
             if (!(ListSequence.fromList(declaredLinks).contains(linkDecl))) {
               TypeChecker.getInstance().reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1221168662817");

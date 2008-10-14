@@ -44,35 +44,35 @@ public class RulesUtil {
         public void run() {
           boolean isGood = false;
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_33().createNode(), false, false)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new QuotationClass_33().createNode(), false, false)) {
               isGood = true;
             }
           }
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_34().createNode(), false, false)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new QuotationClass_34().createNode(), false, false)) {
               isGood = true;
             }
           }
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_35().createNode(), false, false)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new QuotationClass_35().createNode(), false, false)) {
               isGood = true;
             }
           }
           // ===========
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_link")) {
-            SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
+            SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(LeftType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
             if (linkAccessT != null) {
               isGood = SPropertyOperations.getBoolean(linkAccessT, "singularCradinality");
               if (isGood) {
                 // some of ops applicable to 'link' require left-expr to be a concept
                 if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept") && !(SConceptPropertyOperations.getBoolean(op, "applicable_to_node"))) {
-                  isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), new QuotationClass_85().createNode());
+                  isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new QuotationClass_85().createNode());
                 }
               }
             }
           }
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_linkList")) {
-            SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
+            SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(LeftType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
             if (linkAccessT != null) {
               isGood = !(SPropertyOperations.getBoolean(linkAccessT, "singularCradinality"));
             }
@@ -101,7 +101,7 @@ public class RulesUtil {
             }
           }
           if (!(isGood)) {
-            TypeChecker.getInstance().reportTypeError(op, "operation is not applicable to " + TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1186067417054");
+            TypeChecker.getInstance().reportTypeError(op, "operation is not applicable to " + typeCheckingContext.getEquationManager().getRepresentator(LeftType), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1186067417054");
           }
         }
 
@@ -120,7 +120,7 @@ public class RulesUtil {
 
         public void run() {
           boolean isGood = false;
-          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
+          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(LeftType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
           if (linkAccessT != null) {
             if (!(SPropertyOperations.getBoolean(linkAccessT, "singularCradinality"))) {
               isGood = true;
@@ -146,7 +146,7 @@ public class RulesUtil {
 
         public void run() {
           boolean isGood = false;
-          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
+          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(LeftType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
           if (linkAccessT != null) {
             if (SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
               isGood = true;
@@ -209,15 +209,15 @@ public class RulesUtil {
 
         public void run() {
           SNode conceptDeclaration = null;
-          if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "jetbrains.mps.lang.smodel.structure._LinkAccessT")) {
-            conceptDeclaration = SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "targetConcept", false);
+          if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(LeftType), "jetbrains.mps.lang.smodel.structure._LinkAccessT")) {
+            conceptDeclaration = SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(LeftType), "targetConcept", false);
           } else
-          if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
-            conceptDeclaration = SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "concept", false);
+          if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(LeftType), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
+            conceptDeclaration = SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(LeftType), "concept", false);
           } else
-          if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "jetbrains.mps.lang.smodel.structure.SConceptType")) {
+          if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(LeftType), "jetbrains.mps.lang.smodel.structure.SConceptType")) {
             if (conceptOfConceptIfInputConcept) {
-              conceptDeclaration = SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), "conceptDeclaraton", false);
+              conceptDeclaration = SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(LeftType), "conceptDeclaraton", false);
             } else
             {
               conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
@@ -239,12 +239,12 @@ public class RulesUtil {
 
   @InferenceMethod()
   public static void equate_inputNodeType(final TypeCheckingContext typeCheckingContext, SNode op, SNode TypeToEquate) {
-    final SNode Concept_typevar_1206099042246 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    equate_inputNodeConcept(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246));
+    final SNode Concept_typevar_1206099042246 = typeCheckingContext.createNewRuntimeTypesVariable();
+    equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099042246));
     {
       SNode _nodeToCheck_1029348928467 = null;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(TypeToEquate, new QuotationClass_69().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099042246)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1206099071408", intentionProvider);
+      typeCheckingContext.createEquation(TypeToEquate, new QuotationClass_69().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099042246)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1206099071408", intentionProvider);
     }
   }
 
@@ -285,7 +285,7 @@ public class RulesUtil {
         TypeChecker.getInstance().getRuntimeSupport().whenConcrete(poundExpressionType, new Runnable() {
 
           public void run() {
-            SNode conceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(poundExpressionType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true);
+            SNode conceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(poundExpressionType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true);
             if (SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false) != null) {
               {
                 SNode _nodeToCheck_1029348928467 = null;

@@ -29,8 +29,8 @@ public class checkThrowedByThrowIsCaught_NonTypesystemRule extends AbstractNonTy
 
         public void run() {
           Set<SNode> throwables = new HashSet<SNode>();
-          throwables.add(TypeChecker.getInstance().getEquationManager().getRepresentator(ThrowableType));
-          if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(ThrowableType), "jetbrains.mps.baseLanguage.structure.Type")) {
+          throwables.add(typeCheckingContext.getEquationManager().getRepresentator(ThrowableType));
+          if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(ThrowableType), "jetbrains.mps.baseLanguage.structure.Type")) {
             RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, throwStatement);
           }
         }

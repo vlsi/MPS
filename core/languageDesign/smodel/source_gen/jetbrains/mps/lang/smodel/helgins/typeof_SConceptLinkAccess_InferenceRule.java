@@ -23,15 +23,15 @@ public class typeof_SConceptLinkAccess_InferenceRule extends AbstractInferenceRu
     if (conceptLinkDecl == null) {
       return;
     }
-    final SNode Concept_typevar_1208191126316 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    RulesUtil.equate_inputNodeConceptOrInputConceptType(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1208191126316));
+    final SNode Concept_typevar_1208191126316 = typeCheckingContext.createNewRuntimeTypesVariable();
+    RulesUtil.equate_inputNodeConceptOrInputConceptType(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1208191126316));
     {
-      final SNode concreteConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1208191126316);
+      final SNode concreteConcept = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1208191126316);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(concreteConcept, new Runnable() {
 
         public void run() {
           SNode declaringConcept = SNodeOperations.getParent(conceptLinkDecl);
-          RulesUtil.checkAssignableConcept(typeCheckingContext, (SNode)TypeChecker.getInstance().getEquationManager().getRepresentator(concreteConcept), declaringConcept, op, "operation is applied to wrong concept");
+          RulesUtil.checkAssignableConcept(typeCheckingContext, (SNode)typeCheckingContext.getEquationManager().getRepresentator(concreteConcept), declaringConcept, op, "operation is applied to wrong concept");
         }
 
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1208191126321");

@@ -6,7 +6,6 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -18,12 +17,12 @@ public class typeof_Node_GetDescendantsOperation_InferenceRule extends AbstractI
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     RulesUtil.checkOpParameters_generic(typeCheckingContext, op);
-    final SNode ConceptFromOpParm_typevar_1207353217271 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    RulesUtil.equate_conceptFromOpParm(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207353217271));
+    final SNode ConceptFromOpParm_typevar_1207353217271 = typeCheckingContext.createNewRuntimeTypesVariable();
+    RulesUtil.equate_conceptFromOpParm(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207353217271));
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1207353493598", true), new QuotationClass_82().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207353217271)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1207353493596", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1207353493598", true), new QuotationClass_82().createNode(typeCheckingContext.getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207353217271)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1207353493596", intentionProvider);
     }
   }
 

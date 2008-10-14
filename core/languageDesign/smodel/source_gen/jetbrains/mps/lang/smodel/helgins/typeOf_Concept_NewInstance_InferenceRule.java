@@ -35,7 +35,7 @@ public class typeOf_Concept_NewInstance_InferenceRule extends AbstractInferenceR
         public void run() {
           {
             IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType");
-            SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), pattern_0);
+            SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(LeftType), pattern_0);
             if (coercedNode_0 != null) {
               {
                 SNode _nodeToCheck_1029348928467 = node;

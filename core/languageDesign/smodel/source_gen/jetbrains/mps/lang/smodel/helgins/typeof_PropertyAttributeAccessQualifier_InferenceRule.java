@@ -48,14 +48,14 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule extends Abstr
     if (SNodeOperations.isInstanceOf(propQ, "jetbrains.mps.lang.smodel.structure.PropertyRefQualifier")) {
       // check that property is in scope
       final SNode property = SLinkOperations.getTarget(propQ, "property", false);
-      final SNode Concept_typevar_1204914077372 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-      RulesUtil.equate_inputNodeConcept(typeCheckingContext, SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, false), TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1204914077372));
+      final SNode Concept_typevar_1204914077372 = typeCheckingContext.createNewRuntimeTypesVariable();
+      RulesUtil.equate_inputNodeConcept(typeCheckingContext, SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, false), typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1204914077372));
       {
-        final SNode C = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1204914077372);
+        final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1204914077372);
         TypeChecker.getInstance().getRuntimeSupport().whenConcrete(C, new Runnable() {
 
           public void run() {
-            SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C);
+            SNode inputNodeConcept = typeCheckingContext.getEquationManager().getRepresentator(C);
             List<SNode> declaredProperties = AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(inputNodeConcept);
             if (!(ListSequence.fromList(declaredProperties).contains(property))) {
               TypeChecker.getInstance().reportTypeError(propQ, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1204914077394");

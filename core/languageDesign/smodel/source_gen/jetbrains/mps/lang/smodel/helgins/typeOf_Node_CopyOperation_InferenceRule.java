@@ -17,14 +17,14 @@ public class typeOf_Node_CopyOperation_InferenceRule extends AbstractInferenceRu
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
     RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, node);
-    final SNode Concept_typevar_1205967749950 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    RulesUtil.equate_inputNodeConcept(typeCheckingContext, node, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1205967749950));
+    final SNode Concept_typevar_1205967749950 = typeCheckingContext.createNewRuntimeTypesVariable();
+    RulesUtil.equate_inputNodeConcept(typeCheckingContext, node, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1205967749950));
     {
-      final SNode C = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1205967749950);
+      final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1205967749950);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(C, new Runnable() {
 
         public void run() {
-          SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C);
+          SNode inputNodeConcept = typeCheckingContext.getEquationManager().getRepresentator(C);
           {
             SNode _nodeToCheck_1029348928467 = node;
             BaseIntentionProvider intentionProvider = null;

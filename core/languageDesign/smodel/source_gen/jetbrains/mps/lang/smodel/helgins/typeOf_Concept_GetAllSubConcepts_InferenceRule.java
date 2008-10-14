@@ -42,7 +42,7 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule extends AbstractInfe
         public void run() {
           {
             IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType");
-            SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType), pattern_1);
+            SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(LeftType), pattern_1);
             if (coercedNode_1 != null) {
               {
                 SNode _nodeToCheck_1029348928467 = node;

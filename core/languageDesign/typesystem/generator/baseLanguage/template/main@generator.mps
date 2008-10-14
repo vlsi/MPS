@@ -598,12 +598,6 @@
         </node>
       </node>
     </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1205766899455">
-      <link role="applicableConcept" targetNodeId="1.1205762656241" resolveInfo="WhenConcreteVariableReference" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1205766907973">
-        <link role="template" targetNodeId="1205766139542" resolveInfo="WhenConcreteVariableReference_to_Expression" />
-      </node>
-    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1216650020899">
       <link role="applicableConcept" targetNodeId="1.1185788614172" resolveInfo="NormalTypeClause" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1216650028245">
@@ -11848,12 +11842,14 @@
     <link role="applicableConcept" targetNodeId="1.1205762656241" resolveInfo="WhenConcreteVariableReference" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205766329451">
       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205766329452">
-        <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205766329453">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
-          <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
+        <node role="operand" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1223986338330">
+          <property name="name" value="typeCheckingContext" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223986341050">
+            <link role="classifier" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
+          </node>
         </node>
-        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205766329454">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getEquationManager():jetbrains.mps.typesystem.inference.EquationManager" resolveInfo="getEquationManager" />
+        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223986355550">
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeCheckingContext.getEquationManager():jetbrains.mps.typesystem.inference.EquationManager" resolveInfo="getEquationManager" />
         </node>
       </node>
       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205766329455">
@@ -13591,6 +13587,42 @@
       <link role="applicableConcept" targetNodeId="1.1216390348809" resolveInfo="QuickFixArgumentReference" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1216648712133">
         <link role="template" targetNodeId="1216642993572" resolveInfo="reduce_QuickFixArgumentReference" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1223987386387">
+      <link role="applicableConcept" targetNodeId="1.1205762656241" resolveInfo="WhenConcreteVariableReference" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1223987386388">
+        <link role="template" targetNodeId="1205766139542" resolveInfo="WhenConcreteVariableReference_to_Expression" />
+      </node>
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1223987441175">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223987441176">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223987442380">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1223987450748">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223987450749">
+                <link role="classConcept" targetNodeId="41.1220457566052" resolveInfo="HelginsGenUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="41.1220457598870" resolveInfo="isInCheckEquation" />
+                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1223987450750" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1223987392686">
+      <link role="applicableConcept" targetNodeId="1.1205762656241" resolveInfo="WhenConcreteVariableReference" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1223987396001">
+        <link role="template" targetNodeId="1223987247896" resolveInfo="WhenConcreteVariableReference_to_Expression_special" />
+      </node>
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1223987444758">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223987444759">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223987445698">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223987445699">
+              <link role="classConcept" targetNodeId="41.1220457566052" resolveInfo="HelginsGenUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="41.1220457598870" resolveInfo="isInCheckEquation" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1223987445700" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
@@ -15917,6 +15949,35 @@
         </node>
       </node>
       <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1223922835705" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1223987247896">
+    <property name="name" value="WhenConcreteVariableReference_to_Expression_special" />
+    <link role="applicableConcept" targetNodeId="1.1205762656241" resolveInfo="WhenConcreteVariableReference" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1223987307008">
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223987307009">
+        <link role="classifier" targetNodeId="4.~SNode" resolveInfo="SNode" />
+      </node>
+      <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1223987307010">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1223987307011">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223987307012">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223987307013">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223987307014">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223987307015">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1223987307016" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223987307017">
+                    <link role="link" targetNodeId="1.1205762683928" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1223987307018">
+                  <link role="property" targetNodeId="5.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1223987311159" />
     </node>
   </node>
 </model>

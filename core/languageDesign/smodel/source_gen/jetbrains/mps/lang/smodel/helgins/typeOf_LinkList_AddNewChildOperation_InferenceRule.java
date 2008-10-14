@@ -21,22 +21,22 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule extends Abstract
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     RulesUtil.checkAppliedTo_LinkListAccess_aggregation(typeCheckingContext, op);
-    final SNode Concept_typevar_1206099501305 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099501305));
+    final SNode Concept_typevar_1206099501305 = typeCheckingContext.createNewRuntimeTypesVariable();
+    RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099501305));
     {
-      final SNode concreteConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(Concept_typevar_1206099501305);
+      final SNode concreteConcept = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099501305);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(concreteConcept, new Runnable() {
 
         public void run() {
           SNode resultConcept;
           SNode parameterConcept = SLinkOperations.getTarget(op, "concept", false);
           if (parameterConcept == null) {
-            resultConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(concreteConcept);
+            resultConcept = typeCheckingContext.getEquationManager().getRepresentator(concreteConcept);
           } else
           {
             resultConcept = parameterConcept;
-            if (!(SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(TypeChecker.getInstance().getEquationManager().getRepresentator(concreteConcept))))) {
-              TypeChecker.getInstance().reportTypeError(op, SPropertyOperations.getString(parameterConcept, "name") + " is not sub-concept of " + SPropertyOperations.getString(TypeChecker.getInstance().getEquationManager().getRepresentator(concreteConcept), "name"), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205771608879");
+            if (!(SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(typeCheckingContext.getEquationManager().getRepresentator(concreteConcept))))) {
+              TypeChecker.getInstance().reportTypeError(op, SPropertyOperations.getString(parameterConcept, "name") + " is not sub-concept of " + SPropertyOperations.getString(typeCheckingContext.getEquationManager().getRepresentator(concreteConcept), "name"), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205771608879");
             }
           }
           {

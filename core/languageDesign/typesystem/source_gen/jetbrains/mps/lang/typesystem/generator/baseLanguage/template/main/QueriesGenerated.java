@@ -273,6 +273,14 @@ public class QueriesGenerated {
     return false;
   }
 
+  public static boolean baseMappingRule_Condition_1223987441175(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return !(HelginsGenUtil.isInCheckEquation(_context.getNode()));
+  }
+
+  public static boolean baseMappingRule_Condition_1223987444758(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return HelginsGenUtil.isInCheckEquation(_context.getNode());
+  }
+
   public static Object propertyMacro_GetPropertyValue_1174643589864(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode ruleConcept = SNodeOperations.getConceptDeclaration(_context.getNode());
     return SPropertyOperations.getString(_context.getNode(), "name") + "_" + ruleConcept;
@@ -791,6 +799,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1223922835693(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.createUniqueName(SPropertyOperations.getString(_context.getNode(), "name") + "_typevar", null);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1223987307011(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "whenConcreteVar", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
