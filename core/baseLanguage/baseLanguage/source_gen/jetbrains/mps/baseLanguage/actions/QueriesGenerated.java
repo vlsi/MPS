@@ -2055,7 +2055,7 @@ __switch__:
               return new ISequenceIterableAdapter <String>() {
 
                 public Iterator<String> iterator() {
-                  return new YieldingIterator<String>() {
+                  return new YieldingIterator <String>() {
 
                     private int __CP__ = 0;
 

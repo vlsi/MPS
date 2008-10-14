@@ -13,7 +13,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="5" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
@@ -184,7 +184,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1222884485486">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1222884493209">
+                          <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1222884493209">
                             <link role="baseMethodDeclaration" targetNodeId="1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
                             <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1222884536642">
                               <link role="concept" targetNodeId="6.1068431790189" resolveInfo="Type" />
@@ -498,7 +498,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1201536176316">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227958023">
+                          <node role="childNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227958023">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1201536184924">
                               <link role="baseMethodDeclaration" targetNodeId="1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201536188150">
@@ -630,7 +630,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1202774119658">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1203250967791">
+                          <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1203250967791">
                             <link role="baseMethodDeclaration" targetNodeId="1202774154486" resolveInfo="copyTypeRecursively" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1203250971087">
                               <link role="baseMethodDeclaration" targetNodeId="1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
@@ -695,7 +695,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1202774119684">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1203250983732">
+                          <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1203250983732">
                             <link role="baseMethodDeclaration" targetNodeId="1202774154486" resolveInfo="copyTypeRecursively" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1203250987276">
                               <link role="baseMethodDeclaration" targetNodeId="1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
@@ -739,7 +739,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1215426945121">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215446144339">
+                          <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215446144339">
                             <link role="baseMethodDeclaration" targetNodeId="1202774154486" resolveInfo="copyTypeRecursively" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215446144340">
                               <link role="variableDeclaration" targetNodeId="1215426933782" resolveInfo="tt" />
@@ -895,7 +895,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1215451120820">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215451120821">
+                          <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215451120821">
                             <link role="baseMethodDeclaration" targetNodeId="1202763885217" resolveInfo="copyTypeRecursively" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215451120822">
                               <link role="baseMethodDeclaration" targetNodeId="1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
@@ -957,7 +957,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1215451120847">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215451120848">
+                          <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215451120848">
                             <link role="baseMethodDeclaration" targetNodeId="1202763885217" resolveInfo="copyTypeRecursively" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215451120849">
                               <link role="baseMethodDeclaration" targetNodeId="1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
@@ -998,7 +998,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1215451120864">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215451120865">
+                          <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215451120865">
                             <link role="baseMethodDeclaration" targetNodeId="1202763885217" resolveInfo="copyTypeRecursively" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215451120866">
                               <link role="variableDeclaration" targetNodeId="1215451120870" resolveInfo="tt" />
@@ -1154,7 +1154,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1215530117679">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215530117680">
+                          <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215530117680">
                             <link role="baseMethodDeclaration" targetNodeId="1202763885217" resolveInfo="copyTypeRecursively" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215530117681">
                               <link role="baseMethodDeclaration" targetNodeId="1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
@@ -1216,7 +1216,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1215530117705">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215530117706">
+                          <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215530117706">
                             <link role="baseMethodDeclaration" targetNodeId="1202763885217" resolveInfo="copyTypeRecursively" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215530117707">
                               <link role="baseMethodDeclaration" targetNodeId="1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
@@ -1252,7 +1252,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1215530117721">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215530117722">
+                          <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1215530117722">
                             <link role="baseMethodDeclaration" targetNodeId="1202763885217" resolveInfo="copyTypeRecursively" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215530117723">
                               <link role="variableDeclaration" targetNodeId="1215530117727" resolveInfo="tt" />
@@ -2196,7 +2196,7 @@
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1202774154516">
-                      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1202775132616">
+                      <node role="childNode" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1202775132616">
                         <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1202775149137">
                           <link role="baseMethodDeclaration" targetNodeId="1202763885217" resolveInfo="copyTypeRecursively" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202775149138">
@@ -2495,7 +2495,7 @@
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1202763885273">
-                      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1202763885274">
+                      <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1202763885274">
                         <link role="baseMethodDeclaration" targetNodeId="1202763885217" resolveInfo="copyTypeRecursively" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202763885275">
                           <link role="variableDeclaration" targetNodeId="1202763885283" resolveInfo="pt" />
@@ -2581,7 +2581,7 @@
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1222888698060">
-                        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1222888704534">
+                        <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1222888704534">
                           <link role="baseMethodDeclaration" targetNodeId="1202763885217" resolveInfo="copyTypeRecursively" />
                           <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1222888707964">
                             <link role="concept" targetNodeId="6.1068431790189" resolveInfo="Type" />

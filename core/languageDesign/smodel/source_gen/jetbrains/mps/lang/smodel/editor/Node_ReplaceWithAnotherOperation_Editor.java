@@ -66,9 +66,9 @@ public class Node_ReplaceWithAnotherOperation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_parameter1140131934570(editorCell, node, context);
+    setupBasic_refNode_childNode1140131934570(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_parameter_1140131934570((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_childNode_1140131934570((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -76,8 +76,8 @@ public class Node_ReplaceWithAnotherOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode1140131934570(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("parameter");
-    provider.setNoTargetText("<no parameter>");
+    provider.setRole("childNode");
+    provider.setNoTargetText("<no childNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode1140131934570_internal(context, node, provider);
@@ -96,7 +96,7 @@ public class Node_ReplaceWithAnotherOperation_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1140131934568");
   }
 
-  private static void setupBasic_refNode_parameter1140131934570(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNode_childNode1140131934570(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206487382395(EditorCell editorCell, SNode node, EditorContext context) {
@@ -113,7 +113,7 @@ public class Node_ReplaceWithAnotherOperation_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
-  private static void setupLabel_refNode_parameter_1140131934570(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNode_childNode_1140131934570(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1206487382396_1206487382396(EditorCell_Label editorCell, SNode node, EditorContext context) {

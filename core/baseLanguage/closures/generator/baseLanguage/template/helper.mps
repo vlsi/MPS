@@ -12,7 +12,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="5" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
@@ -7422,7 +7422,7 @@
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1203686072155">
-                                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209072002519">
+                                <node role="childNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209072002519">
                                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203686072157">
                                     <link role="variableDeclaration" targetNodeId="1203337810315" resolveInfo="map" />
                                   </node>
@@ -7555,7 +7555,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1203337810409">
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209071994285">
+                    <node role="childNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209071994285">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203337810411">
                         <link role="variableDeclaration" targetNodeId="1203337810315" resolveInfo="map" />
                       </node>
@@ -7732,7 +7732,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1205735134685">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1207047112576">
+                          <node role="childNode" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1207047112576">
                             <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1207047119950">
                               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207047125508" />
                               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207047118418">
@@ -7799,7 +7799,7 @@
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1205735803985">
-                        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205735803986">
+                        <node role="childNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205735803986">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205735803987">
                             <link role="variableDeclaration" targetNodeId="1205735075829" resolveInfo="p" />
                           </node>

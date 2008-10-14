@@ -10,18 +10,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LinkList_AddChildOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation";
-  public static String PARAMETER = "parameter";
+  public static String CHILD_NODE = "childNode";
 
   public LinkList_AddChildOperation(SNode node) {
     super(node);
   }
 
-  public Expression getParameter() {
-    return (Expression)this.getChild(LinkList_AddChildOperation.PARAMETER);
+  public Expression getChildNode() {
+    return (Expression)this.getChild(LinkList_AddChildOperation.CHILD_NODE);
   }
 
-  public void setParameter(Expression node) {
-    super.setChild(LinkList_AddChildOperation.PARAMETER, node);
+  public void setChildNode(Expression node) {
+    super.setChild(LinkList_AddChildOperation.CHILD_NODE, node);
   }
 
 

@@ -28,7 +28,7 @@ public class ReplacementView {
   private UsagesView myUsagesView;
   private RunReplacement_Tool myTool;
   private JPanel myMainPanel = new JPanel(new BorderLayout());
-  private JButton myButton = new JButton("Do modify");
+  private JButton myButton = new JButton("Do replace");
 
   public ReplacementView(RunReplacement_Tool tool, MPSProject project, IResultProvider provider, SearchQuery searchQuery, final SearchResults results, final Query query) {
     this.myTool = tool;

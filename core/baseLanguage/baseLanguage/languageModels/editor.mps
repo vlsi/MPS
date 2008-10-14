@@ -10,7 +10,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="5" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
@@ -9291,7 +9291,7 @@
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1172062199707">
-                        <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1172062202849">
+                        <node role="childNode" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1172062202849">
                           <link role="variable" targetNodeId="1172062166211" resolveInfo="actualArgument" />
                         </node>
                       </node>
@@ -10653,7 +10653,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1197551845421">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197551848160">
+                <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197551848160">
                   <link role="variableDeclaration" targetNodeId="1197551596590" resolveInfo="g" />
                 </node>
               </node>
@@ -10807,7 +10807,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1197551961034">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197552109960">
+                <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197552109960">
                   <link role="variableDeclaration" targetNodeId="1197551884289" resolveInfo="s" />
                 </node>
               </node>
@@ -11618,7 +11618,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1191845633319">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191845637386">
+                    <node role="childNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191845637386">
                       <link role="concept" targetNodeId="17.1068580123157" resolveInfo="Statement" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1191845636558">
                         <link role="variable" targetNodeId="1191845561397" resolveInfo="n" />
@@ -11708,7 +11708,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1191845655056">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191845655057">
+                    <node role="childNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191845655057">
                       <link role="concept" targetNodeId="17.1068580123157" resolveInfo="Statement" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1191845655058">
                         <link role="variable" targetNodeId="1191845655051" resolveInfo="n" />
@@ -11813,7 +11813,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1191845708470">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191845708471">
+                    <node role="childNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191845708471">
                       <link role="concept" targetNodeId="17.1068580123157" resolveInfo="Statement" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1191845708472">
                         <link role="variable" targetNodeId="1191845708465" resolveInfo="n" />
@@ -11903,7 +11903,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1191846252148">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846252149">
+                    <node role="childNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846252149">
                       <link role="concept" targetNodeId="17.1068580123157" resolveInfo="Statement" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1191846252150">
                         <link role="variable" targetNodeId="1191846252143" resolveInfo="n" />
@@ -11993,7 +11993,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1191846303867">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846303868">
+                    <node role="childNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846303868">
                       <link role="concept" targetNodeId="17.1068580123157" resolveInfo="Statement" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1191846303869">
                         <link role="variable" targetNodeId="1191846303862" resolveInfo="n" />
@@ -12088,7 +12088,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1191852804711">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191852804712">
+                    <node role="childNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191852804712">
                       <link role="concept" targetNodeId="17.1068580123157" resolveInfo="Statement" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1191852804713">
                         <link role="variable" targetNodeId="1191852804706" resolveInfo="n" />
@@ -12183,7 +12183,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1191846395080">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846395081">
+                    <node role="childNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846395081">
                       <link role="concept" targetNodeId="17.1068580123157" resolveInfo="Statement" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1191846395082">
                         <link role="variable" targetNodeId="1191846395075" resolveInfo="n" />
@@ -12286,7 +12286,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1191846543458">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846543459">
+                    <node role="childNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846543459">
                       <link role="concept" targetNodeId="17.1068580123157" resolveInfo="Statement" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1191846543460">
                         <link role="variable" targetNodeId="1191846543453" resolveInfo="n" />
@@ -12376,7 +12376,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1191846698203">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846698204">
+                    <node role="childNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846698204">
                       <link role="concept" targetNodeId="17.1068580123157" resolveInfo="Statement" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1191846698205">
                         <link role="variable" targetNodeId="1191846698198" resolveInfo="n" />
@@ -12492,7 +12492,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1191846758729">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846758730">
+                    <node role="childNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846758730">
                       <link role="concept" targetNodeId="17.1068580123157" resolveInfo="Statement" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1191846758731">
                         <link role="variable" targetNodeId="1191846758724" resolveInfo="n" />
@@ -12582,7 +12582,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1191846851238">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846851239">
+                    <node role="childNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1191846851239">
                       <link role="concept" targetNodeId="17.1068580123157" resolveInfo="Statement" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1191846851240">
                         <link role="variable" targetNodeId="1191846851233" resolveInfo="n" />
@@ -12675,7 +12675,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1197487560138">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1197487560139">
+                    <node role="childNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1197487560139">
                       <link role="concept" targetNodeId="17.1068580123157" resolveInfo="Statement" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1197487560140">
                         <link role="variable" targetNodeId="1197487560133" resolveInfo="n" />
@@ -15545,7 +15545,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1198587695276">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198587782153">
+              <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198587782153">
                 <link role="variableDeclaration" targetNodeId="1198586186551" resolveInfo="newDeclaration" />
               </node>
             </node>
@@ -15694,7 +15694,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1198588866989">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198588866990">
+              <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198588866990">
                 <link role="variableDeclaration" targetNodeId="1198588866959" resolveInfo="newDeclaration" />
               </node>
             </node>

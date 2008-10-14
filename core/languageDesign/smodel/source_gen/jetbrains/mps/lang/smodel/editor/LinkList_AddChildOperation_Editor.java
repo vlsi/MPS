@@ -66,9 +66,9 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_parameter1139870441857(editorCell, node, context);
+    setupBasic_refNode_childNode1139870441857(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_parameter_1139870441857((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_childNode_1139870441857((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -76,8 +76,8 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode1139870441857(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("parameter");
-    provider.setNoTargetText("<no parameter>");
+    provider.setRole("childNode");
+    provider.setNoTargetText("<no childNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode1139870441857_internal(context, node, provider);
@@ -96,7 +96,7 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1139870427663");
   }
 
-  private static void setupBasic_refNode_parameter1139870441857(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNode_childNode1139870441857(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12064877446391206487744639(EditorCell editorCell, SNode node, EditorContext context) {
@@ -113,7 +113,7 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
-  private static void setupLabel_refNode_parameter_1139870441857(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNode_childNode_1139870441857(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1206487744639_1206487744639(EditorCell_Label editorCell, SNode node, EditorContext context) {

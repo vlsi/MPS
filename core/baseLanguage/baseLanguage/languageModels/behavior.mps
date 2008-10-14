@@ -14,7 +14,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="5" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -2113,7 +2113,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1213877315992">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877315993">
+                          <node role="childNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877315993">
                             <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1213877315994">
                               <link role="variable" targetNodeId="1213877315985" resolveInfo="typeParm" />
                             </node>
@@ -9315,7 +9315,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1217845923326">
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217845923327">
+                    <node role="childNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217845923327">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217847579370">
                         <link role="variableDeclaration" targetNodeId="1217847546627" resolveInfo="ifFalseStatement" />
                       </node>
@@ -9347,7 +9347,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" id="1217845923343">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217845923344">
+              <node role="childNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217845923344">
                 <link role="variableDeclaration" targetNodeId="1217845923290" resolveInfo="result" />
               </node>
             </node>

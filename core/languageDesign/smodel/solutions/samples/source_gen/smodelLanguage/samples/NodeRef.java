@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class NodeRef {
 
   public void node_ref_1() {
-    List<SNode> members = SLinkOperations.getTargets(SNodeOperations.getNode("jetbrains.mps.bootstrap.editorLanguage.structure", "1139535328871"), "member", true);
+    List<SNode> members = SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1139535328871"), "member", true);
     String presentation = SPropertyOperations.getString(ListSequence.fromList(members).first(), "externalValue");
     String internalValue = SPropertyOperations.getString(ListSequence.fromList(members).first(), "internalValue");
     String javaIdentifier = SPropertyOperations.getString(ListSequence.fromList(members).first(), "javaIdentifier");
