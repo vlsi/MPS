@@ -6,8 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.collections.constraints.SmartClosureParameterTypeUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -27,18 +27,18 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
   }
 
   public void applyRule(final SNode scpd, final TypeCheckingContext typeCheckingContext) {
-    final SNode sampleTypeVar_typevar_1204072172194 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-    SmartClosureParameterTypeUtil.equateInputType(typeCheckingContext, scpd, TypeChecker.getInstance().getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194));
+    final SNode sampleTypeVar_typevar_1204072172194 = typeCheckingContext.createNewRuntimeTypesVariable();
+    SmartClosureParameterTypeUtil.equateInputType(typeCheckingContext, scpd, typeCheckingContext.getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194));
     {
-      final SNode foo = TypeChecker.getInstance().getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194);
+      final SNode foo = typeCheckingContext.getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(foo, new Runnable() {
 
         public void run() {
           if (SmartClosureParameterTypeUtil.hasResolveType(scpd)) {
-            final SNode resolveTypeVar_typevar_1204072273983 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
-            SmartClosureParameterTypeUtil.equateResolveType(typeCheckingContext, scpd, TypeChecker.getInstance().getEquationManager().getRepresentator(resolveTypeVar_typevar_1204072273983));
+            final SNode resolveTypeVar_typevar_1204072273983 = typeCheckingContext.createNewRuntimeTypesVariable();
+            SmartClosureParameterTypeUtil.equateResolveType(typeCheckingContext, scpd, typeCheckingContext.getEquationManager().getRepresentator(resolveTypeVar_typevar_1204072273983));
             {
-              final SNode bar = TypeChecker.getInstance().getEquationManager().getRepresentator(resolveTypeVar_typevar_1204072273983);
+              final SNode bar = typeCheckingContext.getEquationManager().getRepresentator(resolveTypeVar_typevar_1204072273983);
               TypeChecker.getInstance().getRuntimeSupport().whenConcrete(bar, new Runnable() {
 
                 public void run() {
@@ -95,7 +95,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
           {
             {
               IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-              SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194), pattern_1);
+              SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194), pattern_1);
               if (coercedNode_1 != null) {
                 List<SNode> params = SLinkOperations.getTargets(coercedNode_1, "parameter", true);
                 if (params.size() > 0) {
@@ -110,7 +110,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
             }
             {
               IMatchingPattern pattern_2 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
-              SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194), pattern_2);
+              SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194), pattern_2);
               if (coercedNode_2 != null) {
                 {
                   SNode _nodeToCheck_1029348928467 = scpd;

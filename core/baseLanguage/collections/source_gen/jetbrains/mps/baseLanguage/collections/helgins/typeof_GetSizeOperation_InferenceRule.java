@@ -6,7 +6,6 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -17,11 +16,11 @@ public class typeof_GetSizeOperation_InferenceRule extends AbstractInferenceRule
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     SNode input = RulesFunctions_Collections.getInput(typeCheckingContext, op);
-    final SNode elementType_typevar_1184847379888 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
+    final SNode elementType_typevar_1184847379888 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(input, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.helgins)", "1184847389619", true), new QuotationClass_25().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184847379888)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.helgins)", "1184847420828", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(input, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.helgins)", "1184847389619", true), new QuotationClass_25().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1184847379888)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.helgins)", "1184847420828", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = op;
