@@ -118,15 +118,6 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     return getSelectionBackgroundColor();
   }
 
-  public boolean getUseLegacyTypesystem() {
-    return myState.myUseLegacyTypesystem;
-  }
-
-  public void setUseLegacyTypesystem(boolean useLegacyTypesystem) {
-    myState.myUseLegacyTypesystem = useLegacyTypesystem;
-  }
-
-
   public void addEditorSettingsListener(EditorSettingsListener l) {
     myListeners.add(l);
   }
@@ -304,7 +295,6 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
       }
     };
     private JCheckBox myAntialiasingCheckBox = createAntialiasinbCheckBox();
-    private JCheckBox myLegacyTypesystemCheckBox = createLegacyTypesystemCheckBox();
     private JCheckBox myUseBraces = createUseBracesCheckBox();
     private JSlider myBlinkingRateSlider = createBlinkingRateSlider();
     private final EditorComponent myBlinkingDemo = createBlinkingDemo();
@@ -335,12 +325,6 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
       antialiasingPanel.add(myAntialiasingCheckBox);
 
       panel.add(antialiasingPanel);
-
-      JPanel legacyTypesystemPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-      legacyTypesystemPanel.add(myLegacyTypesystemCheckBox);
-
-      panel.add(legacyTypesystemPanel);
-
 
       JPanel colorSettingsPanel = new JPanel(new GridLayout(0, 1));
       colorSettingsPanel.add(new JLabel("Selection Background:"));
@@ -386,12 +370,6 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     private JCheckBox createAntialiasinbCheckBox() {
       JCheckBox result = new JCheckBox("Use Antialiasing");
       result.setSelected(isUseAntialiasing());
-      return result;
-    }
-
-    private JCheckBox createLegacyTypesystemCheckBox() {
-      JCheckBox result = new JCheckBox("Use Lgeacy Typesystem For Highlighting");
-      result.setSelected(getUseLegacyTypesystem());
       return result;
     }
 
@@ -475,7 +453,6 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
             CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
 
             setUseAntialiasing(myAntialiasingCheckBox.isSelected());
-            setUseLegacyTypesystem(myLegacyTypesystemCheckBox.isSelected());
             setUseBraces(myUseBraces.isSelected());
 
             myState.mySelectionBackground = mySelectionBackgroundColorComponent.getColor();
@@ -533,7 +510,6 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     private Color mySelectionForeground = getDefaultSelectionForegroundColor();
     private Color mySelectionBackground = getDefaultSelectionBackgroundColor();
 
-    private boolean myUseLegacyTypesystem = true;
     private boolean myUseBraces = true;
 
     public String getFontFamily() {
@@ -582,14 +558,6 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
 
     public void setSelectionBackground(int rgb) {
       mySelectionBackground = new Color(rgb);
-    }
-
-    public boolean isUseLegacyTypesystem() {
-      return myUseLegacyTypesystem;
-    }
-
-    public void setUseLegacyTypesystem(boolean useLegacyTypesystem) {
-      myUseLegacyTypesystem = useLegacyTypesystem;
     }
 
     public boolean isUseBraces() {
