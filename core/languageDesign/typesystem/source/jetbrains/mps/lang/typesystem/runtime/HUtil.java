@@ -8,6 +8,7 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 import java.util.HashMap;
 
@@ -25,6 +26,19 @@ public class HUtil {
        SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false);
        if (BaseAdapter.isInstance(copy, RuntimeTypeVariable.class)) {
          TypeChecker.getInstance().getRuntimeSupport().registerTypeVariable(copy);
+       }
+       return copy;
+     } else {
+        return node ;
+     }
+  }
+
+  //todo use in post-processing scripts
+  public static SNode copyIfNecessary ( SNode node, TypeCheckingContext typeCheckingContext) {
+     if ( node != null && (node . getParent (  ) != null || node.isRoot())) {
+       SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false);
+       if (BaseAdapter.isInstance(copy, RuntimeTypeVariable.class)) {
+         typeCheckingContext.registerTypeVariable(copy);
        }
        return copy;
      } else {

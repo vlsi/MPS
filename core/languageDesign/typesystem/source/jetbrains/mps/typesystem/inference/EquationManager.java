@@ -41,7 +41,6 @@ public class EquationManager {
   private Map<IWrapper, Map<IWrapper, EquationInfo>> myComparableTypesMapStrong = new HashMap<IWrapper, Map<IWrapper, EquationInfo>>();
 
   private Map<IWrapper, IWrapper> myEquations = new HashMap<IWrapper, IWrapper>(64, 0.4f);
-  private Map<SNode, SNode> myRegisteredVariables = new HashMap<SNode, SNode>();
   private Map<IWrapper, WhenConcreteEntity> myWhenConcreteEntities = new HashMap<IWrapper, WhenConcreteEntity>();
   private Map<IWrapper, Set<SNodePointer>> myNonConcreteVars = new HashMap<IWrapper, Set<SNodePointer>>();
 
@@ -59,6 +58,10 @@ public class EquationManager {
 
   public TypeChecker getTypeChecker() {
     return myTypeChecker;
+  }
+
+  public TypeCheckingContext getTypeCheckingContext() {
+    return myTypeCheckingContext;
   }
 
   public IWrapper getParent(IWrapper type) {
@@ -120,20 +123,6 @@ public class EquationManager {
       myNonConcreteVars.put(wrapper, variables);
     }
     variables.add(variable);
-  }
-
-  private SNode registerVariable(SNode node) {
-    SNode runtimeTypesVariable = myTypeChecker.getRuntimeSupport().createNewRuntimeTypesVariable();
-    myRegisteredVariables.put(node, runtimeTypesVariable);
-    return runtimeTypesVariable;
-  }
-
-  public SNode getRegisteredVariable(SNode node) {
-    SNode var = myRegisteredVariables.get(node);
-    if (var == null) {
-      var = registerVariable(node);
-    }
-    return var;
   }
 
 
@@ -629,7 +618,6 @@ public class EquationManager {
     myWhenConcreteEntities.clear();
     myNonConcreteVars.clear();
     myWrapperListeners.clear();
-    myRegisteredVariables.clear();
   }
 
   private boolean compareWrappers(IWrapper wrapper1, IWrapper wrapper2, EquationInfo errorInfo) {

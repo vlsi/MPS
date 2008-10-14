@@ -102,16 +102,6 @@ public class RuntimeSupport {
     }
   }
 
-  @Deprecated
-  public SNode[] getRegisteredTypeVariables(String varName) {
-    NodeTypesComponent typesComponent = myTypeChecker.getCurrentTypesComponent();
-    if (typesComponent != null) {
-      return typesComponent.getVariables(varName);
-    } else {
-      return SNode.EMPTY_ARRAY;
-    }
-  }
-
   //-------------------- equations
 
   @Deprecated
