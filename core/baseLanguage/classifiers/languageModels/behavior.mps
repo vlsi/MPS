@@ -10,7 +10,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="3" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -1153,7 +1153,7 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221661952291">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221661952292">
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation" id="1221661952293">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221661952294">
+                          <node role="childNodes" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221661952294">
                             <link role="variableDeclaration" targetNodeId="1221661952197" resolveInfo="params" />
                           </node>
                         </node>
@@ -1243,7 +1243,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation" id="1221662108777">
-                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221662111436">
+                          <node role="childNodes" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221662111436">
                             <link role="variableDeclaration" targetNodeId="1221661897773" resolveInfo="parameteres" />
                           </node>
                         </node>
