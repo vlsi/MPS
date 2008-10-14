@@ -42,7 +42,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
               TypeChecker.getInstance().getRuntimeSupport().whenConcrete(bar, new Runnable() {
 
                 public void run() {
-                  SNode resType = ClassifierTypeUtil.resolveTypeUsingSupertypes(TypeChecker.getInstance().getEquationManager().getRepresentator(foo), TypeChecker.getInstance().getEquationManager().getRepresentator(bar));
+                  SNode resType = ClassifierTypeUtil.resolveTypeUsingSupertypes(typeCheckingContext.getEquationManager().getRepresentator(foo), typeCheckingContext.getEquationManager().getRepresentator(bar));
                   {
                     IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
                     SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(resType, pattern_0);
@@ -75,7 +75,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
             for(List<SNode> atypes : mmap.values()) {
               actualTypes.add(SNodeOperations.copyNode(atypes.get(0)));
             }
-            SNode resType = ClassifierTypeUtil.resolveType(SNodeOperations.copyNode(TypeChecker.getInstance().getEquationManager().getRepresentator(foo)), actualTypes, vars);
+            SNode resType = ClassifierTypeUtil.resolveType(SNodeOperations.copyNode(typeCheckingContext.getEquationManager().getRepresentator(foo)), actualTypes, vars);
             {
               IMatchingPattern pattern_3 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
               SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce(resType, pattern_3);

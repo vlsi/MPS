@@ -6,7 +6,6 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -17,21 +16,21 @@ public class typeof_MatrixSubExpression_InferenceRule extends AbstractInferenceR
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
-    final SNode v_typevar_1210172571501 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable();
+    final SNode v_typevar_1210172571501 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210172571506", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1210172571501), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210172571502", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210172571506", true), typeCheckingContext.getEquationManager().getRepresentator(v_typevar_1210172571501), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210172571502", intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "leftExpression", true), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210172571512", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1210172571501), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210172571508", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(SLinkOperations.getTarget(nodeToCheck, "leftExpression", true), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210172571512", true), typeCheckingContext.getEquationManager().getRepresentator(v_typevar_1210172571501), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210172571508", intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "rightExpression", true), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210172571520", true), TypeChecker.getInstance().getEquationManager().getRepresentator(v_typevar_1210172571501), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210172571516", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(SLinkOperations.getTarget(nodeToCheck, "rightExpression", true), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210172571520", true), typeCheckingContext.getEquationManager().getRepresentator(v_typevar_1210172571501), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210172571516", intentionProvider);
     }
   }
 

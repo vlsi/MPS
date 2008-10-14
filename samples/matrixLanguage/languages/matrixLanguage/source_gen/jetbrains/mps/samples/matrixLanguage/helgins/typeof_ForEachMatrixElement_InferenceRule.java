@@ -6,8 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -19,21 +19,21 @@ public class typeof_ForEachMatrixElement_InferenceRule extends AbstractInference
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
     {
-      final SNode matrix = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "matrix", true), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210240202730", true);
+      final SNode matrix = typeCheckingContext.typeOf(SLinkOperations.getTarget(nodeToCheck, "matrix", true), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210240202730", true);
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(matrix, new Runnable() {
 
         public void run() {
-          if (!(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(matrix), "jetbrains.mps.samples.matrixLanguage.structure.MatrixType"))) {
+          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(matrix), "jetbrains.mps.samples.matrixLanguage.structure.MatrixType"))) {
             {
               BaseIntentionProvider intentionProvider = null;
-              TypeChecker.getInstance().reportTypeError(nodeToCheck, "Should be matrix, but " + SNodeOperations.getConceptDeclaration(TypeChecker.getInstance().getEquationManager().getRepresentator(matrix)), "r:fa2583c4-881b-48c1-ac69-00d684ad49dd(jetbrains.mps.samples.matrixLanguage.helgins@12_0)", "1222950473339", intentionProvider);
+              typeCheckingContext.reportTypeError(nodeToCheck, "Should be matrix, but " + SNodeOperations.getConceptDeclaration(typeCheckingContext.getEquationManager().getRepresentator(matrix)), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210240609365", intentionProvider);
             }
           }
-          SNode t = ((SNode)TypeChecker.getInstance().getEquationManager().getRepresentator(matrix));
+          SNode t = ((SNode)typeCheckingContext.getEquationManager().getRepresentator(matrix));
           {
             SNode _nodeToCheck_1029348928467 = nodeToCheck;
             BaseIntentionProvider intentionProvider = null;
-            TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "element", true), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210241241539", true), SLinkOperations.getTarget(t, "scalarType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210241241537", intentionProvider);
+            typeCheckingContext.createEquation(typeCheckingContext.typeOf(SLinkOperations.getTarget(nodeToCheck, "element", true), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210241241539", true), SLinkOperations.getTarget(t, "scalarType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210241241537", intentionProvider);
           }
         }
 

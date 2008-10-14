@@ -12343,7 +12343,7 @@
                 <link role="variableDeclaration" targetNodeId="1222180308351" resolveInfo="typeCheckingContext" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212766833038">
-                <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.typeOf(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="typeOf" />
+                <link role="baseMethodDeclaration" targetNodeId="6.~TypeCheckingContext.typeOf(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="typeOf" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1212766921529">
                   <property name="name" value="child" />
                   <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212766926703">
@@ -12620,12 +12620,14 @@
     <link role="applicableConcept" targetNodeId="1.1212763614690" resolveInfo="ChildTypeRestrictionReference" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212766512596">
       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212766493154">
-        <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212766502829">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
-          <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
+        <node role="operand" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1223989288218">
+          <property name="name" value="typeCheckingContext" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223989291189">
+            <link role="classifier" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
+          </node>
         </node>
-        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212766511642">
-          <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getEquationManager():jetbrains.mps.typesystem.inference.EquationManager" resolveInfo="getEquationManager" />
+        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223989309098">
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeCheckingContext.getEquationManager():jetbrains.mps.typesystem.inference.EquationManager" resolveInfo="getEquationManager" />
         </node>
       </node>
       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212766515756">
