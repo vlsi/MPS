@@ -14276,17 +14276,14 @@
     <link role="applicableConcept" targetNodeId="1.1220357310820" resolveInfo="AddDependencyStatement" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220358452466">
       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220358453749">
-        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220358453750">
-          <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220358453751">
-            <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
-            <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
-          </node>
-          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220358453752">
-            <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getRuntimeSupport():jetbrains.mps.lang.typesystem.runtime.RuntimeSupport" resolveInfo="getRuntimeSupport" />
+        <node role="operand" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1223979916855">
+          <property name="name" value="typeCheckingContext" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223979919716">
+            <link role="classifier" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
           </node>
         </node>
         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220358453753">
-          <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.addDependencyForCurrent(jetbrains.mps.smodel.SNode):void" resolveInfo="addDependencyForCurrent" />
+          <link role="baseMethodDeclaration" targetNodeId="6.~TypeCheckingContext.addDependencyForCurrent(jetbrains.mps.smodel.SNode):void" resolveInfo="addDependencyForCurrent" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1220358460427">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1220358467476">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1220358467477">

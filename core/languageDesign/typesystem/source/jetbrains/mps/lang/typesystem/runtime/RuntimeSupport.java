@@ -70,14 +70,6 @@ public class RuntimeSupport {
   }
 
   @Deprecated
-  public void addDependencyForCurrent(SNode node) {
-    NodeTypesComponent currentTypesComponent = myTypeChecker.getCurrentTypesComponent();
-    if (currentTypesComponent != null) {
-      currentTypesComponent.addDependencyForCurrent(node);
-    }
-  }
-
-  @Deprecated
   private SNode getRepresentatorIfNecessary(SNode type, NodeTypesComponent nodeTypesComponent) {
     if (type == null) return null;
     SNode representator = nodeTypesComponent.getEquationManager().getRepresentator(type);

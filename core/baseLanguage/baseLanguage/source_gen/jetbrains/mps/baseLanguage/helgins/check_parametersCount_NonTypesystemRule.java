@@ -11,7 +11,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -38,7 +37,7 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).count() > 0) {
       for(SNode actual : actualArguments) {
-        TypeChecker.getInstance().getRuntimeSupport().addDependencyForCurrent(actual);
+        typeCheckingContext.addDependencyForCurrent(actual);
       }
     }
   }
