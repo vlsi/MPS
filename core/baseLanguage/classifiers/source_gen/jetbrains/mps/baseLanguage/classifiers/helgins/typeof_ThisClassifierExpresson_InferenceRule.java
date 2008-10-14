@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpresson_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -23,13 +22,13 @@ public class typeof_ThisClassifierExpresson_InferenceRule extends AbstractInfere
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205753197519", true), IClassifier_Behavior.call_createType_1213877527970(classifier), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205753196184", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205753197519", true), IClassifier_Behavior.call_createType_1213877527970(classifier), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205753196184", intentionProvider);
       }
     } else
     {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(nodeToCheck, "this classifier expression isn't applicable in this place", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205753211126", intentionProvider);
+        typeCheckingContext.reportTypeError(nodeToCheck, "this classifier expression isn't applicable in this place", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205753211126", intentionProvider);
       }
     }
   }

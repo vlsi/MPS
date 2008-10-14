@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,7 +21,7 @@ public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205769685435", true), SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "member", false), "returnType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205769679712", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205769685435", true), SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "member", false), "returnType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205769679712", intentionProvider);
     }
     {
       SNode parameter;
@@ -41,14 +40,14 @@ public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInf
         {
           SNode _nodeToCheck_1029348928467 = nodeToCheck;
           BaseIntentionProvider intentionProvider = null;
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205854575356", true), SLinkOperations.getTarget(parameter, "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205854571586", false, 0, intentionProvider);
+          typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(argument, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205854575356", true), SLinkOperations.getTarget(parameter, "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205854571586", false, 0, intentionProvider);
         }
       }
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)).count() != SLinkOperations.getCount(nodeToCheck, "actualArgument")) {
       {
         BaseIntentionProvider intentionProvider = null;
-        TypeChecker.getInstance().reportTypeError(nodeToCheck, "Number of parameters doesn't match", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205854659855", intentionProvider);
+        typeCheckingContext.reportTypeError(nodeToCheck, "Number of parameters doesn't match", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205854659855", intentionProvider);
       }
     }
   }

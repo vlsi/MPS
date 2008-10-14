@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.generator.generationContext" uuid="d7706f63-9be2-479c-a3da-ae92af1e64d5" generatorOutputPath="${mps_home}\core\languageDesign\transformation\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.lang.generator.generationContext" uuid="d7706f63-9be2-479c-a3da-ae92af1e64d5" generatorOutputPath="${mps_home}\core\languageDesign\generator\source_gen" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.lang.generator.generationContext" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.lang.generator.generationContext" />
