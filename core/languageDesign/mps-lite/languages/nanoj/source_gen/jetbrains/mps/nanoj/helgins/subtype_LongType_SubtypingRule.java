@@ -6,17 +6,17 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtype_LongType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  subtype_LongType_SubtypingRule() {
+  public subtype_LongType_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode typeNode) {
-    return ListOperations.<SNode>createList(SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.FloatType", null));
+    return ListSequence.<SNode>fromArray(SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.FloatType", null));
   }
 
   public String getApplicableConceptFQName() {

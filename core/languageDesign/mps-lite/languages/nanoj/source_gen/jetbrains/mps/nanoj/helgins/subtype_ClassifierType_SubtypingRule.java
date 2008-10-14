@@ -8,21 +8,21 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtype_ClassifierType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public  subtype_ClassifierType_SubtypingRule() {
+  public subtype_ClassifierType_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode typeNode) {
     if (SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(typeNode, "classifier", false), "extends", true), "classifier", false) != null) {
       SNode t = SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.ClassifierType", null);
       SLinkOperations.setTarget(t, "classifier", SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(typeNode, "classifier", false), "extends", true), "classifier", false), false);
-      return ListOperations.<SNode>createList(t);
+      return ListSequence.<SNode>fromArray(t);
     }
-    return ListOperations.<SNode>createList();
+    return ListSequence.<SNode>fromArray();
   }
 
   public String getApplicableConceptFQName() {

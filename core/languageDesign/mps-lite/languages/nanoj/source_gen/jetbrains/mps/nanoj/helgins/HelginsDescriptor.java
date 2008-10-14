@@ -8,7 +8,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 
 public class HelginsDescriptor extends BaseHelginsDescriptor {
 
-  public  HelginsDescriptor() {
+  public HelginsDescriptor() {
     {
       InferenceRule_Runtime inferenceRule = new typeof_ClassConcept_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
