@@ -266,10 +266,12 @@ public class RuntimeSupport {
     }
   }
 
+  @Deprecated
   public void whenConcrete(SNode argument, Runnable r) {
     whenConcrete(argument, r, null, null);
   }
 
+  @Deprecated
   public void whenConcrete(SNode argument, final Runnable r, String nodeModel, String nodeId) {
     if (argument == null) return;
     EquationManager equationManager = myTypeChecker.getEquationManager();
@@ -277,8 +279,7 @@ public class RuntimeSupport {
       new WhenConcreteEntity(r, nodeModel, nodeId));
   }
 
-
-
+  @Deprecated
   public void whenConcrete(List<NodeInfo> arguments, final Runnable r) {
     if (arguments.isEmpty()) {
       return;
@@ -307,6 +308,7 @@ public class RuntimeSupport {
       new WhenConcreteEntity(wrapRunnableWithIf(lastInfo, current), lastInfo.myNodeModel, lastInfo.myNodeId));
   }
 
+  @Deprecated
   private Runnable wrapRunnableWithIf(final NodeInfo argument, final Runnable oldRunnable) {
     return new Runnable() {
       public void run() {

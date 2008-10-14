@@ -8341,17 +8341,14 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205764543369">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205769698948">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205769696961">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205764543413">
-                <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
-                <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205769696962">
-                <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getRuntimeSupport():jetbrains.mps.lang.typesystem.runtime.RuntimeSupport" resolveInfo="getRuntimeSupport" />
+            <node role="operand" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1224016837912">
+              <property name="name" value="typeCheckingContext" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224016841815">
+                <link role="classifier" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205769698949">
-              <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.whenConcrete(jetbrains.mps.smodel.SNode,java.lang.Runnable,java.lang.String,java.lang.String):void" resolveInfo="whenConcrete" />
+              <link role="baseMethodDeclaration" targetNodeId="6.~TypeCheckingContext.whenConcrete(jetbrains.mps.smodel.SNode,java.lang.Runnable,java.lang.String,java.lang.String):void" resolveInfo="whenConcrete" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205764655119">
                 <link role="variableDeclaration" targetNodeId="1205764611218" resolveInfo="representator" />
               </node>
@@ -12373,15 +12370,15 @@
             <property name="name" value="nodeInfos" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212596136783">
               <link role="classifier" targetNodeId="11.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212596150473">
-                <link role="classifier" targetNodeId="15.~RuntimeSupport$NodeInfo" resolveInfo="RuntimeSupport.NodeInfo" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224016758244">
+                <link role="classifier" targetNodeId="6.~TypeCheckingContext$NodeInfo" resolveInfo="TypeCheckingContext.NodeInfo" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930473033">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930473035">
                 <link role="baseMethodDeclaration" targetNodeId="11.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212596288661">
-                  <link role="classifier" targetNodeId="15.~RuntimeSupport$NodeInfo" resolveInfo="RuntimeSupport.NodeInfo" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224016766059">
+                  <link role="classifier" targetNodeId="6.~TypeCheckingContext$NodeInfo" resolveInfo="TypeCheckingContext.NodeInfo" />
                 </node>
               </node>
             </node>
@@ -12598,7 +12595,7 @@
                   <link role="baseMethodDeclaration" targetNodeId="11.~List.add(java.lang.Object):boolean" resolveInfo="add" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216930471440">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216930471442">
-                      <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport$NodeInfo.&lt;init&gt;(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,jetbrains.mps.smodel.SNode,boolean)" resolveInfo="RuntimeSupport.NodeInfo" />
+                      <link role="baseMethodDeclaration" targetNodeId="6.~TypeCheckingContext$NodeInfo.&lt;init&gt;(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,jetbrains.mps.smodel.SNode,boolean)" resolveInfo="TypeCheckingContext.NodeInfo" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1212766422779">
                         <property name="name" value="type" />
                         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212766422780">
@@ -12732,17 +12729,11 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1212596127086">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212596128150">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212596128151">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212596128152">
-                <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
-                <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212596128153">
-                <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getRuntimeSupport():jetbrains.mps.lang.typesystem.runtime.RuntimeSupport" resolveInfo="getRuntimeSupport" />
-              </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1224016725710">
+              <link role="variableDeclaration" targetNodeId="1222180308351" resolveInfo="typeCheckingContext" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1212596128154">
-              <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.whenConcrete(java.util.List,java.lang.Runnable):void" resolveInfo="whenConcrete" />
+              <link role="baseMethodDeclaration" targetNodeId="6.~TypeCheckingContext.whenConcrete(java.util.List,java.lang.Runnable):void" resolveInfo="whenConcrete" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212596296240">
                 <link role="variableDeclaration" targetNodeId="1212596136782" resolveInfo="nodeInfos" />
               </node>
