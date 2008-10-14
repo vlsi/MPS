@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -23,7 +22,7 @@ public class typeof_ConceptFunctionParameter_UserArgument_InferenceRule extends 
     {
       SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_UserArgument;
       BaseIntentionProvider intentionProvider = null;
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(SLinkOperations.getTarget(requiredUserEnteredArgument, "argumentType", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(conceptFunctionParameter_UserArgument, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.helgins)", "1192795196477", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.helgins)", "1192795194145", intentionProvider);
+      typeCheckingContext.createEquation(SLinkOperations.getTarget(requiredUserEnteredArgument, "argumentType", true), typeCheckingContext.typeOf(conceptFunctionParameter_UserArgument, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.helgins)", "1192795196477", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.helgins)", "1192795194145", intentionProvider);
     }
   }
 
