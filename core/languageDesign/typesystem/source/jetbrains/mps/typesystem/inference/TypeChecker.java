@@ -218,6 +218,7 @@ public class TypeChecker implements ApplicationComponent {
     }
   }
 
+  @Deprecated
   public void reportTypeError(SNode nodeWithError, String errorString) {
     reportTypeError(nodeWithError, errorString, null, null);
   }
@@ -234,10 +235,12 @@ public class TypeChecker implements ApplicationComponent {
     reportTypeError(nodeWithError, reporter);
   }
 
+  @Deprecated
   public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId, true));
   }
 
+  @Deprecated
   public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId, true);
     reporter.setIntentionProvider(intentionProvider);
