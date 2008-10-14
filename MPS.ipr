@@ -959,7 +959,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/findUsages/findUsages.iml" filepath="$PROJECT_DIR$/core/languageDesign/findUsages/findUsages.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/samples/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/samples/fixedLengthReader/fixedLengthReader.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/samples/formulaLanguage/formulaLanguage.iml" filepath="$PROJECT_DIR$/samples/formulaLanguage/formulaLanguage.iml" group="samples" />
-      <module fileurl="file://$PROJECT_DIR$/app/functional/functional.iml" filepath="$PROJECT_DIR$/app/functional/functional.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/generator/generator.iml" filepath="$PROJECT_DIR$/core/languageDesign/generator/generator.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/app/mf/gothic/gothic.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/platform/gtext/gtext.iml" filepath="$PROJECT_DIR$/platform/gtext/gtext.iml" group="platform/gtext" />
