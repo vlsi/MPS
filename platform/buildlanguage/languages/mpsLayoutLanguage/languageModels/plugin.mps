@@ -3308,6 +3308,21 @@
                             </node>
                           </node>
                         </node>
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1223988031104">
+                          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1223988031105">
+                            <property name="name" value="isChecked" />
+                            <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1223988031106" />
+                            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223988031107">
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223988031108">
+                                <link role="baseMethodDeclaration" targetNodeId="1223982129282" resolveInfo="isChecked" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223988031109">
+                                  <link role="variableDeclaration" targetNodeId="1223489987061" resolveInfo="cbNode" />
+                                </node>
+                              </node>
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223988031110" />
+                            </node>
+                          </node>
+                        </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223982602714">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223982602715">
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223982602716">
@@ -3316,18 +3331,30 @@
                                 <link role="variableDeclaration" targetNodeId="1223489987061" resolveInfo="cbNode" />
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1223982780381">
-                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223982781583">
-                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223982781584">
-                                    <link role="baseMethodDeclaration" targetNodeId="1223982129282" resolveInfo="isChecked" />
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223982781585">
-                                      <link role="variableDeclaration" targetNodeId="1223489987061" resolveInfo="cbNode" />
-                                    </node>
-                                  </node>
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223982781586" />
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223988031112">
+                                  <link role="variableDeclaration" targetNodeId="1223988031105" resolveInfo="isChecked" />
                                 </node>
                               </node>
                             </node>
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223982602717" />
+                          </node>
+                        </node>
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1223988832615">
+                          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223988832616">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223988846600">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223988846601">
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223988846602">
+                                  <link role="baseMethodDeclaration" targetNodeId="1223988077409" resolveInfo="uncheckParents" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223988849872">
+                                    <link role="variableDeclaration" targetNodeId="1223489987061" resolveInfo="cbNode" />
+                                  </node>
+                                </node>
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223988846603" />
+                              </node>
+                            </node>
+                          </node>
+                          <node role="condition" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223988842526">
+                            <link role="variableDeclaration" targetNodeId="1223988031105" resolveInfo="isChecked" />
                           </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223491894520">
@@ -3343,7 +3370,7 @@
                       </node>
                     </node>
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1223982314536">
-                      <property name="name" value="checkNode" />
+                      <property name="name" value="checkNodeRecursively" />
                       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1223982394385">
                         <property name="name" value="checkBoxNode" />
                         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223982394386">
@@ -3360,71 +3387,15 @@
                       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1223982314537" />
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1223982314538" />
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223982314539">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1223982505351">
-                          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223982505352">
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223982512859">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223982534045">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223982513808">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223982512860">
-                                    <link role="classConcept" targetNodeId="1223050118770" resolveInfo="CheckBoxTree" />
-                                  </node>
-                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1223982532842">
-                                    <link role="fieldDeclaration" targetNodeId="1223050118784" resolveInfo="mySelectedItems" />
-                                  </node>
-                                </node>
-                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223982535419">
-                                  <link role="baseMethodDeclaration" targetNodeId="9.~Set.add(java.lang.Object):boolean" resolveInfo="add" />
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223982551917">
-                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223982538486">
-                                      <link role="variableDeclaration" targetNodeId="1223982394385" resolveInfo="checkBoxNode" />
-                                    </node>
-                                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223982555954">
-                                      <link role="baseMethodDeclaration" targetNodeId="1223490037308" resolveInfo="getData" />
-                                    </node>
-                                  </node>
-                                </node>
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223988746892">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223988746893">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223988746894" />
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223988746895">
+                              <link role="baseMethodDeclaration" targetNodeId="1223988746847" resolveInfo="checkNode" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223988746896">
+                                <link role="variableDeclaration" targetNodeId="1223982394385" resolveInfo="checkBoxNode" />
                               </node>
-                            </node>
-                          </node>
-                          <node role="condition" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223982507669">
-                            <link role="variableDeclaration" targetNodeId="1223982443474" resolveInfo="check" />
-                          </node>
-                          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1223982561839">
-                            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223982561840">
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223982566527">
-                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223982572981">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223982566529">
-                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223982566530">
-                                      <link role="classConcept" targetNodeId="1223050118770" resolveInfo="CheckBoxTree" />
-                                    </node>
-                                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1223982571701">
-                                      <link role="fieldDeclaration" targetNodeId="1223050118784" resolveInfo="mySelectedItems" />
-                                    </node>
-                                  </node>
-                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223982575598">
-                                    <link role="baseMethodDeclaration" targetNodeId="9.~Set.remove(java.lang.Object):boolean" resolveInfo="remove" />
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223982580170">
-                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223982578905">
-                                        <link role="variableDeclaration" targetNodeId="1223982394385" resolveInfo="checkBoxNode" />
-                                      </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223982582535">
-                                        <link role="baseMethodDeclaration" targetNodeId="1223490037308" resolveInfo="getData" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223983275923">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223983277659">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223983275924">
-                              <link role="variableDeclaration" targetNodeId="1223982394385" resolveInfo="checkBoxNode" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223983284942">
-                              <link role="baseMethodDeclaration" targetNodeId="1223490172176" resolveInfo="setChecked" />
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223983289047">
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223988746897">
                                 <link role="variableDeclaration" targetNodeId="1223982443474" resolveInfo="check" />
                               </node>
                             </node>
@@ -3538,6 +3509,175 @@
                         </node>
                       </node>
                       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1223982189500" />
+                    </node>
+                    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1223988077409">
+                      <property name="name" value="uncheckParents" />
+                      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1223988077410" />
+                      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1223988077411" />
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223988077412">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1223988198813">
+                          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1223988198814">
+                            <property name="name" value="parent" />
+                            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223988198815">
+                              <link role="classifier" targetNodeId="1223050118711" resolveInfo="CheckBoxNode" />
+                              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1223988202633">
+                                <link role="typeVariableDeclaration" targetNodeId="1223050118895" resolveInfo="N" />
+                              </node>
+                            </node>
+                            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1223988208974">
+                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223988208975">
+                                <link role="classifier" targetNodeId="1223050118711" resolveInfo="CheckBoxNode" />
+                                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1223988208976">
+                                  <link role="typeVariableDeclaration" targetNodeId="1223050118895" resolveInfo="N" />
+                                </node>
+                              </node>
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223988210032">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223988210033">
+                                  <link role="variableDeclaration" targetNodeId="1223988088303" resolveInfo="cbNode" />
+                                </node>
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223988210034">
+                                  <link role="baseMethodDeclaration" targetNodeId="44.~DefaultMutableTreeNode.getParent():javax.swing.tree.TreeNode" resolveInfo="getParent" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1223988818477">
+                          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223988818478">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223988829121" />
+                          </node>
+                          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1223988822716">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1223988824086" />
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223988821449">
+                              <link role="variableDeclaration" targetNodeId="1223988198814" resolveInfo="parent" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223988792703">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223988792704">
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223988792705">
+                              <link role="baseMethodDeclaration" targetNodeId="1223988746847" resolveInfo="checkNode" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223988796497">
+                                <link role="variableDeclaration" targetNodeId="1223988198814" resolveInfo="parent" />
+                              </node>
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1223988799756">
+                                <property name="value" value="false" />
+                              </node>
+                            </node>
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223988792706" />
+                          </node>
+                        </node>
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223988808090">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223988808091">
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223988808092">
+                              <link role="baseMethodDeclaration" targetNodeId="1223988077409" resolveInfo="uncheckParents" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223988813357">
+                                <link role="variableDeclaration" targetNodeId="1223988198814" resolveInfo="parent" />
+                              </node>
+                            </node>
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223988808093" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1223988088303">
+                        <property name="name" value="cbNode" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223988088304">
+                          <link role="classifier" targetNodeId="1223050118711" resolveInfo="CheckBoxNode" />
+                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1223988095975">
+                            <link role="typeVariableDeclaration" targetNodeId="1223050118895" resolveInfo="N" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1223988746847">
+                      <property name="name" value="checkNode" />
+                      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1223988746848" />
+                      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1223988746849" />
+                      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1223988746850">
+                        <property name="name" value="checkBoxNode" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223988746851">
+                          <link role="classifier" targetNodeId="1223050118711" resolveInfo="CheckBoxNode" />
+                          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1223988746852">
+                            <link role="typeVariableDeclaration" targetNodeId="1223050118895" resolveInfo="N" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1223988746853">
+                        <property name="name" value="check" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1223988746854" />
+                      </node>
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223988746855">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1223988746856">
+                          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223988746857">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223988746858">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223988746859">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223988746860">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223988746861">
+                                    <link role="classConcept" targetNodeId="1223050118770" resolveInfo="CheckBoxTree" />
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1223988746862">
+                                    <link role="fieldDeclaration" targetNodeId="1223050118784" resolveInfo="mySelectedItems" />
+                                  </node>
+                                </node>
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223988746863">
+                                  <link role="baseMethodDeclaration" targetNodeId="9.~Set.add(java.lang.Object):boolean" resolveInfo="add" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223988746864">
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223988746886">
+                                      <link role="variableDeclaration" targetNodeId="1223988746850" resolveInfo="checkBoxNode" />
+                                    </node>
+                                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223988746866">
+                                      <link role="baseMethodDeclaration" targetNodeId="1223490037308" resolveInfo="getData" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="condition" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223988746885">
+                            <link role="variableDeclaration" targetNodeId="1223988746853" resolveInfo="check" />
+                          </node>
+                          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1223988746868">
+                            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223988746869">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223988746870">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223988746871">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223988746872">
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1223988746873">
+                                      <link role="classConcept" targetNodeId="1223050118770" resolveInfo="CheckBoxTree" />
+                                    </node>
+                                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1223988746874">
+                                      <link role="fieldDeclaration" targetNodeId="1223050118784" resolveInfo="mySelectedItems" />
+                                    </node>
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223988746875">
+                                    <link role="baseMethodDeclaration" targetNodeId="9.~Set.remove(java.lang.Object):boolean" resolveInfo="remove" />
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223988746876">
+                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223988746888">
+                                        <link role="variableDeclaration" targetNodeId="1223988746850" resolveInfo="checkBoxNode" />
+                                      </node>
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223988746878">
+                                        <link role="baseMethodDeclaration" targetNodeId="1223490037308" resolveInfo="getData" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223988746879">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223988746880">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223988746889">
+                              <link role="variableDeclaration" targetNodeId="1223988746850" resolveInfo="checkBoxNode" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223988746882">
+                              <link role="baseMethodDeclaration" targetNodeId="1223490172176" resolveInfo="setChecked" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223988746891">
+                                <link role="variableDeclaration" targetNodeId="1223988746853" resolveInfo="check" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
