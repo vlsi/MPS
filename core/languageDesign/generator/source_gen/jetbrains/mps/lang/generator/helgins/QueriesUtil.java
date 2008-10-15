@@ -57,7 +57,7 @@ public class QueriesUtil {
     {
       SNode _nodeToCheck_1029348928467 = null;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(new QuotationClass_0().createNode(applicableConcept), InputNodeType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1206286374200", intentionProvider);
+      typeCheckingContext.createEquation(new QuotationClass_0().createNode(applicableConcept, typeCheckingContext), InputNodeType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1206286374200", intentionProvider);
     }
   }
 
@@ -126,7 +126,7 @@ public class QueriesUtil {
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(TypeToEquate, new QuotationClass_9().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1206286245992", intentionProvider);
+        typeCheckingContext.createEquation(TypeToEquate, new QuotationClass_9().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1206286245992", intentionProvider);
       }
       return;
     }

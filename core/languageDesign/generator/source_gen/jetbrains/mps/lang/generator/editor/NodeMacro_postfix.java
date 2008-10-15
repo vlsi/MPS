@@ -20,13 +20,11 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.generator.structure.NodeMacro_AnnotationLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.MPSColors;
 
 public class NodeMacro_postfix extends AbstractCellProvider {
 
@@ -179,13 +177,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NodeMacro_postfix.calculateBoolean9824_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -206,13 +198,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return NodeMacro_postfix.calculateColor9824_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
         }
 
       };
@@ -225,20 +211,8 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return NodeMacro_postfix.calculateColor9824_2(cell);
-            }
-
-          });
-          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return NodeMacro_postfix.calculateColor9824_3(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
+          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
         }
 
       };
@@ -284,36 +258,6 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
   public static boolean renderingCondition9824_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "mappingLabel", false) != null;
-  }
-
-  private static Color calculateColor9824_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.red;
-    return result;
-  }
-
-  private static Color calculateColor9824_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.orange;
-    return result;
-  }
-
-  private static Color calculateColor9824_2(EditorCell cell) {
-    Color result;
-    result = MPSColors.orange;
-    return result;
-  }
-
-  private static Color calculateColor9824_3(EditorCell cell) {
-    Color result;
-    result = MPSColors.cyan;
-    return result;
-  }
-
-  public static Boolean calculateBoolean9824_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
   public static class _Inline9824_0 extends AbstractCellProvider {
@@ -365,13 +309,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return NodeMacro_postfix.calculateColor9824_1(cell);
-              }
-
-            });
+            this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
           }
 
         };

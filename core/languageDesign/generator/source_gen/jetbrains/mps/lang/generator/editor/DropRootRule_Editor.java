@@ -18,7 +18,6 @@ import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -144,13 +143,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return DropRootRule_Editor.calculateBoolean8447_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, true);
         }
 
       };
@@ -172,12 +165,6 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition8447_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "conditionFunction", true) == null;
-  }
-
-  public static Boolean calculateBoolean8447_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
   public static class _Inline8447_0 extends AbstractCellProvider {

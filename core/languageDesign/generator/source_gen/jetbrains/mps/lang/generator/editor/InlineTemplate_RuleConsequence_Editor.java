@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
@@ -92,20 +90,8 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return InlineTemplate_RuleConsequence_Editor.calculateColor8721_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return InlineTemplate_RuleConsequence_Editor.calculateColor8721_2(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
+          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
         }
 
       };
@@ -118,20 +104,8 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return InlineTemplate_RuleConsequence_Editor.calculateColor8721_1(cell);
-            }
-
-          });
-          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return InlineTemplate_RuleConsequence_Editor.calculateColor8721_3(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
+          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
         }
 
       };
@@ -149,30 +123,6 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_templateNode_1177093748944(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor8721_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.pink;
-    return result;
-  }
-
-  private static Color calculateColor8721_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.pink;
-    return result;
-  }
-
-  private static Color calculateColor8721_2(EditorCell cell) {
-    Color result;
-    result = MPSColors.magenta;
-    return result;
-  }
-
-  private static Color calculateColor8721_3(EditorCell cell) {
-    Color result;
-    result = MPSColors.magenta;
-    return result;
   }
 
 }
