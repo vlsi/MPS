@@ -4542,6 +4542,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1085483277582">
     <property name="name" value="EnumClass_Editor" />
+    <property name="package" value="classifier.enum" />
     <link role="conceptDeclaration" targetNodeId="17.1083245097125" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1085483277583">
       <property name="vertical" value="true" />
@@ -4692,6 +4693,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1085485112422">
     <property name="name" value="EnumConstantDeclaration_Editor" />
+    <property name="package" value="classifier.enum" />
     <link role="conceptDeclaration" targetNodeId="17.1083245299891" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1085485112428">
       <property name="vertical" value="false" />

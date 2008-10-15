@@ -12,6 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 public class EnumClass extends ClassConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumClass";
   public static String ENUM_CONSTANT = "enumConstant";
+  public static String SYNTHETIC_STATIC_METHOD = "syntheticStaticMethod";
 
   public EnumClass(SNode node) {
     super(node);
@@ -35,6 +36,26 @@ public class EnumClass extends ClassConcept {
 
   public void insertEnumConstant(EnumConstantDeclaration prev, EnumConstantDeclaration node) {
     this.insertChild(prev, EnumClass.ENUM_CONSTANT, node);
+  }
+
+  public int getSyntheticStaticMethodsCount() {
+    return this.getChildCount(EnumClass.SYNTHETIC_STATIC_METHOD);
+  }
+
+  public Iterator<StaticMethodDeclaration> syntheticStaticMethods() {
+    return this.children(EnumClass.SYNTHETIC_STATIC_METHOD);
+  }
+
+  public List<StaticMethodDeclaration> getSyntheticStaticMethods() {
+    return this.getChildren(EnumClass.SYNTHETIC_STATIC_METHOD);
+  }
+
+  public void addSyntheticStaticMethod(StaticMethodDeclaration node) {
+    this.addChild(EnumClass.SYNTHETIC_STATIC_METHOD, node);
+  }
+
+  public void insertSyntheticStaticMethod(StaticMethodDeclaration prev, StaticMethodDeclaration node) {
+    this.insertChild(prev, EnumClass.SYNTHETIC_STATIC_METHOD, node);
   }
 
 

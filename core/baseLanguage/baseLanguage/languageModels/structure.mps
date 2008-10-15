@@ -1135,6 +1135,7 @@
     <property name="name" value="EnumClass" />
     <property name="iconPath" value="${language_descriptor}\icons\enum.png" />
     <property name="rootable" value="true" />
+    <property name="package" value="classifier.enum" />
     <link role="extends" targetNodeId="1068390468198" resolveInfo="ClassConcept" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1158696685452">
       <property name="value" value="enum class" />
@@ -1150,9 +1151,16 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1083245299891" resolveInfo="EnumConstantDeclaration" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224106973102">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="syntheticStaticMethod" />
+      <link role="target" targetNodeId="1081236700938" resolveInfo="StaticMethodDeclaration" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1083245299891">
     <property name="name" value="EnumConstantDeclaration" />
+    <property name="package" value="classifier.enum" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1083245396909">
       <property name="sourceCardinality" value="0..n" />
@@ -1172,6 +1180,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1083260308424">
     <property name="name" value="EnumConstantReference" />
+    <property name="package" value="classifier.enum" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107216412091">
       <property name="value" value=".&lt;enum&gt;" />
