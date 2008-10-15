@@ -1462,14 +1462,21 @@
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198588571164">
-                <property name="value" value="" />
+                <property name="value" value="." />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648542">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198588530914">
-                <link role="variableDeclaration" targetNodeId="1198588083690" resolveInfo="concept" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224086438751">
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1224086430997">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648542">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198588530914">
+                    <link role="variableDeclaration" targetNodeId="1198588083690" resolveInfo="concept" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1198588547170" />
+                </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1198588547170" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224086442791">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
+              </node>
             </node>
           </node>
           <node role="newFeatureName" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198588600204">
@@ -1864,11 +1871,18 @@
                 <property name="value" value="." />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648307">
-              <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198593956926">
-                <link role="argument" targetNodeId="1198592978857" resolveInfo="targetConcept" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224086369806">
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1224086368720">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648307">
+                  <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198593956926">
+                    <link role="argument" targetNodeId="1198592978857" resolveInfo="targetConcept" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1198593959230" />
+                </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1198593959230" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224086377058">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
+              </node>
             </node>
           </node>
           <node role="newFeatureName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648616">
@@ -2322,14 +2336,21 @@
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198764893501">
-                <property name="value" value="" />
+                <property name="value" value="." />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648386">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198764893504">
-                <link role="variableDeclaration" targetNodeId="1198764893488" resolveInfo="concept" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224086454526">
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1224086453615">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648386">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198764893504">
+                    <link role="variableDeclaration" targetNodeId="1198764893488" resolveInfo="concept" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1198764893503" />
+                </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1198764893503" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224086458351">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
+              </node>
             </node>
           </node>
           <node role="newFeatureName" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198764893505">
@@ -2710,11 +2731,18 @@
                 <property name="value" value="." />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721647911">
-              <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198777127459">
-                <link role="argument" targetNodeId="1198776978561" resolveInfo="targetConcept" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224086401041">
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1224086400062">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721647911">
+                  <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198777127459">
+                    <link role="argument" targetNodeId="1198776978561" resolveInfo="targetConcept" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1198777116406" />
+                </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1198777116406" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224086403950">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
+              </node>
             </node>
           </node>
           <node role="newFeatureName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648236">

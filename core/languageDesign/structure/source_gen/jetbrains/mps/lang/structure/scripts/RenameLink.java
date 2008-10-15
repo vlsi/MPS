@@ -96,7 +96,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
     {
       SNode linkDeclaration = (SNode)refactoringContext.getSelectedNode();
       SNode concept = SNodeOperations.getAncestor(linkDeclaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
-      refactoringContext.changeFeatureName(linkDeclaration, SNodeOperations.getModel(concept) + "" + SPropertyOperations.getString(concept, "name"), ((String)refactoringContext.getParameter("newName")));
+      refactoringContext.changeFeatureName(linkDeclaration, SNodeOperations.getModel(concept).getSModelFqName() + "." + SPropertyOperations.getString(concept, "name"), ((String)refactoringContext.getParameter("newName")));
     }
   }
 
