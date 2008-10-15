@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.samples.secretCompartmentLanguage" uuid="6986543d-8218-4ebf-a2e9-565e5049c1ce" compileInMPS="false">
+<language namespace="jetbrains.mps.samples.secretCompartmentLanguage" uuid="6986543d-8218-4ebf-a2e9-565e5049c1ce" java-stubs-enabled="true" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.samples.secretCompartmentLanguage" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.samples.secretCompartmentLanguage" />
@@ -24,7 +24,9 @@
   <classPath>
     <entry path="${mps_home}\samples\dslbook_example\classes" />
   </classPath>
-  <languageRuntimeClassPath />
+  <languageRuntimeClassPath>
+    <entry path="${mps_home}\samples\dslbook_example\classes" />
+  </languageRuntimeClassPath>
   <sourcePath />
   <extendedLanguages />
 </language>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.money" uuid="f43135f9-b833-4685-8d26-ffb6c8215f72" compileInMPS="false">
+<language namespace="jetbrains.mps.baseLanguage.money" uuid="f43135f9-b833-4685-8d26-ffb6c8215f72" java-stubs-enabled="false" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.baseLanguage.money" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.baseLanguage.money" />
@@ -33,9 +33,10 @@
   </generators>
   <classPath>
     <entry path="${language_descriptor}\classes" />
-    <entry path="${language_descriptor}\runtime\classes" />
   </classPath>
-  <languageRuntimeClassPath />
+  <languageRuntimeClassPath>
+    <entry path="${language_descriptor}\runtime\classes" />
+  </languageRuntimeClassPath>
   <sourcePath />
   <extendedLanguages>
     <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>
