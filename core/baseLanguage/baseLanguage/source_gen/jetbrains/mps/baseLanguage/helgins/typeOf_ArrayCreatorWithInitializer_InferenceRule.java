@@ -27,7 +27,7 @@ public class typeOf_ArrayCreatorWithInitializer_InferenceRule extends AbstractIn
     {
       SNode _nodeToCheck_1029348928467 = arrayCreator;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(arrayCreator, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1205279600881", true), new QuotationClass_8().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(arrayCreator, "componentType", true))), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1205279600879", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(arrayCreator, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1205279600881", true), new QuotationClass_8().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(arrayCreator, "componentType", true)), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1205279600879", intentionProvider);
     }
   }
 

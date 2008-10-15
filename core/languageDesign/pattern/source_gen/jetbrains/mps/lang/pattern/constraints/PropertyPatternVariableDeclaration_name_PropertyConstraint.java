@@ -15,11 +15,11 @@ public class PropertyPatternVariableDeclaration_name_PropertyConstraint implemen
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration", "name", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", "name", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration", "name");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", "name");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {

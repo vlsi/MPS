@@ -277,16 +277,8 @@ public class QueriesGenerated {
     return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
   }
 
-  public static SNode sourceNodeQuery_1196351887509(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
-  }
-
   public static SNode sourceNodeQuery_1196351887805(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);
-  }
-
-  public static SNode sourceNodeQuery_1196860193027(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
   }
 
   public static Iterable sourceNodesQuery_1196351886675(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

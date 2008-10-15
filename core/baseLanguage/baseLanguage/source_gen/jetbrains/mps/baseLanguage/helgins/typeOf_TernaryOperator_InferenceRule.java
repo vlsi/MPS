@@ -19,7 +19,7 @@ public class typeOf_TernaryOperator_InferenceRule extends AbstractInferenceRule_
     {
       SNode _nodeToCheck_1029348928467 = toe;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(toe, "condition", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175522892380", true), new QuotationClass_3().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175522890409", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(toe, "condition", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175522892380", true), new QuotationClass_3().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1175522890409", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = toe;

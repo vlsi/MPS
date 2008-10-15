@@ -15,11 +15,11 @@ public class LinkPatternVariableDeclaration_name_PropertyConstraint implements I
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration", "name", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", "name", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration", "name");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", "name");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {

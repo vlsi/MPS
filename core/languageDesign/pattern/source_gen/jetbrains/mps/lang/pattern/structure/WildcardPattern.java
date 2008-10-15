@@ -8,14 +8,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class WildcardPattern extends Pattern {
-  public static final String concept = "jetbrains.mps.patterns.structure.WildcardPattern";
+  public static final String concept = "jetbrains.mps.lang.pattern.structure.WildcardPattern";
 
   public WildcardPattern(SNode node) {
     super(node);
   }
 
   public static WildcardPattern newInstance(SModel sm, boolean init) {
-    return (WildcardPattern)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.WildcardPattern", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WildcardPattern)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.WildcardPattern", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WildcardPattern newInstance(SModel sm) {

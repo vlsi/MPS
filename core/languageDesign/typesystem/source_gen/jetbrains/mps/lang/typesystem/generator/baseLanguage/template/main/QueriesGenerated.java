@@ -2118,4 +2118,54 @@ public class QueriesGenerated {
     }
   }
 
+  public static void mappingScript_CodeBlock_1224062580253(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for(SNode instanceMethodCall : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
+      SNode baseMethodDeclaration = SNodeOperations.getAncestor(instanceMethodCall, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+      if ((baseMethodDeclaration != null)) {
+        SNode instanceMethodDeclaration = SLinkOperations.getTarget(instanceMethodCall, "baseMethodDeclaration", false);
+        if (!(SPropertyOperations.getString(instanceMethodDeclaration, "name").equals("createNode"))) {
+          continue;
+        }
+        SNode dotExpression = SNodeOperations.getParent(instanceMethodCall);
+        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dotExpression, "operand", true), "jetbrains.mps.baseLanguage.structure.GenericNewExpression"))) {
+          continue;
+        }
+        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(dotExpression, "operand", true), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"))) {
+          continue;
+        }
+        SNode classConcept = SNodeOperations.getParent(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(dotExpression, "operand", true), "creator", true), "baseMethodDeclaration", false));
+        if (!(SPropertyOperations.getString(classConcept, "name").startsWith("QuotationClass_"))) {
+          continue;
+        }
+parametersLoop:
+        for(SNode parameterDeclaration : SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)) {
+          if (SPropertyOperations.getString(parameterDeclaration, "name").equals("typeCheckingContext") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SLinkOperations.getTarget(parameterDeclaration, "type", true), "classifier", false) == SLinkOperations.getTarget(new QuotationClass_23().createNode(), "classifier", false)) {
+            SNode lastParameterType = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).last(), "type", true);
+            boolean alreadyProcessed = SNodeOperations.isInstanceOf(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(lastParameterType, "classifier", false) == SLinkOperations.getTarget(new QuotationClass_19().createNode(), "classifier", false);
+            if (!(alreadyProcessed)) {
+              SLinkOperations.addChild(instanceMethodCall, "actualArgument", new QuotationClass_20().createNode());
+              SLinkOperations.addChild(SNodeOperations.getParent(instanceMethodDeclaration), "method", SNodeOperations.copyNode(instanceMethodDeclaration));
+              SLinkOperations.addChild(instanceMethodDeclaration, "parameter", new QuotationClass_21().createNode());
+              for(SNode mc : SNodeOperations.getDescendants(instanceMethodDeclaration, "jetbrains.mps.baseLanguage.structure.IMethodCall", false)) {
+                do {
+                  SNode matchedNode_7 = mc;
+                  {
+                    boolean matches_8 = false;
+                    Pattern_2 matchingPattern = new Pattern_2();
+                    matches_8 = matchingPattern.match(matchedNode_7);
+                    if (matches_8) {
+                      SLinkOperations.addChild(matchedNode_7, "actualArgument", new QuotationClass_22().createNode());
+                      break;
+                    }
+                  }
+                } while(false);
+              }
+            }
+            break parametersLoop;
+          }
+        }
+      }
+    }
+  }
+
 }

@@ -32,17 +32,17 @@ public class RulesFunctions_BaseLanguage {
     {
       SNode _nodeToCheck_1029348928467 = null;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176897133366", true), SLinkOperations.getTarget(new QuotationClass_18().createNode(), "descriptor", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176897142200", false, 500, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176897133366", true), SLinkOperations.getTarget(new QuotationClass_18().createNode(typeCheckingContext), "descriptor", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176897142200", false, 500, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = null;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176897185028", true), SLinkOperations.getTarget(new QuotationClass_19().createNode(), "descriptor", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176897185023", false, 500, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176897185028", true), SLinkOperations.getTarget(new QuotationClass_19().createNode(typeCheckingContext), "descriptor", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176897185023", false, 500, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = null;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(binOp, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1203512292516", true), new QuotationClass_20().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1203512292514", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(binOp, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1203512292516", true), new QuotationClass_20().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1203512292514", intentionProvider);
     }
   }
 
@@ -63,12 +63,12 @@ public class RulesFunctions_BaseLanguage {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(binOp, "rightExpression", true);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), SLinkOperations.getTarget(new QuotationClass_21().createNode(), "descriptor", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176908856117", false, 500, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), SLinkOperations.getTarget(new QuotationClass_21().createNode(typeCheckingContext), "descriptor", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176908856117", false, 500, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(binOp, "leftExpression", true);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), SLinkOperations.getTarget(new QuotationClass_22().createNode(), "descriptor", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176908902743", false, 500, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), SLinkOperations.getTarget(new QuotationClass_22().createNode(typeCheckingContext), "descriptor", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1176908902743", false, 500, intentionProvider);
     }
     {
       final SNode _representatorVar3 = typeCheckingContext.getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627);
@@ -251,7 +251,7 @@ __switch__:
         {
           SNode _nodeToCheck_1029348928467 = actualParam;
           BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("r:c91580fd-ad0c-4d5f-a9a0-eeceecad7e07(jetbrains.mps.baseLanguage.helgins@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
+          intentionProvider = new BaseIntentionProvider("r:6bc38dc5-0387-4e57-84b0-0b6c8db35854(jetbrains.mps.baseLanguage.helgins@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
           intentionProvider.putArgument("methodCall", mc);
           intentionProvider.putArgument("classifier", SNodeOperations.getAncestor(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
           typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(actualParam, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1219947530380", true), matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1219947530376", false, 2, intentionProvider);
@@ -283,7 +283,7 @@ __switch__:
                         {
                           SNode _nodeToCheck_1029348928467 = actual;
                           BaseIntentionProvider intentionProvider = null;
-                          intentionProvider = new BaseIntentionProvider("r:c91580fd-ad0c-4d5f-a9a0-eeceecad7e07(jetbrains.mps.baseLanguage.helgins@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
+                          intentionProvider = new BaseIntentionProvider("r:6bc38dc5-0387-4e57-84b0-0b6c8db35854(jetbrains.mps.baseLanguage.helgins@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
                           intentionProvider.putArgument("methodCall", mc);
                           intentionProvider.putArgument("classifier", SNodeOperations.getAncestor(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
                           typeCheckingContext.createLessThanInequation(SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(actualType), "componentType", true), matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1220347279318", false, 2, intentionProvider);
@@ -292,7 +292,7 @@ __switch__:
                       {
                         SNode _nodeToCheck_1029348928467 = actual;
                         BaseIntentionProvider intentionProvider = null;
-                        intentionProvider = new BaseIntentionProvider("r:c91580fd-ad0c-4d5f-a9a0-eeceecad7e07(jetbrains.mps.baseLanguage.helgins@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
+                        intentionProvider = new BaseIntentionProvider("r:6bc38dc5-0387-4e57-84b0-0b6c8db35854(jetbrains.mps.baseLanguage.helgins@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
                         intentionProvider.putArgument("methodCall", mc);
                         intentionProvider.putArgument("classifier", SNodeOperations.getAncestor(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
                         typeCheckingContext.createLessThanInequation(typeCheckingContext.getEquationManager().getRepresentator(actualType), matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1220347200873", false, 2, intentionProvider);
@@ -309,7 +309,7 @@ __switch__:
                   {
                     SNode _nodeToCheck_1029348928467 = actual;
                     BaseIntentionProvider intentionProvider = null;
-                    intentionProvider = new BaseIntentionProvider("r:c91580fd-ad0c-4d5f-a9a0-eeceecad7e07(jetbrains.mps.baseLanguage.helgins@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
+                    intentionProvider = new BaseIntentionProvider("r:6bc38dc5-0387-4e57-84b0-0b6c8db35854(jetbrains.mps.baseLanguage.helgins@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
                     intentionProvider.putArgument("methodCall", mc);
                     intentionProvider.putArgument("classifier", SNodeOperations.getAncestor(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
                     typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(actual, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1219947702426", true), matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1219947702422", false, 2, intentionProvider);
@@ -342,7 +342,7 @@ __switch__:
             {
               SNode _nodeToCheck_1029348928467 = arg;
               BaseIntentionProvider intentionProvider = null;
-              intentionProvider = new BaseIntentionProvider("r:c91580fd-ad0c-4d5f-a9a0-eeceecad7e07(jetbrains.mps.baseLanguage.helgins@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
+              intentionProvider = new BaseIntentionProvider("r:6bc38dc5-0387-4e57-84b0-0b6c8db35854(jetbrains.mps.baseLanguage.helgins@3_0).ChooseAppropriateMethodDeclaration_QuickFix", true);
               intentionProvider.putArgument("methodCall", mc);
               intentionProvider.putArgument("classifier", SNodeOperations.getAncestor(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
               typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(arg, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1203441371331", true), matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1203441371327", false, 2, intentionProvider);
@@ -483,7 +483,7 @@ __switch__:
   @InferenceMethod()
   /* package */static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode) {
     for(SNode livingThrowable : new HashSet<SNode>(throwables)) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_85().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_84().createNode())) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_85().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new QuotationClass_84().createNode(typeCheckingContext))) {
         throwables.remove(livingThrowable);
       }
     }
@@ -537,7 +537,7 @@ __switch__:
           }
           {
             BaseIntentionProvider intentionProvider = null;
-            intentionProvider = new BaseIntentionProvider("r:c91580fd-ad0c-4d5f-a9a0-eeceecad7e07(jetbrains.mps.baseLanguage.helgins@3_0).AddExceptionToMethodSignature_QuickFix", false);
+            intentionProvider = new BaseIntentionProvider("r:6bc38dc5-0387-4e57-84b0-0b6c8db35854(jetbrains.mps.baseLanguage.helgins@3_0).AddExceptionToMethodSignature_QuickFix", false);
             intentionProvider.putArgument("throwableType", throwables.iterator().next());
             typeCheckingContext.reportTypeError(mainNode, errorString, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1210182111558", intentionProvider);
           }

@@ -17,7 +17,7 @@ public class PatternExpression_DataFlow extends DataFlowBuilder {
     for(SNode antiquotation : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", false)) {
       _context.getBuilder().build((SNode)antiquotation);
     }
-    for(SNode patternVar : SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.patterns.structure.PatternVariableDeclaration","jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration"}, false)) {
+    for(SNode patternVar : SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration","jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"}, false)) {
       _context.getBuilder().build((SNode)patternVar);
     }
   }

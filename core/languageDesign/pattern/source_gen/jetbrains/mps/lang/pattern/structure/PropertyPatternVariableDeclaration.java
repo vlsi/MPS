@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PropertyPatternVariableDeclaration extends PropertyAttributeConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration";
+  public static final String concept = "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration";
   public static String VAR_NAME = "varName";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
@@ -63,7 +63,7 @@ public class PropertyPatternVariableDeclaration extends PropertyAttributeConcept
 
 
   public static PropertyPatternVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (PropertyPatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyPatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyPatternVariableDeclaration newInstance(SModel sm) {

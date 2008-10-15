@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PatternVariableDeclaration extends Pattern implements INamedConcept {
-  public static final String concept = "jetbrains.mps.patterns.structure.PatternVariableDeclaration";
+  public static final String concept = "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration";
   public static String VAR_NAME = "varName";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
@@ -62,7 +62,7 @@ public class PatternVariableDeclaration extends Pattern implements INamedConcept
 
 
   public static PatternVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (PatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.PatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PatternVariableDeclaration newInstance(SModel sm) {

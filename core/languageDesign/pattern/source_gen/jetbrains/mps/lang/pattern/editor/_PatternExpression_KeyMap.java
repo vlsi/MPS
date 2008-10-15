@@ -87,7 +87,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      node.setAttribute(SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.patterns.structure.WildcardPattern", null));
+      node.setAttribute(SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.pattern.structure.WildcardPattern", null));
     }
 
     public String getKeyStroke() {
@@ -131,7 +131,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      AsPattern_AnnotationLink.setAsPattern((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), ((AsPattern)SNodeOperations.getAdapter(SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.patterns.structure.AsPattern", null))));
+      AsPattern_AnnotationLink.setAsPattern((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), ((AsPattern)SNodeOperations.getAdapter(SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.pattern.structure.AsPattern", null))));
     }
 
     public String getKeyStroke() {
@@ -221,7 +221,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell_Property cell = (EditorCell_Property)editorContext.getSelectedCell();
       String propertyName = ((PropertyAccessor)cell.getModelAccessor()).getPropertyName();
-      node.setPropertyAttribute(propertyName, SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration", null));
+      node.setPropertyAttribute(propertyName, SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", null));
     }
 
     public String getKeyStroke() {
@@ -266,7 +266,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       List<SNode> siblings = SNodeOperations.getAllSiblings(node, false);
-      AsPattern_AnnotationLink.setAsPattern((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), ((ListPattern)SNodeOperations.getAdapter(SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.patterns.structure.ListPattern", null))));
+      AsPattern_AnnotationLink.setAsPattern((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), ((ListPattern)SNodeOperations.getAdapter(SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.pattern.structure.ListPattern", null))));
       for(SNode sibling : siblings) {
         SNodeOperations.deleteNode(sibling);
       }

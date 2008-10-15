@@ -9,14 +9,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Pattern extends AttributeConcept {
-  public static final String concept = "jetbrains.mps.patterns.structure.Pattern";
+  public static final String concept = "jetbrains.mps.lang.pattern.structure.Pattern";
 
   public Pattern(SNode node) {
     super(node);
   }
 
   public static Pattern newInstance(SModel sm, boolean init) {
-    return (Pattern)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.Pattern", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Pattern)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.Pattern", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Pattern newInstance(SModel sm) {

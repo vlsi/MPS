@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PatternExpression extends BaseConcept {
-  public static final String concept = "jetbrains.mps.patterns.structure.PatternExpression";
+  public static final String concept = "jetbrains.mps.lang.pattern.structure.PatternExpression";
   public static String PATTERN_NODE = "patternNode";
 
   public PatternExpression(SNode node) {
@@ -26,7 +26,7 @@ public class PatternExpression extends BaseConcept {
 
 
   public static PatternExpression newInstance(SModel sm, boolean init) {
-    return (PatternExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.PatternExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PatternExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.PatternExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PatternExpression newInstance(SModel sm) {

@@ -19,7 +19,7 @@ public class typeOf_ClassifierClassExpression_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = classExpr;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(classExpr, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223981485120", true), new QuotationClass_24().createNode(SLinkOperations.getTarget(classExpr, "classifier", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223981485115", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(classExpr, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223981485120", true), new QuotationClass_24().createNode(SLinkOperations.getTarget(classExpr, "classifier", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223981485115", intentionProvider);
     }
   }
 

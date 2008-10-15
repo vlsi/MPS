@@ -8,14 +8,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AsPattern extends PatternVariableDeclaration {
-  public static final String concept = "jetbrains.mps.patterns.structure.AsPattern";
+  public static final String concept = "jetbrains.mps.lang.pattern.structure.AsPattern";
 
   public AsPattern(SNode node) {
     super(node);
   }
 
   public static AsPattern newInstance(SModel sm, boolean init) {
-    return (AsPattern)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.AsPattern", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AsPattern)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.AsPattern", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AsPattern newInstance(SModel sm) {

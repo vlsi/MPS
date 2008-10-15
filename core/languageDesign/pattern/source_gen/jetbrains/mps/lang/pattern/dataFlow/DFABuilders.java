@@ -8,11 +8,11 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 public class DFABuilders extends DataFlowBuilders {
 
   public void install(DataFlowManager manager) {
-    manager.register("jetbrains.mps.patterns.structure.PatternVariableDeclaration", new PatternVariableDeclaration_DataFlow());
-    manager.register("jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration", new PropertyPatternVariableDeclaration_DataFlow());
-    manager.register("jetbrains.mps.patterns.structure.PatternExpression", new PatternExpression_DataFlow());
-    manager.register("jetbrains.mps.patterns.structure.PatternVariableReference", new PatternVariableReference_DataFlow());
-    manager.register("jetbrains.mps.patterns.structure.PropertyPatternVariableReference", new PropertyPatternVariableReference_DataFlow());
+    manager.register("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", new PatternVariableDeclaration_DataFlow());
+    manager.register("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", new PropertyPatternVariableDeclaration_DataFlow());
+    manager.register("jetbrains.mps.lang.pattern.structure.PatternExpression", new PatternExpression_DataFlow());
+    manager.register("jetbrains.mps.lang.pattern.structure.PatternVariableReference", new PatternVariableReference_DataFlow());
+    manager.register("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableReference", new PropertyPatternVariableReference_DataFlow());
   }
 
 }

@@ -2197,37 +2197,9 @@
                           </node>
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1196860193022">
                             <link role="classConcept" targetNodeId="20.~HUtil" resolveInfo="HUtil" />
-                            <link role="baseMethodDeclaration" targetNodeId="20.~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModel):jetbrains.mps.smodel.SNode" resolveInfo="copyIfNecessary" />
+                            <link role="baseMethodDeclaration" targetNodeId="20.~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="copyIfNecessary" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201868496905">
                               <link role="variableDeclaration" targetNodeId="1201868455977" resolveInfo="_node1_" />
-                            </node>
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216933352900">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1196860193025">
-                                <link role="classConcept" targetNodeId="18.~TypeChecker" resolveInfo="TypeChecker" />
-                                <link role="baseMethodDeclaration" targetNodeId="18.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
-                              </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216933352901">
-                                <link role="baseMethodDeclaration" targetNodeId="18.~TypeChecker.getRuntimeTypesModel():jetbrains.mps.smodel.SModel" resolveInfo="getRuntimeTypesModel" />
-                              </node>
-                              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="1196860193026">
-                                <link role="templateSwitch" targetNodeId="1196351886655" resolveInfo="QuotationModel_switch" />
-                                <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1196860193027">
-                                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196860193028">
-                                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196860193029">
-                                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227924423">
-                                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1196860193031" />
-                                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1196860193032">
-                                          <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1196860193033">
-                                            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1216933355773">
-                                              <link role="conceptDeclaration" targetNodeId="1.1196350785113" resolveInfo="Quotation" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
                             </node>
                           </node>
                         </node>
@@ -2502,37 +2474,9 @@
                           </node>
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1196351887504">
                             <link role="classConcept" targetNodeId="20.~HUtil" resolveInfo="HUtil" />
-                            <link role="baseMethodDeclaration" targetNodeId="20.~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModel):jetbrains.mps.smodel.SNode" resolveInfo="copyIfNecessary" />
+                            <link role="baseMethodDeclaration" targetNodeId="20.~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="copyIfNecessary" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196351887505">
                               <link role="variableDeclaration" targetNodeId="1196351887459" resolveInfo="child" />
-                            </node>
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216933353495">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1196351887507">
-                                <link role="baseMethodDeclaration" targetNodeId="18.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
-                                <link role="classConcept" targetNodeId="18.~TypeChecker" resolveInfo="TypeChecker" />
-                              </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216933353496">
-                                <link role="baseMethodDeclaration" targetNodeId="18.~TypeChecker.getRuntimeTypesModel():jetbrains.mps.smodel.SModel" resolveInfo="getRuntimeTypesModel" />
-                              </node>
-                              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="1196351887508">
-                                <link role="templateSwitch" targetNodeId="1196351886655" resolveInfo="QuotationModel_switch" />
-                                <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1196351887509">
-                                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196351887510">
-                                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196351887511">
-                                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227837167">
-                                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1196351887513" />
-                                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1196351887514">
-                                          <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1196351887515">
-                                            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1216933355774">
-                                              <link role="conceptDeclaration" targetNodeId="1.1196350785113" resolveInfo="Quotation" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
                             </node>
                           </node>
                         </node>

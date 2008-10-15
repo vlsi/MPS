@@ -15,11 +15,11 @@ public class PatternVariableDeclaration_name_PropertyConstraint implements IMode
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.patterns.structure.PatternVariableDeclaration", "name", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", "name", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.patterns.structure.PatternVariableDeclaration", "name");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", "name");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {

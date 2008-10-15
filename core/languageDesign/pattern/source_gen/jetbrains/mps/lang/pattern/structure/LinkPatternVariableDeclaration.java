@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LinkPatternVariableDeclaration extends LinkAttributeConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration";
+  public static final String concept = "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration";
   public static String VAR_NAME = "varName";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
@@ -63,7 +63,7 @@ public class LinkPatternVariableDeclaration extends LinkAttributeConcept impleme
 
 
   public static LinkPatternVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (LinkPatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkPatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkPatternVariableDeclaration newInstance(SModel sm) {
