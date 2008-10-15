@@ -6,20 +6,23 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
+import java.awt.Frame;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.refactoring.inlineMethod.InlineMethodRefactoringAnalyzer;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.baseLanguage.refactoring.inlineMethod.InlineMethodDialog;
 
 public class InlineMethod_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(InlineMethod_Action.class);
   public static final Icon ICON = null;
 
   private SNode node;
+  public Frame frame;
+  public Project project;
+  public IOperationContext operationContext;
 
   public InlineMethod_Action() {
     super("Inline method", "", ICON);
@@ -33,12 +36,11 @@ public class InlineMethod_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    final SNode node = new ActionEventData(event).getNode();
     final Wrappers._T<Boolean> b = new Wrappers._T<Boolean>(false);
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        b.value = InlineMethodRefactoringAnalyzer.isMethodNode(node);
+        b.value = InlineMethodRefactoringAnalyzer.isMethodNode(InlineMethod_Action.this.node);
       }
 
     });
@@ -71,12 +73,24 @@ public class InlineMethod_Action extends GeneratedAction {
     if (this.node == null) {
       return false;
     }
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
+      return false;
+    }
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
+      return false;
+    }
+    this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
+    if (this.operationContext == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      InlineMethodDialog dialog = new InlineMethodDialog(new ActionEventData(event));
+      InlineMethodDialog dialog = new InlineMethodDialog(InlineMethod_Action.this.frame, InlineMethod_Action.this.node, InlineMethod_Action.this.project, InlineMethod_Action.this.operationContext);
       dialog.tryToShow();
       dialog.pack();
     } catch (Throwable t) {

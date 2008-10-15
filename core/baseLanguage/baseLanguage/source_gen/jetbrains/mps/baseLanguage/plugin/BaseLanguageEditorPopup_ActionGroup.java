@@ -23,7 +23,6 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.add(new ExtractMethod_Action());
       this.add(new InlineMethod_Action());
-      this.add(new _InlineMethod_Action());
       this.add(new ChangeMethodSignature_Action());
     } catch (Throwable t) {
       LOG.error("User group error", t);
