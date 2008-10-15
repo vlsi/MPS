@@ -9,11 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class BaseConcept_Editor extends DefaultNodeEditor {
 
@@ -35,27 +33,9 @@ public class BaseConcept_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return BaseConcept_Editor.calculateBoolean0843_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return BaseConcept_Editor.calculateColor0843_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return BaseConcept_Editor.calculateFontStyle0843_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, true);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
 
       };
@@ -64,24 +44,6 @@ public class BaseConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1133921115694_1133921115694(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle0843_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
-  }
-
-  private static Color calculateColor0843_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.lightGray;
-    return result;
-  }
-
-  public static Boolean calculateBoolean0843_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
 }
