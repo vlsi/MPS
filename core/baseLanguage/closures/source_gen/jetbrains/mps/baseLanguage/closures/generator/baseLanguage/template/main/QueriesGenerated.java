@@ -16,6 +16,7 @@ import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helpe
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
@@ -78,7 +79,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1201093930999(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), _context.getGenerator()) != null;
+    return (SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false) != null) && PrepStatementUtil.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), _context.getGenerator()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201193354452(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -276,7 +277,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1219916476737(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return WrappersUtils.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    boolean result = WrappersUtils.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    if (result) {
+      WrappersUtils.putPrepData(_context.getNode(), null, _context.getGenerator());
+    }
+    return result;
   }
 
   public static boolean baseMappingRule_Condition_1219933368506(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -320,7 +325,8 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1219934617805(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return WrappersUtils.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), _context.getGenerator()) != null;
+    Object declData = WrappersUtils.getPrepData(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), _context.getGenerator());
+    return declData != null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ClassCreator") && INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getParent(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "baseMethodDeclaration", false))).startsWith("jetbrains.mps.baseLanguage.closures.runtime.Wrappers"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1201019320624(final IOperationContext operationContext, final PropertyMacroContext _context) {
