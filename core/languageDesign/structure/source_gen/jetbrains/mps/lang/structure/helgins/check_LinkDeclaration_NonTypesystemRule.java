@@ -38,7 +38,7 @@ public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesyst
         return new ISequenceIterableAdapter <SNode>() {
 
           public Iterator<SNode> iterator() {
-            return new YieldingIterator<SNode>() {
+            return new YieldingIterator <SNode>() {
 
               private int __CP__ = 0;
               private List<SNode> _3_links;

@@ -852,8 +852,18 @@
                     <property name="value" value="." />
                   </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198174051499">
-                  <link role="argument" targetNodeId="1198173589717" resolveInfo="targetModel" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224074105952">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224074098187">
+                    <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198174051499">
+                      <link role="argument" targetNodeId="1198173589717" resolveInfo="targetModel" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224074105294">
+                      <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224074106486">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~SModelFqName.toString():java.lang.String" resolveInfo="toString" />
+                  </node>
                 </node>
               </node>
               <node role="newFeatureName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648384">
