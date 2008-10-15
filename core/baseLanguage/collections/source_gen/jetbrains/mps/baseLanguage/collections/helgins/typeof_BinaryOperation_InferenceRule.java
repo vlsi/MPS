@@ -23,7 +23,7 @@ public class typeof_BinaryOperation_InferenceRule extends AbstractInferenceRule_
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(sequenceType_typevar_1184848409899), new QuotationClass_35().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1184848397564)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.helgins)", "1184848442457", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(sequenceType_typevar_1184848409899), new QuotationClass_35().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1184848397564), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.helgins)", "1184848442457", intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = op;

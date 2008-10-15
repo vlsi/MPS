@@ -21,7 +21,7 @@ public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenc
       type = SLinkOperations.getTarget(internalNewExpression, "type", true);
     } else
     {
-      type = new QuotationClass_0().createNode();
+      type = new QuotationClass_0().createNode(typeCheckingContext);
     }
     {
       SNode _nodeToCheck_1029348928467 = internalNewExpression;
