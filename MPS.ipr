@@ -950,7 +950,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/core/core.iml" filepath="$PROJECT_DIR$/core/languageDesign/core/core.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/devkits/core-devkits.iml" filepath="$PROJECT_DIR$/core/devkits/core-devkits.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" filepath="$PROJECT_DIR$/core/baseLanguage/csharp/csharp.iml" group="core/baseLanguage/csharp" />
-      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/csharp/runtime/csharp-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/csharp/runtime/csharp-runtime.iml" group="core/baseLanguage/csharp" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/dataFlow/dataFlow.iml" filepath="$PROJECT_DIR$/core/languageDesign/dataFlow/dataFlow.iml" group="core/languageDesign/dataFlow" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/dataFlow/runtime/dataFlow-runtime.iml" filepath="$PROJECT_DIR$/core/languageDesign/dataFlow/runtime/dataFlow-runtime.iml" group="core/languageDesign/dataFlow" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/dates/dates.iml" filepath="$PROJECT_DIR$/core/baseLanguage/dates/dates.iml" group="core/baseLanguage/dates" />
