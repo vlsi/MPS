@@ -387,6 +387,10 @@ public class Language extends AbstractModule {
     return myLanguageDescriptor;
   }
 
+  protected boolean areJavaStubsEnabled() {
+    return getLanguageDescriptor().getEnableJavaStubs();
+  }
+
   public String getGeneratedPluginClassLongName() {
     return getPluginModelDescriptor().getLongName() + "." + PluginNameUtils.getPluginName(this);
   }

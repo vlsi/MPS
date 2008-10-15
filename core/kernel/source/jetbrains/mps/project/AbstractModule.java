@@ -566,10 +566,19 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
+  protected boolean areJavaStubsEnabled() {
+    return true;
+  }
+
   private void loadNewStubs() {
     loadJavaStubModelRoots();
 
     myManager.dispose();
+
+    if (!areJavaStubsEnabled()) {
+      return;
+    }
+
     myManager = new MyClassPathModelRootManager();
 
     SModel sm = new SModel();
