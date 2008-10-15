@@ -117,6 +117,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
     });
   }
 
+
   private void doComplete() {
     final Item selectedItem = (Item) myList.getSelectedValue();
     if (selectedItem == null) return;

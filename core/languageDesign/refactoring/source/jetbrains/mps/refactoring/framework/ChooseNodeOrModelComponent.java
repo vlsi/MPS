@@ -201,6 +201,10 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     public void askForDispose() {
     }
 
+    protected String getItemPresentation(SModelDescriptor sm) {
+      return sm.getSModelFqName().toString();
+    }
+
     public void doChoose(SModelDescriptor sModelDescriptor) {
       myModel = sModelDescriptor;
       myTree.rebuildNow();//selectNode(myTree.findNodeWith(sModelDescriptor));
@@ -210,7 +214,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       getNames().clear();
       getItemsMap().clear();
       for (SModelDescriptor modelDescriptor : myModels) {
-        putItem(modelDescriptor.toString(), modelDescriptor);
+        putItem(modelDescriptor.getSModelFqName().toString(), modelDescriptor);
       }
       makeNamesConsistent();
     }
