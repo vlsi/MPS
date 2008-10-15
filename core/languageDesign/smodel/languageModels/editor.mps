@@ -460,7 +460,7 @@
         <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1140131934570">
-        <link role="relationDeclaration" targetNodeId="1.1139870362308" />
+        <link role="relationDeclaration" targetNodeId="1.1140131861877" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487394428">
         <property name="text" value=")" />
