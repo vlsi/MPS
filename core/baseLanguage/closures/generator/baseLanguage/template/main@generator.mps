@@ -1105,15 +1105,40 @@
       </node>
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1207145700256">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207145700257">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207145703139">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1207145710029">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207145711933" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207145704485">
-                <link role="baseMethodDeclaration" targetNodeId="13.1207145118690" resolveInfo="getPrepData" />
-                <link role="classConcept" targetNodeId="13.1207078435086" resolveInfo="WrappersUtils" />
-                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207145706822" />
-                <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1207145708242" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224087345588">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224087345589">
+              <property name="name" value="result" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224087345590" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1224087345591">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1224087345592" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1224087345593">
+                  <link role="baseMethodDeclaration" targetNodeId="13.1207145118690" resolveInfo="getPrepData" />
+                  <link role="classConcept" targetNodeId="13.1207078435086" resolveInfo="WrappersUtils" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1224087345594" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1224087345595" />
+                </node>
               </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1224087351773">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224087351774">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224087574681">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1224087577949">
+                  <link role="baseMethodDeclaration" targetNodeId="13.1207145118667" resolveInfo="putPrepData" />
+                  <link role="classConcept" targetNodeId="13.1207078435086" resolveInfo="WrappersUtils" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1224087580108" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1224087590232" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1224087602834" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224087353273">
+              <link role="variableDeclaration" targetNodeId="1224087345589" resolveInfo="result" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224087608212">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224087609940">
+              <link role="variableDeclaration" targetNodeId="1224087345589" resolveInfo="result" />
             </node>
           </node>
         </node>

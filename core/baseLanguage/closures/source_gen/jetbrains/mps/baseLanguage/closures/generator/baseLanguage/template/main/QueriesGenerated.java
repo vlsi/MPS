@@ -148,7 +148,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1207145700256(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return WrappersUtils.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    boolean result = WrappersUtils.getPrepData(_context.getNode(), _context.getGenerator()) != null;
+    if (result) {
+      WrappersUtils.putPrepData(_context.getNode(), null, _context.getGenerator());
+    }
+    return result;
   }
 
   public static boolean baseMappingRule_Condition_1207146222921(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
