@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class AssertTrue_Editor extends DefaultNodeEditor {
@@ -92,13 +90,7 @@ public class AssertTrue_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return AssertTrue_Editor.calculateColor9112_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
         }
 
       };
@@ -120,12 +112,6 @@ public class AssertTrue_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1171981274831_1171981274831(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor9112_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.blue;
-    return result;
   }
 
 }

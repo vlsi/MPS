@@ -17,8 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -206,13 +205,7 @@ public class InputNode_A_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BRACKETS, true);
-          this.set(StyleAttributes.BRACKETS_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return InputNode_A_Editor.calculateColor7362_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.BRACKETS_COLOR, MPSColors.gray);
         }
 
       };
@@ -306,12 +299,6 @@ public class InputNode_A_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_name_1202327551613(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor7362_0(EditorCell cell) {
-    Color result;
-    result = Color.gray;
-    return result;
   }
 
   public static class inputChildListHandler_7362_0 extends RefNodeListHandler {

@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNodeEditor {
@@ -131,13 +130,7 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return GenerationContextOp_UserObjectAccessBase_Editor.calculateBoolean5398_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -163,12 +156,6 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
   }
 
   private static void setupLabel_refNode_userKey_1217890728561(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean5398_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
   public static class GenerationContextOp_UserObjectAccessBase_Editor_replaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

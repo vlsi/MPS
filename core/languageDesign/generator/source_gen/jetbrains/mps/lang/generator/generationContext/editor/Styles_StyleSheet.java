@@ -5,7 +5,6 @@ package jetbrains.mps.lang.generator.generationContext.editor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Styles_StyleSheet {
@@ -13,35 +12,11 @@ public class Styles_StyleSheet {
   public static Style getGenContext_operation(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-          public Boolean calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateBoolean7582_0(cell);
-          }
-
-        });
-        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-          public Integer calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateFontStyle7582_0(cell);
-          }
-
-        });
+        this.set(StyleAttributes.EDITABLE, true);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       }
 
     };
-  }
-
-  private static Integer calculateFontStyle7582_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.PLAIN;
-    return result;
-  }
-
-  public static Boolean calculateBoolean7582_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
 }
