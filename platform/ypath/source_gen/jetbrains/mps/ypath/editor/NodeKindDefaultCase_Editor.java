@@ -186,7 +186,13 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return NodeKindDefaultCase_Editor.calculateBoolean6159_1(cell);
+            }
+
+          });
         }
 
       };
@@ -199,7 +205,13 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return NodeKindDefaultCase_Editor.calculateBoolean6159_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
         }
 
@@ -278,6 +290,18 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
   private static Color calculateColor6159_1(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6159_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean6159_1(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

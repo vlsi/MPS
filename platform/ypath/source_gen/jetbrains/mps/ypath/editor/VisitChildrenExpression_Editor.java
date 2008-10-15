@@ -132,7 +132,13 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return VisitChildrenExpression_Editor.calculateBoolean9190_0(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -188,6 +194,12 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
   private static Color calculateColor9190_1(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean9190_0(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

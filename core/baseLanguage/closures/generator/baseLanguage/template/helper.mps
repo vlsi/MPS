@@ -12,7 +12,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="5" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
@@ -5172,7 +5172,7 @@
                       <link role="variableDeclaration" targetNodeId="1223030913543" resolveInfo="dsc" />
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1223030936880">
-                      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223030949101">
+                      <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223030949101">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1223030939045">
                           <link role="baseMethodDeclaration" targetNodeId="1223029226944" resolveInfo="unmeet" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223030940478">

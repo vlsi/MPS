@@ -10,7 +10,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="5" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="0" />
@@ -353,7 +353,7 @@
               <link role="variableDeclaration" targetNodeId="1145577584169" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1145577770495">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1145577776653">
+              <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1145577776653">
                 <link role="variableDeclaration" targetNodeId="1145577623217" />
               </node>
             </node>
@@ -425,7 +425,7 @@
               <link role="variableDeclaration" targetNodeId="1145577814153" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1145577814161">
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227908130">
+              <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227908130">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227957053">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1145577896814">
                     <link role="variableDeclaration" targetNodeId="1145577834220" />

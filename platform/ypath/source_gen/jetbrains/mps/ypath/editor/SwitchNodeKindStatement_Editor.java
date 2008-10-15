@@ -220,7 +220,13 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return SwitchNodeKindStatement_Editor.calculateBoolean4855_0(cell);
+            }
+
+          });
         }
 
       };
@@ -268,6 +274,12 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
   private static Color calculateColor4855_2(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4855_0(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

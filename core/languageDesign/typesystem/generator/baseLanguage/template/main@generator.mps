@@ -18,7 +18,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="5" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -56,7 +56,7 @@
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
-  <import index="23" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="5" />
+  <import index="23" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
   <import index="29" modelUID="f:java_stub#jetbrains.mps.typesystem.inference.util(jetbrains.mps.typesystem.inference.util@java_stub)" version="-1" />
   <import index="30" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="31" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" />
@@ -15661,7 +15661,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation" id="1223374876272">
-                  <node role="parameter" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1223374879509">
+                  <node role="childNode" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1223374879509">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1223374882091">
                       <property name="name" value="typeCheckingContext" />
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223374886953">
@@ -15728,7 +15728,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation" id="1223378999453">
-                  <node role="parameter" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1223379017017">
+                  <node role="childNode" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1223379017017">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1223379059036">
                       <property name="name" value="typeCheckingContext" />
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223379083742">
@@ -15912,7 +15912,7 @@
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation" id="1223389577949">
-                      <node role="parameter" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1223389582373">
+                      <node role="childNode" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1223389582373">
                         <node role="quotedNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1223392622905">
                           <property name="name" value="typeCheckingContext" />
                           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1223393867216">
@@ -16049,7 +16049,7 @@
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation" id="1223389540574">
-                      <node role="parameter" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1223389540575">
+                      <node role="childNode" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1223389540575">
                         <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1223389540576">
                           <property name="name" value="typeCheckingContext" />
                           <property name="isFinal" value="true" />

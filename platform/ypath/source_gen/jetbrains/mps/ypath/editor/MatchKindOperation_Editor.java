@@ -188,7 +188,13 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchKindOperation_Editor.calculateBoolean3694_1(cell);
+            }
+
+          });
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
@@ -211,7 +217,13 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchKindOperation_Editor.calculateBoolean3694_0(cell);
+            }
+
+          });
         }
 
       };
@@ -241,6 +253,18 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
   private static Color calculateColor3694_0(EditorCell cell) {
     Color result;
     result = MPSColors.red;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3694_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3694_1(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

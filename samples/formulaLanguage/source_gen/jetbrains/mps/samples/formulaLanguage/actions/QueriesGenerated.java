@@ -43,7 +43,7 @@ public class QueriesGenerated {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode res = SModelOperations.createNewNode(model, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant", null);
+            SNode res = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant", null);
             SPropertyOperations.set(res, "value", "" + (Integer.parseInt(pattern)));
             return res;
           }
@@ -77,7 +77,7 @@ public class QueriesGenerated {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode res = SModelOperations.createNewNode(model, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
+            SNode res = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
             if (pattern.endsWith(".")) {
               SPropertyOperations.set(res, "value", "" + (Float.parseFloat(pattern + "0")));
             } else
@@ -115,7 +115,7 @@ public class QueriesGenerated {
       Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
       concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
       for(final SNode subconcept : concepts) {
-        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration"))) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           continue;
         }
         if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {

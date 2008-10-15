@@ -45,7 +45,7 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             int value = Integer.parseInt(pattern);
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.nanoj.structure.NumberExpression", null);
+            SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.nanoj.structure.NumberExpression", null);
             SPropertyOperations.set(result, "number", "" + (value));
             return result;
           }
@@ -71,7 +71,7 @@ public class QueriesGenerated {
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.nanoj.structure.LocalVariableDeclarationStatement", null);
+          SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.nanoj.structure.LocalVariableDeclarationStatement", null);
           SLinkOperations.setTarget(result, "declaration", nodeToWrap, true);
           return result;
         }
@@ -104,7 +104,7 @@ public class QueriesGenerated {
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.nanoj.structure.ExpressionStatement", null);
+          SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.nanoj.structure.ExpressionStatement", null);
           SLinkOperations.setTarget(result, "expr", nodeToWrap, true);
           return result;
         }
@@ -137,7 +137,7 @@ public class QueriesGenerated {
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.nanoj.structure.LocalVariableDeclaration", null);
+          SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.nanoj.structure.LocalVariableDeclaration", null);
           SLinkOperations.setTarget(result, "type", nodeToWrap, true);
           return result;
         }
@@ -170,7 +170,7 @@ public class QueriesGenerated {
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.nanoj.structure.ParameterDeclaration", null);
+          SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.nanoj.structure.ParameterDeclaration", null);
           SLinkOperations.setTarget(result, "type", nodeToWrap, true);
           return result;
         }
@@ -203,7 +203,7 @@ public class QueriesGenerated {
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.nanoj.structure.FieldDeclaration", null);
+          SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.nanoj.structure.FieldDeclaration", null);
           SLinkOperations.setTarget(result, "type", nodeToWrap, true);
           return result;
         }

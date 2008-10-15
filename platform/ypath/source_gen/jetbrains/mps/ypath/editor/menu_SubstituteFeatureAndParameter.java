@@ -5,7 +5,6 @@ package jetbrains.mps.ypath.editor;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuComponent;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
-
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;

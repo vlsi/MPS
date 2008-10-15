@@ -67,9 +67,9 @@ public class Node_InsertPrevSiblingOperation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_parameter1143224196793(editorCell, node, context);
+    setupBasic_refNode_insertedNode1143224196793(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_parameter_1143224196793((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_insertedNode_1143224196793((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -77,8 +77,8 @@ public class Node_InsertPrevSiblingOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode1143224196793(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("parameter");
-    provider.setNoTargetText("<no parameter>");
+    provider.setRole("insertedNode");
+    provider.setNoTargetText("<no insertedNode>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode1143224196793_internal(context, node, provider);
@@ -97,7 +97,7 @@ public class Node_InsertPrevSiblingOperation_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1143224196791");
   }
 
-  private static void setupBasic_refNode_parameter1143224196793(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNode_insertedNode1143224196793(EditorCell editorCell, SNode node, EditorContext context) {
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -117,7 +117,7 @@ public class Node_InsertPrevSiblingOperation_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
-  private static void setupLabel_refNode_parameter_1143224196793(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNode_insertedNode_1143224196793(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1206487245463_1206487245463(EditorCell_Label editorCell, SNode node, EditorContext context) {

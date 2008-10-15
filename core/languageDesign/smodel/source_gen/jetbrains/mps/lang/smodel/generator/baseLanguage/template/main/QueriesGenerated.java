@@ -633,7 +633,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1170443521299(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameter", true);
+    return SLinkOperations.getTarget(_context.getNode(), "insertedNode", true);
   }
 
   public static SNode sourceNodeQuery_1170443724880(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -645,7 +645,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1170443854081(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameter", true);
+    return SLinkOperations.getTarget(_context.getNode(), "replacementNode", true);
   }
 
   public static SNode sourceNodeQuery_1170443922573(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -988,7 +988,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1205535849442(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameter", true);
+    return SLinkOperations.getTarget(_context.getNode(), "childNode", true);
   }
 
   public static SNode sourceNodeQuery_1205536047120(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

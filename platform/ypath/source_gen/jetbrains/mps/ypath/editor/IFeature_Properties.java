@@ -237,7 +237,13 @@ public class IFeature_Properties extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IFeature_Properties.calculateBoolean2453_4(cell);
+            }
+
+          });
         }
 
       };
@@ -269,7 +275,13 @@ public class IFeature_Properties extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IFeature_Properties.calculateBoolean2453_1(cell);
+            }
+
+          });
         }
 
       };
@@ -286,7 +298,13 @@ public class IFeature_Properties extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IFeature_Properties.calculateBoolean2453_7(cell);
+            }
+
+          });
         }
 
       };
@@ -299,7 +317,13 @@ public class IFeature_Properties extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IFeature_Properties.calculateBoolean2453_5(cell);
+            }
+
+          });
         }
 
       };
@@ -317,7 +341,13 @@ public class IFeature_Properties extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IFeature_Properties.calculateBoolean2453_3(cell);
+            }
+
+          });
         }
 
       };
@@ -330,7 +360,13 @@ public class IFeature_Properties extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IFeature_Properties.calculateBoolean2453_0(cell);
+            }
+
+          });
         }
 
       };
@@ -347,7 +383,13 @@ public class IFeature_Properties extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IFeature_Properties.calculateBoolean2453_8(cell);
+            }
+
+          });
         }
 
       };
@@ -365,7 +407,13 @@ public class IFeature_Properties extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IFeature_Properties.calculateBoolean2453_2(cell);
+            }
+
+          });
         }
 
       };
@@ -378,7 +426,13 @@ public class IFeature_Properties extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IFeature_Properties.calculateBoolean2453_6(cell);
+            }
+
+          });
         }
 
       };
@@ -417,6 +471,60 @@ public class IFeature_Properties extends AbstractCellProvider {
   private static Color calculateColor2453_0(EditorCell cell) {
     Color result;
     result = MPSColors.gray;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2453_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2453_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2453_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2453_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2453_4(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2453_5(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2453_6(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2453_7(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean2453_8(EditorCell cell) {
+    boolean result;
+    result = false;
     return result;
   }
 

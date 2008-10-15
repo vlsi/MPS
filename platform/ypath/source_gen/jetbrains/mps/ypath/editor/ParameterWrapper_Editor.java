@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class ParameterWrapper_Editor extends DefaultNodeEditor {
 
@@ -132,7 +133,13 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ParameterWrapper_Editor.calculateBoolean5358_0(cell);
+            }
+
+          });
         }
 
       };
@@ -149,7 +156,13 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ParameterWrapper_Editor.calculateBoolean5358_1(cell);
+            }
+
+          });
         }
 
       };
@@ -162,7 +175,13 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return ParameterWrapper_Editor.calculateBoolean5358_2(cell);
+            }
+
+          });
         }
 
       };
@@ -177,6 +196,24 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_name_1197479518472(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean5358_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5358_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean5358_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
 }

@@ -10,7 +10,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="5" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
@@ -450,7 +450,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214259269870">
               <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1154453067085" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1154453075149">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214259269301">
+                <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214259269301">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1154453079011" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1154453083513">
                     <link role="link" targetNodeId="1.1111784647019" />
@@ -475,7 +475,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214259269724">
               <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1154453098796" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1154453098797">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214259270066">
+                <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214259270066">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1154453098799" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1154453120082">
                     <link role="link" targetNodeId="1.1111784613299" />

@@ -176,7 +176,7 @@ public class QueriesGenerated {
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode vpd = SModelOperations.createNewNode(model, "jetbrains.mps.ypath.structure.VisitParameterDeclaration", null);
+          SNode vpd = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.ypath.structure.VisitParameterDeclaration", null);
           SLinkOperations.setTarget(vpd, "type", nodeToWrap, true);
           return vpd;
         }

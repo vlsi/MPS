@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class IfFunction_Editor extends DefaultNodeEditor {
 
@@ -174,7 +175,13 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfFunction_Editor.calculateBoolean8841_0(cell);
+            }
+
+          });
         }
 
       };
@@ -190,7 +197,13 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return IfFunction_Editor.calculateBoolean8841_1(cell);
+            }
+
+          });
         }
 
       };
@@ -224,6 +237,18 @@ public class IfFunction_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1111785715841_1111785715841(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Boolean calculateBoolean8841_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8841_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
 }
