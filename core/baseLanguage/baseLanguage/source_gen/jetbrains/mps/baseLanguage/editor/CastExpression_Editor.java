@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class CastExpression_Editor extends DefaultNodeEditor {
 
@@ -161,13 +160,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CastExpression_Editor.calculateBoolean9371_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -188,12 +181,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1215103594746_1215103594746(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean9371_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
 }

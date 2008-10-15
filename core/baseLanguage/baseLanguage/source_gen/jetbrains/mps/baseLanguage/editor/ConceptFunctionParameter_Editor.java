@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
@@ -58,13 +57,7 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return ConceptFunctionParameter_Editor.calculateFontStyle7229_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
@@ -75,12 +68,6 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_conceptProperty_alias_1139533905854(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle7229_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
   }
 
 }

@@ -97,7 +97,13 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
 
             public Boolean calculate(EditorCell cell) {
-              return ClassifierClassExpression_Editor.calculateBoolean4221_0(cell);
+              return ClassifierClassExpression_Editor._StyleParameter_QueryFunction_1223653128322((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -144,18 +150,6 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
       return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
     }
     return false;
-  }
-
-  public static Boolean calculateBoolean4221_0(EditorCell cell) {
-    boolean result;
-    result = ClassifierClassExpression_Editor._StyleParameter_QueryFunction_1223653128322((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
   }
 
   public static class _Inline4221_0 extends AbstractCellProvider {

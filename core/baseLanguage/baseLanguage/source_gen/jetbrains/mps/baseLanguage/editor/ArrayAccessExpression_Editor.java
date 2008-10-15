@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
 
@@ -124,13 +123,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ArrayAccessExpression_Editor.calculateBoolean2233_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -149,27 +142,9 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ArrayAccessExpression_Editor.calculateBoolean2233_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ArrayAccessExpression_Editor.calculateBoolean2233_3(cell);
-            }
-
-          });
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ArrayAccessExpression_Editor.calculateBoolean2233_2(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -188,30 +163,6 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1173175610988_1173175610988(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean2233_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean2233_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean2233_2(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean2233_3(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
 }

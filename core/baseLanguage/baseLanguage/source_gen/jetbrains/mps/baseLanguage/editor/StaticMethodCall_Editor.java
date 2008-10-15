@@ -21,8 +21,8 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -144,7 +144,13 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
 
             public Boolean calculate(EditorCell cell) {
-              return StaticMethodCall_Editor.calculateBoolean7119_1(cell);
+              return StaticMethodCall_Editor._StyleParameter_QueryFunction_1223653880430((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -163,7 +169,13 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
 
             public Boolean calculate(EditorCell cell) {
-              return StaticMethodCall_Editor.calculateBoolean7119_0(cell);
+              return StaticMethodCall_Editor._StyleParameter_QueryFunction_1223653827116((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -194,36 +206,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
   public static boolean _StyleParameter_QueryFunction_1223653880430(SNode node, EditorContext editorContext) {
     return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "baseMethodDeclaration", false));
-  }
-
-  private static Integer calculateFontStyle7119_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  public static Boolean calculateBoolean7119_0(EditorCell cell) {
-    boolean result;
-    result = StaticMethodCall_Editor._StyleParameter_QueryFunction_1223653827116((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
-  }
-
-  public static Boolean calculateBoolean7119_1(EditorCell cell) {
-    boolean result;
-    result = StaticMethodCall_Editor._StyleParameter_QueryFunction_1223653880430((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
   }
 
   public static class _Inline7119_0 extends AbstractCellProvider {
@@ -276,13 +258,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-              public Integer calculate(EditorCell cell) {
-                return StaticMethodCall_Editor.calculateFontStyle7119_0(cell);
-              }
-
-            });
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           }
 
         };

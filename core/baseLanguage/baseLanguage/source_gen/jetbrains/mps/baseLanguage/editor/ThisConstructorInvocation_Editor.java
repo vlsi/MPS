@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
 
@@ -133,18 +132,6 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1178906643449_1178906643449(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static Boolean calculateBoolean8960_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean8960_1(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
   public static class actualArgumentListHandler_8960_0 extends RefNodeListHandler {
 
     public actualArgumentListHandler_8960_0(SNode ownerNode, String childRole, EditorContext context) {
@@ -210,20 +197,8 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-              public Boolean calculate(EditorCell cell) {
-                return ThisConstructorInvocation_Editor.calculateBoolean8960_0(cell);
-              }
-
-            });
-            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-              public Boolean calculate(EditorCell cell) {
-                return ThisConstructorInvocation_Editor.calculateBoolean8960_1(cell);
-              }
-
-            });
+            this.set(StyleAttributes.SELECTABLE, true);
+            this.set(StyleAttributes.EDITABLE, true);
           }
 
         };

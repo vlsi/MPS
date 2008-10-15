@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
@@ -95,13 +96,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return BaseMethodDeclaration_NameCellComponent.calculateBoolean4313_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -118,7 +113,13 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
           this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
 
             public Boolean calculate(EditorCell cell) {
-              return BaseMethodDeclaration_NameCellComponent.calculateBoolean4313_2(cell);
+              return BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_1223655957671((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -134,13 +135,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return BaseMethodDeclaration_NameCellComponent.calculateBoolean4313_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
@@ -157,31 +152,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
   }
 
   public static boolean _StyleParameter_QueryFunction_1223655957671(SNode node, EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
-  }
-
-  public static Boolean calculateBoolean4313_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4313_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4313_2(EditorCell cell) {
-    boolean result;
-    result = BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_1223655957671((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept")) && IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
   }
 
   public static class BaseMethodDeclaration_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {

@@ -136,7 +136,13 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
 
             public Boolean calculate(EditorCell cell) {
-              return ClassifierType_Editor.calculateBoolean9185_4(cell);
+              return ClassifierType_Editor._StyleParameter_QueryFunction_1223908815979((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -152,13 +158,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ClassifierType_Editor.calculateBoolean9185_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -171,13 +171,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ClassifierType_Editor.calculateBoolean9185_2(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
@@ -196,20 +190,8 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ClassifierType_Editor.calculateBoolean9185_1(cell);
-            }
-
-          });
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ClassifierType_Editor.calculateBoolean9185_3(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -234,50 +216,14 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "parameter") > 0;
   }
 
-  public static boolean _StyleParameter_QueryFunction_1223653171179(SNode node, EditorContext editorContext) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+  public static boolean _StyleParameter_QueryFunction_1223908815979(SNode node, EditorContext editorContext) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "classifier", false));
     }
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
-      return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
+      return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "classifier", false));
     }
     return false;
-  }
-
-  public static Boolean calculateBoolean9185_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean9185_1(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean9185_2(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean9185_3(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean9185_4(EditorCell cell) {
-    boolean result;
-    result = ClassifierType_Editor._StyleParameter_QueryFunction_1223653171179((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
   }
 
   public static class _Inline9185_0 extends AbstractCellProvider {
@@ -330,6 +276,19 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+            this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+              public Boolean calculate(EditorCell cell) {
+                return ClassifierType_Editor._Inline9185_0._StyleParameter_QueryFunction_1223907755139((cell == null ?
+                  null :
+                  cell.getSNode()
+                ), (cell == null ?
+                  null :
+                  cell.getEditorContext()
+                ));
+              }
+
+            });
           }
 
         };
@@ -338,6 +297,16 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_property_nestedName_1211505069984(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    }
+
+    public static boolean _StyleParameter_QueryFunction_1223907755139(SNode node, EditorContext editorContext) {
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+        return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+      }
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
+        return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+      }
+      return false;
     }
 
 }

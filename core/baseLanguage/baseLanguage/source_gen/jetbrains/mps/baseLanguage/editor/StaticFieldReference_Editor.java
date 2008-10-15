@@ -132,7 +132,13 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
 
             public Boolean calculate(EditorCell cell) {
-              return StaticFieldReference_Editor.calculateBoolean6051_0(cell);
+              return StaticFieldReference_Editor._StyleParameter_QueryFunction_1223653587333((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -151,7 +157,13 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
 
             public Boolean calculate(EditorCell cell) {
-              return StaticFieldReference_Editor.calculateBoolean6051_1(cell);
+              return StaticFieldReference_Editor._StyleParameter_QueryFunction_1223653650998((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -178,30 +190,6 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
   public static boolean _StyleParameter_QueryFunction_1223653650998(SNode node, EditorContext editorContext) {
     return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "classifier", false));
-  }
-
-  public static Boolean calculateBoolean6051_0(EditorCell cell) {
-    boolean result;
-    result = StaticFieldReference_Editor._StyleParameter_QueryFunction_1223653587333((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
-  }
-
-  public static Boolean calculateBoolean6051_1(EditorCell cell) {
-    boolean result;
-    result = StaticFieldReference_Editor._StyleParameter_QueryFunction_1223653650998((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
   }
 
   public static class _Inline6051_0 extends AbstractCellProvider {

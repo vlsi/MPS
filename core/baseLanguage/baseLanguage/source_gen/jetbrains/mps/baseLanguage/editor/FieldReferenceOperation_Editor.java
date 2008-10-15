@@ -63,7 +63,13 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
 
             public Boolean calculate(EditorCell cell) {
-              return FieldReferenceOperation_Editor.calculateBoolean0858_0(cell);
+              return FieldReferenceOperation_Editor._StyleParameter_QueryFunction_1223653533029((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -79,18 +85,6 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
 
   public static boolean _StyleParameter_QueryFunction_1223653533029(SNode node, EditorContext editorContext) {
     return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "fieldDeclaration", false));
-  }
-
-  public static Boolean calculateBoolean0858_0(EditorCell cell) {
-    boolean result;
-    result = FieldReferenceOperation_Editor._StyleParameter_QueryFunction_1223653533029((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
   }
 
   public static class _Inline0858_0 extends AbstractCellProvider {
