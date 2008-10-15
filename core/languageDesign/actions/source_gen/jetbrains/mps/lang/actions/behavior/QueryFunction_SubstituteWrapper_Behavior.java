@@ -15,7 +15,7 @@ public class QueryFunction_SubstituteWrapper_Behavior {
     if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap")) {
       return false;
     }
-    if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model")) {
+    if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model")) {
       return false;
     }
     return true;

@@ -13,7 +13,7 @@ public class QueryFunction_Substitute_Handler_Behavior {
   }
 
   public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
-    if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model")) {
+    if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model")) {
       return false;
     }
     return ConceptFunction_Behavior.callSuper_usesParameterObjectFor_1213877374432(thisNode, "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler", parameter);
