@@ -25,6 +25,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Igor Alshannikov
  * Oct 26, 2005
@@ -79,7 +81,7 @@ public class GenerationSession implements IGenerationSession {
     mySessionContext = null;
   }
 
-  public GenerationStatus generateModel(SModelDescriptor inputModel) throws Exception {
+  public GenerationStatus generateModel(@NotNull SModelDescriptor inputModel) throws Exception {
     return generateModel(inputModel, new GenerationStepController(inputModel.getSModel()));
   }
 
