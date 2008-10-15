@@ -112,7 +112,7 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1168623810819(context, node, "source"));
+    editorCell.addEditorCell(this.createConstant1168623810819(context, node, "input"));
     editorCell.addEditorCell(this.createRefCell1168623810820(context, node));
     return editorCell;
   }

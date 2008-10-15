@@ -56,7 +56,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1168625644512(context, node, "source"));
+    editorCell.addEditorCell(this.createConstant1168625644512(context, node, "input"));
     editorCell.addEditorCell(this.createRefCell1168625644513(context, node));
     return editorCell;
   }
