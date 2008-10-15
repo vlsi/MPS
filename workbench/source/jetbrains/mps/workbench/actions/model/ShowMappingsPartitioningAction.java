@@ -1,19 +1,17 @@
 package jetbrains.mps.workbench.actions.model;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.plan.GenerationPartitioner;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.lang.generator.structure.MappingConfiguration;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.output.OutputViewTool;
@@ -49,18 +47,24 @@ public class ShowMappingsPartitioningAction extends BaseAction {
     messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
     for (Generator generator : generators) {
       List<MappingPriorityRule> rules = ((GeneratorDescriptor) generator.getModuleDescriptor()).getPriorityRules();
-      List<String> strings = GenerationPartitioningUtil.toStrings(rules, true);
-      for (String string : strings) {
-        messagesView.add(new Message(MessageKind.INFORMATION, " " + string));
+      List<Pair<MappingPriorityRule, String>> strings = GenerationPartitioningUtil.toStrings(rules, true);
+      for (Pair<MappingPriorityRule, String> string : strings) {
+        messagesView.add(new Message(MessageKind.INFORMATION, " " + string.second, generator));
       }
     }
     messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
     if (partitioner.hasConflictingPriorityRules()) {
       // message view
       messagesView.openToolLater(true);
-      List<String> messagesFull = GenerationPartitioningUtil.toStrings(partitioner.getConflictingPriorityRules(), true);
-      for (String message : messagesFull) {
-        messagesView.add(new Message(MessageKind.ERROR, "conflicting rule: " + message));
+      messagesView.add(new Message(MessageKind.ERROR, "Conflicting mapping priority rules encountered:"));
+      List<Pair<MappingPriorityRule, String>> messagesFull = GenerationPartitioningUtil.toStrings(partitioner.getConflictingPriorityRules(), true);
+      for (Pair<MappingPriorityRule, String> message : messagesFull) {
+        MappingPriorityRule rule = message.first;
+        String text = message.second;
+        GeneratorDescriptor generatorDescriptor = rule.findParent(GeneratorDescriptor.class);
+        Generator generatorModule = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorDescriptor.getGeneratorUID());
+
+        messagesView.add(new Message(MessageKind.ERROR, text, generatorModule));
       }
       messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
 

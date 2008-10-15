@@ -1,5 +1,6 @@
 package jetbrains.mps.generator;
 
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.plan.AbstractGenerationStepController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationStepController;
@@ -8,22 +9,21 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.NodeWithContext;
+import jetbrains.mps.lang.generator.structure.MappingScript;
+import jetbrains.mps.lang.generator.structure.MappingScriptKind;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.lang.generator.structure.MappingScript;
-import jetbrains.mps.lang.generator.structure.MappingScriptKind;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
+import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Pair;
 
-import javax.swing.JOptionPane;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.List;
-
-import com.intellij.openapi.progress.ProgressIndicator;
 
 /**
  * Igor Alshannikov
@@ -42,7 +42,6 @@ public class GenerationSession implements IGenerationSession {
 
   private int myInvocationCount = 0;
   private int myTransientModelsCount = 0;
-  private boolean myIgnoreConflictsInMappingPriorityRules;
 
 
   public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, ProgressIndicator progressMonitor, final IMessageHandler messagesHandler) {
@@ -88,7 +87,7 @@ public class GenerationSession implements IGenerationSession {
                                         AbstractGenerationStepController stepController) throws Exception {
     Statistics.clearAll();
     if (!checkGenerationStep(stepController)) {
-      throw new GenerationCanceledException();
+//      throw new GenerationCanceledException();
     }
 
     GenerationStatus status;
@@ -336,38 +335,28 @@ public class GenerationSession implements IGenerationSession {
     addMessage(new Message(kind, text));
   }
 
-  private void addMessage(MessageKind kind, String text, SNode hintObject) {
+  private void addMessage(MessageKind kind, String text, Object hintObject) {
     addMessage(new Message(kind, text, hintObject));
   }
 
   private void addProgressMessage(MessageKind kind, String text) {
-    //myProgressMonitor.addText(text);
     addMessage(new Message(kind, text));
   }
 
   private boolean checkGenerationStep(AbstractGenerationStepController stepController) {
-    if (!myIgnoreConflictsInMappingPriorityRules && stepController.hasConflictingPriorityRules()) {
-      List<String> errors = stepController.getConflictingPriorityRulesAsStrings();
-      for (String error : errors) {
-        addMessage(new Message(MessageKind.ERROR, "conflicting rule: " + error));
-      }
+    if (stepController.hasConflictingPriorityRules()) {
+      addMessage(MessageKind.ERROR, "Conflicting mapping priority rules encountered:");
+      List<com.intellij.openapi.util.Pair<MappingPriorityRule, String>> errors = stepController.getConflictingPriorityRulesAsStrings();
+      for (com.intellij.openapi.util.Pair<MappingPriorityRule, String> error : errors) {
+        MappingPriorityRule rule = error.first;
+        String text = error.second;
 
-      Object[] options = {"Yes",
-        "Yes, and ingnore all conflicts",
-        "No, cancel generation"};
-      int option = JOptionPane.showOptionDialog(null,
-        "Conflicting mapping priority rules encountered.\nContinue generation?",
-        "",
-        JOptionPane.YES_NO_CANCEL_OPTION,
-        JOptionPane.ERROR_MESSAGE,
-        null,
-        options,
-        options[0]);
-      if (option == JOptionPane.NO_OPTION) {
-        // actualy 'yes and ignore all'
-        myIgnoreConflictsInMappingPriorityRules = true;
+        GeneratorDescriptor generatorDescriptor = rule.findParent(GeneratorDescriptor.class);
+        Generator generatorModule = (Generator) MPSModuleRepository.getInstance().getModuleByUID(generatorDescriptor.getGeneratorUID());
+        addMessage(MessageKind.ERROR, text, generatorModule);
       }
-      return option == JOptionPane.YES_OPTION || option == JOptionPane.NO_OPTION;
+      addMessage(MessageKind.ERROR, "-----------------------------------------------");
+      return false;
     }
     return true;
   }

@@ -13,6 +13,8 @@ import jetbrains.mps.project.ModuleReference;
 
 import java.util.*;
 
+import com.intellij.openapi.util.Pair;
+
 /**
  * Igor Alshannikov
  * Date: Mar 30, 2007
@@ -189,8 +191,8 @@ public class GenerationPartitioningUtil {
     return strings;
   }
 
-  public static List<String> toStrings(Iterable<MappingPriorityRule> priorityRules, boolean moreDetails) {
-    List<String> list = new ArrayList<String>();
+  public static List<Pair<MappingPriorityRule,String>> toStrings(Iterable<MappingPriorityRule> priorityRules, boolean moreDetails) {
+    List<Pair<MappingPriorityRule,String>> list = new ArrayList<Pair<MappingPriorityRule,String>>();
     for (MappingPriorityRule rule : priorityRules) {
       GeneratorDescriptor enclosingGenerator = rule.findParent(GeneratorDescriptor.class);
       String text = asString(rule, moreDetails);
@@ -201,9 +203,13 @@ public class GenerationPartitioningUtil {
           text = text.substring(0, 120) + "...";
         }
       }
-      list.add(text);
+      list.add(new Pair(rule, text));
     }
-    Collections.sort(list);
+    Collections.sort(list, new Comparator<Pair<MappingPriorityRule, String>>() {
+      public int compare(Pair<MappingPriorityRule, String> o1, Pair<MappingPriorityRule, String> o2) {
+        return o1.second.compareTo(o2.second);
+      }
+    });
     return list;
   }
 
