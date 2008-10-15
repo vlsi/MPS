@@ -86,7 +86,7 @@ public class TemplateQueryContext {
   }
 
   public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label, IOperationContext operationContext) {
-    throw new  UnsupportedOperationException("use this method only in reference macros");
+    throw new UnsupportedOperationException("use this method only in reference macros");
   }
 
   public SNode getCopiedOutputNodeForInputNode(SNode inputNode) {
@@ -99,6 +99,10 @@ public class TemplateQueryContext {
 
   public String createUniqueName(String baseName, SNode contextNode) {
     return myGenerator.getGeneratorSessionContext().createUniqueName(baseName, contextNode);
+  }
+
+  public IOperationContext getInvocationContext() {
+    return myGenerator.getGeneratorSessionContext().getInvocationContext();
   }
 
   // user objects

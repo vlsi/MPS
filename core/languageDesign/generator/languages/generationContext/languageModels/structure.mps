@@ -548,5 +548,23 @@
       <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224102704684">
+    <property name="name" value="GenerationContextOp_GetInvocationContext" />
+    <link role="extends" targetNodeId="1216860049619" resolveInfo="GenerationContextOp_Base" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224102704685">
+      <property name="value" value="invocation context" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224102704686">
+      <property name="value" value="generator invocation context (IOperationContext)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1224102704687">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1217022095863" resolveInfo="returnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224102912533">
+        <link role="classifier" targetNodeId="5.~IOperationContext" resolveInfo="IOperationContext" />
+      </node>
+    </node>
+  </node>
 </model>
 
