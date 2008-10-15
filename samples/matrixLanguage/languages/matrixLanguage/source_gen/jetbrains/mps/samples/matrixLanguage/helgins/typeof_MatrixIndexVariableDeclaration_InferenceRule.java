@@ -18,7 +18,7 @@ public class typeof_MatrixIndexVariableDeclaration_InferenceRule extends Abstrac
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210248715900", true), new QuotationClass_10().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210248722055", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210248715900", true), new QuotationClass_10().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)", "1210248722055", intentionProvider);
     }
   }
 

@@ -20,7 +20,7 @@ public class typeOf_LambdaMethodParameter_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = parameter;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(new QuotationClass_2().createNode(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1178551166899)), typeCheckingContext.typeOf(SNodeOperations.getAncestor(parameter, "jetbrains.mps.ypath.structure.TreePath", false, false), "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1179327748294", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1179327739073", intentionProvider);
+      typeCheckingContext.createEquation(new QuotationClass_2().createNode(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1178551166899), typeCheckingContext), typeCheckingContext.typeOf(SNodeOperations.getAncestor(parameter, "jetbrains.mps.ypath.structure.TreePath", false, false), "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1179327748294", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1179327739073", intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = parameter;

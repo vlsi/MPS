@@ -18,7 +18,7 @@ public class typeof_IndexFunctionParam_InferenceRule extends AbstractInferenceRu
     {
       SNode _nodeToCheck_1029348928467 = index;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(index, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223208188308", true), new QuotationClass_8().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223208188306", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(index, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223208188308", true), new QuotationClass_8().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223208188306", intentionProvider);
     }
   }
 
