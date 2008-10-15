@@ -2,7 +2,7 @@
 <model modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)">
   <persistence version="3" />
   <refactoringHistory>
-    <refactoringContext modelVersion="1">
+    <refactoringContext modelVersion="2">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
       <conceptFeatureMap>

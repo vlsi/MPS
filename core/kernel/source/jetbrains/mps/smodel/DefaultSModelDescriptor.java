@@ -180,15 +180,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
         refactoringContext.getRefactoring().updateModel(mySModel, refactoringContext);
       }
       mySModel.updateImportedModelUsedVersion(modelDescriptor.getSModelReference(), currentVersion);
-      /*   SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              save();
-            }
-          });
-        }
-      });*/
+      SModelRepository.getInstance().markChanged(mySModel);
     }
     return;
   }
