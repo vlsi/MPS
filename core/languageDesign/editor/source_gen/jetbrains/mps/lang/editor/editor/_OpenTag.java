@@ -64,27 +64,21 @@ public class _OpenTag extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return _OpenTag.calculateBoolean4575_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return _OpenTag.calculateColor4575_0(cell);
+              return _OpenTag._StyleParameter_QueryFunction_1214396913666((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return _OpenTag.calculateBoolean4575_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -97,30 +91,6 @@ public class _OpenTag extends AbstractCellProvider {
 
   public static Color _StyleParameter_QueryFunction_1214396913666(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
-  }
-
-  private static Color calculateColor4575_0(EditorCell cell) {
-    Color result;
-    result = _OpenTag._StyleParameter_QueryFunction_1214396913666((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
-  }
-
-  public static Boolean calculateBoolean4575_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4575_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
 }

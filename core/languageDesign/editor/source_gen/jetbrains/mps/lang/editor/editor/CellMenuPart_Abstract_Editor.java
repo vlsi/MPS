@@ -9,9 +9,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
 
@@ -32,13 +31,7 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return CellMenuPart_Abstract_Editor.calculateFontStyle7903_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         }
 
       };
@@ -47,12 +40,6 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Error_1164841410765_1164841410765(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle7903_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
   }
 
 }

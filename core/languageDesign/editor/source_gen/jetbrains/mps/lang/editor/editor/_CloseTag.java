@@ -67,24 +67,18 @@ public class _CloseTag extends AbstractCellProvider {
           this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return _CloseTag.calculateColor6449_0(cell);
+              return _CloseTag._StyleParameter_QueryFunction_1214396913636((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return _CloseTag.calculateBoolean6449_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return _CloseTag.calculateBoolean6449_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -97,30 +91,6 @@ public class _CloseTag extends AbstractCellProvider {
 
   public static Color _StyleParameter_QueryFunction_1214396913636(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
-  }
-
-  private static Color calculateColor6449_0(EditorCell cell) {
-    Color result;
-    result = _CloseTag._StyleParameter_QueryFunction_1214396913636((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
-  }
-
-  public static Boolean calculateBoolean6449_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean6449_1(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
 }

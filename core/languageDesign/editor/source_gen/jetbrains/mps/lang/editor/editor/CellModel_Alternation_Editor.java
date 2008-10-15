@@ -436,13 +436,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_9(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -455,13 +449,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_16(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -474,13 +462,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_19(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -492,13 +474,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_21(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -511,24 +487,18 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_3(cell);
-            }
-
-          });
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_4(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateColor4233_0(cell);
+              return CellModel_Alternation_Editor._StyleParameter_QueryFunction_1214396893965((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -544,13 +514,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_18(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -563,13 +527,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_7(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -581,13 +539,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_22(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -600,24 +552,18 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_2(cell);
-            }
-
-          });
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_8(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
           this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateColor4233_1(cell);
+              return CellModel_Alternation_Editor._StyleParameter_QueryFunction_1214396913660((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -633,13 +579,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_12(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -652,13 +592,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_10(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -670,13 +604,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_15(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -689,13 +617,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_20(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -708,13 +630,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_17(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -726,13 +642,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_5(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -745,13 +655,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -769,20 +673,8 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_13(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -800,13 +692,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_14(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -819,13 +705,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_11(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -838,13 +718,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_6(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -865,13 +739,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_23(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -884,20 +752,8 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_24(cell);
-            }
-
-          });
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_25(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -914,13 +770,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return CellModel_Alternation_Editor.calculateBoolean4233_26(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -984,192 +834,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   public static Color _StyleParameter_QueryFunction_1214396913660(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
-  }
-
-  private static Color calculateColor4233_0(EditorCell cell) {
-    Color result;
-    result = CellModel_Alternation_Editor._StyleParameter_QueryFunction_1214396893965((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
-  }
-
-  private static Color calculateColor4233_1(EditorCell cell) {
-    Color result;
-    result = CellModel_Alternation_Editor._StyleParameter_QueryFunction_1214396913660((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_2(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_3(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_4(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_5(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_6(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_7(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_8(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_9(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_10(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_11(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_12(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_13(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_14(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_15(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_16(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_17(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_18(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_19(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_20(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_21(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_22(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_23(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_24(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_25(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean4233_26(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
 }

@@ -11,9 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -22,7 +19,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
@@ -81,24 +79,6 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNodeList_cellMenuPart_1164826358683(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle1820_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Color calculateColor1820_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.darkGray;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1820_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
   public static class cellMenuPartListHandler_1820_0 extends RefNodeListHandler {
@@ -161,27 +141,9 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-              public Integer calculate(EditorCell cell) {
-                return CellMenuDescriptor_Editor.calculateFontStyle1820_0(cell);
-              }
-
-            });
-            this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-              public Boolean calculate(EditorCell cell) {
-                return CellMenuDescriptor_Editor.calculateBoolean1820_0(cell);
-              }
-
-            });
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return CellMenuDescriptor_Editor.calculateColor1820_0(cell);
-              }
-
-            });
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
           }
 
         };

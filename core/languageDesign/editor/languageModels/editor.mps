@@ -26,12 +26,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <maxImportIndex value="33" />
+  <maxImportIndex value="35" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="14" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="16" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="19" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <import index="20" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
@@ -40,8 +39,8 @@
   <import index="28" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="29" modelUID="r:00000000-0000-4000-0000-011c895902bb(jetbrains.mps.lang.sharedConcepts.editor)" version="-1" />
   <import index="30" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" />
-  <import index="31" modelUID="f:java_stub#jetbrains.mps.lang.editor.structure(jetbrains.mps.lang.editor.structure@java_stub)" version="-1" />
-  <import index="32" modelUID="f:java_stub#jetbrains.mps.lang.editor.editor(jetbrains.mps.lang.editor.editor@java_stub)" version="-1" />
+  <import index="34" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
+  <import index="35" modelUID="f:java_stub#jetbrains.mps.lang.editor.editor(jetbrains.mps.lang.editor.editor@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1078153915535">
     <property name="name" value="ConceptEditorDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="2.1071666914219" />
@@ -2825,36 +2824,36 @@
                         <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
                       </node>
                       <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1164849353031">
-                        <link role="variableDeclaration" targetNodeId="16.~EditorCellKeyMap.KEY_MODIFIERS_NONE" resolveInfo="KEY_MODIFIERS_NONE" />
-                        <link role="classifier" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" targetNodeId="34.~EditorCellKeyMap.KEY_MODIFIERS_NONE" resolveInfo="KEY_MODIFIERS_NONE" />
+                        <link role="classifier" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
                       </node>
                       <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1164849353032">
-                        <link role="classifier" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                        <link role="variableDeclaration" targetNodeId="16.~EditorCellKeyMap.KEY_MODIFIERS_CTRL" resolveInfo="KEY_MODIFIERS_CTRL" />
+                        <link role="classifier" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" targetNodeId="34.~EditorCellKeyMap.KEY_MODIFIERS_CTRL" resolveInfo="KEY_MODIFIERS_CTRL" />
                       </node>
                       <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1164849353033">
-                        <link role="variableDeclaration" targetNodeId="16.~EditorCellKeyMap.KEY_MODIFIERS_ALT" resolveInfo="KEY_MODIFIERS_ALT" />
-                        <link role="classifier" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" targetNodeId="34.~EditorCellKeyMap.KEY_MODIFIERS_ALT" resolveInfo="KEY_MODIFIERS_ALT" />
+                        <link role="classifier" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
                       </node>
                       <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1164849353050">
-                        <link role="variableDeclaration" targetNodeId="16.~EditorCellKeyMap.KEY_MODIFIERS_SHIFT" resolveInfo="KEY_MODIFIERS_SHIFT" />
-                        <link role="classifier" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" targetNodeId="34.~EditorCellKeyMap.KEY_MODIFIERS_SHIFT" resolveInfo="KEY_MODIFIERS_SHIFT" />
+                        <link role="classifier" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
                       </node>
                       <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1164849353051">
-                        <link role="variableDeclaration" targetNodeId="16.~EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT" resolveInfo="KEY_MODIFIERS_CTRL_ALT" />
-                        <link role="classifier" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" targetNodeId="34.~EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT" resolveInfo="KEY_MODIFIERS_CTRL_ALT" />
+                        <link role="classifier" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
                       </node>
                       <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1164849353052">
-                        <link role="variableDeclaration" targetNodeId="16.~EditorCellKeyMap.KEY_MODIFIERS_CTRL_SHIFT" resolveInfo="KEY_MODIFIERS_CTRL_SHIFT" />
-                        <link role="classifier" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" targetNodeId="34.~EditorCellKeyMap.KEY_MODIFIERS_CTRL_SHIFT" resolveInfo="KEY_MODIFIERS_CTRL_SHIFT" />
+                        <link role="classifier" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
                       </node>
                       <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1164849353053">
-                        <link role="classifier" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                        <link role="variableDeclaration" targetNodeId="16.~EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT_SHIFT" resolveInfo="KEY_MODIFIERS_CTRL_ALT_SHIFT" />
+                        <link role="classifier" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" targetNodeId="34.~EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT_SHIFT" resolveInfo="KEY_MODIFIERS_CTRL_ALT_SHIFT" />
                       </node>
                       <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1164849353054">
-                        <link role="variableDeclaration" targetNodeId="16.~EditorCellKeyMap.KEY_MODIFIERS_ALT_SHIFT" resolveInfo="KEY_MODIFIERS_ALT_SHIFT" />
-                        <link role="classifier" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="variableDeclaration" targetNodeId="34.~EditorCellKeyMap.KEY_MODIFIERS_ALT_SHIFT" resolveInfo="KEY_MODIFIERS_ALT_SHIFT" />
+                        <link role="classifier" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
                       </node>
                     </node>
                   </node>
@@ -2897,24 +2896,24 @@
                           <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
                         </node>
                         <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1164849028340">
-                          <link role="classifier" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                          <link role="variableDeclaration" targetNodeId="16.~EditorCellKeyMap.KEY_CODE_DIGIT" resolveInfo="KEY_CODE_DIGIT" />
+                          <link role="classifier" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                          <link role="variableDeclaration" targetNodeId="34.~EditorCellKeyMap.KEY_CODE_DIGIT" resolveInfo="KEY_CODE_DIGIT" />
                         </node>
                         <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1164849028341">
-                          <link role="variableDeclaration" targetNodeId="16.~EditorCellKeyMap.KEY_CODE_LETTER" resolveInfo="KEY_CODE_LETTER" />
-                          <link role="classifier" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                          <link role="variableDeclaration" targetNodeId="34.~EditorCellKeyMap.KEY_CODE_LETTER" resolveInfo="KEY_CODE_LETTER" />
+                          <link role="classifier" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
                         </node>
                         <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1164849028342">
-                          <link role="variableDeclaration" targetNodeId="16.~EditorCellKeyMap.KEY_CODE_LETTER_OR_DIGIT" resolveInfo="KEY_CODE_LETTER_OR_DIGIT" />
-                          <link role="classifier" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                          <link role="variableDeclaration" targetNodeId="34.~EditorCellKeyMap.KEY_CODE_LETTER_OR_DIGIT" resolveInfo="KEY_CODE_LETTER_OR_DIGIT" />
+                          <link role="classifier" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
                         </node>
                         <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1164849028343">
-                          <link role="variableDeclaration" targetNodeId="16.~EditorCellKeyMap.KEY_CODE_SPACE" resolveInfo="KEY_CODE_SPACE" />
-                          <link role="classifier" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                          <link role="variableDeclaration" targetNodeId="34.~EditorCellKeyMap.KEY_CODE_SPACE" resolveInfo="KEY_CODE_SPACE" />
+                          <link role="classifier" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
                         </node>
                         <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1164849028344">
-                          <link role="classifier" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                          <link role="variableDeclaration" targetNodeId="16.~EditorCellKeyMap.KEY_CODE_CHAR" resolveInfo="KEY_CODE_CHAR" />
+                          <link role="classifier" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                          <link role="variableDeclaration" targetNodeId="34.~EditorCellKeyMap.KEY_CODE_CHAR" resolveInfo="KEY_CODE_CHAR" />
                         </node>
                       </node>
                     </node>
@@ -2927,8 +2926,8 @@
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" id="1164849028348">
                       <node role="argument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1164849028349">
-                        <link role="classConcept" targetNodeId="16.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
-                        <link role="baseMethodDeclaration" targetNodeId="16.~EditorCellKeyMap.getVirtualKeycodes():java.util.List" resolveInfo="getVirtualKeycodes" />
+                        <link role="classConcept" targetNodeId="34.~EditorCellKeyMap" resolveInfo="EditorCellKeyMap" />
+                        <link role="baseMethodDeclaration" targetNodeId="34.~EditorCellKeyMap.getVirtualKeycodes():java.util.List" resolveInfo="getVirtualKeycodes" />
                       </node>
                     </node>
                   </node>
@@ -3486,7 +3485,7 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214480452886">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1214480452887">
                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1214480452888">
-                        <link role="baseMethodDeclaration" targetNodeId="32.~SelectImageFileButton.&lt;init&gt;(jetbrains.mps.lang.editor.structure.CellModel_Image)" resolveInfo="SelectImageFileButton" />
+                        <link role="baseMethodDeclaration" targetNodeId="35.~SelectImageFileButton.&lt;init&gt;(jetbrains.mps.lang.editor.structure.CellModel_Image)" resolveInfo="SelectImageFileButton" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214480452889">
                           <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1214480452890" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1214480452891" />
@@ -6594,7 +6593,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207872475555">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1198589407021" />
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207872475556">
-                    <link role="baseMethodDeclaration" targetNodeId="16.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getNodeEditorComponent" />
+                    <link role="baseMethodDeclaration" targetNodeId="34.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getNodeEditorComponent" />
                   </node>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198589416985">

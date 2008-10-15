@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class _CellKeyMapLnk_Component extends AbstractCellProvider {
@@ -65,13 +64,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return _CellKeyMapLnk_Component.calculateBoolean8023_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -80,18 +73,6 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
   }
 
   private static void setupLabel_refCell_keyMap_1140223991344(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean8023_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean8023_1(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
   public static class _Inline8023_0 extends AbstractCellProvider {
@@ -143,13 +124,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-              public Boolean calculate(EditorCell cell) {
-                return _CellKeyMapLnk_Component.calculateBoolean8023_0(cell);
-              }
-
-            });
+            this.set(StyleAttributes.DRAW_BORDER, true);
           }
 
         };

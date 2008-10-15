@@ -54,6 +54,7 @@
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1212794206564">
       <property name="name" value="getProviderClassNameForCellWithRole" />
+      <property name="isDeprecated" value="false" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212794212412">
         <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
       </node>

@@ -5,23 +5,15 @@ package jetbrains.mps.lang.editor.editor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Styles_StyleSheet {
 
   public static Style getStyle(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateColor7582_4(cell);
-          }
-
-        });
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
 
     };
@@ -30,20 +22,8 @@ public class Styles_StyleSheet {
   public static Style getReference(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateColor7582_0(cell);
-          }
-
-        });
-        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-          public Integer calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateFontStyle7582_0(cell);
-          }
-
-        });
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       }
 
     };
@@ -52,20 +32,8 @@ public class Styles_StyleSheet {
   public static Style getItem(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-          public Integer calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateFontStyle7582_1(cell);
-          }
-
-        });
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateColor7582_1(cell);
-          }
-
-        });
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
 
     };
@@ -74,34 +42,10 @@ public class Styles_StyleSheet {
   public static Style getHeader(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-          public Integer calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateFontStyle7582_2(cell);
-          }
-
-        });
-        this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-          public Boolean calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateBoolean7582_0(cell);
-          }
-
-        });
-        this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
-
-          public Boolean calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateUnderlined7582_0(cell);
-          }
-
-        });
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateColor7582_2(cell);
-          }
-
-        });
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+        this.set(StyleAttributes.SELECTABLE, false);
+        this.set(StyleAttributes.UNDERLINED, true);
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
 
     };
@@ -110,115 +54,13 @@ public class Styles_StyleSheet {
   public static Style getProperty(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-          public Boolean calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateBoolean7582_1(cell);
-          }
-
-        });
-        this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-          public Boolean calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateBoolean7582_2(cell);
-          }
-
-        });
-        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-          public Integer calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateFontStyle7582_3(cell);
-          }
-
-        });
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return Styles_StyleSheet.calculateColor7582_3(cell);
-          }
-
-        });
+        this.set(StyleAttributes.SELECTABLE, false);
+        this.set(StyleAttributes.DRAW_BORDER, true);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       }
 
     };
-  }
-
-  private static Integer calculateFontStyle7582_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Integer calculateFontStyle7582_1(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Integer calculateFontStyle7582_2(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
-  }
-
-  private static Integer calculateFontStyle7582_3(EditorCell cell) {
-    int result;
-    result = MPSFonts.PLAIN;
-    return result;
-  }
-
-  private static Color calculateColor7582_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-  private static Color calculateColor7582_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
-  }
-
-  private static Color calculateColor7582_2(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
-  }
-
-  private static Color calculateColor7582_3(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor7582_4(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
-  }
-
-  private static boolean calculateUnderlined7582_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean7582_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean7582_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean7582_2(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
 }
