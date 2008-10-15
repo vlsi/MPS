@@ -36,7 +36,6 @@
   <import index="8" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="11" modelUID="f:java_stub#jetbrains.mps.baseLanguage.ext.csharp.runtime(jetbrains.mps.baseLanguage.ext.csharp.runtime@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps.baseLanguage.runtime(jetbrains.mps.baseLanguage.runtime@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1201381967720">
     <property name="name" value="mc_baseLanguage" />
