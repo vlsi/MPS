@@ -271,6 +271,10 @@ __switch__:
     return AssignmentExpression_Behavior.call_canConvertToLocalVariableDeclaration_1221573334330(assignment) && SLinkOperations.getTarget(assignment, "lValue", true) == _context.getSourceNode();
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1224071208743(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.AsExpression");
+  }
+
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface")) {
       SPropertyOperations.set(_context.getNewNode(), "isAbstract", "" + (true));
@@ -2686,6 +2690,56 @@ __switch__:
         }
 
       });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1224071208705(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AsExpression");
+      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
+      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      for(final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          continue;
+        }
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
+        }
+        result.add(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
+
+          public SNode doSubstitute(String pattern) {
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            {
+              SNode type = ExpectedType_FactoryUtil.createExpectedType(_context.getSourceNode());
+              if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+                SLinkOperations.setTarget(result, "classifierType", type, true);
+              }
+              SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+              SLinkOperations.setTarget(result, "expression", _context.getSourceNode(), true);
+              return result;
+            }
+          }
+
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ClassifierType_1224071208742(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return SNodeOperations.getParent(_context.getSourceNode());
+        }
+
+      };
+      SNode node = (SNode)calc.calculate();
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext));
     }
     return result;
   }

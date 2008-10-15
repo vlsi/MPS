@@ -19,7 +19,9 @@
   <classPath>
     <entry path="${language_descriptor}\classes" />
   </classPath>
-  <languageRuntimeClassPath />
+  <languageRuntimeClassPath>
+    <entry path="${language_descriptor}\runtime\classes" />
+  </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>
     <dependency reexport="true">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>

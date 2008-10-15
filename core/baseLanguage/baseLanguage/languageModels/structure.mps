@@ -17,9 +17,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <maxImportIndex value="38" />
+  <maxImportIndex value="39" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="37" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <import index="39" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068498886294">
     <property name="name" value="AssignmentExpression" />
     <property name="package" value="assignments" />
@@ -2791,6 +2792,51 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1223985693348">
     <property name="name" value="IVariableAssignment" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224071154655">
+    <property name="name" value="AsExpression" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224071154656">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expression" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224071154657">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="classifierType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1107535904670" resolveInfo="ClassifierType" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224071154658">
+      <property name="value" value="as" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224071154659">
+      <property name="value" value="type case expression or return null" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224071180699">
+    <property name="name" value="UsingStatement" />
+    <property name="rootable" value="false" />
+    <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224071180700">
+      <property name="value" value="using(...)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224071180701">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="resource" />
+      <property name="sourceCardinality" value="1..n" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224071180702">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="body" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
+    </node>
   </node>
 </model>
 

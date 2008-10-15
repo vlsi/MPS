@@ -18,7 +18,6 @@
     <orderEntry type="module" module-name="baseLanguage" exported="" />
     <orderEntry type="module" module-name="blTypes" exported="" />
     <orderEntry type="module" module-name="collections-runtime" exported="" />
-    <orderEntry type="module" module-name="InternalCollections-runtime" exported="" />
     <orderEntry type="module" module-name="constraints" exported="" />
     <orderEntry type="module" module-name="editor" exported="" />
     <orderEntry type="module" module-name="typesystem" exported="" />
@@ -52,6 +51,7 @@
     <orderEntry type="library" exported="" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="unitTest" exported="" />
     <orderEntry type="module" module-name="actions" exported="" />
+    <orderEntry type="module" module-name="baseLanguage-runtime" exported="" />
     <orderEntryProperties />
   </component>
   <component name="copyright">

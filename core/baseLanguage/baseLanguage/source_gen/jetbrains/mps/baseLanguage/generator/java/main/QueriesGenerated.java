@@ -14,6 +14,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
@@ -48,6 +49,10 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1206154728906(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode property = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "operation", true), "property", false);
     return Property_Behavior.call_getGetterMethodName_1213877383170(property);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1224072736283(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "resource_" + _context.getNode().getId();
   }
 
   public static boolean ifMacro_Condition_1201570447832(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -111,12 +116,44 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(property, "type", true);
   }
 
+  public static SNode sourceNodeQuery_1224072707340(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1224072707365(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "classifierType", true);
+  }
+
+  public static SNode sourceNodeQuery_1224072736270(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1224072736278(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1224072736302(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1224072736313(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(_context.getNode());
+  }
+
   public static Iterable sourceNodesQuery_1201570443454(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(Property_Behavior.call_getCustomPropertyImplementation_1213877383154(_context.getNode()), "getAccessor", true), "statementList", true), "statement", true);
   }
 
   public static Iterable sourceNodesQuery_1202009237531(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(Property_Behavior.call_getCustomPropertyImplementation_1213877383154(_context.getNode()), "setAccessor", true), "statementList", true), "statement", true);
+  }
+
+  public static Iterable sourceNodesQuery_1224072736293(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "resource", true);
+  }
+
+  public static Iterable sourceNodesQuery_1224072736321(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "resource", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201570605396(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
