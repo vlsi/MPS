@@ -4,7 +4,7 @@ package jetbrains.mps.lang.typesystem.actions;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
-import jetbrains.mps.lang.typesystem.helgins.RulesUtil;
+import jetbrains.mps.lang.typesystem.typesystem.RulesUtil;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
