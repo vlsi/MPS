@@ -4,17 +4,18 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
-import com.intellij.ide.ui.customization.CustomizableActionsSchemas;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.vcs.MPSExcludedFileIndex;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.LinkedList;
+import java.awt.Frame;
 
 public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNode {
   protected final VirtualFile myFile;
@@ -27,7 +28,7 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNo
   }
 
   public AbstractFileTreeNode(Project project, VirtualFile file, boolean showFullPath) {
-    super(null);
+    super(new MyIOperationContext());
     assert file != null;
     myFile = file;
     myProvider = project.getComponent(VcsFileStatusProvider.class);
@@ -74,4 +75,38 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNo
       }
     return children;
   }
+
+  private static class MyIOperationContext implements IOperationContext {
+  public MyIOperationContext() {
+  }
+
+  @Deprecated
+    public MPSProject getMPSProject() {
+        return null;
+      }
+
+  public Project getProject() {
+    return null;
+  }
+
+  public IModule getModule() {
+    return null;
+  }
+
+  public IScope getScope() {
+    return null;
+  }
+
+  public Frame getMainFrame() {
+    return null;
+  }
+
+  public boolean isTestMode() {
+    return false;
+  }
+
+  public <T> T getComponent(Class<T> clazz) {
+        return null;
+      }
+}
 }
