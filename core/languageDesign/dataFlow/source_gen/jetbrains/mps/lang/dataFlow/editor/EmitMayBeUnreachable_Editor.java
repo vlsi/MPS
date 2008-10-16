@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
 
@@ -94,13 +93,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return EmitMayBeUnreachable_Editor.calculateBoolean5949_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, true);
         }
 
       };
@@ -115,13 +108,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return EmitMayBeUnreachable_Editor.calculateBoolean5949_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, true);
         }
 
       };
@@ -137,18 +124,6 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1206534319498_1206534319498(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean5949_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean5949_1(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
 }

@@ -25,10 +25,10 @@ public class ReferenceMacro_GetReferent_Behavior {
     LinkDeclaration link_ = linkSearchScope.getMostSpecificLinkDeclarationByRole(linkRole);
     SNode link = (SNode)BaseAdapter.fromAdapter(link_);
     SNode targetConcept = SLinkOperations.getTarget(link, "target", false);
-    SNode expectedNodeType = new QuotationClass_0().createNode(targetConcept);
+    SNode expectedNodeType = new _Quotations.QuotationClass_0().createNode(targetConcept);
     // reference may be resolved dynamically?
     if (SConceptOperations.isSubConceptOf(targetConcept, "jetbrains.mps.lang.core.structure.IResolveInfo")) {
-      return new QuotationClass_1().createNode(targetConcept);
+      return new _Quotations.QuotationClass_1().createNode(targetConcept);
     }
     return expectedNodeType;
   }

@@ -15,9 +15,9 @@ public class QueryFunction_ParameterizedSideTransform_Query_Behavior {
     SNode hostMenuPart = SNodeOperations.getParent(thisNode);
     SNode parameterType = SLinkOperations.getTarget(hostMenuPart, "type", true);
     if (parameterType != null) {
-      return new QuotationClass_8().createNode(parameterType);
+      return new _Quotations.QuotationClass_8().createNode(parameterType);
     }
-    return new QuotationClass_9().createNode();
+    return new _Quotations.QuotationClass_9().createNode();
   }
 
 }

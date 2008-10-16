@@ -237,7 +237,13 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ListAntiquotation_Editor.calculateColor7120_0(cell);
+              return ListAntiquotation_Editor._StyleParameter_QueryFunction_1214399677894((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -259,7 +265,13 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return ListAntiquotation_Editor.calculateColor7120_1(cell);
+              return ListAntiquotation_Editor._StyleParameter_QueryFunction_1214399678073((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -283,13 +295,7 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ListAntiquotation_Editor.calculateBoolean7120_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -354,36 +360,6 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
 
   public static Color _StyleParameter_QueryFunction_1214399678073(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
-  }
-
-  private static Color calculateColor7120_0(EditorCell cell) {
-    Color result;
-    result = ListAntiquotation_Editor._StyleParameter_QueryFunction_1214399677894((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
-  }
-
-  private static Color calculateColor7120_1(EditorCell cell) {
-    Color result;
-    result = ListAntiquotation_Editor._StyleParameter_QueryFunction_1214399678073((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
-  }
-
-  public static Boolean calculateBoolean7120_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
 }

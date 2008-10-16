@@ -14,7 +14,7 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart","jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"}, false, false);
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.actions.structure.AddMenuPart")) {
-      return new QuotationClass_3().createNode(SLinkOperations.getTarget(ancestor, "concept", false));
+      return new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(ancestor, "concept", false));
     }
     SNode expectedType = null;
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart")) {
@@ -22,9 +22,9 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
     }
     // ==========
     if (expectedType == null) {
-      return new QuotationClass_4().createNode();
+      return new _Quotations.QuotationClass_4().createNode();
     }
-    return new QuotationClass_5().createNode(expectedType);
+    return new _Quotations.QuotationClass_5().createNode(expectedType);
   }
 
 }

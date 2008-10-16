@@ -19,7 +19,7 @@ public class check_CellModel_RefCell_InferenceRule extends AbstractInferenceRule
   public void applyRule(final SNode refCell, final TypeCheckingContext typeCheckingContext) {
     if (!(LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(refCell, "relationDeclaration", false)))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(refCell, "multiple cardinality link is not applicable", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.helgins)", "1180280232711", intentionProvider);
+      typeCheckingContext.reportTypeError(refCell, "multiple cardinality link is not applicable", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180280232711", intentionProvider);
     }
   }
 

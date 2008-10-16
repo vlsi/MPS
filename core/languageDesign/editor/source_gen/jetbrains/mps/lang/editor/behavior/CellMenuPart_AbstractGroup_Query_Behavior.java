@@ -17,7 +17,7 @@ public class CellMenuPart_AbstractGroup_Query_Behavior {
     if (parameterObjectType == null) {
       return null;
     }
-    return new QuotationClass_4().createNode(parameterObjectType);
+    return new _Quotations.QuotationClass_4().createNode(parameterObjectType);
   }
 
 }

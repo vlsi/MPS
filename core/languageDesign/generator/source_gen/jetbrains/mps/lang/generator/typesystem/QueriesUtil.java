@@ -57,7 +57,7 @@ public class QueriesUtil {
     {
       SNode _nodeToCheck_1029348928467 = null;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(new QuotationClass_0().createNode(applicableConcept, typeCheckingContext), InputNodeType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1206286374200", intentionProvider);
+      typeCheckingContext.createEquation(new _Quotations.QuotationClass_0().createNode(applicableConcept, typeCheckingContext), InputNodeType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1206286374200", intentionProvider);
     }
   }
 
@@ -126,25 +126,25 @@ public class QueriesUtil {
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(TypeToEquate, new QuotationClass_9().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1206286245992", intentionProvider);
+        typeCheckingContext.createEquation(TypeToEquate, new _Quotations.QuotationClass_1().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1206286245992", intentionProvider);
       }
       return;
     }
     {
-      final SNode OutputType = typeCheckingContext.typeOf(query, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1206283548589", false);
+      final SNode OutputType = typeCheckingContext.typeOf(query, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1206283548589", false);
       typeCheckingContext.whenConcrete(OutputType, new Runnable() {
 
         public void run() {
           {
             SNode _nodeToCheck_1029348928467 = null;
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createLessThanInequation(TypeToEquate, new QuotationClass_1().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1190121627948", false, 0, intentionProvider);
+            typeCheckingContext.createLessThanInequation(TypeToEquate, new _Quotations.QuotationClass_2().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1190121627948", false, 0, intentionProvider);
           }
           if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(OutputType), "jetbrains.mps.lang.smodel.structure.SNodeListType")) {
             {
               SNode _nodeToCheck_1029348928467 = null;
               BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.createEquation(TypeToEquate, new QuotationClass_2().createNode(SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(OutputType), "elementConcept", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1186132911051", intentionProvider);
+              typeCheckingContext.createEquation(TypeToEquate, new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(OutputType), "elementConcept", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1186132911051", intentionProvider);
             }
           } else
           {
@@ -153,7 +153,7 @@ public class QueriesUtil {
               {
                 SNode _nodeToCheck_1029348928467 = null;
                 BaseIntentionProvider intentionProvider = null;
-                typeCheckingContext.createEquation(TypeToEquate, outputSNodeType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1186132959877", intentionProvider);
+                typeCheckingContext.createEquation(TypeToEquate, outputSNodeType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1186132959877", intentionProvider);
               }
             } else
             {
@@ -165,7 +165,7 @@ public class QueriesUtil {
                   {
                     SNode _nodeToCheck_1029348928467 = null;
                     BaseIntentionProvider intentionProvider = null;
-                    typeCheckingContext.createEquation(TypeToEquate, outputSNodeType2, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1186133027887", intentionProvider);
+                    typeCheckingContext.createEquation(TypeToEquate, outputSNodeType2, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1186133027887", intentionProvider);
                   }
                 }
               }
@@ -173,7 +173,7 @@ public class QueriesUtil {
           }
         }
 
-      }, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1186132825697");
+      }, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1186132825697");
     }
   }
 

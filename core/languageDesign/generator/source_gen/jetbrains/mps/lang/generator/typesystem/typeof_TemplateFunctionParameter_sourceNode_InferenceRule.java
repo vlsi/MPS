@@ -14,7 +14,7 @@ public class typeof_TemplateFunctionParameter_sourceNode_InferenceRule extends A
   }
 
   public void applyRule(final SNode sourceNode, final TypeCheckingContext typeCheckingContext) {
-    QueriesUtil.equate_templateFunction_inputNodeType(typeCheckingContext, sourceNode, typeCheckingContext.typeOf(sourceNode, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1206286439885", true));
+    QueriesUtil.equate_templateFunction_inputNodeType(typeCheckingContext, sourceNode, typeCheckingContext.typeOf(sourceNode, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1206286439885", true));
   }
 
   public String getApplicableConceptFQName() {

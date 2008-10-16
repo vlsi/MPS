@@ -13,7 +13,7 @@ public class wildCard_is_Object_SubtypingRule extends SubtypingRule_Runtime impl
   }
 
   public SNode getSubOrSuperType(SNode wildCardType) {
-    return new QuotationClass_101().createNode();
+    return new _Quotations.QuotationClass_101().createNode();
   }
 
   public String getApplicableConceptFQName() {

@@ -20,11 +20,11 @@ public class check_CellModel_RefNodeList_InferenceRule extends AbstractInference
     SNode lnk = SLinkOperations.getTarget(refNodeList, "relationDeclaration", false);
     if (!(SPropertyOperations.hasValue(lnk, "metaClass", "aggregation", "reference"))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(refNodeList, "aggregation link expected", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.helgins)", "1180295464579", intentionProvider);
+      typeCheckingContext.reportTypeError(refNodeList, "aggregation link expected", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180295464579", intentionProvider);
     }
     if (!(SPropertyOperations.hasValue(lnk, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(lnk, "sourceCardinality", "1..n", "0..1"))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(refNodeList, "multiple cardinality expected", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.helgins)", "1180295464588", intentionProvider);
+      typeCheckingContext.reportTypeError(refNodeList, "multiple cardinality expected", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180295464588", intentionProvider);
     }
   }
 

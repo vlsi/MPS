@@ -28,7 +28,7 @@ public class PropertyMacro_GetPropertyValue_Behavior {
         return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);
       }
     }
-    return new QuotationClass_2().createNode();
+    return new _Quotations.QuotationClass_2().createNode();
   }
 
 }

@@ -35,7 +35,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
       supertypes.addAll(SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true));
     }
     if (supertypes.isEmpty()) {
-      result.add(new QuotationClass_4().createNode());
+      result.add(new _Quotations.QuotationClass_4().createNode());
     }
     for(SNode supertype : supertypes) {
       SNode supertypeCopy = SNodeOperations.copyNode(supertype);

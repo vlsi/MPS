@@ -16,11 +16,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Quotation_Editor extends DefaultNodeEditor {
 
@@ -157,20 +155,8 @@ public class Quotation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return Quotation_Editor.calculateBoolean3472_1(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return Quotation_Editor.calculateColor3472_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.cyan);
           this.set(StyleAttributes.PADDING_RIGHT, 0.5);
         }
 
@@ -188,20 +174,8 @@ public class Quotation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return Quotation_Editor.calculateBoolean3472_2(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return Quotation_Editor.calculateColor3472_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.cyan);
         }
 
       };
@@ -215,13 +189,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return Quotation_Editor.calculateBoolean3472_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -260,36 +228,6 @@ public class Quotation_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition3472_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "modelToCreate", true) != null;
-  }
-
-  private static Color calculateColor3472_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.cyan;
-    return result;
-  }
-
-  private static Color calculateColor3472_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.cyan;
-    return result;
-  }
-
-  public static Boolean calculateBoolean3472_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean3472_1(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean3472_2(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
 }

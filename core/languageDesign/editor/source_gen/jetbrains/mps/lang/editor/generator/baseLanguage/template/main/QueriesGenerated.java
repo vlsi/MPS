@@ -788,15 +788,15 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1197568889095(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if (SPropertyOperations.hasValue(_context.getNode(), "caretPolicy", "caret_at_first_position", null)) {
-      return SLinkOperations.getTarget(new QuotationClass_0().createNode(), "variableDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "variableDeclaration", false);
     }
     if (SPropertyOperations.hasValue(_context.getNode(), "caretPolicy", "caret_at_last_position", null)) {
-      return SLinkOperations.getTarget(new QuotationClass_1().createNode(), "variableDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "variableDeclaration", false);
     }
     if (SPropertyOperations.hasValue(_context.getNode(), "caretPolicy", "caret_at_intermediate_position", null)) {
-      return SLinkOperations.getTarget(new QuotationClass_2().createNode(), "variableDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "variableDeclaration", false);
     }
-    return SLinkOperations.getTarget(new QuotationClass_3().createNode(), "variableDeclaration", false);
+    return SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "variableDeclaration", false);
   }
 
   public static Object referenceMacro_GetReferent_1197572060712(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -824,22 +824,22 @@ public class QueriesGenerated {
     if (cellLayout == null) {
       // no cell layout
       if (SPropertyOperations.getBoolean(_context.getNode(), "vertical")) {
-        return SLinkOperations.getTarget(new QuotationClass_4().createNode(), "baseMethodDeclaration", false);
+        return SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "baseMethodDeclaration", false);
       }
-      return SLinkOperations.getTarget(new QuotationClass_5().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "baseMethodDeclaration", false);
     }
     // cell layout is defined
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical")) {
-      return SLinkOperations.getTarget(new QuotationClass_6().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_6().createNode(), "baseMethodDeclaration", false);
     }
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal")) {
-      return SLinkOperations.getTarget(new QuotationClass_7().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_7().createNode(), "baseMethodDeclaration", false);
     }
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Flow")) {
-      return SLinkOperations.getTarget(new QuotationClass_8().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_8().createNode(), "baseMethodDeclaration", false);
     }
     // default
-    return SLinkOperations.getTarget(new QuotationClass_9().createNode(), "baseMethodDeclaration", false);
+    return SLinkOperations.getTarget(new _Quotations.QuotationClass_9().createNode(), "baseMethodDeclaration", false);
   }
 
   public static Object referenceMacro_GetReferent_1197580078127(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -847,19 +847,19 @@ public class QueriesGenerated {
     // no cell layout defined (obsolete)
     if (cellLayout == null) {
       if (SPropertyOperations.getBoolean(_context.getNode(), "vertical")) {
-        return SLinkOperations.getTarget(SLinkOperations.getTarget(new QuotationClass_10().createNode(), "creator", true), "baseMethodDeclaration", false);
+        return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_10().createNode(), "creator", true), "baseMethodDeclaration", false);
       }
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(new QuotationClass_11().createNode(), "creator", true), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(), "creator", true), "baseMethodDeclaration", false);
     }
     // choose cell layout
     if (SNodeOperations.isInstanceOf(cellLayout, "jetbrains.mps.lang.editor.structure.CellLayout_Vertical")) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(new QuotationClass_12().createNode(), "creator", true), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_12().createNode(), "creator", true), "baseMethodDeclaration", false);
     }
     if (SNodeOperations.isInstanceOf(cellLayout, "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal")) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(new QuotationClass_13().createNode(), "creator", true), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_13().createNode(), "creator", true), "baseMethodDeclaration", false);
     }
     if (SNodeOperations.isInstanceOf(cellLayout, "jetbrains.mps.lang.editor.structure.CellLayout_Flow")) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(new QuotationClass_14().createNode(), "creator", true), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(new _Quotations.QuotationClass_14().createNode(), "creator", true), "baseMethodDeclaration", false);
     }
     // error
     return null;

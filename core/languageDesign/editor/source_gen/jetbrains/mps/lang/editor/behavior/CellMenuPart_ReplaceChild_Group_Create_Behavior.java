@@ -18,7 +18,7 @@ public class CellMenuPart_ReplaceChild_Group_Create_Behavior {
     SNode hostMenuPart = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", false, false);
     SNode editedLink = CellMenuPart_Abstract_Behavior.call_getEditedLink_1219409839992(hostMenuPart);
     SNode conceptOfChild = SLinkOperations.getTarget(editedLink, "target", false);
-    return new QuotationClass_0().createNode(conceptOfChild);
+    return new _Quotations.QuotationClass_0().createNode(conceptOfChild);
   }
 
 }

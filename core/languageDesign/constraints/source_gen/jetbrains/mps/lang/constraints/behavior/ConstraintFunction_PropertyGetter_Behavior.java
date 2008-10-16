@@ -19,7 +19,7 @@ public class ConstraintFunction_PropertyGetter_Behavior {
     if (dataType != null) {
       return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);
     }
-    return new QuotationClass_0().createNode();
+    return new _Quotations.QuotationClass_0().createNode();
   }
 
 }

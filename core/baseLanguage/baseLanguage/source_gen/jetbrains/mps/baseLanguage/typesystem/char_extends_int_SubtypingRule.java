@@ -13,7 +13,7 @@ public class char_extends_int_SubtypingRule extends SubtypingRule_Runtime implem
   }
 
   public SNode getSubOrSuperType(SNode charType) {
-    return new QuotationClass_41().createNode();
+    return new _Quotations.QuotationClass_52().createNode();
   }
 
   public String getApplicableConceptFQName() {

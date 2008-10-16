@@ -16,7 +16,7 @@ public class QueryFunction_PasteWrapper_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return new QuotationClass_10().createNode(SLinkOperations.getTarget(QueryFunction_PasteWrapper_Behavior.call_getWrapper_1221137519379(thisNode), "targetConcept", false));
+    return new _Quotations.QuotationClass_10().createNode(SLinkOperations.getTarget(QueryFunction_PasteWrapper_Behavior.call_getWrapper_1221137519379(thisNode), "targetConcept", false));
   }
 
 }

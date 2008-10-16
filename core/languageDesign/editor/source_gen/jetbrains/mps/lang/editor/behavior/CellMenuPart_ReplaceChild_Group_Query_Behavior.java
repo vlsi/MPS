@@ -15,9 +15,9 @@ public class CellMenuPart_ReplaceChild_Group_Query_Behavior {
     SNode hostMenuPart = SNodeOperations.getParent(thisNode);
     SNode parameterObjectType = SLinkOperations.getTarget(hostMenuPart, "parameterObjectType", true);
     if (parameterObjectType == null) {
-      return new QuotationClass_1().createNode();
+      return new _Quotations.QuotationClass_1().createNode();
     }
-    return SNodeOperations.copyNode(new QuotationClass_2().createNode(parameterObjectType));
+    return SNodeOperations.copyNode(new _Quotations.QuotationClass_2().createNode(parameterObjectType));
   }
 
 }

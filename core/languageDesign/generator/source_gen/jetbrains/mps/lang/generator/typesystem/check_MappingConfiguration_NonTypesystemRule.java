@@ -20,14 +20,14 @@ public class check_MappingConfiguration_NonTypesystemRule extends AbstractNonTyp
     for(SNode scriptReference : SLinkOperations.getTargets(mc, "preMappingScript", true)) {
       if (!(SPropertyOperations.hasValue(SLinkOperations.getTarget(scriptReference, "mappingScript", false), "scriptKind", "pre_processing", "post_processing"))) {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(scriptReference, "pre-processing script kind is expected", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1195601255636", intentionProvider);
+        typeCheckingContext.reportTypeError(scriptReference, "pre-processing script kind is expected", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1195601255636", intentionProvider);
       }
     }
     // --
     for(SNode scriptReference : SLinkOperations.getTargets(mc, "postMappingScript", true)) {
       if (!(SPropertyOperations.hasValue(SLinkOperations.getTarget(scriptReference, "mappingScript", false), "scriptKind", "post_processing", "post_processing"))) {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(scriptReference, "post-processing script kind is expected", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.helgins)", "1195601346473", intentionProvider);
+        typeCheckingContext.reportTypeError(scriptReference, "post-processing script kind is expected", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1195601346473", intentionProvider);
       }
     }
   }
