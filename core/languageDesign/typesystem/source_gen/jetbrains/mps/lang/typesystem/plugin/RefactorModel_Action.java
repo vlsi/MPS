@@ -32,7 +32,7 @@ public class RefactorModel_Action extends GeneratedAction {
 
   public boolean isApplicable(AnActionEvent event) {
     LanguageAspect languageAspect = Language.getModelAspect(RefactorModel_Action.this.model);
-    return languageAspect == LanguageAspect.HELGINS_TYPESYSTEM;
+    return languageAspect == LanguageAspect.TYPESYSTEM;
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {

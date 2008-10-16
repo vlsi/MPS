@@ -493,7 +493,7 @@ public class Language extends AbstractModule {
   }
 
   public SModelDescriptor getHelginsTypesystemModelDescriptor() {
-    return LanguageAspect.HELGINS_TYPESYSTEM.get(this);
+    return LanguageAspect.TYPESYSTEM.get(this);
   }
 
   public SModelDescriptor getActionsModelDescriptor() {

@@ -60,7 +60,16 @@ public enum LanguageAspect {
     }
   },
 
-  HELGINS_TYPESYSTEM("helgins") {
+  TYPESYSTEM("typesystem") {
+    public SModelDescriptor get(Language l) {
+      SModelDescriptor result = super.get(l);
+      if (result == null) {
+        //todo backward compatibility
+        result = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(l.getNamespace() + ".helgins"));
+      }
+      return result;
+    }
+
     protected List<ModuleReference> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapModule.HELGINS.getModuleReference());
     }
@@ -114,7 +123,7 @@ public enum LanguageAspect {
     }
   },
 
-  LANGUAGE_TEST("languageTest") {
+  TEST("test") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapModule.TEST.getModuleReference());
     }

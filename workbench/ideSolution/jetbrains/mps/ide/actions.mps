@@ -846,6 +846,9 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1223294668477">
         <link role="constructorDeclaration" targetNodeId="120.~UpgradeProjectsAction.&lt;init&gt;()" resolveInfo="UpgradeProjectsAction" />
       </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1224155968585">
+        <link role="constructorDeclaration" targetNodeId="40.~RenameAspectsAction.&lt;init&gt;()" resolveInfo="RenameAspectsAction" />
+      </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1206351971744" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205164534403">
         <property name="name" value="Internal" />

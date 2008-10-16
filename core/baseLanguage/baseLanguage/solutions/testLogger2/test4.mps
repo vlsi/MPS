@@ -54,6 +54,36 @@
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1191327616147">
       <link role="classifier" targetNodeId="1.1191327608581" />
     </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1224155144570">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224155144571" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224155144572" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224155144573">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1224155170911">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224155170912">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1224155170913" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1224155171759">
+            <property name="value" value="true" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1224155177714">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224155177715">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1224155177716" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1224155178312">
+            <property name="value" value="true" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1224155179408">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224155179409">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1224155179410" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1224155179958">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

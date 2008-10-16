@@ -138,7 +138,7 @@ public class NewProjectWizard extends AbstractWizard {
     LanguageAspect.STRUCTURE.createNew(language);
     LanguageAspect.EDITOR.createNew(language);
     LanguageAspect.CONSTRAINTS.createNew(language);
-    LanguageAspect.HELGINS_TYPESYSTEM.createNew(language);
+    LanguageAspect.TYPESYSTEM.createNew(language);
     language.setLanguageDescriptor((LanguageDescriptor) ((LanguageDescriptor) SNodeOperations.getAdapter(languageDescriptor)));
     language.save();
 
