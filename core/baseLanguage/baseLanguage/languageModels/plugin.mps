@@ -19418,9 +19418,9 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222935705553">
                   <link role="variableDeclaration" targetNodeId="1222935522385" resolveInfo="method" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1222936015189">
-                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1222936015190">
-                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1222936015191">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1224085471008">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1224085471009">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1224085471010">
                       <link role="conceptDeclaration" targetNodeId="1.1068581242878" resolveInfo="ReturnStatement" />
                     </node>
                   </node>
@@ -19440,9 +19440,9 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222935730260">
                   <link role="variableDeclaration" targetNodeId="1222935522385" resolveInfo="method" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1222936018626">
-                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1222936018627">
-                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1222936018628">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1224085472933">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1224085472934">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1224085472935">
                       <link role="conceptDeclaration" targetNodeId="1.1164991038168" resolveInfo="ThrowStatement" />
                     </node>
                   </node>

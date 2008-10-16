@@ -356,8 +356,8 @@
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1223993376126" />
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1223993379052">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1223993381959">
-                    <link role="conceptDeclaration" targetNodeId="1.1152728232947" resolveInfo="Closure" />
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1224150426732">
+                    <link role="conceptDeclaration" targetNodeId="1.1207665819089" resolveInfo="Closureoid" />
                   </node>
                 </node>
               </node>

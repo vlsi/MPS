@@ -2801,6 +2801,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1223985693348">
     <property name="name" value="IVariableAssignment" />
+    <property name="package" value="dataflow" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224071154655">
     <property name="name" value="AsExpression" />

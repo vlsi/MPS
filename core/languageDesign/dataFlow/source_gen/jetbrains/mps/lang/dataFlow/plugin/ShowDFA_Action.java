@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -20,6 +21,7 @@ public class ShowDFA_Action extends GeneratedAction {
 
   private SNode node;
   public IOperationContext context;
+  public Frame frame;
 
   public ShowDFA_Action() {
     super("Show DFA (under construction)", "", ICON);
@@ -59,13 +61,17 @@ public class ShowDFA_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       Program program = DataFlowManager.getInstance().buildProgramFor(ShowDFA_Action.this.node);
-      new ShowCFGDialog(program, ShowDFA_Action.this.context);
+      new ShowCFGDialog(program, ShowDFA_Action.this.context, ShowDFA_Action.this.frame);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowDFA", t);
     }

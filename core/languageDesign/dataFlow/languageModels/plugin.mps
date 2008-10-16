@@ -145,7 +145,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1206642324441">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213875405924">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213875405926">
-              <link role="baseMethodDeclaration" targetNodeId="23.~ShowCFGDialog.&lt;init&gt;(jetbrains.mps.lang.dataFlow.framework.Program,jetbrains.mps.smodel.IOperationContext)" resolveInfo="ShowCFGDialog" />
+              <link role="baseMethodDeclaration" targetNodeId="23.~ShowCFGDialog.&lt;init&gt;(jetbrains.mps.lang.dataFlow.framework.Program,jetbrains.mps.smodel.IOperationContext,java.awt.Frame)" resolveInfo="ShowCFGDialog" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206642517900">
                 <link role="variableDeclaration" targetNodeId="1206642304931" resolveInfo="program" />
               </node>
@@ -153,6 +153,12 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1213875432369" />
                 <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420648827">
                   <link role="member" targetNodeId="1217420648826" resolveInfo="context" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224149678474">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1224149678475" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1224149678476">
+                  <link role="member" targetNodeId="1224149654246" resolveInfo="frame" />
                 </node>
               </node>
             </node>
@@ -168,6 +174,10 @@
       <property name="name" value="node" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206642293489" />
       <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1206642294882" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1224149654246">
+      <property name="name" value="frame" />
+      <link role="key" targetNodeId="18.~MPSDataKeys.FRAME" resolveInfo="FRAME" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1207219950955">
