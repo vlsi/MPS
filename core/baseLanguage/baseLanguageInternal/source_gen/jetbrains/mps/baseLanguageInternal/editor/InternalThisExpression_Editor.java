@@ -41,6 +41,7 @@ public class InternalThisExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12028382007891202838200789(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202838200789");
+    StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1202838200789_1202838200789(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -16,11 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
 
 public class InternalNewExpression_Editor extends DefaultNodeEditor {
 
@@ -287,21 +282,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_property_fqClassName1173996598179(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_fqClassName");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return InternalNewExpression_Editor.calculateColor4191_0(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_component_IMethodCall_actualArguments1173996742260(EditorCell editorCell, SNode node, EditorContext context) {
@@ -436,12 +417,6 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1179333322217_1179333322217(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor4191_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
   }
 
 }

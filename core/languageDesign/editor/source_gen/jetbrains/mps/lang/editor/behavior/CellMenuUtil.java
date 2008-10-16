@@ -11,12 +11,11 @@ public class CellMenuUtil {
   }
 
   public static SNode getEditedFeature(SNode node) {
-    SNode parentNode = SNodeOperations.getParent(node);
-    if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract")) {
-      return getEditedFeature(parentNode);
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract")) {
+      return getEditedFeature(SNodeOperations.getParent(node));
     }
-    if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor")) {
-      return CellMenuDescriptor_Behavior.call_getEditedFeature_1220342015727(parentNode);
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor")) {
+      return CellMenuDescriptor_Behavior.call_getEditedFeature_1220342015727(node);
     }
     return null;
   }

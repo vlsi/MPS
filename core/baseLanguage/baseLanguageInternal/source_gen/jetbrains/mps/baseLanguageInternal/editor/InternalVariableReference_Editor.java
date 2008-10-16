@@ -13,12 +13,16 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class InternalVariableReference_Editor extends DefaultNodeEditor {
 
@@ -93,6 +97,7 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
       setupLabel_property_name_1176743304856((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new InternalVariableReference_Editor.InternalVariableReference_name_postfixCellMenu0()}));
     return editorCell;
   }
 
@@ -131,21 +136,7 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_property_name1176743304856(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return InternalVariableReference_Editor.calculateColor8666_0(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1176743259738_1176743259738(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -160,10 +151,28 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
   private static void setupLabel_property_name_1176743304856(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor8666_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.green;
-    return result;
-  }
+  public static class InternalVariableReference_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
+
+    public InternalVariableReference_name_postfixCellMenu0() {
+    }
+
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
+      List<String> result;
+      SNode nodeType = SLinkOperations.getTarget(node, "type", true);
+      if (nodeType != null) {
+        result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
+      } else
+      {
+        result = ListSequence.<String>fromArray();
+      }
+      // we need this because of smart input
+      // DO NOT REMOVE IT
+      if (SPropertyOperations.getString(node, "name") != null) {
+        ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "name"));
+      }
+      return result;
+    }
+
+}
 
 }

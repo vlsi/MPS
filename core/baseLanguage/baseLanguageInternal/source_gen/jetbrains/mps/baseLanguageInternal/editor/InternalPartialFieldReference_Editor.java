@@ -17,11 +17,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.MPSColors;
 
 public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
@@ -270,21 +267,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_property_fieldName1177590154097(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_fieldName");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return InternalPartialFieldReference_Editor.calculateColor7959_0(cell);
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11775979552951177597955295(EditorCell editorCell, SNode node, EditorContext context) {
@@ -358,12 +341,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition7959_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "instance", true) != null;
-  }
-
-  private static Color calculateColor7959_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
   }
 
 }

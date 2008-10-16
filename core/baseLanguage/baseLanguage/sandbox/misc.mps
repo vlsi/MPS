@@ -74,5 +74,35 @@
       <link role="concept" targetNodeId="138.1188206331916" resolveInfo="Annotation" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224153148222">
+    <property name="name" value="TestPlus" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224153148223" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1224153148224">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224153148225" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224153148226" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224153148227">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224153169089">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224153180531">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224153169090">
+              <property name="value" value="1" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1224153184051">
+              <property name="value" value="true" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224153613975">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1224153616149">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1224153618558">
+              <property name="value" value="true" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224153613976">
+              <property name="value" value="1" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
