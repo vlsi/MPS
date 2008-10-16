@@ -5,8 +5,6 @@ package jetbrains.mps.lang.test.editor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class transformationTest_StyleSheet {
@@ -14,13 +12,7 @@ public class transformationTest_StyleSheet {
   public static Style getAssertStyle(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return transformationTest_StyleSheet.calculateColor2229_0(cell);
-          }
-
-        });
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
       }
 
     };
@@ -30,20 +22,8 @@ public class transformationTest_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-        this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
-
-          public Boolean calculate(EditorCell cell) {
-            return transformationTest_StyleSheet.calculateUnderlined2229_0(cell);
-          }
-
-        });
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return transformationTest_StyleSheet.calculateColor2229_1(cell);
-          }
-
-        });
+        this.set(StyleAttributes.UNDERLINED, true);
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
 
     };
@@ -53,40 +33,10 @@ public class transformationTest_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return transformationTest_StyleSheet.calculateColor2229_2(cell);
-          }
-
-        });
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
 
     };
-  }
-
-  private static Color calculateColor2229_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.blue;
-    return result;
-  }
-
-  private static Color calculateColor2229_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
-  }
-
-  private static Color calculateColor2229_2(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
-  }
-
-  private static boolean calculateUnderlined2229_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
 }

@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -234,20 +233,8 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NodesTestCase_Editor.calculateBoolean1929_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NodesTestCase_Editor.calculateBoolean1929_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -268,13 +255,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NodesTestCase_Editor.calculateUnderlined1929_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.UNDERLINED, true);
         }
 
       };
@@ -287,13 +268,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NodesTestCase_Editor.calculateUnderlined1929_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.UNDERLINED, true);
         }
 
       };
@@ -306,13 +281,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NodesTestCase_Editor.calculateUnderlined1929_2(cell);
-            }
-
-          });
+          this.set(StyleAttributes.UNDERLINED, true);
         }
 
       };
@@ -333,20 +302,8 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NodesTestCase_Editor.calculateBoolean1929_2(cell);
-            }
-
-          });
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NodesTestCase_Editor.calculateBoolean1929_3(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -367,20 +324,8 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NodesTestCase_Editor.calculateBoolean1929_4(cell);
-            }
-
-          });
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NodesTestCase_Editor.calculateBoolean1929_5(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -401,20 +346,8 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NodesTestCase_Editor.calculateBoolean1929_6(cell);
-            }
-
-          });
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NodesTestCase_Editor.calculateBoolean1929_7(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -452,72 +385,6 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNodeList_nodesToCheck_1217517896205(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static boolean calculateUnderlined1929_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  private static boolean calculateUnderlined1929_1(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  private static boolean calculateUnderlined1929_2(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1929_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1929_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1929_2(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1929_3(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1929_4(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1929_5(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1929_6(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1929_7(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
   public static class testMethodsListHandler_1929_0 extends RefNodeListHandler {

@@ -179,34 +179,27 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224153941793" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1224153941794">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224153941795" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224153941796" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1224171641026" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224153941797">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224154198723">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224154198724">
             <property name="name" value="t" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1224154198725" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224154200508">
-              <property name="value" value="0" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224154280773">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" id="1224154280774">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1224154283886">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1224171652168">
               <link role="variableDeclaration" targetNodeId="1224154274472" resolveInfo="b" />
             </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224154280776">
-              <link role="variableDeclaration" targetNodeId="1224154198724" resolveInfo="c" />
-            </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224154206121">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" id="1224154209874">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1224154285465">
-              <link role="variableDeclaration" targetNodeId="1224154273299" resolveInfo="a" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224171662845">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1224171662846">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224171662847">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1224171662848" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1224171662849">
+                <link role="fieldDeclaration" targetNodeId="1224171662827" resolveInfo="a" />
+              </node>
             </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224154208592">
-              <link role="variableDeclaration" targetNodeId="1224154198724" resolveInfo="c" />
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1224171662850">
+              <link role="variableDeclaration" targetNodeId="1224154273299" resolveInfo="a" />
             </node>
           </node>
         </node>
@@ -219,6 +212,11 @@
         <property name="name" value="b" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1224154275474" />
       </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1224171662827">
+      <property name="name" value="a" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1224171662828" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1224171662829" />
     </node>
   </node>
 </model>

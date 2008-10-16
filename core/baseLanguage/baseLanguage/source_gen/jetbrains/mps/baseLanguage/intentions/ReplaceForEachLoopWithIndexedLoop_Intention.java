@@ -46,7 +46,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention {
     // 
     final SNode forVariableDeclaration = SLinkOperations.setNewChild(forStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     SPropertyOperations.set(forVariableDeclaration, "name", "i");
-    SLinkOperations.setTarget(forVariableDeclaration, "type", new QuotationClass_3().createNode(), true);
+    SLinkOperations.setTarget(forVariableDeclaration, "type", new _Quotations.QuotationClass_2().createNode(), true);
     SLinkOperations.setNewChild(forVariableDeclaration, "initializer", "jetbrains.mps.baseLanguage.structure.IntegerConstant");
     SPropertyOperations.set(SLinkOperations.getTarget(forVariableDeclaration, "initializer", true), "value", "" + (0));
     // 

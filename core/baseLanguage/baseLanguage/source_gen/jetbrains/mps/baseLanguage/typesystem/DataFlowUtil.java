@@ -74,7 +74,7 @@ public class DataFlowUtil {
         SNode ref = read;
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportTypeError(read, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640624825", intentionProvider);
+          typeCheckingContext.reportTypeError(ref, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640624825", intentionProvider);
         }
       }
     }

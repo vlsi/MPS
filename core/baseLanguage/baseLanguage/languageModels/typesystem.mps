@@ -12631,8 +12631,8 @@
                   <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1223640624826">
                     <property name="value" value="Variable used before it is initialized" />
                   </node>
-                  <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223640624827">
-                    <link role="variableDeclaration" targetNodeId="1223640624833" resolveInfo="read" />
+                  <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224171111624">
+                    <link role="variableDeclaration" targetNodeId="1223640624808" resolveInfo="ref" />
                   </node>
                 </node>
               </node>

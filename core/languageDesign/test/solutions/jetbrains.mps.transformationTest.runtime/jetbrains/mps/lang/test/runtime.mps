@@ -1117,8 +1117,8 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223050832382">
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223050832383">
                     <link role="baseMethodDeclaration" targetNodeId="18.~Macros.expandPath(java.lang.String,jetbrains.mps.vfs.IFile):java.lang.String" resolveInfo="expandPath" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1223050832384">
-                      <link role="variableDeclaration" targetNodeId="1217253515487" resolveInfo="project" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1224170987415">
+                      <link role="variableDeclaration" targetNodeId="1217253515487" resolveInfo="projectName" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1223050832385">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1223050832386">
@@ -1185,7 +1185,7 @@
                                     <link role="classConcept" targetNodeId="17.~SModelRepository" resolveInfo="SModelRepository" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223217174032">
-                                    <link role="baseMethodDeclaration" targetNodeId="17.~SModelRepository.getModelDescriptor(jetbrains.mps.smodel.SModel):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                                    <link role="baseMethodDeclaration" targetNodeId="17.~SModelRepository.getModelDescriptor(jetbrains.mps.smodel.SModelReference):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223217174033">
                                       <link role="baseMethodDeclaration" targetNodeId="17.~SModelReference.fromString(java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="fromString" />
                                       <link role="classConcept" targetNodeId="17.~SModelReference" resolveInfo="SModelReference" />

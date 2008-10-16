@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class TestNode_Editor extends DefaultNodeEditor {
 
@@ -70,13 +69,7 @@ public class TestNode_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BRACKETS, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return TestNode_Editor.calculateBoolean4312_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BRACKETS, true);
         }
 
       };
@@ -85,12 +78,6 @@ public class TestNode_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_nodeToCheck_1216992052771(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean4312_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
 }

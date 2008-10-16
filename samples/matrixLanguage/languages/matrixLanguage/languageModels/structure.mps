@@ -47,8 +47,8 @@
   <import index="12" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <import index="16" modelUID="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)" version="-1" />
-  <import index="17" modelUID="r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.helgins)" version="-1" />
+  <import index="16" modelUID="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" version="-1" />
+  <import index="17" modelUID="r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1209978821264">
     <property name="name" value="MatrixType" />
     <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />

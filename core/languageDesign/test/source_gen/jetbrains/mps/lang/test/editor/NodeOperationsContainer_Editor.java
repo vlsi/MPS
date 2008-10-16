@@ -15,10 +15,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -96,13 +94,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return NodeOperationsContainer_Editor.calculateColor3161_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
 
       };
@@ -117,13 +109,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NodeOperationsContainer_Editor.calculateBoolean3161_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
         }
 
       };
@@ -141,13 +127,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return NodeOperationsContainer_Editor.calculateColor3161_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
 
       };
@@ -162,30 +142,6 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1215604480993_1215604480993(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor3161_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
-  }
-
-  private static Color calculateColor3161_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
-  }
-
-  public static Boolean calculateBoolean3161_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean3161_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
   public static class operationsListHandler_3161_0 extends RefNodeListHandler {
@@ -254,13 +210,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
-
-              public Boolean calculate(EditorCell cell) {
-                return NodeOperationsContainer_Editor.calculateBoolean3161_1(cell);
-              }
-
-            });
+            this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
           }
 
         };
