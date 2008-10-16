@@ -1555,6 +1555,25 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224180246653">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224180264819">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224180247778">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1224180246654" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224180256037">
+                <link role="link" targetNodeId="1.1220974847213" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1224180272449">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1224180274519">
+                <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1224180276435">
+                  <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1224180276436">
+                    <link role="concept" targetNodeId="1.1220973916698" resolveInfo="Path" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
@@ -2525,6 +2544,25 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224180728045">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224180731237">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224180728310">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1224180728046" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224180730422">
+                <link role="link" targetNodeId="1.1220982054961" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1224180732747">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1224180733917">
+                <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1224180735304">
+                  <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1224180735305">
+                    <link role="concept" targetNodeId="1.1220973916698" resolveInfo="Path" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
@@ -2586,6 +2624,25 @@
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1213877479690">
               <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1213877479691">
                 <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224180664668">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224180670802">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224180664761">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1224180664669" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224180669556">
+                <link role="link" targetNodeId="1.1220981955937" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1224180672719">
+              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1224180673879">
+                <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1224180710515">
+                  <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1224180710516">
+                    <link role="concept" targetNodeId="1.1220973916698" resolveInfo="Path" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

@@ -527,6 +527,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1220974249696">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="path" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1220973992845" resolveInfo="CompositePathComponent" />
     </node>
   </node>
