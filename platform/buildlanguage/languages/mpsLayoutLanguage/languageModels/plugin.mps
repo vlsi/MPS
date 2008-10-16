@@ -106,7 +106,7 @@
     <property name="name" value="GenerateMPSBuildAction" />
     <property name="caption" value="Generate Build Files" />
     <property name="outsideCommandExecution" value="true" />
-    <property name="description" value="Generate Build Files And Place Them Into Base Directory Of MPSLayout" />
+    <property name="description" value="Generate Build Files And Place Them Into Base Directory" />
     <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1219145325068">
       <property name="name" value="getMPSLayout" />
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1219145337558">
@@ -651,21 +651,6 @@
         </node>
       </node>
     </node>
-    <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" id="1218726094711">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218726094712">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1219142764040">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219145503662">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219145499975">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1219145499976" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1219145499977">
-                <link role="member" targetNodeId="1219145325068" resolveInfo="getMPSLayout" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1219145510162" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1218726094722">
       <property name="name" value="project" />
       <link role="key" targetNodeId="11.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
@@ -677,6 +662,21 @@
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1218726094724">
       <property name="name" value="modelDescriptor" />
       <link role="key" targetNodeId="11.~MPSDataKeys.MODEL_DESCRIPTOR" resolveInfo="MODEL_DESCRIPTOR" />
+    </node>
+    <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" id="1224174040639">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224174040640">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224174114025">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1224174119088">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1224174120041" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224174114026">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1224174114027" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1224174114028">
+                <link role="member" targetNodeId="1219145325068" resolveInfo="getMPSLayout" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220376685232">
@@ -870,7 +870,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1221149114857">
     <property name="name" value="GenerateBuildForProjectAction" />
-    <property name="caption" value="Generate Build For Project" />
+    <property name="caption" value="Build" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1221149976842">
       <property name="name" value="mpsProject" />
       <link role="key" targetNodeId="11.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
@@ -958,41 +958,17 @@
         </node>
       </node>
     </node>
-    <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" id="1223662501335">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223662501336">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223662526304">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223662881871">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223662874462">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223662873176">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1223662873177" />
-                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1223662873178">
-                  <link role="member" targetNodeId="1221149911658" resolveInfo="project" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223662880628">
-                <link role="baseMethodDeclaration" targetNodeId="22.~Project.getName():java.lang.String" resolveInfo="getName" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1223662887826">
-              <link role="baseMethodDeclaration" targetNodeId="10.~String.contains(java.lang.CharSequence):boolean" resolveInfo="contains" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1223662888520">
-                <property name="value" value="BuildLanguage" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1221153700178">
     <property name="name" value="ProjectPaneProjectAddition" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1221153717675">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1224172951739" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1221153772444">
         <link role="action" targetNodeId="1221149114857" resolveInfo="GenerateBuildForProjectAction" />
       </node>
     </node>
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1221153774641">
-      <link role="modifiedGroup" targetNodeId="29.1204991220529" resolveInfo="ProjectActions" />
+      <link role="modifiedGroup" targetNodeId="29.1204991221264" resolveInfo="ProjectNewActions" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1222854011172">
