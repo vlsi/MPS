@@ -19,7 +19,8 @@ public class BaseConcept extends BaseAdapter {
   public static String CPR_Deprecated_798 = "deprecated_798";
   public static String CPR_Deprecated_944 = "deprecated_944";
   public static String CPR_Deprecated_1045 = "deprecated_1045";
-  public static String CPR_Deprecated_next_after_1045 = "deprecated_next_after_1045";
+  public static String CPR_Deprecated_1117 = "deprecated_1117";
+  public static String CPR_Deprecated_next_after_1117 = "deprecated_next_after_1117";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";

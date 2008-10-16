@@ -110,7 +110,10 @@
       <property name="name" value="deprecated_1045" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1224111255512">
-      <property name="name" value="deprecated_next_after_1045" />
+      <property name="name" value="deprecated_1117" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1224193728639">
+      <property name="name" value="deprecated_next_after_1117" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1133922314101">
       <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract" />
