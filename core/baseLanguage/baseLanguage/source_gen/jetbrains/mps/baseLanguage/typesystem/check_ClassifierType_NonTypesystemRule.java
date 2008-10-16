@@ -19,12 +19,12 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
   public void applyRule(final SNode classifierType, final TypeCheckingContext typeCheckingContext) {
     if (!(SLinkOperations.getCount(classifierType, "parameter") == 0 || SLinkOperations.getCount(classifierType, "parameter") == SLinkOperations.getCount(SLinkOperations.getTarget(classifierType, "classifier", false), "typeVariableDeclaration"))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(classifierType, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1195494591081", intentionProvider);
+      typeCheckingContext.reportTypeError(classifierType, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591081", intentionProvider);
     }
     for(SNode typeParameter : SLinkOperations.getTargets(classifierType, "parameter", true)) {
       if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeParameter, SLinkOperations.getTarget(new QuotationClass_66().createNode(typeCheckingContext), "descriptor", false), false, false)))) {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(typeParameter, "primitive types not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1195494591112", intentionProvider);
+        typeCheckingContext.reportTypeError(typeParameter, "primitive types not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591112", intentionProvider);
       }
     }
   }

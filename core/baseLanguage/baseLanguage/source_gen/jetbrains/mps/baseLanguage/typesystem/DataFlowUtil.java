@@ -42,13 +42,13 @@ public class DataFlowUtil {
         if (nodeToSelect != null) {
           {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportTypeError(nodeToSelect, "Return expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223640343628", intentionProvider);
+            typeCheckingContext.reportTypeError(nodeToSelect, "Return expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640343628", intentionProvider);
           }
         } else
         {
           {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportTypeError(n, "Return expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223640343636", intentionProvider);
+            typeCheckingContext.reportTypeError(n, "Return expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640343636", intentionProvider);
           }
         }
       }
@@ -61,7 +61,7 @@ public class DataFlowUtil {
     for(SNode n : unreachable) {
       {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(n, "Unreachable node", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223640538234", intentionProvider);
+        typeCheckingContext.reportTypeError(n, "Unreachable node", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640538234", intentionProvider);
       }
     }
   }
@@ -74,7 +74,7 @@ public class DataFlowUtil {
         SNode ref = read;
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportTypeError(read, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223640624825", intentionProvider);
+          typeCheckingContext.reportTypeError(read, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640624825", intentionProvider);
         }
       }
     }
@@ -90,7 +90,7 @@ public class DataFlowUtil {
           {
             BaseIntentionProvider intentionProvider = null;
             intentionProvider = new BaseIntentionProvider("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints).RemoveUnusedAssignment_QuickFix");
-            typeCheckingContext.reportWarning(assignment, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223642282236", intentionProvider);
+            typeCheckingContext.reportWarning(assignment, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223642282236", intentionProvider);
           }
         }
       }
@@ -99,7 +99,7 @@ public class DataFlowUtil {
         if (IVariableAssignment_Behavior.call_isCanBeUnused_1223985713603(variableAssignment)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportWarning(write, "Unused parameter", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223986255355", intentionProvider);
+            typeCheckingContext.reportWarning(write, "Unused parameter", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223986255355", intentionProvider);
           }
         }
       }
@@ -113,7 +113,7 @@ public class DataFlowUtil {
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause"))) {
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportWarning(var, "Unused variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1223642399966", intentionProvider);
+          typeCheckingContext.reportWarning(var, "Unused variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223642399966", intentionProvider);
         }
       }
     }

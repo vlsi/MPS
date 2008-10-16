@@ -31,7 +31,7 @@ public class check_BreakStatement_InferenceRule extends AbstractInferenceRule_Ru
       });
       if (!(Sequence.fromIterable(matchingLoops).isNotEmpty())) {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(nodeToCheck, "No such label", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.helgins)", "1199469904373", intentionProvider);
+        typeCheckingContext.reportTypeError(nodeToCheck, "No such label", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1199469904373", intentionProvider);
       }
     }
   }

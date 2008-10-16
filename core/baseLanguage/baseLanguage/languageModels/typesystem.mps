@@ -39,14 +39,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
-  <maxImportIndex value="39" />
+  <maxImportIndex value="41" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" />
   <import index="18" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
-  <import index="23" modelUID="f:java_stub#jetbrains.mps.baseLanguage.helgins(jetbrains.mps.baseLanguage.helgins@java_stub)" version="-1" />
   <import index="25" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" version="-1" />
   <import index="29" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
@@ -57,6 +56,7 @@
   <import index="37" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="38" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" />
   <import index="39" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow(jetbrains.mps.lang.dataFlow@java_stub)" version="-1" />
+  <import index="40" modelUID="f:java_stub#jetbrains.mps.baseLanguage.typesystem(jetbrains.mps.baseLanguage.typesystem@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1175495245176">
     <property name="name" value="typeOf_andExpression" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175495245177">
@@ -2310,8 +2310,8 @@
                   </node>
                   <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1203512296349">
                     <node role="normalType" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1185963109702">
-                      <link role="baseMethodDeclaration" targetNodeId="23.~Queries.getBinaryOperationType(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getBinaryOperationType" />
-                      <link role="classConcept" targetNodeId="23.~Queries" resolveInfo="Queries" />
+                      <link role="classConcept" targetNodeId="40.~Queries" resolveInfo="Queries" />
+                      <link role="baseMethodDeclaration" targetNodeId="40.~Queries.getBinaryOperationType(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getBinaryOperationType" />
                       <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1185963110690">
                         <link role="typeVarDeclaration" targetNodeId="1185962769627" resolveInfo="leftExpressionType" />
                       </node>
@@ -6553,8 +6553,8 @@
               </node>
               <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1212763528103">
                 <node role="normalType" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212763528104">
-                  <link role="classConcept" targetNodeId="23.~Queries" resolveInfo="Queries" />
-                  <link role="baseMethodDeclaration" targetNodeId="23.~Queries.getBinaryOperationType(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getBinaryOperationType" />
+                  <link role="classConcept" targetNodeId="40.~Queries" resolveInfo="Queries" />
+                  <link role="baseMethodDeclaration" targetNodeId="40.~Queries.getBinaryOperationType(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getBinaryOperationType" />
                   <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ChildTypeRestrictionReference" id="1212764517275">
                     <link role="typeRestriction" targetNodeId="1212575507353" resolveInfo="leftType" />
                   </node>
