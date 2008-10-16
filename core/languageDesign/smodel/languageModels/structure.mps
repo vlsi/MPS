@@ -8,7 +8,7 @@
       <conceptFeatureMap>
         <entry>
           <key featureName="parameter" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" featureKind="CHILD" />
-          <value featureName="linkTarget" conceptFQName="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.bootstrap.smodelLanguage.structure)Link_SetTargetOperation" featureKind="CHILD" />
+          <value featureName="linkTarget" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" featureKind="CHILD" />
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
