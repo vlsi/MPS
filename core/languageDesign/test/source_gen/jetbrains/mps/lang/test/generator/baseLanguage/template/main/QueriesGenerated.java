@@ -92,7 +92,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1221570038189(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().getOriginalInputModel().getLongName();
+    return _context.getOriginalInputModel().getSModelReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1221570039970(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -106,7 +106,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1221570040017(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getGenerator().getGeneratorSessionContext().getOriginalInputModel().getLongName();
+    return _context.getOriginalInputModel().getSModelReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1221570981212(final IOperationContext operationContext, final PropertyMacroContext _context) {
