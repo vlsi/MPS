@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * User: Sergey Dmitriev
  * Date: Apr 3, 2005
@@ -60,6 +62,7 @@ public interface SModelDescriptor {
 
   void replaceModel(SModel newModel);
 
+  @Nullable
   IFile getModelFile();
 
   boolean isPackaged();
