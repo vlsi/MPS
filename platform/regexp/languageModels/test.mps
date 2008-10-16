@@ -30,42 +30,5 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
-  <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1222879957143">
-    <property name="name" value="qwerty" />
-    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1222879966785">
-      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1222879991770">
-        <property name="name" value="Class" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222879991771" />
-        <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1222879991772">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1222879991773" />
-          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222879991774" />
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222879991775">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1222880010479">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1222880010480">
-                <property name="name" value="a" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1222880010481" />
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222880019311">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1222880027053">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1222880027290">
-                  <property name="value" value="1" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222880019312">
-                  <link role="variableDeclaration" targetNodeId="1222880010480" resolveInfo="a" />
-                  <node role="nodePropertiesMarker$attribute" type="jetbrains.mps.lang.test.structure.NodePropertiesContainer" id="1222880041322">
-                    <node role="properties" type="jetbrains.mps.lang.test.structure.NodeErrorPropety" id="1222880048058" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="nodeOpraretionsMark$attribute" type="jetbrains.mps.lang.test.structure.NodeOperationsContainer" id="1222880055606">
-            <node role="operations" type="jetbrains.mps.lang.test.structure.TypesCheckOperation" id="1222880062811" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
 </model>
 

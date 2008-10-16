@@ -947,7 +947,7 @@ __switch__:
             SNode thisConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
             SNode superClass = SLinkOperations.getTarget(SLinkOperations.getTarget(thisConcept, "superclass", true), "classifier", false);
             if (superClass == null) {
-              superClass = SLinkOperations.getTarget(new QuotationClass_2().createNode(), "classifier", false);
+              superClass = SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false);
             }
             return SLinkOperations.getTargets(superClass, "constructor", true);
           }
@@ -1169,7 +1169,7 @@ __switch__:
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return new QuotationClass_0().createNode();
+            return new _Quotations.QuotationClass_1().createNode();
           }
 
           public String getDescriptionText(String pattern) {
@@ -1198,7 +1198,7 @@ __switch__:
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return new QuotationClass_1().createNode();
+            return new _Quotations.QuotationClass_2().createNode();
           }
 
           public String getDescriptionText(String pattern) {
@@ -1272,7 +1272,7 @@ __switch__:
                 // replace all type vars with Object
                 List<SNode> typeVarRefs = SNodeOperations.getDescendants(SLinkOperations.getTarget(creator, "cls", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false);
                 for(SNode typeVar : typeVarRefs) {
-                  SNodeOperations.replaceWithAnother(typeVar, new QuotationClass_3().createNode());
+                  SNodeOperations.replaceWithAnother(typeVar, new _Quotations.QuotationClass_3().createNode());
                 }
                 return creator;
               }

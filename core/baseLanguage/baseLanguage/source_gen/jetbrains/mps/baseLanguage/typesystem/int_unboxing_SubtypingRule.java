@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 
 public class int_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  /* package */Pattern_5 myMatchingPattern;
+  /* package */_Patterns.Pattern_6 myMatchingPattern;
 
   public int_unboxing_SubtypingRule() {
   }
@@ -22,7 +22,7 @@ public class int_unboxing_SubtypingRule extends SubtypingRule_Runtime implements
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new Pattern_5();
+    this.myMatchingPattern = new _Patterns.Pattern_6();
     return this.myMatchingPattern.match(argument);
   }
 

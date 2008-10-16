@@ -57,7 +57,7 @@ public class Type_Behavior {
 
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     {
-      Pattern_0 pattern_1 = new Pattern_0(thisNode);
+      _Patterns.Pattern_2 pattern_1 = new _Patterns.Pattern_2(thisNode);
       SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(t, pattern_1);
       if (coercedNode_1 != null) {
         return true;

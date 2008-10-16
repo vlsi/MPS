@@ -10,7 +10,7 @@ import jetbrains.mps.util.CollectionUtil;
 
 public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  /* package */Pattern_9 myMatchingPattern;
+  /* package */_Patterns.Pattern_9 myMatchingPattern;
 
   public ObjectArraySupertypes_SubtypingRule() {
   }
@@ -25,7 +25,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new Pattern_9();
+    this.myMatchingPattern = new _Patterns.Pattern_9();
     return this.myMatchingPattern.match(argument);
   }
 
