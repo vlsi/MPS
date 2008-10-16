@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.ide.ChooseItemComponent;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -100,7 +101,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     if (myParameterObject instanceof INodeAdapter) {
       return NodePresentationUtil.getIcon((INodeAdapter) myParameterObject, referent_presentation);
     }
-    return null;
+    return Icons.DEFAULT_ICON;
   }
 
   public boolean canSubstituteStrictly(String pattern) {
