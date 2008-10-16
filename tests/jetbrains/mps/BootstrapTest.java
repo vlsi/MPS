@@ -48,7 +48,7 @@ public class BootstrapTest extends BaseMPSTest {
     assertTrue(res, res == null);
   }
 
-  public void testHelgins() {
+  public void testTypesystem() {
     String res = testProject(new File("core/languageDesign/typesystem/typesystem.mpr"));
     assertTrue(res, res == null);
   }

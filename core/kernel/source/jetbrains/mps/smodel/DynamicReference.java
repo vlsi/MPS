@@ -84,7 +84,7 @@ public class DynamicReference extends SReferenceBase {
     SNode targetNode = infoResolver.resolve(getResolveInfo(), getTargetSModelReference());
     if (targetNode == null) {
       error("can't find target by resolve info: '" + getResolveInfo() + "'");
-//      infoResolver.resolve(getResolveInfo());
+//      infoResolver.resolve(getResolveInfo(), getTargetSModelReference());
     }
 
     return targetNode;
