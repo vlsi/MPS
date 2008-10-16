@@ -10,28 +10,14 @@
       <models>
         <modelRoot path="${language_descriptor}\generator\outputLang\template" namespacePrefix="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template" />
       </models>
-      <external-templates>
-        <generator generatorUID="857d0a79-6f44-4f46-84ed-9c5b42632011(jetbrains.mps.closures#1199623535494)" />
-      </external-templates>
+      <external-templates />
       <dependencies>
         <dependency reexport="false">157a9668-bf58-417b-893e-53d86388dc56(jetbrains.mps.transformation.test.outputLang)</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguages>157a9668-bf58-417b-893e-53d86388dc56(jetbrains.mps.transformation.test.outputLang)</usedLanguages>
       </usedLanguages>
-      <mapping-priorities>
-        <mapping-priority-rule kind="strictly_before">
-          <greater-priority-mapping>
-            <all-local-mappings />
-          </greater-priority-mapping>
-          <lesser-priority-mapping>
-            <generator generatorUID="jetbrains.mps.closures#1199623535494" />
-            <external-mapping>
-              <all-local-mappings />
-            </external-mapping>
-          </lesser-priority-mapping>
-        </mapping-priority-rule>
-      </mapping-priorities>
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath>
