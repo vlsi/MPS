@@ -18,7 +18,11 @@ public class TextPasteUtil {
 
   public static String getStringFromClipboard () {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    Transferable content = cb.getContents(null);
+    Transferable content = null;
+    try {
+    	content = cb.getContents(null);
+    }
+    catch (RuntimeException ignored) {}
     if (content == null) return null;
     return getStringFromTransferable(content);
   }
