@@ -452,7 +452,7 @@
       <conceptFeatureMap>
         <entry>
           <key featureName="parameter" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation" featureKind="CHILD" />
-          <value featureName="childNodes" conceptFQName="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)LinkList_AddAllOperation" featureKind="CHILD" />
+          <value featureName="childNodes" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation" featureKind="CHILD" />
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
@@ -462,7 +462,7 @@
       <conceptFeatureMap>
         <entry>
           <key featureName="parameter" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" featureKind="CHILD" />
-          <value featureName="childNode" conceptFQName="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)LinkList_AddChildOperation" featureKind="CHILD" />
+          <value featureName="childNode" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" featureKind="CHILD" />
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
@@ -472,7 +472,7 @@
       <conceptFeatureMap>
         <entry>
           <key featureName="parameter" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation" featureKind="CHILD" />
-          <value featureName="childNode" conceptFQName="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)LinkList_InsertChildFirstOperation" featureKind="CHILD" />
+          <value featureName="childNode" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation" featureKind="CHILD" />
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
@@ -482,7 +482,7 @@
       <conceptFeatureMap>
         <entry>
           <key featureName="parameter" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" featureKind="CHILD" />
-          <value featureName="insertedNode" conceptFQName="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)Node_InsertPrevSiblingOperation" featureKind="CHILD" />
+          <value featureName="insertedNode" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" featureKind="CHILD" />
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
@@ -492,7 +492,7 @@
       <conceptFeatureMap>
         <entry>
           <key featureName="parameter" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" featureKind="CHILD" />
-          <value featureName="replacementNode" conceptFQName="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)Node_ReplaceWithAnotherOperation" featureKind="CHILD" />
+          <value featureName="replacementNode" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" featureKind="CHILD" />
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
