@@ -130,16 +130,16 @@
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1165007009657" resolveInfo="default_" />
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1165007009657">
-      <property name="externalValue" value="default_" />
+      <property name="externalValue" value="default" />
       <property name="javaIdentifier" value="default_" />
     </node>
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1165007068491">
-      <property name="externalValue" value="referent_" />
+      <property name="externalValue" value="referent" />
       <property name="internalValue" value="default_referent" />
       <property name="javaIdentifier" value="referent_" />
     </node>
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1165007009658">
-      <property name="externalValue" value="custom_" />
+      <property name="externalValue" value="custom" />
       <property name="internalValue" value="custom" />
       <property name="javaIdentifier" value="custom_" />
     </node>

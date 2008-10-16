@@ -9,14 +9,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunctionParameter_editorContext extends ConceptFunctionParameter {
-  public static final String concept = "jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_editorContext";
+  public static final String concept = "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext";
 
   public ConceptFunctionParameter_editorContext(SNode node) {
     super(node);
   }
 
   public static ConceptFunctionParameter_editorContext newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_editorContext)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_editorContext", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_editorContext)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_editorContext newInstance(SModel sm) {

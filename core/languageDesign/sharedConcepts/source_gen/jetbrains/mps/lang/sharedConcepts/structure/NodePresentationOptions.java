@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.LinkedList;
 
 public enum NodePresentationOptions {
-  default_("default_", null),
-  referent_("referent_", "default_referent"),
-  custom_("custom_", "custom");
+  default_("default", null),
+  referent_("referent", "default_referent"),
+  custom_("custom", "custom");
 
   private String myName;
   private String myValue;

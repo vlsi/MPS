@@ -5,30 +5,16 @@ package jetbrains.mps.lang.sharedConcepts.editor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class SharedStyles_StyleSheet {
 
   public static Style getReferenceDecorated(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return SharedStyles_StyleSheet.calculateColor6601_0(cell);
-          }
-
-        });
-        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-          public Integer calculate(EditorCell cell) {
-            return SharedStyles_StyleSheet.calculateFontStyle6601_0(cell);
-          }
-
-        });
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       }
 
     };
@@ -37,13 +23,7 @@ public class SharedStyles_StyleSheet {
   public static Style getReferenceOnConcept(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return SharedStyles_StyleSheet.calculateColor6601_1(cell);
-          }
-
-        });
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       }
 
     };
@@ -52,53 +32,11 @@ public class SharedStyles_StyleSheet {
   public static Style getReferenceOnConceptualFeature(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return SharedStyles_StyleSheet.calculateColor6601_2(cell);
-          }
-
-        });
-        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-          public Integer calculate(EditorCell cell) {
-            return SharedStyles_StyleSheet.calculateFontStyle6601_1(cell);
-          }
-
-        });
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       }
 
     };
-  }
-
-  private static Integer calculateFontStyle6601_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Integer calculateFontStyle6601_1(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Color calculateColor6601_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-  private static Color calculateColor6601_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor6601_2(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
   }
 
 }

@@ -9,14 +9,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunctionParameter_model extends ConceptFunctionParameter {
-  public static final String concept = "jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model";
+  public static final String concept = "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model";
 
   public ConceptFunctionParameter_model(SNode node) {
     super(node);
   }
 
   public static ConceptFunctionParameter_model newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_model)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_model)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_model newInstance(SModel sm) {
