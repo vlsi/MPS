@@ -420,6 +420,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="4.1196851066733" resolveInfo="Project" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224178284812">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="targetDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="4.1196851099544" resolveInfo="TargetDeclaration" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210777854685">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="targetReference" />

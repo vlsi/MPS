@@ -1977,15 +1977,10 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877286267">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877286268">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877286269">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877286270">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877286271">
-                    <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1213877286272" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213877286273">
-                      <link role="link" targetNodeId="1.1210777854685" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213877286274">
-                    <link role="link" targetNodeId="1.1210777931344" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877286271">
+                  <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1213877286272" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224179536461">
+                    <link role="link" targetNodeId="1.1224178284812" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1213877286275">

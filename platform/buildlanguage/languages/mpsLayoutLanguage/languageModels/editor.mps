@@ -981,8 +981,15 @@
           <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
           <link role="styleClass" targetNodeId="1203598953979" resolveInfo="projectComponent" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1210778113931">
-          <link role="relationDeclaration" targetNodeId="1.1210777854685" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1224178635087">
+          <link role="relationDeclaration" targetNodeId="1.1224178284812" />
+          <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1224178635088">
+            <link role="conceptDeclaration" targetNodeId="11.1196851099544" resolveInfo="TargetDeclaration" />
+            <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1224178642573">
+              <property name="readOnly" value="true" />
+              <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1210778113932">
           <property name="text" value="from" />
