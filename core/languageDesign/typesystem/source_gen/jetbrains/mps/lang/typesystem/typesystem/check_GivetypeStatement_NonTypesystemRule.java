@@ -17,7 +17,7 @@ public class check_GivetypeStatement_NonTypesystemRule extends AbstractNonTypesy
   public void applyRule(final SNode givetypeStatement, final TypeCheckingContext typeCheckingContext) {
     if (!(RulesUtil.withinInferenceItem(givetypeStatement))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(givetypeStatement, "GIVETYPE should be used only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1195217450603", intentionProvider);
+      typeCheckingContext.reportTypeError(givetypeStatement, "GIVETYPE should be used only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1195217450603", intentionProvider);
     }
   }
 

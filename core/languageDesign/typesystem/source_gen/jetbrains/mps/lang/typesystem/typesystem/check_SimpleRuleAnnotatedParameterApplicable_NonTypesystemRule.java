@@ -18,7 +18,7 @@ public class check_SimpleRuleAnnotatedParameterApplicable_NonTypesystemRule exte
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext) {
     if (!((SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.typesystem.structure.SimpleRule_Annotated", false, false) != null))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(parameter, "not applicable here", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1223036669831", intentionProvider);
+      typeCheckingContext.reportTypeError(parameter, "not applicable here", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223036669831", intentionProvider);
     }
   }
 

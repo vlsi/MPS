@@ -946,8 +946,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206109315368">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1206109318421">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1206109330249">
-              <link role="enumConstantDeclaration" targetNodeId="8.~LanguageAspect.HELGINS_TYPESYSTEM" resolveInfo="HELGINS_TYPESYSTEM" />
               <link role="enumClass" targetNodeId="8.~LanguageAspect" resolveInfo="LanguageAspect" />
+              <link role="enumConstantDeclaration" targetNodeId="8.~LanguageAspect.TYPESYSTEM" resolveInfo="TYPESYSTEM" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206109317356">
               <link role="variableDeclaration" targetNodeId="1206109279884" resolveInfo="languageAspect" />

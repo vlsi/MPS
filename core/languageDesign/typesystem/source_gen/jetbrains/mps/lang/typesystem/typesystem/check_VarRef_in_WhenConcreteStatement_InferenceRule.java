@@ -38,7 +38,7 @@ public class check_VarRef_in_WhenConcreteStatement_InferenceRule extends Abstrac
       if (variableDeclaration != null && !(ListSequence.fromList(SNodeOperations.getAncestors(variableDeclaration, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", false)).contains(ancestor))) {
         if (!(SPropertyOperations.getBoolean(variableDeclaration, "isFinal"))) {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportTypeError(variableReference, "variable is used inside WHEN CONCRETE block. should be declared final", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1185875417873", intentionProvider);
+          typeCheckingContext.reportTypeError(variableReference, "variable is used inside WHEN CONCRETE block. should be declared final", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1185875417873", intentionProvider);
         }
       }
     }

@@ -17,7 +17,7 @@ public class check_AbstractEquation_NonTypesystemRule extends AbstractNonTypesys
   public void applyRule(final SNode abstractEquationStatement, final TypeCheckingContext typeCheckingContext) {
     if (!(RulesUtil.withinInferenceItem(abstractEquationStatement))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(abstractEquationStatement, "type equations should be used only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1195217401619", intentionProvider);
+      typeCheckingContext.reportTypeError(abstractEquationStatement, "type equations should be used only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1195217401619", intentionProvider);
     }
   }
 

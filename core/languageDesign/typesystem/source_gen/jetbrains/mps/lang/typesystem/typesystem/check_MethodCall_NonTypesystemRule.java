@@ -20,7 +20,7 @@ public class check_MethodCall_NonTypesystemRule extends AbstractNonTypesystemRul
       if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new QuotationClass_18().createNode(typeCheckingContext), "classifier", false)) {
         if (!(RulesUtil.withinInferenceItem(baseMethodCall))) {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportTypeError(baseMethodCall, "inference method should be called only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1196178341653", intentionProvider);
+          typeCheckingContext.reportTypeError(baseMethodCall, "inference method should be called only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1196178341653", intentionProvider);
         }
         return;
       }

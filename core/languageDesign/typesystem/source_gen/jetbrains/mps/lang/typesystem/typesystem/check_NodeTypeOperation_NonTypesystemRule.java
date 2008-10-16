@@ -17,7 +17,7 @@ public class check_NodeTypeOperation_NonTypesystemRule extends AbstractNonTypesy
   public void applyRule(final SNode node_TypeOperation, final TypeCheckingContext typeCheckingContext) {
     if (!(!(RulesUtil.withinInferenceItem(node_TypeOperation)))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(node_TypeOperation, "don't use typeOperation within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1196099140505", intentionProvider);
+      typeCheckingContext.reportTypeError(node_TypeOperation, "don't use typeOperation within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1196099140505", intentionProvider);
     }
   }
 

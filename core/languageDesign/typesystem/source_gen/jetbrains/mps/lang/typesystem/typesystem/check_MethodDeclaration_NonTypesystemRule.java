@@ -21,7 +21,7 @@ public class check_MethodDeclaration_NonTypesystemRule extends AbstractNonTypesy
       if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new QuotationClass_23().createNode(typeCheckingContext), "classifier", false)) {
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportTypeError(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "inference method should not return a value", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1206297717786", intentionProvider);
+          typeCheckingContext.reportTypeError(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "inference method should not return a value", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1206297717786", intentionProvider);
         }
         return;
       }
