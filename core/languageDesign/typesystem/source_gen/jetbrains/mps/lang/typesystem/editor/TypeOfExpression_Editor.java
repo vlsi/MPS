@@ -160,7 +160,13 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return TypeOfExpression_Editor.calculateColor6237_0(cell);
+              return TypeOfExpression_Editor._StyleParameter_QueryFunction_1214399678001((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -222,18 +228,6 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     {
       return MPSColors.DARK_BLUE;
     }
-  }
-
-  private static Color calculateColor6237_0(EditorCell cell) {
-    Color result;
-    result = TypeOfExpression_Editor._StyleParameter_QueryFunction_1214399678001((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
   }
 
 }

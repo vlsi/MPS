@@ -378,14 +378,6 @@ public class QueriesGenerated {
     return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression")) + "";
   }
 
-  public static Object propertyMacro_GetPropertyValue_1185024196506(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(_context.getNode()).toString();
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1185024203650(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getId();
-  }
-
   public static Object propertyMacro_GetPropertyValue_1186391633357(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "modelId");
   }
@@ -1559,6 +1551,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1224145493074(final IOperationContext operationContext, final IfMacroContext _context) {
+    throw new RuntimeException("givetype is deprecated and not implemented");
+  }
+
   public static SNode sourceNodeQuery_1174654997817(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -1591,14 +1587,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1175149818478(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1175496456158(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "typeExpression", true);
-  }
-
-  public static SNode sourceNodeQuery_1175496464709(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "termExpression", true);
   }
 
   public static SNode sourceNodeQuery_1175518525147(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

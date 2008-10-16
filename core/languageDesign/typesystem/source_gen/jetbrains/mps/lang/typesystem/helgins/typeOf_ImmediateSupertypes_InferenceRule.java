@@ -18,7 +18,7 @@ public class typeOf_ImmediateSupertypes_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = immediateSupertypesExpr;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(immediateSupertypesExpr, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1223981204994", true), new QuotationClass_5().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1223981204989", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(immediateSupertypesExpr, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1223981204994", true), new QuotationClass_5().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1223981204989", intentionProvider);
     }
   }
 

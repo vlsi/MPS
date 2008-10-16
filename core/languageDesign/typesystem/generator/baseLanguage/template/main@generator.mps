@@ -4949,86 +4949,17 @@
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1175496118183">
     <property name="name" value="Givetype_to_statement" />
     <link role="applicableConcept" targetNodeId="1.1175496148685" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1175496418186">
-      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929832800">
-        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929835095">
-          <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1175496420359">
-            <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
-            <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
-          </node>
-          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929835096">
-            <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getRuntimeSupport():jetbrains.mps.lang.typesystem.runtime.RuntimeSupport" resolveInfo="getRuntimeSupport" />
-          </node>
-        </node>
-        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929832801">
-          <link role="baseMethodDeclaration" targetNodeId="15.~RuntimeSupport.givetype(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String):void" resolveInfo="givetype" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1175496442527">
-            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1175496456157">
-              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1175496456158">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175496456159">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1175496469257">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227957846">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1175496469258" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1175496475401">
-                        <link role="link" targetNodeId="1.1175496171063" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1175496446669">
-            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1175496464708">
-              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1175496464709">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175496464710">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1175496480652">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227914746">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1175496480653" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1175496484655">
-                        <link role="link" targetNodeId="1.1175496179767" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1185024177113">
-            <property name="value" value="" />
-            <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1185024196505">
-              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1185024196506">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1185024196507">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1185024210652">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929837551">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1185024212591">
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227867667">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1185024210653" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1185024229614" />
-                        </node>
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929837552">
-                        <link role="baseMethodDeclaration" targetNodeId="4.~SModel.toString():java.lang.String" resolveInfo="toString" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1185024179879">
-            <property name="value" value="" />
-            <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1185024203649">
-              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1185024203650">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1185024203651">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1185024244577">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216929836485">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1185024246641">
-                        <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1185024244578" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929836486">
-                        <link role="baseMethodDeclaration" targetNodeId="4.~SNode.getId():java.lang.String" resolveInfo="getId" />
-                      </node>
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224145462970">
+      <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1224145478191">
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1224145493073">
+          <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1224145493074">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224145493075">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1224145496495">
+                <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1224145498031">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1224145508110">
+                    <link role="baseMethodDeclaration" targetNodeId="2.~RuntimeException.&lt;init&gt;(java.lang.String)" resolveInfo="RuntimeException" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224145510419">
+                      <property name="value" value="givetype is deprecated and not implemented" />
                     </node>
                   </node>
                 </node>
@@ -5037,7 +4968,7 @@
           </node>
         </node>
       </node>
-      <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1175496449155" />
+      <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1224145486734" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1175518443988">

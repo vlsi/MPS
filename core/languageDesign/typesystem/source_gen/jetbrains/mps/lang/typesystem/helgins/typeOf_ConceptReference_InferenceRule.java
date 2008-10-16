@@ -20,7 +20,7 @@ public class typeOf_ConceptReference_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = cr;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(conceptReference, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1201876231886", true), new QuotationClass_0().createNode(SLinkOperations.getTarget(conceptReference, "concept", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1201876231884", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(conceptReference, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1201876231886", true), new QuotationClass_0().createNode(SLinkOperations.getTarget(conceptReference, "concept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.helgins)", "1201876231884", intentionProvider);
     }
   }
 

@@ -714,6 +714,13 @@
       <property name="value" value="givetype" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1224145981474">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224146051565">
+      <property name="value" value="'givetype' is not used any longer" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1218562853918" resolveInfo="deprecated_1045" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1175517400280">
     <property name="name" value="AssertStatement" />

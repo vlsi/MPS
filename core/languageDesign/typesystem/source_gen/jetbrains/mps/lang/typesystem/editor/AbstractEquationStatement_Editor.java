@@ -177,7 +177,13 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AbstractEquationStatement_Editor.calculateColor7653_0(cell);
+              return AbstractEquationStatement_Editor._StyleParameter_QueryFunction_1214399678504((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -211,18 +217,6 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     {
       return Color.BLACK;
     }
-  }
-
-  private static Color calculateColor7653_0(EditorCell cell) {
-    Color result;
-    result = AbstractEquationStatement_Editor._StyleParameter_QueryFunction_1214399678504((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
   }
 
   public static class AbstractEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

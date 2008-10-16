@@ -262,7 +262,13 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
           this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return AbstractInequationStatement_Editor.calculateColor9248_0(cell);
+              return AbstractInequationStatement_Editor._StyleParameter_QueryFunction_1214399678682((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
             }
 
           });
@@ -287,13 +293,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_SIZE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return AbstractInequationStatement_Editor.calculateFontSize9248_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_SIZE, 6);
         }
 
       };
@@ -314,13 +314,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return AbstractInequationStatement_Editor.calculateBoolean9248_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -364,30 +358,6 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     {
       return Color.BLACK;
     }
-  }
-
-  private static Color calculateColor9248_0(EditorCell cell) {
-    Color result;
-    result = AbstractInequationStatement_Editor._StyleParameter_QueryFunction_1214399678682((cell == null ?
-      null :
-      cell.getSNode()
-    ), (cell == null ?
-      null :
-      cell.getEditorContext()
-    ));
-    return result;
-  }
-
-  private static Integer calculateFontSize9248_0(EditorCell cell) {
-    int result;
-    result = 6;
-    return result;
-  }
-
-  public static Boolean calculateBoolean9248_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
   public static class AbstractInequationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

@@ -249,24 +249,6 @@ public class RuntimeSupport {
 
 
   @Deprecated
-  public void givetype(SNode type, SNode node, String ruleModel, String ruleId) {
-    Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
-    NodeTypesComponent component = myTypeChecker.getCurrentTypesComponent();
-    if (component != null) {
-      component.addDependcyOnCurrent(node);
-      //----
-      component.markNodeAsAffectedByRule(node, ruleModel, ruleId);
-    }
-    if (type == null) return;
-    SNode nodesType = typesContext.get(node);
-    if (nodesType == null) { // put to context
-      typesContext.put(node, getRepresentatorIfNecessary(type, component));
-    } else { // create equation
-      createEquation(nodesType, type, node , null, ruleModel, ruleId);
-    }
-  }
-
-  @Deprecated
   public void whenConcrete(SNode argument, Runnable r) {
     whenConcrete(argument, r, null, null);
   }
