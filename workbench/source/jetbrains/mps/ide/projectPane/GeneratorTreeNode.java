@@ -80,13 +80,6 @@ class GeneratorTreeNode extends MPSTreeNode {
 
 
   private void populate() {
-//    List<GeneratorModelsTreeNode> modelTreeNodes = GeneratorModelsTreeNode.createModelsTreeNodes(getOperationContext());
-//    for (GeneratorModelsTreeNode modelsTreeNode : modelTreeNodes) {
-//      this.add(modelsTreeNode);
-//    }
-
-//    LanguagesTreeNode languagesNode = new LanguagesTreeNode(getOperationContext().getProject(), getOperationContext());
-//    this.add(languagesNode);
     SModelsSubtree.create(this, getOperationContext());
   }
 

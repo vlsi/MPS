@@ -136,7 +136,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends Name
       }
     }
 
-    T newChild = myBuilder.createNamespaceNode(first, new MyContext(null, context));
+    T newChild = myBuilder.createNamespaceNode(first, new MyContext(context.getModule(), context));
 
     sourceNode.add(newChild);
 
