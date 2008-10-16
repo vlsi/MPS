@@ -2184,7 +2184,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             lastAdd = ce;
             childAddedEventNodes.add(ce.getChild());
           }
-          if (ce.isRemoved()) lastRemove = ce;
+          if (ce.isRemoved()) {
+            lastRemove = ce;
+          }
         }
       }
 
@@ -2219,52 +2221,50 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (lastRemove != null) {
       if (lastRemove instanceof SModelChildEvent && (lastSelectedNode == null || lastSelectedNode.isDeleted())) {
         SModelChildEvent ce = (SModelChildEvent) lastRemove;
-        int index = ce.getChildIndex();
+        int childIndex = ce.getChildIndex();
         String role = ce.getChildRole();
         SNode parent = ce.getParent();
 
-        if (parent.getChildCount() > index) {
-          SNode child = parent.getChildAt(index);
-          if (role.equals(child.getRole_())) {
-            EditorCell cell = findNodeCell(child);
+        List<SNode> siblings = parent.getChildren(role);
+        if (siblings.isEmpty()) {
+          EditorCell nullCell = findNodeCellWithRole(parent, role);
+          if (nullCell == null) {
+            EditorCell cell = findNodeCell(parent);
             if (cell != null) {
-              EditorCell firstLeaf = cell.getFirstLeaf(CellConditions.SELECTABLE);
-              if (firstLeaf != null) {
-                changeSelection(firstLeaf);
-                firstLeaf.home();
-                return;
-              }
+              EditorCell firstLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
+              changeSelection(firstLeaf);
+              firstLeaf.end();
+              return;
             }
-          }
-        }
-
-        if (index != 0) {
-          SNode child = parent.getChildAt(index - 1);
-          if (role.equals(child.getRole_())) {
-            EditorCell cell = findNodeCell(child);
-            if (cell != null) {
-              EditorCell lastLeaf = cell.getFirstLeaf(CellConditions.SELECTABLE);
-              if (lastLeaf != null) {
-                changeSelection(lastLeaf);
-                lastLeaf.end();
-                return;
-              }
-            }
-          }
-        }
-
-
-        EditorCell nullCell = findNodeCellWithRole(parent, role);
-        if (nullCell == null) {
-          EditorCell cell = findNodeCell(parent);
-          if (cell != null) {
-            EditorCell firstLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
-            changeSelection(firstLeaf);
-            firstLeaf.end();
-            return;
+          } else {
+            changeSelectionWRTFocusPolicy(nullCell);
           }
         } else {
-          changeSelectionWRTFocusPolicy(nullCell);
+          SNode target = null;
+          for (SNode sibling : siblings) {
+            int index = parent.getChildren().indexOf(sibling);
+            if (index < childIndex) {
+              target = sibling;
+            }
+          }
+
+          if (target != null) {
+            EditorCell cell = findNodeCell(target);
+            if (cell != null) {
+              EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
+              changeSelection(lastLeaf);
+              lastLeaf.end();
+              return;
+            }
+          } else {
+            EditorCell cell = findNodeCell(siblings.get(0));
+            if (cell != null) {
+              EditorCell lastLeaf = cell.getFirstLeaf(CellConditions.SELECTABLE);
+              changeSelection(lastLeaf);
+              lastLeaf.home();
+              return;
+            }
+          }
         }
       }
 
