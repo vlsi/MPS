@@ -38,12 +38,8 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
     for (final Object parameterObject : parameterObjects) {
       actions.add(new AbstractNodeSubstituteAction(null, null, node) {
 
-        public String getMatchingText(String pattern) {
+        public String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
           return AbstractCellMenuPart_ReplaceNode_Group.this.getMatchingText(parameterObject);
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return getMatchingText(pattern);
         }
 
         public String getDescriptionText(String pattern) {

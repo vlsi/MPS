@@ -27,7 +27,7 @@ public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInf
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     actions.add(new AbstractNodeSubstituteAction(null, null, node) {
 
-      public String getMatchingText(String pattern) {
+      public String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
         return AbstractCellMenuPart_Generic_Item.this.getMatchingText();
       }
 

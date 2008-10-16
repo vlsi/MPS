@@ -30,7 +30,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
     final IOperationContext context = editorContext.getOperationContext();
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     actions.add(new DefaultChildNodeSubstituteAction(defaultConceptOfChild, parentNode, currentChild, setter, context.getScope()) {
-      public String getMatchingText(String pattern) {
+      protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
         return AbstractCellMenuPart_ReplaceChild_Item.this.getMatchingText();
       }
 

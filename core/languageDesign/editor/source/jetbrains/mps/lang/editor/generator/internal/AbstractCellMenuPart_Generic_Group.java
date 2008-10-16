@@ -33,7 +33,7 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
     for (final Object parameterObject : parameterObjects) {
       actions.add(new AbstractNodeSubstituteAction(null, parameterObject, node) {
 
-        public String getMatchingText(String pattern) {
+        protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
           return AbstractCellMenuPart_Generic_Group.this.getMatchingText(parameterObject);
         }
 
