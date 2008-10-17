@@ -319,12 +319,12 @@ public class RuntimeSupport {
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, equationManager);
   }
 
-  public SNode coerce(TypeCheckingContext typeCheckingContext, SNode subtype, IMatchingPattern pattern, boolean isWeak) {
+  public SNode coerce(SNode subtype, IMatchingPattern pattern, boolean isWeak, TypeCheckingContext typeCheckingContext) {
     EquationManager equationManager = typeCheckingContext.getEquationManager();
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, isWeak, equationManager);
   }
 
-  public SNode coerce(TypeCheckingContext typeCheckingContext, SNode subtype, IMatchingPattern pattern) {
+  public SNode coerce(SNode subtype, IMatchingPattern pattern, TypeCheckingContext typeCheckingContext) {
     EquationManager equationManager = typeCheckingContext.getEquationManager();
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, equationManager);
   }
