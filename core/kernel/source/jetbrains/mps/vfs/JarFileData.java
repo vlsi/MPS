@@ -17,14 +17,10 @@ public class JarFileData {
   private Map<String, Set<String>> mySubDirectories = new HashMap<String, Set<String>>();
   private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
 
-  JarFileData(File file) {
-    try {
-      myFile = file;
-      myZipFile = new ZipFile(file);
-      buildCaches();
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    }
+  JarFileData(File file) throws IOException {
+    myFile = file;
+    myZipFile = new ZipFile(file);
+    buildCaches();
   }
 
   public File getFile() {

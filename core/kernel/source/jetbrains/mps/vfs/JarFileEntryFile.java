@@ -9,14 +9,16 @@ import java.util.List;
 
 public class JarFileEntryFile implements IFile {
   private JarFileData myJarFileData;
+  private File myJarFile;
   private String myEntryPath;
 
   JarFileEntryFile(File zipFile) {
-    this(JarFileDataCache.instance().getDataFor(zipFile), "");
+    this(JarFileDataCache.instance().getDataFor(zipFile), zipFile, "");
   }
 
-  JarFileEntryFile(JarFileData jarFileData, String path) {
+  JarFileEntryFile(JarFileData jarFileData, File jarFile, String path) {
     myJarFileData = jarFileData;
+    myJarFile = jarFile;
     myEntryPath = path.replace(File.separator, "/");
     if (myEntryPath.endsWith("/")) {
       myEntryPath = myEntryPath.substring(0, myEntryPath.length() - 1);
@@ -34,11 +36,11 @@ public class JarFileEntryFile implements IFile {
   }
 
   public File getJarFile() {
-    return myJarFileData.getFile();
+    return myJarFile;
   }
 
   public IFile getParent() {
-    return new JarFileEntryFile(myJarFileData, myJarFileData.getParentDirectory(myEntryPath));
+    return new JarFileEntryFile(myJarFileData, myJarFile, myJarFileData.getParentDirectory(myEntryPath));
   }
 
   public List<IFile> list() {
@@ -48,10 +50,10 @@ public class JarFileEntryFile implements IFile {
 
     List<IFile> result = new ArrayList<IFile>();
     for (String e : myJarFileData.getSubdirectories(myEntryPath)) {
-      result.add(new JarFileEntryFile(myJarFileData, e));
+      result.add(new JarFileEntryFile(myJarFileData, myJarFile, e));
     }
     for (String e : myJarFileData.getFiles(myEntryPath)) {
-      result.add(new JarFileEntryFile(myJarFileData, myEntryPath.length() > 0 ? myEntryPath + "/" + e : e));
+      result.add(new JarFileEntryFile(myJarFileData, myJarFile, myEntryPath.length() > 0 ? myEntryPath + "/" + e : e));
     }
 
     return result;
@@ -75,10 +77,13 @@ public class JarFileEntryFile implements IFile {
 
   public IFile child(String suffix) {
     String path = myEntryPath.length() > 0 ? myEntryPath + "/" + suffix : suffix;
-    return new JarFileEntryFile(myJarFileData, path);
+    return new JarFileEntryFile(myJarFileData, myJarFile, path);
   }
 
   public boolean isDirectory() {
+    if (myJarFileData == null) {
+      return false;
+    }
     return myJarFileData.isDirectory(myEntryPath);
   }
 
@@ -95,14 +100,17 @@ public class JarFileEntryFile implements IFile {
   }
 
   public String getCanonicalPath() {
-    return FileUtil.getCanonicalPath(myJarFileData.getFile()) + "!" + myEntryPath;
+    return FileUtil.getCanonicalPath(myJarFile) + "!" + myEntryPath;
   }
 
   public long lastModified() {
-    return myJarFileData.getFile().lastModified();
+    return myJarFile.lastModified();
   }
 
   public boolean exists() {
+    if (myJarFileData == null) {
+      return false;
+    }
     return myJarFileData.exists(myEntryPath);
   }
 
@@ -127,6 +135,9 @@ public class JarFileEntryFile implements IFile {
   }
 
   public InputStream openInputStream() throws IOException {
+    if (myJarFileData == null) {
+      throw new IOException("File is not found " + getCanonicalPath());
+    }
     return myJarFileData.openStream(myEntryPath);
   }
 
@@ -143,6 +154,9 @@ public class JarFileEntryFile implements IFile {
   }
 
   public long length() {
+    if (myJarFileData == null) {
+      return -1;
+    }
     return myJarFileData.getLength(myEntryPath);
   }
 

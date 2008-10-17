@@ -1,14 +1,18 @@
 package jetbrains.mps.vfs;
 
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.logging.Logger;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.lang.ref.ReferenceQueue;
 import java.util.Map;
 import java.util.HashMap;
 
 class JarFileDataCache {
+  private static Logger LOG = Logger.getLogger(JarFileDataCache.class);
+
   private static JarFileDataCache ourInstance = new JarFileDataCache();
 
   public static JarFileDataCache instance() {
@@ -38,12 +42,17 @@ class JarFileDataCache {
         }
       }
 
-      JarFileData data = new JarFileData(new File(path));
-      WeakReference<JarFileData> ref = new WeakReference<JarFileData>(data, myQueue);
-      myPathToRef.put(path, ref);
-      myRefToPath.put(ref, path);
+      try {
+        JarFileData data = new JarFileData(new File(path));
+        WeakReference<JarFileData> ref = new WeakReference<JarFileData>(data, myQueue);
+        myPathToRef.put(path, ref);
+        myRefToPath.put(ref, path);
 
-      return data;
+        return data;
+      } catch (IOException e) {
+        LOG.error(e);
+        return null;
+      }
     }
   }
 
