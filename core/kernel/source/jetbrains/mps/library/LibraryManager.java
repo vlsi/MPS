@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.pathVariables.PathVariableManager;
 import jetbrains.mps.library.LibraryManager.MyState;
 import jetbrains.mps.cleanup.CleanupManager;
 import org.jetbrains.annotations.NonNls;
@@ -51,7 +50,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   private MPSModuleRepository myRepository;
   private LibraryManagerPreferences myPreferences;
 
-  public LibraryManager(MPSModuleRepository repo, PathVariableManager pathManager) {
+  public LibraryManager(MPSModuleRepository repo) {
     myRepository = repo;
   }
 

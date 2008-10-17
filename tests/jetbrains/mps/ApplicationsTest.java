@@ -1,7 +1,5 @@
 package jetbrains.mps;
 
-import jetbrains.mps.pathVariables.PathVariableManager;
-
 import java.io.File;
 
 public class ApplicationsTest extends BaseMPSTest {
