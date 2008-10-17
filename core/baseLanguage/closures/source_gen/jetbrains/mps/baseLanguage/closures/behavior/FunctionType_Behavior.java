@@ -93,7 +93,7 @@ public class FunctionType_Behavior {
       buf.append(FunctionType_Behavior.call_getSignature_1213877405047(t));
       return;
     }
-    SNode ct = TypeChecker.getInstance().getRuntimeSupport().coerce(t, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    SNode ct = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     String pres;
     if ((ct != null)) {
       String[] nn = SPropertyOperations.getString(SLinkOperations.getTarget(ct, "classifier", false), "name").split("\\\\.");
@@ -130,7 +130,7 @@ public class FunctionType_Behavior {
   public static SNode call_getNormalizedSequenceParameterReturnType_1213877405260(SNode thisNode) {
     {
       IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
-      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(thisNode, "resultType", true), pattern_0);
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(thisNode, "resultType", true), pattern_0);
       if (coercedNode_0 != null) {
         return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_0, "elementType", true));
       }

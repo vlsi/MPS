@@ -26,12 +26,16 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
   private final SNode myNode;
   private int myHashCode = Integer.MAX_VALUE;
 
-  public static IWrapper createWrapperFromNode(SNode node, EquationManager equationManager) {
+  public static NodeWrapper createWrapperFromNode(SNode node, EquationManager equationManager) {
+    return createWrapperFromNode(node, equationManager, false);
+  }
+
+  public static NodeWrapper createWrapperFromNode(SNode node, EquationManager equationManager, boolean equationManagerNullable) {
     if (node == null) return null;
     NodeWrapper result;
     String conceptFqName = node.getConceptFqName();
     if ("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable".equals(conceptFqName)) {
-      result = new VariableWrapper(node, equationManager);
+      result = new VariableWrapper(node, equationManager, equationManagerNullable);
     } else {
       result = new NodeWrapper(node);
     }
@@ -217,12 +221,13 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
   }
 
   public static NodeWrapper fromNode(SNode node, EquationManager equationManager) {
-    if (node == null) return null;
-    IWrapper wrapper = NodeWrapper.createWrapperFromNode(node, equationManager);
-    if (wrapper instanceof NodeWrapper) {
-      return (NodeWrapper) wrapper;
-    }
-    return null;
+    NodeWrapper  wrapper = NodeWrapper.createWrapperFromNode(node, equationManager);
+    return wrapper;
+  }
+
+  public static NodeWrapper fromNode(SNode node, EquationManager equationManager, boolean equationManagerNullable) {
+    NodeWrapper  wrapper = NodeWrapper.createWrapperFromNode(node, equationManager, equationManagerNullable);
+    return wrapper;
   }
 
   public String toString() {

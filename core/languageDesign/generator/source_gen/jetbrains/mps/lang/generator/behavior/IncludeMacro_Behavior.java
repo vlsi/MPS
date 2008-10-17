@@ -14,7 +14,7 @@ public class IncludeMacro_Behavior {
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
       _Patterns.Pattern_3 pattern_3 = new _Patterns.Pattern_3();
-      SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_3);
+      SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_3);
       if (coercedNode_3 != null) {
         return pattern_3.PatternVar3;
       } else

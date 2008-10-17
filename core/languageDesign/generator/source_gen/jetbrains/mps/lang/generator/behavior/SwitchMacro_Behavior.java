@@ -14,7 +14,7 @@ public class SwitchMacro_Behavior {
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
       _Patterns.Pattern_5 pattern_5 = new _Patterns.Pattern_5();
-      SNode coercedNode_5 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_5);
+      SNode coercedNode_5 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_5);
       if (coercedNode_5 != null) {
         return pattern_5.PatternVar5;
       } else

@@ -461,7 +461,7 @@ public class SubtypingManager {
     }
 
     CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
-    boolean success = searchInSupertypes(NodeWrapper.fromNode(subtype, equationManager), coersionMatcher, null, null, isWeak);
+    boolean success = searchInSupertypes(NodeWrapper.fromNode(subtype, equationManager, true), coersionMatcher, null, null, isWeak);
     SNode result;
     if (!success) {
       result = null;

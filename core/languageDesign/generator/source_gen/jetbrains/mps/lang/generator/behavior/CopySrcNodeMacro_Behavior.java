@@ -14,7 +14,7 @@ public class CopySrcNodeMacro_Behavior {
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
       _Patterns.Pattern_4 pattern_4 = new _Patterns.Pattern_4();
-      SNode coercedNode_4 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_4);
+      SNode coercedNode_4 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_4);
       if (coercedNode_4 != null) {
         return pattern_4.PatternVar4;
       } else

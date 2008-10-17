@@ -23,25 +23,25 @@ public class check_IMemberOperation_NonTypesystemRule extends AbstractNonTypesys
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
     {
-      final SNode operandType = typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(nodeToCheck), "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205921836720", true);
+      final SNode operandType = typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(nodeToCheck), "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205921836720", true);
       typeCheckingContext.whenConcrete(operandType, new Runnable() {
 
         public void run() {
           {
             IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
-            SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(operandType), pattern_0);
+            SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(operandType), pattern_0, typeCheckingContext);
             if (coercedNode_0 != null) {
               if (!(ListSequence.fromList(BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_0, nodeToCheck)).contains(SLinkOperations.getTarget(nodeToCheck, "member", false)))) {
                 {
                   BaseIntentionProvider intentionProvider = null;
-                  typeCheckingContext.reportTypeError(nodeToCheck, "Declaration is out of scope", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205921883388", intentionProvider);
+                  typeCheckingContext.reportTypeError(nodeToCheck, "Declaration is out of scope", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205921883388", intentionProvider);
                 }
               }
             }
           }
         }
 
-      }, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.helgins)", "1205921833059");
+      }, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205921833059");
     }
   }
 

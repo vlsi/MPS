@@ -91,7 +91,7 @@ public class ClassifierType_Behavior {
     }
     {
       _Patterns.Pattern_1 pattern_0 = new _Patterns.Pattern_1(SLinkOperations.getTarget(thisNode, "classifier", false));
-      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(t, pattern_0);
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_0);
       if (coercedNode_0 != null) {
         {
           SNode typeParam;

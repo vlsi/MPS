@@ -40,7 +40,7 @@ public class Type_Behavior {
   }
 
   public static Class call_getClass_1213877337327(SNode thisNode, IModule module) {
-    return ReflectionUtil.forName(module, SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce(thisNode, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true), "classifier", false));
+    return ReflectionUtil.forName(module, SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true), "classifier", false));
   }
 
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
@@ -48,7 +48,7 @@ public class Type_Behavior {
   }
 
   public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {
-    return TypeChecker.getInstance().getRuntimeSupport().coerce(thisNode, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    return TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
   }
 
   public static boolean virtual_selectOnVariableCreation_1213877337352(SNode thisNode) {
@@ -58,7 +58,7 @@ public class Type_Behavior {
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     {
       _Patterns.Pattern_2 pattern_1 = new _Patterns.Pattern_2(thisNode);
-      SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(t, pattern_1);
+      SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_1);
       if (coercedNode_1 != null) {
         return true;
       } else

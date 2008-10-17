@@ -56,13 +56,13 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1194727667091(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true));
     SNode targType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "writePath", true)), "targetType", true);
-    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_0().createNode(targType)));
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new _Quotations.QuotationClass_0().createNode(targType)));
   }
 
   public static boolean baseMappingRule_Condition_1194727970307(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true));
     SNode targType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "writePath", true)), "targetType", true);
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_1().createNode(targType));
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new _Quotations.QuotationClass_1().createNode(targType));
   }
 
   public static boolean baseMappingRule_Condition_1194728309348(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -664,7 +664,7 @@ public class QueriesGenerated {
     if (SPropertyOperations.getInteger(cand, "priority") > 0) {
       return SLinkOperations.getTarget(cand, "statement", true);
     }
-    return new QuotationClass_2().createNode();
+    return new _Quotations.QuotationClass_2().createNode();
   }
 
   public static SNode sourceNodeQuery_1197288625644(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -683,7 +683,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1197288625705(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
       IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
-      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_0);
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_0);
       if (coercedNode_0 != null) {
         return SLinkOperations.getTarget(coercedNode_0, "elementType", true);
       }
@@ -706,7 +706,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1197288625785(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
       IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
-      SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_1);
+      SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_1);
       if (coercedNode_1 != null) {
         return SLinkOperations.getTarget(coercedNode_1, "elementType", true);
       }
@@ -755,7 +755,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1197288626102(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
       IMatchingPattern pattern_2 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
-      SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_2);
+      SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_2);
       if (coercedNode_2 != null) {
         return SLinkOperations.getTarget(coercedNode_2, "elementType", true);
       }
@@ -778,7 +778,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1197288626181(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
       IMatchingPattern pattern_3 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
-      SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_3);
+      SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_3);
       if (coercedNode_3 != null) {
         return SLinkOperations.getTarget(coercedNode_3, "elementType", true);
       }
@@ -853,7 +853,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1197288626627(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
       IMatchingPattern pattern_4 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
-      SNode coercedNode_4 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_4);
+      SNode coercedNode_4 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_4);
       if (coercedNode_4 != null) {
         return SLinkOperations.getTarget(coercedNode_4, "elementType", true);
       }
@@ -876,7 +876,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1197288626707(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
       IMatchingPattern pattern_5 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
-      SNode coercedNode_5 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_5);
+      SNode coercedNode_5 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_5);
       if (coercedNode_5 != null) {
         return SLinkOperations.getTarget(coercedNode_5, "elementType", true);
       }
@@ -988,7 +988,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1197299914489(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
       IMatchingPattern pattern_6 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
-      SNode coercedNode_6 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_6);
+      SNode coercedNode_6 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true)), pattern_6);
       if (coercedNode_6 != null) {
         return SLinkOperations.getTarget(coercedNode_6, "elementType", true);
       }

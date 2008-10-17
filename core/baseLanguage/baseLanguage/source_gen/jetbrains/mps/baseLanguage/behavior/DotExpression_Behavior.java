@@ -21,7 +21,7 @@ public class DotExpression_Behavior {
   }
 
   public static SNode call_getClassifier_1213877410697(SNode thisNode) {
-    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false), "classifier", false);
+    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false), "classifier", false);
   }
 
   public static String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {

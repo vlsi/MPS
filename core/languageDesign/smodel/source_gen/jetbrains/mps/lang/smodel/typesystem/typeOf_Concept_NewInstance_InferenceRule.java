@@ -35,12 +35,12 @@ public class typeOf_Concept_NewInstance_InferenceRule extends AbstractInferenceR
         public void run() {
           {
             IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType");
-            SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(LeftType), pattern_0);
+            SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(LeftType), pattern_0, typeCheckingContext);
             if (coercedNode_0 != null) {
               {
                 SNode _nodeToCheck_1029348928467 = node;
                 BaseIntentionProvider intentionProvider = null;
-                typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207688101919", true), new _Quotations.QuotationClass_71().createNode(SLinkOperations.getTarget(coercedNode_0, "conceptDeclaraton", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207688101917", intentionProvider);
+                typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207688101919", true), new _Quotations.QuotationClass_71().createNode(SLinkOperations.getTarget(coercedNode_0, "conceptDeclaraton", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207688101917", intentionProvider);
               }
             }
           }
