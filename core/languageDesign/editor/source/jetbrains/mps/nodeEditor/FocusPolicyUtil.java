@@ -25,7 +25,7 @@ public class FocusPolicyUtil {
     }
 
     if (prevCell.getFocusPolicy() == FocusPolicy.FIRST_EDITABLE_CELL) {
-      EditorCell result = prevCell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE));
+      EditorCell result = prevCell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE));
       if (result != null) {
         return result;
       }

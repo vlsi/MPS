@@ -1987,7 +1987,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
     EditorCell toSelect;
     if (focusPolicyCell == null || (focusPolicyCell == cell && !focusPolicyCell.hasFocusPolicy())) {
-      toSelect = cell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE));
+      toSelect = cell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE));
       if (toSelect == null) {
         toSelect = cell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
       }
