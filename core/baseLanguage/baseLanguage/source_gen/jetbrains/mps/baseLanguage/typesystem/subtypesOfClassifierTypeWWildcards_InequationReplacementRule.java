@@ -28,7 +28,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
         public void run() {
           {
             _Patterns.Pattern_10 pattern_0 = new _Patterns.Pattern_10(SLinkOperations.getTarget(supertype, "classifier", false));
-            SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(t), pattern_0);
+            SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(t), pattern_0, typeCheckingContext);
             if (coercedNode_0 != null) {
               {
                 SNode typeParam;
@@ -99,7 +99,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
       final SNode t = subtype;
       {
         _Patterns.Pattern_10 pattern_1 = new _Patterns.Pattern_10(SLinkOperations.getTarget(supertype, "classifier", false));
-        SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce(t, pattern_1);
+        SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_1);
         if (coercedNode_1 != null) {
           {
             SNode typeParam;

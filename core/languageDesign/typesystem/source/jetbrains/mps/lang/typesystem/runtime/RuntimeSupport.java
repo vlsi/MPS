@@ -309,22 +309,32 @@ public class RuntimeSupport {
     };
   }
 
+  @Deprecated
   public SNode coerce(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
     EquationManager equationManager = myTypeChecker.getEquationManager(); //todo make equation manager null
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, isWeak, equationManager);
   }
 
+  @Deprecated
   public SNode coerce(SNode subtype, IMatchingPattern pattern) {
     EquationManager equationManager = myTypeChecker.getEquationManager(); //todo make equation manager null
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, equationManager);
   }
 
-  public SNode coerce(SNode subtype, IMatchingPattern pattern, boolean isWeak, TypeCheckingContext typeCheckingContext) {
+  public SNode coerce_(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
+    return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, isWeak, null);
+  }
+
+  public SNode coerce_(SNode subtype, IMatchingPattern pattern) {
+    return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, null);
+  }
+
+  public SNode coerce_(SNode subtype, IMatchingPattern pattern, boolean isWeak, TypeCheckingContext typeCheckingContext) {
     EquationManager equationManager = typeCheckingContext.getEquationManager();
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, isWeak, equationManager);
   }
 
-  public SNode coerce(SNode subtype, IMatchingPattern pattern, TypeCheckingContext typeCheckingContext) {
+  public SNode coerce_(SNode subtype, IMatchingPattern pattern, TypeCheckingContext typeCheckingContext) {
     EquationManager equationManager = typeCheckingContext.getEquationManager();
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, equationManager);
   }
