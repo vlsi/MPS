@@ -65,7 +65,7 @@ public class NodeEditorComponent extends EditorComponent {
       public void actionPerformed(ActionEvent e) {
         InspectorTool inspectorTool = getInspectorTool();
         if (inspectorTool == null) return;
-        inspectorTool.openToolLater(true);
+        inspectorTool.activate();
       }
     }, INSPECT_SHORTCUT, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
