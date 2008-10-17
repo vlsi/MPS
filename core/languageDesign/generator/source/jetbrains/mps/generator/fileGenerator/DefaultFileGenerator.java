@@ -7,11 +7,13 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.logging.Logger;
 
 import java.io.File;
 import java.io.IOException;
 
 public abstract class DefaultFileGenerator implements IFileGenerator {
+  private static final Logger LOG = Logger.getLogger(DefaultFileGenerator.class);
 
   protected DefaultFileGenerator() {
   }
@@ -63,7 +65,12 @@ public abstract class DefaultFileGenerator implements IFileGenerator {
       }
     }
 
-    FileUtil.write(file, content);
+    if (fileCreated) {
+      FileUtil.write(file, content);
+    } else {
+      LOG.error("Can't create " + file.getPath());
+    }
+
     return fileCreated ? file : null;
   }
 
