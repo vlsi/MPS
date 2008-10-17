@@ -118,7 +118,7 @@ public class DevKit extends AbstractModule {
 
   public List<Language> getExportedLanguages() {
     List<Language> langs = new ArrayList<Language>();
-    for (jetbrains.mps.projectLanguage.structure.Language l : myDescriptor.getExportedLanguages()) {
+    for (LanguageReference l : myDescriptor.getExportedLanguages()) {
       String namespace = l.getName();
       Language lang = MPSModuleRepository.getInstance().getLanguage(namespace);
       if (lang != null) {
