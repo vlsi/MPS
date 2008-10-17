@@ -706,20 +706,17 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215438709824">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215438709825">
             <property name="name" value="ref" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215438709826">
-              <link role="classifier" targetNodeId="2.~ChangeMethodSignatureRefactoring" resolveInfo="ChangeMethodSignatureRefactoring" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224254843802">
+              <link role="classifier" targetNodeId="21.1224252751159" resolveInfo="_ChangeMethodSignatureRefactoring" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215438709827">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215438709828">
-                <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.&lt;init&gt;(jetbrains.mps.baseLanguage.refactoring.changeMethodSignature.ChangeMethodSignatureParameters,jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration)" resolveInfo="ChangeMethodSignatureRefactoring" />
+                <link role="baseMethodDeclaration" targetNodeId="21.1224252751161" resolveInfo="_ChangeMethodSignatureRefactoring" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215438709829">
                   <link role="variableDeclaration" targetNodeId="1215438709787" resolveInfo="params" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215438709830">
-                  <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215438709831">
-                    <link role="declaration" targetNodeId="1215438709889" resolveInfo="method" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1215438709832" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215438709831">
+                  <link role="declaration" targetNodeId="1215438709889" resolveInfo="method" />
                 </node>
               </node>
             </node>
@@ -772,7 +769,7 @@
               <link role="variableDeclaration" targetNodeId="1215438709825" resolveInfo="ref" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215438709853">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.setUsages(java.util.List):void" resolveInfo="setUsages" />
+              <link role="baseMethodDeclaration" targetNodeId="21.1224254137721" resolveInfo="setUssages" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215438709854">
                 <link role="variableDeclaration" targetNodeId="1215438709834" resolveInfo="ussages" />
               </node>
@@ -784,8 +781,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215438709857">
               <link role="variableDeclaration" targetNodeId="1215438709825" resolveInfo="ref" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215438709858">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.doRefactoring():void" resolveInfo="doRefactoring" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224254853553">
+              <link role="baseMethodDeclaration" targetNodeId="21.1224252960711" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -874,20 +871,17 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215438859759">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215438859760">
             <property name="name" value="ref" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215438859761">
-              <link role="classifier" targetNodeId="2.~ChangeMethodSignatureRefactoring" resolveInfo="ChangeMethodSignatureRefactoring" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224254814094">
+              <link role="classifier" targetNodeId="21.1224252751159" resolveInfo="_ChangeMethodSignatureRefactoring" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215438859762">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215438859763">
-                <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.&lt;init&gt;(jetbrains.mps.baseLanguage.refactoring.changeMethodSignature.ChangeMethodSignatureParameters,jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration)" resolveInfo="ChangeMethodSignatureRefactoring" />
+                <link role="baseMethodDeclaration" targetNodeId="21.1224252751161" resolveInfo="_ChangeMethodSignatureRefactoring" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215438859764">
                   <link role="variableDeclaration" targetNodeId="1215438859747" resolveInfo="params" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215438859765">
-                  <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215438859766">
-                    <link role="declaration" targetNodeId="1215438859735" resolveInfo="method" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1215438859767" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215438859766">
+                  <link role="declaration" targetNodeId="1215438859735" resolveInfo="method" />
                 </node>
               </node>
             </node>
@@ -898,8 +892,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215438859770">
               <link role="variableDeclaration" targetNodeId="1215438859760" resolveInfo="ref" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215438859771">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.doRefactoring():void" resolveInfo="doRefactoring" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224254823564">
+              <link role="baseMethodDeclaration" targetNodeId="21.1224252960711" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -1631,20 +1625,17 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217418780231">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217418780232">
             <property name="name" value="ref" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217418780233">
-              <link role="classifier" targetNodeId="2.~ChangeMethodSignatureRefactoring" resolveInfo="ChangeMethodSignatureRefactoring" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224254782371">
+              <link role="classifier" targetNodeId="21.1224252751159" resolveInfo="_ChangeMethodSignatureRefactoring" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217418780234">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217418780235">
-                <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.&lt;init&gt;(jetbrains.mps.baseLanguage.refactoring.changeMethodSignature.ChangeMethodSignatureParameters,jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration)" resolveInfo="ChangeMethodSignatureRefactoring" />
+                <link role="baseMethodDeclaration" targetNodeId="21.1224252751161" resolveInfo="_ChangeMethodSignatureRefactoring" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217418780236">
                   <link role="variableDeclaration" targetNodeId="1217418780204" resolveInfo="params" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217418780237">
-                  <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1217418780238">
-                    <link role="declaration" targetNodeId="1215438915938" resolveInfo="method" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1217418780239" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1217418780238">
+                  <link role="declaration" targetNodeId="1215438915938" resolveInfo="method" />
                 </node>
               </node>
             </node>
@@ -1655,8 +1646,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217418780242">
               <link role="variableDeclaration" targetNodeId="1217418780232" resolveInfo="ref" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217418780243">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.doRefactoring():void" resolveInfo="doRefactoring" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224254795872">
+              <link role="baseMethodDeclaration" targetNodeId="21.1224252960711" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -4968,20 +4959,17 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215438872439">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215438872440">
             <property name="name" value="ref" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215438872441">
-              <link role="classifier" targetNodeId="2.~ChangeMethodSignatureRefactoring" resolveInfo="ChangeMethodSignatureRefactoring" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224254801623">
+              <link role="classifier" targetNodeId="21.1224252751159" resolveInfo="_ChangeMethodSignatureRefactoring" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215438872442">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215438872443">
-                <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.&lt;init&gt;(jetbrains.mps.baseLanguage.refactoring.changeMethodSignature.ChangeMethodSignatureParameters,jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration)" resolveInfo="ChangeMethodSignatureRefactoring" />
+                <link role="baseMethodDeclaration" targetNodeId="21.1224252751161" resolveInfo="_ChangeMethodSignatureRefactoring" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215438872444">
                   <link role="variableDeclaration" targetNodeId="1215438872425" resolveInfo="params" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215438872445">
-                  <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215438872446">
-                    <link role="declaration" targetNodeId="1215438872460" resolveInfo="method" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1215438872447" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215438872446">
+                  <link role="declaration" targetNodeId="1215438872460" resolveInfo="method" />
                 </node>
               </node>
             </node>
@@ -4992,8 +4980,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215438872450">
               <link role="variableDeclaration" targetNodeId="1215438872440" resolveInfo="ref" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215438872451">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.doRefactoring():void" resolveInfo="doRefactoring" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224254809531">
+              <link role="baseMethodDeclaration" targetNodeId="21.1224252960711" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -5130,20 +5118,17 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217415757900">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217415757901">
             <property name="name" value="ref" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217415757902">
-              <link role="classifier" targetNodeId="2.~ChangeMethodSignatureRefactoring" resolveInfo="ChangeMethodSignatureRefactoring" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224254705704">
+              <link role="classifier" targetNodeId="21.1224252751159" resolveInfo="_ChangeMethodSignatureRefactoring" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217415757903">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217415757904">
-                <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.&lt;init&gt;(jetbrains.mps.baseLanguage.refactoring.changeMethodSignature.ChangeMethodSignatureParameters,jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration)" resolveInfo="ChangeMethodSignatureRefactoring" />
+                <link role="baseMethodDeclaration" targetNodeId="21.1224252751161" resolveInfo="_ChangeMethodSignatureRefactoring" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217415757905">
                   <link role="variableDeclaration" targetNodeId="1217415757871" resolveInfo="params" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217415757906">
-                  <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1217415757907">
-                    <link role="declaration" targetNodeId="1215438889406" resolveInfo="method" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1217415757908" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1217415757907">
+                  <link role="declaration" targetNodeId="1215438889406" resolveInfo="method" />
                 </node>
               </node>
             </node>
@@ -5154,8 +5139,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217415757911">
               <link role="variableDeclaration" targetNodeId="1217415757901" resolveInfo="ref" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217415757912">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.doRefactoring():void" resolveInfo="doRefactoring" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224254716049">
+              <link role="baseMethodDeclaration" targetNodeId="21.1224252960711" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -7007,20 +6992,17 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215438836237">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215438836238">
             <property name="name" value="ref" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215438836239">
-              <link role="classifier" targetNodeId="2.~ChangeMethodSignatureRefactoring" resolveInfo="ChangeMethodSignatureRefactoring" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224254827924">
+              <link role="classifier" targetNodeId="21.1224252751159" resolveInfo="_ChangeMethodSignatureRefactoring" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215438836240">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215438836241">
-                <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.&lt;init&gt;(jetbrains.mps.baseLanguage.refactoring.changeMethodSignature.ChangeMethodSignatureParameters,jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration)" resolveInfo="ChangeMethodSignatureRefactoring" />
+                <link role="baseMethodDeclaration" targetNodeId="21.1224252751161" resolveInfo="_ChangeMethodSignatureRefactoring" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215438836242">
                   <link role="variableDeclaration" targetNodeId="1215438836225" resolveInfo="params" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215438836243">
-                  <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215438836244">
-                    <link role="declaration" targetNodeId="1215438836258" resolveInfo="method" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1215438836245" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215438836244">
+                  <link role="declaration" targetNodeId="1215438836258" resolveInfo="method" />
                 </node>
               </node>
             </node>
@@ -7031,8 +7013,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215438836248">
               <link role="variableDeclaration" targetNodeId="1215438836238" resolveInfo="ref" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215438836249">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.doRefactoring():void" resolveInfo="doRefactoring" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224254836582">
+              <link role="baseMethodDeclaration" targetNodeId="21.1224252960711" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -7679,20 +7661,17 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217418756769">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217418756770">
             <property name="name" value="ref" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217418756771">
-              <link role="classifier" targetNodeId="2.~ChangeMethodSignatureRefactoring" resolveInfo="ChangeMethodSignatureRefactoring" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224254747617">
+              <link role="classifier" targetNodeId="21.1224252751159" resolveInfo="_ChangeMethodSignatureRefactoring" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217418756772">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217418756773">
-                <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.&lt;init&gt;(jetbrains.mps.baseLanguage.refactoring.changeMethodSignature.ChangeMethodSignatureParameters,jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration)" resolveInfo="ChangeMethodSignatureRefactoring" />
+                <link role="baseMethodDeclaration" targetNodeId="21.1224252751161" resolveInfo="_ChangeMethodSignatureRefactoring" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217418756774">
                   <link role="variableDeclaration" targetNodeId="1217418756732" resolveInfo="params" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217418756775">
-                  <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1217418756776">
-                    <link role="declaration" targetNodeId="1215438978535" resolveInfo="method" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1217418756777" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1217418756776">
+                  <link role="declaration" targetNodeId="1215438978535" resolveInfo="method" />
                 </node>
               </node>
             </node>
@@ -7732,7 +7711,7 @@
               <link role="variableDeclaration" targetNodeId="1217418756770" resolveInfo="ref" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217418756793">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.setUsages(java.util.List):void" resolveInfo="setUsages" />
+              <link role="baseMethodDeclaration" targetNodeId="21.1224254137721" resolveInfo="setUssages" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217418756794">
                 <link role="variableDeclaration" targetNodeId="1217418756779" resolveInfo="ussages" />
               </node>
@@ -7744,8 +7723,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217418756797">
               <link role="variableDeclaration" targetNodeId="1217418756770" resolveInfo="ref" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217418756798">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.doRefactoring():void" resolveInfo="doRefactoring" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224254761790">
+              <link role="baseMethodDeclaration" targetNodeId="21.1224252960711" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -8602,20 +8581,17 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217418608239">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217418608240">
             <property name="name" value="ref" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217418608241">
-              <link role="classifier" targetNodeId="2.~ChangeMethodSignatureRefactoring" resolveInfo="ChangeMethodSignatureRefactoring" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224254722128">
+              <link role="classifier" targetNodeId="21.1224252751159" resolveInfo="_ChangeMethodSignatureRefactoring" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217418608242">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217418608243">
-                <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.&lt;init&gt;(jetbrains.mps.baseLanguage.refactoring.changeMethodSignature.ChangeMethodSignatureParameters,jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration)" resolveInfo="ChangeMethodSignatureRefactoring" />
+                <link role="baseMethodDeclaration" targetNodeId="21.1224252751161" resolveInfo="_ChangeMethodSignatureRefactoring" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217418608244">
                   <link role="variableDeclaration" targetNodeId="1217418608222" resolveInfo="params" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217418608245">
-                  <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1217418608246">
-                    <link role="declaration" targetNodeId="1215438938396" resolveInfo="method" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1217418608247" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1217418608246">
+                  <link role="declaration" targetNodeId="1215438938396" resolveInfo="method" />
                 </node>
               </node>
             </node>
@@ -8626,8 +8602,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217418608250">
               <link role="variableDeclaration" targetNodeId="1217418608240" resolveInfo="ref" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217418608251">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.doRefactoring():void" resolveInfo="doRefactoring" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224254729207">
+              <link role="baseMethodDeclaration" targetNodeId="21.1224252960711" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -9091,20 +9067,17 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217418768728">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217418768729">
             <property name="name" value="ref" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217418768730">
-              <link role="classifier" targetNodeId="2.~ChangeMethodSignatureRefactoring" resolveInfo="ChangeMethodSignatureRefactoring" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224254766713">
+              <link role="classifier" targetNodeId="21.1224252751159" resolveInfo="_ChangeMethodSignatureRefactoring" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217418768731">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217418768732">
-                <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.&lt;init&gt;(jetbrains.mps.baseLanguage.refactoring.changeMethodSignature.ChangeMethodSignatureParameters,jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration)" resolveInfo="ChangeMethodSignatureRefactoring" />
+                <link role="baseMethodDeclaration" targetNodeId="21.1224252751161" resolveInfo="_ChangeMethodSignatureRefactoring" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217418768733">
                   <link role="variableDeclaration" targetNodeId="1217418768714" resolveInfo="params" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217418768734">
-                  <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1217418768735">
-                    <link role="declaration" targetNodeId="1215438994860" resolveInfo="method" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1217418768736" />
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1217418768735">
+                  <link role="declaration" targetNodeId="1215438994860" resolveInfo="method" />
                 </node>
               </node>
             </node>
@@ -9115,8 +9088,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217418768739">
               <link role="variableDeclaration" targetNodeId="1217418768729" resolveInfo="ref" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217418768740">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.doRefactoring():void" resolveInfo="doRefactoring" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224254777448">
+              <link role="baseMethodDeclaration" targetNodeId="21.1224252960711" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -10176,20 +10149,17 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217418741187">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217418741188">
             <property name="name" value="ref" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217418741189">
-              <link role="classifier" targetNodeId="2.~ChangeMethodSignatureRefactoring" resolveInfo="ChangeMethodSignatureRefactoring" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224254734864">
+              <link role="classifier" targetNodeId="21.1224252751159" resolveInfo="_ChangeMethodSignatureRefactoring" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217418741190">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217418741191">
-                <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.&lt;init&gt;(jetbrains.mps.baseLanguage.refactoring.changeMethodSignature.ChangeMethodSignatureParameters,jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration)" resolveInfo="ChangeMethodSignatureRefactoring" />
+                <link role="baseMethodDeclaration" targetNodeId="21.1224252751161" resolveInfo="_ChangeMethodSignatureRefactoring" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217418741192">
                   <link role="variableDeclaration" targetNodeId="1217418741139" resolveInfo="params" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217418741193">
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1217418741194" />
-                  <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1217418741195">
-                    <link role="declaration" targetNodeId="1215438955976" resolveInfo="method" />
-                  </node>
+                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1217418741195">
+                  <link role="declaration" targetNodeId="1215438955976" resolveInfo="method" />
                 </node>
               </node>
             </node>
@@ -10200,8 +10170,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217418741198">
               <link role="variableDeclaration" targetNodeId="1217418741188" resolveInfo="ref" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217418741199">
-              <link role="baseMethodDeclaration" targetNodeId="2.~ChangeMethodSignatureRefactoring.doRefactoring():void" resolveInfo="doRefactoring" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224254742459">
+              <link role="baseMethodDeclaration" targetNodeId="21.1224252960711" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
