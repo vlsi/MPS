@@ -25,7 +25,7 @@ public class typeof_LinkPatternVariableDeclaration_InferenceRule extends Abstrac
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.helgins)", "1202486174317", true), new QuotationClass_1().createNode(SLinkOperations.getTarget(linkDeclaration, "target", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.helgins)", "1202486181555", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202486174317", true), new _Quotations.QuotationClass_1().createNode(SLinkOperations.getTarget(linkDeclaration, "target", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202486181555", intentionProvider);
     }
   }
 

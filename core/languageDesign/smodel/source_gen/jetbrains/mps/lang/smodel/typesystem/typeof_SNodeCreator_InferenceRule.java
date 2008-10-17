@@ -21,7 +21,7 @@ public class typeof_SNodeCreator_InferenceRule extends AbstractInferenceRule_Run
       if (SLinkOperations.getTarget(createdType, "concept", false) == null) {
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportTypeError(createdType, "concrete node type is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1181944909006", intentionProvider);
+          typeCheckingContext.reportTypeError(createdType, "concrete node type is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1181944909006", intentionProvider);
         }
         return;
       }
@@ -29,13 +29,13 @@ public class typeof_SNodeCreator_InferenceRule extends AbstractInferenceRule_Run
         {
           SNode _nodeToCheck_1029348928467 = creator;
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(creator, "prototypeNode", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1186061742845", true), new QuotationClass_52().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1181945011354", false, 0, intentionProvider);
+          typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(creator, "prototypeNode", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061742845", true), new _Quotations.QuotationClass_69().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1181945011354", false, 0, intentionProvider);
         }
       }
       {
         SNode _nodeToCheck_1029348928467 = creator;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(creator, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1203712073963", true), createdType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1203712073961", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(creator, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712073963", true), createdType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712073961", intentionProvider);
       }
     }
   }

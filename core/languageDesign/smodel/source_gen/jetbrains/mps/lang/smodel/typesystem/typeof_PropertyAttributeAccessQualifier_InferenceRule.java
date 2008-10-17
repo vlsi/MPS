@@ -29,12 +29,12 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule extends Abstr
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1206103035534", true), new QuotationClass_70().createNode(SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1") + "", SLinkOperations.getTarget(annotationLink, "target", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1206103041053", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206103035534", true), new _Quotations.QuotationClass_82().createNode(SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1") + "", SLinkOperations.getTarget(annotationLink, "target", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206103041053", intentionProvider);
     }
     // ---
     if (!(SPropertyOperations.hasValue(annotationLink, "stereotype", "property", "node"))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(nodeToCheck, "property annotation link is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1204832870610", intentionProvider);
+      typeCheckingContext.reportTypeError(nodeToCheck, "property annotation link is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204832870610", intentionProvider);
     }
     final SNode propQ = SLinkOperations.getTarget(nodeToCheck, "propertyQualifier", true);
     if (SNodeOperations.isInstanceOf(propQ, "jetbrains.mps.lang.smodel.structure.PoundExpression")) {
@@ -42,7 +42,7 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule extends Abstr
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(propQ, "expression", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1204835998062", false), new QuotationClass_60().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1204835998060", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(propQ, "expression", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204835998062", false), new _Quotations.QuotationClass_83().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204835998060", false, 0, intentionProvider);
       }
     } else
     if (SNodeOperations.isInstanceOf(propQ, "jetbrains.mps.lang.smodel.structure.PropertyRefQualifier")) {
@@ -59,11 +59,11 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule extends Abstr
             List<SNode> declaredProperties = AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(inputNodeConcept);
             if (!(ListSequence.fromList(declaredProperties).contains(property))) {
               BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.reportTypeError(propQ, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1204914077394", intentionProvider);
+              typeCheckingContext.reportTypeError(propQ, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204914077394", intentionProvider);
             }
           }
 
-        }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1204914077379");
+        }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204914077379");
       }
     }
   }

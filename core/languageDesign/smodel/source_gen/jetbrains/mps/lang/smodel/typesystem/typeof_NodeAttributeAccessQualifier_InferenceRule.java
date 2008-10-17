@@ -30,12 +30,12 @@ public class typeof_NodeAttributeAccessQualifier_InferenceRule extends AbstractI
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205266078203", true), T, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205266078201", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205266078203", true), T, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205266078201", intentionProvider);
     }
     // ---
     if (!(SPropertyOperations.hasValue(annotationLink, "stereotype", "node", "node"))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(nodeToCheck, "node annotation link is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1204764593904", intentionProvider);
+      typeCheckingContext.reportTypeError(nodeToCheck, "node annotation link is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204764593904", intentionProvider);
     }
   }
 

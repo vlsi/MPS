@@ -19,12 +19,12 @@ public class SplitExpression_InferenceRule extends AbstractInferenceRule_Runtime
     {
       SNode _nodeToCheck_1029348928467 = se;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(se, "expr", true), "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.helgins)", "1178179183643", true), new QuotationClass_4().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.helgins)", "1178179183642", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(se, "expr", true), "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1178179183643", true), new _Quotations.QuotationClass_4().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1178179183642", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = se;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(se, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.helgins)", "1223981840556", true), new QuotationClass_5().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.helgins)", "1223981840551", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(se, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1223981840556", true), new _Quotations.QuotationClass_5().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1223981840551", intentionProvider);
     }
   }
 

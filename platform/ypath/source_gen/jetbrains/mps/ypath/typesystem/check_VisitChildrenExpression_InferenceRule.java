@@ -24,13 +24,13 @@ public class check_VisitChildrenExpression_InferenceRule extends AbstractInferen
     SNode visitBlock = VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1213877259423(visitChildrenExpression);
     if (!((visitBlock != null))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(visitChildrenExpression, "visit children is unexpected here", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1180014856089", intentionProvider);
+      typeCheckingContext.reportTypeError(visitChildrenExpression, "visit children is unexpected here", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1180014856089", intentionProvider);
     }
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(visitBlock, "visitParameterDeclarationList", true), "visitParameterDeclaration", true);
     int expectedCount = ListSequence.fromList(parameters).count();
     if (!(actualCount == expectedCount)) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(visitChildrenExpression, "wrong parameters number: expected " + expectedCount + " , actual " + actualCount, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1180014444793", intentionProvider);
+      typeCheckingContext.reportTypeError(visitChildrenExpression, "wrong parameters number: expected " + expectedCount + " , actual " + actualCount, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1180014444793", intentionProvider);
     }
     {
       SNode arg;
@@ -49,7 +49,7 @@ public class check_VisitChildrenExpression_InferenceRule extends AbstractInferen
         {
           SNode _nodeToCheck_1029348928467 = visitChildrenExpression;
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(arg, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1180014730654", true), typeCheckingContext.typeOf(param, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1180014739452", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1180014737422", false, 0, intentionProvider);
+          typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(arg, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1180014730654", true), typeCheckingContext.typeOf(param, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1180014739452", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1180014737422", false, 0, intentionProvider);
         }
       }
     }

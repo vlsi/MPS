@@ -18,19 +18,19 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
 
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext) {
     {
-      final SNode _representatorVar0 = typeCheckingContext.typeOf(SLinkOperations.getTarget(invoke, "function", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.helgins)", "1199567116884", true);
+      final SNode _representatorVar0 = typeCheckingContext.typeOf(SLinkOperations.getTarget(invoke, "function", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1199567116884", true);
       typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
 
         public void run() {
-          SNode ft = typeCheckingContext.typeOf(SLinkOperations.getTarget(invoke, "function", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.helgins)", "1199567532549", true);
+          SNode ft = typeCheckingContext.typeOf(SLinkOperations.getTarget(invoke, "function", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1199567532549", true);
           {
             SNode _nodeToCheck_1029348928467 = invoke;
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createEquation(typeCheckingContext.typeOf(invoke, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.helgins)", "1199711684834", true), SLinkOperations.getTarget(ft, "resultType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.helgins)", "1199711681931", intentionProvider);
+            typeCheckingContext.createEquation(typeCheckingContext.typeOf(invoke, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1199711684834", true), SLinkOperations.getTarget(ft, "resultType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1199711681931", intentionProvider);
           }
           if (!(SLinkOperations.getCount(ft, "parameterType") == SLinkOperations.getCount(invoke, "parameter"))) {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportTypeError(invoke, "Wrong parameters number", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.helgins)", "1199568419784", intentionProvider);
+            typeCheckingContext.reportTypeError(invoke, "Wrong parameters number", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1199568419784", intentionProvider);
           }
           {
             SNode pt;
@@ -49,13 +49,13 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
               {
                 SNode _nodeToCheck_1029348928467 = invoke;
                 BaseIntentionProvider intentionProvider = null;
-                typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.helgins)", "1202920138888", true), pt, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.helgins)", "1202920135673", false, 0, intentionProvider);
+                typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202920138888", true), pt, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202920135673", false, 0, intentionProvider);
               }
             }
           }
         }
 
-      }, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.helgins)", "1199567113016");
+      }, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1199567113016");
     }
   }
 

@@ -17,7 +17,7 @@ public class check_MethodCall_NonTypesystemRule extends AbstractNonTypesystemRul
 
   public void applyRule(final SNode baseMethodCall, final TypeCheckingContext typeCheckingContext) {
     for(SNode annotationInstance : SLinkOperations.getTargets(SLinkOperations.getTarget(baseMethodCall, "baseMethodDeclaration", false), "annotation", true)) {
-      if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new QuotationClass_18().createNode(typeCheckingContext), "classifier", false)) {
+      if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_18().createNode(typeCheckingContext), "classifier", false)) {
         if (!(RulesUtil.withinInferenceItem(baseMethodCall))) {
           BaseIntentionProvider intentionProvider = null;
           typeCheckingContext.reportTypeError(baseMethodCall, "inference method should be called only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1196178341653", intentionProvider);

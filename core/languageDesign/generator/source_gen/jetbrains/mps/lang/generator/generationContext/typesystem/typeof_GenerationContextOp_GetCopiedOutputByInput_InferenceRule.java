@@ -20,7 +20,7 @@ public class typeof_GenerationContextOp_GetCopiedOutputByInput_InferenceRule ext
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.helgins)", "1217884981897", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "inputNode", true), "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.helgins)", "1217885029448", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.helgins)", "1217884997103", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1217884981897", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "inputNode", true), "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1217885029448", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1217884997103", intentionProvider);
     }
   }
 

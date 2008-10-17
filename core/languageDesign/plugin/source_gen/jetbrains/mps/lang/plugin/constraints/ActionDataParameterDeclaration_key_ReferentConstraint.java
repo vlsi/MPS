@@ -45,7 +45,7 @@ public class ActionDataParameterDeclaration_key_ReferentConstraint implements IM
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(new QuotationClass_2().createNode(), "classifier", false), "staticField", true);
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "classifier", false), "staticField", true);
   }
 
 }

@@ -36,17 +36,17 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInfe
             resultConcept = parameterConcept;
             if (!(SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(typeCheckingContext.getEquationManager().getRepresentator(concreteConcept))))) {
               BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.reportTypeError(op, SPropertyOperations.getString(parameterConcept, "name") + " is not sub-concept of " + SPropertyOperations.getString(typeCheckingContext.getEquationManager().getRepresentator(concreteConcept), "name"), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205442304609", intentionProvider);
+              typeCheckingContext.reportTypeError(op, SPropertyOperations.getString(parameterConcept, "name") + " is not sub-concept of " + SPropertyOperations.getString(typeCheckingContext.getEquationManager().getRepresentator(concreteConcept), "name"), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205442304609", intentionProvider);
             }
           }
           {
             SNode _nodeToCheck_1029348928467 = op;
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205442304627", true), new QuotationClass_63().createNode(resultConcept), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205442304625", intentionProvider);
+            typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205442304627", true), new _Quotations.QuotationClass_52().createNode(resultConcept), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205442304625", intentionProvider);
           }
         }
 
-      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205442246000");
+      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205442246000");
     }
   }
 

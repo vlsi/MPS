@@ -14,7 +14,7 @@ public class DataTypeDeclaration_Behavior {
   }
 
   public static SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
-    return new QuotationClass_0().createNode();
+    return new _Quotations.QuotationClass_0().createNode();
   }
 
   public static boolean call_isSimple_1220268671473(SNode thisNode) {

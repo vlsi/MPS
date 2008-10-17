@@ -17,7 +17,7 @@ public class FindSourceBlock_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return new QuotationClass_0().createNode();
+    return new _Quotations.QuotationClass_0().createNode();
   }
 
   public static boolean call_isSet_1213877521577(SNode thisNode) {
@@ -32,7 +32,7 @@ public class FindSourceBlock_Behavior {
     }
     for(SNode expr : expressions) {
       SNode type = TypeChecker.getInstance().getTypeOf(expr);
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_1().createNode()) && !(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.NullType"))) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new _Quotations.QuotationClass_1().createNode()) && !(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.NullType"))) {
         return true;
       }
     }

@@ -18,7 +18,7 @@ public class typeof_ExpressionFunctionParam_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = expressionFunctionParam;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(expressionFunctionParam, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223208192097", true), new QuotationClass_10().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223208192095", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(expressionFunctionParam, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223208192097", true), new _Quotations.QuotationClass_10().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223208192095", intentionProvider);
     }
   }
 

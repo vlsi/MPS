@@ -20,7 +20,7 @@ public class ActionParameterTypeIsNotClassifier_NonTypesystemRule extends Abstra
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameter, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(SLinkOperations.getTarget(parameter, "type", true), "Complex action parameters is not for getting classifier types", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.helgins)", "1217414931437", intentionProvider);
+        typeCheckingContext.reportTypeError(SLinkOperations.getTarget(parameter, "type", true), "Complex action parameters is not for getting classifier types", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1217414931437", intentionProvider);
       }
     }
   }

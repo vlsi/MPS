@@ -63,7 +63,7 @@ public class DependenciesCollector {
             }
             if (matches_1) {
               if (SLinkOperations.getTarget(matchedNode_0, "rValue", true) == node) {
-                dependencies.put(SLinkOperations.getTarget(matchedNode_0, "lValue", true), new Pair<SNode, SNode>(node, new QuotationClass_0().createNode()));
+                dependencies.put(SLinkOperations.getTarget(matchedNode_0, "lValue", true), new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_0().createNode()));
               }
               break;
             }
@@ -78,7 +78,7 @@ public class DependenciesCollector {
             }
             if (matches_2) {
               if (SLinkOperations.getTarget(matchedNode_0, "initializer", true) == node) {
-                dependencies.put(matchedNode_0, new Pair<SNode, SNode>(node, new QuotationClass_1().createNode()));
+                dependencies.put(matchedNode_0, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_1().createNode()));
               }
               break;
             }
@@ -96,7 +96,7 @@ public class DependenciesCollector {
               if (matches_3) {
                 for(SNode variableReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false)) {
                   if (SLinkOperations.getTarget(variableReference, "variableDeclaration", false) == node) {
-                    dependencies.put(variableReference, new Pair<SNode, SNode>(node, new QuotationClass_2().createNode()));
+                    dependencies.put(variableReference, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_2().createNode()));
                   }
                 }
                 break;
@@ -128,7 +128,7 @@ public class DependenciesCollector {
 
                       });
                       if (list.indexOf(nodeStatement) <= list.indexOf(usageStatement)) {
-                        dependencies.put(reference, new Pair<SNode, SNode>(node, new QuotationClass_3().createNode()));
+                        dependencies.put(reference, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_3().createNode()));
                       }
                     }
                   }

@@ -19,9 +19,9 @@ public class _LinkAccessT_Behavior {
 
   public static SNode virtual_getPublicType_1213877443338(SNode thisNode) {
     if (SPropertyOperations.getBoolean(thisNode, "singularCradinality")) {
-      return new QuotationClass_2().createNode(SLinkOperations.getTarget(thisNode, "targetConcept", false));
+      return new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(thisNode, "targetConcept", false));
     }
-    return new QuotationClass_3().createNode(SLinkOperations.getTarget(thisNode, "targetConcept", false));
+    return new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(thisNode, "targetConcept", false));
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {

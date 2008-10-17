@@ -8,13 +8,13 @@ import jetbrains.mps.smodel.SNode;
 
 public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  /* package */Pattern_2 myMatchingPattern;
+  /* package */_Patterns.Pattern_2 myMatchingPattern;
 
   public java_util_Map_extends_map_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode mapType) {
-    return new QuotationClass_55().createNode(this.myMatchingPattern.PatternVar2, this.myMatchingPattern.PatternVar3);
+    return new _Quotations.QuotationClass_56().createNode(this.myMatchingPattern.PatternVar2, this.myMatchingPattern.PatternVar3);
   }
 
   public String getApplicableConceptFQName() {
@@ -22,7 +22,7 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new Pattern_2();
+    this.myMatchingPattern = new _Patterns.Pattern_2();
     return this.myMatchingPattern.match(argument);
   }
 

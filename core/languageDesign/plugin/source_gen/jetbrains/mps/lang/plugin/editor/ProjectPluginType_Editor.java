@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -103,13 +102,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ProjectPluginType_Editor.calculateBoolean2742_2(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -124,13 +117,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ProjectPluginType_Editor.calculateBoolean2742_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -144,13 +131,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ProjectPluginType_Editor.calculateBoolean2742_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -172,24 +153,6 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refCell_plugin_1206111775837(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean2742_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean2742_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean2742_2(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
   public static class _Inline2742_0 extends AbstractCellProvider {

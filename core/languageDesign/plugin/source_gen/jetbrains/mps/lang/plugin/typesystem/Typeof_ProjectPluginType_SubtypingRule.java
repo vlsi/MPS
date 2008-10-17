@@ -13,7 +13,7 @@ public class Typeof_ProjectPluginType_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode pluginType) {
-    return new QuotationClass_3().createNode();
+    return new _Quotations.QuotationClass_4().createNode();
   }
 
   public String getApplicableConceptFQName() {

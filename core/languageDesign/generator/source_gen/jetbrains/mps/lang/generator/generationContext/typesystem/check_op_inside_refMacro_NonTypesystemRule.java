@@ -18,7 +18,7 @@ public class check_op_inside_refMacro_NonTypesystemRule extends AbstractNonTypes
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     if (!((SNodeOperations.getAncestor(op, "jetbrains.mps.lang.generator.structure.ReferenceMacro", false, false) != null))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(op, "such an operation may be used only inside ref.macro", "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.helgins)", "1221220343089", intentionProvider);
+      typeCheckingContext.reportTypeError(op, "such an operation may be used only inside ref.macro", "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "1221220343089", intentionProvider);
     }
   }
 

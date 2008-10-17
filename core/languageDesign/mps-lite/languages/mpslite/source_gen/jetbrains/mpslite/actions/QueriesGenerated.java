@@ -45,7 +45,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1196942343253(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new QuotationClass_0().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new _Quotations.QuotationClass_0().createNode());
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LinePart_1182843946099(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -57,7 +57,7 @@ public class QueriesGenerated {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode part = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mpslite.structure.ConstantLinePart", null);
+            SNode part = SModelOperations.createNewNode(model, "jetbrains.mpslite.structure.ConstantLinePart", null);
             SPropertyOperations.set(part, "text", pattern.substring(1));
             return part;
           }

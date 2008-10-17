@@ -16,7 +16,7 @@ public class ParameterQueryFun_Behavior {
     if ((parameterType == null)) {
       return null;
     }
-    return new QuotationClass_0().createNode(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.IFeature", false, false), "parameterType", true));
+    return new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.IFeature", false, false), "parameterType", true));
   }
 
 }

@@ -21,7 +21,7 @@ public class typeof_PatternExpression_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = patternExpression;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(patternExpression1, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.helgins)", "1223981705732", true), new QuotationClass_0().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpression1, "patternNode", true))), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.helgins)", "1223981705727", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(patternExpression1, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1223981705732", true), new _Quotations.QuotationClass_0().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpression1, "patternNode", true)), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1223981705727", intentionProvider);
     }
   }
 

@@ -10,7 +10,7 @@ public class ConstrainedDataTypeDeclaration_Behavior {
   }
 
   public static SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
-    return new QuotationClass_1().createNode();
+    return new _Quotations.QuotationClass_1().createNode();
   }
 
 }

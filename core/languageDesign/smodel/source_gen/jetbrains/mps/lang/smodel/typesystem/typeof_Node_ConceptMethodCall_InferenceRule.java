@@ -19,13 +19,13 @@ public class typeof_Node_ConceptMethodCall_InferenceRule extends AbstractInferen
   public void applyRule(final SNode conceptMethodCall, final TypeCheckingContext typeCheckingContext) {
     if (!((SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false) != null))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(conceptMethodCall, "no method declaration", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1179410829052", intentionProvider);
+      typeCheckingContext.reportTypeError(conceptMethodCall, "no method declaration", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179410829052", intentionProvider);
     }
     int actCount = SLinkOperations.getCount(conceptMethodCall, "actualArgument");
     int expCount = SLinkOperations.getCount(SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false), "parameter");
     if (!(actCount == expCount)) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(conceptMethodCall, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1179410886099", intentionProvider);
+      typeCheckingContext.reportTypeError(conceptMethodCall, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179410886099", intentionProvider);
     }
     {
       SNode arg;
@@ -44,14 +44,14 @@ public class typeof_Node_ConceptMethodCall_InferenceRule extends AbstractInferen
         {
           SNode _nodeToCheck_1029348928467 = conceptMethodCall;
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(arg, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1179411075565", true), typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1179411084134", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1179411081637", false, 0, intentionProvider);
+          typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(arg, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179411075565", true), typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179411084134", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179411081637", false, 0, intentionProvider);
         }
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = conceptMethodCall;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(conceptMethodCall, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1179410528345", true), SLinkOperations.getTarget(SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false), "returnType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1179410535708", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(conceptMethodCall, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179410528345", true), SLinkOperations.getTarget(SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false), "returnType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179410535708", intentionProvider);
     }
   }
 

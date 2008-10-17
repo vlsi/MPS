@@ -18,7 +18,7 @@ public class typeof_MoneyGetCurrencyMethodCall_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = moneyGetCurrencyMethodCall;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(moneyGetCurrencyMethodCall, "r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.helgins)", "1187360333780", true), new QuotationClass_6().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.helgins)", "1187360333778", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(moneyGetCurrencyMethodCall, "r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)", "1187360333780", true), new _Quotations.QuotationClass_6().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)", "1187360333778", intentionProvider);
     }
   }
 

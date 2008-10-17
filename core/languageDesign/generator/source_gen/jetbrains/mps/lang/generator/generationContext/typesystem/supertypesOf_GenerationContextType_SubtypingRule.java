@@ -13,7 +13,7 @@ public class supertypesOf_GenerationContextType_SubtypingRule extends SubtypingR
   }
 
   public SNode getSubOrSuperType(SNode generationContextType) {
-    return new QuotationClass_0().createNode();
+    return new _Quotations.QuotationClass_0().createNode();
   }
 
   public String getApplicableConceptFQName() {

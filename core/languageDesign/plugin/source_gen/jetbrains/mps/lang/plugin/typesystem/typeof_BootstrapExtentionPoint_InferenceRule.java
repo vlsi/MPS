@@ -18,7 +18,7 @@ public class typeof_BootstrapExtentionPoint_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = bootstrapExtentionPoint;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(bootstrapExtentionPoint, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.helgins)", "1206194321751", true), new QuotationClass_5().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.helgins)", "1206194327756", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(bootstrapExtentionPoint, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206194321751", true), new _Quotations.QuotationClass_6().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206194327756", false, 0, intentionProvider);
     }
   }
 

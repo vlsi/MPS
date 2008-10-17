@@ -32,7 +32,7 @@ public class FunctionType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new QuotationClass_0().createNode();
+    return new _Quotations.QuotationClass_0().createNode();
   }
 
   public static String call_getRuntimeSignature_1213877404927(SNode thisNode) {

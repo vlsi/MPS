@@ -21,11 +21,11 @@ public class typeOf_LinkList_AddChildOperation_InferenceRule extends AbstractInf
     if ((parameter != null)) {
       final SNode ExpectedType_typevar_1206101161890 = typeCheckingContext.createNewRuntimeTypesVariable();
       RulesUtil.equate_inputNodeType(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(ExpectedType_typevar_1206101161890));
-      SNode parmType = typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205272443654", true);
+      SNode parmType = typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205272443654", true);
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(parmType, typeCheckingContext.getEquationManager().getRepresentator(ExpectedType_typevar_1206101161890), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1205272443656", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation(parmType, typeCheckingContext.getEquationManager().getRepresentator(ExpectedType_typevar_1206101161890), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205272443656", false, 0, intentionProvider);
       }
     }
   }

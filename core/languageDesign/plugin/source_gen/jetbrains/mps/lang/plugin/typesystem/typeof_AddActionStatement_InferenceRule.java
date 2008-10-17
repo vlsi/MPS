@@ -19,7 +19,7 @@ public class typeof_AddActionStatement_InferenceRule extends AbstractInferenceRu
     {
       SNode _nodeToCheck_1029348928467 = addActionStatement;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(SLinkOperations.getTarget(addActionStatement, "expression", true), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.helgins)", "1207145538621", true), new QuotationClass_6().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.helgins)", "1207145552839", true, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(SLinkOperations.getTarget(addActionStatement, "expression", true), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1207145538621", true), new _Quotations.QuotationClass_7().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1207145552839", true, 0, intentionProvider);
     }
   }
 

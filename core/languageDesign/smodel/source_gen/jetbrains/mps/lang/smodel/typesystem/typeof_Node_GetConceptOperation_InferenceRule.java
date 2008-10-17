@@ -25,11 +25,11 @@ public class typeof_Node_GetConceptOperation_InferenceRule extends AbstractInfer
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1210625778386", true), new QuotationClass_91().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1210625806639", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1210625778386", true), new _Quotations.QuotationClass_94().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1210625806639", false, 0, intentionProvider);
     }
     SNode operand = SLinkOperations.getTarget(SNodeOperations.getParent(op), "operand", true);
     {
-      final SNode operandType = typeCheckingContext.typeOf(operand, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1210625639214", false);
+      final SNode operandType = typeCheckingContext.typeOf(operand, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1210625639214", false);
       typeCheckingContext.whenConcrete(operandType, new Runnable() {
 
         public void run() {
@@ -41,14 +41,14 @@ public class typeof_Node_GetConceptOperation_InferenceRule extends AbstractInfer
                 {
                   SNode _nodeToCheck_1029348928467 = op;
                   BaseIntentionProvider intentionProvider = null;
-                  typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1210625860175", true), new QuotationClass_92().createNode(SLinkOperations.getTarget(coercedNode_3, "concept", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1210625868819", intentionProvider);
+                  typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1210625860175", true), new _Quotations.QuotationClass_95().createNode(SLinkOperations.getTarget(coercedNode_3, "concept", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1210625868819", intentionProvider);
                 }
               }
             }
           }
         }
 
-      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1210625578392");
+      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1210625578392");
     }
   }
 

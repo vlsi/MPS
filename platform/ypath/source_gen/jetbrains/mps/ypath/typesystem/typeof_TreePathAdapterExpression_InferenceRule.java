@@ -21,7 +21,7 @@ public class typeof_TreePathAdapterExpression_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = exp;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521), typeCheckingContext.typeOf(SLinkOperations.getTarget(exp, "expression", true), "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1190288685890", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1190288669877", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521), typeCheckingContext.typeOf(SLinkOperations.getTarget(exp, "expression", true), "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1190288685890", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1190288669877", intentionProvider);
     }
     {
       final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521);
@@ -31,18 +31,18 @@ public class typeof_TreePathAdapterExpression_InferenceRule extends AbstractInfe
           final SNode treePathType = SLinkOperations.getTarget(SLinkOperations.getTarget(exp, "treepathAspect", false), "treePathType", true);
           if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521), SLinkOperations.getTarget(treePathType, "nodeType", true)))) {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportTypeError(SLinkOperations.getTarget(exp, "expression", true), "Incompatible type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1196166858319", intentionProvider);
+            typeCheckingContext.reportTypeError(SLinkOperations.getTarget(exp, "expression", true), "Incompatible type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1196166858319", intentionProvider);
           }
           if ((SLinkOperations.getTarget(treePathType, "nodeType", true) != null)) {
             {
               SNode _nodeToCheck_1029348928467 = exp;
               BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.createEquation(typeCheckingContext.typeOf(exp, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223982595295", true), new QuotationClass_0().createNode(typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223982595290", intentionProvider);
+              typeCheckingContext.createEquation(typeCheckingContext.typeOf(exp, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595295", true), new _Quotations.QuotationClass_0().createNode(typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595290", intentionProvider);
             }
           }
         }
 
-      }, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1190288695814");
+      }, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1190288695814");
     }
   }
 

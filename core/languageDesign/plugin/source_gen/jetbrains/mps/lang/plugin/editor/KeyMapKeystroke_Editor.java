@@ -18,8 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
@@ -160,13 +158,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return KeyMapKeystroke_Editor.calculateBoolean0302_2(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
         }
 
@@ -180,13 +172,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return KeyMapKeystroke_Editor.calculateColor0302_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -201,13 +187,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return KeyMapKeystroke_Editor.calculateBoolean0302_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -220,13 +200,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return KeyMapKeystroke_Editor.calculateColor0302_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -241,13 +215,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return KeyMapKeystroke_Editor.calculateBoolean0302_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -260,13 +228,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return KeyMapKeystroke_Editor.calculateBoolean0302_3(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -281,13 +243,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PADDING_LEFT, 0.0);
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return KeyMapKeystroke_Editor.calculateBoolean0302_4(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -314,48 +270,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1219070165604_1219070165604(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor0302_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.blue;
-    return result;
-  }
-
-  private static Color calculateColor0302_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.blue;
-    return result;
-  }
-
-  public static Boolean calculateBoolean0302_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean0302_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean0302_2(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean0302_3(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean0302_4(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
   public static class KeyMapKeystroke_modifiers_cellMenu0 extends AbstractCellMenuPart_PropertyValues {

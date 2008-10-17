@@ -13,7 +13,7 @@ public class Typeof_ToolType_Instanceof_BaseTool_SubtypingRule extends Subtyping
   }
 
   public SNode getSubOrSuperType(SNode toolType) {
-    return new QuotationClass_8().createNode();
+    return new _Quotations.QuotationClass_9().createNode();
   }
 
   public String getApplicableConceptFQName() {

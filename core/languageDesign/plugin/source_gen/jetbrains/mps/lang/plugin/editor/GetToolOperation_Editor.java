@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -117,13 +116,7 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return GetToolOperation_Editor.calculateBoolean8845_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
         }
 
       };
@@ -150,12 +143,6 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refCell_tool_1209909966445(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean8845_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
   public static class _Inline8845_0 extends AbstractCellProvider {

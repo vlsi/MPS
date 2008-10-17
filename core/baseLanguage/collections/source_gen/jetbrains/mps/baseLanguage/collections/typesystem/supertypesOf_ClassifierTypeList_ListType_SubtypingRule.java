@@ -8,13 +8,13 @@ import jetbrains.mps.smodel.SNode;
 
 public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  /* package */Pattern_0 myMatchingPattern;
+  /* package */_Patterns.Pattern_0 myMatchingPattern;
 
   public supertypesOf_ClassifierTypeList_ListType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode node) {
-    return new QuotationClass_38().createNode(this.myMatchingPattern.PatternVar0);
+    return new _Quotations.QuotationClass_39().createNode(this.myMatchingPattern.PatternVar0);
   }
 
   public String getApplicableConceptFQName() {
@@ -22,7 +22,7 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new Pattern_0();
+    this.myMatchingPattern = new _Patterns.Pattern_0();
     return this.myMatchingPattern.match(argument);
   }
 

@@ -14,7 +14,7 @@ public class TreePathType_extends_SequenceType_SubtypingRule extends SubtypingRu
   }
 
   public SNode getSubOrSuperType(SNode treepath) {
-    return new QuotationClass_3().createNode(SLinkOperations.getTarget(treepath, "nodeType", true));
+    return new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(treepath, "nodeType", true));
   }
 
   public String getApplicableConceptFQName() {

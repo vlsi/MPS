@@ -23,7 +23,7 @@ public class typeof_Node_GetReferentSearchScopeOperation_InferenceRule extends A
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1221168249378", true), new QuotationClass_100().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1221168255365", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168249378", true), new _Quotations.QuotationClass_99().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168255365", intentionProvider);
     }
     // generic check 
     RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
@@ -31,14 +31,14 @@ public class typeof_Node_GetReferentSearchScopeOperation_InferenceRule extends A
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "operationContext", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1221167442901", true), new QuotationClass_99().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1221167466283", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "operationContext", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221167442901", true), new _Quotations.QuotationClass_100().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221167466283", false, 0, intentionProvider);
     }
     // check link role argument
     final SNode linkDecl = SLinkOperations.getTarget(op, "referenceLink", false);
     if (linkDecl != null) {
       if (!(SPropertyOperations.hasValue(linkDecl, "metaClass", "reference", "reference"))) {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(op, "reference link is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1221168677396", intentionProvider);
+        typeCheckingContext.reportTypeError(op, "reference link is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168677396", intentionProvider);
       }
       final SNode Concept_typevar_1221168662799 = typeCheckingContext.createNewRuntimeTypesVariable();
       RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1221168662799));
@@ -51,11 +51,11 @@ public class typeof_Node_GetReferentSearchScopeOperation_InferenceRule extends A
             List<SNode> declaredLinks = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(inputNodeConcept);
             if (!(ListSequence.fromList(declaredLinks).contains(linkDecl))) {
               BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1221168662817", intentionProvider);
+              typeCheckingContext.reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168662817", intentionProvider);
             }
           }
 
-        }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1221168662804");
+        }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168662804");
       }
     }
   }

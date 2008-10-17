@@ -18,7 +18,7 @@ public class typeof_MoneyCreator_InferenceRule extends AbstractInferenceRule_Run
     {
       SNode _nodeToCheck_1029348928467 = moneyCreator;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(moneyCreator, "r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.helgins)", "1187621956855", true), new QuotationClass_8().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.helgins)", "1187621962983", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(moneyCreator, "r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)", "1187621956855", true), new _Quotations.QuotationClass_8().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)", "1187621962983", intentionProvider);
     }
   }
 

@@ -13,12 +13,12 @@ public class PrimitiveDataTypeDeclaration_Behavior {
 
   public static SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
     if (Primitives.INTEGER_TYPE.equals(SPropertyOperations.getString(thisNode, "name"))) {
-      return new QuotationClass_2().createNode();
+      return new _Quotations.QuotationClass_2().createNode();
     }
     if (Primitives.BOOLEAN_TYPE.equals(SPropertyOperations.getString(thisNode, "name"))) {
-      return new QuotationClass_3().createNode();
+      return new _Quotations.QuotationClass_3().createNode();
     }
-    return new QuotationClass_4().createNode();
+    return new _Quotations.QuotationClass_4().createNode();
   }
 
   public static boolean call_isString_1220268752134(SNode thisNode) {

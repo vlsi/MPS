@@ -13,7 +13,7 @@ public class Typeof_Action_SubtypingRule extends SubtypingRule_Runtime implement
   }
 
   public SNode getSubOrSuperType(SNode actionType) {
-    return new QuotationClass_13().createNode();
+    return new _Quotations.QuotationClass_13().createNode();
   }
 
   public String getApplicableConceptFQName() {

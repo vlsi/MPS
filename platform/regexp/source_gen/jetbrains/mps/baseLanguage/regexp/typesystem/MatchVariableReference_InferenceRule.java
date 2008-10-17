@@ -18,7 +18,7 @@ public class MatchVariableReference_InferenceRule extends AbstractInferenceRule_
     {
       SNode _nodeToCheck_1029348928467 = mvr;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(mvr, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.helgins)", "1222428222364", true), new QuotationClass_0().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.helgins)", "1222428222362", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(mvr, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1222428222364", true), new _Quotations.QuotationClass_0().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1222428222362", intentionProvider);
     }
   }
 

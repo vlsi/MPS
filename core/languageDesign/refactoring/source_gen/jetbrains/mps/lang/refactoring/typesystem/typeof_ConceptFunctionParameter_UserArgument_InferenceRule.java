@@ -22,7 +22,7 @@ public class typeof_ConceptFunctionParameter_UserArgument_InferenceRule extends 
     {
       SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_UserArgument;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(SLinkOperations.getTarget(requiredUserEnteredArgument, "argumentType", true), typeCheckingContext.typeOf(conceptFunctionParameter_UserArgument, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.helgins)", "1192795196477", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.helgins)", "1192795194145", intentionProvider);
+      typeCheckingContext.createEquation(SLinkOperations.getTarget(requiredUserEnteredArgument, "argumentType", true), typeCheckingContext.typeOf(conceptFunctionParameter_UserArgument, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1192795196477", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1192795194145", intentionProvider);
     }
   }
 

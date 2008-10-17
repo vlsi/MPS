@@ -28,7 +28,7 @@ public class typeof_SLinkAccess_InferenceRule extends AbstractInferenceRule_Runt
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1206103331026", true), new QuotationClass_71().createNode(SLinkOperations.getTarget(linkDecl, "target", false), SPropertyOperations.hasValue(linkDecl, "metaClass", "aggregation", "reference") + ""), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1206103335045", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206103331026", true), new _Quotations.QuotationClass_13().createNode(SLinkOperations.getTarget(linkDecl, "target", false), SPropertyOperations.hasValue(linkDecl, "metaClass", "aggregation", "reference") + "", typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206103335045", intentionProvider);
     }
     // ---
     RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
@@ -43,11 +43,11 @@ public class typeof_SLinkAccess_InferenceRule extends AbstractInferenceRule_Runt
           List<SNode> declaredLinks = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(inputNodeConcept);
           if (!(ListSequence.fromList(declaredLinks).contains(linkDecl))) {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1186062499482", intentionProvider);
+            typeCheckingContext.reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186062499482", intentionProvider);
           }
         }
 
-      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1186062479067");
+      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186062479067");
     }
   }
 

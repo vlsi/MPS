@@ -21,7 +21,7 @@ public class ChildrenBlock_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return new QuotationClass_6().createNode(TreePath_Behavior.call_getNodeType_1213877481303(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.TreePath", false, false)));
+    return new _Quotations.QuotationClass_6().createNode(TreePath_Behavior.call_getNodeType_1213877481303(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.TreePath", false, false)));
   }
 
 }

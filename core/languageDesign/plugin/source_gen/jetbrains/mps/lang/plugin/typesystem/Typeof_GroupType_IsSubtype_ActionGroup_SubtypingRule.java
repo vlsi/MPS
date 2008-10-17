@@ -13,7 +13,7 @@ public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends Subtyp
   }
 
   public SNode getSubOrSuperType(SNode groupType) {
-    return new QuotationClass_7().createNode();
+    return new _Quotations.QuotationClass_8().createNode();
   }
 
   public String getApplicableConceptFQName() {

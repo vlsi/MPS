@@ -21,7 +21,7 @@ public class typeof_Quotation_InferenceRule extends AbstractInferenceRule_Runtim
     {
       SNode _nodeToCheck_1029348928467 = quotation;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(quotationNode, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.helgins)", "1196858483112", true), new QuotationClass_0().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(quotationNode, "quotedNode", true))), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.helgins)", "1196858483110", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(quotationNode, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196858483112", true), new _Quotations.QuotationClass_0().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(quotationNode, "quotedNode", true)), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196858483110", intentionProvider);
     }
   }
 

@@ -14,7 +14,7 @@ public class Complex_is_Numeric_SubtypingRule extends SubtypingRule_Runtime impl
   }
 
   public SNode getSubOrSuperType(SNode complexType) {
-    return SLinkOperations.getTarget(new QuotationClass_3().createNode(), "descriptor", false);
+    return SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "descriptor", false);
   }
 
   public String getApplicableConceptFQName() {

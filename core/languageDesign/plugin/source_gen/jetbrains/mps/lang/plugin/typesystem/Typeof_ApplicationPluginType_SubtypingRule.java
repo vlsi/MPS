@@ -13,7 +13,7 @@ public class Typeof_ApplicationPluginType_SubtypingRule extends SubtypingRule_Ru
   }
 
   public SNode getSubOrSuperType(SNode customApplicationPluginType) {
-    return new QuotationClass_11().createNode();
+    return new _Quotations.QuotationClass_12().createNode();
   }
 
   public String getApplicableConceptFQName() {

@@ -165,12 +165,12 @@ public class AbstractConceptDeclaration_Behavior {
 
   public static SNode call_getAdapterType_1213877394418(SNode thisNode) {
     if (thisNode == null) {
-      return new QuotationClass_5().createNode();
+      return new _Quotations.QuotationClass_5().createNode();
     }
     String adapterClassFqName = NameUtil.nodeFQName(thisNode);
     Object adapterClassAdapter = SModelUtil_new.findNodeByFQName(adapterClassFqName, Classifier.class, GlobalScope.getInstance());
     SNode adapterClass = BaseAdapter.fromAdapter((INodeAdapter)adapterClassAdapter);
-    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new QuotationClass_6().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new _Quotations.QuotationClass_6().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(adapterClassType, "classifier", adapterClass, false);
     return adapterClassType;
   }

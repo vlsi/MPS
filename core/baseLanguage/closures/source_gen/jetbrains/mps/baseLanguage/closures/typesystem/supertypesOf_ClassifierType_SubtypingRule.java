@@ -30,7 +30,7 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
           paramTypes.add(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(p, "type", true), ct));
         }
         SNode resType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), ct);
-        supertypes = Collections.singletonList(new QuotationClass_0().createNode(paramTypes, resType));
+        supertypes = Collections.singletonList(new _Quotations.QuotationClass_0().createNode(paramTypes, resType));
       }
     }
     return supertypes;

@@ -32,7 +32,7 @@ public class check_Antiquotation_NonTypesystemRule extends AbstractNonTypesystem
           if (SLinkOperations.getTarget(matchedNode_0, "quotedNode", true) == annotatedNode) {
             {
               BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.reportTypeError(antiquotation, "node antiquotation should not be used on a quoted node itself", "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.helgins)", "1202840754879", intentionProvider);
+              typeCheckingContext.reportTypeError(antiquotation, "node antiquotation should not be used on a quoted node itself", "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1202840754879", intentionProvider);
             }
           }
           break;

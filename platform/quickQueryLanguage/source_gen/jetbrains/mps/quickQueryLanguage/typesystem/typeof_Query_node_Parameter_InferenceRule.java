@@ -21,7 +21,7 @@ public class typeof_Query_node_Parameter_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = parameter;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.helgins)", "1218797220572", true), new QuotationClass_0().createNode(functionParameter), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.helgins)", "1218797226779", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.typesystem)", "1218797220572", true), new _Quotations.QuotationClass_0().createNode(functionParameter, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.typesystem)", "1218797226779", intentionProvider);
     }
   }
 

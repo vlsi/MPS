@@ -101,7 +101,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1194616749686(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new QuotationClass_0().createNode(), false, false);
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new _Quotations.QuotationClass_0().createNode(), false, false);
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1198013650814(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -176,7 +176,7 @@ public class QueriesGenerated {
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode vpd = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.ypath.structure.VisitParameterDeclaration", null);
+          SNode vpd = SModelOperations.createNewNode(model, "jetbrains.mps.ypath.structure.VisitParameterDeclaration", null);
           SLinkOperations.setTarget(vpd, "type", nodeToWrap, true);
           return vpd;
         }

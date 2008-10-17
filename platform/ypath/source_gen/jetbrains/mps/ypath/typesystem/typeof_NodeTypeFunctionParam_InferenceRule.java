@@ -21,7 +21,7 @@ public class typeof_NodeTypeFunctionParam_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223208178732", true), new QuotationClass_9().createNode(SNodeOperations.getConceptDeclaration(nodeType), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1223208178730", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223208178732", true), new _Quotations.QuotationClass_9().createNode(SNodeOperations.getConceptDeclaration(nodeType), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223208178730", intentionProvider);
     }
   }
 

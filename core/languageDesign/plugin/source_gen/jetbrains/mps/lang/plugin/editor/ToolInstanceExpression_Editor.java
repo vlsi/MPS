@@ -9,9 +9,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class ToolInstanceExpression_Editor extends DefaultNodeEditor {
 
@@ -33,13 +32,7 @@ public class ToolInstanceExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return ToolInstanceExpression_Editor.calculateFontStyle6263_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
 
       };
@@ -48,12 +41,6 @@ public class ToolInstanceExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1204471477599_1204471477599(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle6263_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
   }
 
 }

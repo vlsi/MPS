@@ -21,7 +21,7 @@ public class typeof_MigrationScriptPart_node_InferenceRule extends AbstractInfer
     {
       SNode _nodeToCheck_1029348928467 = node;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.helgins)", "1209063748604", true), new QuotationClass_0().createNode(affectedConcept), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.helgins)", "1209063748602", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)", "1209063748604", true), new _Quotations.QuotationClass_0().createNode(affectedConcept, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)", "1209063748602", intentionProvider);
     }
   }
 

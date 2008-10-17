@@ -21,7 +21,7 @@ public class typeof_ReturnStatement_InferenceRule extends AbstractInferenceRule_
     if (false && (SNodeOperations.getAncestor(returnStatement, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) != null)) {
       if (!(false)) {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(returnStatement, "return is not allowed within closure literal", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.helgins)", "1200829870877", intentionProvider);
+        typeCheckingContext.reportTypeError(returnStatement, "return is not allowed within closure literal", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1200829870877", intentionProvider);
       }
     }
   }

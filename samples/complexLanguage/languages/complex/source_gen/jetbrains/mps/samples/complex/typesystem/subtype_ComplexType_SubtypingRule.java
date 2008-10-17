@@ -13,7 +13,7 @@ public class subtype_ComplexType_SubtypingRule extends SubtypingRule_Runtime imp
   }
 
   public SNode getSubOrSuperType(SNode doubleType) {
-    return new QuotationClass_2().createNode();
+    return new _Quotations.QuotationClass_2().createNode();
   }
 
   public String getApplicableConceptFQName() {

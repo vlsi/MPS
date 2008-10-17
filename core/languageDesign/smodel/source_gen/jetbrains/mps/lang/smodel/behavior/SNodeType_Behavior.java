@@ -40,7 +40,7 @@ public class SNodeType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new QuotationClass_1().createNode();
+    return new _Quotations.QuotationClass_1().createNode();
   }
 
   public static boolean virtual_selectOnVariableCreation_1213877337352(SNode thisNode) {

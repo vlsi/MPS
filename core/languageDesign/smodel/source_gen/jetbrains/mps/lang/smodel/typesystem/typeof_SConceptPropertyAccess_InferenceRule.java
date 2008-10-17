@@ -33,34 +33,34 @@ public class typeof_SConceptPropertyAccess_InferenceRule extends AbstractInferen
           RulesUtil.checkAssignableConcept(typeCheckingContext, (SNode)typeCheckingContext.getEquationManager().getRepresentator(concreteConcept), declaringConcept, op, "operation is applied to wrong concept");
         }
 
-      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1186060002359");
+      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186060002359");
     }
     // ==========
     if (SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration")) {
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1203710663195", true), new QuotationClass_16().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1203710663193", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710663195", true), new _Quotations.QuotationClass_24().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710663193", intentionProvider);
       }
     } else
     if (SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration")) {
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1203710667949", true), new QuotationClass_17().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1203710667947", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710667949", true), new _Quotations.QuotationClass_25().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710667947", intentionProvider);
       }
     } else
     if (SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1203710671344", true), new QuotationClass_18().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1203710671342", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710671344", true), new _Quotations.QuotationClass_26().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710671342", intentionProvider);
       }
     } else
     {
       {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.helgins)", "1186059822707", intentionProvider);
+        typeCheckingContext.reportTypeError(op, "unknown type of concept property: " + conceptPropertyDecl, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059822707", intentionProvider);
       }
     }
   }

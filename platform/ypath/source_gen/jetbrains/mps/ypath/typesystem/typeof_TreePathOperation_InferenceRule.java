@@ -31,14 +31,14 @@ public class typeof_TreePathOperation_InferenceRule extends AbstractInferenceRul
           {
             SNode _nodeToCheck_1029348928467 = op;
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1178551167102", true), typeCheckingContext.typeOf(matchedNode_0, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1178551167104", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1178551167101", intentionProvider);
+            typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1178551167102", true), typeCheckingContext.typeOf(matchedNode_0, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1178551167104", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1178551167101", intentionProvider);
           }
           break;
         }
       }
       {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(op, "Error in model structure: wrong parent type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.helgins)", "1190288908359", intentionProvider);
+        typeCheckingContext.reportTypeError(op, "Error in model structure: wrong parent type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1190288908359", intentionProvider);
       }
     } while(false);
   }

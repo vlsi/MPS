@@ -46,7 +46,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return ListSequence.<SNode>fromArray(new QuotationClass_2().createNode(), new QuotationClass_3().createNode(), new QuotationClass_4().createNode());
+            return ListSequence.<SNode>fromArray(new _Quotations.QuotationClass_0().createNode(), new _Quotations.QuotationClass_1().createNode(), new _Quotations.QuotationClass_2().createNode());
           }
 
         };
@@ -84,7 +84,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return SLinkOperations.getTargets(SLinkOperations.getTarget(new QuotationClass_0().createNode(), "classifier", false), "staticField", true);
+            return SLinkOperations.getTargets(SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "classifier", false), "staticField", true);
           }
 
         };
@@ -103,7 +103,7 @@ public class QueriesGenerated {
                 SNode annotation = ListSequence.fromList(SLinkOperations.getTargets((item), "annotation", true)).where(new IWhereFilter <SNode>() {
 
                   public boolean accept(SNode it) {
-                    return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(new QuotationClass_5().createNode(), "classifier", false), "name"));
+                    return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "classifier", false), "name"));
                   }
 
                 }).first();
@@ -179,7 +179,7 @@ public class QueriesGenerated {
           public Object calculate() {
             List<SNode> correntNodes = new ArrayList<SNode>();
             for(SNode classNode : SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-              if (ClassConcept_Behavior.call_isDescendant_1213877355812(classNode, SLinkOperations.getTarget(new QuotationClass_1().createNode(), "classifier", false))) {
+              if (ClassConcept_Behavior.call_isDescendant_1213877355812(classNode, SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "classifier", false))) {
                 ListSequence.fromList(correntNodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classNode, "constructor", true)));
               }
             }
