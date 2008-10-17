@@ -28,6 +28,7 @@ public class BaseTransformationTest extends TestCase {
 
   public void intitTest(String projectName, final String model) throws Exception {
     final MPSProject project = myContainer.getProject(Macros.mpsHomeMacros().expandPath(projectName, ((IFile)null)));
+    System.err.println("Project " + project);
     final BaseTransformationTest test = this;
     SwingUtilities.invokeAndWait(new Runnable() {
 
@@ -36,7 +37,11 @@ public class BaseTransformationTest extends TestCase {
 
           public void run() {
             IdeMain.setTestMode(true);
-            test.myModel = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model));
+            System.err.println("Model name " + model);
+            SModelReference sModelReference = SModelReference.fromString(model);
+            System.err.println("Reference " + sModelReference);
+            test.myModel = SModelRepository.getInstance().getModelDescriptor(sModelReference);
+            System.err.println("Model " + test.myModel);
             ModuleContext context = ModuleContext.create(test.myModel, project, false);
             TransientModelsModule module = context.getComponent(TransientModelsModule.class);
             test.myTransidentModel = module.createTransientModel("testTransidentModel", "testTransidentModel");
