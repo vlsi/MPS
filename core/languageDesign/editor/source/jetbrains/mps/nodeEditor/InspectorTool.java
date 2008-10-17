@@ -62,7 +62,7 @@ public class InspectorTool extends BaseProjectTool {
 
   public JComponent getComponent() {
     return myComponent;
-  }
+  } 
 
   public void inspect(final SNode node, IOperationContext context, FileEditor fileEditor, @Nullable Runnable afterInspect) {
     myFileEditor = fileEditor;
@@ -74,6 +74,23 @@ public class InspectorTool extends BaseProjectTool {
       }
     });
   }
+
+  public void activate() {
+    //we need this in order for the following code to work:
+    //
+    // inspect(node, context, editor, null);
+    // activate();
+    //
+    // if we won't use runReadInEDT, the openTool(true) call might be called
+    // before node is selected in inspector and focus will be lost.
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        openTool(true);
+      }
+    });
+  }
+
+
 
   private class MyPanel extends JPanel implements DataProvider {
     private MyPanel() {

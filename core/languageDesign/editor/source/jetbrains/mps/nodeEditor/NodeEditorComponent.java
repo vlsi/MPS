@@ -31,7 +31,7 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.ide.DataManager;
 
 public class NodeEditorComponent extends EditorComponent {
-  public static final KeyStroke CHANGE_ORIENTATION_KEYSTROKE = KeyStroke.getKeyStroke("alt shift I");
+  public static final KeyStroke INSPECT_SHORTCUT = KeyStroke.getKeyStroke("alt shift I");
 
   private JPanel myExternalComponent;
   private SNodePointer myLastInspectedNode = new SNodePointer((SNode) null);
@@ -65,15 +65,16 @@ public class NodeEditorComponent extends EditorComponent {
       public void actionPerformed(ActionEvent e) {
         InspectorTool inspectorTool = getInspectorTool();
         if (inspectorTool == null) return;
-        inspectorTool.openTool(true);
-
+        inspectorTool.openToolLater(true);
       }
-    }, KeyStroke.getKeyStroke("alt shift I"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, INSPECT_SHORTCUT, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
   public SNode getLastInspectedNode() {
     return myLastInspectedNode.getNode();
   }
+
+  
 
   private void inspect(final SNode toSelect) {
     ModelAccess.instance().runReadAction(new Runnable() {
