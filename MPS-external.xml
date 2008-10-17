@@ -278,9 +278,9 @@
     <antcall target="pack.ypath.test" />
     <antcall target="pack.jetbrains.mps.ypath" />
     <antcall target="pack.jetbrains.mps.buildlanguage" />
-    <antcall target="pack.jetbrains.mps.build.packagingLanguage" />
-    <antcall target="pack.jetbrains.mps.build.moduleDependencyLanguage" />
-    <antcall target="pack.jetbrains.mps.propertylanguage" />
+    <antcall target="pack.jetbrains.mps.build.packaging" />
+    <antcall target="pack.jetbrains.mps.build.dependency" />
+    <antcall target="pack.jetbrains.mps.build.property" />
     <antcall target="pack.jetbrains.mps.bookLanguage" />
     <antcall target="pack.jetbrains.mps.baseLanguage.regexp" />
     <antcall target="pack.jetbrains.mps.baseLanguage.regexp.examples" />

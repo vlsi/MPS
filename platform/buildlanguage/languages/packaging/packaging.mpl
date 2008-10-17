@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language namespace="jetbrains.mps.build.packaging" uuid="4e6c5313-7662-4c44-9bc7-b488cec17508" generatorOutputPath="${language_descriptor}\source_gen" java-stubs-enabled="true" compileInMPS="false">
+  <models>
+    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.build.packaging" />
+    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.build.packaging" />
+  </models>
+  <accessoryModels />
+  <generators>
+    <generator generatorUID="jetbrains.mps.mpsLayoutLanguage#1203014923802" uuid="ab777ef3-cd35-47a2-8db1-108b4d67986f">
+      <models>
+        <modelRoot path="${language_descriptor}\generator\buildlanguage\template" namespacePrefix="jetbrains.mps.build.packaging.generator.buildlanguage.template" />
+      </models>
+      <external-templates />
+      <dependencies>
+        <dependency reexport="true">0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</dependency>
+        <dependency reexport="false">500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)</dependency>
+      </dependencies>
+      <usedLanguages>
+        <usedLanguages>3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)</usedLanguages>
+        <usedLanguages>500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)</usedLanguages>
+      </usedLanguages>
+      <mapping-priorities />
+    </generator>
+  </generators>
+  <classPath>
+    <entry path="${mps_home}\platform\buildlanguage\classes" />
+  </classPath>
+  <languageRuntimeClassPath />
+  <sourcePath />
+  <dependencies>
+    <dependency reexport="true">0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</dependency>
+    <dependency reexport="true">dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc(jetbrains.mps.build.property)</dependency>
+    <dependency reexport="false">df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</dependency>
+    <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
+    <dependency reexport="false">efeeac01-e569-4878-a3cb-bd0362259b3a(jetbrains.mps.projectLanguage)</dependency>
+    <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>
+    <dependency reexport="false">3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)</dependency>
+    <dependency reexport="false">83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</dependency>
+  </dependencies>
+  <usedLanguages>
+    <usedLanguages>0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</usedLanguages>
+    <usedLanguages>dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc(jetbrains.mps.build.property)</usedLanguages>
+    <usedLanguages>3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)</usedLanguages>
+    <usedLanguages>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</usedLanguages>
+    <usedLanguages>5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)</usedLanguages>
+  </usedLanguages>
+  <extendedLanguages>
+    <extendedLanguage>0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</extendedLanguage>
+    <extendedLanguage>dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc(jetbrains.mps.build.property)</extendedLanguage>
+  </extendedLanguages>
+</language>
+
