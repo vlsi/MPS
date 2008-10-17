@@ -45,11 +45,15 @@ public class NodeEditorComponent extends EditorComponent {
 
     addCellSelectionListener(new CellSelectionListener() {
       public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
-        SNode toSelect = null;
+        final SNode[] toSelect = new SNode[1];
         if (newSelection != null) {
-          toSelect = newSelection.getSNode();
+          toSelect[0] = newSelection.getSNode();
         }
-        inspect(toSelect);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            inspect(toSelect[0]);
+          }
+        });
       }
     });
 
