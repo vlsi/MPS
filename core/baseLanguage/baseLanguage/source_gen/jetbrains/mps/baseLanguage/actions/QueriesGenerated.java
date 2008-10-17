@@ -136,7 +136,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1177503884613(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ArrayType"), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ArrayType"), true) != null);
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1177505054800(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {

@@ -43,7 +43,7 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1197932868400(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getSourceNode());
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), false) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), false) != null);
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_SequenceCreatorWithSupplier_1207757132200(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -120,10 +120,10 @@ public class QueriesGenerated {
           }
           if ((leftExpression != null)) {
             SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
-            if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), false) != null) {
+            if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), false) != null) {
               result.myApplicableToSequence = true;
             }
-            if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.ListType"), false) != null) {
+            if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.ListType"), false) != null) {
               result.myApplicableToList = true;
             }
           }
@@ -145,7 +145,7 @@ public class QueriesGenerated {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode direction = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.collections.structure.SortDirection", _context.getCurrentTargetNode());
+            SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.collections.structure.SortDirection", _context.getCurrentTargetNode());
             SPropertyOperations.set(direction, "value", "" + (true));
             return direction;
           }
@@ -172,7 +172,7 @@ public class QueriesGenerated {
         result.add(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode direction = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.collections.structure.SortDirection", _context.getCurrentTargetNode());
+            SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.collections.structure.SortDirection", _context.getCurrentTargetNode());
             SPropertyOperations.set(direction, "value", "" + (false));
             return direction;
           }
@@ -295,10 +295,10 @@ public class QueriesGenerated {
           }
           if ((leftExpression != null)) {
             SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
-            if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), false) != null) {
+            if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), false) != null) {
               result.myApplicableToSequence = true;
             }
-            if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.ListType"), false) != null) {
+            if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.ListType"), false) != null) {
               result.myApplicableToList = true;
             }
           }

@@ -44,7 +44,7 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189126(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     // use weak coerce because we want ':' to be applicable to SNode (class), linkAccess etc.
-    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
+    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
     return nodeType != null;
   }
 
@@ -131,23 +131,23 @@ public class QueriesGenerated {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
-          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
+          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
           result.myLinkAccessT = linkAccessT;
           if ((linkAccessT != null) && SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
-            if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true) != null) {
+            if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true) != null) {
               result.myLinkToConcept = true;
             }
           }
           // is concept ?
-          if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), false) != null) {
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), false) != null) {
             result.myToConcept = true;
           }
           // is node ?
-          if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
             result.myToNode = true;
           }
           // is smodel ?
-          if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SModelType"), false) != null) {
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SModelType"), false) != null) {
             result.myToModel = true;
           }
           return result;
@@ -335,23 +335,23 @@ public class QueriesGenerated {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = SLinkOperations.getTarget(_context.getParentNode(), "operand", true);
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
-          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
+          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
           result.myLinkAccessT = linkAccessT;
           if ((linkAccessT != null) && SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
-            if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true) != null) {
+            if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true) != null) {
               result.myLinkToConcept = true;
             }
           }
           // is concept ?
-          if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), false) != null) {
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), false) != null) {
             result.myToConcept = true;
           }
           // is node ?
-          if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
             result.myToNode = true;
           }
           // is smodel ?
-          if (TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SModelType"), false) != null) {
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SModelType"), false) != null) {
             result.myToModel = true;
           }
           return result;

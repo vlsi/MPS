@@ -54,13 +54,13 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1168978381110(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     // apply rule if argument is string
     SNode typeOfArgument = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "value", true));
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(typeOfArgument, new QuotationClass_0().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(typeOfArgument, new _Quotations.QuotationClass_0().createNode());
   }
 
   public static boolean baseMappingRule_Condition_1168978822549(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     // apply rule if argument is not string
     SNode typeOfArgument = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "value", true));
-    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeOfArgument, new QuotationClass_1().createNode()));
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeOfArgument, new _Quotations.QuotationClass_1().createNode()));
   }
 
   public static boolean baseMappingRule_Condition_1168979597371(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -166,7 +166,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1206552173985(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     // apply rule if the value is string
     SNode typeOfValue = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rValue", true));
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(typeOfValue, new QuotationClass_2().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(typeOfValue, new _Quotations.QuotationClass_2().createNode());
   }
 
   public static boolean baseMappingRule_Condition_1206558374188(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -528,7 +528,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170386916206(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     return SLinkOperations.getTarget(nodeType, "classifier", false);
   }
 

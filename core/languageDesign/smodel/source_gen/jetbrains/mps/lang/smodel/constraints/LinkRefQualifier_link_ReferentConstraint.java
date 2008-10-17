@@ -56,7 +56,7 @@ public class LinkRefQualifier_link_ReferentConstraint implements IModelConstrain
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode dotOperand = IOperation_Behavior.call_getOperand_1213877410070(SNodeOperations.getParent(_context.getEnclosingNode()));
-    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(dotOperand), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
+    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(dotOperand), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
     if (nodeType == null) {
       return null;
     }

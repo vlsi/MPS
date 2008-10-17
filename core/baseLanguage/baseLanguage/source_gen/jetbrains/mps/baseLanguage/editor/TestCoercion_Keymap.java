@@ -57,37 +57,37 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       String text = "type: " + type;
       {
         text = text + "\n\ncoerce to SequenceType";
-        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
+        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
         text = text + "\nweak  : " + coercedType;
-        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), false);
+        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), false);
         text = text + "\nstrong: " + coercedType;
       }
       {
         text = text + "\n\ncoerce to ListType";
-        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.ListType"), true);
+        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.ListType"), true);
         text = text + "\nweak  : " + coercedType;
-        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.ListType"), false);
+        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.ListType"), false);
         text = text + "\nstrong: " + coercedType;
       }
       {
         text = text + "\n\ncoerce to ClassifierType";
-        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
         text = text + "\nweak  : " + coercedType;
-        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
         text = text + "\nstrong: " + coercedType;
       }
       {
         text = text + "\n\ncoerce to Iterable<..>";
-        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, new _Patterns.Pattern_0(), true);
+        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new _Patterns.Pattern_0(), true);
         text = text + "\nweak  : " + coercedType;
-        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, new _Patterns.Pattern_1(), false);
+        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new _Patterns.Pattern_1(), false);
         text = text + "\nstrong: " + coercedType;
       }
       {
         text = text + "\n\ncoerce to Type";
-        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
+        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
         text = text + "\nweak  : " + coercedType;
-        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), false);
+        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), false);
         text = text + "\nstrong: " + coercedType;
       }
       JOptionPane.showMessageDialog(null, text, node.getDebugText(), JOptionPane.INFORMATION_MESSAGE);

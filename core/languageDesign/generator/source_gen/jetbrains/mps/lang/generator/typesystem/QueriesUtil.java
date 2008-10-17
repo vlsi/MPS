@@ -138,17 +138,17 @@ public class QueriesUtil {
           {
             SNode _nodeToCheck_1029348928467 = null;
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createLessThanInequation(TypeToEquate, new _Quotations.QuotationClass_2().createNode(), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1190121627948", false, 0, intentionProvider);
+            typeCheckingContext.createLessThanInequation(TypeToEquate, new _Quotations.QuotationClass_2().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1190121627948", false, 0, intentionProvider);
           }
           if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(OutputType), "jetbrains.mps.lang.smodel.structure.SNodeListType")) {
             {
               SNode _nodeToCheck_1029348928467 = null;
               BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.createEquation(TypeToEquate, new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(OutputType), "elementConcept", false)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1186132911051", intentionProvider);
+              typeCheckingContext.createEquation(TypeToEquate, new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(typeCheckingContext.getEquationManager().getRepresentator(OutputType), "elementConcept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1186132911051", intentionProvider);
             }
           } else
           {
-            SNode outputSNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(OutputType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
+            SNode outputSNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(OutputType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true, typeCheckingContext);
             if (outputSNodeType != null) {
               {
                 SNode _nodeToCheck_1029348928467 = null;
@@ -157,10 +157,10 @@ public class QueriesUtil {
               }
             } else
             {
-              SNode outputSequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce(typeCheckingContext.getEquationManager().getRepresentator(OutputType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
+              SNode outputSequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(OutputType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true, typeCheckingContext);
               if (outputSequenceType != null) {
                 SNode elementType = SLinkOperations.getTarget(outputSequenceType, "elementType", true);
-                SNode outputSNodeType2 = TypeChecker.getInstance().getRuntimeSupport().coerce(elementType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
+                SNode outputSNodeType2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(elementType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true, typeCheckingContext);
                 if (outputSNodeType2 != null) {
                   {
                     SNode _nodeToCheck_1029348928467 = null;

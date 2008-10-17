@@ -51,7 +51,7 @@ public class InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConst
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode instance = SLinkOperations.getTarget(_context.getEnclosingNode(), "operand", true);
-    SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+    SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     return new InstanceMethodCall_InstanceMethodScope(((ClassifierType)SNodeOperations.getAdapter(classifierType)), _context.getEnclosingNode());
   }
 

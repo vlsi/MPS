@@ -109,7 +109,7 @@ public class QueriesUtil {
 
   public static List<SNode> replaceNodeMenu_FieldReference_getParameterObjects(SNode node) {
     SNode instance = SLinkOperations.getTarget(node, "instance", true);
-    SNode instanceType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+    SNode instanceType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     if (instanceType == null) {
       return new ArrayList<SNode>();
     }

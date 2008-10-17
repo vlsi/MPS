@@ -44,7 +44,7 @@ public class FunctionTypeUtil {
   }
 
   public static SNode getAdaptableTarget(SNode expr, ITemplateGenerator generator) {
-    SNode ntype = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    SNode ntype = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     assert ntype != null;
     List<SNode> targets = FunctionTypeUtil.getAdaptableClassifierTypeTargets(ntype, generator);
     String trgFQname = (String)FunctionTypeUtil.getPrepData(expr, generator);
