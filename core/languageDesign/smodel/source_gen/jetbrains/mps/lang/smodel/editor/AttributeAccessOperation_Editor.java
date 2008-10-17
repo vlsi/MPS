@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
@@ -82,20 +81,8 @@ public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return AttributeAccessOperation_Editor.calculateFontStyle8939_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.LAST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return AttributeAccessOperation_Editor.calculateBoolean8939_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -111,18 +98,6 @@ public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_attributeQualifier_1204762928415(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle8939_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.PLAIN;
-    return result;
-  }
-
-  public static Boolean calculateBoolean8939_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
 }

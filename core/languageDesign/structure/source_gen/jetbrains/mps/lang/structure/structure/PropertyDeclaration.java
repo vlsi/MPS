@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PropertyDeclaration extends BaseConcept implements INamedConcept {
+public class PropertyDeclaration extends BaseConcept implements INamedConcept, IDeprecatable {
   public static final String concept = "jetbrains.mps.lang.structure.structure.PropertyDeclaration";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";

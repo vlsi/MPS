@@ -15,14 +15,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.MPSColors;
 
 public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
@@ -198,20 +196,8 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateFontStyle9117_1(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateColor9117_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         }
 
       };
@@ -224,20 +210,8 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateColor9117_1(cell);
-            }
-
-          });
-          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateColor9117_6(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
         }
 
       };
@@ -250,20 +224,8 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateBoolean9117_1(cell);
-            }
-
-          });
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateFontStyle9117_3(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
 
       };
@@ -276,27 +238,9 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateBoolean9117_3(cell);
-            }
-
-          });
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateFontStyle9117_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateColor9117_3(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
         }
 
       };
@@ -309,27 +253,9 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateBoolean9117_4(cell);
-            }
-
-          });
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateFontStyle9117_4(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateColor9117_5(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
         }
 
       };
@@ -342,13 +268,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateBoolean9117_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -361,27 +281,9 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateBoolean9117_2(cell);
-            }
-
-          });
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateFontStyle9117_2(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateColor9117_2(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
         }
 
       };
@@ -394,27 +296,9 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateFontStyle9117_5(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateColor9117_4(cell);
-            }
-
-          });
-          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return EnumerationMemberDeclaration_Editor.calculateColor9117_7(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+          this.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
         }
 
       };
@@ -456,120 +340,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition9117_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(SNodeOperations.getParent(node), "memberIdentifierPolicy", "custom", "derive_from_presentation");
-  }
-
-  private static Integer calculateFontStyle9117_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Integer calculateFontStyle9117_1(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
-  }
-
-  private static Integer calculateFontStyle9117_2(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Integer calculateFontStyle9117_3(EditorCell cell) {
-    int result;
-    result = MPSFonts.PLAIN;
-    return result;
-  }
-
-  private static Integer calculateFontStyle9117_4(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Integer calculateFontStyle9117_5(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD_ITALIC;
-    return result;
-  }
-
-  private static Color calculateColor9117_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor9117_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.blue;
-    return result;
-  }
-
-  private static Color calculateColor9117_2(EditorCell cell) {
-    Color result;
-    result = MPSColors.darkGray;
-    return result;
-  }
-
-  private static Color calculateColor9117_3(EditorCell cell) {
-    Color result;
-    result = MPSColors.darkGray;
-    return result;
-  }
-
-  private static Color calculateColor9117_4(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor9117_5(EditorCell cell) {
-    Color result;
-    result = MPSColors.darkGray;
-    return result;
-  }
-
-  private static Color calculateColor9117_6(EditorCell cell) {
-    Color result;
-    result = MPSColors.cyan;
-    return result;
-  }
-
-  private static Color calculateColor9117_7(EditorCell cell) {
-    Color result;
-    result = MPSColors.cyan;
-    return result;
-  }
-
-  public static Boolean calculateBoolean9117_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean9117_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean9117_2(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean9117_3(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean9117_4(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
 }

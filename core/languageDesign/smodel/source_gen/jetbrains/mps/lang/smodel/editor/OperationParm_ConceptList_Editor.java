@@ -12,10 +12,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -83,13 +81,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return OperationParm_ConceptList_Editor.calculateColor8994_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -107,13 +99,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return OperationParm_ConceptList_Editor.calculateColor8994_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -129,18 +115,6 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1154547244033_1154547244033(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor8994_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.lightGray;
-    return result;
-  }
-
-  private static Color calculateColor8994_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.lightGray;
-    return result;
   }
 
   public static class conceptListHandler_8994_0 extends RefNodeListHandler {

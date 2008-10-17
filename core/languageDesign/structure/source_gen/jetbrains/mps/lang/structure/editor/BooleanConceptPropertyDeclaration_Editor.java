@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
@@ -132,20 +130,8 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return BooleanConceptPropertyDeclaration_Editor.calculateFontStyle9401_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return BooleanConceptPropertyDeclaration_Editor.calculateColor9401_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         }
 
       };
@@ -158,13 +144,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return BooleanConceptPropertyDeclaration_Editor.calculateColor9401_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
         }
 
       };
@@ -177,20 +157,8 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return BooleanConceptPropertyDeclaration_Editor.calculateColor9401_2(cell);
-            }
-
-          });
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return BooleanConceptPropertyDeclaration_Editor.calculateFontStyle9401_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
 
       };
@@ -207,20 +175,8 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return BooleanConceptPropertyDeclaration_Editor.calculateColor9401_3(cell);
-            }
-
-          });
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return BooleanConceptPropertyDeclaration_Editor.calculateFontStyle9401_2(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
 
       };
@@ -241,48 +197,6 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private static void setupLabel_Constant_1218575395851_1218575395851(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle9401_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
-  }
-
-  private static Integer calculateFontStyle9401_1(EditorCell cell) {
-    int result;
-    result = MPSFonts.PLAIN;
-    return result;
-  }
-
-  private static Integer calculateFontStyle9401_2(EditorCell cell) {
-    int result;
-    result = MPSFonts.PLAIN;
-    return result;
-  }
-
-  private static Color calculateColor9401_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
-  }
-
-  private static Color calculateColor9401_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor9401_2(EditorCell cell) {
-    Color result;
-    result = MPSColors.gray;
-    return result;
-  }
-
-  private static Color calculateColor9401_3(EditorCell cell) {
-    Color result;
-    result = MPSColors.gray;
-    return result;
   }
 
 }

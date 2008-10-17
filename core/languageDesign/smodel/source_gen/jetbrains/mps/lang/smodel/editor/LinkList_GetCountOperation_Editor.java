@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class LinkList_GetCountOperation_Editor extends DefaultNodeEditor {
@@ -32,13 +31,7 @@ public class LinkList_GetCountOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return LinkList_GetCountOperation_Editor.calculateBoolean2571_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -48,12 +41,6 @@ public class LinkList_GetCountOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1145468793690_1145468793690(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean2571_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
 }

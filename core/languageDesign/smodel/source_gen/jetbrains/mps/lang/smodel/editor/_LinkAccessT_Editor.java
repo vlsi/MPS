@@ -14,6 +14,11 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.lang.structure.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class _LinkAccessT_Editor extends DefaultNodeEditor {
@@ -172,6 +177,27 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_targetConcept1204926270355(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_targetConcept");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return _LinkAccessT_Editor._StyleParameter_QueryFunction_1224258875340((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_12052649565491205264956549(EditorCell editorCell, SNode node, EditorContext context) {
@@ -209,6 +235,10 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_aggregation_1205266348085(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1224258875340(SNode node, EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_isDeprecated_1224246601835(SLinkOperations.getTarget(node, "targetConcept", false));
   }
 
   public static class _Inline0901_0 extends AbstractCellProvider {

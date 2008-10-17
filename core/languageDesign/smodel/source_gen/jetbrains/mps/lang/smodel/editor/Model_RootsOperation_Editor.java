@@ -14,14 +14,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.structure.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Model_RootsOperation_Editor extends DefaultNodeEditor {
 
@@ -105,6 +106,27 @@ public class Model_RootsOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_concept1171315915309(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_concept");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Model_RootsOperation_Editor._StyleParameter_QueryFunction_1224258479266((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -133,10 +155,11 @@ public class Model_RootsOperation_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1206486716424_1206486716424(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Color calculateColor7728_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
+  public static boolean _StyleParameter_QueryFunction_1224258479266(SNode node, EditorContext editorContext) {
+    return ((SLinkOperations.getTarget(node, "concept", false) == null) ?
+      false :
+      IDeprecatable_Behavior.call_isDeprecated_1224246601835(SLinkOperations.getTarget(node, "concept", false))
+    );
   }
 
   public static class _Inline7728_0 extends AbstractCellProvider {
@@ -189,13 +212,7 @@ public class Model_RootsOperation_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return Model_RootsOperation_Editor.calculateColor7728_0(cell);
-              }
-
-            });
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
 
         };

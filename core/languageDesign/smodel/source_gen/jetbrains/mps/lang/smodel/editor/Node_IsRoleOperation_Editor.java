@@ -18,10 +18,11 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.structure.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
@@ -144,6 +145,27 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_conceptOfParent1144195585868(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_conceptOfParent");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return Node_IsRoleOperation_Editor._StyleParameter_QueryFunction_1224258553845((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
+            }
+
+          });
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_11441981233721144198123372(EditorCell editorCell, SNode node, EditorContext context) {
@@ -151,13 +173,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return Node_IsRoleOperation_Editor.calculateBoolean8094_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -207,28 +223,8 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1206487372237_1206487372237(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static Integer calculateFontStyle8094_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Color calculateColor8094_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor8094_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.darkGray;
-    return result;
-  }
-
-  public static Boolean calculateBoolean8094_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
+  public static boolean _StyleParameter_QueryFunction_1224258553845(SNode node, EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_isDeprecated_1224246601835(SLinkOperations.getTarget(node, "conceptOfParent", false));
   }
 
   public static class _Inline8094_0 extends AbstractCellProvider {
@@ -280,13 +276,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return Node_IsRoleOperation_Editor.calculateColor8094_0(cell);
-              }
-
-            });
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
 
         };
@@ -347,20 +337,8 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-              public Integer calculate(EditorCell cell) {
-                return Node_IsRoleOperation_Editor.calculateFontStyle8094_0(cell);
-              }
-
-            });
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return Node_IsRoleOperation_Editor.calculateColor8094_1(cell);
-              }
-
-            });
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
             this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }
 

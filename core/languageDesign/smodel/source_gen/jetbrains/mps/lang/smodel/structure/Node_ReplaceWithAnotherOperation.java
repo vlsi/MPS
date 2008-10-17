@@ -10,18 +10,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Node_ReplaceWithAnotherOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation";
-  public static String PARAMETER = "parameter";
+  public static String REPLACEMENT_NODE = "replacementNode";
 
   public Node_ReplaceWithAnotherOperation(SNode node) {
     super(node);
   }
 
-  public Expression getParameter() {
-    return (Expression)this.getChild(Node_ReplaceWithAnotherOperation.PARAMETER);
+  public Expression getReplacementNode() {
+    return (Expression)this.getChild(Node_ReplaceWithAnotherOperation.REPLACEMENT_NODE);
   }
 
-  public void setParameter(Expression node) {
-    super.setChild(Node_ReplaceWithAnotherOperation.PARAMETER, node);
+  public void setReplacementNode(Expression node) {
+    super.setChild(Node_ReplaceWithAnotherOperation.REPLACEMENT_NODE, node);
   }
 
 

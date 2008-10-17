@@ -16,11 +16,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class ReplaceableAlias_Comp extends AbstractCellProvider {
@@ -98,13 +97,7 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return ReplaceableAlias_Comp.calculateFontStyle3900_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -125,12 +118,6 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
 
   public static boolean renderingCondition3900_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.SNodeOperation"));
-  }
-
-  private static Integer calculateFontStyle3900_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
   }
 
   public static class ReplaceableAlias_Comp_replaceWith_SNodeOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

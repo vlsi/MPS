@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class AllAttributesQualifier_Editor extends DefaultNodeEditor {
 
@@ -56,13 +55,7 @@ public class AllAttributesQualifier_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return AllAttributesQualifier_Editor.calculateBoolean1062_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, false);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -72,12 +65,6 @@ public class AllAttributesQualifier_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_conceptProperty_alias_1205357242128(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean1062_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
 }

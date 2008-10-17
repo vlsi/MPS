@@ -10,18 +10,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Node_InsertPrevSiblingOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation";
-  public static String PARAMETER = "parameter";
+  public static String INSERTED_NODE = "insertedNode";
 
   public Node_InsertPrevSiblingOperation(SNode node) {
     super(node);
   }
 
-  public Expression getParameter() {
-    return (Expression)this.getChild(Node_InsertPrevSiblingOperation.PARAMETER);
+  public Expression getInsertedNode() {
+    return (Expression)this.getChild(Node_InsertPrevSiblingOperation.INSERTED_NODE);
   }
 
-  public void setParameter(Expression node) {
-    super.setChild(Node_InsertPrevSiblingOperation.PARAMETER, node);
+  public void setInsertedNode(Expression node) {
+    super.setChild(Node_InsertPrevSiblingOperation.INSERTED_NODE, node);
   }
 
 

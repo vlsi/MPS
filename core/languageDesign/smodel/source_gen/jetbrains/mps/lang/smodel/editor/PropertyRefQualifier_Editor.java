@@ -13,6 +13,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.lang.structure.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -58,6 +61,19 @@ public class PropertyRefQualifier_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return PropertyRefQualifier_Editor._StyleParameter_QueryFunction_1224253988839((cell == null ?
+                null :
+                cell.getSNode()
+              ), (cell == null ?
+                null :
+                cell.getEditorContext()
+              ));
+            }
+
+          });
         }
 
       };
@@ -66,6 +82,10 @@ public class PropertyRefQualifier_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refCell_property_1204837286691(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _StyleParameter_QueryFunction_1224253988839(SNode node, EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_isDeprecated_1224246601835(SLinkOperations.getTarget(node, "property", false));
   }
 
   public static class _Inline4368_0 extends AbstractCellProvider {

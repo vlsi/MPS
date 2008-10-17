@@ -2869,5 +2869,32 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222430504610" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptBehavior" id="1224246597864">
+    <property name="package" value="deprecatedAnnotation" />
+    <link role="concept" targetNodeId="1.1224243221118" resolveInfo="IDeprecatable" />
+    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1224246601835">
+      <property name="name" value="isDeprecated" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224246601836" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224246608418" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224246601838">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224246619357">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224246636772">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224246626658">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1224246625625" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1224246629333">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="1224246634912">
+                  <link role="annotationLink" targetNodeId="1.1224241293279" resolveInfo="deprecatedNode" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1224246639401" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.constraints.structure.ConceptConstructorDeclaration" id="1224246597865">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224246597866" />
+    </node>
+  </node>
 </model>
 

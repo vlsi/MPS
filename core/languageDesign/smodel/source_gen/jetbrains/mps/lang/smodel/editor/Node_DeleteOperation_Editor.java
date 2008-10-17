@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class Node_DeleteOperation_Editor extends DefaultNodeEditor {
@@ -32,13 +31,7 @@ public class Node_DeleteOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return Node_DeleteOperation_Editor.calculateBoolean7901_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, true);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -48,12 +41,6 @@ public class Node_DeleteOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1140133705634_1140133705634(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean7901_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
 }
