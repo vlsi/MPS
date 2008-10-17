@@ -65,7 +65,7 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       InspectorEditorComponent inspector = (InspectorEditorComponent)ShowNodeInInspector_Action.this.editor;
-      inspector.inspectNode(ShowNodeInInspector_Action.this.node, inspector.getOperationContext(), null);
+      inspector.inspectNode(ShowNodeInInspector_Action.this.node, inspector.getOperationContext());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeInInspector", t);
     }

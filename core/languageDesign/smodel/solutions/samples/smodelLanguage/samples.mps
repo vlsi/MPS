@@ -3884,6 +3884,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224251170237">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224251170692">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1224251170238">
+              <link role="variableDeclaration" targetNodeId="1171315708426" resolveInfo="model" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation" id="1224251172304">
+              <node role="scope" type="jetbrains.mps.baseLanguage.structure.Expression" id="1224251172305" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1171321797074">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1171321797075">
             <property name="name" value="roots2" />

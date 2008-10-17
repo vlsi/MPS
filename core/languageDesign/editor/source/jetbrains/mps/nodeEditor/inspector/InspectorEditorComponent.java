@@ -36,15 +36,11 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   public void editNode(SNode semanticNode, IOperationContext operationContext) {
-    inspectNode(semanticNode, operationContext, null);
+    inspectNode(semanticNode, operationContext);
   }
 
-  public void inspectNode(final SNode node, final IOperationContext context, @Nullable final Runnable afterInspect) {
-    //DO NOT UNCOMMENT. TO CALL THIS METHOD TWICE IS THE ONLY WAY TO FOCUS WHERE WE NEED TO
-    //if (node != null && getEditedNode() == node) {
-    //  return;
-    //}
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+  public void inspectNode(final SNode node, final IOperationContext context) {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (node == null) {
           setOperationContext(null);
@@ -56,10 +52,8 @@ public class InspectorEditorComponent extends EditorComponent {
 
         reinitEditor();
         repaint();
-
-        if (afterInspect != null) afterInspect.run();
       }
-    });
+    });    
   }
 
   @Nullable

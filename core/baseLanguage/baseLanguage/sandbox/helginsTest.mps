@@ -513,6 +513,16 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221563360811" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221563360812" />
     </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1224249071355">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224249071356" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224249071357" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224249071358" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1224249068678">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224249068679" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224249068680" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224249068681" />
+    </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1221563746060">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1221563746061" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221563746062" />
@@ -996,6 +1006,14 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224248369638">
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224248369639" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1224248369640">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224248369641" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224248369642" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224248369643" />
     </node>
   </node>
 </model>

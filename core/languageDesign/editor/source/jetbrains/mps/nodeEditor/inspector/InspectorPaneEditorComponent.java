@@ -46,7 +46,7 @@ final class InspectorPaneEditorComponent extends JComponent {
     myInspectorEditorComponents.clear();
     myPanel.removeAll();
     InspectorEditorComponent inspectorEditorComponent = new InspectorEditorComponent();
-    inspectorEditorComponent.inspectNode(node, context, null);
+    inspectorEditorComponent.inspectNode(node, context);
     myInspectorEditorComponents.add(inspectorEditorComponent);
     myPanel.add(inspectorEditorComponent);
   }

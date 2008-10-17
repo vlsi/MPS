@@ -229,20 +229,17 @@ public class MPSEditorOpener implements ProjectComponent {
     FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(nodeEditor.getComponent()).getData(MPSDataKeys.FILE_EDITOR.getName());
 
     final EditorComponent inspector = inspectorTool.getInspector();
-    inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor, new Runnable() {
-      public void run() {
-        SNode currentTargetNode = node;
-        while (currentTargetNode != null) {
-          EditorCell cellInInspector = inspector.findNodeCell(currentTargetNode);
-          if (cellInInspector != null) {
-            inspector.selectNode(node);
-            doFocus(focus, nodeEditor, currentTargetNode != node);
-            return;
-          }
-          currentTargetNode = currentTargetNode.getParent();
-        }
+    inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor);
+    SNode currentTargetNode = node;
+    while (currentTargetNode != null) {
+      EditorCell cellInInspector = inspector.findNodeCell(currentTargetNode);
+      if (cellInInspector != null) {
+        inspector.selectNode(node);
+        doFocus(focus, nodeEditor, currentTargetNode != node);
+        return;
       }
-    });
+      currentTargetNode = currentTargetNode.getParent();
+    }
   }
 
 

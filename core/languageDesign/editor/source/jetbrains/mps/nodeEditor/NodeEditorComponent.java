@@ -56,7 +56,11 @@ public class NodeEditorComponent extends EditorComponent {
     addFocusListener(new FocusAdapter() {
       public void focusGained(FocusEvent e) {
         if (getSelectedNode() != null) {
-          inspect(getSelectedNode());
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              inspect(getSelectedNode());
+            }
+          });
         }
       }
     });
@@ -65,7 +69,7 @@ public class NodeEditorComponent extends EditorComponent {
       public void actionPerformed(ActionEvent e) {
         InspectorTool inspectorTool = getInspectorTool();
         if (inspectorTool == null) return;
-        inspectorTool.activate();
+        inspectorTool.openTool(true);
       }
     }, INSPECT_SHORTCUT, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
@@ -77,14 +81,10 @@ public class NodeEditorComponent extends EditorComponent {
   
 
   private void inspect(final SNode toSelect) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myLastInspectedNode = new SNodePointer(toSelect);
-      }
-    });
+    myLastInspectedNode = new SNodePointer(toSelect);
     if (toSelect != null && getInspector() != null) {
       FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(this).getData(MPSDataKeys.FILE_EDITOR.getName());
-      getInspectorTool().inspect(toSelect, getOperationContext(), fileEditor, null);
+      getInspectorTool().inspect(toSelect, getOperationContext(), fileEditor);
     }
   }
 
@@ -128,7 +128,7 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   public void dispose() {
-    getInspectorTool().inspect(null, null, null, null);
+    getInspectorTool().inspect(null, null, null);
     super.dispose();
   }
 }
