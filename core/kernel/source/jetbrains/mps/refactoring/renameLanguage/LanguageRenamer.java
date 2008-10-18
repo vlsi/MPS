@@ -3,6 +3,7 @@ package jetbrains.mps.refactoring.renameLanguage;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
+import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -89,6 +90,12 @@ public class LanguageRenamer {
 
   private void renameGenerators(String oldFqName) {
     for (Generator g : myLanguage.getGenerators()) {
+
+      GeneratorDescriptor genDesc = g.getGeneratorDescriptor();
+      String uid = genDesc.getGeneratorUID();
+      int sharpIndex = uid.indexOf('#');
+      genDesc.setGeneratorUID(myNewName + "#" + uid.substring(sharpIndex));
+
       for (SModelRoot root : g.getSModelRoots()) {
         String oldPrefix = root.getPrefix();
         if (oldPrefix != null && oldPrefix.startsWith(oldFqName)) {
