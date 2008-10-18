@@ -8,7 +8,7 @@
     <model modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mps.bootstrap.structureLanguage#1170324972255" uuid="b8e4beec-8383-4fb9-b0bb-9d1c9c159cfc">
+    <generator generatorUID="jetbrains.mps.lang.structure#1170324972255" uuid="b8e4beec-8383-4fb9-b0bb-9d1c9c159cfc">
       <models>
         <modelRoot path="${language_descriptor}\generator_new" namespacePrefix="jetbrains.mps.lang.structure.generator_new" />
       </models>

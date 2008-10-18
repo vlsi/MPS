@@ -6,7 +6,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.quotation#1196351859310" uuid="b736a816-59a2-4796-a8e6-372fc0a096ce">
+    <generator generatorUID="jetbrains.mps.lang.quotation#1196351859310" uuid="b736a816-59a2-4796-a8e6-372fc0a096ce">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.lang.quotation.generator.baseLanguage.template" />
       </models>

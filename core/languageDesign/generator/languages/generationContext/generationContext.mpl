@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.generator.generationContext" uuid="d7706f63-9be2-479c-a3da-ae92af1e64d5" generatorOutputPath="${mps_home}\core\languageDesign\generator\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.lang.generator.generationContext" uuid="d7706f63-9be2-479c-a3da-ae92af1e64d5" generatorOutputPath="${mps_home}\core\languageDesign\generator\source_gen" java-stubs-enabled="false" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.lang.generator.generationContext" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.lang.generator.generationContext" />
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.transformation.generationContext#1216862161405" uuid="715b4f28-d9b2-45a3-a1a4-a7966d9df2d4">
+    <generator generatorUID="jetbrains.mps.lang.generator.generationContext#1216862161405" uuid="715b4f28-d9b2-45a3-a1a4-a7966d9df2d4">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template" />
       </models>
@@ -28,7 +28,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>
-    <dependency reexport="false">fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.transformationTest#1210261198005)</dependency>
+    <dependency reexport="false">fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </dependencies>
   <extendedLanguages>
