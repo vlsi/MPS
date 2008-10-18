@@ -6178,7 +6178,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216125695601">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216125709037">
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216125724659">
-              <link role="baseMethodDeclaration" targetNodeId="99.~InspectorEditorComponent.inspectNode(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext,java.lang.Runnable):void" resolveInfo="inspectNode" />
+              <link role="baseMethodDeclaration" targetNodeId="99.~InspectorEditorComponent.inspectNode(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="inspectNode" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216125726160">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1216125726161" />
                 <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420647213">
@@ -6193,7 +6193,6 @@
                   <link role="baseMethodDeclaration" targetNodeId="65.~EditorComponent.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
                 </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1221753043926" />
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216125830483">
               <link role="variableDeclaration" targetNodeId="1216125738196" resolveInfo="inspectorEditorComponent" />
