@@ -117,14 +117,24 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
     MPSEditorStateWrapper state = new MPSEditorStateWrapper();
     state.setEditorState(myNodeEditor.saveState(level));
+    state.setLevel(level);
     return state;
   }
 
   public void setState(final @NotNull FileEditorState state) {
     if (!(state instanceof MPSEditorStateWrapper)) return;
+    final MPSEditorStateWrapper wrapper = (MPSEditorStateWrapper) state;
 
-    MPSEditorStateWrapper wrapper = (MPSEditorStateWrapper) state;
-    myNodeEditor.loadState(wrapper.getEditorState());
+    if (wrapper.getLevel() == FileEditorStateLevel.UNDO) {
+      //we need it here since undo might need to flush events which requires write action
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          myNodeEditor.loadState(wrapper.getEditorState());
+        }
+      });
+    } else {
+      myNodeEditor.loadState(wrapper.getEditorState());
+    }
   }
 
   public boolean isModified() {

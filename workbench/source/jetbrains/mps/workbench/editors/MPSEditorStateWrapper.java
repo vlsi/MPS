@@ -7,6 +7,7 @@ import jetbrains.mps.util.EqualUtil;
 
 class MPSEditorStateWrapper implements FileEditorState {
   private MPSEditorState myEditorState;
+  private FileEditorStateLevel myLevel;
 
   MPSEditorStateWrapper() {
   }
@@ -17,6 +18,14 @@ class MPSEditorStateWrapper implements FileEditorState {
 
   void setEditorState(MPSEditorState editorState) {
     myEditorState = editorState;
+  }
+
+  public FileEditorStateLevel getLevel() {
+    return myLevel;
+  }
+
+  public void setLevel(FileEditorStateLevel level) {
+    myLevel = level;
   }
 
   public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
