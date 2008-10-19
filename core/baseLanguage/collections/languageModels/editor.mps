@@ -198,6 +198,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1152143155516">
+    <property name="package" value="obsolete" />
     <link role="conceptDeclaration" targetNodeId="1.1152141063573" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1152143177082">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1152143180130">
@@ -1601,6 +1602,40 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1224446621928">
+    <property name="package" value="internal" />
+    <link role="conceptDeclaration" targetNodeId="1.1224446583770" resolveInfo="SkipStatement" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1224446624012">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224446624013">
+        <property name="text" value="skip" />
+        <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224446624014">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224446624015">
+        <property name="text" value=";" />
+        <link role="styleClass" targetNodeId="15.1215094139260" resolveInfo="Semicolon" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1224451886447">
+    <property name="package" value="internal" />
+    <link role="conceptDeclaration" targetNodeId="1.1224451845108" resolveInfo="StopStatement" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1224451888514">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224451888515">
+        <property name="text" value="stop" />
+        <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224451888516">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224451888517">
+        <property name="text" value=";" />
+        <link role="styleClass" targetNodeId="15.1215094139260" resolveInfo="Semicolon" />
       </node>
     </node>
   </node>

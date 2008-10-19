@@ -387,6 +387,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1152141063573">
     <property name="name" value="TraversalYieldStatement" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="2.1068580123157" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1152141088715">
       <property name="value" value="yield" />
@@ -1308,6 +1309,32 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224415284112">
       <property name="value" value="create new sequence" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224446583770">
+    <property name="package" value="internal" />
+    <property name="name" value="SkipStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224446596627">
+      <property name="value" value="skip" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224446600840">
+      <property name="value" value="skip to next element in input sequence" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224451845108">
+    <property name="package" value="internal" />
+    <property name="name" value="StopStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224451853677">
+      <property name="value" value="stop" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224451859022">
+      <property name="value" value="stop iterating input sequence" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
     </node>
   </node>

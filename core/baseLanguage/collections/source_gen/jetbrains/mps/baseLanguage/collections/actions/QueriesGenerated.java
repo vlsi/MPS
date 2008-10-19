@@ -41,6 +41,18 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.collections.structure.SortOperation");
   }
 
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1224446775945(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    SNode cl = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false);
+    SNode parent = SNodeOperations.getParent(cl);
+    return (cl == null) || !(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.TranslateOperation"));
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1224451929757(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    SNode cl = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false);
+    SNode parent = SNodeOperations.getParent(cl);
+    return (cl == null) || !(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.TranslateOperation")) || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator");
+  }
+
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1197932868400(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getSourceNode());
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), false) != null);
@@ -226,6 +238,16 @@ public class QueriesGenerated {
         });
       }
     }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1224446770027(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1224451907809(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     return result;
   }
 

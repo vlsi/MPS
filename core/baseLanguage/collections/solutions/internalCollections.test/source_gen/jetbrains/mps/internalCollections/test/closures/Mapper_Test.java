@@ -283,6 +283,75 @@ __switch__:
 
     });
     this.assertIterableEquals(Arrays.asList(2, 4, 6), test);
+    Iterable<Integer> test2 = Sequence.fromIterable(this.input10()).translate(new ITranslator <Integer, Integer>() {
+
+      public ISequence<Integer> translate(final Integer it) {
+        return new ISequenceIterableAdapter <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 4:
+                      if (it % 2 == 1) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this.__CP__ = 6;
+                      break;
+                    case 8:
+                      if (it > 5) {
+                        this.__CP__ = 9;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 3:
+                      if (false) {
+                        this.__CP__ = 2;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 6:
+                      this.__CP__ = 8;
+                      this.yield(it);
+                      return true;
+                    case 2:
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this.__CP__ = 1;
+                      break;
+                    case 9:
+                      throw new StopIteratingException();
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    this.assertIterableEquals(Arrays.asList(2, 4, 6), test2);
   }
 
   @Test()
