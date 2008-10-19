@@ -13527,32 +13527,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration" id="1198247682918">
-    <property name="name" value="InlineVariableDeclaration_KeyMap" />
-    <property name="everyModel" value="true" />
-    <link role="applicableConcept" targetNodeId="17.1068431474542" resolveInfo="VariableDeclaration" />
-    <node role="item" type="jetbrains.mps.lang.editor.structure.CellKeyMapItem" id="1198247735058">
-      <property name="description" value="Inline Variable" />
-      <property name="showInPopup" value="true" />
-      <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="1198247735059">
-        <property name="modifiers" value="ctrl+alt" />
-        <property name="keycode" value="VK_N" />
-      </node>
-      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="1198247735060">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198247735061">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198247795254">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977954858">
-              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1198247795255" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1198247799872">
-                <link role="conceptMethodDeclaration" targetNodeId="75.1213877517476" resolveInfo="inline" />
-                <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1198247801794" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration" id="1198252535774">
     <property name="name" value="MethodHierarchy_KeyMap" />
     <property name="everyModel" value="true" />
