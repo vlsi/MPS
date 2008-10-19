@@ -55,7 +55,11 @@ public class EventsCollector {
 
           if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
             SModelEvent e = (SModelEvent) args[0];
-            assert myCommandProcessor.getCurrentCommand() != null;
+
+            if (myCommandProcessor.getCurrentCommand() == null) {
+              throw new IllegalStateException("Event outside of a command");
+            }
+
             myEvents.add(e);
           }
 
