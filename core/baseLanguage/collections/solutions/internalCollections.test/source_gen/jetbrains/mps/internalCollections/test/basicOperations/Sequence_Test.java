@@ -158,6 +158,69 @@ __switch__:
   }
 
   @Test()
+  public void test_sequenceInitializer2() throws Exception {
+    Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure <Integer>() {
+
+      public Iterable<Integer> iterable() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private int _2_i;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_i = 1;
+                    case 3:
+                      if (!(this._2_i <= 5)) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this._2_i++ ;
+                      this.__CP__ = 3;
+                      break;
+                    case 6:
+                      this.__CP__ = 5;
+                      this.yield(this._2_i);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 6;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    this.assertIterableEquals(this.expect5(), seq);
+    Iterable<Integer> seq2 = Sequence.fromIterable(Collections.<Integer>emptyList());
+    Assert.assertTrue(Sequence.fromIterable(seq2).isEmpty());
+  }
+
+  @Test()
   public void test_sequenceOperations() throws Exception {
     Iterable<Integer> input = this.input5();
     Assert.assertEquals(((Integer)1), Sequence.fromIterable(input).first());

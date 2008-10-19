@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class ListType_Editor extends DefaultNodeEditor {
@@ -102,13 +101,7 @@ public class ListType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ListType_Editor.calculateBoolean7508_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, false);
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
@@ -129,13 +122,7 @@ public class ListType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ListType_Editor.calculateBoolean7508_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -149,13 +136,7 @@ public class ListType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ListType_Editor.calculateBoolean7508_2(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -173,24 +154,6 @@ public class ListType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1215706741568_1215706741568(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean7508_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean7508_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean7508_2(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
 }

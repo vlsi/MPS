@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.collections.editor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Collections_Style_StyleSheet {
@@ -13,13 +12,7 @@ public class Collections_Style_StyleSheet {
   public static Style getOperation(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-          public Integer calculate(EditorCell cell) {
-            return Collections_Style_StyleSheet.calculateFontStyle6167_0(cell);
-          }
-
-        });
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         this.set(StyleAttributes.PADDING_RIGHT, 0.0);
       }
 
@@ -29,13 +22,7 @@ public class Collections_Style_StyleSheet {
   public static Style getAngleBracket(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-          public Boolean calculate(EditorCell cell) {
-            return Collections_Style_StyleSheet.calculateBoolean6167_0(cell);
-          }
-
-        });
+        this.set(StyleAttributes.SELECTABLE, false);
       }
 
     };
@@ -61,18 +48,6 @@ public class Collections_Style_StyleSheet {
       }
 
     };
-  }
-
-  private static Integer calculateFontStyle6167_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
-  }
-
-  public static Boolean calculateBoolean6167_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
 }
