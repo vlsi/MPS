@@ -230,7 +230,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public boolean hasModelListener(@NotNull SModelListener listener) {
-    synchronized (myListeners) {
+    synchronized (myListenersLock) {
       return myWeakListeners.contains(listener) || myListeners.contains(listener);
     }
   }
