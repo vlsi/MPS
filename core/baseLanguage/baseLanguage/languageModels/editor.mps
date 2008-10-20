@@ -144,6 +144,27 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1178550101404">
           <link role="editorComponent" targetNodeId="1178547675197" resolveInfo="_Component_Visibility" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224500199775">
+          <property name="text" value="static" />
+          <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1224500205261">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224500205262">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224500208200">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224500209894">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224500208280">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1224500208201" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1224500209330" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1224500210944">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1224500214257">
+                      <link role="conceptDeclaration" targetNodeId="17.1107461130800" resolveInfo="Classifier" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1178610212801">
           <property name="text" value="abstract" />
           <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
@@ -4787,6 +4808,27 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1178550117011">
           <link role="editorComponent" targetNodeId="1178547675197" resolveInfo="_Component_Visibility" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224500226822">
+          <property name="text" value="static" />
+          <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1224500226823">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224500226824">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224500226825">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224500226826">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224500226827">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1224500226828" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1224500226829" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1224500226830">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1224500226831">
+                      <link role="conceptDeclaration" targetNodeId="17.1107461130800" resolveInfo="Classifier" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1107796852517">
           <property name="text" value="interface" />

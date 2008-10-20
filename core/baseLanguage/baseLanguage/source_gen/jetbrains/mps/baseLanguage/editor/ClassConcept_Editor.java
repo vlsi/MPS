@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -93,6 +94,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent1178550101404(context, node));
+    if (renderingCondition8372_6(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant1224500199775(context, node, "static"));
+    }
     if (renderingCondition8372_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant1178610212801(context, node, "abstract"));
     }
@@ -561,6 +565,14 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12217407534351221740753435(editorCell, node, context);
     setupLabel_Constant_1221740753435_1221740753435(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1224500199775(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12245001997751224500199775(editorCell, node, context);
+    setupLabel_Constant_1224500199775_1224500199775(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -1713,6 +1725,11 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "component__DeprecatedPart");
   }
 
+  private static void setupBasic_Constant_12245001997751224500199775(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224500199775");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+  }
+
   private static void setupLabel_Constant_1074794604362_1074794604362(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -1833,6 +1850,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1221740753435_1221740753435(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_Constant_1224500199775_1224500199775(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   public static boolean renderingCondition8372_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }
@@ -1855,6 +1875,10 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition8372_5(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "staticInitializer", true) != null);
+  }
+
+  public static boolean renderingCondition8372_6(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public static class fieldListHandler_8372_0 extends RefNodeListHandler {
