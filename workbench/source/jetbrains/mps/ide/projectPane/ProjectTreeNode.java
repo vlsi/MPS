@@ -8,12 +8,22 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionGroup;
 
 class ProjectTreeNode extends MPSTreeNode {
+  private MPSProject myProject;
 
   ProjectTreeNode(MPSProject project) {
     super(new ProjectOperationContext(project));
 
+    myProject = project;
+
     setIcon(Icons.PROJECT_ICON);
     setNodeIdentifier("Project");
+    updatePresentation();
+  }
+
+  protected void updatePresentation() {
+    super.updatePresentation();
+    setErrorState(myProject.getErrors() != null);
+    setTooltipText(myProject.getErrors());
   }
 
   protected ActionGroup getQuickCreateGroup(boolean plain) {

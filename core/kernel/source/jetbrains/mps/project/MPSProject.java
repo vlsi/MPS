@@ -48,9 +48,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   private ProjectScope myScope = new ProjectScope();
 
   private Project myIDEAProject;
-
-
   private boolean myDisposed;
+  private String myErrors = null;
 
   public MPSProject(final File projectFile, final ProjectDescriptor projectDescriptor, Project ideaProject) {
     myIDEAProject = ideaProject;
@@ -99,19 +98,17 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   private void readModules() {
+    myErrors = null;
+
     // load solutions
     mySolutions = new LinkedList<Solution>();
     for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectSolutions())) {
       String path = solutionPath.getPath();
-      if (path == null) {
-        LOG.error("Solution path is null");
-        continue;
-      }
       IFile descriptorFile = FileSystem.getFile(path);
-      if (!descriptorFile.getName().endsWith(MPSExtentions.DOT_SOLUTION)) {
-        LOG.error("Couldn't load solution from: " + descriptorFile.getPath() + " : '*" + MPSExtentions.DOT_SOLUTION + "' file expected");
-      } else if (descriptorFile.exists()) {
+      if (descriptorFile.exists()) {
         mySolutions.add((Solution) MPSModuleRepository.getInstance().registerSolution(descriptorFile, this));
+      } else {
+        error("Can't load solution from " + descriptorFile.getCanonicalPath() + " File doesn't exist.");
       }
     }
 
@@ -120,13 +117,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     for (LanguagePath languagePath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectLanguages())) {
       String path = languagePath.getPath();
       IFile descriptorFile = FileSystem.getFile(path);
-      if (!descriptorFile.getName().endsWith(MPSExtentions.DOT_LANGUAGE)) {
-        LOG.error("Couldn't load language from: " + descriptorFile.getPath() + " : '*" + MPSExtentions.DOT_LANGUAGE + "' file expected");
-      } else if (descriptorFile.exists()) {
+      if (descriptorFile.exists()) {
         myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this));
+      } else {
+        error("Can't load language from " + descriptorFile.getCanonicalPath() + " File doesn't exist.");
       }
-
-      FileSystem.getFile(path);
     }
 
     //load devkits
@@ -134,13 +129,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     for (DevKitPath dk : myProjectDescriptor.getProjectDevkits()) {
       String path = dk.getPath();
       IFile devKit = FileSystem.getFile(path);
-      if (!devKit.getName().endsWith(MPSExtentions.DOT_DEVKIT)) {
-        LOG.error("Couldn't load devkit from: " + devKit.getPath() + " : '*." + MPSExtentions.DOT_DEVKIT + "' file expected");
-      } else if (devKit.exists()) {
+      if (devKit.exists()) {
         myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
-      } 
+      } else {
+        error("Can't load devkit from " + devKit.getCanonicalPath() + " File doesn't exist");
+      }
     }
-
 
     for (Library l : myProjectDescriptor.getLibraries()) {
       String name = l.getName();
@@ -148,9 +142,22 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
       if (lib != null) {
         MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(lib.getPath()), this);
       } else {
-        LOG.error("Can't find a global library " + name);
+        error("Can't find a global library " + name);
       }
     }
+  }
+
+  private void error(String text) {
+    if (myErrors == null) {
+      myErrors = text;
+    } else {
+      myErrors += "\n" + text;
+    }
+    LOG.error(text);
+  }
+
+  public String getErrors() {
+    return myErrors;
   }
 
   @Nullable
