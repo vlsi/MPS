@@ -14134,5 +14134,23 @@
       <link role="concept" targetNodeId="1.1107535904670" resolveInfo="ClassifierType" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1224501745441">
+    <property name="name" value="typeof_BinaryBitwiseOperation" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224501745442">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224501745443">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1224501745444">
+          <link role="baseMethodDeclaration" targetNodeId="1176908760532" resolveInfo="numericOp" />
+          <link role="classConcept" targetNodeId="1176897069499" resolveInfo="RulesFunctions_BaseLanguage" />
+          <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1224501745445">
+            <link role="applicableNode" targetNodeId="1224501745446" resolveInfo="mulExpression" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1224501745446">
+      <property name="name" value="node" />
+      <link role="concept" targetNodeId="1.1224500579375" resolveInfo="BinaryBitwiseOperation" />
+    </node>
+  </node>
 </model>
 

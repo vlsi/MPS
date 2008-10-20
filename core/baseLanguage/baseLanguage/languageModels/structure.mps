@@ -2848,5 +2848,48 @@
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224500579375">
+    <property name="name" value="BinaryBitwiseOperation" />
+    <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1224500733706">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224500764161">
+    <property name="name" value="BitwiseAndExpression" />
+    <link role="extends" targetNodeId="1224500579375" resolveInfo="BitwiseBinaryOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224500786256">
+      <property name="value" value="&amp;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1224501515248">
+      <property name="value" value="8" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224500790866">
+    <property name="name" value="BitwiseOrExpression" />
+    <link role="extends" targetNodeId="1224500579375" resolveInfo="BinaryBitwiseOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224500790867">
+      <property name="value" value="|" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1224501489588">
+      <property name="value" value="10" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224500799915">
+    <property name="name" value="BitwiseXorExpression" />
+    <link role="extends" targetNodeId="1224500579375" resolveInfo="BinaryBitwiseOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224500799916">
+      <property name="value" value="^" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1224501524437">
+      <property name="value" value="9" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
+    </node>
+  </node>
 </model>
 
