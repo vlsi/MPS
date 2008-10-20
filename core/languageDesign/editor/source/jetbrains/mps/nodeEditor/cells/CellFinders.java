@@ -13,8 +13,8 @@ public class CellFinders {
   public static final CellFinder<EditorCell_Label> FIRST_EDITABLE = new EditableCellCellFinder(true);
   public static final CellFinder<EditorCell_Label> LAST_EDITABLE = new EditableCellCellFinder(false);
 
-  public static final CellFinder<EditorCell_Error> FIRST_ERROR = byClass(EditorCell_Error.class, true);
-  public static final CellFinder<EditorCell_Error> LAST_ERROR = byClass(EditorCell_Error.class, true);
+  public static final CellFinder<EditorCell_Label> FIRST_ERROR = new ErrorCellFinder(true);
+  public static final CellFinder<EditorCell_Label> LAST_ERROR = new ErrorCellFinder(false);
 
   public static final CellFinder<EditorCell> FIRST_SELECTABLE_LEAF = new SelectableLeafCellFinder(true);
   public static final CellFinder<EditorCell> LAST_SELECTABLE_LEAF = new SelectableLeafCellFinder(false);
@@ -108,6 +108,26 @@ public class CellFinders {
     }
 
     public boolean isFirstChild() {
+      return myFirst;
+    }
+  }
+
+  private static class ErrorCellFinder extends BaseCellFinder<EditorCell_Label> {
+    private boolean myFirst;
+
+    private ErrorCellFinder(boolean first) {
+      myFirst = first;
+    }
+
+    boolean isSuitable(EditorCell_Label cell) {
+      return cell instanceof EditorCell_Error || cell.isErrorState();
+    }
+
+    Class<EditorCell_Label> getCellClass() {
+      return EditorCell_Label.class;
+    }
+
+    boolean isFirstChild() {
       return myFirst;
     }
   }
