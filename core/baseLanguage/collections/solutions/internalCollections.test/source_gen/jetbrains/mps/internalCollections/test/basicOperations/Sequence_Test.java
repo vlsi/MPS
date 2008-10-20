@@ -218,6 +218,83 @@ __switch__:
     this.assertIterableEquals(this.expect5(), seq);
     Iterable<Integer> seq2 = Sequence.fromIterable(Collections.<Integer>emptyList());
     Assert.assertTrue(Sequence.fromIterable(seq2).isEmpty());
+    Iterable<Integer> seq3 = Sequence.fromClosure(new ISequenceClosure <Integer>() {
+
+      public Iterable<Integer> iterable() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+              private int _4_i;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 4:
+                      this._4_i = 1;
+                    case 5:
+                      if (!(this._4_i <= 10)) {
+                        this.__CP__ = 3;
+                        break;
+                      }
+                      this.__CP__ = 6;
+                      break;
+                    case 7:
+                      this._4_i++ ;
+                      this.__CP__ = 5;
+                      break;
+                    case 9:
+                      if (this._4_i >= 5) {
+                        this.__CP__ = 10;
+                        break;
+                      }
+                      this.__CP__ = 7;
+                      break;
+                    case 3:
+                      if (false) {
+                        this.__CP__ = 2;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 8:
+                      this.__CP__ = 9;
+                      this.yield(this._4_i);
+                      return true;
+                    case 2:
+                      this.__CP__ = 4;
+                      break;
+                    case 6:
+                      this.__CP__ = 8;
+                      break;
+                    case 10:
+                      this.__CP__ = 1;
+                      break;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    this.assertIterableEquals(this.expect5(), seq3);
   }
 
   @Test()

@@ -460,6 +460,130 @@ __switch__:
 
     });
     Assert.assertTrue(Sequence.fromIterable(test2).isEmpty());
+    Iterable<Integer> test3 = Sequence.fromIterable(this.input5()).translate(new ITranslator <Integer, Integer>() {
+
+      public ISequence<Integer> translate(final Integer it) {
+        return new ISequenceIterableAdapter <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 4:
+                      if (it == 5) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 3:
+                      if (false) {
+                        this.__CP__ = 2;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 6:
+                      this.__CP__ = 7;
+                      this.yield(5);
+                      return true;
+                    case 2:
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this.__CP__ = 6;
+                      break;
+                    case 7:
+                      throw new StopIteratingException();
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    this.assertIterableEquals(Arrays.asList(5), test3);
+    Iterable<Integer> test4 = Sequence.fromIterable(this.input5()).translate(new ITranslator <Integer, Integer>() {
+
+      public ISequence<Integer> translate(final Integer it) {
+        return new ISequenceIterableAdapter <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 4:
+                      if (false) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this.__CP__ = 6;
+                      break;
+                    case 3:
+                      if (false) {
+                        this.__CP__ = 2;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 7:
+                      this.__CP__ = 6;
+                      this.yield(999);
+                      return true;
+                    case 2:
+                      this.__CP__ = 4;
+                      break;
+                    case 6:
+                      throw new StopIteratingException();
+                    case 5:
+                      this.__CP__ = 7;
+                      break;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    Assert.assertTrue(Sequence.fromIterable(test4).isEmpty());
   }
 
 }

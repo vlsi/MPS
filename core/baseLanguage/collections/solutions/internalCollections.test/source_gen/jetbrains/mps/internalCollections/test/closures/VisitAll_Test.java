@@ -87,6 +87,24 @@ __skip__:
 
     });
     this.assertIterableEquals(Arrays.asList(4, 8, 12), res);
+    res.clear();
+    Sequence.fromIterable(this.input10()).visitAll(new IVisitor <Integer>() {
+
+      public void visit(Integer it) {
+__skip__:
+        do {
+          if (it % 2 == 1) {
+            break __skip__;
+          }
+          res.add(it * 2);
+          if (it > 5) {
+            throw new StopIteratingException();
+          }
+        } while(false);
+      }
+
+    });
+    this.assertIterableEquals(Arrays.asList(4, 8, 12), res);
   }
 
 }
