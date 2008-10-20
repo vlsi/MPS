@@ -1044,9 +1044,13 @@ private static final Logger LOG = Logger.getLogger(SNode.class);
     }
 
     // add language because helgins needs it to invalidate/revalidate its caches
-//    if (!myModel.hasLanguage(getLanguageNamespace())) {
-//      myModel.addLanguage_internal(ModuleReference.fromString(getLanguageNamespace()));
-//    }
+    //todo this is a hack
+    if (!myModel.hasLanguage(getLanguageNamespace())) {
+      Language lang = GlobalScope.getInstance().getLanguage(getLanguageNamespace());
+      if (lang != null) {
+        myModel.addLanguage_internal(lang.getModuleReference());
+      }
+    }
   }
 
   public boolean isDetached() {
