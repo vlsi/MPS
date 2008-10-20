@@ -5,66 +5,30 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.workbench.action.ActionUtils;
 
-class GeneratorTreeNode extends MPSTreeNode {
-
+class GeneratorTreeNode extends ProjectModuleTreeNode {
   public GeneratorTreeNode(Generator generator, MPSProject project) {
     super(new ModuleContext(generator, project));
     populate();
     updatePresentation();
   }
 
+  protected String getModulePresentation() {
+    return calculateText();
+  }
+
+  public IModule getModule() {
+    return getGenerator();
+  }
+
   protected void updatePresentation() {
-    if (generationRequired()) {
-      setAdditionalText("generation required");
-    } else if (getGenerator().isPackaged()) {
-      setAdditionalText("packaged");
-    } else {
-      setAdditionalText(null);
-    }
-
-    if (getGenerator().validate().isEmpty()) {
-      setTooltipText(null);
-    } else {
-      String result = "<html>";
-      for (String error : getGenerator().validate()) {
-        result += error + "<br>";
-      }
-      setTooltipText(result);
-    }
-
+    super.updatePresentation();
     setIcon(Icons.GENERATOR_ICON);
     setNodeIdentifier(calculateNodeIdenifier());
-    setText(calculateText());
-
-    setErrorState(!getGenerator().isValid());
   }
-
-  public boolean generationRequired() {
-    return generationRequired(this);
-  }
-
-  private boolean generationRequired(MPSTreeNode node) {
-    if (getGenerator().isPackaged()) {
-      return false;
-    }
-
-    if (node instanceof SModelTreeNode) {
-      SModelTreeNode smodelTreeNode = (SModelTreeNode) node;
-      return smodelTreeNode.generationRequired();
-    }
-
-    for (int i = 0; i < node.getChildCount(); i++) {
-      if (generationRequired((MPSTreeNode) node.getChildAt(i))) {
-        return true;
-      }
-    }
-
-    return false;
-  }
-
 
   public Generator getGenerator() {
     return (Generator) getOperationContext().getModule();

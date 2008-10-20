@@ -612,7 +612,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return findTreeNode(rootTreeNode,
       new Condition<MPSTreeNode>() {
         public boolean met(MPSTreeNode object) {
-          return !(object instanceof ProjectModuleTreeNode);
+          return !(object instanceof ProjectModuleTreeNode) || object instanceof ProjectLanguageTreeNode;
         }
       },
       new Condition<MPSTreeNode>() {
@@ -742,9 +742,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       TreeNode node = (TreeNode) path.getLastPathComponent();
       if (node instanceof ProjectModuleTreeNode) {
         result.add(((ProjectModuleTreeNode) node).getModule());
-      } else if (node instanceof GeneratorTreeNode) {
-        result.add(((GeneratorTreeNode) node).getGenerator());
-      }
+      } 
     }
     return result;
   }

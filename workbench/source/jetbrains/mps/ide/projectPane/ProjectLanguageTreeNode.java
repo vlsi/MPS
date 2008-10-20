@@ -43,7 +43,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   protected void updatePresentation() {
     super.updatePresentation();
     setIcon(Icons.PROJECT_LANGUAGE_ICON);
-    setNodeIdentifier(myLanguage.getModuleUID());
+    setNodeIdentifier(myLanguage.getModuleReference().toString());
   }
 
   public IModule getModule() {

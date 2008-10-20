@@ -16,7 +16,6 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
     return createFor(project, module, false);
   }
 
-
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module, boolean shortNameOnly) {
     if (module instanceof Language) {
       return new ProjectLanguageTreeNode((Language) module, project, shortNameOnly);
