@@ -659,6 +659,10 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void addLanguage_internal(@NotNull ModuleReference ref) {
+    if (ref.getModuleId() == null) {
+      LOG.warning("Attempt to add language reference to a language without id in model " + getSModelFqName() + ". Language = " + ref);
+    }
+
     if (!myLanguages.contains(ref)) {
       myLanguages.add(ref);
       fireLanguageAddedEvent(ref);
