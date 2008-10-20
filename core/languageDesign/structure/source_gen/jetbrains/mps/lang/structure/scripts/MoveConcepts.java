@@ -24,6 +24,7 @@ import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.constraints.structure.ConceptBehavior;
+import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Map;
@@ -115,6 +116,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
       List<SNode> editors = new ArrayList<SNode>();
       List<SNode> behaviors = new ArrayList<SNode>();
+      List<SNode> constraints = new ArrayList<SNode>();
       // collecting editors:
       SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
       if (editorModelDescriptor != null) {
@@ -139,6 +141,17 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
           }
         }
       }
+      // collecting constraints:
+      SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
+      if (constraintsModelDescriptor != null) {
+        for(SNode node : nodes) {
+          ConceptConstraints conceptConstraints = SModelUtil_new.findConstraintsDeclaration(constraintsModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node)));
+          if (conceptConstraints != null) {
+            SNode conceptConstraintsNodes = (SNode)conceptConstraints.getNode();
+            ListSequence.fromList(constraints).addElement(conceptConstraintsNodes);
+          }
+        }
+      }
       // refactoring itself
       refactoringContext.moveNodesToModel(nodes, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModel());
       for(SNode node : nodes) {
@@ -155,12 +168,22 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
         refactoringContext.updateModelWithMaps(editorModel);
       }
       if (ListSequence.fromList(behaviors).isNotEmpty()) {
+        SModelDescriptor targetBehaviorModelDescriptor = targetLanguage.getBehaviorModelDescriptor();
+        if (targetBehaviorModelDescriptor == null) {
+          targetBehaviorModelDescriptor = LanguageAspect.BEHAVIOR.createNew(targetLanguage);
+        }
+        SModel behaviorModel = targetBehaviorModelDescriptor.getSModel();
+        refactoringContext.moveNodesToModel(behaviors, behaviorModel);
+        refactoringContext.computeCaches();
+        refactoringContext.updateModelWithMaps(behaviorModel);
+      }
+      if (ListSequence.fromList(constraints).isNotEmpty()) {
         SModelDescriptor targetConstraintsModelDescriptor = targetLanguage.getConstraintsModelDescriptor();
         if (targetConstraintsModelDescriptor == null) {
           targetConstraintsModelDescriptor = LanguageAspect.CONSTRAINTS.createNew(targetLanguage);
         }
         SModel constraintsModel = targetConstraintsModelDescriptor.getSModel();
-        refactoringContext.moveNodesToModel(behaviors, constraintsModel);
+        refactoringContext.moveNodesToModel(constraints, constraintsModel);
         refactoringContext.computeCaches();
         refactoringContext.updateModelWithMaps(constraintsModel);
       }
