@@ -43,9 +43,29 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention {
     for(String word : strings) {
       SNode constantCell = SNodeOperations.copyNode(node);
       SPropertyOperations.set(constantCell, "text", word);
-      SLinkOperations.setTarget(constantCell, "styleClass", SLinkOperations.getTarget(node, "styleClass", false), false);
-      for(SNode styleClassItem : SLinkOperations.getTargets(node, "styleItem", true)) {
-        SLinkOperations.addChild(constantCell, "styleItem", SNodeOperations.copyNode(styleClassItem));
+      boolean leftPaddingSet = false;
+      boolean rightPaddingSet = false;
+      for(SNode styleClassItem : SLinkOperations.getTargets(constantCell, "styleItem", true)) {
+        if (SNodeOperations.isInstanceOf(styleClassItem, "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem")) {
+          leftPaddingSet = true;
+          if (!(strings[0].equals(word))) {
+            SPropertyOperations.set(styleClassItem, "value", "0.5");
+          }
+        }
+        if (SNodeOperations.isInstanceOf(styleClassItem, "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem")) {
+          rightPaddingSet = true;
+          if (!(strings[strings.length - 1].equals(word))) {
+            SPropertyOperations.set(styleClassItem, "value", "0.5");
+          }
+        }
+      }
+      if (!(leftPaddingSet)) {
+        SNode paddingLeftStyleClassItem = SLinkOperations.addNewChild(constantCell, "styleItem", "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem");
+        SPropertyOperations.set(paddingLeftStyleClassItem, "value", "0.5");
+      }
+      if (!(rightPaddingSet)) {
+        SNode paddingRightStyleClassItem = SLinkOperations.addNewChild(constantCell, "styleItem", "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem");
+        SPropertyOperations.set(paddingRightStyleClassItem, "value", "0.5");
       }
       SLinkOperations.addChild(collection, "childCellModel", constantCell);
     }
