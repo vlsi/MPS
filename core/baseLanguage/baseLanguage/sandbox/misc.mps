@@ -101,6 +101,9 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224510109930">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1224510109931" />
+        </node>
       </node>
     </node>
   </node>

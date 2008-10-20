@@ -1762,9 +1762,6 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1070475354124">
     <property name="name" value="ThisExpression" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1197884178086">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107217864430">
       <property name="value" value="this" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
