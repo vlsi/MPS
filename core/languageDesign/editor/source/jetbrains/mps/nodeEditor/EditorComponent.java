@@ -1318,6 +1318,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
         removeAll();
 
+        if (events != null) {
+          revertErrorCells(events);
+        }
+
         runSwapCellsActions(new Runnable() {
           public void run() {
             setRootCell(createRootCell(events));
@@ -2150,6 +2154,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             fireCellSynchronized(cell);
           }
           relayout();
+          revertErrorCells(events);
         }
       } else {
         rebuildEditorContent(events);
@@ -2162,8 +2167,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
 
       updateSelection(events, lastSelectedNode);
+      revertErrorCells(events);
     }
-    revertErrorCells(events);
   }
 
   private void updateSelection(List<SModelEvent> events, SNode lastSelectedNode) {
