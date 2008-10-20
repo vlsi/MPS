@@ -28,7 +28,11 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention {
     if ((SNodeOperations.getParent(node) == null)) {
       return false;
     }
-    if (SPropertyOperations.getString(node, "text").trim().contains(" ")) {
+    String text = SPropertyOperations.getString(node, "text");
+    if (text == null || text.isEmpty()) {
+      return false;
+    }
+    if (text.trim().contains(" ")) {
       return true;
     }
     return false;
@@ -40,6 +44,7 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention {
     SLinkOperations.setNewChild(collection, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Flow");
     SNodeOperations.replaceWithAnother(node, collection);
     String[] strings = text.split(" ");
+    int i = 0;
     for(String word : strings) {
       SNode constantCell = SNodeOperations.copyNode(node);
       SPropertyOperations.set(constantCell, "text", word);
@@ -48,13 +53,13 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention {
       for(SNode styleClassItem : SLinkOperations.getTargets(constantCell, "styleItem", true)) {
         if (SNodeOperations.isInstanceOf(styleClassItem, "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem")) {
           leftPaddingSet = true;
-          if (!(strings[0].equals(word))) {
+          if (i != 0) {
             SPropertyOperations.set(styleClassItem, "value", "0.5");
           }
         }
         if (SNodeOperations.isInstanceOf(styleClassItem, "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem")) {
           rightPaddingSet = true;
-          if (!(strings[strings.length - 1].equals(word))) {
+          if (i != strings.length - 1) {
             SPropertyOperations.set(styleClassItem, "value", "0.5");
           }
         }
@@ -68,6 +73,7 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention {
         SPropertyOperations.set(paddingRightStyleClassItem, "value", "0.5");
       }
       SLinkOperations.addChild(collection, "childCellModel", constantCell);
+      i++ ;
     }
   }
 
