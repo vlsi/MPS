@@ -119,8 +119,8 @@ public class DevKit extends AbstractModule {
   public List<Language> getExportedLanguages() {
     List<Language> langs = new ArrayList<Language>();
     for (LanguageReference l : myDescriptor.getExportedLanguages()) {
-      String namespace = l.getName();
-      Language lang = MPSModuleRepository.getInstance().getLanguage(namespace);
+      ModuleReference ref = ModuleReference.fromString(l.getName());
+      Language lang = MPSModuleRepository.getInstance().getLanguage(ref);
       if (lang != null) {
         langs.add(lang);
       }
