@@ -1044,10 +1044,9 @@ private static final Logger LOG = Logger.getLogger(SNode.class);
     }
 
     // add language because helgins needs it to invalidate/revalidate its caches
-
-    if (!myModel.hasLanguage(getLanguageNamespace())) {    
-      myModel.addLanguage_internal(ModuleReference.fromString(getLanguageNamespace()));
-    }
+//    if (!myModel.hasLanguage(getLanguageNamespace())) {
+//      myModel.addLanguage_internal(ModuleReference.fromString(getLanguageNamespace()));
+//    }
   }
 
   public boolean isDetached() {

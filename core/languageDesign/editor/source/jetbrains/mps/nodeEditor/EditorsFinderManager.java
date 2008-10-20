@@ -87,6 +87,9 @@ public class EditorsFinderManager implements ApplicationComponent {
         } catch (NoSuchMethodException e) {
           LOG.error(e);
           return new DefaultNodeEditor();
+        } catch (NoClassDefFoundError e) {
+          LOG.error(e);
+          return new DefaultNodeEditor();
         }
 
       }
@@ -145,8 +148,8 @@ public class EditorsFinderManager implements ApplicationComponent {
       LOG.error(e);
     } catch (IllegalAccessException e) {
       LOG.error(e);
-    } catch (Exception e) {
-      LOG.error(e);
+    } catch (Throwable t) {
+      LOG.error(t);
     }
 
     return null;
