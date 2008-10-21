@@ -317,14 +317,23 @@
     </zip>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp" />
     <copy file="lib/idea-platform/idea-platform-src.zip" tofile="${deploy.dir}/debug/idea-platform-src.zip" />
-    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp">
-      <fileset dir="core/kernel/source" excludes="" includes="**/*.java, **/*.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp">
-      <fileset dir="workbench/source" excludes="" includes="**/*.java, **/*.xml, " />
+    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
+      <fileset dir="core" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
-      <fileset dir="" excludes="" includes="**/src/, **/source/, **/sources/, **/source_gen/, **/*.java, **/*.xml, " />
+      <fileset dir="platform" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
+      <fileset dir="plugin" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
+      <fileset dir="source" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
+      <fileset dir="resources" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
+      <fileset dir="workbench" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
     </copy>
     <antcall target="repack.sources" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
