@@ -17737,5 +17737,78 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1224574042506">
+    <property name="package" value="enumOperations" />
+    <link role="conceptDeclaration" targetNodeId="17.1224573963862" resolveInfo="EnumValuesExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1224574045555">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1224574066637">
+        <link role="relationDeclaration" targetNodeId="17.1224573974191" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1224574066638">
+          <link role="conceptDeclaration" targetNodeId="17.1083245097125" resolveInfo="EnumClass" />
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1224574067640">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224574610276">
+              <property name="value" value="0.0" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224574073189">
+        <property name="text" value="." />
+        <link role="styleClass" targetNodeId="1215096040201" resolveInfo="Dot" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224574074659">
+        <property name="text" value="values" />
+        <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224574615496">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1224575196387">
+    <property name="package" value="enumOperations" />
+    <link role="conceptDeclaration" targetNodeId="17.1224575136086" resolveInfo="EnumValueOfExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1224575200202">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1224575200203">
+        <link role="relationDeclaration" targetNodeId="17.1224573974191" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1224575200204">
+          <link role="conceptDeclaration" targetNodeId="17.1083245097125" resolveInfo="EnumClass" />
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1224575200205">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224575200206">
+              <property name="value" value="0.0" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224575200207">
+        <property name="text" value="." />
+        <link role="styleClass" targetNodeId="1215096040201" resolveInfo="Dot" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224575200208">
+        <property name="text" value="valueOf" />
+        <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224575200209">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224575281440">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="1215087929380" resolveInfo="LeftParen" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1224575296116">
+        <link role="relationDeclaration" targetNodeId="17.1224575157853" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224575282942">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />
+      </node>
+    </node>
+  </node>
 </model>
 

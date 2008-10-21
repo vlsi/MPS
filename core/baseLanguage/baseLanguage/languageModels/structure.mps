@@ -2888,5 +2888,41 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224573963862">
+    <property name="name" value="EnumValuesExpression" />
+    <property name="package" value="enumOperations" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224573974191">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="enumClass" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1083245097125" resolveInfo="EnumClass" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224574205910">
+      <property name="value" value="enum values" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224575136086">
+    <property name="package" value="enumOperations" />
+    <property name="name" value="EnumValueOfExpression" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224575157853">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="value" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224575174120">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="enumClass" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1083245097125" resolveInfo="EnumClass" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224575184714">
+      <property name="value" value="enum value of" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
