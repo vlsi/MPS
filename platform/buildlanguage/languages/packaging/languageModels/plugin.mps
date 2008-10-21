@@ -407,10 +407,7 @@
                               <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218726094668">
                                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218726094669">
                                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1218726094670">
-                                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1218726094671">
-                                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1218726094672">
-                                        <property name="value" value=".xml" />
-                                      </node>
+                                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224594507353">
                                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218726094673">
                                         <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1218726094674">
                                           <link role="concept" targetNodeId="32.1196851066733" resolveInfo="Project" />
@@ -421,6 +418,9 @@
                                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1218726094676">
                                           <link role="conceptMethodDeclaration" targetNodeId="6.1213877351812" resolveInfo="getDocumentName" />
                                         </node>
+                                      </node>
+                                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224594570333">
+                                        <property name="value" value=".xml" />
                                       </node>
                                     </node>
                                     <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218726094677">

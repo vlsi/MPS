@@ -7,6 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.EqualUtil;
 
 public class Copy_Behavior {
 
@@ -48,6 +50,13 @@ public class Copy_Behavior {
       (SPropertyOperations.getString(thisNode, "includes")) :
       ""
     );
+  }
+
+  public static boolean virtual_equals_1213877333900(SNode thisNode, SNode snode) {
+    if (!(SNodeOperations.isInstanceOf(snode, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))))) {
+      return false;
+    }
+    return EqualUtil.equalsIgnoreCase(Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(thisNode, "sourcePath", true)), Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(snode, "sourcePath", true)));
   }
 
 }
