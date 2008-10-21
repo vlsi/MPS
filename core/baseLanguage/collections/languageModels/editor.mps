@@ -1282,10 +1282,14 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1201315584462">
         <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224589775991">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1201315586667">
         <property name="text" value="(" />
         <link role="styleClass" targetNodeId="15.1215087929380" resolveInfo="LeftParen" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1224589781414" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1201654620376">
         <link role="relationDeclaration" targetNodeId="1.1201654602639" />
