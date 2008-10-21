@@ -940,9 +940,8 @@
               </node>
             </node>
           </node>
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1209134942078">
-            <link role="baseMethodDeclaration" targetNodeId="40.~LanguageAspect.values():jetbrains.mps.smodel.LanguageAspect[]" resolveInfo="values" />
-            <link role="classConcept" targetNodeId="40.~LanguageAspect" resolveInfo="LanguageAspect" />
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" id="1224582789410">
+            <link role="enumClass" targetNodeId="40.~LanguageAspect" resolveInfo="LanguageAspect" />
           </node>
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1209134926490">
             <property name="name" value="aspect" />
