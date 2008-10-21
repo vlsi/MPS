@@ -29,7 +29,7 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention {
       return false;
     }
     String text = SPropertyOperations.getString(node, "text");
-    if (text == null || text.isEmpty()) {
+    if (text == null || text.length() == 0) {
       return false;
     }
     if (text.trim().contains(" ")) {

@@ -23,7 +23,7 @@ public class TrimConstantCell_Intention extends BaseIntention {
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     String text = SPropertyOperations.getString(node, "text");
-    if (text == null || text.isEmpty()) {
+    if (text == null || text.length() == 0) {
       return false;
     }
     if (text.charAt(0) == ' ' || text.charAt(text.length() - 1) == ' ') {
