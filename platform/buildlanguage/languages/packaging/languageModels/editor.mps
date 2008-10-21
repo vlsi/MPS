@@ -292,6 +292,12 @@
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem" id="1204129851721">
         <property name="color" value="gray" />
       </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224597437104">
+        <property name="value" value="0.3" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1224597437105">
+        <property name="value" value="0.3" />
+      </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1205337004073">
       <property name="name" value="variable" />
