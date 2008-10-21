@@ -639,7 +639,7 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1216803865149" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1160612601119">
-        <property name="attractsFocus" value="1" />
+        <property name="attractsFocus" value="2" />
         <link role="relationDeclaration" targetNodeId="1.1160612519549" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1160612610699">
