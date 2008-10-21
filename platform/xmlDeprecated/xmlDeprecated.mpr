@@ -5,7 +5,9 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
-    <projectSolutions />
+    <projectSolutions>
+      <solutionPath path="${project}\solutions\jetbrains.mps.xml.sandbox\jetbrains.mps.xml.sandbox.msd" />
+    </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}\languageDescriptor.mpl" />
     </projectLanguages>
