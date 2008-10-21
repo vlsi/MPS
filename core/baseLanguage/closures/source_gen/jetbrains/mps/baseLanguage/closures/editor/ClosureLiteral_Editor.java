@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -155,19 +154,23 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_11995699642401199569964240(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199569964240");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 0.0);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_refNode_body1199569970439(EditorCell editorCell, SNode node, EditorContext context) {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BRACKETS, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ClosureLiteral_Editor.calculateBoolean2648_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BRACKETS, true);
         }
 
       };
@@ -188,12 +191,6 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_body_1199569970439(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean2648_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
   public static class parameterListHandler_2648_0 extends RefNodeListHandler {

@@ -155,6 +155,12 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199569964240">
         <property name="text" value="=&gt;" />
         <link role="styleClass" targetNodeId="3.1215010940130" resolveInfo="Operator" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1224597244829">
+          <property name="value" value="0.0" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224597249144">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1199569970439">
         <link role="relationDeclaration" targetNodeId="1.1199569916463" />

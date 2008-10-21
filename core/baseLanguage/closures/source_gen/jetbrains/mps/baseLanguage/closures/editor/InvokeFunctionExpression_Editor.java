@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -161,13 +160,7 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return InvokeFunctionExpression_Editor.calculateBoolean1988_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
         }
 
       };
@@ -195,12 +188,6 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNodeList_parameter_1199548058137(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean1988_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
   public static class parameterListHandler_1988_0 extends RefNodeListHandler {

@@ -155,11 +155,12 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1209728126060(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12097281287761209728128776(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209728128776");
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_comparator1209728133903(EditorCell editorCell, SNode node, EditorContext context) {
@@ -167,6 +168,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12097281807001209728180700(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209728180700");
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_ascending1209728183886(EditorCell editorCell, SNode node, EditorContext context) {
@@ -174,6 +176,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12097281861401209728186140(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209728186140");
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_conceptProperty_alias_1209728126060(EditorCell_Label editorCell, SNode node, EditorContext context) {

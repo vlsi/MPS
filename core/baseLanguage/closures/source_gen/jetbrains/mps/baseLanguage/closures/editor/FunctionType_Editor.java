@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -179,13 +178,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return FunctionType_Editor.calculateBoolean1642_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
         }
 
       };
@@ -211,13 +204,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return FunctionType_Editor.calculateBoolean1642_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -257,18 +244,6 @@ public class FunctionType_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition1642_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsType", true)).isNotEmpty();
-  }
-
-  public static Boolean calculateBoolean1642_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1642_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
   public static class parameterTypeListHandler_1642_0 extends RefNodeListHandler {

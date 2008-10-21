@@ -116,6 +116,7 @@ public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12067296647791206729664779(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206729664779");
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_closure1206729664780(EditorCell editorCell, SNode node, EditorContext context) {
@@ -123,11 +124,12 @@ public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12067296647811206729664781(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206729664781");
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_conceptProperty_alias1206729909757(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_1206729664779_1206729664779(EditorCell_Label editorCell, SNode node, EditorContext context) {
