@@ -90,7 +90,7 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
         if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
-          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, " /"));
+          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, "/"));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
@@ -100,7 +100,7 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
 
     public EditorCell createSeparatorCell(EditorContext context) {
       {
-        EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), " /");
+        EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), "/");
         editorCell.setSelectable(false);
         return editorCell;
       }

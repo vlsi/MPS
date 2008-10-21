@@ -33,6 +33,7 @@ public class Jar_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider myConfigurationReferencesEditorComponent1697_0;
   /* package */AbstractCellProvider myConfigurationReferencesEditorComponent1697_1;
   /* package */AbstractCellProvider myICompositeComponentEditorComponenmt1697_0;
+  /* package */AbstractCellProvider myIncludeExcludeEditorComponent1697_0;
   /* package */AbstractCellListHandler myListHandler_1203598588660;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -73,6 +74,7 @@ public class Jar_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty1203599093069(context, node));
     editorCell.addEditorCell(this.createRefNode1205344621976(context, node));
+    editorCell.addEditorCell(this.createComponent1224596511516(context, node));
     editorCell.addEditorCell(this.createComponent1204128139480(context, node));
     return editorCell;
   }
@@ -136,6 +138,15 @@ public class Jar_Editor extends DefaultNodeEditor {
     }
     EditorCell editorCell = this.myICompositeComponentEditorComponenmt1697_0.createEditorCell(context);
     setupBasic_component_ICompositeComponentEditorComponenmt1206440342373(editorCell, node, context);
+    return editorCell;
+  }
+
+  public EditorCell createComponent1224596511516(EditorContext context, SNode node) {
+    if (this.myIncludeExcludeEditorComponent1697_0 == null) {
+      this.myIncludeExcludeEditorComponent1697_0 = new IncludeExcludeEditorComponent(node);
+    }
+    EditorCell editorCell = this.myIncludeExcludeEditorComponent1697_0.createEditorCell(context);
+    setupBasic_component_IncludeExcludeEditorComponent1224596511516(editorCell, node, context);
     return editorCell;
   }
 
@@ -403,6 +414,10 @@ public class Jar_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_property_dirmode1209915766282(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "property_dirmode");
+  }
+
+  private static void setupBasic_component_IncludeExcludeEditorComponent1224596511516(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "component_IncludeExcludeEditorComponent");
   }
 
   private static void setupLabel_refNodeList_entry_1203598588660(EditorCell_Label editorCell, SNode node, EditorContext context) {
