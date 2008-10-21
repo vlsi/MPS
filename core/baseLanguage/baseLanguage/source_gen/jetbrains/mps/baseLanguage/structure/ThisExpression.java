@@ -7,12 +7,39 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ThisExpression extends Expression {
+public class ThisExpression extends Expression implements IThisExpression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ThisExpression";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String CLASS_CONCEPT = "classConcept";
 
   public ThisExpression(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ThisExpression.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ThisExpression.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ThisExpression.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ThisExpression.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ThisExpression.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ThisExpression.VIRTUAL_PACKAGE, value);
   }
 
   public Classifier getClassConcept() {

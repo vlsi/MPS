@@ -565,6 +565,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1177671793650">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1224609958838">
+      <link role="intfc" targetNodeId="3.1224609861009" resolveInfo="IThisExpression" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1177673300966">
     <property name="package" value="Behavior" />

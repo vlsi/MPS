@@ -1764,6 +1764,9 @@
       <property name="role" value="classConcept" />
       <link role="target" targetNodeId="1107461130800" resolveInfo="Classifier" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1224609880263">
+      <link role="intfc" targetNodeId="1224609861009" resolveInfo="IThisExpression" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1163668896201">
     <property name="name" value="TernaryOperatorExpression" />
@@ -2919,6 +2922,10 @@
       <property name="value" value="8" />
       <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1224609861009">
+    <property name="package" value="refactoring" />
+    <property name="name" value="IThisExpression" />
   </node>
 </model>
 
