@@ -14226,8 +14226,8 @@
               <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1224575743688">
                 <link role="applicableNode" targetNodeId="1224575656588" resolveInfo="expression" />
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224575743689">
-                <link role="link" targetNodeId="1.1224575174120" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224580737292">
+                <link role="link" targetNodeId="1.1224575157853" />
               </node>
             </node>
           </node>

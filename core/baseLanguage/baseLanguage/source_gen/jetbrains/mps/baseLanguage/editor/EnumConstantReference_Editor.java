@@ -24,8 +24,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
 
 public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
@@ -62,7 +62,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       setupLabel_refCell_enumConstantDeclaration_1090928601379((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new EnumConstantReference_Editor.EnumConstantReference_enumConstantDeclaration_cellMenu0(),new EnumConstantReference_Editor.EnumConstantReference_customReplace_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new EnumConstantReference_Editor.EnumConstantReference_customReplace_cellMenu0()}));
     return editorCell;
   }
 
@@ -269,7 +269,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return QueriesUtil.replaceNodeMenu_EnumConstantReference_getParameterObjects(node);
+      return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, "enumClass", false), node);
     }
 
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -277,18 +277,13 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     }
 
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return QueriesUtil.replaceNodeMenu_EnumConstantReference_createReplacementNode(node, parameterObject);
+      return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "enumClass", false), parameterObject);
     }
 
     public boolean isReferentPresentation() {
       return true;
     }
 
-}
-  public static class EnumConstantReference_enumConstantDeclaration_cellMenu0 extends PrimaryReferentMenuCellMenuPart {
-
-    public EnumConstantReference_enumConstantDeclaration_cellMenu0() {
-    }
 }
 
 }

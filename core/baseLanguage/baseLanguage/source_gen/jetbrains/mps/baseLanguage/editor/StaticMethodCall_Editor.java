@@ -27,7 +27,6 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
 
 public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
@@ -76,7 +75,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       setupLabel_refCell_staticMethodDeclaration_1088427863670((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new StaticMethodCall_Editor.StaticMethodCall_staticMethodDeclaration_cellMenu0(),new StaticMethodCall_Editor.StaticMethodCall_customReplace_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new StaticMethodCall_Editor.StaticMethodCall_customReplace_cellMenu0()}));
     return editorCell;
   }
 
@@ -337,7 +336,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return QueriesUtil.replaceNodeMenu_StaticMethodCall_getParameterObjects(node);
+      return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, "classConcept", false), node);
     }
 
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -345,18 +344,13 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     }
 
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return QueriesUtil.replaceNodeMenu_StaticMethodCall_createReplacementNode(node, parameterObject);
+      return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "classConcept", false), parameterObject);
     }
 
     public boolean isReferentPresentation() {
       return true;
     }
 
-}
-  public static class StaticMethodCall_staticMethodDeclaration_cellMenu0 extends PrimaryReferentMenuCellMenuPart {
-
-    public StaticMethodCall_staticMethodDeclaration_cellMenu0() {
-    }
 }
 
 }

@@ -1151,12 +1151,6 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1083245299891" resolveInfo="EnumConstantDeclaration" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224106973102">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="syntheticStaticMethod" />
-      <link role="target" targetNodeId="1081236700938" resolveInfo="StaticMethodDeclaration" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1083245299891">
     <property name="name" value="EnumConstantDeclaration" />
@@ -2899,8 +2893,11 @@
       <link role="target" targetNodeId="1083245097125" resolveInfo="EnumClass" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224574205910">
-      <property name="value" value="enum values" />
+      <property name="value" value="values" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1224575486286">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224575136086">
@@ -2920,8 +2917,11 @@
       <link role="target" targetNodeId="1083245097125" resolveInfo="EnumClass" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224575184714">
-      <property name="value" value="enum value of" />
+      <property name="value" value="valueOf" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1224575492069">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
 </model>

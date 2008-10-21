@@ -11,8 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class EnumClass_Behavior {
 
   public static void init(SNode thisNode) {
-    SLinkOperations.addChild(thisNode, "syntheticStaticMethod", new _Quotations.QuotationClass_3().createNode(thisNode));
-    SLinkOperations.addChild(thisNode, "syntheticStaticMethod", new _Quotations.QuotationClass_4().createNode(thisNode));
   }
 
   public static SNode call_findConstantByName_1213877267258(SNode thisNode, String name) {
@@ -31,7 +29,8 @@ public class EnumClass_Behavior {
   }
 
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return Classifier_Behavior.callSuper_hasStaticMemebers_1214840444586(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass") || ListSequence.fromList(SLinkOperations.getTargets(thisNode, "enumConstant", true)).count() > 0 || SLinkOperations.getCount(thisNode, "syntheticStaticMethod") > 0;
+    // enums always have static operations: valueOf and values
+    return true;
   }
 
 }
