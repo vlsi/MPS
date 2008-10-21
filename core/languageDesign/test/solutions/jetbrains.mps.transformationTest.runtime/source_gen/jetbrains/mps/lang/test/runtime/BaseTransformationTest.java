@@ -26,9 +26,8 @@ public class BaseTransformationTest extends TestCase {
   public BaseTransformationTest() {
   }
 
-  public void intitTest(String projectName, final String model) throws Exception {
+  public void initTest(String projectName, final String model) throws Exception {
     final MPSProject project = myContainer.getProject(Macros.mpsHomeMacros().expandPath(projectName, ((IFile)null)));
-    final BaseTransformationTest test = this;
     SwingUtilities.invokeAndWait(new Runnable() {
 
       public void run() {
@@ -36,18 +35,23 @@ public class BaseTransformationTest extends TestCase {
 
           public void run() {
             IdeMain.setTestMode(true);
-            test.myModel = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model));
-            ModuleContext context = ModuleContext.create(test.myModel, project, false);
-            TransientModelsModule module = context.getComponent(TransientModelsModule.class);
-            test.myTransidentModel = module.createTransientModel("testTransidentModel", "testTransidentModel");
-            CloneUtil.cloneModel(test.myModel.getSModel(), test.myTransidentModel.getSModel());
-            test.myTransidentModel.getSModel().validateLanguagesAndImports();
+            SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model));
+            BaseTransformationTest.this.setModelDescriptor(modelDescriptor, project);
           }
 
         });
       }
 
     });
+  }
+
+  public void setModelDescriptor(SModelDescriptor modelDescriptor, MPSProject project) {
+    this.myModel = modelDescriptor;
+    ModuleContext context = ModuleContext.create(this.myModel, project, false);
+    TransientModelsModule module = context.getComponent(TransientModelsModule.class);
+    this.myTransidentModel = module.createTransientModel("testTransidentModel", "testTransidentModel");
+    CloneUtil.cloneModel(this.myModel.getSModel(), this.myTransidentModel.getSModel());
+    this.myTransidentModel.getSModel().validateLanguagesAndImports();
   }
 
   public void runTest(final String className, String methodName) throws Exception {
