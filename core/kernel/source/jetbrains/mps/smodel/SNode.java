@@ -21,6 +21,8 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * User: Sergey Dmitriev
  * Date: Aug 2, 2003
@@ -1632,7 +1634,7 @@ private static final Logger LOG = Logger.getLogger(SNode.class);
     return false;
   }
 
-  public Language getLanguage(IScope scope) {
+  public Language getLanguage(@NotNull IScope scope) {
     String languageNamespace = getLanguageNamespace();
     Language language = scope.getLanguage(languageNamespace);
     if (language == null) {
