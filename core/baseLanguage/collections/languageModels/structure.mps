@@ -405,6 +405,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1152141130888">
     <property name="name" value="TraversalStopStatement" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="2.1068580123157" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1152141188156">
       <property name="value" value="stop" />
@@ -416,6 +417,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1152141160639">
     <property name="name" value="TraversalSkipStatement" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="2.1068580123157" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1152141196204">
       <property name="value" value="skip" />
@@ -471,6 +473,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153248196026">
     <property name="name" value="DefaultInputElement" />
+    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="2.1153179527848" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153509719989">
@@ -889,7 +892,6 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1178286324487">
     <property name="name" value="SortDirection" />
-    <property name="package" value="obsolete" />
     <link role="extends" targetNodeId="2.1068580123137" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1178286349577">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />

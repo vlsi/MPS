@@ -462,11 +462,31 @@
       <node role="precondition" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" id="1178286539824">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178286539825">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178286574940">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227891537">
-              <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1178286574941" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1178286592083">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1178286605808">
-                  <link role="conceptDeclaration" targetNodeId="1.1168502632000" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1224580333225">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1224580440500">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224580442933">
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1224580442398" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1224580444186">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1224580445699">
+                      <link role="conceptDeclaration" targetNodeId="1.1209727891789" resolveInfo="ComparatorSortOperation" />
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224580335764">
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1224580335047" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1224580336938">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1224580339715">
+                      <link role="conceptDeclaration" targetNodeId="1.1205679737078" resolveInfo="SortOperationNew" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227891537">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1178286574941" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1178286592083">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1178286605808">
+                    <link role="conceptDeclaration" targetNodeId="1.1168502632000" />
+                  </node>
                 </node>
               </node>
             </node>
