@@ -19,7 +19,7 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="true" testAllLanguages="false">
+  <component name="MPSProject" auto-import-from-idea="true" testAllLanguages="true">
     <projectSolutions>
       <solutionPath path="${project}\solutions\jetbrains.mps.build\mpsbuild.msd" folder="package" />
     </projectSolutions>
@@ -32,6 +32,9 @@
     <projectDevkits />
     <libraries />
     <genConfs>
+      <genConfLanguage name="generate packaging language" language="jetbrains.mps.build.packaging" />
+      <genConfLanguage name="generate dependency language" language="jetbrains.mps.build.dependency" />
+      <genConfLanguage name="generate property language" language="jetbrains.mps.build.property" />
       <genConfLanguage name="generate buildLanguage" language="jetbrains.mps.buildlanguage" />
     </genConfs>
   </component>
