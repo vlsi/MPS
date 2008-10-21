@@ -9266,7 +9266,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptBehavior" id="1223985710162">
-    <property name="package" value="dataflow" />
+    <property name="package" value="refactoring" />
     <link role="concept" targetNodeId="1.1223985693348" resolveInfo="IVariableDeclaration" />
     <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1223985713603">
       <property name="name" value="isCanBeUnused" />

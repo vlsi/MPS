@@ -7,10 +7,12 @@ import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class InlineLocalVariable_Action extends GeneratedAction {
@@ -19,6 +21,7 @@ public class InlineLocalVariable_Action extends GeneratedAction {
 
   private SNode node;
   public EditorContext editorContext;
+  public Frame frame;
 
   public InlineLocalVariable_Action() {
     super("Inline local variable", "", ICON);
@@ -65,19 +68,32 @@ public class InlineLocalVariable_Action extends GeneratedAction {
     if (this.editorContext == null) {
       return false;
     }
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final InlineVariableRefactoring ref = new InlineVariableRefactoring(((SNode)InlineLocalVariable_Action.this.node), InlineLocalVariable_Action.this.editorContext);
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      final Wrappers._T<InlineVariableRefactoring> ref = new Wrappers._T<InlineVariableRefactoring>();
+      ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          ref.doRefactoring();
+          ref.value = new InlineVariableRefactoring(((SNode)InlineLocalVariable_Action.this.node));
         }
 
       });
+      if (ref.value.checkRefactoring(InlineLocalVariable_Action.this.frame)) {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+          public void run() {
+            ref.value.doRefactoring();
+          }
+
+        });
+      }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "InlineLocalVariable", t);
     }
