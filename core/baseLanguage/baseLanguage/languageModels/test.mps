@@ -40,7 +40,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <maxImportIndex value="22" />
+  <maxImportIndex value="23" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -53,6 +53,7 @@
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="21" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="22" modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
+  <import index="23" modelUID="f:java_stub#jetbrains.mps.baseLanguage.test(jetbrains.mps.baseLanguage.test@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215441101658">
     <property name="name" value="SandboxConcept" />
     <property name="package" value="inlineMethod" />
@@ -12470,7 +12471,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1224161463074">
-    <property name="name" value="SimplesMoveMethod" />
+    <property name="name" value="SimpleMoveMethod" />
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.NodesTestMethod" id="1224162039150">
       <property name="name" value="check" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224162039151">
@@ -12667,11 +12668,11 @@
                 <property name="name" value="c" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1224589732617" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224589744496">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224589744655">
-                    <property name="value" value="1" />
-                  </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224589742338">
                     <property name="value" value="5" />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224601336219">
+                    <property name="value" value="1" />
                   </node>
                 </node>
               </node>
