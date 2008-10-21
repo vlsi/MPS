@@ -75,4 +75,8 @@ public class NodesTestCase_Behavior {
     return result;
   }
 
+  public static String getTestBodyName_1224602741295() {
+    return "TestBody";
+  }
+
 }

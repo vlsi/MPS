@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
@@ -41,10 +42,6 @@ public class QueriesGenerated {
     return ITestMethod_Behavior.call_getTestName_1216136419751(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1217434974886(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ITestMethod_Behavior.call_getTestName_1216136419751(_context.getNode());
-  }
-
   public static Object propertyMacro_GetPropertyValue_1221567851385(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getId();
   }
@@ -66,7 +63,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1221567884881(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "body" + ITestMethod_Behavior.call_getTestName_1216136419751(_context.getNode());
+    return ITestMethod_Behavior.call_getTestName_1216136419751(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1221567898665(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -95,30 +92,20 @@ public class QueriesGenerated {
     return _context.getOriginalInputModel().getSModelReference().toString();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1221570039970(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IOperationContext invocationContext = _context.getGenerator().getGeneratorSessionContext().getInvocationContext();
-    String url = invocationContext.getProject().getPresentableUrl();
-    if (url != null) {
-      String path = url.replaceAll("/", "\\\\");
-      return Macros.mpsHomeMacros().shrinkPath(path, (IFile)null).replaceAll("\\\\", "/");
-    }
-    return "";
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1221570040017(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelReference().toString();
-  }
-
   public static Object propertyMacro_GetPropertyValue_1221570981212(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "body" + ITestMethod_Behavior.call_getTestName_1216136419751(_context.getNode());
+    return ITestMethod_Behavior.call_getTestName_1216136419751(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1221573038180(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "body" + ITestMethod_Behavior.call_getTestName_1216136419751(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1221573076739(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "body" + ITestMethod_Behavior.call_getTestName_1216136419751(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_1224603580889(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1224603647998(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NodesTestCase_Behavior.getTestBodyName_1224602741295();
   }
 
   public static Object referenceMacro_GetReferent_1210689466825(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -174,15 +161,12 @@ public class QueriesGenerated {
     for(SNode method : SLinkOperations.getTargets(_context.getNode(), "testMethods", true)) {
       ListSequence.fromList(res).addElement(method);
     }
+    ListSequence.fromList(res).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.test.structure.NodeOperation", false)));
     return res;
   }
 
   public static Iterable sourceNodesQuery_1217248368856(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
-  }
-
-  public static Iterable sourceNodesQuery_1217432232836(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.test.structure.NodeOperation", false);
   }
 
   public static Iterable sourceNodesQuery_1221567851293(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

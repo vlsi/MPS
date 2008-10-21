@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class InlineMethod_Action extends GeneratedAction {
@@ -40,7 +41,7 @@ public class InlineMethod_Action extends GeneratedAction {
     ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
-        b.value = InlineMethodRefactoringAnalyzer.isMethodNode(InlineMethod_Action.this.node);
+        b.value = SNodeOperations.isInstanceOf(InlineMethod_Action.this.node, "jetbrains.mps.baseLanguage.structure.IMethodCall") || SNodeOperations.isInstanceOf(InlineMethod_Action.this.node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       }
 
     });

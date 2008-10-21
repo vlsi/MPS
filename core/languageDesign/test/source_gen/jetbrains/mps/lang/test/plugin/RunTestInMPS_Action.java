@@ -17,8 +17,8 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
-import java.lang.reflect.Method;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 
 public class RunTestInMPS_Action extends GeneratedAction {
   public static final Logger LOG = Logger.getLogger(RunTestInMPS_Action.class);
@@ -101,23 +101,21 @@ public class RunTestInMPS_Action extends GeneratedAction {
       final String testName = ITestMethod_Behavior.call_getTestName_1216136419751(test);
       System.out.println("Test " + className + "." + testName);
       final Class c = RunTestInMPS_Action.this.model.getModelDescriptor().getModule().getClass(ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(test)));
-      Method method = c.getMethod("setModelDescriptor", SModelDescriptor.class, MPSProject.class);
-      final Object obj = c.newInstance();
-      method.invoke(obj, RunTestInMPS_Action.this.model.getModelDescriptor(), RunTestInMPS_Action.this.project);
-      final Method testMethod = c.getMethod("runTest", String.class, String.class);
+      final BaseTransformationTest testClass = (BaseTransformationTest)c.newInstance();
+      testClass.setModelDescriptor(RunTestInMPS_Action.this.model.getModelDescriptor(), RunTestInMPS_Action.this.project);
       Thread thread = new Thread(new Runnable() {
 
         public void run() {
           try {
-            testMethod.invoke(obj, className + "$TestBody", "body" + testName);
-          } catch (Exception e) {
+            testClass.runTest(className + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295(), testName);
+          } catch (Throwable e) {
             e.printStackTrace();
           }
         }
 
       });
       thread.start();
-    } catch (Exception e) {
+    } catch (Throwable e) {
       e.printStackTrace();
     }
   }

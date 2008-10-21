@@ -795,6 +795,20 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219157440637" />
     </node>
+    <node role="staticMethod" type="jetbrains.mps.lang.constraints.structure.StaticConceptMethodDeclaration" id="1224602741295">
+      <property name="name" value="getTestBodyName" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224602741296" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224602747773">
+        <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224602741298">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224602855747">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224602857125">
+            <property name="value" value="TestBody" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.constraints.structure.ConceptConstructorDeclaration" id="1217250493537">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217250493538" />
     </node>
