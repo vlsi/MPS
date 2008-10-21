@@ -8450,6 +8450,10 @@
           <property name="vertical" value="false" />
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1201186146367">
             <property name="text" value="&lt;" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224588548308">
+              <property name="value" value="0.0" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1224588934890" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1201186153043">
             <property name="vertical" value="false" />
