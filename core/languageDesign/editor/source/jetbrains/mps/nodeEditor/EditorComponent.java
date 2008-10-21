@@ -342,7 +342,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (cell == null) return;
         showPopupMenu(cell.getX(), cell.getY());
       }
-    }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);        
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {

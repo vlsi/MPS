@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.ide.actions.ShowModelRepository_Action;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -659,6 +660,10 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void addLanguage_internal(@NotNull ModuleReference ref) {
+    if (hasLanguage(ref)) {
+      return;
+    }
+
     if (ref.getModuleId() == null) {
       LOG.warning("Attempt to add language reference to a language without id in model " + getSModelFqName() + ". Language = " + ref);
     }
