@@ -4,14 +4,14 @@ package jetbrains.mps.gtext.structure;
 
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class GContentBlock extends GItem implements INamedConcept {
-  public static final String concept = "webr.gtext.structure.GContentBlock";
+  public static final String concept = "jetbrains.mps.gtext.structure.GContentBlock";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -21,15 +21,6 @@ public class GContentBlock extends GItem implements INamedConcept {
   public GContentBlock(SNode node) {
     super(node);
   }
-
-  public static GContentBlock newInstance(SModel sm, boolean init) {
-    return (GContentBlock)SModelUtil_new.instantiateConceptDeclaration("webr.gtext.structure.GContentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GContentBlock newInstance(SModel sm) {
-    return GContentBlock.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(GContentBlock.NAME);
@@ -81,6 +72,15 @@ public class GContentBlock extends GItem implements INamedConcept {
 
   public void insertItem(GItem prev, GItem node) {
     this.insertChild(prev, GContentBlock.ITEM, node);
+  }
+
+
+  public static GContentBlock newInstance(SModel sm, boolean init) {
+    return (GContentBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GContentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GContentBlock newInstance(SModel sm) {
+    return GContentBlock.newInstance(sm, false);
   }
 
 }

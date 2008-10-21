@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GItem extends BaseConcept implements GTextConcept {
-  public static final String concept = "webr.gtext.structure.GItem";
+  public static final String concept = "jetbrains.mps.gtext.structure.GItem";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
@@ -17,15 +17,6 @@ public class GItem extends BaseConcept implements GTextConcept {
   public GItem(SNode node) {
     super(node);
   }
-
-  public static GItem newInstance(SModel sm, boolean init) {
-    return (GItem)SModelUtil_new.instantiateConceptDeclaration("webr.gtext.structure.GItem", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GItem newInstance(SModel sm) {
-    return GItem.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(GItem.SHORT_DESCRIPTION);
@@ -49,6 +40,15 @@ public class GItem extends BaseConcept implements GTextConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(GItem.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static GItem newInstance(SModel sm, boolean init) {
+    return (GItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GItem", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GItem newInstance(SModel sm) {
+    return GItem.newInstance(sm, false);
   }
 
 }

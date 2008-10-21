@@ -8,21 +8,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GIndentBlock extends GItem {
-  public static final String concept = "webr.gtext.structure.GIndentBlock";
+  public static final String concept = "jetbrains.mps.gtext.structure.GIndentBlock";
   public static String ITEM_LIST = "itemList";
 
   public GIndentBlock(SNode node) {
     super(node);
   }
-
-  public static GIndentBlock newInstance(SModel sm, boolean init) {
-    return (GIndentBlock)SModelUtil_new.instantiateConceptDeclaration("webr.gtext.structure.GIndentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GIndentBlock newInstance(SModel sm) {
-    return GIndentBlock.newInstance(sm, false);
-  }
-
 
   public GItemList getItemList() {
     return (GItemList)this.getChild(GIndentBlock.ITEM_LIST);
@@ -30,6 +21,15 @@ public class GIndentBlock extends GItem {
 
   public void setItemList(GItemList node) {
     super.setChild(GIndentBlock.ITEM_LIST, node);
+  }
+
+
+  public static GIndentBlock newInstance(SModel sm, boolean init) {
+    return (GIndentBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GIndentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GIndentBlock newInstance(SModel sm) {
+    return GIndentBlock.newInstance(sm, false);
   }
 
 }

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GContentPlaceholder extends GItem implements INamedConcept {
-  public static final String concept = "webr.gtext.structure.GContentPlaceholder";
+  public static final String concept = "jetbrains.mps.gtext.structure.GContentPlaceholder";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -18,15 +18,6 @@ public class GContentPlaceholder extends GItem implements INamedConcept {
   public GContentPlaceholder(SNode node) {
     super(node);
   }
-
-  public static GContentPlaceholder newInstance(SModel sm, boolean init) {
-    return (GContentPlaceholder)SModelUtil_new.instantiateConceptDeclaration("webr.gtext.structure.GContentPlaceholder", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GContentPlaceholder newInstance(SModel sm) {
-    return GContentPlaceholder.newInstance(sm, false);
-  }
-
 
   public String getName() {
     return this.getProperty(GContentPlaceholder.NAME);
@@ -58,6 +49,15 @@ public class GContentPlaceholder extends GItem implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(GContentPlaceholder.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static GContentPlaceholder newInstance(SModel sm, boolean init) {
+    return (GContentPlaceholder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GContentPlaceholder", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GContentPlaceholder newInstance(SModel sm) {
+    return GContentPlaceholder.newInstance(sm, false);
   }
 
 }

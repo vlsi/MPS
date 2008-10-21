@@ -8,14 +8,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GIndent extends GItem {
-  public static final String concept = "webr.gtext.structure.GIndent";
+  public static final String concept = "jetbrains.mps.gtext.structure.GIndent";
 
   public GIndent(SNode node) {
     super(node);
   }
 
   public static GIndent newInstance(SModel sm, boolean init) {
-    return (GIndent)SModelUtil_new.instantiateConceptDeclaration("webr.gtext.structure.GIndent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GIndent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GIndent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GIndent newInstance(SModel sm) {

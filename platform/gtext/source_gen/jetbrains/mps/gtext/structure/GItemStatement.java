@@ -4,28 +4,19 @@ package jetbrains.mps.gtext.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class GItemStatement extends Statement {
-  public static final String concept = "webr.gtext.structure.GItemStatement";
+  public static final String concept = "jetbrains.mps.gtext.structure.GItemStatement";
   public static String ITEM = "item";
 
   public GItemStatement(SNode node) {
     super(node);
   }
-
-  public static GItemStatement newInstance(SModel sm, boolean init) {
-    return (GItemStatement)SModelUtil_new.instantiateConceptDeclaration("webr.gtext.structure.GItemStatement", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GItemStatement newInstance(SModel sm) {
-    return GItemStatement.newInstance(sm, false);
-  }
-
 
   public int getItemsCount() {
     return this.getChildCount(GItemStatement.ITEM);
@@ -45,6 +36,15 @@ public class GItemStatement extends Statement {
 
   public void insertItem(GItem prev, GItem node) {
     this.insertChild(prev, GItemStatement.ITEM, node);
+  }
+
+
+  public static GItemStatement newInstance(SModel sm, boolean init) {
+    return (GItemStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GItemStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GItemStatement newInstance(SModel sm) {
+    return GItemStatement.newInstance(sm, false);
   }
 
 }

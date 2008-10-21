@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BuilderContextRef extends Expression implements GTextConcept {
-  public static final String concept = "webr.gtext.structure.BuilderContextRef";
+  public static final String concept = "jetbrains.mps.gtext.structure.BuilderContextRef";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
@@ -17,15 +17,6 @@ public class BuilderContextRef extends Expression implements GTextConcept {
   public BuilderContextRef(SNode node) {
     super(node);
   }
-
-  public static BuilderContextRef newInstance(SModel sm, boolean init) {
-    return (BuilderContextRef)SModelUtil_new.instantiateConceptDeclaration("webr.gtext.structure.BuilderContextRef", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static BuilderContextRef newInstance(SModel sm) {
-    return BuilderContextRef.newInstance(sm, false);
-  }
-
 
   public String getShortDescription() {
     return this.getProperty(BuilderContextRef.SHORT_DESCRIPTION);
@@ -49,6 +40,15 @@ public class BuilderContextRef extends Expression implements GTextConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(BuilderContextRef.VIRTUAL_PACKAGE, value);
+  }
+
+
+  public static BuilderContextRef newInstance(SModel sm, boolean init) {
+    return (BuilderContextRef)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.BuilderContextRef", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static BuilderContextRef newInstance(SModel sm) {
+    return BuilderContextRef.newInstance(sm, false);
   }
 
 }

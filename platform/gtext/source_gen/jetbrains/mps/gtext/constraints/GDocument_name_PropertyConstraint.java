@@ -15,11 +15,11 @@ public class GDocument_name_PropertyConstraint implements IModelConstraints, INo
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("webr.gtext.structure.GDocument", "name", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.gtext.structure.GDocument", "name", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("webr.gtext.structure.GDocument", "name");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.gtext.structure.GDocument", "name");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {

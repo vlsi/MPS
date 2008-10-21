@@ -5,14 +5,14 @@ package jetbrains.mps.gtext.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 
 public class GDocument extends BaseConcept implements INamedConcept {
-  public static final String concept = "webr.gtext.structure.GDocument";
+  public static final String concept = "jetbrains.mps.gtext.structure.GDocument";
   public static String DOCUMENT_NAME = "documentName";
   public static String EXTENSION = "extension";
   public static String NAME = "name";
@@ -24,15 +24,6 @@ public class GDocument extends BaseConcept implements INamedConcept {
   public GDocument(SNode node) {
     super(node);
   }
-
-  public static GDocument newInstance(SModel sm, boolean init) {
-    return (GDocument)SModelUtil_new.instantiateConceptDeclaration("webr.gtext.structure.GDocument", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static GDocument newInstance(SModel sm) {
-    return GDocument.newInstance(sm, false);
-  }
-
 
   public String getDocumentName() {
     return this.getProperty(GDocument.DOCUMENT_NAME);
@@ -100,6 +91,15 @@ public class GDocument extends BaseConcept implements INamedConcept {
 
   public void insertItem(GItem prev, GItem node) {
     this.insertChild(prev, GDocument.ITEM, node);
+  }
+
+
+  public static GDocument newInstance(SModel sm, boolean init) {
+    return (GDocument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GDocument", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static GDocument newInstance(SModel sm) {
+    return GDocument.newInstance(sm, false);
   }
 
 }

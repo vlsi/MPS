@@ -5,5 +5,5 @@ package jetbrains.mps.gtext.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface GTextConcept extends INodeAdapter {
-  public static final String concept = "webr.gtext.structure.GTextConcept";
+  public static final String concept = "jetbrains.mps.gtext.structure.GTextConcept";
 }
