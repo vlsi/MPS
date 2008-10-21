@@ -158,6 +158,15 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1169127622168" resolveInfo="InterfaceConceptReference" />
     </node>
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration" id="1224593254291">
+      <property name="name" value="sdfsd" />
+      <link role="targetType" targetNodeId="1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1224593256792" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1224593265013">
+      <link role="conceptLinkDeclaration" targetNodeId="1224593254291" resolveInfo="sdfsd" />
+      <node role="target" type="jetbrains.mps.lang.core.structure.BaseConcept" id="1224593265014" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1071489288298">
     <property name="name" value="LinkDeclaration" />

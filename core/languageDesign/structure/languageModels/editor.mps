@@ -2046,6 +2046,25 @@
             </node>
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" id="1224593613835">
+          <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean" id="1224593614917">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224593614918">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224593642543">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224593647758">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224593643879">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1224593642544" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224593646532">
+                      <link role="link" targetNodeId="1.1105742372452" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224593649925">
+                    <link role="conceptMethodDeclaration" targetNodeId="34.1224246601835" resolveInfo="isDeprecated" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1105739062909">
         <property name="text" value="=" />
@@ -2081,6 +2100,25 @@
             </node>
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678077">
               <property name="color" value="DARK_MAGENTA" />
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" id="1224593309719">
+          <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean" id="1224593311283">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224593311284">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224593342758">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224593400098">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224593385500">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1224593342759" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224593399034">
+                      <link role="link" targetNodeId="1.1105742417828" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224593402804">
+                    <link role="conceptMethodDeclaration" targetNodeId="34.1224246601835" resolveInfo="isDeprecated" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
