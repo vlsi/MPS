@@ -1025,12 +1025,17 @@
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1224538955645">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224538958651">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224538957385">
-                <link role="variableDeclaration" targetNodeId="1224538588537" resolveInfo="text" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1224582448804">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224582450823">
+                <property name="value" value="0" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224538961129">
-                <link role="baseMethodDeclaration" targetNodeId="5.~String.isEmpty():boolean" resolveInfo="isEmpty" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224538958651">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224538957385">
+                  <link role="variableDeclaration" targetNodeId="1224538588537" resolveInfo="text" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224582447037">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~String.length():int" resolveInfo="length" />
+                </node>
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1224538609155">
@@ -1138,12 +1143,17 @@
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1224538940755">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224538944301">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224538942818">
-                <link role="variableDeclaration" targetNodeId="1224530107191" resolveInfo="text" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1224582457824">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224582458077">
+                <property name="value" value="0" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224538945425">
-                <link role="baseMethodDeclaration" targetNodeId="5.~String.isEmpty():boolean" resolveInfo="isEmpty" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224538944301">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224538942818">
+                  <link role="variableDeclaration" targetNodeId="1224530107191" resolveInfo="text" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224582456402">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~String.length():int" resolveInfo="length" />
+                </node>
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1224538633297">

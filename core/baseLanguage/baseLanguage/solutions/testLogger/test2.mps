@@ -152,7 +152,21 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1224580698122">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224580698123" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224580698124" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224580698125" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224580698125">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224581620543">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumValueOfExpression" id="1224581621686">
+            <link role="enumClass" targetNodeId="1224580427854" resolveInfo="CDE" />
+            <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224581622547">
+              <property name="value" value="a" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224581626487">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" id="1224581628410">
+            <link role="enumClass" targetNodeId="1224580427854" resolveInfo="CDE" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
