@@ -6,10 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.plugin.MethodCallParameters;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Node_ConceptMethodCall_Behavior {
 
@@ -43,33 +39,6 @@ public class Node_ConceptMethodCall_Behavior {
       variableExpectedName = variableExpectedName.substring(2);
     }
     return NameUtil.decapitalize(variableExpectedName);
-  }
-
-  public static MethodCallParameters virtual_getMethodCallParameters_1223390672636(SNode thisNode) {
-    final SNode node = thisNode;
-    return new MethodCallParameters() {
-
-      public SNode getDeclaration() {
-        return SLinkOperations.getTarget(node, "conceptMethodDeclaration", false);
-      }
-
-      public SNode getMethodCall() {
-        return SNodeOperations.getParent(node);
-      }
-
-      public List<SNode> getArguments() {
-        return ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).toListSequence();
-      }
-
-      public SNode getOperand() {
-        return SLinkOperations.getTarget(((SNode)SNodeOperations.getParent(node)), "operand", true);
-      }
-
-      public boolean isThisExpression(SNode node) {
-        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.constraints.structure.ThisNodeExpression");
-      }
-
-    };
   }
 
 }

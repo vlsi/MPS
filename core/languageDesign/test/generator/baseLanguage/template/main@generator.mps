@@ -689,15 +689,10 @@
                   <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1221573038180">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221573038181">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221573054122">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1222514683576">
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1222514684141">
-                            <property name="value" value="body" />
-                          </node>
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221573055749">
-                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1221573054123" />
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1221573061346">
-                              <link role="conceptMethodDeclaration" targetNodeId="31.1216136419751" resolveInfo="getTestName" />
-                            </node>
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221573055749">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1221573054123" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1221573061346">
+                            <link role="conceptMethodDeclaration" targetNodeId="31.1216136419751" resolveInfo="getTestName" />
                           </node>
                         </node>
                       </node>
