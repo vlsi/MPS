@@ -16094,13 +16094,13 @@
               <node role="parametersFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" id="1217846547789">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217846547790">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217846631079">
-                    <property name="value" value="todo this is quite a hackish stuff but we need it" />
+                    <property name="value" value="todo: this is quite a hackish stuff but we need it" />
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217847952836">
-                    <property name="value" value="todo but we need it since we can't enable/disable" />
+                    <property name="value" value="todo: but we need it since we can't enable/disable" />
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217847965370">
-                    <property name="value" value="todo menu items by condition" />
+                    <property name="value" value="todo: menu items by condition" />
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217846570497">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217846570498">

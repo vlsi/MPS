@@ -141,7 +141,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
             if (role == null) return;
             parent.removeChild(var);
             for (SNode node : nodes2) {
-              SNode runtimeTypesVariable = equationManager.getTypeChecker().getRuntimeSupport().createNewRuntimeTypesVariable();
+              SNode runtimeTypesVariable = equationManager.getTypeCheckingContext().createNewRuntimeTypesVariable();
               parent.addChild(role, runtimeTypesVariable);
               childEQs.add(new Pair<SNode, SNode>(runtimeTypesVariable, node));
             }
@@ -152,7 +152,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
             if (role == null) return;
             parent.removeChild(var);
             for (SNode node : nodes1) {
-              SNode runtimeTypesVariable = equationManager.getTypeChecker().getRuntimeSupport().createNewRuntimeTypesVariable();
+              SNode runtimeTypesVariable = equationManager.getTypeCheckingContext().createNewRuntimeTypesVariable();
               parent.addChild(role, runtimeTypesVariable);
               childEQs.add(new Pair<SNode, SNode>(runtimeTypesVariable, node));
             }

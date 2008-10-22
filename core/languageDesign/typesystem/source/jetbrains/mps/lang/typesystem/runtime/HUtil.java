@@ -21,19 +21,6 @@ import java.util.HashMap;
  */
 public class HUtil {
 
-  @Deprecated
-  public static SNode copyIfNecessary ( SNode node, SModel model ) {
-     if ( node != null && (node . getParent (  ) != null || node.isRoot())) {
-       SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false);
-       if (BaseAdapter.isInstance(copy, RuntimeTypeVariable.class)) {
-         TypeChecker.getInstance().getRuntimeSupport().registerTypeVariable(copy);
-       }
-       return copy;
-     } else {
-        return node ;
-     }
-  }
-
   public static SNode copyIfNecessary (SNode node) {
      if ( node != null && (node . getParent (  ) != null || node.isRoot())) {
        SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false);
@@ -43,7 +30,6 @@ public class HUtil {
      }
   }
 
-  //todo use in post-processing scripts
   public static SNode copyIfNecessary ( SNode node, TypeCheckingContext typeCheckingContext) {
      if ( node != null && (node . getParent (  ) != null || node.isRoot())) {
        SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false);

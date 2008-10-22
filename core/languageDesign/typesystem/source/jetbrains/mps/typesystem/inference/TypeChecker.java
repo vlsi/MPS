@@ -218,48 +218,6 @@ public class TypeChecker implements ApplicationComponent {
     }
   }
 
-  @Deprecated
-  public void reportTypeError(SNode nodeWithError, String errorString) {
-    reportTypeError(nodeWithError, errorString, null, null);
-  }
-
-  @Deprecated
-  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
-    reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId));
-  }
-
-  @Deprecated
-  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
-    reporter.setIntentionProvider(intentionProvider);
-    reportTypeError(nodeWithError, reporter);
-  }
-
-  @Deprecated
-  public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
-    reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId, true));
-  }
-
-  @Deprecated
-  public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId, true);
-    reporter.setIntentionProvider(intentionProvider);
-    reportTypeError(nodeWithError, reporter);
-  }
-
-  @Deprecated
-  public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
-    if (myCurrentTypesComponent == null) {
-      if (myCurrentTypesComponentForNonTypesystemCheck == null) {
-        return;
-      }
-      myCurrentTypesComponentForNonTypesystemCheck.reportTypeError(nodeWithError, errorReporter);
-      return;
-    }
-    myCurrentTypesComponent.reportTypeError(nodeWithError, errorReporter);
-    myCurrentTypesComponent.addDependcyOnCurrent(nodeWithError);
-  }
-
   public static SNode asType(Object o) {
     if (o instanceof SNode) {
       return (SNode) o;
@@ -489,11 +447,6 @@ public class TypeChecker implements ApplicationComponent {
     }
 
     return modelDescriptor.getSModel();
-  }
-
-  @Deprecated
-  public NodeTypesComponent getCurrentTypesComponent() {
-    return myCurrentTypesComponent;
   }
 
   public IErrorReporter getTypeErrorDontCheck(SNode node) {
