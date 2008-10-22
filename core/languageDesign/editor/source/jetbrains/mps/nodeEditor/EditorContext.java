@@ -301,4 +301,8 @@ public class EditorContext {
     return myNodeEditorComponent.getSelectedNodes();
   }
 
+  public void executeCommand(Runnable r) {
+    myNodeEditorComponent.executeCommand(r);
+  }
+
 }

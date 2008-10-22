@@ -97,8 +97,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private Set<EditorCell> myFoldedCells = new HashSet<EditorCell>();
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
 
-  private boolean myExecutingCommand = false;
-
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
       rebuildEditorContent();
@@ -164,6 +162,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private CellInfo myRecentlySelectedCellInfo = null;
   private final EditorMessageOwner myOwner = new EditorMessageOwner() {
   };
+
+  private boolean myInsideOfCommand = false;
 
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
   private CellSpeedSearch myCellSpeedSearch;
@@ -1778,31 +1778,39 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return;
     }
 
-    try {
-      myExecutingCommand = true;
-      // all other processing should be performed inside command
-      final DataContext dataContext = DataManager.getInstance().getDataContext(this);
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          updateMPSActionsWithKeyStrokes(dataContext);
-          EditorContext editorContext = getEditorContext();
-          if (editorContext == null) {
-            return; //i.e. editor is disposed
-          }
-
-          if (peekKeyboardHandler().processKeyPressed(editorContext, keyEvent)) {
-            keyEvent.consume();
-          }
+    // all other processing should be performed inside command
+    final DataContext dataContext = DataManager.getInstance().getDataContext(this);
+    executeCommand(new Runnable() {
+      public void run() {
+        updateMPSActionsWithKeyStrokes(dataContext);
+        EditorContext editorContext = getEditorContext();
+        if (editorContext == null) {
+          return; //i.e. editor is disposed
         }
-      });
-    } finally {
-      myExecutingCommand = false;
-    }
+
+        if (peekKeyboardHandler().processKeyPressed(editorContext, keyEvent)) {
+          keyEvent.consume();
+        }
+      }
+    });
     revalidateAndRepaint(false);
   }
 
-  boolean isExecutingCommand() {
-    return myExecutingCommand;
+  void executeCommand(final Runnable r) {
+    myInsideOfCommand = true;
+    try {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          r.run();
+        }
+      });
+    } finally {
+      myInsideOfCommand = false;
+    }
+  }
+
+  boolean isForcedFocusChangeEnabled() {
+    return myInsideOfCommand;
   }
 
   public boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
@@ -2202,7 +2210,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
 
-    if (lastAdd != null && isExecutingCommand()) {
+    if (lastAdd != null && isForcedFocusChangeEnabled()) {
       if (lastAdd instanceof SModelChildEvent) {
         List<NodesParetoFrontier.NodeBox> frontier = NodesParetoFrontier.findParetoFrontier(childAddedEventNodes);
         SNode addedChild = frontier.get(frontier.size() - 1).getNode();
@@ -2274,7 +2282,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
 
       //noinspection ConstantConditions
-      if (lastRemove instanceof SModelReferenceEvent && isExecutingCommand()) {
+      if (lastRemove instanceof SModelReferenceEvent && isForcedFocusChangeEnabled()) {
         SModelReferenceEvent re = (SModelReferenceEvent) lastRemove;
         SReference ref = re.getReference();
         SNode sourceNode = ref.getSourceNode();
