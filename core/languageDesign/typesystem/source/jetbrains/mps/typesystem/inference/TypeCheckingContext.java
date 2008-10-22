@@ -111,15 +111,6 @@ public class TypeCheckingContext {
       if (type != null) return getRepresentatorIfNecessary(type);
     }
 
-    if (currentTypesComponent == null || currentTypesComponent.getNode() != node.getContainingRoot()) {
-      NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance()  // then, in appropriate component
-        .getNodeTypesComponent(node.getContainingRoot());
-      if (nodeTypesComponent != null && nodeTypesComponent != currentTypesComponent) {
-        type = nodeTypesComponent.getType(node);
-        if (type != null) return type;
-      }
-    }
-
     SNode var = createNewRuntimeTypesVariable();
     type = TypeChecker.asType(var);
     getMainContext().put(node, type);
