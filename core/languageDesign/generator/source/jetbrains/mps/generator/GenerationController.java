@@ -4,7 +4,6 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingMode;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
@@ -208,7 +207,7 @@ public class GenerationController {
         wasLoggingThreshold = Logger.setThreshold("ERROR");
       }
       Logger.addLoggingHandler(generationSession.getLoggingHandler());
-      TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.GENERATION);
+      TypeChecker.getInstance().setIsGeneration(true);
       for (SModelDescriptor inputModel : inputModels) {
         if (!myGenerationType.isApplicable(inputModel)) {
           LOG.error("Can't apply generation type " + myGenerationType + " to " + inputModel.getSModelFqName());
@@ -256,7 +255,7 @@ public class GenerationController {
       }
       generationSession.discardTransients();
       Logger.removeLoggingHandler(generationSession.getLoggingHandler());
-      TypeChecker.getInstance().resetTypeCheckingMode();
+      TypeChecker.getInstance().setIsGeneration(false);
     }
 
     checkMonitorCanceled();

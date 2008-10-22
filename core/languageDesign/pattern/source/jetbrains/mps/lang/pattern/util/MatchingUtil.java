@@ -41,8 +41,8 @@ public class MatchingUtil {
       String propertyValue1 = node1.getProperty(propertyName);
       String propertyValue2 = node2.getProperty(propertyName);
       if (propertyDeclaration == null) {
-        LOG.error("can't find a property declaration for property " + propertyName + " in a concept " + typeDeclaration);
-        LOG.error("try to compare just properties' internal values");
+        LOG.warning("can't find a property declaration for property " + propertyName + " in a concept " + typeDeclaration);
+        LOG.warning("try to compare just properties' internal values");
         if (!EqualUtil.equals(propertyValue1, propertyValue2))                 {
           return false;
         }

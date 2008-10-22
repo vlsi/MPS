@@ -2449,7 +2449,7 @@
       </node>
       <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1095704740738">
         <property name="name" value="myValue" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1095704739706">
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224695712565">
           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
         </node>
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1095704887821" />
@@ -2481,9 +2481,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1095929612191">
-          <property name="name" value="int" />
-        </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1224695684725" />
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1095930013853" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546095604" />
       </node>
@@ -2619,9 +2617,7 @@
       </node>
       <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1095929567248">
         <property name="name" value="myValue" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1095929587706">
-          <property name="name" value="int" />
-        </node>
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1224695476218" />
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1095930013869" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1212083361452" />
       </node>
@@ -2651,9 +2647,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1095952790016">
-          <property name="name" value="boolean" />
-        </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224695702993" />
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1095952798586" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546095081" />
       </node>
@@ -2789,9 +2783,7 @@
       </node>
       <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1095952798585">
         <property name="name" value="myValue" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1095952779173">
-          <property name="name" value="boolean" />
-        </node>
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224695699956" />
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1095952798604" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1212083341856" />
       </node>

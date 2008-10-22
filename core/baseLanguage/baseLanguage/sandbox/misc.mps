@@ -141,7 +141,19 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224689015218">
               <link role="variableDeclaration" targetNodeId="1224669428680" resolveInfo="n" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.AbstractOperation" id="1224689015958" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1224692211182">
+              <link role="link" targetNodeId="138.1068581517665" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224692226065">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224692226308">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224692226066">
+              <link role="variableDeclaration" targetNodeId="1224669428680" resolveInfo="n" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1224692229994">
+              <link role="link" targetNodeId="138.1068581517665" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224689023473">

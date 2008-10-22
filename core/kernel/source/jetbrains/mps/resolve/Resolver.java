@@ -105,7 +105,7 @@ public class Resolver {
     }
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
 
-    TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.RESOLVE);
+    TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.EDITOR_QUERIES);
     try {
       SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
         referenceNode, referenceNodeConcept, linkDeclaration, operationContext);

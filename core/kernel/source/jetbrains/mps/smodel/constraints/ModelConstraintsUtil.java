@@ -47,7 +47,7 @@ public class ModelConstraintsUtil {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         try {
-          TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.RESOLVE);
+          TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.EDITOR_QUERIES);
           status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, context);
         } catch (Throwable t) {
           LOG.error(t);

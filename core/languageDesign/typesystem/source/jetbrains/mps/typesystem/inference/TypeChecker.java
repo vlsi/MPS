@@ -7,14 +7,12 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.typesystem.integration.HelginsPreferencesComponent;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.intentions.IntentionProvider;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -61,6 +59,8 @@ public class TypeChecker implements ApplicationComponent {
   private ClassLoaderManager myClassLoaderManager;
 
   private TypeCheckingMode myTypeCheckingMode = null;
+
+  private boolean myIsGeneration = false;
 
   public TypeChecker(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
@@ -157,14 +157,22 @@ public class TypeChecker implements ApplicationComponent {
     myComputedTypesForCompletion = null;
   }
 
+  public void setIsGeneration(boolean isGeneration) {
+    myIsGeneration = isGeneration;
+    if (isGeneration) {
+      mySubtypingCache = new SubtypingCache();
+      setIncrementalMode(false);
+    } else {
+      mySubtypingCache = null;
+      setIncrementalMode(true);
+    }
+  }
+
   public void setTypeCheckingMode(TypeCheckingMode typeCheckingMode) {
     if (myTypeCheckingMode != null) {
       myTypesCheckingModesStack.push(myTypeCheckingMode);
     }
     myTypeCheckingMode = typeCheckingMode;
-    if (myTypeCheckingMode == TypeCheckingMode.GENERATION) {
-      mySubtypingCache = new SubtypingCache();
-    }
     if (typeCheckingMode != null) {
       setIncrementalMode(false);
     }
@@ -176,7 +184,6 @@ public class TypeChecker implements ApplicationComponent {
       myTypeCheckingMode = myTypesCheckingModesStack.pop();
     }
     if (myTypeCheckingMode == null) {
-      mySubtypingCache = null;
       setIncrementalMode(true);
     }
   }
@@ -319,11 +326,9 @@ public class TypeChecker implements ApplicationComponent {
 
   @Nullable
   public SNode getTypeOf(SNode node) {
-    if (myTypeCheckingMode == TypeCheckingMode.GENERATION && HelginsPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
+    if (myIsGeneration && HelginsPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
       return getTypeOf_generationMode(node);
-    } else if (myTypeCheckingMode == TypeCheckingMode.RESOLVE) {
-      return getTypeOf_resolveMode(node, true);
-    } else if (myTypeCheckingMode == TypeCheckingMode.COMPLETION) {
+    } else if (myTypeCheckingMode == TypeCheckingMode.EDITOR_QUERIES) {
       return getTypeOf_resolveMode(node, true);
     } else {
       return getTypeOf_normalMode(node);
@@ -409,7 +414,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public boolean isGenerationMode() {
-    return myTypeCheckingMode == TypeCheckingMode.GENERATION;
+    return myIsGeneration;
   }
 
   private static class MyReadAccessListener implements INodeReadAccessListener {
