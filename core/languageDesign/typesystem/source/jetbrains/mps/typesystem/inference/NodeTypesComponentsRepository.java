@@ -90,12 +90,6 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
     }
   }
 
-  public NodeTypesComponent swapTypesComponentForRoot(SNode containingRoot, NodeTypesComponent newComponent) {
-    if (newComponent == null) return null;
-    assert containingRoot == newComponent.getNode();
-    return myNodesToComponents.put(containingRoot, newComponent);
-  }
-
   private void fireComponentRemoved(NodeTypesComponent component) {
     for (TypesComponentRepositoryListener listener : myListeners) {
       listener.typesComponentRemoved(component);

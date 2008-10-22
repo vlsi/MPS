@@ -126,6 +126,44 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224680923424">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224680923957">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224680923425">
+              <link role="variableDeclaration" targetNodeId="1224669428680" resolveInfo="n" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1224680925389">
+              <link role="link" targetNodeId="138.1068581517665" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224689015217">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224689015952">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224689015218">
+              <link role="variableDeclaration" targetNodeId="1224669428680" resolveInfo="n" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.AbstractOperation" id="1224689015958" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224689023473">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224689023555">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224689023474">
+              <link role="variableDeclaration" targetNodeId="1224669428680" resolveInfo="n" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1224689025005">
+              <link role="link" targetNodeId="138.1068581517665" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224689026646">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224689027296">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224689027412">
+              <property name="value" value="4" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224689026647">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

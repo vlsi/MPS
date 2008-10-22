@@ -286,7 +286,6 @@ public class TypeChecker implements ApplicationComponent {
         LOG.error(ex);
         return null;
       }
-      NodeTypesComponent oldComponent = NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, temporaryComponent);
       try {
         checkWithinRoot(node, new Runnable() {
           public void run() {
@@ -299,7 +298,6 @@ public class TypeChecker implements ApplicationComponent {
         });
       } finally {
         temporaryComponent.clearListeners(); //I added it in order to fix memory leak. (Kostik)
-        NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, oldComponent);
       }
       SNode resultType = result[0];
       if (myComputedTypesForCompletion != null) {
