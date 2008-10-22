@@ -51,6 +51,7 @@ public class NodeEditorComponent extends EditorComponent {
         }
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
+            if (!isFocusOwner()) return;
             inspect(toSelect[0]);
           }
         });
