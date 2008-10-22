@@ -60,7 +60,7 @@
   <import index="56" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="57" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1139186732963">
-    <property name="name" value="MAPPING_main" />
+    <property name="name" value="mc_main" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1168910896903">
       <link role="applicableConcept" targetNodeId="6.1138055754698" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1177112865974">
@@ -349,7 +349,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1139187530309">
-    <property name="name" value="MAPPING_property_operations" />
+    <property name="name" value="mc_property_operations" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1195249229777">
       <link role="applicableConcept" targetNodeId="6.1138056022639" resolveInfo="SPropertyAccess" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence" id="1195249253546">
@@ -942,7 +942,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1139341814904">
-    <property name="name" value="MAPPING_link_operations" />
+    <property name="name" value="mc_link_operations" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1175620989125">
       <link role="applicableConcept" targetNodeId="6.1175618182947" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1205529532067">
@@ -1348,7 +1348,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1139619842725">
-    <property name="name" value="MAPPING_node_operations" />
+    <property name="name" value="mc_node_operations" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1179411775020">
       <link role="applicableConcept" targetNodeId="6.1179409122411" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1179411798687">
@@ -2071,7 +2071,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1143235821620">
-    <property name="name" value="MAPPING_model_operations" />
+    <property name="name" value="mc_model_operations" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1212009796435">
       <link role="applicableConcept" targetNodeId="6.1212008292747" resolveInfo="Model_GetLongNameOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1212009817259">
@@ -2786,7 +2786,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1146069305540">
-    <property name="name" value="MAPPING_concept_property_operations" />
+    <property name="name" value="mc_concept_property_operations" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1168984065249">
       <link role="applicableConcept" targetNodeId="6.1145994841052" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1170384781556">
@@ -3382,7 +3382,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1168908126680">
-    <property name="name" value="MAPPING_linklist_operations" />
+    <property name="name" value="mc_linklist_operations" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1168908168826">
       <link role="applicableConcept" targetNodeId="6.1138056282393" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1206050125856">
@@ -4580,7 +4580,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1172328557997">
-    <property name="name" value="MAPPING_concept_operations" />
+    <property name="name" value="mc_concept_operations" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1206655176237">
       <link role="applicableConcept" targetNodeId="6.1180028149140" resolveInfo="Concept_IsSuperConceptOfOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1206655208612">
@@ -5947,7 +5947,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1205364916983">
-    <property name="name" value="MAPPING_attributes" />
+    <property name="name" value="mc_attributes" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1205364942218">
       <link role="applicableConcept" targetNodeId="6.1204761823073" resolveInfo="AttributeAccessOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1205365096811">
@@ -6458,7 +6458,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1206037790971">
-    <property name="name" value="MAPPING_type_internal" />
+    <property name="name" value="mc_type_internal" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1206037850049">
       <link role="applicableConcept" targetNodeId="6.1204919674986" resolveInfo="_LinkAccessT" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1206037859864">
@@ -6482,7 +6482,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1206551858932">
-    <property name="name" value="MAPPING_assignmentStatement" />
+    <property name="name" value="mc_assignmentStatement" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1206552028913">
       <link role="applicableConcept" targetNodeId="3.1068498886294" resolveInfo="AssignmentExpression" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence" id="1206552172138">
@@ -6970,7 +6970,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1208783529339">
-    <property name="name" value="MAPPING_commands" />
+    <property name="name" value="mc_commands" />
     <property name="package" value="commands" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1208783541669">
       <link role="applicableConcept" targetNodeId="6.1208783294205" resolveInfo="ExecuteCommandStatement" />

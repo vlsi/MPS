@@ -6,7 +6,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.lang.smodel#1139186730696" uuid="2bdcefec-ba49-4b32-ab50-ebc7a41d5090">
+    <generator name="BL" generatorUID="jetbrains.mps.lang.smodel#1139186730696" uuid="2bdcefec-ba49-4b32-ab50-ebc7a41d5090">
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage" namespacePrefix="jetbrains.mps.lang.smodel.generator.baseLanguage" />
       </models>
