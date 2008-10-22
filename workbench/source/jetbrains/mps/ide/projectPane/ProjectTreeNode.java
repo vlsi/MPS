@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -22,7 +23,7 @@ class ProjectTreeNode extends MPSTreeNode {
 
   protected void updatePresentation() {
     super.updatePresentation();
-    setErrorState(myProject.getErrors() != null);
+    setErrorState(myProject.getErrors() != null ? ErrorState.ERROR : ErrorState.NONE);
     setTooltipText(myProject.getErrors());
   }
 

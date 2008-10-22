@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -46,7 +47,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
     }
     setText(getModulePresentation());
 
-    setErrorState(!getModule().isValid());
+    setErrorState(getModule().isValid() ? ErrorState.NONE : ErrorState.ERROR);
     if (getModule().validate().isEmpty()) {
       setTooltipText(null);
     } else {

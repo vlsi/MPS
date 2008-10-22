@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.ui;
 
 import com.intellij.ide.DataManager;
-import com.intellij.ide.IdeBundle;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
@@ -43,8 +42,8 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private Color myColor = Color.BLACK;
   private int myFontStyle = Font.PLAIN;
   private boolean myAutoExpandable = true;
-  private boolean myErrorState = false;
-  private boolean myHiglightAsError = false;
+  private ErrorState myErrorState = ErrorState.NONE;
+  private ErrorState myCombinedErrorState = ErrorState.NONE;
 
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -355,30 +354,31 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public final boolean isErrorState() {
-    return myErrorState;
+    return myErrorState == ErrorState.ERROR;
   }
 
-  public final void setErrorState(boolean errorState) {
-    myErrorState = errorState;
+  public final void setErrorState(ErrorState state) {
+    myErrorState = state;
     updateErrorState();
   }
 
-  public final boolean isHighlighAsError() {
-    return myHiglightAsError;
+  public final ErrorState getErrorState() {
+    return myErrorState;
+  }
+
+  public final ErrorState getAggregatedErrorState() {
+    return myCombinedErrorState;
   }
 
   private void updateErrorState() {
-    boolean hasErrorInChildren = false;
+    ErrorState state = ErrorState.NONE;
     if (propogateErrorUpwards()) {
       for (int i = 0; i < getChildCount(); i++) {
         MPSTreeNode node = (MPSTreeNode) getChildAt(i);
-        if (node.isHighlighAsError()) {
-          hasErrorInChildren = true;
-          break;
-        }
+        state = state.combine(node.getAggregatedErrorState());
       }
     }
-    myHiglightAsError = hasErrorInChildren || isErrorState();
+    myCombinedErrorState = state.combine(myErrorState);
     if (getParent() != null) {
       ((MPSTreeNode) getParent()).updateErrorState();
     }

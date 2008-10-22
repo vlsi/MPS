@@ -833,8 +833,12 @@ public abstract class MPSTree extends DnDAwareTree {
 
       super.paint(g);
 
-      if (myNode != null && myNode.isHighlighAsError()) {
-        g.setColor(Color.RED);
+      if (myNode != null && myNode.getAggregatedErrorState() != ErrorState.NONE) {
+        if (myNode.getAggregatedErrorState() == ErrorState.ERROR) {
+          g.setColor(Color.RED);
+        } else {
+          g.setColor(Color.YELLOW);
+        }
         ColorAndGraphicsUtil.drawWave(g, imageOffset, getWidth(), getHeight() - ColorAndGraphicsUtil.WAVE_HEIGHT - 1);
       }
     }

@@ -13,6 +13,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.AndCondition;
@@ -118,7 +119,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     if (myModelDescriptor != null && myModelDescriptor.isInitialized()) {
-      setErrorState(!getSModelDescriptor().isValid(getOperationContext().getScope()));
+      setErrorState(getSModelDescriptor().isValid(getOperationContext().getScope()) ? ErrorState.NONE : ErrorState.ERROR);
       List<String> errors = getSModelDescriptor().validate(getOperationContext().getScope());
       if (errors.isEmpty()) {
         setTooltipText(null);
