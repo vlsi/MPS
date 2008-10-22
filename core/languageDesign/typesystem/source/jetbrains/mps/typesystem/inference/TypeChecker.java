@@ -124,17 +124,6 @@ public class TypeChecker implements ApplicationComponent {
     return myResolveModeNodesBeingChecked.contains(node);
   }
 
-  @Deprecated
-  public Map<SNode, SNode> getMainContext() {
-    return myCurrentTypesComponent.getMainContext();
-  }
-
-  @Deprecated
-  public EquationManager getEquationManager() {
-    if (myCurrentTypesComponent == null) return new EquationManager(this, null);
-    return myCurrentTypesComponent.getEquationManager();
-  }
-
   public SubtypingManager getSubtypingManager() {
     return mySubtypingManager;
   }
