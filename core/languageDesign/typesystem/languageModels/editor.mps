@@ -2432,10 +2432,8 @@
     <link role="conceptDeclaration" targetNodeId="1.1207055528241" resolveInfo="WarningStatement" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1207055587763">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1207055587764">
-        <property name="text" value="WARNING" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678084">
-          <property name="color" value="DARK_GREEN" />
-        </node>
+        <property name="text" value="warning" />
+        <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1207055587765">
         <property name="noTargetText" value="&lt;error string&gt;" />

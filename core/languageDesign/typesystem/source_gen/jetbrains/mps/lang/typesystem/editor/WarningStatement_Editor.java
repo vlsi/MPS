@@ -13,9 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class WarningStatement_Editor extends DefaultNodeEditor {
 
@@ -33,7 +31,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1207055587764(context, node, "WARNING"));
+    editorCell.addEditorCell(this.createConstant1207055587764(context, node, "warning"));
     editorCell.addEditorCell(this.createRefNode1207055587765(context, node));
     editorCell.addEditorCell(this.createConstant1207055587766(context, node, "->"));
     editorCell.addEditorCell(this.createRefNode1207055587767(context, node));
@@ -178,15 +176,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12070555877641207055587764(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1207055587764");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_warningText1207055587765(EditorCell editorCell, SNode node, EditorContext context) {
