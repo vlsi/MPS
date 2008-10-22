@@ -120,7 +120,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
             AnActionEvent event = new AnActionEvent(keyEvent, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
             ActionUtils.updateGroup(group, event);
             popup = JBPopupFactory.getInstance()
-              .createActionGroupPopup(IdeBundle.message("title.popup.new.element"),
+              .createActionGroupPopup("New",
                 group,
                 dataContext,
                 JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
