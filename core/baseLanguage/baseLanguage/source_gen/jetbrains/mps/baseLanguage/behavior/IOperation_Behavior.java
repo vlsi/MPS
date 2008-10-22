@@ -19,6 +19,10 @@ public class IOperation_Behavior {
     return SLinkOperations.getTarget(SNodeOperations.getParent(thisNode), "operand", true);
   }
 
+  public static SNode call_getDotExpression_1224687669172(SNode thisNode) {
+    return SNodeOperations.getParent(thisNode);
+  }
+
   public static boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return SConceptPropertyOperations.getBoolean(thisNode, "lvalue");
   }

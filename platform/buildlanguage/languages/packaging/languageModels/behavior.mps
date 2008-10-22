@@ -2187,8 +2187,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877295516">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877295517">
             <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1213877295518" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1213877295519">
-              <link role="property" targetNodeId="12.1169194664001" resolveInfo="name" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224687268853">
+              <link role="property" targetNodeId="1.1223641503366" resolveInfo="name" />
             </node>
           </node>
         </node>
