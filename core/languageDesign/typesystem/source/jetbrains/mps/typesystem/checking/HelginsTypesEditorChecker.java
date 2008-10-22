@@ -49,9 +49,7 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
 
     //non-typesystem checks
     try {
-      //todo: remove errors created by non-typesystem rules
-      TypeChecker.getInstance().checkWithNonTypesystemRules(typesComponent); //will be removed after refactoring
-      // typesComponent.applyNonTypesystemRulesToRoot();
+      typesComponent.applyNonTypesystemRulesToRoot();
     } catch (Throwable t) {
       LOG.error(t);
     }

@@ -43,12 +43,7 @@ public class TypeChecker implements ApplicationComponent {
   private SubtypingManager mySubtypingManager;
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
-  private NodeTypesComponent myCurrentTypesComponent = null;
-  private Stack<NodeTypesComponent> myCurentTypesComponentStack = new Stack<NodeTypesComponent>();
   private Stack<TypeCheckingMode> myTypesCheckingModesStack = new Stack<TypeCheckingMode>();
-
-  @Deprecated @Hack
-  private NodeTypesComponent myCurrentTypesComponentForNonTypesystemCheck = null; //will be removed after refactoring
 
   private SubtypingCache mySubtypingCache = null;
 
@@ -140,34 +135,13 @@ public class TypeChecker implements ApplicationComponent {
     return myRulesManager;
   }
 
-  @Hack @Deprecated //will be removed after refactoring
-  public void checkWithNonTypesystemRules(NodeTypesComponent component) {
-    myCurrentTypesComponentForNonTypesystemCheck = component;
-    component.applyNonTypesystemRulesToRoot();
-    myCurrentTypesComponentForNonTypesystemCheck = null;
-  }
-
   @UseCarefully
   public void setCurrentTypesComponent(NodeTypesComponent component) {
-    if (myCurrentTypesComponent != null) {
-      myCurentTypesComponentStack.push(myCurrentTypesComponent);
-    }
-    myCurrentTypesComponent = component;
-  }
-
-  @UseCarefully
-  public void clearCurrentTypesComponent() {
-    myCurrentTypesComponent = null;
-    if (!myCurentTypesComponentStack.isEmpty()) {
-      myCurrentTypesComponent = myCurentTypesComponentStack.pop();
-    }
   }
 
   public void clearForReload() {
     myNodesToDependentRoots.clear();
     myRulesManager.clear();
-    myCurentTypesComponentStack.clear();
-    myCurrentTypesComponent = null;
     myCheckedRoots.clear();
   }
 
@@ -231,12 +205,7 @@ public class TypeChecker implements ApplicationComponent {
     checkWithinRoot(node, new Runnable() {
       public void run() {
         NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node);
-        setCurrentTypesComponent(component);
-        try {
-          component.computeTypes(refreshTypes);
-        } finally {
-          clearCurrentTypesComponent();
-        }
+        component.computeTypes(refreshTypes);
         myCheckedRoots.add(node);
       }
     });
@@ -277,20 +246,15 @@ public class TypeChecker implements ApplicationComponent {
     if (!myCheckedRoots.contains(containingRoot) || component == null) {
       final SNode[] result = new SNode[1];
       final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
-      setCurrentTypesComponent(component1);
-      try {
-        checkWithinRoot(node, new Runnable() {
-          public void run() {
-            result[0] = component1.computeTypesForNodeDuringGeneration(node, new Runnable() {
-              public void run() {
-                myCheckedRoots.add(node);
-              }
-            });
-          }
-        });
-      } finally {
-        clearCurrentTypesComponent();
-      }
+      checkWithinRoot(node, new Runnable() {
+        public void run() {
+          result[0] = component1.computeTypesForNodeDuringGeneration(node, new Runnable() {
+            public void run() {
+              myCheckedRoots.add(node);
+            }
+          });
+        }
+      });
       return result[0];
     }
     return getTypeDontCheck(node);
@@ -322,7 +286,6 @@ public class TypeChecker implements ApplicationComponent {
         LOG.error(ex);
         return null;
       }
-      setCurrentTypesComponent(temporaryComponent);
       NodeTypesComponent oldComponent = NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, temporaryComponent);
       try {
         checkWithinRoot(node, new Runnable() {
@@ -337,7 +300,6 @@ public class TypeChecker implements ApplicationComponent {
       } finally {
         temporaryComponent.clearListeners(); //I added it in order to fix memory leak. (Kostik)
         NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, oldComponent);
-        clearCurrentTypesComponent();
       }
       SNode resultType = result[0];
       if (myComputedTypesForCompletion != null) {
@@ -392,7 +354,7 @@ public class TypeChecker implements ApplicationComponent {
       checkRoot(containingRoot);
 
       if (useNonTypesystemRules) {
-        checkWithNonTypesystemRules(component);
+        component.applyNonTypesystemRulesToRoot();
       }
     }
     return true;
