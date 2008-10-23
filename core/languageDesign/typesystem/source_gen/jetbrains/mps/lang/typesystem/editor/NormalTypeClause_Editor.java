@@ -13,9 +13,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 
 public class NormalTypeClause_Editor extends DefaultNodeEditor {
 
@@ -33,16 +30,7 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1185788729585(context, node, ""));
     editorCell.addEditorCell(this.createRefNode1185788737962(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createConstant1185788729585(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11857887295851185788729585(editorCell, node, context);
-    setupLabel_Constant_1185788729585_1185788729585(editorCell, node, context);
-    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -88,27 +76,11 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1185788725255");
   }
 
-  private static void setupBasic_Constant_11857887295851185788729585(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1185788729585");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_refNode_normalType1185788737962(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11858020045781185802004578(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1185802004578");
-  }
-
-  private static void setupLabel_Constant_1185788729585_1185788729585(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_refNode_normalType_1185788737962(EditorCell_Label editorCell, SNode node, EditorContext context) {

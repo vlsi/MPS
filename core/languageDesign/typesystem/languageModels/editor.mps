@@ -1656,11 +1656,6 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1185788720441">
     <link role="conceptDeclaration" targetNodeId="1.1185788614172" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1185788725255">
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1185788729585">
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678128">
-          <property name="color" value="DARK_GREEN" />
-        </node>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1185788737962">
         <link role="relationDeclaration" targetNodeId="1.1185788644032" />
       </node>
