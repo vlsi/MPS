@@ -17,19 +17,20 @@ import java.util.List;
 import java.util.LinkedList;
 import java.awt.Frame;
 
+import org.jetbrains.annotations.NotNull;
+
 public abstract class AbstractFileTreeNode extends MPSTreeNode implements FileNode {
   protected final VirtualFile myFile;
   protected VcsFileStatusProvider myProvider;
   protected Project myProject;
   private boolean myShowFullPath;
 
-  public AbstractFileTreeNode(Project project, VirtualFile file) {
+  public AbstractFileTreeNode(Project project,@NotNull VirtualFile file) {
     this(project, file, false);
   }
 
-  public AbstractFileTreeNode(Project project, VirtualFile file, boolean showFullPath) {
+  public AbstractFileTreeNode(Project project,@NotNull VirtualFile file, boolean showFullPath) {
     super(new MyIOperationContext());
-    assert file != null;
     myFile = file;
     myProvider = project.getComponent(VcsFileStatusProvider.class);
     myProject = project;

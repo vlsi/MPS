@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Zip extends Jar {
-  public static final String concept = "jetbrains.mps.build.packaging.structure.Zip";
+public    static final String concept = "jetbrains.mps.build.packaging.structure.Zip";
 
   public Zip(SNode node) {
     super(node);

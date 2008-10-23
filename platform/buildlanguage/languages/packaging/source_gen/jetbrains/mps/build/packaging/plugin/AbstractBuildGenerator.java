@@ -36,7 +36,7 @@ public abstract class AbstractBuildGenerator implements BuildGenerator {
 
   public String getNewModelName() {
     if (this.myModelName == null && this.mySolutionName != null) {
-      this.myModelName = this.mySolutionName + ".main";
+      this.myModelName = this.mySolutionName;
     }
     return this.myModelName;
   }

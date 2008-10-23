@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NewModuleReference extends BaseConcept {
-  public static final String concept = "jetbrains.mps.build.packaging.structure.NewModuleReference";
-  public static final String MODULE = "module";
+public    static final String concept = "jetbrains.mps.build.packaging.structure.NewModuleReference";
+public    static final String MODULE = "module";
 
   public NewModuleReference(SNode node) {
     super(node);

@@ -14,9 +14,9 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractProjectComponent_Behavior {
-  public static Class[] PARAMETERS_1213877333777 = {SNode.class};
-  public static Class[] PARAMETERS_1213877333861 = {SNode.class};
-  public static Class[] PARAMETERS_1213877333900 = {SNode.class ,SNode.class};
+private    static Class[] PARAMETERS_1213877333777 = {SNode.class};
+private    static Class[] PARAMETERS_1213877333861 = {SNode.class};
+private    static Class[] PARAMETERS_1213877333900 = {SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }

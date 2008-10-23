@@ -9,9 +9,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MacroReference extends BaseConcept {
-  public static final String concept = "jetbrains.mps.build.packaging.structure.MacroReference";
-  public static final String NAME = "name";
-  public static final String PATH = "path";
+public    static final String concept = "jetbrains.mps.build.packaging.structure.MacroReference";
+public    static final String NAME = "name";
+public    static final String PATH = "path";
 
   public MacroReference(SNode node) {
     super(node);

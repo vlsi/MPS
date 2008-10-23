@@ -9,11 +9,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class VariableReference extends BaseConcept implements IStringExpression {
-  public static final String concept = "jetbrains.mps.build.packaging.structure.VariableReference";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String VARIABLE = "variable";
+public    static final String concept = "jetbrains.mps.build.packaging.structure.VariableReference";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String VARIABLE = "variable";
 
   public VariableReference(SNode node) {
     super(node);

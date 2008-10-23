@@ -12,6 +12,9 @@ import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import javax.swing.event.CaretListener;
+import javax.swing.event.CaretEvent;
 import javax.swing.ComboBoxModel;
 import java.util.Arrays;
 import javax.swing.DefaultComboBoxModel;
@@ -25,11 +28,13 @@ public abstract class TwoOptionsStep <M> extends AbstractStep {
   private JTextField myTextField;
   private JCheckBox myOptionsCheckBox;
   private JComboBox mySelectComboBox;
+  private IErrorHandler myHandler;
   protected M[] myVariantsArray;
 
-  public TwoOptionsStep(Project project, BuildGenerator buildGenerator) {
+  public TwoOptionsStep(Project project, BuildGenerator buildGenerator, IErrorHandler handler) {
     this.myProject = project;
     this.myGenerator = buildGenerator;
+    this.myHandler = handler;
   }
 
   protected abstract M[] getVariants();
@@ -39,6 +44,10 @@ public abstract class TwoOptionsStep <M> extends AbstractStep {
   protected abstract String getVariantName(M variant);
 
   protected abstract String getTextFieldName();
+
+  protected abstract boolean isValid(String text);
+
+  protected abstract String getWarningText(String text);
 
   protected abstract String getComboBoxName();
 
@@ -102,7 +111,25 @@ public abstract class TwoOptionsStep <M> extends AbstractStep {
   }
 
   private JTextField createTextField() {
-    return new JTextField();
+    final JTextField textField = new JTextField();
+    final Color color = textField.getForeground();
+    textField.addCaretListener(new CaretListener() {
+
+      public void caretUpdate(CaretEvent p0) {
+        String text = textField.getText();
+        if (!(TwoOptionsStep.this.isValid(text))) {
+          TwoOptionsStep.this.myTextField.setForeground(Color.red);
+          TwoOptionsStep.this.myHandler.setErrorText(TwoOptionsStep.this.getWarningText(text));
+        } else
+        {
+          TwoOptionsStep.this.myTextField.setForeground(color);
+          TwoOptionsStep.this.myHandler.setErrorText(null);
+        }
+        TwoOptionsStep.this.myTextField.repaint();
+      }
+
+    });
+    return textField;
   }
 
   private void setEnabledState(boolean checkBoxSelected) {

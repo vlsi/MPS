@@ -19,8 +19,15 @@ public class GenerateBuildWizard extends AbstractWizard {
     this.myTitle = title;
     this.myProject = project;
     this.myGenerator = generator;
-    Step moduleStep = new SolutionStep(this.myProject, this.myGenerator);
-    Step modelStep = new NewModelStep(this.myProject, this.myGenerator);
+    IErrorHandler handler = new IErrorHandler() {
+
+      public void setErrorText(String text) {
+        GenerateBuildWizard.this.setErrorText(text);
+      }
+
+    };
+    Step moduleStep = new SolutionStep(this.myProject, this.myGenerator, handler);
+    Step modelStep = new NewModelStep(this.myProject, this.myGenerator, handler);
     Step languagesStep = new LanguagesStep(this.myProject, this.myGenerator);
     this.addStep(moduleStep);
     this.addStep(modelStep);

@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Echo extends File {
-  public static final String concept = "jetbrains.mps.build.packaging.structure.Echo";
-  public static final String MESSAGE = "message";
+public    static final String concept = "jetbrains.mps.build.packaging.structure.Echo";
+public    static final String MESSAGE = "message";
 
   public Echo(SNode node) {
     super(node);

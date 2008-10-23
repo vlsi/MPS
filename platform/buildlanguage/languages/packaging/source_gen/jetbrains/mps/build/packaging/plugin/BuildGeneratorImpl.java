@@ -6,6 +6,7 @@ import com.intellij.openapi.project.Project;
 import java.util.List;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import java.io.File;
@@ -32,11 +33,19 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
   public BuildGeneratorImpl(Project project) {
     this.myProject = project;
-    this.setProjectName(this.myProject.getName());
-    this.setNewSolutionName(this.myProject.getName() + ".build");
+    String projectName = this.myProject.getName();
+    if (projectName.endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
+      projectName = projectName.substring(0, projectName.length() - MPSExtentions.DOT_MPS_PROJECT.length());
+    }
+    this.setProjectName(projectName);
+    this.setNewSolutionName(projectName + ".build");
   }
 
   public void generate() {
+    this.generateInternal();
+  }
+
+  private void generateInternal() {
     BuildGeneratorImpl.generate(this.getSModelDescriptor(), this.getProjectName(), this.myProject.getBaseDir().getPath(), this.getModules());
   }
 

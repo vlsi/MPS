@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PostProcessingTask extends AbstractProjectComponent {
-  public static final String concept = "jetbrains.mps.build.packaging.structure.PostProcessingTask";
+public    static final String concept = "jetbrains.mps.build.packaging.structure.PostProcessingTask";
 
   public PostProcessingTask(SNode node) {
     super(node);

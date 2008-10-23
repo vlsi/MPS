@@ -10,17 +10,17 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Jar extends AbstractProjectComponent implements ICompositeComponent {
-  public static final String concept = "jetbrains.mps.build.packaging.structure.Jar";
-  public static final String FILEMODE = "filemode";
-  public static final String DIRMODE = "dirmode";
-  public static final String EXCLUDES = "excludes";
-  public static final String INCLUDES = "includes";
-  public static final String NAME = "name";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String DELETE = "delete";
-  public static final String ENTRY = "entry";
+public    static final String concept = "jetbrains.mps.build.packaging.structure.Jar";
+public    static final String FILEMODE = "filemode";
+public    static final String DIRMODE = "dirmode";
+public    static final String EXCLUDES = "excludes";
+public    static final String INCLUDES = "includes";
+public    static final String NAME = "name";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String DELETE = "delete";
+public    static final String ENTRY = "entry";
 
   public Jar(SNode node) {
     super(node);

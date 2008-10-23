@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IStringExpression_Behavior {
-  public static Class[] PARAMETERS_1213877173054 = {SNode.class};
+private    static Class[] PARAMETERS_1213877173054 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

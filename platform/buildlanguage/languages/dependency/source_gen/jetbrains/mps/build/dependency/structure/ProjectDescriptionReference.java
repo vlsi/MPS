@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ProjectDescriptionReference extends ImportProject {
   public static final String concept = "jetbrains.mps.build.dependency.structure.ProjectDescriptionReference";
-  public static String DESCRIPTION = "description";
+  public static final String DESCRIPTION = "description";
 
   public ProjectDescriptionReference(SNode node) {
     super(node);

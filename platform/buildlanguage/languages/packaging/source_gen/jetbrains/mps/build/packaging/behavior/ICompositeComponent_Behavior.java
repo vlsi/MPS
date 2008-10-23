@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ICompositeComponent_Behavior {
-  public static Class[] PARAMETERS_1213877279370 = {SNode.class};
+private    static Class[] PARAMETERS_1213877279370 = {SNode.class};
 
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "excludes", "");

@@ -12,13 +12,14 @@ import jetbrains.mps.project.Solution;
 import java.util.List;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class SolutionStep extends TwoOptionsStep<IModule> {
 
   private final MPSProject myMpsProject;
 
-  public SolutionStep(Project project, BuildGenerator generator) {
-    super(project, generator);
+  public SolutionStep(Project project, BuildGenerator generator, IErrorHandler handler) {
+    super(project, generator, handler);
     this.myMpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
@@ -81,6 +82,21 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
 
   protected boolean isCheckBoxEnabled() {
     return true;
+  }
+
+  protected boolean isValid(String text) {
+    if (text.equals("")) {
+      return false;
+    }
+    IModule moduleWithSelectedName = MPSModuleRepository.getInstance().getModuleByUID(text);
+    return moduleWithSelectedName == null;
+  }
+
+  protected String getWarningText(String text) {
+    if (text.equals("")) {
+      return "Empty solution name not allowed.";
+    }
+    return "Module " + text + " already exists, choose another name.";
   }
 
 }
