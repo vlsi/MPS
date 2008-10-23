@@ -78,10 +78,12 @@ public class TemplateQueryContext {
   }
 
   public SNode getOutputNodeByInputNodeAndMappingLabel(SNode inputNode, String label) {
+    if(inputNode == null) return null;
     return myGenerator.findOutputNodeByInputNodeAndMappingName(inputNode, label);
   }
 
   public List<SNode> getAllOutputNodesByInputNodeAndMappingLabel(SNode inputNode, String label) {
+    if(inputNode == null) return null;
     return myGenerator.findAllOutputNodesByInputNodeAndMappingName(inputNode, label);
   }
 
@@ -90,6 +92,7 @@ public class TemplateQueryContext {
   }
 
   public SNode getCopiedOutputNodeForInputNode(SNode inputNode) {
+    if(inputNode == null) return null;
     return myGenerator.findCopiedOutputNodeForInputNode(inputNode);
   }
 
