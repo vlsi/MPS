@@ -2891,6 +2891,12 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1216383526188">
         <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
         <link role="styleClass" targetNodeId="27.1198595398954" resolveInfo="Field" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1224771999448">
+          <property name="value" value="1.0" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224772231517">
+          <property name="value" value="0.0" />
+        </node>
       </node>
     </node>
   </node>
