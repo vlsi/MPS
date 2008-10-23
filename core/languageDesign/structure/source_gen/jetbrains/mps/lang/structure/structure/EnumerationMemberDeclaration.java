@@ -10,9 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EnumerationMemberDeclaration extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration";
-  public static String INTERNAL_VALUE = "internalValue";
-  public static String EXTERNAL_VALUE = "externalValue";
-  public static String JAVA_IDENTIFIER = "javaIdentifier";
+  public static final String INTERNAL_VALUE = "internalValue";
+  public static final String EXTERNAL_VALUE = "externalValue";
+  public static final String JAVA_IDENTIFIER = "javaIdentifier";
 
   public EnumerationMemberDeclaration(SNode node) {
     super(node);

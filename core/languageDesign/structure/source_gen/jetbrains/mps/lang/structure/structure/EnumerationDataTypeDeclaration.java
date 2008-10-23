@@ -11,12 +11,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   public static final String concept = "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration";
-  public static String NO_VALUE_TEXT = "noValueText";
-  public static String HAS_NO_DEFAULT_MEMBER = "hasNoDefaultMember";
-  public static String MEMBER_IDENTIFIER_POLICY = "memberIdentifierPolicy";
+  public static final String NO_VALUE_TEXT = "noValueText";
+  public static final String HAS_NO_DEFAULT_MEMBER = "hasNoDefaultMember";
+  public static final String MEMBER_IDENTIFIER_POLICY = "memberIdentifierPolicy";
   public static String MEMBER_DATA_TYPE = "memberDataType";
   public static String DEFAULT_MEMBER = "defaultMember";
-  public static String MEMBER = "member";
+  public static final String MEMBER = "member";
 
   public EnumerationDataTypeDeclaration(SNode node) {
     super(node);

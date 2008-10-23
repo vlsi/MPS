@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.structure;
 
 
 public class DeprecatedNode_AnnotationLink {
-  public static String DEPRECATED_NODE = "deprecatedNode";
+  public static final String DEPRECATED_NODE = "deprecatedNode";
 
   public static void setDeprecatedNode(IDeprecatable source, DeprecatedNodeAnnotation target) {
     source.setAttribute(DeprecatedNode_AnnotationLink.DEPRECATED_NODE, target);

@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class IntegerConceptProperty extends ConceptProperty {
   public static final String concept = "jetbrains.mps.lang.structure.structure.IntegerConceptProperty";
-  public static String VALUE = "value";
+  public static final String VALUE = "value";
 
   public IntegerConceptProperty(SNode node) {
     super(node);

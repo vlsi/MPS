@@ -465,6 +465,7 @@
     </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1167754725790">
       <property name="name" value="_CONCEPT_PROPERTY_" />
+      <property name="isFinal" value="true" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1167754735839">
         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
       </node>
@@ -522,9 +523,11 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224773937074" />
     </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1167754780567">
       <property name="name" value="_CONCEPT_LINK_" />
+      <property name="isFinal" value="true" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1167754780568">
         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
       </node>
@@ -582,6 +585,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224773940591" />
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1095433426218">
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1170228562797">
@@ -818,6 +822,7 @@
       </node>
       <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1095670167928">
         <property name="name" value="_property_constant_" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1095670167941">
           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
         </node>
@@ -857,6 +862,7 @@
             </node>
           </node>
         </node>
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224773987510" />
       </node>
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170359665316">
         <link role="classifier" targetNodeId="5.~BaseAdapter" resolveInfo="BaseAdapter" />
@@ -970,6 +976,7 @@
       </node>
       <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1095688526428">
         <property name="name" value="_property_constant_" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1095688526446">
           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
         </node>
@@ -1009,6 +1016,7 @@
             </node>
           </node>
         </node>
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224773977069" />
       </node>
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170359601204">
         <link role="classifier" targetNodeId="5.~BaseAdapter" resolveInfo="BaseAdapter" />
@@ -1122,6 +1130,7 @@
       </node>
       <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1095689039696">
         <property name="name" value="_property_constant_" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1095689039713">
           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
         </node>
@@ -1161,6 +1170,7 @@
           </node>
         </node>
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1095689039717" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224773984056" />
       </node>
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170359642284">
         <link role="classifier" targetNodeId="5.~BaseAdapter" resolveInfo="BaseAdapter" />
@@ -3000,6 +3010,7 @@
       </node>
       <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1096017891575">
         <property name="name" value="_property_constant_" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1096018151090">
           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
         </node>
@@ -3039,6 +3050,7 @@
           </node>
         </node>
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1096018151093" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224773980867" />
       </node>
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170359619751">
         <link role="classifier" targetNodeId="5.~BaseAdapter" resolveInfo="BaseAdapter" />
@@ -3234,6 +3246,7 @@
           </node>
         </node>
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1096027818746" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224773971958" />
       </node>
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170359324259">
         <link role="classifier" targetNodeId="5.~BaseAdapter" resolveInfo="BaseAdapter" />
@@ -3390,6 +3403,7 @@
       </node>
       <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1096044406079">
         <property name="name" value="_property_constant_" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1096044406097">
           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
         </node>
@@ -3429,6 +3443,7 @@
             </node>
           </node>
         </node>
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224773960908" />
       </node>
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170359567312">
         <link role="classifier" targetNodeId="5.~BaseAdapter" resolveInfo="BaseAdapter" />
@@ -3804,6 +3819,7 @@
       </node>
       <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1096045201277">
         <property name="name" value="_property_constant_" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1096045201278">
           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
         </node>
@@ -3843,6 +3859,7 @@
             </node>
           </node>
         </node>
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224773967019" />
       </node>
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170359292195">
         <link role="classifier" targetNodeId="5.~BaseAdapter" resolveInfo="BaseAdapter" />
@@ -4451,6 +4468,7 @@
     <property name="name" value="class_AnnotationLink" />
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1149763646491">
       <property name="name" value="ROLE" />
+      <property name="isFinal" value="true" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1149763651056">
         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
       </node>
@@ -4489,6 +4507,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224773931807" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1149763385783">
       <property name="name" value="setAttribute" />
@@ -5839,6 +5858,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224773951656" />
     </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1170173405417">
       <property name="name" value="_CONCEPT_LINK_" />
@@ -5902,6 +5922,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224773953844" />
     </node>
     <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1169126625178">
       <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1169126625179">

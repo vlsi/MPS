@@ -13,16 +13,16 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractConceptDeclaration extends BaseConcept implements INamedConcept, IDeprecatable {
   public static final String concept = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String LINK_DECLARATION = "linkDeclaration";
-  public static String PROPERTY_DECLARATION = "propertyDeclaration";
-  public static String CONCEPT_PROPERTY = "conceptProperty";
-  public static String CONCEPT_LINK = "conceptLink";
-  public static String CONCEPT_PROPERTY_DECLARATION = "conceptPropertyDeclaration";
-  public static String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String LINK_DECLARATION = "linkDeclaration";
+  public static final String PROPERTY_DECLARATION = "propertyDeclaration";
+  public static final String CONCEPT_PROPERTY = "conceptProperty";
+  public static final String CONCEPT_LINK = "conceptLink";
+  public static final String CONCEPT_PROPERTY_DECLARATION = "conceptPropertyDeclaration";
+  public static final String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
 
   public AbstractConceptDeclaration(SNode node) {
     super(node);

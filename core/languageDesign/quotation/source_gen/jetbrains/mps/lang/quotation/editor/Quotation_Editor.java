@@ -157,7 +157,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.cyan);
-          this.set(StyleAttributes.PADDING_RIGHT, 0.5);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };

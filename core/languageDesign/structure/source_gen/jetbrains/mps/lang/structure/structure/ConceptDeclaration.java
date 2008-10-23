@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptDeclaration extends AbstractConceptDeclaration {
   public static final String concept = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
-  public static String ICON_PATH = "iconPath";
-  public static String ROOTABLE = "rootable";
+  public static final String ICON_PATH = "iconPath";
+  public static final String ROOTABLE = "rootable";
   public static String EXTENDS = "extends";
-  public static String IMPLEMENTS = "implements";
+  public static final String IMPLEMENTS = "implements";
 
   public ConceptDeclaration(SNode node) {
     super(node);

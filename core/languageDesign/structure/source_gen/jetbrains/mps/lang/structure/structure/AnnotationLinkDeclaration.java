@@ -11,13 +11,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AnnotationLinkDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration";
-  public static String ROLE = "role";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String STEREOTYPE = "stereotype";
-  public static String SOURCE_CARDINALITY = "sourceCardinality";
+  public static final String ROLE = "role";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String STEREOTYPE = "stereotype";
+  public static final String SOURCE_CARDINALITY = "sourceCardinality";
   public static String SOURCE = "source";
   public static String TARGET = "target";
 

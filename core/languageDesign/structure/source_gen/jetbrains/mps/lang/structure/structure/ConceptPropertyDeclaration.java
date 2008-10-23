@@ -11,11 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptPropertyDeclaration extends BaseConcept implements INamedConcept, IDeprecatable {
   public static final String concept = "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String INHERITABLE = "inheritable";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String INHERITABLE = "inheritable";
 
   public ConceptPropertyDeclaration(SNode node) {
     super(node);

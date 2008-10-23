@@ -12769,11 +12769,9 @@
                     <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1223986195018">
                       <link role="concept" targetNodeId="1.1223985693348" resolveInfo="IVariableAssignment" />
                     </node>
-                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1223987905041">
-                      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1223987905042">
-                        <link role="concept" targetNodeId="1.1223985693348" resolveInfo="IVariableAssignment" />
-                      </node>
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223987908278">
+                    <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1224772962498">
+                      <link role="concept" targetNodeId="1.1223985693348" resolveInfo="IVariableAssignment" />
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1223987908278">
                         <link role="variableDeclaration" targetNodeId="1223642282313" resolveInfo="write" />
                       </node>
                     </node>

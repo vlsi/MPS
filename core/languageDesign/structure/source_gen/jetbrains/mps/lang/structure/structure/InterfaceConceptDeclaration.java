@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InterfaceConceptDeclaration extends AbstractConceptDeclaration {
   public static final String concept = "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration";
-  public static String EXTENDS = "extends";
+  public static final String EXTENDS = "extends";
 
   public InterfaceConceptDeclaration(SNode node) {
     super(node);

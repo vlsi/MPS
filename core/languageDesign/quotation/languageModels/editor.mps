@@ -444,7 +444,7 @@
           <property name="color" value="cyan" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215436926206">
-          <property name="value" value="0.5" />
+          <property name="value" value="0.0" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1196350915659">
