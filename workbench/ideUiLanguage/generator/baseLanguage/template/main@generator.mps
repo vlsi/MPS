@@ -610,7 +610,7 @@
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1203596488690">
         <link role="annotation" targetNodeId="13.~BaseDialog$Button" resolveInfo="BaseDialog.Button" />
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1203596492269">
-          <link role="key" targetNodeId="13.~BaseDialog$Button.name():java.lang.String" resolveInfo="name" />
+          <link role="key" targetNodeId="13.~BaseDialog$Button.name()" resolveInfo="name" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203596494318">
             <property name="value" value="ButtonName" />
             <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1203596505560">
@@ -630,7 +630,7 @@
           </node>
         </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1203596495382">
-          <link role="key" targetNodeId="13.~BaseDialog$Button.position():int" resolveInfo="position" />
+          <link role="key" targetNodeId="13.~BaseDialog$Button.position()" resolveInfo="position" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203596499743">
             <property name="value" value="239" />
             <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1203596689254">
@@ -648,7 +648,7 @@
           </node>
         </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1203596500057">
-          <link role="key" targetNodeId="13.~BaseDialog$Button.defaultButton():boolean" resolveInfo="defaultButton" />
+          <link role="key" targetNodeId="13.~BaseDialog$Button.defaultButton()" resolveInfo="defaultButton" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1203596502903">
             <property name="value" value="false" />
             <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1203596700091">

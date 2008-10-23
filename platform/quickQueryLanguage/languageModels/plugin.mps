@@ -1207,19 +1207,19 @@
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1219416909918">
         <link role="annotation" targetNodeId="28.~BaseDialog$Button" resolveInfo="BaseDialog.Button" />
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219416909919">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.position():int" resolveInfo="position" />
+          <link role="key" targetNodeId="28.~BaseDialog$Button.position()" resolveInfo="position" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1219416909920">
             <property name="value" value="0" />
           </node>
         </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219416909921">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.name():java.lang.String" resolveInfo="name" />
+          <link role="key" targetNodeId="28.~BaseDialog$Button.name()" resolveInfo="name" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1219416909922">
             <property name="value" value="Find" />
           </node>
         </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219416909923">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.defaultButton():boolean" resolveInfo="defaultButton" />
+          <link role="key" targetNodeId="28.~BaseDialog$Button.defaultButton()" resolveInfo="defaultButton" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1219416909924">
             <property name="value" value="true" />
           </node>
@@ -1256,19 +1256,19 @@
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1219671263202">
         <link role="annotation" targetNodeId="28.~BaseDialog$Button" resolveInfo="BaseDialog.Button" />
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219671283151">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.position():int" resolveInfo="position" />
+          <link role="key" targetNodeId="28.~BaseDialog$Button.position()" resolveInfo="position" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1219671289844">
             <property name="value" value="1" />
           </node>
         </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219671290595">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.name():java.lang.String" resolveInfo="name" />
+          <link role="key" targetNodeId="28.~BaseDialog$Button.name()" resolveInfo="name" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1219671295050">
             <property name="value" value="Cancel" />
           </node>
         </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219671299411">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.defaultButton():boolean" resolveInfo="defaultButton" />
+          <link role="key" targetNodeId="28.~BaseDialog$Button.defaultButton()" resolveInfo="defaultButton" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1219671308319">
             <property name="value" value="false" />
           </node>
@@ -2177,19 +2177,19 @@
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1219748094672">
         <link role="annotation" targetNodeId="28.~BaseDialog$Button" resolveInfo="BaseDialog.Button" />
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219748129292">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.position():int" resolveInfo="position" />
+          <link role="key" targetNodeId="28.~BaseDialog$Button.position()" resolveInfo="position" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1219748129293">
             <property name="value" value="0" />
           </node>
         </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219748129294">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.name():java.lang.String" resolveInfo="name" />
+          <link role="key" targetNodeId="28.~BaseDialog$Button.name()" resolveInfo="name" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1219748129295">
             <property name="value" value="Modify" />
           </node>
         </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219748129296">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.defaultButton():boolean" resolveInfo="defaultButton" />
+          <link role="key" targetNodeId="28.~BaseDialog$Button.defaultButton()" resolveInfo="defaultButton" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1219748129297">
             <property name="value" value="true" />
           </node>
@@ -2226,19 +2226,19 @@
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1219748097767">
         <link role="annotation" targetNodeId="28.~BaseDialog$Button" resolveInfo="BaseDialog.Button" />
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219748140392">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.position():int" resolveInfo="position" />
+          <link role="key" targetNodeId="28.~BaseDialog$Button.position()" resolveInfo="position" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1219748154691">
             <property name="value" value="1" />
           </node>
         </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219748140394">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.name():java.lang.String" resolveInfo="name" />
+          <link role="key" targetNodeId="28.~BaseDialog$Button.name()" resolveInfo="name" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1219748140395">
             <property name="value" value="Cancel" />
           </node>
         </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219748140396">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.defaultButton():boolean" resolveInfo="defaultButton" />
+          <link role="key" targetNodeId="28.~BaseDialog$Button.defaultButton()" resolveInfo="defaultButton" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1219748167232">
             <property name="value" value="false" />
           </node>

@@ -237,8 +237,8 @@
               <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1215002415235">
                 <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002412000" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224757826370">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224758534308">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
               </node>
             </node>
           </node>
@@ -494,8 +494,8 @@
               <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1215002632139">
                 <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002629451" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224757812295">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224758521914">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
               </node>
             </node>
           </node>
@@ -1740,8 +1740,8 @@
               <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1215002293168">
                 <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002289840" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224757830345">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224758540512">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
               </node>
             </node>
           </node>
@@ -2156,8 +2156,8 @@
               <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1215002564786">
                 <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002561145" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224757816697">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224758526806">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
               </node>
             </node>
           </node>
@@ -2614,8 +2614,8 @@
               <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1215002258185">
                 <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002249779" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224757835382">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224758544341">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
               </node>
             </node>
           </node>
@@ -3016,8 +3016,8 @@
               <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1215002485235">
                 <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215002482703" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224757821536">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224758530432">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
               </node>
             </node>
           </node>

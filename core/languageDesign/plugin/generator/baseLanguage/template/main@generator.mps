@@ -7019,7 +7019,7 @@
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1217948330357">
         <link role="annotation" targetNodeId="80.~Tag" resolveInfo="Tag" />
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1217948348426">
-          <link role="key" targetNodeId="80.~Tag.value():java.lang.String" resolveInfo="value" />
+          <link role="key" targetNodeId="80.~Tag.value()" resolveInfo="value" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217948351991">
             <property name="value" value="state" />
           </node>

@@ -600,8 +600,8 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199555238171">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1199555248173">
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207782886159">
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224757780820">
-                    <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224758674285">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
                   </node>
                   <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1213027961990">
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213027940876">
