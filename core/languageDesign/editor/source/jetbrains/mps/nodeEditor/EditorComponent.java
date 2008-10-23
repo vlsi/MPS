@@ -580,7 +580,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public SNode getEditedNode() {
     if (myNodePointer != null) {
-      return myNodePointer.getNode();
+      return ModelAccess.instance().runReadAction(new Computable<SNode>() {
+        public SNode compute() {
+          return myNodePointer.getNode();
+        }
+      });
     }
     return null;
   }
