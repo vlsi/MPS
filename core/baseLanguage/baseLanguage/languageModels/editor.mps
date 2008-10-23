@@ -11223,6 +11223,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1188206662537">
         <property name="readOnly" value="false" />
         <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1224754127421">
+          <property name="value" value="1.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188206667508">
         <property name="text" value="(" />
@@ -11285,6 +11288,9 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188995305245">
           <property name="text" value=")" />
           <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224754487148">
+            <property name="value" value="1.0" />
+          </node>
         </node>
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1188995326442">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188995326443">

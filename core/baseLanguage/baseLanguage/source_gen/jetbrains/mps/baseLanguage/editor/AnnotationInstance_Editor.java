@@ -182,6 +182,15 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_11889953052451188995305245(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188995305245");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 1.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_11889953152061188995315206(EditorCell editorCell, SNode node, EditorContext context) {
