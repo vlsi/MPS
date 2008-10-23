@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ActionType extends BaseClassifierType {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ActionType";
-  public static String ACTION = "action";
+  public static final String ACTION = "action";
 
   public ActionType(SNode node) {
     super(node);

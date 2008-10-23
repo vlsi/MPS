@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GetGroupOperation extends Expression {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.GetGroupOperation";
-  public static String GROUP = "group";
+  public static final String GROUP = "group";
 
   public GetGroupOperation(SNode node) {
     super(node);
