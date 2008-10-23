@@ -29,7 +29,7 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1144102074314(context, node, "concept="));
+    editorCell.addEditorCell(this.createConstant1144102074314(context, node, "concept ="));
     editorCell.addEditorCell(this.createRefNode1207343883309(context, node));
     return editorCell;
   }

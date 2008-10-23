@@ -967,7 +967,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1144101972840" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1144102070906">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1144102074314">
-        <property name="text" value="concept=" />
+        <property name="text" value="concept =" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678306">
           <property name="color" value="lightGray" />
         </node>

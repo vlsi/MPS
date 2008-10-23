@@ -516,6 +516,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1196350915681">
         <property name="text" value=")^" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224771654552">
+          <property name="value" value="0.0" />
+        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678255">
           <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="1214399678256">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214399678257">
