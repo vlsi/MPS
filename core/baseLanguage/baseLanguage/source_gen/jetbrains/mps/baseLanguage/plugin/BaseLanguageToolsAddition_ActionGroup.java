@@ -11,8 +11,8 @@ import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
 
 public class BaseLanguageToolsAddition_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(BaseLanguageToolsAddition_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition";
+private    static Logger LOG = Logger.getLogger(BaseLanguageToolsAddition_ActionGroup.class);
+public    static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition";
 
   public BaseLanguageToolsAddition_ActionGroup() {
     super("", ID);

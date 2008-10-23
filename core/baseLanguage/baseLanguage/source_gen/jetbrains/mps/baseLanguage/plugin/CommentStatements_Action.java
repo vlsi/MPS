@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CommentStatements_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(CommentStatements_Action.class);
-  public static final Icon ICON = null;
+private    static final Logger LOG = Logger.getLogger(CommentStatements_Action.class);
+private    static final Icon ICON = null;
 
   private List<SNode> nodes;
 

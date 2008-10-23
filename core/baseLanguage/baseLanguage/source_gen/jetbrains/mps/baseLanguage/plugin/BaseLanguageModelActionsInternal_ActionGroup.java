@@ -9,8 +9,8 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.ProjectPaneModelActionsInternal_ActionGroup;
 
 public class BaseLanguageModelActionsInternal_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(BaseLanguageModelActionsInternal_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal";
+private    static Logger LOG = Logger.getLogger(BaseLanguageModelActionsInternal_ActionGroup.class);
+public    static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal";
 
   public BaseLanguageModelActionsInternal_ActionGroup() {
     super("", ID);

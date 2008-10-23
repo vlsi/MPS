@@ -95,7 +95,7 @@ public class DataFlowUtil {
         }
       }
       if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment")) {
-        SNode variableAssignment = (SNode)write;
+        SNode variableAssignment = write;
         if (IVariableAssignment_Behavior.call_isCanBeUnused_1223985713603(variableAssignment)) {
           {
             BaseIntentionProvider intentionProvider = null;

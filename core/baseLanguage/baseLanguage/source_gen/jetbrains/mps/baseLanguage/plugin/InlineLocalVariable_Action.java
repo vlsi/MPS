@@ -16,8 +16,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class InlineLocalVariable_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(InlineLocalVariable_Action.class);
-  public static final Icon ICON = null;
+private    static final Logger LOG = Logger.getLogger(InlineLocalVariable_Action.class);
+private    static final Icon ICON = null;
 
   private SNode node;
   public EditorContext editorContext;
@@ -81,7 +81,7 @@ public class InlineLocalVariable_Action extends GeneratedAction {
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          ref.value = new InlineVariableRefactoring(((SNode)InlineLocalVariable_Action.this.node));
+          ref.value = InlineVariableRefactoring.createRefactoring(InlineLocalVariable_Action.this.node);
         }
 
       });
