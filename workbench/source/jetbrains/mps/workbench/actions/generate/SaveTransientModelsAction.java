@@ -23,6 +23,7 @@ public class SaveTransientModelsAction extends ToggleAction {
   }
 
   public void update(AnActionEvent e) {
+    super.update(e);
     e.getPresentation().setVisible(e.getData(PlatformDataKeys.PROJECT) != null);
   }
 

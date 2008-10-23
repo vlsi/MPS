@@ -17,7 +17,7 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
     myTransientModule = project.getComponentSafe(TransientModelsModule.class);
     populate();
     updatePresentation();
-    setNodeIdentifier(myTransientModule.getModuleUID());
+    setNodeIdentifier(myTransientModule.getModuleReference().toString());
   }
 
   protected void updatePresentation() {
