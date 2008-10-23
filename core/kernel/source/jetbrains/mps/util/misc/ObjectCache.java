@@ -133,8 +133,11 @@ public final class ObjectCache<K, V> {
     }
     */
     V result = _secondGenerationQueue.get(key);
-    if(result == null) {
-      result = _firstGenerationQueue.get(key);
+    if (result == null) {
+      result = _firstGenerationQueue.remove(key);
+      if (result != null) {
+        _secondGenerationQueue.put(key, result);
+      }
     }
     if (result != null) {
       ++myHits;

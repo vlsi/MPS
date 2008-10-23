@@ -142,6 +142,7 @@ public class LinkedHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> 
       unlink(e);
       _top = e;
       e.setNext(top);
+      e.setPrevious(null);
       if (top != null) {
         top.setPrevious(e);
       }
@@ -161,10 +162,10 @@ public class LinkedHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> 
       next.setPrevious(prev);
     }
     if (_back == e) {
-      _back = (Entry<K, V>) e.getPrevious();
+      _back = prev;
     }
     if (_top == e) {
-      _top = (Entry<K, V>) e.getNext();
+      _top = next;
     }
   }
 

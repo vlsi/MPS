@@ -5,7 +5,7 @@ import java.util.Arrays;
 class HashUtil {
 
   public static final int MIN_CAPACITY = 4;
-  public static final float ENTRIES_PER_BUCKET = 2.718281828f; // e
+  public static final float ENTRIES_PER_BUCKET = 1;
   public static final float CAPACITY_MULTIPLE = 1.618033989f; // phi
 
   public static int adjustTableSize(int capacity) {
