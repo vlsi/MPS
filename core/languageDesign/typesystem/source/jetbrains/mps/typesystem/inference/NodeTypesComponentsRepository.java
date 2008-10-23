@@ -15,8 +15,9 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class NodeTypesComponentsRepository implements ApplicationComponent {
-  private Map<SNode, NodeTypesComponent> myNodesToComponents = new HashMap<SNode, NodeTypesComponent>();
-  private Set<TypesComponentRepositoryListener> myListeners = new HashSet<TypesComponentRepositoryListener>();
+
+  private Map<SNode, TypeCheckingContext> myNodesToContexts = new HashMap<SNode, TypeCheckingContext>();
+
   private TypeChecker myTypeChecker;
   private ClassLoaderManager myClassLoaderManager;
 
@@ -26,12 +27,11 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
 
   private SModelRepositoryAdapter myModelRepositoryListener = new SModelRepositoryAdapter() {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
-      for (final NodeTypesComponent nodeTypesComponent :
-        myNodesToComponents.values().toArray(new NodeTypesComponent[myNodesToComponents.size()])) {
-        if (nodeTypesComponent.getNode().getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
-          nodeTypesComponent.clearListeners();
-          myNodesToComponents.remove(nodeTypesComponent.getNode());
-          fireComponentRemoved(nodeTypesComponent);
+      for (final TypeCheckingContext typeCheckingContext :
+        myNodesToContexts.values().toArray(new TypeCheckingContext[myNodesToContexts.size()])) {
+        if (typeCheckingContext.getNode().getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
+          typeCheckingContext.clearListeners();
+          myNodesToContexts.remove(typeCheckingContext.getNode());
         }
       }
     }
@@ -59,49 +59,45 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
   public void disposeComponent() {
   }
 
+  @Deprecated
   public NodeTypesComponent getNodeTypesComponent(SNode node) {
-    if (node == null) return null;
-    return myNodesToComponents.get(node.getContainingRoot());
+    TypeCheckingContext context = getTypeCheckingContext(node);
+    if (context == null) return null;
+    return context.getNodeTypesComponent();
   }
 
+  public TypeCheckingContext getTypeCheckingContext(SNode node) {
+    if (node == null) return null;
+    return myNodesToContexts.get(node.getContainingRoot());
+  }
+
+  @Deprecated
   public NodeTypesComponent createNodeTypesComponent(SNode node) {
+    return createTypeCheckingContext(node).getNodeTypesComponent();
+  }
+
+  public TypeCheckingContext createTypeCheckingContext(SNode node) {
     if (node == null) return null;
     SNode root = node.getContainingRoot();
-    NodeTypesComponent nodeTypesComponent = getNodeTypesComponent(root);
-    if (nodeTypesComponent != null) {
-      return nodeTypesComponent;
+
+    TypeCheckingContext typeCheckingContext = getTypeCheckingContext(root);
+    if (typeCheckingContext != null) {
+      return typeCheckingContext;
     }
-    nodeTypesComponent = NodeTypesComponentsFactory.createNodeTypesComponent(root, myTypeChecker);
-    myNodesToComponents.put(nodeTypesComponent.getNode(), nodeTypesComponent);
+    typeCheckingContext = new TypeCheckingContext(root, myTypeChecker);
+    myNodesToContexts.put(typeCheckingContext.getNode(), typeCheckingContext);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
-    return nodeTypesComponent;
+    return typeCheckingContext;
   }
 
   public void clear() {
-    for (final NodeTypesComponent nodeTypesComponent : myNodesToComponents.values()) {
-      nodeTypesComponent.clearListeners();
+    for (final TypeCheckingContext typeCheckingContext : myNodesToContexts.values()) {
+      typeCheckingContext.clearListeners();
     }
-    for (SNode node : new HashSet<SNode>(myNodesToComponents.keySet())) {
-      NodeTypesComponent typesComponent = myNodesToComponents.remove(node);
-      if (typesComponent != null) {
-        fireComponentRemoved(typesComponent);
-      }
+    for (SNode node : new HashSet<SNode>(myNodesToContexts.keySet())) {
+      myNodesToContexts.remove(node);
     }
-  }
-
-  private void fireComponentRemoved(NodeTypesComponent component) {
-    for (TypesComponentRepositoryListener listener : myListeners) {
-      listener.typesComponentRemoved(component);
-    }
-  }
-
-  public void addTypesComponentListener(TypesComponentRepositoryListener listener) {
-    myListeners.add(listener);
-  }
-
-  public void removeTypesComponentListener(TypesComponentRepositoryListener listener) {
-    myListeners.remove(listener);
   }
 
 

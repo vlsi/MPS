@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.MessageStatus;
 
 import java.util.Map;
 import java.util.List;
+import java.util.Stack;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -22,11 +23,15 @@ import org.jetbrains.annotations.NotNull;
  */
 public class TypeCheckingContext {
   private NodeTypesComponent myNodeTypesComponent;
+  private SNode myRootNode;
   private TypeChecker myTypeChecker;
 
-  public TypeCheckingContext(@NotNull NodeTypesComponent nodeTypesComponent) {
-    myNodeTypesComponent = nodeTypesComponent;
-    myTypeChecker = nodeTypesComponent.getTypeChecker();
+  private Stack<Boolean> myIsInEditorQueriesStack = new Stack<Boolean>();
+
+  public TypeCheckingContext(@NotNull SNode rootNode, TypeChecker typeChecker) {
+    myNodeTypesComponent = new NodeTypesComponent(rootNode, typeChecker, this);
+    myTypeChecker = typeChecker;
+    myRootNode = rootNode;
   }
 
   public SModel getRuntimeTypesModel() {
@@ -34,11 +39,29 @@ public class TypeCheckingContext {
   }
 
   public Map<SNode, SNode> getMainContext() {
-    return myNodeTypesComponent.getMainContext();
+    return getNodeTypesComponent().getMainContext();
   }
 
   public EquationManager getEquationManager() {
-    return myNodeTypesComponent.getEquationManager();
+    return getNodeTypesComponent().getEquationManager();
+  }
+
+  public boolean isIncrementalMode() {
+    return !isInEditorQueries() && myTypeChecker.isGlobalIncrementalMode();
+  }
+
+  public boolean isInEditorQueries() {
+    return myIsInEditorQueriesStack.isEmpty();
+  }
+
+  public void setInEditorQueriesMode() {
+    myIsInEditorQueriesStack.push(true);
+  }
+
+  public void resetIsInEditorQueriesMode() {
+    if (!myIsInEditorQueriesStack.isEmpty()) {
+      myIsInEditorQueriesStack.pop();
+    }
   }
 
   //errors reporting
@@ -62,8 +85,8 @@ public class TypeCheckingContext {
   }
 
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
-    myNodeTypesComponent.reportTypeError(nodeWithError, errorReporter);
-    myNodeTypesComponent.addDependcyOnCurrent(nodeWithError);
+    getNodeTypesComponent().reportTypeError(nodeWithError, errorReporter);
+    getNodeTypesComponent().addDependcyOnCurrent(nodeWithError);
   }
   //~
 
@@ -75,11 +98,11 @@ public class TypeCheckingContext {
   }
 
   private String getNewVarName() {
-    return myNodeTypesComponent.getNewVarName();
+    return getNodeTypesComponent().getNewVarName();
   }
 
   public void registerTypeVariable(SNode variable) {
-    myNodeTypesComponent.registerTypeVariable(variable);
+    getNodeTypesComponent().registerTypeVariable(variable);
   }
 
   //for special cases
@@ -90,7 +113,7 @@ public class TypeCheckingContext {
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     if (node == null) return null;
     SNode type;
-    NodeTypesComponent currentTypesComponent = myNodeTypesComponent;   //first, in current component
+    NodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);
@@ -113,16 +136,16 @@ public class TypeCheckingContext {
   }
 
   public SNode[] getRegisteredTypeVariables(String varName) {
-    return myNodeTypesComponent.getVariables(varName);
+    return getNodeTypesComponent().getVariables(varName);
   }
 
   public void addDependencyForCurrent(SNode node) {
-    myNodeTypesComponent.addDependencyForCurrent(node);
+    getNodeTypesComponent().addDependencyForCurrent(node);
   }
 
   private SNode getRepresentatorIfNecessary(SNode type) {
     if (type == null) return null;
-    SNode representator = myNodeTypesComponent.getEquationManager().getRepresentator(type);
+    SNode representator = getNodeTypesComponent().getEquationManager().getRepresentator(type);
     if (representator != null) return representator;
     return type;
   }
@@ -134,7 +157,7 @@ public class TypeCheckingContext {
                              String ruleModel,
                              String ruleId,
                              IntentionProvider intentionProvider) {
-    myNodeTypesComponent.getEquationManager().addEquation(
+    getNodeTypesComponent().getEquationManager().addEquation(
       node1,
       node2,
       new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
@@ -149,7 +172,7 @@ public class TypeCheckingContext {
                                        boolean checkOnly,
                                        int inequationPriority,
                                        IntentionProvider intentionProvider) {
-    myNodeTypesComponent.getEquationManager().addInequation(
+    getNodeTypesComponent().getEquationManager().addInequation(
       node1,
       node2,
       new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority, intentionProvider),
@@ -166,7 +189,7 @@ public class TypeCheckingContext {
                                              boolean checkOnly,
                                              int inequationPriority,
                                              IntentionProvider intentionProvider) {
-    myNodeTypesComponent.getEquationManager().addInequation(
+    getNodeTypesComponent().getEquationManager().addInequation(
       node1,
       node2,
       new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority, intentionProvider),
@@ -183,7 +206,7 @@ public class TypeCheckingContext {
                                           boolean checkOnly,
                                           int inequationPriority,
                                           IntentionProvider intentionProvider) {
-    myNodeTypesComponent.getEquationManager().addInequation(
+    getNodeTypesComponent().getEquationManager().addInequation(
       node2,
       node1,
       new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority, intentionProvider),
@@ -198,7 +221,7 @@ public class TypeCheckingContext {
                                        String ruleModel,
                                        String ruleId,
                                        IntentionProvider intentionProvider) {
-    myNodeTypesComponent.getEquationManager().addInequationComparable(
+    getNodeTypesComponent().getEquationManager().addInequationComparable(
       node1,
       node2,
       new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
@@ -211,7 +234,7 @@ public class TypeCheckingContext {
                                              String ruleModel,
                                              String ruleId,
                                              IntentionProvider intentionProvider) {
-    myNodeTypesComponent.getEquationManager().addInequationComparable(
+    getNodeTypesComponent().getEquationManager().addInequationComparable(
       node1,
       node2,
       new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider),
@@ -271,6 +294,22 @@ public class TypeCheckingContext {
         }
       }
     };
+  }
+
+  public void clearListeners() { //todo more attentively
+    getNodeTypesComponent().clearListeners();
+  }
+
+  public SNode getNode() {
+    return myRootNode;
+  }
+
+  public NodeTypesComponent getNodeTypesComponent() {
+    return myNodeTypesComponent;
+  }
+
+  public NodeTypesComponent getNodeTypesComponentClone() {
+    return myNodeTypesComponent.clone(this);
   }
 
   public static class NodeInfo {

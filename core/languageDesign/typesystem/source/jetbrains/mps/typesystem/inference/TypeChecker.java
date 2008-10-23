@@ -41,7 +41,6 @@ public class TypeChecker implements ApplicationComponent {
   private SubtypingManager mySubtypingManager;
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
-  private Stack<TypeCheckingMode> myTypesCheckingModesStack = new Stack<TypeCheckingMode>();
 
   private SubtypingCache mySubtypingCache = null;
 
@@ -54,7 +53,6 @@ public class TypeChecker implements ApplicationComponent {
   @ForDebug
   private Object myResolveModeStartedFrame;
 
-  private boolean myIsIncrementalMode = true;
 
   private ClassLoaderManager myClassLoaderManager;
 
@@ -135,18 +133,10 @@ public class TypeChecker implements ApplicationComponent {
     return myRulesManager;
   }
 
-  @UseCarefully
-  public void setCurrentTypesComponent(NodeTypesComponent component) {
-  }
-
   public void clearForReload() {
     myNodesToDependentRoots.clear();
     myRulesManager.clear();
     myCheckedRoots.clear();
-  }
-
-  private void setIncrementalMode(boolean isIncrementalMode) {
-    myIsIncrementalMode = isIncrementalMode;
   }
 
   public void enableTypesComputingForCompletion() {
@@ -161,30 +151,8 @@ public class TypeChecker implements ApplicationComponent {
     myIsGeneration = isGeneration;
     if (isGeneration) {
       mySubtypingCache = new SubtypingCache();
-      setIncrementalMode(false);
     } else {
       mySubtypingCache = null;
-      setIncrementalMode(true);
-    }
-  }
-
-  public void setTypeCheckingMode(TypeCheckingMode typeCheckingMode) {
-    if (myTypeCheckingMode != null) {
-      myTypesCheckingModesStack.push(myTypeCheckingMode);
-    }
-    myTypeCheckingMode = typeCheckingMode;
-    if (typeCheckingMode != null) {
-      setIncrementalMode(false);
-    }
-  }
-
-  public void resetTypeCheckingMode() {
-    myTypeCheckingMode = null;
-    if (!myTypesCheckingModesStack.isEmpty()) {
-      myTypeCheckingMode = myTypesCheckingModesStack.pop();
-    }
-    if (myTypeCheckingMode == null) {
-      setIncrementalMode(true);
     }
   }
 
@@ -248,6 +216,7 @@ public class TypeChecker implements ApplicationComponent {
     if (node == null) return null;
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
+
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
       getNodeTypesComponent(node.getContainingRoot());
     if (!myCheckedRoots.contains(containingRoot) || component == null) {
@@ -274,12 +243,12 @@ public class TypeChecker implements ApplicationComponent {
     if (myComputedTypesForCompletion != null && myComputedTypesForCompletion.containsKey(node)) {
       return myComputedTypesForCompletion.get(node);
     }
-    NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
-      getNodeTypesComponent(node.getContainingRoot());
-    if (nodeIsNotChecked || !myCheckedRoots.contains(containingRoot) || component == null) {
+    TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(node.getContainingRoot());
+    if (nodeIsNotChecked || !myCheckedRoots.contains(containingRoot) || typeCheckingContext == null) {
       final SNode[] result = new SNode[1];
-      final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
-      SNode computedType = component1.getType(node);
+      typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(containingRoot);
+      final NodeTypesComponent component = typeCheckingContext.getNodeTypesComponent();
+      SNode computedType = component.getType(node);
       if (computedType != null) {
         if (myComputedTypesForCompletion != null) {
           myComputedTypesForCompletion.put(node, computedType);
@@ -287,12 +256,7 @@ public class TypeChecker implements ApplicationComponent {
         return computedType;
       }
       final NodeTypesComponent temporaryComponent;
-      try {
-        temporaryComponent = component1.clone();
-      } catch(CloneNotSupportedException ex) {
-        LOG.error(ex);
-        return null;
-      }
+      temporaryComponent = typeCheckingContext.getNodeTypesComponentClone();
       try {
         checkWithinRoot(node, new Runnable() {
           public void run() {
@@ -409,8 +373,8 @@ public class TypeChecker implements ApplicationComponent {
     return NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(root).getError(node);
   }
 
-  public boolean isIncrementalMode() {
-    return myIsIncrementalMode;
+  public boolean isGlobalIncrementalMode() {
+    return !isGenerationMode();
   }
 
   public boolean isGenerationMode() {

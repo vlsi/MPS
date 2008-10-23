@@ -4,6 +4,8 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingMode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.OK;
@@ -46,14 +48,19 @@ public class ModelConstraintsUtil {
     final SearchScopeStatus[] status = new SearchScopeStatus[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        SNode contextNode = enclosingNode_;
+        if (contextNode == null) {
+          contextNode = referenceNode;
+        }
+        TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(contextNode);
+        typeCheckingContext.setInEditorQueriesMode();
         try {
-          TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.EDITOR_QUERIES);
           status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, context);
         } catch (Throwable t) {
           LOG.error(t);
           status[0] = new SearchScopeStatus.ERROR("can't create search scope for role '" + linkRole + "' in '" + referenceNodeConcept.getName() + "'");
         } finally {
-          TypeChecker.getInstance().resetTypeCheckingMode();
+          typeCheckingContext.resetIsInEditorQueriesMode();
         }
       }
     });

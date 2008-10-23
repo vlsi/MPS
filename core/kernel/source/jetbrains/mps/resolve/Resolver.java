@@ -3,6 +3,8 @@ package jetbrains.mps.resolve;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingMode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -105,7 +107,8 @@ public class Resolver {
     }
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
 
-    TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.EDITOR_QUERIES);
+    TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(referenceNode);
+    typeCheckingContext.setInEditorQueriesMode();
     try {
       SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
         referenceNode, referenceNodeConcept, linkDeclaration, operationContext);
@@ -175,7 +178,7 @@ public class Resolver {
 
       return false;
     } finally {
-      TypeChecker.getInstance().resetTypeCheckingMode();
+      typeCheckingContext.resetIsInEditorQueriesMode();
     }
   }
 

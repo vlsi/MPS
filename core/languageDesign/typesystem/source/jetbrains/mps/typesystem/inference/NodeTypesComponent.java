@@ -67,14 +67,14 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
   private TypeCheckingContext myTypeCheckingContext;
 
-  public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker) {
+  public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
-    myTypeCheckingContext = new TypeCheckingContext(this);
+    myTypeCheckingContext = typeCheckingContext;
     myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext);
   }
 
-  public TypeCheckingContext getTypeCheckingContext() {
+  private TypeCheckingContext getTypeCheckingContext() {
     return myTypeCheckingContext;
   }
 
@@ -82,6 +82,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     return myTypeChecker;
   }
 
+  @Deprecated
   public NodeTypesComponent clone() throws CloneNotSupportedException {
     NodeTypesComponent result = (NodeTypesComponent) super.clone();
     result.myNodesToTypesMap = new HashMap<SNode, SNode>();
@@ -89,7 +90,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     result.myNodesToNonTypesystemErrorsMap = new HashMap<SNode, IErrorReporter>();
     result.myFullyCheckedNodes = new WeakSet<SNode>();
     result.myPartlyCheckedNodes = new WeakSet<SNode>();
-    result.myTypeCheckingContext = new TypeCheckingContext(result);
+    result.myTypeCheckingContext = null;
     result.myEquationManager = new EquationManager(result.myTypeChecker, result.myTypeCheckingContext);
     result.myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
     result.myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
@@ -101,6 +102,17 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     result.myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
     result.myRegisteredVariables = new HashMap<String, Set<SNode>>();
     return result;
+  }
+
+  public NodeTypesComponent clone(TypeCheckingContext typeCheckingContext) {
+    try {
+      NodeTypesComponent clone = this.clone();
+      clone.myTypeCheckingContext = typeCheckingContext;
+      return clone;
+    } catch (CloneNotSupportedException ex) {
+      LOG.error(ex);
+      return null;
+    }
   }
 
   public void clear() {
@@ -268,8 +280,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   private boolean isIncrementalMode() {
-    return myTypeChecker.isIncrementalMode();
-    //return true;
+    return myTypeCheckingContext.isIncrementalMode();
   }
 
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode, Runnable continuation) {

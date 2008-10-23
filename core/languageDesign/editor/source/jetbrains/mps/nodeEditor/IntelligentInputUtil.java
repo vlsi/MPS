@@ -10,6 +10,8 @@ import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingMode;
+import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 import java.util.List;
 
@@ -154,9 +156,11 @@ public class IntelligentInputUtil {
     }
 
     EditorCellAction rtAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.RIGHT_TRANSFORM);
-    TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.EDITOR_QUERIES);
+
+    TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
+    typeCheckingContext.setInEditorQueriesMode();
     boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.RIGHT, tail);
-    TypeChecker.getInstance().resetTypeCheckingMode();
+    typeCheckingContext.resetIsInEditorQueriesMode();
     if (rtAction == null || !hasSideActions) {
       final CellInfo cellInfo = cellForNewNode.getCellInfo();
       putTextInErrorChild(cellInfo, smallPattern + tail, editorContext);
@@ -178,9 +182,10 @@ public class IntelligentInputUtil {
       if (rtSubstituteInfo == null) {
         rtSubstituteInfo = new NullSubstituteInfo();
       }
-      TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.EDITOR_QUERIES);
+      //TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext();
+      typeCheckingContext.setInEditorQueriesMode();
       List<INodeSubstituteAction> rtMatchingActions = rtSubstituteInfo.getMatchingActions(tail, true);
-      TypeChecker.getInstance().resetTypeCheckingMode();
+      typeCheckingContext.resetIsInEditorQueriesMode();
 
       if (!canCompleteSmallPatternImmediately(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         editorContext.flushEvents();
@@ -249,9 +254,10 @@ public class IntelligentInputUtil {
 
 
     EditorCellAction ltAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.LEFT_TRANSFORM);
-    TypeChecker.getInstance().setTypeCheckingMode(TypeCheckingMode.EDITOR_QUERIES);
+    TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
+    typeCheckingContext.setInEditorQueriesMode();
     boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.LEFT, head);
-    TypeChecker.getInstance().resetTypeCheckingMode();
+    typeCheckingContext.resetIsInEditorQueriesMode();
     if (ltAction == null || !hasSideActions) {
       CellInfo cellInfo = cellForNewNode.getCellInfo();
       if (!sourceCellRemains) {
