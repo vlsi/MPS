@@ -2889,6 +2889,11 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224761482760">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224761482761">
+                <property name="value" value="3" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215441331650">
@@ -3050,20 +3055,20 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1215441331726">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1215441331727">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215441331728" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215441331729">
-              <link role="classConcept" targetNodeId="21.1222935385630" resolveInfo="_InlineMethodRefactoringAnalyzer" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1224761458248">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1224761468818">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1224761469727" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1224761462250">
               <link role="baseMethodDeclaration" targetNodeId="21.1222935484721" resolveInfo="getErrors" />
-              <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441331731">
+              <link role="classConcept" targetNodeId="21.1222935385630" resolveInfo="InlineMethodRefactoringAnalyzer" />
+              <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1224761462251">
                 <link role="declaration" targetNodeId="1215441331607" resolveInfo="call2" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223034853982">
-                <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1215441331735">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224761462252">
+                <node role="operand" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1224761462253">
                   <link role="declaration" targetNodeId="1215441331607" resolveInfo="call2" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223034855766">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224761462254">
                   <link role="link" targetNodeId="1.1202948736718" />
                 </node>
               </node>
