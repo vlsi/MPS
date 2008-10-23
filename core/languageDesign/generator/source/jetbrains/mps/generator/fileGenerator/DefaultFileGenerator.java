@@ -46,7 +46,7 @@ public abstract class DefaultFileGenerator implements IFileGenerator {
     }
 
     boolean fileCreated = false;
-    for (int i = 1; i <= 5; i++) {
+    for (int i = 1; i <= 20; i++) {
       try {
         file.createNewFile();
         fileCreated = true;
