@@ -323,6 +323,16 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_11889952994931188995299493(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188995299493");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.PADDING_LEFT, 0.0);
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_Constant_1188995299493_1188995299493(EditorCell_Label editorCell, SNode node, EditorContext context) {
