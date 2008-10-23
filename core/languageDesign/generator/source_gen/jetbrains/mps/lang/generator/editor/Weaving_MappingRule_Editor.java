@@ -651,6 +651,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11846164020941184616402094(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184616402094");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_contextNodeQuery1184616402096(EditorCell editorCell, SNode node, EditorContext context) {

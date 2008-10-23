@@ -20,6 +20,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
@@ -313,6 +314,7 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10920611735131092061173513(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1092061173513");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -368,6 +370,15 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_10928266090471092826609047(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1092826609047");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Collection_11001165374161100116537416(EditorCell editorCell, SNode node, EditorContext context) {
@@ -398,6 +409,15 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11001165374181100116537418(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1100116537418");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_11682860521811168286052181(EditorCell editorCell, SNode node, EditorContext context) {
@@ -467,6 +487,7 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11686238047441168623804744(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168623804744");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -506,15 +527,7 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11686238108191168623810819(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168623810819");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_applicableConcept1168623810820(EditorCell editorCell, SNode node, EditorContext context) {

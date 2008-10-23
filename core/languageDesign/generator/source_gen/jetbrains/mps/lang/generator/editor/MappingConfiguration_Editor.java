@@ -760,6 +760,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11849504208791184950420879(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184950420879");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_name1184950420880(EditorCell editorCell, SNode node, EditorContext context) {
@@ -781,6 +782,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11849504478501184950447850(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184950447850");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_topPriorityGroup1184950447851(EditorCell editorCell, SNode node, EditorContext context) {

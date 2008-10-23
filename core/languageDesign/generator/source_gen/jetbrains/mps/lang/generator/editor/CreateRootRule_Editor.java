@@ -384,6 +384,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11670880053891167088005389(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167088005389");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -511,6 +512,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12009235413111200923541311(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200923541311");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12009235413121200923541312(EditorCell editorCell, SNode node, EditorContext context) {

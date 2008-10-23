@@ -221,6 +221,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
 
   private static void setupBasic_Constant_11694949427581169494942758(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169494942758");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -254,6 +255,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
 
   private static void setupBasic_Constant_11694949427631169494942763(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169494942763");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -284,6 +286,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
 
   private static void setupBasic_Constant_11694949427751169494942775(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169494942775");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

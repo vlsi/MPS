@@ -158,6 +158,7 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12009113606601200911360660(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200911360660");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_name1200911362725(EditorCell editorCell, SNode node, EditorContext context) {

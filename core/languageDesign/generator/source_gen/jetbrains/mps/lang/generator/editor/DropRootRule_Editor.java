@@ -133,6 +133,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12199528484651219952848465(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219952848465");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_conditionFunction1219952862843(EditorCell editorCell, SNode node, EditorContext context) {

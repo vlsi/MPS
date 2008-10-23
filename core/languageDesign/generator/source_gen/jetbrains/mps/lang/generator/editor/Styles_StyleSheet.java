@@ -10,6 +10,16 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Styles_StyleSheet {
 
+  public static Style getGeneratorKeyWord(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      }
+
+    };
+  }
+
   public static Style getReference(final EditorCell cell) {
     return new Style(cell) {
       {
