@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.nodeEditor.MessageStatus;
 
 import java.util.Map;
 import java.util.List;
@@ -42,31 +43,25 @@ public class TypeCheckingContext {
 
   //errors reporting
 
-  public void reportTypeError(SNode nodeWithError, String errorString) {
-    reportTypeError(nodeWithError, errorString, null, null);
-  }
-
-  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
-    reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId));
-  }
-
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
+    SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId, MessageStatus.ERROR);
     reporter.setIntentionProvider(intentionProvider);
-    reportTypeError(nodeWithError, reporter);
-  }
-
-  public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
-    reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId, true));
+    reportMessage(nodeWithError, reporter);
   }
 
   public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId, true);
+    SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, ruleModel, ruleId, MessageStatus.WARNING);
     reporter.setIntentionProvider(intentionProvider);
-    reportTypeError(nodeWithError, reporter);
+    reportMessage(nodeWithError, reporter);
   }
 
-  public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
+  public void reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
+    SimpleErrorReporter reporter = new SimpleErrorReporter(message, ruleModel, ruleId, MessageStatus.OK);
+    reporter.setIntentionProvider(intentionProvider);
+    reportMessage(nodeWithInfo, reporter);
+  }
+
+  public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
     myNodeTypesComponent.reportTypeError(nodeWithError, errorReporter);
     myNodeTypesComponent.addDependcyOnCurrent(nodeWithError);
   }

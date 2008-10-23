@@ -1367,7 +1367,7 @@
       <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1207055564760">
-      <property name="value" value="WARNINNG" />
+      <property name="value" value="warning" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
@@ -1899,6 +1899,31 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="helginsIntention" />
       <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224760201579">
+    <property name="name" value="InfoStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224760230762">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="infoText" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224760230763">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="nodeToReport" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224760230764">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="helginsIntention" />
+      <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224760271468">
+      <property name="value" value="info" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

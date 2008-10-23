@@ -163,12 +163,11 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     } else {
       map = myNodesToErrorsMap;
     }
-    if (errorReporter.isWarning()) { //warnings should not hide errors
-      IErrorReporter former = map.get(node);
-      if (former != null && !former.isWarning()) {
-        return;
-      }
+    IErrorReporter former = map.get(node);
+    if (former != null && former.getMessageStatus().compareTo(errorReporter.getMessageStatus()) > 0) {
+      return;
     }
+
     map.put(node, errorReporter);
   }
 
@@ -231,7 +230,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     for (SNode node : new HashSet<SNode>(myNodesToErrorsMap.keySet())) {
       IErrorReporter iErrorReporter = myNodesToErrorsMap.get(node);
       String errorString = iErrorReporter.reportError();
-      SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(), iErrorReporter.isWarning());
+      SimpleErrorReporter reporter = new SimpleErrorReporter(errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(), iErrorReporter.getMessageStatus());
       reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
       myNodesToErrorsMap.put(node, reporter);
     }

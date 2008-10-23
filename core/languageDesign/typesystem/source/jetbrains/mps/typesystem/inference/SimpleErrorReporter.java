@@ -1,6 +1,7 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.nodeEditor.MessageStatus;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,7 +15,7 @@ public class SimpleErrorReporter implements IErrorReporter {
   private String myRuleModel;
   private String myRuleId;
   private IntentionProvider myIntentionProvider;
-  private boolean myIsWarning = false;
+  private MessageStatus myMessageStatus = MessageStatus.ERROR;
 
   public SimpleErrorReporter(String s, String ruleModel, String ruleId) {
     myErrorString = s;
@@ -24,7 +25,12 @@ public class SimpleErrorReporter implements IErrorReporter {
 
   public SimpleErrorReporter(String s, String ruleModel, String ruleId, boolean isWarning) {
     this(s, ruleModel, ruleId);
-    myIsWarning = isWarning;
+    myMessageStatus = isWarning ? MessageStatus.WARNING : MessageStatus.ERROR;
+  }
+
+  public SimpleErrorReporter(String s, String ruleModel, String ruleId, MessageStatus messageStatus) {
+    this(s, ruleModel, ruleId);
+    myMessageStatus = messageStatus;
   }
 
   public String reportError() {
@@ -39,15 +45,15 @@ public class SimpleErrorReporter implements IErrorReporter {
     return myRuleModel;
   }
 
-  public boolean isWarning() {
-    return myIsWarning;
-  }
-
   public void setIntentionProvider(IntentionProvider intentionProvider) {
     myIntentionProvider = intentionProvider;
   }
 
   public IntentionProvider getIntentionProvider() {
     return myIntentionProvider;
+  }
+
+  public MessageStatus getMessageStatus() {
+    return myMessageStatus;
   }
 }

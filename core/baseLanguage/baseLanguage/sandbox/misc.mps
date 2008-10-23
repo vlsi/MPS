@@ -176,6 +176,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224767535230">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1224767538689">
+            <property name="value" value="5." />
+          </node>
+        </node>
       </node>
     </node>
   </node>

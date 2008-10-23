@@ -1,6 +1,7 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.nodeEditor.MessageStatus;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,7 +14,7 @@ public interface IErrorReporter {
   public String reportError();
   public String getRuleId();
   public String getRuleModel();
-  public boolean isWarning();
+  public MessageStatus getMessageStatus();
   public IntentionProvider getIntentionProvider();
   public void setIntentionProvider(IntentionProvider intentionProvider);
 }

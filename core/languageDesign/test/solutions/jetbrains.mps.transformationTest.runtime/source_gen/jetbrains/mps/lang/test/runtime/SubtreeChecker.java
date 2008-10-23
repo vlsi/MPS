@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import java.util.Set;
@@ -37,12 +38,12 @@ public class SubtreeChecker {
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorPropety")) {
             Assert.assertTrue(checker.getTypeErrorDontCheck(child) != null);
-            Assert.assertFalse(checker.getTypeErrorDontCheck(child).isWarning());
+            Assert.assertFalse(checker.getTypeErrorDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
             isError = true;
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeWarningProperty")) {
             Assert.assertTrue(checker.getTypeErrorDontCheck(child) != null);
-            Assert.assertTrue(checker.getTypeErrorDontCheck(child).isWarning());
+            Assert.assertTrue(checker.getTypeErrorDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
             isError = true;
           }
         }

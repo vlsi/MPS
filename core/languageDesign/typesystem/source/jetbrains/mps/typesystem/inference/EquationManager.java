@@ -226,7 +226,7 @@ public class EquationManager {
       errorReporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
     }
     errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
-    myTypeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), errorReporter);
+    myTypeCheckingContext.reportMessage(equationInfo.getNodeWithError(), errorReporter);
 
     //4debug
    //  myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, equationInfo, isWeak);
@@ -312,7 +312,7 @@ public class EquationManager {
       errorReporter = new SimpleErrorReporter(errorString, ruleModel, ruleId);
     }
     errorReporter.setIntentionProvider(errorInfo.getIntentionProvider());
-    myTypeCheckingContext.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
+    myTypeCheckingContext.reportMessage(errorInfo.getNodeWithError(), errorReporter);
   }
 
   public WhenConcreteEntity getWhenConcreteEntity(IWrapper wrapper) {
@@ -464,7 +464,7 @@ public class EquationManager {
     if (typeVar instanceof RuntimeErrorType) {
       SimpleErrorReporter reporter = new SimpleErrorReporter(((RuntimeErrorType) typeVar).getErrorText(), errorInfo.getRuleModel(), errorInfo.getRuleId());
       reporter.setIntentionProvider(errorInfo.getIntentionProvider());
-      myTypeCheckingContext.reportTypeError(
+      myTypeCheckingContext.reportMessage(
         errorInfo.getNodeWithError(), reporter);
     }
     var.fireRepresentatorSet(type, this);
@@ -600,7 +600,7 @@ public class EquationManager {
 
   private void processErrorEquation(IWrapper type, IWrapper error, IErrorReporter errorReporter, SNode nodeToCheck) {
     setParent(error, type); //type
-    myTypeCheckingContext.reportTypeError(nodeToCheck, errorReporter);
+    myTypeCheckingContext.reportMessage(nodeToCheck, errorReporter);
     error.fireRepresentatorSet(type, this);
   }
 

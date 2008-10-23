@@ -18,6 +18,9 @@ import java.util.List;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SearchScopeOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -823,6 +826,23 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "nodeId");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1224761479286(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode quickFix = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "quickFix", false);
+    return SNodeOperations.getModel(quickFix) + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1224761479325(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1224761479382(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(_context.getNode()).toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1224761479393(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getNode().getId();
+  }
+
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
     SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "mainMethodForRule");
@@ -1552,6 +1572,14 @@ public class QueriesGenerated {
     throw new RuntimeException("givetype is deprecated and not implemented");
   }
 
+  public static boolean ifMacro_Condition_1224761479311(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1224761479342(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1174654997817(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -1924,6 +1952,18 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "errorString", true);
   }
 
+  public static SNode sourceNodeQuery_1224761479335(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "value", true);
+  }
+
+  public static SNode sourceNodeQuery_1224761479366(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "nodeToReport", true);
+  }
+
+  public static SNode sourceNodeQuery_1224761479374(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "infoText", true);
+  }
+
   public static Iterable sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "judgement", true);
   }
@@ -2068,6 +2108,10 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1223996377358(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "actualArgument", true);
+  }
+
+  public static Iterable sourceNodesQuery_1224761479351(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "actualArgument", true);
   }
 

@@ -36,7 +36,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <maxImportIndex value="26" />
+  <maxImportIndex value="27" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" version="-1" />
@@ -63,6 +63,7 @@
   <import index="24" modelUID="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" version="-1" />
   <import index="25" modelUID="f:java_stub#com.intellij.openapi.application.impl(com.intellij.openapi.application.impl@java_stub)" version="-1" />
   <import index="26" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <import index="27" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1215078243118">
     <property name="name" value="SubtreeChecker" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1215078294635">
@@ -239,20 +240,26 @@
                           </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" id="1215607026435">
-                          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215607026436">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215607026437">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215607026438">
-                                <link role="variableDeclaration" targetNodeId="1215607026362" resolveInfo="checker" />
-                              </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215607026439">
-                                <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
-                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215610203364">
-                                  <link role="variableDeclaration" targetNodeId="1215607026378" resolveInfo="child" />
+                          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1224766633497">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1224766775030">
+                              <link role="enumConstantDeclaration" targetNodeId="27.~MessageStatus.WARNING" resolveInfo="WARNING" />
+                              <link role="enumClass" targetNodeId="27.~MessageStatus" resolveInfo="MessageStatus" />
+                            </node>
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215607026436">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215607026437">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215607026438">
+                                  <link role="variableDeclaration" targetNodeId="1215607026362" resolveInfo="checker" />
+                                </node>
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215607026439">
+                                  <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215610203364">
+                                    <link role="variableDeclaration" targetNodeId="1215607026378" resolveInfo="child" />
+                                  </node>
                                 </node>
                               </node>
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215607026441">
-                              <link role="baseMethodDeclaration" targetNodeId="1.~IErrorReporter.isWarning():boolean" resolveInfo="isWarning" />
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224766631996">
+                                <link role="baseMethodDeclaration" targetNodeId="1.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -297,20 +304,26 @@
                           </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1215607026459">
-                          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215607026460">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215607026461">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215607026462">
-                                <link role="variableDeclaration" targetNodeId="1215607026362" resolveInfo="checker" />
-                              </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215607026463">
-                                <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
-                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215610195690">
-                                  <link role="variableDeclaration" targetNodeId="1215607026378" resolveInfo="child" />
+                          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1224766784657">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1224766795333">
+                              <link role="enumConstantDeclaration" targetNodeId="27.~MessageStatus.WARNING" resolveInfo="WARNING" />
+                              <link role="enumClass" targetNodeId="27.~MessageStatus" resolveInfo="MessageStatus" />
+                            </node>
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215607026460">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215607026461">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215607026462">
+                                  <link role="variableDeclaration" targetNodeId="1215607026362" resolveInfo="checker" />
+                                </node>
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215607026463">
+                                  <link role="baseMethodDeclaration" targetNodeId="1.~TypeChecker.getTypeErrorDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.IErrorReporter" resolveInfo="getTypeErrorDontCheck" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215610195690">
+                                    <link role="variableDeclaration" targetNodeId="1215607026378" resolveInfo="child" />
+                                  </node>
                                 </node>
                               </node>
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215607026465">
-                              <link role="baseMethodDeclaration" targetNodeId="1.~IErrorReporter.isWarning():boolean" resolveInfo="isWarning" />
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224766783515">
+                                <link role="baseMethodDeclaration" targetNodeId="1.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
+                              </node>
                             </node>
                           </node>
                         </node>

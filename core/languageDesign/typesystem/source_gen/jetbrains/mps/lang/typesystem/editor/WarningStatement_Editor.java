@@ -45,7 +45,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1210839954270(context, node, "intention to fix an error(optional)"));
+    editorCell.addEditorCell(this.createConstant1210839954270(context, node, "intention to fix a warning(optional)"));
     editorCell.addEditorCell(this.createRefNode1210839954271(context, node));
     return editorCell;
   }
