@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
@@ -84,20 +82,8 @@ public class PropertyPatternVariableDeclaration_Editor extends DefaultNodeEditor
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return PropertyPatternVariableDeclaration_Editor.calculateFontStyle9335_1(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return PropertyPatternVariableDeclaration_Editor.calculateColor9335_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
 
       };
@@ -110,20 +96,8 @@ public class PropertyPatternVariableDeclaration_Editor extends DefaultNodeEditor
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return PropertyPatternVariableDeclaration_Editor.calculateFontStyle9335_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return PropertyPatternVariableDeclaration_Editor.calculateColor9335_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
 
       };
@@ -135,30 +109,6 @@ public class PropertyPatternVariableDeclaration_Editor extends DefaultNodeEditor
   }
 
   private static void setupLabel_Constant_1138397462496_1138397462496(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle9335_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD_ITALIC;
-    return result;
-  }
-
-  private static Integer calculateFontStyle9335_1(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD_ITALIC;
-    return result;
-  }
-
-  private static Color calculateColor9335_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-  private static Color calculateColor9335_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
   }
 
 }

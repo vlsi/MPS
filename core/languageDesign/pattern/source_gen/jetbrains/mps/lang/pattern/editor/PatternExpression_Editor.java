@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class PatternExpression_Editor extends DefaultNodeEditor {
@@ -93,27 +91,10 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return PatternExpression_Editor.calculateBoolean1748_1(cell);
-            }
-
-          });
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return PatternExpression_Editor.calculateBoolean1748_4(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return PatternExpression_Editor.calculateColor1748_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.green);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -125,20 +106,8 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BRACKETS, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return PatternExpression_Editor.calculateBoolean1748_2(cell);
-            }
-
-          });
-          this.set(StyleAttributes.DRAW_BORDER, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return PatternExpression_Editor.calculateBoolean1748_3(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BRACKETS, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
         }
 
       };
@@ -151,20 +120,8 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return PatternExpression_Editor.calculateBoolean1748_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return PatternExpression_Editor.calculateColor1748_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.green);
         }
 
       };
@@ -179,48 +136,6 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1136720096752_1136720096752(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor1748_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.green;
-    return result;
-  }
-
-  private static Color calculateColor1748_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.green;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1748_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1748_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1748_2(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1748_3(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean1748_4(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
 }

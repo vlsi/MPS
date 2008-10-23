@@ -91,6 +91,9 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="1214407442037">
           <property name="color" value="green" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224771830046">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1136720096751">
         <link role="relationDeclaration" targetNodeId="1.1136720037778" />
