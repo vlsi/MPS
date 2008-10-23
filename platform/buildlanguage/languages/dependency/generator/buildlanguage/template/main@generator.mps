@@ -54,6 +54,12 @@
         <link role="template" targetNodeId="1219772393477" resolveInfo="reduce_PathHolder" />
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1224775831879">
+      <link role="applicableConcept" targetNodeId="1.1224775496043" resolveInfo="ProjectDescriptionReference" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1224775844695">
+        <link role="template" targetNodeId="1224775844691" resolveInfo="reduce_ProjectDescriptionReference" />
+      </node>
+    </node>
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1216910717604">
       <property name="name" value="ModuleToClassesProperty" />
       <link role="sourceConcept" targetNodeId="1.1216745525843" resolveInfo="ModuleDescription" />
@@ -79,9 +85,15 @@
       <link role="sourceConcept" targetNodeId="1.1219418780635" resolveInfo="Macros" />
       <link role="targetConcept" targetNodeId="3.1219147669362" resolveInfo="ExternalPropertyDeclaration" />
     </node>
+    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1224775923722">
+      <property name="name" value="DescriptionToProject" />
+      <link role="sourceConcept" targetNodeId="1.1216745453338" resolveInfo="ProjectDescription" />
+      <link role="targetConcept" targetNodeId="3.1196851066733" resolveInfo="Project" />
+    </node>
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1216909134654">
       <link role="applicableConcept" targetNodeId="1.1216745453338" resolveInfo="Description" />
       <link role="template" targetNodeId="1216906941020" resolveInfo="project" />
+      <link role="labelDeclaration" targetNodeId="1224775923722" resolveInfo="DescriptionToProject" />
     </node>
   </node>
   <node type="jetbrains.mps.buildlanguage.structure.Project" id="1216906941020">
@@ -1015,6 +1027,43 @@
       </node>
       <node role="default" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="1219772419133">
         <link role="targetDeclaration" targetNodeId="1219772400793" resolveInfo="target" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1224775844691">
+    <property name="name" value="reduce_ProjectDescriptionReference" />
+    <link role="applicableConcept" targetNodeId="1.1224775496043" resolveInfo="ProjectDescriptionReference" />
+    <node role="contentNode" type="jetbrains.mps.buildlanguage.structure.Project" id="1224775852955">
+      <property name="name" value="project" />
+      <node role="importProject" type="jetbrains.mps.buildlanguage.structure.ImportProject" id="1224775872219">
+        <link role="project" targetNodeId="1216906941020" resolveInfo="project" />
+        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1224775895094" />
+        <node role="referenceMacro$link_attribute$project" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1224775901837">
+          <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1224775901838">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224775901839">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224776195719">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224776197281">
+                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1224776195720" />
+                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="1224776203180">
+                    <link role="label" targetNodeId="1224775923722" resolveInfo="DescriptionToProject" />
+                    <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224776219230">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1224776217701" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224776226881">
+                        <link role="link" targetNodeId="1.1224775730869" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1224775852956">
+        <property name="name" value="t" />
+      </node>
+      <node role="default" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="1224775865923">
+        <link role="targetDeclaration" targetNodeId="1224775852956" resolveInfo="t" />
       </node>
     </node>
   </node>

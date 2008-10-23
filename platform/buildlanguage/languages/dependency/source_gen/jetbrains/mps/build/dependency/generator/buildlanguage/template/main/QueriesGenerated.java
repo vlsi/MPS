@@ -92,6 +92,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "macro", false), "MacroToExternalProperty");
   }
 
+  public static Object referenceMacro_GetReferent_1224775901838(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "description", false), "DescriptionToProject");
+  }
+
   public static boolean ifMacro_Condition_1216912138334(final IOperationContext operationContext, final IfMacroContext _context) {
     return _context.getNode() != ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.dependency.structure.Cycle", true, false), "moduleDescription", true)).first();
   }

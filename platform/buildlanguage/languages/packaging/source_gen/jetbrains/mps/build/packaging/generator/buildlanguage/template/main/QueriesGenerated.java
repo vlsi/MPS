@@ -52,12 +52,12 @@ public class QueriesGenerated {
     return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.packaging.structure.Replace", false)).isNotEmpty();
   }
 
-  public static boolean baseMappingRule_Condition_1216903135368(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "compile");
-  }
-
   public static boolean baseMappingRule_Condition_1221758915287(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.packaging.structure.Module", false)).isNotEmpty();
+  }
+
+  public static boolean baseMappingRule_Condition_1224770908054(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "compile");
   }
 
   public static Object propertyMacro_GetPropertyValue_1203614794462(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -337,10 +337,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ReplaceTargets");
   }
 
-  public static Object referenceMacro_GetReferent_1217528923897(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "MPSLayoutToCompileModules");
-  }
-
   public static Object referenceMacro_GetReferent_1219156437486(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variable", false), "VariableToPropertyDeclaration");
   }
@@ -423,10 +419,6 @@ public class QueriesGenerated {
     return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "jetbrains.mps.build.packaging.structure.Replace", false)).count() > 0;
   }
 
-  public static boolean ifMacro_Condition_1217529106702(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "compile");
-  }
-
   public static boolean ifMacro_Condition_1217529239036(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "compile");
   }
@@ -472,6 +464,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1221759211471(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SNodeOperations.getDescendants(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "jetbrains.mps.build.packaging.structure.Module", false)).isNotEmpty();
+  }
+
+  public static boolean ifMacro_Condition_1224776239614(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "compile");
   }
 
   public static SNode sourceNodeQuery_1219156054317(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -651,7 +647,7 @@ public class QueriesGenerated {
       // fill map
       for(SNode module : modules) {
         IModule imodule = Module_Behavior.call_getModule_1213877515148(module);
-        if (imodule instanceof DevKit) {
+        if ((imodule instanceof DevKit) || (!(imodule.isCompileInMPS()))) {
           continue;
         }
         List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
