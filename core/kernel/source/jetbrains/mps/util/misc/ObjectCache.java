@@ -1,8 +1,11 @@
 package jetbrains.mps.util.misc;
 
-import java.util.LinkedHashMap;
-import java.util.Iterator;
+
+import jetbrains.mps.util.misc.hash.LinkedHashMap;
+
 import java.util.EventListener;
+import java.util.Iterator;
+import java.util.Map;
 
 public final class ObjectCache<K, V> {
 
@@ -44,7 +47,7 @@ public final class ObjectCache<K, V> {
 
   public void clear() {
     _firstGenerationQueue = new LinkedHashMap<K, V>() {
-      protected boolean removeEldestEntry(final java.util.Map.Entry<K, V> eldest) {
+      protected boolean removeEldestEntry(final Map.Entry<K, V> eldest) {
         final boolean result = size() + _secondGenerationQueue.size() > _size;
         if (result) {
           fireListenersAboutDeletion(eldest.getKey(), eldest.getValue());
@@ -54,7 +57,7 @@ public final class ObjectCache<K, V> {
     };
     final int secondGenSizeBound = (int) (_size * _secondGenSizeRatio);
     _secondGenerationQueue = new LinkedHashMap<K, V>() {
-      protected boolean removeEldestEntry(final java.util.Map.Entry<K, V> eldest) {
+      protected boolean removeEldestEntry(final Map.Entry<K, V> eldest) {
         final boolean result = size() > secondGenSizeBound;
         if (result) {
           _firstGenerationQueue.put(eldest.getKey(), eldest.getValue());
@@ -119,12 +122,21 @@ public final class ObjectCache<K, V> {
 
   public V tryKey(final K key) {
     ++myAttempts;
+    /*
     V result = _secondGenerationQueue.remove(key);
     if (result == null) {
       result = _firstGenerationQueue.remove(key);
     }
     if (result != null) {
       _secondGenerationQueue.put(key, result);
+      ++myHits;
+    }
+    */
+    V result = _secondGenerationQueue.get(key);
+    if(result == null) {
+      result = _firstGenerationQueue.get(key);
+    }
+    if (result != null) {
       ++myHits;
     }
     return result;
@@ -145,7 +157,7 @@ public final class ObjectCache<K, V> {
   }
 
   public boolean isCached(final K key) {
-    return _firstGenerationQueue.get(key) != null || _secondGenerationQueue.get(key) != null;
+    return getObject(key) != null;
   }
 
   public int count() {
