@@ -4,7 +4,7 @@ package jetbrains.mps.ypath.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.baseLanguage.structure.Visible;
+import jetbrains.mps.baseLanguage.structure.IVisible;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Visibility;
 import java.util.Iterator;
@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class TreePathAspect extends BaseConcept implements INamedConcept, Visible, TreePath {
+public class TreePathAspect extends BaseConcept implements INamedConcept, IVisible, TreePath {
   public static final String concept = "jetbrains.mps.ypath.structure.TreePathAspect";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
