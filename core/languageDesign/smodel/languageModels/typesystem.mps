@@ -10115,5 +10115,39 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1224770088853">
+    <property name="name" value="check_PropertySet" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224770088854">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.InfoStatement" id="1224770144427">
+        <node role="infoText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224770145572">
+          <property name="value" value="It's recommended to use assignment instead" />
+        </node>
+        <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1224770164320">
+          <link role="applicableNode" targetNodeId="1224770104354" resolveInfo="node" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1224770104354">
+      <property name="name" value="node" />
+      <link role="concept" targetNodeId="1.1138661924179" resolveInfo="Property_SetOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1224770175247">
+    <property name="name" value="check_LinkSet" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224770175248">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.InfoStatement" id="1224770193498">
+        <node role="infoText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224770194835">
+          <property name="value" value="It's recommended to use assignment instead" />
+        </node>
+        <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1224770218302">
+          <link role="applicableNode" targetNodeId="1224770182874" resolveInfo="node" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1224770182874">
+      <property name="name" value="node" />
+      <link role="concept" targetNodeId="1.1140725362528" resolveInfo="Link_SetTargetOperation" />
+    </node>
+  </node>
 </model>
 
