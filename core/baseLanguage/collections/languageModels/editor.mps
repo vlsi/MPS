@@ -1185,6 +1185,9 @@
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1217429284559">
         <property name="flag" value="true" />
       </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" id="1224753901723">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1197683426865">

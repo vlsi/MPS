@@ -1712,6 +1712,22 @@
         </node>
       </node>
     </node>
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1224753913842">
+      <property name="description" value="replace count with size" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1195127791705" resolveInfo="CountOperation" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1224753913843">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224753913844">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224753934149">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224753934326">
+              <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1224753934150" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" id="1224753936831">
+                <link role="concept" targetNodeId="1.1162935959151" resolveInfo="GetSizeOperation" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

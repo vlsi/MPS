@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.collections.unittest.simple_operations;
 
 import junit.framework.TestCase;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Collections;
 import junit.framework.Assert;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.List;
@@ -15,13 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class SimpleOperations1 extends TestCase {
 
   public void test_S1() {
-    Iterable<Object> S = Sequence.fromClosure(new ISequenceClosure <Object>() {
-
-      public Iterable<Object> iterable() {
-        return Collections.<Object>emptyList();
-      }
-
-    });
+    Iterable<Object> S = Sequence.fromIterable(Collections.<Object>emptyList());
     Assert.assertEquals(null, Sequence.fromIterable(S).first());
     Assert.assertEquals(null, Sequence.fromIterable(S).first());
     Assert.assertEquals(null, Sequence.fromIterable(S).last());

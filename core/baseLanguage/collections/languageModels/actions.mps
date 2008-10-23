@@ -839,6 +839,15 @@
           </node>
         </node>
       </node>
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" id="1224668332374">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224668332375">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224668334823">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1224668334824">
+              <property name="value" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeFactories" id="1174261408149">

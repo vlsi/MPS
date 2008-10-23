@@ -83,7 +83,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207739103992">
                     <link role="variableDeclaration" targetNodeId="1207738992859" resolveInfo="nullSeq" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.CountOperation" id="1207739106319" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1224754206756" />
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207743263053">
@@ -403,7 +403,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207742025013">
                     <link role="variableDeclaration" targetNodeId="1207741307110" resolveInfo="nullSeq" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.CountOperation" id="1207742027699" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1224754206795" />
                 </node>
               </node>
             </node>
@@ -495,7 +495,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207743102183">
                     <link role="variableDeclaration" targetNodeId="1207742923616" resolveInfo="input" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.CountOperation" id="1207743107754" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1224754206818" />
                 </node>
               </node>
             </node>
@@ -947,11 +947,8 @@
                     </node>
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1207745733208">
-                    <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreatorWithSupplier" id="1207745733209">
-                      <node role="supplier" type="jetbrains.mps.baseLanguage.collections.structure.ValueSupplierBlock" id="1207745733210">
-                        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207745733211" />
-                      </node>
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207758710763">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" id="1224754206328">
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224754206329">
                         <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
                       </node>
                     </node>

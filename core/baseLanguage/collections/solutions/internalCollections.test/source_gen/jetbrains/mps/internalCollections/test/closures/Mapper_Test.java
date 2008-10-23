@@ -257,9 +257,6 @@ __switch__:
                       this.__CP__ = 8;
                       this.yield(it);
                       return true;
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
@@ -268,6 +265,9 @@ __switch__:
                       break;
                     case 9:
                       throw new StopIteratingException();
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     default:
                       break __loop__;
                   }
@@ -374,25 +374,35 @@ __switch__:
                     case -1:
                       assert false : "Internal error";
                       return false;
-                    case 2:
+                    case 4:
                       if (it == 5) {
-                        this.__CP__ = 3;
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 3:
+                      if (false) {
+                        this.__CP__ = 2;
                         break;
                       }
                       this.__CP__ = 1;
                       break;
-                    case 4:
-                      this.__CP__ = 5;
+                    case 6:
+                      this.__CP__ = 7;
                       this.yield(5);
                       return true;
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
-                    case 3:
+                    case 2:
                       this.__CP__ = 4;
                       break;
                     case 5:
+                      this.__CP__ = 6;
+                      break;
+                    case 7:
                       throw new StopIteratingException();
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     default:
                       break __loop__;
                   }
@@ -426,24 +436,34 @@ __switch__:
                     case -1:
                       assert false : "Internal error";
                       return false;
-                    case 2:
+                    case 4:
                       if (false) {
-                        this.__CP__ = 3;
+                        this.__CP__ = 5;
                         break;
                       }
-                      this.__CP__ = 4;
+                      this.__CP__ = 6;
                       break;
-                    case 5:
-                      this.__CP__ = 4;
+                    case 3:
+                      if (false) {
+                        this.__CP__ = 2;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 7:
+                      this.__CP__ = 6;
                       this.yield(999);
                       return true;
+                    case 2:
+                      this.__CP__ = 4;
+                      break;
+                    case 6:
+                      throw new StopIteratingException();
+                    case 5:
+                      this.__CP__ = 7;
+                      break;
                     case 0:
                       this.__CP__ = 2;
-                      break;
-                    case 4:
-                      throw new StopIteratingException();
-                    case 3:
-                      this.__CP__ = 5;
                       break;
                     default:
                       break __loop__;

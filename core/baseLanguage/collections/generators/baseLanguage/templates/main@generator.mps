@@ -60,6 +60,7 @@
   <import index="29" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="2" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1151699678608">
     <property name="name" value="MAPPING_main_collections" />
+    <property name="package" value="obsolete" />
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1207789369972">
       <property name="name" value="loop_variable_declaration" />
       <link role="sourceConcept" targetNodeId="8.1153943597977" resolveInfo="ForEachStatement" />
@@ -131,6 +132,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1151699773424">
     <property name="name" value="reduce_ListType_jList" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1151688443754" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1151700049988">
       <link role="classifier" targetNodeId="1.~List" resolveInfo="List" />
@@ -156,6 +158,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1151700376194">
     <property name="name" value="reduce_SequenceType_jIterable" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1151689724996" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1151700376195">
       <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
@@ -181,6 +184,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1151957132284">
     <property name="name" value="MAPPING_sequence_operation" />
+    <property name="package" value="obsolete" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1171152244205">
       <property name="applyToConceptInheritors" value="true" />
       <link role="applicableConcept" targetNodeId="6.1197027756228" resolveInfo="DotExpression" />
@@ -396,6 +400,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1151957251145">
     <property name="name" value="reduce_ToListOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1151702311717" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1151957433961">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -427,6 +432,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1152292594976">
     <property name="name" value="MAPPING_traversal_blocks" />
+    <property name="package" value="obsolete" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1171063786156">
       <link role="applicableConcept" targetNodeId="6.1145552977093" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1171063840182">
@@ -579,6 +585,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1152292853197">
     <property name="name" value="class_ValueSupplierAdapter" />
+    <property name="package" value="obsolete" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1152293538744">
       <property name="name" value="run" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1152293552903" />
@@ -667,6 +674,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1152303633460">
     <property name="name" value="reduce_YieldStatement" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1152141063573" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1152303633461">
       <property name="name" value="_closureAdapter_" />
@@ -715,6 +723,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1152304224814">
     <property name="name" value="reduce_StopStatement_inValueSupplierBlock" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1152141130888" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1152304224815">
       <property name="name" value="_ValueSupplierAdapter_" />
@@ -739,6 +748,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1152823353803">
     <property name="name" value="reduce_NewSequenceWithSupplier" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="6.1145552977093" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1152823353804">
       <property name="name" value="_enclosing_class_" />
@@ -857,6 +867,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1153256013315">
     <property name="name" value="class_MapperAdapter" />
+    <property name="package" value="obsolete" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1153256013316">
       <property name="name" value="doMapping" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1153256013317" />
@@ -1002,6 +1013,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1153258958168">
     <property name="name" value="reduce_StopStatement_default" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1152141130888" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1153258958169">
       <property name="name" value="_closureAdapter_" />
@@ -1034,6 +1046,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1153355927517">
     <property name="name" value="reduce_MapOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1152906680026" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1153355927518">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -1081,6 +1094,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1153425667328">
     <property name="name" value="reduce_SkipStatement" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1152141160639" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1153425667329">
       <property name="name" value="_adapter_" />
@@ -1099,6 +1113,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1153518919549">
     <property name="name" value="class_ForEachAdapter" />
+    <property name="package" value="obsolete" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1153518919550">
       <property name="name" value="doForEach" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1153518919551" />
@@ -1208,6 +1223,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1153519333106">
     <property name="name" value="reduce_ForEachOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1153513495343" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1153519333107">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -1255,6 +1271,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1153771860687">
     <property name="name" value="class_PredicateAdapter" />
+    <property name="package" value="obsolete" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1153771860688">
       <property name="name" value="isTrue" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1153771959062" />
@@ -1361,6 +1378,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1153772042680">
     <property name="name" value="reduce_WhereOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1153760737019" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1153772042681">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -1408,6 +1426,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1153781168969">
     <property name="name" value="class_SelectorAdapter" />
+    <property name="package" value="obsolete" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1153781168970">
       <property name="name" value="select" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1153782598848">
@@ -1547,6 +1566,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1153782857850">
     <property name="name" value="reduce_SelectOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1153779905654" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1153782857851">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -1594,6 +1614,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1154019864807">
     <property name="name" value="reduce_ForEachStatement_iterateCursor" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1153943597977" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1154019890528">
       <property name="name" value="_class_" />
@@ -1820,6 +1841,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1154023362998">
     <property name="name" value="reduce_ForEachVariableReference_LocalVariableReference" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1153944233411" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1154023389984">
       <property name="name" value="_method_" />
@@ -1873,6 +1895,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1160609713462">
     <property name="name" value="reduce_NewListWithInit" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="6.1145552977093" />
     <node role="contentNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" id="1200500151277">
       <property name="fqClassName" value="jetbrains.mps.baseLanguage.collections.internal.query.ListOperations" />
@@ -1953,6 +1976,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1160669848718">
     <property name="name" value="reduce_AddElementOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1160612413312" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1160669848719">
       <link role="classConcept" targetNodeId="4.~ListOperations" resolveInfo="ListOperations" />
@@ -2000,6 +2024,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1160670167175">
     <property name="name" value="reduce_AddAllElementsOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1160666733551" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1160670187482">
       <link role="classConcept" targetNodeId="4.~ListOperations" resolveInfo="ListOperations" />
@@ -2047,6 +2072,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1162935608610">
     <property name="name" value="reduce_GetElementOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1162934736510" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1162935608611">
       <link role="classConcept" targetNodeId="4.~ListOperations" resolveInfo="ListOperations" />
@@ -2095,6 +2121,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1162936741227">
     <property name="name" value="reduce_GetSizeOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1162935959151" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1162936741228">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -2126,6 +2153,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1165526043911">
     <property name="name" value="reduce_GetFirstOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1165525191778" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1165526043912">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -2157,6 +2185,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1165530838959">
     <property name="name" value="reduce_IsEmptyOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1165530316231" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1165530838960">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -2188,6 +2217,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1165596393361">
     <property name="name" value="reduce_GetLastOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1165595910856" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1165596393362">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -2219,6 +2249,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1167381297811">
     <property name="name" value="reduce_RemoveElementOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1167380149909" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1167381297812">
       <link role="classConcept" targetNodeId="4.~ListOperations" resolveInfo="ListOperations" />
@@ -2266,6 +2297,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1168508934736">
     <property name="name" value="class_SortAdapter" />
+    <property name="package" value="obsolete" />
     <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1168509016271">
       <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1168509021319">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168509021320">
@@ -2596,6 +2628,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1168510816187">
     <property name="name" value="reduce_SortOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1168502632000" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1168510816188">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -2660,6 +2693,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170067193331">
     <property name="name" value="class_ReverseSortAdapter" />
+    <property name="package" value="obsolete" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170067368148">
       <property name="name" value="compare" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170067368149">
@@ -2957,6 +2991,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1171152576907">
     <property name="name" value="reduce_SequenceOperationExpression" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="6.1197027756228" resolveInfo="DotExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1171152595097">
       <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1171152598863" />
@@ -2978,6 +3013,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1171392402007">
     <property name="name" value="reduce_GetIndexOfOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1171391069720" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1171392402008">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -3025,6 +3061,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1172256338941">
     <property name="name" value="reduce_ContainsOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1172254888721" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1172256338942">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -3072,6 +3109,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch" id="1172276598279">
     <property name="name" value="switch_removeGenericParms" />
+    <property name="package" value="obsolete" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1172276694201">
       <link role="applicableConcept" targetNodeId="6.1107535904670" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1172276845087">
@@ -3115,6 +3153,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1172276729018">
     <property name="name" value="switch_removeGenericParms_case_ClassifierType" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="6.1107535904670" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1172276857401">
       <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
@@ -3137,6 +3176,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1172277077374">
     <property name="name" value="switch_removeGenericParms_case_default" />
+    <property name="package" value="obsolete" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1172277077375">
       <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
       <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1172277077376" />
@@ -3153,6 +3193,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1172277976860">
     <property name="name" value="switch_removeGenericParms_case_ListType" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1151688443754" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1172277976861">
       <link role="classifier" targetNodeId="1.~List" resolveInfo="List" />
@@ -3161,6 +3202,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1172663560402">
     <property name="name" value="reduce_SkipOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1172650591544" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1172663560403">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -3209,6 +3251,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1172664516569">
     <property name="name" value="reduce_TakeOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1172664342967" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1172664516570">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -3257,6 +3300,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1173950824207">
     <property name="name" value="reduce_RemoveAllElementsOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1173946412755" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1173950824208">
       <link role="classConcept" targetNodeId="4.~ListOperations" resolveInfo="ListOperations" />
@@ -3304,6 +3348,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1175845714193">
     <property name="name" value="reduce_ReverseOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1175845471038" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1175845738293">
       <link role="classConcept" targetNodeId="4.~ListOperations" resolveInfo="ListOperations" />
@@ -3335,6 +3380,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1176501763901">
     <property name="name" value="reduce_IsNotEmptyOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1176501494711" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1176501895856">
       <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176501905890">
@@ -3368,6 +3414,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1176917393683">
     <property name="name" value="reduce_UnionOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1176903168877" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176917955774">
       <link role="baseMethodDeclaration" targetNodeId="4.~SequenceOperations.union(java.lang.Iterable,java.lang.Iterable):java.lang.Iterable" resolveInfo="union" />
@@ -3415,6 +3462,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1176922081148">
     <property name="name" value="reduce_IntersectOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1176921879268" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176922566674">
       <link role="baseMethodDeclaration" targetNodeId="4.~SequenceOperations.intersect(java.lang.Iterable,java.lang.Iterable):java.lang.Iterable" resolveInfo="intersect" />
@@ -3462,6 +3510,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1176923816513">
     <property name="name" value="reduce_ExcludeOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1176923520476" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1176923848736">
       <link role="baseMethodDeclaration" targetNodeId="4.~SequenceOperations.exclude(java.lang.Iterable,java.lang.Iterable):java.lang.Iterable" resolveInfo="exclude" />
@@ -3509,6 +3558,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1178898331383">
     <property name="name" value="reduce_DistinctOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1178894719932" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1178898345132">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -3540,6 +3590,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1180967393865">
     <property name="name" value="reduce_ConcatOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1180964022718" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1180967393866">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -3593,6 +3644,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1184963782125">
     <property name="name" value="reduce_ToArrayOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1184963466173" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1184964095909">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -3692,6 +3744,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1192413804235">
     <property name="name" value="reduce_ToSetListOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1192413483650" resolveInfo="ToSetListOperation" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1192413992373">
       <link role="baseMethodDeclaration" targetNodeId="4.~SequenceOperations.toSetList(java.lang.Iterable):java.util.List" resolveInfo="toSetList" />
@@ -3723,6 +3776,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1195127985968">
     <property name="name" value="reduce_CountOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1195127791705" resolveInfo="CountOperation" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1195127985969">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -4468,6 +4522,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1207236345017">
     <property name="name" value="reduce_ToIteratorOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1207236100912" resolveInfo="ToIteratorOperation" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207236345018">
       <link role="classConcept" targetNodeId="4.~SequenceOperations" resolveInfo="SequenceOperations" />
@@ -4527,6 +4582,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1210015219204">
     <property name="name" value="reduce_PageOperation" />
+    <property name="package" value="obsolete" />
     <link role="applicableConcept" targetNodeId="8.1172667724288" resolveInfo="PageOperation" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1210015270851">
       <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210015270852">
@@ -9171,6 +9227,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch" id="1207320953211">
     <property name="name" value="switch_valueSupplier_body" />
+    <property name="package" value="obsolete" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1207320953212">
       <link role="applicableConcept" targetNodeId="6.1068580123136" resolveInfo="StatementList" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1207320953213">

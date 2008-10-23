@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
 import jetbrains.mps.internal.collections.runtime.impl.NullListSequence;
 
@@ -174,6 +175,40 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     
     public Iterator<T> iterator() {
         return list.iterator();
+    }
+
+    // sequence 
+    
+    @Override
+    public int count() {
+    	return list.size();
+    }
+    
+    @Override
+    public T first() {
+    	if (list.size() > 0) {
+    		return list.get(0);
+    	}
+        if (Sequence.NULL_WHEN_EMPTY) {
+            return null;
+        }
+        throw new IndexOutOfBoundsException ("Empty list");
+    }
+    
+    @Override
+    public T last() {
+    	if (list.size() > 0) {
+    		return list.get(list.size()-1);
+    	}
+        if (Sequence.NULL_WHEN_EMPTY) {
+            return null;
+        }
+        throw new IndexOutOfBoundsException ("Empty list");
+    }
+    
+    @Override
+    public boolean isNotEmpty() {
+    	return list.size() > 0;
     }
     
     // Additional methods

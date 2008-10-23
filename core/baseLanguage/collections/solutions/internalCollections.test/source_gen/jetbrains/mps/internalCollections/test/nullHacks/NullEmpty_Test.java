@@ -5,7 +5,6 @@ package jetbrains.mps.internalCollections.test.nullHacks;
 import jetbrains.mps.internalCollections.test.closures.Util_Test;
 import org.junit.Test;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Collections;
 import junit.framework.Assert;
 import java.util.List;
@@ -16,13 +15,7 @@ public class NullEmpty_Test extends Util_Test {
   @Test()
   public void test_nullFirstLast() throws Exception {
     if (Sequence.NULL_WHEN_EMPTY) {
-      Iterable<Integer> emptySeq = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
-        public Iterable<Integer> iterable() {
-          return Collections.<Integer>emptyList();
-        }
-
-      });
+      Iterable<Integer> emptySeq = Sequence.fromIterable(Collections.<Integer>emptyList());
       Assert.assertNull(Sequence.fromIterable(emptySeq).first());
       Assert.assertNull(Sequence.fromIterable(emptySeq).last());
       List<Integer> emptyList = ListSequence.<Integer>fromArray();

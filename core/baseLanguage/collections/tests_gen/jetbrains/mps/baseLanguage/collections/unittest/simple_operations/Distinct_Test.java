@@ -8,8 +8,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.Comparator;
-import jetbrains.mps.internal.collections.runtime.CaseInsensitiveStringComparison;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
@@ -37,16 +35,10 @@ public class Distinct_Test extends TestCase {
 
     }).count(), 1);
     Assert.assertEquals(Sequence.fromIterable(source).count(), 5);
-    source = Sequence.fromIterable(source).sort(new Comparator <Integer>() {
+    source = Sequence.fromIterable(source).sort(new ISelector <Integer, Comparable<?>>() {
 
-      public int compare(Integer a, Integer b) {
-        return CaseInsensitiveStringComparison.compare(a, b, new ISelector <Integer, Comparable<?>>() {
-
-          public Comparable<?> select(Integer it) {
-            return it;
-          }
-
-        });
+      public Comparable<?> select(Integer it) {
+        return it;
       }
 
     }, true);
@@ -139,16 +131,10 @@ __switch__:
 
     }).count(), 1);
     Assert.assertEquals(Sequence.fromIterable(source).count(), 5);
-    source = Sequence.fromIterable(source).sort(new Comparator <Integer>() {
+    source = Sequence.fromIterable(source).sort(new ISelector <Integer, Comparable<?>>() {
 
-      public int compare(Integer a, Integer b) {
-        return CaseInsensitiveStringComparison.compare(a, b, new ISelector <Integer, Comparable<?>>() {
-
-          public Comparable<?> select(Integer it) {
-            return it;
-          }
-
-        });
+      public Comparable<?> select(Integer it) {
+        return it;
       }
 
     }, true);

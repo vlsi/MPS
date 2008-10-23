@@ -8,7 +8,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Arrays;
 import java.util.Comparator;
-import jetbrains.mps.internal.collections.runtime.CaseInsensitiveStringComparison;
 
 public class Sort_Test extends Util_Test {
 
@@ -80,16 +79,10 @@ public class Sort_Test extends Util_Test {
   @Test()
   public void test_legacySort() throws Exception {
     Iterable<String> input = Arrays.asList("Z", "YY", "XXX", "WWWW");
-    Iterable<String> test = Sequence.fromIterable(input).sort(new Comparator <String>() {
+    Iterable<String> test = Sequence.fromIterable(input).sort(new ISelector <String, Comparable<?>>() {
 
-      public int compare(String a, String b) {
-        return CaseInsensitiveStringComparison.compare(a, b, new ISelector <String, Comparable<?>>() {
-
-          public Comparable<?> select(String it) {
-            return it.length();
-          }
-
-        });
+      public Comparable<?> select(String it) {
+        return it.length();
       }
 
     }, false);
