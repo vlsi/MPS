@@ -32,34 +32,46 @@ public class LinkedHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> 
 
   public V get(final Object key) {
     final Entry<K, V>[] table = _table;
-    final int hash = (key.hashCode() & 0x7fffffff) % table.length;
-    Entry<K, V> e = table[hash];
-    while (e != null) {
-      if (e.getKey().equals(key)) {
-        setTop(e);
+    final int hash = key.hashCode();
+    final int index = (hash & 0x7fffffff) % table.length;
+
+    for (Entry<K, V> e = table[index]; e != null; e = e._hashNext) {
+      final K entryKey;
+      if (e.getKeyHash() == hash && ((entryKey = e.getKey()) == key || entryKey.equals(key))) {
+        moveToTop(e);
         return e.getValue();
       }
-      e = e._hashNext;
     }
+
     return null;
   }
 
   public V put(final K key, final V value) {
     final Entry<K, V>[] table = _table;
-    final int hash = (key.hashCode() & 0x7fffffff) % table.length;
-    Entry<K, V> e = table[hash];
-    while (e != null) {
-      if (e.getKey().equals(key)) {
-        setTop(e);
+    final int hash = key.hashCode();
+    final int index = (hash & 0x7fffffff) % table.length;
+
+    for (Entry<K, V> e = table[index]; e != null; e = e._hashNext) {
+      final K entryKey;
+      if (e.getKeyHash() == hash && ((entryKey = e.getKey()) == key || entryKey.equals(key))) {
+        moveToTop(e);
         return e.setValue(value);
       }
-      e = e._hashNext;
     }
-    e = new Entry<K, V>(key, value);
-    e._hashNext = table[hash];
-    table[hash] = e;
-    setTop(e);
+
+    final Entry<K, V> e = new Entry<K, V>(key, value);
+    e._hashNext = table[index];
+    table[index] = e;
+    final Entry<K, V> top = _top;
+    e.setNext(top);
+    if (top != null) {
+      top.setPrevious(e);
+    } else {
+      _back = e;
+    }
+    _top = e;
     _size = _size + 1;
+
     if (removeEldestEntry(_back)) {
       remove(_back.getKey());
     } else if (_size > _capacity) {
@@ -75,18 +87,22 @@ public class LinkedHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> 
   public boolean containsValue(final Object value) {
     final ValueIterator it = new ValueIterator();
     while (it.hasNext()) {
-      if (it.next().equals(value)) return true;
+      final V next = it.next();
+      if (next == value || next.equals(value)) return true;
     }
     return false;
   }
 
   public V remove(final Object key) {
     final Entry<K, V>[] table = _table;
-    final int hash = (key.hashCode() & 0x7fffffff) % table.length;
-    Entry<K, V> e = table[hash];
+    final int hash = key.hashCode();
+    final int index = (hash & 0x7fffffff) % table.length;
+    Entry<K, V> e = table[index];
+
     if (e != null) {
-      if (e.getKey().equals(key)) {
-        table[hash] = e._hashNext;
+      K entryKey;
+      if (e.getKeyHash() == hash && ((entryKey = e.getKey()) == key || entryKey.equals(key))) {
+        table[index] = e._hashNext;
         unlink(e);
         _size = _size - 1;
         return e.getValue();
@@ -95,7 +111,7 @@ public class LinkedHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> 
         Entry<K, V> lastEntry = e;
         e = e._hashNext;
         if (e == null) break;
-        if (e.getKey().equals(key)) {
+        if (e.getKeyHash() == hash && ((entryKey = e.getKey()) == key || entryKey.equals(key))) {
           lastEntry._hashNext = e._hashNext;
           unlink(e);
           _size = _size - 1;
@@ -103,6 +119,7 @@ public class LinkedHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> 
         }
       }
     }
+
     return null;
   }
 
@@ -136,19 +153,21 @@ public class LinkedHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> 
     _size = 0;
   }
 
-  private void setTop(final Entry<K, V> e) {
+  private void moveToTop(final Entry<K, V> e) {
     final Entry<K, V> top = _top;
     if (top != e) {
-      unlink(e);
-      _top = e;
+      final Entry<K, V> prev = (Entry<K, V>) e.getPrevious();
+      final Entry<K, V> next = (Entry<K, V>) e.getNext();
+      prev.setNext(next);
+      if (next != null) {
+        next.setPrevious(prev);
+      } else {
+        _back = prev;
+      }
+      top.setPrevious(e);
       e.setNext(top);
       e.setPrevious(null);
-      if (top != null) {
-        top.setPrevious(e);
-      }
-      if (_back == null) {
-        _back = e;
-      }
+      _top = e;
     }
   }
 
@@ -157,30 +176,25 @@ public class LinkedHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> 
     final Entry<K, V> next = (Entry<K, V>) e.getNext();
     if (prev != null) {
       prev.setNext(next);
+    } else {
+      _top = next;
     }
     if (next != null) {
       next.setPrevious(prev);
-    }
-    if (_back == e) {
+    } else {
       _back = prev;
-    }
-    if (_top == e) {
-      _top = next;
     }
   }
 
   private void rehash(int capacity) {
-    Entry<K, V> back = _back;
-    init(capacity);
+    _table = new Entry[HashUtil.adjustTableSize((int) (capacity / HashUtil.ENTRIES_PER_BUCKET))];
+    _capacity = capacity;
     final Entry<K, V>[] table = _table;
     final int bucketsLength = table.length;
-    while (back != null) {
-      final Entry<K, V> e = back;
-      back = (Entry<K, V>) back.getPrevious();
+    for (Entry<K, V> e = _back; e != null; e = (Entry<K, V>) e.getPrevious()) {
       final int hash = (e.getKey().hashCode() & 0x7fffffff) % bucketsLength;
       e._hashNext = table[hash];
       table[hash] = e;
-      setTop(e);
     }
   }
 
