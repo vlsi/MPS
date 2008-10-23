@@ -13,12 +13,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EventDeclaration extends BaseConcept implements IMember {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.EventDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String PARAMETER = "parameter";
-  public static String INITIALIZER = "initializer";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String PARAMETER = "parameter";
+  public static final String INITIALIZER = "initializer";
 
   public EventDeclaration(SNode node) {
     super(node);

@@ -13,13 +13,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ProjectDescription extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.build.dependency.structure.ProjectDescription";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String CYCLE = "cycle";
-  public static String COMMON_CLASSPATH = "commonClasspath";
-  public static String MACRO = "macro";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String CYCLE = "cycle";
+  public static final String COMMON_CLASSPATH = "commonClasspath";
+  public static final String MACRO = "macro";
 
   public ProjectDescription(SNode node) {
     super(node);

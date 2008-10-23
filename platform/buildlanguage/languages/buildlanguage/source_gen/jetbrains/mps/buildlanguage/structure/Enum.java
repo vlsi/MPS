@@ -12,8 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Enum extends BaseConcept {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.Enum";
-  public static String CLNK_Type = "type";
-  public static String CONSTANTS = "constants";
+  public static final String CLNK_Type = "type";
+  public static final String CONSTANTS = "constants";
 
   public Enum(SNode node) {
     super(node);

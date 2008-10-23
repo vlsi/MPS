@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InternalSequenceOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation";
-  public static String CLOSURE = "closure";
+  public static final String CLOSURE = "closure";
 
   public InternalSequenceOperation(SNode node) {
     super(node);

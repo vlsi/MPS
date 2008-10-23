@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CompositePathComponent extends BaseConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.CompositePathComponent";
-  public static String PATH = "path";
+  public static final String PATH = "path";
 
   public CompositePathComponent(SNode node) {
     super(node);

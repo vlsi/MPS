@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MoneyCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.money.structure.MoneyCreator";
-  public static String AMOUNT = "amount";
-  public static String CURRENCY = "currency";
+  public static final String AMOUNT = "amount";
+  public static final String CURRENCY = "currency";
 
   public MoneyCreator(SNode node) {
     super(node);

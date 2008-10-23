@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FormPart extends BaseConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.FormPart";
-  public static String LABEL = "label";
-  public static String CONTENT = "content";
+  public static final String LABEL = "label";
+  public static final String CONTENT = "content";
 
   public FormPart(SNode node) {
     super(node);

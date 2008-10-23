@@ -16,13 +16,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodesTestCase extends BaseConcept implements ITestCase, INamedConcept, IClassifier {
   public static final String concept = "jetbrains.mps.lang.test.structure.NodesTestCase";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String NAME = "name";
-  public static String NODES_TO_CHECK = "nodesToCheck";
-  public static String TEST_METHODS = "testMethods";
-  public static String METHODS = "methods";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
+  public static final String NODES_TO_CHECK = "nodesToCheck";
+  public static final String TEST_METHODS = "testMethods";
+  public static final String METHODS = "methods";
 
   public NodesTestCase(SNode node) {
     super(node);

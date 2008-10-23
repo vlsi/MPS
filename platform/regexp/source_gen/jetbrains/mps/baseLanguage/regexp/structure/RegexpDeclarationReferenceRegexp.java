@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RegexpDeclarationReferenceRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp";
-  public static String REGEXP = "regexp";
+  public static final String REGEXP = "regexp";
 
   public RegexpDeclarationReferenceRegexp(SNode node) {
     super(node);

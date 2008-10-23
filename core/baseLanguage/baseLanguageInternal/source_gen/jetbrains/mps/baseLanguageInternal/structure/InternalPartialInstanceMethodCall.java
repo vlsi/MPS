@@ -14,13 +14,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InternalPartialInstanceMethodCall extends Expression implements IOperation {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall";
-  public static String METHOD_NAME = "methodName";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String RETURN_TYPE = "returnType";
-  public static String INSTANCE = "instance";
-  public static String ACTUAL_ARGUMENT = "actualArgument";
+  public static final String METHOD_NAME = "methodName";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RETURN_TYPE = "returnType";
+  public static final String INSTANCE = "instance";
+  public static final String ACTUAL_ARGUMENT = "actualArgument";
 
   public InternalPartialInstanceMethodCall(SNode node) {
     super(node);

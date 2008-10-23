@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SemanticDowncastExpression extends Expression {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression";
-  public static String LEFT_EXPRESSION = "leftExpression";
+  public static final String LEFT_EXPRESSION = "leftExpression";
 
   public SemanticDowncastExpression(SNode node) {
     super(node);

@@ -13,13 +13,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EnumConstantDeclaration extends BaseConcept implements IValidIdentifier, IResolveInfo, ClassifierMember {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String RESOLVE_INFO = "resolveInfo";
-  public static String VISIBILITY = "visibility";
-  public static String ACTUAL_ARGUMENT = "actualArgument";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOLVE_INFO = "resolveInfo";
+  public static final String VISIBILITY = "visibility";
+  public static final String ACTUAL_ARGUMENT = "actualArgument";
 
   public EnumConstantDeclaration(SNode node) {
     super(node);

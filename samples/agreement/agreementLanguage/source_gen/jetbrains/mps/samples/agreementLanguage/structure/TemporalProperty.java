@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TemporalProperty extends BaseConcept {
   public static final String concept = "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty";
-  public static String DATE = "date";
-  public static String VALUE = "value";
+  public static final String DATE = "date";
+  public static final String VALUE = "value";
 
   public TemporalProperty(SNode node) {
     super(node);

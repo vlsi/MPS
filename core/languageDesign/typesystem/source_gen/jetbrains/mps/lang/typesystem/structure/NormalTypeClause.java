@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NormalTypeClause extends TypeClause {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.NormalTypeClause";
-  public static String NORMAL_TYPE = "normalType";
+  public static final String NORMAL_TYPE = "normalType";
 
   public NormalTypeClause(SNode node) {
     super(node);

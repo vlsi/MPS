@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FloatingPointConstant extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.FloatingPointConstant";
-  public static String VALUE = "value";
+  public static final String VALUE = "value";
 
   public FloatingPointConstant(SNode node) {
     super(node);

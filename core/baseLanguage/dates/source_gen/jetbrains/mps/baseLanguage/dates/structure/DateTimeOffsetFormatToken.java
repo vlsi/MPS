@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DateTimeOffsetFormatToken extends FormatToken {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.DateTimeOffsetFormatToken";
-  public static String DURATION_TYPE_REFERENCE = "durationTypeReference";
+  public static final String DURATION_TYPE_REFERENCE = "durationTypeReference";
 
   public DateTimeOffsetFormatToken(SNode node) {
     super(node);

@@ -10,10 +10,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Fail extends Statement implements MessageHolder {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.Fail";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String MESSAGE = "message";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String MESSAGE = "message";
 
   public Fail(SNode node) {
     super(node);

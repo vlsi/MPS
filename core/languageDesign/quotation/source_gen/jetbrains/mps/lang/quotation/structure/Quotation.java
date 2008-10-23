@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Quotation extends Expression {
   public static final String concept = "jetbrains.mps.lang.quotation.structure.Quotation";
-  public static String QUOTED_NODE = "quotedNode";
-  public static String MODEL_TO_CREATE = "modelToCreate";
+  public static final String QUOTED_NODE = "quotedNode";
+  public static final String MODEL_TO_CREATE = "modelToCreate";
 
   public Quotation(SNode node) {
     super(node);

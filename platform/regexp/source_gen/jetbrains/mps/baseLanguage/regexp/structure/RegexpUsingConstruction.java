@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.INodeAdapter;
 
 public interface RegexpUsingConstruction extends INodeAdapter {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction";
-  public static String REGEXP = "regexp";
+  public static final String REGEXP = "regexp";
 
   public RegexpExpression getRegexp();
 

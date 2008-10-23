@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DeleteFeatureOperation extends Statement {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation";
-  public static String FEATURE = "feature";
+  public static final String FEATURE = "feature";
 
   public DeleteFeatureOperation(SNode node) {
     super(node);

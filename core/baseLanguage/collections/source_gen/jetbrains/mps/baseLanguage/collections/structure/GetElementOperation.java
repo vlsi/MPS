@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GetElementOperation extends AbstractListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.GetElementOperation";
-  public static String ARGUMENT = "argument";
+  public static final String ARGUMENT = "argument";
 
   public GetElementOperation(SNode node) {
     super(node);

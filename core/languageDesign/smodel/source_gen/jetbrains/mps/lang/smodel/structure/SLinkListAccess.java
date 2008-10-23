@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SLinkListAccess extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
-  public static String LINK = "link";
+  public static final String LINK = "link";
 
   public SLinkListAccess(SNode node) {
     super(node);

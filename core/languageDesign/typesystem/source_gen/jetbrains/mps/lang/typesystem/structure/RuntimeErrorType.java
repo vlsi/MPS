@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RuntimeErrorType extends RuntimeTypeVariable {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType";
-  public static String ERROR_TEXT = "errorText";
-  public static String NODE_ID = "nodeId";
-  public static String NODE_MODEL = "nodeModel";
+  public static final String ERROR_TEXT = "errorText";
+  public static final String NODE_ID = "nodeId";
+  public static final String NODE_MODEL = "nodeModel";
 
   public RuntimeErrorType(SNode node) {
     super(node);

@@ -11,12 +11,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DateTimePropertySettings extends BaseConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.dates.internal.structure.DateTimePropertySettings";
-  public static String DATE_TIME_PROPERTY = "dateTimeProperty";
-  public static String DURATION_TYPE = "durationType";
-  public static String LOCALE = "locale";
-  public static String MONTH = "month";
-  public static String SCHEDULE_PERIOD = "schedulePeriod";
+  public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertySettings";
+  public static final String DATE_TIME_PROPERTY = "dateTimeProperty";
+  public static final String DURATION_TYPE = "durationType";
+  public static final String LOCALE = "locale";
+  public static final String MONTH = "month";
+  public static final String SCHEDULE_PERIOD = "schedulePeriod";
 
   public DateTimePropertySettings(SNode node) {
     super(node);
@@ -124,7 +124,7 @@ public class DateTimePropertySettings extends BaseConcept {
 
 
   public static DateTimePropertySettings newInstance(SModel sm, boolean init) {
-    return (DateTimePropertySettings)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimePropertySettings", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimePropertySettings)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertySettings", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimePropertySettings newInstance(SModel sm) {

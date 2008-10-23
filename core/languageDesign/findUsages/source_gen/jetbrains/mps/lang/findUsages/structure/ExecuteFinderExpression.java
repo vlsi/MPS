@@ -10,9 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ExecuteFinderExpression extends Expression {
   public static final String concept = "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression";
-  public static String FINDER = "finder";
-  public static String QUERY_NODE = "queryNode";
-  public static String QUERY_SCOPE = "queryScope";
+  public static final String FINDER = "finder";
+  public static final String QUERY_NODE = "queryNode";
+  public static final String QUERY_SCOPE = "queryScope";
 
   public ExecuteFinderExpression(SNode node) {
     super(node);

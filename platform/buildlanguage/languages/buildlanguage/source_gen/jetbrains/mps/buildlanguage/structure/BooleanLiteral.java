@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BooleanLiteral extends PropertyValueExpression {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.BooleanLiteral";
-  public static String VALUE = "value";
+  public static final String VALUE = "value";
 
   public BooleanLiteral(SNode node) {
     super(node);

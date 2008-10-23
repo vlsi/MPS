@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_Custom extends EditorCellModel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_Custom";
-  public static String CELL_PROVIDER = "cellProvider";
+  public static final String CELL_PROVIDER = "cellProvider";
 
   public CellModel_Custom(SNode node) {
     super(node);

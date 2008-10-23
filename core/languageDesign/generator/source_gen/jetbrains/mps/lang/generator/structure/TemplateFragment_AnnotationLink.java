@@ -5,7 +5,7 @@ package jetbrains.mps.lang.generator.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 public class TemplateFragment_AnnotationLink {
-  public static String TEMPLATE_FRAGMENT = "templateFragment";
+  public static final String TEMPLATE_FRAGMENT = "templateFragment";
 
   public static void setTemplateFragment(BaseConcept source, TemplateFragment target) {
     source.setAttribute(TemplateFragment_AnnotationLink.TEMPLATE_FRAGMENT, target);

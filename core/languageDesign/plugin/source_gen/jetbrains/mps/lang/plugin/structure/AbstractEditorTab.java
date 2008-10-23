@@ -11,12 +11,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractEditorTab extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.AbstractEditorTab";
-  public static String EMPTY_CAPTION = "emptyCaption";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String CREATE_BLOCK = "createBlock";
+  public static final String EMPTY_CAPTION = "emptyCaption";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String CREATE_BLOCK = "createBlock";
 
   public AbstractEditorTab(SNode node) {
     super(node);

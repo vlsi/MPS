@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Node_GetReferentSearchScopeOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation";
-  public static String REFERENCE_LINK = "referenceLink";
-  public static String OPERATION_CONTEXT = "operationContext";
+  public static final String REFERENCE_LINK = "referenceLink";
+  public static final String OPERATION_CONTEXT = "operationContext";
 
   public Node_GetReferentSearchScopeOperation(SNode node) {
     super(node);

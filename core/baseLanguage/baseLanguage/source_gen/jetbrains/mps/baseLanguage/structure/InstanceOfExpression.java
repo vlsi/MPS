@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InstanceOfExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.InstanceOfExpression";
-  public static String LEFT_EXPRESSION = "leftExpression";
-  public static String CLASS_TYPE = "classType";
+  public static final String LEFT_EXPRESSION = "leftExpression";
+  public static final String CLASS_TYPE = "classType";
 
   public InstanceOfExpression(SNode node) {
     super(node);

@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StatementList extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.StatementList";
-  public static String STATEMENT = "statement";
+  public static final String STATEMENT = "statement";
 
   public StatementList(SNode node) {
     super(node);

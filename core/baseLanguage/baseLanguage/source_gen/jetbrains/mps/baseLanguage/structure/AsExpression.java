@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AsExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AsExpression";
-  public static String EXPRESSION = "expression";
-  public static String CLASSIFIER_TYPE = "classifierType";
+  public static final String EXPRESSION = "expression";
+  public static final String CLASSIFIER_TYPE = "classifierType";
 
   public AsExpression(SNode node) {
     super(node);

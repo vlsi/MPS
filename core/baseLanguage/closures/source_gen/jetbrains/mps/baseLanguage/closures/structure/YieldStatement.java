@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class YieldStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.YieldStatement";
-  public static String EXPRESSION = "expression";
+  public static final String EXPRESSION = "expression";
 
   public YieldStatement(SNode node) {
     super(node);

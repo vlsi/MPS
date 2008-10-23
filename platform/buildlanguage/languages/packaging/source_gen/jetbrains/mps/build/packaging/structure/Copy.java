@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Copy extends AbstractProjectComponent {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Copy";
-  public static String EXCLUDES = "excludes";
-  public static String INCLUDES = "includes";
-  public static String SOURCE_PATH = "sourcePath";
+  public static final String EXCLUDES = "excludes";
+  public static final String INCLUDES = "includes";
+  public static final String SOURCE_PATH = "sourcePath";
 
   public Copy(SNode node) {
     super(node);

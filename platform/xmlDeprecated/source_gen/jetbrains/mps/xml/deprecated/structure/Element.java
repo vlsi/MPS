@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Element extends ElementPart {
   public static final String concept = "jetbrains.mps.xml.deprecated.structure.Element";
-  public static String ATTRIBUTE = "attribute";
-  public static String CONTENT = "content";
+  public static final String ATTRIBUTE = "attribute";
+  public static final String CONTENT = "content";
 
   public Element(SNode node) {
     super(node);

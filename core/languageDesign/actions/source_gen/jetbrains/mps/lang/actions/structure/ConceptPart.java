@@ -12,8 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptPart extends MenuBuilderPart {
   public static final String concept = "jetbrains.mps.lang.actions.structure.ConceptPart";
-  public static String CONCEPT = "concept";
-  public static String PART = "part";
+  public static final String CONCEPT = "concept";
+  public static final String PART = "part";
 
   public ConceptPart(SNode node) {
     super(node);

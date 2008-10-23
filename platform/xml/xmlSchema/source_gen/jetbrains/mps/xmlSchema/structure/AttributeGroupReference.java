@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AttributeGroupReference extends AttributeExpression {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.AttributeGroupReference";
-  public static String ATTRIBUTE_GROUP = "attributeGroup";
+  public static final String ATTRIBUTE_GROUP = "attributeGroup";
 
   public AttributeGroupReference(SNode node) {
     super(node);

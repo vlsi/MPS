@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ComparisonRule extends AbstractSubtypingRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.ComparisonRule";
-  public static String ANOTHER_NODE = "anotherNode";
+  public static final String ANOTHER_NODE = "anotherNode";
 
   public ComparisonRule(SNode node) {
     super(node);

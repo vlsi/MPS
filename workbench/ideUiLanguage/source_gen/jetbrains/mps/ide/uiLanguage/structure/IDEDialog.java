@@ -5,36 +5,27 @@ package jetbrains.mps.ide.uiLanguage.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.uiLanguage.structure.IComponentInstance;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.uiLanguage.structure.IComponentPart;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class IDEDialog extends BaseConcept implements IComponentInstance {
   public static final String concept = "jetbrains.mps.ide.uiLanguage.structure.IDEDialog";
-  public static String TITLE = "title";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String STRETCH = "stretch";
-  public static String CONTENT_PANE = "contentPane";
-  public static String BUTTON = "button";
-  public static String CONTENT = "content";
+  public static final String TITLE = "title";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String STRETCH = "stretch";
+  public static final String CONTENT_PANE = "contentPane";
+  public static final String BUTTON = "button";
+  public static final String CONTENT = "content";
 
   public IDEDialog(SNode node) {
     super(node);
   }
-
-  public static IDEDialog newInstance(SModel sm, boolean init) {
-    return (IDEDialog)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.IDEDialog", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static IDEDialog newInstance(SModel sm) {
-    return IDEDialog.newInstance(sm, false);
-  }
-
 
   public String getTitle() {
     return this.getProperty(IDEDialog.TITLE);
@@ -122,6 +113,15 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, IDEDialog.CONTENT, node);
+  }
+
+
+  public static IDEDialog newInstance(SModel sm, boolean init) {
+    return (IDEDialog)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.IDEDialog", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static IDEDialog newInstance(SModel sm) {
+    return IDEDialog.newInstance(sm, false);
   }
 
 }

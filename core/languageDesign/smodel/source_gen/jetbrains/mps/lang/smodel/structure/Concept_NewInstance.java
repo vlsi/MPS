@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Concept_NewInstance extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Concept_NewInstance";
-  public static String PROTOTYPE_NODE = "prototypeNode";
+  public static final String PROTOTYPE_NODE = "prototypeNode";
 
   public Concept_NewInstance(SNode node) {
     super(node);

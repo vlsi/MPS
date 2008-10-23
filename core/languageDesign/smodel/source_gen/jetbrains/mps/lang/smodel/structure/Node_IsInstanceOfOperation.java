@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Node_IsInstanceOfOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation";
-  public static String CONCEPT_ARGUMENT = "conceptArgument";
+  public static final String CONCEPT_ARGUMENT = "conceptArgument";
 
   public Node_IsInstanceOfOperation(SNode node) {
     super(node);

@@ -5,7 +5,7 @@ package jetbrains.mps.lang.pattern.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 public class Pattern_AnnotationLink {
-  public static String PATTERN = "pattern";
+  public static final String PATTERN = "pattern";
 
   public static void setPattern(BaseConcept source, Pattern target) {
     source.setAttribute(Pattern_AnnotationLink.PATTERN, target);

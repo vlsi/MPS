@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellMenuPart_ReplaceNode_Group extends CellMenuPart_AbstractGroup {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group";
-  public static String PARAMETERS_FUNCTION = "parametersFunction";
-  public static String CREATE_FUNCTION = "createFunction";
+  public static final String PARAMETERS_FUNCTION = "parametersFunction";
+  public static final String CREATE_FUNCTION = "createFunction";
 
   public CellMenuPart_ReplaceNode_Group(SNode node) {
     super(node);

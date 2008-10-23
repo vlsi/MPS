@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CycleReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.build.dependency.structure.CycleReference";
-  public static String CYCLE = "cycle";
+  public static final String CYCLE = "cycle";
 
   public CycleReference(SNode node) {
     super(node);

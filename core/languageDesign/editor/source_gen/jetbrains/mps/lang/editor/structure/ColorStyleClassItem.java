@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ColorStyleClassItem extends StyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.ColorStyleClassItem";
-  public static String COLOR = "color";
-  public static String QUERY = "query";
+  public static final String COLOR = "color";
+  public static final String QUERY = "query";
 
   public ColorStyleClassItem(SNode node) {
     super(node);

@@ -13,13 +13,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Cycle extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.build.dependency.structure.Cycle";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String MODULE_DESCRIPTION = "moduleDescription";
-  public static String DEPENDENCY = "dependency";
-  public static String CLASSPATH = "classpath";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String MODULE_DESCRIPTION = "moduleDescription";
+  public static final String DEPENDENCY = "dependency";
+  public static final String CLASSPATH = "classpath";
 
   public Cycle(SNode node) {
     super(node);

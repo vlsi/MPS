@@ -12,8 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AgreementDeclarations extends BaseConcept {
   public static final String concept = "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations";
-  public static String EVENT_TYPE = "eventType";
-  public static String ACCOUNT_TYPE = "accountType";
+  public static final String EVENT_TYPE = "eventType";
+  public static final String ACCOUNT_TYPE = "accountType";
 
   public AgreementDeclarations(SNode node) {
     super(node);

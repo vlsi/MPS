@@ -12,18 +12,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EditorCellModel extends BaseConcept implements IStyleContainer {
   public static final String concept = "jetbrains.mps.lang.editor.structure.EditorCellModel";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ATTRACTS_FOCUS = "attractsFocus";
-  public static String ACTION_MAP = "actionMap";
-  public static String KEY_MAP = "keyMap";
-  public static String STYLE_CLASS = "styleClass";
-  public static String RENDERING_CONDITION = "renderingCondition";
-  public static String MENU_DESCRIPTOR = "menuDescriptor";
-  public static String CELL_BACKGROUND_FUNCTION = "cellBackgroundFunction";
-  public static String FOCUS_POLICY_APPLICABLE = "focusPolicyApplicable";
-  public static String STYLE_ITEM = "styleItem";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String ATTRACTS_FOCUS = "attractsFocus";
+  public static final String ACTION_MAP = "actionMap";
+  public static final String KEY_MAP = "keyMap";
+  public static final String STYLE_CLASS = "styleClass";
+  public static final String RENDERING_CONDITION = "renderingCondition";
+  public static final String MENU_DESCRIPTOR = "menuDescriptor";
+  public static final String CELL_BACKGROUND_FUNCTION = "cellBackgroundFunction";
+  public static final String FOCUS_POLICY_APPLICABLE = "focusPolicyApplicable";
+  public static final String STYLE_ITEM = "styleItem";
 
   public EditorCellModel(SNode node) {
     super(node);

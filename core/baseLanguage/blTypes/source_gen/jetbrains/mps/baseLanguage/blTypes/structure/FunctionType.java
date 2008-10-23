@@ -12,8 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FunctionType extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.blTypes.structure.FunctionType";
-  public static String RESULT = "result";
-  public static String PARAM = "param";
+  public static final String RESULT = "result";
+  public static final String PARAM = "param";
 
   public FunctionType(SNode node) {
     super(node);

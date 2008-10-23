@@ -14,8 +14,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ListCreatorWithInit extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit";
-  public static String ELEMENT_TYPE = "elementType";
-  public static String INIT_VALUE = "initValue";
+  public static final String ELEMENT_TYPE = "elementType";
+  public static final String INIT_VALUE = "initValue";
 
   public ListCreatorWithInit(SNode node) {
     super(node);

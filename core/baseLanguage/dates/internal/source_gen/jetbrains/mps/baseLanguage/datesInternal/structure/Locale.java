@@ -11,12 +11,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Locale extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.dates.internal.structure.Locale";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String JAVA_LOCALE = "javaLocale";
+  public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.Locale";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String JAVA_LOCALE = "javaLocale";
 
   public Locale(SNode node) {
     super(node);
@@ -64,7 +64,7 @@ public class Locale extends BaseConcept implements INamedConcept {
 
 
   public static Locale newInstance(SModel sm, boolean init) {
-    return (Locale)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.internal.structure.Locale", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Locale)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.Locale", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Locale newInstance(SModel sm) {

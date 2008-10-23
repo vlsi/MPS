@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LogStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.logging.structure.LogStatement";
-  public static String HAS_EXCEPTION = "hasException";
-  public static String SEVERITY = "severity";
-  public static String LOG_EXPRESSION = "logExpression";
-  public static String EXCEPTION = "exception";
+  public static final String HAS_EXCEPTION = "hasException";
+  public static final String SEVERITY = "severity";
+  public static final String LOG_EXPRESSION = "logExpression";
+  public static final String EXCEPTION = "exception";
 
   public LogStatement(SNode node) {
     super(node);

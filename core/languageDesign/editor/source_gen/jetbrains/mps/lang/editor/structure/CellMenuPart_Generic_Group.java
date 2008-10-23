@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellMenuPart_Generic_Group extends CellMenuPart_AbstractGroup {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group";
-  public static String PARAMETERS_FUNCTION = "parametersFunction";
-  public static String HANDLER_FUNCTION = "handlerFunction";
+  public static final String PARAMETERS_FUNCTION = "parametersFunction";
+  public static final String HANDLER_FUNCTION = "handlerFunction";
 
   public CellMenuPart_Generic_Group(SNode node) {
     super(node);

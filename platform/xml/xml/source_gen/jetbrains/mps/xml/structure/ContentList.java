@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ContentList extends Content {
   public static final String concept = "jetbrains.mps.xml.structure.ContentList";
-  public static String IS_HORIZONTAL = "isHorizontal";
-  public static String CONTENT = "content";
+  public static final String IS_HORIZONTAL = "isHorizontal";
+  public static final String CONTENT = "content";
 
   public ContentList(SNode node) {
     super(node);

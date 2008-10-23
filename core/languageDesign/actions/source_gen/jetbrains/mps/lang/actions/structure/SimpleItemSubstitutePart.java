@@ -9,11 +9,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   public static final String concept = "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart";
-  public static String MATCHING_TEXT = "matchingText";
-  public static String DESCRIPTION_TEXT = "descriptionText";
-  public static String ICON = "icon";
-  public static String CAN_SUBSTITUTE = "canSubstitute";
-  public static String HANDLER = "handler";
+  public static final String MATCHING_TEXT = "matchingText";
+  public static final String DESCRIPTION_TEXT = "descriptionText";
+  public static final String ICON = "icon";
+  public static final String CAN_SUBSTITUTE = "canSubstitute";
+  public static final String HANDLER = "handler";
 
   public SimpleItemSubstitutePart(SNode node) {
     super(node);

@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DoWhileStatement extends AbstractLoopStatement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.DoWhileStatement";
-  public static String CONDITION = "condition";
+  public static final String CONDITION = "condition";
 
   public DoWhileStatement(SNode node) {
     super(node);

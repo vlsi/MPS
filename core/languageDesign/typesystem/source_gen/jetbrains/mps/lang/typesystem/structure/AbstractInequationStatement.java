@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractInequationStatement extends AbstractEquationStatement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement";
-  public static String INEQUATION_PRIORITY = "inequationPriority";
+  public static final String INEQUATION_PRIORITY = "inequationPriority";
 
   public AbstractInequationStatement(SNode node) {
     super(node);

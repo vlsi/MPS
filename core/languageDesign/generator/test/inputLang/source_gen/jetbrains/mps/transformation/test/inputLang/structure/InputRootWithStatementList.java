@@ -12,12 +12,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InputRootWithStatementList extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String USE_IN_TEST = "useInTest";
-  public static String STATEMENT_LIST = "statementList";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String USE_IN_TEST = "useInTest";
+  public static final String STATEMENT_LIST = "statementList";
 
   public InputRootWithStatementList(SNode node) {
     super(node);

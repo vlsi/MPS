@@ -14,17 +14,17 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ActionGroupDeclaration extends BaseConcept implements INamedConcept, ActionGroupMember, IClassifier {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration";
-  public static String CAPTION = "caption";
-  public static String MNEMONIC = "mnemonic";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String IS_INTERNAL = "isInternal";
-  public static String IS_POPUP = "isPopup";
-  public static String IS_INVISIBLE_WHEN_DISABLED = "isInvisibleWhenDisabled";
-  public static String CONTENTS = "contents";
-  public static String MODIFIER = "modifier";
+  public static final String CAPTION = "caption";
+  public static final String MNEMONIC = "mnemonic";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_INTERNAL = "isInternal";
+  public static final String IS_POPUP = "isPopup";
+  public static final String IS_INVISIBLE_WHEN_DISABLED = "isInvisibleWhenDisabled";
+  public static final String CONTENTS = "contents";
+  public static final String MODIFIER = "modifier";
 
   public ActionGroupDeclaration(SNode node) {
     super(node);

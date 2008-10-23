@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class UnicodeCharacterRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp";
-  public static String CODE = "code";
+  public static final String CODE = "code";
 
   public UnicodeCharacterRegexp(SNode node) {
     super(node);

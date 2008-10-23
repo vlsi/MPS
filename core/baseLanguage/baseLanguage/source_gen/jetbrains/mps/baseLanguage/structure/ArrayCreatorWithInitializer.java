@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ArrayCreatorWithInitializer extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer";
-  public static String COMPONENT_TYPE = "componentType";
-  public static String INIT_VALUE = "initValue";
+  public static final String COMPONENT_TYPE = "componentType";
+  public static final String INIT_VALUE = "initValue";
 
   public ArrayCreatorWithInitializer(SNode node) {
     super(node);

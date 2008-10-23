@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Reduction_MappingRule extends BaseMappingRule {
   public static final String concept = "jetbrains.mps.lang.generator.structure.Reduction_MappingRule";
-  public static String RULE_CONSEQUENCE = "ruleConsequence";
+  public static final String RULE_CONSEQUENCE = "ruleConsequence";
 
   public Reduction_MappingRule(SNode node) {
     super(node);

@@ -13,7 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Comment extends Content {
   public static final String concept = "jetbrains.mps.xmlInternal.structure.Comment";
-  public static String TEXT = "text";
+  public static final String TEXT = "text";
 
   public Comment(SNode node) {
     super(node);

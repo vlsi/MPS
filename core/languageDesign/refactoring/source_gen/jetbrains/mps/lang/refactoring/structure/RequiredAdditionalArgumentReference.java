@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RequiredAdditionalArgumentReference extends Expression {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference";
-  public static String ARGUMENT = "argument";
+  public static final String ARGUMENT = "argument";
 
   public RequiredAdditionalArgumentReference(SNode node) {
     super(node);

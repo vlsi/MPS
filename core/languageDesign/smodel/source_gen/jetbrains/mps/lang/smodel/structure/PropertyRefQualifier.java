@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PropertyRefQualifier extends BaseConcept implements IPropertyAccessQualifier {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.PropertyRefQualifier";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String PROPERTY = "property";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String PROPERTY = "property";
 
   public PropertyRefQualifier(SNode node) {
     super(node);

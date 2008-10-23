@@ -11,12 +11,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractEquationStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
-  public static String CHECK_ONLY = "checkOnly";
-  public static String LEFT_EXPRESSION = "leftExpression";
-  public static String RIGHT_EXPRESSION = "rightExpression";
-  public static String NODE_TO_CHECK = "nodeToCheck";
-  public static String ERROR_STRING = "errorString";
-  public static String HELGINS_INTENTION = "helginsIntention";
+  public static final String CHECK_ONLY = "checkOnly";
+  public static final String LEFT_EXPRESSION = "leftExpression";
+  public static final String RIGHT_EXPRESSION = "rightExpression";
+  public static final String NODE_TO_CHECK = "nodeToCheck";
+  public static final String ERROR_STRING = "errorString";
+  public static final String HELGINS_INTENTION = "helginsIntention";
 
   public AbstractEquationStatement(SNode node) {
     super(node);

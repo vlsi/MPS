@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SimpleRule_VarRef extends SimpleRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.SimpleRule_VarRef";
-  public static String LINK = "link";
-  public static String CONCEPT_REFERENCE = "conceptReference";
+  public static final String LINK = "link";
+  public static final String CONCEPT_REFERENCE = "conceptReference";
 
   public SimpleRule_VarRef(SNode node) {
     super(node);

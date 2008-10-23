@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BaseEmitJumpStatement extends EmitStatement {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement";
-  public static String JUMP_TO = "jumpTo";
+  public static final String JUMP_TO = "jumpTo";
 
   public BaseEmitJumpStatement(SNode node) {
     super(node);

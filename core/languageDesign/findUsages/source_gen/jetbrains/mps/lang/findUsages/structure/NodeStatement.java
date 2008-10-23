@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.findUsages.structure.NodeStatement";
-  public static String FOUND_NODE = "foundNode";
+  public static final String FOUND_NODE = "foundNode";
 
   public NodeStatement(SNode node) {
     super(node);

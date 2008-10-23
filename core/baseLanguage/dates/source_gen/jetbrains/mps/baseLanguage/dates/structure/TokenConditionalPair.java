@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TokenConditionalPair extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.TokenConditionalPair";
-  public static String FORMAT = "format";
-  public static String CONDITION = "condition";
+  public static final String FORMAT = "format";
+  public static final String CONDITION = "condition";
 
   public TokenConditionalPair(SNode node) {
     super(node);

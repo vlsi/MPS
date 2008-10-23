@@ -11,9 +11,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PasteWrapper extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.actions.structure.PasteWrapper";
-  public static String SOURCE_CONCEPT = "sourceConcept";
-  public static String TARGET_CONCEPT = "targetConcept";
-  public static String WRAPPER_FUNCTION = "wrapperFunction";
+  public static final String SOURCE_CONCEPT = "sourceConcept";
+  public static final String TARGET_CONCEPT = "targetConcept";
+  public static final String WRAPPER_FUNCTION = "wrapperFunction";
 
   public PasteWrapper(SNode node) {
     super(node);

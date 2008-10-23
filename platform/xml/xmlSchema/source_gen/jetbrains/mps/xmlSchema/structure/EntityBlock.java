@@ -13,8 +13,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EntityBlock extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.EntityBlock";
-  public static String COMMENT = "comment";
-  public static String ENTITY_LINE = "entityLine";
+  public static final String COMMENT = "comment";
+  public static final String ENTITY_LINE = "entityLine";
 
   public EntityBlock(SNode node) {
     super(node);

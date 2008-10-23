@@ -10,10 +10,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AttributeAccessOperation extends SNodeOperation implements IOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.AttributeAccessOperation";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ATTRIBUTE_QUALIFIER = "attributeQualifier";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String ATTRIBUTE_QUALIFIER = "attributeQualifier";
 
   public AttributeAccessOperation(SNode node) {
     super(node);

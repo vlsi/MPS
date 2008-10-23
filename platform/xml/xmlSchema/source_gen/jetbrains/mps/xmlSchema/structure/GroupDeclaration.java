@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GroupDeclaration extends Declaration {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.GroupDeclaration";
-  public static String GROUP_NAME = "groupName";
-  public static String GROUP_EXPRESSION = "groupExpression";
+  public static final String GROUP_NAME = "groupName";
+  public static final String GROUP_EXPRESSION = "groupExpression";
 
   public GroupDeclaration(SNode node) {
     super(node);

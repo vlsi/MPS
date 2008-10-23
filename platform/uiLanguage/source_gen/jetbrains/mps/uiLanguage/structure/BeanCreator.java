@@ -14,8 +14,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BeanCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.BeanCreator";
-  public static String CONSTRUCTOR = "constructor";
-  public static String PARAMETER = "parameter";
+  public static final String CONSTRUCTOR = "constructor";
+  public static final String PARAMETER = "parameter";
 
   public BeanCreator(SNode node) {
     super(node);

@@ -13,12 +13,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class WhenConcreteStatement extends Statement implements Closureoid {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String BODY = "body";
-  public static String ARGUMENT = "argument";
-  public static String ARGUMENT_REPRESENTATOR = "argumentRepresentator";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String BODY = "body";
+  public static final String ARGUMENT = "argument";
+  public static final String ARGUMENT_REPRESENTATOR = "argumentRepresentator";
 
   public WhenConcreteStatement(SNode node) {
     super(node);

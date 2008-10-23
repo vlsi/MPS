@@ -5,7 +5,7 @@ package jetbrains.mps.lang.generator.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 public class RootTemplateAnnotation_AnnotationLink {
-  public static String ROOT_TEMPLATE_ANNOTATION = "rootTemplateAnnotation";
+  public static final String ROOT_TEMPLATE_ANNOTATION = "rootTemplateAnnotation";
 
   public static void setRootTemplateAnnotation(BaseConcept source, RootTemplateAnnotation target) {
     source.setAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION, target);

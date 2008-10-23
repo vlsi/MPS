@@ -12,11 +12,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Grid extends BaseConcept implements IComponentInstance {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.Grid";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ROW = "row";
-  public static String CONTENT = "content";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String ROW = "row";
+  public static final String CONTENT = "content";
 
   public Grid(SNode node) {
     super(node);

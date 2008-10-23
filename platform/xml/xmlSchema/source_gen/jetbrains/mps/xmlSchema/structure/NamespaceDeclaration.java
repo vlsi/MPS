@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NamespaceDeclaration extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.NamespaceDeclaration";
-  public static String PREFIX = "prefix";
-  public static String URI = "uri";
+  public static final String PREFIX = "prefix";
+  public static final String URI = "uri";
 
   public NamespaceDeclaration(SNode node) {
     super(node);

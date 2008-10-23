@@ -13,13 +13,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Mapping extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.samples.readerConfigLanguage.structure.Mapping";
-  public static String CODE = "code";
-  public static String TARGET_CLASS = "targetClass";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String FIELD = "field";
+  public static final String CODE = "code";
+  public static final String TARGET_CLASS = "targetClass";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String FIELD = "field";
 
   public Mapping(SNode node) {
     super(node);

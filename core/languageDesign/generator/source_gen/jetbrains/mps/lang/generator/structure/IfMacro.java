@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class IfMacro extends NodeMacro {
   public static final String concept = "jetbrains.mps.lang.generator.structure.IfMacro";
-  public static String CONDITION_FUNCTION = "conditionFunction";
-  public static String ALTERNATIVE_CONSEQUENCE = "alternativeConsequence";
+  public static final String CONDITION_FUNCTION = "conditionFunction";
+  public static final String ALTERNATIVE_CONSEQUENCE = "alternativeConsequence";
 
   public IfMacro(SNode node) {
     super(node);

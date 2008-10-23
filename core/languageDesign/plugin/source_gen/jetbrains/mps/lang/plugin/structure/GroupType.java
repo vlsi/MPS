@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GroupType extends BaseClassifierType {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.GroupType";
-  public static String ACTION_GROUP = "actionGroup";
+  public static final String ACTION_GROUP = "actionGroup";
 
   public GroupType(SNode node) {
     super(node);

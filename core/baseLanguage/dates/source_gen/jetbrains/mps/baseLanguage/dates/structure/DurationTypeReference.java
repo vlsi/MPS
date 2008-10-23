@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DurationTypeReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.DurationTypeReference";
-  public static String DURATION_TYPE = "durationType";
+  public static final String DURATION_TYPE = "durationType";
 
   public DurationTypeReference(SNode node) {
     super(node);

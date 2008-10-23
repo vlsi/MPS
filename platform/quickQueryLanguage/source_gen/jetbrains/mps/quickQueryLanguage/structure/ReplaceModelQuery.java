@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ReplaceModelQuery extends BaseQuery {
   public static final String concept = "jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery";
-  public static String REPLACE = "replace";
+  public static final String REPLACE = "replace";
 
   public ReplaceModelQuery(SNode node) {
     super(node);

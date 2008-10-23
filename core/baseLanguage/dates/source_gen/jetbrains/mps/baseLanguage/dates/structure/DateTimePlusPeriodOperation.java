@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DateTimePlusPeriodOperation extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.DateTimePlusPeriodOperation";
-  public static String LEFT_VALUE = "leftValue";
-  public static String RIGHT_VALUE = "rightValue";
+  public static final String LEFT_VALUE = "leftValue";
+  public static final String RIGHT_VALUE = "rightValue";
 
   public DateTimePlusPeriodOperation(SNode node) {
     super(node);

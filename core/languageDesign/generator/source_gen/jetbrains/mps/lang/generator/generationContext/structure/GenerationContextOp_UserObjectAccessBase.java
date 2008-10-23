@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenerationContextOp_UserObjectAccessBase extends GenerationContextOp_Base {
   public static final String concept = "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase";
-  public static String USER_KEY = "userKey";
+  public static final String USER_KEY = "userKey";
 
   public GenerationContextOp_UserObjectAccessBase(SNode node) {
     super(node);

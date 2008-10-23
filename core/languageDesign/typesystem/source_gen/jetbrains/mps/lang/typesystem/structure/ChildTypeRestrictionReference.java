@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ChildTypeRestrictionReference extends Expression {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.ChildTypeRestrictionReference";
-  public static String TYPE_RESTRICTION = "typeRestriction";
+  public static final String TYPE_RESTRICTION = "typeRestriction";
 
   public ChildTypeRestrictionReference(SNode node) {
     super(node);

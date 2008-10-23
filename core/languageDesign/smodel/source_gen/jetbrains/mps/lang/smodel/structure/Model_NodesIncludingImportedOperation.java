@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Model_NodesIncludingImportedOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation";
-  public static String CONCEPT = "concept";
-  public static String SCOPE = "scope";
+  public static final String CONCEPT = "concept";
+  public static final String SCOPE = "scope";
 
   public Model_NodesIncludingImportedOperation(SNode node) {
     super(node);

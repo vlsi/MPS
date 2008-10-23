@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SequenceType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.SequenceType";
-  public static String ELEMENT_TYPE = "elementType";
+  public static final String ELEMENT_TYPE = "elementType";
 
   public SequenceType(SNode node) {
     super(node);

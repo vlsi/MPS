@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class WhenConcreteVariableReference extends Expression {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference";
-  public static String WHEN_CONCRETE_VAR = "whenConcreteVar";
+  public static final String WHEN_CONCRETE_VAR = "whenConcreteVar";
 
   public WhenConcreteVariableReference(SNode node) {
     super(node);

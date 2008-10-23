@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LabelPosition extends Position {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.LabelPosition";
-  public static String LABEL = "label";
+  public static final String LABEL = "label";
 
   public LabelPosition(SNode node) {
     super(node);

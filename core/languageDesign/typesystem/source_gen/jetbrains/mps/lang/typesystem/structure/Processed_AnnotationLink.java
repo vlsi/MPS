@@ -5,7 +5,7 @@ package jetbrains.mps.lang.typesystem.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 public class Processed_AnnotationLink {
-  public static String PROCESSED = "processed";
+  public static final String PROCESSED = "processed";
 
   public static void setProcessed(BaseConcept source, Processed target) {
     source.setAttribute(Processed_AnnotationLink.PROCESSED, target);

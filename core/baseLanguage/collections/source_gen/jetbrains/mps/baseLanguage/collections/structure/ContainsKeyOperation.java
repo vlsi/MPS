@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ContainsKeyOperation extends MapOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation";
-  public static String KEY = "key";
+  public static final String KEY = "key";
 
   public ContainsKeyOperation(SNode node) {
     super(node);

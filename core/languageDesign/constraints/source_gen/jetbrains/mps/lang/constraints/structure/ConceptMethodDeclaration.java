@@ -12,14 +12,14 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptMethodDeclaration extends BaseMethodDeclaration implements IVisible {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String IS_VIRTUAL = "isVirtual";
-  public static String IS_PRIVATE = "isPrivate";
-  public static String IS_ABSTRACT = "isAbstract";
-  public static String OVERRIDDEN_METHOD = "overriddenMethod";
-  public static String VISIBILITY = "visibility";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_VIRTUAL = "isVirtual";
+  public static final String IS_PRIVATE = "isPrivate";
+  public static final String IS_ABSTRACT = "isAbstract";
+  public static final String OVERRIDDEN_METHOD = "overriddenMethod";
+  public static final String VISIBILITY = "visibility";
 
   public ConceptMethodDeclaration(SNode node) {
     super(node);

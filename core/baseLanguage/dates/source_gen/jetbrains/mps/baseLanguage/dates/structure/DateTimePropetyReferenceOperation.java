@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DateTimePropetyReferenceOperation extends DateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.DateTimePropetyReferenceOperation";
-  public static String DATE_TIME_PROPERTY = "dateTimeProperty";
+  public static final String DATE_TIME_PROPERTY = "dateTimeProperty";
 
   public DateTimePropetyReferenceOperation(SNode node) {
     super(node);

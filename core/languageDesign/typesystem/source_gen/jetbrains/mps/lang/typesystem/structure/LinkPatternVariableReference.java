@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LinkPatternVariableReference extends Expression {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference";
-  public static String PATTERN_VAR_DECL = "patternVarDecl";
+  public static final String PATTERN_VAR_DECL = "patternVarDecl";
 
   public LinkPatternVariableReference(SNode node) {
     super(node);

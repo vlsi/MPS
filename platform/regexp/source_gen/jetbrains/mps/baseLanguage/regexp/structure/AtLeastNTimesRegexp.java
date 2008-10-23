@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AtLeastNTimesRegexp extends UnaryRegexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp";
-  public static String N = "n";
+  public static final String N = "n";
 
   public AtLeastNTimesRegexp(SNode node) {
     super(node);

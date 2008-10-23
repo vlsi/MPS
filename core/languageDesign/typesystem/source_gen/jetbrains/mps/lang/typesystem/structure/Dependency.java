@@ -11,9 +11,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Dependency extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.Dependency";
-  public static String TARGET_CONCEPT = "targetConcept";
-  public static String SOURCE_CONCEPT = "sourceConcept";
-  public static String FIND_SOURCE_BLOCK = "findSourceBlock";
+  public static final String TARGET_CONCEPT = "targetConcept";
+  public static final String SOURCE_CONCEPT = "sourceConcept";
+  public static final String FIND_SOURCE_BLOCK = "findSourceBlock";
 
   public Dependency(SNode node) {
     super(node);

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class UseAttribute extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.UseAttribute";
-  public static String USE = "use";
+  public static final String USE = "use";
 
   public UseAttribute(SNode node) {
     super(node);

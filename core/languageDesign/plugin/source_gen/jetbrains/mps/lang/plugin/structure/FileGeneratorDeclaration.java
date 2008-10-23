@@ -16,16 +16,16 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FileGeneratorDeclaration extends BaseConcept implements IClassifier {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String EXTENDED_CLASS = "extendedClass";
-  public static String GENERATE_BLOCK = "generateBlock";
-  public static String IS_DEFAULT_BLOCK = "isDefaultBlock";
-  public static String OVERRIDES_DEFAULT_BLOCK = "overridesDefaultBlock";
-  public static String METHOD = "method";
-  public static String FIELD = "field";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String EXTENDED_CLASS = "extendedClass";
+  public static final String GENERATE_BLOCK = "generateBlock";
+  public static final String IS_DEFAULT_BLOCK = "isDefaultBlock";
+  public static final String OVERRIDES_DEFAULT_BLOCK = "overridesDefaultBlock";
+  public static final String METHOD = "method";
+  public static final String FIELD = "field";
 
   public FileGeneratorDeclaration(SNode node) {
     super(node);

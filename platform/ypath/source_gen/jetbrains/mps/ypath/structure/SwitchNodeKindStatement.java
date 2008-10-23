@@ -12,8 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SwitchNodeKindStatement extends Statement {
   public static final String concept = "jetbrains.mps.ypath.structure.SwitchNodeKindStatement";
-  public static String NODE_EXPRESSION = "nodeExpression";
-  public static String NODE_KIND_CASE = "nodeKindCase";
+  public static final String NODE_EXPRESSION = "nodeExpression";
+  public static final String NODE_KIND_CASE = "nodeKindCase";
 
   public SwitchNodeKindStatement(SNode node) {
     super(node);

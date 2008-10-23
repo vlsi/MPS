@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InternalNewExpression extends BaseMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression";
-  public static String FQ_CLASS_NAME = "fqClassName";
-  public static String TYPE = "type";
+  public static final String FQ_CLASS_NAME = "fqClassName";
+  public static final String TYPE = "type";
 
   public InternalNewExpression(SNode node) {
     super(node);

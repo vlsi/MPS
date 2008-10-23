@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InequationReplacementRule extends AbstractSubtypingRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule";
-  public static String SUPERTYPE_NODE = "supertypeNode";
+  public static final String SUPERTYPE_NODE = "supertypeNode";
 
   public InequationReplacementRule(SNode node) {
     super(node);

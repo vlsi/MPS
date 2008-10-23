@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellMenuComponentFeature extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature";
-  public static String RELATION_DECLARATION = "relationDeclaration";
+  public static final String RELATION_DECLARATION = "relationDeclaration";
 
   public CellMenuComponentFeature(SNode node) {
     super(node);

@@ -12,8 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TypeExpressionList extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.TypeExpressionList";
-  public static String IS_VERTICAL = "isVertical";
-  public static String TYPE_EXPRESSION = "typeExpression";
+  public static final String IS_VERTICAL = "isVertical";
+  public static final String TYPE_EXPRESSION = "typeExpression";
 
   public TypeExpressionList(SNode node) {
     super(node);

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Node_InsertPrevSiblingOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation";
-  public static String INSERTED_NODE = "insertedNode";
+  public static final String INSERTED_NODE = "insertedNode";
 
   public Node_InsertPrevSiblingOperation(SNode node) {
     super(node);

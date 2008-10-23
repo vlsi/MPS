@@ -13,13 +13,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TemplateSwitch extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.TemplateSwitch";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String MODIFIED_SWITCH = "modifiedSwitch";
-  public static String DEFAULT_CONSEQUENCE = "defaultConsequence";
-  public static String REDUCTION_MAPPING_RULE = "reductionMappingRule";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String MODIFIED_SWITCH = "modifiedSwitch";
+  public static final String DEFAULT_CONSEQUENCE = "defaultConsequence";
+  public static final String REDUCTION_MAPPING_RULE = "reductionMappingRule";
 
   public TemplateSwitch(SNode node) {
     super(node);

@@ -11,9 +11,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SequenceOperation extends BaseConcept implements IOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public SequenceOperation(SNode node) {
     super(node);

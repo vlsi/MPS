@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LayoutConstraintStyleClassItem extends StyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem";
-  public static String LAYOUT_CONSTRAINT = "layoutConstraint";
+  public static final String LAYOUT_CONSTRAINT = "layoutConstraint";
 
   public LayoutConstraintStyleClassItem(SNode node) {
     super(node);

@@ -9,10 +9,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SimpleSideTransformMenuPart extends SideTransformMenuPart {
   public static final String concept = "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart";
-  public static String MATCHING_TEXT = "matchingText";
-  public static String DESCRIPTION_TEXT = "descriptionText";
-  public static String ICON = "icon";
-  public static String HANDLER = "handler";
+  public static final String MATCHING_TEXT = "matchingText";
+  public static final String DESCRIPTION_TEXT = "descriptionText";
+  public static final String ICON = "icon";
+  public static final String HANDLER = "handler";
 
   public SimpleSideTransformMenuPart(SNode node) {
     super(node);

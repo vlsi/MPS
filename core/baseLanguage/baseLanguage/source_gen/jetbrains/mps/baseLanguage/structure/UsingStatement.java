@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class UsingStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.UsingStatement";
-  public static String BODY = "body";
-  public static String RESOURCE = "resource";
+  public static final String BODY = "body";
+  public static final String RESOURCE = "resource";
 
   public UsingStatement(SNode node) {
     super(node);

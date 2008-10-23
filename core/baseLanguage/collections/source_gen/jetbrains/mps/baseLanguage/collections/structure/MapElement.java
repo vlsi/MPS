@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MapElement extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.MapElement";
-  public static String MAP = "map";
-  public static String KEY = "key";
+  public static final String MAP = "map";
+  public static final String KEY = "key";
 
   public MapElement(SNode node) {
     super(node);

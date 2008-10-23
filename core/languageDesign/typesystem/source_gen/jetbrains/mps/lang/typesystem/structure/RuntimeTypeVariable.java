@@ -11,11 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RuntimeTypeVariable extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String NULLABLE = "nullable";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NULLABLE = "nullable";
 
   public RuntimeTypeVariable(SNode node) {
     super(node);

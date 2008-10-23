@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Pair extends BaseConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Pair";
-  public static String FIRST = "first";
-  public static String SECOND = "second";
+  public static final String FIRST = "first";
+  public static final String SECOND = "second";
 
   public Pair(SNode node) {
     super(node);

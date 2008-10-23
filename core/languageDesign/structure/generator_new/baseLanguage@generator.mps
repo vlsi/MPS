@@ -3207,6 +3207,7 @@
       </node>
       <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1096027818727">
         <property name="name" value="_property_constant_" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1096027818742">
           <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
         </node>

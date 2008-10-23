@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BaseElement extends Content {
   public static final String concept = "jetbrains.mps.xml.structure.BaseElement";
-  public static String CONTENT_LIST = "contentList";
-  public static String ATTRIBUTE = "attribute";
+  public static final String CONTENT_LIST = "contentList";
+  public static final String ATTRIBUTE = "attribute";
 
   public BaseElement(SNode node) {
     super(node);

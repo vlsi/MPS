@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PathHolder extends BaseConcept {
   public static final String concept = "jetbrains.mps.build.dependency.structure.PathHolder";
-  public static String PATH = "path";
-  public static String MACRO = "macro";
+  public static final String PATH = "path";
+  public static final String MACRO = "macro";
 
   public PathHolder(SNode node) {
     super(node);

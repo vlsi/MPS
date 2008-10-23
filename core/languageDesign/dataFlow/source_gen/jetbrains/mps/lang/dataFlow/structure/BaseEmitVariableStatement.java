@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BaseEmitVariableStatement extends EmitStatement {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement";
-  public static String VARIABLE = "variable";
+  public static final String VARIABLE = "variable";
 
   public BaseEmitVariableStatement(SNode node) {
     super(node);

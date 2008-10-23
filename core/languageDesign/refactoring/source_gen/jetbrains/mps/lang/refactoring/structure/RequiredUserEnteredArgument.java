@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RequiredUserEnteredArgument extends RequiredAdditionalArgument {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument";
-  public static String FILTER_CLAUSE = "filterClause";
-  public static String CHOOSE_COMPONENT_CLAUSE = "chooseComponentClause";
-  public static String INITIAL_VALUE = "initialValue";
+  public static final String FILTER_CLAUSE = "filterClause";
+  public static final String CHOOSE_COMPONENT_CLAUSE = "chooseComponentClause";
+  public static final String INITIAL_VALUE = "initialValue";
 
   public RequiredUserEnteredArgument(SNode node) {
     super(node);

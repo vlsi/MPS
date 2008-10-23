@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MatchVariableReference extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference";
-  public static String MATCH = "match";
+  public static final String MATCH = "match";
 
   public MatchVariableReference(SNode node) {
     super(node);

@@ -18,20 +18,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemberContainer, IExtarctMethodAvailable, IStaticContainerForMethods {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.ConceptBehavior";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String CONCEPT = "concept";
-  public static String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
-  public static String CONSTRUCTOR = "constructor";
-  public static String DEFAULT_SCOPE = "defaultScope";
-  public static String CAN_BE_A_CHILD = "canBeAChild";
-  public static String CAN_BE_A_PARENT = "canBeAParent";
-  public static String PROPERTIES = "properties";
-  public static String REFERENCES = "references";
-  public static String METHOD = "method";
-  public static String STATIC_METHOD = "staticMethod";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String CONCEPT = "concept";
+  public static final String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
+  public static final String CONSTRUCTOR = "constructor";
+  public static final String DEFAULT_SCOPE = "defaultScope";
+  public static final String CAN_BE_A_CHILD = "canBeAChild";
+  public static final String CAN_BE_A_PARENT = "canBeAParent";
+  public static final String PROPERTIES = "properties";
+  public static final String REFERENCES = "references";
+  public static final String METHOD = "method";
+  public static final String STATIC_METHOD = "staticMethod";
 
   public ConceptBehavior(SNode node) {
     super(node);

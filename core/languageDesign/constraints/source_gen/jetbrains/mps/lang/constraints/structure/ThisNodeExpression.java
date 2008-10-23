@@ -11,9 +11,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ThisNodeExpression extends Expression implements IThisExpression {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.ThisNodeExpression";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public ThisNodeExpression(SNode node) {
     super(node);

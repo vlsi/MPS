@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ContainsOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ContainsOperation";
-  public static String ARGUMENT = "argument";
+  public static final String ARGUMENT = "argument";
 
   public ContainsOperation(SNode node) {
     super(node);

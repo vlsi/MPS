@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EnumMemberReference extends Expression {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.EnumMemberReference";
-  public static String ENUM_MEMBER = "enumMember";
+  public static final String ENUM_MEMBER = "enumMember";
 
   public EnumMemberReference(SNode node) {
     super(node);

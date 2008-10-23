@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ArrayType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ArrayType";
-  public static String COMPONENT_TYPE = "componentType";
+  public static final String COMPONENT_TYPE = "componentType";
 
   public ArrayType(SNode node) {
     super(node);

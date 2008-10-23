@@ -13,7 +13,7 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
   public static final String concept = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
   public static final String ICON_PATH = "iconPath";
   public static final String ROOTABLE = "rootable";
-  public static String EXTENDS = "extends";
+  public static final String EXTENDS = "extends";
   public static final String IMPLEMENTS = "implements";
 
   public ConceptDeclaration(SNode node) {

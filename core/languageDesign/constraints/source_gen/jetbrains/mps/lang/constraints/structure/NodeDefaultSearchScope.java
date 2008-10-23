@@ -10,9 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeDefaultSearchScope extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope";
-  public static String DESCRIPTION = "description";
-  public static String SEARCH_SCOPE_CAN_CREATE = "searchScopeCanCreate";
-  public static String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
+  public static final String DESCRIPTION = "description";
+  public static final String SEARCH_SCOPE_CAN_CREATE = "searchScopeCanCreate";
+  public static final String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
 
   public NodeDefaultSearchScope(SNode node) {
     super(node);

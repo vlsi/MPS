@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractComponent extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.editor.structure.AbstractComponent";
-  public static String CONCEPT_DECLARATION = "conceptDeclaration";
+  public static final String CONCEPT_DECLARATION = "conceptDeclaration";
 
   public AbstractComponent(SNode node) {
     super(node);

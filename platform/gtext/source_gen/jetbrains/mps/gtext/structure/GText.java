@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GText extends GItem {
   public static final String concept = "jetbrains.mps.gtext.structure.GText";
-  public static String TEXT = "text";
+  public static final String TEXT = "text";
 
   public GText(SNode node) {
     super(node);

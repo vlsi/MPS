@@ -11,11 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DateTimeCompareOperation extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.DateTimeCompareOperation";
-  public static String CLNK_DefaultDatetimeProperty = "defaultDatetimeProperty";
-  public static String COMPARE_TYPE = "compareType";
-  public static String DATETIME_PROPERTY = "datetimeProperty";
-  public static String OP1 = "op1";
-  public static String OP2 = "op2";
+  public static final String CLNK_DefaultDatetimeProperty = "defaultDatetimeProperty";
+  public static final String COMPARE_TYPE = "compareType";
+  public static final String DATETIME_PROPERTY = "datetimeProperty";
+  public static final String OP1 = "op1";
+  public static final String OP2 = "op2";
 
   public DateTimeCompareOperation(SNode node) {
     super(node);

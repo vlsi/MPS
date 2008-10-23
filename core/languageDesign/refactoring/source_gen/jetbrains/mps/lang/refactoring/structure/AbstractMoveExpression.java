@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractMoveExpression extends Expression {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression";
-  public static String WHAT_TO_MOVE = "whatToMove";
-  public static String DESTINATION = "destination";
+  public static final String WHAT_TO_MOVE = "whatToMove";
+  public static final String DESTINATION = "destination";
 
   public AbstractMoveExpression(SNode node) {
     super(node);

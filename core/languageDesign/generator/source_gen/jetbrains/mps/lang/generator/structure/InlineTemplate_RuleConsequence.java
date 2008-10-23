@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InlineTemplate_RuleConsequence extends RuleConsequence {
   public static final String concept = "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence";
-  public static String TEMPLATE_NODE = "templateNode";
+  public static final String TEMPLATE_NODE = "templateNode";
 
   public InlineTemplate_RuleConsequence(SNode node) {
     super(node);

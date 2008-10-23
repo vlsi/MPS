@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class IncludeRightTransformForNodePart extends MenuBuilderPart {
   public static final String concept = "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart";
-  public static String NODE_BLOCK = "nodeBlock";
+  public static final String NODE_BLOCK = "nodeBlock";
 
   public IncludeRightTransformForNodePart(SNode node) {
     super(node);

@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DateTimeWithPropertyOperation extends UnaryDateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.DateTimeWithPropertyOperation";
-  public static String DATE_TIME_PROPERTY = "dateTimeProperty";
-  public static String EXPRESSION = "expression";
+  public static final String DATE_TIME_PROPERTY = "dateTimeProperty";
+  public static final String EXPRESSION = "expression";
 
   public DateTimeWithPropertyOperation(SNode node) {
     super(node);

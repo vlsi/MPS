@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GIndentBlock extends GItem {
   public static final String concept = "jetbrains.mps.gtext.structure.GIndentBlock";
-  public static String ITEM_LIST = "itemList";
+  public static final String ITEM_LIST = "itemList";
 
   public GIndentBlock(SNode node) {
     super(node);

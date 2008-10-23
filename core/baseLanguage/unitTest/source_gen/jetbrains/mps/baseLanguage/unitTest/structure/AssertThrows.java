@@ -11,12 +11,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AssertThrows extends Statement implements MessageHolder {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String STATEMENT = "statement";
-  public static String EXCEPTION_TYPE = "exceptionType";
-  public static String MESSAGE = "message";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String STATEMENT = "statement";
+  public static final String EXCEPTION_TYPE = "exceptionType";
+  public static final String MESSAGE = "message";
 
   public AssertThrows(SNode node) {
     super(node);

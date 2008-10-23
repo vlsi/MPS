@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InlineSwitch_Case extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.InlineSwitch_Case";
-  public static String CONDITION_FUNCTION = "conditionFunction";
-  public static String CASE_CONSEQUENCE = "caseConsequence";
+  public static final String CONDITION_FUNCTION = "conditionFunction";
+  public static final String CASE_CONSEQUENCE = "caseConsequence";
 
   public InlineSwitch_Case(SNode node) {
     super(node);

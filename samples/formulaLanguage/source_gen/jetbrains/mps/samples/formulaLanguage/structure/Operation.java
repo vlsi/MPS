@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Operation extends Expression {
   public static final String concept = "jetbrains.mps.samples.formulaLanguage.structure.Operation";
-  public static String LEFT_OPERAND = "leftOperand";
-  public static String RIGHT_OPERAND = "rightOperand";
+  public static final String LEFT_OPERAND = "leftOperand";
+  public static final String RIGHT_OPERAND = "rightOperand";
 
   public Operation(SNode node) {
     super(node);

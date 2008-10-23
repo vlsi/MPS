@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CatchClause extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.CatchClause";
-  public static String THROWABLE = "throwable";
-  public static String CATCH_BODY = "catchBody";
+  public static final String THROWABLE = "throwable";
+  public static final String CATCH_BODY = "catchBody";
 
   public CatchClause(SNode node) {
     super(node);

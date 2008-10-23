@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StringLiteralRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp";
-  public static String TEXT = "text";
+  public static final String TEXT = "text";
 
   public StringLiteralRegexp(SNode node) {
     super(node);

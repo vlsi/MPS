@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellMenuPart_PropertyPostfixHints extends CellMenuPart_Abstract {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints";
-  public static String POSTFIXES_FUNCTION = "postfixesFunction";
+  public static final String POSTFIXES_FUNCTION = "postfixesFunction";
 
   public CellMenuPart_PropertyPostfixHints(SNode node) {
     super(node);

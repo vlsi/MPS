@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AssertStatement extends ReportErrorStatement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AssertStatement";
-  public static String CONDITION = "condition";
+  public static final String CONDITION = "condition";
 
   public AssertStatement(SNode node) {
     super(node);

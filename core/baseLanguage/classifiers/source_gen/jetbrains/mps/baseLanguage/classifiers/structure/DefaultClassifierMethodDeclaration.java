@@ -12,11 +12,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DefaultClassifierMethodDeclaration extends BaseMethodDeclaration implements IMember, IVisible {
   public static final String concept = "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String VISIBILITY = "visibility";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String VISIBILITY = "visibility";
 
   public DefaultClassifierMethodDeclaration(SNode node) {
     super(node);

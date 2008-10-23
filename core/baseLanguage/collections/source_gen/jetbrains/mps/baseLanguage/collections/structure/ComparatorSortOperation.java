@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ComparatorSortOperation extends InternalSequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation";
-  public static String ASCENDING = "ascending";
+  public static final String ASCENDING = "ascending";
 
   public ComparatorSortOperation(SNode node) {
     super(node);

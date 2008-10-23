@@ -14,20 +14,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MappingConfiguration extends BaseConcept implements INamedConcept, IMemberContainer {
   public static final String concept = "jetbrains.mps.lang.generator.structure.MappingConfiguration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String TOP_PRIORITY_GROUP = "topPriorityGroup";
-  public static String ROOT_MAPPING_RULE = "rootMappingRule";
-  public static String WEAVING_MAPPING_RULE = "weavingMappingRule";
-  public static String REDUCTION_MAPPING_RULE = "reductionMappingRule";
-  public static String CREATE_ROOT_RULE = "createRootRule";
-  public static String ABANDON_ROOT_RULE = "abandonRootRule";
-  public static String DROP_ROOT_RULE = "dropRootRule";
-  public static String PRE_MAPPING_SCRIPT = "preMappingScript";
-  public static String POST_MAPPING_SCRIPT = "postMappingScript";
-  public static String MAPPING_LABEL = "mappingLabel";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String TOP_PRIORITY_GROUP = "topPriorityGroup";
+  public static final String ROOT_MAPPING_RULE = "rootMappingRule";
+  public static final String WEAVING_MAPPING_RULE = "weavingMappingRule";
+  public static final String REDUCTION_MAPPING_RULE = "reductionMappingRule";
+  public static final String CREATE_ROOT_RULE = "createRootRule";
+  public static final String ABANDON_ROOT_RULE = "abandonRootRule";
+  public static final String DROP_ROOT_RULE = "dropRootRule";
+  public static final String PRE_MAPPING_SCRIPT = "preMappingScript";
+  public static final String POST_MAPPING_SCRIPT = "postMappingScript";
+  public static final String MAPPING_LABEL = "mappingLabel";
 
   public MappingConfiguration(SNode node) {
     super(node);

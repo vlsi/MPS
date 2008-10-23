@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellMenuPart_AbstractGroup extends CellMenuPart_Abstract {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup";
-  public static String PRESENTATION = "presentation";
-  public static String PARAMETER_OBJECT_TYPE = "parameterObjectType";
-  public static String MATCHING_TEXT_FUNCTION = "matchingTextFunction";
-  public static String DESCRIPTION_TEXT_FUNCTION = "descriptionTextFunction";
+  public static final String PRESENTATION = "presentation";
+  public static final String PARAMETER_OBJECT_TYPE = "parameterObjectType";
+  public static final String MATCHING_TEXT_FUNCTION = "matchingTextFunction";
+  public static final String DESCRIPTION_TEXT_FUNCTION = "descriptionTextFunction";
 
   public CellMenuPart_AbstractGroup(SNode node) {
     super(node);

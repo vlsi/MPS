@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CoerceExpression extends Expression {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.CoerceExpression";
-  public static String PATTERN = "pattern";
-  public static String NODE_TO_COERCE = "nodeToCoerce";
+  public static final String PATTERN = "pattern";
+  public static final String NODE_TO_COERCE = "nodeToCoerce";
 
   public CoerceExpression(SNode node) {
     super(node);

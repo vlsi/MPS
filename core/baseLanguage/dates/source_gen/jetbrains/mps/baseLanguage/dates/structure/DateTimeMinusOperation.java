@@ -11,9 +11,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DateTimeMinusOperation extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.DateTimeMinusOperation";
-  public static String DATETIME_PROPERTY = "datetimeProperty";
-  public static String LEFT_VALUE = "leftValue";
-  public static String RIGHT_VALUE = "rightValue";
+  public static final String DATETIME_PROPERTY = "datetimeProperty";
+  public static final String LEFT_VALUE = "leftValue";
+  public static final String RIGHT_VALUE = "rightValue";
 
   public DateTimeMinusOperation(SNode node) {
     super(node);

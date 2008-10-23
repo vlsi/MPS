@@ -12,13 +12,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ScheduleLiteral extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.ScheduleLiteral";
-  public static String SECOND = "second";
-  public static String MINUTE = "minute";
-  public static String HOUR = "hour";
-  public static String DAY_OF_MONTH = "dayOfMonth";
-  public static String DAY_OF_WEEK = "dayOfWeek";
-  public static String SCHEDULE_PERIOD = "schedulePeriod";
-  public static String MONTH = "month";
+  public static final String SECOND = "second";
+  public static final String MINUTE = "minute";
+  public static final String HOUR = "hour";
+  public static final String DAY_OF_MONTH = "dayOfMonth";
+  public static final String DAY_OF_WEEK = "dayOfWeek";
+  public static final String SCHEDULE_PERIOD = "schedulePeriod";
+  public static final String MONTH = "month";
 
   public ScheduleLiteral(SNode node) {
     super(node);

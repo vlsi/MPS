@@ -12,12 +12,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DateTimePropertyConfiguration extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.dates.internal.structure.DateTimePropertyConfiguration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String DATE_TIME_PROPERTY_FORMAT_TYPE = "dateTimePropertyFormatType";
+  public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyConfiguration";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String DATE_TIME_PROPERTY_FORMAT_TYPE = "dateTimePropertyFormatType";
 
   public DateTimePropertyConfiguration(SNode node) {
     super(node);
@@ -77,7 +77,7 @@ public class DateTimePropertyConfiguration extends BaseConcept implements INamed
 
 
   public static DateTimePropertyConfiguration newInstance(SModel sm, boolean init) {
-    return (DateTimePropertyConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimePropertyConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimePropertyConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimePropertyConfiguration newInstance(SModel sm) {

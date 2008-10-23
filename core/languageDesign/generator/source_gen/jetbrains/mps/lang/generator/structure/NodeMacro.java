@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeMacro extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.NodeMacro";
-  public static String MAPPING_ID = "mappingId";
-  public static String MAPPING_LABEL = "mappingLabel";
+  public static final String MAPPING_ID = "mappingId";
+  public static final String MAPPING_LABEL = "mappingLabel";
 
   public NodeMacro(SNode node) {
     super(node);

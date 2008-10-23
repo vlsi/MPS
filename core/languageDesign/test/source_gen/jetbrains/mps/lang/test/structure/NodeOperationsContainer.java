@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeOperationsContainer extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.test.structure.NodeOperationsContainer";
-  public static String OPERATIONS = "operations";
+  public static final String OPERATIONS = "operations";
 
   public NodeOperationsContainer(SNode node) {
     super(node);

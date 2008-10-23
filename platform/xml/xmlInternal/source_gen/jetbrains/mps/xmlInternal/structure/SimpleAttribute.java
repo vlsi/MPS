@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SimpleAttribute extends BaseAttribute {
   public static final String concept = "jetbrains.mps.xmlInternal.structure.SimpleAttribute";
-  public static String ATTRIBUTE_NAME = "attributeName";
-  public static String VALUE = "value";
+  public static final String ATTRIBUTE_NAME = "attributeName";
+  public static final String VALUE = "value";
 
   public SimpleAttribute(SNode node) {
     super(node);

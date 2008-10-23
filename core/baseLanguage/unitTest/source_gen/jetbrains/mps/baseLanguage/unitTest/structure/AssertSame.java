@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AssertSame extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertSame";
-  public static String EXPECTED = "expected";
-  public static String ACTUAL = "actual";
+  public static final String EXPECTED = "expected";
+  public static final String ACTUAL = "actual";
 
   public AssertSame(SNode node) {
     super(node);

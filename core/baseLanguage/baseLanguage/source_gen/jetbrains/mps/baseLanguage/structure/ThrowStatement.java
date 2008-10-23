@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ThrowStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ThrowStatement";
-  public static String THROWABLE = "throwable";
+  public static final String THROWABLE = "throwable";
 
   public ThrowStatement(SNode node) {
     super(node);

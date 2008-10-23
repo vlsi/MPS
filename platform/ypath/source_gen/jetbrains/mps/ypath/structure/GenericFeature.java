@@ -13,16 +13,16 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenericFeature extends BaseConcept implements IGenericFeature, INamedConcept, IFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.GenericFeature";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String WRITABLE = "writable";
-  public static String DEFAULT = "default";
-  public static String ASCENDING = "ascending";
-  public static String OPPOSITE = "opposite";
-  public static String GETTER = "getter";
-  public static String FUN_HOLDERS = "funHolders";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String WRITABLE = "writable";
+  public static final String DEFAULT = "default";
+  public static final String ASCENDING = "ascending";
+  public static final String OPPOSITE = "opposite";
+  public static final String GETTER = "getter";
+  public static final String FUN_HOLDERS = "funHolders";
 
   public GenericFeature(SNode node) {
     super(node);

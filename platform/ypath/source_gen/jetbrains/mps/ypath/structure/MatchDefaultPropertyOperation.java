@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MatchDefaultPropertyOperation extends TreePathOperation {
   public static final String concept = "jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation";
-  public static String MATCH_EXPRESSION = "matchExpression";
+  public static final String MATCH_EXPRESSION = "matchExpression";
 
   public MatchDefaultPropertyOperation(SNode node) {
     super(node);

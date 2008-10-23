@@ -12,12 +12,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StandardDialog extends BaseConcept implements IComponentInstance {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.StandardDialog";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ROOT_COMPONENT = "rootComponent";
-  public static String BUTTON = "button";
-  public static String CONTENT = "content";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String ROOT_COMPONENT = "rootComponent";
+  public static final String BUTTON = "button";
+  public static final String CONTENT = "content";
 
   public StandardDialog(SNode node) {
     super(node);

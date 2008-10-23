@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class UnderlinedStyleClassItem extends StyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem";
-  public static String UNDERLINED = "underlined";
-  public static String QUERY = "query";
+  public static final String UNDERLINED = "underlined";
+  public static final String QUERY = "query";
 
   public UnderlinedStyleClassItem(SNode node) {
     super(node);

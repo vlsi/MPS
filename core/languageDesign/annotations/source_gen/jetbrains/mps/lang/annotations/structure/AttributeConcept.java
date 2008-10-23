@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AttributeConcept extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.annotations.structure.AttributeConcept";
-  public static String ATTRIBUTED_NODE = "attributedNode";
+  public static final String ATTRIBUTED_NODE = "attributedNode";
 
   public AttributeConcept(SNode node) {
     super(node);

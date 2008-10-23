@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PropertyAttributeConcept extends AttributeConcept {
   public static final String concept = "jetbrains.mps.lang.annotations.structure.PropertyAttributeConcept";
-  public static String PROPERTY_NAME = "propertyName";
+  public static final String PROPERTY_NAME = "propertyName";
 
   public PropertyAttributeConcept(SNode node) {
     super(node);

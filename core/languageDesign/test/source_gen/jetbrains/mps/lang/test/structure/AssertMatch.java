@@ -13,8 +13,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AssertMatch extends Statement {
   public static final String concept = "jetbrains.mps.lang.test.structure.AssertMatch";
-  public static String BEFORE = "before";
-  public static String AFTER = "after";
+  public static final String BEFORE = "before";
+  public static final String AFTER = "after";
 
   public AssertMatch(SNode node) {
     super(node);

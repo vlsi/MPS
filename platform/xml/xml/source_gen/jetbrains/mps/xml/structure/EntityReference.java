@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EntityReference extends BaseText {
   public static final String concept = "jetbrains.mps.xml.structure.EntityReference";
-  public static String ENTITY_DECLARATION = "entityDeclaration";
+  public static final String ENTITY_DECLARATION = "entityDeclaration";
 
   public EntityReference(SNode node) {
     super(node);

@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CastExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.CastExpression";
-  public static String TYPE = "type";
-  public static String EXPRESSION = "expression";
+  public static final String TYPE = "type";
+  public static final String EXPRESSION = "expression";
 
   public CastExpression(SNode node) {
     super(node);

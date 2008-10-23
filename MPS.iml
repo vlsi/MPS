@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/samples/theSimplestLanguage/languages/theSimplestLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />

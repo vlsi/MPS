@@ -12,8 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SequenceCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator";
-  public static String ELEMENT_TYPE = "elementType";
-  public static String INITIALIZER = "initializer";
+  public static final String ELEMENT_TYPE = "elementType";
+  public static final String INITIALIZER = "initializer";
 
   public SequenceCreator(SNode node) {
     super(node);

@@ -13,7 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MatrixRow extends BaseConcept {
   public static final String concept = "jetbrains.mps.samples.matrixLanguage.structure.MatrixRow";
-  public static String ITEMS = "items";
+  public static final String ITEMS = "items";
 
   public MatrixRow(SNode node) {
     super(node);

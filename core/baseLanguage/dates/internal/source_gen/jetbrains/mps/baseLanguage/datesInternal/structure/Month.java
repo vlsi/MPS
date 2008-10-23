@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Month extends BaseConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.dates.internal.structure.Month";
-  public static String NAME = "name";
-  public static String SHORT_NAME = "shortName";
-  public static String DAYS = "days";
+  public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.Month";
+  public static final String NAME = "name";
+  public static final String SHORT_NAME = "shortName";
+  public static final String DAYS = "days";
 
   public Month(SNode node) {
     super(node);
@@ -44,7 +44,7 @@ public class Month extends BaseConcept {
 
 
   public static Month newInstance(SModel sm, boolean init) {
-    return (Month)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.internal.structure.Month", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Month)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.Month", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Month newInstance(SModel sm) {

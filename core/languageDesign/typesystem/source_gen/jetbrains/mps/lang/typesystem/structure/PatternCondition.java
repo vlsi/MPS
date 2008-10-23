@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PatternCondition extends ApplicableNodeCondition {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.PatternCondition";
-  public static String PATTERN = "pattern";
+  public static final String PATTERN = "pattern";
 
   public PatternCondition(SNode node) {
     super(node);

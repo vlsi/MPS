@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MigrationScriptPart_Instance extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance";
-  public static String DESCRIPTION = "description";
-  public static String AFFECTED_INSTANCE_CONCEPT = "affectedInstanceConcept";
-  public static String AFFECTED_INSTANCE_PREDICATE = "affectedInstancePredicate";
-  public static String AFFECTED_INSTANCE_UPDATER = "affectedInstanceUpdater";
+  public static final String DESCRIPTION = "description";
+  public static final String AFFECTED_INSTANCE_CONCEPT = "affectedInstanceConcept";
+  public static final String AFFECTED_INSTANCE_PREDICATE = "affectedInstancePredicate";
+  public static final String AFFECTED_INSTANCE_UPDATER = "affectedInstanceUpdater";
 
   public MigrationScriptPart_Instance(SNode node) {
     super(node);

@@ -9,14 +9,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SchedulePeriod extends BaseConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.dates.internal.structure.SchedulePeriod";
-  public static String NAME = "name";
-  public static String SECOND = "second";
-  public static String MINUTE = "minute";
-  public static String HOUR = "hour";
-  public static String DAY_OF_WEEK = "dayOfWeek";
-  public static String DAY_OF_MONTH = "dayOfMonth";
-  public static String MONTH = "month";
+  public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.SchedulePeriod";
+  public static final String NAME = "name";
+  public static final String SECOND = "second";
+  public static final String MINUTE = "minute";
+  public static final String HOUR = "hour";
+  public static final String DAY_OF_WEEK = "dayOfWeek";
+  public static final String DAY_OF_MONTH = "dayOfMonth";
+  public static final String MONTH = "month";
 
   public SchedulePeriod(SNode node) {
     super(node);
@@ -80,7 +80,7 @@ public class SchedulePeriod extends BaseConcept {
 
 
   public static SchedulePeriod newInstance(SModel sm, boolean init) {
-    return (SchedulePeriod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.internal.structure.SchedulePeriod", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SchedulePeriod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.SchedulePeriod", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SchedulePeriod newInstance(SModel sm) {

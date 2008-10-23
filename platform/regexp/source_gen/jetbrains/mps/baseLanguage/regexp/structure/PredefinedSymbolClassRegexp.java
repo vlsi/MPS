@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PredefinedSymbolClassRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp";
-  public static String SYMBOL_CLASS = "symbolClass";
+  public static final String SYMBOL_CLASS = "symbolClass";
 
   public PredefinedSymbolClassRegexp(SNode node) {
     super(node);

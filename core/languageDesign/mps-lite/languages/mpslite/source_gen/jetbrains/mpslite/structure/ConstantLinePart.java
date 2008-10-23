@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConstantLinePart extends LinePart {
   public static final String concept = "jetbrains.mpslite.structure.ConstantLinePart";
-  public static String TEXT = "text";
+  public static final String TEXT = "text";
 
   public ConstantLinePart(SNode node) {
     super(node);

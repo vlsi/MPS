@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LinkAttributeConcept extends AttributeConcept {
   public static final String concept = "jetbrains.mps.lang.annotations.structure.LinkAttributeConcept";
-  public static String LINK_ROLE = "linkRole";
+  public static final String LINK_ROLE = "linkRole";
 
   public LinkAttributeConcept(SNode node) {
     super(node);

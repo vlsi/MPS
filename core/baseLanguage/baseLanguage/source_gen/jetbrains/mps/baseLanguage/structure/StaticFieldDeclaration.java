@@ -10,12 +10,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StaticFieldDeclaration extends VariableDeclaration implements ClassifierMember, IResolveInfo, IDeprecatable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String RESOLVE_INFO = "resolveInfo";
-  public static String IS_DEPRECATED = "isDeprecated";
-  public static String VISIBILITY = "visibility";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOLVE_INFO = "resolveInfo";
+  public static final String IS_DEPRECATED = "isDeprecated";
+  public static final String VISIBILITY = "visibility";
 
   public StaticFieldDeclaration(SNode node) {
     super(node);

@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EnumConstantReference extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumConstantReference";
-  public static String ENUM_CLASS = "enumClass";
-  public static String ENUM_CONSTANT_DECLARATION = "enumConstantDeclaration";
+  public static final String ENUM_CLASS = "enumClass";
+  public static final String ENUM_CONSTANT_DECLARATION = "enumConstantDeclaration";
 
   public EnumConstantReference(SNode node) {
     super(node);

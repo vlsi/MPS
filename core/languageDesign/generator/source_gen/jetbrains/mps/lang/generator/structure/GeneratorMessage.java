@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GeneratorMessage extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.GeneratorMessage";
-  public static String MESSAGE_TEXT = "messageText";
-  public static String MESSAGE_TYPE = "messageType";
+  public static final String MESSAGE_TEXT = "messageText";
+  public static final String MESSAGE_TYPE = "messageType";
 
   public GeneratorMessage(SNode node) {
     super(node);

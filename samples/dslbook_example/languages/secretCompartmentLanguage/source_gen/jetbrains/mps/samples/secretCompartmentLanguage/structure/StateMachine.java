@@ -13,14 +13,14 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StateMachine extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine";
-  public static String STATE_MACHINE_NAME = "stateMachineName";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String START_STATE = "startState";
-  public static String EVENT = "event";
-  public static String STATE = "state";
+  public static final String STATE_MACHINE_NAME = "stateMachineName";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String START_STATE = "startState";
+  public static final String EVENT = "event";
+  public static final String STATE = "state";
 
   public StateMachine(SNode node) {
     super(node);

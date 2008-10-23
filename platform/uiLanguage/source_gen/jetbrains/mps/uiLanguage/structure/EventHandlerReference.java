@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EventHandlerReference extends Expression {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.EventHandlerReference";
-  public static String HANDLER = "handler";
+  public static final String HANDLER = "handler";
 
   public EventHandlerReference(SNode node) {
     super(node);

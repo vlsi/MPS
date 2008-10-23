@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MoveNodeToNodeExpression extends AbstractMoveNodeExpression {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression";
-  public static String ROLE_IN_TARGET = "roleInTarget";
+  public static final String ROLE_IN_TARGET = "roleInTarget";
 
   public MoveNodeToNodeExpression(SNode node) {
     super(node);

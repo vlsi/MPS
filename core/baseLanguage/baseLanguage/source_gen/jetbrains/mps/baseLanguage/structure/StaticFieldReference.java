@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StaticFieldReference extends VariableReference {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.StaticFieldReference";
-  public static String CLASSIFIER = "classifier";
+  public static final String CLASSIFIER = "classifier";
 
   public StaticFieldReference(SNode node) {
     super(node);

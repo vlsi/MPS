@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GExpressionItem extends GItem {
   public static final String concept = "jetbrains.mps.gtext.structure.GExpressionItem";
-  public static String EXPRESSION = "expression";
+  public static final String EXPRESSION = "expression";
 
   public GExpressionItem(SNode node) {
     super(node);

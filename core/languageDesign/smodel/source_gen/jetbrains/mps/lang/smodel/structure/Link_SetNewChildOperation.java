@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Link_SetNewChildOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation";
-  public static String CONCEPT = "concept";
+  public static final String CONCEPT = "concept";
 
   public Link_SetNewChildOperation(SNode node) {
     super(node);

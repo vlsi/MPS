@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TransposeExpression extends Expression {
   public static final String concept = "jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression";
-  public static String MATRIX = "matrix";
+  public static final String MATRIX = "matrix";
 
   public TransposeExpression(SNode node) {
     super(node);

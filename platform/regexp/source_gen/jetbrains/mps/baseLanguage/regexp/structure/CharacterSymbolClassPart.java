@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CharacterSymbolClassPart extends SymbolClassPart {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart";
-  public static String CHARACTER = "character";
+  public static final String CHARACTER = "character";
 
   public CharacterSymbolClassPart(SNode node) {
     super(node);

@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Root_MappingRule extends BaseMappingRule {
   public static final String concept = "jetbrains.mps.lang.generator.structure.Root_MappingRule";
-  public static String KEEP_SOURCE_ROOT = "keepSourceRoot";
-  public static String TEMPLATE = "template";
+  public static final String KEEP_SOURCE_ROOT = "keepSourceRoot";
+  public static final String TEMPLATE = "template";
 
   public Root_MappingRule(SNode node) {
     super(node);

@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class IncludeMacro extends SourceSubstituteMacro {
   public static final String concept = "jetbrains.mps.lang.generator.structure.IncludeMacro";
-  public static String INCLUDE_TEMPLATE = "includeTemplate";
-  public static String SOURCE_NODE_QUERY = "sourceNodeQuery";
+  public static final String INCLUDE_TEMPLATE = "includeTemplate";
+  public static final String SOURCE_NODE_QUERY = "sourceNodeQuery";
 
   public IncludeMacro(SNode node) {
     super(node);

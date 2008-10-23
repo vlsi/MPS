@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ElementWithType extends ElementDeclaration {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.ElementWithType";
-  public static String COMPLEX_TYPE_REFERENCE = "complexTypeReference";
-  public static String OCCURS_ATTRIBUTE = "occursAttribute";
+  public static final String COMPLEX_TYPE_REFERENCE = "complexTypeReference";
+  public static final String OCCURS_ATTRIBUTE = "occursAttribute";
 
   public ElementWithType(SNode node) {
     super(node);

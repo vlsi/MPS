@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class VariableInialized extends NodeProperty {
   public static final String concept = "jetbrains.mps.lang.test.structure.VariableInialized";
-  public static String VAR = "var";
+  public static final String VAR = "var";
 
   public VariableInialized(SNode node) {
     super(node);

@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AssertStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AssertStatement";
-  public static String CONDITION = "condition";
-  public static String MESSAGE = "message";
+  public static final String CONDITION = "condition";
+  public static final String MESSAGE = "message";
 
   public AssertStatement(SNode node) {
     super(node);

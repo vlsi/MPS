@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class VariableLive extends NodeProperty {
   public static final String concept = "jetbrains.mps.lang.test.structure.VariableLive";
-  public static String VAR = "var";
+  public static final String VAR = "var";
 
   public VariableLive(SNode node) {
     super(node);

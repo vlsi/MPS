@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractForStatement extends AbstractLoopStatement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AbstractForStatement";
-  public static String VARIABLE = "variable";
+  public static final String VARIABLE = "variable";
 
   public AbstractForStatement(SNode node) {
     super(node);

@@ -10,10 +10,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Substitute_SimpleString extends BaseConcept implements ISubstitute_String {
   public static final String concept = "jetbrains.mps.lang.actions.structure.Substitute_SimpleString";
-  public static String TEXT = "text";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String TEXT = "text";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public Substitute_SimpleString(SNode node) {
     super(node);

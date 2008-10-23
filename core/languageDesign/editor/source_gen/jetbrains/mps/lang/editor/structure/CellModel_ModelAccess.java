@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_ModelAccess extends CellModel_AbstractLabel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess";
-  public static String NULL_TEXT = "nullText";
-  public static String MODEL_ACESSOR = "modelAcessor";
+  public static final String NULL_TEXT = "nullText";
+  public static final String MODEL_ACESSOR = "modelAcessor";
 
   public CellModel_ModelAccess(SNode node) {
     super(node);

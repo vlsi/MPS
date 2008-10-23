@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Node_InsertNewNextSiblingOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation";
-  public static String CONCEPT = "concept";
+  public static final String CONCEPT = "concept";
 
   public Node_InsertNewNextSiblingOperation(SNode node) {
     super(node);

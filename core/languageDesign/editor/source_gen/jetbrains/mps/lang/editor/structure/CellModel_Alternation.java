@@ -9,10 +9,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_Alternation extends EditorCellModel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_Alternation";
-  public static String VERTICAL = "vertical";
-  public static String ALTERNATION_CONDITION = "alternationCondition";
-  public static String IF_TRUE_CELL_MODEL = "ifTrueCellModel";
-  public static String IF_FALSE_CELL_MODEL = "ifFalseCellModel";
+  public static final String VERTICAL = "vertical";
+  public static final String ALTERNATION_CONDITION = "alternationCondition";
+  public static final String IF_TRUE_CELL_MODEL = "ifTrueCellModel";
+  public static final String IF_FALSE_CELL_MODEL = "ifFalseCellModel";
 
   public CellModel_Alternation(SNode node) {
     super(node);

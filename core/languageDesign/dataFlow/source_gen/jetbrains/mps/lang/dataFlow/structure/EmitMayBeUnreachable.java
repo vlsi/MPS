@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EmitMayBeUnreachable extends Statement {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable";
-  public static String EMIT_STATEMENT = "emitStatement";
+  public static final String EMIT_STATEMENT = "emitStatement";
 
   public EmitMayBeUnreachable(SNode node) {
     super(node);

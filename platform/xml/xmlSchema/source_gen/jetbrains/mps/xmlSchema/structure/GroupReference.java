@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GroupReference extends TypeExpression {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.GroupReference";
-  public static String GROUP_DECLARATION = "groupDeclaration";
+  public static final String GROUP_DECLARATION = "groupDeclaration";
 
   public GroupReference(SNode node) {
     super(node);

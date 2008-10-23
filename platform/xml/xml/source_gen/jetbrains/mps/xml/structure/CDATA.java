@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CDATA extends Content {
   public static final String concept = "jetbrains.mps.xml.structure.CDATA";
-  public static String CONTENT_LIST = "contentList";
+  public static final String CONTENT_LIST = "contentList";
 
   public CDATA(SNode node) {
     super(node);

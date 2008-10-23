@@ -11,9 +11,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class HashMapCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator";
-  public static String KEY_TYPE = "keyType";
-  public static String VALUE_TYPE = "valueType";
-  public static String INITIALIZER = "initializer";
+  public static final String KEY_TYPE = "keyType";
+  public static final String VALUE_TYPE = "valueType";
+  public static final String INITIALIZER = "initializer";
 
   public HashMapCreator(SNode node) {
     super(node);

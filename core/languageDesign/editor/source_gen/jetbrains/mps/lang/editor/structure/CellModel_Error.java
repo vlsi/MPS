@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_Error extends CellModel_AbstractLabel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_Error";
-  public static String TEXT = "text";
+  public static final String TEXT = "text";
 
   public CellModel_Error(SNode node) {
     super(node);

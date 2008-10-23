@@ -9,15 +9,15 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_ListWithRole extends CellModel_WithRole {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole";
-  public static String SEPARATOR_TEXT = "separatorText";
-  public static String VERTICAL = "vertical";
-  public static String GRID_LAYOUT = "gridLayout";
-  public static String USES_BRACES = "usesBraces";
-  public static String USES_FOLDING = "usesFolding";
-  public static String SEPARATOR_LAYOUT_CONSTRAINT = "separatorLayoutConstraint";
-  public static String NODE_FACTORY = "nodeFactory";
-  public static String EMPTY_CELL_MODEL = "emptyCellModel";
-  public static String CELL_LAYOUT = "cellLayout";
+  public static final String SEPARATOR_TEXT = "separatorText";
+  public static final String VERTICAL = "vertical";
+  public static final String GRID_LAYOUT = "gridLayout";
+  public static final String USES_BRACES = "usesBraces";
+  public static final String USES_FOLDING = "usesFolding";
+  public static final String SEPARATOR_LAYOUT_CONSTRAINT = "separatorLayoutConstraint";
+  public static final String NODE_FACTORY = "nodeFactory";
+  public static final String EMPTY_CELL_MODEL = "emptyCellModel";
+  public static final String CELL_LAYOUT = "cellLayout";
 
   public CellModel_ListWithRole(SNode node) {
     super(node);

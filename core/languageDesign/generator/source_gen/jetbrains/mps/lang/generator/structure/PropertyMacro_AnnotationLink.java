@@ -5,7 +5,7 @@ package jetbrains.mps.lang.generator.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 public class PropertyMacro_AnnotationLink {
-  public static String PROPERTY_MACRO = "propertyMacro";
+  public static final String PROPERTY_MACRO = "propertyMacro";
 
   public static void setPropertyMacro(BaseConcept source, String propertyName, PropertyMacro target) {
     source.setPropertyAttribute(PropertyMacro_AnnotationLink.PROPERTY_MACRO, propertyName, target);

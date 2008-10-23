@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PatternExpression extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.pattern.structure.PatternExpression";
-  public static String PATTERN_NODE = "patternNode";
+  public static final String PATTERN_NODE = "patternNode";
 
   public PatternExpression(SNode node) {
     super(node);

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SideTransformVariableDeclaration extends VariableDeclaration {
   public static final String concept = "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration";
-  public static String INITIALIZER_BLOCK = "initializerBlock";
+  public static final String INITIALIZER_BLOCK = "initializerBlock";
 
   public SideTransformVariableDeclaration(SNode node) {
     super(node);

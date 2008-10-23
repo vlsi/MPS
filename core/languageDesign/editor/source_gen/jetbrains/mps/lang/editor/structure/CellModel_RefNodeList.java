@@ -10,10 +10,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_RefNodeList extends CellModel_ListWithRole {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList";
-  public static String REVERSE = "reverse";
-  public static String ELEMENT_ACTION_MAP = "elementActionMap";
-  public static String ELEMENT_MENU_DESCRIPTOR = "elementMenuDescriptor";
-  public static String FILTER = "filter";
+  public static final String REVERSE = "reverse";
+  public static final String ELEMENT_ACTION_MAP = "elementActionMap";
+  public static final String ELEMENT_MENU_DESCRIPTOR = "elementMenuDescriptor";
+  public static final String FILTER = "filter";
 
   public CellModel_RefNodeList(SNode node) {
     super(node);

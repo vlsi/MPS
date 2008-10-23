@@ -10,11 +10,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_WithRole extends CellModel_AbstractLabel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_WithRole";
-  public static String NO_TARGET_TEXT = "noTargetText";
-  public static String EMPTY_NO_TARGET_TEXT = "emptyNoTargetText";
-  public static String READ_ONLY = "readOnly";
-  public static String ALLOW_EMPTY_TEXT = "allowEmptyText";
-  public static String RELATION_DECLARATION = "relationDeclaration";
+  public static final String NO_TARGET_TEXT = "noTargetText";
+  public static final String EMPTY_NO_TARGET_TEXT = "emptyNoTargetText";
+  public static final String READ_ONLY = "readOnly";
+  public static final String ALLOW_EMPTY_TEXT = "allowEmptyText";
+  public static final String RELATION_DECLARATION = "relationDeclaration";
 
   public CellModel_WithRole(SNode node) {
     super(node);

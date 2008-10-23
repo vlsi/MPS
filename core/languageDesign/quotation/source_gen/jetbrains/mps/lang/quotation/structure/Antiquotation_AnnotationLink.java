@@ -5,7 +5,7 @@ package jetbrains.mps.lang.quotation.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 public class Antiquotation_AnnotationLink {
-  public static String ANTIQUOTATION = "antiquotation";
+  public static final String ANTIQUOTATION = "antiquotation";
 
   public static void setAntiquotation(BaseConcept source, Antiquotation target) {
     source.setAttribute(Antiquotation_AnnotationLink.ANTIQUOTATION, target);

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SConceptType extends Type {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.SConceptType";
-  public static String CONCEPT_DECLARATON = "conceptDeclaraton";
+  public static final String CONCEPT_DECLARATON = "conceptDeclaraton";
 
   public SConceptType(SNode node) {
     super(node);

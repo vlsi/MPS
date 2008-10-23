@@ -6,11 +6,11 @@ import jetbrains.mps.baseLanguage.structure.Type;
 
 public interface IParamFeature extends IFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.IParamFeature";
-  public static String PARAMETER_TYPE = "parameterType";
-  public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
-  public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
-  public static String TO_STRING_FUNCTION = "toStringFunction";
-  public static String CARDINAL = "cardinal";
+  public static final String PARAMETER_TYPE = "parameterType";
+  public static final String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
+  public static final String TARGET_TYPE_FUNCTION = "targetTypeFunction";
+  public static final String TO_STRING_FUNCTION = "toStringFunction";
+  public static final String CARDINAL = "cardinal";
 
   public Type getParameterType();
 

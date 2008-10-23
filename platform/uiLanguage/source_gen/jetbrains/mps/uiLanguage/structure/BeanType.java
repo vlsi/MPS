@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BeanType extends BaseClassifierType {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.BeanType";
-  public static String BEAN = "bean";
+  public static final String BEAN = "bean";
 
   public BeanType(SNode node) {
     super(node);

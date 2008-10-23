@@ -10,13 +10,13 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PredefinedDateFormat extends BaseConcept implements IDateFormat {
-  public static final String concept = "jetbrains.mps.baseLanguage.dates.internal.structure.PredefinedDateFormat";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String IS_PUBLIC = "isPublic";
-  public static String FORMATTER = "formatter";
+  public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.PredefinedDateFormat";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_PUBLIC = "isPublic";
+  public static final String FORMATTER = "formatter";
 
   public PredefinedDateFormat(SNode node) {
     super(node);
@@ -72,7 +72,7 @@ public class PredefinedDateFormat extends BaseConcept implements IDateFormat {
 
 
   public static PredefinedDateFormat newInstance(SModel sm, boolean init) {
-    return (PredefinedDateFormat)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.internal.structure.PredefinedDateFormat", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PredefinedDateFormat)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.PredefinedDateFormat", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PredefinedDateFormat newInstance(SModel sm) {

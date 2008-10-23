@@ -10,10 +10,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TestMethod extends BaseMethodDeclaration implements ITestMethod {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod";
-  public static String METHOD_NAME = "methodName";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String METHOD_NAME = "methodName";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public TestMethod(SNode node) {
     super(node);

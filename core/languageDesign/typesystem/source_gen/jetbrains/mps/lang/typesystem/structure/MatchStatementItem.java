@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MatchStatementItem extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.MatchStatementItem";
-  public static String CONDITION = "condition";
-  public static String IF_TRUE = "ifTrue";
+  public static final String CONDITION = "condition";
+  public static final String IF_TRUE = "ifTrue";
 
   public MatchStatementItem(SNode node) {
     super(node);

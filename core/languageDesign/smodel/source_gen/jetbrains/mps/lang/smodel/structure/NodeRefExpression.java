@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeRefExpression extends Expression {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.NodeRefExpression";
-  public static String REFERENT_NODE = "referentNode";
+  public static final String REFERENT_NODE = "referentNode";
 
   public NodeRefExpression(SNode node) {
     super(node);

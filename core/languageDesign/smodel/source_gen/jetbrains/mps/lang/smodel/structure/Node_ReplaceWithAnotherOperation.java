@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Node_ReplaceWithAnotherOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation";
-  public static String REPLACEMENT_NODE = "replacementNode";
+  public static final String REPLACEMENT_NODE = "replacementNode";
 
   public Node_ReplaceWithAnotherOperation(SNode node) {
     super(node);

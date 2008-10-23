@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InternalVariableReference extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference";
-  public static String NAME = "name";
-  public static String TYPE = "type";
+  public static final String NAME = "name";
+  public static final String TYPE = "type";
 
   public InternalVariableReference(SNode node) {
     super(node);

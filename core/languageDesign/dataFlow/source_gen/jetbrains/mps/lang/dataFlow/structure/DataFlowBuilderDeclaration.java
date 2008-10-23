@@ -12,12 +12,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DataFlowBuilderDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String CONCEPT_DECLARATION = "conceptDeclaration";
-  public static String BUILDER_BLOCK = "builderBlock";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String CONCEPT_DECLARATION = "conceptDeclaration";
+  public static final String BUILDER_BLOCK = "builderBlock";
 
   public DataFlowBuilderDeclaration(SNode node) {
     super(node);

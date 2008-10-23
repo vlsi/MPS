@@ -11,11 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ActionParameterDeclaration extends FieldDeclaration implements IMember, ActionParameter {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String IS_OPTIONAL = "isOptional";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_OPTIONAL = "isOptional";
 
   public ActionParameterDeclaration(SNode node) {
     super(node);

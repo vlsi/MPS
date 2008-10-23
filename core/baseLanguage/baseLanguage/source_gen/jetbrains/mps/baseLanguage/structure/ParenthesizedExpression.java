@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ParenthesizedExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression";
-  public static String EXPRESSION = "expression";
+  public static final String EXPRESSION = "expression";
 
   public ParenthesizedExpression(SNode node) {
     super(node);

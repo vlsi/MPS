@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StyleClassItem extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.editor.structure.StyleClassItem";
-  public static String CLNK_AttributeConstant = "attributeConstant";
+  public static final String CLNK_AttributeConstant = "attributeConstant";
 
   public StyleClassItem(SNode node) {
     super(node);

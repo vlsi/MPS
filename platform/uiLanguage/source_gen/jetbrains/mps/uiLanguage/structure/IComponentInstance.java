@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface IComponentInstance extends IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.IComponentInstance";
-  public static String CONTENT = "content";
+  public static final String CONTENT = "content";
 
   public int getContentsCount();
 

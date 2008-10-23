@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RootTemplateAnnotation extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation";
-  public static String APPLICABLE_CONCEPT = "applicableConcept";
+  public static final String APPLICABLE_CONCEPT = "applicableConcept";
 
   public RootTemplateAnnotation(SNode node) {
     super(node);

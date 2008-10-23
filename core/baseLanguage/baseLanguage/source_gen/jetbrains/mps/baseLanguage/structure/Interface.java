@@ -11,11 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Interface extends Classifier implements IDeprecatable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Interface";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String IS_DEPRECATED = "isDeprecated";
-  public static String EXTENDED_INTERFACE = "extendedInterface";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_DEPRECATED = "isDeprecated";
+  public static final String EXTENDED_INTERFACE = "extendedInterface";
 
   public Interface(SNode node) {
     super(node);

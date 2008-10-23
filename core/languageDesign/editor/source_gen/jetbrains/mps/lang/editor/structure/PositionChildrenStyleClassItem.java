@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PositionChildrenStyleClassItem extends StyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem";
-  public static String POSITION = "position";
+  public static final String POSITION = "position";
 
   public PositionChildrenStyleClassItem(SNode node) {
     super(node);

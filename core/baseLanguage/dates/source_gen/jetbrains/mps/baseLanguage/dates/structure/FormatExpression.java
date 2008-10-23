@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FormatExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.FormatExpression";
-  public static String DATE_FORMAT = "dateFormat";
-  public static String DATE_EXPRESSION = "dateExpression";
+  public static final String DATE_FORMAT = "dateFormat";
+  public static final String DATE_EXPRESSION = "dateExpression";
 
   public FormatExpression(SNode node) {
     super(node);

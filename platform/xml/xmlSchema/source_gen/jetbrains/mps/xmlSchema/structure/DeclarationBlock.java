@@ -12,8 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DeclarationBlock extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.DeclarationBlock";
-  public static String TEXT_LINE = "textLine";
-  public static String DECLARATION = "declaration";
+  public static final String TEXT_LINE = "textLine";
+  public static final String DECLARATION = "declaration";
 
   public DeclarationBlock(SNode node) {
     super(node);

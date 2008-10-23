@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GLine extends GItem {
   public static final String concept = "jetbrains.mps.gtext.structure.GLine";
-  public static String ITEM = "item";
+  public static final String ITEM = "item";
 
   public GLine(SNode node) {
     super(node);

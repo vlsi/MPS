@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MapType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.MapType";
-  public static String KEY_TYPE = "keyType";
-  public static String VALUE_TYPE = "valueType";
+  public static final String KEY_TYPE = "keyType";
+  public static final String VALUE_TYPE = "valueType";
 
   public MapType(SNode node) {
     super(node);

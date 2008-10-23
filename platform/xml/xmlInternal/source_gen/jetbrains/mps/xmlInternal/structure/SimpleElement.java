@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SimpleElement extends BaseElement {
   public static final String concept = "jetbrains.mps.xmlInternal.structure.SimpleElement";
-  public static String ELEMENT_NAME = "elementName";
+  public static final String ELEMENT_NAME = "elementName";
 
   public SimpleElement(SNode node) {
     super(node);

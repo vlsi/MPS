@@ -11,10 +11,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class FormatTokenSettings extends BaseConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.dates.internal.structure.FormatTokenSettings";
-  public static String PREDEFINED_DATE_FORMAT = "predefinedDateFormat";
-  public static String DATE_TIME_PROPERTY_CARDINALITY = "dateTimePropertyCardinality";
-  public static String DATE_TIME_PROPERTY_FORMAT_CONFIGURATION = "dateTimePropertyFormatConfiguration";
+  public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.FormatTokenSettings";
+  public static final String PREDEFINED_DATE_FORMAT = "predefinedDateFormat";
+  public static final String DATE_TIME_PROPERTY_CARDINALITY = "dateTimePropertyCardinality";
+  public static final String DATE_TIME_PROPERTY_FORMAT_CONFIGURATION = "dateTimePropertyFormatConfiguration";
 
   public FormatTokenSettings(SNode node) {
     super(node);
@@ -82,7 +82,7 @@ public class FormatTokenSettings extends BaseConcept {
 
 
   public static FormatTokenSettings newInstance(SModel sm, boolean init) {
-    return (FormatTokenSettings)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.internal.structure.FormatTokenSettings", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FormatTokenSettings)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.FormatTokenSettings", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FormatTokenSettings newInstance(SModel sm) {

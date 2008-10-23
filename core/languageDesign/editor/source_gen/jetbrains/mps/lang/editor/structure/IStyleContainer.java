@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface IStyleContainer extends INodeAdapter {
   public static final String concept = "jetbrains.mps.lang.editor.structure.IStyleContainer";
-  public static String STYLE_ITEM = "styleItem";
+  public static final String STYLE_ITEM = "styleItem";
 
   public int getStyleItemsCount();
 

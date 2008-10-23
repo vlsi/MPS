@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AddDependencyStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AddDependencyStatement";
-  public static String DEPENDENCY = "dependency";
+  public static final String DEPENDENCY = "dependency";
 
   public AddDependencyStatement(SNode node) {
     super(node);

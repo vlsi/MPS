@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenerationContextOp_GetCopiedOutputByInput extends GenerationContextOp_Base {
   public static final String concept = "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput";
-  public static String INPUT_NODE = "inputNode";
+  public static final String INPUT_NODE = "inputNode";
 
   public GenerationContextOp_GetCopiedOutputByInput(SNode node) {
     super(node);

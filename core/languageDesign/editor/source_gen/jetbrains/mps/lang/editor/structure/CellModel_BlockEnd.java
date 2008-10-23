@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_BlockEnd extends EditorCellModel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd";
-  public static String CLOSE_BRACE = "closeBrace";
+  public static final String CLOSE_BRACE = "closeBrace";
 
   public CellModel_BlockEnd(SNode node) {
     super(node);

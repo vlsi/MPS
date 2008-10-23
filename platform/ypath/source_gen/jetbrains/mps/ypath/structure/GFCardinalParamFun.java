@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GFCardinalParamFun extends GFCardinalFun implements IParamFeatureFun, IDesignFunction {
   public static final String concept = "jetbrains.mps.ypath.structure.GFCardinalParamFun";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public GFCardinalParamFun(SNode node) {
     super(node);

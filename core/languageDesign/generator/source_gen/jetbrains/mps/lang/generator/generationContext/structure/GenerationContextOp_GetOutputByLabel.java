@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenerationContextOp_GetOutputByLabel extends GenerationContextOp_Base {
   public static final String concept = "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel";
-  public static String LABEL_NAME_INTERN = "labelName_intern";
-  public static String LABEL = "label";
+  public static final String LABEL_NAME_INTERN = "labelName_intern";
+  public static final String LABEL = "label";
 
   public GenerationContextOp_GetOutputByLabel(SNode node) {
     super(node);

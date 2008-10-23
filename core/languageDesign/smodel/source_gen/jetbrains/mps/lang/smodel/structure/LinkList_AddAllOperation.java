@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LinkList_AddAllOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation";
-  public static String CHILD_NODES = "childNodes";
+  public static final String CHILD_NODES = "childNodes";
 
   public LinkList_AddAllOperation(SNode node) {
     super(node);

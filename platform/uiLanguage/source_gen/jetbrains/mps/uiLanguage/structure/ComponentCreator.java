@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ComponentCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentCreator";
-  public static String COMPONENT_DECLARATION = "componentDeclaration";
+  public static final String COMPONENT_DECLARATION = "componentDeclaration";
 
   public ComponentCreator(SNode node) {
     super(node);

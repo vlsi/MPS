@@ -12,13 +12,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellKeyMapItem extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellKeyMapItem";
-  public static String DESCRIPTION = "description";
-  public static String SHOW_IN_POPUP = "showInPopup";
-  public static String MENU_ALWAYS_SHOWN = "menuAlwaysShown";
-  public static String CARET_POLICY = "caretPolicy";
-  public static String IS_APPLICABLE_FUNCTION = "isApplicableFunction";
-  public static String EXECUTE_FUNCTION = "executeFunction";
-  public static String KEYSTROKE = "keystroke";
+  public static final String DESCRIPTION = "description";
+  public static final String SHOW_IN_POPUP = "showInPopup";
+  public static final String MENU_ALWAYS_SHOWN = "menuAlwaysShown";
+  public static final String CARET_POLICY = "caretPolicy";
+  public static final String IS_APPLICABLE_FUNCTION = "isApplicableFunction";
+  public static final String EXECUTE_FUNCTION = "executeFunction";
+  public static final String KEYSTROKE = "keystroke";
 
   public CellKeyMapItem(SNode node) {
     super(node);

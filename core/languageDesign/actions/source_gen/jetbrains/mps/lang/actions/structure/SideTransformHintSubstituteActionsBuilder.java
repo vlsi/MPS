@@ -13,14 +13,14 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder";
-  public static String DESCRIPTION = "description";
-  public static String TRANSFORM_TAG = "transformTag";
-  public static String SIDE = "side";
-  public static String APPLICABLE_CONCEPT = "applicableConcept";
-  public static String PRECONDITION = "precondition";
-  public static String COMMON_INITIALIZER = "commonInitializer";
-  public static String PART = "part";
-  public static String VARIABLE = "variable";
+  public static final String DESCRIPTION = "description";
+  public static final String TRANSFORM_TAG = "transformTag";
+  public static final String SIDE = "side";
+  public static final String APPLICABLE_CONCEPT = "applicableConcept";
+  public static final String PRECONDITION = "precondition";
+  public static final String COMMON_INITIALIZER = "commonInitializer";
+  public static final String PART = "part";
+  public static final String VARIABLE = "variable";
 
   public SideTransformHintSubstituteActionsBuilder(SNode node) {
     super(node);

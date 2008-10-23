@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MapOperationExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression";
-  public static String EXPRESSION = "expression";
-  public static String MAP_OPERATION = "mapOperation";
+  public static final String EXPRESSION = "expression";
+  public static final String MAP_OPERATION = "mapOperation";
 
   public MapOperationExpression(SNode node) {
     super(node);

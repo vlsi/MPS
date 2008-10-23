@@ -5,7 +5,7 @@ package jetbrains.mps.lang.test.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 public class NodeOpraretionsMark_AnnotationLink {
-  public static String NODE_OPRARETIONS_MARK = "nodeOpraretionsMark";
+  public static final String NODE_OPRARETIONS_MARK = "nodeOpraretionsMark";
 
   public static void setNodeOpraretionsMark(BaseConcept source, NodeOperationsContainer target) {
     source.setAttribute(NodeOpraretionsMark_AnnotationLink.NODE_OPRARETIONS_MARK, target);

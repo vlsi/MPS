@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NamespaceAttribute extends BaseAttribute {
   public static final String concept = "jetbrains.mps.xmlInternal.structure.NamespaceAttribute";
-  public static String PREFIX = "prefix";
-  public static String URI = "uri";
+  public static final String PREFIX = "prefix";
+  public static final String URI = "uri";
 
   public NamespaceAttribute(SNode node) {
     super(node);

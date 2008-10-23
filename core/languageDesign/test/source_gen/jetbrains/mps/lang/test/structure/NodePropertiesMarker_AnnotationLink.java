@@ -5,7 +5,7 @@ package jetbrains.mps.lang.test.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 public class NodePropertiesMarker_AnnotationLink {
-  public static String NODE_PROPERTIES_MARKER = "nodePropertiesMarker";
+  public static final String NODE_PROPERTIES_MARKER = "nodePropertiesMarker";
 
   public static void setNodePropertiesMarker(BaseConcept source, NodePropertiesContainer target) {
     source.setAttribute(NodePropertiesMarker_AnnotationLink.NODE_PROPERTIES_MARKER, target);

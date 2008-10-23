@@ -15,11 +15,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ClosureLiteral extends Expression implements IStatementListContainer {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String BODY = "body";
-  public static String PARAMETER = "parameter";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String BODY = "body";
+  public static final String PARAMETER = "parameter";
 
   public ClosureLiteral(SNode node) {
     super(node);

@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellKeyMapKeystroke extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke";
-  public static String MODIFIERS = "modifiers";
-  public static String KEYCODE = "keycode";
+  public static final String MODIFIERS = "modifiers";
+  public static final String KEYCODE = "keycode";
 
   public CellKeyMapKeystroke(SNode node) {
     super(node);

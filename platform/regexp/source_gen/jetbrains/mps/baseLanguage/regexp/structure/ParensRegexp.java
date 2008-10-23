@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ParensRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp";
-  public static String EXPR = "expr";
+  public static final String EXPR = "expr";
 
   public ParensRegexp(SNode node) {
     super(node);

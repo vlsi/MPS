@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellMenuPart_ReplaceNode_CustomNodeConcept extends CellMenuPart_Abstract {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept";
-  public static String REPLACEMENT_CONCEPT = "replacementConcept";
+  public static final String REPLACEMENT_CONCEPT = "replacementConcept";
 
   public CellMenuPart_ReplaceNode_CustomNodeConcept(SNode node) {
     super(node);

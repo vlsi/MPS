@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GridRow extends BaseConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.GridRow";
-  public static String COMPONENT = "component";
+  public static final String COMPONENT = "component";
 
   public GridRow(SNode node) {
     super(node);

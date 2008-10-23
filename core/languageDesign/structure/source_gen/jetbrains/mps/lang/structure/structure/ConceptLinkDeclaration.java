@@ -15,7 +15,7 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String TARGET_TYPE = "targetType";
+  public static final String TARGET_TYPE = "targetType";
 
   public ConceptLinkDeclaration(SNode node) {
     super(node);

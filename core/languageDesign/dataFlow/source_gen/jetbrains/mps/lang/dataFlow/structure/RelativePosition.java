@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RelativePosition extends Position {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.RelativePosition";
-  public static String RELATIVE_TO = "relativeTo";
+  public static final String RELATIVE_TO = "relativeTo";
 
   public RelativePosition(SNode node) {
     super(node);

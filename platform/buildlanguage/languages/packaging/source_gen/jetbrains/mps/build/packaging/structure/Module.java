@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Module extends AbstractProjectComponent {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Module";
-  public static String ID = "id";
-  public static String CYCLE = "cycle";
+  public static final String ID = "id";
+  public static final String CYCLE = "cycle";
 
   public Module(SNode node) {
     super(node);

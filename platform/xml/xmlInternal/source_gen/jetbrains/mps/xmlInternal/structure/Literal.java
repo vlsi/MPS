@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Literal extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlInternal.structure.Literal";
-  public static String VALUE = "value";
+  public static final String VALUE = "value";
 
   public Literal(SNode node) {
     super(node);

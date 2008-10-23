@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FixedLocaleFormatToken extends FormatToken {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.FixedLocaleFormatToken";
-  public static String LOCALE = "locale";
-  public static String DATE_FORMAT = "dateFormat";
+  public static final String LOCALE = "locale";
+  public static final String DATE_FORMAT = "dateFormat";
 
   public FixedLocaleFormatToken(SNode node) {
     super(node);

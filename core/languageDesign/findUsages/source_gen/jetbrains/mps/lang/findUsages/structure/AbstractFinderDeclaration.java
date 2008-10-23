@@ -11,11 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractFinderDeclaration extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration";
-  public static String FOR_CONCEPT = "forConcept";
-  public static String IS_APPLICABLE_FUNCTION = "isApplicableFunction";
-  public static String FIND_FUNCTION = "findFunction";
-  public static String SEARCHED_NODES_BLOCK = "searchedNodesBlock";
-  public static String CATEGORIZE_BLOCK = "categorizeBlock";
+  public static final String FOR_CONCEPT = "forConcept";
+  public static final String IS_APPLICABLE_FUNCTION = "isApplicableFunction";
+  public static final String FIND_FUNCTION = "findFunction";
+  public static final String SEARCHED_NODES_BLOCK = "searchedNodesBlock";
+  public static final String CATEGORIZE_BLOCK = "categorizeBlock";
 
   public AbstractFinderDeclaration(SNode node) {
     super(node);

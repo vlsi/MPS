@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FromNToMTimesRegexp extends UnaryRegexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp";
-  public static String N = "n";
-  public static String M = "m";
+  public static final String N = "n";
+  public static final String M = "m";
 
   public FromNToMTimesRegexp(SNode node) {
     super(node);

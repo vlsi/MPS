@@ -12,15 +12,15 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PreferencePage extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencePage";
-  public static String ICON = "icon";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String COMPONENT = "component";
-  public static String IS_MODIFIED_BLOCK = "isModifiedBlock";
-  public static String RESET_BLOCK = "resetBlock";
-  public static String COMMIT_BLOCK = "commitBlock";
+  public static final String ICON = "icon";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String COMPONENT = "component";
+  public static final String IS_MODIFIED_BLOCK = "isModifiedBlock";
+  public static final String RESET_BLOCK = "resetBlock";
+  public static final String COMMIT_BLOCK = "commitBlock";
 
   public PreferencePage(SNode node) {
     super(node);

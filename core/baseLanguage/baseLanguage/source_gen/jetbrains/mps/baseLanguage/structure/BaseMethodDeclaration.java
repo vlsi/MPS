@@ -11,17 +11,17 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BaseMethodDeclaration extends GenericDeclaration implements IValidIdentifier, HasAnnotation, IDeprecatable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String IS_FINAL = "isFinal";
-  public static String IS_DEPRECATED = "isDeprecated";
-  public static String RETURN_TYPE = "returnType";
-  public static String BODY = "body";
-  public static String PARAMETER = "parameter";
-  public static String THROWS_ITEM = "throwsItem";
-  public static String ANNOTATION = "annotation";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_FINAL = "isFinal";
+  public static final String IS_DEPRECATED = "isDeprecated";
+  public static final String RETURN_TYPE = "returnType";
+  public static final String BODY = "body";
+  public static final String PARAMETER = "parameter";
+  public static final String THROWS_ITEM = "throwsItem";
+  public static final String ANNOTATION = "annotation";
 
   public BaseMethodDeclaration(SNode node) {
     super(node);

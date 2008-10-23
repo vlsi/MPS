@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DateTimePropertyFormatToken extends FormatToken {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.DateTimePropertyFormatToken";
-  public static String DATE_TIME_PROPERTY_FORMAT_CONFIGURATION = "dateTimePropertyFormatConfiguration";
-  public static String DATE_TIME_PROPERTY_FORMAT_TYPE = "dateTimePropertyFormatType";
+  public static final String DATE_TIME_PROPERTY_FORMAT_CONFIGURATION = "dateTimePropertyFormatConfiguration";
+  public static final String DATE_TIME_PROPERTY_FORMAT_TYPE = "dateTimePropertyFormatType";
 
   public DateTimePropertyFormatToken(SNode node) {
     super(node);

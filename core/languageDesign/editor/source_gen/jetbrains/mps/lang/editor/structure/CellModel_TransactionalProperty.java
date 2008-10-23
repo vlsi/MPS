@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_TransactionalProperty extends CellModel_AbstractLabel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty";
-  public static String PROPERTY = "property";
-  public static String HANDLER_BLOCK = "handlerBlock";
+  public static final String PROPERTY = "property";
+  public static final String HANDLER_BLOCK = "handlerBlock";
 
   public CellModel_TransactionalProperty(SNode node) {
     super(node);

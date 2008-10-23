@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ChildPart extends LinePart {
   public static final String concept = "jetbrains.mpslite.structure.ChildPart";
-  public static String SEPARATOR = "separator";
+  public static final String SEPARATOR = "separator";
 
   public ChildPart(SNode node) {
     super(node);

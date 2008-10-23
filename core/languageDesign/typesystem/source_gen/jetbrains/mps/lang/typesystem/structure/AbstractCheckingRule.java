@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractCheckingRule extends AbstractRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule";
-  public static String OVERRIDES = "overrides";
-  public static String BODY = "body";
+  public static final String OVERRIDES = "overrides";
+  public static final String BODY = "body";
 
   public AbstractCheckingRule(SNode node) {
     super(node);

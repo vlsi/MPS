@@ -12,15 +12,15 @@ import jetbrains.mps.project.GlobalScope;
 
 public class IntentionDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.intentions.structure.IntentionDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String IS_ERROR_INTENTION = "isErrorIntention";
-  public static String FOR_CONCEPT = "forConcept";
-  public static String DESCRIPTION_FUNCTION = "descriptionFunction";
-  public static String IS_APPLICABLE_FUNCTION = "isApplicableFunction";
-  public static String EXECUTE_FUNCTION = "executeFunction";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_ERROR_INTENTION = "isErrorIntention";
+  public static final String FOR_CONCEPT = "forConcept";
+  public static final String DESCRIPTION_FUNCTION = "descriptionFunction";
+  public static final String IS_APPLICABLE_FUNCTION = "isApplicableFunction";
+  public static final String EXECUTE_FUNCTION = "executeFunction";
 
   public IntentionDeclaration(SNode node) {
     super(node);

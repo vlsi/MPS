@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BinaryOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation";
-  public static String RIGHT_EXPRESSION = "rightExpression";
+  public static final String RIGHT_EXPRESSION = "rightExpression";
 
   public BinaryOperation(SNode node) {
     super(node);

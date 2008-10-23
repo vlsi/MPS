@@ -9,9 +9,9 @@ import java.util.List;
 public interface ICompositeComponent extends INamedConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.ICompositeComponent";
   public static String CPR_CleanAfterTheJob = "cleanAfterTheJob";
-  public static String EXCLUDES = "excludes";
-  public static String INCLUDES = "includes";
-  public static String ENTRY = "entry";
+  public static final String EXCLUDES = "excludes";
+  public static final String INCLUDES = "includes";
+  public static final String ENTRY = "entry";
 
   public String getExcludes();
 

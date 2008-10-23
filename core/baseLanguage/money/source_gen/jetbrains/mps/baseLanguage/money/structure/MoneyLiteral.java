@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MoneyLiteral extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.money.structure.MoneyLiteral";
-  public static String CURRENCY = "currency";
-  public static String AMOUNT = "amount";
+  public static final String CURRENCY = "currency";
+  public static final String AMOUNT = "amount";
 
   public MoneyLiteral(SNode node) {
     super(node);

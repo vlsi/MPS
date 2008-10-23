@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TextLine extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.TextLine";
-  public static String LINE = "line";
+  public static final String LINE = "line";
 
   public TextLine(SNode node) {
     super(node);

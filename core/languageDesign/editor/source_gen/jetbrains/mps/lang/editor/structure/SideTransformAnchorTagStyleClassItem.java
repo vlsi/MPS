@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SideTransformAnchorTagStyleClassItem extends StyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem";
-  public static String TAG = "tag";
+  public static final String TAG = "tag";
 
   public SideTransformAnchorTagStyleClassItem(SNode node) {
     super(node);

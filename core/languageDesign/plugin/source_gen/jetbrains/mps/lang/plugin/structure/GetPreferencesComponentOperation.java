@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GetPreferencesComponentOperation extends ProjectOperation {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.GetPreferencesComponentOperation";
-  public static String COMPONENT_DECLARATION = "componentDeclaration";
+  public static final String COMPONENT_DECLARATION = "componentDeclaration";
 
   public GetPreferencesComponentOperation(SNode node) {
     super(node);

@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TreePathAdapterExpression extends Expression {
   public static final String concept = "jetbrains.mps.ypath.structure.TreePathAdapterExpression";
-  public static String TREEPATH_ASPECT = "treepathAspect";
-  public static String EXPRESSION = "expression";
+  public static final String TREEPATH_ASPECT = "treepathAspect";
+  public static final String EXPRESSION = "expression";
 
   public TreePathAdapterExpression(SNode node) {
     super(node);

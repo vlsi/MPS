@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ChunkOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ChunkOperation";
-  public static String LENGTH = "length";
+  public static final String LENGTH = "length";
 
   public ChunkOperation(SNode node) {
     super(node);

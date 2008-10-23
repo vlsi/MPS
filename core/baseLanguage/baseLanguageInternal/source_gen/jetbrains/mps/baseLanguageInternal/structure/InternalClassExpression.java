@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InternalClassExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression";
-  public static String TYPE = "type";
+  public static final String TYPE = "type";
 
   public InternalClassExpression(SNode node) {
     super(node);

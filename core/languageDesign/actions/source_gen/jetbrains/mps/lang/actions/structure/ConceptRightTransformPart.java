@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptRightTransformPart extends MenuBuilderPart {
   public static final String concept = "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart";
-  public static String CONCEPT = "concept";
-  public static String HANDLER = "handler";
+  public static final String CONCEPT = "concept";
+  public static final String HANDLER = "handler";
 
   public ConceptRightTransformPart(SNode node) {
     super(node);

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ReferenceMacro extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.ReferenceMacro";
-  public static String REFERENT_FUNCTION = "referentFunction";
+  public static final String REFERENT_FUNCTION = "referentFunction";
 
   public ReferenceMacro(SNode node) {
     super(node);

@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import java.util.List;
 
 public class NodeMacro_AnnotationLink {
-  public static String NODE_MACRO = "nodeMacro";
+  public static final String NODE_MACRO = "nodeMacro";
 
   public static void addNodeMacro(BaseConcept source, NodeMacro target) {
     source.addAttribute(NodeMacro_AnnotationLink.NODE_MACRO, target);

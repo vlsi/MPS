@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InvokeExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression";
-  public static String PARAMETER = "parameter";
+  public static final String PARAMETER = "parameter";
 
   public InvokeExpression(SNode node) {
     super(node);

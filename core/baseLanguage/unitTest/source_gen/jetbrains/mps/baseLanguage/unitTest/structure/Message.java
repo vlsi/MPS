@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Message extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.Message";
-  public static String MESSAGE = "message";
+  public static final String MESSAGE = "message";
 
   public Message(SNode node) {
     super(node);

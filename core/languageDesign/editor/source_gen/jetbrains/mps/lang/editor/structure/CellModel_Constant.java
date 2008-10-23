@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_Constant extends CellModel_AbstractLabel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_Constant";
-  public static String TEXT = "text";
-  public static String NULL_TEXT = "nullText";
+  public static final String TEXT = "text";
+  public static final String NULL_TEXT = "nullText";
 
   public CellModel_Constant(SNode node) {
     super(node);

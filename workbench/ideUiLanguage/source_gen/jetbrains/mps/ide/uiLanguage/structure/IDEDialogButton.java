@@ -4,29 +4,20 @@ package jetbrains.mps.ide.uiLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class IDEDialogButton extends BaseConcept {
   public static final String concept = "jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton";
-  public static String TEXT = "text";
-  public static String IS_DEFAULT = "isDefault";
-  public static String HANDLER = "handler";
+  public static final String TEXT = "text";
+  public static final String IS_DEFAULT = "isDefault";
+  public static final String HANDLER = "handler";
 
   public IDEDialogButton(SNode node) {
     super(node);
   }
-
-  public static IDEDialogButton newInstance(SModel sm, boolean init) {
-    return (IDEDialogButton)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static IDEDialogButton newInstance(SModel sm) {
-    return IDEDialogButton.newInstance(sm, false);
-  }
-
 
   public String getText() {
     return this.getProperty(IDEDialogButton.TEXT);
@@ -50,6 +41,15 @@ public class IDEDialogButton extends BaseConcept {
 
   public void setHandler(Expression node) {
     super.setChild(IDEDialogButton.HANDLER, node);
+  }
+
+
+  public static IDEDialogButton newInstance(SModel sm, boolean init) {
+    return (IDEDialogButton)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static IDEDialogButton newInstance(SModel sm) {
+    return IDEDialogButton.newInstance(sm, false);
   }
 
 }

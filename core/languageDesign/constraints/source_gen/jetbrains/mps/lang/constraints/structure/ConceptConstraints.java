@@ -15,17 +15,17 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptConstraints extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.ConceptConstraints";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String CONCEPT = "concept";
-  public static String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
-  public static String DEFAULT_SCOPE = "defaultScope";
-  public static String CAN_BE_CHILD = "canBeChild";
-  public static String CAN_BE_PARENT = "canBeParent";
-  public static String PROPERTY = "property";
-  public static String REFERENT = "referent";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String CONCEPT = "concept";
+  public static final String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
+  public static final String DEFAULT_SCOPE = "defaultScope";
+  public static final String CAN_BE_CHILD = "canBeChild";
+  public static final String CAN_BE_PARENT = "canBeParent";
+  public static final String PROPERTY = "property";
+  public static final String REFERENT = "referent";
 
   public ConceptConstraints(SNode node) {
     super(node);

@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SwitchMacro extends SourceSubstituteMacro {
   public static final String concept = "jetbrains.mps.lang.generator.structure.SwitchMacro";
-  public static String TEMPLATE_SWITCH = "templateSwitch";
-  public static String SOURCE_NODE_QUERY = "sourceNodeQuery";
+  public static final String TEMPLATE_SWITCH = "templateSwitch";
+  public static final String SOURCE_NODE_QUERY = "sourceNodeQuery";
 
   public SwitchMacro(SNode node) {
     super(node);

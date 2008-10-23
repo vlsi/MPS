@@ -11,14 +11,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DateTimeProperty extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.dates.internal.structure.DateTimeProperty";
-  public static String PLURAL_FORM = "pluralForm";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String JODA_DATE_TIME_FIELD_TYPE = "jodaDateTimeFieldType";
-  public static String JODA_PERIOD_TYPE = "jodaPeriodType";
+  public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty";
+  public static final String PLURAL_FORM = "pluralForm";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String JODA_DATE_TIME_FIELD_TYPE = "jodaDateTimeFieldType";
+  public static final String JODA_PERIOD_TYPE = "jodaPeriodType";
 
   public DateTimeProperty(SNode node) {
     super(node);
@@ -82,7 +82,7 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
 
 
   public static DateTimeProperty newInstance(SModel sm, boolean init) {
-    return (DateTimeProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimeProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimeProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimeProperty newInstance(SModel sm) {

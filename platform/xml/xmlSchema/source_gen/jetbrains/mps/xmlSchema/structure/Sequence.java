@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Sequence extends GroupExpression {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.Sequence";
-  public static String TYPE_EXPRESSION_LIST = "typeExpressionList";
+  public static final String TYPE_EXPRESSION_LIST = "typeExpressionList";
 
   public Sequence(SNode node) {
     super(node);

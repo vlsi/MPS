@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PairOfInts extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.PairOfInts";
-  public static String FIRST = "first";
-  public static String SECOND = "second";
+  public static final String FIRST = "first";
+  public static final String SECOND = "second";
 
   public PairOfInts(SNode node) {
     super(node);

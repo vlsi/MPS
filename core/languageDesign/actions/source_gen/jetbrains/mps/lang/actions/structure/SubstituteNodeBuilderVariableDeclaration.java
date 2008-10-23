@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SubstituteNodeBuilderVariableDeclaration extends VariableDeclaration {
   public static final String concept = "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration";
-  public static String INITIALIZER_BLOCK = "initializerBlock";
+  public static final String INITIALIZER_BLOCK = "initializerBlock";
 
   public SubstituteNodeBuilderVariableDeclaration(SNode node) {
     super(node);

@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Choice extends GroupExpression {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.Choice";
-  public static String TYPE_EXPRESSION_LIST = "typeExpressionList";
-  public static String OCCURS_ATTRIBUTE = "occursAttribute";
+  public static final String TYPE_EXPRESSION_LIST = "typeExpressionList";
+  public static final String OCCURS_ATTRIBUTE = "occursAttribute";
 
   public Choice(SNode node) {
     super(node);

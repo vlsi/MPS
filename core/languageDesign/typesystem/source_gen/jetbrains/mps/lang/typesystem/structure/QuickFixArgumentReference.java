@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class QuickFixArgumentReference extends Expression {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference";
-  public static String QUICK_FIX_ARGUMENT = "quickFixArgument";
+  public static final String QUICK_FIX_ARGUMENT = "quickFixArgument";
 
   public QuickFixArgumentReference(SNode node) {
     super(node);

@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DropRootRule extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.DropRootRule";
-  public static String APPLICABLE_CONCEPT = "applicableConcept";
-  public static String CONDITION_FUNCTION = "conditionFunction";
+  public static final String APPLICABLE_CONCEPT = "applicableConcept";
+  public static final String CONDITION_FUNCTION = "conditionFunction";
 
   public DropRootRule(SNode node) {
     super(node);

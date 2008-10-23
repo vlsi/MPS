@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PersistentPropertyDeclaration extends VariableDeclaration implements IMember {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public PersistentPropertyDeclaration(SNode node) {
     super(node);

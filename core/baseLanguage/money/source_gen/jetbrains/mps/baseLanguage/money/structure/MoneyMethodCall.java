@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MoneyMethodCall extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall";
-  public static String INSTANCE = "instance";
+  public static final String INSTANCE = "instance";
 
   public MoneyMethodCall(SNode node) {
     super(node);

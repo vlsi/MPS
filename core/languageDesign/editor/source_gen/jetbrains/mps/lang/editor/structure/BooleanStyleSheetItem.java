@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BooleanStyleSheetItem extends StyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem";
-  public static String FLAG = "flag";
-  public static String QUERY = "query";
+  public static final String FLAG = "flag";
+  public static final String QUERY = "query";
 
   public BooleanStyleSheetItem(SNode node) {
     super(node);

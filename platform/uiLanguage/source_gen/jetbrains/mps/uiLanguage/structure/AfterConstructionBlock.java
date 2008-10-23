@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AfterConstructionBlock extends BaseConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.AfterConstructionBlock";
-  public static String BODY = "body";
+  public static final String BODY = "body";
 
   public AfterConstructionBlock(SNode node) {
     super(node);

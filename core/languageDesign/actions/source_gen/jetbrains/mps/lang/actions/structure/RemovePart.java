@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RemovePart extends MenuBuilderPart {
   public static final String concept = "jetbrains.mps.lang.actions.structure.RemovePart";
-  public static String CONCEPT_TO_REMOVE = "conceptToRemove";
+  public static final String CONCEPT_TO_REMOVE = "conceptToRemove";
 
   public RemovePart(SNode node) {
     super(node);

@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodePropertyConstraint extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint";
-  public static String APPLICABLE_PROPERTY = "applicableProperty";
-  public static String PROPERTY_GETTER = "propertyGetter";
-  public static String PROPERTY_SETTER = "propertySetter";
-  public static String PROPERTY_VALIDATOR = "propertyValidator";
+  public static final String APPLICABLE_PROPERTY = "applicableProperty";
+  public static final String PROPERTY_GETTER = "propertyGetter";
+  public static final String PROPERTY_SETTER = "propertySetter";
+  public static final String PROPERTY_VALIDATOR = "propertyValidator";
 
   public NodePropertyConstraint(SNode node) {
     super(node);

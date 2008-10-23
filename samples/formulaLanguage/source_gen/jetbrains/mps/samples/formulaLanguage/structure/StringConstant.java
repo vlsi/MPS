@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StringConstant extends Constant {
   public static final String concept = "jetbrains.mps.samples.formulaLanguage.structure.StringConstant";
-  public static String VALUE = "value";
+  public static final String VALUE = "value";
 
   public StringConstant(SNode node) {
     super(node);

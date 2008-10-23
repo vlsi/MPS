@@ -10,13 +10,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FinderDeclaration extends AbstractFinderDeclaration implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.findUsages.structure.FinderDeclaration";
-  public static String DESCRIPTION = "description";
-  public static String LONG_DESCRIPTION = "longDescription";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String IS_VISIBLE_BLOCK = "isVisibleBlock";
+  public static final String DESCRIPTION = "description";
+  public static final String LONG_DESCRIPTION = "longDescription";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_VISIBLE_BLOCK = "isVisibleBlock";
 
   public FinderDeclaration(SNode node) {
     super(node);

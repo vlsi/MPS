@@ -10,10 +10,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DefaultClassifierFieldAccessOperation extends BaseConcept implements IMemberOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String MEMBER = "member";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String MEMBER = "member";
 
   public DefaultClassifierFieldAccessOperation(SNode node) {
     super(node);

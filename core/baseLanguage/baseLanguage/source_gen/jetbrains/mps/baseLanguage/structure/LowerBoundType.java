@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LowerBoundType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.LowerBoundType";
-  public static String BOUND = "bound";
+  public static final String BOUND = "bound";
 
   public LowerBoundType(SNode node) {
     super(node);

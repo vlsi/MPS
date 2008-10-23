@@ -13,13 +13,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class OutputRoot extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot";
-  public static String TEXT = "text";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String SPECIAL_CHILD = "specialChild";
-  public static String OUTPUT_CHILD = "outputChild";
+  public static final String TEXT = "text";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String SPECIAL_CHILD = "specialChild";
+  public static final String OUTPUT_CHILD = "outputChild";
 
   public OutputRoot(SNode node) {
     super(node);

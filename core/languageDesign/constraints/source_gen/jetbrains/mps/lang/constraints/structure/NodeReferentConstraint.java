@@ -11,11 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeReferentConstraint extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint";
-  public static String SEARCH_SCOPE_DESCRIPTION = "searchScopeDescription";
-  public static String APPLICABLE_LINK = "applicableLink";
-  public static String SEARCH_SCOPE_CAN_CREATE = "searchScopeCanCreate";
-  public static String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
-  public static String REFERENT_SET_HANDLER = "referentSetHandler";
+  public static final String SEARCH_SCOPE_DESCRIPTION = "searchScopeDescription";
+  public static final String APPLICABLE_LINK = "applicableLink";
+  public static final String SEARCH_SCOPE_CAN_CREATE = "searchScopeCanCreate";
+  public static final String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
+  public static final String REFERENT_SET_HANDLER = "referentSetHandler";
 
   public NodeReferentConstraint(SNode node) {
     super(node);

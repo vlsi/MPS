@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ComplexType extends Declaration {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.ComplexType";
-  public static String TYPE_NAME = "typeName";
-  public static String TYPE_EXPRESSION_LIST = "typeExpressionList";
-  public static String MIXED_ATTRIBUTE = "mixedAttribute";
+  public static final String TYPE_NAME = "typeName";
+  public static final String TYPE_EXPRESSION_LIST = "typeExpressionList";
+  public static final String MIXED_ATTRIBUTE = "mixedAttribute";
 
   public ComplexType(SNode node) {
     super(node);

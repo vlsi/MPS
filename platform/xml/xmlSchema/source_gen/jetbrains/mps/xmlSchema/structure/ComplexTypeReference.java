@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ComplexTypeReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.ComplexTypeReference";
-  public static String COMPLEXT_TYPE = "complextType";
+  public static final String COMPLEXT_TYPE = "complextType";
 
   public ComplexTypeReference(SNode node) {
     super(node);

@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TernaryOperatorExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression";
-  public static String CONDITION = "condition";
-  public static String IF_TRUE = "ifTrue";
-  public static String IF_FALSE = "ifFalse";
+  public static final String CONDITION = "condition";
+  public static final String IF_TRUE = "ifTrue";
+  public static final String IF_FALSE = "ifFalse";
 
   public TernaryOperatorExpression(SNode node) {
     super(node);

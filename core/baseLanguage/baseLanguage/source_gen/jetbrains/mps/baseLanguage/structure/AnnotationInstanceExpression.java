@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AnnotationInstanceExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression";
-  public static String ANNOTATION_INSTANCE = "annotationInstance";
+  public static final String ANNOTATION_INSTANCE = "annotationInstance";
 
   public AnnotationInstanceExpression(SNode node) {
     super(node);

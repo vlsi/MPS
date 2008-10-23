@@ -12,10 +12,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Scroller extends BaseConcept implements IComponentInstance {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.Scroller";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String CONTENT = "content";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String CONTENT = "content";
 
   public Scroller(SNode node) {
     super(node);

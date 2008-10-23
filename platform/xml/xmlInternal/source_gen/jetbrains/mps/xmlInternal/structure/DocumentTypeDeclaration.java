@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DocumentTypeDeclaration extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlInternal.structure.DocumentTypeDeclaration";
-  public static String DOC_TYPE_NAME = "docTypeName";
-  public static String EXTERNAL_ID = "externalId";
+  public static final String DOC_TYPE_NAME = "docTypeName";
+  public static final String EXTERNAL_ID = "externalId";
 
   public DocumentTypeDeclaration(SNode node) {
     super(node);

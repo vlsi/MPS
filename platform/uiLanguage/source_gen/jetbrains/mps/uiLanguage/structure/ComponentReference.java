@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ComponentReference extends Expression {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentReference";
-  public static String COMPONENT = "component";
+  public static final String COMPONENT = "component";
 
   public ComponentReference(SNode node) {
     super(node);

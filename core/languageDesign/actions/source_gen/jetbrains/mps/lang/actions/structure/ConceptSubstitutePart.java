@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptSubstitutePart extends MenuBuilderPart {
   public static final String concept = "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart";
-  public static String CONCEPT = "concept";
+  public static final String CONCEPT = "concept";
 
   public ConceptSubstitutePart(SNode node) {
     super(node);

@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellMenuPart_ReplaceChild_CustomChildConcept extends CellMenuPart_Abstract {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept";
-  public static String CHILD_CONCEPT_FUNCTION = "childConceptFunction";
+  public static final String CHILD_CONCEPT_FUNCTION = "childConceptFunction";
 
   public CellMenuPart_ReplaceChild_CustomChildConcept(SNode node) {
     super(node);

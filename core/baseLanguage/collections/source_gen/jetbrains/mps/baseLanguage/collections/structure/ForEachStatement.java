@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ForEachStatement extends AbstractLoopStatement {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement";
-  public static String VARIABLE = "variable";
-  public static String INPUT_SEQUENCE = "inputSequence";
+  public static final String VARIABLE = "variable";
+  public static final String INPUT_SEQUENCE = "inputSequence";
 
   public ForEachStatement(SNode node) {
     super(node);

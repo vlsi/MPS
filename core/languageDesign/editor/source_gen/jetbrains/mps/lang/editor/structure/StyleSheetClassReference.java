@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StyleSheetClassReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.editor.structure.StyleSheetClassReference";
-  public static String STYLE_SHEET_CLASS = "styleSheetClass";
+  public static final String STYLE_SHEET_CLASS = "styleSheetClass";
 
   public StyleSheetClassReference(SNode node) {
     super(node);

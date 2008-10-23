@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AttributeGroup extends Declaration {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.AttributeGroup";
-  public static String ATTRIBUTE_GROUP_NAME = "attributeGroupName";
-  public static String ATTRIBUTE_EXPRESSION = "attributeExpression";
+  public static final String ATTRIBUTE_GROUP_NAME = "attributeGroupName";
+  public static final String ATTRIBUTE_EXPRESSION = "attributeExpression";
 
   public AttributeGroup(SNode node) {
     super(node);

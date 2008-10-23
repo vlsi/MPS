@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AssertType extends AbstractNodeAssert {
   public static final String concept = "jetbrains.mps.lang.test.structure.AssertType";
-  public static String TYPE_TO_CHECK = "typeToCheck";
+  public static final String TYPE_TO_CHECK = "typeToCheck";
 
   public AssertType(SNode node) {
     super(node);

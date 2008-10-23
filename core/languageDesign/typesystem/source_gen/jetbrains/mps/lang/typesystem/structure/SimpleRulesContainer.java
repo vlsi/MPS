@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SimpleRulesContainer extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.SimpleRulesContainer";
-  public static String SIMPLE_RULE = "simpleRule";
+  public static final String SIMPLE_RULE = "simpleRule";
 
   public SimpleRulesContainer(SNode node) {
     super(node);

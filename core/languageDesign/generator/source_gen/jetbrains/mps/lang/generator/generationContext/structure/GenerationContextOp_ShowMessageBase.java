@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenerationContextOp_ShowMessageBase extends GenerationContextOp_Base {
   public static final String concept = "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase";
-  public static String MESSAGE_TEXT = "messageText";
-  public static String REFERENCE_NODE = "referenceNode";
+  public static final String MESSAGE_TEXT = "messageText";
+  public static final String REFERENCE_NODE = "referenceNode";
 
   public GenerationContextOp_ShowMessageBase(SNode node) {
     super(node);

@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PublicExternalId extends ExternalId {
   public static final String concept = "jetbrains.mps.xmlInternal.structure.PublicExternalId";
-  public static String PUBID_LITERAL = "pubidLiteral";
-  public static String SYSTEM_LITERAL = "systemLiteral";
+  public static final String PUBID_LITERAL = "pubidLiteral";
+  public static final String SYSTEM_LITERAL = "systemLiteral";
 
   public PublicExternalId(SNode node) {
     super(node);

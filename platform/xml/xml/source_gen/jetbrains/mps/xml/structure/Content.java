@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Content extends BaseConcept {
   public static final String concept = "jetbrains.mps.xml.structure.Content";
-  public static String CPR_IsComplex = "isComplex";
-  public static String CLNK_CorrespondingElement = "correspondingElement";
+  public static final String CPR_IsComplex = "isComplex";
+  public static final String CLNK_CorrespondingElement = "correspondingElement";
 
   public Content(SNode node) {
     super(node);

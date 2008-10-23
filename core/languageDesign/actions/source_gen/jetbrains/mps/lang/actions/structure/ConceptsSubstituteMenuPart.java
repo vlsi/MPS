@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptsSubstituteMenuPart extends SubstituteMenuPart {
   public static final String concept = "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart";
-  public static String QUERY = "query";
+  public static final String QUERY = "query";
 
   public ConceptsSubstituteMenuPart(SNode node) {
     super(node);

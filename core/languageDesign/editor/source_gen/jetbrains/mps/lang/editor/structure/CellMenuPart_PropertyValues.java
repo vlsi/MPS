@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellMenuPart_PropertyValues extends CellMenuPart_Abstract {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues";
-  public static String VALUES_FUNCTION = "valuesFunction";
+  public static final String VALUES_FUNCTION = "valuesFunction";
 
   public CellMenuPart_PropertyValues(SNode node) {
     super(node);

@@ -10,11 +10,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CompositeString extends BaseConcept implements IStringExpression {
   public static final String concept = "jetbrains.mps.build.packaging.structure.CompositeString";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String LEFT = "left";
-  public static String RIGHT = "right";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String LEFT = "left";
+  public static final String RIGHT = "right";
 
   public CompositeString(SNode node) {
     super(node);

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RaiseInternalStatement extends Statement {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.RaiseInternalStatement";
-  public static String ARGUMENT = "argument";
+  public static final String ARGUMENT = "argument";
 
   public RaiseInternalStatement(SNode node) {
     super(node);

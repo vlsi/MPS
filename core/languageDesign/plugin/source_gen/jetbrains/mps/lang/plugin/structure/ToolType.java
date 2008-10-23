@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ToolType extends BaseClassifierType {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ToolType";
-  public static String TOOL = "tool";
+  public static final String TOOL = "tool";
 
   public ToolType(SNode node) {
     super(node);

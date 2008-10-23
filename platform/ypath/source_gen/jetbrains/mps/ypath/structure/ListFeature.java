@@ -11,19 +11,19 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ListFeature extends BaseConcept implements INamedConcept, IFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.ListFeature";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String WRITABLE = "writable";
-  public static String DEFAULT = "default";
-  public static String ASCENDING = "ascending";
-  public static String OPPOSITE = "opposite";
-  public static String GET_FUNCTION = "getFunction";
-  public static String SIZE_FUNCTION = "sizeFunction";
-  public static String SET_FUNCTION = "setFunction";
-  public static String INSERT_FUNCTION = "insertFunction";
-  public static String DELETE_FUNCTION = "deleteFunction";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String WRITABLE = "writable";
+  public static final String DEFAULT = "default";
+  public static final String ASCENDING = "ascending";
+  public static final String OPPOSITE = "opposite";
+  public static final String GET_FUNCTION = "getFunction";
+  public static final String SIZE_FUNCTION = "sizeFunction";
+  public static final String SET_FUNCTION = "setFunction";
+  public static final String INSERT_FUNCTION = "insertFunction";
+  public static final String DELETE_FUNCTION = "deleteFunction";
 
   public ListFeature(SNode node) {
     super(node);

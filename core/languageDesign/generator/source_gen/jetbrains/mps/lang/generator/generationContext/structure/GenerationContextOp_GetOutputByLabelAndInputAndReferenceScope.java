@@ -11,9 +11,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope extends GenerationContextOp_Base {
   public static final String concept = "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope";
-  public static String LABEL_NAME_INTERN = "labelName_intern";
-  public static String LABEL = "label";
-  public static String INPUT_NODE = "inputNode";
+  public static final String LABEL_NAME_INTERN = "labelName_intern";
+  public static final String LABEL = "label";
+  public static final String INPUT_NODE = "inputNode";
 
   public GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope(SNode node) {
     super(node);

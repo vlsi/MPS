@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PostfixDecrementExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression";
-  public static String EXPRESSION = "expression";
+  public static final String EXPRESSION = "expression";
 
   public PostfixDecrementExpression(SNode node) {
     super(node);

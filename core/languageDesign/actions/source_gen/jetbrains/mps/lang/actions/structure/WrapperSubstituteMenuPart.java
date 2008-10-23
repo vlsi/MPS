@@ -10,9 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   public static final String concept = "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart";
-  public static String WRAPPED_CONCEPT = "wrappedConcept";
-  public static String WRAPPER_BLOCK = "wrapperBlock";
-  public static String RETURN_SMALL_PART = "returnSmallPart";
+  public static final String WRAPPED_CONCEPT = "wrappedConcept";
+  public static final String WRAPPER_BLOCK = "wrapperBlock";
+  public static final String RETURN_SMALL_PART = "returnSmallPart";
 
   public WrapperSubstituteMenuPart(SNode node) {
     super(node);

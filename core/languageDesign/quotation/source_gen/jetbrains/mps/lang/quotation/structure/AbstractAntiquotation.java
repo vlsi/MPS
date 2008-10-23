@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractAntiquotation extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation";
-  public static String EXPRESSION = "expression";
+  public static final String EXPRESSION = "expression";
 
   public AbstractAntiquotation(SNode node) {
     super(node);

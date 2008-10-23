@@ -13,18 +13,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Project extends BaseConcept implements INamedConcept, IPropertyHolder {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.Project";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String DEFAULT = "default";
-  public static String BASEDIR = "basedir";
-  public static String TARGET = "target";
-  public static String LIBRARY = "library";
-  public static String IMPORT_PROJECT = "importProject";
-  public static String PATHS = "paths";
-  public static String IMPORT_PROPERTIES = "importProperties";
-  public static String PROPERTY = "property";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String DEFAULT = "default";
+  public static final String BASEDIR = "basedir";
+  public static final String TARGET = "target";
+  public static final String LIBRARY = "library";
+  public static final String IMPORT_PROJECT = "importProject";
+  public static final String PATHS = "paths";
+  public static final String IMPORT_PROPERTIES = "importProperties";
+  public static final String PROPERTY = "property";
 
   public Project(SNode node) {
     super(node);

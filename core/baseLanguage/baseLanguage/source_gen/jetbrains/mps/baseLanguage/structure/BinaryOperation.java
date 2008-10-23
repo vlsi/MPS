@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BinaryOperation extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BinaryOperation";
-  public static String CPR_Priority = "priority";
-  public static String RIGHT_EXPRESSION = "rightExpression";
-  public static String LEFT_EXPRESSION = "leftExpression";
+  public static final String CPR_Priority = "priority";
+  public static final String RIGHT_EXPRESSION = "rightExpression";
+  public static final String LEFT_EXPRESSION = "leftExpression";
 
   public BinaryOperation(SNode node) {
     super(node);

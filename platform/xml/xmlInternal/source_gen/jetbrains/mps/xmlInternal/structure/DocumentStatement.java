@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DocumentStatement extends Statement {
   public static final String concept = "jetbrains.mps.xmlInternal.structure.DocumentStatement";
-  public static String DOCUMENT = "document";
+  public static final String DOCUMENT = "document";
 
   public DocumentStatement(SNode node) {
     super(node);

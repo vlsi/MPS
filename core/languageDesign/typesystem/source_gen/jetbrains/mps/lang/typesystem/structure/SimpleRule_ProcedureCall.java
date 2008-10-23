@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SimpleRule_ProcedureCall extends SimpleRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.SimpleRule_ProcedureCall";
-  public static String ACTUAL_ARGUMENTS_LINK = "actualArgumentsLink";
-  public static String PROCEDURE_DECLARATION = "procedureDeclaration";
-  public static String PARAMETERS_LINK = "parametersLink";
-  public static String CONCEPT_REFERENCE = "conceptReference";
+  public static final String ACTUAL_ARGUMENTS_LINK = "actualArgumentsLink";
+  public static final String PROCEDURE_DECLARATION = "procedureDeclaration";
+  public static final String PARAMETERS_LINK = "parametersLink";
+  public static final String CONCEPT_REFERENCE = "conceptReference";
 
   public SimpleRule_ProcedureCall(SNode node) {
     super(node);

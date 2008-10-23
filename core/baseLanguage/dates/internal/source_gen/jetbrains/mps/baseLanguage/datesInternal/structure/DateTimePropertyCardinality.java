@@ -10,13 +10,13 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DateTimePropertyCardinality extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.dates.internal.structure.DateTimePropertyCardinality";
-  public static String MEANING = "meaning";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String NUMBER_OF_SYMBOLS = "numberOfSymbols";
+  public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyCardinality";
+  public static final String MEANING = "meaning";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NUMBER_OF_SYMBOLS = "numberOfSymbols";
 
   public DateTimePropertyCardinality(SNode node) {
     super(node);
@@ -72,7 +72,7 @@ public class DateTimePropertyCardinality extends BaseConcept implements INamedCo
 
 
   public static DateTimePropertyCardinality newInstance(SModel sm, boolean init) {
-    return (DateTimePropertyCardinality)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimePropertyCardinality", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimePropertyCardinality)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyCardinality", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimePropertyCardinality newInstance(SModel sm) {

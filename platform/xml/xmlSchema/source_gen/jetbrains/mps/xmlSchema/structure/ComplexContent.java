@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ComplexContent extends TypeExpression {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.ComplexContent";
-  public static String CONTENT_ITEM = "contentItem";
+  public static final String CONTENT_ITEM = "contentItem";
 
   public ComplexContent(SNode node) {
     super(node);

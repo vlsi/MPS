@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SPropertyAccess extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.SPropertyAccess";
-  public static String PROPERTY = "property";
+  public static final String PROPERTY = "property";
 
   public SPropertyAccess(SNode node) {
     super(node);

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CommentedStatementsBlock extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock";
-  public static String STATEMENT = "statement";
+  public static final String STATEMENT = "statement";
 
   public CommentedStatementsBlock(SNode node) {
     super(node);

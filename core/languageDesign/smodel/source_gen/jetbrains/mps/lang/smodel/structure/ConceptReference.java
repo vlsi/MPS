@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.ConceptReference";
-  public static String CONCEPT = "concept";
+  public static final String CONCEPT = "concept";
 
   public ConceptReference(SNode node) {
     super(node);

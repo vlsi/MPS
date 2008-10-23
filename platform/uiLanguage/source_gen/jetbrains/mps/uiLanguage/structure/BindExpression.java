@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BindExpression extends Expression {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.BindExpression";
-  public static String EXPRESSION = "expression";
+  public static final String EXPRESSION = "expression";
 
   public BindExpression(SNode node) {
     super(node);

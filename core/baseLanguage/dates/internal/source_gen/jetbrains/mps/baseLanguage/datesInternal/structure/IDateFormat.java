@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.datesInternal.structure;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 
 public interface IDateFormat extends INamedConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.dates.internal.structure.IDateFormat";
-  public static String IS_PUBLIC = "isPublic";
+  public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.IDateFormat";
+  public static final String IS_PUBLIC = "isPublic";
 
   public boolean getIsPublic();
 

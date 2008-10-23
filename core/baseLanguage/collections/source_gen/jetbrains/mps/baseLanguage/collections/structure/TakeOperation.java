@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TakeOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.TakeOperation";
-  public static String ELEMENTS_TO_TAKE = "elementsToTake";
+  public static final String ELEMENTS_TO_TAKE = "elementsToTake";
 
   public TakeOperation(SNode node) {
     super(node);

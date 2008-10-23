@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Formula extends BaseConcept {
   public static final String concept = "jetbrains.mps.samples.formulaLanguage.structure.Formula";
-  public static String EXPRESSION = "expression";
+  public static final String EXPRESSION = "expression";
 
   public Formula(SNode node) {
     super(node);

@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SimpleRule_Literal extends SimpleRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.SimpleRule_Literal";
-  public static String CONCEPT_REFERENCE = "conceptReference";
-  public static String TYPE = "type";
+  public static final String CONCEPT_REFERENCE = "conceptReference";
+  public static final String TYPE = "type";
 
   public SimpleRule_Literal(SNode node) {
     super(node);

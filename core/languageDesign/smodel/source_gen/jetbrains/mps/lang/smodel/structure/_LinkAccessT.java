@@ -12,12 +12,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class _LinkAccessT extends Type implements IInternalType {
   public static final String concept = "jetbrains.mps.lang.smodel.structure._LinkAccessT";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String SINGULAR_CRADINALITY = "singularCradinality";
-  public static String AGGREGATION = "aggregation";
-  public static String TARGET_CONCEPT = "targetConcept";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String SINGULAR_CRADINALITY = "singularCradinality";
+  public static final String AGGREGATION = "aggregation";
+  public static final String TARGET_CONCEPT = "targetConcept";
 
   public _LinkAccessT(SNode node) {
     super(node);

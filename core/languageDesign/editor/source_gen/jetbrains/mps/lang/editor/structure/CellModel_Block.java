@@ -9,10 +9,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_Block extends EditorCellModel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_Block";
-  public static String OPEN_BRACE = "openBrace";
-  public static String CLOSE_BRACE = "closeBrace";
-  public static String HEADER = "header";
-  public static String BODY = "body";
+  public static final String OPEN_BRACE = "openBrace";
+  public static final String CLOSE_BRACE = "closeBrace";
+  public static final String HEADER = "header";
+  public static final String BODY = "body";
 
   public CellModel_Block(SNode node) {
     super(node);

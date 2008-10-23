@@ -13,13 +13,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EntitySet extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.EntitySet";
-  public static String ENTITY_SET_NAME = "entitySetName";
-  public static String URL = "url";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ENTITY_BLOCK = "entityBlock";
+  public static final String ENTITY_SET_NAME = "entitySetName";
+  public static final String URL = "url";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String ENTITY_BLOCK = "entityBlock";
 
   public EntitySet(SNode node) {
     super(node);

@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FloatStyleClassItem extends StyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.FloatStyleClassItem";
-  public static String VALUE = "value";
+  public static final String VALUE = "value";
 
   public FloatStyleClassItem(SNode node) {
     super(node);

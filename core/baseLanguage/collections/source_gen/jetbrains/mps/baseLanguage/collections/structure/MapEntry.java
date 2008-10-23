@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MapEntry extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.MapEntry";
-  public static String KEY = "key";
-  public static String VALUE = "value";
+  public static final String KEY = "key";
+  public static final String VALUE = "value";
 
   public MapEntry(SNode node) {
     super(node);

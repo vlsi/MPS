@@ -12,9 +12,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StateMachineTestMethod extends BaseConcept {
   public static final String concept = "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod";
-  public static String METHOD_NAME = "methodName";
-  public static String FINAL_STATE = "finalState";
-  public static String HANDLE_EVENT = "handleEvent";
+  public static final String METHOD_NAME = "methodName";
+  public static final String FINAL_STATE = "finalState";
+  public static final String HANDLE_EVENT = "handleEvent";
 
   public StateMachineTestMethod(SNode node) {
     super(node);

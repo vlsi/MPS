@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ListVarReference extends Expression {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.ListVarReference";
-  public static String LIST_VAR_DECLARATION = "listVarDeclaration";
+  public static final String LIST_VAR_DECLARATION = "listVarDeclaration";
 
   public ListVarReference(SNode node) {
     super(node);

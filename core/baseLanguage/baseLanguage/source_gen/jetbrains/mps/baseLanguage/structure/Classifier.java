@@ -12,17 +12,17 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Classifier extends GenericDeclaration implements HasAnnotation, IMemberContainer, IResolveInfo, IValidIdentifier {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Classifier";
-  public static String NESTED_NAME = "nestedName";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String RESOLVE_INFO = "resolveInfo";
-  public static String NAME = "name";
-  public static String IS_DEPRECATED = "isDeprecated";
-  public static String VISIBILITY = "visibility";
-  public static String STATIC_FIELD = "staticField";
-  public static String METHOD = "method";
-  public static String ANNOTATION = "annotation";
+  public static final String NESTED_NAME = "nestedName";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOLVE_INFO = "resolveInfo";
+  public static final String NAME = "name";
+  public static final String IS_DEPRECATED = "isDeprecated";
+  public static final String VISIBILITY = "visibility";
+  public static final String STATIC_FIELD = "staticField";
+  public static final String METHOD = "method";
+  public static final String ANNOTATION = "annotation";
 
   public Classifier(SNode node) {
     super(node);

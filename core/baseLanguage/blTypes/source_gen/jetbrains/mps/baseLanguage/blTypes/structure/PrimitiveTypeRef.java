@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PrimitiveTypeRef extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef";
-  public static String DESCRIPTOR = "descriptor";
+  public static final String DESCRIPTOR = "descriptor";
 
   public PrimitiveTypeRef(SNode node) {
     super(node);

@@ -11,9 +11,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InfoStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.InfoStatement";
-  public static String INFO_TEXT = "infoText";
-  public static String NODE_TO_REPORT = "nodeToReport";
-  public static String HELGINS_INTENTION = "helginsIntention";
+  public static final String INFO_TEXT = "infoText";
+  public static final String NODE_TO_REPORT = "nodeToReport";
+  public static final String HELGINS_INTENTION = "helginsIntention";
 
   public InfoStatement(SNode node) {
     super(node);

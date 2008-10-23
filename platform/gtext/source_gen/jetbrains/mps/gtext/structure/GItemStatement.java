@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GItemStatement extends Statement {
   public static final String concept = "jetbrains.mps.gtext.structure.GItemStatement";
-  public static String ITEM = "item";
+  public static final String ITEM = "item";
 
   public GItemStatement(SNode node) {
     super(node);

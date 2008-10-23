@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PostingRule extends Formula {
   public static final String concept = "jetbrains.mps.samples.agreementLanguage.structure.PostingRule";
-  public static String ACCOUNT = "account";
+  public static final String ACCOUNT = "account";
 
   public PostingRule(SNode node) {
     super(node);

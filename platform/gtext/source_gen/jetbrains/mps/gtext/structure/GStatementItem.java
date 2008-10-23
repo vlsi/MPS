@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GStatementItem extends GItem {
   public static final String concept = "jetbrains.mps.gtext.structure.GStatementItem";
-  public static String STATEMENT_LIST = "statementList";
+  public static final String STATEMENT_LIST = "statementList";
 
   public GStatementItem(SNode node) {
     super(node);

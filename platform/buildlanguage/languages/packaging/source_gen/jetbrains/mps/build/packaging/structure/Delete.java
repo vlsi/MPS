@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Delete extends PostProcessingTask {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Delete";
-  public static String PATH = "path";
+  public static final String PATH = "path";
 
   public Delete(SNode node) {
     super(node);

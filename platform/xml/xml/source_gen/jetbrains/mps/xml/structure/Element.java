@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Element extends BaseElement {
   public static final String concept = "jetbrains.mps.xml.structure.Element";
-  public static String IS_EMPTY = "isEmpty";
-  public static String ELEMENT_DECLARATION = "elementDeclaration";
+  public static final String IS_EMPTY = "isEmpty";
+  public static final String ELEMENT_DECLARATION = "elementDeclaration";
 
   public Element(SNode node) {
     super(node);

@@ -15,7 +15,7 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept, I
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String DATA_TYPE = "dataType";
+  public static final String DATA_TYPE = "dataType";
 
   public PropertyDeclaration(SNode node) {
     super(node);

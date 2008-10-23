@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RefConcept_Reference extends BaseConcept implements IRefConceptArg {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.RefConcept_Reference";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String CONCEPT_DECLARATION = "conceptDeclaration";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String CONCEPT_DECLARATION = "conceptDeclaration";
 
   public RefConcept_Reference(SNode node) {
     super(node);

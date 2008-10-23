@@ -13,8 +13,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MatrixLiteral extends Expression {
   public static final String concept = "jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral";
-  public static String SCALAR_TYPE = "scalarType";
-  public static String ROW = "row";
+  public static final String SCALAR_TYPE = "scalarType";
+  public static final String ROW = "row";
 
   public MatrixLiteral(SNode node) {
     super(node);

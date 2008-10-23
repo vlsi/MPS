@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EnumClass extends ClassConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumClass";
-  public static String ENUM_CONSTANT = "enumConstant";
+  public static final String ENUM_CONSTANT = "enumConstant";
 
   public EnumClass(SNode node) {
     super(node);

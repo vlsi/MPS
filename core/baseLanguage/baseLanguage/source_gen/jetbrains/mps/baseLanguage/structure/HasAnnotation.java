@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface HasAnnotation extends INodeAdapter {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.HasAnnotation";
-  public static String ANNOTATION = "annotation";
+  public static final String ANNOTATION = "annotation";
 
   public int getAnnotationsCount();
 

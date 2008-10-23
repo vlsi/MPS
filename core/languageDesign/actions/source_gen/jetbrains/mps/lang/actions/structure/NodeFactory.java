@@ -11,9 +11,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeFactory extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.actions.structure.NodeFactory";
-  public static String DESCRIPTION = "description";
-  public static String APPLICABLE_CONCEPT = "applicableConcept";
-  public static String SETUP_FUNCTION = "setupFunction";
+  public static final String DESCRIPTION = "description";
+  public static final String APPLICABLE_CONCEPT = "applicableConcept";
+  public static final String SETUP_FUNCTION = "setupFunction";
 
   public NodeFactory(SNode node) {
     super(node);

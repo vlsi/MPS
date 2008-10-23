@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CeilingDateTimeOperation extends RoundDateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.CeilingDateTimeOperation";
-  public static String PRECISION = "precision";
+  public static final String PRECISION = "precision";
 
   public CeilingDateTimeOperation(SNode node) {
     super(node);

@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GSeparatorItemList extends GItem {
   public static final String concept = "jetbrains.mps.gtext.structure.GSeparatorItemList";
-  public static String SEPARATOR = "separator";
-  public static String ITEM = "item";
+  public static final String SEPARATOR = "separator";
+  public static final String ITEM = "item";
 
   public GSeparatorItemList(SNode node) {
     super(node);

@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BinaryRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp";
-  public static String LEFT = "left";
-  public static String RIGHT = "right";
+  public static final String LEFT = "left";
+  public static final String RIGHT = "right";
 
   public BinaryRegexp(SNode node) {
     super(node);

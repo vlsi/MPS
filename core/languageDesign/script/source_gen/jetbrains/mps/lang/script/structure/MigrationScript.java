@@ -13,14 +13,14 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MigrationScript extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.script.structure.MigrationScript";
-  public static String TITLE = "title";
-  public static String MIGRATION_FROM_BUILD = "migrationFromBuild";
-  public static String CATEGORY = "category";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String PART = "part";
+  public static final String TITLE = "title";
+  public static final String MIGRATION_FROM_BUILD = "migrationFromBuild";
+  public static final String CATEGORY = "category";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String PART = "part";
 
   public MigrationScript(SNode node) {
     super(node);

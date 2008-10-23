@@ -13,13 +13,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DateFormat extends BaseConcept implements IDateFormat {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.DateFormat";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String IS_PUBLIC = "isPublic";
-  public static String DATE_FORMAT_VISIBILITY = "dateFormatVisibility";
-  public static String TOKEN = "token";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_PUBLIC = "isPublic";
+  public static final String DATE_FORMAT_VISIBILITY = "dateFormatVisibility";
+  public static final String TOKEN = "token";
 
   public DateFormat(SNode node) {
     super(node);

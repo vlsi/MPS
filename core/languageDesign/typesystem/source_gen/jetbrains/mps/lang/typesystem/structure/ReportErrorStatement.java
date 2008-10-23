@@ -11,9 +11,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ReportErrorStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement";
-  public static String ERROR_STRING = "errorString";
-  public static String NODE_TO_REPORT = "nodeToReport";
-  public static String HELGINS_INTENTION = "helginsIntention";
+  public static final String ERROR_STRING = "errorString";
+  public static final String NODE_TO_REPORT = "nodeToReport";
+  public static final String HELGINS_INTENTION = "helginsIntention";
 
   public ReportErrorStatement(SNode node) {
     super(node);

@@ -10,9 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ModelAccessor extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.editor.structure.ModelAccessor";
-  public static String GETTER = "getter";
-  public static String SETTER = "setter";
-  public static String VALIDATOR = "validator";
+  public static final String GETTER = "getter";
+  public static final String SETTER = "setter";
+  public static final String VALIDATOR = "validator";
 
   public ModelAccessor(SNode node) {
     super(node);

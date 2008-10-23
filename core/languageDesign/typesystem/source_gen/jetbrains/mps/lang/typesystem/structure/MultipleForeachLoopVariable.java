@@ -12,8 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MultipleForeachLoopVariable extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable";
-  public static String VARIABLE = "variable";
-  public static String ITERABLE = "iterable";
+  public static final String VARIABLE = "variable";
+  public static final String ITERABLE = "iterable";
 
   public MultipleForeachLoopVariable(SNode node) {
     super(node);

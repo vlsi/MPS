@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellMenuDescriptor extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuDescriptor";
-  public static String CELL_MENU_PART = "cellMenuPart";
+  public static final String CELL_MENU_PART = "cellMenuPart";
 
   public CellMenuDescriptor(SNode node) {
     super(node);

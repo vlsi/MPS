@@ -13,12 +13,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class State extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.samples.secretCompartmentLanguage.structure.State";
-  public static String STATE_NAME = "stateName";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String TRANSITION = "transition";
+  public static final String STATE_NAME = "stateName";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String TRANSITION = "transition";
 
   public State(SNode node) {
     super(node);

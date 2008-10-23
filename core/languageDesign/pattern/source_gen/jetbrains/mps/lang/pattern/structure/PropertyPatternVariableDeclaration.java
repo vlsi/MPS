@@ -11,11 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PropertyPatternVariableDeclaration extends PropertyAttributeConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration";
-  public static String VAR_NAME = "varName";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String VAR_NAME = "varName";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public PropertyPatternVariableDeclaration(SNode node) {
     super(node);

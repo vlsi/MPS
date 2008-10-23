@@ -10,9 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Date extends BaseConcept {
   public static final String concept = "jetbrains.mps.samples.agreementLanguage.structure.Date";
-  public static String YEAR = "year";
-  public static String MONTH = "month";
-  public static String DAY = "day";
+  public static final String YEAR = "year";
+  public static final String MONTH = "month";
+  public static final String DAY = "day";
 
   public Date(SNode node) {
     super(node);

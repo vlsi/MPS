@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class IntegerConstant extends Constant {
   public static final String concept = "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant";
-  public static String VALUE = "value";
+  public static final String VALUE = "value";
 
   public IntegerConstant(SNode node) {
     super(node);

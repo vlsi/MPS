@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractNodeAssert extends Statement {
   public static final String concept = "jetbrains.mps.lang.test.structure.AbstractNodeAssert";
-  public static String NODE_TO_CHECK = "nodeToCheck";
+  public static final String NODE_TO_CHECK = "nodeToCheck";
 
   public AbstractNodeAssert(SNode node) {
     super(node);

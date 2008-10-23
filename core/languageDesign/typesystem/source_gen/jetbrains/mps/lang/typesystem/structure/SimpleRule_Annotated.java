@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SimpleRule_Annotated extends SimpleRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.SimpleRule_Annotated";
-  public static String CONCEPT_REFERENCE = "conceptReference";
-  public static String PATH_EXPRESSION = "pathExpression";
+  public static final String CONCEPT_REFERENCE = "conceptReference";
+  public static final String PATH_EXPRESSION = "pathExpression";
 
   public SimpleRule_Annotated(SNode node) {
     super(node);

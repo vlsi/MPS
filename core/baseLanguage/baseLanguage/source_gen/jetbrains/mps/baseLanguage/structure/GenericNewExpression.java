@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenericNewExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.GenericNewExpression";
-  public static String CREATOR = "creator";
+  public static final String CREATOR = "creator";
 
   public GenericNewExpression(SNode node) {
     super(node);

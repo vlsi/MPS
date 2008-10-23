@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeTypeProperty extends NodeProperty {
   public static final String concept = "jetbrains.mps.lang.test.structure.NodeTypeProperty";
-  public static String TYPE = "type";
+  public static final String TYPE = "type";
 
   public NodeTypeProperty(SNode node) {
     super(node);

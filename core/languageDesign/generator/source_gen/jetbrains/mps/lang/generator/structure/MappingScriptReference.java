@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MappingScriptReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.MappingScriptReference";
-  public static String MAPPING_SCRIPT = "mappingScript";
+  public static final String MAPPING_SCRIPT = "mappingScript";
 
   public MappingScriptReference(SNode node) {
     super(node);

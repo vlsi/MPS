@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EnumValueOfExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression";
-  public static String ENUM_CLASS = "enumClass";
-  public static String VALUE = "value";
+  public static final String ENUM_CLASS = "enumClass";
+  public static final String VALUE = "value";
 
   public EnumValueOfExpression(SNode node) {
     super(node);

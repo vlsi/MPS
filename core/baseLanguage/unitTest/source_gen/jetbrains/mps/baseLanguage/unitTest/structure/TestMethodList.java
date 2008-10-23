@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TestMethodList extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList";
-  public static String TEST_METHOD = "testMethod";
+  public static final String TEST_METHOD = "testMethod";
 
   public TestMethodList(SNode node) {
     super(node);

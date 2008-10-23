@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LoopMacro extends SourceSubstituteMacro {
   public static final String concept = "jetbrains.mps.lang.generator.structure.LoopMacro";
-  public static String SOURCE_NODES_QUERY = "sourceNodesQuery";
+  public static final String SOURCE_NODES_QUERY = "sourceNodesQuery";
 
   public LoopMacro(SNode node) {
     super(node);

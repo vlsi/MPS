@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RemoveAllElementsOperation extends AbstractListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation";
-  public static String ARGUMENT = "argument";
+  public static final String ARGUMENT = "argument";
 
   public RemoveAllElementsOperation(SNode node) {
     super(node);

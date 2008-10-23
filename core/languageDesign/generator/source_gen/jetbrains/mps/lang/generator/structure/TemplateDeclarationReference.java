@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TemplateDeclarationReference extends RuleConsequence {
   public static final String concept = "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference";
-  public static String TEMPLATE = "template";
+  public static final String TEMPLATE = "template";
 
   public TemplateDeclarationReference(SNode node) {
     super(node);

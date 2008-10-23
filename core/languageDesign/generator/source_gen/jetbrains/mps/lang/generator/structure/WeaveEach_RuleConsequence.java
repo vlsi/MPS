@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class WeaveEach_RuleConsequence extends RuleConsequence {
   public static final String concept = "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence";
-  public static String TEMPLATE = "template";
-  public static String SOURCE_NODES_QUERY = "sourceNodesQuery";
+  public static final String TEMPLATE = "template";
+  public static final String SOURCE_NODES_QUERY = "sourceNodesQuery";
 
   public WeaveEach_RuleConsequence(SNode node) {
     super(node);

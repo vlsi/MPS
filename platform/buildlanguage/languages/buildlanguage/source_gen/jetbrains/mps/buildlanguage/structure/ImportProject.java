@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ImportProject extends BaseConcept {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.ImportProject";
-  public static String PROJECT = "project";
+  public static final String PROJECT = "project";
 
   public ImportProject(SNode node) {
     super(node);

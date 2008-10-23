@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GetIndexOfOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation";
-  public static String ARGUMENT = "argument";
+  public static final String ARGUMENT = "argument";
 
   public GetIndexOfOperation(SNode node) {
     super(node);

@@ -14,12 +14,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StyleSheetClass extends BaseConcept implements INamedConcept, IValidIdentifier, IStyleContainer {
   public static final String concept = "jetbrains.mps.lang.editor.structure.StyleSheetClass";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String EXTENDED_CLASS = "extendedClass";
-  public static String STYLE_ITEM = "styleItem";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String EXTENDED_CLASS = "extendedClass";
+  public static final String STYLE_ITEM = "styleItem";
 
   public StyleSheetClass(SNode node) {
     super(node);

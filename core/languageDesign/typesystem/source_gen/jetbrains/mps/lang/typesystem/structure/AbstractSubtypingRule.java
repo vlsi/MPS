@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractSubtypingRule extends AbstractRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule";
-  public static String IS_WEAK = "isWeak";
-  public static String BODY = "body";
+  public static final String IS_WEAK = "isWeak";
+  public static final String BODY = "body";
 
   public AbstractSubtypingRule(SNode node) {
     super(node);

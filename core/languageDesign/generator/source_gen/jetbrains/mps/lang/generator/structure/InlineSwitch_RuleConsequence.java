@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InlineSwitch_RuleConsequence extends RuleConsequence {
   public static final String concept = "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence";
-  public static String DEFAULT_CONSEQUENCE = "defaultConsequence";
-  public static String CASE = "case";
+  public static final String DEFAULT_CONSEQUENCE = "defaultConsequence";
+  public static final String CASE = "case";
 
   public InlineSwitch_RuleConsequence(SNode node) {
     super(node);

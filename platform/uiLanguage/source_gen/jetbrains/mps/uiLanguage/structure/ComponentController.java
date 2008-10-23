@@ -15,16 +15,16 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ComponentController extends BaseConcept implements INamedConcept, IClassifierPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentController";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String COMPONENT = "component";
-  public static String AFTER_CONSTRUCTION = "afterConstruction";
-  public static String BEFORE_CONSTRUCTION = "beforeConstruction";
-  public static String ATTRIBUTE = "attribute";
-  public static String EVENT = "event";
-  public static String COMPONENT_METHOD = "componentMethod";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String COMPONENT = "component";
+  public static final String AFTER_CONSTRUCTION = "afterConstruction";
+  public static final String BEFORE_CONSTRUCTION = "beforeConstruction";
+  public static final String ATTRIBUTE = "attribute";
+  public static final String EVENT = "event";
+  public static final String COMPONENT_METHOD = "componentMethod";
 
   public ComponentController(SNode node) {
     super(node);

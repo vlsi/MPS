@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellMenuPart_CellMenuComponent extends CellMenuPart_Abstract {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent";
-  public static String CELL_MENU_COMPONENT = "cellMenuComponent";
+  public static final String CELL_MENU_COMPONENT = "cellMenuComponent";
 
   public CellMenuPart_CellMenuComponent(SNode node) {
     super(node);

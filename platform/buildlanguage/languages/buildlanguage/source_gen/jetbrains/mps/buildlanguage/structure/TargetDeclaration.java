@@ -12,13 +12,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TargetDeclaration extends BaseConcept implements IProjectComponent, IPropertyHolder, ICommented {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.TargetDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String TASK_CALL = "taskCall";
-  public static String DEPENDS = "depends";
-  public static String PROPERTY_LIST = "propertyList";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String TASK_CALL = "taskCall";
+  public static final String DEPENDS = "depends";
+  public static final String PROPERTY_LIST = "propertyList";
 
   public TargetDeclaration(SNode node) {
     super(node);

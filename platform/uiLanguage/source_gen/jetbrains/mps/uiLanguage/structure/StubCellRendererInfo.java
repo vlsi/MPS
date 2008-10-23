@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StubCellRendererInfo extends BaseConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.StubCellRendererInfo";
-  public static String CELL_RENDERER_SETTER = "cellRendererSetter";
+  public static final String CELL_RENDERER_SETTER = "cellRendererSetter";
 
   public StubCellRendererInfo(SNode node) {
     super(node);

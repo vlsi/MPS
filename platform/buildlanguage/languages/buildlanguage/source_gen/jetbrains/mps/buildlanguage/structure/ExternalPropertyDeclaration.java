@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ExternalPropertyDeclaration extends PropertyDeclaration {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration";
-  public static String CHECK_ON_START = "checkOnStart";
+  public static final String CHECK_ON_START = "checkOnStart";
 
   public ExternalPropertyDeclaration(SNode node) {
     super(node);

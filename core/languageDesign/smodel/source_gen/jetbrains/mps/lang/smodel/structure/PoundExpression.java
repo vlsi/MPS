@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PoundExpression extends BaseConcept implements IPropertyAccessQualifier, ILinkAccessQualifier, IRefConceptArg {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.PoundExpression";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String EXPRESSION = "expression";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String EXPRESSION = "expression";
 
   public PoundExpression(SNode node) {
     super(node);

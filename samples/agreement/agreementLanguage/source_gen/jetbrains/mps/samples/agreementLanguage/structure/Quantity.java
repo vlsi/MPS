@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Quantity extends Constant {
   public static final String concept = "jetbrains.mps.samples.agreementLanguage.structure.Quantity";
-  public static String UNIT = "unit";
-  public static String AMOUNT = "amount";
+  public static final String UNIT = "unit";
+  public static final String AMOUNT = "amount";
 
   public Quantity(SNode node) {
     super(node);

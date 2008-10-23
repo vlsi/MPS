@@ -11,11 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ReplaceWithRegexpOperation extends BaseConcept implements IOperation, RegexpUsingConstruction {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String REPLACE_BLOCK = "replaceBlock";
-  public static String REGEXP = "regexp";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String REPLACE_BLOCK = "replaceBlock";
+  public static final String REGEXP = "regexp";
 
   public ReplaceWithRegexpOperation(SNode node) {
     super(node);

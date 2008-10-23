@@ -11,22 +11,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ClassConcept extends Classifier implements IDeprecatable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ClassConcept";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ABSTRACT_CLASS = "abstractClass";
-  public static String IS_FINAL = "isFinal";
-  public static String IS_DEPRECATED = "isDeprecated";
-  public static String SUPERCLASS = "superclass";
-  public static String INSTANCE_INITIALIZER = "instanceInitializer";
-  public static String CLASS_INITIALIZER = "classInitializer";
-  public static String STATIC_INITIALIZER = "staticInitializer";
-  public static String FIELD = "field";
-  public static String CONSTRUCTOR = "constructor";
-  public static String STATIC_METHOD = "staticMethod";
-  public static String IMPLEMENTED_INTERFACE = "implementedInterface";
-  public static String STATIC_INNER_CLASSIFIERS = "staticInnerClassifiers";
-  public static String PROPERTY = "property";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String ABSTRACT_CLASS = "abstractClass";
+  public static final String IS_FINAL = "isFinal";
+  public static final String IS_DEPRECATED = "isDeprecated";
+  public static final String SUPERCLASS = "superclass";
+  public static final String INSTANCE_INITIALIZER = "instanceInitializer";
+  public static final String CLASS_INITIALIZER = "classInitializer";
+  public static final String STATIC_INITIALIZER = "staticInitializer";
+  public static final String FIELD = "field";
+  public static final String CONSTRUCTOR = "constructor";
+  public static final String STATIC_METHOD = "staticMethod";
+  public static final String IMPLEMENTED_INTERFACE = "implementedInterface";
+  public static final String STATIC_INNER_CLASSIFIERS = "staticInnerClassifiers";
+  public static final String PROPERTY = "property";
 
   public ClassConcept(SNode node) {
     super(node);

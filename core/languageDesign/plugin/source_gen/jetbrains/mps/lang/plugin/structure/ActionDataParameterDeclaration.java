@@ -12,12 +12,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ActionDataParameterDeclaration extends BaseConcept implements IMember, ActionParameter {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String IS_OPTIONAL = "isOptional";
-  public static String KEY = "key";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_OPTIONAL = "isOptional";
+  public static final String KEY = "key";
 
   public ActionDataParameterDeclaration(SNode node) {
     super(node);

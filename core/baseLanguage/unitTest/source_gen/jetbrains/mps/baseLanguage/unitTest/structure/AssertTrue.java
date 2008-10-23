@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AssertTrue extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue";
-  public static String CONDITION = "condition";
+  public static final String CONDITION = "condition";
 
   public AssertTrue(SNode node) {
     super(node);

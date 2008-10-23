@@ -10,12 +10,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunction extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ConceptFunction";
-  public static String CPR_UsesParameterObject = "usesParameterObject";
-  public static String CPR_ShowName = "showName";
-  public static String CLNK_ConceptFunctionReturnType = "conceptFunctionReturnType";
-  public static String CLNK_ConceptFunctionParameter = "conceptFunctionParameter";
-  public static String CLNK_ApplicableConceptFunctionParameter = "applicableConceptFunctionParameter";
-  public static String BODY = "body";
+  public static final String CPR_UsesParameterObject = "usesParameterObject";
+  public static final String CPR_ShowName = "showName";
+  public static final String CLNK_ConceptFunctionReturnType = "conceptFunctionReturnType";
+  public static final String CLNK_ConceptFunctionParameter = "conceptFunctionParameter";
+  public static final String CLNK_ApplicableConceptFunctionParameter = "applicableConceptFunctionParameter";
+  public static final String BODY = "body";
 
   public ConceptFunction(SNode node) {
     super(node);

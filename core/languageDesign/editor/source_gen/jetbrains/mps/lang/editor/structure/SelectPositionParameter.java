@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SelectPositionParameter extends SelectLaterParameter {
   public static final String concept = "jetbrains.mps.lang.editor.structure.SelectPositionParameter";
-  public static String POSITION = "position";
+  public static final String POSITION = "position";
 
   public SelectPositionParameter(SNode node) {
     super(node);

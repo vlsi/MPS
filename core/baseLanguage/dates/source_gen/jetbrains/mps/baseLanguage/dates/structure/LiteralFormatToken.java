@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LiteralFormatToken extends FormatToken {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.LiteralFormatToken";
-  public static String VALUE = "value";
+  public static final String VALUE = "value";
 
   public LiteralFormatToken(SNode node) {
     super(node);

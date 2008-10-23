@@ -12,8 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AnnotationInstance extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AnnotationInstance";
-  public static String ANNOTATION = "annotation";
-  public static String VALUE = "value";
+  public static final String ANNOTATION = "annotation";
+  public static final String VALUE = "value";
 
   public AnnotationInstance(SNode node) {
     super(node);

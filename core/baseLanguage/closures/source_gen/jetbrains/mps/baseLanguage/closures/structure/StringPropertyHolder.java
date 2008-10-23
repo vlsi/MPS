@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StringPropertyHolder extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder";
-  public static String VALUE = "value";
+  public static final String VALUE = "value";
 
   public StringPropertyHolder(SNode node) {
     super(node);

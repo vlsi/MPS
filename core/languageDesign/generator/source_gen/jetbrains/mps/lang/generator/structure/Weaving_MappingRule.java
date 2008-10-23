@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Weaving_MappingRule extends BaseMappingRule {
   public static final String concept = "jetbrains.mps.lang.generator.structure.Weaving_MappingRule";
-  public static String RULE_CONSEQUENCE = "ruleConsequence";
-  public static String CONTEXT_NODE_QUERY = "contextNodeQuery";
+  public static final String RULE_CONSEQUENCE = "ruleConsequence";
+  public static final String CONTEXT_NODE_QUERY = "contextNodeQuery";
 
   public Weaving_MappingRule(SNode node) {
     super(node);

@@ -9,10 +9,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InlineRegexpExpression extends RegexpExpression {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression";
-  public static String DOT_ALL = "dotAll";
-  public static String MULTI_LINE = "multiLine";
-  public static String CASE_INSENSITIVE = "caseInsensitive";
-  public static String REGEXP = "regexp";
+  public static final String DOT_ALL = "dotAll";
+  public static final String MULTI_LINE = "multiLine";
+  public static final String CASE_INSENSITIVE = "caseInsensitive";
+  public static final String REGEXP = "regexp";
 
   public InlineRegexpExpression(SNode node) {
     super(node);

@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PropertyPart extends LinePart {
   public static final String concept = "jetbrains.mpslite.structure.PropertyPart";
-  public static String GETTER_FUNCTION = "getterFunction";
+  public static final String GETTER_FUNCTION = "getterFunction";
 
   public PropertyPart(SNode node) {
     super(node);

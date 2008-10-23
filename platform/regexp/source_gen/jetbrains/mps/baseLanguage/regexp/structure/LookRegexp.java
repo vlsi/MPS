@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LookRegexp extends Regexp {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp";
-  public static String REGEXP = "regexp";
+  public static final String REGEXP = "regexp";
 
   public LookRegexp(SNode node) {
     super(node);

@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class IntersectionSymbolClassPart extends SymbolClassPart {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart";
-  public static String LEFT = "left";
-  public static String RIGHT = "right";
+  public static final String LEFT = "left";
+  public static final String RIGHT = "right";
 
   public IntersectionSymbolClassPart(SNode node) {
     super(node);

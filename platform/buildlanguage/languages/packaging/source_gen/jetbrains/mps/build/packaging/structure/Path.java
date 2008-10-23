@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Path extends BaseConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Path";
-  public static String MACRO = "macro";
-  public static String PATH = "path";
+  public static final String MACRO = "macro";
+  public static final String PATH = "path";
 
   public Path(SNode node) {
     super(node);

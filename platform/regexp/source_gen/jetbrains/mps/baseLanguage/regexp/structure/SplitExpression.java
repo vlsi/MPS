@@ -10,11 +10,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SplitExpression extends Expression implements RegexpUsingConstruction {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String EXPR = "expr";
-  public static String REGEXP = "regexp";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String EXPR = "expr";
+  public static final String REGEXP = "regexp";
 
   public SplitExpression(SNode node) {
     super(node);

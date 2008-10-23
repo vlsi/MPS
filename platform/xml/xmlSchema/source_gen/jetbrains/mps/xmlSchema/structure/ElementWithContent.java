@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ElementWithContent extends ElementDeclaration {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.ElementWithContent";
-  public static String COMPLEX_TYPE = "complexType";
+  public static final String COMPLEX_TYPE = "complexType";
 
   public ElementWithContent(SNode node) {
     super(node);

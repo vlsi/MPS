@@ -11,12 +11,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RegexpDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration";
-  public static String DESCRIPTION = "description";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String REGEXP = "regexp";
+  public static final String DESCRIPTION = "description";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String REGEXP = "regexp";
 
   public RegexpDeclaration(SNode node) {
     super(node);

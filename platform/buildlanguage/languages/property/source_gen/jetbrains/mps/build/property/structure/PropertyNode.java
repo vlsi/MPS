@@ -15,12 +15,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PropertyNode extends BaseConcept implements INamedConcept, IPropertyHolder {
   public static final String concept = "jetbrains.mps.build.property.structure.PropertyNode";
-  public static String CPR_Extension = "extension";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String DECLARATION = "declaration";
+  public static final String CPR_Extension = "extension";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String DECLARATION = "declaration";
 
   public PropertyNode(SNode node) {
     super(node);

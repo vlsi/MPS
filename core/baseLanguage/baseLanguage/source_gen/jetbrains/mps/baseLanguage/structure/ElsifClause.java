@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ElsifClause extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ElsifClause";
-  public static String CONDITION = "condition";
-  public static String STATEMENT_LIST = "statementList";
+  public static final String CONDITION = "condition";
+  public static final String STATEMENT_LIST = "statementList";
 
   public ElsifClause(SNode node) {
     super(node);

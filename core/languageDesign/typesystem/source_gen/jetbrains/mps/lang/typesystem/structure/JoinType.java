@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class JoinType extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.JoinType";
-  public static String ARGUMENT = "argument";
+  public static final String ARGUMENT = "argument";
 
   public JoinType(SNode node) {
     super(node);

@@ -11,9 +11,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenerationContextOp_Base extends BaseConcept implements IOperation {
   public static final String concept = "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public GenerationContextOp_Base(SNode node) {
     super(node);

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Prolog extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlInternal.structure.Prolog";
-  public static String DOCUMENT_TYPE_DECLARATION = "documentTypeDeclaration";
+  public static final String DOCUMENT_TYPE_DECLARATION = "documentTypeDeclaration";
 
   public Prolog(SNode node) {
     super(node);

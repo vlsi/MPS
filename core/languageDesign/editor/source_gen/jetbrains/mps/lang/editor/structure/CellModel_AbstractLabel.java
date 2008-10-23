@@ -9,11 +9,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_AbstractLabel extends EditorCellModel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel";
-  public static String DEFAULT_CARET_POSITION = "defaultCaretPosition";
-  public static String CELL_FOREGROUND_FUNCTION = "cellForegroundFunction";
-  public static String TEXT_FOREGROUND_EMPTY_FUNCTION = "textForegroundEmptyFunction";
-  public static String TEXT_BACKGROUND_FUNCTION = "textBackgroundFunction";
-  public static String TEXT_BG_COLOR_SELECTED_FUNCTION = "textBgColorSelectedFunction";
+  public static final String DEFAULT_CARET_POSITION = "defaultCaretPosition";
+  public static final String CELL_FOREGROUND_FUNCTION = "cellForegroundFunction";
+  public static final String TEXT_FOREGROUND_EMPTY_FUNCTION = "textForegroundEmptyFunction";
+  public static final String TEXT_BACKGROUND_FUNCTION = "textBackgroundFunction";
+  public static final String TEXT_BG_COLOR_SELECTED_FUNCTION = "textBgColorSelectedFunction";
 
   public CellModel_AbstractLabel(SNode node) {
     super(node);

@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GivetypeStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.GivetypeStatement";
-  public static String TYPE_EXPRESSION = "typeExpression";
-  public static String TERM_EXPRESSION = "termExpression";
+  public static final String TYPE_EXPRESSION = "typeExpression";
+  public static final String TERM_EXPRESSION = "termExpression";
 
   public GivetypeStatement(SNode node) {
     super(node);

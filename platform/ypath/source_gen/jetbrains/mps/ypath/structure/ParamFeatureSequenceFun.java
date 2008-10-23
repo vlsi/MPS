@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ParamFeatureSequenceFun extends FeatureSequenceFun implements IParamFeatureFun {
   public static final String concept = "jetbrains.mps.ypath.structure.ParamFeatureSequenceFun";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public ParamFeatureSequenceFun(SNode node) {
     super(node);

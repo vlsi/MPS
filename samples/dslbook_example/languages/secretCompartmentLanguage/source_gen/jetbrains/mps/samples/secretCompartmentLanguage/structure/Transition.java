@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Transition extends BaseConcept {
   public static final String concept = "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition";
-  public static String TRIGGER = "trigger";
-  public static String TARGET = "target";
+  public static final String TRIGGER = "trigger";
+  public static final String TARGET = "target";
 
   public Transition(SNode node) {
     super(node);

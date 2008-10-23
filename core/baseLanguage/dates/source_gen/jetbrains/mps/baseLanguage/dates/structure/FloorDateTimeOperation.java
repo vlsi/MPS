@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FloorDateTimeOperation extends RoundDateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.FloorDateTimeOperation";
-  public static String PRECISION = "precision";
+  public static final String PRECISION = "precision";
 
   public FloorDateTimeOperation(SNode node) {
     super(node);

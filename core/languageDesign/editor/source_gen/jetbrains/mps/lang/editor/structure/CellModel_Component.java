@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_Component extends EditorCellModel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_Component";
-  public static String EDITOR_COMPONENT = "editorComponent";
+  public static final String EDITOR_COMPONENT = "editorComponent";
 
   public CellModel_Component(SNode node) {
     super(node);

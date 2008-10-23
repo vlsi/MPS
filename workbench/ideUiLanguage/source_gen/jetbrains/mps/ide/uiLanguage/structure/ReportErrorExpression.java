@@ -10,20 +10,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ReportErrorExpression extends Expression {
   public static final String concept = "jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression";
-  public static String ERROR_TEXT = "errorText";
+  public static final String ERROR_TEXT = "errorText";
 
   public ReportErrorExpression(SNode node) {
     super(node);
   }
-
-  public static ReportErrorExpression newInstance(SModel sm, boolean init) {
-    return (ReportErrorExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
-  }
-
-  public static ReportErrorExpression newInstance(SModel sm) {
-    return ReportErrorExpression.newInstance(sm, false);
-  }
-
 
   public Expression getErrorText() {
     return (Expression)this.getChild(ReportErrorExpression.ERROR_TEXT);
@@ -31,6 +22,15 @@ public class ReportErrorExpression extends Expression {
 
   public void setErrorText(Expression node) {
     super.setChild(ReportErrorExpression.ERROR_TEXT, node);
+  }
+
+
+  public static ReportErrorExpression newInstance(SModel sm, boolean init) {
+    return (ReportErrorExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+  }
+
+  public static ReportErrorExpression newInstance(SModel sm) {
+    return ReportErrorExpression.newInstance(sm, false);
   }
 
 }

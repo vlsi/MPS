@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GConditionalLine extends GItem {
   public static final String concept = "jetbrains.mps.gtext.structure.GConditionalLine";
-  public static String IS_SEPARATE = "isSeparate";
-  public static String ITEM = "item";
+  public static final String IS_SEPARATE = "isSeparate";
+  public static final String ITEM = "item";
 
   public GConditionalLine(SNode node) {
     super(node);

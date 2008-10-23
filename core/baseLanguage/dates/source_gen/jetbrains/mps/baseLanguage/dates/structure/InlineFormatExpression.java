@@ -12,9 +12,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InlineFormatExpression extends UnaryDateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.InlineFormatExpression";
-  public static String WITH_LOCALE = "withLocale";
-  public static String LOCALE = "locale";
-  public static String FORMAT_TOKEN = "formatToken";
+  public static final String WITH_LOCALE = "withLocale";
+  public static final String LOCALE = "locale";
+  public static final String FORMAT_TOKEN = "formatToken";
 
   public InlineFormatExpression(SNode node) {
     super(node);

@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class IsSubtypeExpression extends Expression {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression";
-  public static String SUBTYPE_EXPRESSION = "subtypeExpression";
-  public static String SUPERTYPE_EXPRESSION = "supertypeExpression";
+  public static final String SUBTYPE_EXPRESSION = "subtypeExpression";
+  public static final String SUPERTYPE_EXPRESSION = "supertypeExpression";
 
   public IsSubtypeExpression(SNode node) {
     super(node);

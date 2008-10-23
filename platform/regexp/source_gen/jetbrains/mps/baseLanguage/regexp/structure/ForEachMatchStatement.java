@@ -12,12 +12,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ForEachMatchStatement extends Statement implements RegexpUsingConstruction {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String EXPR = "expr";
-  public static String BODY = "body";
-  public static String REGEXP = "regexp";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String EXPR = "expr";
+  public static final String BODY = "body";
+  public static final String REGEXP = "regexp";
 
   public ForEachMatchStatement(SNode node) {
     super(node);

@@ -5,7 +5,7 @@ package jetbrains.mps.lang.test.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 public class TestNode_AnnotationLink {
-  public static String TEST_NODE = "testNode";
+  public static final String TEST_NODE = "testNode";
 
   public static void setTestNode(BaseConcept source, TestNodeAnnotation target) {
     source.setAttribute(TestNode_AnnotationLink.TEST_NODE, target);

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ComponentType extends BaseClassifierType {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentType";
-  public static String COMPONENT = "component";
+  public static final String COMPONENT = "component";
 
   public ComponentType(SNode node) {
     super(node);

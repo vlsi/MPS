@@ -13,10 +13,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InternalStaticMethodCall extends BaseMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall";
-  public static String FQ_CLASS_NAME = "fqClassName";
-  public static String METHOD_NAME = "methodName";
-  public static String RETURN_TYPE = "returnType";
-  public static String TYPE_PARAMETER = "typeParameter";
+  public static final String FQ_CLASS_NAME = "fqClassName";
+  public static final String METHOD_NAME = "methodName";
+  public static final String RETURN_TYPE = "returnType";
+  public static final String TYPE_PARAMETER = "typeParameter";
 
   public InternalStaticMethodCall(SNode node) {
     super(node);

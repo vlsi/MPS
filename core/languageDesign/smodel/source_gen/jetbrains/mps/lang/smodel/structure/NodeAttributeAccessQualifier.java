@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeAttributeAccessQualifier extends BaseConcept implements IAttributeAccessQualifier {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ANNOTATION_LINK = "annotationLink";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String ANNOTATION_LINK = "annotationLink";
 
   public NodeAttributeAccessQualifier(SNode node) {
     super(node);

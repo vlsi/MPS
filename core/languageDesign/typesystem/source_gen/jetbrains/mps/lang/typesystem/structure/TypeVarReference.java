@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TypeVarReference extends Expression {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.TypeVarReference";
-  public static String TYPE_VAR_DECLARATION = "typeVarDeclaration";
+  public static final String TYPE_VAR_DECLARATION = "typeVarDeclaration";
 
   public TypeVarReference(SNode node) {
     super(node);

@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.INodeAdapter;
 
 public interface IVisible extends INodeAdapter {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.IVisible";
-  public static String VISIBILITY = "visibility";
+  public static final String VISIBILITY = "visibility";
 
   public Visibility getVisibility();
 

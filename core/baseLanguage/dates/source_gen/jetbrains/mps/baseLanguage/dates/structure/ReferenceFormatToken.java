@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ReferenceFormatToken extends FormatToken {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.ReferenceFormatToken";
-  public static String DATE_FORMAT = "dateFormat";
+  public static final String DATE_FORMAT = "dateFormat";
 
   public ReferenceFormatToken(SNode node) {
     super(node);

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TestNodeReference extends Expression {
   public static final String concept = "jetbrains.mps.lang.test.structure.TestNodeReference";
-  public static String DECLARATION = "declaration";
+  public static final String DECLARATION = "declaration";
 
   public TestNodeReference(SNode node) {
     super(node);

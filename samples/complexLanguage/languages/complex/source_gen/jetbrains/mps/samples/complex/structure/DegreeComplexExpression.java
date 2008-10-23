@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DegreeComplexExpression extends SingleComplexExpression {
   public static final String concept = "jetbrains.mps.samples.complex.structure.DegreeComplexExpression";
-  public static String DEGREE = "degree";
+  public static final String DEGREE = "degree";
 
   public DegreeComplexExpression(SNode node) {
     super(node);

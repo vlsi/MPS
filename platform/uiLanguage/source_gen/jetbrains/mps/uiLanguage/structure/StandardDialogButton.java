@@ -11,9 +11,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StandardDialogButton extends BaseConcept {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.StandardDialogButton";
-  public static String TEXT = "text";
-  public static String IS_DEFAULT = "isDefault";
-  public static String HANDLER = "handler";
+  public static final String TEXT = "text";
+  public static final String IS_DEFAULT = "isDefault";
+  public static final String HANDLER = "handler";
 
   public StandardDialogButton(SNode node) {
     super(node);

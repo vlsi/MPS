@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenerationContextOp_CreateUniqueName extends GenerationContextOp_Base {
   public static final String concept = "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName";
-  public static String BASE_NAME = "baseName";
-  public static String CONTEXT_NODE = "contextNode";
+  public static final String BASE_NAME = "baseName";
+  public static final String CONTEXT_NODE = "contextNode";
 
   public GenerationContextOp_CreateUniqueName(SNode node) {
     super(node);

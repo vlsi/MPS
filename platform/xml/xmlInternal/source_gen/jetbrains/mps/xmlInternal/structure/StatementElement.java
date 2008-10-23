@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StatementElement extends Content {
   public static final String concept = "jetbrains.mps.xmlInternal.structure.StatementElement";
-  public static String STATEMENT_LIST = "statementList";
+  public static final String STATEMENT_LIST = "statementList";
 
   public StatementElement(SNode node) {
     super(node);

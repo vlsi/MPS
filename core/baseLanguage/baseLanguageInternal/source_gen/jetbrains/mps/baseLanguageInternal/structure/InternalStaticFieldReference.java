@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InternalStaticFieldReference extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference";
-  public static String FQ_CLASS_NAME = "fqClassName";
-  public static String FIELD_NAME = "fieldName";
+  public static final String FQ_CLASS_NAME = "fqClassName";
+  public static final String FIELD_NAME = "fieldName";
 
   public InternalStaticFieldReference(SNode node) {
     super(node);

@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MultipleForeachLoop extends AbstractLoopStatement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop";
-  public static String LOOP_VARIABLE = "loopVariable";
+  public static final String LOOP_VARIABLE = "loopVariable";
 
   public MultipleForeachLoop(SNode node) {
     super(node);

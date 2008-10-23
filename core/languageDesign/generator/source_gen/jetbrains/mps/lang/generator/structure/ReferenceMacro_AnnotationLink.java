@@ -5,7 +5,7 @@ package jetbrains.mps.lang.generator.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 public class ReferenceMacro_AnnotationLink {
-  public static String REFERENCE_MACRO = "referenceMacro";
+  public static final String REFERENCE_MACRO = "referenceMacro";
 
   public static void setReferenceMacro(BaseConcept source, String propertyName, ReferenceMacro target) {
     source.setLinkAttribute(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, propertyName, target);

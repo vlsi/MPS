@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EntityDeclaration extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.EntityDeclaration";
-  public static String ENTITY_NAME = "entityName";
+  public static final String ENTITY_NAME = "entityName";
 
   public EntityDeclaration(SNode node) {
     super(node);

@@ -12,10 +12,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CoerceStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.CoerceStatement";
-  public static String PATTERN = "pattern";
-  public static String NODE_TO_COERCE = "nodeToCoerce";
-  public static String BODY = "body";
-  public static String ELSE_CLAUSE = "elseClause";
+  public static final String PATTERN = "pattern";
+  public static final String NODE_TO_COERCE = "nodeToCoerce";
+  public static final String BODY = "body";
+  public static final String ELSE_CLAUSE = "elseClause";
 
   public CoerceStatement(SNode node) {
     super(node);

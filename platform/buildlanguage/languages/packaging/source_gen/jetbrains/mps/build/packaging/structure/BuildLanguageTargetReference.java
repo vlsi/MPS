@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BuildLanguageTargetReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference";
-  public static String TARGET_DECLARATION = "targetDeclaration";
+  public static final String TARGET_DECLARATION = "targetDeclaration";
 
   public BuildLanguageTargetReference(SNode node) {
     super(node);

@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SNodeType extends Type {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.SNodeType";
-  public static String CONCEPT = "concept";
+  public static final String CONCEPT = "concept";
 
   public SNodeType(SNode node) {
     super(node);

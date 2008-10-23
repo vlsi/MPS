@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ListElements extends BaseConcept implements IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ListElements";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String VALUE = "value";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String VALUE = "value";
 
   public ListElements(SNode node) {
     super(node);

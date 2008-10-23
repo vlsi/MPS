@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class UnaryDateTimeOperation extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.UnaryDateTimeOperation";
-  public static String CLNK_OperationType = "operationType";
-  public static String DATETIME = "datetime";
+  public static final String CLNK_OperationType = "operationType";
+  public static final String DATETIME = "datetime";
 
   public UnaryDateTimeOperation(SNode node) {
     super(node);

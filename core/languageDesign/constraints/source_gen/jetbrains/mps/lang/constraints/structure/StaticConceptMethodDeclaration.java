@@ -12,11 +12,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StaticConceptMethodDeclaration extends BaseMethodDeclaration implements IVisible {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.StaticConceptMethodDeclaration";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String IS_PRIVATE = "isPrivate";
-  public static String VISIBILITY = "visibility";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_PRIVATE = "isPrivate";
+  public static final String VISIBILITY = "visibility";
 
   public StaticConceptMethodDeclaration(SNode node) {
     super(node);

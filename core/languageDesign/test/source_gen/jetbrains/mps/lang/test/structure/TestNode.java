@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TestNode extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.test.structure.TestNode";
-  public static String NODE_TO_CHECK = "nodeToCheck";
+  public static final String NODE_TO_CHECK = "nodeToCheck";
 
   public TestNode(SNode node) {
     super(node);

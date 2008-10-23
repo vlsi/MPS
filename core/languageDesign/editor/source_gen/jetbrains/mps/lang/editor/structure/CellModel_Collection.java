@@ -11,12 +11,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_Collection extends EditorCellModel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_Collection";
-  public static String VERTICAL = "vertical";
-  public static String GRID_LAYOUT = "gridLayout";
-  public static String USES_BRACES = "usesBraces";
-  public static String USES_FOLDING = "usesFolding";
-  public static String CELL_LAYOUT = "cellLayout";
-  public static String CHILD_CELL_MODEL = "childCellModel";
+  public static final String VERTICAL = "vertical";
+  public static final String GRID_LAYOUT = "gridLayout";
+  public static final String USES_BRACES = "usesBraces";
+  public static final String USES_FOLDING = "usesFolding";
+  public static final String CELL_LAYOUT = "cellLayout";
+  public static final String CHILD_CELL_MODEL = "childCellModel";
 
   public CellModel_Collection(SNode node) {
     super(node);

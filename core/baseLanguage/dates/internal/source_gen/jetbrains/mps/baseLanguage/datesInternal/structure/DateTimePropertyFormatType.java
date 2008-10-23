@@ -10,15 +10,15 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DateTimePropertyFormatType extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.dates.internal.structure.DateTimePropertyFormatType";
-  public static String LETTER = "letter";
-  public static String MEANING = "meaning";
-  public static String EXAMPLES = "examples";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String DATE_TIME_PROPERTY_CARDINALITY = "dateTimePropertyCardinality";
+  public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyFormatType";
+  public static final String LETTER = "letter";
+  public static final String MEANING = "meaning";
+  public static final String EXAMPLES = "examples";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String DATE_TIME_PROPERTY_CARDINALITY = "dateTimePropertyCardinality";
 
   public DateTimePropertyFormatType(SNode node) {
     super(node);
@@ -90,7 +90,7 @@ public class DateTimePropertyFormatType extends BaseConcept implements INamedCon
 
 
   public static DateTimePropertyFormatType newInstance(SModel sm, boolean init) {
-    return (DateTimePropertyFormatType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimePropertyFormatType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimePropertyFormatType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyFormatType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimePropertyFormatType newInstance(SModel sm) {

@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Attribute extends BaseAttribute {
   public static final String concept = "jetbrains.mps.xml.structure.Attribute";
-  public static String ATTRIBUTE_DECLARATION = "attributeDeclaration";
-  public static String VALUE = "value";
+  public static final String ATTRIBUTE_DECLARATION = "attributeDeclaration";
+  public static final String VALUE = "value";
 
   public Attribute(SNode node) {
     super(node);

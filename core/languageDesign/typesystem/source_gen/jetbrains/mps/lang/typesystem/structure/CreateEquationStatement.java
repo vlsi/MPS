@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CreateEquationStatement extends AbstractEquationStatement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement";
-  public static String DIRECTION = "direction";
+  public static final String DIRECTION = "direction";
 
   public CreateEquationStatement(SNode node) {
     super(node);

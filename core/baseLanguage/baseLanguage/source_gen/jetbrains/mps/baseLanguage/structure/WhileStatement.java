@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class WhileStatement extends AbstractLoopStatement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.WhileStatement";
-  public static String CONDITION = "condition";
+  public static final String CONDITION = "condition";
 
   public WhileStatement(SNode node) {
     super(node);

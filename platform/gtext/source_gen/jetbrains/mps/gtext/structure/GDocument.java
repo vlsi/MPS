@@ -13,13 +13,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GDocument extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.gtext.structure.GDocument";
-  public static String DOCUMENT_NAME = "documentName";
-  public static String EXTENSION = "extension";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String ITEM = "item";
+  public static final String DOCUMENT_NAME = "documentName";
+  public static final String EXTENSION = "extension";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String ITEM = "item";
 
   public GDocument(SNode node) {
     super(node);

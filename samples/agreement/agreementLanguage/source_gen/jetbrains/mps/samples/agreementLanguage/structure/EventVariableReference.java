@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EventVariableReference extends Expression {
   public static final String concept = "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference";
-  public static String EVENT_VARIABLE = "eventVariable";
+  public static final String EVENT_VARIABLE = "eventVariable";
 
   public EventVariableReference(SNode node) {
     super(node);

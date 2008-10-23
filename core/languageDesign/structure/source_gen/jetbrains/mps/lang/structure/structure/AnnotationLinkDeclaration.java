@@ -18,8 +18,8 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String STEREOTYPE = "stereotype";
   public static final String SOURCE_CARDINALITY = "sourceCardinality";
-  public static String SOURCE = "source";
-  public static String TARGET = "target";
+  public static final String SOURCE = "source";
+  public static final String TARGET = "target";
 
   public AnnotationLinkDeclaration(SNode node) {
     super(node);

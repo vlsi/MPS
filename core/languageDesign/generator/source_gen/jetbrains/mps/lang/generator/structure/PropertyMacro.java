@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PropertyMacro extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.PropertyMacro";
-  public static String PROPERTY_VALUE_FUNCTION = "propertyValueFunction";
+  public static final String PROPERTY_VALUE_FUNCTION = "propertyValueFunction";
 
   public PropertyMacro(SNode node) {
     super(node);

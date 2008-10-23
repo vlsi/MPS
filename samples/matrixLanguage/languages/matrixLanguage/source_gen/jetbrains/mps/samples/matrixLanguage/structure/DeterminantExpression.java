@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DeterminantExpression extends Expression {
   public static final String concept = "jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression";
-  public static String LITERAL = "literal";
+  public static final String LITERAL = "literal";
 
   public DeterminantExpression(SNode node) {
     super(node);

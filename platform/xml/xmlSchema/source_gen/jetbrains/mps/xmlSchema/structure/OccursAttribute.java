@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class OccursAttribute extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.OccursAttribute";
-  public static String MIN_OCCURS = "minOccurs";
-  public static String MAX_OCCURS = "maxOccurs";
+  public static final String MIN_OCCURS = "minOccurs";
+  public static final String MAX_OCCURS = "maxOccurs";
 
   public OccursAttribute(SNode node) {
     super(node);

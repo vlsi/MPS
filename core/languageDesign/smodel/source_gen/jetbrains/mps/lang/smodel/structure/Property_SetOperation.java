@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Property_SetOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Property_SetOperation";
-  public static String VALUE = "value";
+  public static final String VALUE = "value";
 
   public Property_SetOperation(SNode node) {
     super(node);

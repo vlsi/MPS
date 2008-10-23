@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PageOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.PageOperation";
-  public static String FROM_ELEMENT = "fromElement";
-  public static String TO_ELEMENT = "toElement";
+  public static final String FROM_ELEMENT = "fromElement";
+  public static final String TO_ELEMENT = "toElement";
 
   public PageOperation(SNode node) {
     super(node);

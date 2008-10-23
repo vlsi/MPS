@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SingleComplexExpression extends Expression {
   public static final String concept = "jetbrains.mps.samples.complex.structure.SingleComplexExpression";
-  public static String CLNK_ReturnType = "returnType";
-  public static String COMPLEX_EXPRESSION = "complexExpression";
+  public static final String CLNK_ReturnType = "returnType";
+  public static final String COMPLEX_EXPRESSION = "complexExpression";
 
   public SingleComplexExpression(SNode node) {
     super(node);

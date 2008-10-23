@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InferenceRule extends AbstractCheckingRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.InferenceRule";
-  public static String DEPENDENCY = "dependency";
-  public static String CHILD_TYPE_RESTRICTION = "childTypeRestriction";
+  public static final String DEPENDENCY = "dependency";
+  public static final String CHILD_TYPE_RESTRICTION = "childTypeRestriction";
 
   public InferenceRule(SNode node) {
     super(node);

@@ -13,13 +13,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InternalPartialFieldReference extends Expression implements IOperation {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference";
-  public static String FIELD_NAME = "fieldName";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String FIELD_TYPE = "fieldType";
-  public static String INSTANCE_TYPE = "instanceType";
-  public static String INSTANCE = "instance";
+  public static final String FIELD_NAME = "fieldName";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String FIELD_TYPE = "fieldType";
+  public static final String INSTANCE_TYPE = "instanceType";
+  public static final String INSTANCE = "instance";
 
   public InternalPartialFieldReference(SNode node) {
     super(node);

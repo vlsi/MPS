@@ -11,9 +11,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ChangeFeatureNameOperation extends Statement {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation";
-  public static String FEATURE = "feature";
-  public static String NEW_CONCEPT_F_Q_NAME = "newConceptFQName";
-  public static String NEW_FEATURE_NAME = "newFeatureName";
+  public static final String FEATURE = "feature";
+  public static final String NEW_CONCEPT_F_Q_NAME = "newConceptFQName";
+  public static final String NEW_FEATURE_NAME = "newFeatureName";
 
   public ChangeFeatureNameOperation(SNode node) {
     super(node);

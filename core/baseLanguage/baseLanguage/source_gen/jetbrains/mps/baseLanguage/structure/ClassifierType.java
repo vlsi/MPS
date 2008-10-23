@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ClassifierType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ClassifierType";
-  public static String CLASSIFIER = "classifier";
-  public static String PARAMETER = "parameter";
+  public static final String CLASSIFIER = "classifier";
+  public static final String PARAMETER = "parameter";
 
   public ClassifierType(SNode node) {
     super(node);

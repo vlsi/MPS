@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ArrayCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ArrayCreator";
-  public static String COMPONENT_TYPE = "componentType";
-  public static String DIMENSION_EXPRESSION = "dimensionExpression";
+  public static final String COMPONENT_TYPE = "componentType";
+  public static final String DIMENSION_EXPRESSION = "dimensionExpression";
 
   public ArrayCreator(SNode node) {
     super(node);

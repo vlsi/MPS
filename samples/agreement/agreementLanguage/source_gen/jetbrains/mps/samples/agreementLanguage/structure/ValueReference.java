@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ValueReference extends Expression {
   public static final String concept = "jetbrains.mps.samples.agreementLanguage.structure.ValueReference";
-  public static String VALUE = "value";
+  public static final String VALUE = "value";
 
   public ValueReference(SNode node) {
     super(node);

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RoundDateTimeOperation extends UnaryDateTimeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.RoundDateTimeOperation";
-  public static String PRECISION = "precision";
+  public static final String PRECISION = "precision";
 
   public RoundDateTimeOperation(SNode node) {
     super(node);

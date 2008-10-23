@@ -10,10 +10,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DefaultClassifierFieldDeclaration extends FieldDeclaration implements IMember {
   public static final String concept = "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public DefaultClassifierFieldDeclaration(SNode node) {
     super(node);

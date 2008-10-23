@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GItemList extends GItem {
   public static final String concept = "jetbrains.mps.gtext.structure.GItemList";
-  public static String ITEM = "item";
+  public static final String ITEM = "item";
 
   public GItemList(SNode node) {
     super(node);

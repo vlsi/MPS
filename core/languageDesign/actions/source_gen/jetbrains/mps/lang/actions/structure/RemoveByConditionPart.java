@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RemoveByConditionPart extends MenuBuilderPart {
   public static final String concept = "jetbrains.mps.lang.actions.structure.RemoveByConditionPart";
-  public static String CONDITION = "condition";
+  public static final String CONDITION = "condition";
 
   public RemoveByConditionPart(SNode node) {
     super(node);

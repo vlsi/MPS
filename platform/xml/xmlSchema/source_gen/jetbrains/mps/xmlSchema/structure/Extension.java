@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Extension extends ContentItem {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.Extension";
-  public static String TYPE_EXPRESSION_LIST = "typeExpressionList";
+  public static final String TYPE_EXPRESSION_LIST = "typeExpressionList";
 
   public Extension(SNode node) {
     super(node);

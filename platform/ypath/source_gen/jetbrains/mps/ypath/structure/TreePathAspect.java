@@ -15,17 +15,17 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TreePathAspect extends BaseConcept implements INamedConcept, IVisible, TreePath {
   public static final String concept = "jetbrains.mps.ypath.structure.TreePathAspect";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String DEFAULT_FEATURE = "defaultFeature";
-  public static String VISIBILITY = "visibility";
-  public static String TREE_PATH_TYPE = "treePathType";
-  public static String PARENT_BLOCK = "parentBlock";
-  public static String CHILDREN_BLOCK = "childrenBlock";
-  public static String NODE_KINDS = "nodeKinds";
-  public static String FEATURES = "features";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String DEFAULT_FEATURE = "defaultFeature";
+  public static final String VISIBILITY = "visibility";
+  public static final String TREE_PATH_TYPE = "treePathType";
+  public static final String PARENT_BLOCK = "parentBlock";
+  public static final String CHILDREN_BLOCK = "childrenBlock";
+  public static final String NODE_KINDS = "nodeKinds";
+  public static final String FEATURES = "features";
 
   public TreePathAspect(SNode node) {
     super(node);

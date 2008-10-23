@@ -13,12 +13,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodeSubstituteActionsBuilder extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder";
-  public static String DESCRIPTION = "description";
-  public static String APPLICABLE_CONCEPT = "applicableConcept";
-  public static String PRECONDITION = "precondition";
-  public static String COMMON_INITIALIZER = "commonInitializer";
-  public static String PART = "part";
-  public static String VARIABLE = "variable";
+  public static final String DESCRIPTION = "description";
+  public static final String APPLICABLE_CONCEPT = "applicableConcept";
+  public static final String PRECONDITION = "precondition";
+  public static final String COMMON_INITIALIZER = "commonInitializer";
+  public static final String PART = "part";
+  public static final String VARIABLE = "variable";
 
   public NodeSubstituteActionsBuilder(SNode node) {
     super(node);

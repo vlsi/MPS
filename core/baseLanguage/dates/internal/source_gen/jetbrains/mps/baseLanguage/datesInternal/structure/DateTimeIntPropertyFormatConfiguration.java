@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DateTimeIntPropertyFormatConfiguration extends DateTimePropertyConfiguration {
-  public static final String concept = "jetbrains.mps.baseLanguage.dates.internal.structure.DateTimeIntPropertyFormatConfiguration";
-  public static String DATE_TIME_PROPERTY = "dateTimeProperty";
+  public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeIntPropertyFormatConfiguration";
+  public static final String DATE_TIME_PROPERTY = "dateTimeProperty";
 
   public DateTimeIntPropertyFormatConfiguration(SNode node) {
     super(node);
@@ -25,7 +25,7 @@ public class DateTimeIntPropertyFormatConfiguration extends DateTimePropertyConf
 
 
   public static DateTimeIntPropertyFormatConfiguration newInstance(SModel sm, boolean init) {
-    return (DateTimeIntPropertyFormatConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimeIntPropertyFormatConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimeIntPropertyFormatConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeIntPropertyFormatConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimeIntPropertyFormatConfiguration newInstance(SModel sm) {

@@ -12,10 +12,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ActionDataParameterReferenceOperation extends BaseConcept implements IMemberOperation {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String MEMBER = "member";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String MEMBER = "member";
 
   public ActionDataParameterReferenceOperation(SNode node) {
     super(node);

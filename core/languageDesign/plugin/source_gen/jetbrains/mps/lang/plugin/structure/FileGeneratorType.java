@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FileGeneratorType extends BaseClassifierType {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.FileGeneratorType";
-  public static String GENERATOR = "generator";
+  public static final String GENERATOR = "generator";
 
   public FileGeneratorType(SNode node) {
     super(node);

@@ -11,13 +11,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MappingScript extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.MappingScript";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String MODIFIES_MODEL = "modifiesModel";
-  public static String SCRIPT_KIND = "scriptKind";
-  public static String CODE_BLOCK = "codeBlock";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String MODIFIES_MODEL = "modifiesModel";
+  public static final String SCRIPT_KIND = "scriptKind";
+  public static final String CODE_BLOCK = "codeBlock";
 
   public MappingScript(SNode node) {
     super(node);

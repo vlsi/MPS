@@ -12,12 +12,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MappingLabelDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String SOURCE_CONCEPT = "sourceConcept";
-  public static String TARGET_CONCEPT = "targetConcept";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String SOURCE_CONCEPT = "sourceConcept";
+  public static final String TARGET_CONCEPT = "targetConcept";
 
   public MappingLabelDeclaration(SNode node) {
     super(node);

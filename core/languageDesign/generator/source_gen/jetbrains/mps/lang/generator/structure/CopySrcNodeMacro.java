@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CopySrcNodeMacro extends SourceSubstituteMacro {
   public static final String concept = "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro";
-  public static String SOURCE_NODE_QUERY = "sourceNodeQuery";
+  public static final String SOURCE_NODE_QUERY = "sourceNodeQuery";
 
   public CopySrcNodeMacro(SNode node) {
     super(node);

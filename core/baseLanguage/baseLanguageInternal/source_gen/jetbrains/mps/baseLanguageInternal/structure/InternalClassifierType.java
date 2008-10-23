@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InternalClassifierType extends ClassifierType {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType";
-  public static String FQ_CLASS_NAME = "fqClassName";
+  public static final String FQ_CLASS_NAME = "fqClassName";
 
   public InternalClassifierType(SNode node) {
     super(node);

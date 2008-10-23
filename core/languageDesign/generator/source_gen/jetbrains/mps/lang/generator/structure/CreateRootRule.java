@@ -11,13 +11,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CreateRootRule extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.CreateRootRule";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String TEMPLATE_NODE = "templateNode";
-  public static String LABEL = "label";
-  public static String CONDITION_FUNCTION = "conditionFunction";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String TEMPLATE_NODE = "templateNode";
+  public static final String LABEL = "label";
+  public static final String CONDITION_FUNCTION = "conditionFunction";
 
   public CreateRootRule(SNode node) {
     super(node);

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SetAccessor extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.SetAccessor";
-  public static String STATEMENT_LIST = "statementList";
+  public static final String STATEMENT_LIST = "statementList";
 
   public SetAccessor(SNode node) {
     super(node);

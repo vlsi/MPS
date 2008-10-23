@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DismissTopMappingRule extends RuleConsequence {
   public static final String concept = "jetbrains.mps.lang.generator.structure.DismissTopMappingRule";
-  public static String GENERATOR_MESSAGE = "generatorMessage";
+  public static final String GENERATOR_MESSAGE = "generatorMessage";
 
   public DismissTopMappingRule(SNode node) {
     super(node);

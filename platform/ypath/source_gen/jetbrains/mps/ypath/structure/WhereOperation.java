@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class WhereOperation extends TreePathOperation {
   public static final String concept = "jetbrains.mps.ypath.structure.WhereOperation";
-  public static String WHERE_BLOCK = "whereBlock";
+  public static final String WHERE_BLOCK = "whereBlock";
 
   public WhereOperation(SNode node) {
     super(node);

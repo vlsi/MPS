@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AssertIsNull extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull";
-  public static String EXPRESSION = "expression";
+  public static final String EXPRESSION = "expression";
 
   public AssertIsNull(SNode node) {
     super(node);

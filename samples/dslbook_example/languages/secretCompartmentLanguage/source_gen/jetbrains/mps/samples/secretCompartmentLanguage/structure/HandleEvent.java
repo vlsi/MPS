@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class HandleEvent extends BaseConcept {
   public static final String concept = "jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent";
-  public static String EVENT = "event";
+  public static final String EVENT = "event";
 
   public HandleEvent(SNode node) {
     super(node);

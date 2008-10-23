@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MeetType extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.MeetType";
-  public static String ARGUMENT = "argument";
+  public static final String ARGUMENT = "argument";
 
   public MeetType(SNode node) {
     super(node);

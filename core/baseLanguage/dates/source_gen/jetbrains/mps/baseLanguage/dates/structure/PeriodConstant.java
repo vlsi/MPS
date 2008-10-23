@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PeriodConstant extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.PeriodConstant";
-  public static String DATE_TIME_PROPERTY = "dateTimeProperty";
-  public static String COUNT = "count";
+  public static final String DATE_TIME_PROPERTY = "dateTimeProperty";
+  public static final String COUNT = "count";
 
   public PeriodConstant(SNode node) {
     super(node);

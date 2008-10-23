@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FontStyleStyleClassItem extends StyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem";
-  public static String STYLE = "style";
-  public static String QUERY = "query";
+  public static final String STYLE = "style";
+  public static final String QUERY = "query";
 
   public FontStyleStyleClassItem(SNode node) {
     super(node);

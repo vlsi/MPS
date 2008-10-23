@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DotExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.DotExpression";
-  public static String OPERAND = "operand";
-  public static String OPERATION = "operation";
+  public static final String OPERAND = "operand";
+  public static final String OPERATION = "operation";
 
   public DotExpression(SNode node) {
     super(node);

@@ -12,9 +12,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ExecuteFindersExpression extends Expression {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression";
-  public static String SEARCH_NODE = "searchNode";
-  public static String SEARCH_SCOPE = "searchScope";
-  public static String FINDERS = "finders";
+  public static final String SEARCH_NODE = "searchNode";
+  public static final String SEARCH_SCOPE = "searchScope";
+  public static final String FINDERS = "finders";
 
   public ExecuteFindersExpression(SNode node) {
     super(node);

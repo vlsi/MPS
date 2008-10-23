@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TypeOfExpression extends Expression {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.TypeOfExpression";
-  public static String SKIP_DEPENDENCY_ON_CURRENT = "skipDependencyOnCurrent";
-  public static String TERM = "term";
+  public static final String SKIP_DEPENDENCY_ON_CURRENT = "skipDependencyOnCurrent";
+  public static final String TERM = "term";
 
   public TypeOfExpression(SNode node) {
     super(node);

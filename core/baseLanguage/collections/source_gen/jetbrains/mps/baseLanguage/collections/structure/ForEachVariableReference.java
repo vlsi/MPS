@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ForEachVariableReference extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference";
-  public static String VARIABLE = "variable";
+  public static final String VARIABLE = "variable";
 
   public ForEachVariableReference(SNode node) {
     super(node);

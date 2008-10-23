@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellMenuPart_ReplaceChild_Item extends CellMenuPart_Abstract {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item";
-  public static String MATCHING_TEXT = "matchingText";
-  public static String DESCRIPTION_TEXT = "descriptionText";
-  public static String CREATE_FUNCTION = "createFunction";
+  public static final String MATCHING_TEXT = "matchingText";
+  public static final String DESCRIPTION_TEXT = "descriptionText";
+  public static final String CREATE_FUNCTION = "createFunction";
 
   public CellMenuPart_ReplaceChild_Item(SNode node) {
     super(node);

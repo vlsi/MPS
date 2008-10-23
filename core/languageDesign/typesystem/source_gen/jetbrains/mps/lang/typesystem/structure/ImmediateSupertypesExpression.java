@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ImmediateSupertypesExpression extends Expression {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression";
-  public static String SUBTYPE_EXPRESSION = "subtypeExpression";
+  public static final String SUBTYPE_EXPRESSION = "subtypeExpression";
 
   public ImmediateSupertypesExpression(SNode node) {
     super(node);

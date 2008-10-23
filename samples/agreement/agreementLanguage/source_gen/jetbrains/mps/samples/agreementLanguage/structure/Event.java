@@ -12,9 +12,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Event extends BaseConcept {
   public static final String concept = "jetbrains.mps.samples.agreementLanguage.structure.Event";
-  public static String TAXABLE = "taxable";
-  public static String TYPE = "type";
-  public static String POSTING_RULE = "postingRule";
+  public static final String TAXABLE = "taxable";
+  public static final String TYPE = "type";
+  public static final String POSTING_RULE = "postingRule";
 
   public Event(SNode node) {
     super(node);

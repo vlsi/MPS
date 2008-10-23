@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class File extends AbstractProjectComponent {
   public static final String concept = "jetbrains.mps.build.packaging.structure.File";
-  public static String SOURCE_PATH = "sourcePath";
+  public static final String SOURCE_PATH = "sourcePath";
 
   public File(SNode node) {
     super(node);

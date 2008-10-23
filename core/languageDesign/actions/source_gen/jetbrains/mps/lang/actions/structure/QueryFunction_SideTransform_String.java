@@ -10,9 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class QueryFunction_SideTransform_String extends ConceptFunction implements ISideTransform_String {
   public static final String concept = "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public QueryFunction_SideTransform_String(SNode node) {
     super(node);

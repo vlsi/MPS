@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AssignmentExpression extends BaseAssignmentExpression implements TypeDerivable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AssignmentExpression";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public AssignmentExpression(SNode node) {
     super(node);

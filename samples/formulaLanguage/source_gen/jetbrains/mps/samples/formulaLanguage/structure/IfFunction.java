@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class IfFunction extends Function {
   public static final String concept = "jetbrains.mps.samples.formulaLanguage.structure.IfFunction";
-  public static String LOGICAL_TEST = "logicalTest";
-  public static String VALUE_IF_TRUE = "valueIfTrue";
-  public static String VALUE_IF_FALSE = "valueIfFalse";
+  public static final String LOGICAL_TEST = "logicalTest";
+  public static final String VALUE_IF_TRUE = "valueIfTrue";
+  public static final String VALUE_IF_FALSE = "valueIfFalse";
 
   public IfFunction(SNode node) {
     super(node);

@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DefaultCaretPositionStyleClassItem extends StyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem";
-  public static String POSITION = "position";
+  public static final String POSITION = "position";
 
   public DefaultCaretPositionStyleClassItem(SNode node) {
     super(node);

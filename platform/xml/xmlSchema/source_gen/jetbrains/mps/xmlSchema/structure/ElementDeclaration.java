@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ElementDeclaration extends Declaration {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.ElementDeclaration";
-  public static String ELEMENT_NAME = "elementName";
+  public static final String ELEMENT_NAME = "elementName";
 
   public ElementDeclaration(SNode node) {
     super(node);

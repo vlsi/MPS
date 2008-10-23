@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Text extends BaseText {
   public static final String concept = "jetbrains.mps.xml.structure.Text";
-  public static String TEXT = "text";
+  public static final String TEXT = "text";
 
   public Text(SNode node) {
     super(node);

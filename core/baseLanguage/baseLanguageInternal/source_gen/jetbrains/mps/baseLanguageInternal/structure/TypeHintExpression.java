@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TypeHintExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression";
-  public static String EXPRESSION = "expression";
-  public static String TYPE_HINT = "typeHint";
+  public static final String EXPRESSION = "expression";
+  public static final String TYPE_HINT = "typeHint";
 
   public TypeHintExpression(SNode node) {
     super(node);

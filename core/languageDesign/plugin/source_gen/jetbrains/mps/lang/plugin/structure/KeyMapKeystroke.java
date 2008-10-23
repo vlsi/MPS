@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class KeyMapKeystroke extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.KeyMapKeystroke";
-  public static String MODIFIERS = "modifiers";
-  public static String KEYCODE = "keycode";
+  public static final String MODIFIERS = "modifiers";
+  public static final String KEYCODE = "keycode";
 
   public KeyMapKeystroke(SNode node) {
     super(node);

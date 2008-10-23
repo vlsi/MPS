@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DateTimeOperation extends BaseConcept implements IOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.DateTimeOperation";
-  public static String CLNK_OperationType = "operationType";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String CLNK_OperationType = "operationType";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public DateTimeOperation(SNode node) {
     super(node);

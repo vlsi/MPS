@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_Image extends EditorCellModel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_Image";
-  public static String IMAGE_FILE = "imageFile";
-  public static String DESCENT = "descent";
-  public static String IMAGE_PATH_PROVIDER = "imagePathProvider";
+  public static final String IMAGE_FILE = "imageFile";
+  public static final String DESCENT = "descent";
+  public static final String IMAGE_PATH_PROVIDER = "imagePathProvider";
 
   public CellModel_Image(SNode node) {
     super(node);

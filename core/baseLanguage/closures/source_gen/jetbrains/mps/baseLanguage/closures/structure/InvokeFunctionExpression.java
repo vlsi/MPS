@@ -12,8 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InvokeFunctionExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression";
-  public static String FUNCTION = "function";
-  public static String PARAMETER = "parameter";
+  public static final String FUNCTION = "function";
+  public static final String PARAMETER = "parameter";
 
   public InvokeFunctionExpression(SNode node) {
     super(node);

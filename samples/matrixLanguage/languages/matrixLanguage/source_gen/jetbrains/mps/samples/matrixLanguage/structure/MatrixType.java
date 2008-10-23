@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MatrixType extends Type {
   public static final String concept = "jetbrains.mps.samples.matrixLanguage.structure.MatrixType";
-  public static String SCALAR_TYPE = "scalarType";
+  public static final String SCALAR_TYPE = "scalarType";
 
   public MatrixType(SNode node) {
     super(node);

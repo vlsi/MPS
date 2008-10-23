@@ -12,11 +12,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Form extends BaseConcept implements IComponentPart, IComponentInstance {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.Form";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String PART = "part";
-  public static String CONTENT = "content";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String PART = "part";
+  public static final String CONTENT = "content";
 
   public Form(SNode node) {
     super(node);

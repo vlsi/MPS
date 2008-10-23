@@ -13,9 +13,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class FunctionType extends Type {
   public static final String concept = "jetbrains.mps.baseLanguage.closures.structure.FunctionType";
-  public static String RESULT_TYPE = "resultType";
-  public static String PARAMETER_TYPE = "parameterType";
-  public static String THROWS_TYPE = "throwsType";
+  public static final String RESULT_TYPE = "resultType";
+  public static final String PARAMETER_TYPE = "parameterType";
+  public static final String THROWS_TYPE = "throwsType";
 
   public FunctionType(SNode node) {
     super(node);

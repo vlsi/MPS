@@ -12,8 +12,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class OutputNode extends BaseConcept {
   public static final String concept = "jetbrains.mps.transformation.test.outputLang.structure.OutputNode";
-  public static String TEXT = "text";
-  public static String OUTPUT_CHILD = "outputChild";
+  public static final String TEXT = "text";
+  public static final String OUTPUT_CHILD = "outputChild";
 
   public OutputNode(SNode node) {
     super(node);

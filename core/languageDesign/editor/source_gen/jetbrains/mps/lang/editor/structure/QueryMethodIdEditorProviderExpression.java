@@ -15,12 +15,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class QueryMethodIdEditorProviderExpression extends Expression {
   public static final String concept = "jetbrains.mps.lang.editor.structure.QueryMethodIdEditorProviderExpression";
-  public static String NOT_SET_STRING = "notSetString";
-  public static String PREFIX = "prefix";
-  public static String QUERY_ID_PROPERTY = "queryIdProperty";
-  public static String RETURN_TYPE = "returnType";
-  public static String PARAMETER = "parameter";
-  public static String ADDITIONAL_IMPORT = "additionalImport";
+  public static final String NOT_SET_STRING = "notSetString";
+  public static final String PREFIX = "prefix";
+  public static final String QUERY_ID_PROPERTY = "queryIdProperty";
+  public static final String RETURN_TYPE = "returnType";
+  public static final String PARAMETER = "parameter";
+  public static final String ADDITIONAL_IMPORT = "additionalImport";
 
   public QueryMethodIdEditorProviderExpression(SNode node) {
     super(node);

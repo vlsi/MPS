@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ForEachMatrixElement extends AbstractLoopStatement {
   public static final String concept = "jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement";
-  public static String ROW = "row";
-  public static String COLUMN = "column";
-  public static String ELEMENT = "element";
-  public static String MATRIX = "matrix";
+  public static final String ROW = "row";
+  public static final String COLUMN = "column";
+  public static final String ELEMENT = "element";
+  public static final String MATRIX = "matrix";
 
   public ForEachMatrixElement(SNode node) {
     super(node);

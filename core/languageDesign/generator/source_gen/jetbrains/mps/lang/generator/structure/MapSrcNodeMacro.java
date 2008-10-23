@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MapSrcNodeMacro extends SourceSubstituteMacro {
   public static final String concept = "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro";
-  public static String SOURCE_NODE_QUERY = "sourceNodeQuery";
-  public static String MAPPER_FUNCTION = "mapperFunction";
+  public static final String SOURCE_NODE_QUERY = "sourceNodeQuery";
+  public static final String MAPPER_FUNCTION = "mapperFunction";
 
   public MapSrcNodeMacro(SNode node) {
     super(node);

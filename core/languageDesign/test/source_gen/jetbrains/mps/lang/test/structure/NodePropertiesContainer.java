@@ -13,11 +13,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class NodePropertiesContainer extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.test.structure.NodePropertiesContainer";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String PROPERTIES = "properties";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String PROPERTIES = "properties";
 
   public NodePropertiesContainer(SNode node) {
     super(node);

@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TemplateSwitchReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.TemplateSwitchReference";
-  public static String TEMPLATE_SWITCH = "templateSwitch";
+  public static final String TEMPLATE_SWITCH = "templateSwitch";
 
   public TemplateSwitchReference(SNode node) {
     super(node);

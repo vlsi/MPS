@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MapInitializer extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.MapInitializer";
-  public static String ENTRIES = "entries";
+  public static final String ENTRIES = "entries";
 
   public MapInitializer(SNode node) {
     super(node);

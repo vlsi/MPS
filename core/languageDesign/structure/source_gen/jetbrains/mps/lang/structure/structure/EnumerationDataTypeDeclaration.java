@@ -14,8 +14,8 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   public static final String NO_VALUE_TEXT = "noValueText";
   public static final String HAS_NO_DEFAULT_MEMBER = "hasNoDefaultMember";
   public static final String MEMBER_IDENTIFIER_POLICY = "memberIdentifierPolicy";
-  public static String MEMBER_DATA_TYPE = "memberDataType";
-  public static String DEFAULT_MEMBER = "defaultMember";
+  public static final String MEMBER_DATA_TYPE = "memberDataType";
+  public static final String DEFAULT_MEMBER = "defaultMember";
   public static final String MEMBER = "member";
 
   public EnumerationDataTypeDeclaration(SNode node) {

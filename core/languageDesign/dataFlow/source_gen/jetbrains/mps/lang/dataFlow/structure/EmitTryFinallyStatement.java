@@ -10,8 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EmitTryFinallyStatement extends EmitStatement {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement";
-  public static String TRY_PART = "tryPart";
-  public static String FINALLY_PART = "finallyPart";
+  public static final String TRY_PART = "tryPart";
+  public static final String FINALLY_PART = "finallyPart";
 
   public EmitTryFinallyStatement(SNode node) {
     super(node);

@@ -12,7 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Line extends BaseConcept {
   public static final String concept = "jetbrains.mpslite.structure.Line";
-  public static String LINE_PART = "linePart";
+  public static final String LINE_PART = "linePart";
 
   public Line(SNode node) {
     super(node);

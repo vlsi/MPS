@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConditionalFormatToken extends FormatToken {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.ConditionalFormatToken";
-  public static String CONDITION_PAIR = "conditionPair";
+  public static final String CONDITION_PAIR = "conditionPair";
 
   public ConditionalFormatToken(SNode node) {
     super(node);

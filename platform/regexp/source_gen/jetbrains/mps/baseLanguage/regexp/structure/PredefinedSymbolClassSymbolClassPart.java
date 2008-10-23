@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PredefinedSymbolClassSymbolClassPart extends SymbolClassPart {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart";
-  public static String DECLARATION = "declaration";
+  public static final String DECLARATION = "declaration";
 
   public PredefinedSymbolClassSymbolClassPart(SNode node) {
     super(node);

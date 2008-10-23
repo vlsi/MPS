@@ -12,17 +12,17 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ComponentDeclaration extends BaseConcept implements IClassifier {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.ComponentDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String STUB = "stub";
-  public static String ABSTRACT = "abstract";
-  public static String ACTION_COMPONENT = "actionComponent";
-  public static String EXTENDED_COMPONENT = "extendedComponent";
-  public static String MAP_TO = "mapTo";
-  public static String ROOT = "root";
-  public static String RENDERER_INFO = "rendererInfo";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String STUB = "stub";
+  public static final String ABSTRACT = "abstract";
+  public static final String ACTION_COMPONENT = "actionComponent";
+  public static final String EXTENDED_COMPONENT = "extendedComponent";
+  public static final String MAP_TO = "mapTo";
+  public static final String ROOT = "root";
+  public static final String RENDERER_INFO = "rendererInfo";
 
   public ComponentDeclaration(SNode node) {
     super(node);

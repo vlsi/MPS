@@ -13,7 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PrintStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.logging.structure.PrintStatement";
-  public static String TEXT_EXPRESSION = "textExpression";
+  public static final String TEXT_EXPRESSION = "textExpression";
 
   public PrintStatement(SNode node) {
     super(node);

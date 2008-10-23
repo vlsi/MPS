@@ -11,8 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Document extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlInternal.structure.Document";
-  public static String PROLOG = "prolog";
-  public static String ROOT_ELEMENT = "rootElement";
+  public static final String PROLOG = "prolog";
+  public static final String ROOT_ELEMENT = "rootElement";
 
   public Document(SNode node) {
     super(node);

@@ -13,9 +13,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MatchStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.MatchStatement";
-  public static String EXPRESSION = "expression";
-  public static String IF_FALSE_STATEMENT = "ifFalseStatement";
-  public static String ITEM = "item";
+  public static final String EXPRESSION = "expression";
+  public static final String IF_FALSE_STATEMENT = "ifFalseStatement";
+  public static final String ITEM = "item";
 
   public MatchStatement(SNode node) {
     super(node);

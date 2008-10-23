@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class IntervalSymbolClassPart extends SymbolClassPart {
   public static final String concept = "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart";
-  public static String START = "start";
-  public static String END = "end";
+  public static final String START = "start";
+  public static final String END = "end";
 
   public IntervalSymbolClassPart(SNode node) {
     super(node);

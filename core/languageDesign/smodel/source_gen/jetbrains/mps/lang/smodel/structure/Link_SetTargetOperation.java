@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Link_SetTargetOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation";
-  public static String LINK_TARGET = "linkTarget";
+  public static final String LINK_TARGET = "linkTarget";
 
   public Link_SetTargetOperation(SNode node) {
     super(node);

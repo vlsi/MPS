@@ -11,12 +11,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DurationType extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.dates.internal.structure.DurationType";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String JODA_DURATION_FIELD_TYPE = "jodaDurationFieldType";
+  public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.DurationType";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String JODA_DURATION_FIELD_TYPE = "jodaDurationFieldType";
 
   public DurationType(SNode node) {
     super(node);
@@ -64,7 +64,7 @@ public class DurationType extends BaseConcept implements INamedConcept {
 
 
   public static DurationType newInstance(SModel sm, boolean init) {
-    return (DurationType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.internal.structure.DurationType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DurationType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DurationType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DurationType newInstance(SModel sm) {

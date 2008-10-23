@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DefaultClassifierType extends BaseClassifierType {
   public static final String concept = "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType";
-  public static String CLASSIFIER = "classifier";
+  public static final String CLASSIFIER = "classifier";
 
   public DefaultClassifierType(SNode node) {
     super(node);

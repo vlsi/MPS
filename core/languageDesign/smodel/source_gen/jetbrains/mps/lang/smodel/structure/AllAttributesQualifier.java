@@ -10,9 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AllAttributesQualifier extends BaseConcept implements IAttributeAccessQualifier {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.AllAttributesQualifier";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public AllAttributesQualifier(SNode node) {
     super(node);

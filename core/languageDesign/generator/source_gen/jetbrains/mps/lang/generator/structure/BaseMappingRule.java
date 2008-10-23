@@ -12,14 +12,14 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BaseMappingRule extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.BaseMappingRule";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String APPLY_TO_CONCEPT_INHERITORS = "applyToConceptInheritors";
-  public static String APPLICABLE_CONCEPT = "applicableConcept";
-  public static String LABEL_DECLARATION = "labelDeclaration";
-  public static String CONDITION_FUNCTION = "conditionFunction";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String APPLY_TO_CONCEPT_INHERITORS = "applyToConceptInheritors";
+  public static final String APPLICABLE_CONCEPT = "applicableConcept";
+  public static final String LABEL_DECLARATION = "labelDeclaration";
+  public static final String CONDITION_FUNCTION = "conditionFunction";
 
   public BaseMappingRule(SNode node) {
     super(node);

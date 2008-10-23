@@ -10,9 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellActionMapItem extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellActionMapItem";
-  public static String DESCRIPTION = "description";
-  public static String ACTION_ID = "actionId";
-  public static String EXECUTE_FUNCTION = "executeFunction";
+  public static final String DESCRIPTION = "description";
+  public static final String ACTION_ID = "actionId";
+  public static final String EXECUTE_FUNCTION = "executeFunction";
 
   public CellActionMapItem(SNode node) {
     super(node);
