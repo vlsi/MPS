@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept, IDeprecatableStructure {
+public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept, IStructureDeprecatable {
 public    static final String concept = "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration";
 public    static final String NAME = "name";
 public    static final String SHORT_DESCRIPTION = "shortDescription";

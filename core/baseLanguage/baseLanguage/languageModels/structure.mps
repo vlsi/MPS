@@ -2932,7 +2932,7 @@
     <property name="name" value="IThisExpression" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1224848483129">
-    <property name="name" value="IDeprecatableBase" />
+    <property name="name" value="IBLDeprecatable" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1224848525476">
       <property name="name" value="isDeprecated" />
       <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />

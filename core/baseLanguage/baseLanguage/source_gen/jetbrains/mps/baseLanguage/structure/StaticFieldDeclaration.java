@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class StaticFieldDeclaration extends VariableDeclaration implements ClassifierMember, IResolveInfo, IDeprecatableBase {
+public class StaticFieldDeclaration extends VariableDeclaration implements ClassifierMember, IResolveInfo, IBLDeprecatable {
 public    static final String concept = "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";
 public    static final String SHORT_DESCRIPTION = "shortDescription";
 public    static final String ALIAS = "alias";

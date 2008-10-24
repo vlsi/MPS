@@ -7447,8 +7447,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1223648539628">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223648559616">
             <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1223648556052" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224848684025">
-              <link role="conceptMethodDeclaration" targetNodeId="33.1224609060727" resolveInfo="isDeprecated" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224852911891">
+              <link role="property" targetNodeId="1.1224848525476" resolveInfo="isDeprecated" />
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223648539630">

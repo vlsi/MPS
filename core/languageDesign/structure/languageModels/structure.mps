@@ -687,7 +687,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1224848324737">
     <property name="package" value="deprecatedAnnotation" />
-    <property name="name" value="IDeprecatableStructure" />
+    <property name="name" value="IStructureDeprecatable" />
     <node role="extends" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1224848346098">
       <link role="intfc" targetNodeId="1.1224608834445" resolveInfo="IDeprecatable" />
     </node>

@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class DeprecatedJavaDoc_Intention extends BaseIntention {
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.IDeprecatableBase";
+    return "jetbrains.mps.baseLanguage.structure.IBLDeprecatable";
   }
 
   public boolean isErrorIntention() {
@@ -28,7 +28,7 @@ public class DeprecatedJavaDoc_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(node)) {
+    if (SPropertyOperations.getBoolean(node, "isDeprecated")) {
       SPropertyOperations.set(node, "isDeprecated", "" + (false));
     } else
     {
