@@ -17402,8 +17402,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224614825497">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224614827108">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1224614825498" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224614830893">
-                    <link role="property" targetNodeId="18.1224608857649" resolveInfo="isDeprecated" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224860126428">
+                    <link role="conceptMethodDeclaration" targetNodeId="74.1224609060727" resolveInfo="isDeprecated" />
                   </node>
                 </node>
               </node>
@@ -17439,8 +17439,8 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223637252795">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223637253313">
                 <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1223637252796" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224614789244">
-                  <link role="property" targetNodeId="18.1224608857649" resolveInfo="isDeprecated" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224860126411">
+                  <link role="conceptMethodDeclaration" targetNodeId="74.1224609060727" resolveInfo="isDeprecated" />
                 </node>
               </node>
             </node>

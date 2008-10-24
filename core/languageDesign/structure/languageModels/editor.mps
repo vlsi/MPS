@@ -1126,13 +1126,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1105726622986">
         <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1105726671674">
-          <property name="text" value="    " />
-          <property name="name" value="indent" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995548">
-            <property name="flag" value="false" />
-          </node>
-        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1224844181910" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1105726747113">
           <property name="vertical" value="true" />
           <property name="name" value="contentArea" />

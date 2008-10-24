@@ -588,13 +588,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1079007237550">
         <property name="name" value="semanticTypeAreaIndented" />
         <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1079007237551">
-          <property name="text" value="    " />
-          <property name="name" value="indentCell" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995761">
-            <property name="flag" value="false" />
-          </node>
-        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1224850862495" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1079007237552">
           <property name="name" value="semanticTypeArea" />
           <property name="vertical" value="true" />
@@ -638,13 +632,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1079007237557">
         <property name="name" value="nodeCellArea" />
         <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1079007237558">
-          <property name="text" value="    " />
-          <property name="name" value="indentCell" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996289">
-            <property name="flag" value="false" />
-          </node>
-        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1224850865121" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1079007237559">
           <property name="name" value="nodeCellPanel" />
           <property name="vertical" value="true" />
