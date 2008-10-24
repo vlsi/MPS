@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.typesystem.integration.HelginsPreferencesComponent;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
@@ -55,8 +54,6 @@ public class TypeChecker implements ApplicationComponent {
 
 
   private ClassLoaderManager myClassLoaderManager;
-
-  private TypeCheckingMode myTypeCheckingMode = null;
 
   private boolean myIsGeneration = false;
 
@@ -256,7 +253,7 @@ public class TypeChecker implements ApplicationComponent {
         return computedType;
       }
       final NodeTypesComponent temporaryComponent;
-      temporaryComponent = typeCheckingContext.getNodeTypesComponentClone();
+      temporaryComponent = typeCheckingContext.createTemporaryTypesComponent();
       try {
         checkWithinRoot(node, new Runnable() {
           public void run() {
@@ -269,6 +266,7 @@ public class TypeChecker implements ApplicationComponent {
         });
       } finally {
         temporaryComponent.clearListeners(); //I added it in order to fix memory leak. (Kostik)
+        typeCheckingContext.popTemporaryTypesComponent();
       }
       SNode resultType = result[0];
       if (myComputedTypesForCompletion != null) {
@@ -292,7 +290,7 @@ public class TypeChecker implements ApplicationComponent {
   public SNode getTypeOf(SNode node) {
     if (myIsGeneration && HelginsPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
       return getTypeOf_generationMode(node);
-    } else if (myTypeCheckingMode == TypeCheckingMode.EDITOR_QUERIES) {
+    } else if (NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node).isInEditorQueries()) {
       return getTypeOf_resolveMode(node, true);
     } else {
       return getTypeOf_normalMode(node);

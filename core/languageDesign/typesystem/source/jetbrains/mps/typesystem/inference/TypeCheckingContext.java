@@ -27,6 +27,7 @@ public class TypeCheckingContext {
   private TypeChecker myTypeChecker;
 
   private Stack<Boolean> myIsInEditorQueriesStack = new Stack<Boolean>();
+  private Stack<NodeTypesComponent> myTemporaryComponentsStack = new Stack<NodeTypesComponent>();
 
   public TypeCheckingContext(@NotNull SNode rootNode, TypeChecker typeChecker) {
     myNodeTypesComponent = new NodeTypesComponent(rootNode, typeChecker, this);
@@ -51,7 +52,7 @@ public class TypeCheckingContext {
   }
 
   public boolean isInEditorQueries() {
-    return myIsInEditorQueriesStack.isEmpty();
+    return !myIsInEditorQueriesStack.isEmpty();
   }
 
   public void setInEditorQueriesMode() {
@@ -305,11 +306,20 @@ public class TypeCheckingContext {
   }
 
   public NodeTypesComponent getNodeTypesComponent() {
+    if (!myTemporaryComponentsStack.isEmpty()) {
+      return myTemporaryComponentsStack.peek();
+    }
     return myNodeTypesComponent;
   }
 
-  public NodeTypesComponent getNodeTypesComponentClone() {
-    return myNodeTypesComponent.clone(this);
+  public NodeTypesComponent createTemporaryTypesComponent() {
+    NodeTypesComponent component = myNodeTypesComponent.clone(this);
+    myTemporaryComponentsStack.push(component);
+    return component;
+  }
+
+  public void popTemporaryTypesComponent() {
+    myTemporaryComponentsStack.pop();
   }
 
   public static class NodeInfo {
