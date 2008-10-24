@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class AddDeprecatedAnnotation_Intention extends BaseIntention {
 
   public String getConcept() {
-    return "jetbrains.mps.lang.structure.structure.IDeprecatableStructure";
+    return "jetbrains.mps.lang.structure.structure.IStructureDeprecatable";
   }
 
   public boolean isErrorIntention() {

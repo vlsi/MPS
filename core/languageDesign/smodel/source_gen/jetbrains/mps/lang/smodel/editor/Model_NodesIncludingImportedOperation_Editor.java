@@ -15,12 +15,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 
@@ -152,27 +147,6 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
 
   private static void setupBasic_refCell_concept1182511109971(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_concept");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return Model_NodesIncludingImportedOperation_Editor._StyleParameter_QueryFunction_1224258278311((cell == null ?
-                null :
-                cell.getSNode()
-              ), (cell == null ?
-                null :
-                cell.getEditorContext()
-              ));
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206486612667(EditorCell editorCell, SNode node, EditorContext context) {
@@ -202,13 +176,6 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
   }
 
   private static void setupLabel_Constant_1206486629587_1206486629587(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean _StyleParameter_QueryFunction_1224258278311(SNode node, EditorContext editorContext) {
-    if ((SLinkOperations.getTarget(node, "concept", false) != null)) {
-      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "concept", false));
-    }
-    return false;
   }
 
   public static class _Inline3997_0 extends AbstractCellProvider {

@@ -16,10 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -145,27 +142,6 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_conceptOfParent1144195585868(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_conceptOfParent");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return Node_IsRoleOperation_Editor._StyleParameter_QueryFunction_1224258553845((cell == null ?
-                null :
-                cell.getSNode()
-              ), (cell == null ?
-                null :
-                cell.getEditorContext()
-              ));
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Constant_11441981233721144198123372(EditorCell editorCell, SNode node, EditorContext context) {
@@ -221,10 +197,6 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1206487372237_1206487372237(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean _StyleParameter_QueryFunction_1224258553845(SNode node, EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "conceptOfParent", false));
   }
 
   public static class _Inline8094_0 extends AbstractCellProvider {

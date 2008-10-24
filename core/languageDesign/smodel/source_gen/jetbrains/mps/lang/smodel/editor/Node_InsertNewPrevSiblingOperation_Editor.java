@@ -14,13 +14,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor {
@@ -105,27 +102,6 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
 
   private static void setupBasic_refCell_concept1143221124298(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_concept");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return Node_InsertNewPrevSiblingOperation_Editor._StyleParameter_QueryFunction_1224253838895((cell == null ?
-                null :
-                cell.getSNode()
-              ), (cell == null ?
-                null :
-                cell.getEditorContext()
-              ));
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Constant_12064871926121206487192612(EditorCell editorCell, SNode node, EditorContext context) {
@@ -149,10 +125,6 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
   }
 
   private static void setupLabel_Constant_1206487204567_1206487204567(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean _StyleParameter_QueryFunction_1224253838895(SNode node, EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "concept", false));
   }
 
   public static class _Inline8454_0 extends AbstractCellProvider {

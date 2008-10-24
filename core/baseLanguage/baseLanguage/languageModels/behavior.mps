@@ -6427,6 +6427,51 @@
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptBehavior" id="1213877436332">
     <link role="concept" targetNodeId="1.1068580123140" resolveInfo="ConstructorDeclaration" />
+    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1224865755823">
+      <property name="name" value="isDeprecated" />
+      <link role="overriddenMethod" targetNodeId="20.1224609060727" resolveInfo="isDeprecated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224865755826">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224865895552">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1224865896382">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1224865896383">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1224865896384">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224865914105">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1224865896386">
+                    <link role="concept" targetNodeId="19.1224608834445" resolveInfo="IDeprecatable" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224865896387">
+                      <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1224865896388" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1224865896389" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224865916264">
+                    <link role="conceptMethodDeclaration" targetNodeId="20.1224609060727" resolveInfo="isDeprecated" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224865896392">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224865896393">
+                    <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1224865896394" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1224865896395" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1224865896396">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1224865896397">
+                      <link role="conceptDeclaration" targetNodeId="19.1224608834445" resolveInfo="IDeprecatable" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224865896398">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.SuperNodeExpression" id="1224865896399" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224865896400">
+                <link role="conceptMethodDeclaration" targetNodeId="20.1224609060727" resolveInfo="isDeprecated" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224865758907" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224865758908" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1213877436333">
       <property name="name" value="getPresentation" />
       <property name="isPrivate" value="false" />

@@ -16,9 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 
@@ -438,27 +435,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_source1204751188237(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_source");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return AnnotationLinkDeclaration_Editor._StyleParameter_QueryFunction_1224252101564((cell == null ?
-                null :
-                cell.getSNode()
-              ), (cell == null ?
-                null :
-                cell.getEditorContext()
-              ));
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Collection_12047513836461204751383646(EditorCell editorCell, SNode node, EditorContext context) {
@@ -480,27 +456,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_target1204751383648(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_target");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return AnnotationLinkDeclaration_Editor._StyleParameter_QueryFunction_1224252146129((cell == null ?
-                null :
-                cell.getSNode()
-              ), (cell == null ?
-                null :
-                cell.getEditorContext()
-              ));
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Collection_12047515127921204751512792(EditorCell editorCell, SNode node, EditorContext context) {
@@ -558,14 +513,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_sourceCardinality_1204751512794(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean _StyleParameter_QueryFunction_1224252101564(SNode node, EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "source", false));
-  }
-
-  public static boolean _StyleParameter_QueryFunction_1224252146129(SNode node, EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "target", false));
   }
 
   public static class _Inline9621_0 extends AbstractCellProvider {

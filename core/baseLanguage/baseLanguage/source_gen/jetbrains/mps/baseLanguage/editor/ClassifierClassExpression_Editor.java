@@ -15,9 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -91,27 +88,6 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_classifier1116615277650(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_classifier");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ClassifierClassExpression_Editor._StyleParameter_QueryFunction_1223653128322((cell == null ?
-                null :
-                cell.getSNode()
-              ), (cell == null ?
-                null :
-                cell.getEditorContext()
-              ));
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Constant_11166153369051116615336905(EditorCell editorCell, SNode node, EditorContext context) {
@@ -140,16 +116,6 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1215012484921_1215012484921(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean _StyleParameter_QueryFunction_1223653128322(SNode node, EditorContext editorContext) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
-    }
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
-      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
-    }
-    return false;
   }
 
   public static class _Inline4221_0 extends AbstractCellProvider {

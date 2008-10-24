@@ -18,11 +18,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -141,27 +138,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_constructorDeclaration1212699852034(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_constructorDeclaration");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ClassCreator_Editor._StyleParameter_QueryFunction_1223909271642((cell == null ?
-                null :
-                cell.getSNode()
-              ), (cell == null ?
-                null :
-                cell.getEditorContext()
-              ));
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Collection_12126998520371212699852037(EditorCell editorCell, SNode node, EditorContext context) {
@@ -221,22 +197,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "typeParameter") > 0;
   }
 
-  public static boolean _StyleParameter_QueryFunction_1223909271642(SNode node, EditorContext editorContext) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
-      if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)))) {
-        return true;
-      }
-    } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)))) {
-        return true;
-      }
-    }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.IDeprecatable")) {
-      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)));
-    }
-    return false;
-  }
-
   public static class _Inline9368_0 extends AbstractCellProvider {
 
     public _Inline9368_0() {
@@ -288,19 +248,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
-            this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
-              public Boolean calculate(EditorCell cell) {
-                return ClassCreator_Editor._Inline9368_0._StyleParameter_QueryFunction_1223912104287((cell == null ?
-                  null :
-                  cell.getSNode()
-                ), (cell == null ?
-                  null :
-                  cell.getEditorContext()
-                ));
-              }
-
-            });
           }
 
         };
@@ -309,19 +256,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_property_resolveInfo_1212700054374(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
-    public static boolean _StyleParameter_QueryFunction_1223912104287(SNode node, EditorContext editorContext) {
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
-        if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(node)) {
-          return true;
-        }
-      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(node)) {
-          return true;
-        }
-      }
-      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
     }
 
 }

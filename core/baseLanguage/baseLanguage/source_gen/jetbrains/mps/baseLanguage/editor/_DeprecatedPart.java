@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class _DeprecatedPart extends AbstractCellProvider {
 
@@ -172,11 +172,11 @@ public class _DeprecatedPart extends AbstractCellProvider {
   }
 
   public static boolean renderingCondition0235_0(SNode node, EditorContext editorContext, IScope scope) {
-    return IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
+    return SPropertyOperations.getBoolean(node, "isDeprecated");
   }
 
   public static boolean renderingCondition0235_1(SNode node, EditorContext editorContext, IScope scope) {
-    return IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
+    return SPropertyOperations.getBoolean(node, "isDeprecated");
   }
 
 }
