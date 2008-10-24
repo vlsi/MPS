@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -57,7 +58,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1149010888354(context, node, "  "));
+    editorCell.addEditorCell(this.createIndentCell8504_0(context, node));
     editorCell.addEditorCell(this.createCollection1149010905585(context, node));
     return editorCell;
   }
@@ -134,14 +135,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant1149010888354(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_11490108883541149010888354(editorCell, node, context);
-    setupLabel_Constant_1149010888354_1149010888354(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createConstant1149010905587(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_11490109055871149010905587(editorCell, node, context);
@@ -196,6 +189,11 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
     setupLabel_Constant_1149010998075_1149010998075(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  public EditorCell createIndentCell8504_0(EditorContext context, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(context, node);
+    return result;
   }
 
   public EditorCell createRefCell1149010775552_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -391,19 +389,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_11490108883541149010888354(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1149010888354");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_Collection_11490109055851149010905585(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1149010905585");
     {
@@ -547,6 +532,10 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   private static void setupBasic_refNode_propertyValidator1212097544399(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_Indent_12248438431501224843843150(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1224843843150");
+  }
+
   private static void setupLabel_Constant_1149010775546_1149010775546(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -557,9 +546,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1149010775555_1149010775555(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1149010888354_1149010888354(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1149010905587_1149010905587(EditorCell_Label editorCell, SNode node, EditorContext context) {

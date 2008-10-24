@@ -96,12 +96,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1149010884541">
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1149010888354">
-          <property name="text" value="  " />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997092">
-            <property name="flag" value="false" />
-          </node>
-        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1224843843150" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1149010905585">
           <property name="vertical" value="true" />
           <property name="gridLayout" value="true" />
@@ -234,12 +229,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1167949001309">
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1167949009159">
-          <property name="text" value="  " />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996100">
-            <property name="flag" value="false" />
-          </node>
-        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1224843817906" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1167949001310">
           <property name="vertical" value="true" />
           <property name="gridLayout" value="true" />
@@ -346,12 +336,8 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1167948814453">
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1167948859075">
-          <property name="text" value="    " />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995362">
-            <property name="flag" value="false" />
-          </node>
-        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1224843820719" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="1224843822299" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1167948814454">
           <property name="vertical" value="true" />
           <property name="gridLayout" value="true" />
