@@ -8,12 +8,14 @@ import jetbrains.mps.MPSProjectHolder;
 import javax.swing.JComponent;
 import java.util.List;
 import jetbrains.mps.project.IModule;
+import java.util.Collections;
+import java.util.Comparator;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
-import java.util.Collections;
-import java.util.Comparator;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
@@ -54,6 +56,24 @@ public class LanguagesStep extends AbstractStep {
     List<IModule> allModules = this.myMpsProject.getModules();
     ModulesListData data = new ModulesListData(allModules);
     List<ModuleData> children = data.getModules();
+    Collections.sort(children, new Comparator <ModuleData>() {
+
+      public int compare(ModuleData data1, ModuleData data2) {
+        IModule module1 = data1.getModule();
+        IModule module2 = data2.getModule();
+        if (module1.getClass().getName().equals(module2.getClass().getName())) {
+          return data1.getText().compareToIgnoreCase(data2.getText());
+        } else if (module1 instanceof Solution) {
+          return -1;
+        } else if (module2 instanceof Solution) {
+          return 1;
+        } else if (module1 instanceof Language) {
+          return -1;
+        }
+        return 1;
+      }
+
+    });
     NamespaceTreeBuilder builder = new LanguagesStep.MyTreeBuilder(this.myMpsProject);
     for(ModuleData moduleData : children) {
       builder.addNode(new CheckBoxNode(moduleData, false));
