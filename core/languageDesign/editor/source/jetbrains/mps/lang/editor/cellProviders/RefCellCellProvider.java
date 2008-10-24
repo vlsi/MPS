@@ -2,7 +2,12 @@ package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.structure.IDeprecatable;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -13,6 +18,9 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
+import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.structure.IBLDeprecatable;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.Iterator;
 
@@ -36,7 +44,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     return result;
   }
 
-  protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
+  protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
     AbstractCellProvider inlineComponent = myAuxiliaryCellProvider;
     myAuxiliaryCellProvider.setSNode(effectiveNode);
     EditorCell editorCell;
@@ -44,6 +52,17 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
       editorCell = inlineComponent.createEditorCell(context);
     } else {
       editorCell = context.createReferentCell(inlineComponent, getSNode(), effectiveNode, myGenuineRole);
+      if (effectiveNode.getAdapter() instanceof IDeprecatable) {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.STRIKE_OUT,
+              IDeprecatable_Behavior.call_isDeprecated_1224609060727(effectiveNode)
+            );
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
     setSemanticNodeToCells(editorCell, node);
 

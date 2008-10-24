@@ -17,11 +17,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -130,27 +127,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_classifier1211505069982(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refCell_classifier");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ClassifierType_Editor._StyleParameter_QueryFunction_1223908815979((cell == null ?
-                null :
-                cell.getSNode()
-              ), (cell == null ?
-                null :
-                cell.getEditorContext()
-              ));
-            }
-
-          });
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Collection_12115051688561211505168856(EditorCell editorCell, SNode node, EditorContext context) {
@@ -216,16 +192,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "parameter") > 0;
   }
 
-  public static boolean _StyleParameter_QueryFunction_1223908815979(SNode node, EditorContext editorContext) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "classifier", false));
-    }
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
-      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "classifier", false));
-    }
-    return false;
-  }
-
   public static class _Inline9185_0 extends AbstractCellProvider {
 
     public _Inline9185_0() {
@@ -276,19 +242,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-            this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
-              public Boolean calculate(EditorCell cell) {
-                return ClassifierType_Editor._Inline9185_0._StyleParameter_QueryFunction_1223907755139((cell == null ?
-                  null :
-                  cell.getSNode()
-                ), (cell == null ?
-                  null :
-                  cell.getEditorContext()
-                ));
-              }
-
-            });
           }
 
         };
@@ -297,16 +250,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     }
 
     private static void setupLabel_property_nestedName_1211505069984(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
-    public static boolean _StyleParameter_QueryFunction_1223907755139(SNode node, EditorContext editorContext) {
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        return IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
-      }
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
-        return IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
-      }
-      return false;
     }
 
 }
