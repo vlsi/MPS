@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelFqName;
 import java.util.List;
-import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -14,6 +13,7 @@ import java.io.File;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.Language;
 
 public class BuildGeneratorUtil {
 
@@ -40,7 +41,7 @@ public class BuildGeneratorUtil {
     if (modelDescriptor == null) {
       modelDescriptor = solution.createModel(newModelFQName, solution.getSModelRoots().get(0));
     }
-    modelDescriptor.getSModel().addLanguage(new ModuleReference("jetbrains.mps.build.packaging"));
+    modelDescriptor.getSModel().addLanguage(getPackagingLanguageReference());
     return modelDescriptor;
   }
 
@@ -62,8 +63,9 @@ public class BuildGeneratorUtil {
     {
       solution = BuildGeneratorUtil.createSolutionFormFile(mpsProject, solutionFile);
     }
-    solution.addDependency(new ModuleReference("jetbrains.mps.build.packaging"), false);
-    solution.addUsedLangauge(new ModuleReference("jetbrains.mps.build.packaging"));
+    ModuleReference packagingLanguageRef = BuildGeneratorUtil.getPackagingLanguageReference();
+    solution.addDependency(packagingLanguageRef, false);
+    solution.addUsedLangauge(packagingLanguageRef);
     return solution;
   }
 
@@ -79,6 +81,11 @@ public class BuildGeneratorUtil {
     SLinkOperations.addChild(solutionDescriptor, "modelRoot", modelRoot);
     DescriptorsPersistence.saveSolutionDescriptor(solutionDescriptorFile, ((SolutionDescriptor)SNodeOperations.getAdapter(solutionDescriptor)));
     return mpsProject.addProjectSolution(solutionDescriptorFile.toFile());
+  }
+
+  private static ModuleReference getPackagingLanguageReference() {
+    Language packagingLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.packaging");
+    return packagingLanguage.getModuleReference();
   }
 
 }

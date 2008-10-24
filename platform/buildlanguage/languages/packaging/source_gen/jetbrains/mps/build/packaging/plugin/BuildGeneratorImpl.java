@@ -92,6 +92,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SLinkOperations.addChild(zip, "entry", folder);
     // add modules to folder
     BuildGeneratorImpl.createContent(selectedData, folder, targetSModel);
+    targetModelDescriptor.save();
   }
 
   public static SNode createComponent(NodeData data, SModel targetSModel) {

@@ -13,6 +13,7 @@ public class Packaging_ApplicationPlugin extends BaseApplicationPlugin {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
     groups.add(new ProjectPaneModelAddition_ActionGroup());
     groups.add(new ProjectPaneProjectAddition_ActionGroup());
+    groups.add(new SNodeAddition_ActionGroup());
     return groups;
   }
 
