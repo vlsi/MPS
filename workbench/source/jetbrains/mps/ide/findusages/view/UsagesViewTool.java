@@ -20,11 +20,8 @@ import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder;
-import jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -36,6 +33,8 @@ import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
+import jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder;
+import jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.project.MPSProject;
@@ -220,11 +219,11 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     });
   }
 
-  public void findUsages(final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab, BaseFinder... finders) {
-    findUsages(FindUtils.makeProvider(finders), query, isRerunnable, showOne, newTab);
+  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
+    findUsages(provider, query, isRerunnable, showOne, newTab, "No usages for that node");
   }
 
-  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
+  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab, final String notFoundMsg) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         final SearchResults[] searchResults = new SearchResults[1];
@@ -237,22 +236,22 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
           }
         });
         if (!isCancelled[0]) {
-          showResults(searchResults[0], showOne, newTab, provider, query, isRerunnable);
+          showResults(searchResults[0], showOne, newTab, provider, query, isRerunnable, notFoundMsg);
         }
       }
     });
   }
 
   public void showResults(final SearchQuery query, final SearchResults searchResults) {
-    showResults(searchResults, false, false, FindUtils.makeProvider(new ConstantFinder(searchResults.getSearchResults())), query, false);
+    showResults(searchResults, false, false, FindUtils.makeProvider(new ConstantFinder(searchResults.getSearchResults())), query, false, "No usages for that node");
   }
 
-  private void showResults(final SearchResults searchResults, final boolean showOne, final boolean newTab, final IResultProvider provider, final SearchQuery query, final boolean isRerunnable) {
+  private void showResults(final SearchResults searchResults, final boolean showOne, final boolean newTab, final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final String notFoundMsg) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         int resCount = searchResults.getSearchResults().size();
         if (resCount == 0) {
-          JOptionPane.showMessageDialog(getContentManager().getComponent(), "No usages for that node", "Not found", JOptionPane.INFORMATION_MESSAGE);
+          JOptionPane.showMessageDialog(getContentManager().getComponent(), notFoundMsg, "Not found", JOptionPane.INFORMATION_MESSAGE);
         } else if (resCount == 1 && !showOne) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {

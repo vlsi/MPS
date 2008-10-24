@@ -38,8 +38,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class UsagesView implements IExternalizeable {
-  private static final Logger LOG = Logger.getLogger(UsagesView.class);
-
   //read/write constants
   private static final String QUERY = "query";
   private static final String RESULT_PROVIDER = "result_provider";

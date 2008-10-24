@@ -15,6 +15,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
@@ -130,7 +131,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
     SearchQuery searchQuery = new SearchQuery(GlobalScope.getInstance());
     BaseFinder finder = new AspectMethodsFinder(applicableModelDescriptors, name);
-    myProject.getComponent(UsagesViewTool.class).findUsages(searchQuery, false, true, true, finder);
+    BaseFinder[] finders = new BaseFinder[]{finder};
+    myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), searchQuery, false, true, true);
   }
 
   public void showConceptNode(final String fqName) throws RemoteException {
@@ -194,7 +196,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           }
         });
 
-        myProject.getComponent(UsagesViewTool.class).findUsages(query, true, true, true, finder);
+        BaseFinder[] finders = new BaseFinder[]{finder};
+        myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), query, true, true, true);
       }
     }.start();
   }
