@@ -5,6 +5,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
@@ -27,8 +28,9 @@ public class NodePresentation extends BasePresentation {
     return myModelName;
   }
 
+  @NotNull
   public String doGetPresentableText() {
-    return myNode.getName();
+    return "" + myNode.getName();
   }
 
   public String doGetLocationString() {

@@ -6,6 +6,8 @@ import jetbrains.mps.workbench.choose.base.BasePresentation;
 
 import javax.swing.Icon;
 
+import org.jetbrains.annotations.NotNull;
+
 public class ModulePresentation extends BasePresentation {
   private IModule myModule;
 
@@ -13,6 +15,7 @@ public class ModulePresentation extends BasePresentation {
     myModule = module;
   }
 
+  @NotNull
   public String doGetPresentableText() {
     return myModule.getModuleUID();
   }

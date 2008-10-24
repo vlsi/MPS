@@ -8,6 +8,8 @@ import jetbrains.mps.workbench.choose.base.BasePresentation;
 
 import javax.swing.Icon;
 
+import org.jetbrains.annotations.NotNull;
+
 public class ModelPresentation extends BasePresentation {
   private SModelDescriptor myModelDescriptor;
 
@@ -15,6 +17,7 @@ public class ModelPresentation extends BasePresentation {
     myModelDescriptor = modelDescriptor;
   }
 
+  @NotNull
   public String doGetPresentableText() {
     String modelName = myModelDescriptor.getSModelReference().getLongName();
     boolean javaStub = myModelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB);

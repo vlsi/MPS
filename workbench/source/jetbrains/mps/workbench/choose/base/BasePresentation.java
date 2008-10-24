@@ -5,6 +5,7 @@ import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
@@ -40,6 +41,7 @@ public abstract class BasePresentation implements ItemPresentation {
     return null;
   }
 
+  @NotNull
   public abstract String doGetPresentableText();
 
   public abstract String doGetLocationString();
