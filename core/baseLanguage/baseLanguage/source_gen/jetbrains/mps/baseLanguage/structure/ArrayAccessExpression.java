@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ArrayAccessExpression extends Expression {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression";
-  public static final String ARRAY = "array";
-  public static final String INDEX = "index";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression";
+public    static final String ARRAY = "array";
+public    static final String INDEX = "index";
 
   public ArrayAccessExpression(SNode node) {
     super(node);

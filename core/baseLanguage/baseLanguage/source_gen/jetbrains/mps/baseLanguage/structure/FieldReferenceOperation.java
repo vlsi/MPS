@@ -9,11 +9,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class FieldReferenceOperation extends BaseConcept implements IOperation {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String FIELD_DECLARATION = "fieldDeclaration";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String FIELD_DECLARATION = "fieldDeclaration";
 
   public FieldReferenceOperation(SNode node) {
     super(node);

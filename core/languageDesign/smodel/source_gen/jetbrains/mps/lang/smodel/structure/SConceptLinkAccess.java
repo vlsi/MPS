@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SConceptLinkAccess extends SNodeOperation {
-  public static final String concept = "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess";
-  public static final String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
+public    static final String concept = "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess";
+public    static final String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
 
   public SConceptLinkAccess(SNode node) {
     super(node);

@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PostfixIncrementExpression extends Expression {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression";
-  public static final String EXPRESSION = "expression";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression";
+public    static final String EXPRESSION = "expression";
 
   public PostfixIncrementExpression(SNode node) {
     super(node);

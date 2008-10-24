@@ -10,12 +10,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BaseMethodCall extends Expression implements IMethodCall {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.BaseMethodCall";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
-  public static final String ACTUAL_ARGUMENT = "actualArgument";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.BaseMethodCall";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
+public    static final String ACTUAL_ARGUMENT = "actualArgument";
 
   public BaseMethodCall(SNode node) {
     super(node);

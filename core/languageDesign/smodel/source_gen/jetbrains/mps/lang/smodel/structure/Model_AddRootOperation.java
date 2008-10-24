@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Model_AddRootOperation extends SNodeOperation {
-  public static final String concept = "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation";
-  public static final String NODE_ARGUMENT = "nodeArgument";
+public    static final String concept = "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation";
+public    static final String NODE_ARGUMENT = "nodeArgument";
 
   public Model_AddRootOperation(SNode node) {
     super(node);

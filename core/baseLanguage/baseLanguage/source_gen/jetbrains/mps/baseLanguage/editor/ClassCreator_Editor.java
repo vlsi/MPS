@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -223,15 +223,18 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
   public static boolean _StyleParameter_QueryFunction_1223909271642(SNode node, EditorContext editorContext) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
-      if (IDeprecatable_Behavior.call_isDeprecated_1223639666632(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)))) {
+      if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)))) {
         return true;
       }
     } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      if (IDeprecatable_Behavior.call_isDeprecated_1223639666632(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)))) {
+      if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)))) {
         return true;
       }
     }
-    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.IDeprecatable")) {
+      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)));
+    }
+    return false;
   }
 
   public static class _Inline9368_0 extends AbstractCellProvider {
@@ -310,15 +313,15 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
     public static boolean _StyleParameter_QueryFunction_1223912104287(SNode node, EditorContext editorContext) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
-        if (IDeprecatable_Behavior.call_isDeprecated_1223639666632(node)) {
+        if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(node)) {
           return true;
         }
       } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        if (IDeprecatable_Behavior.call_isDeprecated_1223639666632(node)) {
+        if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(node)) {
           return true;
         }
       }
-      return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
     }
 
 }

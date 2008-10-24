@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -670,10 +670,10 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   public static boolean _StyleParameter_QueryFunction_1224071876263(SNode node, EditorContext editorContext) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "classifier", false));
+      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "classifier", false));
     }
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
-      return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "classifier", false));
+      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "classifier", false));
     }
     return false;
   }
@@ -754,10 +754,10 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     public static boolean _StyleParameter_QueryFunction_1223652722144(SNode node, EditorContext editorContext) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+        return IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
       }
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
-        return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+        return IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
       }
       return false;
     }

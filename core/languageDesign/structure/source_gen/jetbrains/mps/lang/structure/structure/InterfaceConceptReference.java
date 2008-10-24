@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class InterfaceConceptReference extends BaseConcept {
-  public static final String concept = "jetbrains.mps.lang.structure.structure.InterfaceConceptReference";
-  public static final String INTFC = "intfc";
+public    static final String concept = "jetbrains.mps.lang.structure.structure.InterfaceConceptReference";
+public    static final String INTFC = "intfc";
 
   public InterfaceConceptReference(SNode node) {
     super(node);

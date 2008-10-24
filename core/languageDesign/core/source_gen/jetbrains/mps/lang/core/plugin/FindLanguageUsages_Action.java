@@ -20,8 +20,8 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageUsage
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindLanguageUsages_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(FindLanguageUsages_Action.class);
-  public static final Icon ICON = null;
+private    static final Logger LOG = Logger.getLogger(FindLanguageUsages_Action.class);
+private    static final Icon ICON = null;
 
   public IModule module;
   public IOperationContext context;

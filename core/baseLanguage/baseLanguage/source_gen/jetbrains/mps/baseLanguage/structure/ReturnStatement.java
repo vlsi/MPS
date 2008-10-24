@@ -8,11 +8,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ReturnStatement extends Statement implements TypeDerivable {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.ReturnStatement";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String EXPRESSION = "expression";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.ReturnStatement";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String EXPRESSION = "expression";
 
   public ReturnStatement(SNode node) {
     super(node);

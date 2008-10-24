@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class StraightDerivedClasses_Finder extends GeneratedFinder {
-  public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder");
+private    static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder");
 
   public String getDescription() {
     return "Straight Derivatives";

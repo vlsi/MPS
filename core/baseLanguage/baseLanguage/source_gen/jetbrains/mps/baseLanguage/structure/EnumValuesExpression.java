@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class EnumValuesExpression extends Expression {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumValuesExpression";
-  public static final String ENUM_CLASS = "enumClass";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.EnumValuesExpression";
+public    static final String ENUM_CLASS = "enumClass";
 
   public EnumValuesExpression(SNode node) {
     super(node);

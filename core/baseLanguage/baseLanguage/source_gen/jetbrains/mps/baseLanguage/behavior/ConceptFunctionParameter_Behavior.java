@@ -12,8 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConceptFunctionParameter_Behavior {
-  public static Class[] PARAMETERS_1213877522908 = {SNode.class};
-  public static Class[] PARAMETERS_1213877522926 = {SNode.class};
+private    static Class[] PARAMETERS_1213877522908 = {SNode.class};
+private    static Class[] PARAMETERS_1213877522926 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

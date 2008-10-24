@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class ImplementedInterfaces_Finder extends GeneratedFinder {
-  public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder");
+private    static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder");
 
   public String getDescription() {
     return "Implemented Interfaces";

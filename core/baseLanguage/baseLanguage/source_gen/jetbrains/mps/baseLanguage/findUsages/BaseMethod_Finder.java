@@ -19,7 +19,7 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class BaseMethod_Finder extends GeneratedFinder {
-  public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder");
+private    static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder");
 
   public String getDescription() {
     return "Base Methods";

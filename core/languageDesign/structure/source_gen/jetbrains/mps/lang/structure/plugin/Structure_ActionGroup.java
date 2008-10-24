@@ -12,8 +12,8 @@ import com.intellij.openapi.actionSystem.Anchor;
 import jetbrains.mps.ide.actions.ProjectPaneNodeActions_ActionGroup;
 
 public class Structure_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(Structure_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.structure.plugin.Structure";
+private    static Logger LOG = Logger.getLogger(Structure_ActionGroup.class);
+public    static final String ID = "jetbrains.mps.lang.structure.plugin.Structure";
 
   public Structure_ActionGroup() {
     super("", ID);

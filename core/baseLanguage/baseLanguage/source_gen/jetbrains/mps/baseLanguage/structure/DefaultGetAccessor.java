@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DefaultGetAccessor extends BaseConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.DefaultGetAccessor";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.DefaultGetAccessor";
 
   public DefaultGetAccessor(SNode node) {
     super(node);

@@ -8,8 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class VariableDeclaration_Behavior {
-  public static Class[] PARAMETERS_1213877517482 = {SNode.class};
-  public static Class[] PARAMETERS_1213877517488 = {SNode.class};
+private    static Class[] PARAMETERS_1213877517482 = {SNode.class};
+private    static Class[] PARAMETERS_1213877517488 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

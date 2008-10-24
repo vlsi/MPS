@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IfStatement extends Statement {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.IfStatement";
-  public static final String CONDITION = "condition";
-  public static final String IF_FALSE_STATEMENT = "ifFalseStatement";
-  public static final String IF_TRUE = "ifTrue";
-  public static final String ELSIF_CLAUSES = "elsifClauses";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.IfStatement";
+public    static final String CONDITION = "condition";
+public    static final String IF_FALSE_STATEMENT = "ifFalseStatement";
+public    static final String IF_TRUE = "ifTrue";
+public    static final String ELSIF_CLAUSES = "elsifClauses";
 
   public IfStatement(SNode node) {
     super(node);

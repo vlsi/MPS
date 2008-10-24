@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TryCatchStatement extends Statement {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.TryCatchStatement";
-  public static final String BODY = "body";
-  public static final String CATCH_CLAUSE = "catchClause";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.TryCatchStatement";
+public    static final String BODY = "body";
+public    static final String CATCH_CLAUSE = "catchClause";
 
   public TryCatchStatement(SNode node) {
     super(node);

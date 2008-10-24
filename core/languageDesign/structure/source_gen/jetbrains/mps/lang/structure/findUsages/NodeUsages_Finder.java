@@ -15,7 +15,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class NodeUsages_Finder extends GeneratedFinder {
-  public static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder");
+private    static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder");
 
   public String getDescription() {
     return "Node Usages";

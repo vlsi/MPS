@@ -75,8 +75,8 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1209502366743">
       <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IResolveInfo" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1223642945388">
-      <link role="intfc" targetNodeId="1223637189742" resolveInfo="IDeprecatable" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1224614740974">
+      <link role="intfc" targetNodeId="4.1224608834445" resolveInfo="IDeprecatableCore" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068390468198">
@@ -159,8 +159,8 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1201370618622" resolveInfo="Property" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1223637611657">
-      <link role="intfc" targetNodeId="1223637189742" resolveInfo="IDeprecatable" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1224614730798">
+      <link role="intfc" targetNodeId="4.1224608834445" resolveInfo="IDeprecatableCore" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068498886292">
@@ -283,8 +283,8 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1188210442792">
       <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1223637286196">
-      <link role="intfc" targetNodeId="1223637189742" resolveInfo="IDeprecatable" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1224614724672">
+      <link role="intfc" targetNodeId="4.1224608834445" resolveInfo="IDeprecatableCore" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123136">
@@ -666,8 +666,8 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1209513556145">
       <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IResolveInfo" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1223642553902">
-      <link role="intfc" targetNodeId="1223637189742" resolveInfo="IDeprecatable" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1224614745975">
+      <link role="intfc" targetNodeId="4.1224608834445" resolveInfo="IDeprecatableCore" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107223377482">
       <property name="value" value="static field declaration" />
@@ -1339,8 +1339,8 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1107535904670" resolveInfo="ClassifierType" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1223648009743">
-      <link role="intfc" targetNodeId="1223637189742" resolveInfo="IDeprecatable" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1224614735988">
+      <link role="intfc" targetNodeId="4.1224608834445" resolveInfo="IDeprecatableCore" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1109279763828">
@@ -2792,13 +2792,6 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1222174328436">
     <property name="package" value="refactoring" />
     <property name="name" value="IStaticContainerForMethods" />
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1223637189742">
-    <property name="name" value="IDeprecatable" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1223637196134">
-      <property name="name" value="isDeprecated" />
-      <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1223985693348">
     <property name="name" value="IVariableAssignment" />

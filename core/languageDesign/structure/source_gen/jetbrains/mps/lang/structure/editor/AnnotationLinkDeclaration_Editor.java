@@ -17,7 +17,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import jetbrains.mps.lang.structure.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -561,11 +561,11 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static boolean _StyleParameter_QueryFunction_1224252101564(SNode node, EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_isDeprecated_1224246601835(SLinkOperations.getTarget(node, "source", false));
+    return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "source", false));
   }
 
   public static boolean _StyleParameter_QueryFunction_1224252146129(SNode node, EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_isDeprecated_1224246601835(SLinkOperations.getTarget(node, "target", false));
+    return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "target", false));
   }
 
   public static class _Inline9621_0 extends AbstractCellProvider {

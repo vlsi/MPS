@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -144,10 +144,10 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
 
   public static boolean _StyleParameter_QueryFunction_1223653128322(SNode node, EditorContext editorContext) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
-      return IDeprecatable_Behavior.call_isDeprecated_1223639666632(node);
+      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
     }
     return false;
   }

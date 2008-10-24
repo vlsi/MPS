@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LinkList_InsertChildFirstOperation extends SNodeOperation {
-  public static final String concept = "jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation";
-  public static final String CHILD_NODE = "childNode";
+public    static final String concept = "jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation";
+public    static final String CHILD_NODE = "childNode";
 
   public LinkList_InsertChildFirstOperation(SNode node) {
     super(node);

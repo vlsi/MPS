@@ -9,11 +9,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ExpressionStatement extends Statement implements IWrapper {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.ExpressionStatement";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String EXPRESSION = "expression";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.ExpressionStatement";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String EXPRESSION = "expression";
 
   public ExpressionStatement(SNode node) {
     super(node);

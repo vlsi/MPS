@@ -18,8 +18,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
@@ -185,11 +186,14 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
   }
 
   public static boolean _StyleParameter_QueryFunction_1223653587333(SNode node, EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "variableDeclaration", false));
+    return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "variableDeclaration", false));
   }
 
   public static boolean _StyleParameter_QueryFunction_1223653650998(SNode node, EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "classifier", false));
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.lang.core.structure.IDeprecatable")) {
+      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "classifier", false));
+    }
+    return false;
   }
 
   public static class _Inline6051_0 extends AbstractCellProvider {

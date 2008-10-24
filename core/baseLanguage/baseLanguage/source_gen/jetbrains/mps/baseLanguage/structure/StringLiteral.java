@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class StringLiteral extends Expression {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.StringLiteral";
-  public static final String VALUE = "value";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.StringLiteral";
+public    static final String VALUE = "value";
 
   public StringLiteral(SNode node) {
     super(node);

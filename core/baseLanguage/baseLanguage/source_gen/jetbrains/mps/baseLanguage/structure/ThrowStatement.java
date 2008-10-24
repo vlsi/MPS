@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ThrowStatement extends Statement {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.ThrowStatement";
-  public static final String THROWABLE = "throwable";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.ThrowStatement";
+public    static final String THROWABLE = "throwable";
 
   public ThrowStatement(SNode node) {
     super(node);

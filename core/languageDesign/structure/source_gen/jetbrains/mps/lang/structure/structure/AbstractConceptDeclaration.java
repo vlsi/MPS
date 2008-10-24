@@ -4,6 +4,7 @@ package jetbrains.mps.lang.structure.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.core.structure.IDeprecatable;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
@@ -12,17 +13,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AbstractConceptDeclaration extends BaseConcept implements INamedConcept, IDeprecatable {
-  public static final String concept = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
-  public static final String NAME = "name";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String LINK_DECLARATION = "linkDeclaration";
-  public static final String PROPERTY_DECLARATION = "propertyDeclaration";
-  public static final String CONCEPT_PROPERTY = "conceptProperty";
-  public static final String CONCEPT_LINK = "conceptLink";
-  public static final String CONCEPT_PROPERTY_DECLARATION = "conceptPropertyDeclaration";
-  public static final String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
+public    static final String concept = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
+public    static final String NAME = "name";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String IS_DEPRECATED = "isDeprecated";
+public    static final String LINK_DECLARATION = "linkDeclaration";
+public    static final String PROPERTY_DECLARATION = "propertyDeclaration";
+public    static final String CONCEPT_PROPERTY = "conceptProperty";
+public    static final String CONCEPT_LINK = "conceptLink";
+public    static final String CONCEPT_PROPERTY_DECLARATION = "conceptPropertyDeclaration";
+public    static final String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
 
   public AbstractConceptDeclaration(SNode node) {
     super(node);
@@ -58,6 +60,14 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
 
   public void setVirtualPackage(String value) {
     this.setProperty(AbstractConceptDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getIsDeprecated() {
+    return this.getBooleanProperty(AbstractConceptDeclaration.IS_DEPRECATED);
+  }
+
+  public void setIsDeprecated(boolean value) {
+    this.setBooleanProperty(AbstractConceptDeclaration.IS_DEPRECATED, value);
   }
 
   public int getLinkDeclarationsCount() {

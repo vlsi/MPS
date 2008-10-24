@@ -28,7 +28,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <maxImportIndex value="12" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -38,6 +38,7 @@
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902bb(jetbrains.mps.lang.sharedConcepts.editor)" version="-1" />
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
+  <import index="13" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1138063451695">
     <link role="conceptDeclaration" targetNodeId="1.1138056022639" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1138412409274">
@@ -71,8 +72,8 @@
                     <link role="link" targetNodeId="1.1138056395725" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224252586278">
-                  <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613451420">
+                  <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                 </node>
               </node>
             </node>
@@ -179,8 +180,8 @@
                         <link role="link" targetNodeId="1.1138405853777" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258789059">
-                      <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613446215">
+                      <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                     </node>
                   </node>
                 </node>
@@ -327,8 +328,8 @@
                         <link role="link" targetNodeId="1.1139880128956" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224259338352">
-                      <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613348323">
+                      <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                     </node>
                   </node>
                 </node>
@@ -393,8 +394,8 @@
                         <link role="link" targetNodeId="1.1139877738879" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224259300799">
-                      <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613343009">
+                      <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                     </node>
                   </node>
                 </node>
@@ -484,8 +485,8 @@
                       <link role="link" targetNodeId="1.1139858951584" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224253803813">
-                    <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613385532">
+                    <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                   </node>
                 </node>
               </node>
@@ -540,8 +541,8 @@
                       <link role="link" targetNodeId="1.1139867957129" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224253885123">
-                    <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613401816">
+                    <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                   </node>
                 </node>
               </node>
@@ -684,8 +685,8 @@
                       <link role="link" targetNodeId="1.1140138128738" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258814573">
-                    <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613440683">
+                    <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                   </node>
                 </node>
               </node>
@@ -774,8 +775,8 @@
                       <link role="link" targetNodeId="1.1143221076069" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224253847937">
-                    <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613390424">
+                    <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                   </node>
                 </node>
               </node>
@@ -896,8 +897,8 @@
                       <link role="link" targetNodeId="1.1143235391024" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224253759674">
-                    <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613356871">
+                    <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                   </node>
                 </node>
               </node>
@@ -1028,8 +1029,8 @@
                       <link role="link" targetNodeId="1.1144195362400" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258627704">
-                    <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613396237">
+                    <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                   </node>
                 </node>
               </node>
@@ -1134,8 +1135,8 @@
                         <link role="link" targetNodeId="1.1145383142433" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258746748">
-                      <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613435026">
+                      <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                     </node>
                   </node>
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1224258739708">
@@ -1279,8 +1280,8 @@
                     <link role="link" targetNodeId="1.1145994841055" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224253918854">
-                  <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613422711">
+                  <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                 </node>
               </node>
             </node>
@@ -1361,8 +1362,8 @@
                     <link role="link" targetNodeId="1.1154546997487" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258248777">
-                  <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613333805">
+                  <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                 </node>
               </node>
             </node>
@@ -1531,8 +1532,8 @@
                         <link role="link" targetNodeId="1.1171315804605" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258499855">
-                      <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613380375">
+                      <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                     </node>
                   </node>
                 </node>
@@ -1599,8 +1600,8 @@
                           <link role="link" targetNodeId="1.1171323947160" />
                         </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258415041">
-                        <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613368826">
+                        <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                       </node>
                     </node>
                   </node>
@@ -1872,8 +1873,8 @@
                         <link role="link" targetNodeId="1.1180481110358" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258698983">
-                      <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613429478">
+                      <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                     </node>
                   </node>
                 </node>
@@ -1938,8 +1939,8 @@
                       <link role="link" targetNodeId="1.1172424100906" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258207402">
-                    <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613327757">
+                    <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                   </node>
                 </node>
               </node>
@@ -1989,8 +1990,8 @@
                       <link role="link" targetNodeId="1.1175618223511" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224253957461">
-                    <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613417663">
+                    <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                   </node>
                 </node>
               </node>
@@ -2064,8 +2065,8 @@
                         <link role="link" targetNodeId="1.1176109685394" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258461654">
-                      <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613372983">
+                      <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                     </node>
                   </node>
                 </node>
@@ -2109,8 +2110,8 @@
                     <link role="link" targetNodeId="1.1177026940964" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258652875">
-                  <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613413428">
+                  <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                 </node>
               </node>
             </node>
@@ -2433,8 +2434,8 @@
                           <link role="link" targetNodeId="1.1182511038750" />
                         </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258329833">
-                        <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613363887">
+                        <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                       </node>
                     </node>
                   </node>
@@ -2599,8 +2600,8 @@
                     <link role="link" targetNodeId="1.1204837225594" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224254031352">
-                  <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613407755">
+                  <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                 </node>
               </node>
             </node>
@@ -2694,8 +2695,8 @@
                       <link role="link" targetNodeId="1.1204926237448" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258887602">
-                    <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613463734">
+                    <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                   </node>
                 </node>
               </node>
@@ -2785,8 +2786,8 @@
                       <link role="link" targetNodeId="1.1206019820684" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224258854556">
-                    <link role="conceptMethodDeclaration" targetNodeId="12.1224246601835" resolveInfo="isDeprecated" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613457264">
+                    <link role="conceptMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
                   </node>
                 </node>
               </node>

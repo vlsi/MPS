@@ -33,7 +33,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 public class RenameLink extends AbstractLoggableRefactoring {
-  public static final String newName = "newName";
+public    static final String newName = "newName";
 
   private Set<String> myTransientParameters = new HashSet<String>();
 

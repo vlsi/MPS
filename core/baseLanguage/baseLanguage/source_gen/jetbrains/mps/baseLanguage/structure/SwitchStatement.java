@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SwitchStatement extends Statement {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.SwitchStatement";
-  public static final String LABEL = "label";
-  public static final String EXPRESSION = "expression";
-  public static final String DEFAULT_BLOCK = "defaultBlock";
-  public static final String CASE = "case";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.SwitchStatement";
+public    static final String LABEL = "label";
+public    static final String EXPRESSION = "expression";
+public    static final String DEFAULT_BLOCK = "defaultBlock";
+public    static final String CASE = "case";
 
   public SwitchStatement(SNode node) {
     super(node);

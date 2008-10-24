@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Node_IsRoleOperation extends SNodeOperation {
-  public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation";
-  public static final String CONCEPT_OF_PARENT = "conceptOfParent";
-  public static final String LINK_IN_PARENT = "linkInParent";
+public    static final String concept = "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation";
+public    static final String CONCEPT_OF_PARENT = "conceptOfParent";
+public    static final String LINK_IN_PARENT = "linkInParent";
 
   public Node_IsRoleOperation(SNode node) {
     super(node);

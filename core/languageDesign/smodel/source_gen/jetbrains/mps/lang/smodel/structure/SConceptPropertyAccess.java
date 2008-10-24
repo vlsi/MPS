@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SConceptPropertyAccess extends SNodeOperation {
-  public static final String concept = "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess";
-  public static final String CONCEPT_PROPERTY = "conceptProperty";
+public    static final String concept = "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess";
+public    static final String CONCEPT_PROPERTY = "conceptProperty";
 
   public SConceptPropertyAccess(SNode node) {
     super(node);

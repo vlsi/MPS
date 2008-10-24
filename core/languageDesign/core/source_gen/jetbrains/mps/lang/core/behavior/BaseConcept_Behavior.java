@@ -11,8 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseConcept_Behavior {
-  public static Class[] PARAMETERS_1213877396640 = {SNode.class};
-  public static Class[] PARAMETERS_1213877396707 = {SNode.class};
+private    static Class[] PARAMETERS_1213877396640 = {SNode.class};
+private    static Class[] PARAMETERS_1213877396707 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

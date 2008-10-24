@@ -12,12 +12,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GenericDeclaration extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.GenericDeclaration";
-  public static final String NAME = "name";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String TYPE_VARIABLE_DECLARATION = "typeVariableDeclaration";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.GenericDeclaration";
+public    static final String NAME = "name";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String TYPE_VARIABLE_DECLARATION = "typeVariableDeclaration";
 
   public GenericDeclaration(SNode node) {
     super(node);

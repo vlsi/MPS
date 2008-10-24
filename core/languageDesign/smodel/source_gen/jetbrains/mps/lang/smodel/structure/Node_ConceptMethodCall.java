@@ -12,9 +12,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Node_ConceptMethodCall extends SNodeOperation {
-  public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall";
-  public static final String CONCEPT_METHOD_DECLARATION = "conceptMethodDeclaration";
-  public static final String ACTUAL_ARGUMENT = "actualArgument";
+public    static final String concept = "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall";
+public    static final String CONCEPT_METHOD_DECLARATION = "conceptMethodDeclaration";
+public    static final String ACTUAL_ARGUMENT = "actualArgument";
 
   public Node_ConceptMethodCall(SNode node) {
     super(node);

@@ -33,7 +33,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 public class MovePropertyUp extends AbstractLoggableRefactoring {
-  public static final String targetConcept = "targetConcept";
+public    static final String targetConcept = "targetConcept";
 
   private Set<String> myTransientParameters = new HashSet<String>();
 

@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Concept_IsExactlyOperation extends SNodeOperation {
-  public static final String concept = "jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation";
-  public static final String CONCEPT_ARGUMENT = "conceptArgument";
+public    static final String concept = "jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation";
+public    static final String CONCEPT_ARGUMENT = "conceptArgument";
 
   public Concept_IsExactlyOperation(SNode node) {
     super(node);

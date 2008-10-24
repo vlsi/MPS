@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.structure.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -29,7 +29,7 @@ public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesyst
 
   public void applyRule(final SNode linkToCheck, final TypeCheckingContext typeCheckingContext) {
     if ((SLinkOperations.getTarget(linkToCheck, "target", false) != null)) {
-      if (IDeprecatable_Behavior.call_isDeprecated_1224246601835(SLinkOperations.getTarget(linkToCheck, "target", false))) {
+      if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(linkToCheck, "target", false))) {
         String error = BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(linkToCheck, "target", false));
         {
           BaseIntentionProvider intentionProvider = null;

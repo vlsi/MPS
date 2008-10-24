@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class ConceptInstances_Finder extends GeneratedFinder {
-  public static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
+private    static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
 
   public String getDescription() {
     return "Concept Instances";

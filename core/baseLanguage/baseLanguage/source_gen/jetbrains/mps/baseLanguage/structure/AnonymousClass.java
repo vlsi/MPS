@@ -10,10 +10,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AnonymousClass extends ClassConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.AnonymousClass";
-  public static final String CLASSIFIER = "classifier";
-  public static final String PARAMETER = "parameter";
-  public static final String TYPE_PARAMETER = "typeParameter";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.AnonymousClass";
+public    static final String CLASSIFIER = "classifier";
+public    static final String PARAMETER = "parameter";
+public    static final String TYPE_PARAMETER = "typeParameter";
 
   public AnonymousClass(SNode node) {
     super(node);

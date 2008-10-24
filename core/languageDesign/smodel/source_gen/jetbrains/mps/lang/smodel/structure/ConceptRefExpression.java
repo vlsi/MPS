@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptRefExpression extends Expression {
-  public static final String concept = "jetbrains.mps.lang.smodel.structure.ConceptRefExpression";
-  public static final String CONCEPT_DECLARATION = "conceptDeclaration";
+public    static final String concept = "jetbrains.mps.lang.smodel.structure.ConceptRefExpression";
+public    static final String CONCEPT_DECLARATION = "conceptDeclaration";
 
   public ConceptRefExpression(SNode node) {
     super(node);

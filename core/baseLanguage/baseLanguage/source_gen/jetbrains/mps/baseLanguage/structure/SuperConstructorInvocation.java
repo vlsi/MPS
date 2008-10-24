@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SuperConstructorInvocation extends Statement {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation";
-  public static final String CONSTRUCTOR_DECLARATION = "constructorDeclaration";
-  public static final String ACTUAL_ARGUMENT = "actualArgument";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation";
+public    static final String CONSTRUCTOR_DECLARATION = "constructorDeclaration";
+public    static final String ACTUAL_ARGUMENT = "actualArgument";
 
   public SuperConstructorInvocation(SNode node) {
     super(node);

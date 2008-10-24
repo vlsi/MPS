@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.structure.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 
@@ -154,7 +154,7 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
 
   public static boolean _StyleParameter_QueryFunction_1224258385312(SNode node, EditorContext editorContext) {
     if ((SLinkOperations.getTarget(node, "concept", false) != null)) {
-      return IDeprecatable_Behavior.call_isDeprecated_1224246601835(SLinkOperations.getTarget(node, "concept", false));
+      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "concept", false));
     }
     return false;
   }

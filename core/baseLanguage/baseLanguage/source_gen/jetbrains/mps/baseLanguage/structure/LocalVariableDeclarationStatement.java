@@ -9,11 +9,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LocalVariableDeclarationStatement extends Statement implements IWrapper {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String LOCAL_VARIABLE_DECLARATION = "localVariableDeclaration";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String LOCAL_VARIABLE_DECLARATION = "localVariableDeclaration";
 
   public LocalVariableDeclarationStatement(SNode node) {
     super(node);

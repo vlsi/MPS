@@ -37,7 +37,7 @@ import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.structure.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -1241,7 +1241,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
   public static boolean _StyleParameter_QueryFunction_1224252242255(SNode node, EditorContext editorContext) {
     if ((SLinkOperations.getTarget(node, "extends", false) != null)) {
-      return IDeprecatable_Behavior.call_isDeprecated_1224246601835(SLinkOperations.getTarget(node, "extends", false));
+      return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "extends", false));
     }
     return false;
   }

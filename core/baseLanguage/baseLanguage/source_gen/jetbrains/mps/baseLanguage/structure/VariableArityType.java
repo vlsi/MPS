@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class VariableArityType extends Type {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.VariableArityType";
-  public static final String COMPONENT_TYPE = "componentType";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.VariableArityType";
+public    static final String COMPONENT_TYPE = "componentType";
 
   public VariableArityType(SNode node) {
     super(node);

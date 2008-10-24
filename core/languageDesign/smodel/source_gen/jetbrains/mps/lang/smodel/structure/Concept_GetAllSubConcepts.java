@@ -9,9 +9,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Concept_GetAllSubConcepts extends SNodeOperation {
-  public static final String concept = "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts";
-  public static final String SMODEL = "smodel";
-  public static final String SCOPE = "scope";
+public    static final String concept = "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts";
+public    static final String SMODEL = "smodel";
+public    static final String SCOPE = "scope";
 
   public Concept_GetAllSubConcepts(SNode node) {
     super(node);

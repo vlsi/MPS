@@ -5,5 +5,5 @@ package jetbrains.mps.lang.smodel.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface IAttributeAccessQualifier extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier";
+public    static final String concept = "jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier";
 }

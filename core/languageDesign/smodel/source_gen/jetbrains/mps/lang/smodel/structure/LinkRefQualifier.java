@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifier {
-  public static final String concept = "jetbrains.mps.lang.smodel.structure.LinkRefQualifier";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String LINK = "link";
+public    static final String concept = "jetbrains.mps.lang.smodel.structure.LinkRefQualifier";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String LINK = "link";
 
   public LinkRefQualifier(SNode node) {
     super(node);

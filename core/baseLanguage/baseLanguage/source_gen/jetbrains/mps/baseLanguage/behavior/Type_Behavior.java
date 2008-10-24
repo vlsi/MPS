@@ -15,14 +15,14 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Type_Behavior {
-  public static Class[] PARAMETERS_1213877337304 = {SNode.class};
-  public static Class[] PARAMETERS_1213877337313 = {SNode.class};
-  public static Class[] PARAMETERS_1213877337320 = {SNode.class};
-  public static Class[] PARAMETERS_1213877337340 = {SNode.class};
-  public static Class[] PARAMETERS_1213877337345 = {SNode.class};
-  public static Class[] PARAMETERS_1213877337352 = {SNode.class};
-  public static Class[] PARAMETERS_1213877337357 = {SNode.class};
-  public static Class[] PARAMETERS_1220438914705 = {SNode.class ,SNode.class};
+private    static Class[] PARAMETERS_1213877337304 = {SNode.class};
+private    static Class[] PARAMETERS_1213877337313 = {SNode.class};
+private    static Class[] PARAMETERS_1213877337320 = {SNode.class};
+private    static Class[] PARAMETERS_1213877337340 = {SNode.class};
+private    static Class[] PARAMETERS_1213877337345 = {SNode.class};
+private    static Class[] PARAMETERS_1213877337352 = {SNode.class};
+private    static Class[] PARAMETERS_1213877337357 = {SNode.class};
+private    static Class[] PARAMETERS_1220438914705 = {SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }

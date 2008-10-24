@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Expression extends BaseConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.Expression";
-  public static final String CPR_Lvalue = "lvalue";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.Expression";
+public    static final String CPR_Lvalue = "lvalue";
 
   public Expression(SNode node) {
     super(node);

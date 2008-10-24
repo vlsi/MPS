@@ -6,11 +6,12 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 
 public class DeprecatedJavaDoc_Intention extends BaseIntention {
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.IDeprecatable";
+    return "jetbrains.mps.lang.core.structure.IDeprecatable";
   }
 
   public boolean isErrorIntention() {
@@ -24,6 +25,10 @@ public class DeprecatedJavaDoc_Intention extends BaseIntention {
     {
       return "Add deprecated java doc";
     }
+  }
+
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    return IDeprecatable_Behavior.call_canJavaDoc_1224609519989(node);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

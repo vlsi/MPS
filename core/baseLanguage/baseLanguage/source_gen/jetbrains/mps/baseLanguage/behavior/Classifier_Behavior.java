@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Classifier_Behavior {
-  public static Class[] PARAMETERS_1214840444586 = {SNode.class};
+private    static Class[] PARAMETERS_1214840444586 = {SNode.class};
 
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");

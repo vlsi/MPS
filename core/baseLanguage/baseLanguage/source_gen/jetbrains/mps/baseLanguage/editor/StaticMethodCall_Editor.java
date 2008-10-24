@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import jetbrains.mps.baseLanguage.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -200,11 +200,11 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static boolean _StyleParameter_QueryFunction_1223653827116(SNode node, EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "classConcept", false));
+    return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "classConcept", false));
   }
 
   public static boolean _StyleParameter_QueryFunction_1223653880430(SNode node, EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_isDeprecated_1223639666632(SLinkOperations.getTarget(node, "baseMethodDeclaration", false));
+    return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "baseMethodDeclaration", false));
   }
 
   public static class _Inline7119_0 extends AbstractCellProvider {

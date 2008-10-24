@@ -9,12 +9,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class StaticMethodDeclaration extends BaseMethodDeclaration implements ClassifierMember, IResolveInfo {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String RESOLVE_INFO = "resolveInfo";
-  public static final String VISIBILITY = "visibility";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String RESOLVE_INFO = "resolveInfo";
+public    static final String VISIBILITY = "visibility";
 
   public StaticMethodDeclaration(SNode node) {
     super(node);

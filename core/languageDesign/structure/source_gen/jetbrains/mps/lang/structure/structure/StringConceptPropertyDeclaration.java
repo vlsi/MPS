@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class StringConceptPropertyDeclaration extends ConceptPropertyDeclaration {
-  public static final String concept = "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration";
+public    static final String concept = "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration";
 
   public StringConceptPropertyDeclaration(SNode node) {
     super(node);

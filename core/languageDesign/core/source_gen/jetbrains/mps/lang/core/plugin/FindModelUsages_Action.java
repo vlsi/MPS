@@ -20,8 +20,8 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFi
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindModelUsages_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(FindModelUsages_Action.class);
-  public static final Icon ICON = null;
+private    static final Logger LOG = Logger.getLogger(FindModelUsages_Action.class);
+private    static final Icon ICON = null;
 
   public IScope scope;
   public IOperationContext context;

@@ -12,20 +12,20 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SNodeOperation extends BaseConcept implements IOperation {
-  public static final String concept = "jetbrains.mps.lang.smodel.structure.SNodeOperation";
-  public static final String CPR_Applicable_to_model = "applicable_to_model";
-  public static final String CPR_Applicable_to_node = "applicable_to_node";
-  public static final String CPR_Applicable_to_simple_property = "applicable_to_simple_property";
-  public static final String CPR_Applicable_to_enum_property = "applicable_to_enum_property";
-  public static final String CPR_Applicable_to_concept_property = "applicable_to_concept_property";
-  public static final String CPR_Applicable_to_link = "applicable_to_link";
-  public static final String CPR_Applicable_to_linkList = "applicable_to_linkList";
-  public static final String CPR_Applicable_to_concept = "applicable_to_concept";
-  public static final String CLNK_ApplicableParameter = "applicableParameter";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String PARAMETER = "parameter";
+public    static final String concept = "jetbrains.mps.lang.smodel.structure.SNodeOperation";
+public    static final String CPR_Applicable_to_model = "applicable_to_model";
+public    static final String CPR_Applicable_to_node = "applicable_to_node";
+public    static final String CPR_Applicable_to_simple_property = "applicable_to_simple_property";
+public    static final String CPR_Applicable_to_enum_property = "applicable_to_enum_property";
+public    static final String CPR_Applicable_to_concept_property = "applicable_to_concept_property";
+public    static final String CPR_Applicable_to_link = "applicable_to_link";
+public    static final String CPR_Applicable_to_linkList = "applicable_to_linkList";
+public    static final String CPR_Applicable_to_concept = "applicable_to_concept";
+public    static final String CLNK_ApplicableParameter = "applicableParameter";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String PARAMETER = "parameter";
 
   public SNodeOperation(SNode node) {
     super(node);

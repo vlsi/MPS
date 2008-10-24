@@ -8,9 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Expression_Behavior {
-  public static Class[] PARAMETERS_1213877519769 = {SNode.class ,IModule.class};
-  public static Class[] PARAMETERS_1213877519781 = {SNode.class};
-  public static Class[] PARAMETERS_1213877519786 = {SNode.class};
+private    static Class[] PARAMETERS_1213877519769 = {SNode.class ,IModule.class};
+private    static Class[] PARAMETERS_1213877519781 = {SNode.class};
+private    static Class[] PARAMETERS_1213877519786 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

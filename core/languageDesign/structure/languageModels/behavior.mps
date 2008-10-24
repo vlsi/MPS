@@ -996,6 +996,40 @@
     <node role="constructor" type="jetbrains.mps.lang.constraints.structure.ConceptConstructorDeclaration" id="1213877394027">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877394028" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1224611318943">
+      <property name="name" value="canJavaDoc" />
+      <link role="overriddenMethod" targetNodeId="15.1224609519989" resolveInfo="canJavaDoc" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224611318946">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224611382738">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1224611385881">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224611331304" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224611331305" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1224611318052">
+      <property name="name" value="isDeprecated" />
+      <link role="overriddenMethod" targetNodeId="15.1224609060727" resolveInfo="isDeprecated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224611318055">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224611342278">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224611375402">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224611375403">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1224611375404" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1224611375405">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="1224611379674">
+                  <link role="annotationLink" targetNodeId="1.1224241293279" resolveInfo="deprecatedNode" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1224611375407" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224611339885" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224611339886" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1213877394029">
       <property name="name" value="findBehaviour" />
       <property name="isPrivate" value="false" />
@@ -2770,6 +2804,40 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724693" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1224611411913">
+      <property name="name" value="canJavaDoc" />
+      <link role="overriddenMethod" targetNodeId="15.1224609519989" resolveInfo="canJavaDoc" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224611411914">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224611411915">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1224611411916">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224611411917" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224611411918" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1224611411919">
+      <property name="name" value="isDeprecated" />
+      <link role="overriddenMethod" targetNodeId="15.1224609060727" resolveInfo="isDeprecated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224611411920">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224611411921">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224611411922">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224611411923">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1224611411924" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1224611411925">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="1224611411926">
+                  <link role="annotationLink" targetNodeId="1.1224241293279" resolveInfo="deprecatedNode" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1224611411927" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224611411928" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224611411929" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptBehavior" id="1216822987999">
     <link role="concept" targetNodeId="1.1105725006687" resolveInfo="ConceptPropertyDeclaration" />
@@ -2798,6 +2866,40 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724641" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1224611404063">
+      <property name="name" value="canJavaDoc" />
+      <link role="overriddenMethod" targetNodeId="15.1224609519989" resolveInfo="canJavaDoc" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224611404064">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224611404065">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1224611404066">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224611404067" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224611404068" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1224611404069">
+      <property name="name" value="isDeprecated" />
+      <link role="overriddenMethod" targetNodeId="15.1224609060727" resolveInfo="isDeprecated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224611404070">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224611404071">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224611404072">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224611404073">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1224611404074" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1224611404075">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="1224611404076">
+                  <link role="annotationLink" targetNodeId="1.1224241293279" resolveInfo="deprecatedNode" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1224611404077" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224611404078" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224611404079" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptBehavior" id="1222430504608">
@@ -2869,31 +2971,44 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222430504610" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptBehavior" id="1224246597864">
-    <property name="package" value="deprecatedAnnotation" />
-    <link role="concept" targetNodeId="1.1224243221118" resolveInfo="IDeprecatable" />
-    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1224246601835">
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptBehavior" id="1224611395679">
+    <link role="concept" targetNodeId="1.1105736576531" resolveInfo="ConceptLinkDeclaration" />
+    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1224611396886">
+      <property name="name" value="canJavaDoc" />
+      <link role="overriddenMethod" targetNodeId="15.1224609519989" resolveInfo="canJavaDoc" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224611396887">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224611396888">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1224611396889">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224611396890" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224611396891" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1224611396892">
       <property name="name" value="isDeprecated" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224246601836" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224246608418" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224246601838">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224246619357">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224246636772">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224246626658">
-              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1224246625625" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1224246629333">
-                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="1224246634912">
+      <link role="overriddenMethod" targetNodeId="15.1224609060727" resolveInfo="isDeprecated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224611396893">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224611396894">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224611396895">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224611396896">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1224611396897" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="1224611396898">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="1224611396899">
                   <link role="annotationLink" targetNodeId="1.1224241293279" resolveInfo="deprecatedNode" />
                 </node>
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1224246639401" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1224611396900" />
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1224611396901" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224611396902" />
     </node>
-    <node role="constructor" type="jetbrains.mps.lang.constraints.structure.ConceptConstructorDeclaration" id="1224246597865">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224246597866" />
+    <node role="constructor" type="jetbrains.mps.lang.constraints.structure.ConceptConstructorDeclaration" id="1224611395680">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224611395681" />
     </node>
   </node>
 </model>

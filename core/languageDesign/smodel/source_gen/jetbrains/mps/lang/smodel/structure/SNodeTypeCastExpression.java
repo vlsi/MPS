@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SNodeTypeCastExpression extends Expression {
-  public static final String concept = "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression";
-  public static final String CONCEPT = "concept";
-  public static final String LEFT_EXPRESSION = "leftExpression";
+public    static final String concept = "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression";
+public    static final String CONCEPT = "concept";
+public    static final String LEFT_EXPRESSION = "leftExpression";
 
   public SNodeTypeCastExpression(SNode node) {
     super(node);

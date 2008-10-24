@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 public class SafeDeleteLink extends AbstractLoggableRefactoring {
-  public static final String sourceLanguage = "sourceLanguage";
+public    static final String sourceLanguage = "sourceLanguage";
 
   private Set<String> myTransientParameters = new HashSet<String>();
 

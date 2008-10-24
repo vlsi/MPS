@@ -9,8 +9,8 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 
 public class FindLanguageUsages_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(FindLanguageUsages_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.core.plugin.FindLanguageUsages";
+private    static Logger LOG = Logger.getLogger(FindLanguageUsages_ActionGroup.class);
+public    static final String ID = "jetbrains.mps.lang.core.plugin.FindLanguageUsages";
 
   public FindLanguageUsages_ActionGroup() {
     super("", ID);

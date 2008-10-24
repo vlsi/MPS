@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import jetbrains.mps.lang.structure.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -85,7 +85,7 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
   }
 
   public static boolean _StyleParameter_QueryFunction_1224256686943(SNode node, EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_isDeprecated_1224246601835(SLinkOperations.getTarget(node, "intfc", false));
+    return IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(node, "intfc", false));
   }
 
   public static class _Inline2400_0 extends AbstractCellProvider {

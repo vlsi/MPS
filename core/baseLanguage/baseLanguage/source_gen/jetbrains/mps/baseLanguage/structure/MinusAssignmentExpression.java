@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MinusAssignmentExpression extends BaseAssignmentExpression {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.MinusAssignmentExpression";
+public    static final String concept = "jetbrains.mps.baseLanguage.structure.MinusAssignmentExpression";
 
   public MinusAssignmentExpression(SNode node) {
     super(node);

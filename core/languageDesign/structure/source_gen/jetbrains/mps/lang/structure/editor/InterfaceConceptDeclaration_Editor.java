@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.lang.structure.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -878,7 +878,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static boolean _StyleParameter_QueryFunction_1224248295481(SNode node, EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_isDeprecated_1224246601835(node);
+    return IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
   }
 
   public static class propertyDeclarationListHandler_8145_0 extends RefNodeListHandler {

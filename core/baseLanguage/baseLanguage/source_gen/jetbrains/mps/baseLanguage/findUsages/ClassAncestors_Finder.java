@@ -12,7 +12,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class ClassAncestors_Finder extends GeneratedFinder {
-  public static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder");
+private    static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder");
 
   public boolean isVisible(SNode node, IScope scope) {
     return SLinkOperations.getTarget(node, "superclass", true) != null;
