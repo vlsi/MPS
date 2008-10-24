@@ -90,7 +90,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
   protected abstract List<Pair<SNode, IOperationContext>> tryToLoadNodes();
 
-  protected abstract Pair<SNode, IOperationContext> createLoadableNode();
+  protected abstract Pair<SNode, IOperationContext> createLoadableNode(boolean ask);
 
   protected List<SNode> getLoadableNodes() {
     return CollectionUtil.map(myLoadableNodesList, new Mapper<SNodePointer, SNode>() {
@@ -180,7 +180,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   private void createNewInnerTab() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode();
+        Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode(false);
         if (nodeAndContext != null) {
           nodeAndContext.o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
           JComponent component = addInnerTab(nodeAndContext.o1, nodeAndContext.o2);
@@ -202,7 +202,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   private void createEditor() {
     if (tryToInitComponent()) return;
 
-    Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode();
+    Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode(true);
 
     if (nodeAndContext != null) {
       nodeAndContext.o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
