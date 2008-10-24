@@ -67,6 +67,10 @@ public class SmartChooseByNamePanel extends ChooseByNameBase {
     return false;
   }
 
+  protected void showTextFieldPanel() {
+    return;
+  }
+
   public JPanel getPanel() {
     return myPanel;
   }
