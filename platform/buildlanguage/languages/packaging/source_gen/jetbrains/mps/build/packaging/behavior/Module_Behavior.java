@@ -48,7 +48,7 @@ public class Module_Behavior {
   }
 
   public static String call_findMPSProjectFile_1213877514840(SNode thisNode, File file) {
-    if (file.getAbsolutePath().equals(AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode))) {
+    if (AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).startsWith(file.getAbsolutePath()) && !(AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).equals(file.getAbsolutePath()))) {
       return null;
     }
     File[] children = file.listFiles();
@@ -69,6 +69,9 @@ public class Module_Behavior {
     String result = Module_Behavior.call_findMPSProjectFile_1213877514840(thisNode, f);
     if (result == null) {
       return result;
+    }
+    if (result.equals(AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode))) {
+      return "";
     }
     return result.substring(AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).length() + 1);
   }
