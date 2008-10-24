@@ -12,24 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
-import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.generationTypes.GenerateModelGenerationType;
-import jetbrains.mps.generator.GenerationStatus;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.messages.IMessageHandler;
-import java.util.List;
-import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.property.behavior.PropertyNode_Behavior;
-import jetbrains.mps.buildlanguage.behavior.Project_Behavior;
-import java.io.PrintWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class GenerateMPSBuildAction_Action extends GeneratedAction {
 private    static final Logger LOG = Logger.getLogger(GenerateMPSBuildAction_Action.class);
@@ -51,7 +33,7 @@ private    static final Icon ICON = null;
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return GenerateMPSBuildAction_Action.this.getMPSLayout() != null;
+    return GenerateTextFromBuild.getLayout(GenerateMPSBuildAction_Action.this.modelDescriptor) != null;
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -89,73 +71,11 @@ private    static final Icon ICON = null;
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       // calculate output path
-      final SNode layout = GenerateMPSBuildAction_Action.this.getMPSLayout();
-      final String basedir = ModelAccess.instance().runReadAction(new Computable <String>() {
-
-        public String compute() {
-          return ILayoutComponent_Behavior.call_getPath_1213877230696(layout);
-        }
-
-      });
-      // generate files
-      GeneratorManager generatorManager = GenerateMPSBuildAction_Action.this.project.getComponentSafe(GeneratorManager.class);
-      GenerateModelGenerationType generationType = new GenerateModelGenerationType() {
-
-        @Override()
-        public boolean handleOutput(GenerationStatus status, String outputDir, IOperationContext ocontext, ProgressIndicator monitor, IMessageHandler messages) {
-          List<SNode> roots = status.getOutputModel().getRoots();
-          for(SNode root : roots) {
-            TextGenerationUtil.TextGenerationResult generationResult = TextGenerationUtil.generateText(ocontext, root);
-            assert !(generationResult.hasErrors());
-            String s;
-            if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.build.property.structure.PropertyNode")) {
-              s = PropertyNode_Behavior.call_getFileName_1213877341757(root);
-            } else
-            {
-              s = Project_Behavior.call_getDocumentName_1213877351812(root) + ".xml";
-            }
-            this.outputGenerated(generationResult.getText(), s, basedir);
-          }
-          return true;
-        }
-
-        public void outputGenerated(String text, String name, String basedir) {
-          PrintWriter w = null;
-          try {
-            w = new PrintWriter(basedir + File.separator + name);
-            w.write(text);
-          } catch (FileNotFoundException e) {
-            e.printStackTrace();
-          } finally {
-            if (w != null) {
-              w.close();
-            }
-          }
-        }
-
-      };
-      generatorManager.generateModelsWithProgressWindow(ListSequence.<SModelDescriptor>fromArray(GenerateMPSBuildAction_Action.this.modelDescriptor), GenerateMPSBuildAction_Action.this.operationContext, generationType, true);
+      final SNode layout = GenerateTextFromBuild.getLayout(GenerateMPSBuildAction_Action.this.modelDescriptor);
+      GenerateTextFromBuild.generate(layout, GenerateMPSBuildAction_Action.this.modelDescriptor, GenerateMPSBuildAction_Action.this.operationContext, GenerateMPSBuildAction_Action.this.project);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GenerateMPSBuildAction", t);
     }
-  }
-
-  private SNode getMPSLayout() {
-    final List<SNode> roots = GenerateMPSBuildAction_Action.this.modelDescriptor.getSModel().getRoots();
-    final Wrappers._T<SNode> layout = new Wrappers._T<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-
-      public void run() {
-        for(SNode root : roots) {
-          if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.build.packaging.structure.MPSLayout")) {
-            layout.value = (SNode)root;
-            return;
-          }
-        }
-      }
-
-    });
-    return layout.value;
   }
 
 }
