@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GenerationListener_models extends ConceptFunctionParameter {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.GenerationListener_models";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.GenerationListener_models";
 
   public GenerationListener_models(SNode node) {
     super(node);

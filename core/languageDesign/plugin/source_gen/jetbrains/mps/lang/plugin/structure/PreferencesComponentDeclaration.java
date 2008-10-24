@@ -12,15 +12,15 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PreferencesComponentDeclaration extends BaseConcept implements IClassifier {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration";
-  public static final String NAME = "name";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String AFTER_READ_BLOCK = "afterReadBlock";
-  public static final String BEFORE_WRITE_BLOCK = "beforeWriteBlock";
-  public static final String PERSISTEN_PROPERTY_DECLARATION = "persistenPropertyDeclaration";
-  public static final String PREFERENCE_PAGE = "preferencePage";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration";
+public    static final String NAME = "name";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String AFTER_READ_BLOCK = "afterReadBlock";
+public    static final String BEFORE_WRITE_BLOCK = "beforeWriteBlock";
+public    static final String PERSISTEN_PROPERTY_DECLARATION = "persistenPropertyDeclaration";
+public    static final String PREFERENCE_PAGE = "preferencePage";
 
   public PreferencesComponentDeclaration(SNode node) {
     super(node);

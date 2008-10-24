@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BeforeGenerationBlock extends ConceptFunction {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.BeforeGenerationBlock";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.BeforeGenerationBlock";
 
   public BeforeGenerationBlock(SNode node) {
     super(node);

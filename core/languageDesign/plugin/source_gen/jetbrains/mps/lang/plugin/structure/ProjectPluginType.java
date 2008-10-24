@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ProjectPluginType extends BaseClassifierType {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.ProjectPluginType";
-  public static final String PLUGIN = "plugin";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.ProjectPluginType";
+public    static final String PLUGIN = "plugin";
 
   public ProjectPluginType(SNode node) {
     super(node);

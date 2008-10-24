@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GetToolOperation extends ProjectOperation {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.GetToolOperation";
-  public static final String TOOL = "tool";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.GetToolOperation";
+public    static final String TOOL = "tool";
 
   public GetToolOperation(SNode node) {
     super(node);

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunctionParameter_PreferencePage_component extends ConceptFunctionParameter {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component";
 
   public ConceptFunctionParameter_PreferencePage_component(SNode node) {
     super(node);

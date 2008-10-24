@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class InterfaceExtentionPoint extends ExtentionPoint {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint";
-  public static final String POINT_I_D = "pointID";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint";
+public    static final String POINT_I_D = "pointID";
 
   public InterfaceExtentionPoint(SNode node) {
     super(node);

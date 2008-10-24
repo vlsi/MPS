@@ -5,5 +5,5 @@ package jetbrains.mps.lang.plugin.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface GroupContents extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.GroupContents";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.GroupContents";
 }

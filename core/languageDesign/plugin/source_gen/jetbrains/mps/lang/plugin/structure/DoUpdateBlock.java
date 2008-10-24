@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DoUpdateBlock extends UpdateBlock {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.DoUpdateBlock";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.DoUpdateBlock";
 
   public DoUpdateBlock(SNode node) {
     super(node);

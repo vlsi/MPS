@@ -14,19 +14,19 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ToolDeclaration extends BaseConcept implements IClassifier {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.ToolDeclaration";
-  public static final String CAPTION = "caption";
-  public static final String NUMBER = "number";
-  public static final String ICON = "icon";
-  public static final String NAME = "name";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String INIT_BLOCK = "initBlock";
-  public static final String DISPOSE_BLOCK = "disposeBlock";
-  public static final String GET_COMPONENT_BLOCK = "getComponentBlock";
-  public static final String METHOD_DECLARATION = "methodDeclaration";
-  public static final String FIELD_DECLARATION = "fieldDeclaration";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.ToolDeclaration";
+public    static final String CAPTION = "caption";
+public    static final String NUMBER = "number";
+public    static final String ICON = "icon";
+public    static final String NAME = "name";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String INIT_BLOCK = "initBlock";
+public    static final String DISPOSE_BLOCK = "disposeBlock";
+public    static final String GET_COMPONENT_BLOCK = "getComponentBlock";
+public    static final String METHOD_DECLARATION = "methodDeclaration";
+public    static final String FIELD_DECLARATION = "fieldDeclaration";
 
   public ToolDeclaration(SNode node) {
     super(node);

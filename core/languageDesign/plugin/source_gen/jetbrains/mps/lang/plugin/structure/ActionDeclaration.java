@@ -13,22 +13,22 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ActionDeclaration extends BaseConcept implements IClassifier {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.ActionDeclaration";
-  public static final String ICON_PATH = "iconPath";
-  public static final String CAPTION = "caption";
-  public static final String DESCRIPTION = "description";
-  public static final String MNEMONIC = "mnemonic";
-  public static final String NAME = "name";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String IS_ALWAYS_VISIBLE = "isAlwaysVisible";
-  public static final String OUTSIDE_COMMAND_EXECUTION = "outsideCommandExecution";
-  public static final String UPDATE_BLOCK = "updateBlock";
-  public static final String EXECUTE_FUNCTION = "executeFunction";
-  public static final String KEYSTROKE = "keystroke";
-  public static final String METHOD_DECLARATION = "methodDeclaration";
-  public static final String PARAMETER = "parameter";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.ActionDeclaration";
+public    static final String ICON_PATH = "iconPath";
+public    static final String CAPTION = "caption";
+public    static final String DESCRIPTION = "description";
+public    static final String MNEMONIC = "mnemonic";
+public    static final String NAME = "name";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String IS_ALWAYS_VISIBLE = "isAlwaysVisible";
+public    static final String OUTSIDE_COMMAND_EXECUTION = "outsideCommandExecution";
+public    static final String UPDATE_BLOCK = "updateBlock";
+public    static final String EXECUTE_FUNCTION = "executeFunction";
+public    static final String KEYSTROKE = "keystroke";
+public    static final String METHOD_DECLARATION = "methodDeclaration";
+public    static final String PARAMETER = "parameter";
 
   public ActionDeclaration(SNode node) {
     super(node);

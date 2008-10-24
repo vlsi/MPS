@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GetInnerTabCaptionBlock extends ConceptFunction {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.GetInnerTabCaptionBlock";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.GetInnerTabCaptionBlock";
 
   public GetInnerTabCaptionBlock(SNode node) {
     super(node);

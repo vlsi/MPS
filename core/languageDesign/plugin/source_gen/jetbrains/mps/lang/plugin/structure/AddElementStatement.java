@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AddElementStatement extends ExpressionStatement {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.AddElementStatement";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.AddElementStatement";
 
   public AddElementStatement(SNode node) {
     super(node);

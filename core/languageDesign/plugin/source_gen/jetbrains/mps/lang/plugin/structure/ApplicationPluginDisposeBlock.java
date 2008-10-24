@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ApplicationPluginDisposeBlock extends ConceptFunction {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.ApplicationPluginDisposeBlock";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.ApplicationPluginDisposeBlock";
 
   public ApplicationPluginDisposeBlock(SNode node) {
     super(node);

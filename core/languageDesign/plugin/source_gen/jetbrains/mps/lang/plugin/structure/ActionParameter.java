@@ -5,8 +5,8 @@ package jetbrains.mps.lang.plugin.structure;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 
 public interface ActionParameter extends INamedConcept {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.ActionParameter";
-  public static final String IS_OPTIONAL = "isOptional";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.ActionParameter";
+public    static final String IS_OPTIONAL = "isOptional";
 
   public boolean getIsOptional();
 

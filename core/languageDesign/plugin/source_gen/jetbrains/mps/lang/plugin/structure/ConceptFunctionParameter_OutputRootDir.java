@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunctionParameter_OutputRootDir extends ConceptFunctionParameter {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootDir";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootDir";
 
   public ConceptFunctionParameter_OutputRootDir(SNode node) {
     super(node);

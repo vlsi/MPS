@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PreferencesComponentType extends BaseClassifierType {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencesComponentType";
-  public static final String COMPONENT_DECLARATION = "componentDeclaration";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencesComponentType";
+public    static final String COMPONENT_DECLARATION = "componentDeclaration";
 
   public PreferencesComponentType(SNode node) {
     super(node);

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class OnAfterReadBlock extends ConceptFunction {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.OnAfterReadBlock";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.OnAfterReadBlock";
 
   public OnAfterReadBlock(SNode node) {
     super(node);

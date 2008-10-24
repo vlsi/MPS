@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GenerateFileBlock extends ConceptFunction {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.GenerateFileBlock";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.GenerateFileBlock";
 
   public GenerateFileBlock(SNode node) {
     super(node);

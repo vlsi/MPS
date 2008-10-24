@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ToolInstanceExpression extends Expression {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression";
 
   public ToolInstanceExpression(SNode node) {
     super(node);

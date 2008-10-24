@@ -11,11 +11,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PersistentPropertyReference extends BaseConcept implements IMemberOperation {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String MEMBER = "member";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String MEMBER = "member";
 
   public PersistentPropertyReference(SNode node) {
     super(node);

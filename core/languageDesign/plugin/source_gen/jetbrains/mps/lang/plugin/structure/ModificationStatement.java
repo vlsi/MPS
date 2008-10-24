@@ -9,9 +9,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ModificationStatement extends BaseConcept {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.ModificationStatement";
-  public static final String MODIFIED_GROUP = "modifiedGroup";
-  public static final String POINT = "point";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.ModificationStatement";
+public    static final String MODIFIED_GROUP = "modifiedGroup";
+public    static final String POINT = "point";
 
   public ModificationStatement(SNode node) {
     super(node);

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GetNodeBlock extends ConceptFunction {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.GetNodeBlock";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.GetNodeBlock";
 
   public GetNodeBlock(SNode node) {
     super(node);

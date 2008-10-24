@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class OnModelsGeneratedBlock_success extends ConceptFunctionParameter {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.OnModelsGeneratedBlock_success";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.OnModelsGeneratedBlock_success";
 
   public OnModelsGeneratedBlock_success(SNode node) {
     super(node);

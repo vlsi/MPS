@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunctionParameter_AnActionEvent extends ConceptFunctionParameter {
-  public static final String concept = "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent";
+public    static final String concept = "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent";
 
   public ConceptFunctionParameter_AnActionEvent(SNode node) {
     super(node);
