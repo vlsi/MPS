@@ -48,6 +48,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };

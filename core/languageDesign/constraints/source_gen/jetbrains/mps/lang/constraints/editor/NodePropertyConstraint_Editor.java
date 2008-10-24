@@ -352,6 +352,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };
@@ -641,6 +642,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }
 
         };

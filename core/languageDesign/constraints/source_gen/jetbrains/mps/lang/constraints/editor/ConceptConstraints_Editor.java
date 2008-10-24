@@ -531,6 +531,16 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12130940996951213094099695(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1213094099695");
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Collection_12130941026191213094102619(EditorCell editorCell, SNode node, EditorContext context) {
@@ -548,6 +558,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12130941034811213094103481(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1213094103481");
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12130941364531213094136453(EditorCell editorCell, SNode node, EditorContext context) {

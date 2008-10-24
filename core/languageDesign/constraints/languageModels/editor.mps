@@ -60,6 +60,9 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678200">
             <property name="color" value="DARK_MAGENTA" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224841333196">
+            <property name="value" value="0.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1149010775552">
           <property name="noTargetText" value="&lt;choose property&gt;" />
@@ -72,6 +75,9 @@
               <link role="relationDeclaration" targetNodeId="2.1169194664001" />
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678995">
                 <property name="color" value="DARK_MAGENTA" />
+              </node>
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224841342338">
+                <property name="value" value="0.0" />
               </node>
             </node>
           </node>
@@ -192,6 +198,9 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678324">
             <property name="color" value="DARK_MAGENTA" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224841243227">
+            <property name="value" value="0.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1148929692477">
           <property name="noTargetText" value="&lt;choose reference&gt;" />
@@ -204,6 +213,9 @@
               <link role="relationDeclaration" targetNodeId="5.1071599776563" />
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678627">
                 <property name="color" value="DARK_MAGENTA" />
+              </node>
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224841252277">
+                <property name="value" value="0.0" />
               </node>
             </node>
           </node>
@@ -1678,6 +1690,9 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678177">
           <property name="color" value="DARK_BLUE" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224841040981">
+          <property name="value" value="0.0" />
+        </node>
       </node>
     </node>
   </node>
@@ -1869,6 +1884,10 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1213094099695">
           <property name="text" value="{" />
+          <link role="styleClass" targetNodeId="11.1215091279307" resolveInfo="LeftBrace" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1224841136048">
+            <property name="value" value="0.0" />
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997121">
           <property name="flag" value="false" />
@@ -2092,6 +2111,7 @@
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1213094103481">
           <property name="text" value="}" />
+          <link role="styleClass" targetNodeId="11.1215091331565" resolveInfo="RightBrace" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996463">
           <property name="flag" value="false" />
