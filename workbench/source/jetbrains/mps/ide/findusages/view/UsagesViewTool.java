@@ -28,19 +28,11 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
-import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
-import jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder;
-import jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 import org.jdom.Element;
@@ -63,21 +55,19 @@ import java.util.List;
 public class UsagesViewTool extends BaseProjectTool implements PersistentStateComponent<Element> {
   private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
 
-  private static final String VERSION_NUMBER = "0.99";
+  private static final String VERSION_NUMBER = "0.999";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
   private static final String TAB = "tab";
   private static final String TABS = "tabs";
 
-  private static final String DEFAULT_FIND_OPTIONS = "default_find_options";
   private static final String DEFAULT_VIEW_OPTIONS = "default_view_options";
 
   private static final String PREV_COMMAND = "FindUsages.Previous";
   private static final String NEXT_COMMAND = "FindUsages.Next";
 
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
-  private FindUsagesOptions myDefaultFindOptions = new FindUsagesOptions();
   private jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions myDefaultViewOptions = new jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions();
   private ContentManagerAdapter myContentListener;
 
@@ -85,19 +75,6 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
 
   public UsagesViewTool(Project project) {
     super(project, "Usages", 3, jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, ToolWindowAnchor.BOTTOM, true);
-
-    setDefaultOptions();
-  }
-
-  private void setDefaultOptions() {
-    FindersOptions findersOptions = new FindersOptions(NodeUsages_Finder.class.getName(), ConceptInstances_Finder.class.getName());
-    myDefaultFindOptions.setOption(findersOptions);
-
-    ViewOptions viewOptions = new ViewOptions(true, false);
-    myDefaultFindOptions.setOption(viewOptions);
-
-    ScopeOptions scopeOptions = new ScopeOptions(ScopeOptions.PROJECT_SCOPE, ScopeOptions.DEFAULT_VALUE, ScopeOptions.DEFAULT_VALUE);
-    myDefaultFindOptions.setOption(scopeOptions);
   }
 
   //----TOOL STUFF----
@@ -181,44 +158,6 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
 
   //---FIND USAGES STUFF----
 
-  public void findUsages(final ActionEventData data) {
-    final SNode[] semanticNode = new SNode[1];
-    final SNode[] operationNode = new SNode[1];
-
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        semanticNode[0] = data.getNode();
-
-        EditorCell editorCell = data.getEditorCell();
-        operationNode[0] = editorCell != null ? editorCell.getSNodeWRTReference() : semanticNode[0];
-      }
-    });
-
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultFindOptions, operationNode[0], data);
-        findUsagesDialog.showDialog();
-
-        if (!findUsagesDialog.isCancelled()) {
-          myDefaultFindOptions = findUsagesDialog.getResult();
-          final IResultProvider[] provider = new IResultProvider[1];
-          final SearchQuery[] query = new SearchQuery[1];
-          final ViewOptions[] viewOptions = new ViewOptions[1];
-
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              provider[0] = myDefaultFindOptions.getOption(FindersOptions.class).getResult(operationNode[0], data);
-              query[0] = myDefaultFindOptions.getOption(ScopeOptions.class).getResult(operationNode[0], data);
-              viewOptions[0] = myDefaultFindOptions.getOption(ViewOptions.class);
-            }
-          });
-
-          findUsages(provider[0], query[0], true, viewOptions[0].myShowOneResult, viewOptions[0].myNewTab);
-        }
-      }
-    });
-  }
-
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
     findUsages(provider, query, isRerunnable, showOne, newTab, "No usages for that node");
   }
@@ -290,6 +229,8 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     });
   }
 
+  //---END FIND STUFF----
+
   private void read(Element element, MPSProject project) {
     Element versionXML = element.getChild(VERSION);
     if (versionXML == null) return;
@@ -319,13 +260,6 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
           }
         });
       }
-    }
-
-    Element defaultFindOptionsXML = element.getChild(DEFAULT_FIND_OPTIONS);
-    try {
-      myDefaultFindOptions.read(defaultFindOptionsXML, project);
-    } catch (CantLoadSomethingException e) {
-      myDefaultFindOptions = new FindUsagesOptions(new FindersOptions(), new ScopeOptions(), new ViewOptions());
     }
 
     Element defaultViewOptionsXML = element.getChild(DEFAULT_VIEW_OPTIONS);
@@ -361,14 +295,6 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
       if (!error) tabsXML.addContent(tabXML);
     }
     element.addContent(tabsXML);
-
-    Element defaultFindOptionsXML = new Element(DEFAULT_FIND_OPTIONS);
-    try {
-      myDefaultFindOptions.write(defaultFindOptionsXML, project);
-    } catch (CantSaveSomethingException e) {
-      throw new RuntimeException("this exception shouldn't be thrown");
-    }
-    element.addContent(defaultFindOptionsXML);
 
     Element defaultViewOptionsXML = new Element(DEFAULT_VIEW_OPTIONS);
     myDefaultViewOptions.write(defaultViewOptionsXML, project);
