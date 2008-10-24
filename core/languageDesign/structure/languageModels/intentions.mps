@@ -32,10 +32,9 @@
   <maxImportIndex value="2" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1224245135252">
     <property name="name" value="AddDeprecatedAnnotation" />
-    <link role="forConcept" targetNodeId="2v.1224608834445" resolveInfo="IDeprecatableCore" />
+    <link role="forConcept" targetNodeId="1.1224848324737" resolveInfo="IDeprecatableStructure" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1224245135253">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224245135254">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1224245334979">
@@ -125,20 +124,6 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1224245578655" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1224610262948">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224610262949">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224610265762">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1224610332726">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224610332727">
-              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1224610332728" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224610332729">
-                <link role="conceptMethodDeclaration" targetNodeId="2.1224609519989" resolveInfo="canJavaDoc" />
               </node>
             </node>
           </node>

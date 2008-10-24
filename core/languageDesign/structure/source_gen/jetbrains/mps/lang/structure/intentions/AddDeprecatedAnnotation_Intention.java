@@ -7,13 +7,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class AddDeprecatedAnnotation_Intention extends BaseIntention {
 
   public String getConcept() {
-    return "jetbrains.mps.lang.core.structure.IDeprecatable";
+    return "jetbrains.mps.lang.structure.structure.IDeprecatableStructure";
   }
 
   public boolean isErrorIntention() {
@@ -25,10 +24,6 @@ public class AddDeprecatedAnnotation_Intention extends BaseIntention {
       return "Add deprecated annotation";
     }
     return "Remove deprecated annotation";
-  }
-
-  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return !(IDeprecatable_Behavior.call_canJavaDoc_1224609519989(node));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

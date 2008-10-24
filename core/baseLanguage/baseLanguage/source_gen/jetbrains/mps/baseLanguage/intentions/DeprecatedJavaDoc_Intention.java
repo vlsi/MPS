@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class DeprecatedJavaDoc_Intention extends BaseIntention {
 
   public String getConcept() {
-    return "jetbrains.mps.lang.core.structure.IDeprecatable";
+    return "jetbrains.mps.baseLanguage.structure.IDeprecatableBase";
   }
 
   public boolean isErrorIntention() {
@@ -19,7 +19,7 @@ public class DeprecatedJavaDoc_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    if (SPropertyOperations.getBoolean(node, "isDeprecated")) {
+    if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(node)) {
       return "Remove deprecated java doc";
     } else
     {
@@ -27,12 +27,8 @@ public class DeprecatedJavaDoc_Intention extends BaseIntention {
     }
   }
 
-  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return IDeprecatable_Behavior.call_canJavaDoc_1224609519989(node);
-  }
-
   public void execute(final SNode node, final EditorContext editorContext) {
-    if (SPropertyOperations.getBoolean(node, "isDeprecated")) {
+    if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(node)) {
       SPropertyOperations.set(node, "isDeprecated", "" + (false));
     } else
     {

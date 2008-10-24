@@ -7413,14 +7413,14 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1223648378225">
     <property name="name" value="DeprecatedJavaDoc" />
-    <link role="forConcept" targetNodeId="4.1224608834445" resolveInfo="IDeprecatableCore" />
+    <link role="forConcept" targetNodeId="1.1224848483129" resolveInfo="IDeprecatableBase" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1223648378226">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223648378227">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1223648710434">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223648710435">
             <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1223648710436" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224610418593">
-              <link role="property" targetNodeId="4.1224608857649" resolveInfo="isDeprecated" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224848684024">
+              <link role="conceptMethodDeclaration" targetNodeId="33.1224609060727" resolveInfo="isDeprecated" />
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223648710438">
@@ -7447,8 +7447,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1223648539628">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223648559616">
             <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1223648556052" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224610422157">
-              <link role="property" targetNodeId="4.1224608857649" resolveInfo="isDeprecated" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224848684025">
+              <link role="conceptMethodDeclaration" targetNodeId="33.1224609060727" resolveInfo="isDeprecated" />
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223648539630">
@@ -7456,8 +7456,8 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223648620079">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223648604810">
                   <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1223648603372" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224610425892">
-                    <link role="property" targetNodeId="4.1224608857649" resolveInfo="isDeprecated" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224851341018">
+                    <link role="property" targetNodeId="1.1224848525476" resolveInfo="isDeprecated" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1223648623692">
@@ -7474,8 +7474,8 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223648652704">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223648647669">
                     <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1223648646027" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224610427612">
-                      <link role="property" targetNodeId="4.1224608857649" resolveInfo="isDeprecated" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224851344300">
+                      <link role="property" targetNodeId="1.1224848525476" resolveInfo="isDeprecated" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1223648655097">
@@ -7485,18 +7485,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1224610429410">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224610429411">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224610433146">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224610434398">
-            <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1224610433147" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224610436011">
-              <link role="conceptMethodDeclaration" targetNodeId="33.1224609519989" resolveInfo="canJavaDoc" />
             </node>
           </node>
         </node>

@@ -4,20 +4,18 @@ package jetbrains.mps.lang.structure.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.core.structure.IDeprecatable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConceptPropertyDeclaration extends BaseConcept implements INamedConcept, IDeprecatable {
+public class ConceptPropertyDeclaration extends BaseConcept implements INamedConcept, IDeprecatableStructure {
 public    static final String concept = "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration";
 public    static final String NAME = "name";
 public    static final String SHORT_DESCRIPTION = "shortDescription";
 public    static final String ALIAS = "alias";
 public    static final String VIRTUAL_PACKAGE = "virtualPackage";
 public    static final String INHERITABLE = "inheritable";
-public    static final String IS_DEPRECATED = "isDeprecated";
 
   public ConceptPropertyDeclaration(SNode node) {
     super(node);
@@ -61,14 +59,6 @@ public    static final String IS_DEPRECATED = "isDeprecated";
 
   public void setInheritable(boolean value) {
     this.setBooleanProperty(ConceptPropertyDeclaration.INHERITABLE, value);
-  }
-
-  public boolean getIsDeprecated() {
-    return this.getBooleanProperty(ConceptPropertyDeclaration.IS_DEPRECATED);
-  }
-
-  public void setIsDeprecated(boolean value) {
-    this.setBooleanProperty(ConceptPropertyDeclaration.IS_DEPRECATED, value);
   }
 
 
