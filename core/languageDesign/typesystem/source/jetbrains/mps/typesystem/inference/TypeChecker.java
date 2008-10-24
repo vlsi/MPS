@@ -288,6 +288,7 @@ public class TypeChecker implements ApplicationComponent {
 
   @Nullable
   public SNode getTypeOf(SNode node) {
+    if (node == null) return null;
     if (myIsGeneration && HelginsPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
       return getTypeOf_generationMode(node);
     } else if (NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node).isInEditorQueries()) {
