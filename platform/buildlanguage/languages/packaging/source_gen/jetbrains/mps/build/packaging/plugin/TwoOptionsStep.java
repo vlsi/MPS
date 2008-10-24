@@ -4,6 +4,7 @@ package jetbrains.mps.build.packaging.plugin;
 
 import com.intellij.openapi.project.Project;
 import javax.swing.JTextField;
+import java.awt.Color;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
@@ -12,7 +13,6 @@ import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
-import java.awt.Color;
 import javax.swing.event.CaretListener;
 import javax.swing.event.CaretEvent;
 import javax.swing.ComboBoxModel;
@@ -26,6 +26,7 @@ public abstract class TwoOptionsStep <M> extends AbstractStep {
   protected final BuildGenerator myGenerator;
   protected final Project myProject;
   private JTextField myTextField;
+  private Color myDefaultTextFieldColor;
   private JCheckBox myOptionsCheckBox;
   private JComboBox mySelectComboBox;
   private IErrorHandler myHandler;
@@ -101,6 +102,7 @@ public abstract class TwoOptionsStep <M> extends AbstractStep {
       public void actionPerformed(ActionEvent event) {
         boolean checkBoxSelected = TwoOptionsStep.this.myOptionsCheckBox.isSelected();
         TwoOptionsStep.this.setEnabledState(checkBoxSelected);
+        TwoOptionsStep.this.checkTextField(TwoOptionsStep.this.myTextField);
       }
 
     });
@@ -112,24 +114,28 @@ public abstract class TwoOptionsStep <M> extends AbstractStep {
 
   private JTextField createTextField() {
     final JTextField textField = new JTextField();
-    final Color color = textField.getForeground();
+    this.myDefaultTextFieldColor = textField.getForeground();
     textField.addCaretListener(new CaretListener() {
 
       public void caretUpdate(CaretEvent p0) {
-        String text = textField.getText();
-        if (!(TwoOptionsStep.this.isValid(text))) {
-          TwoOptionsStep.this.myTextField.setForeground(Color.red);
-          TwoOptionsStep.this.myHandler.setErrorText(TwoOptionsStep.this.getWarningText(text));
-        } else
-        {
-          TwoOptionsStep.this.myTextField.setForeground(color);
-          TwoOptionsStep.this.myHandler.setErrorText(null);
-        }
-        TwoOptionsStep.this.myTextField.repaint();
+        TwoOptionsStep.this.checkTextField(textField);
       }
 
     });
     return textField;
+  }
+
+  private void checkTextField(JTextField textField) {
+    String text = textField.getText();
+    if (!(this.isValid(text)) && this.myOptionsCheckBox.isSelected()) {
+      this.myTextField.setForeground(Color.red);
+      this.myHandler.setErrorText(TwoOptionsStep.this.getWarningText(text));
+    } else
+    {
+      this.myTextField.setForeground(this.myDefaultTextFieldColor);
+      this.myHandler.setErrorText(null);
+    }
+    this.myTextField.repaint();
   }
 
   private void setEnabledState(boolean checkBoxSelected) {

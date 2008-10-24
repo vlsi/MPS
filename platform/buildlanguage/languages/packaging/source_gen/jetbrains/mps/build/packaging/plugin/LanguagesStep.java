@@ -27,15 +27,22 @@ public class LanguagesStep extends AbstractStep {
   private final BuildGenerator myGenerator;
   private CheckBoxTree myCheckTree;
   private final MPSProject myMpsProject;
+  private final IErrorHandler myHandler;
 
-  public LanguagesStep(Project project, BuildGenerator generator) {
+  public LanguagesStep(Project project, BuildGenerator generator, IErrorHandler handler) {
     this.myGenerator = generator;
     this.myProject = project;
     this.myMpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    this.myHandler = handler;
   }
 
   public void _init() {
     super._init();
+    String errorText = null;
+    if (!(this.myGenerator.isValid())) {
+      errorText = "Invalid input in previous steps.";
+    }
+    this.myHandler.setErrorText(errorText);
   }
 
   public JComponent createMainComponent() {
