@@ -158,10 +158,6 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
 
   //---FIND USAGES STUFF----
 
-  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
-    findUsages(provider, query, isRerunnable, showOne, newTab, "No usages for that node");
-  }
-
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab, final String notFoundMsg) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {

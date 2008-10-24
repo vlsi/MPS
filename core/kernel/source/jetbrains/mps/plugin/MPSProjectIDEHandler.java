@@ -4,18 +4,18 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
@@ -132,7 +132,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     SearchQuery searchQuery = new SearchQuery(GlobalScope.getInstance());
     BaseFinder finder = new AspectMethodsFinder(applicableModelDescriptors, name);
     BaseFinder[] finders = new BaseFinder[]{finder};
-    myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), searchQuery, false, true, true);
+    myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), searchQuery, false, true, true, "No usages for that method");
   }
 
   public void showConceptNode(final String fqName) throws RemoteException {
@@ -197,7 +197,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         });
 
         BaseFinder[] finders = new BaseFinder[]{finder};
-        myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), query, true, true, true);
+        myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), query, true, true, true, "No usages for that node");
       }
     }.start();
   }
