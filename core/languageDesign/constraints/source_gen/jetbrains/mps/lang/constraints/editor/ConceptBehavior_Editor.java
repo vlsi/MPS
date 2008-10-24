@@ -652,6 +652,15 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_11776706155091177670615509(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177670615509");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_11776706174801177670617480(EditorCell editorCell, SNode node, EditorContext context) {
