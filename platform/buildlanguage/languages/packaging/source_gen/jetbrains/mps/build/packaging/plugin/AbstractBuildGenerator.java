@@ -7,6 +7,10 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.Collections;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public abstract class AbstractBuildGenerator implements BuildGenerator {
 
@@ -91,6 +95,22 @@ public abstract class AbstractBuildGenerator implements BuildGenerator {
 
   public boolean getCreateSolution() {
     return this.myCreateSolution;
+  }
+
+  public boolean isValidModelName(String text) {
+    return SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(text)) == null;
+  }
+
+  public boolean isValidSolutionName(String text) {
+    if (text.equals("")) {
+      return false;
+    }
+    IModule moduleWithSelectedName = MPSModuleRepository.getInstance().getModuleByUID(text);
+    return moduleWithSelectedName == null;
+  }
+
+  public boolean isValid() {
+    return (this.isValidModelName(this.myModelName) || !(this.myCreateModel)) && (this.isValidSolutionName(this.mySolutionName) || !(this.myCreateSolution));
   }
 
 }

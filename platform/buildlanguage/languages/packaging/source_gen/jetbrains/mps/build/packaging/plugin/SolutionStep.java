@@ -12,7 +12,6 @@ import jetbrains.mps.project.Solution;
 import java.util.List;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class SolutionStep extends TwoOptionsStep<IModule> {
 
@@ -85,11 +84,7 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
   }
 
   protected boolean isValid(String text) {
-    if (text.equals("")) {
-      return false;
-    }
-    IModule moduleWithSelectedName = MPSModuleRepository.getInstance().getModuleByUID(text);
-    return moduleWithSelectedName == null;
+    return this.myGenerator.isValidSolutionName(text);
   }
 
   protected String getWarningText(String text) {

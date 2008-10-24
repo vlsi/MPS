@@ -14,6 +14,11 @@ import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Collections;
 import java.util.Comparator;
+import javax.swing.JPanel;
+import java.awt.GridBagLayout;
+import javax.swing.JLabel;
+import javax.swing.border.EtchedBorder;
+import java.awt.GridBagConstraints;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class LanguagesStep extends AbstractStep {
@@ -90,6 +95,19 @@ public class LanguagesStep extends AbstractStep {
     if (item.getParent() != null) {
       this.fillWithParents(item.getParent(), collection);
     }
+  }
+
+  protected void createComponent() {
+    if (this.myMainPanel == null) {
+      this.myMainPanel = new JPanel(new GridBagLayout());
+      this.myMainPanel.add(new JLabel(this.getDescription()), this.createConstraint(0, 0));
+      JComponent mainComponent = this.createMainComponent();
+      mainComponent.setBorder(new EtchedBorder());
+      GridBagConstraints constraints = this.createConstraint(1, 1);
+      constraints.fill = GridBagConstraints.BOTH;
+      this.myMainPanel.add(mainComponent, constraints);
+    }
+    this.myMainPanel.doLayout();
   }
 
   public static class MyTreeBuilder extends NamespaceTreeBuilder<CheckBoxNode, CheckBoxNamespaceNode> {

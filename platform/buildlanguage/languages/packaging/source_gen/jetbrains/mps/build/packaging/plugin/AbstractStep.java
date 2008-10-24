@@ -14,7 +14,7 @@ import javax.swing.border.EtchedBorder;
 
 public abstract class AbstractStep extends StepAdapter {
 
-  private JPanel myMainPanel;
+  protected JPanel myMainPanel;
 
   public AbstractStep() {
   }
@@ -47,7 +47,7 @@ public abstract class AbstractStep extends StepAdapter {
     return null;
   }
 
-  private void createComponent() {
+  protected void createComponent() {
     if (this.myMainPanel == null) {
       this.myMainPanel = new JPanel(new GridBagLayout());
       this.myMainPanel.add(new JLabel(this.getDescription()), this.createConstraint(0, 0));
@@ -56,6 +56,7 @@ public abstract class AbstractStep extends StepAdapter {
       this.myMainPanel.add(mainComponent, this.createConstraint(1, 0));
       this.myMainPanel.add(new JPanel(), this.createConstraint(2, 1));
     }
+    this.myMainPanel.doLayout();
   }
 
 }
