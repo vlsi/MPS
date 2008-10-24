@@ -118,9 +118,10 @@ public class Generator extends AbstractModule {
     SModelDescriptor result = super.createModel(name, root);
     if (SModelStereotype.isGeneratorModel(result)) {
       result.getSModel().addLanguage(BootstrapLanguagesManager.getInstance().getTLBase());
+    }else{
+      result.getSModel().addDevKit((jetbrains.mps.project.DevKit) BootstrapModule.LANGUAGE_DESIGN_DEVKIT.get());
     }
     result.getSModel().addLanguage(BootstrapLanguagesManager.getInstance().getGenerationContext());
-    result.getSModel().addDevKit((jetbrains.mps.project.DevKit) BootstrapModule.LANGUAGE_DESIGN_DEVKIT.get());
 
     LanguageDescriptor oldDescriptor = getSourceLanguage().getLanguageDescriptor();
     getSourceLanguage().setLanguageDescriptor(oldDescriptor);
