@@ -75,9 +75,8 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
   }
 
   public void loadState(Element state) {
-    Element defaultFindOptionsXML = state.getChild(DEFAULT_SEARCH_OPTIONS);
     try {
-      myDefaultSearchOptions.read(defaultFindOptionsXML, getMPSProject());
+      myDefaultSearchOptions.read(state, getMPSProject());
     } catch (CantLoadSomethingException e) {
       myDefaultSearchOptions = new FindUsagesOptions(new FindersOptions(), new ScopeOptions(), new ViewOptions());
     }
