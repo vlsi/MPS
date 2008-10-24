@@ -8,15 +8,9 @@ import java.awt.*;
  */
 public class FrameUtil {
   public static void activateFrame(Frame frame) {
+    frame.setAlwaysOnTop(true);
+    frame.setAlwaysOnTop(false);
+
     frame.toFront();
-
-    int state = frame.getExtendedState();
-    Rectangle bounds = frame.getBounds();
-
-    frame.setExtendedState(JFrame.ICONIFIED);
-    frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
-    frame.setExtendedState(state);
-    frame.setBounds(bounds);
   }
 }
