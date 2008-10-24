@@ -244,23 +244,12 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
     }
 
     class ViewOptionsToolbar extends MPSToolBar {
-      private AnonymToggleButton myCountNeededButton;
       private AnonymToggleButton myAdditionalInfoNeededButton;
       private AnonymToggleButton myShowSearchedNodesButton;
       private AnonymToggleButton myGroupSearchedNodesButton;
 
       public ViewOptionsToolbar() {
         setBorderPainted(false);
-        myCountNeededButton = new MyAnonymToggleButton(Icons.NUM_ICON, "Counters") {
-          public void actionSelected() {
-            myTree.setCountNeeded(true);
-          }
-
-          public void actionDeselected() {
-            myTree.setCountNeeded(false);
-          }
-        };
-        /*add(myCountNeededButton);*/
 
         myAdditionalInfoNeededButton = new MyAnonymToggleButton(Icons.INFO_ICON, "Additional node info") {
           public void actionSelected() {
@@ -310,7 +299,6 @@ public abstract class UsagesTreeHolder extends JPanel implements IChangeListener
       public void setViewOptions(ViewOptions options) {
         myTree.startAdjusting();
 
-        myCountNeededButton.setState(true/*options.myCount*/);
         myAdditionalInfoNeededButton.setState(options.myInfo);
         myShowSearchedNodesButton.setState(options.myShowSearchedNodes);
         myGroupSearchedNodesButton.setState(options.myGroupSearchedNodes);

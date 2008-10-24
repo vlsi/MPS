@@ -48,7 +48,6 @@ public abstract class UsagesTree extends MPSTree {
   private DataTree myContents = new DataTree();
   private HashSet<PathItemRole> myResultPathProvider = new HashSet<PathItemRole>();
 
-  private boolean myCountersNeeded;
   private boolean myAdditionalInfoNeeded;
   private boolean myShowSearchedNodes;
   private boolean myGroupSearchedNodes;
@@ -56,7 +55,6 @@ public abstract class UsagesTree extends MPSTree {
   private boolean myAutoscroll = false;
 
   public UsagesTree() {
-    myCountersNeeded = false;
     myAdditionalInfoNeeded = false;
 
     myResultPathProvider.add(PathItemRole.ROLE_MAIN_RESULTS);
@@ -166,13 +164,6 @@ public abstract class UsagesTree extends MPSTree {
   public void setResultPathProvider(Set<PathItemRole> resultPathProvider) {
     myResultPathProvider.clear();
     myResultPathProvider.addAll(resultPathProvider);
-    if (!myIsAdjusting) {
-      rebuildLater();
-    }
-  }
-
-  public void setCountNeeded(boolean countersNeeded) {
-    myCountersNeeded = countersNeeded;
     if (!myIsAdjusting) {
       rebuildLater();
     }
@@ -289,7 +280,7 @@ public abstract class UsagesTree extends MPSTree {
       node.setUserObject(root);
 
       String invalid = data.isInvalid() ? "<font color=red>[Invalid]</font> " : "";
-      String caption = data.getText(new TextOptions(myAdditionalInfoNeeded, myCountersNeeded));
+      String caption = data.getText(new TextOptions(myAdditionalInfoNeeded, true));
       if (data.isExcluded()) {
         node.setText(invalid + "<font color=gray><s>" + caption + "</s></font>");
       } else {
