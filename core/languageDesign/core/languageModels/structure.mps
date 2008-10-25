@@ -140,6 +140,10 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1224608834445">
     <property name="name" value="IDeprecatable" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1224938608338">
+      <property name="name" value="build" />
+      <link role="dataType" targetNodeId="1082983657062" resolveInfo="integer" />
+    </node>
   </node>
 </model>
 

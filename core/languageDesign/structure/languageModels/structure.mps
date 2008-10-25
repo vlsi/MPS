@@ -419,6 +419,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1105736576531">
     <property name="name" value="ConceptLinkDeclaration" />
     <property name="rootable" value="false" />
+    <property name="build" value="122" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1169197959642">
       <link role="intfc" targetNodeId="1.1169194658468" />

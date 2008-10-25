@@ -15,6 +15,7 @@ public    static final String ALIAS = "alias";
 public    static final String VIRTUAL_PACKAGE = "virtualPackage";
 public    static final String RESOLVE_INFO = "resolveInfo";
 public    static final String IS_DEPRECATED = "isDeprecated";
+public    static final String BUILD = "build";
 public    static final String VISIBILITY = "visibility";
 
   public StaticFieldDeclaration(SNode node) {
@@ -59,6 +60,14 @@ public    static final String VISIBILITY = "visibility";
 
   public void setIsDeprecated(boolean value) {
     this.setBooleanProperty(StaticFieldDeclaration.IS_DEPRECATED, value);
+  }
+
+  public int getBuild() {
+    return this.getIntegerProperty(StaticFieldDeclaration.BUILD);
+  }
+
+  public void setBuild(int value) {
+    this.setIntegerProperty(StaticFieldDeclaration.BUILD, value);
   }
 
   public Visibility getVisibility() {

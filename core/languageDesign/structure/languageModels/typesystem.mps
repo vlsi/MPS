@@ -64,8 +64,49 @@
               </node>
               <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="1224250219917">
                 <node role="warningText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224250219918">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224250219919">
-                    <property name="value" value=" is deprecated" />
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224944087512">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224250219919">
+                      <property name="value" value=" is deprecated" />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1224944088909">
+                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1224944088910">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224944088911">
+                          <property name="value" value="0" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224944088912">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224944088913">
+                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1224944094086">
+                              <link role="applicableNode" targetNodeId="1212181808765" resolveInfo="linkToCheck" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224944096856">
+                              <link role="link" targetNodeId="5.1071599976176" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224944088916">
+                            <link role="property" targetNodeId="6.1224938608338" resolveInfo="build" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224944088917">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224944088918">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224944088919">
+                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1224944099658">
+                              <link role="applicableNode" targetNodeId="1212181808765" resolveInfo="linkToCheck" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224944102476">
+                              <link role="link" targetNodeId="5.1071599976176" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224944088922">
+                            <link role="property" targetNodeId="6.1224938608338" resolveInfo="build" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224944088923">
+                          <property name="value" value=" since b." />
+                        </node>
+                      </node>
+                      <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224944088924" />
+                    </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224250219920">
                     <link role="variableDeclaration" targetNodeId="1224250219910" resolveInfo="error" />
@@ -448,8 +489,49 @@
               </node>
               <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="1224250081336">
                 <node role="warningText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224250085433">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224250087796">
-                    <property name="value" value=" is deprecated" />
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224944012303">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224250087796">
+                      <property name="value" value=" is deprecated" />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1224944012837">
+                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1224944012838">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224944012839">
+                          <property name="value" value="0" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224944012840">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224944012841">
+                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1224944018947">
+                              <link role="applicableNode" targetNodeId="1224249863237" resolveInfo="annotationLink" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224944023792">
+                              <link role="link" targetNodeId="5.1149608246500" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224944012844">
+                            <link role="property" targetNodeId="6.1224938608338" resolveInfo="build" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224944012845">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224944012846">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224944012847">
+                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1224944028668">
+                              <link role="applicableNode" targetNodeId="1224249863237" resolveInfo="annotationLink" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224944032216">
+                              <link role="link" targetNodeId="5.1149608246500" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224944012850">
+                            <link role="property" targetNodeId="6.1224938608338" resolveInfo="build" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224944012851">
+                          <property name="value" value=" since b." />
+                        </node>
+                      </node>
+                      <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224944012852" />
+                    </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224250083886">
                     <link role="variableDeclaration" targetNodeId="1224250051822" resolveInfo="error" />
@@ -514,8 +596,49 @@
               </node>
               <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="1224250109484">
                 <node role="warningText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224250109485">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224250109486">
-                    <property name="value" value=" is deprecated" />
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224944037951">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224250109486">
+                      <property name="value" value=" is deprecated" />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1224944038485">
+                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1224944038486">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224944038487">
+                          <property name="value" value="0" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224944038488">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224944038489">
+                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1224944044001">
+                              <link role="applicableNode" targetNodeId="1224249863237" resolveInfo="annotationLink" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224944050597">
+                              <link role="link" targetNodeId="5.1204741097161" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224944038492">
+                            <link role="property" targetNodeId="6.1224938608338" resolveInfo="build" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224944038493">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224944038494">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224944038495">
+                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1224944055333">
+                              <link role="applicableNode" targetNodeId="1224249863237" resolveInfo="annotationLink" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224944058052">
+                              <link role="link" targetNodeId="5.1149608246500" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224944038498">
+                            <link role="property" targetNodeId="6.1224938608338" resolveInfo="build" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224944038499">
+                          <property name="value" value=" since b." />
+                        </node>
+                      </node>
+                      <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224944038500" />
+                    </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224250109487">
                     <link role="variableDeclaration" targetNodeId="1224250109477" resolveInfo="error" />
@@ -589,8 +712,49 @@
               </node>
               <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="1224250291456">
                 <node role="warningText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224250291457">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224250291458">
-                    <property name="value" value=" is deprecated" />
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224943490719">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1224943896310">
+                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1224943913710">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224943915652">
+                          <property name="value" value="0" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224943909561">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224943903772">
+                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1224943901566">
+                              <link role="applicableNode" targetNodeId="1224250283584" resolveInfo="concept" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224943906527">
+                              <link role="link" targetNodeId="5.1071489389519" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224943911613">
+                            <link role="property" targetNodeId="6.1224938608338" resolveInfo="build" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224943935161">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224943945005">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224943941232">
+                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1224943939385">
+                              <link role="applicableNode" targetNodeId="1224250283584" resolveInfo="concept" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224943943471">
+                              <link role="link" targetNodeId="5.1071489389519" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224943946698">
+                            <link role="property" targetNodeId="6.1224938608338" resolveInfo="build" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224943922830">
+                          <property name="value" value=" since b." />
+                        </node>
+                      </node>
+                      <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224943919608" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224250291458">
+                      <property name="value" value=" is deprecated" />
+                    </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224250291459">
                     <link role="variableDeclaration" targetNodeId="1224250291449" resolveInfo="error" />
@@ -666,8 +830,39 @@
               </node>
               <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="1224250635410">
                 <node role="warningText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224250641320">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224250642105">
-                    <property name="value" value=" is deprecated" />
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224943964311">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224250642105">
+                      <property name="value" value=" is deprecated" />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1224943965676">
+                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1224943965677">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1224943965678">
+                          <property name="value" value="0" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224943965679">
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224943965683">
+                            <link role="property" targetNodeId="6.1224938608338" resolveInfo="build" />
+                          </node>
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224943991998">
+                            <link role="variableDeclaration" targetNodeId="1224250578653" resolveInfo="impl" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224943965684">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224943965685">
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1224943965689">
+                            <link role="property" targetNodeId="6.1224938608338" resolveInfo="build" />
+                          </node>
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224943996347">
+                            <link role="variableDeclaration" targetNodeId="1224250578653" resolveInfo="impl" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224943965690">
+                          <property name="value" value=" since b." />
+                        </node>
+                      </node>
+                      <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1224943965691" />
+                    </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224250639382">
                     <link role="variableDeclaration" targetNodeId="1224250611594" resolveInfo="error" />

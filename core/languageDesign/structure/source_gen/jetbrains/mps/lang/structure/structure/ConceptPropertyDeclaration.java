@@ -16,6 +16,7 @@ public    static final String SHORT_DESCRIPTION = "shortDescription";
 public    static final String ALIAS = "alias";
 public    static final String VIRTUAL_PACKAGE = "virtualPackage";
 public    static final String INHERITABLE = "inheritable";
+public    static final String BUILD = "build";
 
   public ConceptPropertyDeclaration(SNode node) {
     super(node);
@@ -59,6 +60,14 @@ public    static final String INHERITABLE = "inheritable";
 
   public void setInheritable(boolean value) {
     this.setBooleanProperty(ConceptPropertyDeclaration.INHERITABLE, value);
+  }
+
+  public int getBuild() {
+    return this.getIntegerProperty(ConceptPropertyDeclaration.BUILD);
+  }
+
+  public void setBuild(int value) {
+    this.setIntegerProperty(ConceptPropertyDeclaration.BUILD, value);
   }
 
 

@@ -15,6 +15,7 @@ public    static final String SHORT_DESCRIPTION = "shortDescription";
 public    static final String ALIAS = "alias";
 public    static final String VIRTUAL_PACKAGE = "virtualPackage";
 public    static final String IS_DEPRECATED = "isDeprecated";
+public    static final String BUILD = "build";
 public    static final String EXTENDED_INTERFACE = "extendedInterface";
 
   public Interface(SNode node) {
@@ -51,6 +52,14 @@ public    static final String EXTENDED_INTERFACE = "extendedInterface";
 
   public void setIsDeprecated(boolean value) {
     this.setBooleanProperty(Interface.IS_DEPRECATED, value);
+  }
+
+  public int getBuild() {
+    return this.getIntegerProperty(Interface.BUILD);
+  }
+
+  public void setBuild(int value) {
+    this.setIntegerProperty(Interface.BUILD, value);
   }
 
   public int getExtendedInterfacesCount() {

@@ -596,6 +596,34 @@
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1171628247797">
       <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1224937242837">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224937242838">
+          <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224937242840">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224937253825">
+          <property name="text" value="deprecated since b." />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1224938638156">
+          <link role="relationDeclaration" targetNodeId="18.1224938608338" resolveInfo="build" />
+          <link role="styleClass" targetNodeId="1198596048616" resolveInfo="NumericLiteral" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1224940140897">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224940140898">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224940141368">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224940141369">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1224940141370" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224940141371">
+                  <link role="conceptMethodDeclaration" targetNodeId="74.1224609060727" resolveInfo="isDeprecated" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199822265082">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199822265083">
@@ -950,6 +978,34 @@
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1188210485491">
       <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1224939538303">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224939538304">
+          <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224939538305">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224939538306">
+          <property name="text" value="deprecated since b." />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1224939538313">
+          <link role="styleClass" targetNodeId="1198596048616" resolveInfo="NumericLiteral" />
+          <link role="relationDeclaration" targetNodeId="18.1224938608338" resolveInfo="build" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1224940125626">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224940125627">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224940126174">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224940126175">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1224940126176" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224940126177">
+                  <link role="conceptMethodDeclaration" targetNodeId="74.1224609060727" resolveInfo="isDeprecated" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1188210485992">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188210485993">
@@ -1281,6 +1337,34 @@
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1188210505277">
       <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1224939561140">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224939561141">
+          <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224939561142">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224939561143">
+          <property name="text" value="deprecated since b." />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1224939561150">
+          <link role="styleClass" targetNodeId="1198596048616" resolveInfo="NumericLiteral" />
+          <link role="relationDeclaration" targetNodeId="18.1224938608338" resolveInfo="build" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1224940087676">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224940087677">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224940088178">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224940088179">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1224940088180" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224940088181">
+                  <link role="conceptMethodDeclaration" targetNodeId="74.1224609060727" resolveInfo="isDeprecated" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1188210505278">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188210505279">
@@ -1513,6 +1597,34 @@
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1188210527970">
       <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1224939594102">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224939594103">
+          <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224939594104">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224939594105">
+          <property name="text" value="deprecated since b." />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1224939594112">
+          <link role="styleClass" targetNodeId="1198596048616" resolveInfo="NumericLiteral" />
+          <link role="relationDeclaration" targetNodeId="18.1224938608338" resolveInfo="build" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1224940024066">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224940024067">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224940028958">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224940030507">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1224940028959" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224940033963">
+                  <link role="conceptMethodDeclaration" targetNodeId="74.1224609060727" resolveInfo="isDeprecated" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1188210545590">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188210545591">
@@ -1638,6 +1750,34 @@
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1188210582852">
       <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1224939552596">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224939552597">
+          <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224939552598">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224939552599">
+          <property name="text" value="deprecated since b." />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1224939552606">
+          <link role="styleClass" targetNodeId="1198596048616" resolveInfo="NumericLiteral" />
+          <link role="relationDeclaration" targetNodeId="18.1224938608338" resolveInfo="build" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1224940103823">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224940103824">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224940105137">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224940105138">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1224940105139" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224940105140">
+                  <link role="conceptMethodDeclaration" targetNodeId="74.1224609060727" resolveInfo="isDeprecated" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1188210583259">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188210583260">
@@ -4473,6 +4613,34 @@
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1184156044214">
       <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1224939586293">
+        <property name="vertical" value="false" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224939586294">
+          <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224939586295">
+          <property name="flag" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224939586296">
+          <property name="text" value="deprecated since b." />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1224939586303">
+          <link role="relationDeclaration" targetNodeId="18.1224938608338" resolveInfo="build" />
+          <link role="styleClass" targetNodeId="1198596048616" resolveInfo="NumericLiteral" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1224940064543">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224940064544">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224940067685">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224940068812">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1224940067686" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224940072034">
+                  <link role="conceptMethodDeclaration" targetNodeId="74.1224609060727" resolveInfo="isDeprecated" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1184156044215">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1184156045517">

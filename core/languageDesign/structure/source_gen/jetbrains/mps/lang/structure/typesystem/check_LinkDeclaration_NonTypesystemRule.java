@@ -33,7 +33,10 @@ public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesyst
         String error = BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(linkToCheck, "target", false));
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportWarning(linkToCheck, error + " is deprecated", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1224250219917", intentionProvider);
+          typeCheckingContext.reportWarning(linkToCheck, error + " is deprecated" + (SPropertyOperations.getInteger(SLinkOperations.getTarget(linkToCheck, "target", false), "build") != 0 ?
+            " since b." + SPropertyOperations.getInteger(SLinkOperations.getTarget(linkToCheck, "target", false), "build") :
+            ""
+          ), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1224250219917", intentionProvider);
         }
       }
     }
