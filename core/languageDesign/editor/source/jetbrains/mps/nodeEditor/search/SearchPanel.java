@@ -275,8 +275,10 @@ public class SearchPanel extends JPanel {
     List<Integer> startCellPosition = new ArrayList<Integer>();
     List<Integer> endCellPosition = new ArrayList<Integer>();
     StringBuilder sourceBuilder = new StringBuilder();
+    boolean doubleSpace = false;
     for (EditorCell_Label cell : cells) {
-      if (cell.getStyle().get(StyleAttributes.PADDING_LEFT) >= 1.0) {
+      if (cell.getStyle().get(StyleAttributes.PADDING_LEFT) >= 1.0
+        && !doubleSpace) {
         sourceBuilder.append(" ");
       }
       startCellPosition.add(sourceBuilder.length());
@@ -284,6 +286,9 @@ public class SearchPanel extends JPanel {
       endCellPosition.add(sourceBuilder.length());
       if (cell.getStyle().get(StyleAttributes.PADDING_RIGHT) >= 1.0) {
         sourceBuilder.append(" ");
+        doubleSpace = true;
+      } else {
+        doubleSpace = false;
       }
     }
     List<Integer> resultIndex = new ArrayList<Integer>();
@@ -295,6 +300,19 @@ public class SearchPanel extends JPanel {
       while (!((startCellPosition.get(index) <= matcher.start())
         && (endCellPosition.get(index) > matcher.start()))) {
         index++;
+        if (index == cells.size()) {
+          if (myCells.isEmpty()) {
+            return;
+          } else {
+            break;
+          }
+        }
+        if (startCellPosition.get(index) <= matcher.start()
+          && !(endCellPosition.indexOf(index) > matcher.start())
+          && index < cells.size() - 1
+          && startCellPosition.get(index + 1) > matcher.start()) {
+          break;
+        }
       }
       myCells.add(cells.get(index));
       CellLayout cellLayout = cells.get(index).getParent().getCellLayout();
