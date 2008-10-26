@@ -243,6 +243,8 @@ public class CopyPasteUtil {
 
   public static PasteNodeData getPasteNodeDataFromClipboard(SModel model) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    if (cb == null) return PasteNodeData.emptyPasteNodeData(model);
+    
     Transferable content = cb.getContents(null);
     if (content == null) return PasteNodeData.emptyPasteNodeData(model);
 
