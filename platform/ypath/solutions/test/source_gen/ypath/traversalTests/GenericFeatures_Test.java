@@ -14,7 +14,7 @@ import java.io.ByteArrayInputStream;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 public class GenericFeatures_Test extends TestCase {
-  public static String INPUT = "<root><a><foo/><bar><foo/></bar><baz><foo/></baz></a></root>";
+private    static String INPUT = "<root><a><foo/><bar><foo/></bar><baz><foo/></baz></a></root>";
 
   @Test()
   public void test_generic() throws Exception {

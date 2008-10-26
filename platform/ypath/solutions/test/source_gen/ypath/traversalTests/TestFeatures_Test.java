@@ -16,7 +16,7 @@ import java.io.ByteArrayInputStream;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 public class TestFeatures_Test extends TestCase {
-  public static String SIMPLE = "<root r1=\"r1\"><a a1=\"a1\"><b b1=\"b1\" b2=\"b2\"><c c1=\"c1\"/></b></a></root>";
+private    static String SIMPLE = "<root r1=\"r1\"><a a1=\"a1\"><b b1=\"b1\" b2=\"b2\"><c c1=\"c1\"/></b></a></root>";
 
   @Test()
   public void test_nodesAndAttributes() throws Exception {

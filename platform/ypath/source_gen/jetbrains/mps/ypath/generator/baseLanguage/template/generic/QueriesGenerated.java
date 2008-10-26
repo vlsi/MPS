@@ -17,27 +17,17 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ypath.generator.baseLanguage.template.helper.AggregatorUtil;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
-import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import java.util.Comparator;
-import jetbrains.mps.internal.collections.runtime.CaseInsensitiveStringComparison;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil;
-import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
+import jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesGenerated {
 
@@ -360,38 +350,6 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.ypath.structure.IterateOperation") && TreePathOperationExpression_Behavior.call_isGeneric_1213877409257(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1199806492720(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
-    return (TraversalAxisUtil.isSelfFirst(axis) ?
-      "closure" :
-      "void"
-    );
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1199806555903(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
-    return (TraversalAxisUtil.isSelfFirst(axis) ?
-      "closure" :
-      "parents"
-    );
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1200060391054(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
-    return (TraversalAxisUtil.isSelfFirst(axis) ?
-      "closure" :
-      "parents"
-    );
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1200060391259(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
-    return (TraversalAxisUtil.isSelfFirst(axis) ?
-      "closure" :
-      "void"
-    );
-  }
-
   public static Object referenceMacro_GetReferent_1197288625692(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "usedFeature", false);
   }
@@ -458,104 +416,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1197299931245(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "range", true), "includes_start"));
-  }
-
-  public static boolean ifMacro_Condition_1199801991912(final IOperationContext operationContext, final IfMacroContext _context) {
-    return TraversalAxisUtil.isIncludingSelf(TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS")));
-  }
-
-  public static boolean ifMacro_Condition_1199803923829(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
-    return TraversalAxisUtil.isIncludingSelf(axis);
-  }
-
-  public static boolean ifMacro_Condition_1199803953270(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
-    return TraversalAxisUtil.isSelfFirst(axis);
-  }
-
-  public static boolean ifMacro_Condition_1199806552619(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
-    return !(TraversalAxisUtil.isSelfFirst(axis));
-  }
-
-  public static boolean ifMacro_Condition_1199806656619(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
-    return TraversalAxisUtil.isSelfFirst(axis);
-  }
-
-  public static boolean ifMacro_Condition_1199879710014(final IOperationContext operationContext, final IfMacroContext _context) {
-    return IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
-  }
-
-  public static boolean ifMacro_Condition_1199880059582(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
-  }
-
-  public static boolean ifMacro_Condition_1199881604907(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
-  }
-
-  public static boolean ifMacro_Condition_1199881864289(final IOperationContext operationContext, final IfMacroContext _context) {
-    return IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
-  }
-
-  public static boolean ifMacro_Condition_1199882800816(final IOperationContext operationContext, final IfMacroContext _context) {
-    return TraversalAxisUtil.isSelfFirst(TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS")));
-  }
-
-  public static boolean ifMacro_Condition_1199971572683(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
-    return !(TraversalAxisUtil.isSelfFirst(axis));
-  }
-
-  public static boolean ifMacro_Condition_1199998553589(final IOperationContext operationContext, final IfMacroContext _context) {
-    return IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
-  }
-
-  public static boolean ifMacro_Condition_1199998563164(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
-  }
-
-  public static boolean ifMacro_Condition_1200060390903(final IOperationContext operationContext, final IfMacroContext _context) {
-    return TraversalAxisUtil.isSelfFirst(TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS")));
-  }
-
-  public static boolean ifMacro_Condition_1200060391003(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
-    return TraversalAxisUtil.isIncludingSelf(axis);
-  }
-
-  public static boolean ifMacro_Condition_1200060391022(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
-    return TraversalAxisUtil.isSelfFirst(axis);
-  }
-
-  public static boolean ifMacro_Condition_1200060391038(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
-    return !(TraversalAxisUtil.isSelfFirst(axis));
-  }
-
-  public static boolean ifMacro_Condition_1200060391077(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
-    return TraversalAxisUtil.isSelfFirst(axis);
-  }
-
-  public static boolean ifMacro_Condition_1200060391094(final IOperationContext operationContext, final IfMacroContext _context) {
-    TraversalAxis axis = (TraversalAxis)_context.getTransientObject("traversal_axis");
-    return !(TraversalAxisUtil.isSelfFirst(axis));
-  }
-
-  public static boolean ifMacro_Condition_1210075313871(final IOperationContext operationContext, final IfMacroContext _context) {
-    return IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true));
-  }
-
-  public static boolean ifMacro_Condition_1210076007212(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(IGenericFeature_Behavior.call_isSingleCardinality_1213877249147(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SLinkOperations.getTarget(_context.getNode(), "paramObject", true)));
-  }
-
-  public static boolean ifMacro_Condition_1210077634627(final IOperationContext operationContext, final IfMacroContext _context) {
-    return TraversalAxisUtil.isIncludingSelf(TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS")));
   }
 
   public static SNode sourceNodeQuery_1194654504117(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -639,25 +499,19 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1196716148727(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode cand = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "candidates", true)).sort(new Comparator <SNode>() {
+    SNode cand = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "candidates", true)).sort(new ISelector <SNode, Comparable<?>>() {
 
-      public int compare(SNode a, SNode b) {
-        return CaseInsensitiveStringComparison.compare(a, b, new ISelector <SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getInteger(it, "priority") * ((ListSequence.fromList(SNodeOperations.getDescendants(it, null, false)).where(new IWhereFilter <SNode>() {
 
-          public Comparable<?> select(SNode it) {
-            return SPropertyOperations.getInteger(it, "priority") * ((ListSequence.fromList(SNodeOperations.getDescendants(it, null, false)).where(new IWhereFilter <SNode>() {
-
-              public boolean accept(SNode it) {
-                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.NotAStatement");
-              }
-
-            }).isNotEmpty() ?
-              0 :
-              1
-            ));
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.NotAStatement");
           }
 
-        });
+        }).isNotEmpty() ?
+          0 :
+          1
+        ));
       }
 
     }, false).first();
@@ -1060,10 +914,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "writePath", true);
   }
 
-  public static SNode sourceNodeQuery_1199880351805(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "operation", true);
-  }
-
   public static SNode sourceNodeQuery_1199883266471(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "body", true);
   }
@@ -1073,42 +923,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(expression), "nodeType", true);
   }
 
-  public static SNode sourceNodeQuery_1200053390568(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true));
-  }
-
-  public static SNode sourceNodeQuery_1200053478309(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true)));
-  }
-
-  public static SNode sourceNodeQuery_1200059673243(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(ITreePathExpression_Behavior.call_getTreePath_1213877496973(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false)), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1200059774145(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1200060433412(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true)));
-  }
-
-  public static SNode sourceNodeQuery_1200060433432(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true));
-  }
-
   public static SNode sourceNodeQuery_1200090439933(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operation", true);
-  }
-
-  public static SNode sourceNodeQuery_1200485834660(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode op = (SNode)_context.getTransientObject("siblings_operation");
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(ITreePathExpression_Behavior.call_getTreePath_1213877496973(SNodeOperations.getAncestor(op, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false)), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1200485902317(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode op = (SNode)_context.getTransientObject("siblings_operation");
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(ITreePathExpression_Behavior.call_getTreePath_1213877496973(SNodeOperations.getAncestor(op, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false)), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1200745610377(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1117,38 +933,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1200745634904(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "writePath", true), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1210075313743(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1210075313818(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1210075313841(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1210075990241(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1210075990307(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1210075990329(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false)), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1210079713279(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true)));
-  }
-
-  public static SNode sourceNodeQuery_1210079713293(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true));
   }
 
   public static Iterable sourceNodesQuery_1196716118756(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1162,284 +946,6 @@ public class QueriesGenerated {
       }
     }
     return newCandidates;
-  }
-
-  public static Iterable sourceNodesQuery_1199801680531(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return OperationsUtil.substituteApplicableOperations(_context.getNode());
-  }
-
-  public static Iterable sourceNodesQuery_1199802138419(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return OperationsUtil.substituteApplicableOperations(_context.getNode());
-  }
-
-  public static Iterable sourceNodesQuery_1199878823319(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return OperationsUtil.substituteApplicableOperations(_context.getNode());
-  }
-
-  public static Iterable sourceNodesQuery_1199881860506(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return OperationsUtil.substituteApplicableOperations(_context.getNode());
-  }
-
-  public static Iterable sourceNodesQuery_1199998553583(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return OperationsUtil.substituteApplicableOperations(_context.getNode());
-  }
-
-  public static Iterable sourceNodesQuery_1199998563158(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return OperationsUtil.substituteApplicableOperations(_context.getNode());
-  }
-
-  public static Iterable sourceNodesQuery_1200060391110(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode origOp = (SNode)_context.getTransientObject("siblings_operation");
-    final SNode currOpp = SLinkOperations.getTarget(_context.getNode(), "usedFeature", false);
-    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).translate(new ITranslator <SNode, SNode>() {
-
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
-
-          public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
-              private int __CP__ = 0;
-              private SNode _3_opp;
-              private SNode _7_io;
-
-              protected boolean moveToNext() {
-__loop__:
-                do {
-__switch__:
-                  switch (this.__CP__) {
-                    case -1:
-                      assert false : "Internal error";
-                      return false;
-                    case 4:
-                      if (this._3_opp == currOpp) {
-                        this.__CP__ = 5;
-                        break;
-                      }
-                      this.__CP__ = 1;
-                      break;
-                    case 8:
-                      this.__CP__ = 1;
-                      this.yield(this._7_io);
-                      return true;
-                    case 0:
-                      this._3_opp = SLinkOperations.getTarget(SLinkOperations.getTarget(it, "usedFeature", false), "opposite", false);
-                      this.__CP__ = 4;
-                      break;
-                    case 5:
-                      this._7_io = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.IterateOperation", null);
-                      SLinkOperations.setTarget(this._7_io, "usedFeature", SLinkOperations.getTarget(it, "usedFeature", false), false);
-                      SPropertyOperations.set(this._7_io, "axis", "" + (TraversalAxis.CHILDREN.getValue()));
-                      this.__CP__ = 8;
-                      break;
-                    default:
-                      break __loop__;
-                  }
-                } while(true);
-                return false;
-              }
-
-            };
-          }
-
-        };
-      }
-
-    }).toListSequence();
-  }
-
-  public static Iterable sourceNodesQuery_1200060391177(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
-    _context.putTransientObject("traversal_axis", axis);
-    _context.putTransientObject("siblings_operation", _context.getNode());
-    final List<SNode> oppFeats = ListSequence.<SNode>fromArray();
-    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).translate(new ITranslator <SNode, SNode>() {
-
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
-
-          public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
-              private int __CP__ = 0;
-              private SNode _3_opp;
-              private SNode _7_io;
-
-              protected boolean moveToNext() {
-__loop__:
-                do {
-__switch__:
-                  switch (this.__CP__) {
-                    case -1:
-                      assert false : "Internal error";
-                      return false;
-                    case 4:
-                      if (!(ListSequence.fromList(oppFeats).contains(this._3_opp))) {
-                        this.__CP__ = 5;
-                        break;
-                      }
-                      this.__CP__ = 1;
-                      break;
-                    case 8:
-                      this.__CP__ = 1;
-                      this.yield(this._7_io);
-                      return true;
-                    case 0:
-                      this._3_opp = SLinkOperations.getTarget(SLinkOperations.getTarget(it, "usedFeature", false), "opposite", false);
-                      this.__CP__ = 4;
-                      break;
-                    case 5:
-                      ListSequence.fromList(oppFeats).addElement(this._3_opp);
-                      this._7_io = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.IterateOperation", null);
-                      SLinkOperations.setTarget(this._7_io, "usedFeature", this._3_opp, false);
-                      SPropertyOperations.set(this._7_io, "axis", "" + (TraversalAxis.CHILDREN.getValue()));
-                      this.__CP__ = 8;
-                      break;
-                    default:
-                      break __loop__;
-                  }
-                } while(true);
-                return false;
-              }
-
-            };
-          }
-
-        };
-      }
-
-    }).toListSequence();
-  }
-
-  public static Iterable sourceNodesQuery_1200223036886(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode origOp = (SNode)_context.getTransientObject("siblings_operation");
-    final SNode currOpp = SLinkOperations.getTarget(_context.getNode(), "usedFeature", false);
-    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).translate(new ITranslator <SNode, SNode>() {
-
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
-
-          public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
-              private int __CP__ = 0;
-              private SNode _3_opp;
-              private SNode _7_io;
-
-              protected boolean moveToNext() {
-__loop__:
-                do {
-__switch__:
-                  switch (this.__CP__) {
-                    case -1:
-                      assert false : "Internal error";
-                      return false;
-                    case 4:
-                      if (this._3_opp == currOpp) {
-                        this.__CP__ = 5;
-                        break;
-                      }
-                      this.__CP__ = 1;
-                      break;
-                    case 8:
-                      this.__CP__ = 1;
-                      this.yield(this._7_io);
-                      return true;
-                    case 0:
-                      this._3_opp = SLinkOperations.getTarget(SLinkOperations.getTarget(it, "usedFeature", false), "opposite", false);
-                      this.__CP__ = 4;
-                      break;
-                    case 5:
-                      this._7_io = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.IterateOperation", null);
-                      SLinkOperations.setTarget(this._7_io, "usedFeature", SLinkOperations.getTarget(it, "usedFeature", false), false);
-                      SPropertyOperations.set(this._7_io, "axis", "" + (TraversalAxis.CHILDREN.getValue()));
-                      this.__CP__ = 8;
-                      break;
-                    default:
-                      break __loop__;
-                  }
-                } while(true);
-                return false;
-              }
-
-            };
-          }
-
-        };
-      }
-
-    }).toListSequence();
-  }
-
-  public static Iterable sourceNodesQuery_1200223045189(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(_context.getNode(), "axis", "DESCENDANTS"));
-    _context.putTransientObject("traversal_axis", axis);
-    _context.putTransientObject("siblings_operation", _context.getNode());
-    final List<SNode> oppFeats = ListSequence.<SNode>fromArray();
-    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).translate(new ITranslator <SNode, SNode>() {
-
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
-
-          public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
-              private int __CP__ = 0;
-              private SNode _3_opp;
-              private SNode _7_io;
-
-              protected boolean moveToNext() {
-__loop__:
-                do {
-__switch__:
-                  switch (this.__CP__) {
-                    case -1:
-                      assert false : "Internal error";
-                      return false;
-                    case 4:
-                      if (!(ListSequence.fromList(oppFeats).contains(this._3_opp))) {
-                        this.__CP__ = 5;
-                        break;
-                      }
-                      this.__CP__ = 1;
-                      break;
-                    case 8:
-                      this.__CP__ = 1;
-                      this.yield(this._7_io);
-                      return true;
-                    case 0:
-                      this._3_opp = SLinkOperations.getTarget(SLinkOperations.getTarget(it, "usedFeature", false), "opposite", false);
-                      this.__CP__ = 4;
-                      break;
-                    case 5:
-                      ListSequence.fromList(oppFeats).addElement(this._3_opp);
-                      this._7_io = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.IterateOperation", null);
-                      SLinkOperations.setTarget(this._7_io, "usedFeature", this._3_opp, false);
-                      SPropertyOperations.set(this._7_io, "axis", "" + (TraversalAxis.CHILDREN.getValue()));
-                      this.__CP__ = 8;
-                      break;
-                    default:
-                      break __loop__;
-                  }
-                } while(true);
-                return false;
-              }
-
-            };
-          }
-
-        };
-      }
-
-    }).toListSequence();
-  }
-
-  public static Iterable sourceNodesQuery_1210075313865(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return OperationsUtil.substituteApplicableOperations(_context.getNode());
-  }
-
-  public static Iterable sourceNodesQuery_1210075990407(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return OperationsUtil.substituteApplicableOperations(_context.getNode());
   }
 
   public static SNode mapSrcMacro_mapper_1196598547056(final IOperationContext operationContext, final MapSrcMacroContext _context) {
@@ -1656,154 +1162,6 @@ __switch__:
   public static SNode mapSrcMacro_mapper_1200052339756(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode expression = OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "expression", true));
     return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), SNodeOperations.copyNode(expression), SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1200059504866(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreatorWithSupplier", true, false), null, false)).where(new IWhereFilter <SNode>() {
-
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") && "_zzz_".equals(SPropertyOperations.getString(it, "name"));
-      }
-
-    }).first();
-    SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-    SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1200059510402(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreatorWithSupplier", true, false), null, false)).where(new IWhereFilter <SNode>() {
-
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") && "_zzz_".equals(SPropertyOperations.getString(it, "name"));
-      }
-
-    }).first();
-    SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-    SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1200059598735(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode cp = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.MapperBlock", false, false), "defaultInputElement", true);
-    SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", null);
-    SLinkOperations.setTarget(cpr, "closureParameter", cp, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1200059605106(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode cp = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.MapperBlock", false, false), "defaultInputElement", true);
-    SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", null);
-    SLinkOperations.setTarget(cpr, "closureParameter", cp, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1200059825971(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false), null, false)).where(new IWhereFilter <SNode>() {
-
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") && "_zzz_".equals(SPropertyOperations.getString(it, "name"));
-      }
-
-    }).first();
-    SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
-    SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1200059862831(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false), null, false)).where(new IWhereFilter <SNode>() {
-
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") && "_zzz_".equals(SPropertyOperations.getString(it, "name"));
-      }
-
-    }).first();
-    SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
-    SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1200060036685(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode cp = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.MapperBlock", false, false), "defaultInputElement", true);
-    SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", null);
-    SLinkOperations.setTarget(cpr, "closureParameter", cp, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), cpr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1200060077751(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.ForeachStatement", false, false), "variable", true);
-    SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-    SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1200060390957(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode yyy = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", true, false), "variable", true);
-    SNode ref_yyy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", null);
-    SLinkOperations.setTarget(ref_yyy, "variable", yyy, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_yyy, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1200060476931(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreatorWithSupplier", true, false), null, false)).where(new IWhereFilter <SNode>() {
-
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") && "_zzz_".equals(SPropertyOperations.getString(it, "name"));
-      }
-
-    }).first();
-    SNode ref_zzz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-    SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1210075313760(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-    SLinkOperations.setTarget(lvr, "variableDeclaration", ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false)).where(new IWhereFilter <SNode>() {
-
-      public boolean accept(SNode it) {
-        return "_zzz_".equals(SPropertyOperations.getString(it, "name"));
-      }
-
-    }).first(), false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1210075871503(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-    SLinkOperations.setTarget(lvr, "variableDeclaration", ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false)).where(new IWhereFilter <SNode>() {
-
-      public boolean accept(SNode it) {
-        return "_xxx_".equals(SPropertyOperations.getString(it, "name"));
-      }
-
-    }).first(), false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1210076021926(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-    SLinkOperations.setTarget(lvr, "variableDeclaration", ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false)).where(new IWhereFilter <SNode>() {
-
-      public boolean accept(SNode it) {
-        return "_zzz_".equals(SPropertyOperations.getString(it, "name"));
-      }
-
-    }).first(), false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
-  }
-
-  public static SNode mapSrcMacro_mapper_1210076153986(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-    SLinkOperations.setTarget(lvr, "variableDeclaration", ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false)).where(new IWhereFilter <SNode>() {
-
-      public boolean accept(SNode it) {
-        return "_xxx_".equals(SPropertyOperations.getString(it, "name"));
-      }
-
-    }).first(), false);
-    return IGenericFeature_Behavior.call_getterExpression_1213877249152(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), lvr, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), _context.getGenerator());
   }
 
 }

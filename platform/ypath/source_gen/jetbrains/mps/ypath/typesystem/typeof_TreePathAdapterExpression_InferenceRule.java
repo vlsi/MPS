@@ -37,7 +37,7 @@ public class typeof_TreePathAdapterExpression_InferenceRule extends AbstractInfe
             {
               SNode _nodeToCheck_1029348928467 = exp;
               BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.createEquation(typeCheckingContext.typeOf(exp, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595295", true), new _Quotations.QuotationClass_0().createNode(typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521)), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595290", intentionProvider);
+              typeCheckingContext.createEquation(typeCheckingContext.typeOf(exp, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595295", true), new _Quotations.QuotationClass_0().createNode(typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595290", intentionProvider);
             }
           }
         }

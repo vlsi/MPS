@@ -9,20 +9,20 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ParamSequenceFeature extends SequenceFeature implements IFeature, IParamFeature {
-  public static final String concept = "jetbrains.mps.ypath.structure.ParamSequenceFeature";
-  public static final String NAME = "name";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String WRITABLE = "writable";
-  public static final String DEFAULT = "default";
-  public static final String ASCENDING = "ascending";
-  public static final String OPPOSITE = "opposite";
-  public static final String PARAMETER_TYPE = "parameterType";
-  public static final String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
-  public static final String TARGET_TYPE_FUNCTION = "targetTypeFunction";
-  public static final String TO_STRING_FUNCTION = "toStringFunction";
-  public static final String CARDINAL = "cardinal";
+public    static final String concept = "jetbrains.mps.ypath.structure.ParamSequenceFeature";
+public    static final String NAME = "name";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String WRITABLE = "writable";
+public    static final String DEFAULT = "default";
+public    static final String ASCENDING = "ascending";
+public    static final String OPPOSITE = "opposite";
+public    static final String PARAMETER_TYPE = "parameterType";
+public    static final String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
+public    static final String TARGET_TYPE_FUNCTION = "targetTypeFunction";
+public    static final String TO_STRING_FUNCTION = "toStringFunction";
+public    static final String CARDINAL = "cardinal";
 
   public ParamSequenceFeature(SNode node) {
     super(node);

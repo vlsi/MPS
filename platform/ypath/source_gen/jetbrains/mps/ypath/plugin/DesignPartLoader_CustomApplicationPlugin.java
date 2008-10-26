@@ -6,7 +6,7 @@ import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.logging.Logger;
 
 public class DesignPartLoader_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
-  public static Logger LOG = Logger.getLogger(DesignPartLoader_CustomApplicationPlugin.class);
+private    static Logger LOG = Logger.getLogger(DesignPartLoader_CustomApplicationPlugin.class);
 
   public DesignPartLoader_CustomApplicationPlugin() {
   }

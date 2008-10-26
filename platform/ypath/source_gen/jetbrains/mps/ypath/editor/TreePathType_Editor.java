@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class TreePathType_Editor extends DefaultNodeEditor {
 
@@ -101,13 +100,7 @@ public class TreePathType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return TreePathType_Editor.calculateBoolean6561_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -136,12 +129,6 @@ public class TreePathType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1198257736336_1198257736336(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean6561_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
 }

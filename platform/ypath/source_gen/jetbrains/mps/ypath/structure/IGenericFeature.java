@@ -6,9 +6,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public interface IGenericFeature extends IFeature {
-  public static final String concept = "jetbrains.mps.ypath.structure.IGenericFeature";
-  public static final String GETTER = "getter";
-  public static final String FUN_HOLDERS = "funHolders";
+public    static final String concept = "jetbrains.mps.ypath.structure.IGenericFeature";
+public    static final String GETTER = "getter";
+public    static final String FUN_HOLDERS = "funHolders";
 
   public GFGetterFun getGetter();
 
