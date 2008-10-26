@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GFCardinalFun extends ConceptFunction implements IDesignFunction {
-public    static final String concept = "jetbrains.mps.ypath.structure.GFCardinalFun";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String concept = "jetbrains.mps.ypath.structure.GFCardinalFun";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public GFCardinalFun(SNode node) {
     super(node);

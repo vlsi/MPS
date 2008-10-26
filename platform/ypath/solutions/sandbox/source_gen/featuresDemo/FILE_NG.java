@@ -18,7 +18,7 @@ public class FILE_NG extends TreePath<File> {
     this.registerFeature(new FILE_NG.Desc_Feature_parent());
   }
   public static class DIR_NodeKindTrigger implements IFilter<File> {
-private      static FILE_NG.DIR_NodeKindTrigger instance;
+    public static FILE_NG.DIR_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;

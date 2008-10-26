@@ -45,7 +45,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
                   {
                     SNode _nodeToCheck_1029348928467 = tpoe;
                     BaseIntentionProvider intentionProvider = null;
-                    typeCheckingContext.createEquation(typeCheckingContext.typeOf(tpoe, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595148", true), new _Quotations.QuotationClass_1().createNode(targetType, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595143", intentionProvider);
+                    typeCheckingContext.createEquation(typeCheckingContext.typeOf(tpoe, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595148", true), new _Quotations.QuotationClass_1().createNode(targetType), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595143", intentionProvider);
                   }
                 }
               }

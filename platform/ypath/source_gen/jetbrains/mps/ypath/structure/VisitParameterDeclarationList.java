@@ -11,8 +11,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class VisitParameterDeclarationList extends BaseConcept {
-public    static final String concept = "jetbrains.mps.ypath.structure.VisitParameterDeclarationList";
-public    static final String VISIT_PARAMETER_DECLARATION = "visitParameterDeclaration";
+  public static final String concept = "jetbrains.mps.ypath.structure.VisitParameterDeclarationList";
+  public static final String VISIT_PARAMETER_DECLARATION = "visitParameterDeclaration";
 
   public VisitParameterDeclarationList(SNode node) {
     super(node);

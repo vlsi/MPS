@@ -17,9 +17,11 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -186,8 +188,20 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchKindOperation_Editor.calculateBoolean3694_1(cell);
+            }
+
+          });
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return MatchKindOperation_Editor.calculateColor3694_0(cell);
+            }
+
+          });
         }
 
       };
@@ -203,7 +217,13 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return MatchKindOperation_Editor.calculateBoolean3694_0(cell);
+            }
+
+          });
         }
 
       };
@@ -228,6 +248,24 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition3694_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "nodeKind", false) != null;
+  }
+
+  private static Color calculateColor3694_0(EditorCell cell) {
+    Color result;
+    result = MPSColors.red;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3694_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean3694_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class _Inline3694_0 extends AbstractCellProvider {

@@ -17,8 +17,8 @@ import java.io.ByteArrayInputStream;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 public class XMLTreeSimple_Test extends TestCase {
-private    static String SINGLE_NODE = "<foo/>";
-private    static String SIMPLE_TREE = "<root><a1><b1/><b2/></a1><a2><b3><c1/></b3></a2></root>";
+  public static String SINGLE_NODE = "<foo/>";
+  public static String SIMPLE_TREE = "<root><a1><b1/><b2/></a1><a2><b3><c1/></b3></a2></root>";
 
   @Test()
   public void test_single() throws Exception {

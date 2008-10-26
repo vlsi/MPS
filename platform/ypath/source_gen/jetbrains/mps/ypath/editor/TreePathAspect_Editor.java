@@ -19,11 +19,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.MPSColors;
+import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -641,7 +643,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_2(cell);
+            }
+
+          });
         }
 
       };
@@ -654,7 +662,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_19(cell);
+            }
+
+          });
         }
 
       };
@@ -667,7 +681,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_21(cell);
+            }
+
+          });
         }
 
       };
@@ -688,7 +708,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_5(cell);
+            }
+
+          });
         }
 
       };
@@ -708,7 +734,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_17(cell);
+            }
+
+          });
         }
 
       };
@@ -725,7 +757,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_1(cell);
+            }
+
+          });
         }
 
       };
@@ -743,8 +781,20 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_30(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_37(cell);
+            }
+
+          });
         }
 
       };
@@ -757,7 +807,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_26(cell);
+            }
+
+          });
         }
 
       };
@@ -770,7 +826,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_8(cell);
+            }
+
+          });
         }
 
       };
@@ -787,8 +849,20 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_11(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_38(cell);
+            }
+
+          });
         }
 
       };
@@ -801,7 +875,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_25(cell);
+            }
+
+          });
         }
 
       };
@@ -814,7 +894,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_6(cell);
+            }
+
+          });
         }
 
       };
@@ -831,8 +917,20 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_24(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_35(cell);
+            }
+
+          });
         }
 
       };
@@ -845,7 +943,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_22(cell);
+            }
+
+          });
         }
 
       };
@@ -867,7 +971,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_0(cell);
+            }
+
+          });
         }
 
       };
@@ -884,7 +994,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_10(cell);
+            }
+
+          });
         }
 
       };
@@ -901,8 +1017,20 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_12(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_34(cell);
+            }
+
+          });
         }
 
       };
@@ -915,8 +1043,20 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_16(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_31(cell);
+            }
+
+          });
         }
 
       };
@@ -929,7 +1069,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_7(cell);
+            }
+
+          });
         }
 
       };
@@ -942,7 +1088,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_15(cell);
+            }
+
+          });
         }
 
       };
@@ -959,8 +1111,20 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_18(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_32(cell);
+            }
+
+          });
         }
 
       };
@@ -973,7 +1137,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_29(cell);
+            }
+
+          });
         }
 
       };
@@ -991,7 +1161,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateColor1553_0(cell);
+            }
+
+          });
         }
 
       };
@@ -1004,8 +1180,20 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_13(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_33(cell);
+            }
+
+          });
         }
 
       };
@@ -1018,7 +1206,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_20(cell);
+            }
+
+          });
         }
 
       };
@@ -1035,7 +1229,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_3(cell);
+            }
+
+          });
         }
 
       };
@@ -1051,7 +1251,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_9(cell);
+            }
+
+          });
         }
 
       };
@@ -1064,7 +1270,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_23(cell);
+            }
+
+          });
         }
 
       };
@@ -1081,7 +1293,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_14(cell);
+            }
+
+          });
         }
 
       };
@@ -1097,8 +1315,20 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_28(cell);
+            }
+
+          });
+          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_36(cell);
+            }
+
+          });
         }
 
       };
@@ -1111,7 +1341,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_27(cell);
+            }
+
+          });
         }
 
       };
@@ -1128,7 +1364,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAspect_Editor.calculateBoolean1553_4(cell);
+            }
+
+          });
         }
 
       };
@@ -1254,6 +1496,246 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition1553_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "parentBlock", true) != null) || (SLinkOperations.getTarget(node, "childrenBlock", true) != null);
+  }
+
+  private static Color calculateColor1553_0(EditorCell cell) {
+    Color result;
+    result = MPSColors.lightGray;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_1(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_2(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_3(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_4(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_5(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_6(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_7(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_8(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_9(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_10(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_11(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_12(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_13(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_14(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_15(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_16(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_17(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_18(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_19(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_20(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_21(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_22(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_23(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_24(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_25(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_26(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_27(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_28(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_29(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_30(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_31(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_32(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_33(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_34(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_35(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_36(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_37(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
+  }
+
+  public static Boolean calculateBoolean1553_38(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class nodeKindsListHandler_1553_0 extends RefNodeListHandler {

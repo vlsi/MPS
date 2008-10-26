@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -165,7 +167,13 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return SwitchNodeKindStatement_Editor.calculateColor4855_2(cell);
+            }
+
+          });
         }
 
       };
@@ -181,7 +189,13 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return SwitchNodeKindStatement_Editor.calculateColor4855_0(cell);
+            }
+
+          });
         }
 
       };
@@ -206,7 +220,13 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return SwitchNodeKindStatement_Editor.calculateBoolean4855_0(cell);
+            }
+
+          });
         }
 
       };
@@ -237,6 +257,30 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNodeList_nodeKindCase_1180024016002(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor4855_0(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor4855_1(EditorCell cell) {
+    Color result;
+    result = MPSColors.lightGray;
+    return result;
+  }
+
+  private static Color calculateColor4855_2(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4855_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class nodeKindCaseListHandler_4855_0 extends RefNodeListHandler {
@@ -299,7 +343,13 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+              public Color calculate(EditorCell cell) {
+                return SwitchNodeKindStatement_Editor.calculateColor4855_1(cell);
+              }
+
+            });
           }
 
         };

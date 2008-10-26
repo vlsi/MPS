@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NodeKindSpecificCase extends NodeKindCase {
-public    static final String concept = "jetbrains.mps.ypath.structure.NodeKindSpecificCase";
-public    static final String TREE_NODE_KIND = "treeNodeKind";
+  public static final String concept = "jetbrains.mps.ypath.structure.NodeKindSpecificCase";
+  public static final String TREE_NODE_KIND = "treeNodeKind";
 
   public NodeKindSpecificCase(SNode node) {
     super(node);

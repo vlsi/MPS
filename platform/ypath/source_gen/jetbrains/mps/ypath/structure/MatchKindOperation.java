@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MatchKindOperation extends TreePathOperation {
-public    static final String concept = "jetbrains.mps.ypath.structure.MatchKindOperation";
-public    static final String NODE_KIND = "nodeKind";
-public    static final String NODE_KIND_OCCURRENCE = "nodeKindOccurrence";
+  public static final String concept = "jetbrains.mps.ypath.structure.MatchKindOperation";
+  public static final String NODE_KIND = "nodeKind";
+  public static final String NODE_KIND_OCCURRENCE = "nodeKindOccurrence";
 
   public MatchKindOperation(SNode node) {
     super(node);

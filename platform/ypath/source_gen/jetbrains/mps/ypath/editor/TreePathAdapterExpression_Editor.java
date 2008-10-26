@@ -16,9 +16,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -157,7 +159,13 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return TreePathAdapterExpression_Editor.calculateBoolean8904_0(cell);
+            }
+
+          });
         }
 
       };
@@ -178,7 +186,13 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return TreePathAdapterExpression_Editor.calculateColor8904_0(cell);
+            }
+
+          });
         }
 
       };
@@ -201,6 +215,18 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition8904_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false) == null);
+  }
+
+  private static Color calculateColor8904_0(EditorCell cell) {
+    Color result;
+    result = MPSColors.red;
+    return result;
+  }
+
+  public static Boolean calculateBoolean8904_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
   public static class _Inline8904_0 extends AbstractCellProvider {

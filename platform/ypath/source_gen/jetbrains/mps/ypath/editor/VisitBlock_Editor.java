@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class VisitBlock_Editor extends DefaultNodeEditor {
@@ -243,7 +245,13 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
+
+            public Boolean calculate(EditorCell cell) {
+              return VisitBlock_Editor.calculateBoolean4522_0(cell);
+            }
+
+          });
         }
 
       };
@@ -256,7 +264,13 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return VisitBlock_Editor.calculateColor4522_0(cell);
+            }
+
+          });
         }
 
       };
@@ -281,7 +295,13 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+            public Color calculate(EditorCell cell) {
+              return VisitBlock_Editor.calculateColor4522_1(cell);
+            }
+
+          });
         }
 
       };
@@ -314,6 +334,24 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1180025214675_1180025214675(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static Color calculateColor4522_0(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor4522_1(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  public static Boolean calculateBoolean4522_0(EditorCell cell) {
+    boolean result;
+    result = false;
+    return result;
   }
 
 }

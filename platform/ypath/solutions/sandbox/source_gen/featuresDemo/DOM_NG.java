@@ -24,7 +24,7 @@ public class DOM_NG extends TreePath<Node> {
     this.registerFeature(new DOM_NG.Desc_Feature_parent());
   }
   public static class ELEMENT_NodeKindTrigger implements IFilter<Node> {
-private      static DOM_NG.ELEMENT_NodeKindTrigger instance;
+    public static DOM_NG.ELEMENT_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;

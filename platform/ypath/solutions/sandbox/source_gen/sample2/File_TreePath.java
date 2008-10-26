@@ -50,7 +50,7 @@ public class File_TreePath extends TreePath<File> {
 
 }
   public static class FILE_NodeKindTrigger implements IFilter<File> {
-private      static File_TreePath.FILE_NodeKindTrigger instance;
+    public static File_TreePath.FILE_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;
@@ -76,7 +76,7 @@ private      static File_TreePath.FILE_NodeKindTrigger instance;
 
 }
   public static class DIR_NodeKindTrigger implements IFilter<File> {
-private      static File_TreePath.DIR_NodeKindTrigger instance;
+    public static File_TreePath.DIR_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;

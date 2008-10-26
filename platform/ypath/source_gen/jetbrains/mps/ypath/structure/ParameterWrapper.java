@@ -10,13 +10,13 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ParameterWrapper extends BaseConcept implements INamedConcept {
-public    static final String concept = "jetbrains.mps.ypath.structure.ParameterWrapper";
-public    static final String PARAM_VALUE = "paramValue";
-public    static final String NAME = "name";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String PARAM_REF = "paramRef";
+  public static final String concept = "jetbrains.mps.ypath.structure.ParameterWrapper";
+  public static final String PARAM_VALUE = "paramValue";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String PARAM_REF = "paramRef";
 
   public ParameterWrapper(SNode node) {
     super(node);

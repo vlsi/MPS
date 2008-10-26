@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class FromOperation extends TreePathOperation {
-public    static final String concept = "jetbrains.mps.ypath.structure.FromOperation";
-public    static final String FROM_EXPRESSION = "fromExpression";
+  public static final String concept = "jetbrains.mps.ypath.structure.FromOperation";
+  public static final String FROM_EXPRESSION = "fromExpression";
 
   public FromOperation(SNode node) {
     super(node);
