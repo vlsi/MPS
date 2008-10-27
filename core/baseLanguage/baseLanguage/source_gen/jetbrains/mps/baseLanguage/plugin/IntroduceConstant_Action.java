@@ -27,7 +27,7 @@ public class IntroduceConstant_Action extends GeneratedAction {
 
   @NotNull()
   public String getKeyStroke() {
-    return "ctrl alt V";
+    return "ctrl alt C";
   }
 
   public boolean isApplicable(AnActionEvent event) {
@@ -69,7 +69,7 @@ public class IntroduceConstant_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      VariableIntroducer introducer = new ConstantIntroducer();
+      IntroduceVariableRefactoring introducer = new ConstantIntroducer();
       introducer.introduce("Introduce Constant...", IntroduceConstant_Action.this.node, IntroduceConstant_Action.this.editorContext);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "IntroduceConstant", t);

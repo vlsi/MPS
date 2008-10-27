@@ -6,28 +6,32 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class IntroduceField_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(IntroduceField_Action.class);
   private static final Icon ICON = null;
 
   private SNode node;
-  public EditorContext editorContext;
+  public EditorComponent component;
+  public Frame frame;
 
   public IntroduceField_Action() {
     super("Introduce Field...", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull()
   public String getKeyStroke() {
-    return "ctrl alt V";
+    return "ctrl alt F";
   }
 
   public boolean isApplicable(AnActionEvent event) {
@@ -60,8 +64,12 @@ public class IntroduceField_Action extends GeneratedAction {
     if (this.node == null) {
       return false;
     }
-    this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
-    if (this.editorContext == null) {
+    this.component = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.component == null) {
+      return false;
+    }
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
       return false;
     }
     return true;
@@ -69,8 +77,19 @@ public class IntroduceField_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      VariableIntroducer introducer = new FieldIntroducer();
-      introducer.introduce("Introduce Field...", IntroduceField_Action.this.node, IntroduceField_Action.this.editorContext);
+      final IntroduceFieldRefactoring introducer = new IntroduceFieldRefactoring();
+      final Wrappers._boolean canRefactor = new Wrappers._boolean();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+
+        public void run() {
+          canRefactor.value = introducer.init("Introduce Field...", IntroduceField_Action.this.node, IntroduceField_Action.this.component);
+        }
+
+      });
+      if (canRefactor.value) {
+        IntroduceFieldDialog dialog = new IntroduceFieldDialog(IntroduceField_Action.this.frame, introducer);
+        dialog.showDialog();
+      }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "IntroduceField", t);
     }

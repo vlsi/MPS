@@ -14,6 +14,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.smodel.structure.CommandClosureLiteral", new CommandClosureLiteral_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression", new SemanticDowncastExpression_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement", new ExecuteLightweightCommandStatement_DataFlow());
+    manager.register("jetbrains.mps.lang.smodel.structure.ExecuteWriteActionStatement", new ExecuteWriteActionStatement_DataFlow());
   }
 
 }
