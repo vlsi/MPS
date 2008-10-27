@@ -4099,14 +4099,9 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205883087541">
                 <link role="variableDeclaration" targetNodeId="1205883003794" resolveInfo="language" />
               </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205883087542">
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205883087543">
-                  <link role="baseMethodDeclaration" targetNodeId="68.~BootstrapLanguagesManager.getTLBase():jetbrains.mps.smodel.Language" resolveInfo="getTLBase" />
-                </node>
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205883087544">
-                  <link role="baseMethodDeclaration" targetNodeId="68.~BootstrapLanguagesManager.getInstance():jetbrains.mps.ide.BootstrapLanguagesManager" resolveInfo="getInstance" />
-                  <link role="classConcept" targetNodeId="68.~BootstrapLanguagesManager" resolveInfo="BootstrapLanguagesManager" />
-                </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225107825054">
+                <link role="baseMethodDeclaration" targetNodeId="76.~Generator_Language.get():jetbrains.mps.smodel.Language" resolveInfo="get" />
+                <link role="classConcept" targetNodeId="76.~Generator_Language" resolveInfo="Generator_Language" />
               </node>
             </node>
           </node>
