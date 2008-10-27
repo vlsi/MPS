@@ -52,18 +52,26 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
 
   private MPSModuleRepository myRepository;
   private LibraryManagerPreferences myPreferences;
+  private boolean myInitializing = false;
 
-  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm, ClassLoaderManager clm) {
+  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm) {
     myRepository = repo;
   }
 
   public void initComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        updatePredefinedLibraries();
-        update();
-      }
-    });
+    //todo hack
+    if (myInitializing) return;
+    myInitializing = true;
+    try {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          updatePredefinedLibraries();
+          update();
+        }
+      });
+    } finally {
+      myInitializing = false;
+    }
   }
 
   @NonNls

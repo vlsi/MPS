@@ -1,7 +1,6 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.javastub.classpath.ClassPathModelRootManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.ModuleReadException;
@@ -22,6 +21,7 @@ import jetbrains.mps.vfs.JarFileEntryFile;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
+import jetbrains.mps.library.LibraryManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -215,7 +215,7 @@ public abstract class AbstractModule implements IModule {
 
     // add bootstrap languages
     if (Language.class.isAssignableFrom(cls)) {
-      Set<Language> languages = BootstrapLanguagesManager.getInstance().getLanguages();
+      Set<Language> languages = LibraryManager.getInstance().getBootstrapModules(Language.class);
       for (Language language : languages) {
         //noinspection SuspiciousMethodCalls
         if (!modules.contains(language)) {
@@ -390,7 +390,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected static List<IModule> appendBootstrapLanguages(List<IModule> list) {
-    Set<Language> languages = BootstrapLanguagesManager.getInstance().getLanguages();
+    Set<Language> languages = LibraryManager.getInstance().getBootstrapModules(Language.class);
     for (Language language : languages) {
       if (!list.contains(language)) {
         list.add(language);

@@ -3,7 +3,6 @@ package jetbrains.mps.reloading;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleReference;
@@ -14,6 +13,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.library.LibraryManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -35,7 +35,6 @@ public class ClassLoaderManager implements ApplicationComponent {
   private final Object myLock = new Object();
   private RuntimeEnvironment<ModuleReference> myRuntimeEnvironment;
   private MPSModuleRepository myRepository;
-
 
   public ClassLoaderManager(MPSModuleRepository repository) {
     myRepository = repository;
@@ -176,7 +175,7 @@ public class ClassLoaderManager implements ApplicationComponent {
   private RuntimeEnvironment<ModuleReference> createRuntimeEnvironment() {
     final Set<String> excludedPackages = new HashSet<String>();
     final Set<String> generatorPrefixes = new HashSet<String>();
-    for (Language l : BootstrapLanguagesManager.getInstance().getLanguages()) {
+    for (Language l : LibraryManager.getInstance().getBootstrapModules(Language.class)) {
       for (LanguageAspect aspect : LanguageAspect.values()) {
         if (aspect == LanguageAspect.STRUCTURE) continue;
         excludedPackages.add(l.getNamespace() + "." + aspect.getName());

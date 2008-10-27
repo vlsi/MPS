@@ -97,10 +97,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.BootstrapLanguagesManager</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.reloading.ClassLoaderManager</implementation-class>
     </component>
 

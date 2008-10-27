@@ -9,9 +9,9 @@ import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.runtime.BytecodeLocator;
+import jetbrains.mps.library.LibraryManager;
 
 import java.io.File;
 import java.util.*;
@@ -246,7 +246,7 @@ public class Generator extends AbstractModule {
 
   public List<ModuleReference> getUsedLanguagesReferences() {
     List<ModuleReference> result = super.getUsedLanguagesReferences();
-    for (Language l : BootstrapLanguagesManager.getInstance().getLanguages()) {
+    for (Language l : LibraryManager.getInstance().getBootstrapModules(Language.class)) {
       if (!result.contains(l.getModuleReference())) {
         result.add(l.getModuleReference());
       }

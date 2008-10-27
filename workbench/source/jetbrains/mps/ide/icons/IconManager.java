@@ -2,7 +2,6 @@ package jetbrains.mps.ide.icons;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
@@ -140,9 +139,6 @@ public class IconManager {
     }
     if (owner instanceof MPSProject) {
       return Icons.PROJECT_ICON;
-    }
-    if (owner instanceof BootstrapLanguagesManager) {
-      return Icons.PROJECT_LANGUAGE_ICON;
     }
     if (owner instanceof Solution) {
       return Icons.SOLUTION_ICON;

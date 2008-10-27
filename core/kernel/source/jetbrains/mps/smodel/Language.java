@@ -3,7 +3,6 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.refactoring.structure.Refactoring;
 import jetbrains.mps.project.*;
@@ -21,6 +20,7 @@ import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.library.LibraryManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -139,7 +139,7 @@ public class Language extends AbstractModule {
 
   public List<ModuleReference> getUsedLanguagesReferences() {
     List<ModuleReference> result = super.getUsedLanguagesReferences();
-    for (Language l : BootstrapLanguagesManager.getInstance().getLanguages()) {
+    for (Language l : LibraryManager.getInstance().getBootstrapModules(Language.class)) {
       if (!result.contains(l.getModuleReference())) {
         result.add(l.getModuleReference());
       }
@@ -363,7 +363,7 @@ public class Language extends AbstractModule {
   }
 
   public boolean isBootstrap() {
-    return BootstrapLanguagesManager.getInstance().getLanguages().contains(this);
+    return LibraryManager.getInstance().getBootstrapModules(Language.class).contains(this);
   }
 
   public int getVersion() {

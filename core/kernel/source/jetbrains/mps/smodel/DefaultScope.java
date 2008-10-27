@@ -1,10 +1,10 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.projectLanguage.structure.ProjectLanguage_Language;
+import jetbrains.mps.library.LibraryManager;
 
 import java.util.*;
 
@@ -116,7 +116,7 @@ public abstract class DefaultScope extends BaseScope {
 
     Set<DevKit> usedDevkits = new HashSet<DevKit>();
 
-    usedDevkits.addAll(BootstrapLanguagesManager.getInstance().getDevkits());
+    usedDevkits.addAll(LibraryManager.getInstance().getBootstrapModules(DevKit.class));
 
     for (IModule m : getInitialModules()) {
       if (m instanceof DevKit) {
