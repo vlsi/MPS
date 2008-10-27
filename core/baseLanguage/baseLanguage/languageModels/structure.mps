@@ -481,6 +481,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068581242863">
     <property name="name" value="LocalVariableDeclaration" />
     <property name="iconPath" value="${language_descriptor}\icons\variable.png" />
+    <property name="build" value="1" />
     <link role="extends" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107222782262">
       <property name="value" value="&lt;type&gt; &lt;var&gt;" />
@@ -496,6 +497,7 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1223988934029">
       <link role="intfc" targetNodeId="1223985693348" resolveInfo="IVariableAssignment" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1225114553209" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068581242864">
     <property name="name" value="LocalVariableDeclarationStatement" />
@@ -988,6 +990,7 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1210110243243">
       <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IResolveInfo" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1225115476724" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1081256982272">
     <property name="name" value="InstanceOfExpression" />

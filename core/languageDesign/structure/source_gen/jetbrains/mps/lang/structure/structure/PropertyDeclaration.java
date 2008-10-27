@@ -15,7 +15,6 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept, I
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String BUILD = "build";
   public static final String DATA_TYPE = "dataType";
 
   public PropertyDeclaration(SNode node) {
@@ -52,14 +51,6 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept, I
 
   public void setVirtualPackage(String value) {
     this.setProperty(PropertyDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public int getBuild() {
-    return this.getIntegerProperty(PropertyDeclaration.BUILD);
-  }
-
-  public void setBuild(int value) {
-    this.setIntegerProperty(PropertyDeclaration.BUILD, value);
   }
 
   public DataTypeDeclaration getDataType() {

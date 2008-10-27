@@ -5,6 +5,8 @@ package jetbrains.mps.lang.structure.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IStructureDeprecatable_Behavior {
 
@@ -13,6 +15,22 @@ public class IStructureDeprecatable_Behavior {
 
   public static boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true) != null);
+  }
+
+  public static String call_getNonTypeSystemMessage_1225121708891(SNode thisNode) {
+    StringBuilder result = new StringBuilder();
+    result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(thisNode));
+    result.append(" is deprecated");
+    if (SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true), "build") != null) {
+      result.append(" since build ");
+      result.append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true), "build"));
+    }
+    if (SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true), "comment") != null) {
+      result.append(" (");
+      result.append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true), "comment"));
+      result.append(")");
+    }
+    return result.toString();
   }
 
 }

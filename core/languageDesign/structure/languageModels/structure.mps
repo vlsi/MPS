@@ -679,12 +679,20 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1224240859229">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1225118929411">
+      <property name="name" value="build" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1225118933224">
+      <property name="name" value="comment" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="1224241293279">
     <property name="role" value="deprecatedNode" />
     <property name="package" value="deprecatedAnnotation" />
     <link role="target" targetNodeId="1224240836180" resolveInfo="DeprecatedNodeAnnotation" />
-    <link role="source" targetNodeId="1.1224608834445" resolveInfo="IDeprecatableCore" />
+    <link role="source" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1224848324737">
     <property name="package" value="deprecatedAnnotation" />

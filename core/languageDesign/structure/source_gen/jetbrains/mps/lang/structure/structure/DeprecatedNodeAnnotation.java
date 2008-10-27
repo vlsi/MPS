@@ -11,6 +11,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class DeprecatedNodeAnnotation extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation";
+  public static final String BUILD = "build";
+  public static final String COMMENT = "comment";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -18,6 +20,22 @@ public class DeprecatedNodeAnnotation extends BaseConcept implements INamedConce
 
   public DeprecatedNodeAnnotation(SNode node) {
     super(node);
+  }
+
+  public String getBuild() {
+    return this.getProperty(DeprecatedNodeAnnotation.BUILD);
+  }
+
+  public void setBuild(String value) {
+    this.setProperty(DeprecatedNodeAnnotation.BUILD, value);
+  }
+
+  public String getComment() {
+    return this.getProperty(DeprecatedNodeAnnotation.COMMENT);
+  }
+
+  public void setComment(String value) {
+    this.setProperty(DeprecatedNodeAnnotation.COMMENT, value);
   }
 
   public String getName() {

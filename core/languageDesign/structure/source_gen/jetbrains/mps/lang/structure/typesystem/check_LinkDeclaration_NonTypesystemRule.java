@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.lang.structure.behavior.IStructureDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
@@ -30,13 +30,9 @@ public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesyst
   public void applyRule(final SNode linkToCheck, final TypeCheckingContext typeCheckingContext) {
     if ((SLinkOperations.getTarget(linkToCheck, "target", false) != null)) {
       if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(linkToCheck, "target", false))) {
-        String error = BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(linkToCheck, "target", false));
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportWarning(linkToCheck, error + " is deprecated" + (SPropertyOperations.getInteger(SLinkOperations.getTarget(linkToCheck, "target", false), "build") != 0 ?
-            " since b." + SPropertyOperations.getInteger(SLinkOperations.getTarget(linkToCheck, "target", false), "build") :
-            ""
-          ), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1224250219917", intentionProvider);
+          typeCheckingContext.reportWarning(linkToCheck, IStructureDeprecatable_Behavior.call_getNonTypeSystemMessage_1225121708891(SLinkOperations.getTarget(linkToCheck, "target", false)), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1224250219917", intentionProvider);
         }
       }
     }

@@ -15,7 +15,6 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String IS_DEPRECATED = "isDeprecated";
-  public static final String BUILD = "build";
   public static final String VISIBILITY = "visibility";
 
   public FieldDeclaration(SNode node) {
@@ -60,14 +59,6 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
 
   public void setIsDeprecated(boolean value) {
     this.setBooleanProperty(FieldDeclaration.IS_DEPRECATED, value);
-  }
-
-  public int getBuild() {
-    return this.getIntegerProperty(FieldDeclaration.BUILD);
-  }
-
-  public void setBuild(int value) {
-    this.setIntegerProperty(FieldDeclaration.BUILD, value);
   }
 
   public Visibility getVisibility() {

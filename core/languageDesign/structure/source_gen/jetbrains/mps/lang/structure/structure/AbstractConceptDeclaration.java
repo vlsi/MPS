@@ -17,7 +17,6 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String BUILD = "build";
   public static final String LINK_DECLARATION = "linkDeclaration";
   public static final String PROPERTY_DECLARATION = "propertyDeclaration";
   public static final String CONCEPT_PROPERTY = "conceptProperty";
@@ -59,14 +58,6 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
 
   public void setVirtualPackage(String value) {
     this.setProperty(AbstractConceptDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public int getBuild() {
-    return this.getIntegerProperty(AbstractConceptDeclaration.BUILD);
-  }
-
-  public void setBuild(int value) {
-    this.setIntegerProperty(AbstractConceptDeclaration.BUILD, value);
   }
 
   public int getLinkDeclarationsCount() {

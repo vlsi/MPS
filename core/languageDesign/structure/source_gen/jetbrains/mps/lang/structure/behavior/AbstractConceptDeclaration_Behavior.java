@@ -32,7 +32,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractConceptDeclaration_Behavior {
-private    static Class[] PARAMETERS_1222430305282 = {SNode.class};
+  private static Class[] PARAMETERS_1222430305282 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

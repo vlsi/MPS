@@ -15,7 +15,6 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String BUILD = "build";
   public static final String TARGET_TYPE = "targetType";
 
   public ConceptLinkDeclaration(SNode node) {
@@ -52,14 +51,6 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConceptLinkDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public int getBuild() {
-    return this.getIntegerProperty(ConceptLinkDeclaration.BUILD);
-  }
-
-  public void setBuild(int value) {
-    this.setIntegerProperty(ConceptLinkDeclaration.BUILD, value);
   }
 
   public ConceptDeclaration getTargetType() {

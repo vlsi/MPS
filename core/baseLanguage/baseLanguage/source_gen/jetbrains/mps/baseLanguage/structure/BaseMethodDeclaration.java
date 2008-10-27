@@ -17,7 +17,6 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_FINAL = "isFinal";
   public static final String IS_DEPRECATED = "isDeprecated";
-  public static final String BUILD = "build";
   public static final String RETURN_TYPE = "returnType";
   public static final String BODY = "body";
   public static final String PARAMETER = "parameter";
@@ -74,14 +73,6 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
 
   public void setIsDeprecated(boolean value) {
     this.setBooleanProperty(BaseMethodDeclaration.IS_DEPRECATED, value);
-  }
-
-  public int getBuild() {
-    return this.getIntegerProperty(BaseMethodDeclaration.BUILD);
-  }
-
-  public void setBuild(int value) {
-    this.setIntegerProperty(BaseMethodDeclaration.BUILD, value);
   }
 
   public Type getReturnType() {

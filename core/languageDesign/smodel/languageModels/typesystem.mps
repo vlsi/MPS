@@ -30,7 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
-  <maxImportIndex value="33" />
+  <maxImportIndex value="34" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -43,6 +43,7 @@
   <import index="31" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="32" modelUID="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" version="-1" />
   <import index="33" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" />
+  <import index="34" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1178287490510">
     <property name="name" value="typeof_SNodeTypeCastExpression" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178287490511">
@@ -10161,6 +10162,66 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1224770182874">
       <property name="name" value="node" />
       <link role="concept" targetNodeId="1.1140725362528" resolveInfo="Link_SetTargetOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1225120387254">
+    <property name="name" value="check_ConceptReference" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225120387255">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225120410367">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225120410368">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225120410369">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1225120416481">
+              <link role="applicableNode" targetNodeId="1225120404148" resolveInfo="conceptReference" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225120440797">
+              <link role="link" targetNodeId="1.1154546997487" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225120410372">
+            <link role="conceptMethodDeclaration" targetNodeId="34.1224609060727" resolveInfo="isDeprecated" />
+          </node>
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225120410373">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225120410374">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225120410375">
+              <property name="name" value="error" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225120410376">
+                <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225120410377">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225120410378">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1225120425561">
+                    <link role="applicableNode" targetNodeId="1225120404148" resolveInfo="conceptReference" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225120444298">
+                    <link role="link" targetNodeId="1.1154546997487" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225120410381">
+                  <link role="conceptMethodDeclaration" targetNodeId="34.1213877396640" resolveInfo="getPresentation" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="1225120410382">
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1225120447408">
+              <link role="applicableNode" targetNodeId="1225120404148" resolveInfo="conceptReference" />
+            </node>
+            <node role="warningText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1225120410384">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225120410385">
+                <property name="value" value=" is deprecated" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225120410386">
+                <link role="variableDeclaration" targetNodeId="1225120410375" resolveInfo="error" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1225120404148">
+      <property name="name" value="conceptReference" />
+      <link role="concept" targetNodeId="1.1154546950173" resolveInfo="ConceptReference" />
     </node>
   </node>
 </model>
