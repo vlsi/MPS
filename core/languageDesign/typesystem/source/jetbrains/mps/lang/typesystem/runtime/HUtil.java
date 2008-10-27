@@ -23,7 +23,7 @@ public class HUtil {
 
   public static SNode copyIfNecessary (SNode node) {
      if ( node != null && (node . getParent (  ) != null || node.isRoot())) {
-       SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false);
+       SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), true);
        return copy;
      } else {
         return node ;
@@ -32,7 +32,7 @@ public class HUtil {
 
   public static SNode copyIfNecessary ( SNode node, TypeCheckingContext typeCheckingContext) {
      if ( node != null && (node . getParent (  ) != null || node.isRoot())) {
-       SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false);
+       SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), true);
        if (BaseAdapter.isInstance(copy, RuntimeTypeVariable.class)) {
          typeCheckingContext.registerTypeVariable(copy);
        }
