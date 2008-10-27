@@ -37,4 +37,9 @@ public class Library {
   public boolean isPredefined() {
     return false;
   }
+
+  @Transient
+  public boolean isBootstrap() {
+    return false;    
+  }
 }

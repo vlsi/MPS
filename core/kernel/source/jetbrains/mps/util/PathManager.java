@@ -155,14 +155,13 @@ public class PathManager {
     return getHomePath() + File.separator + File.separator + "docs" + File.separator + "help" + File.separator + "acknowledgements.html";
   }
 
-  public static String getLanguagesPath() {
-    return getHomePath() + File.separator + "languages";
-  }
-
   public static String getLanguageDesignPath() {
     return getHomePath() + File.separator + "core" + File.separator + "languageDesign";
   }
 
+  public static String getBootstrapPath() {
+    return getHomePath() + File.separator + "core";
+  }
 
   public static String getSamplesPath() {
     return getHomePath() + File.separator + "samples";
@@ -182,10 +181,6 @@ public class PathManager {
 
   public static String getAppPath() {
     return getHomePath() + File.separator + "app";
-  }
-
-  public static String getBaseLanguagePath_Old() {
-    return getHomePath() + File.separator + "baseLanguage";
   }
 
   public static String getBaseLanguagePath() {

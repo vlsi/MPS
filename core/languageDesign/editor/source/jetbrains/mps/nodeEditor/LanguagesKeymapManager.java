@@ -9,6 +9,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.library.LibraryManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,7 +32,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   private MPSModuleRepository myRepository;
   private ClassLoaderManager myClassLoaderManager;
 
-  public LanguagesKeymapManager(MPSModuleRepository repository, ClassLoaderManager manager) {
+  public LanguagesKeymapManager(MPSModuleRepository repository, ClassLoaderManager manager, LibraryManager libraryManager) {
     myRepository = repository;
     myClassLoaderManager = manager;
   }

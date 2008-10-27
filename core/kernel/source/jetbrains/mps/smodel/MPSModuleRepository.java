@@ -168,6 +168,10 @@ public class MPSModuleRepository implements ApplicationComponent {
     return myFileToModuleMap.get(FileUtil.getCanonicalPath(file));
   }
 
+  public IModule getModuleByPath(String path) {
+    return myFileToModuleMap.get(path);
+  }
+
   public IModule getModuleByUID(String moduleUID) {
     return myFqNameToModulesMap.get(moduleUID);
   }

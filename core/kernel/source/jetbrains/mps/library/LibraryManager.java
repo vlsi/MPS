@@ -3,6 +3,7 @@ package jetbrains.mps.library;
 import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -23,6 +24,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.util.xmlb.annotations.Transient;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -50,18 +52,13 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   private MPSModuleRepository myRepository;
   private LibraryManagerPreferences myPreferences;
 
-  public LibraryManager(MPSModuleRepository repo) {
+  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm) {
     myRepository = repo;
   }
 
   public void initComponent() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        //todo hack
-        //since bootstrap manager can't do this in its constructor we do it here
-        for (BootstrapModule bm : BootstrapModule.values()) {
-          bm.get().onModuleLoad();
-        }
         updatePredefinedLibraries();
         update();
       }
@@ -103,14 +100,14 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
 
     result.addAll(myState.myLibraries.values());
 
-    result.add(new PredefinedLibrary("mps.languages") {
+    result.add(new PredefinedLibrary("mps.bootstrap") {
       public String getPath() {
-        return PathManager.getLanguagesPath();
+        return PathManager.getBootstrapPath();
       }
-    });
-    result.add(new PredefinedLibrary("mps.languageDesign") {
-      public String getPath() {
-        return PathManager.getLanguageDesignPath();
+
+      @Transient
+      public boolean isBootstrap() {
+        return true;
       }
     });
     result.add(new PredefinedLibrary("mps.platform") {
@@ -121,16 +118,6 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
     result.add(new PredefinedLibrary("mps.workbench") {
       public String getPath() {
         return PathManager.getWorkbenchPath();
-      }
-    });
-    result.add(new PredefinedLibrary("mps.baseLanguage.old") {
-      public String getPath() {
-        return PathManager.getBaseLanguagePath_Old()  ;
-      }
-    });
-    result.add(new PredefinedLibrary("mps.baseLanguage") {
-      public String getPath() {
-        return PathManager.getBaseLanguagePath()  ;
       }
     });
    result.add(new PredefinedLibrary("mps.app") {
@@ -154,7 +141,13 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
     myPredefinedLibrariesOwner = new MPSModuleOwner() { };
     for (Library l : getLibraries()) {
       if (l.isPredefined()) {
-        myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myPredefinedLibrariesOwner);
+        List<IModule> modules = myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myPredefinedLibrariesOwner);
+
+        if (l.isBootstrap()) {
+          for (IModule m : modules) {
+            m.updateClassPath();
+          }
+        }
       }
     }
     fireOnLoad(myPredefinedLibrariesOwner);
