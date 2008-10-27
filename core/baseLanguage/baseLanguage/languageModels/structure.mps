@@ -2775,7 +2775,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1221393582612">
-    <property name="name" value="IExtarctMethodAvailable" />
+    <property name="name" value="IExtractMethodAvailable" />
     <property name="package" value="refactoring" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1221737317277">
