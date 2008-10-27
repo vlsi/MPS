@@ -6406,6 +6406,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215444376218">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215444376219">
                 <property name="name" value="t" />
+                <property name="isFinal" value="true" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1215444376220" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215444376221">
                   <property name="value" value="10" />
