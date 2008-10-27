@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SNodeCreator extends AbstractCreator {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.SNodeCreator";
-public    static final String CREATED_TYPE = "createdType";
-public    static final String PROTOTYPE_NODE = "prototypeNode";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.SNodeCreator";
+  public static final String CREATED_TYPE = "createdType";
+  public static final String PROTOTYPE_NODE = "prototypeNode";
 
   public SNodeCreator(SNode node) {
     super(node);

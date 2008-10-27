@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Concept_IsSubConceptOfOperation extends SNodeOperation {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation";
-public    static final String CONCEPT_ARGUMENT = "conceptArgument";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation";
+  public static final String CONCEPT_ARGUMENT = "conceptArgument";
 
   public Concept_IsSubConceptOfOperation(SNode node) {
     super(node);

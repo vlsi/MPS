@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SLinkAccess extends SNodeOperation {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.SLinkAccess";
-public    static final String LINK = "link";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.SLinkAccess";
+  public static final String LINK = "link";
 
   public SLinkAccess(SNode node) {
     super(node);

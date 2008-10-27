@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunctionParameter_OperationContext extends ConceptFunctionParameter {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext";
 
   public ConceptFunctionParameter_OperationContext(SNode node) {
     super(node);

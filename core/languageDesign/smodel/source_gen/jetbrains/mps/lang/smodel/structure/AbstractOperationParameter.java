@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AbstractOperationParameter extends BaseConcept {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter";
 
   public AbstractOperationParameter(SNode node) {
     super(node);

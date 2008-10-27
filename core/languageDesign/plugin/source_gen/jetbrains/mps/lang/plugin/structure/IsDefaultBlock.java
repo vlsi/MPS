@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IsDefaultBlock extends ConceptFunction {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.IsDefaultBlock";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.IsDefaultBlock";
 
   public IsDefaultBlock(SNode node) {
     super(node);

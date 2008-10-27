@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Model_CreateNewNodeOperation extends SNodeOperation {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation";
-public    static final String CONCEPT = "concept";
-public    static final String PROTOTYPE_NODE = "prototypeNode";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation";
+  public static final String CONCEPT = "concept";
+  public static final String PROTOTYPE_NODE = "prototypeNode";
 
   public Model_CreateNewNodeOperation(SNode node) {
     super(node);

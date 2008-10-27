@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunctionParameter_OutputRootNode extends ConceptFunctionParameter_node {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootNode";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootNode";
 
   public ConceptFunctionParameter_OutputRootNode(SNode node) {
     super(node);

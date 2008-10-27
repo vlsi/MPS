@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PreferencePageIsModifiedBlock extends ConceptFunction {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencePageIsModifiedBlock";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencePageIsModifiedBlock";
 
   public PreferencePageIsModifiedBlock(SNode node) {
     super(node);

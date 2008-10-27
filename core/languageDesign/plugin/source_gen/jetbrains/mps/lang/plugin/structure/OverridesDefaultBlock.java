@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class OverridesDefaultBlock extends ConceptFunction {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.OverridesDefaultBlock";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.OverridesDefaultBlock";
 
   public OverridesDefaultBlock(SNode node) {
     super(node);

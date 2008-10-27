@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Property_RemoveOperation extends SNodeOperation {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.Property_RemoveOperation";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.Property_RemoveOperation";
 
   public Property_RemoveOperation(SNode node) {
     super(node);

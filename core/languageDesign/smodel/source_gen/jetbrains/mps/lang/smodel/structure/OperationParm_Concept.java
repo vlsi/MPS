@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class OperationParm_Concept extends AbstractOperationParameter {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.OperationParm_Concept";
-public    static final String CONCEPT_ARGUMENT = "conceptArgument";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.OperationParm_Concept";
+  public static final String CONCEPT_ARGUMENT = "conceptArgument";
 
   public OperationParm_Concept(SNode node) {
     super(node);

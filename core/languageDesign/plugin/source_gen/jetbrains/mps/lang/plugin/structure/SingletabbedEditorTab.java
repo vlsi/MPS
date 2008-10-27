@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SingletabbedEditorTab extends AbstractEditorTab {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab";
-public    static final String GET_NODE_BLOCK = "getNodeBlock";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab";
+  public static final String GET_NODE_BLOCK = "getNodeBlock";
 
   public SingletabbedEditorTab(SNode node) {
     super(node);

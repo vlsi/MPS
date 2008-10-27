@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LinkList_RemoveAllChildrenOperation extends SNodeOperation {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation";
 
   public LinkList_RemoveAllChildrenOperation(SNode node) {
     super(node);

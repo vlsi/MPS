@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class UpdateBlock extends ConceptFunction {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.UpdateBlock";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.UpdateBlock";
 
   public UpdateBlock(SNode node) {
     super(node);

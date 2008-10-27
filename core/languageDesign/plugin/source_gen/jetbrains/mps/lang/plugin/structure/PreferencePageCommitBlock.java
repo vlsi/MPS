@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PreferencePageCommitBlock extends ConceptFunction {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencePageCommitBlock";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencePageCommitBlock";
 
   public PreferencePageCommitBlock(SNode node) {
     super(node);

@@ -5,5 +5,5 @@ package jetbrains.mps.lang.plugin.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface ActionGroupMember extends INodeAdapter {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.ActionGroupMember";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.ActionGroupMember";
 }

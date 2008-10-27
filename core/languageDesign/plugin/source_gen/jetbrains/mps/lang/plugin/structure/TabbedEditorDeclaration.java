@@ -13,14 +13,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TabbedEditorDeclaration extends BaseConcept implements INamedConcept {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration";
-public    static final String NAME = "name";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String MAIN_CONCEPT = "mainConcept";
-public    static final String GET_MAIN_CONCEPT_BLOCK = "getMainConceptBlock";
-public    static final String TABS = "tabs";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String MAIN_CONCEPT = "mainConcept";
+  public static final String GET_MAIN_CONCEPT_BLOCK = "getMainConceptBlock";
+  public static final String TABS = "tabs";
 
   public TabbedEditorDeclaration(SNode node) {
     super(node);

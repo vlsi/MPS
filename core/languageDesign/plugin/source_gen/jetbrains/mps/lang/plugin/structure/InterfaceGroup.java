@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class InterfaceGroup extends ActionGroupDeclaration {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.InterfaceGroup";
-public    static final String GROUP_I_D = "groupID";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.InterfaceGroup";
+  public static final String GROUP_I_D = "groupID";
 
   public InterfaceGroup(SNode node) {
     super(node);

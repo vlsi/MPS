@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Concept_FindInstances extends SNodeOperation {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.Concept_FindInstances";
-public    static final String SCOPE = "scope";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.Concept_FindInstances";
+  public static final String SCOPE = "scope";
 
   public Concept_FindInstances(SNode node) {
     super(node);

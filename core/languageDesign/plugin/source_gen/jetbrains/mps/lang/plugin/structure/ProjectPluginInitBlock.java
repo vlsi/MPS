@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ProjectPluginInitBlock extends ConceptFunction {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.ProjectPluginInitBlock";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.ProjectPluginInitBlock";
 
   public ProjectPluginInitBlock(SNode node) {
     super(node);

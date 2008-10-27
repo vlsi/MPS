@@ -5,5 +5,5 @@ package jetbrains.mps.lang.core.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface IWrapper extends INodeAdapter {
-public    static final String concept = "jetbrains.mps.lang.core.structure.IWrapper";
+  public static final String concept = "jetbrains.mps.lang.core.structure.IWrapper";
 }

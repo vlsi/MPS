@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PreferencePageResetBlock extends ConceptFunction {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencePageResetBlock";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencePageResetBlock";
 
   public PreferencePageResetBlock(SNode node) {
     super(node);

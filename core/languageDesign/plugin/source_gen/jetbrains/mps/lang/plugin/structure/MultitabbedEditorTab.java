@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MultitabbedEditorTab extends AbstractEditorTab {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab";
-public    static final String GET_NODES_BLOCK = "getNodesBlock";
-public    static final String GET_INNER_TAB_NAME_BLOCK = "getInnerTabNameBlock";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab";
+  public static final String GET_NODES_BLOCK = "getNodesBlock";
+  public static final String GET_INNER_TAB_NAME_BLOCK = "getInnerTabNameBlock";
 
   public MultitabbedEditorTab(SNode node) {
     super(node);

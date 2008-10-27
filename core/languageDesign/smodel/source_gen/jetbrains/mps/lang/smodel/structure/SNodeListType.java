@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SNodeListType extends Type {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.SNodeListType";
-public    static final String ELEMENT_CONCEPT = "elementConcept";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.SNodeListType";
+  public static final String ELEMENT_CONCEPT = "elementConcept";
 
   public SNodeListType(SNode node) {
     super(node);

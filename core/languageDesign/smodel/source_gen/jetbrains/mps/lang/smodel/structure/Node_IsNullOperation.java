@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Node_IsNullOperation extends SNodeOperation {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.Node_IsNullOperation";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_IsNullOperation";
 
   public Node_IsNullOperation(SNode node) {
     super(node);

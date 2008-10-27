@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BuildGroupBlock extends ConceptFunction implements GroupContents {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.BuildGroupBlock";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.BuildGroupBlock";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public BuildGroupBlock(SNode node) {
     super(node);

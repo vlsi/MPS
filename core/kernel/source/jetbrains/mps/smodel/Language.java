@@ -568,7 +568,7 @@ public class Language extends AbstractModule {
   public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
     if (myNameToConceptCache.isEmpty()) {
       SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
-      final String structureLangNamespace = BootstrapLanguagesManager.getInstance().getStructureLanguage().getNamespace();
+      final String structureLangNamespace = Structure_Language.get().getNamespace();
       SModel structureModel = structureModelDescriptor.getSModel();
       structureModel.allNodes(new Condition<SNode>() {
         public boolean met(SNode node) {

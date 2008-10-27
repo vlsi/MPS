@@ -11,11 +11,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SearchScope_ContainsOperation extends BaseConcept implements IOperation {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String NODE_TO_CHECK = "nodeToCheck";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NODE_TO_CHECK = "nodeToCheck";
 
   public SearchScope_ContainsOperation(SNode node) {
     super(node);

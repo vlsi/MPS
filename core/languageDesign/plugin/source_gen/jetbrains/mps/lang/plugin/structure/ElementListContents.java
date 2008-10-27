@@ -11,11 +11,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ElementListContents extends BaseConcept implements GroupContents {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.ElementListContents";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String REFERENCE = "reference";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.ElementListContents";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String REFERENCE = "reference";
 
   public ElementListContents(SNode node) {
     super(node);

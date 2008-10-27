@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IsApplicableBlock extends UpdateBlock {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.IsApplicableBlock";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.IsApplicableBlock";
 
   public IsApplicableBlock(SNode node) {
     super(node);

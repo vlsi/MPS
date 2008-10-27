@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CreateBlock extends ConceptFunction {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.CreateBlock";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.CreateBlock";
 
   public CreateBlock(SNode node) {
     super(node);

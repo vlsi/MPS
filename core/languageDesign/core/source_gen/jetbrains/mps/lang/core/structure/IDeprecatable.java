@@ -5,8 +5,8 @@ package jetbrains.mps.lang.core.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface IDeprecatable extends INodeAdapter {
-public    static final String concept = "jetbrains.mps.lang.core.structure.IDeprecatable";
-public    static final String BUILD = "build";
+  public static final String concept = "jetbrains.mps.lang.core.structure.IDeprecatable";
+  public static final String BUILD = "build";
 
   public int getBuild();
 

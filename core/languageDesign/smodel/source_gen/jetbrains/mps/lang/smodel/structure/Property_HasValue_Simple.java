@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Property_HasValue_Simple extends SNodeOperation {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple";
-public    static final String VALUE = "value";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple";
+  public static final String VALUE = "value";
 
   public Property_HasValue_Simple(SNode node) {
     super(node);

@@ -10,12 +10,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PropertyAttributeAccessQualifier extends BaseConcept implements IAttributeAccessQualifier {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String ANNOTATION_LINK = "annotationLink";
-public    static final String PROPERTY_QUALIFIER = "propertyQualifier";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String ANNOTATION_LINK = "annotationLink";
+  public static final String PROPERTY_QUALIFIER = "propertyQualifier";
 
   public PropertyAttributeAccessQualifier(SNode node) {
     super(node);

@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Model_NodesOperation extends SNodeOperation {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.Model_NodesOperation";
-public    static final String CONCEPT = "concept";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.Model_NodesOperation";
+  public static final String CONCEPT = "concept";
 
   public Model_NodesOperation(SNode node) {
     super(node);

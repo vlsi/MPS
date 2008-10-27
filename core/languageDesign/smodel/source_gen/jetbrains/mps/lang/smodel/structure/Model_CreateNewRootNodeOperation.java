@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Model_CreateNewRootNodeOperation extends Model_CreateNewNodeOperation {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation";
 
   public Model_CreateNewRootNodeOperation(SNode node) {
     super(node);

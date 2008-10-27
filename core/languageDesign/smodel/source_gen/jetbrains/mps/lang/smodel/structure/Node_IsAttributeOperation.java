@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Node_IsAttributeOperation extends SNodeOperation {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation";
 
   public Node_IsAttributeOperation(SNode node) {
     super(node);

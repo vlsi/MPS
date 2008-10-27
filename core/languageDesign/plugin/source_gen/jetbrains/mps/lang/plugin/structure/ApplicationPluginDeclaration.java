@@ -13,14 +13,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ApplicationPluginDeclaration extends BaseConcept implements IClassifier {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration";
-public    static final String NAME = "name";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String INIT_BLOCK = "initBlock";
-public    static final String DISPOSE_BLOCK = "disposeBlock";
-public    static final String FIELD_DECLARATION = "fieldDeclaration";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String INIT_BLOCK = "initBlock";
+  public static final String DISPOSE_BLOCK = "disposeBlock";
+  public static final String FIELD_DECLARATION = "fieldDeclaration";
 
   public ApplicationPluginDeclaration(SNode node) {
     super(node);

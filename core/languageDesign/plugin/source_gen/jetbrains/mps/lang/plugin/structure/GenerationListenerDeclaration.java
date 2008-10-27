@@ -10,14 +10,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GenerationListenerDeclaration extends BaseConcept implements INamedConcept {
-public    static final String concept = "jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration";
-public    static final String NAME = "name";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String BEFORE_GENERATION_BLOCK = "beforeGenerationBlock";
-public    static final String MODELS_GENERATED_BLOCK = "modelsGeneratedBlock";
-public    static final String AFTER_GENERATION_BLOCK = "afterGenerationBlock";
+  public static final String concept = "jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String BEFORE_GENERATION_BLOCK = "beforeGenerationBlock";
+  public static final String MODELS_GENERATED_BLOCK = "modelsGeneratedBlock";
+  public static final String AFTER_GENERATION_BLOCK = "afterGenerationBlock";
 
   public GenerationListenerDeclaration(SNode node) {
     super(node);

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SearchScopeType extends Type {
-public    static final String concept = "jetbrains.mps.lang.smodel.structure.SearchScopeType";
+  public static final String concept = "jetbrains.mps.lang.smodel.structure.SearchScopeType";
 
   public SearchScopeType(SNode node) {
     super(node);
