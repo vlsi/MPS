@@ -1757,6 +1757,20 @@
           </node>
         </node>
       </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1225113203761">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1225113209406">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1225113209407">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225113211268" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1225113203764">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1225113197617">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1225113199338">
+              <link role="applicableNode" targetNodeId="1178287490242" resolveInfo="op" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1178287490242">
       <property name="name" value="op" />

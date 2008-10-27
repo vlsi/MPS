@@ -44,17 +44,17 @@ public class RulesUtil {
         public void run() {
           boolean isGood = false;
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new _Quotations.QuotationClass_44().createNode(typeCheckingContext), false, false)) {
-              isGood = true;
-            }
-          }
-          if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new _Quotations.QuotationClass_45().createNode(typeCheckingContext), false, false)) {
               isGood = true;
             }
           }
-          if (SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
+          if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new _Quotations.QuotationClass_46().createNode(typeCheckingContext), false, false)) {
+              isGood = true;
+            }
+          }
+          if (SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new _Quotations.QuotationClass_47().createNode(typeCheckingContext), false, false)) {
               isGood = true;
             }
           }
@@ -66,7 +66,7 @@ public class RulesUtil {
               if (isGood) {
                 // some of ops applicable to 'link' require left-expr to be a concept
                 if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept") && !(SConceptPropertyOperations.getBoolean(op, "applicable_to_node"))) {
-                  isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new _Quotations.QuotationClass_47().createNode(typeCheckingContext));
+                  isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new _Quotations.QuotationClass_48().createNode(typeCheckingContext));
                 }
               }
             }
@@ -247,7 +247,7 @@ public class RulesUtil {
     {
       SNode _nodeToCheck_1029348928467 = null;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(TypeToEquate, new _Quotations.QuotationClass_48().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099042246), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206099071408", intentionProvider);
+      typeCheckingContext.createEquation(TypeToEquate, new _Quotations.QuotationClass_49().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099042246), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206099071408", intentionProvider);
     }
   }
 

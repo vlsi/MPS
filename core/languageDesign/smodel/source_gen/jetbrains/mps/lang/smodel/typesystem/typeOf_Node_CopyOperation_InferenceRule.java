@@ -27,7 +27,7 @@ public class typeOf_Node_CopyOperation_InferenceRule extends AbstractInferenceRu
           {
             SNode _nodeToCheck_1029348928467 = node;
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205967749966", true), new _Quotations.QuotationClass_58().createNode(inputNodeConcept, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205967749964", intentionProvider);
+            typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205967749966", true), new _Quotations.QuotationClass_59().createNode(inputNodeConcept, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205967749964", intentionProvider);
           }
         }
 
@@ -36,7 +36,7 @@ public class typeOf_Node_CopyOperation_InferenceRule extends AbstractInferenceRu
     {
       SNode _nodeToCheck_1029348928467 = node;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057865109", true), new _Quotations.QuotationClass_59().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057869956", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057865109", true), new _Quotations.QuotationClass_60().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057869956", false, 0, intentionProvider);
     }
   }
 

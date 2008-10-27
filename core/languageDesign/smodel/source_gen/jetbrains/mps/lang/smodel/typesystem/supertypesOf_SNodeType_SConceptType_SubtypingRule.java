@@ -14,7 +14,7 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
   }
 
   public SNode getSubOrSuperType(SNode node) {
-    return new _Quotations.QuotationClass_65().createNode();
+    return new _Quotations.QuotationClass_66().createNode();
   }
 
   public String getApplicableConceptFQName() {

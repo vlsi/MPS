@@ -22,6 +22,11 @@ public class typeof_Node_ReplaceWithAnotherOperation_InferenceRule extends Abstr
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "replacementNode", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206488003353", true), new _Quotations.QuotationClass_23().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206488011466", false, 0, intentionProvider);
     }
+    {
+      SNode _nodeToCheck_1029348928467 = op;
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225113197617", true), new _Quotations.QuotationClass_24().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225113203761", intentionProvider);
+    }
   }
 
   public String getApplicableConceptFQName() {
