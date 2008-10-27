@@ -43,46 +43,45 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216860931282">
         <property name="value" value=" only applicable to 'genctx'" />
       </node>
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" id="1216860931283">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216860931284">
-          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1216860931285">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216860931286">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference" id="1216860931287">
-                <link role="whenConcreteVar" targetNodeId="1216860931292" resolveInfo="contextType" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1216860931288">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1216860975772">
-                  <link role="conceptDeclaration" targetNodeId="1.1216860049633" resolveInfo="GenerationContextType" />
-                </node>
-              </node>
-            </node>
-            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1216860931290">
-              <link role="applicableNode" targetNodeId="1216860931316" resolveInfo="generationContextOp_Base" />
-            </node>
-            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216860931291">
-              <property name="value" value="operation is not applicable" />
-            </node>
-          </node>
-        </node>
-        <node role="argumentRepresentator" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration" id="1216860931292">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225121875077">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225121875078">
           <property name="name" value="contextType" />
-          <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1216860931293" />
-        </node>
-        <node role="argument" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1216860931294">
-          <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216860931295">
-            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1216860931296">
-              <link role="concept" targetNodeId="5.1197027756228" resolveInfo="DotExpression" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216860931297">
-                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1216860931298">
-                  <link role="applicableNode" targetNodeId="1216860931316" resolveInfo="generationContextOp_Base" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225121875079" />
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225121903025">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225121900034">
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1225121900035">
+                <link role="concept" targetNodeId="5.1197027756228" resolveInfo="DotExpression" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225121900036">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1225121900037">
+                    <link role="applicableNode" targetNodeId="1216860931316" resolveInfo="op" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1225121900038" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1216860931299" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225121900039">
+                <link role="link" targetNodeId="5.1197027771414" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1216860931300">
-              <link role="link" targetNodeId="5.1197027771414" />
+            <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1225121903950" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1216860931285">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216860931286">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225122005796">
+            <link role="variableDeclaration" targetNodeId="1225121875078" resolveInfo="contextType" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1216860931288">
+            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1216860975772">
+              <link role="conceptDeclaration" targetNodeId="1.1216860049633" resolveInfo="GenerationContextType" />
             </node>
           </node>
+        </node>
+        <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1216860931290">
+          <link role="applicableNode" targetNodeId="1216860931316" resolveInfo="generationContextOp_Base" />
+        </node>
+        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216860931291">
+          <property name="value" value="operation is not applicable" />
         </node>
       </node>
     </node>

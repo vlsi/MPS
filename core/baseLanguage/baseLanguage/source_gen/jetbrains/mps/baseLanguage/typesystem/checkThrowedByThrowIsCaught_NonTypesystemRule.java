@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,19 +23,11 @@ public class checkThrowedByThrowIsCaught_NonTypesystemRule extends AbstractNonTy
     if ((throwable == null)) {
       return;
     }
-    {
-      final SNode ThrowableType = typeCheckingContext.typeOf(throwable, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1210182461919", true);
-      typeCheckingContext.whenConcrete(ThrowableType, new Runnable() {
-
-        public void run() {
-          Set<SNode> throwables = new HashSet<SNode>();
-          throwables.add(typeCheckingContext.getEquationManager().getRepresentator(ThrowableType));
-          if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(ThrowableType), "jetbrains.mps.baseLanguage.structure.Type")) {
-            RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, throwStatement);
-          }
-        }
-
-      }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1210182438695");
+    SNode throwableType = TypeChecker.getInstance().getTypeOf(throwable);
+    Set<SNode> throwables = new HashSet<SNode>();
+    throwables.add(throwableType);
+    if (SNodeOperations.isInstanceOf(throwableType, "jetbrains.mps.baseLanguage.structure.Type")) {
+      RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, throwStatement);
     }
   }
 

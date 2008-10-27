@@ -14,6 +14,7 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
+  <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -116,6 +117,22 @@
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1224838931246">
               <link role="link" targetNodeId="138.1068581517665" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225122371450">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225122371451">
+            <property name="name" value="g" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1225122397977" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225122380751">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225122380831">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225122380752">
+              <link role="variableDeclaration" targetNodeId="1225122371451" resolveInfo="g" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput" id="1225122386569">
+              <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.Expression" id="1225122386570" />
             </node>
           </node>
         </node>

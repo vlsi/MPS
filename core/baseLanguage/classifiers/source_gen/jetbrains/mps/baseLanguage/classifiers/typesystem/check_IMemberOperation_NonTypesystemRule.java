@@ -6,10 +6,10 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -22,26 +22,18 @@ public class check_IMemberOperation_NonTypesystemRule extends AbstractNonTypesys
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
+    SNode operandType = TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(nodeToCheck));
     {
-      final SNode operandType = typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(nodeToCheck), "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205921836720", true);
-      typeCheckingContext.whenConcrete(operandType, new Runnable() {
-
-        public void run() {
+      IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
+      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, pattern_0, typeCheckingContext);
+      if (coercedNode_0 != null) {
+        if (!(ListSequence.fromList(BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_0, nodeToCheck)).contains(SLinkOperations.getTarget(nodeToCheck, "member", false)))) {
           {
-            IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
-            SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(operandType), pattern_0, typeCheckingContext);
-            if (coercedNode_0 != null) {
-              if (!(ListSequence.fromList(BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_0, nodeToCheck)).contains(SLinkOperations.getTarget(nodeToCheck, "member", false)))) {
-                {
-                  BaseIntentionProvider intentionProvider = null;
-                  typeCheckingContext.reportTypeError(nodeToCheck, "Declaration is out of scope", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205921883388", intentionProvider);
-                }
-              }
-            }
+            BaseIntentionProvider intentionProvider = null;
+            typeCheckingContext.reportTypeError(nodeToCheck, "Declaration is out of scope", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205921883388", intentionProvider);
           }
         }
-
-      }, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205921833059");
+      }
     }
   }
 

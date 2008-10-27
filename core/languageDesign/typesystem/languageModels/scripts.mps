@@ -148,5 +148,34 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1225120911688">
+    <property name="migrationFromBuild" value="1117" />
+    <property name="name" value="FindTypeOf" />
+    <property name="title" value="find typeof" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1225120944633">
+      <property name="description" value="find typeof" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1174657487114" resolveInfo="TypeOfExpression" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1225120944634">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225120944635" />
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1225120990731">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225120990732">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225120993545">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225120999254">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225120994329">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1225120993546" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" id="1225120998284" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1225120999913">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1225121001383">
+                  <link role="conceptDeclaration" targetNodeId="1.1195214364922" resolveInfo="NonTypesystemRule" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
