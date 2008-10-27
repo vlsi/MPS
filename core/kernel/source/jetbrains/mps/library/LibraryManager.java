@@ -47,6 +47,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   private MyState myState = new MyState();
 
   private MPSModuleOwner myOwner;
+  private MPSModuleOwner myBootstrapLibrariesOwner;
   private MPSModuleOwner myPredefinedLibrariesOwner;
 
   private MPSModuleRepository myRepository;
@@ -139,9 +140,11 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
 
   private void updatePredefinedLibraries() {
     myPredefinedLibrariesOwner = new MPSModuleOwner() { };
+    myBootstrapLibrariesOwner = new MPSModuleOwner() { };
     for (Library l : getLibraries()) {
       if (l.isPredefined()) {
-        List<IModule> modules = myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myPredefinedLibrariesOwner);
+        MPSModuleOwner owner = (l.isBootstrap() ? myBootstrapLibrariesOwner : myPredefinedLibrariesOwner);
+        List<IModule> modules = myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), owner);
 
         if (l.isBootstrap()) {
           for (IModule m : modules) {
@@ -150,6 +153,8 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
         }
       }
     }
+
+    fireOnLoad(myBootstrapLibrariesOwner);
     fireOnLoad(myPredefinedLibrariesOwner);
   }
 
@@ -180,8 +185,10 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   }
 
   public <M extends IModule> Set<M> getGlobalModules(Class<M> cls) {
-    List<M> result = myRepository.getModules(myOwner, cls);
+    List<M> result = new ArrayList<M>();
+    result.addAll(myRepository.getModules(myBootstrapLibrariesOwner, cls));
     result.addAll(myRepository.getModules(myPredefinedLibrariesOwner, cls));
+    result.addAll(myRepository.getModules(myOwner, cls));
 
     for (M m : new ArrayList<M>(result)) {
       if (m instanceof Language) {
