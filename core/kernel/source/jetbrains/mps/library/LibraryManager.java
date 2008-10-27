@@ -190,6 +190,20 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
     result.addAll(myRepository.getModules(myPredefinedLibrariesOwner, cls));
     result.addAll(myRepository.getModules(myOwner, cls));
 
+    addGenerators(cls, result);
+
+    return new HashSet<M>(result);
+  }
+
+  public <M extends IModule> Set<M> getBootstrapModules(Class<M> cls) {
+    List<M> result = new ArrayList<M>();
+    result.addAll(myRepository.getModules(myBootstrapLibrariesOwner, cls));
+
+    addGenerators(cls, result);
+
+    return new HashSet<M>(result);
+  }
+  private <M extends IModule> void addGenerators(Class<M> cls, List<M> result) {
     for (M m : new ArrayList<M>(result)) {
       if (m instanceof Language) {
         if (cls.isAssignableFrom(Generator.class)) {
@@ -197,8 +211,6 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
         }
       }
     }
-
-    return new HashSet<M>(result);
   }
 
   private LibraryManagerPreferences getPreferences() {
