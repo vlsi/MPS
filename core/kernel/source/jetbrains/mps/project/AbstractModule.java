@@ -295,9 +295,6 @@ public abstract class AbstractModule implements IModule {
   public List<IModule> getDesignTimeDependOnModules() {
     Set<IModule> result = new LinkedHashSet<IModule>();
     result.addAll(getAllDependOnModules());
-//    for (Language l : getAllUsedLanguages()) {
-//      result.addAll(l.getRuntimeDependOnModules());
-//    }
     return new ArrayList<IModule>(result);
   }
 
@@ -674,31 +671,6 @@ public abstract class AbstractModule implements IModule {
     });
   }
 
-  private ModuleDescriptor renameModuleImport(final String oldModuleUID, final String newModuleUID, final boolean setModuleDescriptor) {
-    return ModelAccess.instance().runWriteActionInCommand(new Computable<ModuleDescriptor>() {
-      public ModuleDescriptor compute() {
-        ModuleDescriptor md = getModuleDescriptor();
-        if (md == null) return null;
-
-        for (jetbrains.mps.projectLanguage.structure.ModuleReference r : md.getDependencies()) {
-          if (oldModuleUID.equals(r.getName())) {
-            md.removeChild(r);
-          }
-        }
-
-        jetbrains.mps.projectLanguage.structure.ModuleReference ref = jetbrains.mps.projectLanguage.structure.ModuleReference.newInstance(md.getModel());
-        ref.setName(newModuleUID);
-        md.addDependency(ref);
-
-        if (setModuleDescriptor) {
-          setModuleDescriptor(md);
-          save();
-        }
-        return md;
-      }
-    });
-  }
-
   public void addUsedLanguage(final String languageNamespace) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -770,6 +742,7 @@ public abstract class AbstractModule implements IModule {
 
     for (Model m : getModuleDescriptor().getDescendants(Model.class)) {
       SModelReference oldRef = SModelReference.fromString(m.getModelRef());
+      assert oldRef != null;
       SModelReference newRef = oldRef.update();
       changed = changed || changed(oldRef, newRef);
       m.setModelRef(newRef.toString());
@@ -777,6 +750,7 @@ public abstract class AbstractModule implements IModule {
 
     for (MappingConfig_SimpleRef ref : getModuleDescriptor().getDescendants(MappingConfig_SimpleRef.class)) {
       SModelReference oldRef = SModelReference.fromString(ref.getModelUID());
+      assert oldRef != null;
       SModelReference newRef = oldRef.update();
       changed = changed || changed(oldRef, newRef);
       ref.setModelUID(newRef.toString());
