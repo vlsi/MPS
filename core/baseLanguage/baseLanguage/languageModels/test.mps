@@ -207,6 +207,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397547" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585202">
@@ -464,6 +465,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397619" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585269">
@@ -792,6 +794,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397574" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585337">
@@ -900,6 +903,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397665" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585404">
@@ -1113,6 +1117,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397702" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585456">
@@ -1151,6 +1156,7 @@
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.NodesTestMethod" id="1217271585459">
       <property name="name" value="OnlyStatementsCanbeUnReachable" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216231062377" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397577" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585523">
@@ -1241,6 +1247,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397633" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585574">
@@ -1362,6 +1369,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397703" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585641">
@@ -1421,6 +1429,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397622" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585692">
@@ -1476,6 +1485,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397637" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585759">
@@ -1651,6 +1661,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397631" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585810">
@@ -1852,6 +1863,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397623" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585862">
@@ -2286,6 +2298,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397639" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585914">
@@ -2628,6 +2641,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397704" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585968">
@@ -2761,6 +2775,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397629" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586020">
@@ -3147,6 +3162,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397635" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586071">
@@ -3383,6 +3399,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397565" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586138">
@@ -3440,6 +3457,7 @@
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.NodesTestMethod" id="1217271586141">
       <property name="name" value="UnreachableStatements" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215444211003" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397689" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586189">
@@ -3652,6 +3670,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397692" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586241">
@@ -3905,6 +3924,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397626" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586324">
@@ -3956,6 +3976,7 @@
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.NodesTestMethod" id="1217271586327">
       <property name="name" value="ReadAction" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216549096937" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397690" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586375">
@@ -4133,6 +4154,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397638" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586411">
@@ -4221,6 +4243,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397571" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586462">
@@ -4275,6 +4298,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397666" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586497">
@@ -4435,6 +4459,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397672" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586549">
@@ -4538,6 +4563,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397621" />
     </node>
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.NodesTestMethod" id="1220358037828">
       <property name="name" value="oneBreak" />
@@ -4573,6 +4599,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397570" />
     </node>
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.NodesTestMethod" id="1220358061274">
       <property name="name" value="oneContionue" />
@@ -4608,6 +4635,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397671" />
     </node>
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.NodesTestMethod" id="1220358115731">
       <property name="name" value="breakAndContinue" />
@@ -4649,6 +4677,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397601" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586585">
@@ -4709,6 +4738,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397628" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586635">
@@ -4871,6 +4901,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397632" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586673">
@@ -4987,6 +5018,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397627" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586725">
@@ -5143,6 +5175,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397636" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586761">
@@ -5258,6 +5291,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397658" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586813">
@@ -5497,6 +5531,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397698" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586849">
@@ -5594,6 +5629,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397599" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586900">
@@ -5826,6 +5862,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397657" />
     </node>
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.NodesTestMethod" id="1220372333081">
       <property name="name" value="retunInAnonymousClass" />
@@ -5861,6 +5898,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397569" />
     </node>
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.NodesTestMethod" id="1220372371985">
       <property name="name" value="notAlwaysReturn" />
@@ -5899,6 +5937,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397656" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586935">
@@ -6082,6 +6121,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397693" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271586987">
@@ -6358,6 +6398,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397594" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587023">
@@ -6390,6 +6431,7 @@
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.NodesTestMethod" id="1217271587026">
       <property name="name" value="UnusedVariableDeclaration" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216889483873" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397700" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587074">
@@ -6474,6 +6516,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397663" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587109">
@@ -6740,6 +6783,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397568" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587163">
@@ -6905,6 +6949,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397696" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587199">
@@ -7015,6 +7060,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397699" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587251">
@@ -7292,6 +7338,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397688" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587288">
@@ -7448,6 +7495,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397624" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587339">
@@ -7722,6 +7770,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397660" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587376">
@@ -7945,6 +7994,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397618" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587428">
@@ -8005,6 +8055,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397694" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587464">
@@ -8179,6 +8230,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397670" />
     </node>
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.NodesTestMethod" id="1220360994623">
       <property name="name" value="returnAndOutVariable" />
@@ -8220,6 +8272,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397697" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587515">
@@ -8337,6 +8390,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397695" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587551">
@@ -8449,6 +8503,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397602" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587604">
@@ -8598,6 +8653,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397634" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587656">
@@ -8651,6 +8707,7 @@
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.NodesTestMethod" id="1217271587659">
       <property name="name" value="VariableUninitialized" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215444156829" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397630" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587691">
@@ -8964,6 +9021,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397573" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587743">
@@ -9081,6 +9139,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397661" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587779">
@@ -9344,6 +9403,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397595" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587831">
@@ -9604,6 +9664,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397575" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587867">
@@ -9650,6 +9711,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397548" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587918">
@@ -9733,6 +9795,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397600" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271587953">
@@ -9931,6 +9994,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397620" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271588005">
@@ -10017,6 +10081,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397572" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271588056">
@@ -10160,6 +10225,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397659" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271588092">
@@ -10374,6 +10440,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397705" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271588144">
@@ -10623,6 +10690,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397701" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271588182">
@@ -10846,6 +10914,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397597" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271588234">
@@ -11091,6 +11160,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397576" />
     </node>
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.NodesTestMethod" id="1221822202358">
       <property name="name" value="extractFromExecute" />
@@ -11179,6 +11249,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397567" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217861204623">
@@ -11751,6 +11822,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397668" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1221228449843">
@@ -11970,6 +12042,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397598" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1222358743033">
@@ -12125,6 +12198,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397669" />
     </node>
     <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1222358766832">
       <node role="nodeToCheck" type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1222359069655">
@@ -12474,6 +12548,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397691" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1224161463074">
@@ -12525,6 +12600,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397662" />
     </node>
     <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1224161472734">
       <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224161478908">
@@ -12618,6 +12694,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397667" />
     </node>
     <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1224589627576">
       <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224589630171">
@@ -12816,6 +12893,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397664" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1224778280045">
@@ -12928,6 +13006,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397566" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1224781896617">
@@ -12970,6 +13049,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397625" />
     </node>
     <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1224781953400">
       <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224781955823">
@@ -13099,6 +13179,7 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225111397596" />
     </node>
     <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1224857506978">
       <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224857509989">

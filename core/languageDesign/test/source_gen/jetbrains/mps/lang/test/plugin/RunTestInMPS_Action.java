@@ -21,8 +21,8 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 
 public class RunTestInMPS_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(RunTestInMPS_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(RunTestInMPS_Action.class);
+  private static final Icon ICON = null;
 
   private SModel model;
   private SNode node;

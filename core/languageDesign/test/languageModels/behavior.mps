@@ -813,6 +813,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217250493538" />
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptBehavior" id="1217423888659">
     <link role="concept" targetNodeId="1.1216913689992" resolveInfo="NodesTestMethod" />
     <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1217423960598">
@@ -880,7 +881,25 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724972" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.constraints.structure.ConceptConstructorDeclaration" id="1217423888660">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217423888661" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217423888661">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225110613090">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1225110639331">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225110639693">
+              <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1225110643258">
+                <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225110643259">
+                  <link role="concept" targetNodeId="2v.1068581517677" resolveInfo="VoidType" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225110614436">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" id="1225110613091" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225110618626">
+                <link role="link" targetNodeId="2v.1068580123133" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

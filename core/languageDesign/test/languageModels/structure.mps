@@ -384,7 +384,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1216913689992">
     <property name="name" value="NodesTestMethod" />
-    <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="7.1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1216989116695">
       <property name="value" value="test method" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
@@ -394,12 +394,6 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1217250730750">
       <link role="intfc" targetNodeId="8.1216134482493" resolveInfo="ITestMethod" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1216913719839">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="body" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="7.1068580123136" resolveInfo="StatementList" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1216989428737">

@@ -249,8 +249,8 @@
             <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1223643142295">
               <link role="applicableNode" targetNodeId="1217855714267" resolveInfo="nodesTestMethod" />
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223643144081">
-              <link role="link" targetNodeId="1.1216913719839" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225109813504">
+              <link role="link" targetNodeId="5.1068580123135" />
             </node>
           </node>
         </node>
