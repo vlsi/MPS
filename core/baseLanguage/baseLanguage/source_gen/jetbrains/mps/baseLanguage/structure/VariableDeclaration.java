@@ -11,15 +11,15 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class VariableDeclaration extends BaseConcept implements IValidIdentifier, HasAnnotation, TypeDerivable {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
-public    static final String NAME = "name";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String IS_FINAL = "isFinal";
-public    static final String TYPE = "type";
-public    static final String INITIALIZER = "initializer";
-public    static final String ANNOTATION = "annotation";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_FINAL = "isFinal";
+  public static final String TYPE = "type";
+  public static final String INITIALIZER = "initializer";
+  public static final String ANNOTATION = "annotation";
 
   public VariableDeclaration(SNode node) {
     super(node);

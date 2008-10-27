@@ -8,7 +8,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodeEditor.Highlighter;
 
 public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProjectPlugin {
-private    static Logger LOG = Logger.getLogger(BaseLanguageCustomPlugin_CustomProjectPlugin.class);
+  private static Logger LOG = Logger.getLogger(BaseLanguageCustomPlugin_CustomProjectPlugin.class);
 
   private ToDoHighlighter myToDoHighlighter = new ToDoHighlighter();
 

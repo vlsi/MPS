@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DefaultPropertyImplementation extends PropertyImplementation {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation";
-public    static final String DEFAULT_GET_ACCESSOR = "defaultGetAccessor";
-public    static final String DEFAULT_SET_ACCESSOR = "defaultSetAccessor";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation";
+  public static final String DEFAULT_GET_ACCESSOR = "defaultGetAccessor";
+  public static final String DEFAULT_SET_ACCESSOR = "defaultSetAccessor";
 
   public DefaultPropertyImplementation(SNode node) {
     super(node);

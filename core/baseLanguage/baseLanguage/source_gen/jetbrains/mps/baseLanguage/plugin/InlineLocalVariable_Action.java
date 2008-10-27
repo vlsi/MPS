@@ -10,14 +10,13 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class InlineLocalVariable_Action extends GeneratedAction {
-private    static final Logger LOG = Logger.getLogger(InlineLocalVariable_Action.class);
-private    static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(InlineLocalVariable_Action.class);
+  private static final Icon ICON = null;
 
   private SNode node;
   public EditorContext editorContext;
@@ -35,7 +34,7 @@ private    static final Icon ICON = null;
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(InlineLocalVariable_Action.this.node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+    return InlineVariableRefactoring.isApplicable(InlineLocalVariable_Action.this.node);
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -89,7 +88,8 @@ private    static final Icon ICON = null;
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
           public void run() {
-            ref.value.doRefactoring();
+            SNode result = ref.value.doRefactoring();
+            InlineLocalVariable_Action.this.editorContext.select(result);
           }
 
         });

@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CharConstant extends Expression {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.CharConstant";
-public    static final String CHAR_CONSTANT = "charConstant";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.CharConstant";
+  public static final String CHAR_CONSTANT = "charConstant";
 
   public CharConstant(SNode node) {
     super(node);

@@ -8,11 +8,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ThisExpression extends Expression implements IThisExpression {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.ThisExpression";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String CLASS_CONCEPT = "classConcept";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ThisExpression";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String CLASS_CONCEPT = "classConcept";
 
   public ThisExpression(SNode node) {
     super(node);

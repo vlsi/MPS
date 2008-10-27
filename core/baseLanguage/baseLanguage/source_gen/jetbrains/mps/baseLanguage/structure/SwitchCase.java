@@ -9,9 +9,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SwitchCase extends BaseConcept {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.SwitchCase";
-public    static final String EXPRESSION = "expression";
-public    static final String BODY = "body";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.SwitchCase";
+  public static final String EXPRESSION = "expression";
+  public static final String BODY = "body";
 
   public SwitchCase(SNode node) {
     super(node);

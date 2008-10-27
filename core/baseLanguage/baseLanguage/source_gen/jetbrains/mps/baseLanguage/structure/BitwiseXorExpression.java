@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BitwiseXorExpression extends BinaryBitwiseOperation {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression";
 
   public BitwiseXorExpression(SNode node) {
     super(node);

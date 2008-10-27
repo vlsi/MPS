@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class WildCardType extends Type {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.WildCardType";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.WildCardType";
 
   public WildCardType(SNode node) {
     super(node);

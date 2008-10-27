@@ -13,8 +13,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class UncommentStatements_Action extends GeneratedAction {
-private    static final Logger LOG = Logger.getLogger(UncommentStatements_Action.class);
-private    static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(UncommentStatements_Action.class);
+  private static final Icon ICON = null;
 
   private SNode node;
 

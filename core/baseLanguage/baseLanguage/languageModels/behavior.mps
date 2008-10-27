@@ -9190,6 +9190,16 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1224857430232">
+      <property name="name" value="getValue" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224857430233" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1224857432917">
+        <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224857430235" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.constraints.structure.ConceptConstructorDeclaration" id="1223985710163">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223985710164" />
     </node>

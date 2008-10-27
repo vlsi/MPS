@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.lang.core.structure.IDeprecatable;
 
 public interface IBLDeprecatable extends IDeprecatable {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.IBLDeprecatable";
-public    static final String IS_DEPRECATED = "isDeprecated";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.IBLDeprecatable";
+  public static final String IS_DEPRECATED = "isDeprecated";
 
   public boolean getIsDeprecated();
 

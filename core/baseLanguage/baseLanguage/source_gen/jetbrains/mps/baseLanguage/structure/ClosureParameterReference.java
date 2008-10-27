@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ClosureParameterReference extends Expression {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.ClosureParameterReference";
-public    static final String CLOSURE_PARAMETER = "closureParameter";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ClosureParameterReference";
+  public static final String CLOSURE_PARAMETER = "closureParameter";
 
   public ClosureParameterReference(SNode node) {
     super(node);

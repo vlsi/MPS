@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunctionParameter extends Expression {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter";
-public    static final String CPR_DontUseParameterObject = "dontUseParameterObject";
-public    static final String CLNK_ConceptFunctionParameterType = "conceptFunctionParameterType";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter";
+  public static final String CPR_DontUseParameterObject = "dontUseParameterObject";
+  public static final String CLNK_ConceptFunctionParameterType = "conceptFunctionParameterType";
 
   public ConceptFunctionParameter(SNode node) {
     super(node);

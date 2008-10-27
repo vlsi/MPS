@@ -9,13 +9,13 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class InstanceMethodDeclaration extends BaseMethodDeclaration implements ClassifierMember, IResolveInfo {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String RESOLVE_INFO = "resolveInfo";
-public    static final String IS_ABSTRACT = "isAbstract";
-public    static final String VISIBILITY = "visibility";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOLVE_INFO = "resolveInfo";
+  public static final String IS_ABSTRACT = "isAbstract";
+  public static final String VISIBILITY = "visibility";
 
   public InstanceMethodDeclaration(SNode node) {
     super(node);

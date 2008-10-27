@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class FieldUsages_Finder extends GeneratedFinder {
-private    static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder");
+  private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder");
 
   public String getDescription() {
     return "Field Usages";

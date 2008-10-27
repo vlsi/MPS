@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IntegerConstant extends IntegerLiteral {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.IntegerConstant";
-public    static final String VALUE = "value";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.IntegerConstant";
+  public static final String VALUE = "value";
 
   public IntegerConstant(SNode node) {
     super(node);

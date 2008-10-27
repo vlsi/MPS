@@ -18,8 +18,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExtractMethod_Action extends GeneratedAction {
-private    static final Logger LOG = Logger.getLogger(ExtractMethod_Action.class);
-private    static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(ExtractMethod_Action.class);
+  private static final Icon ICON = null;
 
   private List<SNode> nodes;
   public Frame frame;

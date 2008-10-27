@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseAssignmentExpression_Behavior {
-private    static Class[] PARAMETERS_1215696236033 = {SNode.class};
+  private static Class[] PARAMETERS_1215696236033 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

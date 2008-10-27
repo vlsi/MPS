@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PublicVisibility extends Visibility {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.PublicVisibility";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.PublicVisibility";
 
   public PublicVisibility(SNode node) {
     super(node);

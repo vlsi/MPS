@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class OverridingFields_Finder extends GeneratedFinder {
-private    static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder");
+  private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder");
 
   public String getDescription() {
     return "Overriding Fields";

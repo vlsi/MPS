@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CommentedStatementsBlock extends Statement {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock";
-public    static final String STATEMENT = "statement";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock";
+  public static final String STATEMENT = "statement";
 
   public CommentedStatementsBlock(SNode node) {
     super(node);

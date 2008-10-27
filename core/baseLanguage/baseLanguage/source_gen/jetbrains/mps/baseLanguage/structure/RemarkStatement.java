@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class RemarkStatement extends Statement {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.RemarkStatement";
-public    static final String VALUE = "value";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.RemarkStatement";
+  public static final String VALUE = "value";
 
   public RemarkStatement(SNode node) {
     super(node);

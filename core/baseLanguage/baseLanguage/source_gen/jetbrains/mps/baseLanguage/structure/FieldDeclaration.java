@@ -9,14 +9,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class FieldDeclaration extends VariableDeclaration implements ClassifierMember, IResolveInfo, IBLDeprecatable {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.FieldDeclaration";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String RESOLVE_INFO = "resolveInfo";
-public    static final String IS_DEPRECATED = "isDeprecated";
-public    static final String BUILD = "build";
-public    static final String VISIBILITY = "visibility";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.FieldDeclaration";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOLVE_INFO = "resolveInfo";
+  public static final String IS_DEPRECATED = "isDeprecated";
+  public static final String BUILD = "build";
+  public static final String VISIBILITY = "visibility";
 
   public FieldDeclaration(SNode node) {
     super(node);

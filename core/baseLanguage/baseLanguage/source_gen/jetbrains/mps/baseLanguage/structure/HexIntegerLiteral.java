@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class HexIntegerLiteral extends IntegerLiteral {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral";
-public    static final String VALUE = "value";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral";
+  public static final String VALUE = "value";
 
   public HexIntegerLiteral(SNode node) {
     super(node);

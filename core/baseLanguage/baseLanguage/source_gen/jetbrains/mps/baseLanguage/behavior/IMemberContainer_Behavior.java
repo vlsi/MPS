@@ -7,7 +7,7 @@ import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IMemberContainer_Behavior {
-private    static Class[] PARAMETERS_1213877531970 = {SNode.class};
+  private static Class[] PARAMETERS_1213877531970 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

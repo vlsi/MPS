@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class InstanceInitializer extends BaseConcept {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.InstanceInitializer";
-public    static final String STATEMENT_LIST = "statementList";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.InstanceInitializer";
+  public static final String STATEMENT_LIST = "statementList";
 
   public InstanceInitializer(SNode node) {
     super(node);

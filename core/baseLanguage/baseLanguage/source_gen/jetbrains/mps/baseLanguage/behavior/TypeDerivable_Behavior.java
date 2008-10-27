@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class TypeDerivable_Behavior {
-private    static Class[] PARAMETERS_1213877435747 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_1213877435747 = {SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }

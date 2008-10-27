@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CustomPropertyImplementation extends PropertyImplementation {
-public    static final String concept = "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation";
-public    static final String GET_ACCESSOR = "getAccessor";
-public    static final String SET_ACCESSOR = "setAccessor";
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation";
+  public static final String GET_ACCESSOR = "getAccessor";
+  public static final String SET_ACCESSOR = "setAccessor";
 
   public CustomPropertyImplementation(SNode node) {
     super(node);
