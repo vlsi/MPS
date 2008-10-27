@@ -34,12 +34,19 @@ public class ClassLoaderManager implements ApplicationComponent {
 
   private final Object myLock = new Object();
   private RuntimeEnvironment<ModuleReference> myRuntimeEnvironment;
+  private MPSModuleRepository myRepository;
 
 
-  public ClassLoaderManager() {
+  public ClassLoaderManager(MPSModuleRepository repository) {
+    myRepository = repository;
   }
 
   public void initComponent() {
+    addReloadHandler(new ReloadAdapter() {
+      public void onReload() {
+        myRepository.invalidateCaches();
+      }
+    });
   }
 
   @NonNls
@@ -53,7 +60,7 @@ public class ClassLoaderManager implements ApplicationComponent {
 
   private void addModule(ModuleReference ref) {
     synchronized (myLock) {
-      IModule module = MPSModuleRepository.getInstance().getModule(ref);
+      IModule module = myRepository.getModule(ref);
 
       if (module == null) {
         throw new RuntimeException("Can't find module : " + ref.getModuleFqName());
@@ -123,7 +130,7 @@ public class ClassLoaderManager implements ApplicationComponent {
       }
 
       Set<ModuleReference> added = new HashSet<ModuleReference>();
-      for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
+      for (IModule m : myRepository.getAllModules()) {
         if (!containsBundle(m.getModuleReference())) {
           addModule(m.getModuleReference());
           added.add(m.getModuleReference());
@@ -131,7 +138,7 @@ public class ClassLoaderManager implements ApplicationComponent {
       }
 
       for (ModuleReference addedUID : added) {
-        IModule m = MPSModuleRepository.getInstance().getModule(addedUID);
+        IModule m = myRepository.getModule(addedUID);
         RBundle<ModuleReference> b = myRuntimeEnvironment.get(addedUID);
         for (IModule dep : m.getDesignTimeDependOnModules()) {
           b.addDependency(dep.getModuleReference());
@@ -146,7 +153,7 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       List<RBundle> toRemove = new ArrayList<RBundle>();
       for (RBundle<ModuleReference> b : myRuntimeEnvironment.getBundles()) {
-        if (MPSModuleRepository.getInstance().getModule(b.getId()) == null) {
+        if (myRepository.getModule(b.getId()) == null) {
           toRemove.add(b);
         }
       }
@@ -154,7 +161,7 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       myRuntimeEnvironment.reloadAll();
 
-      for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
+      for (IModule m : myRepository.getAllModules()) {
         m.updateClassPath();
       }
     }

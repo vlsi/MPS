@@ -48,11 +48,6 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void initComponent() {
-    ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
-      public void onReload() {
-        invalidateCaches();
-      }
-    });
   }
 
   @NonNls
