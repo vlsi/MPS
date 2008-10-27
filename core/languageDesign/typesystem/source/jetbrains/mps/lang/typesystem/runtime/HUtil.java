@@ -23,6 +23,7 @@ public class HUtil {
 
   public static SNode copyIfNecessary (SNode node) {
      if ( node != null && (node . getParent (  ) != null || node.isRoot())) {
+       // this copies all the atributes, because can be used in migration scripts
        SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), true);
        return copy;
      } else {
@@ -32,7 +33,11 @@ public class HUtil {
 
   public static SNode copyIfNecessary ( SNode node, TypeCheckingContext typeCheckingContext) {
      if ( node != null && (node . getParent (  ) != null || node.isRoot())) {
-       SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), true);
+
+       // this method is used only when quotations create a type
+       // so it should not copy attributes, for instance generator macros of a certain type
+       SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false); 
+
        if (BaseAdapter.isInstance(copy, RuntimeTypeVariable.class)) {
          typeCheckingContext.registerTypeVariable(copy);
        }
