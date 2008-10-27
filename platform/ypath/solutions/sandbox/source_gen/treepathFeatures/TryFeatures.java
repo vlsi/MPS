@@ -50,7 +50,7 @@ public class TryFeatures extends TreePath<Node> {
     }
 }
   public static class foo_NodeKindTrigger implements IFilter<Node> {
-    public static TryFeatures.foo_NodeKindTrigger instance;
+private      static TryFeatures.foo_NodeKindTrigger instance;
 
     /* package */Object _enclosingClass;
     /* package */Object _closureContext;

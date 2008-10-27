@@ -5,5 +5,5 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface IFunctionParam extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.ypath.structure.IFunctionParam";
+public    static final String concept = "jetbrains.mps.ypath.structure.IFunctionParam";
 }

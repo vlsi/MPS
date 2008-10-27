@@ -12,13 +12,13 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TreeNodeKind extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.ypath.structure.TreeNodeKind";
-  public static final String NAME = "name";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String TRIGGER = "trigger";
-  public static final String PROPERTIES = "properties";
+public    static final String concept = "jetbrains.mps.ypath.structure.TreeNodeKind";
+public    static final String NAME = "name";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String TRIGGER = "trigger";
+public    static final String PROPERTIES = "properties";
 
   public TreeNodeKind(SNode node) {
     super(node);

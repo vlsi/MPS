@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NodeKindCase extends BaseConcept {
-  public static final String concept = "jetbrains.mps.ypath.structure.NodeKindCase";
-  public static final String STATEMENT_LIST = "statementList";
+public    static final String concept = "jetbrains.mps.ypath.structure.NodeKindCase";
+public    static final String STATEMENT_LIST = "statementList";
 
   public NodeKindCase(SNode node) {
     super(node);

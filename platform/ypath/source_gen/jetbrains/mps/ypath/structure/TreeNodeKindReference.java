@@ -9,9 +9,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TreeNodeKindReference extends Expression {
-  public static final String concept = "jetbrains.mps.ypath.structure.TreeNodeKindReference";
-  public static final String TREE_PATH_ASPECT = "treePathAspect";
-  public static final String TREE_NODE_KIND = "treeNodeKind";
+public    static final String concept = "jetbrains.mps.ypath.structure.TreeNodeKindReference";
+public    static final String TREE_PATH_ASPECT = "treePathAspect";
+public    static final String TREE_NODE_KIND = "treeNodeKind";
 
   public TreeNodeKindReference(SNode node) {
     super(node);

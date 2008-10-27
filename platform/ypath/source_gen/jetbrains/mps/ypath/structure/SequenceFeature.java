@@ -10,19 +10,19 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SequenceFeature extends BaseConcept implements INamedConcept, IFeature {
-  public static final String concept = "jetbrains.mps.ypath.structure.SequenceFeature";
-  public static final String NAME = "name";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String WRITABLE = "writable";
-  public static final String DEFAULT = "default";
-  public static final String ASCENDING = "ascending";
-  public static final String OPPOSITE = "opposite";
-  public static final String SEQUENCE_FUNCTION = "sequenceFunction";
-  public static final String SIZE_FUNCTION = "sizeFunction";
-  public static final String ADD_FUNCTION = "addFunction";
-  public static final String REMOVE_FUNCTION = "removeFunction";
+public    static final String concept = "jetbrains.mps.ypath.structure.SequenceFeature";
+public    static final String NAME = "name";
+public    static final String SHORT_DESCRIPTION = "shortDescription";
+public    static final String ALIAS = "alias";
+public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+public    static final String WRITABLE = "writable";
+public    static final String DEFAULT = "default";
+public    static final String ASCENDING = "ascending";
+public    static final String OPPOSITE = "opposite";
+public    static final String SEQUENCE_FUNCTION = "sequenceFunction";
+public    static final String SIZE_FUNCTION = "sizeFunction";
+public    static final String ADD_FUNCTION = "addFunction";
+public    static final String REMOVE_FUNCTION = "removeFunction";
 
   public SequenceFeature(SNode node) {
     super(node);

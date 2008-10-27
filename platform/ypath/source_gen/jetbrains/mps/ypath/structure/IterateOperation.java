@@ -8,11 +8,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IterateOperation extends TreePathOperation {
-  public static final String concept = "jetbrains.mps.ypath.structure.IterateOperation";
-  public static final String USE_DEFAULT = "useDefault";
-  public static final String AXIS = "axis";
-  public static final String USED_FEATURE = "usedFeature";
-  public static final String PARAM_OBJECT = "paramObject";
+public    static final String concept = "jetbrains.mps.ypath.structure.IterateOperation";
+public    static final String USE_DEFAULT = "useDefault";
+public    static final String AXIS = "axis";
+public    static final String USED_FEATURE = "usedFeature";
+public    static final String PARAM_OBJECT = "paramObject";
 
   public IterateOperation(SNode node) {
     super(node);

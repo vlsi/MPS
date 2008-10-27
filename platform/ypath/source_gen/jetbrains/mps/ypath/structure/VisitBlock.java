@@ -9,9 +9,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class VisitBlock extends LambdaMethod {
-  public static final String concept = "jetbrains.mps.ypath.structure.VisitBlock";
-  public static final String EXPRESSION = "expression";
-  public static final String VISIT_PARAMETER_DECLARATION_LIST = "visitParameterDeclarationList";
+public    static final String concept = "jetbrains.mps.ypath.structure.VisitBlock";
+public    static final String EXPRESSION = "expression";
+public    static final String VISIT_PARAMETER_DECLARATION_LIST = "visitParameterDeclarationList";
 
   public VisitBlock(SNode node) {
     super(node);

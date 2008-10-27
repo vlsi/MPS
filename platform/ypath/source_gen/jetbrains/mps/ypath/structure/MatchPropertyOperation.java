@@ -9,9 +9,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MatchPropertyOperation extends MatchKindOperation {
-  public static final String concept = "jetbrains.mps.ypath.structure.MatchPropertyOperation";
-  public static final String PROPERTY = "property";
-  public static final String MATCH_EXPRESSION = "matchExpression";
+public    static final String concept = "jetbrains.mps.ypath.structure.MatchPropertyOperation";
+public    static final String PROPERTY = "property";
+public    static final String MATCH_EXPRESSION = "matchExpression";
 
   public MatchPropertyOperation(SNode node) {
     super(node);
