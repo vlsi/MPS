@@ -12410,7 +12410,7 @@
         </node>
       </node>
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1223640291896">
-        <link role="annotation" targetNodeId="38.1196177069451" resolveInfo="InferenceMethod" />
+        <link role="annotation" targetNodeId="38.1223644778913" resolveInfo="CheckingMethod" />
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1223640283876">
@@ -12589,7 +12589,7 @@
         </node>
       </node>
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1223642537768">
-        <link role="annotation" targetNodeId="38.1196177069451" resolveInfo="InferenceMethod" />
+        <link role="annotation" targetNodeId="38.1223644778913" resolveInfo="CheckingMethod" />
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1223640503736">
@@ -12642,7 +12642,7 @@
         </node>
       </node>
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1223642546879">
-        <link role="annotation" targetNodeId="38.1196177069451" resolveInfo="InferenceMethod" />
+        <link role="annotation" targetNodeId="38.1223644778913" resolveInfo="CheckingMethod" />
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1223640603748">
@@ -12723,7 +12723,7 @@
         </node>
       </node>
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1223642558679">
-        <link role="annotation" targetNodeId="38.1196177069451" resolveInfo="InferenceMethod" />
+        <link role="annotation" targetNodeId="38.1223644778913" resolveInfo="CheckingMethod" />
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1223642182744">
@@ -12891,7 +12891,7 @@
         </node>
       </node>
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1223642611524">
-        <link role="annotation" targetNodeId="38.1196177069451" resolveInfo="InferenceMethod" />
+        <link role="annotation" targetNodeId="38.1223644778913" resolveInfo="CheckingMethod" />
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1223642397405">
@@ -12963,7 +12963,7 @@
         </node>
       </node>
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1223642640010">
-        <link role="annotation" targetNodeId="38.1196177069451" resolveInfo="InferenceMethod" />
+        <link role="annotation" targetNodeId="38.1223644778913" resolveInfo="CheckingMethod" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1223640197350" />
