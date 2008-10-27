@@ -3,13 +3,13 @@ package jetbrains.mps.javastub.classpath;
 import jetbrains.mps.javastub.ConverterFactory;
 import jetbrains.mps.javastub.IConverter;
 import jetbrains.mps.javastub.ClassPathItemProvider;
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,7 +48,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
     SModel model = new SModel(modelDescriptor.getSModelReference());
     ourTimestamps.put(model.getSModelReference(), timestamp(modelDescriptor));
-    model.addLanguage(BootstrapLanguagesManager.getInstance().getBaseLanguage());
+    model.addLanguage(BaseLanguage_Language.get());
     return model;
   }
 

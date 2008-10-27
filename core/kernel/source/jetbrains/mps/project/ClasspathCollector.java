@@ -2,14 +2,10 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.BootstrapModule;
-import jetbrains.mps.ide.BootstrapLanguagesManager;
+import jetbrains.mps.lang.core.structure.Core_Language;
 
 import java.util.*;
-import java.io.File;
-import java.io.IOException;
 
 public class ClasspathCollector {
   private static final Logger LOG = Logger.getLogger(ClasspathCollector.class);
@@ -84,7 +80,7 @@ public class ClasspathCollector {
 
       if (current instanceof Language) {
         Language l = (Language) current;
-        doCollect(BootstrapLanguagesManager.getInstance().getCoreLanguage());
+        doCollect(Core_Language.get());
         for (Language extended : l.getExtendedLanguages()) {
           doCollect(extended);
         }

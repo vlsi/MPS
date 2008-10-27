@@ -19,6 +19,9 @@ import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
+import jetbrains.mps.lang.generator.structure.Generator_Language;
+import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
+import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -342,9 +345,9 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
-    result.add(BootstrapLanguagesManager.getInstance().getBaseLanguage());
-    result.add(BootstrapLanguagesManager.getInstance().getProjectLanguage());
-    result.add(BootstrapLanguagesManager.getInstance().getCollectionsLanguage());
+    result.add(BaseLanguage_Language.get());
+    result.add(ProjectLanguage_Language.get());
+    result.add(Collections_Language.get());
     return result;
   }
 
@@ -420,7 +423,7 @@ public abstract class AbstractModule implements IModule {
   public Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
     LinkedHashSet<Language> result = new LinkedHashSet<Language>();
     if (SModelStereotype.isGeneratorModel(sm)) {
-      result.add(BootstrapLanguagesManager.getInstance().getTLBase());
+      result.add(Generator_Language.get());
     }
     return result;
   }

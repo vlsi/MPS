@@ -1,10 +1,10 @@
 package jetbrains.mps.lang.generator.plugin;
 
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation;
 import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink;
+import jetbrains.mps.lang.generator.structure.Generator_Language;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NonNls;
@@ -27,7 +27,7 @@ public class RootTemplateAnnotator implements ApplicationComponent {
       public void rootAdded(SModelRootEvent event) {
         SNode node = event.getRoot();
         if (SModelStereotype.isGeneratorModel(node.getModel())) {
-          if (node.getNodeLanguage() != BootstrapLanguagesManager.getInstance().getTLBase()) {
+          if (node.getNodeLanguage() != Generator_Language.get()) {
             if (node.getAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION) == null) {
               SNode annotation = RootTemplateAnnotation.newInstance(node.getModel(), true).getNode();
               node.addAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION, annotation);

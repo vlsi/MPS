@@ -5,6 +5,8 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
+import jetbrains.mps.lang.generator.structure.Generator_Language;
+import jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.BootstrapLanguagesManager;
@@ -117,11 +119,11 @@ public class Generator extends AbstractModule {
   public SModelDescriptor createModel(SModelFqName name, SModelRoot root) {
     SModelDescriptor result = super.createModel(name, root);
     if (SModelStereotype.isGeneratorModel(result)) {
-      result.getSModel().addLanguage(BootstrapLanguagesManager.getInstance().getTLBase());
+      result.getSModel().addLanguage(Generator_Language.get());
     }else{
       result.getSModel().addDevKit((jetbrains.mps.project.DevKit) BootstrapModule.LANGUAGE_DESIGN_DEVKIT.get());
     }
-    result.getSModel().addLanguage(BootstrapLanguagesManager.getInstance().getGenerationContext());
+    result.getSModel().addLanguage(GenerationContext_Language.get());
 
     LanguageDescriptor oldDescriptor = getSourceLanguage().getLanguageDescriptor();
     getSourceLanguage().setLanguageDescriptor(oldDescriptor);

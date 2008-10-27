@@ -1,12 +1,13 @@
 package jetbrains.mps.ide.dialogs;
 
-import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
+import jetbrains.mps.lang.generator.structure.Generator_Language;
+import jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 
@@ -197,8 +198,8 @@ public class NewGeneratorDialog extends BaseDialog {
         newGenerator.getSModelRoots().get(0));
 
       SModel templateModel = templateModelDescriptor.getSModel();
-      templateModel.addLanguage(BootstrapLanguagesManager.getInstance().getTLBase());
-      templateModel.addLanguage(BootstrapLanguagesManager.getInstance().getGenerationContext());
+      templateModel.addLanguage(Generator_Language.get());
+      templateModel.addLanguage(GenerationContext_Language.get());
       templateModel.addDevKit((jetbrains.mps.project.DevKit) BootstrapModule.LANGUAGE_DESIGN_DEVKIT.get());
 
       templateModel.addImportedModel(sourceLanguage.getStructureModelDescriptor().getSModelReference());

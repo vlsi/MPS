@@ -4,6 +4,7 @@ import jetbrains.mps.ide.BootstrapLanguagesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.projectLanguage.structure.ProjectLanguage_Language;
 
 import java.util.*;
 
@@ -76,7 +77,7 @@ public abstract class DefaultScope extends BaseScope {
 
   protected Set<Language> getInitialUsedLanguages() {
     Set<Language> result = CollectionUtil.filter(Language.class, getInitialModules());
-    result.add(BootstrapLanguagesManager.getInstance().getProjectLanguage());
+    result.add(ProjectLanguage_Language.get());
     return result;
   }
 
