@@ -62,9 +62,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
         for (BootstrapModule bm : BootstrapModule.values()) {
           bm.get().onModuleLoad();
         }
-        List<IModule> modules = new ArrayList<IModule>();
         updatePredefinedLibraries();
-
         update();
       }
     });
@@ -153,11 +151,10 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   }
 
   private void updatePredefinedLibraries() {
-    List<IModule> result = new ArrayList<IModule>();
     myPredefinedLibrariesOwner = new MPSModuleOwner() { };
     for (Library l : getLibraries()) {
       if (l.isPredefined()) {
-        result.addAll(myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myPredefinedLibrariesOwner));
+        myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myPredefinedLibrariesOwner);
       }
     }
     fireOnLoad(myPredefinedLibrariesOwner);
@@ -170,10 +167,9 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
     myOwner = new MPSModuleOwner() { };
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        List<IModule> modules = new ArrayList<IModule>();
         for (Library l : getLibraries()) {
           if (!l.isPredefined()) {
-            modules = myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
+            myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
           }
         }
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
