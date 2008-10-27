@@ -52,6 +52,22 @@ public final class CopyUtil {
     addReferences(nodes, mapping, copyAttributes);
     return result;
   }
+  
+  public static void copyAttributes (SNode fromNode, SNode toNode) {
+	  if (fromNode == null || toNode == null) return;
+	  
+	  HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode> ();
+	  mapping.put(fromNode, toNode);
+	  
+	  for (SNode child : fromNode.getChildren(true)) {
+			if (child.isAttribute()) {
+				String role = child.getRole_();
+				assert role != null;
+				toNode.addChild(role, CopyUtil.copy(child, mapping, true));
+			}
+	  }
+	  
+  }
 
   private static SNode clone(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
     if (node == null) return null;

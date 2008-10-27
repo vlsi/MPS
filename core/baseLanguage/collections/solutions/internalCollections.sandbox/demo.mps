@@ -153,7 +153,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224669085699">
               <link role="variableDeclaration" targetNodeId="1202117990534" resolveInfo="seq" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.AbstractOperation" id="1224669085808" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1224761445232" />
           </node>
         </node>
       </node>
