@@ -16,7 +16,7 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
-private    static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+  private static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
 
   public String getDescription() {
     return "Node & Descendants Usages";

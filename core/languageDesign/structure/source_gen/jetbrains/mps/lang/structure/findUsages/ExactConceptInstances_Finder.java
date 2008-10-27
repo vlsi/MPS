@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 
 public class ExactConceptInstances_Finder extends GeneratedFinder {
-private    static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder");
+  private static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder");
 
   public String getDescription() {
     return "Exact Concept Instances";
