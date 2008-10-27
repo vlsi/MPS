@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ReferenceConceptLink extends ConceptLink {
-public    static final String concept = "jetbrains.mps.lang.structure.structure.ReferenceConceptLink";
-public    static final String TARGET = "target";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.ReferenceConceptLink";
+  public static final String TARGET = "target";
 
   public ReferenceConceptLink(SNode node) {
     super(node);

@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DeprecatedNodeAnnotation extends BaseConcept implements INamedConcept {
-public    static final String concept = "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation";
-public    static final String NAME = "name";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public DeprecatedNodeAnnotation(SNode node) {
     super(node);

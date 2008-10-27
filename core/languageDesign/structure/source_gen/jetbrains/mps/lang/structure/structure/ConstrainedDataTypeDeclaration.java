@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConstrainedDataTypeDeclaration extends DataTypeDeclaration {
-public    static final String concept = "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration";
-public    static final String CONSTRAINT = "constraint";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration";
+  public static final String CONSTRAINT = "constraint";
 
   public ConstrainedDataTypeDeclaration(SNode node) {
     super(node);

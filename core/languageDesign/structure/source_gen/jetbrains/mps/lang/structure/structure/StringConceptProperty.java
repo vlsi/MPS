@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class StringConceptProperty extends ConceptProperty {
-public    static final String concept = "jetbrains.mps.lang.structure.structure.StringConceptProperty";
-public    static final String VALUE = "value";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.StringConceptProperty";
+  public static final String VALUE = "value";
 
   public StringConceptProperty(SNode node) {
     super(node);

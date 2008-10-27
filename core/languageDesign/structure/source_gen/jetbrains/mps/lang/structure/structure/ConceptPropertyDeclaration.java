@@ -10,13 +10,13 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptPropertyDeclaration extends BaseConcept implements INamedConcept, IStructureDeprecatable {
-public    static final String concept = "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration";
-public    static final String NAME = "name";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String INHERITABLE = "inheritable";
-public    static final String BUILD = "build";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String INHERITABLE = "inheritable";
+  public static final String BUILD = "build";
 
   public ConceptPropertyDeclaration(SNode node) {
     super(node);

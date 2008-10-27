@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AggregationConceptLink extends ConceptLink {
-public    static final String concept = "jetbrains.mps.lang.structure.structure.AggregationConceptLink";
-public    static final String TARGET = "target";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.AggregationConceptLink";
+  public static final String TARGET = "target";
 
   public AggregationConceptLink(SNode node) {
     super(node);

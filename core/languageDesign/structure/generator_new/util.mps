@@ -1441,6 +1441,35 @@
         </node>
       </node>
     </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1225099380388">
+      <property name="name" value="getInputLanguage" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225099382845">
+        <link role="classifier" targetNodeId="2.~Language" resolveInfo="Language" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225099380390" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225099380391">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225099425951">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225099438344">
+            <link role="baseMethodDeclaration" targetNodeId="2.~Language.getLanguageFor(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.Language" resolveInfo="getLanguageFor" />
+            <link role="classConcept" targetNodeId="2.~Language" resolveInfo="Language" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225099438345">
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1225099438346">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225099438347">
+                  <link role="variableDeclaration" targetNodeId="1225099388565" resolveInfo="inputModel" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225099438348">
+                <link role="baseMethodDeclaration" targetNodeId="2.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225099388565">
+        <property name="name" value="inputModel" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1225099388566" />
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081282" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1212077391612">

@@ -13,6 +13,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.structure.generator_new.util.QueriesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.generator_new.util.LinkDeclarationUtil;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -607,6 +608,16 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1219165555001(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "insert" + NameUtil.capitalize(SPropertyOperations.getString(_context.getNode(), "role"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1225099518029(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    Language lang = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
+    String capitalizedName = NameUtil.capitalize(NameUtil.shortNameFromLongName(lang.getNamespace()));
+    return capitalizedName + "_Language";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1225099631046(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).getModuleReference().toString();
   }
 
   public static Object referenceMacro_GetReferent_1197509802062(final IOperationContext operationContext, final ReferenceMacroContext _context) {

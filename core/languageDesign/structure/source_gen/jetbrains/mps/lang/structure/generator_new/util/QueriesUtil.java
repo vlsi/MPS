@@ -16,6 +16,8 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModel;
 
 public class QueriesUtil {
 
@@ -175,6 +177,10 @@ public class QueriesUtil {
       return "set" + NameUtil.capitalize(SPropertyOperations.getString(node, "role"));
     }
     return "add" + NameUtil.capitalize(SPropertyOperations.getString(node, "role"));
+  }
+
+  public static Language getInputLanguage(SModel inputModel) {
+    return Language.getLanguageFor(inputModel.getModelDescriptor());
   }
 
 }

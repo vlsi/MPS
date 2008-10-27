@@ -9,12 +9,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LinkDeclaration extends BaseConcept {
-public    static final String concept = "jetbrains.mps.lang.structure.structure.LinkDeclaration";
-public    static final String ROLE = "role";
-public    static final String META_CLASS = "metaClass";
-public    static final String SOURCE_CARDINALITY = "sourceCardinality";
-public    static final String SPECIALIZED_LINK = "specializedLink";
-public    static final String TARGET = "target";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.LinkDeclaration";
+  public static final String ROLE = "role";
+  public static final String META_CLASS = "metaClass";
+  public static final String SOURCE_CARDINALITY = "sourceCardinality";
+  public static final String SPECIALIZED_LINK = "specializedLink";
+  public static final String TARGET = "target";
 
   public LinkDeclaration(SNode node) {
     super(node);

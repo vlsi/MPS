@@ -5,5 +5,5 @@ package jetbrains.mps.lang.structure.structure;
 import jetbrains.mps.lang.core.structure.IDeprecatable;
 
 public interface IStructureDeprecatable extends IDeprecatable {
-public    static final String concept = "jetbrains.mps.lang.structure.structure.IStructureDeprecatable";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.IStructureDeprecatable";
 }

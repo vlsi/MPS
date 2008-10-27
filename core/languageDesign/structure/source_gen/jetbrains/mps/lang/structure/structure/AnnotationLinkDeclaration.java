@@ -10,16 +10,16 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AnnotationLinkDeclaration extends BaseConcept implements INamedConcept {
-public    static final String concept = "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration";
-public    static final String ROLE = "role";
-public    static final String NAME = "name";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String STEREOTYPE = "stereotype";
-public    static final String SOURCE_CARDINALITY = "sourceCardinality";
-public    static final String SOURCE = "source";
-public    static final String TARGET = "target";
+  public static final String concept = "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration";
+  public static final String ROLE = "role";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String STEREOTYPE = "stereotype";
+  public static final String SOURCE_CARDINALITY = "sourceCardinality";
+  public static final String SOURCE = "source";
+  public static final String TARGET = "target";
 
   public AnnotationLinkDeclaration(SNode node) {
     super(node);
