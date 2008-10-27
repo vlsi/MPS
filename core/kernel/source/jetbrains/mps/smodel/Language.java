@@ -363,7 +363,7 @@ public class Language extends AbstractModule {
   }
 
   public boolean isBootstrap() {
-    return BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore().contains(this);
+    return BootstrapLanguagesManager.getInstance().getLanguages().contains(this);
   }
 
   public int getVersion() {

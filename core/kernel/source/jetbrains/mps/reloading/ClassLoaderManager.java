@@ -169,7 +169,7 @@ public class ClassLoaderManager implements ApplicationComponent {
   private RuntimeEnvironment<ModuleReference> createRuntimeEnvironment() {
     final Set<String> excludedPackages = new HashSet<String>();
     final Set<String> generatorPrefixes = new HashSet<String>();
-    for (Language l : BootstrapLanguagesManager.getInstance().getLanguagesUsedInCore()) {
+    for (Language l : BootstrapLanguagesManager.getInstance().getLanguages()) {
       for (LanguageAspect aspect : LanguageAspect.values()) {
         if (aspect == LanguageAspect.STRUCTURE) continue;
         excludedPackages.add(l.getNamespace() + "." + aspect.getName());

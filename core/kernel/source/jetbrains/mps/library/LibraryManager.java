@@ -53,7 +53,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   private MPSModuleRepository myRepository;
   private LibraryManagerPreferences myPreferences;
 
-  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm) {
+  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm, ClassLoaderManager clm) {
     myRepository = repo;
   }
 
