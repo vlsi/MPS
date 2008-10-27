@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 
 public class NaiveSetOperations_Test extends TestCase {
-  public static Iterable<String> aabbcc = Sequence.fromClosure(new ISequenceClosure <String>() {
+  private static Iterable<String> aabbcc = Sequence.fromClosure(new ISequenceClosure <String>() {
 
     public Iterable<String> iterable() {
       return new Iterable <String>() {
@@ -72,7 +72,7 @@ __switch__:
     }
 
   });
-  public static Iterable<String> aabbc = Sequence.fromClosure(new ISequenceClosure <String>() {
+  private static Iterable<String> aabbc = Sequence.fromClosure(new ISequenceClosure <String>() {
 
     public Iterable<String> iterable() {
       return new Iterable <String>() {
@@ -127,7 +127,7 @@ __switch__:
     }
 
   });
-  public static Iterable<String> aabbcccdde = Sequence.fromClosure(new ISequenceClosure <String>() {
+  private static Iterable<String> aabbcccdde = Sequence.fromClosure(new ISequenceClosure <String>() {
 
     public Iterable<String> iterable() {
       return new Iterable <String>() {
@@ -202,7 +202,7 @@ __switch__:
     }
 
   });
-  public static Iterable<String> ccaabbcc = Sequence.fromClosure(new ISequenceClosure <String>() {
+  private static Iterable<String> ccaabbcc = Sequence.fromClosure(new ISequenceClosure <String>() {
 
     public Iterable<String> iterable() {
       return new Iterable <String>() {
@@ -269,7 +269,7 @@ __switch__:
     }
 
   });
-  public static Iterable<String> abc = Sequence.fromClosure(new ISequenceClosure <String>() {
+  private static Iterable<String> abc = Sequence.fromClosure(new ISequenceClosure <String>() {
 
     public Iterable<String> iterable() {
       return new Iterable <String>() {
@@ -316,7 +316,7 @@ __switch__:
     }
 
   });
-  public static Iterable<String> cccdde = Sequence.fromClosure(new ISequenceClosure <String>() {
+  private static Iterable<String> cccdde = Sequence.fromClosure(new ISequenceClosure <String>() {
 
     public Iterable<String> iterable() {
       return new Iterable <String>() {
@@ -375,7 +375,7 @@ __switch__:
     }
 
   });
-  public static Iterable<String> abcde = Sequence.fromClosure(new ISequenceClosure <String>() {
+  private static Iterable<String> abcde = Sequence.fromClosure(new ISequenceClosure <String>() {
 
     public Iterable<String> iterable() {
       return new Iterable <String>() {
@@ -430,7 +430,7 @@ __switch__:
     }
 
   });
-  public static Iterable<String> aabb = Sequence.fromClosure(new ISequenceClosure <String>() {
+  private static Iterable<String> aabb = Sequence.fromClosure(new ISequenceClosure <String>() {
 
     public Iterable<String> iterable() {
       return new Iterable <String>() {
@@ -481,7 +481,7 @@ __switch__:
     }
 
   });
-  public static Iterable<String> c = Sequence.fromClosure(new ISequenceClosure <String>() {
+  private static Iterable<String> c = Sequence.fromClosure(new ISequenceClosure <String>() {
 
     public Iterable<String> iterable() {
       return new Iterable <String>() {
@@ -520,7 +520,7 @@ __switch__:
     }
 
   });
-  public static Iterable<String> cc = Sequence.fromClosure(new ISequenceClosure <String>() {
+  private static Iterable<String> cc = Sequence.fromClosure(new ISequenceClosure <String>() {
 
     public Iterable<String> iterable() {
       return new Iterable <String>() {
@@ -563,7 +563,7 @@ __switch__:
     }
 
   });
-  public static Iterable<String> ccc = Sequence.fromClosure(new ISequenceClosure <String>() {
+  private static Iterable<String> ccc = Sequence.fromClosure(new ISequenceClosure <String>() {
 
     public Iterable<String> iterable() {
       return new Iterable <String>() {

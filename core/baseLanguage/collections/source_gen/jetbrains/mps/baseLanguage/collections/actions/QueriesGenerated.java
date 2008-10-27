@@ -74,6 +74,72 @@ public class QueriesGenerated {
     SPropertyOperations.set(SLinkOperations.setNewChild(_context.getNewNode(), "order", "jetbrains.mps.baseLanguage.collections.structure.SortDirection"), "value", "" + (true));
   }
 
+  public static void nodeFactory_NodeSetup_ComparatorSortOperation_1225110009889(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+    if ((sel == null)) {
+      sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    }
+    SNode pda = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SPropertyOperations.set(pda, "name", "a");
+    SNode pdb = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SPropertyOperations.set(pdb, "name", "b");
+  }
+
+  public static void nodeFactory_NodeSetup_SelectOperationNew_1225118817882(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+    if ((sel == null)) {
+      sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    }
+    SNode pd = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SPropertyOperations.set(pd, "name", "it");
+  }
+
+  public static void nodeFactory_NodeSetup_WhereOperationNew_1225119083461(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+    if ((sel == null)) {
+      sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    }
+    SNode pd = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SPropertyOperations.set(pd, "name", "it");
+  }
+
+  public static void nodeFactory_NodeSetup_SortOperationNew_1225119114839(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+    if ((sel == null)) {
+      sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    }
+    SNode pd = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SPropertyOperations.set(pd, "name", "it");
+  }
+
+  public static void nodeFactory_NodeSetup_TranslateOperation_1225119174307(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+    if ((sel == null)) {
+      sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    }
+    SNode pd = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SPropertyOperations.set(pd, "name", "it");
+  }
+
+  public static void nodeFactory_NodeSetup_VisitAllOperation_1225119188771(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+    if ((sel == null)) {
+      sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    }
+    SNode pd = SLinkOperations.addNewChild(sel, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SPropertyOperations.set(pd, "name", "it");
+  }
+
+  public static void nodeFactory_NodeSetup_SortOperationNew_1225119783188(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNode sd = SLinkOperations.setNewChild(_context.getNewNode(), "ascending", "jetbrains.mps.baseLanguage.collections.structure.SortDirection");
+    SPropertyOperations.set(sd, "value", "" + (true));
+  }
+
+  public static void nodeFactory_NodeSetup_ComparatorSortOperation_1225119833431(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNode sd = SLinkOperations.setNewChild(_context.getNewNode(), "ascending", "jetbrains.mps.baseLanguage.collections.structure.SortDirection");
+    SPropertyOperations.set(sd, "value", "" + (true));
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1152144005896(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
