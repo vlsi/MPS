@@ -11,6 +11,7 @@ public class MapSrcNodeMacro extends SourceSubstituteMacro {
   public static final String concept = "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro";
   public static final String SOURCE_NODE_QUERY = "sourceNodeQuery";
   public static final String MAPPER_FUNCTION = "mapperFunction";
+  public static final String POST_MAPPER_FUNCTION = "postMapperFunction";
 
   public MapSrcNodeMacro(SNode node) {
     super(node);
@@ -30,6 +31,14 @@ public class MapSrcNodeMacro extends SourceSubstituteMacro {
 
   public void setMapperFunction(MapSrcMacro_MapperFunction node) {
     super.setChild(MapSrcNodeMacro.MAPPER_FUNCTION, node);
+  }
+
+  public MapSrcMacro_PostMapperFunction getPostMapperFunction() {
+    return (MapSrcMacro_PostMapperFunction)this.getChild(MapSrcNodeMacro.POST_MAPPER_FUNCTION);
+  }
+
+  public void setPostMapperFunction(MapSrcMacro_PostMapperFunction node) {
+    super.setChild(MapSrcNodeMacro.POST_MAPPER_FUNCTION, node);
   }
 
 

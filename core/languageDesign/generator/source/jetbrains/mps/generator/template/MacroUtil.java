@@ -61,7 +61,30 @@ public class MacroUtil {
         new MapSrcMacroContext(inputNode, mapSrcNodeOrListMacro, parentOutputNode, generator),
         mapSrcNodeOrListMacro.getModel());
     } catch (Throwable t) {
-      throw new GenerationFailueException("couldn't evaluate macro", inputNode, null, mapSrcNodeOrListMacro, t);
+      throw new GenerationFailueException("couldn't evaluate macro: mapping func failed", inputNode, null, mapSrcNodeOrListMacro, t);
+    }
+  }
+
+  public static void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, ITemplateGenerator generator) throws GenerationFailueException {
+    INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
+    MapSrcMacro_PostMapperFunction postMapperFunction;
+    if (adapter instanceof MapSrcNodeMacro) {
+      postMapperFunction = ((MapSrcNodeMacro) adapter).getPostMapperFunction();
+    } else {
+      postMapperFunction = ((MapSrcListMacro) adapter).getPostMapperFunction();
+    }
+    // post-proc function is optional
+    if(postMapperFunction == null) return;
+
+    String methodName = TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(postMapperFunction.getNode());
+    try {
+      QueryMethodGenerated.invoke(
+        methodName,
+        generator.getGeneratorSessionContext(),
+        new MapSrcMacroPostProcContext(inputNode, mapSrcNodeOrListMacro, outputNode, generator),
+        mapSrcNodeOrListMacro.getModel());
+    } catch (Throwable t) {
+      throw new GenerationFailueException("couldn't evaluate macro: post-processing failed", inputNode, null, mapSrcNodeOrListMacro, t);
     }
   }
 

@@ -51,6 +51,10 @@ public class TemplateFunctionMethodName {
     return "mapSrcMacro_mapper_" + function.getId();
   }
 
+  public static String mapSrcMacro_PostMapperFunction(SNode function) {
+    return "mapSrcMacro_post_mapper_" + function.getId();
+  }
+
   public static String mappingScript_CodeBlock(SNode function) {
     return "mappingScript_CodeBlock_" + function.getId();
   }

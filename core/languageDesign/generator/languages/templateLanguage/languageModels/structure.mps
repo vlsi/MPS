@@ -632,6 +632,11 @@
       <property name="role" value="mapperFunction" />
       <link role="target" targetNodeId="1170725621272" resolveInfo="MapSrcMacro_MapperFunction" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225229330048">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="postMapperFunction" />
+      <link role="target" targetNodeId="1225228973247" resolveInfo="MapSrcMacro_PostMapperFunction" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1131073187193">
       <property name="value" value="$MAP_SRC$" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
@@ -655,6 +660,16 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="mapperFunction" />
       <link role="target" targetNodeId="1170725621272" resolveInfo="MapSrcMacro_MapperFunction" />
+      <node role="specializedLink" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225229678695">
+        <property name="metaClass" value="aggregation" />
+        <property name="role" value="postMapperFunction" />
+        <link role="target" targetNodeId="1225228973247" resolveInfo="MapSrcMacro_PostMapperFunction" />
+      </node>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225229689103">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="postMapperFunction" />
+      <link role="target" targetNodeId="1225228973247" resolveInfo="MapSrcMacro_PostMapperFunction" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1133037820495">
       <property name="value" value="$MAP_SRCL$" />
@@ -1645,6 +1660,34 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1219952151857">
       <link role="conceptPropertyDeclaration" targetNodeId="6.1199874763892" resolveInfo="usesParameterObject" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225228973247">
+    <property name="name" value="MapSrcMacro_PostMapperFunction" />
+    <property name="package" value="macro" />
+    <link role="extends" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1225228973250">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1225228973251">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1184690432998" resolveInfo="TemplateFunctionParameter_outputNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1225228973252">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="12.1216860049635" resolveInfo="TemplateFunctionParameter_generationContext" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1225228973253">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="8.1161622753914" resolveInfo="ConceptFunctionParameter_operationContext" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1225228973254">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1199874763892" resolveInfo="usesParameterObject" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225228973255">
+      <property name="value" value="post-process output node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

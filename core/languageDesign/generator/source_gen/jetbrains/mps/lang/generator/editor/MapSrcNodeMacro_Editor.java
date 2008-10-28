@@ -74,6 +74,7 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection1200912323546(context, node));
     editorCell.addEditorCell(this.createCollection1168281881382(context, node));
     editorCell.addEditorCell(this.createCollection1170725947556(context, node));
+    editorCell.addEditorCell(this.createCollection1225229368545(context, node));
     return editorCell;
   }
 
@@ -123,6 +124,18 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant1200912323547(context, node, "mapping label"));
     editorCell.addEditorCell(this.createConstant1200912323548(context, node, ":"));
     editorCell.addEditorCell(this.createRefCell1200912323549(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createCollection1225229368545(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_12252293685451225229368545(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant1225229368546(context, node, "post-processing"));
+    editorCell.addEditorCell(this.createConstant1225229368548(context, node, ":"));
+    editorCell.addEditorCell(this.createRefNode1225229368550(context, node));
     return editorCell;
   }
 
@@ -228,6 +241,22 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12154789790111215478979011(editorCell, node, context);
     setupLabel_Constant_1215478979011_1215478979011(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1225229368546(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12252293685461225229368546(editorCell, node, context);
+    setupLabel_Constant_1225229368546_1225229368546(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1225229368548(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12252293685481225229368548(editorCell, node, context);
+    setupLabel_Constant_1225229368548_1225229368548(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -338,6 +367,35 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell1200912323549_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createRefNode1225229368550_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_refNode_postMapperFunction1225229368550(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_refNode_postMapperFunction_1225229368550((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createRefNode1225229368550(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("postMapperFunction");
+    provider.setNoTargetText("<default>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createRefNode1225229368550_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -603,6 +661,48 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static void setupBasic_Collection_12252293685451225229368545(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1225229368545");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_12252293685461225229368546(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225229368546");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_12252293685481225229368548(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225229368548");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_refNode_postMapperFunction1225229368550(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_Constant_1149866022646_1149866022646(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -649,6 +749,15 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1215478979011_1215478979011(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1225229368546_1225229368546(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1225229368548_1225229368548(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_postMapperFunction_1225229368550(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition5034_0(SNode node, EditorContext editorContext, IScope scope) {
