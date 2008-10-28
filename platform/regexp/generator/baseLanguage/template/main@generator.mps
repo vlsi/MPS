@@ -8,6 +8,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)" />
+  <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
@@ -704,9 +705,7 @@
           <link role="classifier" targetNodeId="3.~Matcher" resolveInfo="Matcher" />
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1174658298201">
-        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225194693747" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1174658293497">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1174658308250">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1174658308251">
@@ -1586,9 +1585,7 @@
         <property name="name" value="method" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222257161741">
           <link role="classifier" targetNodeId="7.~List" resolveInfo="List" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222257169620">
-            <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-          </node>
+          <node role="parameter" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225194690704" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222257140543" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222257140544">

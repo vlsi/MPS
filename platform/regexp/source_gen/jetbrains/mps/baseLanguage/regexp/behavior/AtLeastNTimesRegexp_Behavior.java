@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AtLeastNTimesRegexp_Behavior {
-  public static Class[] PARAMETERS_1222609601608 = {SNode.class ,List.class};
+  private static Class[] PARAMETERS_1222609601608 = {SNode.class ,List.class};
 
   public static void init(SNode thisNode) {
   }

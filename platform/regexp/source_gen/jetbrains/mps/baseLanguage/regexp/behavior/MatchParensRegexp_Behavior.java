@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class MatchParensRegexp_Behavior {
-  public static Class[] PARAMETERS_1222435297321 = {SNode.class ,List.class};
+  private static Class[] PARAMETERS_1222435297321 = {SNode.class ,List.class};
 
   public static void init(SNode thisNode) {
   }

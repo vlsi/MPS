@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class SymbolClassRegexp_Behavior {
-  public static Class[] PARAMETERS_1222857578599 = {SNode.class ,List.class};
+  private static Class[] PARAMETERS_1222857578599 = {SNode.class ,List.class};
 
   public static void init(SNode thisNode) {
   }

@@ -11,8 +11,8 @@ import java.util.regex.Pattern;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Regexp_Behavior {
-  public static Class[] PARAMETERS_1213877429451 = {SNode.class};
-  public static Class[] PARAMETERS_1222432436326 = {SNode.class ,List.class};
+  private static Class[] PARAMETERS_1213877429451 = {SNode.class};
+  private static Class[] PARAMETERS_1222432436326 = {SNode.class ,List.class};
 
   public static void init(SNode thisNode) {
   }

@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class StringLiteralRegexp_Behavior {
-  public static Class[] PARAMETERS_1222431822198 = {SNode.class ,List.class};
+  private static Class[] PARAMETERS_1222431822198 = {SNode.class ,List.class};
 
   public static void init(SNode thisNode) {
   }

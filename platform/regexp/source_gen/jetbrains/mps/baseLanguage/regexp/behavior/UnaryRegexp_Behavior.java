@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class UnaryRegexp_Behavior {
-  public static Class[] PARAMETERS_1222867684394 = {SNode.class ,List.class};
+  private static Class[] PARAMETERS_1222867684394 = {SNode.class ,List.class};
 
   public static void init(SNode thisNode) {
   }

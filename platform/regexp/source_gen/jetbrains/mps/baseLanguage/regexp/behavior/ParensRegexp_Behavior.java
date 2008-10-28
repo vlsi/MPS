@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ParensRegexp_Behavior {
-  public static Class[] PARAMETERS_1222434892303 = {SNode.class ,List.class};
+  private static Class[] PARAMETERS_1222434892303 = {SNode.class ,List.class};
 
   public static void init(SNode thisNode) {
   }

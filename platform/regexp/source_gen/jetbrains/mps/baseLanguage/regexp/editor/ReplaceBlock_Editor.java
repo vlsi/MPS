@@ -14,8 +14,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ReplaceBlock_Editor extends DefaultNodeEditor {
@@ -72,20 +70,8 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.DRAW_BRACKETS, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return ReplaceBlock_Editor.calculateBoolean0013_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.BRACKETS_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return ReplaceBlock_Editor.calculateColor0013_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.DRAW_BRACKETS, true);
+          this.set(StyleAttributes.BRACKETS_COLOR, MPSColors.DARK_MAGENTA);
         }
 
       };
@@ -94,18 +80,6 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_body_1174656462804(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor0013_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  public static Boolean calculateBoolean0013_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
 }
