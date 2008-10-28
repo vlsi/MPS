@@ -66,7 +66,7 @@ public class MPSPlugin {
       } else {
         return false;
       }
-    } catch (Exception e) {
+    } catch (Throwable t) {
       return false;
     }
   }
