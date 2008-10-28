@@ -6,13 +6,8 @@ import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
-import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action;
-import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.typesystem.inference.IErrorReporter;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
@@ -21,6 +16,9 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
+import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
+import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
@@ -41,18 +39,20 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.typesystem.inference.IErrorReporter;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.nodes.GoByCurrentReferenceAction;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -342,7 +342,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (cell == null) return;
         showPopupMenu(cell.getX(), cell.getY());
       }
-    }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);        
+    }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -977,88 +977,88 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public CellActionType getActionType(KeyEvent keyEvent, EditorContext editorContext) {
-    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && noKeysDown(keyEvent)) {
       return CellActionType.LEFT;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && noKeysDown(keyEvent)) {
       return CellActionType.RIGHT;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_UP && noKeysDown(keyEvent)) {
       return CellActionType.UP;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && noKeysDown(keyEvent)) {
       return CellActionType.DOWN;
     }
-    if (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.getModifiers() == 0) {
+    if (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT && noKeysDown(keyEvent)) {
       return CellActionType.INSERT_BEFORE;
     }
-    if (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.getModifiers() == KeyEvent.SHIFT_MASK) {
+    if (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_ENTER && shiftDown(keyEvent)) {
       return CellActionType.INSERT_BEFORE;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && noKeysDown(keyEvent)) {
       return CellActionType.INSERT;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isShiftDown() && !(keyEvent.isControlDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && shiftDown(keyEvent)) {
       return CellActionType.SELECT_LEFT;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.isShiftDown() && !(keyEvent.isControlDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && shiftDown(keyEvent)) {
       return CellActionType.SELECT_RIGHT;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && ctrlDown(keyEvent)) {
       return CellActionType.LOCAL_HOME;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && ctrlDown(keyEvent)) {
       return CellActionType.LOCAL_END;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isControlDown() && keyEvent.isShiftDown() && !keyEvent.isAltDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && ctrlShiftDown(keyEvent)) {
       return CellActionType.SELECT_LOCAL_HOME;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.isControlDown() && keyEvent.isShiftDown() && !keyEvent.isAltDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && ctrlShiftDown(keyEvent)) {
       return CellActionType.SELECT_LOCAL_END;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_UP && ctrlDown(keyEvent)) {
       return CellActionType.SELECT_UP;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_W && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_W && ctrlDown(keyEvent)) {
       return CellActionType.SELECT_UP;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && ctrlDown(keyEvent)) {
       return CellActionType.SELECT_DOWN;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_W && keyEvent.isControlDown() && keyEvent.isShiftDown() && !keyEvent.isAltDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_W && ctrlShiftDown(keyEvent)) {
       return CellActionType.SELECT_DOWN;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && ctrlDown(keyEvent)) {
       return CellActionType.ROOT_HOME;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_END && ctrlDown(keyEvent)) {
       return CellActionType.ROOT_END;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && noKeysDown(keyEvent)) {
       return CellActionType.HOME;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_END && noKeysDown(keyEvent)) {
       return CellActionType.END;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.isShiftDown() && !(keyEvent.isControlDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && shiftDown(keyEvent)) {
       return CellActionType.SELECT_HOME;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.isShiftDown() && !(keyEvent.isControlDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_END && shiftDown(keyEvent)) {
       return CellActionType.SELECT_END;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN && noKeysDown(keyEvent)) {
       return CellActionType.PAGE_DOWN;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP && noKeysDown(keyEvent)) {
       return CellActionType.PAGE_UP;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && noKeysDown(keyEvent)) {
       return CellActionType.NEXT;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.isShiftDown() && !(keyEvent.isControlDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && shiftDown(keyEvent)) {
       return CellActionType.PREV;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown() && !(keyEvent.isAltDown() || keyEvent.isShiftDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && shiftDown(keyEvent)) {
       return CellActionType.COMPLETE;
     }
     if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
@@ -1066,7 +1066,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     // ---
-    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && noKeysDown(keyEvent)) {
       EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
 
       if (!(selectedCell instanceof EditorCell_STHint)) {
@@ -1093,12 +1093,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && ctrlDown(keyEvent)) {
       return CellActionType.DELETE;
     }
 
     if ((keyEvent.getKeyCode() == KeyEvent.VK_DELETE || keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE)
-      && keyEvent.getModifiers() == 0) {
+      && noKeysDown(keyEvent)) {
 
       EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
       if (selectedCell != null && selectedCell.isBigCell()) {
@@ -1115,14 +1115,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_ADD && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_ADD && ctrlDown(keyEvent)) {
       if (keyEvent.isShiftDown()) {
         return CellActionType.UNFOLD_ALL;
       } else {
         return CellActionType.UNFOLD;
       }
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_SUBTRACT && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_SUBTRACT && ctrlDown(keyEvent)) {
       if (keyEvent.isShiftDown()) {
         return CellActionType.FOLD_ALL;
       } else {
@@ -1131,29 +1131,46 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     // ---
-    if (keyEvent.getKeyCode() == KeyEvent.VK_C && keyEvent.isControlDown() && !keyEvent.isShiftDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_C && ctrlDown(keyEvent)) {
       return CellActionType.COPY;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_X && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_X && ctrlDown(keyEvent)) {
       return CellActionType.CUT;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_V && keyEvent.isControlDown()) {
-      if (keyEvent.isShiftDown() && !keyEvent.isAltDown()) {
-        return CellActionType.PASTE_BEFORE;
-      } else if (!keyEvent.isShiftDown() && keyEvent.isAltDown()) {
-        return CellActionType.PASTE_AFTER;
+    if (keyEvent.getKeyCode() == KeyEvent.VK_V) {
+      if (ctrlDown(keyEvent)) {
+        return CellActionType.PASTE;
       }
-      return CellActionType.PASTE;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && ctrlDown(keyEvent)) {
       return CellActionType.COPY;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.isShiftDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && shiftDown(keyEvent)) {
       return CellActionType.PASTE;
     }
 
 
     return null;
+  }
+
+  private boolean ctrlAltDown(KeyEvent keyEvent) {
+    return keyEvent.getModifiers() == KeyEvent.CTRL_MASK + KeyEvent.ALT_MASK;
+  }
+
+  private boolean ctrlShiftDown(KeyEvent keyEvent) {
+    return keyEvent.getModifiers() == (KeyEvent.CTRL_MASK + KeyEvent.SHIFT_MASK);
+  }
+
+  private boolean shiftDown(KeyEvent keyEvent) {
+    return keyEvent.getModifiers() == KeyEvent.SHIFT_MASK;
+  }
+
+  private boolean noKeysDown(KeyEvent keyEvent) {
+    return keyEvent.getModifiers() == 0;
+  }
+
+  private boolean ctrlDown(KeyEvent keyEvent) {
+    return keyEvent.getModifiers() == KeyEvent.CTRL_MASK;
   }
 
   boolean executeComponentAction(CellActionType type) {
@@ -1757,7 +1774,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.isConsumed()) return;
 
     // hardcoded "update" action
-    if (keyEvent.getKeyCode() == KeyEvent.VK_F5 && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_F5 && noKeysDown(keyEvent)) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           SNode sNode = getRootCell().getSNode();
@@ -1776,7 +1793,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return;
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_F11 && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_F11 && noKeysDown(keyEvent)) {
       relayout();
       keyEvent.consume();
       return;
