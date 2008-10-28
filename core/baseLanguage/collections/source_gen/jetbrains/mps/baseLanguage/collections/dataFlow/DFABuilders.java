@@ -24,6 +24,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.TakeOperation", new TakeOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.AddElementOperation", new AddElementOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.GetElementOperation", new GetElementOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", new InternalSequenceOperation_DataFlow());
   }
 
 }

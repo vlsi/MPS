@@ -323,5 +323,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1225200397608">
+    <property name="package" value="internal" />
+    <link role="conceptDeclaration" targetNodeId="1.1204796164442" resolveInfo="InternalSequenceOperation" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1225200397609">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225200397610">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1225200401470">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225200423302">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1225200422566" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225200424867">
+              <link role="link" targetNodeId="1.1204796294226" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
