@@ -163,6 +163,40 @@
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1205869901301">
                 <property name="value" value="0" />
               </node>
+              <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1225234096094" />
+              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" id="1225234101830">
+                <node role="postMapperFunction" type="jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction" id="1225234110425">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225234110426">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225234138645">
+                      <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225234138646">
+                        <property name="name" value="node" />
+                        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225234138647" />
+                        <node role="initializer" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1225234138648" />
+                      </node>
+                    </node>
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225234146683">
+                      <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225234146684">
+                        <property name="name" value="node" />
+                        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225234146685" />
+                        <node role="initializer" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode" id="1225234146686" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="mapperFunction" type="jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction" id="1225235897611">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225235897612">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225235902814">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225235902815">
+                        <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1225235906286">
+                          <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225235906287">
+                            <link role="concept" targetNodeId="1.1154032098014" resolveInfo="AbstractLoopStatement" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205879491246">

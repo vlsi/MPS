@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -16,11 +17,33 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
-    SNode concept = SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.ReferenceMacro", false, false)));
+    SNode parentMacro = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.ReferenceMacro","jetbrains.mps.lang.generator.structure.MapSrcNodeMacro","jetbrains.mps.lang.generator.structure.MapSrcListMacro"}, false, false);
+    if (SNodeOperations.isInstanceOf(parentMacro, "jetbrains.mps.lang.generator.structure.ReferenceMacro")) {
+      return;
+    }
+    SNode mapperFunc;
+    if (SNodeOperations.isInstanceOf(parentMacro, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
+      mapperFunc = SLinkOperations.getTarget(parentMacro, "mapperFunction", true);
+    } else
     {
-      SNode _nodeToCheck_1029348928467 = node;
-      BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1221153521184", true), new _Quotations.QuotationClass_11().createNode(concept, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1221153528155", intentionProvider);
+      mapperFunc = SLinkOperations.getTarget(parentMacro, "mapperFunction", true);
+    }
+    //  ----
+    if (mapperFunc != null) {
+      {
+        SNode _nodeToCheck_1029348928467 = node;
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234901779", true), typeCheckingContext.typeOf(mapperFunc, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234918647", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234911251", intentionProvider);
+      }
+    } else
+    {
+      //  concept of the wrapped template code
+      SNode concept = SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(parentMacro));
+      {
+        SNode _nodeToCheck_1029348928467 = node;
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234961710", true), new _Quotations.QuotationClass_11().createNode(concept, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234961708", intentionProvider);
+      }
     }
   }
 
