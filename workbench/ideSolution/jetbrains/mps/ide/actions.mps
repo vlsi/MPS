@@ -7957,7 +7957,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1217254654927">
-    <property name="name" value="qAbstractFileActions" />
+    <property name="name" value="AbstractFileActions" />
     <property name="package" value="Menu.FileView" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1217431154934">
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1221761213650">
