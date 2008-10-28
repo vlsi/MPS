@@ -823,7 +823,9 @@
                       </node>
                     </node>
                   </node>
-                  <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225194243629" />
+                  <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225194243629">
+                    <link role="concept" targetNodeId="5.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                  </node>
                   <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225194243630">
                     <property name="name" value="visiblity" />
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225194243631">

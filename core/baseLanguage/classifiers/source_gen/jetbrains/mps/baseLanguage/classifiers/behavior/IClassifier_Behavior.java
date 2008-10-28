@@ -12,14 +12,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.plugin.AbstractExtractMethodRefactoringProcessor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IClassifier_Behavior {
-  public static Class[] PARAMETERS_1213877527970 = {SNode.class};
-  public static Class[] PARAMETERS_1217433657148 = {SNode.class};
-  public static Class[] PARAMETERS_1213877527988 = {SNode.class};
-  public static Class[] PARAMETERS_1213877528124 = {SNode.class};
+  private static Class[] PARAMETERS_1213877527970 = {SNode.class};
+  private static Class[] PARAMETERS_1217433657148 = {SNode.class};
+  private static Class[] PARAMETERS_1213877527988 = {SNode.class};
+  private static Class[] PARAMETERS_1213877528124 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -83,13 +82,7 @@ public class IClassifier_Behavior {
     return new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToRefactor) {
 
       public SNode createNewMethod(SNode returntType, List<SNode> params, SNode body) {
-        SNode methodDeclaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", null);
-        SLinkOperations.setTarget(methodDeclaration, "visibility", this.myVisibylitylevel.getNode(), true);
-        SLinkOperations.setTarget(methodDeclaration, "returnType", returntType, true);
-        SPropertyOperations.set(methodDeclaration, "name", this.myMethodName);
-        SLinkOperations.addAll(methodDeclaration, "parameter", params);
-        SLinkOperations.setTarget(methodDeclaration, "body", body, true);
-        return methodDeclaration;
+        return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", null);
       }
 
       public SNode createMethodCall(SNode methodDeclaration, List<SNode> parameteres) {

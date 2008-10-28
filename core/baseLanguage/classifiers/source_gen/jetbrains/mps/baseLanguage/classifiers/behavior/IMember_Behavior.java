@@ -11,9 +11,9 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IMember_Behavior {
-  public static Class[] PARAMETERS_1213877352965 = {SNode.class};
-  public static Class[] PARAMETERS_1213877352972 = {SNode.class};
-  public static Class[] PARAMETERS_1213877353000 = {SNode.class};
+  private static Class[] PARAMETERS_1213877352965 = {SNode.class};
+  private static Class[] PARAMETERS_1213877352972 = {SNode.class};
+  private static Class[] PARAMETERS_1213877353000 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

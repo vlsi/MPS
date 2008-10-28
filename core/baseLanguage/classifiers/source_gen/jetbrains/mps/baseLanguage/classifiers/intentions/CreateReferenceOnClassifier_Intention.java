@@ -18,6 +18,10 @@ public class CreateReferenceOnClassifier_Intention extends BaseIntention {
     return false;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return "create a reference on outer classifier";
   }
