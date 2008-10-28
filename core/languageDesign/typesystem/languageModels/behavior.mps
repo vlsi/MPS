@@ -52,6 +52,22 @@
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877218090">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877218091" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1225210740874">
+      <property name="name" value="abxcdef" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225210740875" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225210745706" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225210740877" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225210752644">
+        <property name="name" value="o" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225210752645">
+          <link role="classifier" targetNodeId="3.~Object" resolveInfo="Object" />
+        </node>
+        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1225210806891">
+          <link role="annotation" targetNodeId="3.~Deprecated" resolveInfo="Deprecated" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877256119">
     <link role="concept" targetNodeId="1.1212573344738" resolveInfo="ChildTypeRestriction" />

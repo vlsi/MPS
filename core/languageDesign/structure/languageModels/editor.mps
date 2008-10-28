@@ -2702,6 +2702,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224243690299">
           <property name="text" value="@Deprecated" />
           <link role="styleClass" targetNodeId="1224242080493" resolveInfo="AnnotationNode" />
+          <link role="actionMap" targetNodeId="1225209508867" resolveInfo="DeprecatedNodeAnnotation_ActionMap" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225124686441">
             <property name="value" value="1.0" />
           </node>
@@ -2862,6 +2863,24 @@
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1224242095137">
         <property name="color" value="DARK_GREEN" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="1225209508867">
+    <property name="package" value="deprecatedAnnotation" />
+    <property name="name" value="DeprecatedNodeAnnotation_ActionMap" />
+    <link role="applicableConcept" targetNodeId="1.1224240836180" resolveInfo="DeprecatedNodeAnnotation" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="1225209540467">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="1225209540468">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225209540469">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225209569142">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225209570941">
+              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1225209569143" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" id="1225209663742" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

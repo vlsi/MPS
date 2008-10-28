@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class IBLDeprecatable_Behavior {
 
@@ -27,6 +28,13 @@ public class IBLDeprecatable_Behavior {
       }
     }
     return false;
+  }
+
+  public static String virtual_getMessage_1225207468592(SNode thisNode) {
+    StringBuilder result = new StringBuilder();
+    result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(thisNode));
+    result.append(" is deprecated");
+    return result.toString();
   }
 
 }

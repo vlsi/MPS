@@ -6,10 +6,6 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
-import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.lang.structure.behavior.IStructureDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
@@ -20,6 +16,8 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -28,14 +26,6 @@ public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode linkToCheck, final TypeCheckingContext typeCheckingContext) {
-    if ((SLinkOperations.getTarget(linkToCheck, "target", false) != null)) {
-      if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(linkToCheck, "target", false))) {
-        {
-          BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportWarning(linkToCheck, IStructureDeprecatable_Behavior.call_getNonTypeSystemMessage_1225121708891(SLinkOperations.getTarget(linkToCheck, "target", false)), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1224250219917", intentionProvider);
-        }
-      }
-    }
     // link role shouldn't hide roles in super-concepts
     if (SPropertyOperations.getString(linkToCheck, "role") == null) {
       return;

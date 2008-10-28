@@ -17,7 +17,7 @@ public class IStructureDeprecatable_Behavior {
     return (SLinkOperations.getTarget(thisNode, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true) != null);
   }
 
-  public static String call_getNonTypeSystemMessage_1225121708891(SNode thisNode) {
+  public static String virtual_getMessage_1225207468592(SNode thisNode) {
     StringBuilder result = new StringBuilder();
     result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(thisNode));
     result.append(" is deprecated");

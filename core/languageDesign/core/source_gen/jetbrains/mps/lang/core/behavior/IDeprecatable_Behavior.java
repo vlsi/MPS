@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IDeprecatable_Behavior {
   private static Class[] PARAMETERS_1224609060727 = {SNode.class};
+  private static Class[] PARAMETERS_1225207468592 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -15,12 +16,24 @@ public class IDeprecatable_Behavior {
     return false;
   }
 
+  public static String virtual_getMessage_1225207468592(SNode thisNode) {
+    return null;
+  }
+
   public static boolean call_isDeprecated_1224609060727(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, thisNode, "virtual_isDeprecated_1224609060727", PARAMETERS_1224609060727);
   }
 
+  public static String call_getMessage_1225207468592(SNode thisNode) {
+    return (String)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getMessage_1225207468592", PARAMETERS_1225207468592);
+  }
+
   public static boolean callSuper_isDeprecated_1224609060727(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, thisNode, callerConceptFqName, "virtual_isDeprecated_1224609060727", PARAMETERS_1224609060727);
+  }
+
+  public static String callSuper_getMessage_1225207468592(SNode thisNode, String callerConceptFqName) {
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getMessage_1225207468592", PARAMETERS_1225207468592);
   }
 
 }

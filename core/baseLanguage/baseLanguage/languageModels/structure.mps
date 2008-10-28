@@ -990,7 +990,6 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1210110243243">
       <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IResolveInfo" />
     </node>
-    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1225115476724" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1081256982272">
     <property name="name" value="InstanceOfExpression" />

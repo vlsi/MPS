@@ -314,6 +314,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
+    DeprecatedNodeAnnotation_ActionMap.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_AttributedNodeCell_12242437090671224243709067(EditorCell editorCell, SNode node, EditorContext context) {

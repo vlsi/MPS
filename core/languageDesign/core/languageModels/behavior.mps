@@ -295,7 +295,6 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724943" />
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1224609117158" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877404288">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877404289" />
@@ -321,7 +320,19 @@
           </node>
         </node>
       </node>
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1224609075904" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1225207468592">
+      <property name="name" value="getMessage" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225207468593" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225207473455">
+        <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225207468595">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225207483003">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225207490085" />
+        </node>
+      </node>
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1224608888227">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224608888228" />

@@ -47,7 +47,7 @@ public class AddSNodeCastStatement_Intention extends BaseIntention {
     SNode conceptDeclaration = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(de, "operation", true), "conceptArgument", true), "conceptDeclaration", false);
     SNode declaration = SLinkOperations.getTarget(castVariable, "localVariableDeclaration", true);
     SLinkOperations.setTarget(SLinkOperations.setNewChild(declaration, "type", "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", conceptDeclaration, false);
-    SPropertyOperations.set(declaration, "name", NameUtil.decapitalize(SPropertyOperations.getString(conceptDeclaration, "name")));
+    SPropertyOperations.set(declaration, "name", "" + (NameUtil.decapitalize(SPropertyOperations.getString(conceptDeclaration, "name"))));
     SNode expression = SLinkOperations.getTarget(de, "operand", true);
     if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(expression), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
       SNode nodeTypeCastExpression = SLinkOperations.setNewChild(declaration, "initializer", "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
