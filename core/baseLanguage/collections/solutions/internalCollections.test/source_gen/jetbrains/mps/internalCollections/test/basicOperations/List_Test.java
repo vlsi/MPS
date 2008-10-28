@@ -72,4 +72,14 @@ public class List_Test extends Util_Test {
     this.assertIterableEquals(test, test2);
   }
 
+  @Test()
+  public void test_toArray() throws Exception {
+    List<String> test = ListSequence.<String>fromArray("A", "B", "C");
+    String[] arr = ListSequence.fromList(test).toGenericArray(String.class);
+    Assert.assertEquals(Arrays.asList(arr), test);
+    List<String> test2 = ListSequence.<String>fromArray("X", "Y", "Z");
+    String[] strings = ListSequence.fromList(test2).toGenericArray(String.class);
+    Assert.assertEquals(Arrays.asList(strings), test2);
+  }
+
 }
