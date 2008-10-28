@@ -34,7 +34,7 @@ public class PluginStateMonitor implements ProjectComponent {
       public void actionPerformed(ActionEvent e) {
         boolean connected = MPSPlugin.getInstance().isIDEAPresent();
         myLabel.setIcon(connected ? Icons.CONNECTED : Icons.DISCONNECTED);
-        myLabel.setToolTipText(connected? "Connected to IDEA":"Disconnected from IDEA");
+        myLabel.setToolTipText(connected? "Connected to IDEA":"Not connected to IDEA");
       }
     });
     myTimer.start();
