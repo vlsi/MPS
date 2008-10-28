@@ -153,10 +153,10 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
         }
       }
       // refactoring itself
-      refactoringContext.moveNodesToModel(nodes, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModel());
       for(SNode node : nodes) {
         refactoringContext.changeFeatureName(node, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
       }
+      refactoringContext.moveNodesToModel(nodes, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModel());
       if (ListSequence.fromList(editors).isNotEmpty()) {
         SModelDescriptor targetEditorModelDescriptor = targetLanguage.getEditorModelDescriptor();
         if (targetEditorModelDescriptor == null) {
