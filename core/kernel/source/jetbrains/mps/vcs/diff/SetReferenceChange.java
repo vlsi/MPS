@@ -7,6 +7,7 @@ public class SetReferenceChange extends Change {
   private SNodeId myNodeId;
   private String myRole;
   private SNodePointer myNodePointer;
+  private boolean myIsDeleted;
 
   private SModel myModel;
 
@@ -18,13 +19,16 @@ public class SetReferenceChange extends Change {
     myRole = role;
     myModel = model;
 
-
-    if (target == null || target.getModel() != model) {
-      myInternal = false;
-      myNodePointer = new SNodePointer(target);
+    if (target != null) {
+      if (target.getModel() != model) {
+        myInternal = false;
+        myNodePointer = new SNodePointer(target);
+      } else {
+        myInternal = true;
+        myTargetId = target.getSNodeId();
+      }
     } else {
-      myInternal = true;
-      myTargetId = target.getSNodeId();
+      myIsDeleted = true;
     }
   }
 
@@ -42,6 +46,7 @@ public class SetReferenceChange extends Change {
   }
 
   public boolean isBrokenReference() {
+    if (myIsDeleted) return false;
     if (!myInternal && myNodePointer.getNode() == null) return true;
     return false;
   }
@@ -49,7 +54,9 @@ public class SetReferenceChange extends Change {
 
   public String toString() {
     if (!myInternal) {
-      if (myNodePointer.getNode() == null) {
+      if (myIsDeleted) {
+        return "deleted reference " + myNodeId + " in role " + myRole;
+      } else if (myNodePointer.getNode() == null) {
         return "set reference" + myNodeId + " in role. [BAD REFERENCE]";
       } else {
         return "set reference " + myNodeId + " in role " + myRole + " to " + myNodePointer + " in model " + myNodePointer.getModel();
@@ -63,10 +70,12 @@ public class SetReferenceChange extends Change {
     return myNodeId;
   }
 
-  public boolean apply(SModel m) {    
+  public boolean apply(SModel m) {
     SNode node = m.getNodeById(myNodeId);
     if (node != null) {
-      if (myInternal) {
+      if (myIsDeleted) {
+        node.removeReferent(myRole);
+      } else if (myInternal) {
         SNode target = m.getNodeById(myTargetId);
         node.setReferent(getRole(), target);
       } else {
