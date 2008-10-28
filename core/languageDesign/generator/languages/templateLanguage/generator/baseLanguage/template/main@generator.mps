@@ -342,6 +342,24 @@
         </node>
       </node>
     </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1225233669266">
+      <link role="applicableConcept" targetNodeId="7.1225228973247" resolveInfo="MapSrcMacro_PostMapperFunction" />
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1225233669268">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225233669269">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225233669270">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225233669271">
+              <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1225233669272" />
+              <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel" id="1225233669273">
+                <link role="label" targetNodeId="1200923491526" resolveInfo="queriesGenerated" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1225233944559">
+        <link role="template" targetNodeId="1225233707631" resolveInfo="weave_MapSrcMacro_PostMapperFunction" />
+      </node>
+    </node>
     <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1184374763942">
       <link role="applicableConcept" targetNodeId="7.1184373935793" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1184374883297">
@@ -816,7 +834,7 @@
         <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1170727064428">
           <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1170727064429">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170727064430">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1170727064431">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225233877709">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1170727064432">
                   <link role="classConcept" targetNodeId="6.~TemplateFunctionMethodName" resolveInfo="TemplateFunctionMethodName" />
                   <link role="baseMethodDeclaration" targetNodeId="6.~TemplateFunctionMethodName.mapSrcMacro_MapperFunction(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="mapSrcMacro_MapperFunction" />
@@ -2026,6 +2044,67 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219959436959" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219959436960" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1225233707631">
+    <property name="name" value="weave_MapSrcMacro_PostMapperFunction" />
+    <property name="package" value="Main" />
+    <link role="applicableConcept" targetNodeId="7.1225228973247" resolveInfo="MapSrcMacro_PostMapperFunction" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1225233707632">
+      <property name="name" value="_class_" />
+      <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1225233707633">
+        <property name="name" value="_query_method_" />
+        <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225233707634" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225233707635">
+          <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1225233707636">
+            <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1225233707637">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225233707638">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225233900150">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225233707640">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1225233707641" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225233707642">
+                      <link role="link" targetNodeId="1.1137022507850" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225233707643">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225233707644" />
+          </node>
+        </node>
+        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1225233707645" />
+        <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1225233707646">
+          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1225233707647">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225233707648">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225233874410">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225233733986">
+                  <link role="baseMethodDeclaration" targetNodeId="6.~TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="mapSrcMacro_PostMapperFunction" />
+                  <link role="classConcept" targetNodeId="6.~TemplateFunctionMethodName" resolveInfo="TemplateFunctionMethodName" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1225233871393" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225233707652" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225233707653">
+          <property name="name" value="operationContext" />
+          <property name="isFinal" value="true" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225233707654">
+            <link role="classifier" targetNodeId="4.~IOperationContext" resolveInfo="IOperationContext" />
+          </node>
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225233707655">
+          <property name="name" value="_context" />
+          <property name="isFinal" value="true" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225233893540">
+            <link role="classifier" targetNodeId="3.~MapSrcMacroPostProcContext" resolveInfo="MapSrcMacroPostProcContext" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225233707657" />
     </node>
   </node>
 </model>

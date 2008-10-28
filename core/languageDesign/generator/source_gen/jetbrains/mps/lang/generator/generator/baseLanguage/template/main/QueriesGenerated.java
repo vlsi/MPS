@@ -82,6 +82,10 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.dropRootRule_Condition(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_1225233707647(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(_context.getNode());
+  }
+
   public static Object referenceMacro_GetReferent_1217272831785(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     // method parameter
     return "_context";
@@ -151,6 +155,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
+  public static SNode sourceNodeQuery_1225233707637(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619599466(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByMappingLabel("queriesGenerated");
   }
@@ -196,6 +204,10 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1219959119598(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return _context.getOutputNodeByMappingLabel("queriesGenerated");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1225233669268(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByMappingLabel("queriesGenerated");
   }
 
