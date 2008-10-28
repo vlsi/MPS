@@ -18,6 +18,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <maxImportIndex value="9" />
   <import index="1" modelUID="f:java_stub#junit.framework(junit.framework@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#junit.runner(junit.runner@java_stub)" version="-1" />
