@@ -169,5 +169,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1225195749765">
+    <property name="package" value="command" />
+    <link role="conceptDeclaration" targetNodeId="1.1208783294205" resolveInfo="ExecuteCommandStatement" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1225195749766">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225195749767">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1225195754909">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225195764245">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225195758240">
+              <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1225195757599" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225195761931">
+                <link role="link" targetNodeId="1.1208941703859" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225195765498">
+              <link role="link" targetNodeId="7.1199569916463" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
