@@ -6,6 +6,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -351,9 +352,7 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207741307110">
                   <property name="name" value="nullSeq" />
                   <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1207741307111">
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207741307112">
-                      <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-                    </node>
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196721048" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207741448363">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207741307114">
@@ -372,9 +371,7 @@
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207741710870" />
                                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207741713841">
                                   <link role="classifier" targetNodeId="5.~ISequence" resolveInfo="ISequence" />
-                                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207741716813">
-                                    <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-                                  </node>
+                                  <node role="parameter" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196719734" />
                                 </node>
                               </node>
                             </node>

@@ -5,6 +5,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" />
+  <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -864,9 +865,7 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205756990208">
               <property name="name" value="a" />
               <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1205756990209">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205756997660">
-                  <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-                </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196704697" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205757018264">
                 <link role="classConcept" targetNodeId="3.~Arrays" resolveInfo="Arrays" />
@@ -905,9 +904,7 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205757045801">
               <property name="name" value="b" />
               <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1205757045802">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205757050618">
-                  <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-                </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196717668" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205757058054">
                 <link role="classConcept" targetNodeId="3.~Arrays" resolveInfo="Arrays" />
