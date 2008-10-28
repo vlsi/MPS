@@ -7,6 +7,8 @@ import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+
 public class GenericRefactoringAction extends BaseAction {
   private ILoggableRefactoring myRefactoring;
 
@@ -42,6 +44,27 @@ public class GenericRefactoringAction extends BaseAction {
     return myRefactoring.getKeyStroke();
   }
 
+   private SNode getNode(ActionEventData data) {
+    if (data.getNode() != null) {
+      return data.getNode();
+    }
+    List<SNode> list = data.getNodes();
+    if (list.isEmpty()) return null;
+
+    String conceptFQName = null;
+    for (SNode node : list) {
+      String anotherConceptFqName = node.getConceptFqName();
+      if (conceptFQName == null) {
+        conceptFQName = anotherConceptFqName;
+      } else {
+        if (!conceptFQName.equals(anotherConceptFqName)) {
+          return null;
+        }
+      }
+    }
+    return list.get(0);
+  }
+
   protected void doUpdate(AnActionEvent e) {
     ActionEventData data = new ActionEventData(e);
     boolean enabled = false;
@@ -51,7 +74,7 @@ public class GenericRefactoringAction extends BaseAction {
         enabled = myRefactoring.isApplicableToModel(modelDescriptor);
       }
     } else {
-      SNode node = data.getNode();
+      SNode node = getNode(data);
       if (node != null) {
         enabled = myRefactoring.isApplicableWRTConcept(node);
       }
