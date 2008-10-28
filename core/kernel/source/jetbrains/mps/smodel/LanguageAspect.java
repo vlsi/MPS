@@ -1,9 +1,20 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.ModuleReference;
+import jetbrains.mps.lang.structure.structure.Structure_Language;
+import jetbrains.mps.lang.editor.structure.Editor_Language;
+import jetbrains.mps.lang.actions.structure.Actions_Language;
+import jetbrains.mps.lang.constraints.structure.Constraints_Language;
+import jetbrains.mps.lang.typesystem.structure.Typesystem_Language;
+import jetbrains.mps.lang.script.structure.Script_Language;
+import jetbrains.mps.lang.intentions.structure.Intentions_Language;
+import jetbrains.mps.lang.findUsages.structure.FindUsages_Language;
+import jetbrains.mps.lang.plugin.structure.Plugin_Language;
+import jetbrains.mps.lang.dataFlow.structure.DataFlow_Language;
+import jetbrains.mps.lang.test.structure.Test_Language;
+import jetbrains.mps.library.LanguageDesign_DevKit;
 
 import javax.swing.Icon;
 import java.util.List;
@@ -12,7 +23,7 @@ import java.util.ArrayList;
 public enum LanguageAspect {
   STRUCTURE("structure") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.STRUCTURE.getModuleReference());
+      return CollectionUtil.asList(Structure_Language.MODULE_REFERENCE);
     }
 
     public Icon getIcon() {
@@ -22,7 +33,7 @@ public enum LanguageAspect {
 
   EDITOR("editor") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.EDITOR.getModuleReference());
+      return CollectionUtil.asList(Editor_Language.MODULE_REFERENCE);
     }
 
     public Icon getIcon() {
@@ -32,7 +43,7 @@ public enum LanguageAspect {
 
   ACTIONS("actions") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.ACTIONS.getModuleReference());
+      return CollectionUtil.asList(Actions_Language.MODULE_REFERENCE);
     }
 
     public Icon getIcon() {
@@ -42,7 +53,7 @@ public enum LanguageAspect {
 
   CONSTRAINTS("constraints") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.CONSTRAINTS.getModuleReference());
+      return CollectionUtil.asList(Constraints_Language.MODULE_REFERENCE);
     }
 
     public Icon getIcon() {
@@ -52,7 +63,7 @@ public enum LanguageAspect {
 
   BEHAVIOR("behavior") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.CONSTRAINTS.getModuleReference());
+      return CollectionUtil.asList(Constraints_Language.MODULE_REFERENCE);
     }
 
     public Icon getIcon() {
@@ -71,7 +82,7 @@ public enum LanguageAspect {
     }
 
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.HELGINS.getModuleReference());
+      return CollectionUtil.asList(Typesystem_Language.MODULE_REFERENCE);
     }
 
     public Icon getIcon() {
@@ -81,7 +92,7 @@ public enum LanguageAspect {
 
   SCRIPTS("scripts") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.SCRIPT.getModuleReference());
+      return CollectionUtil.asList(Script_Language.MODULE_REFERENCE);
     }
   },
 
@@ -89,7 +100,7 @@ public enum LanguageAspect {
 
   INTENTIONS("intentions") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.INTENTION.getModuleReference());
+      return CollectionUtil.asList(Intentions_Language.MODULE_REFERENCE);
     }
 
     public Icon getIcon() {
@@ -99,7 +110,7 @@ public enum LanguageAspect {
 
   FIND_USAGES("findUsages") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.FIND_USAGES.getModuleReference());
+      return CollectionUtil.asList(FindUsages_Language.MODULE_REFERENCE);
     }
 
     public Icon getIcon() {
@@ -109,7 +120,7 @@ public enum LanguageAspect {
 
   PLUGIN("plugin") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.PLUGIN.getModuleReference());
+      return CollectionUtil.asList(Plugin_Language.MODULE_REFERENCE);
     }
 
     public Icon getIcon() {
@@ -119,13 +130,13 @@ public enum LanguageAspect {
 
   DATA_FLOW("dataFlow") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.DATA_FLOW.getModuleReference());
+      return CollectionUtil.asList(DataFlow_Language.MODULE_REFERENCE);
     }
   },
 
   TEST("test") {
     protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(BootstrapModule.TEST.getModuleReference());
+      return CollectionUtil.asList(Test_Language.MODULE_REFERENCE);
     }
   };
 
@@ -160,7 +171,7 @@ public enum LanguageAspect {
 
     model.getSModel().runLoadingAction(new Runnable() {
       public void run() {
-        model.getSModel().addDevKit(BootstrapModule.LANGUAGE_DESIGN_DEVKIT.getModuleReference());
+        model.getSModel().addDevKit(LanguageDesign_DevKit.get());
 
         for (ModuleReference lang : getLanguagesToImport(l)) {
           model.getSModel().addLanguage(lang);

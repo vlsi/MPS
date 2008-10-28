@@ -9,9 +9,9 @@ import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.library.LanguageDesign_DevKit;
 
 import java.io.File;
 import java.util.*;
@@ -121,7 +121,7 @@ public class Generator extends AbstractModule {
     if (SModelStereotype.isGeneratorModel(result)) {
       result.getSModel().addLanguage(Generator_Language.get());
     }else{
-      result.getSModel().addDevKit((jetbrains.mps.project.DevKit) BootstrapModule.LANGUAGE_DESIGN_DEVKIT.get());
+      result.getSModel().addDevKit(LanguageDesign_DevKit.get());
     }
     result.getSModel().addLanguage(GenerationContext_Language.get());
 

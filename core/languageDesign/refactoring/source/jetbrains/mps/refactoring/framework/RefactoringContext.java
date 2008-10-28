@@ -2,7 +2,6 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
-import jetbrains.mps.ide.BootstrapModule;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -12,6 +11,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -571,7 +571,7 @@ public class RefactoringContext {
         if (l == null) {
           //if we weren't able to find a language then it should be loaded from core
           //we can use any bootstrap language for it, for example, refactoring lang
-          l = BootstrapModule.REFACTORING.getLanguage();
+          l = Refactoring_Language.get();
         }
 
         if (l == null) {

@@ -20,7 +20,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <maxImportIndex value="21" />
+  <maxImportIndex value="22" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
@@ -37,6 +37,7 @@
   <import index="19" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
   <import index="21" modelUID="r:00000000-0000-4000-0000-011c8959054d(jetbrains.mps.uiLanguage.components)" version="-1" />
+  <import index="22" modelUID="f:java_stub#jetbrains.mps.library(jetbrains.mps.library@java_stub)" version="-1" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="1203684597238">
     <property name="name" value="NewLanguageDialog" />
     <node role="root" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialog" id="1203684615537">
@@ -703,13 +704,13 @@
                 <link role="property" targetNodeId="19.1169194664001" resolveInfo="name" />
               </node>
             </node>
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220039721770">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1220039720392">
-                <link role="enumConstantDeclaration" targetNodeId="20.~BootstrapModule.LANGUAGE_DESIGN_DEVKIT" resolveInfo="LANGUAGE_DESIGN_DEVKIT" />
-                <link role="enumClass" targetNodeId="20.~BootstrapModule" resolveInfo="BootstrapModule" />
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225111223970">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1225111216856">
+                <link role="classifier" targetNodeId="22.~LanguageDesign_DevKit" resolveInfo="LanguageDesign_DevKit" />
+                <link role="variableDeclaration" targetNodeId="22.~LanguageDesign_DevKit.MODULE_REFERENCE" resolveInfo="MODULE_REFERENCE" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220039725493">
-                <link role="baseMethodDeclaration" targetNodeId="20.~BootstrapModule.getUID():java.lang.String" resolveInfo="getUID" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225111225443">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ModuleReference.toString():java.lang.String" resolveInfo="toString" />
               </node>
             </node>
           </node>

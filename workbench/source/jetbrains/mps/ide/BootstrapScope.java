@@ -4,6 +4,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.library.LibraryManager;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -27,14 +28,8 @@ public class BootstrapScope extends BaseScope {
     return "bootstrap scope";
   }
 
-  public <T extends IModule> List<T> getModules(Class<T> moduleKind) {
-    List<T> modules = new ArrayList<T>();
-    for (BootstrapModule module : BootstrapModule.values()) {
-      if (module.getModuleKind() == moduleKind || moduleKind == null) {
-        modules.add((T) module.get());
-      }
-    }
-    return modules;
+  public <T extends IModule> List<T> getModules(Class<T> cls) {
+    return new ArrayList<T>(LibraryManager.getInstance().getBootstrapModules(cls));
   }
 
   public List<Language> getVisibleLanguages() {
