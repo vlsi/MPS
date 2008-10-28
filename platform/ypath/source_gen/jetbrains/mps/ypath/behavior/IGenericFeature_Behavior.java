@@ -12,11 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IGenericFeature_Behavior {
-private    static Class[] PARAMETERS_1213877249147 = {SNode.class ,SNode.class};
-private    static Class[] PARAMETERS_1213877249152 = {SNode.class ,SNode.class ,SNode.class ,ITemplateGenerator.class};
-private    static Class[] PARAMETERS_1213877249161 = {SNode.class ,SNode.class ,SNode.class ,SNode.class ,SNode.class ,ITemplateGenerator.class};
-private    static Class[] PARAMETERS_1213877249174 = {SNode.class ,SNode.class ,SNode.class ,SNode.class ,ITemplateGenerator.class};
-private    static Class[] PARAMETERS_1213877249185 = {SNode.class ,SNode.class ,SNode.class ,SNode.class ,SNode.class ,ITemplateGenerator.class};
+  private static Class[] PARAMETERS_1213877249147 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_1213877249152 = {SNode.class ,SNode.class ,SNode.class ,ITemplateGenerator.class};
+  private static Class[] PARAMETERS_1213877249161 = {SNode.class ,SNode.class ,SNode.class ,SNode.class ,SNode.class ,ITemplateGenerator.class};
+  private static Class[] PARAMETERS_1213877249174 = {SNode.class ,SNode.class ,SNode.class ,SNode.class ,ITemplateGenerator.class};
+  private static Class[] PARAMETERS_1213877249185 = {SNode.class ,SNode.class ,SNode.class ,SNode.class ,SNode.class ,ITemplateGenerator.class};
 
   public static void init(SNode thisNode) {
   }

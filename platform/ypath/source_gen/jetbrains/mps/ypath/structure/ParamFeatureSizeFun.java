@@ -8,10 +8,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ParamFeatureSizeFun extends FeatureSizeFun implements IParamFeatureFun {
-public    static final String concept = "jetbrains.mps.ypath.structure.ParamFeatureSizeFun";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String concept = "jetbrains.mps.ypath.structure.ParamFeatureSizeFun";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public ParamFeatureSizeFun(SNode node) {
     super(node);

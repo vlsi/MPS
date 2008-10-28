@@ -5,11 +5,11 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 
 public interface IFeature extends INamedConcept {
-public    static final String concept = "jetbrains.mps.ypath.structure.IFeature";
-public    static final String WRITABLE = "writable";
-public    static final String DEFAULT = "default";
-public    static final String ASCENDING = "ascending";
-public    static final String OPPOSITE = "opposite";
+  public static final String concept = "jetbrains.mps.ypath.structure.IFeature";
+  public static final String WRITABLE = "writable";
+  public static final String DEFAULT = "default";
+  public static final String ASCENDING = "ascending";
+  public static final String OPPOSITE = "opposite";
 
   public boolean getWritable();
 

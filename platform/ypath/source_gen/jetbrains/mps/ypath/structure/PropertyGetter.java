@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PropertyGetter extends LambdaMethod {
-public    static final String concept = "jetbrains.mps.ypath.structure.PropertyGetter";
+  public static final String concept = "jetbrains.mps.ypath.structure.PropertyGetter";
 
   public PropertyGetter(SNode node) {
     super(node);

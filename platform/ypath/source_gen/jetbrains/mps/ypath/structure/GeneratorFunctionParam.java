@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GeneratorFunctionParam extends ConceptFunctionParameter implements IFunctionParam {
-public    static final String concept = "jetbrains.mps.ypath.structure.GeneratorFunctionParam";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String concept = "jetbrains.mps.ypath.structure.GeneratorFunctionParam";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public GeneratorFunctionParam(SNode node) {
     super(node);

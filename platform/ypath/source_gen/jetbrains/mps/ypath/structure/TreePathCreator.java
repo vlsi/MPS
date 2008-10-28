@@ -11,15 +11,15 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TreePathCreator extends AbstractCreator implements TreePath {
-public    static final String concept = "jetbrains.mps.ypath.structure.TreePathCreator";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String DEFAULT_FEATURE = "defaultFeature";
-public    static final String TREE_PATH_TYPE = "treePathType";
-public    static final String PARENT_BLOCK = "parentBlock";
-public    static final String CHILDREN_BLOCK = "childrenBlock";
-public    static final String FEATURES = "features";
+  public static final String concept = "jetbrains.mps.ypath.structure.TreePathCreator";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String DEFAULT_FEATURE = "defaultFeature";
+  public static final String TREE_PATH_TYPE = "treePathType";
+  public static final String PARENT_BLOCK = "parentBlock";
+  public static final String CHILDREN_BLOCK = "childrenBlock";
+  public static final String FEATURES = "features";
 
   public TreePathCreator(SNode node) {
     super(node);

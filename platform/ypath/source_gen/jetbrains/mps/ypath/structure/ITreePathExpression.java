@@ -5,5 +5,5 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface ITreePathExpression extends INodeAdapter {
-public    static final String concept = "jetbrains.mps.ypath.structure.ITreePathExpression";
+  public static final String concept = "jetbrains.mps.ypath.structure.ITreePathExpression";
 }

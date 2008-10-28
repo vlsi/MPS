@@ -9,12 +9,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TreePathOperationExpression extends Expression implements ITreePathExpression {
-public    static final String concept = "jetbrains.mps.ypath.structure.TreePathOperationExpression";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String EXPRESSION = "expression";
-public    static final String OPERATION = "operation";
+  public static final String concept = "jetbrains.mps.ypath.structure.TreePathOperationExpression";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String EXPRESSION = "expression";
+  public static final String OPERATION = "operation";
 
   public TreePathOperationExpression(SNode node) {
     super(node);

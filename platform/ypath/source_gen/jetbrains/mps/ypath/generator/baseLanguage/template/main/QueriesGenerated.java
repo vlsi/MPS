@@ -1233,16 +1233,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "nodeExpression", true), "expression", true);
   }
 
-  public static SNode sourceNodeQuery_1180087869934(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "nodeExpression", true), "expression", true));
-  }
-
   public static SNode sourceNodeQuery_1180088768491(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1180089519694(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "parameter", true));
   }
 
   public static SNode sourceNodeQuery_1180089683858(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1257,20 +1249,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
 
-  public static SNode sourceNodeQuery_1180089867871(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "parameter", true));
-  }
-
   public static SNode sourceNodeQuery_1180090185278(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "visitBlock", true), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1180090844902(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1180091626437(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "parameter", true));
   }
 
   public static SNode sourceNodeQuery_1183985773053(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2005,6 +1985,26 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1216934019535(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "visitBlock", true);
+  }
+
+  public static SNode sourceNodeQuery_1225193265671(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1225193265996(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "nodeExpression", true), "expression", true));
+  }
+
+  public static SNode sourceNodeQuery_1225193269561(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1225193269885(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1225193270210(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "parameter", true));
   }
 
   public static Iterable sourceNodesQuery_1179331802560(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

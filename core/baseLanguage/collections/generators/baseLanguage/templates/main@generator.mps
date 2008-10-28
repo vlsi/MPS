@@ -13,6 +13,7 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
+  <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -2428,9 +2429,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1168509252518">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1196360417025">
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1196360420937">
-              <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196360423971">
-                <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-              </node>
+              <node role="classType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193964530" />
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196360419764">
                 <link role="variableDeclaration" targetNodeId="1168512765972" resolveInfo="c1" />
               </node>
@@ -2441,17 +2440,13 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196360447357">
                     <link role="variableDeclaration" targetNodeId="1168512765972" resolveInfo="c1" />
                   </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196360447358">
-                    <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                  </node>
+                  <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193963822" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207845252121">
                 <link role="baseMethodDeclaration" targetNodeId="2.~String.compareToIgnoreCase(java.lang.String):int" resolveInfo="compareToIgnoreCase" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1196360466332">
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196360466333">
-                    <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                  </node>
+                  <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193965410" />
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196360466334">
                     <link role="variableDeclaration" targetNodeId="1168512777027" resolveInfo="c2" />
                   </node>
