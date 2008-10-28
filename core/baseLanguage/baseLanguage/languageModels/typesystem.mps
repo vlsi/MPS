@@ -14250,5 +14250,46 @@
       <link role="concept" targetNodeId="1.1224575136086" resolveInfo="EnumValueOfExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1225197179133">
+    <property name="name" value="check_StringTypeClassifierType" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225197179134">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225197241294">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1225197312026">
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225197243080">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1225197242641">
+              <link role="applicableNode" targetNodeId="1225197202294" resolveInfo="node" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225197246347">
+              <link role="link" targetNodeId="1.1107535924139" />
+            </node>
+          </node>
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225197312888">
+            <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1225197312889">
+              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225197312890">
+                <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225197312891">
+              <link role="link" targetNodeId="1.1107535924139" />
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225197241296">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.InfoStatement" id="1225197259595">
+            <node role="infoText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225197261254">
+              <property name="value" value="It's recommended to use string type" />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1225197263771">
+              <link role="applicableNode" targetNodeId="1225197202294" resolveInfo="node" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1225197202294">
+      <property name="name" value="node" />
+      <link role="concept" targetNodeId="1.1107535904670" resolveInfo="ClassifierType" />
+    </node>
+  </node>
 </model>
 
