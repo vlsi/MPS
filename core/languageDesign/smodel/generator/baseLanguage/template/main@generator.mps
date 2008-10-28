@@ -11,6 +11,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -468,9 +469,7 @@
                 <link role="variableDeclaration" targetNodeId="1178819328015" resolveInfo="typeOfArgument" />
               </node>
               <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196952392404">
-                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196952392405">
-                  <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-                </node>
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193163476" />
               </node>
             </node>
           </node>
@@ -603,9 +602,7 @@
                   <link role="variableDeclaration" targetNodeId="1178820483382" resolveInfo="typeOfArgument" />
                 </node>
                 <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196952392406">
-                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196952392407">
-                    <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-                  </node>
+                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193163806" />
                 </node>
               </node>
             </node>
@@ -4395,9 +4392,7 @@
       </node>
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1171415960005">
         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="1171415960006">
-          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1171415960007">
-            <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-          </node>
+          <node role="componentType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193165646" />
           <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1171415960008">
             <property name="value" value="_concept_name_" />
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1203118690609">
@@ -4967,9 +4962,7 @@
       </node>
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1173119412076">
         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="1173119412077">
-          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1173119412078">
-            <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-          </node>
+          <node role="componentType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193162879" />
           <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1173119412079">
             <property name="value" value="_concept_name_" />
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1203457991460">
@@ -5103,9 +5096,7 @@
       </node>
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1173123284737">
         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="1173123284738">
-          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1173123284739">
-            <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-          </node>
+          <node role="componentType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193160637" />
           <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1173123284740">
             <property name="value" value="_concept_name_" />
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1203119702929">
@@ -6514,9 +6505,7 @@
                     <link role="variableDeclaration" targetNodeId="1206552216573" resolveInfo="typeOfArgument" />
                   </node>
                   <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1206552216583">
-                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206552216584">
-                      <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-                    </node>
+                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193162409" />
                   </node>
                 </node>
               </node>

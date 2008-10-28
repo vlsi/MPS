@@ -9,7 +9,7 @@ import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationL
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class NodeMacro_Behavior {
-  public static Class[] PARAMETERS_1213877290799 = {SNode.class};
+  private static Class[] PARAMETERS_1213877290799 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

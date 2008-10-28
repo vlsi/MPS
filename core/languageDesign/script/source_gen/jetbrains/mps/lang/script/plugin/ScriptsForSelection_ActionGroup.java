@@ -15,7 +15,7 @@ import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
 import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
 
 public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(ScriptsForSelection_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(ScriptsForSelection_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.script.plugin.ScriptsForSelection";
 
   public ScriptsForSelection_ActionGroup() {

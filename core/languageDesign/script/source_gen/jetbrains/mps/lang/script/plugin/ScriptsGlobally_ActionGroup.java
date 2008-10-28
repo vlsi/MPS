@@ -12,7 +12,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
 
 public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(ScriptsGlobally_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(ScriptsGlobally_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.script.plugin.ScriptsGlobally";
 
   public ScriptsGlobally_ActionGroup() {

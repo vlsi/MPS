@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseMappingRule_Behavior {
-  public static Class[] PARAMETERS_1213877498511 = {SNode.class};
+  private static Class[] PARAMETERS_1213877498511 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

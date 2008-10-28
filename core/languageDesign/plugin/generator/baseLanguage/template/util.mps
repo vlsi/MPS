@@ -3,6 +3,7 @@
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
@@ -38,17 +39,13 @@
           <link role="classifier" targetNodeId="5.~IModule" resolveInfo="IModule" />
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218029280900">
-        <link role="classifier" targetNodeId="7.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192526351" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1218029277054" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218029277055">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1218029314781">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1218029314782">
             <property name="name" value="moduleUID" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218029314799">
-              <link role="classifier" targetNodeId="7.~String" resolveInfo="String" />
-            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192518875" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218029314800">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1218029314801">
                 <link role="variableDeclaration" targetNodeId="1218029309183" resolveInfo="module" />
@@ -62,9 +59,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1218029314803">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1218029314804">
             <property name="name" value="shortName" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218029314805">
-              <link role="classifier" targetNodeId="7.~String" resolveInfo="String" />
-            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192525202" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218029314806">
               <link role="classConcept" targetNodeId="10.~NameUtil" resolveInfo="NameUtil" />
               <link role="baseMethodDeclaration" targetNodeId="10.~NameUtil.shortNameFromLongName(java.lang.String):java.lang.String" resolveInfo="shortNameFromLongName" />
@@ -77,9 +72,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1218029314808">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1218029314809">
             <property name="name" value="normalShortName" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218029314810">
-              <link role="classifier" targetNodeId="7.~String" resolveInfo="String" />
-            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192519347" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218029314811">
               <link role="baseMethodDeclaration" targetNodeId="10.~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolveInfo="toValidIdentifier" />
               <link role="classConcept" targetNodeId="10.~NameUtil" resolveInfo="NameUtil" />
@@ -102,9 +95,7 @@
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1213879030228">
       <property name="name" value="getPluginName" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213879068875">
-        <link role="classifier" targetNodeId="7.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192523487" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213879030230" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213879030231">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213879243298">
@@ -130,9 +121,7 @@
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1215266534764">
       <property name="name" value="getApplicationPluginName" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215266534765">
-        <link role="classifier" targetNodeId="7.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192522756" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215266534766" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215266534767">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218029344763">
