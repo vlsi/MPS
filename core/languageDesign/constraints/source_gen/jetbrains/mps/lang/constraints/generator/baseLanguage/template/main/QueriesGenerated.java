@@ -9,7 +9,7 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.constraints.behavior.ConceptMethodDeclaration_Behavior;
+import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_Behavior;
 import jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_Behavior;
@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.constraints.behavior.StaticConceptMethodDeclaration_Behavior;
+import jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
@@ -68,11 +68,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1177677003299(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1213877345504(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1181726948102(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getCallerMethodName_1213877345535(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getCallerMethodName_1225196404032(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1181727126085(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -80,11 +80,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1181727149831(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1213877345504(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1182162752919(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1213877345504(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1182162752942(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -168,11 +168,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1193402330791(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getSuperCallerMethodName_1213877345551(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getSuperCallerMethodName_1225196404049(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1193402330855(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1213877345504(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1193402330879(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -180,7 +180,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1193402330913(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1213877345504(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1193402330937(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -208,7 +208,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1206018606831(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return StaticConceptMethodDeclaration_Behavior.call_getGeneratedName_1213877234547(_context.getNode());
+    return StaticConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196403920(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1206018674516(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -315,14 +315,14 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       return SLinkOperations.getTarget(Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(_context.getNode(), "returnType", true)), "classifier", false);
     }
-    return SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "classifier", false);
+    return SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_1218803481966(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       return SLinkOperations.getTarget(Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(_context.getNode(), "returnType", true)), "classifier", false);
     }
-    return SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "classifier", false);
+    return SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_1225131501814(final IOperationContext operationContext, final ReferenceMacroContext _context) {
