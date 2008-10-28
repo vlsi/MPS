@@ -270,8 +270,6 @@ public class TextLine {
       g.setColor(textColor);
     }
 
-//    System.err.println("text color is " + textColor);
-
     int deltaShiftX_EndSelection = (myEndTextSelectionPosition <= myText.length()) ? getCaretX(0, myEndTextSelectionPosition) : getLeftInternalInset();
     int deltaShiftX_StartSelection = getCaretX(0, myStartTextSelectionPosition);
     int endLine = getCaretX(shiftX, myText.length());
@@ -355,7 +353,7 @@ public class TextLine {
 
   private FontMetrics getFontMetrics() {
     if (myFontMetrics == null) {
-      myFontMetrics = Toolkit.getDefaultToolkit().getFontMetrics(myFont);
+      myFontMetrics = Toolkit.getDefaultToolkit().getFontMetrics(getFont());
     }
     return myFontMetrics;
   }
