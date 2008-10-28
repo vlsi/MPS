@@ -9,8 +9,8 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.ProjectPaneModelActions_ActionGroup;
 
 public class FindModelUsages_ActionGroup extends GeneratedActionGroup {
-private    static Logger LOG = Logger.getLogger(FindModelUsages_ActionGroup.class);
-public    static final String ID = "jetbrains.mps.lang.core.plugin.FindModelUsages";
+  private static Logger LOG = Logger.getLogger(FindModelUsages_ActionGroup.class);
+  public static final String ID = "jetbrains.mps.lang.core.plugin.FindModelUsages";
 
   public FindModelUsages_ActionGroup() {
     super("", ID);

@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesUtil {
-  public static Object CELL_READABLE_ID = new Object();
+  private static Object CELL_READABLE_ID = new Object();
 
   public static String getProviderClassNameForCellWithRole(SNode node) {
     String conceptFqName = node.getConceptFqName();

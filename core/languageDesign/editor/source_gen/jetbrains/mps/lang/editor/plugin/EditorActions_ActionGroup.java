@@ -12,7 +12,7 @@ import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
 
 public class EditorActions_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(EditorActions_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(EditorActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.editor.plugin.EditorActions";
 
   public EditorActions_ActionGroup() {

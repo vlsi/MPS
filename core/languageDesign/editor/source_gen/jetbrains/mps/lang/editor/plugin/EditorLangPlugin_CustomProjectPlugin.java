@@ -9,7 +9,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodeEditor.Highlighter;
 
 public class EditorLangPlugin_CustomProjectPlugin extends BaseCustomProjectPlugin {
-  public static Logger LOG = Logger.getLogger(EditorLangPlugin_CustomProjectPlugin.class);
+  private static Logger LOG = Logger.getLogger(EditorLangPlugin_CustomProjectPlugin.class);
 
   private AutoResolver myAutoResolver;
 

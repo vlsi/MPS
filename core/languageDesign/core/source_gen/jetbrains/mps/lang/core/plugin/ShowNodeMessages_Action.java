@@ -15,8 +15,8 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import javax.swing.JOptionPane;
 
 public class ShowNodeMessages_Action extends GeneratedAction {
-private    static final Logger LOG = Logger.getLogger(ShowNodeMessages_Action.class);
-private    static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(ShowNodeMessages_Action.class);
+  private static final Icon ICON = null;
 
   public SNode node;
   public EditorComponent editorComponent;

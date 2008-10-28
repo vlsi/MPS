@@ -6,6 +6,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -163,9 +164,7 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1202839664529">
       <property name="name" value="getDescription" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202839664530">
-        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191828021" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1202839664531" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202839664532">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1202839664533">
@@ -191,9 +190,7 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1202839683085">
       <property name="name" value="getLongDescription" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1202839686901">
-        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191828931" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1202839683087" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202839683088">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1202839698635">
@@ -254,9 +251,7 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1197207280625">
       <property name="name" value="getConcept" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197207280626">
-        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191829104" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1197207280627" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197207280628">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197207280629">
@@ -441,9 +436,7 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206462852592">
       <property name="name" value="getNodeCategory" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206462856564">
-        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191829434" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206462852594" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206462852595">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1206462965298">

@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class QueryFunction_StyleParameter_Behavior {
-  public static Class[] PARAMETERS_1221482178305 = {SNode.class};
+  private static Class[] PARAMETERS_1221482178305 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

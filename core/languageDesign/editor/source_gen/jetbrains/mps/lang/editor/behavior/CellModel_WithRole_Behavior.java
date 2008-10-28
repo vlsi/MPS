@@ -8,8 +8,8 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderNameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CellModel_WithRole_Behavior {
-  public static Class[] PARAMETERS_1216377898846 = {SNode.class};
-  public static Class[] PARAMETERS_1216378357889 = {SNode.class};
+  private static Class[] PARAMETERS_1216377898846 = {SNode.class};
+  private static Class[] PARAMETERS_1216378357889 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BooleanStyleSheetItem_Behavior {
-  public static Class[] PARAMETERS_1223387362946 = {SNode.class};
+  private static Class[] PARAMETERS_1223387362946 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

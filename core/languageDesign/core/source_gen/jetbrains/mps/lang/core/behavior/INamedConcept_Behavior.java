@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class INamedConcept_Behavior {
-private    static Class[] PARAMETERS_1213877404258 = {SNode.class};
+  private static Class[] PARAMETERS_1213877404258 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

@@ -28,7 +28,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Rename extends AbstractLoggableRefactoring {
-public    static final String newName = "newName";
+  public static final String newName = "newName";
 
   private Set<String> myTransientParameters = new HashSet<String>();
 

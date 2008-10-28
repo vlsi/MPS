@@ -15,10 +15,10 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EditorCellModel_Behavior {
-  public static Class[] PARAMETERS_1216737839993 = {SNode.class};
-  public static Class[] PARAMETERS_1220339714057 = {SNode.class};
-  public static Class[] PARAMETERS_1220339738643 = {SNode.class};
-  public static Class[] PARAMETERS_1221472292001 = {SNode.class};
+  private static Class[] PARAMETERS_1216737839993 = {SNode.class};
+  private static Class[] PARAMETERS_1220339714057 = {SNode.class};
+  private static Class[] PARAMETERS_1220339738643 = {SNode.class};
+  private static Class[] PARAMETERS_1221472292001 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

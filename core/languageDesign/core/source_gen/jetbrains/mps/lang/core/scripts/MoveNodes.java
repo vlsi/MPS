@@ -41,9 +41,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
 public class MoveNodes extends AbstractLoggableRefactoring {
-public    static final String target = "target";
-public    static final String role = "role";
-public    static final String nodeToOpen = "nodeToOpen";
+  public static final String target = "target";
+  public static final String role = "role";
+  public static final String nodeToOpen = "nodeToOpen";
 
   private Set<String> myTransientParameters = new HashSet<String>();
 

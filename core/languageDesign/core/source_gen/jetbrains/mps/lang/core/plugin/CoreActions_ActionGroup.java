@@ -9,8 +9,8 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 
 public class CoreActions_ActionGroup extends GeneratedActionGroup {
-private    static Logger LOG = Logger.getLogger(CoreActions_ActionGroup.class);
-public    static final String ID = "jetbrains.mps.lang.core.plugin.CoreActions";
+  private static Logger LOG = Logger.getLogger(CoreActions_ActionGroup.class);
+  public static final String ID = "jetbrains.mps.lang.core.plugin.CoreActions";
 
   public CoreActions_ActionGroup() {
     super("", ID);

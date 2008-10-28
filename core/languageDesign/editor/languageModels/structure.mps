@@ -598,6 +598,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -1823,9 +1824,7 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1160500373903">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1160674633356">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1160674637514">
-          <link role="classifier" targetNodeId="36.~String" resolveInfo="String" />
-        </node>
+        <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191493854" />
       </node>
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1161629196402">
@@ -1986,9 +1985,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1164052439495">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1164052439496">
-        <link role="classifier" targetNodeId="36.~String" resolveInfo="String" />
-      </node>
+      <node role="target" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191500317" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1164052439497">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
@@ -2005,9 +2002,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1164052588710">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1164052588711">
-        <link role="classifier" targetNodeId="36.~String" resolveInfo="String" />
-      </node>
+      <node role="target" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191499704" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1164052588712">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
@@ -2545,9 +2540,7 @@
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1176717792086">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176717823441">
-        <link role="classifier" targetNodeId="36.~String" resolveInfo="String" />
-      </node>
+      <node role="target" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191485527" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1176717779941">
       <property name="value" value="text" />
@@ -2575,9 +2568,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1176717841780">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176717853426">
-        <link role="classifier" targetNodeId="36.~String" resolveInfo="String" />
-      </node>
+      <node role="target" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191497093" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1176717841782">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
@@ -2677,9 +2668,7 @@
     <link role="extends" targetNodeId="4.1107135704075" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1176731909318">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176731909319">
-        <link role="classifier" targetNodeId="36.~String" resolveInfo="String" />
-      </node>
+      <node role="target" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191495552" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1176731909320">
       <property name="value" value="oldText" />
@@ -2813,9 +2802,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1176899348745">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176899540232">
-        <link role="classifier" targetNodeId="36.~String" resolveInfo="String" />
-      </node>
+      <node role="target" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191486628" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1176899348747">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" />
@@ -2851,9 +2838,7 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1180616057534">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1180616057535">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1180616057536">
-          <link role="classifier" targetNodeId="36.~String" resolveInfo="String" />
-        </node>
+        <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191498477" />
       </node>
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1180616057537">
@@ -3589,9 +3574,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1216381142494">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216381143949">
-        <link role="classifier" targetNodeId="36.~String" resolveInfo="String" />
-      </node>
+      <node role="target" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191493539" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1216381148013">
@@ -3607,9 +3590,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1216381148015">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216381148016">
-        <link role="classifier" targetNodeId="36.~String" resolveInfo="String" />
-      </node>
+      <node role="target" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191502754" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1216560327200">

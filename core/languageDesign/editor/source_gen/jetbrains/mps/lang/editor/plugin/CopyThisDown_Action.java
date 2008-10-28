@@ -18,8 +18,8 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 
 public class CopyThisDown_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(CopyThisDown_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(CopyThisDown_Action.class);
+  private static final Icon ICON = null;
 
   private List<SNode> inputNodes;
   public EditorComponent editor;
