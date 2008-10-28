@@ -25,7 +25,7 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(foreachStatement, "variable", true);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createGreaterThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(foreachStatement, "variable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1183457358397", true), typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1176561507041), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1183457358399", false, 1, intentionProvider);
+      typeCheckingContext.createGreaterThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(foreachStatement, "variable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1183457358397", true), typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1176561507041), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1183457358399", false, 0, intentionProvider);
     }
   }
 

@@ -6530,7 +6530,6 @@
         </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1186057690603">
-        <property name="inequationPriority" value="500" />
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1186057722590">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196933487618">
             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196933487619">

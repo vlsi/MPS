@@ -920,7 +920,6 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1202742456556">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202742456557">
                   <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1202742499735">
-                    <property name="inequationPriority" value="1" />
                     <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1202742520611">
                       <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227900105">
                         <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1202742520612">
@@ -984,7 +983,6 @@
                     </node>
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202742531854">
                       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1202746383183">
-                        <property name="inequationPriority" value="1" />
                         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1202746385036">
                           <node role="normalType" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1203277482071">
                             <link role="baseMethodDeclaration" targetNodeId="20.1203271919820" resolveInfo="resolveType" />

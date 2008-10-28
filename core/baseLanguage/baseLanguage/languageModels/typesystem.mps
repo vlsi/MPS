@@ -1626,7 +1626,6 @@
         </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement" id="1183457358399">
-        <property name="inequationPriority" value="1" />
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1185790951938">
           <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1183457358397">
             <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977954866">

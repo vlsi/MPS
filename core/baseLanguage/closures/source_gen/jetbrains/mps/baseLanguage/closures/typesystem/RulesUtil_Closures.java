@@ -11,7 +11,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 
 public class RulesUtil_Closures {
-  public static List<SNode> ourInterfaces;
+  /* package */static List<SNode> ourInterfaces;
 
   public static List<SNode> getInterfaces() {
     if (ourInterfaces == null) {
