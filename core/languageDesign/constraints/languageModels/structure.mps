@@ -2626,7 +2626,7 @@
       </moveMap>
       <conceptFeatureMap>
         <entry>
-          <key featureName="ConceptBehavior" conceptFQName="jetbrains.mps.lang.behavior.structure.ConceptBehavior" featureKind="CONCEPT" />
+          <key featureName="ConceptBehavior" conceptFQName="jetbrains.mps.lang.constraints.structure.ConceptBehavior" featureKind="CONCEPT" />
           <value featureName="ConceptBehavior" conceptFQName="jetbrains.mps.lang.behavior.structure.ConceptBehavior" featureKind="CONCEPT" />
         </entry>
       </conceptFeatureMap>
@@ -2681,7 +2681,7 @@
       </moveMap>
       <conceptFeatureMap>
         <entry>
-          <key featureName="ConceptConstructorDeclaration" conceptFQName="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" featureKind="CONCEPT" />
+          <key featureName="ConceptConstructorDeclaration" conceptFQName="jetbrains.mps.lang.constraints.structure.ConceptConstructorDeclaration" featureKind="CONCEPT" />
           <value featureName="ConceptConstructorDeclaration" conceptFQName="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" featureKind="CONCEPT" />
         </entry>
       </conceptFeatureMap>
@@ -3716,7 +3716,7 @@
       </moveMap>
       <conceptFeatureMap>
         <entry>
-          <key featureName="ConceptMethodDeclaration" conceptFQName="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" featureKind="CONCEPT" />
+          <key featureName="ConceptMethodDeclaration" conceptFQName="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" featureKind="CONCEPT" />
           <value featureName="ConceptMethodDeclaration" conceptFQName="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" featureKind="CONCEPT" />
         </entry>
       </conceptFeatureMap>
@@ -3859,7 +3859,7 @@
       </moveMap>
       <conceptFeatureMap>
         <entry>
-          <key featureName="StaticConceptMethodDeclaration" conceptFQName="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" featureKind="CONCEPT" />
+          <key featureName="StaticConceptMethodDeclaration" conceptFQName="jetbrains.mps.lang.constraints.structure.StaticConceptMethodDeclaration" featureKind="CONCEPT" />
           <value featureName="StaticConceptMethodDeclaration" conceptFQName="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" featureKind="CONCEPT" />
         </entry>
       </conceptFeatureMap>
@@ -3906,7 +3906,7 @@
       </moveMap>
       <conceptFeatureMap>
         <entry>
-          <key featureName="SuperNodeExpression" conceptFQName="jetbrains.mps.lang.behavior.structure.SuperNodeExpression" featureKind="CONCEPT" />
+          <key featureName="SuperNodeExpression" conceptFQName="jetbrains.mps.lang.constraints.structure.SuperNodeExpression" featureKind="CONCEPT" />
           <value featureName="SuperNodeExpression" conceptFQName="jetbrains.mps.lang.behavior.structure.SuperNodeExpression" featureKind="CONCEPT" />
         </entry>
       </conceptFeatureMap>
@@ -3957,7 +3957,7 @@
       </moveMap>
       <conceptFeatureMap>
         <entry>
-          <key featureName="ThisNodeExpression" conceptFQName="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" featureKind="CONCEPT" />
+          <key featureName="ThisNodeExpression" conceptFQName="jetbrains.mps.lang.constraints.structure.ThisNodeExpression" featureKind="CONCEPT" />
           <value featureName="ThisNodeExpression" conceptFQName="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" featureKind="CONCEPT" />
         </entry>
       </conceptFeatureMap>

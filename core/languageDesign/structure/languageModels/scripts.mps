@@ -946,21 +946,6 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1198523172001">
           <property name="value" value="refactoring itself" />
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199622881357">
-          <node role="expression" type="jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression" id="1199622881359">
-            <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198173924290">
-              <link role="variableDeclaration" targetNodeId="1198173821008" resolveInfo="nodes" />
-            </node>
-            <node role="destination" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740201625">
-              <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198173929119">
-                <link role="argument" targetNodeId="1198173589717" resolveInfo="targetModel" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740201626">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1198173949294">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198173949295">
             <node role="statement" type="jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation" id="1198174041135">
@@ -1012,6 +997,21 @@
             <property name="name" value="node" />
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198173960800">
               <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199622881357">
+          <node role="expression" type="jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression" id="1199622881359">
+            <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198173924290">
+              <link role="variableDeclaration" targetNodeId="1198173821008" resolveInfo="nodes" />
+            </node>
+            <node role="destination" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740201625">
+              <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference" id="1198173929119">
+                <link role="argument" targetNodeId="1198173589717" resolveInfo="targetModel" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204740201626">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+              </node>
             </node>
           </node>
         </node>
