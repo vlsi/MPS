@@ -462,7 +462,9 @@
       <skipForDummyProject/>
     </component>
 
-
+    <component>
+      <implementation-class>jetbrains.mps.plugin.PluginStateMonitor</implementation-class>
+    </component>      
   </project-components>
 
 

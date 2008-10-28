@@ -5,7 +5,6 @@ import jetbrains.mps.logging.Logger;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
-import java.net.ServerSocket;
 
 /**
  * @author Kostik
@@ -49,19 +48,6 @@ public class MPSPlugin {
     return myPlugin;
   }
 
-  public IIDEAHandler getIDEAHandler() {
-    try {
-      if (getPlugin() != null) {
-        return getPlugin().getProjectCreator();
-      } else {
-        return null;
-      }
-    } catch (RemoteException e) {
-      LOG.error(e);
-    }
-    return null;
-  }
-
   public IProjectHandler getProjectHandler(String projectPath) {
     try {
       if (getPlugin() == null) return null;
@@ -85,4 +71,16 @@ public class MPSPlugin {
     }
   }
 
+  public IIDEAHandler getIDEAHandler() {
+    try {
+      if (getPlugin() != null) {
+        return getPlugin().getProjectCreator();
+      } else {
+        return null;
+      }
+    } catch (RemoteException e) {
+      LOG.error(e);
+    }
+    return null;
+  }
 }

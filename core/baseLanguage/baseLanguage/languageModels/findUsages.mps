@@ -285,7 +285,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" id="1200310248824">
-    <property name="name" value="ImplementingClasses" />
+    <property name="name" value="mplementingClasses" />
     <property name="description" value="Implementing Classes" />
     <property name="isVisible" value="true" />
     <link role="forConcept" targetNodeId="1.1107796713796" resolveInfo="Interface" />
