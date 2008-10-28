@@ -6,6 +6,8 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import java.util.LinkedList;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
@@ -40,7 +42,20 @@ public abstract class AbstractBuildGenerator implements BuildGenerator {
 
   public String getNewModelName() {
     if (this.myModelName == null && this.mySolutionName != null) {
-      this.myModelName = this.mySolutionName;
+      String modelNamePrefix = this.mySolutionName;
+      int count = 0;
+      {
+        Pattern _pattern_0 = _PrecompiledPatterns.REGEXP0;
+        Matcher _matcher_0 = _pattern_0.matcher(modelNamePrefix);
+        if (_matcher_0.find()) {
+          modelNamePrefix = _matcher_0.group(1) + _matcher_0.group(2);
+        }
+      }
+      this.myModelName = modelNamePrefix;
+      while (!(this.isValidModelName(this.myModelName))) {
+        this.myModelName = modelNamePrefix + count;
+        count++ ;
+      }
     }
     return this.myModelName;
   }

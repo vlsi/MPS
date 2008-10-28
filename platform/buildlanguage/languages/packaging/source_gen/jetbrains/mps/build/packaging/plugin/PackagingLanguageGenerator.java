@@ -22,7 +22,7 @@ public class PackagingLanguageGenerator {
 
   public static SNode createModule(IModule module, SModel model) {
     SNode moduleComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Module", null);
-    SPropertyOperations.set(moduleComponent, "id", module.getModuleId().toString());
+    SPropertyOperations.set(moduleComponent, "id", "" + (module.getModuleId().toString()));
     return moduleComponent;
   }
 
