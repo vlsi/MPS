@@ -498,7 +498,6 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1223988934029">
       <link role="intfc" targetNodeId="1223985693348" resolveInfo="IVariableAssignment" />
     </node>
-    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1225114553209" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068581242864">
     <property name="name" value="LocalVariableDeclarationStatement" />
