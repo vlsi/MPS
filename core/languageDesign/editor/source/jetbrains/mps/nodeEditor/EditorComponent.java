@@ -1058,7 +1058,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && shiftDown(keyEvent)) {
       return CellActionType.PREV;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && shiftDown(keyEvent)) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && ctrlDown(keyEvent)) {
       return CellActionType.COMPLETE;
     }
     if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
@@ -1151,10 +1151,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
 
     return null;
-  }
-
-  private boolean ctrlAltDown(KeyEvent keyEvent) {
-    return keyEvent.getModifiers() == KeyEvent.CTRL_MASK + KeyEvent.ALT_MASK;
   }
 
   private boolean ctrlShiftDown(KeyEvent keyEvent) {
