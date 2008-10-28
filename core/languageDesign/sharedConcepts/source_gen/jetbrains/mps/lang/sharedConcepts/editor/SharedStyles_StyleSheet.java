@@ -24,7 +24,6 @@ public class SharedStyles_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-        this.set(StyleAttributes.PADDING_RIGHT, 0.0);
       }
 
     };

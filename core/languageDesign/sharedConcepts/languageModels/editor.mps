@@ -41,9 +41,6 @@
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1203541509378">
         <property name="color" value="DARK_MAGENTA" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225199338377">
-        <property name="value" value="0.0" />
-      </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1221170124867">
       <property name="name" value="ReferenceOnConceptualFeature" />
