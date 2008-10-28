@@ -77,14 +77,16 @@ public class InlineLocalVariable_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final Wrappers._T<InlineVariableRefactoring> ref = new Wrappers._T<InlineVariableRefactoring>();
+      final Wrappers._boolean isAvailable = new Wrappers._boolean();
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
           ref.value = InlineVariableRefactoring.createRefactoring(InlineLocalVariable_Action.this.node);
+          isAvailable.value = ref.value.checkRefactoring(InlineLocalVariable_Action.this.frame);
         }
 
       });
-      if (ref.value.checkRefactoring(InlineLocalVariable_Action.this.frame)) {
+      if (isAvailable.value) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
           public void run() {
