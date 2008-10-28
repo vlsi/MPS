@@ -16,8 +16,8 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.project.ProjectOperationContext;
 
 public class ShowConceptStructure_Action extends GeneratedAction {
-private    static final Logger LOG = Logger.getLogger(ShowConceptStructure_Action.class);
-private    static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(ShowConceptStructure_Action.class);
+  private static final Icon ICON = null;
 
   private SNode node;
   public MPSProject project;

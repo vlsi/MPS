@@ -30,9 +30,9 @@ import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
 
 public class SafeDeleteConcept extends AbstractLoggableRefactoring {
-public    static final String sourceLanguage = "sourceLanguage";
-public    static final String conceptBehavior = "conceptBehavior";
-public    static final String conceptEditorDeclaration = "conceptEditorDeclaration";
+  public static final String sourceLanguage = "sourceLanguage";
+  public static final String conceptBehavior = "conceptBehavior";
+  public static final String conceptEditorDeclaration = "conceptEditorDeclaration";
 
   private Set<String> myTransientParameters = new HashSet<String>();
 

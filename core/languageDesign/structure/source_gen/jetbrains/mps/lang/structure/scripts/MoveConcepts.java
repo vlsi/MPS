@@ -38,8 +38,8 @@ import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.util.Condition;
 
 public class MoveConcepts extends AbstractLoggableRefactoring {
-public    static final String targetModel = "targetModel";
-public    static final String sourceModel = "sourceModel";
+  public static final String targetModel = "targetModel";
+  public static final String sourceModel = "sourceModel";
 
   private Set<String> myTransientParameters = new HashSet<String>();
 

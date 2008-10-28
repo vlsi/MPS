@@ -7,6 +7,7 @@
   <language namespace="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)" />
+  <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -59,9 +60,7 @@
     <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1198086090026">
       <property name="name" value="newName" />
       <property name="presentation" value="new concept name" />
-      <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198086099794">
-        <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-      </node>
+      <node role="argumentType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192520856" />
       <node role="initialValue" type="jetbrains.mps.lang.refactoring.structure.InitialValueClause" id="1198600921522">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198600921523">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198600932419">
@@ -1552,9 +1551,7 @@
     <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1198587985396">
       <property name="name" value="newName" />
       <property name="presentation" value="enter new name" />
-      <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198588041931">
-        <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-      </node>
+      <node role="argumentType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521648" />
       <node role="initialValue" type="jetbrains.mps.lang.refactoring.structure.InitialValueClause" id="1198600846281">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198600846282">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198600866087">
@@ -2426,9 +2423,7 @@
     <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1198764804967">
       <property name="name" value="newName" />
       <property name="presentation" value="enter new name" />
-      <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198764828479">
-        <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-      </node>
+      <node role="argumentType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521474" />
       <node role="initialValue" type="jetbrains.mps.lang.refactoring.structure.InitialValueClause" id="1198764844727">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198764844728">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198764844729">
