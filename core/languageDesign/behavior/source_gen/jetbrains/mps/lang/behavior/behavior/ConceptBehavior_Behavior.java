@@ -12,8 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.plugin.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.plugin.AbstractStaticContainerProcessor;
-import jetbrains.mps.baseLanguage.plugin.VisibilityLevel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConceptBehavior_Behavior {
 
@@ -85,22 +83,12 @@ public class ConceptBehavior_Behavior {
   public static AbstractStaticContainerProcessor virtual_getStaticContainerProcessor_1222174378300(SNode thisNode, SNode node) {
     return new AbstractStaticContainerProcessor(node) {
 
-      public SNode createNewMethod(VisibilityLevel visiblity, SNode type, String name, List<SNode> params, SNode body) {
-        SNode method = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", null);
-        SLinkOperations.setTarget(method, "visibility", visiblity.getNode(), true);
-        SLinkOperations.setTarget(method, "returnType", type, true);
-        SPropertyOperations.set(method, "name", name);
-        SLinkOperations.addAll(method, "parameter", params);
-        SLinkOperations.setTarget(method, "body", body, true);
-        return method;
+      public SNode createNewMethod() {
+        return SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", null);
       }
 
       public SNode createMethodCall(SNode method, List<SNode> arguments) {
-        SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null);
-        SLinkOperations.setTarget(call, "baseMethodDeclaration", ((SNode)method), false);
-        SLinkOperations.setTarget(call, "concept", SLinkOperations.getTarget(((SNode)this.myStaticContainer), "concept", false), false);
-        SLinkOperations.addAll(call, "actualArgument", arguments);
-        return call;
+        return new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(((SNode)this.myStaticContainer), "concept", false), method, arguments);
       }
 
     };
