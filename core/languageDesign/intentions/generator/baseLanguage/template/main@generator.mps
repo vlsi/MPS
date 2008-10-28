@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model
-  modelUID="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)">
   <persistence version="3"/>
   <refactoringHistory/>
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)"/>
