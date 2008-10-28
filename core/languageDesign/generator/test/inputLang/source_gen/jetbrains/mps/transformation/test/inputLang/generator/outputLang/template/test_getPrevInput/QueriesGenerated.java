@@ -12,6 +12,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 
 public class QueriesGenerated {
 
@@ -96,6 +97,18 @@ public class QueriesGenerated {
     String text = "LEVEL 2: " + SPropertyOperations.getString(((SNode)node), "name");
     SPropertyOperations.set(result, "text", text);
     return result;
+  }
+
+  public static void mapSrcMacro_post_mapper_1225236090395(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    _context.showInformationMessage(_context.getOutputNode(), "TEST post proc (II)");
+  }
+
+  public static void mapSrcMacro_post_mapper_1225236165359(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    _context.showInformationMessage(_context.getOutputNode(), "TEST post-proc (I)");
+  }
+
+  public static void mapSrcMacro_post_mapper_1225236639046(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    _context.showInformationMessage(_context.getOutputNode(), "TEST post-proc (III)");
   }
 
 }

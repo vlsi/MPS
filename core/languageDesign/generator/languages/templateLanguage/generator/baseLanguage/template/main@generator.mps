@@ -2054,7 +2054,7 @@
       <property name="name" value="_class_" />
       <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1225233707633">
         <property name="name" value="_query_method_" />
-        <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225233707634" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225236285195" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225233707635">
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1225233707636">
             <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1225233707637">
@@ -2070,7 +2070,7 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225233707643">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225236288024">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225233707644" />
           </node>
         </node>
