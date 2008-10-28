@@ -29,7 +29,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <maxImportIndex value="122" />
+  <maxImportIndex value="123" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -100,6 +100,7 @@
   <import index="120" modelUID="f:java_stub#jetbrains.mps.project.actions(jetbrains.mps.project.actions@java_stub)" version="-1" />
   <import index="121" modelUID="f:java_stub#jetbrains.mps.lang.structure.plugin(jetbrains.mps.lang.structure.plugin@java_stub)" version="-1" />
   <import index="122" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
+  <import index="123" modelUID="f:java_stub#jetbrains.mps.vcs.actions(jetbrains.mps.vcs.actions@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -7956,11 +7957,11 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1217254654927">
-    <property name="name" value="AbstractFileActions" />
+    <property name="name" value="qAbstractFileActions" />
     <property name="package" value="Menu.FileView" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1217431154934">
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1221761213650">
-        <link role="constructorDeclaration" targetNodeId="113.~FileDeleteAction.&lt;init&gt;()" resolveInfo="FileDeleteAction" />
+        <link role="constructorDeclaration" targetNodeId="123.~FileDeleteActionFixed.&lt;init&gt;()" resolveInfo="FileDeleteActionFixed" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1221761396218" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1217431278099">

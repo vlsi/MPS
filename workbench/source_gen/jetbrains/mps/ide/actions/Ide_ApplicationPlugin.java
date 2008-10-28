@@ -39,7 +39,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     groups.add(new ProjectPaneModelActionsInternal_ActionGroup());
     groups.add(new LanguageNewCustomPartActions_ActionGroup());
     groups.add(new Build_ActionGroup());
-    groups.add(new AbstractFileActions_ActionGroup());
+    groups.add(new qAbstractFileActions_ActionGroup());
     groups.add(new FileActions_ActionGroup());
     groups.add(new FolderActions_ActionGroup());
     groups.add(new ModuleActions_ActionGroup());
@@ -64,14 +64,14 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
       }
     }
     {
-      BaseGroup gToBase = ActionUtils.getGroup(AbstractFileActions_ActionGroup.ID);
+      BaseGroup gToBase = ActionUtils.getGroup(qAbstractFileActions_ActionGroup.ID);
       ActionGroup gWhat = ActionUtils.getDefaultGroup("VcsGroup");
       if (gToBase == null || gWhat == null) {
         return;
       }
       {
         String labelName = null;
-        labelName = AbstractFileActions_ActionGroup.LABEL_ID_vcs;
+        labelName = qAbstractFileActions_ActionGroup.LABEL_ID_vcs;
         Constraints constraints = new Constraints(Anchor.AFTER, labelName);
         gToBase.add(gWhat, constraints);
       }
