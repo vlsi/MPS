@@ -14265,9 +14265,7 @@
           </node>
           <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225197312888">
             <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1225197312889">
-              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225197312890">
-                <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-              </node>
+              <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225209313654" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225197312891">
               <link role="link" targetNodeId="1.1107535924139" />
