@@ -15,8 +15,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class ShowInProject_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(ShowInProject_Action.class);
-  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\project.png", "jetbrains.mps.ide"), true);
+  private static final Logger LOG = Logger.getLogger(ShowInProject_Action.class);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\project.png", "jetbrains.mps.ide"), true);
 
   public IOperationContext context;
   public SNode node;

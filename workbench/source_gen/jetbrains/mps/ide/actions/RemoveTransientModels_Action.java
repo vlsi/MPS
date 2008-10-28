@@ -15,8 +15,8 @@ import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.SModelRepository;
 
 public class RemoveTransientModels_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(RemoveTransientModels_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(RemoveTransientModels_Action.class);
+  private static final Icon ICON = null;
 
   public MPSProject project;
 

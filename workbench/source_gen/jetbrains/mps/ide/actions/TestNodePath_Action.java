@@ -12,8 +12,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TestNodePath_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(TestNodePath_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(TestNodePath_Action.class);
+  private static final Icon ICON = null;
 
   private SNode node;
 

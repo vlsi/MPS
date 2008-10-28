@@ -10,15 +10,15 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Folder extends AbstractProjectComponent implements ICompositeComponent {
-public    static final String concept = "jetbrains.mps.build.packaging.structure.Folder";
-public    static final String EXCLUDES = "excludes";
-public    static final String INCLUDES = "includes";
-public    static final String NAME = "name";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String SOURCE_PATH = "sourcePath";
-public    static final String ENTRY = "entry";
+  public static final String concept = "jetbrains.mps.build.packaging.structure.Folder";
+  public static final String EXCLUDES = "excludes";
+  public static final String INCLUDES = "includes";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String SOURCE_PATH = "sourcePath";
+  public static final String ENTRY = "entry";
 
   public Folder(SNode node) {
     super(node);

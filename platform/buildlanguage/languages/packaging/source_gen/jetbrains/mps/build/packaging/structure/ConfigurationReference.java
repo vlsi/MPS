@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConfigurationReference extends BaseConcept {
-public    static final String concept = "jetbrains.mps.build.packaging.structure.ConfigurationReference";
-public    static final String CONFIGURATION = "configuration";
+  public static final String concept = "jetbrains.mps.build.packaging.structure.ConfigurationReference";
+  public static final String CONFIGURATION = "configuration";
 
   public ConfigurationReference(SNode node) {
     super(node);

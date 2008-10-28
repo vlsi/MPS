@@ -17,8 +17,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewModel_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(NewModel_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(NewModel_Action.class);
+  private static final Icon ICON = null;
 
   public MPSProject project;
   public IOperationContext context;

@@ -11,8 +11,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class PrintNodeID_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(PrintNodeID_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(PrintNodeID_Action.class);
+  private static final Icon ICON = null;
 
   public SNode node;
 

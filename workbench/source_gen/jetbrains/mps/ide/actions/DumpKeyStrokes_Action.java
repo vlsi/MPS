@@ -10,8 +10,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.KeyStrokesUtil;
 
 public class DumpKeyStrokes_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(DumpKeyStrokes_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(DumpKeyStrokes_Action.class);
+  private static final Icon ICON = null;
 
   public DumpKeyStrokes_Action() {
     super("Dump KeyStrokes", "", ICON);

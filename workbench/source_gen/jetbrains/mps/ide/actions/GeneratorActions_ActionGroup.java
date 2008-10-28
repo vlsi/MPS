@@ -9,7 +9,7 @@ import jetbrains.mps.workbench.actions.module.ShowModuleDependenciesAction;
 import jetbrains.mps.workbench.actions.language.DeleteGeneratorAction;
 
 public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(GeneratorActions_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(GeneratorActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorActions";
   public static final String LABEL_ID_generatorNew = ID + "generatorNew";
 

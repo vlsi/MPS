@@ -15,8 +15,8 @@ import java.util.ArrayList;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class EditNode_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(EditNode_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(EditNode_Action.class);
+  private static final Icon ICON = null;
 
   private List<SNode> nodes;
   public IOperationContext context;

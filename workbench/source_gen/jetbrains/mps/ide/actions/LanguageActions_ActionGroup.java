@@ -11,7 +11,7 @@ import jetbrains.mps.workbench.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.workbench.actions.module.DeleteModuleAction;
 
 public class LanguageActions_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(LanguageActions_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(LanguageActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.LanguageActions";
   public static final String LABEL_ID_newGroup = ID + "newGroup";
   public static final String LABEL_ID_refactoring = ID + "refactoring";

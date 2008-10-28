@@ -11,8 +11,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ModuleCycle extends BaseConcept {
-public    static final String concept = "jetbrains.mps.build.packaging.structure.ModuleCycle";
-public    static final String MODULE_REFERENCE = "moduleReference";
+  public static final String concept = "jetbrains.mps.build.packaging.structure.ModuleCycle";
+  public static final String MODULE_REFERENCE = "moduleReference";
 
   public ModuleCycle(SNode node) {
     super(node);

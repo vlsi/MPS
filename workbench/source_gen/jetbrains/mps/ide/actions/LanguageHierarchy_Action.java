@@ -19,8 +19,8 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.workbench.editors.MPSLanguageEditor;
 
 public class LanguageHierarchy_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(LanguageHierarchy_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(LanguageHierarchy_Action.class);
+  private static final Icon ICON = null;
 
   public Project project;
 

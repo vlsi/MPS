@@ -20,8 +20,8 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.project.ProjectOperationContext;
 
 public class ShowConceptInHierarchy_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(ShowConceptInHierarchy_Action.class);
-  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\hierarchyView.png", "jetbrains.mps.ide"), true);
+  private static final Logger LOG = Logger.getLogger(ShowConceptInHierarchy_Action.class);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\hierarchyView.png", "jetbrains.mps.ide"), true);
 
   private SNode node;
   public MPSProject project;

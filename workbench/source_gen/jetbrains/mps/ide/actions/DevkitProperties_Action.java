@@ -18,8 +18,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;
 
 public class DevkitProperties_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(DevkitProperties_Action.class);
-  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\languageProperties.png", "jetbrains.mps.ide"), true);
+  private static final Logger LOG = Logger.getLogger(DevkitProperties_Action.class);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\languageProperties.png", "jetbrains.mps.ide"), true);
 
   public IOperationContext context;
 

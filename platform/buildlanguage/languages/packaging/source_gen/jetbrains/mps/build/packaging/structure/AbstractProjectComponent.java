@@ -12,14 +12,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AbstractProjectComponent extends BaseConcept implements INamedConcept {
-public    static final String concept = "jetbrains.mps.build.packaging.structure.AbstractProjectComponent";
-public    static final String NAME = "name";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String FILE = "file";
-public    static final String TITLE = "title";
-public    static final String CONFIGURATION = "configuration";
+  public static final String concept = "jetbrains.mps.build.packaging.structure.AbstractProjectComponent";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String FILE = "file";
+  public static final String TITLE = "title";
+  public static final String CONFIGURATION = "configuration";
 
   public AbstractProjectComponent(SNode node) {
     super(node);

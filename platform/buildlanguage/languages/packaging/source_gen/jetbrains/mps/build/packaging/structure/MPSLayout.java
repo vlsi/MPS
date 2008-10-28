@@ -12,20 +12,20 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedConcept {
-public    static final String concept = "jetbrains.mps.build.packaging.structure.MPSLayout";
-public    static final String BASEDIR = "basedir";
-public    static final String SHORT_DESCRIPTION = "shortDescription";
-public    static final String ALIAS = "alias";
-public    static final String VIRTUAL_PACKAGE = "virtualPackage";
-public    static final String NAME = "name";
-public    static final String SET_BASEDIR = "setBasedir";
-public    static final String COMPILE = "compile";
-public    static final String CONFIGURATION = "configuration";
-public    static final String COMPONENT = "component";
-public    static final String VARIABLE = "variable";
-public    static final String BUILT_IN_VARIABLE = "builtInVariable";
-public    static final String CYCLE = "cycle";
-public    static final String MACRO = "macro";
+  public static final String concept = "jetbrains.mps.build.packaging.structure.MPSLayout";
+  public static final String BASEDIR = "basedir";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
+  public static final String SET_BASEDIR = "setBasedir";
+  public static final String COMPILE = "compile";
+  public static final String CONFIGURATION = "configuration";
+  public static final String COMPONENT = "component";
+  public static final String VARIABLE = "variable";
+  public static final String BUILT_IN_VARIABLE = "builtInVariable";
+  public static final String CYCLE = "cycle";
+  public static final String MACRO = "macro";
 
   public MPSLayout(SNode node) {
     super(node);

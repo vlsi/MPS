@@ -9,8 +9,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class ShowErrorMessage_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(ShowErrorMessage_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(ShowErrorMessage_Action.class);
+  private static final Icon ICON = null;
 
   public ShowErrorMessage_Action() {
     super("Show Error Message", "", ICON);

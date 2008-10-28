@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PathHolder extends BaseConcept {
-public    static final String concept = "jetbrains.mps.build.packaging.structure.PathHolder";
-public    static final String FULL_PATH = "fullPath";
-public    static final String MACRO = "macro";
-public    static final String MODULE = "module";
+  public static final String concept = "jetbrains.mps.build.packaging.structure.PathHolder";
+  public static final String FULL_PATH = "fullPath";
+  public static final String MACRO = "macro";
+  public static final String MODULE = "module";
 
   public PathHolder(SNode node) {
     super(node);

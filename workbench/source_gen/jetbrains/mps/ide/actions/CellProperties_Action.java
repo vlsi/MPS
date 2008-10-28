@@ -13,8 +13,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cellExplorer.CellPropertiesWindow;
 
 public class CellProperties_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(CellProperties_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(CellProperties_Action.class);
+  private static final Icon ICON = null;
 
   public Frame frame;
   public EditorCell cell;

@@ -14,8 +14,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 
 public class GenerateBuildForProjectAction_Action extends GeneratedAction {
-private    static final Logger LOG = Logger.getLogger(GenerateBuildForProjectAction_Action.class);
-private    static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(GenerateBuildForProjectAction_Action.class);
+  private static final Icon ICON = null;
 
   public MPSProject mpsProject;
   public Project project;

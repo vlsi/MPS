@@ -6,7 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 
 public class ProjectActions_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(ProjectActions_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(ProjectActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.ProjectActions";
   public static final String LABEL_ID_projectNew = ID + "projectNew";
 

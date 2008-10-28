@@ -21,8 +21,8 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 public class RebuildProject_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(RebuildProject_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(RebuildProject_Action.class);
+  private static final Icon ICON = null;
 
   public Project ideaProject;
   public MPSProject project;

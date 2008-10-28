@@ -16,8 +16,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.dialogs.CloneModelDialog;
 
 public class CloneModel_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(CloneModel_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(CloneModel_Action.class);
+  private static final Icon ICON = null;
 
   public SModelDescriptor model;
   public IOperationContext context;

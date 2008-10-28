@@ -13,8 +13,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.classpath.ClassPathViewerTool;
 
 public class AnalyzeClasspath_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(AnalyzeClasspath_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(AnalyzeClasspath_Action.class);
+  private static final Icon ICON = null;
 
   public IModule module;
   public IOperationContext context;

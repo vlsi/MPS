@@ -16,8 +16,8 @@ import jetbrains.mps.ide.dialogs.NewGeneratorDialog;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class NewGenerator_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(NewGenerator_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(NewGenerator_Action.class);
+  private static final Icon ICON = null;
 
   public Frame frame;
 

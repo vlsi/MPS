@@ -20,8 +20,8 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 
 public class CheckModel_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(CheckModel_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(CheckModel_Action.class);
+  private static final Icon ICON = null;
 
   public Project project;
   public SModelDescriptor model;

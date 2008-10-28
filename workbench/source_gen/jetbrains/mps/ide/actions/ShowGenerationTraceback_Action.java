@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class ShowGenerationTraceback_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(ShowGenerationTraceback_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(ShowGenerationTraceback_Action.class);
+  private static final Icon ICON = null;
 
   private SNode node;
   private List<SNode> nodes;

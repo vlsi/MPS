@@ -10,8 +10,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.ide.BrowserUtil;
 
 public class ShowDefaultKeymap_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(ShowDefaultKeymap_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(ShowDefaultKeymap_Action.class);
+  private static final Icon ICON = null;
 
   public ShowDefaultKeymap_Action() {
     super("Default Keymap Reference", "", ICON);

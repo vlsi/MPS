@@ -20,8 +20,8 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 public class CleanAllModules_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(CleanAllModules_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(CleanAllModules_Action.class);
+  private static final Icon ICON = null;
 
   public Project project;
 

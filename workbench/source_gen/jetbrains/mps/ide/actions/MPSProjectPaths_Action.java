@@ -13,8 +13,8 @@ import jetbrains.mps.ide.dialogs.ProjectPathsDialog;
 import jetbrains.mps.project.ProjectOperationContext;
 
 public class MPSProjectPaths_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(MPSProjectPaths_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(MPSProjectPaths_Action.class);
+  private static final Icon ICON = null;
 
   public MPSProject project;
 

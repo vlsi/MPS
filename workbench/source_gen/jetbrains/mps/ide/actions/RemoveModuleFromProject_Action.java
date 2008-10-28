@@ -16,8 +16,8 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
 
 public class RemoveModuleFromProject_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(RemoveModuleFromProject_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(RemoveModuleFromProject_Action.class);
+  private static final Icon ICON = null;
 
   public IOperationContext context;
   public MPSProject project;

@@ -15,8 +15,8 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 
 public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(ShowDifferencesWithModelOnDisk_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(ShowDifferencesWithModelOnDisk_Action.class);
+  private static final Icon ICON = null;
 
   public SModelDescriptor modelDescriptor;
   public Frame frame;

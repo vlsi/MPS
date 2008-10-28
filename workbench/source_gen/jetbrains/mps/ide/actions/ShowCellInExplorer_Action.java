@@ -15,8 +15,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cellExplorer.CellExplorerView;
 
 public class ShowCellInExplorer_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(ShowCellInExplorer_Action.class);
-  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\cellExplorer.png", "jetbrains.mps.ide"), true);
+  private static final Logger LOG = Logger.getLogger(ShowCellInExplorer_Action.class);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\cellExplorer.png", "jetbrains.mps.ide"), true);
 
   public IOperationContext context;
   public EditorCell cell;

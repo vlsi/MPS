@@ -15,8 +15,8 @@ import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 
 public class ExpandNode_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(ExpandNode_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(ExpandNode_Action.class);
+  private static final Icon ICON = null;
 
   public IOperationContext context;
 

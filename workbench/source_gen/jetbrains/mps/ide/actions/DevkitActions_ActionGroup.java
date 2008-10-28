@@ -8,7 +8,7 @@ import jetbrains.mps.workbench.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.workbench.actions.module.DeleteModuleAction;
 
 public class DevkitActions_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(DevkitActions_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(DevkitActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.DevkitActions";
 
   public DevkitActions_ActionGroup() {

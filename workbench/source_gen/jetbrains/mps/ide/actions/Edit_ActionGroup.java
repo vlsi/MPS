@@ -16,7 +16,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 
 public class Edit_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(Edit_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(Edit_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Edit";
   public static final String LABEL_ID_custom = ID + "custom";
 

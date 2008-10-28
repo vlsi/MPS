@@ -13,8 +13,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.newDevkitDialog.NewDevKitDialog;
 
 public class NewDevKit_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(NewDevKit_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(NewDevKit_Action.class);
+  private static final Icon ICON = null;
 
   public Frame frame;
   public MPSProject project;

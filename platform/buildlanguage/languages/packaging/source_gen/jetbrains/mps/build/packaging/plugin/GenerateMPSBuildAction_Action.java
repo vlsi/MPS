@@ -14,8 +14,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SNode;
 
 public class GenerateMPSBuildAction_Action extends GeneratedAction {
-private    static final Logger LOG = Logger.getLogger(GenerateMPSBuildAction_Action.class);
-private    static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(GenerateMPSBuildAction_Action.class);
+  private static final Icon ICON = null;
 
   public MPSProject project;
   public IOperationContext operationContext;

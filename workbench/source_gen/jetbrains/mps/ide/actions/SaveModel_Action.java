@@ -11,8 +11,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class SaveModel_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(SaveModel_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(SaveModel_Action.class);
+  private static final Icon ICON = null;
 
   public SModelDescriptor model;
 

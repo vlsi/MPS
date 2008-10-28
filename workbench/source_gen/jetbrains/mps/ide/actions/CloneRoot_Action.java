@@ -18,8 +18,8 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class CloneRoot_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(CloneRoot_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(CloneRoot_Action.class);
+  private static final Icon ICON = null;
 
   private List<SNode> nodes;
   public MPSProject project;

@@ -21,7 +21,7 @@ import jetbrains.mps.workbench.actions.baseLanguage.ShowParametersAction;
 import jetbrains.mps.workbench.actions.model.ModelPropertiesActionWOShortcuts;
 
 public class EditorPopup_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(EditorPopup_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(EditorPopup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup";
   public static final String LABEL_ID_structure = ID + "structure";
   public static final String LABEL_ID_vcs = ID + "vcs";

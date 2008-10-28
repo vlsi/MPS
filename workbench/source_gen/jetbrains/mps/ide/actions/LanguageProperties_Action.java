@@ -17,8 +17,8 @@ import jetbrains.mps.ide.dialogs.LanguagePropertiesDialog;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class LanguageProperties_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(LanguageProperties_Action.class);
-  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\languageProperties.png", "jetbrains.mps.ide"), true);
+  private static final Logger LOG = Logger.getLogger(LanguageProperties_Action.class);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\languageProperties.png", "jetbrains.mps.ide"), true);
 
   public IOperationContext context;
 

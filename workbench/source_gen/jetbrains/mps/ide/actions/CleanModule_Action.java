@@ -19,8 +19,8 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
 
 public class CleanModule_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(CleanModule_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(CleanModule_Action.class);
+  private static final Icon ICON = null;
 
   public Project project;
   public IOperationContext context;

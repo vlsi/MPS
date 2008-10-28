@@ -13,7 +13,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 
 public class Generate_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(Generate_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(Generate_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Generate";
 
   public Generate_ActionGroup() {

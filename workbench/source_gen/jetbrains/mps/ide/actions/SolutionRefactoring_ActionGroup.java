@@ -11,7 +11,7 @@ import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
 
 public class SolutionRefactoring_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(SolutionRefactoring_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(SolutionRefactoring_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.SolutionRefactoring";
 
   public SolutionRefactoring_ActionGroup() {

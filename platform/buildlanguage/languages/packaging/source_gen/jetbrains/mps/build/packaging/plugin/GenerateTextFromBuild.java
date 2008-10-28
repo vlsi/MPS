@@ -28,7 +28,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GenerateTextFromBuild {
-private    static Logger LOG = Logger.getLogger(GenerateTextFromBuild.class);
+  private static Logger LOG = Logger.getLogger(GenerateTextFromBuild.class);
 
   public GenerateTextFromBuild() {
   }

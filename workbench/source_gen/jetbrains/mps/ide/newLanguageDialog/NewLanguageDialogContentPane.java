@@ -33,11 +33,11 @@ import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.library.LanguageDesign_DevKit;
 
 public class NewLanguageDialogContentPane extends JPanel {
 
@@ -272,7 +272,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     Language language = Language.createLanguage(myThis.getLanguageNamespace(), new FileSystemFile(descriptorFile), myThis.getProject());
     SNode languageDescriptor = (SNode)language.getLanguageDescriptor().getNode();
     SNode devkitRef = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.DevKitReference", null);
-    SPropertyOperations.set(devkitRef, "name", LanguageDesign_DevKit.MODULE_REFERENCE.toString());
+    SPropertyOperations.set(devkitRef, "name", "" + LanguageDesign_DevKit.MODULE_REFERENCE.toString());
     SLinkOperations.addChild(languageDescriptor, "usedDevKit", devkitRef);
     SPropertyOperations.set(languageDescriptor, "compileInMPS", "" + (myThis.getCompileInMPS()));
     LanguageAspect.STRUCTURE.createNew(language);

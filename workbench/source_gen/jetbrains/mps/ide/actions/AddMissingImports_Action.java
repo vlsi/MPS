@@ -13,8 +13,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.MissingDependenciesFixer;
 
 public class AddMissingImports_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(AddMissingImports_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(AddMissingImports_Action.class);
+  private static final Icon ICON = null;
 
   public SModelDescriptor modelDescriptor;
   public IOperationContext context;

@@ -21,8 +21,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 
 public class CleanProject_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(CleanProject_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(CleanProject_Action.class);
+  private static final Icon ICON = null;
 
   public IOperationContext context;
   public Project ideaProject;

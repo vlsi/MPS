@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ILayoutComponent_Behavior {
-private    static Class[] PARAMETERS_1213877230696 = {SNode.class};
+  private static Class[] PARAMETERS_1213877230696 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

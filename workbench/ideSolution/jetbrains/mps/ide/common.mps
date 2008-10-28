@@ -5,6 +5,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
+  <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
@@ -96,9 +97,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203605544101">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203605544102">
             <property name="name" value="oldPath" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203605544103">
-              <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
-            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225195955175" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203605584048">
               <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="1203605578127">
                 <link role="component" targetNodeId="1203601653846" resolveInfo="pathField" />
@@ -251,9 +250,7 @@
     </node>
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1203601661865">
       <property name="name" value="path" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203601663492">
-        <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
-      </node>
+      <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225195955427" />
     </node>
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1203605603115">
       <property name="name" value="mode" />

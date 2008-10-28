@@ -20,8 +20,8 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 public class RebuildAllModules_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(RebuildAllModules_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(RebuildAllModules_Action.class);
+  private static final Icon ICON = null;
 
   public Project project;
 

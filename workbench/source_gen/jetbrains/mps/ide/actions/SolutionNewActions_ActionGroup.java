@@ -10,7 +10,7 @@ import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
 
 public class SolutionNewActions_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(SolutionNewActions_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(SolutionNewActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.SolutionNewActions";
 
   public SolutionNewActions_ActionGroup() {

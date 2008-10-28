@@ -16,8 +16,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.dialogs.GeneratorPropertiesDialog;
 
 public class GeneratorProperties_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(GeneratorProperties_Action.class);
-  public static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\generatorProperties.png", "jetbrains.mps.ide"), true);
+  private static final Logger LOG = Logger.getLogger(GeneratorProperties_Action.class);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\generatorProperties.png", "jetbrains.mps.ide"), true);
 
   public MPSProject project;
 

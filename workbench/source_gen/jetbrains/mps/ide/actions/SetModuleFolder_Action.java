@@ -16,8 +16,8 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import javax.swing.JOptionPane;
 
 public class SetModuleFolder_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(SetModuleFolder_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(SetModuleFolder_Action.class);
+  private static final Icon ICON = null;
 
   public Frame frame;
   public IOperationContext context;

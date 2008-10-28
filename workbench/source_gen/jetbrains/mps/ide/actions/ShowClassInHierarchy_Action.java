@@ -15,8 +15,8 @@ import jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 
 public class ShowClassInHierarchy_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(ShowClassInHierarchy_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(ShowClassInHierarchy_Action.class);
+  private static final Icon ICON = null;
 
   private SNode node;
   public IOperationContext context;

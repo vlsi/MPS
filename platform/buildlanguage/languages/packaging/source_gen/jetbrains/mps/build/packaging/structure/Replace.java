@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Replace extends File {
-public    static final String concept = "jetbrains.mps.build.packaging.structure.Replace";
-public    static final String REPLACING_PAIR = "replacingPair";
+  public static final String concept = "jetbrains.mps.build.packaging.structure.Replace";
+  public static final String REPLACING_PAIR = "replacingPair";
 
   public Replace(SNode node) {
     super(node);

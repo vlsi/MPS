@@ -276,10 +276,10 @@ public class NewSolutionDialogContentPane extends JPanel {
     SPropertyOperations.set(solutionDescriptor, "externallyVisible", "" + (true));
     SPropertyOperations.set(solutionDescriptor, "compileInMPS", "" + (myThis.getCompileInMPS()));
     String fileName = solutionDescriptorFile.getName();
-    SPropertyOperations.set(solutionDescriptor, "name", fileName.substring(0, fileName.length() - 4));
+    SPropertyOperations.set(solutionDescriptor, "name", "" + (fileName.substring(0, fileName.length() - 4)));
     SNode modelRoot = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.ModelRoot", null);
     SPropertyOperations.set(modelRoot, "prefix", "");
-    SPropertyOperations.set(modelRoot, "path", solutionDescriptorFile.getParent().getAbsolutePath());
+    SPropertyOperations.set(modelRoot, "path", "" + (solutionDescriptorFile.getParent().getAbsolutePath()));
     SLinkOperations.addChild(solutionDescriptor, "modelRoot", modelRoot);
     DescriptorsPersistence.saveSolutionDescriptor(solutionDescriptorFile, ((SolutionDescriptor)SNodeOperations.getAdapter(solutionDescriptor)));
     return myThis.getProject().addProjectSolution(solutionDescriptorFile.toFile());

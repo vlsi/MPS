@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PathComponent extends BaseConcept {
-public    static final String concept = "jetbrains.mps.build.packaging.structure.PathComponent";
-public    static final String PATH = "path";
+  public static final String concept = "jetbrains.mps.build.packaging.structure.PathComponent";
+  public static final String PATH = "path";
 
   public PathComponent(SNode node) {
     super(node);

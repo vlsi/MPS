@@ -9,7 +9,7 @@ import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 public class EditorInternal_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(EditorInternal_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(EditorInternal_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorInternal";
 
   public EditorInternal_ActionGroup() {
