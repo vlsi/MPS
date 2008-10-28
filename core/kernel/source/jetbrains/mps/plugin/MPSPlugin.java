@@ -60,8 +60,9 @@ public class MPSPlugin {
 
   public boolean isIDEAPresent() {
     try {
-      if (getIDEAHandler() != null) {
-        getIDEAHandler().ping();
+      IIDEAHandler ideaHandler = getIDEAHandler();
+      if (ideaHandler != null) {
+        ideaHandler.ping();
         return true;
       } else {
         return false;
@@ -79,8 +80,7 @@ public class MPSPlugin {
         return null;
       }
     } catch (RemoteException e) {
-      LOG.error(e);
+      return null;
     }
-    return null;
   }
 }
