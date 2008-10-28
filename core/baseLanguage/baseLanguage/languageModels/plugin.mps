@@ -8338,6 +8338,7 @@
       <property name="name" value="myMethodName" />
       <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190482456" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1220361470800" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225219485166" />
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1220526377255">
       <property name="name" value="myNodesToRefactor" />

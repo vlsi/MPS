@@ -81,7 +81,7 @@ public class IClassifier_Behavior {
   public static AbstractExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
     return new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToRefactor) {
 
-      public SNode createNewMethod(SNode returntType, List<SNode> params, SNode body) {
+      public SNode createNewMethod() {
         return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", null);
       }
 

@@ -1061,24 +1061,6 @@
                 <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221661952193" />
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221661952194">
                   <property name="name" value="createNewMethod" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221661952195">
-                    <property name="name" value="returntType" />
-                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221661952196">
-                      <link role="concept" targetNodeId="6.1068431790189" resolveInfo="Type" />
-                    </node>
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221661952197">
-                    <property name="name" value="params" />
-                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1221661952198">
-                      <link role="elementConcept" targetNodeId="6.1068498886292" resolveInfo="ParameterDeclaration" />
-                    </node>
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221661952199">
-                    <property name="name" value="body" />
-                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221661952200">
-                      <link role="concept" targetNodeId="6.1068580123136" resolveInfo="StatementList" />
-                    </node>
-                  </node>
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221661952201" />
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221661952202">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221661952304">
