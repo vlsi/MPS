@@ -321,7 +321,7 @@
         </node>
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.lang.constraints.structure.ConceptMethodDeclaration" id="1225207468592">
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1225207468592">
       <property name="name" value="getMessage" />
       <property name="isVirtual" value="true" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225207468593" />
