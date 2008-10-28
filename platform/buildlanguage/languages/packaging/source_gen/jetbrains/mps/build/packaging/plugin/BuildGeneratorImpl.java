@@ -38,7 +38,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       projectName = projectName.substring(0, projectName.length() - MPSExtentions.DOT_MPS_PROJECT.length());
     }
     this.setProjectName(projectName);
-    this.setNewSolutionName(projectName + ".build");
+    this.setValidDefaultSolutionName(projectName);
   }
 
   public void generate() {
@@ -68,6 +68,17 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     {
       return this.getModel();
     }
+  }
+
+  private void setValidDefaultSolutionName(String projectName) {
+    String solutionNamePrefix = projectName + ".build";
+    String solutionName = solutionNamePrefix;
+    int count = 0;
+    while (!(this.isValidSolutionName(solutionName))) {
+      solutionName = solutionNamePrefix + count;
+      count++ ;
+    }
+    this.setNewSolutionName(solutionName);
   }
 
 
@@ -139,7 +150,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         topLevel.remove(component);
       }
     }
-    // 
+    //
     for(SNode topLevelComponent : topLevel) {
       SLinkOperations.addChild(folder, "entry", topLevelComponent);
     }
