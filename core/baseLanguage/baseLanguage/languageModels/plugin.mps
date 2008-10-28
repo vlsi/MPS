@@ -34669,11 +34669,15 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225103189079">
                     <property name="name" value="expectedNames" />
                     <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1225103189080">
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190477172" />
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225200215196">
+                        <link role="classifier" targetNodeId="9.~String" resolveInfo="String" />
+                      </node>
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225103189082">
                       <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1225103189083">
-                        <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190445813" />
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225200218828">
+                          <link role="classifier" targetNodeId="9.~String" resolveInfo="String" />
+                        </node>
                       </node>
                     </node>
                   </node>
