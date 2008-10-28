@@ -7,8 +7,8 @@ import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ITestCase_Behavior {
-  public static Class[] PARAMETERS_1216130724401 = {SNode.class};
-  public static Class[] PARAMETERS_1216136193905 = {SNode.class};
+  private static Class[] PARAMETERS_1216130724401 = {SNode.class};
+  private static Class[] PARAMETERS_1216136193905 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

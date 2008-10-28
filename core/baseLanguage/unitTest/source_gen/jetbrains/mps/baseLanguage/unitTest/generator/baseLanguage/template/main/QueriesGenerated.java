@@ -23,7 +23,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1171932074431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode superclass = SLinkOperations.getTarget(_context.getNode(), "superclass", true);
     if ((superclass == null)) {
-      return new QuotationClass_0().createNode();
+      return new _Quotations.QuotationClass_0().createNode();
     }
     return superclass;
   }

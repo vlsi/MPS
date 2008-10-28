@@ -16,7 +16,7 @@ public class TestEvent {
   public static String ERROR_TEST_SUFFIX = "<TEST_ERROR_END>";
   public static String FAILURE_TEST_PREFIX = "<TEST_FAILURE_BEGIN>";
   public static String FAILURE_TEST_SUFFIX = "<TEST_FAILURE_END>";
-  public static List<String> ALL_TOKENS;
+  private static List<String> ALL_TOKENS;
 
   private String token;
   private String testCaseName;

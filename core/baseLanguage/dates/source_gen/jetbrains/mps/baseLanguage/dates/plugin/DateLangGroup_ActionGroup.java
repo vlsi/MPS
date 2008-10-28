@@ -9,7 +9,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.ProjectPaneModelActionsInternal_ActionGroup;
 
 public class DateLangGroup_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(DateLangGroup_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(DateLangGroup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.baseLanguage.dates.plugin.DateLangGroup";
 
   public DateLangGroup_ActionGroup() {

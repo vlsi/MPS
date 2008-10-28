@@ -8,8 +8,8 @@ import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ITestable_Behavior {
-  public static Class[] PARAMETERS_1215620460293 = {SNode.class};
-  public static Class[] PARAMETERS_1216045139515 = {SNode.class};
+  private static Class[] PARAMETERS_1215620460293 = {SNode.class};
+  private static Class[] PARAMETERS_1216045139515 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

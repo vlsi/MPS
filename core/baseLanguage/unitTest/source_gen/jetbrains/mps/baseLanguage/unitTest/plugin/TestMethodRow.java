@@ -8,10 +8,10 @@ import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import org.apache.commons.lang.ObjectUtils;
 
 public class TestMethodRow implements TestStatisticsRow {
-  public static final int UNDEFINED = -1;
-  public static final int SUCCEED = 0;
-  public static final int FAILED = 1;
-  public static final int ERRORED = 2;
+  private static final int UNDEFINED = -1;
+  private static final int SUCCEED = 0;
+  private static final int FAILED = 1;
+  private static final int ERRORED = 2;
 
   private String testCaseName;
   private String testMethodName;

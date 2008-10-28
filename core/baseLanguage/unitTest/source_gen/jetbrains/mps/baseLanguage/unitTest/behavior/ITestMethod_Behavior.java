@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ITestMethod_Behavior {
-  public static Class[] PARAMETERS_1216134500045 = {SNode.class};
-  public static Class[] PARAMETERS_1216136419751 = {SNode.class};
+  private static Class[] PARAMETERS_1216134500045 = {SNode.class};
+  private static Class[] PARAMETERS_1216136419751 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
