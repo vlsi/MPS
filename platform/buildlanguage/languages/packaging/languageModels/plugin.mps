@@ -9866,7 +9866,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224007565785">
     <property name="package" value="create.wizard.steps" />
-    <property name="name" value="NewModelStep" />
+    <property name="name" value="ModelStep" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224007565786" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1224007565787">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224007565788" />

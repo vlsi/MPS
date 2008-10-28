@@ -150,7 +150,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         topLevel.remove(component);
       }
     }
-    //
+    // 
     for(SNode topLevelComponent : topLevel) {
       SLinkOperations.addChild(folder, "entry", topLevelComponent);
     }
