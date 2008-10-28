@@ -27,8 +27,8 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.typesystem.uiActions.MyMenu;
 
 public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(ShowRulesWhichAffectNodeType_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(ShowRulesWhichAffectNodeType_Action.class);
+  private static final Icon ICON = null;
 
   private SNode node;
   public EditorCell cell;

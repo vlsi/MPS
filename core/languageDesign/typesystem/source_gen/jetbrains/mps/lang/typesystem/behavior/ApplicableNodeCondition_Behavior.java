@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ApplicableNodeCondition_Behavior {
-  public static Class[] PARAMETERS_1213877307633 = {SNode.class};
+  private static Class[] PARAMETERS_1213877307633 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

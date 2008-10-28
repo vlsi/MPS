@@ -10,7 +10,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 
 public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(TypesystemActions_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(TypesystemActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.typesystem.plugin.TypesystemActions";
 
   public TypesystemActions_ActionGroup() {

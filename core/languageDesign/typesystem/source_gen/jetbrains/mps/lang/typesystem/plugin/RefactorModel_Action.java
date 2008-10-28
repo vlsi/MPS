@@ -14,8 +14,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.typesystem.uiActions.RefactorModelUtil;
 
 public class RefactorModel_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(RefactorModel_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(RefactorModel_Action.class);
+  private static final Icon ICON = null;
 
   public SModelDescriptor model;
 

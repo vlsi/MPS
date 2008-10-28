@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -21,6 +22,7 @@ public class IntroduceField_Action extends GeneratedAction {
 
   private SNode node;
   public EditorComponent component;
+  public EditorContext context;
   public Frame frame;
 
   public IntroduceField_Action() {
@@ -68,6 +70,10 @@ public class IntroduceField_Action extends GeneratedAction {
     if (this.component == null) {
       return false;
     }
+    this.context = event.getData(MPSDataKeys.EDITOR_CONTEXT);
+    if (this.context == null) {
+      return false;
+    }
     this.frame = event.getData(MPSDataKeys.FRAME);
     if (this.frame == null) {
       return false;
@@ -82,12 +88,12 @@ public class IntroduceField_Action extends GeneratedAction {
       ModelAccess.instance().runWriteAction(new Runnable() {
 
         public void run() {
-          canRefactor.value = introducer.init("Introduce Field...", IntroduceField_Action.this.node, IntroduceField_Action.this.component);
+          canRefactor.value = introducer.init(IntroduceField_Action.this.node, IntroduceField_Action.this.component);
         }
 
       });
       if (canRefactor.value) {
-        IntroduceFieldDialog dialog = new IntroduceFieldDialog(IntroduceField_Action.this.frame, introducer);
+        IntroduceFieldDialog dialog = new IntroduceFieldDialog(IntroduceField_Action.this.frame, introducer, IntroduceField_Action.this.context);
         dialog.showDialog();
       }
     } catch (Throwable t) {
