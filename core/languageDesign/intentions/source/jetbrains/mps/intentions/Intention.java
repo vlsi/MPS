@@ -10,6 +10,8 @@ public interface Intention {
 
   boolean isApplicable(SNode node, EditorContext editorContext);
 
+  boolean isAvailableInChildNodes();
+
   void execute(SNode node, EditorContext editorContext);
 
   IntentionType getType();

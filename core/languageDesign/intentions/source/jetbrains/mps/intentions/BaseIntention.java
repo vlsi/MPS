@@ -19,6 +19,10 @@ public abstract class BaseIntention implements Intention {
     return false;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getLocationString() {
     return "";
   }

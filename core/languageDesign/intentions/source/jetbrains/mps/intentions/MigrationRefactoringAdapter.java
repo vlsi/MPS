@@ -27,6 +27,10 @@ public class MigrationRefactoringAdapter implements Intention {
     return myRefactoring.isApplicableInstanceNode(node);
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public void execute(SNode node, EditorContext editorContext) {
     myRefactoring.doUpdateInstanceNode(node);
   }

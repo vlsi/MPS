@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.application.RuntimeInterruptedException;
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.intentions.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
@@ -179,7 +180,7 @@ public class IntentionsSupport {
 
     IntentionsMenu intentionsMenu = new IntentionsMenu(myEditor.getOperationContext());
 
-    intentionsMenu.init(cell.getSNode(), myEditor.getEditorContext(), getAvailableIntentions());
+    intentionsMenu.init(getAvailableIntentions(), myEditor.getEditorContext());
 
     intentionsMenu.addPopupMenuListener(new PopupMenuListener() {
       public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
@@ -214,12 +215,12 @@ public class IntentionsSupport {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (value) {
-          Set<Intention> enabledIntentions = getEnabledIntentions();
+          Set<Pair<Intention, SNode>> enabledIntentions = getEnabledIntentions();
           if ((!enabledIntentions.isEmpty()) && (!myEditor.getEditedNode().getModel().isNotEditable())) {
             IntentionType typeToShow = IntentionType.getLowestPriorityType();
-            for (Intention intention : enabledIntentions) {
-              if (intention.getType().getPriority() < typeToShow.getPriority()) {
-                typeToShow = intention.getType();
+            for (Pair<Intention, SNode> pair : enabledIntentions) {
+              if (pair.first.getType().getPriority() < typeToShow.getPriority()) {
+                typeToShow = pair.first.getType();
               }
             }
             showLightBulb(typeToShow.getIcon());
@@ -232,8 +233,8 @@ public class IntentionsSupport {
   }
 
 
-  private Set<Intention> getAvailableIntentions() {
-    final Set<Intention> result = new LinkedHashSet<Intention>();
+  private Set<Pair<Intention, SNode>> getAvailableIntentions() {
+    final Set<Pair<Intention, SNode>> result = new LinkedHashSet<Pair<Intention, SNode>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = myEditor.getSelectedNode();
@@ -246,8 +247,8 @@ public class IntentionsSupport {
     return result;
   }
 
-  private Set<Intention> getEnabledIntentions() {
-    final Set<Intention> result = new LinkedHashSet<Intention>();
+  private Set<Pair<Intention, SNode>> getEnabledIntentions() {
+    final Set<Pair<Intention, SNode>> result = new LinkedHashSet<Pair<Intention, SNode>>();
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {

@@ -6,6 +6,7 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior;
 import jetbrains.mps.lang.intentions.structure.IntentionDeclaration;
 import jetbrains.mps.lang.script.plugin.migrationtool.MigrationScriptUtil;
@@ -72,20 +73,43 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   public void disposeComponent() {
   }
 
-  public Set<Intention> getAvailableIntentions(final SNode node, final EditorContext context) {
-    Set<Intention> result = new HashSet<Intention>();
+  public Set<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, @NotNull final EditorContext context) {
+    return ModelAccess.instance().runReadAction(new Computable<Set<Pair<Intention, SNode>>>() {
+      public Set<Pair<Intention, SNode>> compute() {
+        Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
-    assert (context != null);
+        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false)) {
+          result.add(new Pair<Intention, SNode>(intention, node));
+        }
+        SNode parent = node.getParent();
+        while (parent != null) {
+          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true)) {
+            result.add(new Pair<Intention, SNode>(intention, parent));
+          }
+          parent = parent.getParent();
+        }
+
+        return result;
+      }
+    });
+  }
+
+  protected Set<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean onlyAvailableInChildren) {
+    Set<Intention> result = new HashSet<Intention>();
 
     for (String conceptFQName : myIntentions.keySet()) {
       if (node.isInstanceOfConcept(conceptFQName)) {
         for (final Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFQName))) {
           try {
-            boolean isApplicable = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-              public Boolean compute() {
-                return intention.isApplicable(node, context);
-              }
-            });
+            boolean isApplicable = false;
+
+            if (!onlyAvailableInChildren || intention.isAvailableInChildNodes()) {
+              isApplicable = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+                public Boolean compute() {
+                  return intention.isApplicable(node, context);
+                }
+              });
+            }
             if (isApplicable) {
               result.add(intention);
             }
@@ -101,21 +125,23 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       if (intentionProvider != null) {
         Intention intention = intentionProvider.getIntention();
         if (intention != null) {
-          result.add(intention);
+          if (!onlyAvailableInChildren || intention.isAvailableInChildNodes()) {
+            result.add(intention);
+          }
         }
       }
     }
     return Collections.unmodifiableSet(result);
   }
 
-  public Set<Intention> getEnabledAvailableIntentions(SNode node, EditorContext context) {
-    Set<Intention> result = new HashSet<Intention>(getAvailableIntentions(node, context));
+  public Set<Pair<Intention, SNode>> getEnabledAvailableIntentions(SNode node, EditorContext context) {
+    Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>(getAvailableIntentions(node, context));
     result.removeAll(getDisabledIntentions());
     return result;
   }
 
-  public Set<Intention> getDisabledAvailableIntentions(SNode node, EditorContext context) {
-    Set<Intention> result = new HashSet<Intention>(getAvailableIntentions(node, context));
+  public Set<Pair<Intention, SNode>> getDisabledAvailableIntentions(SNode node, EditorContext context) {
+    Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>(getAvailableIntentions(node, context));
     result.retainAll(getDisabledIntentions());
     return result;
   }

@@ -65,6 +65,10 @@ public class BaseIntentionProvider implements IntentionProvider {
         return false;
       }
 
+      public boolean isAvailableInChildNodes() {
+        return true;
+      }
+
       public void execute(SNode node, EditorContext editorContext) {
         quickFix.execute(node);
       }
