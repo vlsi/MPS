@@ -5,7 +5,7 @@ package jetbrains.mps.lang.smodel.structure;
 import jetbrains.mps.baseLanguage.structure.BaseMethodCall;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.constraints.structure.StaticConceptMethodDeclaration;
+import jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

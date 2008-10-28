@@ -13,11 +13,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     this.myConstraints.add(new ConceptConstraints_name_PropertyConstraint());
-    this.myConstraints.add(new ConceptBehavior_name_PropertyConstraint());
     this.myConstraints.add(new NodePropertyConstraint_applicableProperty_ReferentConstraint());
-    this.myConstraints.add(new ConceptMethodDeclaration_overriddenMethod_ReferentConstraint());
     this.myConstraints.add(new NodeReferentConstraint_applicableLink_ReferentConstraint());
-    this.myConstraints.add(new ConceptBehavior_defaultConcreteConcept_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

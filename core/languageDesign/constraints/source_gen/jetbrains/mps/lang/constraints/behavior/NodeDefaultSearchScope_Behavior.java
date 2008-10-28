@@ -12,7 +12,7 @@ public class NodeDefaultSearchScope_Behavior {
   }
 
   public static SNode call_getReferentConcept_1213877261403(SNode thisNode) {
-    if ((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptBehavior", false, false) != null)) {
+    if ((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false) != null)) {
       return SLinkOperations.getTarget(SNodeOperations.getContainingRoot(thisNode), "concept", false);
     }
     if ((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints", false, false) != null)) {

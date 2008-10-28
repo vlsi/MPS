@@ -23,7 +23,7 @@ import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.ArrayList;
 import java.util.Collection;
-import jetbrains.mps.lang.constraints.structure.ConceptBehavior;
+import jetbrains.mps.lang.behavior.structure.ConceptBehavior;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.constraints.behavior.ConceptBehavior_Behavior;
+import jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior;
 
 public class StaticConceptMethodCall_Behavior {
 
@@ -21,7 +21,7 @@ public class StaticConceptMethodCall_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode concept : SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       SNode behavior = AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(concept, scope);
-      if (behavior != null && ListSequence.fromList(ConceptBehavior_Behavior.call_getVisibleStaticMethods_1213877272451(behavior, enclosingNode)).isNotEmpty()) {
+      if (behavior != null && ListSequence.fromList(ConceptBehavior_Behavior.call_getVisibleStaticMethods_1225194243338(behavior, enclosingNode)).isNotEmpty()) {
         ListSequence.fromList(result).addElement(concept);
       }
     }

@@ -7,7 +7,6 @@
   <language namespace="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)" />
-  <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -16,7 +15,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
@@ -37,7 +36,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <maxImportIndex value="30" />
+  <maxImportIndex value="32" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -46,12 +45,14 @@
   <import index="9" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
-  <import index="13" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="2" />
+  <import index="13" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <import index="23" modelUID="f:java_stub#jetbrains.mps.ide.findusages.model(jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
   <import index="29" modelUID="f:java_stub#jetbrains.mps.lang.editor.structure(jetbrains.mps.lang.editor.structure@java_stub)" version="-1" />
   <import index="30" modelUID="f:java_stub#jetbrains.mps.lang.constraints.structure(jetbrains.mps.lang.constraints.structure@java_stub)" version="-1" />
+  <import index="31" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
+  <import index="32" modelUID="f:java_stub#jetbrains.mps.lang.behavior.structure(jetbrains.mps.lang.behavior.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1198085953023">
     <property name="name" value="RenameConcept" />
     <property name="userFriendlyName" value="Rename Concept" />
@@ -60,7 +61,9 @@
     <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1198086090026">
       <property name="name" value="newName" />
       <property name="presentation" value="new concept name" />
-      <node role="argumentType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192520856" />
+      <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198086099794">
+        <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+      </node>
       <node role="initialValue" type="jetbrains.mps.lang.refactoring.structure.InitialValueClause" id="1198600921522">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198600921523">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198600932419">
@@ -564,12 +567,12 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198523085615">
             <property name="name" value="behaviors" />
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1198523085616">
-              <link role="elementConcept" targetNodeId="13.1177670533743" resolveInfo="ConceptBehavior" />
+              <link role="elementConcept" targetNodeId="31.1225194240794" resolveInfo="ConceptBehavior" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1198523085617">
               <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="1198523085618">
                 <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1198523085619">
-                  <link role="elementConcept" targetNodeId="13.1177670533743" resolveInfo="ConceptBehavior" />
+                  <link role="elementConcept" targetNodeId="31.1225194240794" resolveInfo="ConceptBehavior" />
                 </node>
               </node>
             </node>
@@ -745,11 +748,11 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199636033790">
                     <property name="name" value="conceptBehavior" />
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199636033791">
-                      <link role="classifier" targetNodeId="30.~ConceptBehavior" resolveInfo="ConceptBehavior" />
+                      <link role="classifier" targetNodeId="32.~ConceptBehavior" resolveInfo="ConceptBehavior" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1199636033792">
                       <link role="classConcept" targetNodeId="5.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                      <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.findBehaviorDeclaration(jetbrains.mps.smodel.SModel,jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration):jetbrains.mps.lang.constraints.structure.ConceptBehavior" resolveInfo="findBehaviorDeclaration" />
+                      <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.findBehaviorDeclaration(jetbrains.mps.smodel.SModel,jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration):jetbrains.mps.lang.behavior.structure.ConceptBehavior" resolveInfo="findBehaviorDeclaration" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202172">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199636033794">
                           <link role="variableDeclaration" targetNodeId="1198521635841" resolveInfo="constraintsModelDescriptor" />
@@ -773,11 +776,11 @@
                       <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198521676525">
                         <property name="name" value="behavior" />
                         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198521676526">
-                          <link role="concept" targetNodeId="13.1177670533743" resolveInfo="ConceptBehavior" />
+                          <link role="concept" targetNodeId="31.1225194240794" resolveInfo="ConceptBehavior" />
                         </node>
                         <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198521676527">
                           <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198521676528">
-                            <link role="concept" targetNodeId="13.1177670533743" resolveInfo="ConceptBehavior" />
+                            <link role="concept" targetNodeId="31.1225194240794" resolveInfo="ConceptBehavior" />
                           </node>
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740201934">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199636033798">
@@ -1551,7 +1554,9 @@
     <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1198587985396">
       <property name="name" value="newName" />
       <property name="presentation" value="enter new name" />
-      <node role="argumentType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521648" />
+      <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198588041931">
+        <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+      </node>
       <node role="initialValue" type="jetbrains.mps.lang.refactoring.structure.InitialValueClause" id="1198600846281">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198600846282">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198600866087">
@@ -2423,7 +2428,9 @@
     <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1198764804967">
       <property name="name" value="newName" />
       <property name="presentation" value="enter new name" />
-      <node role="argumentType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521474" />
+      <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198764828479">
+        <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+      </node>
       <node role="initialValue" type="jetbrains.mps.lang.refactoring.structure.InitialValueClause" id="1198764844727">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198764844728">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198764844729">
@@ -3277,7 +3284,7 @@
     <node role="internalArguments" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument" id="1201283870600">
       <property name="name" value="conceptBehavior" />
       <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201283882649">
-        <link role="classifier" targetNodeId="30.~ConceptBehavior" resolveInfo="ConceptBehavior" />
+        <link role="classifier" targetNodeId="32.~ConceptBehavior" resolveInfo="ConceptBehavior" />
       </node>
     </node>
     <node role="internalArguments" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument" id="1201283883838">
@@ -3525,7 +3532,7 @@
                     </node>
                     <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201284197610">
                       <link role="classConcept" targetNodeId="5.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                      <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.findBehaviorDeclaration(jetbrains.mps.smodel.SModel,jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration):jetbrains.mps.lang.constraints.structure.ConceptBehavior" resolveInfo="findBehaviorDeclaration" />
+                      <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.findBehaviorDeclaration(jetbrains.mps.smodel.SModel,jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration):jetbrains.mps.lang.behavior.structure.ConceptBehavior" resolveInfo="findBehaviorDeclaration" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740202537">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201284197612">
                           <link role="variableDeclaration" targetNodeId="1201283912537" resolveInfo="constraintsModelDescriptor" />
