@@ -2,7 +2,6 @@ package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
@@ -21,7 +20,7 @@ public class TextGenerationUtil {
       containsErrors = generationResult.hasErrors();
       nodeText = generationResult.getText();
     } else {
-      nodeText = TextPresentationManager.generateTextPresentation(node);
+      nodeText = "Can't generate text from " + node;
     }
     return new TextGenerationResult(nodeText, containsErrors);
   }

@@ -22,7 +22,6 @@ public class EditorInternal_ActionGroup extends GeneratedActionGroup {
       this.add(new ShowCellInExplorer_Action());
       this.addSeparator();
       this.add(new PrintNodeID_Action());
-      this.add(new PrintTextPresentation_Action());
       this.add(new HighlightCellDependenciesAction());
       this.addSeparator();
     } catch (Throwable t) {
