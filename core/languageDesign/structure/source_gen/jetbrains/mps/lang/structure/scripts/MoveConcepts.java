@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.behavior.structure.ConceptBehavior;
 import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
+import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Map;
@@ -117,6 +118,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       List<SNode> editors = new ArrayList<SNode>();
       List<SNode> behaviors = new ArrayList<SNode>();
       List<SNode> constraints = new ArrayList<SNode>();
+      List<SNode> dataFlows = new ArrayList<SNode>();
       // collecting editors:
       SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
       if (editorModelDescriptor != null) {
@@ -149,6 +151,17 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
           if (conceptConstraints != null) {
             SNode conceptConstraintsNodes = (SNode)conceptConstraints.getNode();
             ListSequence.fromList(constraints).addElement(conceptConstraintsNodes);
+          }
+        }
+      }
+      // collecting data flow:
+      SModelDescriptor dataflowModelDescriptor = sourceLanguage.getDataFlowModelDescriptor();
+      if (dataflowModelDescriptor != null) {
+        for(SNode node : nodes) {
+          DataFlowBuilderDeclaration dataFlowBuilderDeclaration = SModelUtil_new.findDataFlowDeclaration(dataflowModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node)));
+          if (dataFlowBuilderDeclaration != null) {
+            SNode dataFlow = (SNode)dataFlowBuilderDeclaration.getNode();
+            ListSequence.fromList(dataFlows).addElement(dataFlow);
           }
         }
       }
@@ -186,6 +199,16 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
         refactoringContext.moveNodesToModel(constraints, constraintsModel);
         refactoringContext.computeCaches();
         refactoringContext.updateModelWithMaps(constraintsModel);
+      }
+      if (ListSequence.fromList(dataFlows).isNotEmpty()) {
+        SModelDescriptor targetDataFlowModelDescriptor = targetLanguage.getDataFlowModelDescriptor();
+        if (targetDataFlowModelDescriptor == null) {
+          targetDataFlowModelDescriptor = LanguageAspect.DATA_FLOW.createNew(targetLanguage);
+        }
+        SModel dataFlowModel = targetDataFlowModelDescriptor.getSModel();
+        refactoringContext.moveNodesToModel(dataFlows, dataFlowModel);
+        refactoringContext.computeCaches();
+        refactoringContext.updateModelWithMaps(dataFlowModel);
       }
       // todo: move other concept-related aspect stuff
     }
