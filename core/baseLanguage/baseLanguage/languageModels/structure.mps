@@ -1255,6 +1255,9 @@
       <property name="name" value="conceptFunctionParameterType" />
       <link role="targetType" targetNodeId="1068431790189" resolveInfo="Type" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1225280789982">
+      <link role="intfc" targetNodeId="1225280593310" resolveInfo="IMethodParameter" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1107461130800">
     <property name="name" value="Classifier" />
@@ -3098,6 +3101,10 @@
       <property name="name" value="trimKind" />
       <link role="dataType" targetNodeId="1225271514374" resolveInfo="TrimKind" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1225280593310">
+    <property name="package" value="refactoring" />
+    <property name="name" value="IParameter" />
   </node>
 </model>
 

@@ -6,7 +6,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptFunction_DataFlow extends DataFlowBuilder {
@@ -15,9 +14,6 @@ public class ConceptFunction_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode param : ConceptFunction_Behavior.call_getParameters_1213877374450(_context.getNode())) {
-      _context.getBuilder().emitWrite(param);
-    }
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
   }
 

@@ -22,6 +22,10 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
     return false;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Convert to \"for (Type var: iterable)\"";
   }

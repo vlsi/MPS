@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConceptFunctionParameter_Behavior {
@@ -39,6 +40,14 @@ public class ConceptFunctionParameter_Behavior {
       }
 
     }).first();
+  }
+
+  public static String virtual_getParameterName_1225280611056(SNode thisNode) {
+    return SPropertyOperations.getString(thisNode, "alias");
+  }
+
+  public static SNode virtual_getDeclaration_1225282371351(SNode thisNode) {
+    return SNodeOperations.getConceptDeclaration(thisNode);
   }
 
   public static boolean call_getFromParameterObject_1213877522908(SNode thisNode) {
