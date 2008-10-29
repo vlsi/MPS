@@ -12836,8 +12836,8 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225278748071">
                       <link role="variableDeclaration" targetNodeId="1225278748061" resolveInfo="variableAssignment" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225278748072">
-                      <link role="conceptMethodDeclaration" targetNodeId="37.1223985713603" resolveInfo="isCanBeUnused" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225281872034">
+                      <link role="baseMethodDeclaration" targetNodeId="37.1223985713603" resolveInfo="isCanBeUnused" />
                     </node>
                   </node>
                 </node>
