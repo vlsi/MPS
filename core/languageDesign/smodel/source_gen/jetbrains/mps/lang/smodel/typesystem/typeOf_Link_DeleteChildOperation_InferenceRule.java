@@ -19,18 +19,9 @@ public class typeOf_Link_DeleteChildOperation_InferenceRule extends AbstractInfe
     final SNode Concept_typevar_1206099630117 = typeCheckingContext.createNewRuntimeTypesVariable();
     RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099630117));
     {
-      final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099630117);
-      typeCheckingContext.whenConcrete(C, new Runnable() {
-
-        public void run() {
-          {
-            SNode _nodeToCheck_1029348928467 = op;
-            BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205528931094", true), new _Quotations.QuotationClass_52().createNode(typeCheckingContext.getEquationManager().getRepresentator(C), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205528931092", intentionProvider);
-          }
-        }
-
-      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205528931049");
+      SNode _nodeToCheck_1029348928467 = op;
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205528931094", true), new _Quotations.QuotationClass_52().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099630117), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205528931092", intentionProvider);
     }
   }
 
