@@ -40,12 +40,18 @@ public class QueriesUtil {
     return result;
   }
 
-  public static SNode replaceNodeMenu_createNewNode(SNode classifier, SNode parameterObject) {
+  public static SNode replaceNodeMenu_createNewNode(SNode classifier, SNode parameterObject, SNode oldNode) {
     SModel model = SNodeOperations.getModel(classifier);
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(newNode, "baseMethodDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "classConcept", classifier, false);
+      if (SNodeOperations.isInstanceOf(oldNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
+        SNode call = oldNode;
+        for(SNode arg : SLinkOperations.getTargets(call, "actualArgument", true)) {
+          SLinkOperations.addChild(newNode, "actualArgument", SNodeOperations.copyNode(arg));
+        }
+      }
       return newNode;
     }
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {

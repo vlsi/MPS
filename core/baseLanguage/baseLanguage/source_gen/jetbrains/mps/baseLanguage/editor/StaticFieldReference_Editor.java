@@ -285,7 +285,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     }
 
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "classifier", false), parameterObject);
+      return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "classifier", false), parameterObject, node);
     }
 
     public boolean isReferentPresentation() {

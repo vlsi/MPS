@@ -292,7 +292,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     }
 
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "classConcept", false), parameterObject);
+      return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "classConcept", false), parameterObject, node);
     }
 
     public boolean isReferentPresentation() {
