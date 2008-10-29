@@ -94,12 +94,21 @@ public class DataFlowUtil {
           }
         }
       }
+      if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+        SNode variableAssignment = write;
+        if (IVariableAssignment_Behavior.call_isCanBeUnused_1223985713603(variableAssignment)) {
+          {
+            BaseIntentionProvider intentionProvider = null;
+            typeCheckingContext.reportWarning(write, "Unused parameter", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225278748067", intentionProvider);
+          }
+        }
+      }
       if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment")) {
         SNode variableAssignment = write;
         if (IVariableAssignment_Behavior.call_isCanBeUnused_1223985713603(variableAssignment)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportWarning(write, "Unused parameter", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223986255355", intentionProvider);
+            typeCheckingContext.reportWarning(write, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225278681706", intentionProvider);
           }
         }
       }
