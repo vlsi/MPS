@@ -275,6 +275,10 @@ __switch__:
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.AsExpression");
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1225276664062(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new _Quotations.QuotationClass_4().createNode());
+  }
+
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface")) {
       SPropertyOperations.set(_context.getNewNode(), "isAbstract", "" + (true));
@@ -542,7 +546,7 @@ __switch__:
               Pattern _pattern_0 = _PrecompiledPatterns.REGEXP3;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.matches()) {
-                SPropertyOperations.set(stringLiteral, "value", "" + (_matcher_0.group(1)));
+                SPropertyOperations.set(stringLiteral, "value", _matcher_0.group(1));
               }
             }
             return stringLiteral;
@@ -2740,6 +2744,36 @@ __switch__:
       };
       SNode node = (SNode)calc.calculate();
       result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext));
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1225276664061(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SubstringExpression");
+      Iterable<SNode> concepts = ListOperations.<SNode>createList(concept);
+      concepts = SequenceOperations.concat(concepts, SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope()));
+      for(final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          continue;
+        }
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
+        }
+        result.add(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
+
+          public SNode doSubstitute(String pattern) {
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            {
+              SNode expression = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SubstringExpression");
+              SLinkOperations.setTarget(expression, "operand", _context.getSourceNode(), true);
+              return expression;
+            }
+          }
+
+        });
+      }
     }
     return result;
   }
