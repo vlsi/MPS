@@ -20,7 +20,7 @@ public class typeof_NodeRefExpression_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = nodeRef;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeRef, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1219354506915", true), new _Quotations.QuotationClass_98().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(nodeRef, "referentNode", false)), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1219354515059", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeRef, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1219354506915", true), new _Quotations.QuotationClass_97().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(nodeRef, "referentNode", false)), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1219354515059", intentionProvider);
     }
   }
 
