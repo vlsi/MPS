@@ -13,7 +13,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
@@ -327,7 +327,7 @@
                 <link role="variableDeclaration" targetNodeId="1199879911058" resolveInfo="tpoe" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1199879911077">
-                <link role="conceptMethodDeclaration" targetNodeId="14.1213877496973" resolveInfo="getTreePath" />
+                <link role="baseMethodDeclaration" targetNodeId="14.1213877496973" resolveInfo="getTreePath" />
               </node>
             </node>
           </node>
@@ -525,7 +525,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225096924495">
-                              <link role="conceptMethodDeclaration" targetNodeId="14.1213877340242" resolveInfo="getParameterObjects" />
+                              <link role="baseMethodDeclaration" targetNodeId="14.1213877340242" resolveInfo="getParameterObjects" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225096924496">
                                 <link role="variableDeclaration" targetNodeId="1199879911065" resolveInfo="nodeType" />
                               </node>

@@ -14,7 +14,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
@@ -319,7 +319,7 @@
                   <link role="variableDeclaration" targetNodeId="1213877337965" resolveInfo="judgement" />
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877337971">
-                  <link role="conceptMethodDeclaration" targetNodeId="1213877321559" resolveInfo="doTest" />
+                  <link role="baseMethodDeclaration" targetNodeId="1213877321559" resolveInfo="doTest" />
                 </node>
               </node>
             </node>
@@ -410,7 +410,7 @@
                       <link role="variableDeclaration" targetNodeId="1213877428183" resolveInfo="arg" />
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877428192">
-                      <link role="conceptMethodDeclaration" targetNodeId="11.1213877396640" resolveInfo="getPresentation" />
+                      <link role="baseMethodDeclaration" targetNodeId="11.1213877396640" resolveInfo="getPresentation" />
                     </node>
                   </node>
                 </node>
@@ -562,7 +562,7 @@
                       <link role="variableDeclaration" targetNodeId="1213877496050" resolveInfo="arg" />
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877496059">
-                      <link role="conceptMethodDeclaration" targetNodeId="11.1213877396640" resolveInfo="getPresentation" />
+                      <link role="baseMethodDeclaration" targetNodeId="11.1213877396640" resolveInfo="getPresentation" />
                     </node>
                   </node>
                 </node>

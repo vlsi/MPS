@@ -13,7 +13,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
@@ -558,7 +558,7 @@
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225194473549">
                         <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1225194473550" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225194473551">
-                          <link role="conceptMethodDeclaration" targetNodeId="3v.1225196403980" resolveInfo="getOverridenMethodConceptName" />
+                          <link role="baseMethodDeclaration" targetNodeId="3v.1225196403980" resolveInfo="getOverridenMethodConceptName" />
                         </node>
                       </node>
                     </node>
@@ -577,7 +577,7 @@
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225194473560">
                             <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1225194473561" />
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225194473562">
-                              <link role="conceptMethodDeclaration" targetNodeId="3v.1225196403980" resolveInfo="getOverridenMethodConceptName" />
+                              <link role="baseMethodDeclaration" targetNodeId="3v.1225196403980" resolveInfo="getOverridenMethodConceptName" />
                             </node>
                           </node>
                         </node>
@@ -1007,7 +1007,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225202142312">
-                  <link role="conceptMethodDeclaration" targetNodeId="10.1213877394290" resolveInfo="getVirtualConceptMethods" />
+                  <link role="baseMethodDeclaration" targetNodeId="10.1213877394290" resolveInfo="getVirtualConceptMethods" />
                   <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1225202142313" />
                 </node>
               </node>

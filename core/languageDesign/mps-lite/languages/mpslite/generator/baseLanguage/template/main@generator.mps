@@ -24,7 +24,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
@@ -65,7 +65,7 @@
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="10" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <import index="10" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c895905d0(jetbrains.mpslite.constraints)" version="27" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
@@ -136,7 +136,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227912741">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197551316180" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197551318731">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285126" resolveInfo="isDotted" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285126" resolveInfo="isDotted" />
               </node>
             </node>
           </node>
@@ -153,7 +153,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227822511">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197551602563" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197551602562">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285126" resolveInfo="isDotted" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285126" resolveInfo="isDotted" />
               </node>
             </node>
           </node>
@@ -170,7 +170,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227896293">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197625333068" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197625335509">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285149" resolveInfo="hasBinaryOperations" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285149" resolveInfo="hasBinaryOperations" />
               </node>
             </node>
           </node>
@@ -248,7 +248,7 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227880852">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1182967134960" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1182967138159">
-                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285371" />
+                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285371" />
                   </node>
                 </node>
               </node>
@@ -263,7 +263,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227885894">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1182967149868" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1182967153462">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285371" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285371" />
                 </node>
               </node>
             </node>
@@ -298,7 +298,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227946095">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183118933884" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183118933883">
-                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285691" />
+                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285691" />
                   </node>
                 </node>
               </node>
@@ -397,7 +397,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465247953">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465249994" />
                 </node>
               </node>
@@ -485,7 +485,7 @@
                     <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227866311">
                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197380820345" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197380823271">
-                        <link role="conceptMethodDeclaration" targetNodeId="37.1213877269700" resolveInfo="isOptional" />
+                        <link role="baseMethodDeclaration" targetNodeId="37.1213877269700" resolveInfo="isOptional" />
                       </node>
                     </node>
                     <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1197380826085">
@@ -522,7 +522,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465214262">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465216760" />
                 </node>
               </node>
@@ -579,7 +579,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197382409754">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877534275" resolveInfo="getMapTo" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877534275" resolveInfo="getMapTo" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197382658210" />
                 </node>
               </node>
@@ -633,7 +633,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197553255128">
-                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285732" resolveInfo="getCorrespondingDotOperationConcept" />
+                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285732" resolveInfo="getCorrespondingDotOperationConcept" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197553255129" />
                   </node>
                 </node>
@@ -668,7 +668,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465144426">
-                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465147224" />
                   </node>
                 </node>
@@ -710,7 +710,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219698546362">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1219698544610" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1219698551053">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285349" resolveInfo="isNamed" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285349" resolveInfo="isNamed" />
                 </node>
               </node>
             </node>
@@ -749,7 +749,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227896368">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197385750172" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197385752067">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877262205" resolveInfo="getBestReplacement" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877262205" resolveInfo="getBestReplacement" />
                 </node>
               </node>
             </node>
@@ -783,7 +783,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227889409">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197387329764" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197387331722">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877403239" resolveInfo="getNextPart" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877403239" resolveInfo="getNextPart" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1197387335522">
@@ -930,7 +930,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227942081">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197385469242" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197385491043">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877403247" resolveInfo="generateActionMap" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877403247" resolveInfo="generateActionMap" />
               </node>
             </node>
           </node>
@@ -946,7 +946,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227932970">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197551723193" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197551726135">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285126" resolveInfo="isDotted" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285126" resolveInfo="isDotted" />
               </node>
             </node>
           </node>
@@ -962,7 +962,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227904177">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197551959433" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197551959432">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285126" resolveInfo="isDotted" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285126" resolveInfo="isDotted" />
               </node>
             </node>
           </node>
@@ -978,7 +978,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227926537">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197626816773" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197626829498">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285149" resolveInfo="hasBinaryOperations" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285149" resolveInfo="hasBinaryOperations" />
               </node>
             </node>
           </node>
@@ -994,7 +994,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227866285">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197627853115" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197627853114">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285149" resolveInfo="hasBinaryOperations" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285149" resolveInfo="hasBinaryOperations" />
               </node>
             </node>
           </node>
@@ -1010,7 +1010,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227924525">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197627854247" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197627854246">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285149" resolveInfo="hasBinaryOperations" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285149" resolveInfo="hasBinaryOperations" />
               </node>
             </node>
           </node>
@@ -1155,7 +1155,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227895194">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465473027" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465475004">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465478727" />
               </node>
             </node>
@@ -1244,7 +1244,7 @@
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227842240">
                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183026899721" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183026904480">
-                        <link role="conceptMethodDeclaration" targetNodeId="37.1213877262205" />
+                        <link role="baseMethodDeclaration" targetNodeId="37.1213877262205" />
                       </node>
                     </node>
                   </node>
@@ -1379,7 +1379,7 @@
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227867906">
                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183026925676" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183026925675">
-                        <link role="conceptMethodDeclaration" targetNodeId="37.1213877262205" />
+                        <link role="baseMethodDeclaration" targetNodeId="37.1213877262205" />
                       </node>
                     </node>
                   </node>
@@ -1743,15 +1743,15 @@
                                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227941843">
                                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197383815775" />
                                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197383818873">
-                                      <link role="conceptMethodDeclaration" targetNodeId="37.1213877239209" resolveInfo="getOptionalPart" />
+                                      <link role="baseMethodDeclaration" targetNodeId="37.1213877239209" resolveInfo="getOptionalPart" />
                                     </node>
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197383849049">
-                                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877262267" resolveInfo="getChildDeclaration" />
+                                    <link role="baseMethodDeclaration" targetNodeId="37.1213877262267" resolveInfo="getChildDeclaration" />
                                   </node>
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197383854240">
-                                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877269711" resolveInfo="getCorrespondingLink" />
+                                  <link role="baseMethodDeclaration" targetNodeId="37.1213877269711" resolveInfo="getCorrespondingLink" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197383855397" />
                                 </node>
                               </node>
@@ -1897,7 +1897,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227900606">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465485495" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465486980">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465490355" />
               </node>
             </node>
@@ -1953,7 +1953,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227866579">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465497085" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465499902">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465502454" />
               </node>
             </node>
@@ -1975,7 +1975,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227888824">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183015404257" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183451794814">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285561" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285561" />
               </node>
             </node>
           </node>
@@ -1991,7 +1991,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227850023">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183116803536" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183116805268">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285509" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285509" />
               </node>
             </node>
           </node>
@@ -2007,7 +2007,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227918401">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183121054832" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183121057475">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285594" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285594" />
               </node>
             </node>
           </node>
@@ -2023,7 +2023,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227922329">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197552238992" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197552241746">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285126" resolveInfo="isDotted" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285126" resolveInfo="isDotted" />
               </node>
             </node>
           </node>
@@ -2059,7 +2059,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227921639">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197630188138" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197630194236">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285149" resolveInfo="hasBinaryOperations" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285149" resolveInfo="hasBinaryOperations" />
               </node>
             </node>
           </node>
@@ -2089,7 +2089,7 @@
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227923770">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465691782" />
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465693684">
-                                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                                <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465695485" />
                               </node>
                             </node>
@@ -2109,7 +2109,7 @@
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227938845">
                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465705384" />
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465708124">
-                                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465709345" />
                                 </node>
                               </node>
@@ -2153,12 +2153,12 @@
                                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227937503">
                                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183017871186" />
                                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183450011242">
-                                          <link role="conceptMethodDeclaration" targetNodeId="37.1213877285485" />
+                                          <link role="baseMethodDeclaration" targetNodeId="37.1213877285485" />
                                         </node>
                                       </node>
                                     </node>
                                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183017878752">
-                                      <link role="conceptMethodDeclaration" targetNodeId="37.1213877262267" />
+                                      <link role="baseMethodDeclaration" targetNodeId="37.1213877262267" />
                                     </node>
                                   </node>
                                 </node>
@@ -2196,12 +2196,12 @@
                               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227890001">
                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183016160239" />
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183449983955">
-                                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285485" />
+                                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285485" />
                                 </node>
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183016162601">
-                              <link role="conceptMethodDeclaration" targetNodeId="37.1213877262186" />
+                              <link role="baseMethodDeclaration" targetNodeId="37.1213877262186" />
                             </node>
                           </node>
                         </node>
@@ -2220,7 +2220,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227919350">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465682656" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465685826">
-                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465686598" />
                   </node>
                 </node>
@@ -2241,12 +2241,12 @@
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227900581">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465636706" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465638628">
-                          <link role="conceptMethodDeclaration" targetNodeId="37.1213877285485" />
+                          <link role="baseMethodDeclaration" targetNodeId="37.1213877285485" />
                         </node>
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465649675">
-                      <link role="conceptMethodDeclaration" targetNodeId="37.1213877262267" />
+                      <link role="baseMethodDeclaration" targetNodeId="37.1213877262267" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1183465653659">
@@ -2254,7 +2254,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465655675">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465658120" />
                 </node>
               </node>
@@ -2291,12 +2291,12 @@
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227892459">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183018396549" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183449946178">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877285485" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877285485" />
                           </node>
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183018410000">
-                        <link role="conceptMethodDeclaration" targetNodeId="37.1213877262267" />
+                        <link role="baseMethodDeclaration" targetNodeId="37.1213877262267" />
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1183018413888">
@@ -2350,7 +2350,7 @@
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227956477">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465571160" />
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465573487">
-                                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                                <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465575266" />
                               </node>
                             </node>
@@ -2370,7 +2370,7 @@
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227879055">
                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465581886" />
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465584020">
-                                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183466089235" />
                                 </node>
                               </node>
@@ -2403,7 +2403,7 @@
                                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227910925">
                                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183116952726" />
                                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183116957215">
-                                        <link role="conceptMethodDeclaration" targetNodeId="37.1213877285485" />
+                                        <link role="baseMethodDeclaration" targetNodeId="37.1213877285485" />
                                       </node>
                                     </node>
                                   </node>
@@ -2456,11 +2456,11 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227894460">
                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465548734" />
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465550314">
-                      <link role="conceptMethodDeclaration" targetNodeId="37.1213877285429" />
+                      <link role="baseMethodDeclaration" targetNodeId="37.1213877285429" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465553409">
-                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465554785" />
                   </node>
                 </node>
@@ -2477,11 +2477,11 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227931454">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465526704" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465528450">
-                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285429" />
+                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285429" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465535149">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465536482" />
                 </node>
               </node>
@@ -2541,7 +2541,7 @@
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227926981">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465818716" />
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465824707">
-                                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                                <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465859811" />
                               </node>
                             </node>
@@ -2561,7 +2561,7 @@
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227911353">
                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465865889" />
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465870108">
-                                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465871272" />
                                 </node>
                               </node>
@@ -2595,7 +2595,7 @@
                                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227944517">
                                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183121523021" />
                                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183121525499">
-                                      <link role="conceptMethodDeclaration" targetNodeId="37.1213877285485" />
+                                      <link role="baseMethodDeclaration" targetNodeId="37.1213877285485" />
                                     </node>
                                   </node>
                                 </node>
@@ -2611,7 +2611,7 @@
                                       <link role="variableDeclaration" targetNodeId="1183121519204" resolveInfo="part" />
                                     </node>
                                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183127805422">
-                                      <link role="conceptMethodDeclaration" targetNodeId="37.1213877262267" />
+                                      <link role="baseMethodDeclaration" targetNodeId="37.1213877262267" />
                                     </node>
                                   </node>
                                 </node>
@@ -2648,7 +2648,7 @@
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227915970">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183122357157" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183122357156">
-                          <link role="conceptMethodDeclaration" targetNodeId="37.1213877285485" />
+                          <link role="baseMethodDeclaration" targetNodeId="37.1213877285485" />
                         </node>
                       </node>
                     </node>
@@ -2662,7 +2662,7 @@
                           <link role="variableDeclaration" targetNodeId="1183122357152" resolveInfo="part" />
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465775444">
-                          <link role="conceptMethodDeclaration" targetNodeId="37.1213877262267" />
+                          <link role="baseMethodDeclaration" targetNodeId="37.1213877262267" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1183465782165">
@@ -2670,7 +2670,7 @@
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183466019274">
-                      <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                      <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                       <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183466020177" />
                     </node>
                   </node>
@@ -2687,11 +2687,11 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227865676">
                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465744415" />
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465746122">
-                      <link role="conceptMethodDeclaration" targetNodeId="37.1213877285429" />
+                      <link role="baseMethodDeclaration" targetNodeId="37.1213877285429" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465749735">
-                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465751080" />
                   </node>
                 </node>
@@ -2708,11 +2708,11 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227866849">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183465730436" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465732321">
-                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285429" />
+                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285429" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183465735112">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1183465736661" />
                 </node>
               </node>
@@ -2740,12 +2740,12 @@
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227851611">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183121088730" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183121105670">
-                          <link role="conceptMethodDeclaration" targetNodeId="37.1213877285485" />
+                          <link role="baseMethodDeclaration" targetNodeId="37.1213877285485" />
                         </node>
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1183121120660">
-                      <link role="conceptMethodDeclaration" targetNodeId="37.1213877262267" />
+                      <link role="baseMethodDeclaration" targetNodeId="37.1213877262267" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1183121126106">
@@ -2838,7 +2838,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227917247">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1196776317070" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1196776317068">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1196776317069" />
               </node>
             </node>
@@ -3162,7 +3162,7 @@
                                   </node>
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1196783020584">
-                                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1196783073273" />
                                 </node>
                               </node>
@@ -3528,7 +3528,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227878418">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197472232072" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197472235904">
-                    <link role="conceptMethodDeclaration" targetNodeId="38.1213877497463" resolveInfo="getLeft" />
+                    <link role="baseMethodDeclaration" targetNodeId="38.1213877497463" resolveInfo="getLeft" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1197472232069" />
@@ -3613,7 +3613,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227914279">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197036503633" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197036505481">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
                           </node>
                         </node>
                       </node>
@@ -3635,7 +3635,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197036786750">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877540093" resolveInfo="getCorrespondingProperty" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877540093" resolveInfo="getCorrespondingProperty" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197036787845" />
                           </node>
                         </node>
@@ -3682,7 +3682,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227922733">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197037077693" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197037090011">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
                           </node>
                         </node>
                       </node>
@@ -3704,7 +3704,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197037098053">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877269711" resolveInfo="getCorrespondingLink" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877269711" resolveInfo="getCorrespondingLink" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197037098930" />
                           </node>
                         </node>
@@ -3751,7 +3751,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227896969">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197037267589" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197037269593">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
                           </node>
                         </node>
                       </node>
@@ -3773,7 +3773,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197037277573">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877360152" resolveInfo="getCorrespondingLink" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877360152" resolveInfo="getCorrespondingLink" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197037278277" />
                           </node>
                         </node>
@@ -3818,7 +3818,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227903017">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197037508822" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197037510326">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
                           </node>
                         </node>
                       </node>
@@ -3863,7 +3863,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227912177">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197037628315" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197037629929">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
                           </node>
                         </node>
                       </node>
@@ -3908,7 +3908,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227818356">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197037917392" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197037918802">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
                           </node>
                         </node>
                       </node>
@@ -3953,7 +3953,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227913831">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197038982238" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197038984118">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
                           </node>
                         </node>
                       </node>
@@ -3975,7 +3975,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197039000148">
-                              <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                              <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                               <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197039001009" />
                             </node>
                           </node>
@@ -4040,7 +4040,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227894910">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197043661422" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197043663223">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
                           </node>
                         </node>
                       </node>
@@ -4063,7 +4063,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197043685580">
-                              <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                              <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                               <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197043686503" />
                             </node>
                           </node>
@@ -4109,7 +4109,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227942977">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197043740814" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197043742802">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
                           </node>
                         </node>
                       </node>
@@ -4130,7 +4130,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197043765770">
-                          <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                          <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                           <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197043766474" />
                         </node>
                       </node>
@@ -4176,7 +4176,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227840782">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197044608322" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197044609701">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
                           </node>
                         </node>
                       </node>
@@ -4198,7 +4198,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197044686705">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877269711" resolveInfo="getCorrespondingLink" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877269711" resolveInfo="getCorrespondingLink" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197044688081" />
                           </node>
                         </node>
@@ -4386,7 +4386,7 @@
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197282937073">
-                                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                                <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197282937917" />
                               </node>
                             </node>
@@ -4434,7 +4434,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227958571">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197284885271" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197284886603">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
                           </node>
                         </node>
                       </node>
@@ -4484,7 +4484,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227896603">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197286600563" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197286607177">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197286608256" />
                 </node>
               </node>
@@ -4584,7 +4584,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227866238">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197460690490" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197460692088">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285172" resolveInfo="isType" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285172" resolveInfo="isType" />
                 </node>
               </node>
             </node>
@@ -4601,7 +4601,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227934845">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197555471649" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197555473044">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285126" resolveInfo="isDotted" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285126" resolveInfo="isDotted" />
               </node>
             </node>
           </node>
@@ -4677,7 +4677,7 @@
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227912487">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197291857270" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197291861760">
-                          <link role="conceptMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
+                          <link role="baseMethodDeclaration" targetNodeId="37.1213877334287" resolveInfo="getLeftPart" />
                         </node>
                       </node>
                     </node>
@@ -4721,7 +4721,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197291346953">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197291347766" />
                           </node>
                         </node>
@@ -5053,7 +5053,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197385365595">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197385366456" />
               </node>
             </node>
@@ -5093,7 +5093,7 @@
                                 <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227832467">
                                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197385799265" />
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197385799264">
-                                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877262205" resolveInfo="getBestReplacement" />
+                                    <link role="baseMethodDeclaration" targetNodeId="37.1213877262205" resolveInfo="getBestReplacement" />
                                   </node>
                                 </node>
                               </node>
@@ -5145,11 +5145,11 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227917661">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197385799293" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197385799292">
-                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877403230" resolveInfo="getContainingNodeType" />
+                    <link role="baseMethodDeclaration" targetNodeId="37.1213877403230" resolveInfo="getContainingNodeType" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197385799289">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197385799290" />
                 </node>
               </node>
@@ -5191,7 +5191,7 @@
                                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227889738">
                                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197387865369" />
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197387867623">
-                                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877403239" resolveInfo="getNextPart" />
+                                    <link role="baseMethodDeclaration" targetNodeId="37.1213877403239" resolveInfo="getNextPart" />
                                   </node>
                                 </node>
                               </node>
@@ -5205,15 +5205,15 @@
                                     <link role="variableDeclaration" targetNodeId="1197387883393" resolveInfo="optionalPart" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197387892214">
-                                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877239209" resolveInfo="getOptionalPart" />
+                                    <link role="baseMethodDeclaration" targetNodeId="37.1213877239209" resolveInfo="getOptionalPart" />
                                   </node>
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197387895889">
-                                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877262267" resolveInfo="getChildDeclaration" />
+                                  <link role="baseMethodDeclaration" targetNodeId="37.1213877262267" resolveInfo="getChildDeclaration" />
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197387898815">
-                                <link role="conceptMethodDeclaration" targetNodeId="37.1213877269711" resolveInfo="getCorrespondingLink" />
+                                <link role="baseMethodDeclaration" targetNodeId="37.1213877269711" resolveInfo="getCorrespondingLink" />
                                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197387899707" />
                               </node>
                             </node>
@@ -5269,7 +5269,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227906177">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197464459243" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197464470075">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197464470889" />
                 </node>
               </node>
@@ -5380,7 +5380,7 @@
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204227938275">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227938276">
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1204227938277">
-                            <link role="conceptMethodDeclaration" targetNodeId="38.1213877497463" resolveInfo="getLeft" />
+                            <link role="baseMethodDeclaration" targetNodeId="38.1213877497463" resolveInfo="getLeft" />
                           </node>
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1204227938278" />
                         </node>
@@ -5436,7 +5436,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227821205">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197551405204" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197551422121">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197551422904" />
                 </node>
               </node>
@@ -5483,7 +5483,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227887397">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197551381696" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197551416163">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197551417414" />
               </node>
             </node>
@@ -5601,7 +5601,7 @@
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227833786">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197552518667" />
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197552521920">
-                                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285716" resolveInfo="getCorrespondingDotConcept" />
+                                <link role="baseMethodDeclaration" targetNodeId="37.1213877285716" resolveInfo="getCorrespondingDotConcept" />
                                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197552523873" />
                               </node>
                             </node>
@@ -5621,7 +5621,7 @@
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227882411">
                                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197552533471" />
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197552533472">
-                                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285716" resolveInfo="getCorrespondingDotConcept" />
+                                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285716" resolveInfo="getCorrespondingDotConcept" />
                                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197552533473" />
                                   </node>
                                 </node>
@@ -5678,7 +5678,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227914588">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197552284676" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197552289009">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197552289698" />
                 </node>
               </node>
@@ -5696,7 +5696,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227932130">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197555381015" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197555381013">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285732" resolveInfo="getCorrespondingDotOperationConcept" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285732" resolveInfo="getCorrespondingDotOperationConcept" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197555381014" />
                 </node>
               </node>
@@ -5840,7 +5840,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197556143487">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877285716" resolveInfo="getCorrespondingDotConcept" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877285716" resolveInfo="getCorrespondingDotConcept" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197556144535" />
                           </node>
                         </node>
@@ -5883,7 +5883,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197556149203">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877285748" resolveInfo="getCorrespondingLeftLink" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877285748" resolveInfo="getCorrespondingLeftLink" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197556149204" />
                           </node>
                         </node>
@@ -5945,7 +5945,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197559316231">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877285716" resolveInfo="getCorrespondingDotConcept" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877285716" resolveInfo="getCorrespondingDotConcept" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197559316232" />
                           </node>
                         </node>
@@ -5988,7 +5988,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197559316212">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877285748" resolveInfo="getCorrespondingLeftLink" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877285748" resolveInfo="getCorrespondingLeftLink" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197559316213" />
                           </node>
                         </node>
@@ -6015,7 +6015,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227882226">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197559924196" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197559928247">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285417" resolveInfo="getRoleConceptType" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285417" resolveInfo="getRoleConceptType" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197559928967" />
                 </node>
               </node>
@@ -6032,7 +6032,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227923074">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197559561948" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197559564092">
-                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197559565359" />
                   </node>
                 </node>
@@ -6107,7 +6107,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227910772">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197625434363" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197625446808">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197625447700" />
                 </node>
               </node>
@@ -6131,7 +6131,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227891217">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197625452579" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197625454927">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197625455553" />
                 </node>
               </node>
@@ -6165,7 +6165,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227920488">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197625429202" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197625441694">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197625442398" />
               </node>
             </node>
@@ -6221,7 +6221,7 @@
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227943308">
                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197637886099" />
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197637898807">
-                                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
+                                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197637900355" />
                                 </node>
                               </node>
@@ -6255,7 +6255,7 @@
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227892663">
                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197638055883" />
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197638073388">
-                                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
+                                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197638074514" />
                                 </node>
                               </node>
@@ -6292,7 +6292,7 @@
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227939190">
                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197638108553" />
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197638139561">
-                                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197638140452" />
                                 </node>
                               </node>
@@ -6312,7 +6312,7 @@
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227935452">
                                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197638188143" />
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197638201429">
-                                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285780" resolveInfo="getCorrespondingLeftPartLink" />
+                                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285780" resolveInfo="getCorrespondingLeftPartLink" />
                                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197638202836" />
                                   </node>
                                 </node>
@@ -6337,7 +6337,7 @@
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227848992">
                                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197638211545" />
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197638229191">
-                                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285780" resolveInfo="getCorrespondingLeftPartLink" />
+                                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285780" resolveInfo="getCorrespondingLeftPartLink" />
                                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197638230083" />
                                   </node>
                                 </node>
@@ -6364,7 +6364,7 @@
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227920206">
                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197638153412" />
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197638171448">
-                                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197638172574" />
                                 </node>
                               </node>
@@ -6384,7 +6384,7 @@
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227887290">
                                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197638243479" />
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197638258812">
-                                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285796" resolveInfo="getCorrespondingRightPartLink" />
+                                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285796" resolveInfo="getCorrespondingRightPartLink" />
                                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197638259860" />
                                   </node>
                                 </node>
@@ -6409,7 +6409,7 @@
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227895948">
                                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197638268569" />
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197638283199">
-                                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285796" resolveInfo="getCorrespondingRightPartLink" />
+                                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285796" resolveInfo="getCorrespondingRightPartLink" />
                                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197638284044" />
                                   </node>
                                 </node>
@@ -6439,7 +6439,7 @@
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227899381">
                                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197638299159" />
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197638313571">
-                                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285780" resolveInfo="getCorrespondingLeftPartLink" />
+                                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285780" resolveInfo="getCorrespondingLeftPartLink" />
                                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197638314368" />
                                   </node>
                                 </node>
@@ -6471,7 +6471,7 @@
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227897321">
                                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197638333797" />
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197638348099">
-                                    <link role="conceptMethodDeclaration" targetNodeId="37.1213877285796" resolveInfo="getCorrespondingRightPartLink" />
+                                    <link role="baseMethodDeclaration" targetNodeId="37.1213877285796" resolveInfo="getCorrespondingRightPartLink" />
                                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197638350115" />
                                   </node>
                                 </node>
@@ -6499,7 +6499,7 @@
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227838457">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197637727293" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197637822803">
-                          <link role="conceptMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
+                          <link role="baseMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
                           <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197637823664" />
                         </node>
                       </node>
@@ -6640,7 +6640,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197628315061">
-                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
+                <link role="baseMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197628315890" />
               </node>
             </node>
@@ -6695,7 +6695,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197628393068">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285812" resolveInfo="getCorrespondingSignProperty" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285812" resolveInfo="getCorrespondingSignProperty" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197628394131" />
                 </node>
               </node>
@@ -6719,7 +6719,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197636269693">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285828" resolveInfo="getCorrespondingPriorityProperty" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285828" resolveInfo="getCorrespondingPriorityProperty" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197636270538" />
                 </node>
               </node>
@@ -6773,7 +6773,7 @@
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227840503">
                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197630418111" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197630422006">
-                        <link role="conceptMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
+                        <link role="baseMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
                         <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197630422710" />
                       </node>
                     </node>
@@ -6795,7 +6795,7 @@
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227844779">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197630426712" />
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197630429091">
-                                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
+                                <link role="baseMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
                                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197630429873" />
                               </node>
                             </node>
@@ -6831,7 +6831,7 @@
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227832444">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197636624208" />
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197636624206">
-                                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                                <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197636624207" />
                               </node>
                             </node>
@@ -6866,7 +6866,7 @@
                                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227909271">
                                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197636705906" />
                                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197636705904">
-                                      <link role="conceptMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
+                                      <link role="baseMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
                                       <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197636705905" />
                                     </node>
                                   </node>
@@ -6890,7 +6890,7 @@
                                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227838071">
                                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197636828178" />
                                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197636828176">
-                                        <link role="conceptMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
+                                        <link role="baseMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
                                         <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197636828177" />
                                       </node>
                                     </node>
@@ -6917,7 +6917,7 @@
                                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227903455">
                                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197636830652" />
                                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197636830650">
-                                        <link role="conceptMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
+                                        <link role="baseMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
                                         <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197636830651" />
                                       </node>
                                     </node>
@@ -6947,7 +6947,7 @@
                                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227946968">
                                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197636860373" />
                                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197636860371">
-                                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                                            <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197636860372" />
                                           </node>
                                         </node>
@@ -7005,7 +7005,7 @@
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227921765">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197630483143" />
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197630488288">
-                                <link role="conceptMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
+                                <link role="baseMethodDeclaration" targetNodeId="37.1213877285764" resolveInfo="getCorrespondingBinaryOperationConcept" />
                                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197630488851" />
                               </node>
                             </node>
@@ -7047,7 +7047,7 @@
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227851585">
                                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197630538633" />
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197630545605">
-                                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285780" resolveInfo="getCorrespondingLefPartLink" />
+                                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285780" resolveInfo="getCorrespondingLefPartLink" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197630546747" />
                                 </node>
                               </node>
@@ -7095,7 +7095,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227918911">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197630233697" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197630238685">
-                  <link role="conceptMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
+                  <link role="baseMethodDeclaration" targetNodeId="37.1213877285700" resolveInfo="getCorrespondingConcept" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197630239436" />
                 </node>
               </node>
@@ -7190,7 +7190,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197633598778">
-                          <link role="conceptMethodDeclaration" targetNodeId="37.1213877285780" resolveInfo="getCorrespondingLeftPartLink" />
+                          <link role="baseMethodDeclaration" targetNodeId="37.1213877285780" resolveInfo="getCorrespondingLeftPartLink" />
                           <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197633673279" />
                         </node>
                       </node>
@@ -7290,7 +7290,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197633636256">
-                          <link role="conceptMethodDeclaration" targetNodeId="37.1213877285796" resolveInfo="getCorrespondingRightPartLink" />
+                          <link role="baseMethodDeclaration" targetNodeId="37.1213877285796" resolveInfo="getCorrespondingRightPartLink" />
                           <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1197633659059" />
                         </node>
                       </node>
@@ -7445,7 +7445,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213104858554">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877285716" resolveInfo="getCorrespondingDotConcept" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877285716" resolveInfo="getCorrespondingDotConcept" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1213104858555" />
                           </node>
                         </node>
@@ -7488,7 +7488,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213104858573">
-                            <link role="conceptMethodDeclaration" targetNodeId="37.1213877285748" resolveInfo="getCorrespondingLeftLink" />
+                            <link role="baseMethodDeclaration" targetNodeId="37.1213877285748" resolveInfo="getCorrespondingLeftLink" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1213104858574" />
                           </node>
                         </node>

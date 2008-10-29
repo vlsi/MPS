@@ -11,7 +11,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
@@ -259,7 +259,7 @@
                         <link role="variable" targetNodeId="1209458967634" resolveInfo="e" />
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1209460182538">
-                        <link role="conceptMethodDeclaration" targetNodeId="4.1213877333900" resolveInfo="equals" />
+                        <link role="baseMethodDeclaration" targetNodeId="4.1213877333900" resolveInfo="equals" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1209460184645">
                           <link role="variable" targetNodeId="1209459001996" resolveInfo="e2" />
                         </node>
@@ -290,7 +290,7 @@
               <link role="applicableNode" targetNodeId="1209470414541" resolveInfo="module" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1209470432580">
-              <link role="conceptMethodDeclaration" targetNodeId="4.1213877515148" resolveInfo="getModule" />
+              <link role="baseMethodDeclaration" targetNodeId="4.1213877515148" resolveInfo="getModule" />
             </node>
           </node>
         </node>

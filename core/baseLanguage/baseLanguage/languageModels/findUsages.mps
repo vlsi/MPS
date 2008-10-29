@@ -10,7 +10,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -259,7 +259,7 @@
                           <link role="variable" targetNodeId="1200413471960" resolveInfo="sMethod" />
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1204901344954">
-                          <link role="conceptMethodDeclaration" targetNodeId="18.1213877350435" resolveInfo="overridesMethod" />
+                          <link role="baseMethodDeclaration" targetNodeId="18.1213877350435" resolveInfo="overridesMethod" />
                           <node role="actualArgument" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1206445035142" />
                         </node>
                       </node>
@@ -1487,7 +1487,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1200499549085">
-                          <link role="conceptMethodDeclaration" targetNodeId="18.1213877337313" resolveInfo="getErasureSignature" />
+                          <link role="baseMethodDeclaration" targetNodeId="18.1213877337313" resolveInfo="getErasureSignature" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1204332444250">
@@ -1500,7 +1500,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1200499562551">
-                            <link role="conceptMethodDeclaration" targetNodeId="18.1213877337313" resolveInfo="getErasureSignature" />
+                            <link role="baseMethodDeclaration" targetNodeId="18.1213877337313" resolveInfo="getErasureSignature" />
                           </node>
                         </node>
                       </node>
@@ -1710,7 +1710,7 @@
                       <link role="variable" targetNodeId="1200425863013" resolveInfo="sMethod" />
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1204901471067">
-                      <link role="conceptMethodDeclaration" targetNodeId="18.1213877350435" resolveInfo="hasSameSignature" />
+                      <link role="baseMethodDeclaration" targetNodeId="18.1213877350435" resolveInfo="hasSameSignature" />
                       <node role="actualArgument" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1206444905148" />
                     </node>
                   </node>
@@ -3083,7 +3083,7 @@
                       <link role="variable" targetNodeId="1216393234217" resolveInfo="classMethod" />
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1216393234223">
-                      <link role="conceptMethodDeclaration" targetNodeId="18.1213877350435" resolveInfo="hasSameSignature" />
+                      <link role="baseMethodDeclaration" targetNodeId="18.1213877350435" resolveInfo="hasSameSignature" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216393234262">
                         <link role="variableDeclaration" targetNodeId="1216391860777" resolveInfo="method" />
                       </node>

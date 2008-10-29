@@ -7,7 +7,7 @@
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
@@ -92,7 +92,7 @@
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1205921509776">
-                        <link role="conceptMethodDeclaration" targetNodeId="4.1213877255428" resolveInfo="getBaseClassifier" />
+                        <link role="baseMethodDeclaration" targetNodeId="4.1213877255428" resolveInfo="getBaseClassifier" />
                       </node>
                     </node>
                   </node>
@@ -177,7 +177,7 @@
                     <link role="variableDeclaration" targetNodeId="1205921464262" resolveInfo="contextClassifier" />
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1205921552916">
-                    <link role="conceptMethodDeclaration" targetNodeId="4.1213877528020" resolveInfo="getMembers" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.1213877528020" resolveInfo="getMembers" />
                     <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1205921556917" />
                   </node>
                 </node>
@@ -262,7 +262,7 @@
                     <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205922144016">
                       <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1205922143765" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1205922145346">
-                        <link role="conceptMethodDeclaration" targetNodeId="4.1213877353000" resolveInfo="createOperation" />
+                        <link role="baseMethodDeclaration" targetNodeId="4.1213877353000" resolveInfo="createOperation" />
                       </node>
                     </node>
                   </node>
@@ -296,7 +296,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219068300362">
                   <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1219068371486" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1219068300364">
-                    <link role="conceptMethodDeclaration" targetNodeId="4.1219068414643" resolveInfo="getPossibleClassifiers" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.1219068414643" resolveInfo="getPossibleClassifiers" />
                   </node>
                 </node>
               </node>

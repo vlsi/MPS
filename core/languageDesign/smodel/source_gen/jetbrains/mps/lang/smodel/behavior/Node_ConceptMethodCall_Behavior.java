@@ -17,7 +17,7 @@ public class Node_ConceptMethodCall_Behavior {
   }
 
   public static SNode call_getVirtualMethodDeclaration_1213877437832(SNode thisNode) {
-    SNode methodDeclaration = SLinkOperations.getTarget(thisNode, "conceptMethodDeclaration", false);
+    SNode methodDeclaration = SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false);
     if ((SLinkOperations.getTarget(methodDeclaration, "overriddenMethod", false) != null)) {
       return SLinkOperations.getTarget(methodDeclaration, "overriddenMethod", false);
     } else
@@ -31,7 +31,7 @@ public class Node_ConceptMethodCall_Behavior {
 
   public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     String variableExpectedName;
-    variableExpectedName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "conceptMethodDeclaration", false), "name");
+    variableExpectedName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "name");
     if (variableExpectedName.startsWith("get")) {
       variableExpectedName = variableExpectedName.substring(3);
     } else

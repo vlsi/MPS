@@ -15,7 +15,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
@@ -1120,7 +1120,7 @@
               <link role="applicableNode" targetNodeId="1202742207433" resolveInfo="ft" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1202742370115">
-              <link role="conceptMethodDeclaration" targetNodeId="23.1213877396640" resolveInfo="getPresentation" />
+              <link role="baseMethodDeclaration" targetNodeId="23.1213877396640" resolveInfo="getPresentation" />
             </node>
           </node>
           <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1202742380240">
@@ -1133,7 +1133,7 @@
                   <link role="applicableNode" targetNodeId="1202742215241" resolveInfo="ct" />
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1202746220329">
-                  <link role="conceptMethodDeclaration" targetNodeId="23.1213877396640" resolveInfo="getPresentation" />
+                  <link role="baseMethodDeclaration" targetNodeId="23.1213877396640" resolveInfo="getPresentation" />
                 </node>
               </node>
             </node>
@@ -1182,7 +1182,7 @@
                 <link role="applicableNode" targetNodeId="1202756483922" resolveInfo="ft" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1202757151719">
-                <link role="conceptMethodDeclaration" targetNodeId="26.1213877404927" resolveInfo="getRuntimeSignature" />
+                <link role="baseMethodDeclaration" targetNodeId="26.1213877404927" resolveInfo="getRuntimeSignature" />
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1202756513379">

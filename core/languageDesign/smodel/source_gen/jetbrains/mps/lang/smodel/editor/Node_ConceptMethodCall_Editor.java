@@ -85,9 +85,9 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new Node_ConceptMethodCall_Editor._Inline6574_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refCell_conceptMethodDeclaration1179409337167(editorCell, node, context);
+    setupBasic_refCell_baseMethodDeclaration1179409337167(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refCell_conceptMethodDeclaration_1179409337167((EditorCell_Label)editorCell, node, context);
+      setupLabel_refCell_baseMethodDeclaration_1179409337167((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -95,8 +95,8 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefCell1179409337167(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
-    provider.setRole("conceptMethodDeclaration");
-    provider.setNoTargetText("<no conceptMethodDeclaration>");
+    provider.setRole("baseMethodDeclaration");
+    provider.setNoTargetText("<no baseMethodDeclaration>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell1179409337167_internal(context, node, provider);
@@ -115,8 +115,8 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1179409334055");
   }
 
-  private static void setupBasic_refCell_conceptMethodDeclaration1179409337167(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_conceptMethodDeclaration");
+  private static void setupBasic_refCell_baseMethodDeclaration1179409337167(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_baseMethodDeclaration");
   }
 
   private static void setupBasic_Constant_11794093651571179409365157(EditorCell editorCell, SNode node, EditorContext context) {
@@ -136,7 +136,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_refCell_conceptMethodDeclaration_1179409337167(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refCell_baseMethodDeclaration_1179409337167(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1179409365157_1179409365157(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -149,7 +149,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition6574_0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false), "parameter") == 0;
+    return SLinkOperations.getCount(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter") == 0;
   }
 
   public static class _Inline6574_0 extends AbstractCellProvider {

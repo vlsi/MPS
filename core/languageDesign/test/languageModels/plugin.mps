@@ -9,7 +9,7 @@
   <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="15" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
@@ -66,11 +66,11 @@
                       <link role="variableDeclaration" targetNodeId="1224595056173" resolveInfo="test" />
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224600446588">
-                      <link role="conceptMethodDeclaration" targetNodeId="4.1216134500045" resolveInfo="getTestCase" />
+                      <link role="baseMethodDeclaration" targetNodeId="4.1216134500045" resolveInfo="getTestCase" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224600446589">
-                    <link role="conceptMethodDeclaration" targetNodeId="4.1216136193905" resolveInfo="getClassName" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.1216136193905" resolveInfo="getClassName" />
                   </node>
                 </node>
               </node>
@@ -85,7 +85,7 @@
                     <link role="variableDeclaration" targetNodeId="1224595056173" resolveInfo="test" />
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224600459942">
-                    <link role="conceptMethodDeclaration" targetNodeId="4.1216136419751" resolveInfo="getTestName" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.1216136419751" resolveInfo="getTestName" />
                   </node>
                 </node>
               </node>
@@ -153,11 +153,11 @@
                           <link role="variableDeclaration" targetNodeId="1224595056173" resolveInfo="test" />
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224599054321">
-                          <link role="conceptMethodDeclaration" targetNodeId="4.1216134500045" resolveInfo="getTestCase" />
+                          <link role="baseMethodDeclaration" targetNodeId="4.1216134500045" resolveInfo="getTestCase" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224599054322">
-                        <link role="conceptMethodDeclaration" targetNodeId="4.1216136193905" resolveInfo="getClassName" />
+                        <link role="baseMethodDeclaration" targetNodeId="4.1216136193905" resolveInfo="getClassName" />
                       </node>
                     </node>
                   </node>
@@ -378,7 +378,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224598402924">
-                    <link role="conceptMethodDeclaration" targetNodeId="4.1216130724401" resolveInfo="getTestSet" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.1216130724401" resolveInfo="getTestSet" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" id="1224598402925" />

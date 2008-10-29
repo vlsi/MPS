@@ -15,7 +15,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
@@ -46,7 +46,7 @@
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="10" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <import index="10" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
@@ -541,7 +541,7 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877290805">
               <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877290806" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877290807">
-                <link role="conceptMethodDeclaration" targetNodeId="1213877290823" resolveInfo="getPreviousNodeMacro" />
+                <link role="baseMethodDeclaration" targetNodeId="1213877290823" resolveInfo="getPreviousNodeMacro" />
               </node>
             </node>
           </node>
@@ -554,7 +554,7 @@
                   <link role="variableDeclaration" targetNodeId="1213877290803" resolveInfo="prevNodeMacro" />
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877290813">
-                  <link role="conceptMethodDeclaration" targetNodeId="1213877290799" resolveInfo="getInputNodeTypeInsideOfMacro" />
+                  <link role="baseMethodDeclaration" targetNodeId="1213877290799" resolveInfo="getInputNodeTypeInsideOfMacro" />
                 </node>
               </node>
             </node>
@@ -571,7 +571,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877290820">
                   <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877290821" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877290822">
-                    <link role="conceptMethodDeclaration" targetNodeId="1213877290892" resolveInfo="getInputNodeTypeFromEnvironment" />
+                    <link role="baseMethodDeclaration" targetNodeId="1213877290892" resolveInfo="getInputNodeTypeFromEnvironment" />
                   </node>
                 </node>
               </node>
@@ -592,7 +592,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877290827">
             <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877290828" />
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877290829">
-              <link role="conceptMethodDeclaration" targetNodeId="1213877290834" resolveInfo="getEnclosingMacro" />
+              <link role="baseMethodDeclaration" targetNodeId="1213877290834" resolveInfo="getEnclosingMacro" />
               <node role="actualArgument" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877290830" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877290831">
                 <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877290832" />
@@ -710,7 +710,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877290881">
             <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877290882" />
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877290883">
-              <link role="conceptMethodDeclaration" targetNodeId="1213877290834" resolveInfo="getEnclosingMacro" />
+              <link role="baseMethodDeclaration" targetNodeId="1213877290834" resolveInfo="getEnclosingMacro" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1213877290884" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877290885">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1213877290886">
@@ -1078,7 +1078,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877378083">
             <node role="operand" type="jetbrains.mps.lang.behavior.structure.SuperNodeExpression" id="1213877378084" />
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877378085">
-              <link role="conceptMethodDeclaration" targetNodeId="1213877290799" resolveInfo="getInputNodeTypeInsideOfMacro" />
+              <link role="baseMethodDeclaration" targetNodeId="1213877290799" resolveInfo="getInputNodeTypeInsideOfMacro" />
             </node>
           </node>
         </node>
@@ -1268,7 +1268,7 @@
                       <link role="variableDeclaration" targetNodeId="1213877473045" resolveInfo="dataType" />
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877473055">
-                      <link role="conceptMethodDeclaration" targetNodeId="13.1213877229718" resolveInfo="toBaseLanguageType" />
+                      <link role="baseMethodDeclaration" targetNodeId="13.1213877229718" resolveInfo="toBaseLanguageType" />
                     </node>
                   </node>
                 </node>
@@ -1397,7 +1397,7 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877498487">
               <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877498488" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877498489">
-                <link role="conceptMethodDeclaration" targetNodeId="1213877498516" resolveInfo="getMappingLabelText" />
+                <link role="baseMethodDeclaration" targetNodeId="1213877498516" resolveInfo="getMappingLabelText" />
               </node>
             </node>
           </node>
@@ -1565,7 +1565,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877522479">
             <node role="operand" type="jetbrains.mps.lang.behavior.structure.SuperNodeExpression" id="1213877522480" />
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877522481">
-              <link role="conceptMethodDeclaration" targetNodeId="1213877290799" resolveInfo="getInputNodeTypeInsideOfMacro" />
+              <link role="baseMethodDeclaration" targetNodeId="1213877290799" resolveInfo="getInputNodeTypeInsideOfMacro" />
             </node>
           </node>
         </node>

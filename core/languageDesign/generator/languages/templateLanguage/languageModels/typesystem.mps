@@ -13,7 +13,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
@@ -43,7 +43,7 @@
   <import index="6" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
-  <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <import index="16" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -1753,7 +1753,7 @@
                 <link role="applicableNode" targetNodeId="1200915146066" resolveInfo="nodeToCheck" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1207675008266">
-                <link role="conceptMethodDeclaration" targetNodeId="21.1213877508894" resolveInfo="getLeftExpression" />
+                <link role="baseMethodDeclaration" targetNodeId="21.1213877508894" resolveInfo="getLeftExpression" />
               </node>
             </node>
           </node>
@@ -1859,7 +1859,7 @@
                         <link role="applicableNode" targetNodeId="1200921388038" resolveInfo="nodeToCheck" />
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1200922175826">
-                        <link role="conceptMethodDeclaration" targetNodeId="24.1213877498511" resolveInfo="getTemplateType" />
+                        <link role="baseMethodDeclaration" targetNodeId="24.1213877498511" resolveInfo="getTemplateType" />
                       </node>
                     </node>
                   </node>

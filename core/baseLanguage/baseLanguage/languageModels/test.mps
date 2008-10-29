@@ -17,7 +17,7 @@
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
@@ -50,7 +50,7 @@
   <import index="5" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
-  <import index="12" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <import index="12" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
@@ -5050,7 +5050,7 @@
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215441453591">
                   <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1215441453592" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1215441453593">
-                    <link role="conceptMethodDeclaration" targetNodeId="1215441453581" resolveInfo="foo" />
+                    <link role="baseMethodDeclaration" targetNodeId="1215441453581" resolveInfo="foo" />
                     <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1215441453594">
                       <property name="name" value="call" />
                     </node>
@@ -6315,7 +6315,7 @@
                     <link role="variableDeclaration" targetNodeId="1215441503150" resolveInfo="node" />
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1215441503161">
-                    <link role="conceptMethodDeclaration" targetNodeId="1215441503169" resolveInfo="bar" />
+                    <link role="baseMethodDeclaration" targetNodeId="1215441503169" resolveInfo="bar" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1215441503162">
                       <property name="value" value="10" />
                     </node>
@@ -6353,7 +6353,7 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215441503175">
                   <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1215441503176" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1215441503177">
-                    <link role="conceptMethodDeclaration" targetNodeId="1215441503164" resolveInfo="foo" />
+                    <link role="baseMethodDeclaration" targetNodeId="1215441503164" resolveInfo="foo" />
                   </node>
                 </node>
               </node>
@@ -6374,7 +6374,7 @@
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215441503185">
                   <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1215441503186" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1215441503187">
-                    <link role="conceptMethodDeclaration" targetNodeId="1215441503164" resolveInfo="foo" />
+                    <link role="baseMethodDeclaration" targetNodeId="1215441503164" resolveInfo="foo" />
                   </node>
                 </node>
               </node>
@@ -6419,7 +6419,7 @@
                       <link role="variableDeclaration" targetNodeId="1215441503194" resolveInfo="node" />
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1215441503206">
-                      <link role="conceptMethodDeclaration" targetNodeId="1215441503208" resolveInfo="foo" />
+                      <link role="baseMethodDeclaration" targetNodeId="1215441503208" resolveInfo="foo" />
                     </node>
                   </node>
                 </node>
@@ -6455,7 +6455,7 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215441503219">
                   <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1215441503220" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1215441503221">
-                    <link role="conceptMethodDeclaration" targetNodeId="1215441503208" resolveInfo="foo" />
+                    <link role="baseMethodDeclaration" targetNodeId="1215441503208" resolveInfo="foo" />
                   </node>
                 </node>
               </node>
@@ -6476,7 +6476,7 @@
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215441503229">
                   <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1215441503230" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1215441503231">
-                    <link role="conceptMethodDeclaration" targetNodeId="1215441503208" resolveInfo="foo" />
+                    <link role="baseMethodDeclaration" targetNodeId="1215441503208" resolveInfo="foo" />
                   </node>
                 </node>
               </node>
@@ -8001,7 +8001,7 @@
                     <link role="variableDeclaration" targetNodeId="1215441478496" resolveInfo="bla" />
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1215441478504">
-                    <link role="conceptMethodDeclaration" targetNodeId="18.1213877396707" resolveInfo="useHorizontalInspector" />
+                    <link role="baseMethodDeclaration" targetNodeId="18.1213877396707" resolveInfo="useHorizontalInspector" />
                     <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1215441478505">
                       <property name="name" value="call" />
                     </node>
@@ -8493,7 +8493,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215439504670">
                 <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1215439504671" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1215439504672">
-                  <link role="conceptMethodDeclaration" targetNodeId="1215439504675" resolveInfo="foo" />
+                  <link role="baseMethodDeclaration" targetNodeId="1215439504675" resolveInfo="foo" />
                 </node>
               </node>
             </node>

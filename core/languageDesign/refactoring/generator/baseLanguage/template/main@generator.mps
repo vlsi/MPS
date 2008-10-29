@@ -17,7 +17,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
@@ -345,7 +345,7 @@
                           <link role="variableDeclaration" targetNodeId="1201177865544" resolveInfo="argument" />
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1201177962073">
-                          <link role="conceptMethodDeclaration" targetNodeId="30.1213877343864" resolveInfo="isTransient" />
+                          <link role="baseMethodDeclaration" targetNodeId="30.1213877343864" resolveInfo="isTransient" />
                         </node>
                       </node>
                     </node>
@@ -385,7 +385,7 @@
                           <link role="variableDeclaration" targetNodeId="1201177939749" resolveInfo="argument" />
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1201177986387">
-                          <link role="conceptMethodDeclaration" targetNodeId="30.1213877343864" resolveInfo="isTransient" />
+                          <link role="baseMethodDeclaration" targetNodeId="30.1213877343864" resolveInfo="isTransient" />
                         </node>
                       </node>
                     </node>
@@ -481,7 +481,7 @@
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1199462183252">
-                        <link role="conceptMethodDeclaration" targetNodeId="31.1213877273475" resolveInfo="getKeyStroke" />
+                        <link role="baseMethodDeclaration" targetNodeId="31.1213877273475" resolveInfo="getKeyStroke" />
                       </node>
                     </node>
                   </node>
@@ -4429,7 +4429,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1212245241086">
-                          <link role="conceptMethodDeclaration" targetNodeId="32.1213877240120" resolveInfo="getGeneratedClassLongName" />
+                          <link role="baseMethodDeclaration" targetNodeId="32.1213877240120" resolveInfo="getGeneratedClassLongName" />
                         </node>
                       </node>
                     </node>

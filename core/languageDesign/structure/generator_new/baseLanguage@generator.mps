@@ -15,7 +15,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
@@ -50,7 +50,7 @@
   <import index="20" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="24" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="25" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
-  <import index="28" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
+  <import index="28" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
   <import index="29" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <import index="30" modelUID="f:java_stub#jetbrains.mps.lang.core.structure(jetbrains.mps.lang.core.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1095423876828">
@@ -109,7 +109,7 @@
                 <link role="variableDeclaration" targetNodeId="1167266747642" resolveInfo="type" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1220343798982">
-                <link role="conceptMethodDeclaration" targetNodeId="29.1220268752134" resolveInfo="isString" />
+                <link role="baseMethodDeclaration" targetNodeId="29.1220268752134" resolveInfo="isString" />
               </node>
             </node>
           </node>
@@ -156,7 +156,7 @@
                 <link role="variableDeclaration" targetNodeId="1167266769459" resolveInfo="type" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1220343803878">
-                <link role="conceptMethodDeclaration" targetNodeId="29.1220268791641" resolveInfo="isBoolean" />
+                <link role="baseMethodDeclaration" targetNodeId="29.1220268791641" resolveInfo="isBoolean" />
               </node>
             </node>
           </node>
@@ -203,7 +203,7 @@
                 <link role="variableDeclaration" targetNodeId="1167266774246" resolveInfo="type" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1220343816324">
-                <link role="conceptMethodDeclaration" targetNodeId="29.1220268780075" resolveInfo="isInteger" />
+                <link role="baseMethodDeclaration" targetNodeId="29.1220268780075" resolveInfo="isInteger" />
               </node>
             </node>
           </node>
@@ -1775,7 +1775,7 @@
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721759057">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197509810329" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1197509815364">
-                          <link role="conceptMethodDeclaration" targetNodeId="29.1213877397785" resolveInfo="getDefaultMember" />
+                          <link role="baseMethodDeclaration" targetNodeId="29.1213877397785" resolveInfo="getDefaultMember" />
                         </node>
                       </node>
                     </node>
