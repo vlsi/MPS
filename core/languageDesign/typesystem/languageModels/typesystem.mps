@@ -31,6 +31,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
@@ -501,7 +502,7 @@
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1185805429689">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1185805442899">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196436873789">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192811320" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192811320" />
           </node>
         </node>
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1185805429691">
@@ -1716,7 +1717,7 @@
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1207055636648">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1207055636649">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1207055636650">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192811483" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192811483" />
           </node>
         </node>
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1207055636652">
@@ -2133,7 +2134,7 @@
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1224760393553">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1224760393554">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1224760393555">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192811466" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192811466" />
           </node>
         </node>
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1224760393557">

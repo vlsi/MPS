@@ -38,6 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="25" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -929,7 +930,7 @@
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201204858050">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201204892988">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201204892989">
-                          <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193801675" />
+                          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193801675" />
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201204900743">
                             <link role="baseMethodDeclaration" targetNodeId="13.1201016985666" resolveInfo="getPrepData" />
                             <link role="classConcept" targetNodeId="13.1200861660719" resolveInfo="PrepStatementUtil" />
@@ -1039,7 +1040,7 @@
                       </node>
                       <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1201094021625" />
                     </node>
-                    <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193797227" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193797227" />
                   </node>
                 </node>
               </node>
@@ -6813,7 +6814,7 @@
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1201019362260" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1201019362261" />
                   </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193800622" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193800622" />
                 </node>
               </node>
             </node>
@@ -6871,7 +6872,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201359412545">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201359412546">
                   <property name="name" value="varName" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193801863" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193801863" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201359412548">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201359412549">
                       <link role="baseMethodDeclaration" targetNodeId="13.1201016985666" resolveInfo="getPrepData" />
@@ -6879,7 +6880,7 @@
                       <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1201359412551" />
                       <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1201359412553" />
                     </node>
-                    <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193802382" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193802382" />
                   </node>
                 </node>
               </node>
@@ -6995,7 +6996,7 @@
                                 </node>
                                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1201093780451" />
                               </node>
-                              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193799380" />
+                              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193799380" />
                             </node>
                           </node>
                         </node>
@@ -9387,7 +9388,7 @@
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201358887689">
                             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201358887690">
                               <property name="name" value="varName" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193802728" />
+                              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193802728" />
                               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201358887692">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201358887693">
                                   <link role="classConcept" targetNodeId="13.1200861660719" resolveInfo="PrepStatementUtil" />
@@ -9400,7 +9401,7 @@
                                   </node>
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1201358887697" />
                                 </node>
-                                <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193804834" />
+                                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193804834" />
                               </node>
                             </node>
                           </node>
@@ -9479,7 +9480,7 @@
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201359082837">
                               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201359082838">
                                 <property name="name" value="varName" />
-                                <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193800087" />
+                                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193800087" />
                                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201359082840">
                                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201359082841">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1201016985666" resolveInfo="getPrepData" />
@@ -9492,7 +9493,7 @@
                                     </node>
                                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1201359082845" />
                                   </node>
-                                  <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193801156" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193801156" />
                                 </node>
                               </node>
                             </node>
@@ -9590,7 +9591,7 @@
                                 </node>
                                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1201359122211" />
                               </node>
-                              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193804315" />
+                              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193804315" />
                             </node>
                           </node>
                         </node>
@@ -9608,7 +9609,7 @@
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201359158802">
                               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201359158803">
                                 <property name="name" value="varName" />
-                                <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193804142" />
+                                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193804142" />
                                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1201359158805">
                                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201359158806">
                                     <link role="classConcept" targetNodeId="13.1200861660719" resolveInfo="PrepStatementUtil" />
@@ -9621,7 +9622,7 @@
                                     </node>
                                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_generator" id="1201359158810" />
                                   </node>
-                                  <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193804661" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193804661" />
                                 </node>
                               </node>
                             </node>

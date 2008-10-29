@@ -20,6 +20,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="5" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -352,7 +353,7 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207741307110">
                   <property name="name" value="nullSeq" />
                   <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1207741307111">
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196721048" />
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196721048" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207741448363">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207741307114">
@@ -371,7 +372,7 @@
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1207741710870" />
                                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207741713841">
                                   <link role="classifier" targetNodeId="5.~ISequence" resolveInfo="ISequence" />
-                                  <node role="parameter" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196719734" />
+                                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196719734" />
                                 </node>
                               </node>
                             </node>

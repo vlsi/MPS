@@ -31,6 +31,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -48,7 +49,7 @@
         </node>
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1222428222365">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1198239755051">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225194686710" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225194686710" />
           </node>
         </node>
       </node>
@@ -76,7 +77,7 @@
         </node>
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1185805553569">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1198239755069">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225194694249" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225194694249" />
           </node>
         </node>
       </node>
@@ -104,7 +105,7 @@
         </node>
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1185805553571">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1198239755071">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225194689339" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225194689339" />
           </node>
         </node>
       </node>
@@ -132,7 +133,7 @@
         </node>
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1185805553573">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1198239755073">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225194694500" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225194694500" />
           </node>
         </node>
       </node>
@@ -160,7 +161,7 @@
         </node>
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1185805553575">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1198239755075">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225194695504" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225194695504" />
           </node>
         </node>
       </node>
@@ -176,7 +177,7 @@
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1198239755077">
             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198239755078">
               <link role="classifier" targetNodeId="4.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225194696257" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225194696257" />
             </node>
           </node>
         </node>
@@ -205,7 +206,7 @@
         </node>
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1185805553577">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1198239755080">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225194686208" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225194686208" />
           </node>
         </node>
       </node>
@@ -254,7 +255,7 @@
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1222260051563">
             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222260051564">
               <link role="classifier" targetNodeId="4.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225194689606" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225194689606" />
             </node>
           </node>
         </node>

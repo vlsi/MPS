@@ -38,6 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="12" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -1030,7 +1031,7 @@
     <property name="name" value="TraversalAxisUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1179161831408">
       <property name="name" value="getOperationSign" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193268533" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193268533" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1179161831410" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179161831411">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SwitchStatement" id="1199385375867">
@@ -4502,7 +4503,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198013650490">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198013650491">
                   <property name="name" value="suffix" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193266749" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193266749" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198013650493">
                     <property name="value" value="" />
                   </node>
@@ -4676,7 +4677,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198013650567">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198013650568">
                   <property name="name" value="suffix" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193266229" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193266229" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198013650570">
                     <property name="value" value="" />
                   </node>
@@ -6047,7 +6048,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198015881271">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198015881272">
                   <property name="name" value="suffix" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193267807" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193267807" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198015881274">
                     <property name="value" value="" />
                   </node>
@@ -6240,7 +6241,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198015881349">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198015881350">
                   <property name="name" value="suffix" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193271653" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193271653" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198015881352">
                     <property name="value" value="" />
                   </node>

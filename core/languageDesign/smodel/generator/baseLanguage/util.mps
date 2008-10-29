@@ -18,6 +18,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="28" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="8" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.lang.smodel(jetbrains.mps.lang.smodel@java_stub)" version="-1" />
@@ -318,7 +319,7 @@
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1172424541766">
       <property name="name" value="getConceptFqName" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193160888" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193160888" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1172424541768">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1172424577871">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1172424595467">

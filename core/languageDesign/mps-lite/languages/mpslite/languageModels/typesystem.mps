@@ -34,6 +34,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905d5(jetbrains.mpslite.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -246,7 +247,7 @@
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1196960426938">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1196960428628">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196960428629">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196854352" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196854352" />
           </node>
         </node>
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1196960426940">

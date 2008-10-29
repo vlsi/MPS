@@ -29,6 +29,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="39" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="37" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -2941,6 +2942,161 @@
     </node>
     <node role="extends" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1224848516303">
       <link role="intfc" targetNodeId="4.1224608834445" resolveInfo="IDeprecatable" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225271177708">
+    <property name="name" value="StringType" />
+    <property name="package" value="string" />
+    <link role="extends" targetNodeId="1068431790189" resolveInfo="Type" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271177709">
+      <property name="value" value="string" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225271221393">
+    <property name="name" value="NPENotEqualsExpression" />
+    <property name="package" value="string" />
+    <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271221394">
+      <property name="value" value="ne" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271221395">
+      <property name="value" value="NPE-safe not equals operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1225271221396">
+      <property name="value" value="4" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225271283259">
+    <property name="name" value="NPEEqualsExpression" />
+    <property name="package" value="string" />
+    <link role="extends" targetNodeId="1081773326031" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271283260">
+      <property name="value" value="eq" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271283261">
+      <property name="value" value="NPE-safe equals operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1225271283262">
+      <property name="value" value="4" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225271315873">
+    <property name="package" value="string.expression" />
+    <property name="name" value="BaseStringOperation" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1225271315874">
+      <link role="intfc" targetNodeId="1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1225271315875">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225271369338">
+    <property name="name" value="IsEmptyOperation" />
+    <property name="package" value="string.expression" />
+    <link role="extends" targetNodeId="1225271443097" resolveInfo="StringBooleanOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271369339">
+      <property name="value" value="isEmpty" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271369340">
+      <property name="value" value="string is null or empty" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225271408483">
+    <property name="name" value="IsNotEmptyOperation" />
+    <property name="package" value="string.expression" />
+    <link role="extends" targetNodeId="1225271443097" resolveInfo="StringBooleanOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271408484">
+      <property name="value" value="isNotEmpty" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271408485">
+      <property name="value" value="string is not null and not empty" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225271443097">
+    <property name="package" value="string.expression" />
+    <property name="name" value="StringBooleanOperation" />
+    <link role="extends" targetNodeId="1225271315873" resolveInfo="BaseStringOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1225271443098">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225271484915">
+    <property name="package" value="string.expression" />
+    <property name="name" value="SubstringExpression" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225271484916">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="operand" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225271484917">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="startIndex" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225271484918">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="endIndex" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271484919">
+      <property name="value" value="[" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271484920">
+      <property name="value" value="substing" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1225271484921">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1225271514374">
+    <property name="package" value="string.expression" />
+    <property name="name" value="TrimKind" />
+    <property name="memberIdentifierPolicy" value="derive_from_internal_value" />
+    <link role="memberDataType" targetNodeId="4.1082983041843" resolveInfo="string" />
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1225271514375">
+      <property name="internalValue" value="both" />
+      <property name="externalValue" value="both" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1225271514376">
+      <property name="internalValue" value="leading" />
+      <property name="externalValue" value="leading" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1225271514377">
+      <property name="internalValue" value="trailing" />
+      <property name="externalValue" value="trailing" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225271546410">
+    <property name="package" value="string.expression" />
+    <property name="name" value="TrimOperation" />
+    <link role="extends" targetNodeId="1225271315873" resolveInfo="BaseStringOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271546411">
+      <property name="value" value="trim" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225271546412">
+      <property name="value" value="trim white spaces, line breaks, tabs, etc." />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1225271546413">
+      <property name="name" value="trimKind" />
+      <link role="dataType" targetNodeId="1225271514374" resolveInfo="TrimKind" />
     </node>
   </node>
 </model>

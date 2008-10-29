@@ -16,6 +16,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -36,13 +37,13 @@
             <property name="name" value="lll" />
             <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1172275567144">
               <node role="elementType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1172275569412">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196798728" />
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196798728" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1172275605056">
               <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1172275607011">
                 <node role="elementType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1172275610201">
-                  <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196802331" />
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196802331" />
                 </node>
               </node>
             </node>
@@ -62,7 +63,7 @@
             <property name="name" value="list" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178925088260">
               <link role="classifier" targetNodeId="2.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196802738" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196802738" />
             </node>
           </node>
         </node>
@@ -85,7 +86,7 @@
             <property name="name" value="iterable" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1179159662634">
               <link role="classifier" targetNodeId="1.~Iterable" resolveInfo="Iterable" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196807528" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196807528" />
             </node>
           </node>
         </node>
@@ -105,7 +106,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1179271692697">
             <property name="name" value="list" />
             <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1179271708883">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196799135" />
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196799135" />
             </node>
           </node>
         </node>
@@ -144,7 +145,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199409914389">
             <property name="name" value="ss" />
             <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1199409914390">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196804712" />
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196804712" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1199409933457">
               <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" id="1224754248051">

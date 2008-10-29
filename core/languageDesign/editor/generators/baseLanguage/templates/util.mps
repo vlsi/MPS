@@ -31,6 +31,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
@@ -57,13 +58,13 @@
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1212794206564">
       <property name="name" value="getProviderClassNameForCellWithRole" />
       <property name="isDeprecated" value="false" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191489438" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191489438" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212794206566" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212794206567">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212794442177">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212794442178">
             <property name="name" value="conceptFqName" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191497549" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191497549" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212794442180">
               <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1212794442181">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1212794442182">
@@ -79,7 +80,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212794530704">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212794530705">
             <property name="name" value="something" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191490992" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191490992" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212794530707">
               <link role="baseMethodDeclaration" targetNodeId="9.~NameUtil.removeStructureFromFqName(java.lang.String):java.lang.String" resolveInfo="removeStructureFromFqName" />
               <link role="classConcept" targetNodeId="9.~NameUtil" resolveInfo="NameUtil" />
@@ -337,7 +338,7 @@
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1189585733348">
       <property name="name" value="keyMapActionClassName" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191503525" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191503525" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1189585733350" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1189585733351">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1189585802292">

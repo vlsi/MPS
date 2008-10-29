@@ -40,6 +40,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="37" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -62,7 +63,7 @@
     <link role="applicableConcept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="internalArguments" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument" id="1198079405212">
       <property name="name" value="role" />
-      <node role="argumentType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191251405" />
+      <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191251405" />
     </node>
     <node role="internalArguments" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument" id="1213099173577">
       <property name="name" value="nodeToOpen" />
@@ -260,7 +261,7 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198078651967">
                 <property name="name" value="childLinksRoles" />
                 <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1198078651968">
-                  <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191250525" />
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191250525" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207782887396">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198080415520">
@@ -295,7 +296,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198080494863">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198080494864">
                     <property name="name" value="childRole" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191251578" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191251578" />
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207782886165">
                       <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1198079775377">
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198079769638">
@@ -786,7 +787,7 @@
     <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1199457954885">
       <property name="name" value="newName" />
       <property name="presentation" value="new name:" />
-      <node role="argumentType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191250902" />
+      <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191250902" />
       <node role="initialValue" type="jetbrains.mps.lang.refactoring.structure.InitialValueClause" id="1199457987467">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199457987468">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199457990515">

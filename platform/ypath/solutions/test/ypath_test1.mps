@@ -22,6 +22,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="8" />
   <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -91,7 +92,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1179329335510">
         <property name="name" value="xml" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196713153" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196713153" />
       </node>
       <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1179329420313">
         <link role="classifier" targetNodeId="3.~Exception" resolveInfo="Exception" />
@@ -99,7 +100,7 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1181230758114">
       <property name="name" value="toString" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196713561" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196713561" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1181230758116" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1181230758117">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1181230794384">
@@ -118,7 +119,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1181230781776">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1181230781777">
             <property name="name" value="sep" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196714250" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196714250" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1181230785537">
               <property name="value" value="" />
             </node>
@@ -193,7 +194,7 @@
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1179329286838">
       <property name="name" value="SINGLE_NODE" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1179329286839" />
-      <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196712762" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196712762" />
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1179329303547">
         <property name="value" value="&lt;foo/&gt;" />
       </node>
@@ -201,7 +202,7 @@
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1179400521623">
       <property name="name" value="SIMPLE_TREE" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1179400521624" />
-      <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196714595" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196714595" />
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1179400541683">
         <property name="value" value="&lt;root&gt;&lt;a1&gt;&lt;b1/&gt;&lt;b2/&gt;&lt;/a1&gt;&lt;a2&gt;&lt;b3&gt;&lt;c1/&gt;&lt;/b3&gt;&lt;/a2&gt;&lt;/root&gt;" />
       </node>

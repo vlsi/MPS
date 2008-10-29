@@ -29,6 +29,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="37" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -605,11 +606,11 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1186997157548">
                     <property name="name" value="postfixes" />
                     <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1186997157549">
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521629" />
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521629" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1186997170881">
                       <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1186997172064">
-                        <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192520452" />
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192520452" />
                       </node>
                     </node>
                   </node>
@@ -619,7 +620,7 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1186997464771">
                       <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1186997464772">
                         <property name="name" value="name" />
-                        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521387" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521387" />
                         <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186997476272">
                           <link role="baseMethodDeclaration" targetNodeId="14.~NameUtil.decapitalize(java.lang.String):java.lang.String" resolveInfo="decapitalize" />
                           <link role="classConcept" targetNodeId="14.~NameUtil" resolveInfo="NameUtil" />
@@ -702,11 +703,11 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1185271154475">
                     <property name="name" value="result" />
                     <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1185271154476">
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192520986" />
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192520986" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1185271161745">
                       <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1185271163966">
-                        <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521715" />
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521715" />
                       </node>
                     </node>
                   </node>
@@ -1508,7 +1509,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1161166135928">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1161166135929">
                 <property name="name" value="s" />
-                <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521612" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521612" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204740201548">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1161166203371">
                     <link role="baseMethodDeclaration" targetNodeId="14.~Macros.languageDescriptor():jetbrains.mps.util.Macros" resolveInfo="languageDescriptor" />

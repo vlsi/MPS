@@ -13,6 +13,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="4" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" version="-1" />
@@ -26,7 +27,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1174939624913">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1174939624914">
             <property name="name" value="s" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196764301" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196764301" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1174939626714" />
           </node>
         </node>
@@ -55,7 +56,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1174939670515">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1174939670516">
             <property name="name" value="email" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196763580" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196763580" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1174939672457" />
           </node>
         </node>
@@ -138,7 +139,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1174939766147">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1174939766148">
             <property name="name" value="rep" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196763204" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196763204" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1174939769323">
               <property name="value" value="quaqua" />
             </node>
@@ -177,7 +178,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1174939822893">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1174939822894">
             <property name="name" value="s" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196762123" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196762123" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1222875982511">
               <property name="value" value="" />
             </node>
@@ -220,7 +221,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1174939854682">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1174939854683">
             <property name="name" value="s" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196765037" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196765037" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1222874978705">
               <property name="value" value="" />
             </node>
@@ -327,7 +328,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1174939967445">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1174939967446">
             <property name="name" value="s" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196761386" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196761386" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement" id="1174939964472">
@@ -389,7 +390,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1174940018011">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1174940018012">
             <property name="name" value="s" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196761026" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196761026" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1174940020124">
@@ -442,7 +443,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1175155160052">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1175155160053">
             <property name="name" value="test" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196761762" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196761762" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1175155161775">
               <property name="value" value="239 239 239" />
             </node>
@@ -496,7 +497,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1175164544444">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1175164544445">
             <property name="name" value="s" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196763940" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196763940" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1175164545729">
               <property name="value" value="ab23cd23ef" />
             </node>
@@ -505,7 +506,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1175164631550">
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1175164631552">
             <property name="name" value="st" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196765413" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196765413" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175164631554">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1175164638080">
@@ -549,14 +550,14 @@
       <property name="name" value="abc" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1178105998378">
         <property name="name" value="s" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196762483" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196762483" />
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1178105988429" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178105988430">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1178105990827">
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178105990828">
             <property name="name" value="st" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196762843" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196762843" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178105990830">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178105990831">
@@ -606,7 +607,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1175169364198">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1175169364199">
             <property name="name" value="s" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196764677" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196764677" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1175169365499">
               <property name="value" value="abcdef2323" />
             </node>

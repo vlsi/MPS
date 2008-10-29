@@ -30,6 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="14" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -51,7 +52,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197714965309">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197714965310">
             <property name="name" value="tokenKey" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193270422" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193270422" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1197714965312">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197714965313">
                 <link role="variableDeclaration" targetNodeId="1197714965367" resolveInfo="tokenPrefix" />
@@ -208,7 +209,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1197714965367">
         <property name="name" value="tokenPrefix" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193269678" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193269678" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1197714965369">
         <property name="name" value="priority" />

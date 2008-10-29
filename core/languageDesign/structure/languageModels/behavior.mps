@@ -37,6 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="18" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
@@ -276,7 +277,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877229720">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877229721">
           <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1213877229722">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521611" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521611" />
           </node>
         </node>
       </node>
@@ -687,7 +688,7 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877254542">
       <property name="name" value="getGenuineRole" />
       <property name="isPrivate" value="false" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192520419" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192520419" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877254544">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877254545">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1213877254546">
@@ -765,7 +766,7 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521216" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521216" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724271" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877254581">
@@ -781,7 +782,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877301669">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877301670">
           <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1213877301671">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521492" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521492" />
           </node>
         </node>
       </node>
@@ -828,7 +829,7 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192520757" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192520757" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724082" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877313738">
@@ -892,7 +893,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877323907">
           <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1213877323908">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521491" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521491" />
           </node>
         </node>
       </node>
@@ -2068,7 +2069,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877394429">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877394430">
             <property name="name" value="adapterClassFqName" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521559" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521559" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213877394432">
               <link role="classConcept" targetNodeId="10.~NameUtil" resolveInfo="NameUtil" />
               <link role="baseMethodDeclaration" targetNodeId="10.~NameUtil.nodeFQName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="nodeFQName" />
@@ -2197,7 +2198,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1213877394478">
         <property name="name" value="role" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192520725" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192520725" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155723773" />
     </node>
@@ -2448,7 +2449,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219835749206" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1219835758724">
         <property name="name" value="name" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521369" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521369" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877394562">
@@ -2736,7 +2737,7 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1216822951265">
       <property name="name" value="getCellId" />
       <property name="isPrivate" value="false" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521319" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521319" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216822951267">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216822968618">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1216822976179">
@@ -2764,7 +2765,7 @@
       <property name="name" value="getCellId" />
       <property name="isPrivate" value="false" />
       <property name="isDeprecated" value="false" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192520336" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192520336" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216822989254">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216823001991">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1216823007182">

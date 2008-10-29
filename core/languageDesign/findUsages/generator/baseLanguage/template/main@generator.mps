@@ -32,6 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="26" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -164,7 +165,7 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1202839664529">
       <property name="name" value="getDescription" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191828021" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191828021" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1202839664531" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202839664532">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1202839664533">
@@ -190,7 +191,7 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1202839683085">
       <property name="name" value="getLongDescription" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191828931" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191828931" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1202839683087" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202839683088">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1202839698635">
@@ -251,7 +252,7 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1197207280625">
       <property name="name" value="getConcept" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191829104" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191829104" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1197207280627" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197207280628">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197207280629">
@@ -436,7 +437,7 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206462852592">
       <property name="name" value="getNodeCategory" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191829434" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191829434" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206462852594" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206462852595">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1206462965298">

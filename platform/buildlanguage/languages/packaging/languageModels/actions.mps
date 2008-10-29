@@ -39,9 +39,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="12" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="3" />
-  <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="-1" />
+  <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <import index="4" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -158,7 +159,7 @@
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1220977388728">
         <link role="concept" targetNodeId="1.1220973955905" resolveInfo="PathComponent" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart" id="1220977388729">
-          <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1220977388730" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1220977388730" />
           <node role="query" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" id="1220977388731">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220977388732">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1220978396857">
@@ -176,7 +177,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1220978475072">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220978475073">
                   <property name="name" value="base" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1220978475074" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1220978475074" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220978495423">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220978490623">
                       <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1220978484396">
@@ -304,11 +305,11 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220978735179">
                   <property name="name" value="suggestStrings" />
                   <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1220978735180">
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1220978736884" />
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1220978736884" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220978755366">
                     <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1220978755367">
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1220978755368" />
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1220978755368" />
                     </node>
                   </node>
                 </node>
@@ -430,7 +431,7 @@
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1220979551599">
         <link role="concept" targetNodeId="1.1220976052975" resolveInfo="MacroReference" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart" id="1220979561151">
-          <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1220979583777" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1220979583777" />
           <node role="query" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" id="1220979561153">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220979561154">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1220980214315">

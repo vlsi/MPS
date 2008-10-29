@@ -22,6 +22,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -184,7 +185,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204027640132">
             <property name="name" value="devkitPath" />
             <property name="isFinal" value="true" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225195952170" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195952170" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1204027646764">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1204027650425">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1214659392582">
@@ -479,7 +480,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204027187688">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204027187689">
             <property name="name" value="path" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225195954167" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195954167" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1204027246048">
               <link role="baseMethodDeclaration" targetNodeId="7.~FileUtil.getCanonicalPath(java.io.File):java.lang.String" resolveInfo="getCanonicalPath" />
               <link role="classConcept" targetNodeId="7.~FileUtil" resolveInfo="FileUtil" />
@@ -505,7 +506,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204027260587">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204027260588">
             <property name="name" value="prefix" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225195953757" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195953757" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1204027265249">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1204027276104">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1204027279358">
@@ -677,7 +678,7 @@
     </node>
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1204026659144">
       <property name="name" value="devkitName" />
-      <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225195956151" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195956151" />
       <node role="onChange" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204027358445">
         <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1205754224195" />
         <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1205834446418">
@@ -687,7 +688,7 @@
     </node>
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1204026664006">
       <property name="name" value="devkitDir" />
-      <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225195953899" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195953899" />
     </node>
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1204026853869">
       <property name="name" value="project" />

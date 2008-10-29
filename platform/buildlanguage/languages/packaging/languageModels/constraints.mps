@@ -37,8 +37,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="20" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="-1" />
+  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
@@ -415,7 +416,7 @@
     <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1213107435808">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213107435809">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107435810">
-          <node role="expression" type="jetbrains.mps.baseLanguage.strings.structure.NPEEqualsExpression" id="1217861873988">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" id="1217861873988">
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217861873989">
               <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link" id="1217861873991" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1217861873992">

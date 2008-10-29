@@ -359,6 +359,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="9" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -790,7 +791,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1177327358084">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" />
-      <node role="target" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196110640" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196110640" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1177327570013">
@@ -922,7 +923,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1177335993647">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196110232" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196110232" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1196434704818">
       <link role="intfc" targetNodeId="1196434661488" resolveInfo="ISubstitute_String" />
@@ -1023,7 +1024,7 @@
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1177339114374">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196118106" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196118106" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1177339114371">
       <link role="target" targetNodeId="5.1161622753914" />
@@ -1347,7 +1348,7 @@
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1177498071308">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196117587" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196117587" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1177498071305">
       <link role="target" targetNodeId="5.1161622753914" />

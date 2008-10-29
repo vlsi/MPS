@@ -15,6 +15,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
@@ -26,7 +27,7 @@
       <property name="name" value="msain" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1178529113481">
         <property name="name" value="emailToAnalyse" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196753473" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196753473" />
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1178529072363" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178529072364" />
@@ -317,7 +318,7 @@
       <property name="name" value="email" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1178535120003">
         <property name="name" value="emailToAnalyse" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196753849" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196753849" />
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1178535091153" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178535091154" />
@@ -412,7 +413,7 @@
       <property name="name" value="contains" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1178535135407">
         <property name="name" value="s" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196751593" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196751593" />
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1178535132008" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178535132009" />
@@ -454,7 +455,7 @@
       <property name="name" value="forEach" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1178535178763">
         <property name="name" value="test" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196752000" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196752000" />
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1178535173849" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178535173850" />
@@ -501,7 +502,7 @@
       <property name="name" value="replaceAll" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1178535225064">
         <property name="name" value="s" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196753113" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196753113" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178535219993" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178535219994">
@@ -562,13 +563,13 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196754210" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196754210" />
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1178535280596">
       <property name="name" value="split" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1178535293360">
         <property name="name" value="s" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196754570" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196754570" />
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1178535280597" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178535280598" />
@@ -576,7 +577,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1178535286955">
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178535286957">
             <property name="name" value="st" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196751170" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196751170" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178535286959">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178535319557">
@@ -633,7 +634,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1220892687093">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220892687094">
               <property name="name" value="string" />
-              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196752753" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196752753" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220892697550">
                 <property name="value" value="??????!" />
               </node>
@@ -694,7 +695,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221034641301">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221034641302">
               <property name="name" value="string" />
-              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196754931" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196754931" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1221034651571">
                 <property name="value" value="?????? ??????? ??? ????????????!" />
               </node>
@@ -740,7 +741,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221047540883">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221047540884">
               <property name="name" value="string" />
-              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196752377" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196752377" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1221047544855">
                 <property name="value" value="???????? ???????? ???????!" />
               </node>

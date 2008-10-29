@@ -28,6 +28,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="13" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590398(jetbrains.mps.baseLanguage.sandbox.refactoringTest)" version="-1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -46,7 +47,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1211993053932">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1211993053933">
             <property name="name" value="s" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196672759" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196672759" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1211993057296">
               <property name="value" value="" />
             </node>
@@ -170,7 +171,7 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211992713280" />
-    <node role="superclass" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196675409" />
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196675409" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224153941792">
     <property name="name" value="Test" />

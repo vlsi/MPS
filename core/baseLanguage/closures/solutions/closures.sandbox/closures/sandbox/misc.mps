@@ -27,6 +27,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -115,7 +116,7 @@
           <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225209590375" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225209590375" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221651222643" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221651222644" />
     </node>
@@ -140,7 +141,7 @@
           <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225209590533" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225209590533" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222958686693" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222958686694" />
     </node>

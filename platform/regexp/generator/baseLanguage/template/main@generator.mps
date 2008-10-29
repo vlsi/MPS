@@ -33,6 +33,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="21" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -705,7 +706,7 @@
           <link role="classifier" targetNodeId="3.~Matcher" resolveInfo="Matcher" />
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225194693747" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225194693747" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1174658293497">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1174658308250">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1174658308251">
@@ -1585,7 +1586,7 @@
         <property name="name" value="method" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1222257161741">
           <link role="classifier" targetNodeId="7.~List" resolveInfo="List" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225194690704" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225194690704" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222257140543" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222257140544">

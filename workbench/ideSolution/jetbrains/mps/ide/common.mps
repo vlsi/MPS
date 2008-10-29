@@ -16,6 +16,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
@@ -97,7 +98,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203605544101">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203605544102">
             <property name="name" value="oldPath" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225195955175" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195955175" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203605584048">
               <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="1203605578127">
                 <link role="component" targetNodeId="1203601653846" resolveInfo="pathField" />
@@ -250,7 +251,7 @@
     </node>
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1203601661865">
       <property name="name" value="path" />
-      <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225195955427" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195955427" />
     </node>
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="1203605603115">
       <property name="name" value="mode" />

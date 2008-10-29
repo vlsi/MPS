@@ -44,6 +44,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="34" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -527,7 +528,7 @@
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221570038152">
                         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221570038153">
                           <property name="name" value="url" />
-                          <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192547503" />
+                          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192547503" />
                           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221570038155">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221570038156">
                               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221570038157">
@@ -548,7 +549,7 @@
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221570038162">
                             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221570038163">
                               <property name="name" value="path" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192547404" />
+                              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192547404" />
                               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221570038165">
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1221570038166">
                                   <link role="baseMethodDeclaration" targetNodeId="2.~String.replaceAll(java.lang.String,java.lang.String):java.lang.String" resolveInfo="replaceAll" />

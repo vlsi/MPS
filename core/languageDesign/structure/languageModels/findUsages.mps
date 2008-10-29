@@ -32,6 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="20" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -433,7 +434,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201278073462">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201278073463">
             <property name="name" value="role" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192520806" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192520806" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648435">
               <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1206445129998" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1201278147784">
@@ -708,7 +709,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225128303098">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225128303099">
             <property name="name" value="role" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521682" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521682" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225128303101">
               <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1225128303102" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1225128320121">
@@ -742,7 +743,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225128446509">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225128446510">
                     <property name="name" value="property" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192520692" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192520692" />
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225128446512">
                       <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1225128446513">
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225128446514">

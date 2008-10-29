@@ -542,7 +542,7 @@ __switch__:
               Pattern _pattern_0 = _PrecompiledPatterns.REGEXP3;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.matches()) {
-                SPropertyOperations.set(stringLiteral, "value", _matcher_0.group(1));
+                SPropertyOperations.set(stringLiteral, "value", "" + (_matcher_0.group(1)));
               }
             }
             return stringLiteral;

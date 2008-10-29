@@ -16,6 +16,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="28" />
   <import index="1" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
@@ -873,7 +874,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1220433215937">
         <property name="name" value="dataId" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225195954812" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195954812" />
         <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1220433215939">
           <link role="annotation" targetNodeId="21.~NonNls" resolveInfo="NonNls" />
         </node>

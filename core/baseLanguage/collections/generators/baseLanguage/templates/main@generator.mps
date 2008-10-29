@@ -41,6 +41,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="29" />
   <import index="1" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -2429,7 +2430,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1168509252518">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1196360417025">
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1196360420937">
-              <node role="classType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193964530" />
+              <node role="classType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193964530" />
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196360419764">
                 <link role="variableDeclaration" targetNodeId="1168512765972" resolveInfo="c1" />
               </node>
@@ -2440,13 +2441,13 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196360447357">
                     <link role="variableDeclaration" targetNodeId="1168512765972" resolveInfo="c1" />
                   </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193963822" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193963822" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207845252121">
                 <link role="baseMethodDeclaration" targetNodeId="2.~String.compareToIgnoreCase(java.lang.String):int" resolveInfo="compareToIgnoreCase" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1196360466332">
-                  <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193965410" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193965410" />
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196360466334">
                     <link role="variableDeclaration" targetNodeId="1168512777027" resolveInfo="c2" />
                   </node>

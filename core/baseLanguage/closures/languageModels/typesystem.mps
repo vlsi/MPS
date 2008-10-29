@@ -32,6 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="29" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -869,7 +870,7 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1202821005224">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1202821005225">
           <property name="name" value="errorMsg" />
-          <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193805195" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193805195" />
           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1202821012123">
             <property name="value" value="" />
           </node>
@@ -1174,7 +1175,7 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1202756513375">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1202756513376">
           <property name="name" value="rtSig" />
-          <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225193797054" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193797054" />
           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1202757148744">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227927444">
               <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1202757149970">

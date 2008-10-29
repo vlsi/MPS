@@ -39,6 +39,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="53" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -2053,12 +2054,12 @@
                   <property name="name" value="localNames" />
                   <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1219230289061">
                     <link role="classifier" targetNodeId="48.~Set" resolveInfo="Set" />
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190456775" />
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190456775" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1219230301115">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1219230326466">
                       <link role="baseMethodDeclaration" targetNodeId="48.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
-                      <node role="typeParameter" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190491668" />
+                      <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190491668" />
                     </node>
                   </node>
                 </node>
@@ -5144,18 +5145,18 @@
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1199465929524">
         <link role="concept" targetNodeId="1.1081855346303" resolveInfo="BreakStatement" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart" id="1199465932534">
-          <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190493192" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190493192" />
           <node role="query" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query" id="1199465932536">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199465932537">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201382203552">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201382203553">
                   <property name="name" value="labels" />
                   <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1201382203554">
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190486480" />
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190486480" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1201382209367">
                     <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1201382209368">
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190470541" />
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190470541" />
                     </node>
                   </node>
                 </node>
@@ -5455,7 +5456,7 @@
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1199470435359">
         <link role="concept" targetNodeId="1.1082113931046" resolveInfo="ContinueStatement" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart" id="1199470435360">
-          <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190461662" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190461662" />
           <node role="query" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query" id="1199470435362">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199470435363">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199470435364">
@@ -6643,13 +6644,13 @@
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1215447014993">
         <link role="concept" targetNodeId="1.1068580123159" resolveInfo="IfStatement" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart" id="1216214130470">
-          <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190460421" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190460421" />
           <node role="query" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query" id="1216214130472">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216214130473">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216214135305">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216214135306">
                   <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1216214139058">
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190459572" />
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190459572" />
                     <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216214145266">
                       <property name="value" value="else{" />
                     </node>
@@ -6695,13 +6696,13 @@
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1215436539279">
         <link role="concept" targetNodeId="1.1068580123159" resolveInfo="IfStatement" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart" id="1216213987169">
-          <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190490678" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190490678" />
           <node role="query" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query" id="1216213987171">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216213987172">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216214065914">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216214065915">
                   <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1216214096900">
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190485144" />
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190485144" />
                     <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216214103309">
                       <property name="value" value="else if" />
                     </node>

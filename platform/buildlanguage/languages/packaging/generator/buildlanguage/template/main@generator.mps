@@ -51,6 +51,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590591(jetbrains.mps.xmlInternal.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959058f(jetbrains.mps.xmlInternal.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590595(jetbrains.mps.xmlSchema.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="24" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -4834,7 +4835,7 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220980380606">
                 <property name="name" value="allMAcroNames" />
                 <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1220980380607">
-                  <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1220980382382" />
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1220980382382" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220980397824">
                   <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1220980396700">

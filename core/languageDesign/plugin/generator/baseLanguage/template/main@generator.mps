@@ -43,6 +43,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="84" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="15" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -609,7 +610,7 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1203087142129">
       <property name="name" value="getKeyStroke" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521027" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521027" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203087142131" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203087257232">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1203087259296">
@@ -1388,7 +1389,7 @@
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1205525460110">
       <property name="isFinal" value="true" />
       <property name="name" value="ID" />
-      <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192526775" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192526775" />
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1205525538923">
         <property name="value" value="" />
         <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1205525538924">
@@ -1415,7 +1416,7 @@
       <property name="isFinal" value="true" />
       <property name="name" value="_String" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205588309057" />
-      <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192526477" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192526477" />
       <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1207148690122">
         <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1207148690123">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207148690124">
@@ -1479,7 +1480,7 @@
             <property name="isFinal" value="true" />
             <property name="name" value="_String" />
             <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207148730699" />
-            <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192525769" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192525769" />
             <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1207148730719">
               <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1207148730720">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207148730721">
@@ -1922,7 +1923,7 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205588921865">
                       <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205588921866">
                         <property name="name" value="labelName" />
-                        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192522174" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192522174" />
                         <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1215004430818" />
                       </node>
                     </node>
@@ -4181,7 +4182,7 @@
       </node>
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204048184241">
         <property name="name" value="getTitle" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192525910" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192525910" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204048184243" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204048184244">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204048184245">
@@ -4207,7 +4208,7 @@
       </node>
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204048184254">
         <property name="name" value="getNullText" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192523629" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192523629" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204048184256" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204048184257">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204048184258">
@@ -4270,7 +4271,7 @@
       </node>
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204051680323">
         <property name="name" value="getTabTextForNode" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521671" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521671" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204051680325" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204051680326">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1204052041838">
@@ -4547,7 +4548,7 @@
       </node>
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204047584326">
         <property name="name" value="getTitle" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192522615" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192522615" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204047584328" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204047584329">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204047678370">
@@ -4573,7 +4574,7 @@
       </node>
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204047596753">
         <property name="name" value="getNullText" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192526209" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192526209" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204047596755" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204047596756">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204047911656">
@@ -7039,7 +7040,7 @@
       <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1217674980476">
         <property name="name" value="externalizableProperty" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217674980477" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192524195" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192524195" />
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="1217674980479">
           <link role="mappingLabel" targetNodeId="1210180725364" resolveInfo="map_PersistentField" />
           <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1217674980480">
@@ -7331,7 +7332,7 @@
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1210180600417">
       <property name="name" value="persistnerProperty" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210180641301" />
-      <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192522898">
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192522898">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1225192522899">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1225192522900">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225192522901">
@@ -8217,7 +8218,7 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1218031829576">
                       <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1218031829577">
                         <property name="name" value="labelName" />
-                        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192518483" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192518483" />
                         <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1218031829579" />
                       </node>
                     </node>
@@ -9062,7 +9063,7 @@
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1217679691845">
       <property name="name" value="getDisplayName" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217679691846" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192521200" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192521200" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217679691848">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1217679691849">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217679691850">
@@ -9782,7 +9783,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1218039518147">
         <property name="name" value="contents" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192520289" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192520289" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1218039518149">
         <property name="name" value="outputDir" />

@@ -16,6 +16,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -39,7 +40,7 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196805511" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196805511" />
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1164650338478">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1164650338479" />
@@ -65,7 +66,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1164650342731">
         <property name="name" value="identity" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196800733" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196800733" />
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1164650289722">
@@ -124,7 +125,7 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196799526" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196799526" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1164652014393">
       <property name="name" value="hashCode" />
@@ -203,7 +204,7 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1164650453610">
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1164650463137">
         <property name="name" value="identity" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196808703" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196808703" />
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1164650453611" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1164650453612">
@@ -224,7 +225,7 @@
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1164650264891">
       <property name="name" value="identity" />
-      <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196801532" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196801532" />
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1165789638236">
       <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
@@ -279,7 +280,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1164651428514">
         <property name="name" value="arags" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1164651440891">
-          <node role="componentType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225196803928" />
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225196803928" />
         </node>
       </node>
     </node>

@@ -37,6 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903c8(jetbrains.mps.baseLanguage.ext.csharp.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="80" />
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -3784,7 +3785,7 @@
                   </node>
                 </node>
               </node>
-              <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190489389" />
+              <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190489389" />
             </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310998064">
@@ -3969,7 +3970,7 @@
                   </node>
                 </node>
               </node>
-              <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190478386" />
+              <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190478386" />
             </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997714">
@@ -5146,7 +5147,7 @@
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207578563303">
                             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207578563304">
                               <property name="name" value="alias" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190454262" />
+                              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190454262" />
                               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207578567355">
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207578566636">
                                   <link role="variableDeclaration" targetNodeId="1207578539041" resolveInfo="cfp" />
@@ -5160,7 +5161,7 @@
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207578575094">
                             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207578575095">
                               <property name="name" value="description" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190440226" />
+                              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190440226" />
                               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207578580614">
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207578579895">
                                   <link role="variableDeclaration" targetNodeId="1207578539041" resolveInfo="cfp" />
@@ -9159,7 +9160,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1178925890414">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178925890415">
               <property name="name" value="text" />
-              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190460264" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190460264" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1178925890417">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1178925890422">
                   <link role="variableDeclaration" targetNodeId="1178925890403" resolveInfo="type" />
@@ -9700,7 +9701,7 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1181823199388">
                   <property name="name" value="result" />
                   <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1182417508530">
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190474783" />
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190474783" />
                   </node>
                 </node>
               </node>
@@ -9748,7 +9749,7 @@
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1182417545661">
                         <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1182417589712">
                           <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1182417591623">
-                            <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190444463" />
+                            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190444463" />
                           </node>
                         </node>
                         <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182417542939">
@@ -10199,7 +10200,7 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215517344874">
                     <property name="name" value="result" />
                     <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1215517344875">
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190494544" />
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190494544" />
                     </node>
                   </node>
                 </node>
@@ -10247,7 +10248,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215517344897">
                           <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215517344898">
                             <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1215517344899">
-                              <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190460091" />
+                              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190460091" />
                             </node>
                           </node>
                           <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215517344901">
@@ -12119,7 +12120,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1194955292478">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1194955292479">
               <property name="name" value="header" />
-              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190450682" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190450682" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1194955310348">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1194955326295">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1194955327772">
@@ -13634,11 +13635,11 @@
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217846612989">
                       <property name="name" value="result" />
                       <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1217846612990">
-                        <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190442266" />
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190442266" />
                       </node>
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217846616172">
                         <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1217846616173">
-                          <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190442078" />
+                          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190442078" />
                         </node>
                       </node>
                     </node>
@@ -13714,7 +13715,7 @@
                   </node>
                 </node>
               </node>
-              <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225190447227" />
+              <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225190447227" />
             </node>
           </node>
         </node>
@@ -14923,6 +14924,83 @@
         <link role="relationDeclaration" targetNodeId="17.1224575157853" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224575282942">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />
+      </node>
+    </node>
+  </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1225271443193">
+    <property name="package" value="string.expression" />
+    <link role="conceptDeclaration" targetNodeId="2v.1225271443097" resolveInfo="StringBooleanOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1225271443194">
+      <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="1215188818086" resolveInfo="CompactKeyWord" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1225271485078">
+    <property name="package" value="string.expression" />
+    <link role="conceptDeclaration" targetNodeId="2v.1225271484915" resolveInfo="SubstringExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225271485079">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1225271485080">
+        <link role="relationDeclaration" targetNodeId="2v.1225271484916" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225271485081">
+        <property name="text" value="[" />
+        <link role="styleClass" targetNodeId="1215087929380" resolveInfo="LeftParen" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1225271485082" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1225271485083">
+        <property name="noTargetText" value="0" />
+        <link role="relationDeclaration" targetNodeId="2v.1225271484917" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225271485084">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225271485085">
+        <property name="text" value=":" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1225271485086">
+          <property name="value" value="1.0" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225271485087">
+          <property name="value" value="1.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1225271485088">
+        <property name="noTargetText" value="end" />
+        <link role="relationDeclaration" targetNodeId="2v.1225271484918" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225271485089">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225271485090">
+        <property name="text" value="]" />
+        <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1225271546555">
+    <property name="package" value="string.expression" />
+    <link role="conceptDeclaration" targetNodeId="2v.1225271546410" resolveInfo="TrimOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225271546556">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225271546557">
+        <property name="text" value="trim" />
+        <link role="styleClass" targetNodeId="1215188818086" resolveInfo="CompactKeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225271546558">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="1215087929380" resolveInfo="LeftParen" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1225271546559" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1225271546560">
+        <link role="relationDeclaration" targetNodeId="2v.1225271546413" resolveInfo="trimKind" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225271546561">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225271546562">
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />
       </node>

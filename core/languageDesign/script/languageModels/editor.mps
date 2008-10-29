@@ -30,6 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -157,7 +158,7 @@
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1209062055837">
                       <property name="name" value="list" />
                       <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1209062055838">
-                        <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225192996596" />
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192996596" />
                       </node>
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209062055840">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209062055842">

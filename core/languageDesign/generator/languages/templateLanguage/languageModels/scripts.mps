@@ -39,6 +39,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="18" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -249,7 +250,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215462343777">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215462343778">
               <property name="name" value="labelName" />
-              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191971593" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191971593" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215462457518">
                 <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1215462455986" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1215462458537">
@@ -381,7 +382,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215474992539">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215474992540">
               <property name="name" value="labelName" />
-              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191971813" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191971813" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215474992542">
                 <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1215474992543" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1215474992544">
@@ -513,7 +514,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215477455913">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215477455914">
               <property name="name" value="labelName" />
-              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191976065" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191976065" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215477455916">
                 <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1215477455917" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1215477455918">
@@ -645,7 +646,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215479499581">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215479499582">
               <property name="name" value="labelName" />
-              <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191974497" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191974497" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215479499584">
                 <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1215479499585" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1215479601616">
@@ -1021,7 +1022,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1215463066114">
         <property name="name" value="labelName" />
-        <node role="type" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225191970575" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225191970575" />
       </node>
     </node>
   </node>

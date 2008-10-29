@@ -42,6 +42,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="23" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -9405,6 +9406,37 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1224848545825">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224848545826" />
+    </node>
+  </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1225271178070">
+    <property name="package" value="string" />
+    <link role="concept" targetNodeId="2v.1225271177708" resolveInfo="StringType" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1225271178071">
+      <property name="name" value="getPresentation" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="20.1213877396640" resolveInfo="getPresentation" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225271178072">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225271178073">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225271178074">
+            <property name="value" value="string" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225271178075">
+        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225271178076" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1225271178077">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225271178078" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1225271315970">
+    <property name="package" value="string.expression" />
+    <link role="concept" targetNodeId="2v.1225271315873" resolveInfo="BaseStringOperation" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1225271315971">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225271315972" />
     </node>
   </node>
 </model>

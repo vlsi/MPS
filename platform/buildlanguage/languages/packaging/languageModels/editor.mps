@@ -38,6 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="3" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -92,11 +93,11 @@
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1218643365987">
                       <property name="name" value="list" />
                       <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1218643365988">
-                        <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225195310292" />
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195310292" />
                       </node>
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1218643365990">
                         <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1218643365991">
-                          <node role="elementType" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225195310768" />
+                          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195310768" />
                         </node>
                       </node>
                     </node>
@@ -106,7 +107,7 @@
                       <property name="name" value="allMacroNames" />
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218643439257">
                         <link role="classifier" targetNodeId="13.~Set" resolveInfo="Set" />
-                        <node role="parameter" type="jetbrains.mps.baseLanguage.strings.structure.StringType" id="1225195307489" />
+                        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195307489" />
                       </node>
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218643439259">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218643439260">
