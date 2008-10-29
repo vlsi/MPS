@@ -59,7 +59,7 @@ public class ConceptBehavior_Behavior {
       public SNode createMethodCall(SNode declaration, List<SNode> arguments) {
         if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
           SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
-          SLinkOperations.setTarget(call, "conceptMethodDeclaration", (SNode)declaration, false);
+          SLinkOperations.setTarget(call, "baseMethodDeclaration", (SNode)declaration, false);
           SLinkOperations.addAll(call, "actualArgument", arguments);
           SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
           SLinkOperations.setTarget(result, "operand", SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.ThisNodeExpression", null), true);

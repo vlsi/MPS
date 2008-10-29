@@ -10,10 +10,13 @@ import jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.constraints.structure.*;
-
+import jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope;
+import jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild;
+import jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent;
 import java.util.Iterator;
+import jetbrains.mps.lang.constraints.structure.NodePropertyConstraint;
 import java.util.List;
+import jetbrains.mps.lang.constraints.structure.NodeReferentConstraint;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;

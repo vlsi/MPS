@@ -14396,25 +14396,6 @@
         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1222174727252" />
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1222180732577">
-      <property name="name" value="createMethodCall" />
-      <property name="isAbstract" value="true" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1222180830328">
-        <property name="name" value="method" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1222180832452" />
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1222180899577">
-        <property name="name" value="arguments" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1222180904263">
-          <link role="elementConcept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
-        </node>
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222180732579" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222180732580" />
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1222180898142">
-        <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1222173646706">
       <property name="name" value="myStaticContainer" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1222181030660" />

@@ -28,7 +28,7 @@ public class Node_ConceptMethodCall_Behavior {
       return null;
     }
   }
-
+                               
   public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     String variableExpectedName;
     variableExpectedName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "name");

@@ -17,6 +17,10 @@ public class MakeVirtual_Intention extends BaseIntention {
     return false;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "isVirtual")) {
       return "make non virtual";
