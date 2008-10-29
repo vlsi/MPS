@@ -1880,14 +1880,9 @@
     <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1179409206125">
       <property name="sourceCardinality" value="1" />
-      <property name="role" value="baseMethodDeclaration" />
+      <property name="role" value="conceptMethodDeclaration" />
       <link role="target" targetNodeId="8.1225194472830" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1179409255348">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="actualArgument" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="2.1068431790191" />
+      <link role="specializedLink" targetNodeId="2.1068499141037" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1179409127152">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" resolveInfo="applicable_to_node" />
@@ -1897,6 +1892,9 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1179409132561">
       <link role="conceptPropertyDeclaration" targetNodeId="1172326539502" resolveInfo="applicable_to_concept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1225282062807">
+      <link role="intfc" targetNodeId="2.1204053956946" resolveInfo="IMethodCall" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1180028149140">
