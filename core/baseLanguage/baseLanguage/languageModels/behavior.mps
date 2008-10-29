@@ -8101,8 +8101,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225280856871">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225280861885">
             <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1225280860483" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1225280867724">
-              <link role="property" targetNodeId="19.1156235010670" resolveInfo="alias" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1225285794519">
+              <link role="conceptProperty" targetNodeId="19.1137473891462" resolveInfo="alias" />
             </node>
           </node>
         </node>
