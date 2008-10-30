@@ -6910,6 +6910,68 @@
                       </node>
                     </node>
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224171059668">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225396717493">
+                        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225396717494">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225396768212">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225396769764">
+                              <property name="value" value="-1" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1225396743598">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1225396753875">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1225396757953">
+                              <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225396764462">
+                                <link role="classifier" targetNodeId="1223050119955" resolveInfo="ModuleData" />
+                              </node>
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225396755998">
+                                <link role="variableDeclaration" targetNodeId="1224171059666" resolveInfo="p1" />
+                              </node>
+                            </node>
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1225396738584">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1225396739544">
+                              <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225396849457">
+                                <link role="classifier" targetNodeId="1223647776843" resolveInfo="NamespaceData" />
+                              </node>
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225396739546">
+                                <link role="variableDeclaration" targetNodeId="1224171059664" resolveInfo="p0" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1225396806909">
+                          <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225396806911">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225396862663">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225396864709">
+                                <property name="value" value="1" />
+                              </node>
+                            </node>
+                          </node>
+                          <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1225396814165">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1225396814166">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1225396814167">
+                                <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225396857934">
+                                  <link role="classifier" targetNodeId="1223647776843" resolveInfo="NamespaceData" />
+                                </node>
+                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225396814169">
+                                  <link role="variableDeclaration" targetNodeId="1224171059666" resolveInfo="p1" />
+                                </node>
+                              </node>
+                            </node>
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1225396814170">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1225396814171">
+                                <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225396822970">
+                                  <link role="classifier" targetNodeId="1223050119955" resolveInfo="ModuleData" />
+                                </node>
+                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225396814173">
+                                  <link role="variableDeclaration" targetNodeId="1224171059664" resolveInfo="p0" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224171121603">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224171131598">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224171126343">

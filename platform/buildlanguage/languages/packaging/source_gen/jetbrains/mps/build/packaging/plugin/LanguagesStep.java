@@ -110,6 +110,11 @@ public class LanguagesStep extends AbstractStep {
     Collections.sort(toSort, new Comparator <NodeData>() {
 
       public int compare(NodeData p0, NodeData p1) {
+        if ((p0 instanceof NamespaceData) && (p1 instanceof ModuleData)) {
+          return -1;
+        } else if ((p0 instanceof ModuleData) && (p1 instanceof NamespaceData)) {
+          return 1;
+        }
         return p0.getText().compareToIgnoreCase(p1.getText());
       }
 
