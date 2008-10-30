@@ -4,6 +4,7 @@ import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 
 /**
  * User: Sergey Dmitriev
@@ -22,6 +23,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     int ascent = 0;
     int descent = 0;
     EditorCell[] cells = editorCells.getCells();
+
     for (int i = 0; i < cells.length; i++) {
       EditorCell editorCell = cells[i];
       editorCell.setX(x + width);

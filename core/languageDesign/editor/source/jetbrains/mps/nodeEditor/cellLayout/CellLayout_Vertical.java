@@ -5,6 +5,7 @@ import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 
 import java.awt.Font;
 import java.awt.FontMetrics;
@@ -46,7 +47,6 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     }
 
     EditorCell[] cells = editorCells.getContentCells();
-
     EditorCell closingBrace = editorCells.getClosingBrace();
     EditorCell openingBrace = editorCells.getOpeningBrace();
     boolean usesBraces = editorCells.usesBraces();
@@ -196,11 +196,12 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     return result;
   }
 
-
   public int getAscent(EditorCell_Collection editorCells) {
-    Iterator<EditorCell> it = editorCells.iterator();
-    if (it.hasNext()) {
-      return it.next().getAscent();
+    for (EditorCell cell : editorCells.getCells()) {
+      int result = cell.getAscent();
+      if (result > 0) {
+        return result;
+      }
     }
     return 0;
   }

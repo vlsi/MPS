@@ -195,7 +195,7 @@ public class CellExplorerView extends BaseProjectTool {
       }
 
       setNodeIdentifier(calculateNodeIdentifier());
-      setAdditionalText("[" + myCell.getX() + ", " + myCell.getY() + ", " + myCell.getWidth() + ", " + myCell.getHeight() + "] baseLine = " + myCell.getBaseline());
+      setAdditionalText("[" + myCell.getX() + ", " + myCell.getY() + ", " + myCell.getWidth() + ", " + myCell.getHeight() + "], baseLine = " + myCell.getBaseline() + ", ascent = " + myCell.getAscent() + ", descent = " + myCell.getDescent());
     }
 
     public boolean isInitialized() {
@@ -238,7 +238,7 @@ public class CellExplorerView extends BaseProjectTool {
         final SNode node = myCell.getSNode();
         String name = node.getName();
         name = name != null ? name : "<no name>";
-        String text = "<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getConceptShortName()) + ") [" + node.getId() + "]";
+        String text = "<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getConceptShortName()) + ")";
         add(new TextTreeNode(text) {
           {
             setIcon(IconManager.getIconFor(node));
@@ -295,7 +295,6 @@ public class CellExplorerView extends BaseProjectTool {
 
     public String calculateNodeIdentifier() {
       String result = NameUtil.shortNameFromLongName(myCell.getClass().getName());
-      if (myCell.getSNode() != null) result += "[" + myCell.getSNode().getId() + "]";
       if (myCell.getUserObject(EditorCell.CELL_ID) != null)
         result += "[" + myCell.getUserObject(EditorCell.CELL_ID).toString() + "]";
       return result;
