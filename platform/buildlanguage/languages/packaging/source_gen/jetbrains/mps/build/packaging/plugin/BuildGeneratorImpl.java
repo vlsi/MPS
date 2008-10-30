@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -46,7 +47,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private void generateInternal() {
-    BuildGeneratorImpl.generate(this.getSModelDescriptor(), this.getProjectName(), this.myProject.getBaseDir().getPath(), this.getModules());
+    this.generate(this.getSModelDescriptor(), this.getProjectName(), this.myProject.getBaseDir().getPath(), this.getModules());
   }
 
   public SModelDescriptor getSModelDescriptor() {
@@ -81,8 +82,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     this.setNewSolutionName(solutionName);
   }
 
-
-  public static void generate(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
+  public void generate(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     // create mps layout
     SNode mpsLayout = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.MPSLayout", null);
     // add mps layout to the target model
@@ -104,7 +104,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     // add modules to folder
     BuildGeneratorImpl.createContent(selectedData, folder, targetSModel);
     targetModelDescriptor.save();
+    MPSEditorOpener editorOpener = this.myProject.getComponent(MPSEditorOpener.class);
+    editorOpener.openNode(mpsLayout);
   }
+
 
   public static SNode createComponent(NodeData data, SModel targetSModel) {
     if (data instanceof ModuleData) {
