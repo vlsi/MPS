@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.nodeEditor.icons.Icons;
 
 import javax.swing.JLabel;
@@ -88,7 +89,12 @@ public class MessagesGutter extends JPanel {
   public void add(EditorMessage message) {
     myMessages.add(message);
     myOwners.put(message, message.getOwner());
-    validateStatus();
+
+    ThreadUtils.runInUIThreadNoWait(new Runnable(){
+      public void run() {
+        validateStatus();
+      }
+    });
   }
 
   public void remove(EditorMessage message) {
