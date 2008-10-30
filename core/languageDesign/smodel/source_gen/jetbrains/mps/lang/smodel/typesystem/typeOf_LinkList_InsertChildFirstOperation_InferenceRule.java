@@ -16,6 +16,7 @@ public class typeOf_LinkList_InsertChildFirstOperation_InferenceRule extends Abs
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
+    // checking
     RulesUtil.checkAppliedTo_LinkListAccess_aggregation(typeCheckingContext, op);
     SNode parameter = SLinkOperations.getTarget(op, "childNode", true);
     if ((parameter != null)) {
@@ -27,6 +28,12 @@ public class typeOf_LinkList_InsertChildFirstOperation_InferenceRule extends Abs
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createLessThanInequation(parmType, typeCheckingContext.getEquationManager().getRepresentator(ExpectedType_typevar_1206101286415), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205272570108", false, 0, intentionProvider);
       }
+    }
+    // op returns node passed in parameter
+    {
+      SNode _nodeToCheck_1029348928467 = op;
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225407664160", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "childNode", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225407664155", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225407664153", intentionProvider);
     }
   }
 

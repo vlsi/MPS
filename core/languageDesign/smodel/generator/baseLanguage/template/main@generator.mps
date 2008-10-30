@@ -3726,8 +3726,8 @@
       <link role="applicableConcept" targetNodeId="6.1140029532506" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1205535849406">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205535849408">
-          <link role="baseMethodDeclaration" targetNodeId="2.~SLinkOperations.insertChildFirst(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.smodel.SNode):void" resolveInfo="insertChildFirst" />
           <link role="classConcept" targetNodeId="2.~SLinkOperations" resolveInfo="SLinkOperations" />
+          <link role="baseMethodDeclaration" targetNodeId="2.~SLinkOperations.insertChildFirst(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="insertChildFirst" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205535849409">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1205535849410">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1205535849411">

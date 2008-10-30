@@ -94,7 +94,7 @@ public class SLinkOperations {
     }
   }
 
-  public static void insertChildFirst(SNode parent, String role, SNode child) {
+  public static SNode insertChildFirst(SNode parent, String role, SNode child) {
     if (parent != null && child != null) {
       SNode childParent = child.getParent();
       if (childParent != null) {
@@ -102,6 +102,7 @@ public class SLinkOperations {
       }
       parent.insertChild(null, role, child);
     }
+    return child;
   }
 
   /**

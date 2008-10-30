@@ -555,7 +555,13 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation" id="1205535756858">
-              <node role="childNode" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205535760751" />
+              <node role="childNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225407824850">
+                <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1225407828727">
+                  <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225407828728">
+                    <link role="concept" targetNodeId="4.1068581242878" resolveInfo="ReturnStatement" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
