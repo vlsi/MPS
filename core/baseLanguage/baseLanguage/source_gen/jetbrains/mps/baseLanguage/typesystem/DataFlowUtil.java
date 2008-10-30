@@ -119,7 +119,7 @@ public class DataFlowUtil {
   public static void checkUnusedVariables(final TypeCheckingContext typeCheckingContext, SNode statementList) {
     Set<SNode> unusedVariables = DataFlow.getUnusedVariables(statementList);
     for(SNode var : unusedVariables) {
-      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause"))) {
+      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause")) && SNodeOperations.getAncestor(var, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null) {
         {
           BaseIntentionProvider intentionProvider = null;
           typeCheckingContext.reportWarning(var, "Unused variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223642399966", intentionProvider);
