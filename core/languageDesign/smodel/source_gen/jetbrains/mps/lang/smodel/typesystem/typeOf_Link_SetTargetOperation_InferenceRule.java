@@ -16,7 +16,7 @@ public class typeOf_Link_SetTargetOperation_InferenceRule extends AbstractInfere
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
+    // checking
     SNode parameter = SLinkOperations.getTarget(op, "linkTarget", true);
     if ((parameter != null)) {
       final SNode ExpectedType_typevar_1206101371703 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -27,6 +27,12 @@ public class typeOf_Link_SetTargetOperation_InferenceRule extends AbstractInfere
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createLessThanInequation(parmType, typeCheckingContext.getEquationManager().getRepresentator(ExpectedType_typevar_1206101371703), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186060404653", false, 0, intentionProvider);
       }
+    }
+    // op returns node passed in parameter
+    {
+      SNode _nodeToCheck_1029348928467 = op;
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225406429482", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "linkTarget", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225406448709", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225406438063", intentionProvider);
     }
   }
 
@@ -39,7 +45,7 @@ public class typeOf_Link_SetTargetOperation_InferenceRule extends AbstractInfere
   }
 
   public boolean overrides() {
-    return true;
+    return false;
   }
 
 }

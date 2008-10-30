@@ -22,7 +22,7 @@ public class SLinkOperations {
     return null;
   }
 
-  public static void setTarget(SNode node, String role, SNode targetNode, boolean child) {
+  public static SNode setTarget(SNode node, String role, SNode targetNode, boolean child) {
     if (node != null) {
       if (child) {
         if (targetNode == null) {
@@ -40,6 +40,7 @@ public class SLinkOperations {
         node.setReferent(role, targetNode);
       }
     }
+    return targetNode;
   }
 
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
