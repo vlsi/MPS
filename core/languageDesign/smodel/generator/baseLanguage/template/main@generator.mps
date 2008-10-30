@@ -1209,8 +1209,8 @@
       <link role="applicableConcept" targetNodeId="6.1140725362528" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1205440400362">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205440400364">
-          <link role="baseMethodDeclaration" targetNodeId="2.~SLinkOperations.setTarget(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.smodel.SNode,boolean):void" resolveInfo="setTarget" />
           <link role="classConcept" targetNodeId="2.~SLinkOperations" resolveInfo="SLinkOperations" />
+          <link role="baseMethodDeclaration" targetNodeId="2.~SLinkOperations.setTarget(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.smodel.SNode,boolean):jetbrains.mps.smodel.SNode" resolveInfo="setTarget" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205440400365">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1205440400366">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1205440400367">
