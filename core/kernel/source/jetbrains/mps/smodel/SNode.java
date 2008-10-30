@@ -1455,7 +1455,7 @@ private static final Logger LOG = Logger.getLogger(SNode.class);
   }
 
   public ModuleReference getConceptLanguage() {
-    return ModuleReference.fromString(getLanguageNamespace());
+    return ModuleReference.fromString(getLanguageNamespace()).update();
   }
 
   public String getConceptShortName() {
