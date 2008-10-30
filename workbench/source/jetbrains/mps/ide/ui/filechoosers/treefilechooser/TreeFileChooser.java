@@ -14,6 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
+import javax.swing.Icon;
 import java.awt.Frame;
 import java.io.File;
 
@@ -67,6 +68,22 @@ public class TreeFileChooser {
         public boolean isFileVisible(VirtualFile file, boolean showHiddenFiles) {
           if (!super.isFileVisible(file, showHiddenFiles)) return false;
           return myFileFilter.accept(new FileSystemFile(file.getPath()));
+        }
+
+        @Override
+        public Icon getOpenIcon(VirtualFile virtualFile) {
+          if (virtualFile.isDirectory()) {
+            return super.getOpenIcon(virtualFile);
+          }
+          return virtualFile.getFileType().getIcon();
+        }
+
+        @Override
+        public Icon getClosedIcon(VirtualFile virtualFile) {
+          if (virtualFile.isDirectory()) {
+            return super.getClosedIcon(virtualFile);
+          }
+          return virtualFile.getFileType().getIcon();
         }
       };
       descriptor.setTitle("Select File");
