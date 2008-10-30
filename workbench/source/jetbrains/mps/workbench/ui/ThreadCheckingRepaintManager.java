@@ -1,11 +1,11 @@
 package jetbrains.mps.workbench.ui;
 
-import com.intellij.ide.HackyRepaintManager;
+import com.intellij.ide.IdeRepaintManager;
 
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 
-public class ThreadCheckingRepaintManager extends HackyRepaintManager {
+public class ThreadCheckingRepaintManager extends IdeRepaintManager {
 
   public synchronized void addInvalidComponent(JComponent invalidComponent) {
     checkThreadViolations(invalidComponent);

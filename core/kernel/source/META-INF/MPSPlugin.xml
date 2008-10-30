@@ -12,6 +12,10 @@
 
     <extensionPoint name="consoleFilterProvider"
                     interface="com.intellij.execution.filters.ConsoleFilterProvider"/>
+
+    <!--Cut Copy Paste-->
+      <extensionPoint name="filePasteProvider"
+                      interface="com.intellij.ide.PasteProvider"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
@@ -41,6 +45,9 @@
                         serviceImplementation="com.intellij.platform.ProjectBaseDirectory"/>
 
     <projectOpenProcessor implementation="com.intellij.platform.PlatformProjectOpenProcessor"/>
+
+    <applicationService serviceInterface="com.intellij.ui.IconDeferrer"
+                            serviceImplementation="com.intellij.ui.DefaultIconDeferrer"/>
 
     <getDataRule key="MPS_MPSProject" implementationClass="jetbrains.mps.workbench.dataExtraction.MPSProjectRule"/>
     <getDataRule key="MPS_Frame" implementationClass="jetbrains.mps.workbench.dataExtraction.FrameRule"/>

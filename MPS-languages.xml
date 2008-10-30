@@ -415,6 +415,24 @@
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.annotations.tmp" />
   </target>
+  <target name="pack.jetbrains.mps.lang.behavior">
+    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.behavior.tmp" />
+    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.behavior.tmp/module" />
+    <mkdir dir="core/languageDesign/behavior/classes" />
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.behavior.tmp/module">
+      <fileset file="core/languageDesign/behavior/languages/behavior/behavior.mpl" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.behavior.tmp/module">
+      <fileset dir="core/languageDesign/behavior/languages/behavior" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.behavior.tmp">
+      <fileset dir="core/languageDesign/behavior/classes" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.behavior.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.behavior.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.behavior.tmp" />
+  </target>
   <target name="pack.jetbrains.mps.lang.constraints">
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.constraints.tmp" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/core/languageDesign/jetbrains.mps.lang.constraints.tmp/module" />

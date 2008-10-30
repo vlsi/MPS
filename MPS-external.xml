@@ -251,6 +251,7 @@
     <antcall target="pack.jetbrains.mps.baseLanguage.unitTest.runtime" />
     <antcall target="pack.jetbrains.mps.lang.actions" />
     <antcall target="pack.jetbrains.mps.lang.annotations" />
+    <antcall target="pack.jetbrains.mps.lang.behavior" />
     <antcall target="pack.jetbrains.mps.lang.constraints" />
     <antcall target="pack.jetbrains.mps.lang.editor" />
     <antcall target="pack.jetbrains.mps.lang.findUsages" />

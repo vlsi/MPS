@@ -156,7 +156,8 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
             }
           }
         }
-      }, new EmptyProgressIndicator());
+      }, new EmptyProgressIndicator(), new StubChangeListManagerGate());
+
     } catch (VcsException e) {
       LOG.error(e);
     }
@@ -283,6 +284,21 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
         filesToAdd.add(file);
       }
       removeFilesFromVcs(filesToAdd);
+    }
+  }
+
+  private static class StubChangeListManagerGate implements ChangeListManagerGate {
+    @Nullable
+    public LocalChangeList findChangeList(String name) {
+      return null;
+    }
+
+    public LocalChangeList addChangeList(String name, String comment) {
+      return null;
+    }
+
+    public LocalChangeList findOrCreateList(String name, String comment) {
+      return null;
     }
   }
 }
