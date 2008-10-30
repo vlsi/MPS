@@ -19,6 +19,10 @@ public class AddDeprecatedAnnotation_Intention extends BaseIntention {
     return false;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true) == null)) {
       return "Add deprecated annotation";
