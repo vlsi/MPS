@@ -55,6 +55,10 @@ public class Type_Behavior {
     return false;
   }
 
+  public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+    throw new UnsupportedOperationException();
+  }
+
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     {
       _Patterns.Pattern_2 pattern_1 = new _Patterns.Pattern_2(thisNode);

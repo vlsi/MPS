@@ -2776,12 +2776,20 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877337357">
       <property name="isVirtual" value="true" />
       <property name="name" value="getClassExpression" />
-      <property name="isAbstract" value="true" />
       <property name="isPrivate" value="false" />
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877337358">
         <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724425" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225366337331">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1225366337332">
+          <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225366348695">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1225366397253">
+              <link role="baseMethodDeclaration" targetNodeId="2.~UnsupportedOperationException.&lt;init&gt;()" resolveInfo="UnsupportedOperationException" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1220438914705">
       <property name="name" value="isSupersetOf" />

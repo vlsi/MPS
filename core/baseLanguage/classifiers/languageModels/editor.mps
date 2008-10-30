@@ -49,6 +49,7 @@
         <property name="text" value="&lt;" />
         <link role="styleClass" targetNodeId="4.1215010871495" resolveInfo="Bracket" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1225364859649" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1225365135583" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225364864370">
           <property name="value" value="0.0" />
         </node>
