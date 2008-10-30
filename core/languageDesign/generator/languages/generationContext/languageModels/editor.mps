@@ -31,6 +31,7 @@
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)" version="-1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1216860146338">
     <link role="conceptDeclaration" targetNodeId="1.1216860049627" resolveInfo="GenerationContextOp_GetOutputByLabelAndInput" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1216860146339">
@@ -56,9 +57,17 @@
         <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1218067724276" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225400182169">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="2v.1215087929380" resolveInfo="LeftParen" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1216860146345">
         <property name="noTargetText" value="&lt;no input node&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1216860049632" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225400196937">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>
@@ -124,9 +133,17 @@
         <property name="text" value="get copied output for input" />
         <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225400108746">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="2v.1215087929380" resolveInfo="LeftParen" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1217884861530">
         <property name="noTargetText" value="&lt;no input node&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1217884725459" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225400068385">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>
@@ -248,9 +265,17 @@
         <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1221156651503" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225400294188">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="2v.1215087929380" resolveInfo="LeftParen" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1221157150062">
         <property name="noTargetText" value="&lt;no input node&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1221156564104" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225400329893">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>
