@@ -3602,8 +3602,8 @@
       <link role="applicableConcept" targetNodeId="6.1139870260207" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1205533195175">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1205533195177">
-          <link role="baseMethodDeclaration" targetNodeId="2.~SLinkOperations.addChild(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.smodel.SNode):void" resolveInfo="addChild" />
           <link role="classConcept" targetNodeId="2.~SLinkOperations" resolveInfo="SLinkOperations" />
+          <link role="baseMethodDeclaration" targetNodeId="2.~SLinkOperations.addChild(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="addChild" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205533195178">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1205533195179">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1205533195180">
@@ -6788,7 +6788,7 @@
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1206558575935">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206558575936">
           <link role="classConcept" targetNodeId="2.~SLinkOperations" resolveInfo="SLinkOperations" />
-          <link role="baseMethodDeclaration" targetNodeId="2.~SLinkOperations.setTarget(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.smodel.SNode,boolean):void" resolveInfo="setTarget" />
+          <link role="baseMethodDeclaration" targetNodeId="2.~SLinkOperations.setTarget(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.smodel.SNode,boolean):jetbrains.mps.smodel.SNode" resolveInfo="setTarget" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206558575937">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1206558575938">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1206558575939">

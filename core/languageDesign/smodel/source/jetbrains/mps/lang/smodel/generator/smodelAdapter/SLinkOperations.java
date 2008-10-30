@@ -77,7 +77,7 @@ public class SLinkOperations {
     return null;
   }
 
-  public static void addChild(SNode parent, String role, SNode child) {
+  public static SNode addChild(SNode parent, String role, SNode child) {
     if (parent != null && child != null) {
       SNode childParent = child.getParent();
       if (childParent != null) {
@@ -85,6 +85,7 @@ public class SLinkOperations {
       }
       parent.addChild(role, child);
     }
+    return child;
   }
 
   public static void addAll(SNode parent, String role, List<SNode> nodeList) {
