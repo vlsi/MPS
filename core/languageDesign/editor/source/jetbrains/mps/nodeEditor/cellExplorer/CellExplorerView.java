@@ -195,6 +195,7 @@ public class CellExplorerView extends BaseProjectTool {
       }
 
       setNodeIdentifier(calculateNodeIdentifier());
+      setAdditionalText("[" + myCell.getX() + ", " + myCell.getY() + ", " + myCell.getWidth() + ", " + myCell.getHeight() + "] baseLine = " + myCell.getBaseline());
     }
 
     public boolean isInitialized() {
@@ -238,13 +239,13 @@ public class CellExplorerView extends BaseProjectTool {
         String name = node.getName();
         name = name != null ? name : "<no name>";
         String text = "<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getConceptShortName()) + ") [" + node.getId() + "]";
-        if (myCell instanceof EditorCell_Collection) {
-          CellLayout layout = ((EditorCell_Collection) myCell).getCellLayout();
-          text += "{" + layout.toString() + "}";
-        }
         add(new TextTreeNode(text) {
           {
             setIcon(IconManager.getIconFor(node));
+            if (myCell instanceof EditorCell_Collection) {
+              CellLayout layout = ((EditorCell_Collection) myCell).getCellLayout();
+              setAdditionalText(layout.toString());
+            }
           }
 
           public void doubleClick() {
@@ -293,7 +294,7 @@ public class CellExplorerView extends BaseProjectTool {
     }
 
     public String calculateNodeIdentifier() {
-      String result = myCell.getClass().getName();
+      String result = NameUtil.shortNameFromLongName(myCell.getClass().getName());
       if (myCell.getSNode() != null) result += "[" + myCell.getSNode().getId() + "]";
       if (myCell.getUserObject(EditorCell.CELL_ID) != null)
         result += "[" + myCell.getUserObject(EditorCell.CELL_ID).toString() + "]";
