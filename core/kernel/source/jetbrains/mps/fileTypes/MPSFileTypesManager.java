@@ -21,6 +21,7 @@ import javax.swing.Icon;
 public class MPSFileTypesManager implements ApplicationComponent {
   // TODO configure file types in xml
   // TODO use idea code highlighters if possible
+  public static final FileType PROJECT_FILE_TYPE = new MPSTextFileType("MPS Project", "MPS Project File Type", MPSExtentions.MPS_PROJECT, Icons.PROJECT_ICON);
   public static final FileType MODEL_FILE_TYPE = new MPSTextFileType("Model", "MPS Model File Type", MPSExtentions.MODEL, Icons.MODEL_ICON);
   public static final FileType SOLUTION_FILE_TYPE = new MPSTextFileType("Solution", "MPS Solution File Type", MPSExtentions.SOLUTION, Icons.SOLUTION_ICON);
   public static final FileType LANGUAGE_FILE_TYPE = new MPSTextFileType("Language", "MPS Language File Type", MPSExtentions.LANGUAGE, Icons.PROJECT_LANGUAGE_ICON);
@@ -64,7 +65,7 @@ public class MPSFileTypesManager implements ApplicationComponent {
       return "utf8";//todo ?
     }
   };
-  private final FileType[] myFileTypes = {MODEL_FILE_TYPE, SOLUTION_FILE_TYPE, LANGUAGE_FILE_TYPE, DEVKIT_FILE_TYPE, CLASS_FILE_TYPE, JAVA_FILE_TYPE, XML_FILE_TYPE};
+  private final FileType[] myFileTypes = {PROJECT_FILE_TYPE, MODEL_FILE_TYPE, SOLUTION_FILE_TYPE, LANGUAGE_FILE_TYPE, DEVKIT_FILE_TYPE, CLASS_FILE_TYPE, JAVA_FILE_TYPE, XML_FILE_TYPE};
   private static final String[] XML_EXTENSIONS = {MPSExtentions.MPS_PROJECT,
     MPSExtentions.IDEAWORKSPACE,
     MPSExtentions.WORKSPACE,
