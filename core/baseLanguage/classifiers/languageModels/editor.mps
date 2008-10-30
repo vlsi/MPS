@@ -41,9 +41,17 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1205752927297">
         <property name="text" value="classifier" />
         <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225364850976">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1205752929909">
         <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="4.1215010871495" resolveInfo="Bracket" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1225364859649" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225364864370">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1205752934708">
         <link role="relationDeclaration" targetNodeId="5.1205752917136" />
@@ -52,11 +60,16 @@
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1205752935414">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225364874746">
+              <property name="value" value="0.0" />
+            </node>
           </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1205752950761">
         <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="4.1215010871495" resolveInfo="Bracket" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1225364890249" />
       </node>
     </node>
   </node>
