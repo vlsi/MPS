@@ -331,10 +331,10 @@ public class SNodeOperations {
     return newChild;
   }
 
-  public static void insertNextSiblingChild(SNode node, SNode siblingNode) {
-    if (node == null) return;
+  public static SNode insertNextSiblingChild(SNode node, SNode siblingNode) {
+    if (node == null) return null;
     SNode nodeParent = node.getParent();
-    if (nodeParent == null || siblingNode == null || node == siblingNode) return;
+    if (nodeParent == null || siblingNode == null || node == siblingNode) return siblingNode;
     SNode parent = siblingNode.getParent();
     if (parent != null) {
       parent.removeChild(siblingNode);
@@ -342,12 +342,13 @@ public class SNodeOperations {
     String role = node.getRole_();
     assert role != null;
     nodeParent.insertChild(node, role, siblingNode, false);
+    return siblingNode;
   }
 
-  public static void insertPrevSiblingChild(SNode node, SNode siblingNode) {
-    if (node == null) return;
+  public static SNode insertPrevSiblingChild(SNode node, SNode siblingNode) {
+    if (node == null) return null;
     SNode nodeParent = node.getParent();
-    if (nodeParent == null || siblingNode == null || node == siblingNode) return;
+    if (nodeParent == null || siblingNode == null || node == siblingNode) return siblingNode;
     SNode siblingParent = siblingNode.getParent();
     if (siblingParent != null) {
       siblingParent.removeChild(siblingNode);
@@ -355,6 +356,7 @@ public class SNodeOperations {
     String role = node.getRole_();
     assert role != null;
     nodeParent.insertChild(node, role, siblingNode, true);
+    return siblingNode;
   }
 
   public static SNode replaceWithNewChild(SNode oldChild, String conceptFqName) {
@@ -401,10 +403,10 @@ public class SNodeOperations {
     }
   }
 
-  public static void replaceWithAnother(SNode node, SNode anotherNode) {
+  public static SNode replaceWithAnother(SNode node, SNode anotherNode) {
     assert node != null : "can't replace node. node is NULL";
     SNode nodeParent = node.getParent();
-    if (nodeParent == null) return;
+    if (nodeParent == null) return anotherNode;
     if (anotherNode != null) {
       SNode anotherNodeParent = anotherNode.getParent();
       if (anotherNodeParent != null) {
@@ -414,6 +416,7 @@ public class SNodeOperations {
     } else {
       nodeParent.removeChild(node);
     }
+    return anotherNode;
   }
 
   public static void deleteNode(SNode node) {

@@ -1882,8 +1882,8 @@
     <property name="name" value="reduce_ReplaceWithAnotherOperation" />
     <link role="applicableConcept" targetNodeId="6.1140131837776" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1140132803081">
-      <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.replaceWithAnother(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):void" resolveInfo="replaceWithAnother" />
       <link role="classConcept" targetNodeId="2.~SNodeOperations" resolveInfo="SNodeOperations" />
+      <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.replaceWithAnother(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="replaceWithAnother" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1140132803084">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1140132803085">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1170443842431">
@@ -1996,8 +1996,8 @@
     <property name="name" value="reduce_InsertNextSiblingOperation" />
     <link role="applicableConcept" targetNodeId="6.1143224066846" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1143225332668">
-      <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.insertNextSiblingChild(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):void" resolveInfo="insertNextSiblingChild" />
       <link role="classConcept" targetNodeId="2.~SNodeOperations" resolveInfo="SNodeOperations" />
+      <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.insertNextSiblingChild(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="insertNextSiblingChild" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1143225332671">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1143225332672">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1170443385726">
@@ -2037,8 +2037,8 @@
     <property name="name" value="reduce_InsertPrevSiblingOperation" />
     <link role="applicableConcept" targetNodeId="6.1143224127713" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1143225530637">
-      <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.insertPrevSiblingChild(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):void" resolveInfo="insertPrevSiblingChild" />
       <link role="classConcept" targetNodeId="2.~SNodeOperations" resolveInfo="SNodeOperations" />
+      <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.insertPrevSiblingChild(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="insertPrevSiblingChild" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1143225530640">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1143225530641">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1170443508758">

@@ -22,10 +22,10 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
     if (elementConcept != null) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(elementConcept, false);
       for(SNode superConcept : superConcepts) {
-        ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_36().createNode(superConcept));
+        ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_35().createNode(superConcept));
       }
       // ==========
-      ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_37().createNode());
+      ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_36().createNode());
     }
     return supertypes;
   }

@@ -16,6 +16,7 @@ public class typeof_Node_InsertPrevSiblingOperation_InferenceRule extends Abstra
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
+    // checking
     RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     SNode parameter = SLinkOperations.getTarget(op, "insertedNode", true);
     if (!((parameter == null))) {
@@ -24,6 +25,12 @@ public class typeof_Node_InsertPrevSiblingOperation_InferenceRule extends Abstra
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createLessThanInequationStrong(typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057110415", true), new _Quotations.QuotationClass_21().createNode(typeCheckingContext), _nodeToCheck_1029348928467, "incompatible type: snode expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057110413", false, 0, intentionProvider);
       }
+    }
+    // op returns node passed in parameter
+    {
+      SNode _nodeToCheck_1029348928467 = op;
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225408525109", true), typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "insertedNode", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225408525104", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225408525102", intentionProvider);
     }
   }
 
