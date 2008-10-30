@@ -16,8 +16,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 
-public class IntroduceConstant_Action extends GeneratedAction {
-  private static final Logger LOG = Logger.getLogger(IntroduceConstant_Action.class);
+public class IntroduceVariable_Action extends GeneratedAction {
+  private static final Logger LOG = Logger.getLogger(IntroduceVariable_Action.class);
   private static final Icon ICON = null;
 
   private SNode node;
@@ -25,19 +25,19 @@ public class IntroduceConstant_Action extends GeneratedAction {
   public EditorComponent component;
   public Frame frame;
 
-  public IntroduceConstant_Action() {
-    super("Introduce Constant...", "", ICON);
+  public IntroduceVariable_Action() {
+    super("Introduce Variable...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
   @NotNull()
   public String getKeyStroke() {
-    return "ctrl alt C";
+    return "ctrl alt V";
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(IntroduceConstant_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression");
+    return SNodeOperations.isInstanceOf(IntroduceVariable_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -47,7 +47,7 @@ public class IntroduceConstant_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "IntroduceConstant", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "IntroduceVariable", t);
       this.disable(event.getPresentation());
     }
   }
@@ -83,19 +83,19 @@ public class IntroduceConstant_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      final Wrappers._T<IntroduceConstantRefactoring> refactoring = new Wrappers._T<IntroduceConstantRefactoring>();
+      final Wrappers._T<IntroduceLocalVariableRefactoring> refactoring = new Wrappers._T<IntroduceLocalVariableRefactoring>();
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          refactoring.value = new IntroduceConstantRefactoring();
-          refactoring.value.init(IntroduceConstant_Action.this.node, IntroduceConstant_Action.this.component);
+          refactoring.value = new IntroduceLocalVariableRefactoring();
+          refactoring.value.init(IntroduceVariable_Action.this.node, IntroduceVariable_Action.this.component);
         }
 
       });
-      IntroduceConstantDialog dialog = new IntroduceConstantDialog(IntroduceConstant_Action.this.frame, refactoring.value, IntroduceConstant_Action.this.context);
+      IntroduceLocalVariableDialog dialog = new IntroduceLocalVariableDialog(IntroduceVariable_Action.this.frame, refactoring.value, IntroduceVariable_Action.this.context);
       dialog.showDialog();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "IntroduceConstant", t);
+      LOG.error("User's action execute method failed. Action:" + "IntroduceVariable", t);
     }
   }
 

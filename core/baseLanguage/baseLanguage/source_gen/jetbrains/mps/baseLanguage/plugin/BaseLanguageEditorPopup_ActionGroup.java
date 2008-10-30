@@ -25,7 +25,7 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
       this.add(new InlineMethod_Action());
       this.add(new ChangeMethodSignature_Action());
       this.add(new InlineLocalVariable_Action());
-      this.add(new InIntroduceVariable_Action());
+      this.add(new IntroduceVariable_Action());
       this.add(new IntroduceField_Action());
       this.add(new IntroduceConstant_Action());
     } catch (Throwable t) {
