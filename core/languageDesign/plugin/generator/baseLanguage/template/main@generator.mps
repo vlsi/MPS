@@ -101,6 +101,36 @@
       <link role="templateNode" targetNodeId="1203866806543" resolveInfo="GeneratedPlugin" />
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.CreateRootRule_Condition" id="1216225902348">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216225902349">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225443684216">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225443684217">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225443739180">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1225443742230">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1225443731999">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1225443735724">
+                <link role="enumConstantDeclaration" targetNodeId="24.~LanguageAspect.PLUGIN" resolveInfo="PLUGIN" />
+                <link role="enumClass" targetNodeId="24.~LanguageAspect" resolveInfo="LanguageAspect" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225443703297">
+                <link role="baseMethodDeclaration" targetNodeId="24.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+                <link role="classConcept" targetNodeId="24.~Language" resolveInfo="Language" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225443724906">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1225443724153">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225443710100">
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1225443708566" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel" id="1225443712838" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225443730263">
+                    <link role="baseMethodDeclaration" targetNodeId="24.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216227985701">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216227985702">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216227985703">
@@ -7795,6 +7825,36 @@
       <link role="templateNode" targetNodeId="1215266495083" resolveInfo="GeneratedApplicationPlugin" />
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.CreateRootRule_Condition" id="1216225645804">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216225645805">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225443747873">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225443747874">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225443747875">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1225443747876">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1225443747877">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1225443747878">
+                <link role="enumClass" targetNodeId="24.~LanguageAspect" resolveInfo="LanguageAspect" />
+                <link role="enumConstantDeclaration" targetNodeId="24.~LanguageAspect.PLUGIN" resolveInfo="PLUGIN" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225443747879">
+                <link role="baseMethodDeclaration" targetNodeId="24.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+                <link role="classConcept" targetNodeId="24.~Language" resolveInfo="Language" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225443747880">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1225443747881">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225443747882">
+                      <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1225443747883" />
+                      <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel" id="1225443747884" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225443747885">
+                    <link role="baseMethodDeclaration" targetNodeId="24.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216227939258">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216227939260">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216227945188">

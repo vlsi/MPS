@@ -4,6 +4,8 @@ package jetbrains.mps.lang.plugin.generator.baseLanguage.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -43,6 +45,9 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1216225645804(final IOperationContext operationContext, final CreateRootRuleContext _context) {
+    if (Language.getModelAspect(_context.getOriginalInputModel().getModelDescriptor()) != LanguageAspect.PLUGIN) {
+      return false;
+    }
     if (ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.NoPlugin")).isEmpty()) {
       return true;
     }
@@ -50,6 +55,9 @@ public class QueriesGenerated {
   }
 
   public static boolean createRootRule_Condition_1216225902348(final IOperationContext operationContext, final CreateRootRuleContext _context) {
+    if (Language.getModelAspect(_context.getOriginalInputModel().getModelDescriptor()) != LanguageAspect.PLUGIN) {
+      return false;
+    }
     if (ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.NoPlugin")).isEmpty()) {
       return true;
     }

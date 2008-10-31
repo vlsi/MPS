@@ -44,7 +44,7 @@ public class MessagesGutter extends JPanel {
 
   private void validateStatus() {
     ThreadUtils.runInUIThreadNoWait(new Runnable(){
-      public void run() {
+      public void run() {            
         GutterStatus status = GutterStatus.OK;
         for (EditorMessage message : myMessages) {
           if (message.getStatus() == MessageStatus.WARNING) {

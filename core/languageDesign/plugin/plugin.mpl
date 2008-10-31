@@ -50,7 +50,7 @@
             <mapping-node modelUID="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)" nodeID="*" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <generator generatorUID="jetbrains.mps.baseLanguage.closures#1199623535494" />
+            <generator generatorUID="857d0a79-6f44-4f46-84ed-9c5b42632011(jetbrains.mps.baseLanguage.closures#1199623535494)" />
             <external-mapping>
               <all-local-mappings />
             </external-mapping>
