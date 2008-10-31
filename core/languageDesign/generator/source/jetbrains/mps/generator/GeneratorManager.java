@@ -14,11 +14,11 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GeneratorManager.MyState;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.ide.messages.*;
+import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Pair;
@@ -394,7 +394,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
   }
 
   public boolean isModified() {
-    return true;
+    return getPreferences().isModified();
   }
 
   public void apply() throws ConfigurationException {

@@ -2,9 +2,13 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.ide.projectPane.Icons;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JCheckBox;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 
 class GeneratorManagerPreferencesPage {
   private JPanel myPage;
@@ -49,5 +53,11 @@ class GeneratorManagerPreferencesPage {
     myGeneratorManager.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
     myGeneratorManager.setDumpStatistics(myDumpQueriesStatisticsCheckBox.isSelected());
     myGeneratorManager.setShowErrorsOnly(myShowErrorsOnlyCheckBox.isSelected());
+  }
+
+  public boolean isModified() {
+    return !(myGeneratorManager.isSaveTransientModels()==mySaveTransientModelsCheckBox.isSelected()&&
+           myGeneratorManager.isDumpStatistics()==myDumpQueriesStatisticsCheckBox.isSelected()&&
+           myGeneratorManager.isShowErrorsOnly()==myShowErrorsOnlyCheckBox.isSelected());
   }
 }
