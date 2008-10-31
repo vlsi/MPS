@@ -506,6 +506,371 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="10">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MoveConcepts" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1214495912999" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441160586" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1214495913000" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441160587" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1214495913001" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441160588" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1208783046932" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441160355" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1208783051904" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441160356" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1208783056000" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441160357" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1208783059893" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441160359" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1208783062380" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441160366" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1208783115211" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441160358" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1208783117979" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441160362" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1208783118809" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441160363" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1208783120764" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441160364" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1214310994766" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441160365" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1214310995027" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441160361" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1219237575325" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441160360" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" nodeId="1208782992286" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441160166" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" nodeId="1208941703859" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441160167" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="BaseExecuteCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.BaseExecuteCommandStatement" featureKind="CONCEPT" />
+          <value featureName="BaseExecuteCommandStatement" conceptFQName="jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatement" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="11">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MoveConcepts" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646466443" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216909" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646466444" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216910" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646466445" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216911" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646468587" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216912" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646468588" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216913" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646468589" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216914" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646468590" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216915" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646468591" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216916" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646468592" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216917" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646468593" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216918" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646468594" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216919" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646468596" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216920" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646468598" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216921" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1216646468599" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441216922" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1208899718161" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441216812" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1208899740749" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441216813" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" nodeId="1208899742090" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" nodeId="1225441216814" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" nodeId="1208899702690" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441216717" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="CommandClosureLiteral" conceptFQName="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" featureKind="CONCEPT" />
+          <value featureName="CommandClosureLiteral" conceptFQName="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="12">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MoveConcepts" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" nodeId="1212478393069" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441257564" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" nodeId="1212478393070" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441257565" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ExecuteCommandInEDTStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteCommandInEDTStatement" featureKind="CONCEPT" />
+          <value featureName="ExecuteCommandInEDTStatement" conceptFQName="jetbrains.mps.lang.plugin.structure.ExecuteCommandInEDTStatement" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="13">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MoveConcepts" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225195749765" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441285646" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225195749766" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441285647" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225195749767" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441285648" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225195754909" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441285649" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225195757599" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441285652" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225195758240" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441285651" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225195761931" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441285653" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225195764245" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441285650" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225195765498" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441285654" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" nodeId="1208783294205" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441285519" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" nodeId="1208783308128" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441285520" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ExecuteCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteCommandStatement" featureKind="CONCEPT" />
+          <value featureName="ExecuteCommandStatement" conceptFQName="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="14">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MoveConcepts" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" nodeId="1208784234277" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441312937" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" nodeId="1208784234278" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441312938" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ExecuteEDTCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteEDTCommandStatement" featureKind="CONCEPT" />
+          <value featureName="ExecuteEDTCommandStatement" conceptFQName="jetbrains.mps.lang.plugin.structure.ExecuteEDTCommandStatement" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="15">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MoveConcepts" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1223984264068" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441342191" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1223984264069" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441342192" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1223984264070" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441342193" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1223984266586" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441342194" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1223984266587" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441342195" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1223984266588" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441342196" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1223984266589" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441342197" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1223984266590" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441342198" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1223984266591" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441342199" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" nodeId="1208783319895" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441341971" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" nodeId="1208783334927" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441341972" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ExecuteLightweightCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" featureKind="CONCEPT" />
+          <value featureName="ExecuteLightweightCommandStatement" conceptFQName="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="16">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MoveConcepts" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225118421176" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441381406" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225118421177" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441381407" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225118421178" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441381408" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225118426679" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441381409" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225118429446" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441381412" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225118429900" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441381411" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225118440060" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441381413" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225118441045" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441381410" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" nodeId="1225118445267" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" nodeId="1225441381414" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" nodeId="1212421857420" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441380935" />
+        </entry>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" nodeId="1212421888527" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441380936" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ExecuteWriteActionStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteWriteActionStatement" featureKind="CONCEPT" />
+          <value featureName="ExecuteWriteActionStatement" conceptFQName="jetbrains.mps.lang.plugin.structure.ExecuteWriteActionStatement" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
@@ -514,7 +879,7 @@
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -529,7 +894,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -2356,49 +2721,6 @@
     <property name="package" value="operation.parameter" />
     <property name="name" value="IRefConceptArg" />
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1208782992286">
-    <property name="package" value="command" />
-    <property name="name" value="BaseExecuteCommandStatement" />
-    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1208941703859">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="commandClosureLiteral" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1208899702690" resolveInfo="CommandClosureLiteral" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1208783294205">
-    <property name="package" value="command" />
-    <property name="name" value="ExecuteCommandStatement" />
-    <link role="extends" targetNodeId="1208782992286" resolveInfo="BaseExecuteCommandStatement" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1208783308128">
-      <property name="value" value="command" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1208783319895">
-    <property name="package" value="command" />
-    <property name="name" value="ExecuteLightweightCommandStatement" />
-    <link role="extends" targetNodeId="1208782992286" resolveInfo="BaseExecuteCommandStatement" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1208783334927">
-      <property name="value" value="read action" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1208784234277">
-    <property name="package" value="command" />
-    <property name="name" value="ExecuteEDTCommandStatement" />
-    <link role="extends" targetNodeId="1208782992286" resolveInfo="BaseExecuteCommandStatement" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1208784234278">
-      <property name="value" value="execute in EDT" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1208899702690">
-    <property name="package" value="command" />
-    <property name="name" value="CommandClosureLiteral" />
-    <link role="extends" targetNodeId="6.1199569711397" resolveInfo="ClosureLiteral" />
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1212008292747">
     <property name="package" value="operation.model" />
     <property name="name" value="Model_GetLongNameOperation" />
@@ -2415,24 +2737,6 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1212008780884">
       <link role="conceptPropertyDeclaration" targetNodeId="1143235288634" resolveInfo="applicable_to_model" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1212421857420">
-    <property name="package" value="command" />
-    <property name="name" value="ExecuteWriteActionStatement" />
-    <link role="extends" targetNodeId="1208782992286" resolveInfo="BaseExecuteCommandStatement" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1212421888527">
-      <property name="value" value="write action" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1212478393069">
-    <property name="package" value="command" />
-    <property name="name" value="ExecuteCommandInEDTStatement" />
-    <link role="extends" targetNodeId="1208782992286" resolveInfo="BaseExecuteCommandStatement" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1212478393070">
-      <property name="value" value="execute command in EDT" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215103457144">

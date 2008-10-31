@@ -15,7 +15,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
@@ -1381,8 +1381,8 @@
                             </node>
                           </node>
                         </node>
-                        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215873093209">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215873099227">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215873093209">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215873099227">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215873099228">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215873099229">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215873099230">
@@ -1523,8 +1523,8 @@
                             </node>
                           </node>
                         </node>
-                        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215872151680">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215872158230">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215872151680">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215872158230">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215872158231">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215872158232">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215872158233">
@@ -1665,8 +1665,8 @@
                             </node>
                           </node>
                         </node>
-                        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215873138468">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215873138469">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215873138468">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215873138469">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215873138470">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215873138471">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215873138472">
@@ -1797,8 +1797,8 @@
                             </node>
                           </node>
                         </node>
-                        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215873275328">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215873275329">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215873275328">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215873275329">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215873275330">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215873275331">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215873275332">
@@ -1894,8 +1894,8 @@
                         </node>
                       </node>
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215873654648">
-                        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215874408781">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215874408782">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215874408781">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215874408782">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215874408783">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215874426359">
                                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215874426360">
@@ -2039,8 +2039,8 @@
                         </node>
                       </node>
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215873952450">
-                        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215874443372">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215874443373">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215874443372">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215874443373">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215874443374">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215874456772">
                                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215874456773">
@@ -2268,8 +2268,8 @@
                         </node>
                       </node>
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215874097607">
-                        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215874465155">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215874465156">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215874465155">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215874465156">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215874465157">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215874473682">
                                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215874473683">
@@ -2752,8 +2752,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215875631495">
-          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215875631496">
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215875631495">
+          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215875631496">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215875631497">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215875656005">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215875661974">
@@ -2889,8 +2889,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215875847711">
-          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215875847712">
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215875847711">
+          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215875847712">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215875847713">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215875847714">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215875847715">
@@ -3302,8 +3302,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteCommandStatement" id="1218643764393">
-          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1218643764394">
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement" id="1218643764393">
+          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1218643764394">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218643764395">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218643777550">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1218643777551">
@@ -3689,8 +3689,8 @@
                         </node>
                       </node>
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215903299805">
-                        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215903304888">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215903304889">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215903304888">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215903304889">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215903304890">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215903312396">
                                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215903312397">
@@ -3890,8 +3890,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215903568362">
-          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215903568363">
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215903568362">
+          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215903568363">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215903568364">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215903580729">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215903589306">
@@ -4194,8 +4194,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215906163367">
-          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215906163368">
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215906163367">
+          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215906163368">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215906163369">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215906265846">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1215906271984">
@@ -4489,8 +4489,8 @@
                         </node>
                       </node>
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215909047205">
-                        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215909051600">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215909051601">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215909051600">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215909051601">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215909051602">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215909055139">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215909057183">
@@ -4744,8 +4744,8 @@
                         </node>
                       </node>
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215910099227">
-                        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1215910103667">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1215910103668">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1215910103667">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1215910103668">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215910103669">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215910114579">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215910120282">
@@ -5330,8 +5330,8 @@
                         </node>
                       </node>
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216123135742">
-                        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1216123140024">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1216123140025">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1216123140024">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1216123140025">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216123140026">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216123146856">
                                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216123146857">
@@ -5455,8 +5455,8 @@
                         </node>
                       </node>
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216123548879">
-                        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1216123548880">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1216123548881">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1216123548880">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1216123548881">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216123548882">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216123649500">
                                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216123649501">
@@ -5692,8 +5692,8 @@
                         </node>
                       </node>
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216123732627">
-                        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1216123732628">
-                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1216123732629">
+                        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1216123732628">
+                          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1216123732629">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216123732630">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216123781545">
                                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216123781546">
@@ -6138,8 +6138,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" id="1216126984988">
-          <node role="commandClosureLiteral" type="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" id="1216126984989">
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1216126984988">
+          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1216126984989">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216126984990">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216126991507">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1216126998320">

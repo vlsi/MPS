@@ -26,6 +26,7 @@
       <languagePath path="${project}\smodel.mpl" />
       <languagePath path="${mps_home}\core\languageDesign\structure\languageDescriptor.mpl" />
       <languagePath path="${mps_home}\core\baseLanguage\baseLanguage\baseLanguage.mpl" />
+      <languagePath path="${mps_home}\core\languageDesign\plugin\plugin.mpl" />
     </projectLanguages>
     <projectDevkits />
     <libraries />

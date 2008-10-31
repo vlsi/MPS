@@ -10,12 +10,7 @@ public class DFABuilders extends DataFlowBuilders {
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.lang.smodel.structure.SNodeOperation", new SNodeOperation_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", new SNodeTypeCastExpression_DataFlow());
-    manager.register("jetbrains.mps.lang.smodel.structure.BaseExecuteCommandStatement", new BaseExecuteCommandStatement_DataFlow());
-    manager.register("jetbrains.mps.lang.smodel.structure.CommandClosureLiteral", new CommandClosureLiteral_DataFlow());
     manager.register("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression", new SemanticDowncastExpression_DataFlow());
-    manager.register("jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement", new ExecuteLightweightCommandStatement_DataFlow());
-    manager.register("jetbrains.mps.lang.smodel.structure.ExecuteWriteActionStatement", new ExecuteWriteActionStatement_DataFlow());
-    manager.register("jetbrains.mps.lang.smodel.structure.ExecuteCommandStatement", new ExecuteCommandStatement_DataFlow());
   }
 
 }
