@@ -793,6 +793,55 @@
           </node>
         </node>
       </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1225453922936">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225453922937">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225454052602">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225454052603">
+              <property name="name" value="cpt" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225454052604">
+                <link role="classifier" targetNodeId="18.~List" resolveInfo="List" />
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1225454332974" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225454069186">
+                <link role="baseMethodDeclaration" targetNodeId="18.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
+                <link role="classConcept" targetNodeId="18.~Arrays" resolveInfo="Arrays" />
+                <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1225454073440">
+                  <link role="conceptDeclaration" targetNodeId="1.1153513461623" resolveInfo="ForEachBlock" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1225454080004">
+                  <link role="conceptDeclaration" targetNodeId="1.1152906997013" resolveInfo="MapperBlock" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1225454086172">
+                  <link role="conceptDeclaration" targetNodeId="1.1153779885165" resolveInfo="SelectorBlock" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1225454100451">
+                  <link role="conceptDeclaration" targetNodeId="1.1168502774204" resolveInfo="SortBlock" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1225454109611">
+                  <link role="conceptDeclaration" targetNodeId="1.1153760673252" resolveInfo="WhereBlock" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225454132209">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225454154155">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225454153585">
+                <link role="variableDeclaration" targetNodeId="1225454052603" resolveInfo="cpt" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225454164836">
+                <link role="baseMethodDeclaration" targetNodeId="18.~List.contains(java.lang.Object):boolean" resolveInfo="contains" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225454185388">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225454171306">
+                    <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1225454171184" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1225454184661" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="1225454189329" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1224579182474">
       <property name="description" value="replace old closures (forEach)" />
