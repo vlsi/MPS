@@ -34,7 +34,7 @@ public class ColorQuery_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SPropertyOperations.set(node, "color", null);
     if ((SLinkOperations.getTarget(node, "query", true) == null)) {
-      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
+      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.IQueryFunction_Color");
     } else
     {
       SLinkOperations.removeChild(node, "query");

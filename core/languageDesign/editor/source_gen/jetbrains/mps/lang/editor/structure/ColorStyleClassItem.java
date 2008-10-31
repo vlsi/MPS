@@ -25,11 +25,11 @@ public class ColorStyleClassItem extends StyleClassItem {
     super.setProperty(ColorStyleClassItem.COLOR, value.getValueAsString());
   }
 
-  public QueryFunction_Color getQuery() {
-    return (QueryFunction_Color)this.getChild(ColorStyleClassItem.QUERY);
+  public IQueryFunction_Color getQuery() {
+    return (IQueryFunction_Color)this.getChild(ColorStyleClassItem.QUERY);
   }
 
-  public void setQuery(QueryFunction_Color node) {
+  public void setQuery(IQueryFunction_Color node) {
     super.setChild(ColorStyleClassItem.QUERY, node);
   }
 

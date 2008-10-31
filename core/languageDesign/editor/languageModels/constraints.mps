@@ -928,5 +928,43 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1225459364437">
+    <property name="package" value="Stylesheet" />
+    <link role="concept" targetNodeId="1.1225456267680" resolveInfo="RGBColor" />
+    <node role="property" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" id="1225459366922">
+      <link role="applicableProperty" targetNodeId="1.1225456424731" resolveInfo="value" />
+      <node role="propertyValidator" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" id="1225459370423">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225459370424">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225459940630">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1225459731341">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1225461832376">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225461832377">
+                  <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1225461832378" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1225461832379">
+                    <link role="property" targetNodeId="1.1225456424731" resolveInfo="value" />
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225461832380" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225459731347">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225459731348">
+                  <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1225459731349" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1225459731350">
+                    <link role="property" targetNodeId="1.1225456424731" resolveInfo="value" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225459731351">
+                  <link role="baseMethodDeclaration" targetNodeId="17.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225459731352">
+                    <property name="value" value="[0-9a-f]{1,6}" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

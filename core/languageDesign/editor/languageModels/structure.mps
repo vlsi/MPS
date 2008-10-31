@@ -2763,6 +2763,9 @@
         <link role="classifier" targetNodeId="39.~Color" resolveInfo="Color" />
       </node>
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1225456207992">
+      <link role="intfc" targetNodeId="1225456097782" resolveInfo="IQueryFunction_Color" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1176897764478">
     <property name="name" value="QueryFunction_NodeFactory" />
@@ -2970,7 +2973,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1186403803051">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="query" />
-      <link role="target" targetNodeId="1176809959526" resolveInfo="QueryFunction_Color" />
+      <link role="target" targetNodeId="1225456097782" resolveInfo="IQueryFunction_Color" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1186403713874">
       <property name="name" value="color" />
@@ -3731,6 +3734,30 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1223387210120">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" resolveInfo="conceptFunctionReturnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1223387224419" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1225456097782">
+    <property name="package" value="QueryFunction.Style" />
+    <property name="name" value="IQueryFunction_Color" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225456267680">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="RGBColor" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1225456281899">
+      <link role="intfc" targetNodeId="1225456097782" resolveInfo="IQueryFunction_Color" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225456328150">
+      <property name="value" value="#" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225456336245">
+      <property name="value" value="#RRGGBB" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1225456424731">
+      <property name="name" value="value" />
+      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
     </node>
   </node>
 </model>
