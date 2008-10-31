@@ -353,7 +353,9 @@
                     <link role="link" targetNodeId="1.1186403803051" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" id="1221475980244" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" id="1221475980244">
+                  <link role="concept" targetNodeId="1.1176809959526" resolveInfo="QueryFunction_Color" />
+                </node>
               </node>
             </node>
           </node>

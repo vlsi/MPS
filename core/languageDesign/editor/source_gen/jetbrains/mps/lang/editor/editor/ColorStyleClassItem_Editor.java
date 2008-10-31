@@ -20,6 +20,13 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.lang.editor.structure._Colors_Enum;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 
 public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
@@ -91,6 +98,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
       setupLabel_property_color_1186412595080((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu0(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu1()}));
     return editorCell;
   }
 
@@ -188,6 +196,47 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
+    }
+
+}
+  public static class ColorStyleClassItem_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
+
+    public ColorStyleClassItem_generic_cellMenu0() {
+    }
+
+    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      List<_Colors_Enum> types = ListSequence.<_Colors_Enum>fromArray();
+      for(_Colors_Enum color : _Colors_Enum.values()) {
+        ListSequence.fromList(types).addElement(color);
+      }
+      return types;
+    }
+
+    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      this.handleAction_impl((_Colors_Enum)parameterObject, node, model, scope, operationContext);
+    }
+
+    public void handleAction_impl(_Colors_Enum parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SLinkOperations.removeChild(node, "query");
+      SPropertyOperations.set(node, "color", parameterObject.getValue());
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+}
+  public static class ColorStyleClassItem_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
+
+    public ColorStyleClassItem_generic_cellMenu1() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.RGBColor");
+    }
+
+    public String getMatchingText() {
+      return "#RRGGBB";
     }
 
 }

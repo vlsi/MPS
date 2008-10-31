@@ -28,6 +28,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior;
@@ -637,6 +638,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1223902656756(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "underlined", "2", "0");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1225463700699(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Integer.parseInt(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "query", true), "value"), 16);
   }
 
   public static Object referenceMacro_GetReferent_1176478910892(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1279,7 +1284,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1223891768209(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "query", true) != null);
+    return (SLinkOperations.getTarget(_context.getNode(), "query", true) != null) && IQueryFunction_Color_Behavior.call_isFunction_1225463329531(SLinkOperations.getTarget(_context.getNode(), "query", true));
   }
 
   public static boolean ifMacro_Condition_1223892480678(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1312,6 +1317,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1223902832144(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "query", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1225463572475(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "query", true) != null) && !(IQueryFunction_Color_Behavior.call_isFunction_1225463329531(SLinkOperations.getTarget(_context.getNode(), "query", true)));
   }
 
   public static SNode sourceNodeQuery_1168383269962(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1583,6 +1592,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1223892487446(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return StyleClassItem_Behavior.call_getStyleConstant_1215703564594(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1225463572460(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return StyleClassItem_Behavior.call_getStyleConstant_1215703564594(_context.getNode());
   }
 

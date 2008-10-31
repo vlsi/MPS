@@ -6056,6 +6056,117 @@
             </node>
           </node>
         </node>
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1225465563520">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" id="1225465568568">
+            <node role="parametersFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" id="1225465568569">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225465568570">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225466595470">
+                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225466595471">
+                    <property name="name" value="types" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1225466595472">
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225466598537">
+                        <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
+                      </node>
+                    </node>
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225466612481">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1225466612482">
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225466612483">
+                          <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1225465998084">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225465998085">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225466037432">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225466094811">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225466037433">
+                          <link role="variableDeclaration" targetNodeId="1225466595471" resolveInfo="types" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1225466097424">
+                          <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225466100036">
+                            <link role="variableDeclaration" targetNodeId="1225465998088" resolveInfo="color" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="iterable" type="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" id="1225466028210">
+                    <link role="enumClass" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
+                  </node>
+                  <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225465998088">
+                    <property name="name" value="color" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225466014470">
+                      <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225466713504">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225466715897">
+                    <link role="variableDeclaration" targetNodeId="1225466595471" resolveInfo="types" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="handlerFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler" id="1225466261587">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225466261588">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225466894957">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225466897025">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225466895037">
+                      <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" id="1225466894958" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225466896415">
+                        <link role="link" targetNodeId="2.1186403803051" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1225466898200" />
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225466903031">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225466906349">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225466903189">
+                      <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" id="1225466903032" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1225466905708">
+                        <link role="property" targetNodeId="2.1186403713874" resolveInfo="color" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1225466907774">
+                      <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225466910074">
+                        <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject" id="1225466909260" />
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225466912358">
+                          <link role="baseMethodDeclaration" targetNodeId="36.~_Colors_Enum.getValue():java.lang.String" resolveInfo="getValue" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225466581339">
+              <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
+            </node>
+          </node>
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item" id="1225466728384">
+            <property name="matchingText" value="#RRGGBB" />
+            <node role="handlerFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler" id="1225466728385">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225466728386">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225466935286">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225466938885">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225466936163">
+                      <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" id="1225466935287" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225466937931">
+                        <link role="link" targetNodeId="2.1186403803051" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" id="1225466945094">
+                      <link role="concept" targetNodeId="2.1225456267680" resolveInfo="RGBColor" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1186412603348">
         <property name="noTargetText" value="&lt;no query&gt;" />

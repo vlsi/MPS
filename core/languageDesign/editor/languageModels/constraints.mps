@@ -947,13 +947,13 @@
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225461832380" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225459731347">
-                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" id="1225462629194" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225459731351">
                   <link role="baseMethodDeclaration" targetNodeId="17.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225459731352">
                     <property name="value" value="[0-9a-f]{1,6}" />
                   </node>
                 </node>
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" id="1225462801212" />
               </node>
             </node>
           </node>
