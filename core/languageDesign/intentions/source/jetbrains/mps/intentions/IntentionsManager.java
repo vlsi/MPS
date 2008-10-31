@@ -94,7 +94,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     });
   }
 
-  protected Set<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean onlyAvailableInChildren) {
+  public Set<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean onlyAvailableInChildren) {
     Set<Intention> result = new HashSet<Intention>();
 
     for (String conceptFQName : myIntentions.keySet()) {
