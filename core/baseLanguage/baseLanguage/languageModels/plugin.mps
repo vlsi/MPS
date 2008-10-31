@@ -7572,8 +7572,13 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225281415512">
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225281421734">
                       <link role="baseMethodDeclaration" targetNodeId="4.~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolveInfo="put" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1225281664912">
-                        <link role="variable" targetNodeId="1225281379863" resolveInfo="parameter" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225462187357">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1225281664912">
+                          <link role="variable" targetNodeId="1225281379863" resolveInfo="parameter" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225462193083">
+                          <link role="baseMethodDeclaration" targetNodeId="69.1225282371351" resolveInfo="getDeclaration" />
+                        </node>
                       </node>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225281669403">
                         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1225281681934">
