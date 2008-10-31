@@ -38,9 +38,9 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1136923542662(context, node, "<"));
     editorCell.addEditorCell(this.createProperty1136923542663(context, node));
-    editorCell.addEditorCell(this.createConstant1136923542664(context, node, " > + <"));
+    editorCell.addEditorCell(this.createConstant1136923542664(context, node, "> + <"));
     editorCell.addEditorCell(this.createProperty1136923542665(context, node));
-    editorCell.addEditorCell(this.createConstant1136923542666(context, node, " >"));
+    editorCell.addEditorCell(this.createConstant1136923542666(context, node, ">"));
     return editorCell;
   }
 

@@ -2856,7 +2856,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1136923542664">
-        <property name="text" value=" &gt; + &lt;" />
+        <property name="text" value="&gt; + &lt;" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994107">
           <property name="flag" value="false" />
         </node>
@@ -2931,7 +2931,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1136923542666">
-        <property name="text" value=" &gt;" />
+        <property name="text" value="&gt;" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996399">
           <property name="flag" value="false" />
         </node>

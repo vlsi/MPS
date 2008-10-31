@@ -18,6 +18,10 @@ public class FontStyleQuery_Intention extends BaseIntention {
     return false;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if ((SLinkOperations.getTarget(node, "query", true) == null)) {
       return "Add Query";
