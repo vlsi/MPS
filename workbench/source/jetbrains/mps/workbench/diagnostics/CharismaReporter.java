@@ -55,7 +55,7 @@ public class CharismaReporter extends ErrorReportSubmitter {
     if (blameDialog.isCancelled()) {
       return new SubmittedReportInfo(null, "Cancelled issue submit", SubmissionStatus.FAILED);
     } else {
-      return new SubmittedReportInfo(null, "", SubmissionStatus.NEW_ISSUE);
+      return new SubmittedReportInfo(null, "", SubmissionStatus.FAILED);
     }
   }
 }

@@ -319,7 +319,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   private void submitToTracker(Message msg) {
-    BlameDialog dialog = createBlameDialog();
+    BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(WindowManager.getInstance().getFrame(getProject()));
     dialog.setMessage(msg.getText());
     dialog.setEx(msg.getException());
     dialog.setCallback(new ResponseCallback() {
@@ -436,10 +436,6 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     myWarningsAction.setSelected(null, state.isWarnings());
     myInfoAction.setSelected(null, state.isInfo());
     myAutoscrollToSourceAction.setSelected(null, state.isAutoscrollToSource());
-  }
-
-  public BlameDialog createBlameDialog() {
-    return BlameDialogComponent.getInstance().createDialog(WindowManager.getInstance().getFrame(getProject()));
   }
 
   public static class MyState {
