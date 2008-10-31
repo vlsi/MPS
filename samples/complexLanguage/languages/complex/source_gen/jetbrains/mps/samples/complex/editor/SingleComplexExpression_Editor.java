@@ -146,6 +146,15 @@ public class SingleComplexExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11964207620001196420762000(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196420762000");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_conceptProperty_alias_1196420740605(EditorCell_Label editorCell, SNode node, EditorContext context) {
