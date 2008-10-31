@@ -42,11 +42,6 @@ public abstract class BaseNodeDialog extends BaseDialog {
     mySplitter.setResizeWeight(0.8);
   }
 
-  public MyPreferencesPage createPreferencesPage() {
-    myEditorComponent.editNode(getNode());
-    return new MyPreferencesPage();
-  }
-
   protected Icon getIcon() {
     return Icons.DEFAULT_ICON;
   }
@@ -146,27 +141,5 @@ public abstract class BaseNodeDialog extends BaseDialog {
   @BaseDialog.Button(position = 2, name = "Apply")
   public void buttonApply() {
     doSaveChanges();
-  }
-
-  public class MyPreferencesPage {
-    public String getName() {
-      return getTitle();
-    }
-
-    public Icon getIcon() {
-      return BaseNodeDialog.this.getIcon();
-    }
-
-    public JComponent getComponent() {
-      return getMainComponent();
-    }
-
-    public boolean validate() {
-      return validateNode();
-    }
-
-    public void commit() {
-      buttonOK();
-    }
   }
 }
