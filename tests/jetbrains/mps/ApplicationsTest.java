@@ -28,6 +28,10 @@ public class ApplicationsTest extends BaseMPSTest {
     assertGenerates(new File("platform/buildlanguage/BuildLanguage.mpr"));
   }
 
+  public void testComplexLanguage() {
+    assertGenerates(new File("samples/complexLanguage/Complex.mpr"));
+  }
+
   public void testUILanguage() {
     assertGenerates(new File("platform/uiLanguage/uiLanguage.mpr"));
   }
