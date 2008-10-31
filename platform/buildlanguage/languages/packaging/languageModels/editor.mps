@@ -702,14 +702,16 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204299963617">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1204299963618">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1204299963619">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205408662893">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204299963622">
-                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1204299963623" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1204299963624">
-                      <link role="link" targetNodeId="1.1204116468206" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1225481104729">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225481105710">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225481105711">
+                      <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1225481105712" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1225481105713">
+                        <link role="link" targetNodeId="1.1204116468206" />
+                      </node>
                     </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1225481105714" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1204299963625" />
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204299963626">
