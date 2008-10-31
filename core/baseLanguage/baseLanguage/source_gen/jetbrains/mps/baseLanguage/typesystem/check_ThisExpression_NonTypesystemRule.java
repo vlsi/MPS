@@ -6,9 +6,6 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -18,15 +15,6 @@ public class check_ThisExpression_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   public void applyRule(final SNode thisExpression, final TypeCheckingContext typeCheckingContext) {
-    if ((SLinkOperations.getTarget(thisExpression, "classConcept", false) != null)) {
-      if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(SLinkOperations.getTarget(thisExpression, "classConcept", false))) {
-        String error = BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisExpression, "classConcept", false));
-        {
-          BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportWarning(thisExpression, error + " is deprecated", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1224867871084", intentionProvider);
-        }
-      }
-    }
     if (!(!(RulesFunctions_BaseLanguage.isWithinStatic(thisExpression)))) {
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.reportTypeError(thisExpression, "this-expression is not allowed in a static context ", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1201700958007", intentionProvider);

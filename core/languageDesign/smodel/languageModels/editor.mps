@@ -1070,25 +1070,6 @@
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1219242048234">
         <property name="value" value="0.0" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" id="1224258236748">
-        <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean" id="1224258237546">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224258237547">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224258239548">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224258246680">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224258240253">
-                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1224258239549" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224258245789">
-                    <link role="link" targetNodeId="1.1154546997487" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1224613333805">
-                  <link role="baseMethodDeclaration" targetNodeId="13.1224609060727" resolveInfo="isDeprecated" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1154547191760">
