@@ -13,7 +13,7 @@ public enum _YesNoDefault_Enum {
   private String myName;
   private String myValue;
 
-_YesNoDefault_Enum(String name, String value) {
+  _YesNoDefault_Enum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

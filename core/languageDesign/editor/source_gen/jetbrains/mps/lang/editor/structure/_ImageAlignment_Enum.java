@@ -13,7 +13,7 @@ public enum _ImageAlignment_Enum {
   private String myName;
   private String myValue;
 
-_ImageAlignment_Enum(String name, String value) {
+  _ImageAlignment_Enum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

@@ -16,7 +16,7 @@ public enum _FontStyle_Enum {
   private String myName;
   private String myValue;
 
-_FontStyle_Enum(String name, String value) {
+  _FontStyle_Enum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

@@ -12,7 +12,7 @@ public enum _LeftRight_Enum {
   private String myName;
   private boolean myValue;
 
-_LeftRight_Enum(String name, boolean value) {
+  _LeftRight_Enum(String name, boolean value) {
     this.myName = name;
     this.myValue = value;
   }

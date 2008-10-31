@@ -12,7 +12,7 @@ public enum SelectPosition {
   private String myName;
   private String myValue;
 
-SelectPosition(String name, String value) {
+  SelectPosition(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

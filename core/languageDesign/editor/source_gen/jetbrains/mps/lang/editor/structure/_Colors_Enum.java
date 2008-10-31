@@ -28,7 +28,7 @@ public enum _Colors_Enum {
   private String myName;
   private String myValue;
 
-_Colors_Enum(String name, String value) {
+  _Colors_Enum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

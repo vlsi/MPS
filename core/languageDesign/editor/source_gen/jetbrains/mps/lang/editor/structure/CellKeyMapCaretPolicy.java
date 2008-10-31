@@ -14,7 +14,7 @@ public enum CellKeyMapCaretPolicy {
   private String myName;
   private String myValue;
 
-CellKeyMapCaretPolicy(String name, String value) {
+  CellKeyMapCaretPolicy(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

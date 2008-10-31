@@ -13,7 +13,7 @@ public enum UnderlineStyle {
   private String myName;
   private int myValue;
 
-UnderlineStyle(String name, int value) {
+  UnderlineStyle(String name, int value) {
     this.myName = name;
     this.myValue = value;
   }

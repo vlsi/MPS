@@ -13,7 +13,7 @@ public enum FocusPolicy {
   private String myName;
   private int myValue;
 
-FocusPolicy(String name, int value) {
+  FocusPolicy(String name, int value) {
     this.myName = name;
     this.myValue = value;
   }

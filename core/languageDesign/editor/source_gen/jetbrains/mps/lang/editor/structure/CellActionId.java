@@ -12,7 +12,7 @@ public enum CellActionId {
   private String myName;
   private String myValue;
 
-CellActionId(String name, String value) {
+  CellActionId(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

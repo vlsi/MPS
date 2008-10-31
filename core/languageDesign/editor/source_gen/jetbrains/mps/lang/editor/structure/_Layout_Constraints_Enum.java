@@ -13,7 +13,7 @@ public enum _Layout_Constraints_Enum {
   private String myName;
   private String myValue;
 
-_Layout_Constraints_Enum(String name, String value) {
+  _Layout_Constraints_Enum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

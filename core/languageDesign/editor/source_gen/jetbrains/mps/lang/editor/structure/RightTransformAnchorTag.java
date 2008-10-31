@@ -17,7 +17,7 @@ public enum RightTransformAnchorTag {
   private String myName;
   private String myValue;
 
-RightTransformAnchorTag(String name, String value) {
+  RightTransformAnchorTag(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
