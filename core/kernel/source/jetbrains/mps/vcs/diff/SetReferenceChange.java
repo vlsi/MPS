@@ -4,31 +4,29 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.diff.Change;
 
 public class SetReferenceChange extends Change {
-  private SNodeId myNodeId;
-  private String myRole;
+  protected final SNodeId myNodeId;
+  private final SModel myModel;
+  protected final String myRole;
+  private final String myResolveInfo;
+  private final SModelReference myTargetModel;
+  private final boolean myInternal;
+
   private SNodePointer myNodePointer;
-  private boolean myIsDeleted;
-
-  private SModel myModel;
-
-  private boolean myInternal;
   private SNodeId myTargetId;
 
-  public SetReferenceChange(SNodeId nodeId, String role, SModel model, SNode target) {
-    myNodeId = nodeId;
-    myRole = role;
+  public SetReferenceChange(SNodeId id, SModel model, SReference reference, SNode target) {
+    myNodeId = id;
     myModel = model;
+    myRole = reference.getRole();
+    myResolveInfo = reference.getResolveInfo();
+    myTargetModel = reference.getTargetSModelReference();
 
-    if (target != null) {
-      if (target.getModel() != model) {
-        myInternal = false;
-        myNodePointer = new SNodePointer(target);
-      } else {
-        myInternal = true;
-        myTargetId = target.getSNodeId();
-      }
+    if (target == null || target.getModel() != model) {
+      myInternal = false;
+      myNodePointer = new SNodePointer(target);
     } else {
-      myIsDeleted = true;
+      myInternal = true;
+      myTargetId = target.getSNodeId();
     }
   }
 
@@ -46,7 +44,6 @@ public class SetReferenceChange extends Change {
   }
 
   public boolean isBrokenReference() {
-    if (myIsDeleted) return false;
     if (!myInternal && myNodePointer.getNode() == null) return true;
     return false;
   }
@@ -54,10 +51,8 @@ public class SetReferenceChange extends Change {
 
   public String toString() {
     if (!myInternal) {
-      if (myIsDeleted) {
-        return "deleted reference " + myNodeId + " in role " + myRole;
-      } else if (myNodePointer.getNode() == null) {
-        return "set reference" + myNodeId + " in role. [BAD REFERENCE]";
+      if (myNodePointer.getNode() == null) {
+        return "set reference" + myNodeId + " in role to " + myResolveInfo + " [NOT FOUND]";
       } else {
         return "set reference " + myNodeId + " in role " + myRole + " to " + myNodePointer + " in model " + myNodePointer.getModel();
       }
@@ -73,21 +68,20 @@ public class SetReferenceChange extends Change {
   public boolean apply(SModel m) {
     SNode node = m.getNodeById(myNodeId);
     if (node != null) {
-      if (myIsDeleted) {
-        node.removeReferent(myRole);
-      } else if (myInternal) {
+      if (myInternal) {
         SNode target = m.getNodeById(myTargetId);
         node.setReferent(getRole(), target);
       } else {
-        if (myNodePointer == null) {
-          node.setReferent(getRole(), null);
-        } else {
-          node.setReferent(getRole(), myNodePointer.getNode());
-        }
+        SReference reference = SReference.create(myRole, node, myTargetModel, myTargetId);
+        node.addReference(reference);
+        if (reference != null) reference.setResolveInfo(myResolveInfo);
       }
     }
     return true;
   }
 
+  public String getResolveInfo() {
+    return myResolveInfo;
+  }
 }
 

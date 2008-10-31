@@ -156,7 +156,7 @@ public class DiffBuilder {
 
       if (oldNode == null) {
         for (SReference ref : newNode.getReferences()) {
-          myChanges.add(new SetReferenceChange(id, ref.getRole(), myNewModel, ref.getTargetNode()));
+          myChanges.add(new SetReferenceChange(id, myNewModel, ref, ref.getTargetNode()));
         }
       } else {
         Set<String> roles = new HashSet<String>(newNode.getReferenceRoles());
@@ -164,10 +164,10 @@ public class DiffBuilder {
         for (String role : roles) {
           if (!isToManyCardinality(newNode.getConceptFqName(), role)) {
             if (oldNode.getReference(role) != null && newNode.getReference(role) == null) {
-              myChanges.add(new SetReferenceChange(id, role, myNewModel, null));
+              myChanges.add(new DeleteReferenceChange(id, myNewModel, oldNode.getReference(role)));
             } else {
               if (!("" + getTargetId(newNode.getReference(role))).equals("" + getTargetId(oldNode.getReference(role)))) {
-                myChanges.add(new SetReferenceChange(id, role, myNewModel, newNode.getReferent(role)));
+                myChanges.add(new SetReferenceChange(id, myNewModel, newNode.getReference(role), newNode.getReferent(role)));
               }
             }
           } else {

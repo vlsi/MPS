@@ -298,7 +298,7 @@ class MergeResultView extends JPanel {
     myWarnings.clear();
     for (SetReferenceChange srf : getChanges(SetReferenceChange.class)) {
       if (srf.isBrokenReference()) {
-        myWarnings.add(new Warning(srf.getNodeId(), "Broken Reference at " + srf.getNodeId()));
+        myWarnings.add(new Warning(srf.getNodeId(), "Maybe broken reference to " + srf.getResolveInfo() + " at " + srf.getNodeId()));
       }
     }
   }
