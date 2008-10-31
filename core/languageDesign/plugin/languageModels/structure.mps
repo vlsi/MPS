@@ -376,6 +376,36 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="16">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="NoPlugin" conceptFQName="jetbrains.mps.lang.plugin.structure.NoPlugin" featureKind="CONCEPT" />
+          <value featureName="GeneratePlugins" conceptFQName="jetbrains.mps.lang.plugin.structure.GeneratePlugins" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="17">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameProperty" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="suppressApplicationPlugin" conceptFQName="jetbrains.mps.lang.plugin.structure.GeneratePlugins" featureKind="PROPERTY" />
+          <value featureName="generateApplicationPlugin" conceptFQName="jetbrains.mps.lang.plugin.structure.GeneratePlugins" featureKind="PROPERTY" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="18">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameProperty" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="suppressProjectPlugin" conceptFQName="jetbrains.mps.lang.plugin.structure.GeneratePlugins" featureKind="PROPERTY" />
+          <value featureName="generateProjectPlugin" conceptFQName="jetbrains.mps.lang.plugin.structure.GeneratePlugins" featureKind="PROPERTY" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -392,7 +422,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="15" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="18" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
@@ -420,7 +450,7 @@
   <import index="24" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="27" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
-  <import index="29" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="15" />
+  <import index="29" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="18" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203071646776">
     <property name="name" value="ActionDeclaration" />
     <property name="rootable" value="true" />
@@ -2011,19 +2041,19 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1216225441716">
-    <property name="name" value="NoPlugin" />
+    <property name="name" value="GeneratePlugins" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1216225520214">
-      <property name="value" value="No Plugins" />
+      <property name="value" value="Generate Plugins" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1216227663668">
-      <property name="name" value="suppressApplicationPlugin" />
+      <property name="name" value="generateApplicationPlugin" />
       <link role="dataType" targetNodeId="6.1082983657063" resolveInfo="boolean" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1216227749011">
-      <property name="name" value="suppressProjectPlugin" />
+      <property name="name" value="generateProjectPlugin" />
       <link role="dataType" targetNodeId="6.1082983657063" resolveInfo="boolean" />
     </node>
   </node>
