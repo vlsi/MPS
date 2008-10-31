@@ -55,9 +55,18 @@ public class EditorCellModel_Behavior {
     return SPropertyOperations.getBoolean(firstItem, "flag");
   }
 
-  public static Color call_getForegroundColor_1220960215403(SNode thisNode) {
-    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"))).first();
-    if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, "color", null) == null || SPropertyOperations.hasValue(firstItem, "color", "query", null)) {
+  public static Color call_getColor_1225468825117(SNode thisNode, SNode firstItem) {
+    if ((firstItem == null)) {
+      return null;
+    }
+    if (SPropertyOperations.getString_def(firstItem, "color", null) == null || SPropertyOperations.hasValue(firstItem, "color", "query", null)) {
+      if ((SLinkOperations.getTarget(firstItem, "query", true) != null) && !(IQueryFunction_Color_Behavior.call_isFunction_1225463329531(SLinkOperations.getTarget(firstItem, "query", true)))) {
+        try {
+          return new Color(Integer.parseInt(IQueryFunction_Color_Behavior.call_getRGBValue_1225468086082(SLinkOperations.getTarget(firstItem, "query", true)), 16));
+        } catch (NumberFormatException nfe) {
+          return null;
+        }
+      }
       return null;
     }
     Class<MPSColors> classColors = MPSColors.class;
@@ -67,34 +76,21 @@ public class EditorCellModel_Behavior {
       t.printStackTrace();
       return null;
     }
+  }
+
+  public static Color call_getForegroundColor_1220960215403(SNode thisNode) {
+    SNode item = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"))).first();
+    return EditorCellModel_Behavior.call_getColor_1225468825117(thisNode, item);
   }
 
   public static Color call_getBackgroundColor_1220969182195(SNode thisNode) {
-    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"))).first();
-    if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, "color", null) == null || SPropertyOperations.hasValue(firstItem, "color", "query", null)) {
-      return null;
-    }
-    Class<MPSColors> classColors = MPSColors.class;
-    try {
-      return (Color)classColors.getField(SPropertyOperations.getString_def(firstItem, "color", null)).get(null);
-    } catch (Throwable t) {
-      t.printStackTrace();
-      return null;
-    }
+    SNode item = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"))).first();
+    return EditorCellModel_Behavior.call_getColor_1225468825117(thisNode, item);
   }
 
   public static Color call_getTextBackgroundColor_1220972190901(SNode thisNode) {
-    SNode firstItem = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"))).first();
-    if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, "color", null) == null || SPropertyOperations.hasValue(firstItem, "color", "query", null)) {
-      return null;
-    }
-    Class<MPSColors> classColors = MPSColors.class;
-    try {
-      return (Color)classColors.getField(SPropertyOperations.getString_def(firstItem, "color", null)).get(null);
-    } catch (Throwable t) {
-      t.printStackTrace();
-      return null;
-    }
+    SNode item = ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"))).first();
+    return EditorCellModel_Behavior.call_getColor_1225468825117(thisNode, item);
   }
 
   public static boolean call_isUnderlined_1221220594206(SNode thisNode) {

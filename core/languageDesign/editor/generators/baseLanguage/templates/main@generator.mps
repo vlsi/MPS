@@ -15215,34 +15215,50 @@
                         </node>
                       </node>
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225463657781">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1225463671566">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225467936755">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1225467974693">
                         <link role="baseMethodDeclaration" targetNodeId="50.~Color.&lt;init&gt;(int)" resolveInfo="Color" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225463679259">
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225467976038">
                           <property name="value" value="0" />
-                          <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1225463700698">
-                            <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1225463700699">
-                              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225463700700">
-                                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225464487073">
-                                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225464490153">
-                                    <link role="baseMethodDeclaration" targetNodeId="2.~Integer.parseInt(java.lang.String,int):int" resolveInfo="parseInt" />
-                                    <link role="classConcept" targetNodeId="2.~Integer" resolveInfo="Integer" />
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225464584683">
-                                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1225464567930">
-                                        <link role="concept" targetNodeId="38.1225456267680" resolveInfo="RGBColor" />
-                                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225464495780">
-                                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1225464494779" />
-                                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225464497720">
-                                            <link role="link" targetNodeId="38.1186403803051" />
+                          <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1225467977461">
+                            <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1225468007360">
+                              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225468007361">
+                                <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="1225470105025">
+                                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225470105026">
+                                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225470116642">
+                                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225470117284">
+                                        <link role="baseMethodDeclaration" targetNodeId="2.~Integer.parseInt(java.lang.String,int):int" resolveInfo="parseInt" />
+                                        <link role="classConcept" targetNodeId="2.~Integer" resolveInfo="Integer" />
+                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225470117285">
+                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225470117286">
+                                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1225470117287" />
+                                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225470117288">
+                                              <link role="link" targetNodeId="38.1186403803051" />
+                                            </node>
+                                          </node>
+                                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225470117289">
+                                            <link role="baseMethodDeclaration" targetNodeId="62.1225468086082" resolveInfo="getRGBValue" />
                                           </node>
                                         </node>
-                                      </node>
-                                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1225464596953">
-                                        <link role="property" targetNodeId="38.1225456424731" resolveInfo="value" />
+                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225470117290">
+                                          <property name="value" value="16" />
+                                        </node>
                                       </node>
                                     </node>
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225464603471">
-                                      <property name="value" value="16" />
+                                  </node>
+                                  <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1225470105028">
+                                    <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225470105029">
+                                      <property name="name" value="nfe" />
+                                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225470140470">
+                                        <link role="classifier" targetNodeId="2.~NumberFormatException" resolveInfo="NumberFormatException" />
+                                      </node>
+                                    </node>
+                                    <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225470105031">
+                                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225471362259">
+                                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225471436235">
+                                          <property name="value" value="0" />
+                                        </node>
+                                      </node>
                                     </node>
                                   </node>
                                 </node>

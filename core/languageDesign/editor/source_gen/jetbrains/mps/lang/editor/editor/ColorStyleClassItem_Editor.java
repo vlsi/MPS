@@ -98,7 +98,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
       setupLabel_property_color_1186412595080((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu0(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu0(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu2(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu3()}));
     return editorCell;
   }
 
@@ -128,6 +128,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
       setupLabel_refNode_query_1186412603348((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu1(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu4(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu5()}));
     return editorCell;
   }
 
@@ -226,9 +227,36 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class ColorStyleClassItem_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
+  public static class ColorStyleClassItem_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Group {
 
     public ColorStyleClassItem_generic_cellMenu1() {
+    }
+
+    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      List<_Colors_Enum> types = ListSequence.<_Colors_Enum>fromArray();
+      for(_Colors_Enum color : _Colors_Enum.values()) {
+        ListSequence.fromList(types).addElement(color);
+      }
+      return types;
+    }
+
+    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      this.handleAction_impl((_Colors_Enum)parameterObject, node, model, scope, operationContext);
+    }
+
+    public void handleAction_impl(_Colors_Enum parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SLinkOperations.removeChild(node, "query");
+      SPropertyOperations.set(node, "color", parameterObject.getValue());
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+}
+  public static class ColorStyleClassItem_generic_cellMenu2 extends AbstractCellMenuPart_Generic_Item {
+
+    public ColorStyleClassItem_generic_cellMenu2() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -237,6 +265,48 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
     public String getMatchingText() {
       return "#RRGGBB";
+    }
+
+}
+  public static class ColorStyleClassItem_generic_cellMenu3 extends AbstractCellMenuPart_Generic_Item {
+
+    public ColorStyleClassItem_generic_cellMenu3() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
+    }
+
+    public String getMatchingText() {
+      return "query";
+    }
+
+}
+  public static class ColorStyleClassItem_generic_cellMenu4 extends AbstractCellMenuPart_Generic_Item {
+
+    public ColorStyleClassItem_generic_cellMenu4() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.RGBColor");
+    }
+
+    public String getMatchingText() {
+      return "#RRGGBB";
+    }
+
+}
+  public static class ColorStyleClassItem_generic_cellMenu5 extends AbstractCellMenuPart_Generic_Item {
+
+    public ColorStyleClassItem_generic_cellMenu5() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
+    }
+
+    public String getMatchingText() {
+      return "query";
     }
 
 }

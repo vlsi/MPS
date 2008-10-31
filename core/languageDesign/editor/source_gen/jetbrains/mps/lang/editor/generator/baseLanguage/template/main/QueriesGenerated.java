@@ -24,11 +24,11 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.editor.behavior.CellModel_WithRole_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior;
+import jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior;
@@ -640,8 +640,12 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), "underlined", "2", "0");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1225463700699(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Integer.parseInt(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "query", true), "value"), 16);
+  public static Object propertyMacro_GetPropertyValue_1225468007360(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    try {
+      return Integer.parseInt(IQueryFunction_Color_Behavior.call_getRGBValue_1225468086082(SLinkOperations.getTarget(_context.getNode(), "query", true)), 16);
+    } catch (NumberFormatException nfe) {
+      return 0;
+    }
   }
 
   public static Object referenceMacro_GetReferent_1176478910892(final IOperationContext operationContext, final ReferenceMacroContext _context) {

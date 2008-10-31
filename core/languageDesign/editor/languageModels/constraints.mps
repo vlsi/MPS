@@ -950,7 +950,7 @@
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225459731351">
                   <link role="baseMethodDeclaration" targetNodeId="17.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225459731352">
-                    <property name="value" value="[0-9a-f]{1,6}" />
+                    <property name="value" value="[0-9a-fA-Z]{1,6}" />
                   </node>
                 </node>
                 <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" id="1225462801212" />

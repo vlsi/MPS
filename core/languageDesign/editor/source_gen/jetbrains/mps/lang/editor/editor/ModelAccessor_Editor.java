@@ -44,7 +44,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1176718043531(context, node, "model acessor"));
+    editorCell.addEditorCell(this.createConstant1176718043531(context, node, "model accessor"));
     editorCell.addEditorCell(this.createConstant1176718046065(context, node, "{"));
     return editorCell;
   }
