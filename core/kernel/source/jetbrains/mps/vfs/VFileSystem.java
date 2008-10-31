@@ -86,7 +86,8 @@ public class VFileSystem {
     }
   }
 
-  public static VirtualFile getFile(@NotNull IFile file) {
+  public static VirtualFile getFile(IFile file) {
+    if (file == null) return null;
     if (file instanceof FileSystemFile) {
       LocalFileSystem lfs = LocalFileSystem.getInstance();
       return lfs.findFileByIoFile(file.toFile());
