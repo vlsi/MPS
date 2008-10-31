@@ -46,6 +46,7 @@ public class PropertyAccessor implements ModelAccessor {
 
   public void setText(String text) {
     if (!myReadOnly) {
+      isValidText(text);
       if (text != null && text.length() == 0) {
         text = null;
       }
