@@ -720,7 +720,7 @@ public class SModel implements Iterable<SNode> {
         //addAspectModelsVersions(languageNamespace, language);
       } else {
         if (!isLoading()) {
-          LOG.error("Language \"" + lang + "\" isn't visible in scope " + scope + " . Used by model \"" + getSModelReference() +
+          LOG.error("Language \"" + lang.getModuleFqName() + "\" isn't visible in scope " + scope + " . Used by model \"" + getSModelFqName() +
             "\"\nAdd this language to the LANGUAGES section of the module properties");
         }
       }
