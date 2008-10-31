@@ -29,6 +29,11 @@ public class BaseMPSTest extends TestCase {
     }
   }
 
+  protected void assertGenerates(File project) {
+    String res = testProject(project);
+    assertTrue(res, res != null);
+  }
+
   protected String testProject(File project) {    
     return TestMain.testProject(project);
   }

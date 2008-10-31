@@ -2,150 +2,120 @@ package jetbrains.mps;
 
 import java.io.File;
 
-public class BootstrapTest extends BaseMPSTest {                                                       
+public class BootstrapTest extends BaseMPSTest {
   public void testBaseLanguage() {
-    String res = testProject(new File("core/baseLanguage/baseLanguage/baseLanguage.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/baseLanguage/baseLanguage/baseLanguage.mpr"));
   }
 
   public void testBaseLanguageStrings() {
-    String res = testProject(new File("core/baseLanguage/strings/strings.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/baseLanguage/strings/strings.mpr"));
   }
 
   public void testBaseLanguageInternal() {
-    String res = testProject(new File("core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr"));
   }
 
   public void testCoreLanguage() {
-    String res = testProject(new File("core/languageDesign/core/core.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/core/core.mpr"));
   }
 
   public void testStructureLanguage() {
-    String res = testProject(new File("core/languageDesign/structure/structure.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/structure/structure.mpr"));
   }
 
   public void testEditorLanguage() {
-    String res = testProject(new File("core/languageDesign/editor/editor.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/editor/editor.mpr"));
   }
 
   public void testConstraintsLanguage() {
-    String res = testProject(new File("core/languageDesign/constraints/constraints.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/constraints/constraints.mpr"));
   }
 
   public void testSModelLanguage() {
-    String res = testProject(new File("core/languageDesign/smodel/smodel.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/smodel/smodel.mpr"));
   }
 
   public void testActionsLanguage() {
-    String res = testProject(new File("core/languageDesign/actions/actions.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/actions/actions.mpr"));
   }
 
   public void testTypesystem() {
-    String res = testProject(new File("core/languageDesign/typesystem/typesystem.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/typesystem/typesystem.mpr"));
   }
 
   public void testRefactoringLanguage() {
-    String res = testProject(new File("core/languageDesign/refactoring/refactoring.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/refactoring/refactoring.mpr"));
   }
 
   public void testSharedConcepts() {
-    String res = testProject(new File("core/languageDesign/sharedConcepts/sharedConcepts.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/sharedConcepts/sharedConcepts.mpr"));
   }
 
   public void testCollectionsLanguage() {
-    String res = testProject(new File("core/baseLanguage/collections/collections.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/baseLanguage/collections/collections.mpr"));
   }
 
   public void testClosures() {
-    String res = testProject(new File("core/baseLanguage/closures/closures.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/baseLanguage/closures/closures.mpr"));
   }
 
   public void testInternalCollections() {
-    String res = testProject(new File("core/baseLanguage/internalCollections/internalCollections.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/baseLanguage/internalCollections/internalCollections.mpr"));
   }
 
   public void testProjectLanguage() {
-    String res = testProject(new File("core/projectLanguage/projectLanguage.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/projectLanguage/projectLanguage.mpr"));
   }
 
   public void testGenerator() {
-    String res = testProject(new File("core/languageDesign/generator/generator.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/generator/generator.mpr"));
   }
 
   public void testIntentionsLanguage() {
-    String res = testProject(new File("core/languageDesign/intentions/intentions.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/intentions/intentions.mpr"));
   }
 
   public void testFindUsagesLanguage() {
-    String res = testProject(new File("core/languageDesign/findUsages/findUsages.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/findUsages/findUsages.mpr"));
   }
 
   public void testPluginLanguage() {
-    String res = testProject(new File("core/languageDesign/plugin/plugin.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/plugin/plugin.mpr"));
   }
 
   public void testDeprecatedXML() {
-    String res = testProject(new File("platform/xmlDeprecated/xmlDeprecated.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("platform/xmlDeprecated/xmlDeprecated.mpr"));
   }
 
   public void testRegexps() {
-    String res = testProject(new File("platform/regexp/regexp.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("platform/regexp/regexp.mpr"));
   }
 
   public void testQuotation() {
-    String res = testProject(new File("core/languageDesign/quotation/quotation.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/quotation/quotation.mpr"));
   }
 
   public void testAnnotations() {
-    String res = testProject(new File("core/languageDesign/annotations/annotations.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/annotations/annotations.mpr"));
   }
 
   public void testPatterns() {
-    String res = testProject(new File("core/languageDesign/pattern/pattern.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/pattern/pattern.mpr"));
   }
 
   public void testDataFlow() {
-    String res = testProject(new File("core/languageDesign/dataFlow/dataFlow.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/dataFlow/dataFlow.mpr"));
   }
 
   public void testScript() {
-    String res = testProject(new File("core/languageDesign/script/script.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/script/script.mpr"));
   }
 
   public void testLanguageTest() {
-    String res = testProject(new File("core/languageDesign/test/test.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("core/languageDesign/test/test.mpr"));
   }
 
-
   public void testXML() {
-    String res = testProject(new File("platform/xml/xml/xml.mpr"));
-    assertTrue(res, res == null);
+    assertGenerates(new File("platform/xml/xml/xml.mpr"));
   }
 }

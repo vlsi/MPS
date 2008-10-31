@@ -410,7 +410,11 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
         {
           setEditorContext(new EditorContext(this, null, null));
           CaretBlinker.getInstance().unregisterEditor(this);
-          rebuildEditorContent();
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+            public void run() {
+              rebuildEditorContent();
+            }
+          });
         }
         public EditorCell createRootCell() {
           return new EditorCell_Demo(getEditorContext(), "blinking");
