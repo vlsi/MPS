@@ -24,6 +24,7 @@ import jetbrains.mps.util.Pair;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.List;
+import java.util.Comparator;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -364,11 +365,15 @@ public class GenerationSession implements IGenerationSession {
   }
 
   private void printGenerationStepData(AbstractGenerationStepController stepController, SModel inputModel) {
-    List<ModuleReference> namespaces = GenerationPartitioningUtil.getUsedLanguageNamespaces(inputModel, false);
-    Collections.sort(namespaces);
+    List<ModuleReference> references = GenerationPartitioningUtil.getUsedLanguageNamespaces(inputModel, false);
+    Collections.sort(references, new Comparator<ModuleReference>() {
+      public int compare(ModuleReference o1, ModuleReference o2) {
+        return ("" + o1.getModuleFqName()).compareTo("" + o2.getModuleFqName());
+      }
+    });
     addMessage(new Message(MessageKind.INFORMATION, "languages used:"));
-    for (ModuleReference namespace : namespaces) {
-      addMessage(new Message(MessageKind.INFORMATION, "    " + namespace));
+    for (ModuleReference reference : references) {
+      addMessage(new Message(MessageKind.INFORMATION, "    " + reference.getModuleFqName()));
     }
 //    List<Generator> generators = stepController.getGenerators();
 //    Collections.sort(generators, new Comparator<Generator>() {
