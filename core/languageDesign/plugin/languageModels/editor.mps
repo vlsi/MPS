@@ -1175,11 +1175,6 @@
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225460460753">
               <property name="value" value="0.0" />
             </node>
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem" id="1225462504216">
-              <node role="query" type="jetbrains.mps.lang.editor.structure.RGBColor" id="1225462511421">
-                <property name="value" value="23aaz" />
-              </node>
-            </node>
           </node>
         </node>
       </node>
