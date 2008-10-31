@@ -43,21 +43,25 @@ public class MessagesGutter extends JPanel {
   }
 
   private void validateStatus() {
-    GutterStatus status = GutterStatus.OK;
-    for (EditorMessage message : myMessages) {
-      if (message.getStatus() == MessageStatus.WARNING) {
-        status = GutterStatus.WARNING;
-      }
-      if (message.getStatus() == MessageStatus.ERROR) {
-        status = GutterStatus.ERROR;
-        break;
-      }
-    }
-    setStatus(status);
-    myStatusIsDirty = false;
+    ThreadUtils.runInUIThreadNoWait(new Runnable(){
+      public void run() {
+        GutterStatus status = GutterStatus.OK;
+        for (EditorMessage message : myMessages) {
+          if (message.getStatus() == MessageStatus.WARNING) {
+            status = GutterStatus.WARNING;
+          }
+          if (message.getStatus() == MessageStatus.ERROR) {
+            status = GutterStatus.ERROR;
+            break;
+          }
+        }
+        setStatus(status);
+        myStatusIsDirty = false;
 
-    //otherwise some messages (removal of which does not affect model) could be not repainted
-    repaint();
+        //otherwise some messages (removal of which does not affect model) could be not repainted
+        repaint();
+      }
+    });
   }
 
   private void removeLater(Set<EditorMessage> messages) {
@@ -89,12 +93,7 @@ public class MessagesGutter extends JPanel {
   public void add(EditorMessage message) {
     myMessages.add(message);
     myOwners.put(message, message.getOwner());
-
-    ThreadUtils.runInUIThreadNoWait(new Runnable(){
-      public void run() {
-        validateStatus();
-      }
-    });
+    validateStatus();
   }
 
   public void remove(EditorMessage message) {
