@@ -23,7 +23,7 @@ public class RGBColor_value_PropertyConstraint implements IModelConstraints, INo
   }
 
   public boolean checkPropertyValue(SNode node, String propertyName, String propertyValue, IScope scope) {
-    return SPropertyOperations.getString(node, "value") == null || SPropertyOperations.getString(node, "value").matches("[0-9a-f]{1,6}");
+    return SPropertyOperations.getString(node, "value") == null || (SPropertyOperations.getString(propertyValue)).matches("[0-9a-f]{1,6}");
   }
 
 }

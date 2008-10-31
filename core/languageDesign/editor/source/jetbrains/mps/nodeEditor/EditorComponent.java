@@ -667,7 +667,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void hideMessageToolTip() {
-    try {
+    try {                                   
       //todo this is a hack but I don't know other way to show tooltip programatically
       ToolTipManager toolTipManager = ToolTipManager.sharedInstance();
       toolTipManager.mousePressed(new MouseEvent(

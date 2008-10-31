@@ -947,12 +947,7 @@
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225461832380" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225459731347">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225459731348">
-                  <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1225459731349" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1225459731350">
-                    <link role="property" targetNodeId="1.1225456424731" resolveInfo="value" />
-                  </node>
-                </node>
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" id="1225462629194" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225459731351">
                   <link role="baseMethodDeclaration" targetNodeId="17.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225459731352">
