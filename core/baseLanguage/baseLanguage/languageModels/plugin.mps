@@ -31987,7 +31987,7 @@
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1225187754039">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1225187863174">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1225460788583">
               <link role="enumConstantDeclaration" targetNodeId="1225124000057" resolveInfo="FIELD" />
               <link role="enumClass" targetNodeId="1225123922270" resolveInfo="FieldInitializationPlace" />
             </node>

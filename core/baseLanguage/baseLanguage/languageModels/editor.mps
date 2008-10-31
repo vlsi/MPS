@@ -4127,6 +4127,7 @@
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1090928601380">
           <link role="conceptDeclaration" targetNodeId="17.1083245299891" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1090928601381">
+            <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934388">
               <property name="style" value="BOLD" />

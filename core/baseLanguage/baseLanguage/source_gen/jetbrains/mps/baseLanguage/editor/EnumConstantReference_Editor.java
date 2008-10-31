@@ -169,7 +169,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
-      provider.setReadOnly(false);
+      provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty1090928601381_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
