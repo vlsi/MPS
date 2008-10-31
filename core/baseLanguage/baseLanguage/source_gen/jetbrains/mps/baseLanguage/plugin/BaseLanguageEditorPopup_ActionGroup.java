@@ -29,6 +29,7 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
       this.add(new IntroduceField_Action());
       this.add(new IntroduceConstant_Action());
       this.add(new MoveStaticMethod_Action());
+      this.add(new RenameVariable_Action());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
