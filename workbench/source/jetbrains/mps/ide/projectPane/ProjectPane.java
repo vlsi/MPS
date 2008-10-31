@@ -38,6 +38,7 @@ import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -163,9 +164,12 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       if (fileEditor instanceof MPSFileNodeEditor) {
         final MPSFileNodeEditor editor = (MPSFileNodeEditor) fileEditor;
         if (myProjectView.isAutoscrollFromSource(ID)) {
+          EditorComponent editorComponent = editor.getNodeEditor().getCurrentEditorComponent();
+          if (editorComponent==null) return;
+          final SNode sNode = editorComponent.getEditedNode();
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
-              selectNode(editor.getNodeEditor().getCurrentEditorComponent().getEditedNode());
+              selectNode(sNode);
             }
           });
         }

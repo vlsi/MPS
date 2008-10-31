@@ -228,6 +228,7 @@ public class TabbedEditor implements IEditor {
     }
   }
 
+  @Nullable
   public EditorComponent getCurrentEditorComponent() {
     return myTabbedPane.getCurrentTab().getCurrentEditorComponent();
   }

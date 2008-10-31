@@ -1,19 +1,18 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
-
-import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 
 public interface IEditor {
@@ -44,6 +43,7 @@ public interface IEditor {
   void dispose();
   void repaint();
 
+  @Nullable
   EditorComponent getCurrentEditorComponent();
   boolean removeFromRecentEditorsOnClose();
 
