@@ -17,19 +17,19 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1196428156151(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new QuotationClass_0().createNode()) && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType");
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new _Quotations.QuotationClass_0().createNode()) && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType");
   }
 
   public static boolean baseMappingRule_Condition_1196428673012(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new QuotationClass_1().createNode()) && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType");
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new _Quotations.QuotationClass_1().createNode()) && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType");
   }
 
   public static boolean baseMappingRule_Condition_1196428788645(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType") && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new QuotationClass_2().createNode());
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType") && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new _Quotations.QuotationClass_2().createNode());
   }
 
   public static boolean baseMappingRule_Condition_1196428954076(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType") && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new QuotationClass_3().createNode());
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType") && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new _Quotations.QuotationClass_3().createNode());
   }
 
   public static boolean baseMappingRule_Condition_1196428960673(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -41,11 +41,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1196429812124(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType") && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new QuotationClass_4().createNode());
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType") && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new _Quotations.QuotationClass_4().createNode());
   }
 
   public static boolean baseMappingRule_Condition_1196429812142(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new QuotationClass_5().createNode()) && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType");
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new _Quotations.QuotationClass_5().createNode()) && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType");
   }
 
   public static boolean baseMappingRule_Condition_1196429868936(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -53,11 +53,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1196429868971(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.samples.complex.structure.ComplexType") && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new QuotationClass_6().createNode());
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.samples.complex.structure.ComplexType") && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new _Quotations.QuotationClass_6().createNode());
   }
 
   public static boolean baseMappingRule_Condition_1196429868989(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new QuotationClass_7().createNode()) && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType");
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new _Quotations.QuotationClass_7().createNode()) && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), "jetbrains.mps.samples.complex.structure.ComplexType");
   }
 
   public static SNode sourceNodeQuery_1196266594304(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
