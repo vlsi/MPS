@@ -91,6 +91,10 @@
       <property name="name" value="description" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1225457189692">
+      <property name="name" value="showAsIntention" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1177457957477">
       <property name="role" value="affectedInstanceConcept" />
       <property name="sourceCardinality" value="1" />

@@ -266,6 +266,7 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1177460802386">
     <link role="conceptDeclaration" targetNodeId="1.1177457850499" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177460842247">
@@ -277,9 +278,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177551421959">
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177551421960">
             <property name="text" value="description" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399677821">
-              <property name="color" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177551421961">
             <property name="text" value=":" />
@@ -301,12 +300,31 @@
             <property name="flag" value="false" />
           </node>
         </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225457175140">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225457175141">
+            <property name="flag" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225457175142">
+            <property name="text" value="show as intention" />
+            <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225457430640">
+            <property name="text" value=":" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225457472376">
+              <property name="flag" value="false" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1225457472377">
+              <property name="color" value="DARK_BLUE" />
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1225457175143">
+            <link role="relationDeclaration" targetNodeId="1.1225457189692" resolveInfo="showAsIntention" />
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177551438475">
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177551438476">
             <property name="text" value="for each" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678568">
-              <property name="color" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177551438477">
             <property name="text" value=":" />
@@ -338,9 +356,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177551438481">
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177551438482">
             <property name="text" value="where" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678202">
-              <property name="color" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177551438483">
             <property name="text" value=":" />
@@ -362,9 +378,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177551438485">
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177551438486">
             <property name="text" value="do" />
-            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678716">
-              <property name="color" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177551438487">
             <property name="text" value=":" />

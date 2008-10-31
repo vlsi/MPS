@@ -222,9 +222,11 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     for (BaseMigrationScript script : scripts.keySet()) {
       MigrationScript migrationScript = scripts.get(script);
       for (AbstractMigrationRefactoring refactoring : script.getRefactorings()) {
-        Intention intention = new MigrationRefactoringAdapter(refactoring, migrationScript);
-        addIntention(intention);
-        myNodesByIntentions.put(intention, migrationScript.getNode());
+        if (refactoring.isShowAsIntention()){
+          Intention intention = new MigrationRefactoringAdapter(refactoring, migrationScript);
+          addIntention(intention);
+          myNodesByIntentions.put(intention, migrationScript.getNode());
+        }
       }
     }
   }

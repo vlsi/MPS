@@ -20,5 +20,9 @@ public abstract class AbstractMigrationRefactoring {
 
   public abstract boolean isApplicableInstanceNode(SNode instanceNode);
 
+  public boolean isShowAsIntention(){
+    return false;
+  }
+
   public abstract void doUpdateInstanceNode(SNode instanceNode);
 }

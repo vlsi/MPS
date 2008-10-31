@@ -310,6 +310,32 @@
                       </node>
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546095342" />
                     </node>
+                    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1225457111715">
+                      <property name="name" value="isShowAsIntention" />
+                      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1225457116797" />
+                      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225457111717" />
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225457111718">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225457124658">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1225457128707">
+                            <property name="value" value="true" />
+                            <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1225457131442">
+                              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1225457131443">
+                                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225457131444">
+                                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225457137320">
+                                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225457138197">
+                                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1225457137321" />
+                                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1225457203506">
+                                        <link role="property" targetNodeId="1.1225457189692" resolveInfo="showAsIntention" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1177465301993">
                       <link role="variableDeclaration" targetNodeId="1177464748270" resolveInfo="operationContext" />
                     </node>
