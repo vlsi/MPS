@@ -80,8 +80,11 @@ public class ModelDiffTool implements DiffTool {
   }
 
   public static SModel readModel(DiffContent content, String path) throws IOException, ReadException {
+    return readModel(content.getBytes(), path);
+  }
+
+  public static SModel readModel(byte[] bytes, String path) throws IOException, ReadException {
     final String[] modelNameAndStereotype = getModelNameAndStereotype(path);
-    byte[] bytes = content.getBytes();
     try {
       final Document document = JDOMUtil.loadDocument(new ByteArrayInputStream(bytes));
       return ModelAccess.instance().runReadAction(new Computable<SModel>() {
@@ -107,7 +110,7 @@ public class ModelDiffTool implements DiffTool {
     return type.equals(MPSFileTypesManager.MODEL_FILE_TYPE);
   }
 
-  static class ReadException extends Throwable {
+  public static class ReadException extends Throwable {
     public ReadException(Throwable t) {
       super(t);
     }

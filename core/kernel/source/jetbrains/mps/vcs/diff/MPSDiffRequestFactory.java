@@ -14,9 +14,16 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
+import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
+import jetbrains.mps.vfs.VFileSystem;
 
 import java.io.OutputStream;
 import java.io.IOException;
+import java.io.ByteArrayInputStream;
 
 public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
   private static final Logger LOG = Logger.getLogger(MPSDiffRequestFactory.class);
@@ -36,7 +43,7 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
     public static final int LAST_REVISION = 2;
     private final VirtualFile myFile;
 
-    protected ModelMergeRequest(String leftText, String rightText, String originalContent,@NotNull VirtualFile file, Project project, ActionButtonPresentation actionButtonPresentation) {
+    protected ModelMergeRequest(String leftText, String rightText, String originalContent, @NotNull VirtualFile file, Project project, ActionButtonPresentation actionButtonPresentation) {
       super(leftText, originalContent, rightText, project, actionButtonPresentation);
       myFile = file;
     }
@@ -54,6 +61,21 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
         outputStream.write(result);
         outputStream.close();
       } catch (IOException e) {
+        LOG.error(e);
+      }
+      reloadModel(result);
+    }
+
+    private void reloadModel(byte[] result) {
+      final SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VFileSystem.toIFile(myFile));
+      if (modelDescriptor == null) return;
+
+      try {
+        SModel model = ModelDiffTool.readModel(result, myFile.getPath());
+        modelDescriptor.replaceModel(model);
+      } catch (IOException e) {
+        LOG.error(e);
+      } catch (ReadException e) {
         LOG.error(e);
       }
     }
