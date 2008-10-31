@@ -6,11 +6,13 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleType;
+import com.intellij.openapi.module.JavaModuleType;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.projectRoots.ProjectJdk;
+import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.projectRoots.ProjectJdkTable;
+import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
@@ -27,9 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-/**
- * @author Kostik
- */
 public class IDEAHandler extends UnicastRemoteObject implements ApplicationComponent, IIDEAHandler {
   static {
     RMIHandler.class.getClassLoader();
@@ -39,11 +38,8 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
     return ApplicationManager.getApplication().getComponent(IDEAHandler.class);
   }
 
-  private ProjectManagerEx myProjectManager;
-
-  public IDEAHandler(ProjectManagerEx projectManager) throws RemoteException {
+  public IDEAHandler() throws RemoteException {
     super();
-    myProjectManager = projectManager;
   }
 
   @NotNull
@@ -51,114 +47,7 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
     return "Project Creator";
   }
 
-  public void closeAllProjects() {
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            for (Project p : myProjectManager.getOpenProjects()) {
-              myProjectManager.closeProject(p);
-            }
-          }
-        });
-      }
-    }, ModalityState.NON_MODAL);
-  }
-
   public void ping() {
-  }
-
-  public String createNewProject(final String path, final String name) {
-    final String[] result = { "OK" };
-
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            LocalFileSystem lfs = LocalFileSystem.getInstance();
-
-            Project project = myProjectManager.newProject(path + File.separator + name + ".ipr", true, false);
-
-            ProjectRootManagerEx projectRootManager = (ProjectRootManagerEx) ProjectRootManagerEx.getInstance(project);
-            projectRootManager.setLanguageLevel(LanguageLevel.JDK_1_5);
-
-            ModuleManager moduleManager = ModuleManager.getInstance(project);                        
-
-            Module module = moduleManager.newModule(path + File.separator + name + ".iml", ModuleType.JAVA);
-            ModuleRootManager rootManager = module.getComponent(ModuleRootManager.class);
-            ModifiableRootModel rootModel = rootManager.getModifiableModel();
-            ProjectJdk jdk = findSuitableJDK();
-
-            if (jdk == null) {
-              result[0] = "Can't find suitable JDK";
-              return;
-            }
-
-            rootModel.setJdk(jdk);
-
-
-            VirtualFile contentRootFile = lfs.refreshAndFindFileByIoFile(new File(path));
-
-            if (contentRootFile == null) return;
-
-            rootModel.addContentEntry(contentRootFile);
-            try {
-              if (contentRootFile.findChild("classes") == null) {
-                contentRootFile.createChildDirectory(this, "classes");
-              }
-              rootModel.setCompilerOutputPath(contentRootFile.findChild("classes"));
-              rootModel.setExcludeOutput(true);
-            } catch (IOException e) {
-              e.printStackTrace();
-            }
-            rootModel.commit();
-
-            myProjectManager.openProject(project);
-
-            project.save();
-
-          }
-        });
-      }
-    }, ModalityState.NON_MODAL);
-
-    return result[0];
-  }
-
-  public List<String> getOpenProjects() throws RemoteException {
-    List<String> result = new ArrayList<String>();
-    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-      result.add(new File(p.getPresentableUrl()).getAbsolutePath());
-    }
-    return result;
-  }
-
-  public ProjectJdk findSuitableJDK() {
-    ProjectJdk jdk15 = null;
-    ProjectJdk jdk16 = null;
-
-    for (ProjectJdk jdk : ProjectJdkTable.getInstance().getAllJdks()) {
-      if (("" + jdk.getVersionString()).startsWith("java version \"1.5")) {
-        jdk15 = jdk;
-      }
-
-      if (("" + jdk.getVersionString()).startsWith("java version \"1.6")) {
-        jdk16 = jdk;
-      }
-    }
-
-    //we need such a smart way of choosing JDK because MPS might be run under 1.5
-    //but we might inadvertenly choose 1.6 which will cause a lot of exception which
-    //aren't very understandly for a regular user
-    if (jdk15 != null) {
-      return jdk15;
-    }
-
-    if (jdk16 != null) {
-      return jdk16;
-    }
-
-    return null;
   }
 
   public void initComponent() {

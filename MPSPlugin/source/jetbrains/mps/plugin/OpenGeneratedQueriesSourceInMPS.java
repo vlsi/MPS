@@ -17,6 +17,8 @@ public class OpenGeneratedQueriesSourceInMPS extends AnAction {
     if (editor == null) return;
 
     Project project = e.getData(DataKeys.PROJECT);
+    if (project == null) return;
+
     int offset = editor.getCaretModel().getOffset();
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
     if (file == null) return;
@@ -37,6 +39,7 @@ public class OpenGeneratedQueriesSourceInMPS extends AnAction {
     Editor editor = e.getData(DataKeys.EDITOR);
     if (editor == null) return;
     Project project = e.getData(DataKeys.PROJECT);
+    assert project != null;
     int offset = editor.getCaretModel().getOffset();
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
     if (file == null) return;

@@ -13,6 +13,7 @@ public class PluginUtil {
     Editor editor = e.getData(DataKeys.EDITOR);
     if (editor == null) return null;
     Project project = e.getData(DataKeys.PROJECT);
+    assert project != null;
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
     if (file == null) return null;
     return file.findElementAt(editor.getCaretModel().getOffset());

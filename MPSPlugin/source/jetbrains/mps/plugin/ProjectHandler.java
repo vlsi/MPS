@@ -10,10 +10,7 @@ import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleManager;
-import com.intellij.openapi.module.ModuleType;
-import com.intellij.openapi.module.ModuleUtil;
+import com.intellij.openapi.module.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
@@ -33,6 +30,7 @@ import com.intellij.openapi.wm.WindowManager;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiSearchHelper;
+import com.intellij.psi.search.searches.ClassInheritorsSearch;
 import com.intellij.refactoring.MoveClassesOrPackagesRefactoring;
 import com.intellij.refactoring.MoveDestination;
 import com.intellij.refactoring.RefactoringFactory;
@@ -198,9 +196,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     final List<String> list = new ArrayList<String>();
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
-        final PsiManager psiManager = PsiManager.getInstance(myProject);
+        final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(myProject);
         if (!isQueriesClassExist(namespace)) return;
-        PsiClass aspects = psiManager.findClass(namespace + ".Queries", GlobalSearchScope.projectScope(myProject));
+        PsiClass aspects = javaPsi.findClass(namespace + ".Queries", GlobalSearchScope.projectScope(myProject));
         if (aspects == null) return;
         PsiMethod[] methods = aspects.getAllMethods();
         for (PsiMethod method : methods) {
@@ -217,11 +215,10 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     final List<String> list = new ArrayList<String>();
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
-        PsiManager manager = PsiManager.getInstance(myProject);
-        PsiClass cls = manager.findClass(fqName, GlobalSearchScope.allScope(myProject));
+        final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(myProject);
+        PsiClass cls = javaPsi.findClass(fqName, GlobalSearchScope.allScope(myProject));
         if (cls == null) return;
-        PsiSearchHelper helper = manager.getSearchHelper();
-        PsiClass[] result = helper.findInheritors(cls, GlobalSearchScope.allScope(myProject), true);
+        PsiClass[] result = ClassInheritorsSearch.search(cls, GlobalSearchScope.allScope(myProject), true).toArray(new PsiClass[0]);
         for (PsiClass aResult : result) {
           if (aResult.getQualifiedName() != null) {  //i.e anonymous class
             list.add(aResult.getQualifiedName());
@@ -236,8 +233,8 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   public void openClass(final String fqName) {
     executeWriteAction(new Runnable() {
       public void run() {
-        PsiManager manager = PsiManager.getInstance(myProject);
-        PsiClass cls = manager.findClass(fqName, GlobalSearchScope.allScope(myProject));
+        final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(myProject);
+        PsiClass cls = javaPsi.findClass(fqName, GlobalSearchScope.allScope(myProject));
         if (cls == null) return;
         cls.navigate(true);
         activateProjectWindow();
@@ -249,14 +246,14 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     if (!isQueriesClassExist(namespace)) return;
     executeWriteAction(new Runnable() {
       public void run() {
-        PsiManager manager = PsiManager.getInstance(myProject);
+        JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(myProject);
         PsiClass aspectClass = getQueriesClass(namespace);
         PsiJavaFile file = (PsiJavaFile) aspectClass.getContainingFile();
         try {
           PsiImportList importList = file.getImportList();
           if (importList == null) return;
           if (importList.findSingleClassImportStatement(fqName) != null) return;
-          PsiClass cls = manager.findClass(fqName, GlobalSearchScope.allScope(myProject));
+          PsiClass cls = javaPsi.findClass(fqName, GlobalSearchScope.allScope(myProject));
           if (cls == null) return;
           PsiImportStatement importStatement = getPsiElementFactory().createImportStatement(cls);
           importList.add(importStatement);
@@ -409,25 +406,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
 
-  public void createLanguageModule(String namespace, final String path) {
-    executeWriteAction(new Runnable() {
-      public void run() {
-        ModuleManager manager = ModuleManager.getInstance(myProject);
-        final Module module = manager.newModule(path, ModuleType.JAVA);
-
-        ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
-        LocalFileSystem localFileSystem = LocalFileSystem.getInstance();
-
-        rootManager.getModifiableModel().inheritJdk();
-
-        rootManager.getModifiableModel().addContentEntry(localFileSystem.findFileByIoFile(new File(path, "source")));
-        rootManager.getModifiableModel().addContentEntry(localFileSystem.findFileByIoFile(new File(path, "source_gen")));
-
-        rootManager.getModifiableModel().commit();
-      }
-    });
-  }
-
   public void addLanguageRoot(String path) {
     executeWriteAction(new Runnable() {
       public void run() {
@@ -469,7 +447,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         PsiDirectory rootDir = psiManager.findDirectory(sourceDir);
         try {
           activateProjectWindow();
-          createPackagesForNamespace(rootDir, namespace).createClass("Queries");
+          JavaDirectoryService.getInstance().createClass(createPackagesForNamespace(rootDir, namespace), "Queries");
         } catch (IncorrectOperationException e) {
           e.printStackTrace();
         }
@@ -514,8 +492,8 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     final PsiClass[] cls = new PsiClass[1];
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
-        final PsiManager psiManager = PsiManager.getInstance(myProject);
-        cls[0] = psiManager.findClass(className, GlobalSearchScope.allScope(myProject));
+        final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(myProject);
+        cls[0] = javaPsi.findClass(className, GlobalSearchScope.allScope(myProject));
       }
     });
     return cls[0];
@@ -559,55 +537,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     return bestModule;
   }
 
-  public String getWebModuleExplodedFolder(final String path) {
-    final String[] res = new String[1];
-    executeWriteAction(new Runnable() {
-      public void run() {
-        Module m = findModule(path);
-
-        if (m == null) return;
-
-/*
-        // IDEA 6835
-        try {
-          // reflection version of the following code:
-          // res[0] = JavaeeModuleProperties.getInstance(m).getFacet().getBuildConfiguration().getBuildProperties().getExplodedPath();
-
-          Class javaeeModuleProperties = Class.forName("com.intellij.javaee.JavaeeModuleProperties");
-          Method getInstance = javaeeModuleProperties.getMethod("getInstance", Module.class);
-          Object javaeeModulePropertiesInstance = getInstance.invoke(null, m);
-
-          Method getFacet = javaeeModuleProperties.getMethod("getFacet");
-          Object facet = getFacet.invoke(javaeeModulePropertiesInstance); // returns com.intellij.javaee.facet.JavaeeFacet
-
-          Method getBuildConfiguration = facet.getClass().getMethod("getBuildConfiguration");
-          Object javaeeBuildConfiguration = getBuildConfiguration.invoke(facet); // returns com.intellij.javaee.facet.JavaeeBuildConfiguration
-
-          Method getBuildProperties = javaeeBuildConfiguration.getClass().getMethod("getBuildProperties");
-          Object buildConfiguration = getBuildProperties.invoke(javaeeBuildConfiguration); // returns com.intellij.openapi.compiler.make.BuildConfiguration
-
-          Method getExplodedPath = buildConfiguration.getClass().getMethod("getExplodedPath");
-          res[0] = (String) getExplodedPath.invoke(buildConfiguration);
-
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
-*/
-        //IDEA 7274
-
-        Collection<WebFacet> wfs = WebFacet.getInstances(m);
-        if (wfs.isEmpty()) {
-          return;
-        }
-
-        WebFacet wf = wfs.iterator().next();
-        res[0] = wf.getBuildConfiguration().getBuildProperties().getExplodedPath();
-      }
-    });
-
-    return res[0];
-  }
-
   public List<String> getModuleClassPath(final String path) {
     final List<String> res = new ArrayList<String>();
     executeWriteAction(new Runnable() {
@@ -622,7 +551,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
         ModuleRootManager instance = ModuleRootManager.getInstance(m);
         if (instance != null) {
-          String outUrl = instance.getCompilerOutputPathUrl();
+          String outUrl = CompilerModuleExtension.getInstance(m).getCompilerOutputUrl();
           if (outUrl != null) {
             res.add(new File(VirtualFileManager.extractPath(outUrl)).getAbsolutePath());
           }
@@ -638,7 +567,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
           public Set<VirtualFile> visitModuleOrderEntry(ModuleOrderEntry moduleOrderEntry, Set<VirtualFile> result) {
             Module module = moduleOrderEntry.getModule();
             if (module != null && !processedModules.contains(module)) {
-              String outUrl = ModuleRootManager.getInstance(module).getCompilerOutputPathUrl();
+              String outUrl = CompilerModuleExtension.getInstance(module).getCompilerOutputUrl();
               if (outUrl != null) {
                 res.add(new File(VirtualFileManager.extractPath(outUrl)).getAbsolutePath());
               }
@@ -723,157 +652,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     return distance + 1;
   }
 
-  public void moveClass(final String classFQName, final String targetPackageNamespace, final File targetSourceRoot) throws RemoteException {
-    executeWriteAction(new Runnable() {
-      public void run() {
-        RefactoringFactory refactoringFactory = RefactoringFactory.getInstance(myProject);
-        VirtualFile targetRoot = LocalFileSystem.getInstance().findFileByIoFile(targetSourceRoot);
-        assert targetRoot != null;
-        PsiClass psiClass = PsiManager.getInstance(myProject).findClass(classFQName, GlobalSearchScope.allScope(myProject));
-        MoveClassesOrPackagesRefactoring refactoring = refactoringFactory.createMoveClassesOrPackages(new PsiElement[]{psiClass},
-                refactoringFactory.createSourceRootMoveDestination(targetPackageNamespace, targetRoot));
-        refactoring.setSearchInComments(false);
-        refactoring.setSearchInNonJavaFiles(false);
-        refactoring.setPreviewUsages(false);
-        refactoring.run();
-      }
-    });
-  }
-
-  public void renameClass(final String oldClassFQName, final String newClassName) {
-    executeWriteAction(new Runnable() {
-      public void run() {
-        doRenameClass(oldClassFQName, newClassName);
-      }
-    });
-  }
-
-
-  public void renameMethod(final String classFQName, final String oldMethodName, final String newMethodName) {
-    executeWriteAction(new Runnable() {
-      public void run() {
-        doRenameMethod(classFQName, oldMethodName, newMethodName);
-      }
-    });
-
-  }
-
-  public void renameFieldAndInitializer(final String classFQName, final String oldFieldName, final String newFieldName, final String initializer) {
-    executeWriteAction(new Runnable() {
-      public void run() {
-        doRenameFieldAndInitializer(classFQName, oldFieldName, newFieldName, initializer);
-      }
-    });
-  }
-
-
-  private void doRenameMethod(String classFQName, String oldMethodName, String newMethodName) {
-    PsiClass psiClass = PsiManager.getInstance(myProject).findClass(classFQName, GlobalSearchScope.allScope(myProject));
-    if (psiClass == null) return;
-    PsiMethod[] psiMethods = psiClass.findMethodsByName(oldMethodName, false);
-    if (psiMethods.length < 1) return;
-    PsiMethod psiMethod = psiMethods[0];
-    RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiMethod, newMethodName);
-    refactoring.setPreviewUsages(false);
-    refactoring.setSearchInComments(false);
-    refactoring.setSearchInNonJavaFiles(false);
-    refactoring.setShouldRenameInheritors(false);
-    refactoring.setShouldRenameVariables(false);
-    refactoring.run();
-  }
-
-  private void doRenameFieldAndInitializer(String classFQName, String oldFieldName, String newFieldName, String initializer) {
-    PsiClass psiClass = PsiManager.getInstance(myProject).findClass(classFQName, GlobalSearchScope.allScope(myProject));
-    if (psiClass == null) return;
-    PsiField psiField = psiClass.findFieldByName(oldFieldName, false);
-    if (psiField == null) return;
-    try {
-      PsiExpression psiExpression = psiField.getInitializer();
-      PsiExpression text = getPsiElementFactory().createExpressionFromText("\"" + initializer + "\"", psiField);
-      if (psiExpression == null) {
-        psiField.setInitializer(text);
-      } else {
-        psiExpression.replace(text);
-      }
-    } catch(IncorrectOperationException ex) {
-      //ok
-    }
-    RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiField, newFieldName);
-    refactoring.setPreviewUsages(false);
-    refactoring.setSearchInComments(false);
-    refactoring.setSearchInNonJavaFiles(false);
-    refactoring.setShouldRenameInheritors(false);
-    refactoring.setShouldRenameVariables(false);
-    refactoring.run();
-  }
-
-  private void doRenameClass(String oldClassFQName, String newClassName) {
-    PsiClass psiClass = PsiManager.getInstance(myProject).findClass(oldClassFQName, GlobalSearchScope.allScope(myProject));
-    RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiClass, newClassName);
-    refactoring.setPreviewUsages(false);
-    refactoring.setSearchInComments(false);
-    refactoring.setSearchInNonJavaFiles(false);
-    refactoring.setShouldRenameInheritors(false);
-    refactoring.setShouldRenameVariables(false);
-    refactoring.run();
-  }
-
-
-  public void renameConceptClass(final String oldClassFQName, final String newClassName, String sourceLangSourcePath) throws RemoteException {
-    try {
-      new WriteCommandAction(myProject) {
-        protected void run(Result result) throws Throwable {
-          doRenameClass(packageName(oldClassFQName) + ".structure." + shortName(oldClassFQName), newClassName);
-          doRenameClass(packageName(oldClassFQName) + ".editor." + shortName(oldClassFQName)+"_Editor",
-                  newClassName + "_Editor");
-        }
-      }.execute();
-      buildModule(sourceLangSourcePath);
-    } catch (Throwable e) {
-      e.printStackTrace();
-    }
-  }
-
-  public void moveConceptClass(String oldClassFQName, String newPackageName, File targetLangSourceRoot) throws RemoteException {
-    //todo: if source root does not exist then create it add it to sources
-    moveClass(packageName(oldClassFQName)+".structure."+shortName(oldClassFQName), newPackageName+".structure", targetLangSourceRoot);
-    moveClass(packageName(oldClassFQName)+".editor."+shortName(oldClassFQName)+"_Editor",
-            newPackageName+".editor", targetLangSourceRoot);
-    buildModule(targetLangSourceRoot.getAbsolutePath());
-  }
-
-  public void renamePackage(final String oldPackageName, final String newPackageName) throws RemoteException {
-    new WriteCommandAction(myProject) {
-      protected void run(Result result) throws Throwable {
-        PsiPackage psiPackage = PsiManager.getInstance(myProject).findPackage(oldPackageName);
-        RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiPackage, newPackageName);
-        refactoring.setPreviewUsages(false);
-        refactoring.setSearchInComments(false);
-        refactoring.setSearchInNonJavaFiles(false);
-        refactoring.setShouldRenameInheritors(false);
-        refactoring.setShouldRenameVariables(false);
-        refactoring.run();
-      }
-    }.execute();
-  }
-
-
-  public void movePackage(final String oldPackageName, final String newLongPackageName) throws RemoteException {
-    new WriteCommandAction(myProject) {
-      protected void run(Result result) throws Throwable {
-        PsiPackage psiPackage = PsiManager.getInstance(myProject).findPackage(oldPackageName);
-        RefactoringFactory refactoringFactory = RefactoringFactory.getInstance(myProject);
-        MoveDestination newPackage = refactoringFactory.createSourceFolderPreservingMoveDestination(newLongPackageName);
-        MoveClassesOrPackagesRefactoring  moveClassesOrPackagesRefactoring
-                = refactoringFactory.createMoveClassesOrPackages(new PsiElement[]{psiPackage}, newPackage);
-        moveClassesOrPackagesRefactoring.setSearchInComments(false);
-        moveClassesOrPackagesRefactoring.setSearchInNonJavaFiles(false);
-        moveClassesOrPackagesRefactoring.setPreviewUsages(false);
-        moveClassesOrPackagesRefactoring.run();
-      }
-    }.execute();
-  }
-
   public void deleteFilesAndRemoveFromVCS(final List<File> files) throws RemoteException {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
@@ -927,93 +705,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   private PsiElementFactory getPsiElementFactory() {
-    return PsiManager.getInstance(myProject).getElementFactory();
-  }
-
-  public void createNewModule(final String moduleName, final String path) {
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            LocalFileSystem lfs = LocalFileSystem.getInstance();
-            Project project = myProject;
-
-            ModuleManager moduleManager = ModuleManager.getInstance(project);
-
-            Module module = moduleManager.newModule(path + File.separator + moduleName + ".iml", ModuleType.JAVA);
-
-            ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
-            ModifiableRootModel rootModel = rootManager.getModifiableModel();
-
-            Module mpsModule = moduleManager.findModuleByName("MPS");
-            if (mpsModule != null) {
-              rootModel.addModuleOrderEntry(mpsModule);
-            } else {
-              LibraryTable table = LibraryTablesRegistrar.getInstance().getLibraryTable(myProject);
-              Library l = table.getLibraryByName("MPS");
-              if (l != null) {
-                rootModel.addLibraryEntry(l);
-              }
-            }
-
-            File contentRoot = new File(path);
-
-            if (!contentRoot.exists()) {
-              contentRoot.mkdirs();
-            }
-
-            File sourceFolder = new File(contentRoot, "source");
-            if (!sourceFolder.exists()) {
-              sourceFolder.mkdirs();
-            }
-
-            VirtualFile contentRootFile = lfs.refreshAndFindFileByIoFile(contentRoot);
-            if (contentRootFile == null) return;
-
-            VirtualFile sourceRootFile = lfs.refreshAndFindFileByIoFile(sourceFolder);
-            if (sourceRootFile == null) return;
-
-            try {
-              if (contentRootFile.findChild("classes") == null) {
-                contentRootFile.createChildDirectory(this, "classes");
-              }
-              rootModel.setCompilerOutputPath(contentRootFile.findChild("classes"));
-              rootModel.setExcludeOutput(true);
-
-              rootModel.setJdk(IDEAHandler.getInstance().findSuitableJDK());
-              
-            } catch (IOException e) {
-              e.printStackTrace();
-            }
-
-            rootModel.addContentEntry(contentRootFile).addSourceFolder(sourceRootFile, false);
-            rootModel.commit();
-            project.save();
-          }
-        });
-      }
-    }, ModalityState.NON_MODAL);
-  }
-
-  private static String packageName(String fqName) {
-    if (fqName == null) {
-      return fqName;
-    }
-    int offset = fqName.lastIndexOf('.');
-    if (offset < 0) {
-      return "";
-    }
-    return fqName.substring(0, offset);
-  }
-
-  private static String shortName(String fqName) {
-    if (fqName == null) {
-      return fqName;
-    }
-    int offset = fqName.lastIndexOf('.');
-    if (offset < 0) {
-      return fqName;
-    }
-    return fqName.substring(offset + 1);
+    return JavaPsiFacade.getInstance(myProject).getElementFactory();
   }
 }

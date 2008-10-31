@@ -16,6 +16,7 @@ public class FindAspectMethodUsages extends AnAction {
     if (editor == null) return;
     Project project = e.getData(DataKeys.PROJECT);
     int offset = editor.getCaretModel().getOffset();
+    if (project == null) return;
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
     if (file == null) return;
     PsiElement element = file.findElementAt(offset);
@@ -35,6 +36,7 @@ public class FindAspectMethodUsages extends AnAction {
     if (editor == null) return;
     Project project = e.getData(DataKeys.PROJECT);
     int offset = editor.getCaretModel().getOffset();
+    if (project == null) return;
     PsiFile file = PsiDocumentManager.getInstance(project).getCachedPsiFile(editor.getDocument());
     if (file == null) return;
     PsiElement element = file.findElementAt(offset);

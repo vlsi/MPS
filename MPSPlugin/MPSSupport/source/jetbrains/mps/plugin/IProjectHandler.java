@@ -15,7 +15,6 @@ public interface IProjectHandler extends Remote {
   List<String> getAspectMethodIds(final String namespace, final String prefix) throws RemoteException;
   List<String> findInheritors(final String fqName) throws RemoteException;
 
-
   void openClass(final String fqName) throws RemoteException;
   void addImport(final String namespace, final String fqName) throws RemoteException;
 
@@ -27,25 +26,13 @@ public interface IProjectHandler extends Remote {
   void openConstructor(final String className, final int parameterCount) throws RemoteException;
 
   void createAspectMethod(final String path, final String namespace, final String name, final String returnType, final String params) throws RemoteException;
-  void createLanguageModule(String namespace, final String path) throws RemoteException;
   void addLanguageRoot(String path) throws RemoteException;
   void createAspectClass(final String path, final String namespace) throws RemoteException;
 
-  void moveClass(String classFQName, String targetPackageNamespace, File targetSourceRoot) throws RemoteException;
-  void renameClass(String oldClassFQName, String newClassName) throws RemoteException;
-  void renameConceptClass(String oldClassFQName, String newClassName, String sourceLangSourcePath) throws RemoteException;
-  void moveConceptClass(String oldClassFQName, String newPackageName, File targetLangSourceRoot) throws RemoteException;
-  void renameMethod(String classFQName, String oldMethodName, String newMethodName) throws RemoteException;
-  void renameFieldAndInitializer(String classFQName, String oldFieldName, String newFieldName, String initializer) throws RemoteException;
-  
   List<String> getModuleClassPath(final String path) throws RemoteException;
-  String getWebModuleExplodedFolder(final String path) throws RemoteException;
 
-  void createNewModule(final String moduleName, final String path) throws RemoteException;
   void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;
   void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException;
   void deleteFilesAndRemoveFromVCS(List<File> files) throws RemoteException;
   void addFilesToVCS(final List<File> files) throws RemoteException;
-  void renamePackage(String oldPackageName, String newPackageName) throws RemoteException;
-  void movePackage(String oldPackageName, String newLongPackageName) throws RemoteException;
 }

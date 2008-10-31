@@ -3,20 +3,22 @@ package jetbrains.mps.plugin;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.impl.source.PsiClassReferenceType;
 import com.intellij.psi.search.GlobalSearchScope;
 
 public class GoToConceptDeclaration extends AnAction {
-
   public void update(AnActionEvent e) {
     super.update(e);
+    Project p = e.getData(PlatformDataKeys.PROJECT);
+    if (p == null) return;
     PsiElement element = PluginUtil.getCurrentElement(e);
     PsiClass cls = getConceptClass(element);
     if (cls != null) {
-      PsiManager manager = cls.getManager();
-      PsiClass snodeClass = manager.findClass("jetbrains.mps.smodel.SNode", GlobalSearchScope.allScope(manager.getProject()));
+      JavaPsiFacade psiFacade = JavaPsiFacade.getInstance(p);
+      PsiClass snodeClass = psiFacade.findClass("jetbrains.mps.smodel.SNode", GlobalSearchScope.allScope(p));
       if (snodeClass == null) return;
 
       if (cls.isInheritor(snodeClass, true)) {
