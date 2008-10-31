@@ -30,7 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="123" />
+  <maxImportIndex value="124" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -97,7 +97,6 @@
   <import index="117" modelUID="f:java_stub#jetbrains.mps.workbench.actions.goTo(jetbrains.mps.workbench.actions.goTo@java_stub)" version="-1" />
   <import index="118" modelUID="f:java_stub#com.intellij.ide(com.intellij.ide@java_stub)" version="-1" />
   <import index="119" modelUID="f:java_stub#jetbrains.mps.refactoring.renameSolution(jetbrains.mps.refactoring.renameSolution@java_stub)" version="-1" />
-  <import index="120" modelUID="f:java_stub#jetbrains.mps.project.actions(jetbrains.mps.project.actions@java_stub)" version="-1" />
   <import index="121" modelUID="f:java_stub#jetbrains.mps.lang.structure.plugin(jetbrains.mps.lang.structure.plugin@java_stub)" version="-1" />
   <import index="122" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
   <import index="123" modelUID="f:java_stub#jetbrains.mps.vcs.actions(jetbrains.mps.vcs.actions@java_stub)" version="-1" />
@@ -839,12 +838,6 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1215010257642" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518717373">
         <link role="constructorDeclaration" targetNodeId="13.~InstallIDEAPluginAction.&lt;init&gt;()" resolveInfo="InstallIDEAPluginAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1222078560629">
-        <link role="constructorDeclaration" targetNodeId="114.~UpgradeModelsAction.&lt;init&gt;()" resolveInfo="UpgradeModelsAction" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1223294668477">
-        <link role="constructorDeclaration" targetNodeId="120.~UpgradeProjectsAction.&lt;init&gt;()" resolveInfo="UpgradeProjectsAction" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1224155968585">
         <link role="constructorDeclaration" targetNodeId="40.~RenameAspectsAction.&lt;init&gt;()" resolveInfo="RenameAspectsAction" />
