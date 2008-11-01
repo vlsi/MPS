@@ -51,6 +51,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
 
   private MyState myState = new MyState();
   private Font myDefaultEditorFont;
+
   private MyPreferencesPage myPreferencesPage;
 
   private CaretBlinker myCaretBlinker;
@@ -59,6 +60,10 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     myCaretBlinker = caretBlinker;
 
     updateCachedFont();
+  }
+
+  public double getLineSpacing() {
+    return myState.myLineSpacing;
   }
 
   public Font getDefaultEditorFont() {
@@ -282,6 +287,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     private static final int SLIDER_RATIO = 10000;
     private JPanel myEditorSettingsPanel = new JPanel(new BorderLayout());
     private JComboBox myFontsComboBox = createFontsComboBox();
+    private JTextField myLineSpacingField = createLineSpacingField();
     private JComboBox myFontSizesComboBox = createSizeComboBox();
     private JComboBox myTextWidthComboBox = createTextWidthComboBox();
     private MyColorComponent mySelectionBackgroundColorComponent = new MyColorComponent(getSelectionBackgroundColor()) {
@@ -297,6 +303,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     private JCheckBox myAntialiasingCheckBox = createAntialiasinbCheckBox();
     private JCheckBox myUseBraces = createUseBracesCheckBox();
     private JSlider myBlinkingRateSlider = createBlinkingRateSlider();
+
     private final EditorComponent myBlinkingDemo = createBlinkingDemo();
     Timer myTimer;
 
@@ -311,6 +318,8 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
       fontPropertiesPanel.add(myFontsComboBox);
       fontPropertiesPanel.add(new JLabel("Font Size : "));
       fontPropertiesPanel.add(myFontSizesComboBox);
+      fontPropertiesPanel.add(new JLabel("Line Spacing : "));
+      fontPropertiesPanel.add(myLineSpacingField);
       fontPropertiesPanel.add(new JLabel("Text Width : "));
       fontPropertiesPanel.add(myTextWidthComboBox);
 
@@ -397,6 +406,10 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
       return result;
     }
 
+    private JTextField createLineSpacingField() {
+      return new JTextField("" + myState.myLineSpacing);
+    }
+
     private JSlider createBlinkingRateSlider() {
       long value = CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis();
       int intMin = (SLIDER_RATIO / CaretBlinker.MAX_BLINKING_PERIOD);
@@ -459,6 +472,12 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
             setUseAntialiasing(myAntialiasingCheckBox.isSelected());
             setUseBraces(myUseBraces.isSelected());
 
+            try {
+              myState.myLineSpacing = Double.parseDouble(myLineSpacingField.getText());
+            } catch (NumberFormatException e) {
+              myState.myLineSpacing = 1.0;
+            }
+
             myState.mySelectionBackground = mySelectionBackgroundColorComponent.getColor();
             myState.mySelectionForeground = mySelectionForegroundColorComponent.getColor();
 
@@ -507,6 +526,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
   public static class MyState {
     private String myFontFamily = "Monospaced";
     private int myFontSize = 12;
+    private double myLineSpacing = 1.0;
 
     private int myTextWidth = 500;
     private boolean myUseAntialiasing = true;

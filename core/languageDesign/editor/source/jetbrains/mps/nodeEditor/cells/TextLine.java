@@ -26,6 +26,7 @@ public class TextLine {
   private boolean myCaretEnabled = true;
   private int myMinimalLength = 0;
 
+  private double myLineSpacing = EditorSettings.getInstance().getLineSpacing();
   private Color mySelectedTextColor = EditorSettings.getInstance().getSelectionForegroundColor();
   private Color myTextSelectedTextColor = EditorSettings.getInstance().getSelectionForegroundColor();
   private Color myTextSelectedBackgroundColor = EditorSettings.getInstance().getSelectionBackgroundColor().darker();
@@ -88,7 +89,7 @@ public class TextLine {
 
   public void relayout() {
     FontMetrics metrics = getFontMetrics();
-    myHeight = metrics.getHeight();
+    myHeight = (int) (metrics.getHeight() * myLineSpacing);
     int minWidth = calculateMinWidth();
     int width = metrics.charsWidth(myText.toCharArray(), 0, myText.length()) + getLeftInternalInset() + getRightInternalInset();
     myWidth = Math.max(minWidth, width);
