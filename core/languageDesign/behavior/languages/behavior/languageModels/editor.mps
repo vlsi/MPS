@@ -899,12 +899,44 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1225194588673">
           <property name="vertical" value="false" />
           <property name="separatorText" value="," />
+          <property name="attractsFocus" value="2" />
           <link role="relationDeclaration" targetNodeId="6.1068580123134" />
           <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225194588674" />
+          <node role="focusPolicyApplicable" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1225528252817">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225528252818">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225528259194">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225528357227">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225528259368">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1225528259195" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1225528354291">
+                      <link role="link" targetNodeId="6.1068580123134" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1225528363803" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225194588675">
           <property name="text" value=")" />
+          <property name="attractsFocus" value="1" />
           <link role="styleClass" targetNodeId="3.1215088010675" resolveInfo="RightParen" />
+          <node role="focusPolicyApplicable" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1225528229059">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225528229060">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225528231889">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225528239469">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225528232110">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1225528231890" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1225528235280">
+                      <link role="link" targetNodeId="6.1068580123134" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1225528241737" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225194588676">
           <property name="text" value="{" />

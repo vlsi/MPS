@@ -22,6 +22,10 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -386,11 +390,17 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refNodeList_parameter1225194588673(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_parameter");
+    if (renderingCondition5645_1(node, context, context.getScope())) {
+      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
+    }
   }
 
   private static void setupBasic_Constant_12251945886751225194588675(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225194588675");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    if (renderingCondition5645_0(node, context, context.getScope())) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
+    }
   }
 
   private static void setupBasic_Constant_12251945886761225194588676(EditorCell editorCell, SNode node, EditorContext context) {
@@ -498,6 +508,14 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_isPrivate_1225194588688(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean renderingCondition5645_0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty();
+  }
+
+  public static boolean renderingCondition5645_1(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
   public static class parameterListHandler_5645_0 extends RefNodeListHandler {

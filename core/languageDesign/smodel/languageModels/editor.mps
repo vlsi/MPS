@@ -1669,55 +1669,8 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1179409365157">
-        <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="5.1215087929380" resolveInfo="LeftParen" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1179409369096">
-        <property name="separatorText" value="," />
-        <property name="vertical" value="false" />
-        <link role="relationDeclaration" targetNodeId="4.1068499141038" />
-        <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1179409374863">
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032159">
-            <property name="flag" value="true" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1216811754014">
-            <property name="value" value="0.0" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1216811757376">
-            <property name="value" value="0.0" />
-          </node>
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1179409379177">
-        <property name="text" value=")" />
-        <property name="attractsFocus" value="1" />
-        <link role="styleClass" targetNodeId="5.1215088010675" resolveInfo="RightParen" />
-        <node role="focusPolicyApplicable" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1201515637070">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201515637071">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201515650920">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1201515672505">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1201515674008">
-                  <property name="value" value="0" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227923719">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227915529">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227898194">
-                      <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1201515650921" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1201515656110">
-                        <link role="link" targetNodeId="1.1179409206125" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1201515659395">
-                      <link role="link" targetNodeId="4.1068580123134" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation" id="1201515671207" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1225529460832">
+        <link role="editorComponent" targetNodeId="5.1173990860683" resolveInfo="IMethodCall_actualArguments" />
       </node>
     </node>
   </node>
