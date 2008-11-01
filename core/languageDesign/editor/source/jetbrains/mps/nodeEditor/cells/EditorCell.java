@@ -23,8 +23,6 @@ import java.util.List;
 public interface EditorCell extends Cloneable {
   static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];
 
-  static final Object METAINFO_SOURCE_NODE = "metainfo-source-node";
-
   int getX();
   void setX(int x);
 
@@ -66,6 +64,9 @@ public interface EditorCell extends Cloneable {
   void setRole(String role);
   String getRole();
 
+  SNode getRefNode();
+  void setRefNode(SNode refNode);
+
   void setLinkDeclaration(LinkDeclaration link);
   LinkDeclaration getLinkDeclaration();
 
@@ -98,6 +99,7 @@ public interface EditorCell extends Cloneable {
 
   SNode getSNode();
   SNodePointer getSNodePointer();
+
   SNode getSNodeWRTReference();
   String getCellRole();
 

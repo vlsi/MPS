@@ -179,7 +179,7 @@ public class QueriesUtil {
 
   public static String getEditedLinkRole(EditorCell cell) {
     LinkDeclaration linkDeclaration = cell.getLinkDeclaration();
-    Object referentNode = cell.getUserObject(EditorCell.METAINFO_SOURCE_NODE);
+    SNode referentNode = cell.getRefNode();
     if (referentNode == null || linkDeclaration == null) {
       return null;
     }
@@ -188,8 +188,7 @@ public class QueriesUtil {
   }
 
   public static SNode getEditedLinkReferentNode(EditorCell cell) {
-    Object referentNode = cell.getUserObject(EditorCell.METAINFO_SOURCE_NODE);
-    return (SNode)referentNode;
+    return cell.getRefNode();
   }
 
 }

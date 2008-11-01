@@ -40,7 +40,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
 
   public EditorCell createEditorCell(EditorContext context) {
     EditorCell result = super.createEditorCell(context);
-    result.putUserObject(EditorCell.METAINFO_SOURCE_NODE, getSNode());
+    result.setRefNode(getSNode());
     return result;
   }
 

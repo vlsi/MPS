@@ -65,6 +65,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private String myCellId;
   private String myRole;
   private LinkDeclaration myLinkDeclaration;
+  private SNode myRefNode;
   private boolean myInTree;
 
   protected EditorCell_Basic(EditorContext editorContext, SNode node) {
@@ -309,6 +310,14 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public LinkDeclaration getLinkDeclaration() {
     return myLinkDeclaration;
+  }
+
+  public SNode getRefNode() {
+    return myRefNode;
+  }
+
+  public void setRefNode(SNode refNode) {
+    myRefNode = refNode;
   }
 
   public void setSelected(boolean selected) {
