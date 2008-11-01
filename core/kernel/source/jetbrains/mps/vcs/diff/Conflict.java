@@ -1,6 +1,6 @@
 package jetbrains.mps.vcs.diff;
 
-import jetbrains.mps.vcs.diff.Change;
+import jetbrains.mps.vcs.diff.changes.Change;
 
 public class Conflict {
   private Change myC1;

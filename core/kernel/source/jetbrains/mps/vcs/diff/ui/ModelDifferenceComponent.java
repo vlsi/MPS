@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.vcs.diff.*;
+import jetbrains.mps.vcs.diff.changes.*;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;

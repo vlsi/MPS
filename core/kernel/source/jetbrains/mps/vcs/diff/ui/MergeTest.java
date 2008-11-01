@@ -24,7 +24,6 @@ import java.io.IOException;
 public class MergeTest {
   public static void main(final String[] args) throws JDOMException, IOException {
     IdeMain.setTestMode(false);
-    long start = System.currentTimeMillis();
     configureMPS();
 
     final SModel baseModel = readModel(args[0]);

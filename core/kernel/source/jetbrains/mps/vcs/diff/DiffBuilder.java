@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.vcs.diff.changes.*;
 
 import java.util.ArrayList;
 import java.util.List;

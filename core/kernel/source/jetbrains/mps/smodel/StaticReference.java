@@ -39,6 +39,7 @@ public class StaticReference extends SReferenceBase {
     super.setTargetSModelReference(modelReference);
   }
 
+  @Nullable
   public SNodeId getTargetNodeId() {
     if (mature()) {
       return myTargetNodeId;

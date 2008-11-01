@@ -56,6 +56,12 @@ public abstract class SReference {
     return targetNode;
   }
 
+  @Nullable
+  public SNodeId getTargetNodeId() {
+    SNode targetNode = getTargetNode();
+    return targetNode == null ? null : targetNode.getSNodeId();
+  }
+
   protected abstract SNode getTargetNode_internal();
 
   @Nullable

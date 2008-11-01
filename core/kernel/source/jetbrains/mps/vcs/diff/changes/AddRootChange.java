@@ -1,11 +1,11 @@
-package jetbrains.mps.vcs.diff;
+package jetbrains.mps.vcs.diff.changes;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.vcs.diff.NewNodeChange;
+import jetbrains.mps.vcs.diff.changes.NewNodeChange;
 
 public class AddRootChange extends NewNodeChange {
   public AddRootChange(String type, SNodeId nodeId) {

@@ -1,7 +1,7 @@
-package jetbrains.mps.vcs.diff;
+package jetbrains.mps.vcs.diff.changes;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.vcs.diff.Change;
+import jetbrains.mps.vcs.diff.changes.Change;
 
 public class SetReferenceChange extends Change {
   protected final SNodeId myNodeId;
@@ -24,6 +24,7 @@ public class SetReferenceChange extends Change {
     if (target == null || target.getModel() != model) {
       myInternal = false;
       myNodePointer = new SNodePointer(target);
+      myTargetId = reference.getTargetNodeId();
     } else {
       myInternal = true;
       myTargetId = target.getSNodeId();
