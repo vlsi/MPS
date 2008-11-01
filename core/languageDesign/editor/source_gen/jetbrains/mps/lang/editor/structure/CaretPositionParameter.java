@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CaretPositionParameter extends SelectLaterParameter {
+public class CaretPositionParameter extends SelectParameter {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CaretPositionParameter";
   public static final String POSITION = "position";
 

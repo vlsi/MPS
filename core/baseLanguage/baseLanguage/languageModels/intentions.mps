@@ -21,7 +21,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="27" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="29" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="22" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
@@ -5310,7 +5310,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202131129652">
               <link role="variableDeclaration" targetNodeId="1202130310989" resolveInfo="stringLiteral" />
             </node>
-            <node role="operation" type="jetbrains.mps.lang.editor.structure.SelectLaterOperation" id="1202131133159">
+            <node role="operation" type="jetbrains.mps.lang.editor.structure.SelectOperation" id="1202131133159">
               <node role="editorContext" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1202131136674" />
               <node role="selectLaterParameter" type="jetbrains.mps.lang.editor.structure.CaretPositionParameter" id="1202131147115">
                 <node role="position" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1202131178144">

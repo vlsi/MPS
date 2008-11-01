@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.behavior.SelectLaterOperation_Behavior;
+import jetbrains.mps.lang.editor.behavior.SelectOperation_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
@@ -49,15 +49,15 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1201269933731(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SelectLaterOperation_Behavior.call_isAfter_1213877395633(_context.getNode());
+    return SelectOperation_Behavior.call_isAfter_1213877395633(_context.getNode());
   }
 
   public static boolean baseMappingRule_Condition_1201270297991(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SelectLaterOperation_Behavior.call_isBefore_1213877395610(_context.getNode());
+    return SelectOperation_Behavior.call_isBefore_1213877395610(_context.getNode());
   }
 
   public static boolean baseMappingRule_Condition_1201271720560(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SelectLaterOperation_Behavior.call_getCaretPositionParameter_1213877395591(_context.getNode()) != null;
+    return SelectOperation_Behavior.call_getCaretPositionParameter_1213877395591(_context.getNode()) != null;
   }
 
   public static boolean baseMappingRule_Condition_1204308005935(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -1564,7 +1564,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1201271773591(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SelectLaterOperation_Behavior.call_getCaretPositionParameter_1213877395591(_context.getNode()), "position", true);
+    return SLinkOperations.getTarget(SelectOperation_Behavior.call_getCaretPositionParameter_1213877395591(_context.getNode()), "position", true);
   }
 
   public static SNode sourceNodeQuery_1204308047624(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

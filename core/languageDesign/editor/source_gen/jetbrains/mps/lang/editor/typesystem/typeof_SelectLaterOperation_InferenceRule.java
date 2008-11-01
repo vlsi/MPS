@@ -24,7 +24,7 @@ public class typeof_SelectLaterOperation_InferenceRule extends AbstractInference
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.editor.structure.SelectLaterOperation";
+    return "jetbrains.mps.lang.editor.structure.SelectOperation";
   }
 
   public boolean isApplicable(SNode argument) {
