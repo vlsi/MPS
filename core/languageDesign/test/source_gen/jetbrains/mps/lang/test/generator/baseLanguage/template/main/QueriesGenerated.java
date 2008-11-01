@@ -58,10 +58,6 @@ public class QueriesGenerated {
     return _context.getNode().getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1221567884857(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getId();
-  }
-
   public static Object propertyMacro_GetPropertyValue_1221567884881(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ITestMethod_Behavior.call_getTestName_1216136419751(_context.getNode());
   }
@@ -108,16 +104,12 @@ public class QueriesGenerated {
     return NodesTestCase_Behavior.getTestBodyName_1224602741295();
   }
 
+  public static Object propertyMacro_GetPropertyValue_1225535751452(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getId();
+  }
+
   public static Object referenceMacro_GetReferent_1210689466825(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return "var" + SLinkOperations.getTarget(_context.getNode(), "declaration", false).getId();
-  }
-
-  public static Object referenceMacro_GetReferent_1217248433242(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "member", false), "name");
-  }
-
-  public static Object referenceMacro_GetReferent_1217418600305(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return "test";
   }
 
   public static Object referenceMacro_GetReferent_1221567851425(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -126,6 +118,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1221567898656(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(_context.getNode()));
+  }
+
+  public static Object referenceMacro_GetReferent_1225533437717(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "member", false), "name");
   }
 
   public static SNode sourceNodeQuery_1215080487278(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -165,10 +161,6 @@ public class QueriesGenerated {
     return res;
   }
 
-  public static Iterable sourceNodesQuery_1217248368856(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
-  }
-
   public static Iterable sourceNodesQuery_1221567851293(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> res = new ArrayList<SNode>();
     for(SNode method : SLinkOperations.getTargets(_context.getNode(), "testMethods", true)) {
@@ -193,10 +185,6 @@ public class QueriesGenerated {
     return new ArrayList<SNode>(set);
   }
 
-  public static Iterable sourceNodesQuery_1221567851508(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
-  }
-
   public static Iterable sourceNodesQuery_1221567884870(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.test.structure.NodeOperation", false);
   }
@@ -219,6 +207,14 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1221567898748(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
+  }
+
+  public static Iterable sourceNodesQuery_1225533437710(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
+  }
+
+  public static Iterable sourceNodesQuery_1225534993631(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
 
 }

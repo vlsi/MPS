@@ -12,7 +12,7 @@ public enum RestrictionKind {
   private String myName;
   private String myValue;
 
-RestrictionKind(String name, String value) {
+  RestrictionKind(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

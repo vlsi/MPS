@@ -18,16 +18,17 @@ import jetbrains.mps.generator.template.CloneUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class BaseTransformationTest extends TestCase {
-  public static ProjectContainer myContainer = new ProjectContainer();
+  private static ProjectContainer myContainer = new ProjectContainer();
 
   private SModelDescriptor myModel;
   private SModelDescriptor myTransidentModel;
+  private MPSProject myProject;
 
   public BaseTransformationTest() {
   }
 
   public void initTest(String projectName, final String model) throws Exception {
-    final MPSProject project = myContainer.getProject(Macros.mpsHomeMacros().expandPath(projectName, ((IFile)null)));
+    this.myProject = myContainer.getProject(Macros.mpsHomeMacros().expandPath(projectName, ((IFile)null)));
     SwingUtilities.invokeAndWait(new Runnable() {
 
       public void run() {
@@ -36,7 +37,7 @@ public class BaseTransformationTest extends TestCase {
           public void run() {
             IdeMain.setTestMode(true);
             SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model));
-            BaseTransformationTest.this.setModelDescriptor(modelDescriptor, project);
+            BaseTransformationTest.this.setModelDescriptor(modelDescriptor, BaseTransformationTest.this.myProject);
           }
 
         });
@@ -54,7 +55,7 @@ public class BaseTransformationTest extends TestCase {
     this.myTransidentModel.getSModel().validateLanguagesAndImports();
   }
 
-  public void runTest(final String className, String methodName) throws Exception {
+  public void runTest(final String className, final String methodName) throws Exception {
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
     ModelAccess.instance().runReadAction(new Runnable() {
 
@@ -63,9 +64,26 @@ public class BaseTransformationTest extends TestCase {
       }
 
     });
-    Object obj = clazz.value.newInstance();
+    final Object obj = clazz.value.newInstance();
     clazz.value.getField("myModel").set(obj, this.myTransidentModel);
-    clazz.value.getDeclaredMethod(methodName).invoke(obj);
+    clazz.value.getField("myProject").set(obj, this.myProject);
+    SwingUtilities.invokeAndWait(new Runnable() {
+
+      public void run() {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+          public void run() {
+            try {
+              clazz.value.getDeclaredMethod(methodName).invoke(obj);
+            } catch (Throwable e) {
+              e.printStackTrace();
+            }
+          }
+
+        });
+      }
+
+    });
     ModelAccess.instance().runWriteAction(new Runnable() {
 
       public void run() {

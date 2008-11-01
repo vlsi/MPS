@@ -32,6 +32,7 @@
     <usedLanguages>823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml.deprecated)</usedLanguages>
     <usedLanguages>b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</usedLanguages>
     <usedLanguages>18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</usedLanguages>
+    <usedLanguages>8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)</usedLanguages>
   </usedLanguages>
   <usedDevKits>
     <usedDevKit>jetbrains.mps.devkit.general-purpose</usedDevKit>

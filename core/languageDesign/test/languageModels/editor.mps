@@ -545,5 +545,17 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1225467113507">
+    <link role="conceptDeclaration" targetNodeId="1.1225467090849" resolveInfo="ProjectExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1225468134152">
+      <link role="relationDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1225469884187">
+    <link role="conceptDeclaration" targetNodeId="1.1225469856668" resolveInfo="ModelExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1225469891485">
+      <link role="relationDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

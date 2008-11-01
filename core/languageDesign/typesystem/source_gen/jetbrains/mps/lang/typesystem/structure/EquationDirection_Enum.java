@@ -13,7 +13,7 @@ public enum EquationDirection_Enum {
   private String myName;
   private String myValue;
 
-EquationDirection_Enum(String name, String value) {
+  EquationDirection_Enum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

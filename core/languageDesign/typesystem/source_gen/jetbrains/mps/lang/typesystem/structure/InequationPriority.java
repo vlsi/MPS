@@ -15,7 +15,7 @@ public enum InequationPriority {
   private String myName;
   private int myValue;
 
-InequationPriority(String name, int value) {
+  InequationPriority(String name, int value) {
     this.myName = name;
     this.myValue = value;
   }

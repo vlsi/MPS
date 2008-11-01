@@ -24,6 +24,10 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
     return false;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return "convert to non-typesystem rule";
   }
