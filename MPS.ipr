@@ -154,6 +154,7 @@
       <entry name="?*.js" />
       <entry name="?*.css" />
       <entry name="?*.ico" />
+      <entry name="?*.zip" />
     </wildcardResourcePatterns>
   </component>
   <component name="DependenciesAnalyzeManager">
@@ -1027,7 +1028,7 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk1.6.0_03" />
+      <option name="ALTERNATIVE_JRE_PATH" value="/usr/lib/jvm/java-6-sun" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
