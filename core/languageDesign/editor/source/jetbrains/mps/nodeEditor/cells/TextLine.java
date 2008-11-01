@@ -47,7 +47,7 @@ public class TextLine {
     myNull = isNull;
     myStyle = style;
     showTextColor();
-  }
+  }                     
 
   public String getText() {
     return myText;
