@@ -24,7 +24,6 @@ public interface EditorCell extends Cloneable {
 
   static final Object METAINFO_LINK_DECLARATION = "metainfo-link-declaration";
   static final Object METAINFO_SOURCE_NODE = "metainfo-source-node";
-  static final Object CELL_ID = "cell-id";
   static final Object ROLE = "role";  
 
   int getX();
