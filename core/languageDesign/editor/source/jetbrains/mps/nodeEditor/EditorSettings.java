@@ -591,5 +591,13 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     public void setUseBraces(boolean useBraces) {
       myUseBraces = useBraces;
     }
+
+    public double getLineSpacing() {
+      return myLineSpacing;
+    }
+
+    public void setLineSpacing(double lineSpacing) {
+      myLineSpacing = lineSpacing;
+    }
   }
 }
