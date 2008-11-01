@@ -174,7 +174,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(true);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1210780533432.getElementRole());
+    editorCell.setRole(this.myListHandler_1210780533432.getElementRole());
     return editorCell;
   }
 

@@ -73,7 +73,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1085485112431.getElementRole());
+    editorCell.setRole(this.myListHandler_1085485112431.getElementRole());
     return editorCell;
   }
 

@@ -131,7 +131,7 @@ public class Plan_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1111795657807.getElementRole());
+    editorCell.setRole(this.myListHandler_1111795657807.getElementRole());
     return editorCell;
   }
 
@@ -144,7 +144,7 @@ public class Plan_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1111795670563.getElementRole());
+    editorCell.setRole(this.myListHandler_1111795670563.getElementRole());
     return editorCell;
   }
 

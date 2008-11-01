@@ -71,9 +71,9 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   public EditorCell createEditorCell(EditorContext context) {
     EditorCell result = createCell_internal(myEditorContext);
     // do not override role/link-declaration if they are already set
-    if (result.getUserObject(EditorCell.ROLE) == null &&
+    if (result.getRole() == null &&
       result.getLinkDeclaration() == null) {
-      result.putUserObject(EditorCell.ROLE, myGenuineRole);
+      result.setRole(myGenuineRole);
       if (myGenuineLinkDeclaration != null) {
         result.setLinkDeclaration(myGenuineLinkDeclaration);
       } else {

@@ -81,7 +81,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1199569952632.getElementRole());
+    editorCell.setRole(this.myListHandler_1199569952632.getElementRole());
     return editorCell;
   }
 

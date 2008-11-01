@@ -131,7 +131,7 @@ public class InputNode_C_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1206462954942.getElementRole());
+    editorCell.setRole(this.myListHandler_1206462954942.getElementRole());
     return editorCell;
   }
 

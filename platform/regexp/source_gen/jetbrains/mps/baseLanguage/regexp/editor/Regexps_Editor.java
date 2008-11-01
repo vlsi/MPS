@@ -109,7 +109,7 @@ public class Regexps_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1174662427911.getElementRole());
+    editorCell.setRole(this.myListHandler_1174662427911.getElementRole());
     return editorCell;
   }
 

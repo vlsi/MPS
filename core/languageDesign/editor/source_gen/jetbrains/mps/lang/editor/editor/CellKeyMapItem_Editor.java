@@ -294,7 +294,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1216158369218.getElementRole());
+    editorCell.setRole(this.myListHandler_1216158369218.getElementRole());
     return editorCell;
   }
 

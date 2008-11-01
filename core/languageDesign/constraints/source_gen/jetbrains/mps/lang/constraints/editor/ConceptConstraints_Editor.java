@@ -277,7 +277,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1213098043015.getElementRole());
+    editorCell.setRole(this.myListHandler_1213098043015.getElementRole());
     return editorCell;
   }
 
@@ -290,7 +290,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1213100820885.getElementRole());
+    editorCell.setRole(this.myListHandler_1213100820885.getElementRole());
     return editorCell;
   }
 

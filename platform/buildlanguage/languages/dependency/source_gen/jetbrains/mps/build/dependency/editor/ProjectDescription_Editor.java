@@ -147,7 +147,7 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1216904253935.getElementRole());
+    editorCell.setRole(this.myListHandler_1216904253935.getElementRole());
     return editorCell;
   }
 
@@ -160,7 +160,7 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1219419409635.getElementRole());
+    editorCell.setRole(this.myListHandler_1219419409635.getElementRole());
     return editorCell;
   }
 
@@ -173,7 +173,7 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1219425114420.getElementRole());
+    editorCell.setRole(this.myListHandler_1219425114420.getElementRole());
     return editorCell;
   }
 

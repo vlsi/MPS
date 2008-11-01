@@ -99,7 +99,7 @@ public class CellAction_PasteNode extends EditorCellAction {
   private EditorCell getCellToPasteTo(EditorCell cell) {
     if (cell.isLastPositionInBigCell()) return cell;
 
-    if (cell instanceof EditorCell_Label && cell.getUserObject(EditorCell.ROLE) == null) {
+    if (cell instanceof EditorCell_Label && cell.getRole() == null) {
       EditorCell result = new ChildrenCollectionFinder(cell, true).find();
       if (result != null) {
         return result;

@@ -273,7 +273,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1138337151587.getElementRole());
+    editorCell.setRole(this.myListHandler_1138337151587.getElementRole());
     return editorCell;
   }
 
@@ -286,7 +286,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1164891084596.getElementRole());
+    editorCell.setRole(this.myListHandler_1164891084596.getElementRole());
     return editorCell;
   }
 
@@ -299,7 +299,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210533000.getElementRole());
+    editorCell.setRole(this.myListHandler_1188210533000.getElementRole());
     return editorCell;
   }
 
@@ -312,7 +312,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210545592.getElementRole());
+    editorCell.setRole(this.myListHandler_1188210545592.getElementRole());
     return editorCell;
   }
 

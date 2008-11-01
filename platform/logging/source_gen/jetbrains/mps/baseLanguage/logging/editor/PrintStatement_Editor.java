@@ -84,7 +84,7 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1168401913942.getElementRole());
+    editorCell.setRole(this.myListHandler_1168401913942.getElementRole());
     return editorCell;
   }
 

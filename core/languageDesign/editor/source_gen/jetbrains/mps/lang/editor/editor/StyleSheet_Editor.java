@@ -103,7 +103,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1186402426928.getElementRole());
+    editorCell.setRole(this.myListHandler_1186402426928.getElementRole());
     return editorCell;
   }
 

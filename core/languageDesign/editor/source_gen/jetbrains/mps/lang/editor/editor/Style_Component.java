@@ -119,7 +119,7 @@ public class Style_Component extends AbstractCellProvider {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1214305846330.getElementRole());
+    editorCell.setRole(this.myListHandler_1214305846330.getElementRole());
     return editorCell;
   }
 

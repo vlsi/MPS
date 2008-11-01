@@ -273,7 +273,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1193744398989.getElementRole());
+    editorCell.setRole(this.myListHandler_1193744398989.getElementRole());
     return editorCell;
   }
 
@@ -286,7 +286,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1212574508146.getElementRole());
+    editorCell.setRole(this.myListHandler_1212574508146.getElementRole());
     return editorCell;
   }
 

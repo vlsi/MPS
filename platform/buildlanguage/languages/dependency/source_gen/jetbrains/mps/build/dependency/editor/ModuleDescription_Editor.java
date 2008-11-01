@@ -157,7 +157,7 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1216907800191.getElementRole());
+    editorCell.setRole(this.myListHandler_1216907800191.getElementRole());
     return editorCell;
   }
 
@@ -170,7 +170,7 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1216907819693.getElementRole());
+    editorCell.setRole(this.myListHandler_1216907819693.getElementRole());
     return editorCell;
   }
 

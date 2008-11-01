@@ -197,7 +197,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1167340820340.getElementRole());
+    editorCell.setRole(this.myListHandler_1167340820340.getElementRole());
     return editorCell;
   }
 

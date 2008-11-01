@@ -74,7 +74,7 @@ public class MeetType_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1221586799853.getElementRole());
+    editorCell.setRole(this.myListHandler_1221586799853.getElementRole());
     return editorCell;
   }
 

@@ -124,7 +124,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1177324036619.getElementRole());
+    editorCell.setRole(this.myListHandler_1177324036619.getElementRole());
     return editorCell;
   }
 

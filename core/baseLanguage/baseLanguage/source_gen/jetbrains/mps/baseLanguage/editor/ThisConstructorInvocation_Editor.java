@@ -84,7 +84,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1178893550247.getElementRole());
+    editorCell.setRole(this.myListHandler_1178893550247.getElementRole());
     return editorCell;
   }
 

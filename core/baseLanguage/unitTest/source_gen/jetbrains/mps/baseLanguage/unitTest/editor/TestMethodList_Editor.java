@@ -35,7 +35,7 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1171931858964.getElementRole());
+    editorCell.setRole(this.myListHandler_1171931858964.getElementRole());
     return editorCell;
   }
 

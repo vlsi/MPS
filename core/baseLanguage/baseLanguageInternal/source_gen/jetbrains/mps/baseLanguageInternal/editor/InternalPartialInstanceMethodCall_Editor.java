@@ -102,7 +102,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1174318227631.getElementRole());
+    editorCell.setRole(this.myListHandler_1174318227631.getElementRole());
     return editorCell;
   }
 

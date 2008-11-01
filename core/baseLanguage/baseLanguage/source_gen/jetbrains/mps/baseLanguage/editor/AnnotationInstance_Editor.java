@@ -98,7 +98,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188995299492.getElementRole());
+    editorCell.setRole(this.myListHandler_1188995299492.getElementRole());
     return editorCell;
   }
 

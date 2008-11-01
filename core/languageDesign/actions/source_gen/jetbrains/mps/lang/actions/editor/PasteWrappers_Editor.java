@@ -90,7 +90,7 @@ public class PasteWrappers_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1221135404884.getElementRole());
+    editorCell.setRole(this.myListHandler_1221135404884.getElementRole());
     return editorCell;
   }
 

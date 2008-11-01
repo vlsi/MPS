@@ -93,7 +93,7 @@ public class Mapping_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1116535602908.getElementRole());
+    editorCell.setRole(this.myListHandler_1116535602908.getElementRole());
     return editorCell;
   }
 

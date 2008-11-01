@@ -96,7 +96,7 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1212242818597.getElementRole());
+    editorCell.setRole(this.myListHandler_1212242818597.getElementRole());
     return editorCell;
   }
 

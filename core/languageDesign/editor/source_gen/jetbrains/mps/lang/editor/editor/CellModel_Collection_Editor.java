@@ -319,7 +319,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1078834032968.getElementRole());
+    editorCell.setRole(this.myListHandler_1078834032968.getElementRole());
     return editorCell;
   }
 
@@ -332,7 +332,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1078915007347.getElementRole());
+    editorCell.setRole(this.myListHandler_1078915007347.getElementRole());
     return editorCell;
   }
 

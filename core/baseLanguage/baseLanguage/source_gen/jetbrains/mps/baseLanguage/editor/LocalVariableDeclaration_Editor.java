@@ -177,7 +177,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188212219619.getElementRole());
+    editorCell.setRole(this.myListHandler_1188212219619.getElementRole());
     return editorCell;
   }
 
@@ -190,7 +190,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188220842771.getElementRole());
+    editorCell.setRole(this.myListHandler_1188220842771.getElementRole());
     return editorCell;
   }
 

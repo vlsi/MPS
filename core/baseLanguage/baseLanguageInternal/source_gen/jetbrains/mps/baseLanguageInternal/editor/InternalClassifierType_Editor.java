@@ -153,7 +153,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1202148817970.getElementRole());
+    editorCell.setRole(this.myListHandler_1202148817970.getElementRole());
     return editorCell;
   }
 

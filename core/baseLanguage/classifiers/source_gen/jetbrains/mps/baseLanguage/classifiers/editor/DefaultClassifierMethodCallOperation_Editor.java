@@ -74,7 +74,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1205769434991.getElementRole());
+    editorCell.setRole(this.myListHandler_1205769434991.getElementRole());
     return editorCell;
   }
 

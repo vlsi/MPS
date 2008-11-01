@@ -38,7 +38,7 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1220978198900.getElementRole());
+    editorCell.setRole(this.myListHandler_1220978198900.getElementRole());
     return editorCell;
   }
 

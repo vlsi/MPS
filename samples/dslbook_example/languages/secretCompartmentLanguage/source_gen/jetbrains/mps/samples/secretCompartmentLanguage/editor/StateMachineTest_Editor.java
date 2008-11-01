@@ -82,7 +82,7 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1197252973061.getElementRole());
+    editorCell.setRole(this.myListHandler_1197252973061.getElementRole());
     return editorCell;
   }
 

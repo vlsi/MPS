@@ -176,7 +176,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188206420424.getElementRole());
+    editorCell.setRole(this.myListHandler_1188206420424.getElementRole());
     return editorCell;
   }
 
@@ -189,7 +189,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210091999.getElementRole());
+    editorCell.setRole(this.myListHandler_1188210091999.getElementRole());
     return editorCell;
   }
 
@@ -202,7 +202,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210101998.getElementRole());
+    editorCell.setRole(this.myListHandler_1188210101998.getElementRole());
     return editorCell;
   }
 

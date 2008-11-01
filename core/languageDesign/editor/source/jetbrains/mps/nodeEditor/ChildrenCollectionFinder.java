@@ -27,8 +27,8 @@ public class ChildrenCollectionFinder {
         return null;
       }
 
-      if (current.getUserObject(EditorCell.ROLE) != null) {
-        String role = (String) current.getUserObject(EditorCell.ROLE);
+      if (current.getRole() != null) {
+        String role = current.getRole();
         LinkDeclaration linkDeclaration = currentNode.getLinkDeclaration(role);
         if (linkDeclaration != null &&
           linkDeclaration.getMetaClass() == LinkMetaclass.aggregation &&

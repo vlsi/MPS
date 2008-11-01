@@ -39,7 +39,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(true);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1073416106126.getElementRole());
+    editorCell.setRole(this.myListHandler_1073416106126.getElementRole());
     return editorCell;
   }
 

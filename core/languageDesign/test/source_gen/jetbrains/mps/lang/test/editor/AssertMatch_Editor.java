@@ -112,7 +112,7 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1211979504028.getElementRole());
+    editorCell.setRole(this.myListHandler_1211979504028.getElementRole());
     return editorCell;
   }
 
@@ -125,7 +125,7 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1211979534640.getElementRole());
+    editorCell.setRole(this.myListHandler_1211979534640.getElementRole());
     return editorCell;
   }
 

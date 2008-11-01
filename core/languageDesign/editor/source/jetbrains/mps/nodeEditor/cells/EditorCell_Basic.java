@@ -63,6 +63,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   private EditorCellKeyMap myKeyMap;
   private String myCellId;
+  private String myRole;
   private LinkDeclaration myLinkDeclaration;
   private boolean myInTree;
 
@@ -210,7 +211,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (linkDeclaration != null) {
       return SModelUtil_new.getGenuineLinkRole(linkDeclaration);
     } else {//try legacy technique
-      return (String) getUserObject(EditorCell.ROLE);
+      return getRole();
     }
   }
 
@@ -292,6 +293,14 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public String getCellId() {
     return myCellId;
+  }
+
+  public String getRole() {
+    return myRole;
+  }
+
+  public void setRole(String role) {
+    myRole = role;
   }
 
   public void setLinkDeclaration(LinkDeclaration link) {

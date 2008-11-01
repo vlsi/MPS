@@ -81,7 +81,7 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1195242097517.getElementRole());
+    editorCell.setRole(this.myListHandler_1195242097517.getElementRole());
     return editorCell;
   }
 

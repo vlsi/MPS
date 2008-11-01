@@ -456,7 +456,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1195502446255.getElementRole());
+    editorCell.setRole(this.myListHandler_1195502446255.getElementRole());
     return editorCell;
   }
 
@@ -469,7 +469,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1195502470963.getElementRole());
+    editorCell.setRole(this.myListHandler_1195502470963.getElementRole());
     return editorCell;
   }
 
@@ -482,7 +482,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1195502488593.getElementRole());
+    editorCell.setRole(this.myListHandler_1195502488593.getElementRole());
     return editorCell;
   }
 
@@ -495,7 +495,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1195502503504.getElementRole());
+    editorCell.setRole(this.myListHandler_1195502503504.getElementRole());
     return editorCell;
   }
 
@@ -508,7 +508,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1195502524916.getElementRole());
+    editorCell.setRole(this.myListHandler_1195502524916.getElementRole());
     return editorCell;
   }
 
@@ -521,7 +521,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1195502537139.getElementRole());
+    editorCell.setRole(this.myListHandler_1195502537139.getElementRole());
     return editorCell;
   }
 
@@ -534,7 +534,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1195502593677.getElementRole());
+    editorCell.setRole(this.myListHandler_1195502593677.getElementRole());
     return editorCell;
   }
 
@@ -547,7 +547,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1200911481866.getElementRole());
+    editorCell.setRole(this.myListHandler_1200911481866.getElementRole());
     return editorCell;
   }
 
@@ -560,7 +560,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1219952930753.getElementRole());
+    editorCell.setRole(this.myListHandler_1219952930753.getElementRole());
     return editorCell;
   }
 

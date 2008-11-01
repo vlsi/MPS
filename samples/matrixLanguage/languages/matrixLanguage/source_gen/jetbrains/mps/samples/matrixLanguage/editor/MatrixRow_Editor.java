@@ -46,7 +46,7 @@ public class MatrixRow_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1215430938058.getElementRole());
+    editorCell.setRole(this.myListHandler_1215430938058.getElementRole());
     return editorCell;
   }
 

@@ -50,7 +50,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
     emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getOwner(), null, getLinkDeclaration(), editorContext));
-    emptyCell.putUserObject(EditorCell.ROLE, getElementRole());
+    emptyCell.setRole(getElementRole());
     return emptyCell;
   }
 

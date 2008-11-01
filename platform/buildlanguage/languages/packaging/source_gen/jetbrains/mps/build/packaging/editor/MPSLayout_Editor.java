@@ -223,7 +223,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1203599373311.getElementRole());
+    editorCell.setRole(this.myListHandler_1203599373311.getElementRole());
     return editorCell;
   }
 
@@ -236,7 +236,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1204115937925.getElementRole());
+    editorCell.setRole(this.myListHandler_1204115937925.getElementRole());
     return editorCell;
   }
 
@@ -249,7 +249,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1205335637672.getElementRole());
+    editorCell.setRole(this.myListHandler_1205335637672.getElementRole());
     return editorCell;
   }
 

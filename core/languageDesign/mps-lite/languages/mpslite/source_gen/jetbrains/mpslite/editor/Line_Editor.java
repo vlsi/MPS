@@ -44,7 +44,7 @@ public class Line_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1182511258456.getElementRole());
+    editorCell.setRole(this.myListHandler_1182511258456.getElementRole());
     return editorCell;
   }
 

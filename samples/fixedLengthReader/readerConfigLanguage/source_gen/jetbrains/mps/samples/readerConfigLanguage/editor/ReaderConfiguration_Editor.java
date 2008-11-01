@@ -102,7 +102,7 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1116535190962.getElementRole());
+    editorCell.setRole(this.myListHandler_1116535190962.getElementRole());
     return editorCell;
   }
 

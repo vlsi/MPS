@@ -247,7 +247,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1163670928772.getElementRole());
+    editorCell.setRole(this.myListHandler_1163670928772.getElementRole());
     return editorCell;
   }
 

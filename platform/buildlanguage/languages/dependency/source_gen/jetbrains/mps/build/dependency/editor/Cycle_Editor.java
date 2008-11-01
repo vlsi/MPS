@@ -146,7 +146,7 @@ public class Cycle_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1216914016830.getElementRole());
+    editorCell.setRole(this.myListHandler_1216914016830.getElementRole());
     return editorCell;
   }
 
@@ -159,7 +159,7 @@ public class Cycle_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1218645758531.getElementRole());
+    editorCell.setRole(this.myListHandler_1218645758531.getElementRole());
     return editorCell;
   }
 
@@ -172,7 +172,7 @@ public class Cycle_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1218645778390.getElementRole());
+    editorCell.setRole(this.myListHandler_1218645778390.getElementRole());
     return editorCell;
   }
 

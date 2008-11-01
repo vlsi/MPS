@@ -79,7 +79,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1173990956439.getElementRole());
+    editorCell.setRole(this.myListHandler_1173990956439.getElementRole());
     return editorCell;
   }
 

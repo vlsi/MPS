@@ -263,7 +263,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1177442586358.getElementRole());
+    editorCell.setRole(this.myListHandler_1177442586358.getElementRole());
     return editorCell;
   }
 
@@ -276,7 +276,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1203347865260.getElementRole());
+    editorCell.setRole(this.myListHandler_1203347865260.getElementRole());
     return editorCell;
   }
 

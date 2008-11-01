@@ -91,7 +91,7 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1158700832827.getElementRole());
+    editorCell.setRole(this.myListHandler_1158700832827.getElementRole());
     return editorCell;
   }
 

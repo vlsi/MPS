@@ -439,7 +439,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1105726873349.getElementRole());
+    editorCell.setRole(this.myListHandler_1105726873349.getElementRole());
     return editorCell;
   }
 
@@ -452,7 +452,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1105739239079.getElementRole());
+    editorCell.setRole(this.myListHandler_1105739239079.getElementRole());
     return editorCell;
   }
 
@@ -465,7 +465,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1105739255644.getElementRole());
+    editorCell.setRole(this.myListHandler_1105739255644.getElementRole());
     return editorCell;
   }
 
@@ -478,7 +478,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1137467292182.getElementRole());
+    editorCell.setRole(this.myListHandler_1137467292182.getElementRole());
     return editorCell;
   }
 
@@ -491,7 +491,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1137532267760.getElementRole());
+    editorCell.setRole(this.myListHandler_1137532267760.getElementRole());
     return editorCell;
   }
 
@@ -504,7 +504,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1182234070816.getElementRole());
+    editorCell.setRole(this.myListHandler_1182234070816.getElementRole());
     return editorCell;
   }
 
@@ -517,7 +517,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1182234553570.getElementRole());
+    editorCell.setRole(this.myListHandler_1182234553570.getElementRole());
     return editorCell;
   }
 
@@ -530,7 +530,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1215626431041.getElementRole());
+    editorCell.setRole(this.myListHandler_1215626431041.getElementRole());
     return editorCell;
   }
 

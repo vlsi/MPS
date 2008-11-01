@@ -162,7 +162,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1177460691150.getElementRole());
+    editorCell.setRole(this.myListHandler_1177460691150.getElementRole());
     return editorCell;
   }
 

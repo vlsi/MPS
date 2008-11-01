@@ -96,7 +96,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1138337224101.getElementRole());
+    editorCell.setRole(this.myListHandler_1138337224101.getElementRole());
     return editorCell;
   }
 

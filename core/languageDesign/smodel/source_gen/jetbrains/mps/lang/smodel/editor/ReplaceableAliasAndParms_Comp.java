@@ -100,7 +100,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1206995959904.getElementRole());
+    editorCell.setRole(this.myListHandler_1206995959904.getElementRole());
     return editorCell;
   }
 

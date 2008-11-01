@@ -204,7 +204,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
   }
 
   private boolean isLinkCollection(EditorCell cell) {
-    String role = (String) cell.getUserObject(EditorCell.ROLE);
+    String role = cell.getRole();
     if (role == null) return false;
     return true;
   }

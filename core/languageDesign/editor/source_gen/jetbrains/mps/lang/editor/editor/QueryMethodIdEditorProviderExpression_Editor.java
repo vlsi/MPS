@@ -176,7 +176,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1176795396043.getElementRole());
+    editorCell.setRole(this.myListHandler_1176795396043.getElementRole());
     return editorCell;
   }
 
@@ -189,7 +189,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1176795396048.getElementRole());
+    editorCell.setRole(this.myListHandler_1176795396048.getElementRole());
     return editorCell;
   }
 

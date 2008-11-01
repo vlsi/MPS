@@ -24,7 +24,6 @@ public interface EditorCell extends Cloneable {
   static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];
 
   static final Object METAINFO_SOURCE_NODE = "metainfo-source-node";
-  static final Object ROLE = "role";  
 
   int getX();
   void setX(int x);
@@ -63,6 +62,9 @@ public interface EditorCell extends Cloneable {
 
   void setCellId(String cellId);
   String getCellId();
+
+  void setRole(String role);
+  String getRole();
 
   void setLinkDeclaration(LinkDeclaration link);
   LinkDeclaration getLinkDeclaration();

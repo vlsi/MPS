@@ -66,7 +66,7 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1174557647349.getElementRole());
+    editorCell.setRole(this.myListHandler_1174557647349.getElementRole());
     return editorCell;
   }
 

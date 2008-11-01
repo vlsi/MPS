@@ -498,7 +498,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1178971984122.getElementRole());
+    editorCell.setRole(this.myListHandler_1178971984122.getElementRole());
     return editorCell;
   }
 
@@ -511,7 +511,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1183981085225.getElementRole());
+    editorCell.setRole(this.myListHandler_1183981085225.getElementRole());
     return editorCell;
   }
 

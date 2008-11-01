@@ -256,7 +256,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1138337100850.getElementRole());
+    editorCell.setRole(this.myListHandler_1138337100850.getElementRole());
     return editorCell;
   }
 
@@ -269,7 +269,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1165410808126.getElementRole());
+    editorCell.setRole(this.myListHandler_1165410808126.getElementRole());
     return editorCell;
   }
 
@@ -282,7 +282,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210475918.getElementRole());
+    editorCell.setRole(this.myListHandler_1188210475918.getElementRole());
     return editorCell;
   }
 
@@ -295,7 +295,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210485994.getElementRole());
+    editorCell.setRole(this.myListHandler_1188210485994.getElementRole());
     return editorCell;
   }
 

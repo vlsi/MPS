@@ -90,7 +90,7 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1199548058137.getElementRole());
+    editorCell.setRole(this.myListHandler_1199548058137.getElementRole());
     return editorCell;
   }
 

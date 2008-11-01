@@ -100,7 +100,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1215091315701.getElementRole());
+    editorCell.setRole(this.myListHandler_1215091315701.getElementRole());
     return editorCell;
   }
 

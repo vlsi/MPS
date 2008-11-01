@@ -259,7 +259,7 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1177583946170.getElementRole());
+    editorCell.setRole(this.myListHandler_1177583946170.getElementRole());
     return editorCell;
   }
 
@@ -272,7 +272,7 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1178540165456.getElementRole());
+    editorCell.setRole(this.myListHandler_1178540165456.getElementRole());
     return editorCell;
   }
 

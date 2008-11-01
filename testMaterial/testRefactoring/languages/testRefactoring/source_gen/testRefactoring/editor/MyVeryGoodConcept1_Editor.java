@@ -225,7 +225,7 @@ public class MyVeryGoodConcept1_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myAnotherGoodConceptListHandler_anotherGoodConceptList_.getElementRole());
+    editorCell.setRole(this.myAnotherGoodConceptListHandler_anotherGoodConceptList_.getElementRole());
     return editorCell;
   }
 

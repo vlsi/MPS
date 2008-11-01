@@ -74,7 +74,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1140573670193.getElementRole());
+    editorCell.setRole(this.myListHandler_1140573670193.getElementRole());
     return editorCell;
   }
 

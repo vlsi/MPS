@@ -111,7 +111,7 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1175163130774.getElementRole());
+    editorCell.setRole(this.myListHandler_1175163130774.getElementRole());
     return editorCell;
   }
 

@@ -309,7 +309,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1138337135190.getElementRole());
+    editorCell.setRole(this.myListHandler_1138337135190.getElementRole());
     return editorCell;
   }
 
@@ -322,7 +322,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1178609159857.getElementRole());
+    editorCell.setRole(this.myListHandler_1178609159857.getElementRole());
     return editorCell;
   }
 
@@ -335,7 +335,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210506456.getElementRole());
+    editorCell.setRole(this.myListHandler_1188210506456.getElementRole());
     return editorCell;
   }
 
@@ -348,7 +348,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210514740.getElementRole());
+    editorCell.setRole(this.myListHandler_1188210514740.getElementRole());
     return editorCell;
   }
 

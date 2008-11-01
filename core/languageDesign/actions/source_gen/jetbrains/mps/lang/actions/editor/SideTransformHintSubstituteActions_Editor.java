@@ -92,7 +92,7 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1138079516426.getElementRole());
+    editorCell.setRole(this.myListHandler_1138079516426.getElementRole());
     return editorCell;
   }
 

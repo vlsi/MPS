@@ -67,7 +67,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1154547221297.getElementRole());
+    editorCell.setRole(this.myListHandler_1154547221297.getElementRole());
     return editorCell;
   }
 

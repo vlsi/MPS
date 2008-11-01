@@ -484,7 +484,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1196865646819.getElementRole());
+    editorCell.setRole(this.myListHandler_1196865646819.getElementRole());
     return editorCell;
   }
 

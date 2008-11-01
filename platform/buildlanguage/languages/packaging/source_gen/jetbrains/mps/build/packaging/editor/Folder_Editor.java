@@ -144,7 +144,7 @@ public class Folder_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(true);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1203598761160.getElementRole());
+    editorCell.setRole(this.myListHandler_1203598761160.getElementRole());
     return editorCell;
   }
 

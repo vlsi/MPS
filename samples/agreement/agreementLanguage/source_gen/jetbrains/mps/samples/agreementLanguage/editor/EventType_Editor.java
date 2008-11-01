@@ -73,7 +73,7 @@ public class EventType_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1112317028032.getElementRole());
+    editorCell.setRole(this.myListHandler_1112317028032.getElementRole());
     return editorCell;
   }
 

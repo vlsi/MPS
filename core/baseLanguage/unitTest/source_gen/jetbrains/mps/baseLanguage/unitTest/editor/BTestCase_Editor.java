@@ -153,7 +153,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1224675173872.getElementRole());
+    editorCell.setRole(this.myListHandler_1224675173872.getElementRole());
     return editorCell;
   }
 
@@ -166,7 +166,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1224675173879.getElementRole());
+    editorCell.setRole(this.myListHandler_1224675173879.getElementRole());
     return editorCell;
   }
 

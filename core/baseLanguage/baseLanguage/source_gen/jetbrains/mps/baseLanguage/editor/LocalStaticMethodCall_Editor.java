@@ -78,7 +78,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1172058760745.getElementRole());
+    editorCell.setRole(this.myListHandler_1172058760745.getElementRole());
     return editorCell;
   }
 

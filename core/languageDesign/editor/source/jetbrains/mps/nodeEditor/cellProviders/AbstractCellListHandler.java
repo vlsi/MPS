@@ -117,7 +117,7 @@ public abstract class AbstractCellListHandler implements KeyboardHandler {
     Iterator<SNode> listNodes = getNodesForList().iterator();
     if (!listNodes.hasNext()) {
       EditorCell emptyCell = createEmptyCell(editorContext);
-      emptyCell.putUserObject(EditorCell.ROLE, getElementRole());
+      emptyCell.setRole(getElementRole());
       myListEditorCell_Collection.addEditorCell(emptyCell);
     } else {
       EditorCell separatorCell = null;

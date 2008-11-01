@@ -75,7 +75,7 @@ public class ElementListContents_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(true);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1207148300115.getElementRole());
+    editorCell.setRole(this.myListHandler_1207148300115.getElementRole());
     return editorCell;
   }
 

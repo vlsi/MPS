@@ -201,7 +201,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1085483273080.getElementRole());
+    editorCell.setRole(this.myListHandler_1085483273080.getElementRole());
     return editorCell;
   }
 
@@ -214,7 +214,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1085483277590.getElementRole());
+    editorCell.setRole(this.myListHandler_1085483277590.getElementRole());
     return editorCell;
   }
 
@@ -227,7 +227,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1085483457772.getElementRole());
+    editorCell.setRole(this.myListHandler_1085483457772.getElementRole());
     return editorCell;
   }
 
@@ -240,7 +240,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1085483457776.getElementRole());
+    editorCell.setRole(this.myListHandler_1085483457776.getElementRole());
     return editorCell;
   }
 
@@ -253,7 +253,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1085483457780.getElementRole());
+    editorCell.setRole(this.myListHandler_1085483457780.getElementRole());
     return editorCell;
   }
 
@@ -266,7 +266,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1169763677000.getElementRole());
+    editorCell.setRole(this.myListHandler_1169763677000.getElementRole());
     return editorCell;
   }
 

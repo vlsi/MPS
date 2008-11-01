@@ -104,7 +104,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1174554472861.getElementRole());
+    editorCell.setRole(this.myListHandler_1174554472861.getElementRole());
     return editorCell;
   }
 

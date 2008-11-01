@@ -253,7 +253,7 @@ public class NodePaster {
   }
 
   private String getRoleFromCell(EditorCell targetCell) {
-    String role = (String) targetCell.getUserObject(EditorCell.ROLE);
+    String role = targetCell.getRole();
     if (role != null) return role;
 
     EditorCell_Collection actualCollection = (targetCell instanceof EditorCell_Collection) ? (EditorCell_Collection) targetCell : targetCell.getParent();

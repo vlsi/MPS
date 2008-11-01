@@ -176,7 +176,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1225194588673.getElementRole());
+    editorCell.setRole(this.myListHandler_1225194588673.getElementRole());
     return editorCell;
   }
 

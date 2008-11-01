@@ -111,7 +111,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1164903583459.getElementRole());
+    editorCell.setRole(this.myListHandler_1164903583459.getElementRole());
     return editorCell;
   }
 

@@ -217,7 +217,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210613756.getElementRole());
+    editorCell.setRole(this.myListHandler_1188210613756.getElementRole());
     return editorCell;
   }
 
@@ -230,7 +230,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210623223.getElementRole());
+    editorCell.setRole(this.myListHandler_1188210623223.getElementRole());
     return editorCell;
   }
 

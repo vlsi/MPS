@@ -296,7 +296,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1162581824142.getElementRole());
+    editorCell.setRole(this.myListHandler_1162581824142.getElementRole());
     return editorCell;
   }
 

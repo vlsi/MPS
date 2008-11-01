@@ -3470,11 +3470,7 @@
                 <link role="variableDeclaration" targetNodeId="1097659587051" resolveInfo="editorCell" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995313412">
-                <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Basic.putUserObject(java.lang.Object,java.lang.Object):void" resolveInfo="putUserObject" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1130865494018">
-                  <link role="classifier" targetNodeId="67.~EditorCell" resolveInfo="EditorCell" />
-                  <link role="variableDeclaration" targetNodeId="67.~EditorCell.ROLE" resolveInfo="ROLE" />
-                </node>
+                <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Basic.setRole(java.lang.String):void" resolveInfo="setRole" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208995320822">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208995307594">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1140538771238" />

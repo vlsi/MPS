@@ -241,7 +241,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1221310280117.getElementRole());
+    editorCell.setRole(this.myListHandler_1221310280117.getElementRole());
     return editorCell;
   }
 
@@ -254,7 +254,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1221310280149.getElementRole());
+    editorCell.setRole(this.myListHandler_1221310280149.getElementRole());
     return editorCell;
   }
 
@@ -267,7 +267,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1221310280160.getElementRole());
+    editorCell.setRole(this.myListHandler_1221310280160.getElementRole());
     return editorCell;
   }
 
@@ -280,7 +280,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1221310301283.getElementRole());
+    editorCell.setRole(this.myListHandler_1221310301283.getElementRole());
     return editorCell;
   }
 

@@ -187,7 +187,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210583261.getElementRole());
+    editorCell.setRole(this.myListHandler_1188210583261.getElementRole());
     return editorCell;
   }
 
@@ -200,7 +200,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.putUserObject(EditorCell.ROLE, this.myListHandler_1188210594842.getElementRole());
+    editorCell.setRole(this.myListHandler_1188210594842.getElementRole());
     return editorCell;
   }
 
