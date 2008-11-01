@@ -82,11 +82,11 @@ public class Fail_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11720172551581172017255158(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1172017255158");
+    editorCell.setCellId("Collection_1172017255158");
   }
 
   private static void setupBasic_Constant_11720172568001172017256800(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172017256800");
+    editorCell.setCellId("Constant_1172017256800");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -99,7 +99,7 @@ public class Fail_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11720173219151172017321915(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172017321915");
+    editorCell.setCellId("Constant_1172017321915");
   }
 
   private static void setupBasic_refNode_message1172074682885(EditorCell editorCell, SNode node, EditorContext context) {

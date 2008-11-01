@@ -36,11 +36,11 @@ public class WildCardType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11719036223651171903622365(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1171903622365");
+    editorCell.setCellId("Collection_1171903622365");
   }
 
   private static void setupBasic_Constant_11719036234451171903623445(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171903623445");
+    editorCell.setCellId("Constant_1171903623445");
   }
 
   private static void setupLabel_Constant_1171903623445_1171903623445(EditorCell_Label editorCell, SNode node, EditorContext context) {

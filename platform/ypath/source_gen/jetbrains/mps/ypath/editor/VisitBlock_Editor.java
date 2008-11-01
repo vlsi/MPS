@@ -219,27 +219,27 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11800080085941180008008594(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180008008594");
+    editorCell.setCellId("Collection_1180008008594");
   }
 
   private static void setupBasic_Collection_11800080116271180008011627(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180008011627");
+    editorCell.setCellId("Collection_1180008011627");
   }
 
   private static void setupBasic_Constant_11800080227251180008022725(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180008022725");
+    editorCell.setCellId("Constant_1180008022725");
   }
 
   private static void setupBasic_Constant_11800080358981180008035898(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180008035898");
+    editorCell.setCellId("Constant_1180008035898");
   }
 
   private static void setupBasic_Collection_11800080486971180008048697(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180008048697");
+    editorCell.setCellId("Collection_1180008048697");
   }
 
   private static void setupBasic_Constant_11800080486981180008048698(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180008048698");
+    editorCell.setCellId("Constant_1180008048698");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -252,7 +252,7 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11800090696151180009069615(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180009069615");
+    editorCell.setCellId("Constant_1180009069615");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -277,7 +277,7 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11800252146751180025214675(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180025214675");
+    editorCell.setCellId("Constant_1180025214675");
     {
       Style inlineStyle = new Style(editorCell) {
         {

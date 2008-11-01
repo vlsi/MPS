@@ -49,7 +49,7 @@ public class ValueParameter_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_conceptProperty_alias1202576424794(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
   }
 
   private static void setupLabel_conceptProperty_alias_1202576424794(EditorCell_Label editorCell, SNode node, EditorContext context) {

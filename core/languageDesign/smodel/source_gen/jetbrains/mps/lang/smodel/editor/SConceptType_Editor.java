@@ -94,11 +94,11 @@ public class SConceptType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11804811494111180481149411(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180481149411");
+    editorCell.setCellId("Collection_1180481149411");
   }
 
   private static void setupBasic_Constant_11804811494121180481149412(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180481149412");
+    editorCell.setCellId("Constant_1180481149412");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -112,7 +112,7 @@ public class SConceptType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11804811494131180481149413(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180481149413");
+    editorCell.setCellId("Constant_1180481149413");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -126,7 +126,7 @@ public class SConceptType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_conceptDeclaraton1180481149414(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_conceptDeclaraton");
+    editorCell.setCellId("refCell_conceptDeclaraton");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -139,7 +139,7 @@ public class SConceptType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11804811494171180481149417(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180481149417");
+    editorCell.setCellId("Constant_1180481149417");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -209,7 +209,7 @@ public class SConceptType_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1180481149416(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

@@ -153,11 +153,11 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11797402940811179740294081(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1179740294081");
+    editorCell.setCellId("Collection_1179740294081");
   }
 
   private static void setupBasic_conceptProperty_alias1179740310923(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -170,7 +170,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11797403793801179740379380(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1179740379380");
+    editorCell.setCellId("Constant_1179740379380");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -183,11 +183,11 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_treePathAspect1179740382822(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_treePathAspect");
+    editorCell.setCellId("refCell_treePathAspect");
   }
 
   private static void setupBasic_Constant_11797403951331179740395133(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1179740395133");
+    editorCell.setCellId("Constant_1179740395133");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -200,11 +200,11 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_treeNodeKind1179740398231(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_treeNodeKind");
+    editorCell.setCellId("refCell_treeNodeKind");
   }
 
   private static void setupBasic_Constant_11797404077271179740407727(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1179740407727");
+    editorCell.setCellId("Constant_1179740407727");
   }
 
   private static void setupLabel_conceptProperty_alias_1179740310923(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -270,7 +270,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1179740391081(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1179740391081(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -322,7 +322,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1179740402221(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1179740402221(EditorCell_Label editorCell, SNode node, EditorContext context) {

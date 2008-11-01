@@ -44,7 +44,7 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refNodeList_path1220978198900(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_path");
+    editorCell.setCellId("refNodeList_path");
     {
       Style inlineStyle = new Style(editorCell) {
         {

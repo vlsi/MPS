@@ -85,11 +85,11 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12156044540001215604454000(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1215604454000");
+    editorCell.setCellId("Collection_1215604454000");
   }
 
   private static void setupBasic_Constant_12156044595491215604459549(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215604459549");
+    editorCell.setCellId("Constant_1215604459549");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -104,7 +104,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_operations1215604465395(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_operations");
+    editorCell.setCellId("refNodeList_operations");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -118,11 +118,11 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_AttributedNodeCell_12156044732881215604473288(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "AttributedNodeCell_1215604473288");
+    editorCell.setCellId("AttributedNodeCell_1215604473288");
   }
 
   private static void setupBasic_Constant_12156044809931215604480993(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215604480993");
+    editorCell.setCellId("Constant_1215604480993");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -205,7 +205,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_12156044924941215604492494(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215604492494");
+      editorCell.setCellId("Constant_1215604492494");
       BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
       {
         Style inlineStyle = new Style(editorCell) {

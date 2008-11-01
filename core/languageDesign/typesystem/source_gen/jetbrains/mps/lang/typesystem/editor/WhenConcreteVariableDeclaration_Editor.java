@@ -50,7 +50,7 @@ public class WhenConcreteVariableDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_property_name1205762236138(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     BaseLanguageStyle_StyleSheet.getLocalVariable(editorCell).apply(editorCell);
   }
 

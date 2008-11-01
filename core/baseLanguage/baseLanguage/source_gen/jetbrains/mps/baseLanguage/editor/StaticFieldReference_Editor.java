@@ -114,16 +114,16 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10827401543921082740154392(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1082740154392");
+    editorCell.setCellId("Collection_1082740154392");
   }
 
   private static void setupBasic_Constant_10827401543941082740154394(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1082740154394");
+    editorCell.setCellId("Constant_1082740154394");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_staticFieldDeclaration1088427644683(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_staticFieldDeclaration");
+    editorCell.setCellId("refCell_staticFieldDeclaration");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -136,7 +136,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_classifier1144433124322(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_classifier");
+    editorCell.setCellId("refCell_classifier");
     StaticFieldReference_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -194,7 +194,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1088427644685(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       BaseLanguageStyle_StyleSheet.getStaticField(editorCell).apply(editorCell);
       {
         Style inlineStyle = new Style(editorCell) {
@@ -259,7 +259,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1144433124324(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

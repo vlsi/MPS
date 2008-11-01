@@ -69,19 +69,19 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11498660565641149866056564(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1149866056564");
+    editorCell.setCellId("Collection_1149866056564");
   }
 
   private static void setupBasic_component_CopyScrNodeMacro_inspector1184214434098(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_CopyScrNodeMacro_inspector");
+    editorCell.setCellId("component_CopyScrNodeMacro_inspector");
   }
 
   private static void setupBasic_component_NodeMacro_postfix1184865678180(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_NodeMacro_postfix");
+    editorCell.setCellId("component_NodeMacro_postfix");
   }
 
   private static void setupBasic_Constant_12161526790701216152679070(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216152679070");
+    editorCell.setCellId("Constant_1216152679070");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);

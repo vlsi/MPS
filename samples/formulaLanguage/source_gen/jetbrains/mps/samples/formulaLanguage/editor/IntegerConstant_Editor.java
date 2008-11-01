@@ -13,8 +13,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class IntegerConstant_Editor extends DefaultNodeEditor {
@@ -54,17 +52,11 @@ public class IntegerConstant_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_property_value1111785807937(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_value");
+    editorCell.setCellId("property_value");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return IntegerConstant_Editor.calculateColor0598_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
         }
 
       };
@@ -73,12 +65,6 @@ public class IntegerConstant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_value_1111785807937(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor0598_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.blue;
-    return result;
   }
 
 }

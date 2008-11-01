@@ -180,15 +180,15 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12211371845861221137184586(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221137184586");
+    editorCell.setCellId("Collection_1221137184586");
   }
 
   private static void setupBasic_Constant_12211371860561221137186056(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221137186056");
+    editorCell.setCellId("Constant_1221137186056");
   }
 
   private static void setupBasic_Collection_12211371889801221137188980(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221137188980");
+    editorCell.setCellId("Collection_1221137188980");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -202,23 +202,23 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12211371896721221137189672(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221137189672");
+    editorCell.setCellId("Constant_1221137189672");
   }
 
   private static void setupBasic_refCell_sourceConcept1221137192846(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_sourceConcept");
+    editorCell.setCellId("refCell_sourceConcept");
   }
 
   private static void setupBasic_Constant_12211371994451221137199445(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221137199445");
+    editorCell.setCellId("Constant_1221137199445");
   }
 
   private static void setupBasic_refCell_targetConcept1221137202260(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_targetConcept");
+    editorCell.setCellId("refCell_targetConcept");
   }
 
   private static void setupBasic_Collection_12211372115321221137211532(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221137211532");
+    editorCell.setCellId("Collection_1221137211532");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -232,7 +232,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_12211377020341221137702034(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1221137702034");
+    editorCell.setCellId("Indent_1221137702034");
   }
 
   private static void setupBasic_refNode_wrapperFunction1221137704801(EditorCell editorCell, SNode node, EditorContext context) {
@@ -301,7 +301,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1221137197428(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1221137197428(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -353,7 +353,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1221137207467(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1221137207467(EditorCell_Label editorCell, SNode node, EditorContext context) {

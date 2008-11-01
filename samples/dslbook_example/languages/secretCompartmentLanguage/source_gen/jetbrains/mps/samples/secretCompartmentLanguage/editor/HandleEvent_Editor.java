@@ -72,15 +72,15 @@ public class HandleEvent_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11972557959101197255795910(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197255795910");
+    editorCell.setCellId("Collection_1197255795910");
   }
 
   private static void setupBasic_Constant_11972557983031197255798303(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197255798303");
+    editorCell.setCellId("Constant_1197255798303");
   }
 
   private static void setupBasic_refCell_event1197255802946(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_event");
+    editorCell.setCellId("refCell_event");
   }
 
   private static void setupLabel_Constant_1197255798303_1197255798303(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -134,7 +134,7 @@ public class HandleEvent_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_eventName1197255805558(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_eventName");
+      editorCell.setCellId("property_eventName");
     }
 
     private static void setupLabel_property_eventName_1197255805558(EditorCell_Label editorCell, SNode node, EditorContext context) {

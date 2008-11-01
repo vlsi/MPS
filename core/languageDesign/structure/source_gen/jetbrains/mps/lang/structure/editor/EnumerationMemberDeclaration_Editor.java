@@ -188,11 +188,11 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10839254142501083925414250(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1083925414250");
+    editorCell.setCellId("Collection_1083925414250");
   }
 
   private static void setupBasic_property_externalValue1083925414254(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_externalValue");
+    editorCell.setCellId("property_externalValue");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -206,7 +206,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_internalValue1083925414256(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_internalValue");
+    editorCell.setCellId("property_internalValue");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -220,7 +220,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_10839254142581083925414258(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1083925414258");
+    editorCell.setCellId("Constant_1083925414258");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -234,7 +234,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11625859342581162585934258(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1162585934258");
+    editorCell.setCellId("Constant_1162585934258");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -249,7 +249,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11625859546511162585954651(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1162585954651");
+    editorCell.setCellId("Constant_1162585954651");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -264,7 +264,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11975917746071197591774607(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197591774607");
+    editorCell.setCellId("Collection_1197591774607");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -277,7 +277,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11975917845621197591784562(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197591784562");
+    editorCell.setCellId("Constant_1197591784562");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -292,7 +292,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_javaIdentifier1197591806188(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_javaIdentifier");
+    editorCell.setCellId("property_javaIdentifier");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -307,7 +307,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12193521055351219352105535(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219352105535");
+    editorCell.setCellId("Constant_1219352105535");
   }
 
   private static void setupLabel_property_externalValue_1083925414254(EditorCell_Label editorCell, SNode node, EditorContext context) {

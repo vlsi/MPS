@@ -14,9 +14,6 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -24,7 +21,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class AgreementDeclarations_Editor extends DefaultNodeEditor {
 
@@ -148,11 +146,11 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11123112116591112311211659(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1112311211659");
+    editorCell.setCellId("Collection_1112311211659");
   }
 
   private static void setupBasic_Collection_11123112690821112311269082(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1112311269082");
+    editorCell.setCellId("Collection_1112311269082");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -165,11 +163,11 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11123113554601112311355460(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1112311355460");
+    editorCell.setCellId("Constant_1112311355460");
   }
 
   private static void setupBasic_Constant_11123113554611112311355461(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1112311355461");
+    editorCell.setCellId("Constant_1112311355461");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -182,11 +180,11 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11123113554621112311355462(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1112311355462");
+    editorCell.setCellId("Constant_1112311355462");
   }
 
   private static void setupBasic_refNodeList_accountType1112315699833(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_accountType");
+    editorCell.setCellId("refNodeList_accountType");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -199,7 +197,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11123157488671112315748867(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1112315748867");
+    editorCell.setCellId("Constant_1112315748867");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -212,7 +210,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11123157857891112315785789(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1112315785789");
+    editorCell.setCellId("Constant_1112315785789");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -225,7 +223,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11123158406351112315840635(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1112315840635");
+    editorCell.setCellId("Collection_1112315840635");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -238,11 +236,11 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11123158406361112315840636(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1112315840636");
+    editorCell.setCellId("Constant_1112315840636");
   }
 
   private static void setupBasic_refNodeList_eventType1112315840637(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_eventType");
+    editorCell.setCellId("refNodeList_eventType");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -276,30 +274,6 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNodeList_eventType_1112315840637(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle4569_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Integer calculateFontStyle4569_1(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Color calculateColor4569_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.blue;
-    return result;
-  }
-
-  private static Color calculateColor4569_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.blue;
-    return result;
   }
 
   public static class accountTypeListHandler_4569_0 extends RefNodeListHandler {
@@ -363,24 +337,12 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_11123156998341112315699834(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1112315699834");
+      editorCell.setCellId("Constant_1112315699834");
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-              public Integer calculate(EditorCell cell) {
-                return AgreementDeclarations_Editor.calculateFontStyle4569_1(cell);
-              }
-
-            });
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return AgreementDeclarations_Editor.calculateColor4569_1(cell);
-              }
-
-            });
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           }
 
         };
@@ -448,24 +410,12 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_11123158406381112315840638(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1112315840638");
+      editorCell.setCellId("Constant_1112315840638");
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-              public Integer calculate(EditorCell cell) {
-                return AgreementDeclarations_Editor.calculateFontStyle4569_0(cell);
-              }
-
-            });
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return AgreementDeclarations_Editor.calculateColor4569_0(cell);
-              }
-
-            });
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           }
 
         };

@@ -78,23 +78,23 @@ public class InvokeExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11997113579411199711357941(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1199711357941");
+    editorCell.setCellId("Collection_1199711357941");
   }
 
   private static void setupBasic_Constant_11997113579441199711357944(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199711357944");
+    editorCell.setCellId("Constant_1199711357944");
   }
 
   private static void setupBasic_Constant_11997113579451199711357945(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199711357945");
+    editorCell.setCellId("Constant_1199711357945");
   }
 
   private static void setupBasic_refNodeList_parameter1199711357946(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_parameter");
+    editorCell.setCellId("refNodeList_parameter");
   }
 
   private static void setupBasic_Constant_11997113579481199711357948(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199711357948");
+    editorCell.setCellId("Constant_1199711357948");
   }
 
   private static void setupLabel_Constant_1199711357944_1199711357944(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -165,7 +165,7 @@ public class InvokeExpression_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_11997113579471199711357947(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199711357947");
+      editorCell.setCellId("Constant_1199711357947");
     }
 
     private static void setupLabel_Constant_1199711357947_1199711357947(EditorCell_Label editorCell, SNode node, EditorContext context) {

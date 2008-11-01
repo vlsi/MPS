@@ -60,7 +60,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
 
 
   private static void setupBasic_refCell_keyMap1140223991344(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_keyMap");
+    editorCell.setCellId("refCell_keyMap");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -120,7 +120,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
 
 
     private static void setupBasic_property_name1140223996488(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

@@ -93,23 +93,23 @@ public class Property_HasValue_Enum_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11461711700361146171170036(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1146171170036");
+    editorCell.setCellId("Collection_1146171170036");
   }
 
   private static void setupBasic_refNode_value1146171170038(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206487951704(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAlias_Comp");
+    editorCell.setCellId("component_ReplaceableAlias_Comp");
   }
 
   private static void setupBasic_Constant_12064879517051206487951705(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487951705");
+    editorCell.setCellId("Constant_1206487951705");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12064879643781206487964378(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487964378");
+    editorCell.setCellId("Constant_1206487964378");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 

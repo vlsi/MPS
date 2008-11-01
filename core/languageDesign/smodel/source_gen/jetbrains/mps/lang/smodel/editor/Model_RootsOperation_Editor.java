@@ -98,27 +98,27 @@ public class Model_RootsOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11713159153071171315915307(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1171315915307");
+    editorCell.setCellId("Collection_1171315915307");
   }
 
   private static void setupBasic_refCell_concept1171315915309(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_concept");
+    editorCell.setCellId("refCell_concept");
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206486703954(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAlias_Comp");
+    editorCell.setCellId("component_ReplaceableAlias_Comp");
   }
 
   private static void setupBasic_Constant_12064867039551206486703955(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206486703955");
+    editorCell.setCellId("Constant_1206486703955");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12064867164241206486716424(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206486716424");
+    editorCell.setCellId("Constant_1206486716424");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
@@ -176,7 +176,7 @@ public class Model_RootsOperation_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1171315915311(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

@@ -51,7 +51,7 @@ public class ConfigurationReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_configuration1204115867975(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_configuration");
+    editorCell.setCellId("refCell_configuration");
   }
 
   private static void setupLabel_refCell_configuration_1204115867975(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -102,7 +102,7 @@ public class ConfigurationReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1204115874150(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       MPSLayoutStyles_StyleSheet.getConfiguration(editorCell).apply(editorCell);
     }
 

@@ -131,29 +131,29 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11684298585401168429858540(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1168429858540");
+    editorCell.setCellId("Collection_1168429858540");
   }
 
   private static void setupBasic_Constant_11684298714191168429871419(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168429871419");
+    editorCell.setCellId("Constant_1168429871419");
   }
 
   private static void setupBasic_refNode_parentBlock1168429937123(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11684299408491168429940849(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168429940849");
+    editorCell.setCellId("Constant_1168429940849");
   }
 
   private static void setupBasic_refNode_childrenBlock1168429945365(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11684299510941168429951094(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168429951094");
+    editorCell.setCellId("Constant_1168429951094");
   }
 
   private static void setupBasic_component_TreePath_component1179306250318(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_TreePath_component");
+    editorCell.setCellId("component_TreePath_component");
   }
 
   private static void setupLabel_Constant_1168429871419_1168429871419(EditorCell_Label editorCell, SNode node, EditorContext context) {

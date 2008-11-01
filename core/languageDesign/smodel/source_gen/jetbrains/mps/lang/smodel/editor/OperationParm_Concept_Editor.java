@@ -73,11 +73,11 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11441020709061144102070906(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1144102070906");
+    editorCell.setCellId("Collection_1144102070906");
   }
 
   private static void setupBasic_Constant_11441020743141144102074314(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144102074314");
+    editorCell.setCellId("Constant_1144102074314");
     {
       Style inlineStyle = new Style(editorCell) {
         {

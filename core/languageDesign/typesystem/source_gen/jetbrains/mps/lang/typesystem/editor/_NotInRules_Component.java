@@ -53,15 +53,15 @@ public class _NotInRules_Component extends AbstractCellProvider {
 
 
   private static void setupBasic_Collection_11765443843331176544384333(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176544384333");
+    editorCell.setCellId("Collection_1176544384333");
   }
 
   private static void setupBasic_Constant_11765443882261176544388226(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176544388226");
+    editorCell.setCellId("Constant_1176544388226");
   }
 
   private static void setupBasic_Constant_11765443953841176544395384(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176544395384");
+    editorCell.setCellId("Constant_1176544395384");
   }
 
   private static void setupLabel_Constant_1176544388226_1176544388226(EditorCell_Label editorCell, SNode node, EditorContext context) {

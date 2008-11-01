@@ -96,19 +96,19 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10753807237661075380723766(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1075380723766");
+    editorCell.setCellId("Collection_1075380723766");
   }
 
   private static void setupBasic_refNode_expression1075380723767(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_10753807237681075380723768(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1075380723768");
+    editorCell.setCellId("Constant_1075380723768");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_10757220756401075722075640(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1075722075640");
+    editorCell.setCellId("Constant_1075722075640");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -123,7 +123,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12150942111501215094211150(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215094211150");
+    editorCell.setCellId("Constant_1215094211150");
     {
       Style inlineStyle = new Style(editorCell) {
         {

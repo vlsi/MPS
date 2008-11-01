@@ -24,7 +24,7 @@ public class SimpleRule_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_12230346169281223034616928(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1223034616928");
+    editorCell.setCellId("Error_1223034616928");
   }
 
   private static void setupLabel_Error_1223034616928_1223034616928(EditorCell_Label editorCell, SNode node, EditorContext context) {

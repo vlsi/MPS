@@ -80,7 +80,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
 
 
   private static void setupBasic_Collection_11405736701911140573670191(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1140573670191");
+    editorCell.setCellId("Collection_1140573670191");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -93,7 +93,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
 
   private static void setupBasic_Constant_11405736701921140573670192(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1140573670192");
+    editorCell.setCellId("Constant_1140573670192");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -107,11 +107,11 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
 
   private static void setupBasic_refNodeList_typeVariableDeclaration1140573670193(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_typeVariableDeclaration");
+    editorCell.setCellId("refNodeList_typeVariableDeclaration");
   }
 
   private static void setupBasic_Constant_11405736701941140573670194(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1140573670194");
+    editorCell.setCellId("Constant_1140573670194");
     {
       Style inlineStyle = new Style(editorCell) {
         {

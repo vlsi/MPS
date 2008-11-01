@@ -72,11 +72,11 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11745576435631174557643563(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174557643563");
+    editorCell.setCellId("Collection_1174557643563");
   }
 
   private static void setupBasic_Constant_11745576446751174557644675(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174557644675");
+    editorCell.setCellId("Constant_1174557644675");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -89,11 +89,11 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_part1174557647349(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_part");
+    editorCell.setCellId("refNodeList_part");
   }
 
   private static void setupBasic_Constant_11745576492571174557649257(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174557649257");
+    editorCell.setCellId("Constant_1174557649257");
     {
       Style inlineStyle = new Style(editorCell) {
         {

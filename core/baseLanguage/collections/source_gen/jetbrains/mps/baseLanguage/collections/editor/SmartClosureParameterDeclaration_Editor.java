@@ -73,11 +73,11 @@ public class SmartClosureParameterDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12035182100101203518210010(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1203518210010");
+    editorCell.setCellId("Collection_1203518210010");
   }
 
   private static void setupBasic_Constant_12035182121961203518212196(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203518212196");
+    editorCell.setCellId("Constant_1203518212196");
     BaseLanguageStyle_StyleSheet.getParameter(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -91,7 +91,7 @@ public class SmartClosureParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1203518218122(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     BaseLanguageStyle_StyleSheet.getParameter(editorCell).apply(editorCell);
   }
 

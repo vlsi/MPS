@@ -49,7 +49,7 @@ public class GetKeysOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_conceptProperty_alias1201872488234(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
   }
 

@@ -25,7 +25,7 @@ public class NodeUnreachable_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_12156129673351215612967335(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215612967335");
+    editorCell.setCellId("Constant_1215612967335");
     transformationTest_StyleSheet.getNodeProperty(editorCell).apply(editorCell);
   }
 

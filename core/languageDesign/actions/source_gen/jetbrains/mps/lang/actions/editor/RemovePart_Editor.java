@@ -75,11 +75,11 @@ public class RemovePart_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11774098559491177409855949(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1177409855949");
+    editorCell.setCellId("Collection_1177409855949");
   }
 
   private static void setupBasic_Constant_11774098567651177409856765(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177409856765");
+    editorCell.setCellId("Constant_1177409856765");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -92,7 +92,7 @@ public class RemovePart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_conceptToRemove1177409858894(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_conceptToRemove");
+    editorCell.setCellId("refCell_conceptToRemove");
   }
 
   private static void setupLabel_Constant_1177409856765_1177409856765(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -146,7 +146,7 @@ public class RemovePart_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1177409860425(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

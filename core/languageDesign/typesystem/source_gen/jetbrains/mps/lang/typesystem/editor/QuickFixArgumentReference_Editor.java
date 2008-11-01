@@ -52,7 +52,7 @@ public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_quickFixArgument1216390449476(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_quickFixArgument");
+    editorCell.setCellId("refCell_quickFixArgument");
   }
 
   private static void setupLabel_refCell_quickFixArgument_1216390449476(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -103,7 +103,7 @@ public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1216390449478(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
     }
 

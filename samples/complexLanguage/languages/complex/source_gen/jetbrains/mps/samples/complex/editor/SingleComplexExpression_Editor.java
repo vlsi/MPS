@@ -112,11 +112,11 @@ public class SingleComplexExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11964207292921196420729292(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1196420729292");
+    editorCell.setCellId("Collection_1196420729292");
   }
 
   private static void setupBasic_conceptProperty_alias1196420740605(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -129,7 +129,7 @@ public class SingleComplexExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11964207493091196420749309(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196420749309");
+    editorCell.setCellId("Constant_1196420749309");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -145,7 +145,7 @@ public class SingleComplexExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11964207620001196420762000(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196420762000");
+    editorCell.setCellId("Constant_1196420762000");
     {
       Style inlineStyle = new Style(editorCell) {
         {

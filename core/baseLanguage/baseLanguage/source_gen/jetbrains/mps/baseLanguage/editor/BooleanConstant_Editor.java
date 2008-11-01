@@ -51,7 +51,7 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_property_value1088424970609(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_value");
+    editorCell.setCellId("property_value");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

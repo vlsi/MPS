@@ -64,11 +64,11 @@ public class StringLiteralRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11744828635531174482863553(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174482863553");
+    editorCell.setCellId("Collection_1174482863553");
   }
 
   private static void setupBasic_property_text1174482866914(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_text");
+    editorCell.setCellId("property_text");
     {
       Style inlineStyle = new Style(editorCell) {
         {

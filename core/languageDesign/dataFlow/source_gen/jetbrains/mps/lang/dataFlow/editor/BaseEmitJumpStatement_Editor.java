@@ -91,11 +91,11 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12064452097701206445209770(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206445209770");
+    editorCell.setCellId("Collection_1206445209770");
   }
 
   private static void setupBasic_conceptProperty_alias1206445210819(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
   }
 

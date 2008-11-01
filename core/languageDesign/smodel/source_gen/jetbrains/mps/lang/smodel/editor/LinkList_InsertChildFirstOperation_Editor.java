@@ -93,23 +93,23 @@ public class LinkList_InsertChildFirstOperation_Editor extends DefaultNodeEditor
 
 
   private static void setupBasic_Collection_11400296290821140029629082(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1140029629082");
+    editorCell.setCellId("Collection_1140029629082");
   }
 
   private static void setupBasic_refNode_childNode1140029629084(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12064878263491206487826349(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487826349");
+    editorCell.setCellId("Constant_1206487826349");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206487836132(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAlias_Comp");
+    editorCell.setCellId("component_ReplaceableAlias_Comp");
   }
 
   private static void setupBasic_Constant_12064878361331206487836133(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487836133");
+    editorCell.setCellId("Constant_1206487836133");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 

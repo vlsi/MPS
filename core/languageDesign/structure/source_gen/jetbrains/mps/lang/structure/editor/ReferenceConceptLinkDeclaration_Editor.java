@@ -115,11 +115,11 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11375326897441137532689744(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1137532689744");
+    editorCell.setCellId("Collection_1137532689744");
   }
 
   private static void setupBasic_Constant_11375326897451137532689745(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1137532689745");
+    editorCell.setCellId("Constant_1137532689745");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -133,7 +133,7 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1137532689746(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -146,7 +146,7 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11375326897471137532689747(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1137532689747");
+    editorCell.setCellId("Constant_1137532689747");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -160,7 +160,7 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_targetType1137532689748(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_targetType");
+    editorCell.setCellId("refCell_targetType");
   }
 
   private static void setupLabel_Constant_1137532689745_1137532689745(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -220,7 +220,7 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1137532689750(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1137532689750(EditorCell_Label editorCell, SNode node, EditorContext context) {

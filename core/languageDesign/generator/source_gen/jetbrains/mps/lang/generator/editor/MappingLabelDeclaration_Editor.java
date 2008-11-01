@@ -153,16 +153,16 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12009113598771200911359877(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1200911359877");
+    editorCell.setCellId("Collection_1200911359877");
   }
 
   private static void setupBasic_Constant_12009113606601200911360660(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200911360660");
+    editorCell.setCellId("Constant_1200911360660");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_name1200911362725(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -175,19 +175,19 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_sourceConcept1200911381903(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_sourceConcept");
+    editorCell.setCellId("refCell_sourceConcept");
   }
 
   private static void setupBasic_Constant_12009130211321200913021132(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200913021132");
+    editorCell.setCellId("Constant_1200913021132");
   }
 
   private static void setupBasic_Constant_12009130240091200913024009(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200913024009");
+    editorCell.setCellId("Constant_1200913024009");
   }
 
   private static void setupBasic_refCell_targetConcept1200913026652(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_targetConcept");
+    editorCell.setCellId("refCell_targetConcept");
   }
 
   private static void setupLabel_Constant_1200911360660_1200911360660(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -253,7 +253,7 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1200911383718(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {
@@ -314,7 +314,7 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1200913029718(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

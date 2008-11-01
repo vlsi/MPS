@@ -151,11 +151,11 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11720699020381172069902038(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1172069902038");
+    editorCell.setCellId("Collection_1172069902038");
   }
 
   private static void setupBasic_Constant_11720699038681172069903868(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172069903868");
+    editorCell.setCellId("Constant_1172069903868");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -168,7 +168,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11720699117921172069911792(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172069911792");
+    editorCell.setCellId("Constant_1172069911792");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -181,7 +181,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11720699154661172069915466(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172069915466");
+    editorCell.setCellId("Constant_1172069915466");
   }
 
   private static void setupBasic_refNode_statement1172070041823(EditorCell editorCell, SNode node, EditorContext context) {

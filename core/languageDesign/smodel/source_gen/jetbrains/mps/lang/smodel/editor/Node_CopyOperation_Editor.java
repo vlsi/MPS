@@ -28,7 +28,7 @@ public class Node_CopyOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_11441463558791144146355879(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144146355879");
+    editorCell.setCellId("Constant_1144146355879");
     {
       Style inlineStyle = new Style(editorCell) {
         {

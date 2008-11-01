@@ -481,11 +481,11 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10831724760281083172476028(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1083172476028");
+    editorCell.setCellId("Collection_1083172476028");
   }
 
   private static void setupBasic_Collection_10831724760291083172476029(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1083172476029");
+    editorCell.setCellId("Collection_1083172476029");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -498,7 +498,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_10831724760301083172476030(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1083172476030");
+    editorCell.setCellId("Constant_1083172476030");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -511,11 +511,11 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1083172476031(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupBasic_Collection_11625812842141162581284214(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1162581284214");
+    editorCell.setCellId("Collection_1162581284214");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -528,7 +528,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11625813490891162581349089(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1162581349089");
+    editorCell.setCellId("Collection_1162581349089");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -541,7 +541,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11625813490901162581349090(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1162581349090");
+    editorCell.setCellId("Collection_1162581349090");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -554,7 +554,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11625813490911162581349091(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1162581349091");
+    editorCell.setCellId("Collection_1162581349091");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -567,7 +567,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11625813490921162581349092(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1162581349092");
+    editorCell.setCellId("Constant_1162581349092");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -580,11 +580,11 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_memberDataType1162581349093(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_memberDataType");
+    editorCell.setCellId("refCell_memberDataType");
   }
 
   private static void setupBasic_Collection_11625813490961162581349096(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1162581349096");
+    editorCell.setCellId("Collection_1162581349096");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -597,7 +597,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11625813490971162581349097(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1162581349097");
+    editorCell.setCellId("Constant_1162581349097");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -610,7 +610,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_member1162581824142(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_member");
+    editorCell.setCellId("refNodeList_member");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -623,7 +623,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11625818455041162581845504(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1162581845504");
+    editorCell.setCellId("Constant_1162581845504");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -636,7 +636,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11625818552881162581855288(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1162581855288");
+    editorCell.setCellId("Constant_1162581855288");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -649,7 +649,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11625823230231162582323023(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1162582323023");
+    editorCell.setCellId("Constant_1162582323023");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -662,7 +662,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11625823370731162582337073(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1162582337073");
+    editorCell.setCellId("Constant_1162582337073");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -675,7 +675,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11975912108991197591210899(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197591210899");
+    editorCell.setCellId("Collection_1197591210899");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -688,7 +688,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11975912109001197591210900(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197591210900");
+    editorCell.setCellId("Constant_1197591210900");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -701,7 +701,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11975912109011197591210901(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197591210901");
+    editorCell.setCellId("Constant_1197591210901");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -714,7 +714,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_memberIdentifierPolicy1197591280167(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_memberIdentifierPolicy");
+    editorCell.setCellId("property_memberIdentifierPolicy");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -728,7 +728,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11975935521411197593552141(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197593552141");
+    editorCell.setCellId("Constant_1197593552141");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -742,7 +742,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12120808891221212080889122(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212080889122");
+    editorCell.setCellId("Collection_1212080889122");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -755,7 +755,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12120808891231212080889123(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212080889123");
+    editorCell.setCellId("Constant_1212080889123");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -768,7 +768,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12120808891241212080889124(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212080889124");
+    editorCell.setCellId("Constant_1212080889124");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -781,15 +781,15 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_defaultMember1212080889125(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_defaultMember");
+    editorCell.setCellId("refCell_defaultMember");
   }
 
   private static void setupBasic_property_hasNoDefaultMember1212080919060(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_hasNoDefaultMember");
+    editorCell.setCellId("property_hasNoDefaultMember");
   }
 
   private static void setupBasic_Collection_12120875548961212087554896(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212087554896");
+    editorCell.setCellId("Collection_1212087554896");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -802,7 +802,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12120875548971212087554897(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212087554897");
+    editorCell.setCellId("Constant_1212087554897");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -815,7 +815,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12120875548981212087554898(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212087554898");
+    editorCell.setCellId("Constant_1212087554898");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -828,7 +828,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_noValueText1212087554899(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_noValueText");
+    editorCell.setCellId("property_noValueText");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -841,11 +841,11 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_12193521231611219352123161(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1219352123161");
+    editorCell.setCellId("Indent_1219352123161");
   }
 
   private static void setupBasic_Constant_12193522796601219352279660(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219352279660");
+    editorCell.setCellId("Constant_1219352279660");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -980,7 +980,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1162581349095(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1162581349095(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -1032,7 +1032,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_externalValue1212080889127(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_externalValue");
+      editorCell.setCellId("property_externalValue");
       {
         Style inlineStyle = new Style(editorCell) {
           {

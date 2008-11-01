@@ -171,11 +171,11 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12070555877631207055587763(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1207055587763");
+    editorCell.setCellId("Collection_1207055587763");
   }
 
   private static void setupBasic_Constant_12070555877641207055587764(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1207055587764");
+    editorCell.setCellId("Constant_1207055587764");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -183,22 +183,22 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12070555877661207055587766(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1207055587766");
+    editorCell.setCellId("Constant_1207055587766");
   }
 
   private static void setupBasic_refNode_nodeToReport1207055587767(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12070555877681207055587768(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1207055587768");
+    editorCell.setCellId("Constant_1207055587768");
   }
 
   private static void setupBasic_Collection_12108399542691210839954269(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1210839954269");
+    editorCell.setCellId("Collection_1210839954269");
   }
 
   private static void setupBasic_Constant_12108399542701210839954270(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210839954270");
+    editorCell.setCellId("Constant_1210839954270");
   }
 
   private static void setupBasic_refNode_helginsIntention1210839954271(EditorCell editorCell, SNode node, EditorContext context) {

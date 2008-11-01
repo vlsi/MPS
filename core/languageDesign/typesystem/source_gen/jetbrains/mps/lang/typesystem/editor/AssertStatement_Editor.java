@@ -221,11 +221,11 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11755180828891175518082889(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175518082889");
+    editorCell.setCellId("Collection_1175518082889");
   }
 
   private static void setupBasic_Constant_11755180846101175518084610(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175518084610");
+    editorCell.setCellId("Constant_1175518084610");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -233,7 +233,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11755180986001175518098600(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175518098600");
+    editorCell.setCellId("Constant_1175518098600");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -241,18 +241,18 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11755181159311175518115931(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175518115931");
+    editorCell.setCellId("Constant_1175518115931");
   }
 
   private static void setupBasic_refNode_nodeToReport1175518122026(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11755181250901175518125090(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175518125090");
+    editorCell.setCellId("Constant_1175518125090");
   }
 
   private static void setupBasic_Constant_12154341425951215434142595(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215434142595");
+    editorCell.setCellId("Constant_1215434142595");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -267,11 +267,11 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12239952511991223995251199(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1223995251199");
+    editorCell.setCellId("Collection_1223995251199");
   }
 
   private static void setupBasic_Constant_12239952512001223995251200(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1223995251200");
+    editorCell.setCellId("Constant_1223995251200");
   }
 
   private static void setupBasic_refNode_helginsIntention1223995251201(EditorCell editorCell, SNode node, EditorContext context) {

@@ -39,11 +39,11 @@ public class ThisNodeExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12251946920281225194692028(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1225194692028");
+    editorCell.setCellId("Collection_1225194692028");
   }
 
   private static void setupBasic_Constant_12251946920291225194692029(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225194692029");
+    editorCell.setCellId("Constant_1225194692029");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

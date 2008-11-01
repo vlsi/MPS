@@ -66,11 +66,11 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
 
 
   private static void setupBasic_Collection_11745588332601174558833260(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174558833260");
+    editorCell.setCellId("Collection_1174558833260");
   }
 
   private static void setupBasic_refCell_declaration1174558836402(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_declaration");
+    editorCell.setCellId("refCell_declaration");
   }
 
   private static void setupLabel_refCell_declaration_1174558836402(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -121,7 +121,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
 
 
     private static void setupBasic_property_name1174558837827(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

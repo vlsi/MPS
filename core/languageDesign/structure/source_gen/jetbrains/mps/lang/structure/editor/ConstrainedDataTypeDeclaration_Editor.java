@@ -141,11 +141,11 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10829793887971082979388797(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1082979388797");
+    editorCell.setCellId("Collection_1082979388797");
   }
 
   private static void setupBasic_Collection_10829793888141082979388814(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1082979388814");
+    editorCell.setCellId("Collection_1082979388814");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -158,7 +158,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_10829793888151082979388815(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1082979388815");
+    editorCell.setCellId("Constant_1082979388815");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -172,11 +172,11 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1082979388816(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupBasic_Constant_10830662317191083066231719(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1083066231719");
+    editorCell.setCellId("Constant_1083066231719");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -189,7 +189,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_10830662317201083066231720(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1083066231720");
+    editorCell.setCellId("Collection_1083066231720");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -202,11 +202,11 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_10830662317211083066231721(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1083066231721");
+    editorCell.setCellId("Constant_1083066231721");
   }
 
   private static void setupBasic_property_constraint1083066231722(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_constraint");
+    editorCell.setCellId("property_constraint");
     {
       Style inlineStyle = new Style(editorCell) {
         {

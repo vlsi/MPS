@@ -74,11 +74,11 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12048351621561204835162156(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204835162156");
+    editorCell.setCellId("Collection_1204835162156");
   }
 
   private static void setupBasic_Constant_12048351621571204835162157(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204835162157");
+    editorCell.setCellId("Constant_1204835162157");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -220,35 +220,35 @@ public class Replace_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12124856495271212485649527(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212485649527");
+    editorCell.setCellId("Collection_1212485649527");
   }
 
   private static void setupBasic_Collection_12124856595581212485659558(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212485659558");
+    editorCell.setCellId("Collection_1212485659558");
   }
 
   private static void setupBasic_refNode_title1212485659560(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12124856595611212485659561(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212485659561");
+    editorCell.setCellId("Constant_1212485659561");
     MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_component_ConfigurationReferencesEditorComponent1212485659563(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ConfigurationReferencesEditorComponent");
+    editorCell.setCellId("component_ConfigurationReferencesEditorComponent");
   }
 
   private static void setupBasic_Collection_12124856730171212485673017(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212485673017");
+    editorCell.setCellId("Collection_1212485673017");
   }
 
   private static void setupBasic_component_ConfigurationReferencesEditorComponent1212485673018(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ConfigurationReferencesEditorComponent");
+    editorCell.setCellId("component_ConfigurationReferencesEditorComponent");
   }
 
   private static void setupBasic_Collection_12124857163301212485716330(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212485716330");
+    editorCell.setCellId("Collection_1212485716330");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -261,11 +261,11 @@ public class Replace_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_12124857191561212485719156(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1212485719156");
+    editorCell.setCellId("Indent_1212485719156");
   }
 
   private static void setupBasic_refNodeList_replacingPair1212485728553(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_replacingPair");
+    editorCell.setCellId("refNodeList_replacingPair");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -278,7 +278,7 @@ public class Replace_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conceptProperty_alias1212489058866(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     MPSLayoutStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
   }
 
@@ -356,7 +356,7 @@ public class Replace_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_12124888690661212488869066(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212488869066");
+      editorCell.setCellId("Constant_1212488869066");
       MPSLayoutStyles_StyleSheet.getHint(editorCell).apply(editorCell);
     }
 

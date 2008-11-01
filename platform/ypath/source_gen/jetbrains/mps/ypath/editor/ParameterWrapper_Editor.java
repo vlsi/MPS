@@ -124,11 +124,11 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11974658983671197465898367(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197465898367");
+    editorCell.setCellId("Collection_1197465898367");
   }
 
   private static void setupBasic_Collection_11974659426041197465942604(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197465942604");
+    editorCell.setCellId("Collection_1197465942604");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -141,11 +141,11 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11974659551781197465955178(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197465955178");
+    editorCell.setCellId("Constant_1197465955178");
   }
 
   private static void setupBasic_ModelAccess_11974659642501197465964250(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ModelAccess_1197465964250");
+    editorCell.setCellId("ModelAccess_1197465964250");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -158,7 +158,7 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1197479518472(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {

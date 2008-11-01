@@ -24,7 +24,7 @@ public class ElementPart_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_12252396465661225239646566(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1225239646566");
+    editorCell.setCellId("Error_1225239646566");
   }
 
   private static void setupLabel_Error_1225239646566_1225239646566(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -115,11 +115,11 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
 
 
   private static void setupBasic_Collection_11375326629731137532662973(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1137532662973");
+    editorCell.setCellId("Collection_1137532662973");
   }
 
   private static void setupBasic_Constant_11375326629741137532662974(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1137532662974");
+    editorCell.setCellId("Constant_1137532662974");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -133,7 +133,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_property_name1137532662975(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -146,7 +146,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_Constant_11375326629761137532662976(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1137532662976");
+    editorCell.setCellId("Constant_1137532662976");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -160,7 +160,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_refCell_targetType1137532662977(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_targetType");
+    editorCell.setCellId("refCell_targetType");
   }
 
   private static void setupLabel_Constant_1137532662974_1137532662974(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -220,7 +220,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
 
 
     private static void setupBasic_property_name1137545446126(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1137545446126(EditorCell_Label editorCell, SNode node, EditorContext context) {

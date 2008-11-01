@@ -72,14 +72,14 @@ public class ArrayType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11132083669801113208366980(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1113208366980");
+    editorCell.setCellId("Collection_1113208366980");
   }
 
   private static void setupBasic_refNode_componentType1113208455587(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11132084555881113208455588(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1113208455588");
+    editorCell.setCellId("Constant_1113208455588");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

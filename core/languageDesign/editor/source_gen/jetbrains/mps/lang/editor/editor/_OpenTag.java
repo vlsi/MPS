@@ -60,7 +60,7 @@ public class _OpenTag extends AbstractCellProvider {
 
 
   private static void setupBasic_ModelAccess_11767168785961176716878596(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ModelAccess_1176716878596");
+    editorCell.setCellId("ModelAccess_1176716878596");
     {
       Style inlineStyle = new Style(editorCell) {
         {

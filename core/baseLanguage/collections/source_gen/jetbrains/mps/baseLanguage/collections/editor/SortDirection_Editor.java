@@ -50,16 +50,16 @@ public class SortDirection_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Alternation_11782863947741178286394774(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Alternation_1178286394774");
+    editorCell.setCellId("Alternation_1178286394774");
   }
 
   private static void setupBasic_Constant_11782864283571178286428357(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178286428357");
+    editorCell.setCellId("Constant_1178286428357");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11782864356071178286435607(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178286435607");
+    editorCell.setCellId("Constant_1178286435607");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 

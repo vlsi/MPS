@@ -158,11 +158,11 @@ public class TestMethod_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11719316908961171931690896(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1171931690896");
+    editorCell.setCellId("Collection_1171931690896");
   }
 
   private static void setupBasic_Collection_11719316908971171931690897(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1171931690897");
+    editorCell.setCellId("Collection_1171931690897");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -175,12 +175,12 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11719316908981171931690898(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171931690898");
+    editorCell.setCellId("Constant_1171931690898");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_methodName1171931690899(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_methodName");
+    editorCell.setCellId("property_methodName");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -193,12 +193,12 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11719316909001171931690900(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171931690900");
+    editorCell.setCellId("Constant_1171931690900");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11719316909011171931690901(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1171931690901");
+    editorCell.setCellId("Collection_1171931690901");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -214,12 +214,12 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11719316909041171931690904(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171931690904");
+    editorCell.setCellId("Constant_1171931690904");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11719316909051171931690905(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171931690905");
+    editorCell.setCellId("Constant_1171931690905");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -232,7 +232,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_12246750167491224675016749(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1224675016749");
+    editorCell.setCellId("Indent_1224675016749");
   }
 
   private static void setupLabel_Constant_1171931690898_1171931690898(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -24,7 +24,7 @@ public class ConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_11374691345241137469134524(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1137469134524");
+    editorCell.setCellId("Error_1137469134524");
   }
 
   private static void setupLabel_Error_1137469134524_1137469134524(EditorCell_Label editorCell, SNode node, EditorContext context) {

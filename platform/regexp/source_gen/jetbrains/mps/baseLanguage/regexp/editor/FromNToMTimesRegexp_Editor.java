@@ -152,14 +152,14 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11749046419941174904641994(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174904641994");
+    editorCell.setCellId("Collection_1174904641994");
   }
 
   private static void setupBasic_refNode_regexp1174904641995(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11749046419961174904641996(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174904641996");
+    editorCell.setCellId("Constant_1174904641996");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -173,15 +173,15 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_n1174904641997(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_n");
+    editorCell.setCellId("property_n");
   }
 
   private static void setupBasic_Constant_11749046419981174904641998(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174904641998");
+    editorCell.setCellId("Constant_1174904641998");
   }
 
   private static void setupBasic_Constant_11749046419991174904641999(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174904641999");
+    editorCell.setCellId("Constant_1174904641999");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -195,7 +195,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_m1174904650360(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_m");
+    editorCell.setCellId("property_m");
   }
 
   private static void setupLabel_refNode_regexp_1174904641995(EditorCell_Label editorCell, SNode node, EditorContext context) {

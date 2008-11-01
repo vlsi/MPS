@@ -28,7 +28,7 @@ public class ToolInstanceExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_12044714775991204471477599(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204471477599");
+    editorCell.setCellId("Constant_1204471477599");
     {
       Style inlineStyle = new Style(editorCell) {
         {

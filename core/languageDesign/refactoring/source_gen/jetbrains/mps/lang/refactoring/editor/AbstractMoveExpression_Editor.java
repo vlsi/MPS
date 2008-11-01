@@ -132,11 +132,11 @@ public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11996201023461199620102346(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1199620102346");
+    editorCell.setCellId("Collection_1199620102346");
   }
 
   private static void setupBasic_conceptProperty_alias1199620102347(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -144,7 +144,7 @@ public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11996201023501199620102350(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199620102350");
+    editorCell.setCellId("Constant_1199620102350");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 

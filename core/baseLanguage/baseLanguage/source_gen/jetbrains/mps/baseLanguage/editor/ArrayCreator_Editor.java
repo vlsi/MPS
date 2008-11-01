@@ -84,14 +84,14 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11849510386301184951038630(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184951038630");
+    editorCell.setCellId("Collection_1184951038630");
   }
 
   private static void setupBasic_refNode_componentType1184951056679(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_refNodeList_dimensionExpression1209401468678(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_dimensionExpression");
+    editorCell.setCellId("refNodeList_dimensionExpression");
   }
 
   private static void setupLabel_refNode_componentType_1184951056679(EditorCell_Label editorCell, SNode node, EditorContext context) {

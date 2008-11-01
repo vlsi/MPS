@@ -79,18 +79,18 @@ public class ParenthisizedExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11340361332771134036133277(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1134036133277");
+    editorCell.setCellId("Collection_1134036133277");
   }
 
   private static void setupBasic_Constant_11340361374121134036137412(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1134036137412");
+    editorCell.setCellId("Constant_1134036137412");
   }
 
   private static void setupBasic_refNode_expression1134036140924(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11340361447001134036144700(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1134036144700");
+    editorCell.setCellId("Constant_1134036144700");
   }
 
   private static void setupLabel_Constant_1134036137412_1134036137412(EditorCell_Label editorCell, SNode node, EditorContext context) {

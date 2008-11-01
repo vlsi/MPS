@@ -91,11 +91,11 @@ public class BaseEmitVariableStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12064446886311206444688631(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206444688631");
+    editorCell.setCellId("Collection_1206444688631");
   }
 
   private static void setupBasic_conceptProperty_alias1206444690133(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
   }
 

@@ -27,7 +27,7 @@ public class Concept_GetHierarchy_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_11804596277811180459627781(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180459627781");
+    editorCell.setCellId("Constant_1180459627781");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -63,11 +63,11 @@ public class SideTransform_SimpleString_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11964339487291196433948729(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1196433948729");
+    editorCell.setCellId("Collection_1196433948729");
   }
 
   private static void setupBasic_property_text1196433955262(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_text");
+    editorCell.setCellId("property_text");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -105,20 +105,20 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12150078421181215007842118(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1215007842118");
+    editorCell.setCellId("Collection_1215007842118");
   }
 
   private static void setupBasic_conceptProperty_alias1215007844401(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12150078460911215007846091(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215007846091");
+    editorCell.setCellId("Constant_1215007846091");
   }
 
   private static void setupBasic_property_value1215007848233(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_value");
+    editorCell.setCellId("property_value");
   }
 
   private static void setupLabel_conceptProperty_alias_1215007844401(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -45,15 +45,15 @@ public class UpdateModelByDefaultOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11973826180671197382618067(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197382618067");
+    editorCell.setCellId("Collection_1197382618067");
   }
 
   private static void setupBasic_Constant_11973826290531197382629053(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197382629053");
+    editorCell.setCellId("Constant_1197382629053");
   }
 
   private static void setupBasic_Constant_11973826375871197382637587(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197382637587");
+    editorCell.setCellId("Constant_1197382637587");
   }
 
   private static void setupLabel_Constant_1197382629053_1197382629053(EditorCell_Label editorCell, SNode node, EditorContext context) {

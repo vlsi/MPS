@@ -158,24 +158,24 @@ public class Echo_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12053314676711205331467671(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1205331467671");
+    editorCell.setCellId("Collection_1205331467671");
   }
 
   private static void setupBasic_Constant_12053315468031205331546803(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205331546803");
+    editorCell.setCellId("Constant_1205331546803");
     MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_component_ConfigurationReferencesEditorComponent1205331920317(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ConfigurationReferencesEditorComponent");
+    editorCell.setCellId("component_ConfigurationReferencesEditorComponent");
   }
 
   private static void setupBasic_component_ConfigurationReferencesEditorComponent1205331923100(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ConfigurationReferencesEditorComponent");
+    editorCell.setCellId("component_ConfigurationReferencesEditorComponent");
   }
 
   private static void setupBasic_conceptProperty_alias1205332796526(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     MPSLayoutStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
   }
 

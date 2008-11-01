@@ -85,15 +85,15 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11749091374571174909137457(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174909137457");
+    editorCell.setCellId("Collection_1174909137457");
   }
 
   private static void setupBasic_refCell_match1174909139725(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_match");
+    editorCell.setCellId("refCell_match");
   }
 
   private static void setupBasic_Constant_11749095535411174909553541(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174909553541");
+    editorCell.setCellId("Constant_1174909553541");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -107,7 +107,7 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11749095569651174909556965(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174909556965");
+    editorCell.setCellId("Constant_1174909556965");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -174,7 +174,7 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1174909141556(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

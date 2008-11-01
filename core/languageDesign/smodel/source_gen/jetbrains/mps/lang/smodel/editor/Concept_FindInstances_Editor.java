@@ -93,15 +93,15 @@ public class Concept_FindInstances_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12211643654101221164365410(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221164365410");
+    editorCell.setCellId("Collection_1221164365410");
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1221164365411(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAlias_Comp");
+    editorCell.setCellId("component_ReplaceableAlias_Comp");
   }
 
   private static void setupBasic_Constant_12211643654121221164365412(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221164365412");
+    editorCell.setCellId("Constant_1221164365412");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
@@ -109,7 +109,7 @@ public class Concept_FindInstances_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12211643654141221164365414(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221164365414");
+    editorCell.setCellId("Constant_1221164365414");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 

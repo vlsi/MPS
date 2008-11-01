@@ -122,11 +122,11 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
 
 
   private static void setupBasic_Collection_11057271528591105727152859(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1105727152859");
+    editorCell.setCellId("Collection_1105727152859");
   }
 
   private static void setupBasic_Constant_11057271528601105727152860(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1105727152860");
+    editorCell.setCellId("Constant_1105727152860");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -140,7 +140,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_property_name1105727152861(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -153,7 +153,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_Constant_12185753958471218575395847(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218575395847");
+    editorCell.setCellId("Constant_1218575395847");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -167,11 +167,11 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_property_inheritable1218575395850(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_inheritable");
+    editorCell.setCellId("property_inheritable");
   }
 
   private static void setupBasic_Constant_12185753958511218575395851(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218575395851");
+    editorCell.setCellId("Constant_1218575395851");
     {
       Style inlineStyle = new Style(editorCell) {
         {

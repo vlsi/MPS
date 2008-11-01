@@ -63,11 +63,11 @@ public class Substitute_SimpleString_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11964348441381196434844138(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1196434844138");
+    editorCell.setCellId("Collection_1196434844138");
   }
 
   private static void setupBasic_property_text1196434847250(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_text");
+    editorCell.setCellId("property_text");
     {
       Style inlineStyle = new Style(editorCell) {
         {

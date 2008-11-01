@@ -27,7 +27,7 @@ public class LinkList_GetCountOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_11454687936901145468793690(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1145468793690");
+    editorCell.setCellId("Constant_1145468793690");
     {
       Style inlineStyle = new Style(editorCell) {
         {

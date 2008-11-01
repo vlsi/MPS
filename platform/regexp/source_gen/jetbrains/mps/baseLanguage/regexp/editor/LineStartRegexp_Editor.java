@@ -39,11 +39,11 @@ public class LineStartRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11751612881021175161288102(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175161288102");
+    editorCell.setCellId("Collection_1175161288102");
   }
 
   private static void setupBasic_Constant_11751612889641175161288964(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175161288964");
+    editorCell.setCellId("Constant_1175161288964");
     {
       Style inlineStyle = new Style(editorCell) {
         {

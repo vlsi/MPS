@@ -16,12 +16,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LogStatement_Editor extends DefaultNodeEditor {
 
@@ -221,28 +219,16 @@ public class LogStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11672455836141167245583614(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1167245583614");
+    editorCell.setCellId("Collection_1167245583614");
   }
 
   private static void setupBasic_property_severity1167245583615(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_severity");
+    editorCell.setCellId("property_severity");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return LogStatement_Editor.calculateFontStyle2351_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return LogStatement_Editor.calculateColor2351_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
 
       };
@@ -254,7 +240,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11672455836171167245583617(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1167245583617");
+    editorCell.setCellId("Collection_1167245583617");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -267,7 +253,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11672455836181167245583618(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167245583618");
+    editorCell.setCellId("Constant_1167245583618");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -283,34 +269,28 @@ public class LogStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11672455836261167245583626(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167245583626");
+    editorCell.setCellId("Constant_1167245583626");
   }
 
   private static void setupBasic_Collection_11690347568881169034756888(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169034756888");
+    editorCell.setCellId("Collection_1169034756888");
   }
 
   private static void setupBasic_Constant_11690347682491169034768249(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169034768249");
+    editorCell.setCellId("Constant_1169034768249");
   }
 
   private static void setupBasic_property_hasException1169034779126(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_hasException");
+    editorCell.setCellId("property_hasException");
   }
 
   private static void setupBasic_Constant_11690347854091169034785409(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169034785409");
+    editorCell.setCellId("Constant_1169034785409");
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return LogStatement_Editor.calculateColor2351_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
         }
 
       };
@@ -344,24 +324,6 @@ public class LogStatement_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition2351_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "hasException");
-  }
-
-  private static Integer calculateFontStyle2351_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
-  }
-
-  private static Color calculateColor2351_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.lightGray;
-    return result;
-  }
-
-  private static Color calculateColor2351_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
   }
 
 }

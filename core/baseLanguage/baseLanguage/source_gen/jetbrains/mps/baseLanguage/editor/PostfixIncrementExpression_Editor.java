@@ -73,14 +73,14 @@ public class PostfixIncrementExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12149189254981214918925498(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1214918925498");
+    editorCell.setCellId("Collection_1214918925498");
   }
 
   private static void setupBasic_refNode_expression1214918928046(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12149189297041214918929704(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1214918929704");
+    editorCell.setCellId("Constant_1214918929704");
     {
       Style inlineStyle = new Style(editorCell) {
         {

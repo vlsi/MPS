@@ -82,14 +82,14 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11744787365361174478736536(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174478736536");
+    editorCell.setCellId("Collection_1174478736536");
   }
 
   private static void setupBasic_refNode_type1174478741007(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11744787486511174478748651(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174478748651");
+    editorCell.setCellId("Constant_1174478748651");
     StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -103,7 +103,7 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12190641065791219064106579(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219064106579");
+    editorCell.setCellId("Constant_1219064106579");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 

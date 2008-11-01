@@ -28,7 +28,7 @@ public class AbandonInput_RuleConsequence_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_12027810106721202781010672(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202781010672");
+    editorCell.setCellId("Constant_1202781010672");
     {
       Style inlineStyle = new Style(editorCell) {
         {

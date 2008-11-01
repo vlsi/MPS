@@ -97,11 +97,11 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11398801109031139880110903(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1139880110903");
+    editorCell.setCellId("Collection_1139880110903");
   }
 
   private static void setupBasic_refCell_concept1139880110905(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_concept");
+    editorCell.setCellId("refCell_concept");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -114,16 +114,16 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206487847415(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAlias_Comp");
+    editorCell.setCellId("component_ReplaceableAlias_Comp");
   }
 
   private static void setupBasic_Constant_12064878474161206487847416(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487847416");
+    editorCell.setCellId("Constant_1206487847416");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12064878615261206487861526(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487861526");
+    editorCell.setCellId("Constant_1206487861526");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
@@ -181,7 +181,7 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1139880110907(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

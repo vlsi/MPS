@@ -311,11 +311,11 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
 
   private static void setupBasic_Collection_11767508484961176750848496(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176750848496");
+    editorCell.setCellId("Collection_1176750848496");
   }
 
   private static void setupBasic_Constant_11767508500911176750850091(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176750850091");
+    editorCell.setCellId("Constant_1176750850091");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -328,11 +328,11 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   }
 
   private static void setupBasic_Collection_11767953960381176795396038(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176795396038");
+    editorCell.setCellId("Collection_1176795396038");
   }
 
   private static void setupBasic_Collection_11767953960391176795396039(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176795396039");
+    editorCell.setCellId("Collection_1176795396039");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -348,23 +348,23 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   }
 
   private static void setupBasic_property_prefix1176795396041(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_prefix");
+    editorCell.setCellId("property_prefix");
   }
 
   private static void setupBasic_Constant_11767953960421176795396042(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176795396042");
+    editorCell.setCellId("Constant_1176795396042");
   }
 
   private static void setupBasic_refNodeList_parameter1176795396043(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_parameter");
+    editorCell.setCellId("refNodeList_parameter");
   }
 
   private static void setupBasic_Constant_11767953960441176795396044(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176795396044");
+    editorCell.setCellId("Constant_1176795396044");
   }
 
   private static void setupBasic_Collection_11767953960461176795396046(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176795396046");
+    editorCell.setCellId("Collection_1176795396046");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -377,15 +377,15 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   }
 
   private static void setupBasic_Constant_11767953960471176795396047(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176795396047");
+    editorCell.setCellId("Constant_1176795396047");
   }
 
   private static void setupBasic_refNodeList_additionalImport1176795396048(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_additionalImport");
+    editorCell.setCellId("refNodeList_additionalImport");
   }
 
   private static void setupBasic_Constant_11767954030651176795403065(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176795403065");
+    editorCell.setCellId("Constant_1176795403065");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -398,7 +398,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   }
 
   private static void setupBasic_Collection_11768003267091176800326709(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176800326709");
+    editorCell.setCellId("Collection_1176800326709");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -411,15 +411,15 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   }
 
   private static void setupBasic_Constant_11768003275241176800327524(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176800327524");
+    editorCell.setCellId("Constant_1176800327524");
   }
 
   private static void setupBasic_property_notSetString1176800335057(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_notSetString");
+    editorCell.setCellId("property_notSetString");
   }
 
   private static void setupBasic_Collection_11768006001781176800600178(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176800600178");
+    editorCell.setCellId("Collection_1176800600178");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -432,11 +432,11 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   }
 
   private static void setupBasic_Constant_11768006010861176800601086(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176800601086");
+    editorCell.setCellId("Constant_1176800601086");
   }
 
   private static void setupBasic_refCell_queryIdProperty1176800612979(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_queryIdProperty");
+    editorCell.setCellId("refCell_queryIdProperty");
   }
 
   private static void setupLabel_Constant_1176750850091_1176750850091(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -523,7 +523,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
 
 
     private static void setupBasic_property_name1176800616560(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1176800616560(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -231,14 +231,14 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11936630978131193663097813(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1193663097813");
+    editorCell.setCellId("Collection_1193663097813");
   }
 
   private static void setupBasic_refNode_leftExpression1193663097814(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_conceptProperty_alias1193663097815(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -255,15 +255,15 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11936630978191193663097819(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1193663097819");
+    editorCell.setCellId("Constant_1193663097819");
   }
 
   private static void setupBasic_Collection_11936631104451193663110445(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1193663110445");
+    editorCell.setCellId("Collection_1193663110445");
   }
 
   private static void setupBasic_Collection_11936631187971193663118797(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1193663118797");
+    editorCell.setCellId("Collection_1193663118797");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -276,11 +276,11 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11936631231581193663123158(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1193663123158");
+    editorCell.setCellId("Constant_1193663123158");
   }
 
   private static void setupBasic_Constant_11936631398481193663139848(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1193663139848");
+    editorCell.setCellId("Constant_1193663139848");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -293,15 +293,15 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11936631443961193663144396(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1193663144396");
+    editorCell.setCellId("Constant_1193663144396");
   }
 
   private static void setupBasic_property_direction1193663158383(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_direction");
+    editorCell.setCellId("property_direction");
   }
 
   private static void setupBasic_component_AbstractEquationInspector1216204717828(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_AbstractEquationInspector");
+    editorCell.setCellId("component_AbstractEquationInspector");
   }
 
   private static void setupLabel_refNode_leftExpression_1193663097814(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -84,11 +84,11 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10796237222281079623722228(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1079623722228");
+    editorCell.setCellId("Collection_1079623722228");
   }
 
   private static void setupBasic_Constant_10796237222291079623722229(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1079623722229");
+    editorCell.setCellId("Constant_1079623722229");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -105,7 +105,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_value1079623722230(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_value");
+    editorCell.setCellId("property_value");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -126,7 +126,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_10796237222311079623722231(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1079623722231");
+    editorCell.setCellId("Constant_1079623722231");
     {
       Style inlineStyle = new Style(editorCell) {
         {

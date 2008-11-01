@@ -51,7 +51,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_variable1205339501475(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_variable");
+    editorCell.setCellId("refCell_variable");
     CompositeString_RT.setCellActions(editorCell, node, context);
   }
 
@@ -103,7 +103,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1205339512744(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       MPSLayoutStyles_StyleSheet.getVariable(editorCell).apply(editorCell);
     }
 

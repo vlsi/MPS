@@ -65,11 +65,11 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11751676903301175167690330(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175167690330");
+    editorCell.setCellId("Collection_1175167690330");
   }
 
   private static void setupBasic_refCell_nodeKind1175256342830(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_nodeKind");
+    editorCell.setCellId("refCell_nodeKind");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -132,7 +132,7 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1175256342832(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1175256342832(EditorCell_Label editorCell, SNode node, EditorContext context) {

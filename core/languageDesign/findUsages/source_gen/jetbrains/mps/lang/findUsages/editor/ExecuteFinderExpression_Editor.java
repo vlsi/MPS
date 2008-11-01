@@ -163,19 +163,19 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12061981764351206198176435(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206198176435");
+    editorCell.setCellId("Collection_1206198176435");
   }
 
   private static void setupBasic_Constant_12061983010171206198301017(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206198301017");
+    editorCell.setCellId("Constant_1206198301017");
   }
 
   private static void setupBasic_refCell_finder1206198306910(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_finder");
+    editorCell.setCellId("refCell_finder");
   }
 
   private static void setupBasic_Constant_12061983316671206198331667(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206198331667");
+    editorCell.setCellId("Constant_1206198331667");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -192,7 +192,7 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12061983316691206198331669(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206198331669");
+    editorCell.setCellId("Constant_1206198331669");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -209,7 +209,7 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12061983316711206198331671(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206198331671");
+    editorCell.setCellId("Constant_1206198331671");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -288,7 +288,7 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1206198310664(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1206198310664(EditorCell_Label editorCell, SNode node, EditorContext context) {

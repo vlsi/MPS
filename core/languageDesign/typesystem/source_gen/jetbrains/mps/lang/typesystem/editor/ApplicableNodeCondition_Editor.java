@@ -24,7 +24,7 @@ public class ApplicableNodeCondition_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_11769054555081176905455508(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1176905455508");
+    editorCell.setCellId("Error_1176905455508");
   }
 
   private static void setupLabel_Error_1176905455508_1176905455508(EditorCell_Label editorCell, SNode node, EditorContext context) {

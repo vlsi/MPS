@@ -73,11 +73,11 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11455531727641145553172764(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1145553172764");
+    editorCell.setCellId("Collection_1145553172764");
   }
 
   private static void setupBasic_Constant_11455531727651145553172765(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1145553172765");
+    editorCell.setCellId("Constant_1145553172765");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

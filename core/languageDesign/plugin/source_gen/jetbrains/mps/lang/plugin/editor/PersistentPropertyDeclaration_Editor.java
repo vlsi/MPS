@@ -140,20 +140,20 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12101793179631210179317963(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1210179317963");
+    editorCell.setCellId("Collection_1210179317963");
   }
 
   private static void setupBasic_refNode_type1210179320738(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_component_VariableDeclaration_NameCellComponent1210179717793(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_VariableDeclaration_NameCellComponent");
+    editorCell.setCellId("component_VariableDeclaration_NameCellComponent");
     BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
     PersistenPropertyDeclaration_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Constant_12101797424231210179742423(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210179742423");
+    editorCell.setCellId("Constant_1210179742423");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
   }
 
@@ -161,11 +161,11 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12101797619591210179761959(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210179761959");
+    editorCell.setCellId("Constant_1210179761959");
   }
 
   private static void setupBasic_Collection_12101803650831210180365083(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1210180365083");
+    editorCell.setCellId("Collection_1210180365083");
     {
       Style inlineStyle = new Style(editorCell) {
         {

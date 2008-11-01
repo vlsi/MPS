@@ -121,11 +121,11 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11719781262171171978126217(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1171978126217");
+    editorCell.setCellId("Collection_1171978126217");
   }
 
   private static void setupBasic_Constant_11719781279071171978127907(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171978127907");
+    editorCell.setCellId("Constant_1171978127907");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -138,11 +138,11 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11719781430851171978143085(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171978143085");
+    editorCell.setCellId("Constant_1171978143085");
   }
 
   private static void setupBasic_Constant_11719781538841171978153884(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171978153884");
+    editorCell.setCellId("Constant_1171978153884");
     {
       Style inlineStyle = new Style(editorCell) {
         {

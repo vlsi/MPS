@@ -105,20 +105,20 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
 
 
   private static void setupBasic_Collection_12143201571951214320157195(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1214320157195");
+    editorCell.setCellId("Collection_1214320157195");
   }
 
   private static void setupBasic_conceptProperty_alias1214320157196(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12143201571971214320157197(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1214320157197");
+    editorCell.setCellId("Constant_1214320157197");
   }
 
   private static void setupBasic_property_tag1214320157198(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_tag");
+    editorCell.setCellId("property_tag");
   }
 
   private static void setupLabel_conceptProperty_alias_1214320157196(EditorCell_Label editorCell, SNode node, EditorContext context) {

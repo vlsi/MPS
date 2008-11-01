@@ -73,11 +73,11 @@ public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12047628345521204762834552(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204762834552");
+    editorCell.setCellId("Collection_1204762834552");
   }
 
   private static void setupBasic_Constant_12047628569291204762856929(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204762856929");
+    editorCell.setCellId("Constant_1204762856929");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -94,14 +94,14 @@ public class QuickFixArgument_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12163835261861216383526186(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1216383526186");
+    editorCell.setCellId("Collection_1216383526186");
   }
 
   private static void setupBasic_refNode_argumentType1216383526187(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_property_name1216383526188(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

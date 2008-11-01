@@ -106,11 +106,11 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10829855706131082985570613(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1082985570613");
+    editorCell.setCellId("Collection_1082985570613");
   }
 
   private static void setupBasic_property_name1082985570614(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -124,7 +124,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_10829870765461082987076546(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1082987076546");
+    editorCell.setCellId("Constant_1082987076546");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -137,7 +137,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_dataType1106002077142(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_dataType");
+    editorCell.setCellId("refCell_dataType");
   }
 
   private static void setupLabel_property_name_1082985570614(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -194,7 +194,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1106002077143(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1106002077143(EditorCell_Label editorCell, SNode node, EditorContext context) {

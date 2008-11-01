@@ -102,7 +102,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10812570731291081257073129(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1081257073129");
+    editorCell.setCellId("Collection_1081257073129");
   }
 
   private static void setupBasic_refNode_leftExpression1081257097746(EditorCell editorCell, SNode node, EditorContext context) {
@@ -118,7 +118,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_10812570977471081257097747(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081257097747");
+    editorCell.setCellId("Constant_1081257097747");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

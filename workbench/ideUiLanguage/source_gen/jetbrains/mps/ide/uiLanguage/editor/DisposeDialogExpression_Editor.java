@@ -26,7 +26,7 @@ public class DisposeDialogExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_12036066095551203606609555(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203606609555");
+    editorCell.setCellId("Constant_1203606609555");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 

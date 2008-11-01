@@ -106,15 +106,15 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11057272434261105727243426(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1105727243426");
+    editorCell.setCellId("Collection_1105727243426");
   }
 
   private static void setupBasic_refCell_integerConceptPropertyDeclaration1105727338100(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_integerConceptPropertyDeclaration");
+    editorCell.setCellId("refCell_integerConceptPropertyDeclaration");
   }
 
   private static void setupBasic_Constant_11057273717741105727371774(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1105727371774");
+    editorCell.setCellId("Constant_1105727371774");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -127,7 +127,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_value1105727402759(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_value");
+    editorCell.setCellId("property_value");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -193,7 +193,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1105727338101(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

@@ -93,23 +93,23 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11398704276631139870427663(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1139870427663");
+    editorCell.setCellId("Collection_1139870427663");
   }
 
   private static void setupBasic_refNode_childNode1139870441857(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12064877446391206487744639(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487744639");
+    editorCell.setCellId("Constant_1206487744639");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206487753718(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAlias_Comp");
+    editorCell.setCellId("component_ReplaceableAlias_Comp");
   }
 
   private static void setupBasic_Constant_12064877537191206487753719(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487753719");
+    editorCell.setCellId("Constant_1206487753719");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 

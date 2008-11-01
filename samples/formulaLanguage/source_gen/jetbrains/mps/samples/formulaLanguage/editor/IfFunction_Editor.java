@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 
 public class IfFunction_Editor extends DefaultNodeEditor {
 
@@ -160,28 +159,22 @@ public class IfFunction_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11117856472711111785647271(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1111785647271");
+    editorCell.setCellId("Collection_1111785647271");
   }
 
   private static void setupBasic_Constant_11117857158351111785715835(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1111785715835");
+    editorCell.setCellId("Constant_1111785715835");
   }
 
   private static void setupBasic_refNode_logicalTest1111785715836(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11117857158371111785715837(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1111785715837");
+    editorCell.setCellId("Constant_1111785715837");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return IfFunction_Editor.calculateBoolean8841_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -193,17 +186,11 @@ public class IfFunction_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11117857158391111785715839(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1111785715839");
+    editorCell.setCellId("Constant_1111785715839");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return IfFunction_Editor.calculateBoolean8841_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, false);
         }
 
       };
@@ -215,7 +202,7 @@ public class IfFunction_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11117857158411111785715841(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1111785715841");
+    editorCell.setCellId("Constant_1111785715841");
   }
 
   private static void setupLabel_Constant_1111785715835_1111785715835(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -237,18 +224,6 @@ public class IfFunction_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1111785715841_1111785715841(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean8841_0(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
-  }
-
-  public static Boolean calculateBoolean8841_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
 }

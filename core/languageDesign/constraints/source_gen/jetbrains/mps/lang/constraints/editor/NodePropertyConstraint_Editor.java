@@ -314,11 +314,11 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11474688753351147468875335(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1147468875335");
+    editorCell.setCellId("Collection_1147468875335");
   }
 
   private static void setupBasic_Collection_11490107755451149010775545(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1149010775545");
+    editorCell.setCellId("Collection_1149010775545");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -331,7 +331,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11490107755461149010775546(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1149010775546");
+    editorCell.setCellId("Constant_1149010775546");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -344,7 +344,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11490107755471149010775547(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1149010775547");
+    editorCell.setCellId("Constant_1149010775547");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -359,11 +359,11 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_applicableProperty1149010775552(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_applicableProperty");
+    editorCell.setCellId("refCell_applicableProperty");
   }
 
   private static void setupBasic_Constant_11490107755551149010775555(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1149010775555");
+    editorCell.setCellId("Constant_1149010775555");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -377,7 +377,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11490108845411149010884541(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1149010884541");
+    editorCell.setCellId("Collection_1149010884541");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -390,7 +390,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11490109055851149010905585(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1149010905585");
+    editorCell.setCellId("Collection_1149010905585");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -403,7 +403,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11490109055861149010905586(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1149010905586");
+    editorCell.setCellId("Collection_1149010905586");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -416,7 +416,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11490109055871149010905587(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1149010905587");
+    editorCell.setCellId("Constant_1149010905587");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -429,7 +429,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11490109055881149010905588(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1149010905588");
+    editorCell.setCellId("Constant_1149010905588");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -445,7 +445,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11490109055901149010905590(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1149010905590");
+    editorCell.setCellId("Collection_1149010905590");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -458,7 +458,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11490109055911149010905591(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1149010905591");
+    editorCell.setCellId("Constant_1149010905591");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -471,7 +471,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11490109055921149010905592(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1149010905592");
+    editorCell.setCellId("Constant_1149010905592");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -484,7 +484,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11490109055941149010905594(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1149010905594");
+    editorCell.setCellId("Collection_1149010905594");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -497,7 +497,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11490109055951149010905595(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1149010905595");
+    editorCell.setCellId("Constant_1149010905595");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -510,7 +510,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11490109055961149010905596(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1149010905596");
+    editorCell.setCellId("Constant_1149010905596");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -523,7 +523,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11490109980751149010998075(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1149010998075");
+    editorCell.setCellId("Constant_1149010998075");
   }
 
   private static void setupBasic_refNode_propertySetter1152963133859(EditorCell editorCell, SNode node, EditorContext context) {
@@ -533,7 +533,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_12248438431501224843843150(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1224843843150");
+    editorCell.setCellId("Indent_1224843843150");
   }
 
   private static void setupLabel_Constant_1149010775546_1149010775546(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -623,7 +623,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1149010775554(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

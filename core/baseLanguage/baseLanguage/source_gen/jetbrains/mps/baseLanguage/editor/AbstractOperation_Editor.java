@@ -38,7 +38,7 @@ public class AbstractOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Custom_12086235265021208623526502(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Custom_1208623526502");
+    editorCell.setCellId("Custom_1208623526502");
   }
 
 }

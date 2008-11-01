@@ -24,7 +24,7 @@ public class Formula_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_11117853900571111785390057(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1111785390057");
+    editorCell.setCellId("Error_1111785390057");
   }
 
   private static void setupLabel_Error_1111785390057_1111785390057(EditorCell_Label editorCell, SNode node, EditorContext context) {

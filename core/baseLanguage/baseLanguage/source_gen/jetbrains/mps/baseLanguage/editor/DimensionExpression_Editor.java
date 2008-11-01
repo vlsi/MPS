@@ -79,16 +79,16 @@ public class DimensionExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11849529541771184952954177(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184952954177");
+    editorCell.setCellId("Collection_1184952954177");
   }
 
   private static void setupBasic_Constant_11849529556631184952955663(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184952955663");
+    editorCell.setCellId("Constant_1184952955663");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11849529580561184952958056(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184952958056");
+    editorCell.setCellId("Constant_1184952958056");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
   }
 

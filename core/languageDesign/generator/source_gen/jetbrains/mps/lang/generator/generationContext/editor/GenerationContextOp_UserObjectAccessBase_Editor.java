@@ -116,16 +116,16 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
 
 
   private static void setupBasic_Collection_12178900665711217890066571(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1217890066571");
+    editorCell.setCellId("Collection_1217890066571");
   }
 
   private static void setupBasic_conceptProperty_alias1217890083480(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12178906722131217890672213(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217890672213");
+    editorCell.setCellId("Constant_1217890672213");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -139,7 +139,7 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
   }
 
   private static void setupBasic_Constant_12178906830111217890683011(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217890683011");
+    editorCell.setCellId("Constant_1217890683011");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
   }
 

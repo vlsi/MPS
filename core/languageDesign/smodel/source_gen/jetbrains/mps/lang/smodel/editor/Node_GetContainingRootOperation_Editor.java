@@ -27,7 +27,7 @@ public class Node_GetContainingRootOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_11713104164581171310416458(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171310416458");
+    editorCell.setCellId("Constant_1171310416458");
     {
       Style inlineStyle = new Style(editorCell) {
         {

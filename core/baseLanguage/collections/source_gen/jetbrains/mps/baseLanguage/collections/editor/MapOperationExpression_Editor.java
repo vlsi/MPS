@@ -101,14 +101,14 @@ public class MapOperationExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12012163022561201216302256(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1201216302256");
+    editorCell.setCellId("Collection_1201216302256");
   }
 
   private static void setupBasic_refNode_expression1201216304899(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12012163078851201216307885(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1201216307885");
+    editorCell.setCellId("Constant_1201216307885");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 

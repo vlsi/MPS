@@ -186,16 +186,16 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11976869113561197686911356(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197686911356");
+    editorCell.setCellId("Collection_1197686911356");
   }
 
   private static void setupBasic_Constant_11976869246261197686924626(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197686924626");
+    editorCell.setCellId("Constant_1197686924626");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11976869285651197686928565(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197686928565");
+    editorCell.setCellId("Constant_1197686928565");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
   }
 
@@ -203,14 +203,14 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11976870511671197687051167(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197687051167");
+    editorCell.setCellId("Constant_1197687051167");
   }
 
   private static void setupBasic_refNode_valueType1197687055013(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_conceptProperty_alias1198082865184(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

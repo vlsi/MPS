@@ -72,7 +72,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11847724151081184772415108(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184772415108");
+    editorCell.setCellId("Collection_1184772415108");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -85,7 +85,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1184772415109(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupLabel_property_name_1184772415109(EditorCell_Label editorCell, SNode node, EditorContext context) {

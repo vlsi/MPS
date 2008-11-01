@@ -51,7 +51,7 @@ public class CycleReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_cycle1216914819221(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_cycle");
+    editorCell.setCellId("refCell_cycle");
   }
 
   private static void setupLabel_refCell_cycle_1216914819221(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -102,7 +102,7 @@ public class CycleReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1216914823785(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1216914823785(EditorCell_Label editorCell, SNode node, EditorContext context) {

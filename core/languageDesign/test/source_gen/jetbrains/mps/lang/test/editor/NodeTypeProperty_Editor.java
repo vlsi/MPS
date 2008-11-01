@@ -71,11 +71,11 @@ public class NodeTypeProperty_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12155264243021215526424302(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1215526424302");
+    editorCell.setCellId("Collection_1215526424302");
   }
 
   private static void setupBasic_Constant_12155264307891215526430789(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215526430789");
+    editorCell.setCellId("Constant_1215526430789");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
   }
 

@@ -16,10 +16,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class FooConcept_Editor extends DefaultNodeEditor {
 
@@ -98,15 +96,15 @@ public class FooConcept_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12094763148031209476314803(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1209476314803");
+    editorCell.setCellId("Collection_1209476314803");
   }
 
   private static void setupBasic_property_name1209476325993(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupBasic_refCell_bar1209476379605(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_bar");
+    editorCell.setCellId("refCell_bar");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -122,12 +120,6 @@ public class FooConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refCell_bar_1209476379605(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor2822_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.blue;
-    return result;
   }
 
   public static class _Inline2822_0 extends AbstractCellProvider {
@@ -175,17 +167,11 @@ public class FooConcept_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1209476428083(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return FooConcept_Editor.calculateColor2822_0(cell);
-              }
-
-            });
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           }
 
         };

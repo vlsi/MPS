@@ -166,36 +166,36 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11973869200731197386920073(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197386920073");
+    editorCell.setCellId("Collection_1197386920073");
   }
 
   private static void setupBasic_Constant_11973869285441197386928544(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197386928544");
+    editorCell.setCellId("Constant_1197386928544");
   }
 
   private static void setupBasic_refNode_feature1197386967657(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11973869703311197386970331(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197386970331");
+    editorCell.setCellId("Constant_1197386970331");
   }
 
   private static void setupBasic_refNode_newConceptFQName1197386980458(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11973869842731197386984273(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197386984273");
+    editorCell.setCellId("Constant_1197386984273");
   }
 
   private static void setupBasic_refNode_newFeatureName1197386988400(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11973869936991197386993699(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197386993699");
+    editorCell.setCellId("Constant_1197386993699");
   }
 
   private static void setupBasic_Constant_11973869967161197386996716(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197386996716");
+    editorCell.setCellId("Constant_1197386996716");
   }
 
   private static void setupLabel_Constant_1197386928544_1197386928544(EditorCell_Label editorCell, SNode node, EditorContext context) {

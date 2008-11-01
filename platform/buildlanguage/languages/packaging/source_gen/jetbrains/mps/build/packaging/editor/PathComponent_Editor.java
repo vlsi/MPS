@@ -49,7 +49,7 @@ public class PathComponent_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_property_path1220974414328(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_path");
+    editorCell.setCellId("property_path");
   }
 
   private static void setupLabel_property_path_1220974414328(EditorCell_Label editorCell, SNode node, EditorContext context) {

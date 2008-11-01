@@ -73,11 +73,11 @@ public class MapInitializer_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12066577554581206657755458(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206657755458");
+    editorCell.setCellId("Collection_1206657755458");
   }
 
   private static void setupBasic_Constant_12066577575071206657757507(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206657757507");
+    editorCell.setCellId("Constant_1206657757507");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -92,7 +92,7 @@ public class MapInitializer_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12066577596181206657759618(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206657759618");
+    editorCell.setCellId("Constant_1206657759618");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -106,7 +106,7 @@ public class MapInitializer_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_entries1206657763839(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_entries");
+    editorCell.setCellId("refNodeList_entries");
   }
 
   private static void setupLabel_Constant_1206657757507_1206657757507(EditorCell_Label editorCell, SNode node, EditorContext context) {

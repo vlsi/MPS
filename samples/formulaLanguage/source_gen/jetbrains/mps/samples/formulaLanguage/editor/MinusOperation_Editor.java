@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class MinusOperation_Editor extends DefaultNodeEditor {
@@ -108,7 +107,7 @@ public class MinusOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11117864346401111786434640(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1111786434640");
+    editorCell.setCellId("Collection_1111786434640");
   }
 
   private static void setupBasic_refNode_leftOperand1111786434641(EditorCell editorCell, SNode node, EditorContext context) {
@@ -116,17 +115,11 @@ public class MinusOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11117864346421111786434642(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1111786434642");
+    editorCell.setCellId("Constant_1111786434642");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return MinusOperation_Editor.calculateBoolean4389_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -146,12 +139,6 @@ public class MinusOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_rightOperand_1111786434643(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean4389_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
   public static class MinusOperation_Editor_replaceWith_Operation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

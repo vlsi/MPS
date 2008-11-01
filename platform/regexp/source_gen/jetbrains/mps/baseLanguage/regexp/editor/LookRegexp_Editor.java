@@ -104,11 +104,11 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11749065787121174906578712(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174906578712");
+    editorCell.setCellId("Collection_1174906578712");
   }
 
   private static void setupBasic_conceptProperty_alias1174906581168(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -122,7 +122,7 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11749065885781174906588578(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174906588578");
+    editorCell.setCellId("Constant_1174906588578");
     {
       Style inlineStyle = new Style(editorCell) {
         {

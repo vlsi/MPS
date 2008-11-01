@@ -72,15 +72,15 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12034155974631203415597463(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1203415597463");
+    editorCell.setCellId("Collection_1203415597463");
   }
 
   private static void setupBasic_Constant_12034155996571203415599657(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203415599657");
+    editorCell.setCellId("Constant_1203415599657");
   }
 
   private static void setupBasic_property_code1203415604492(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_code");
+    editorCell.setCellId("property_code");
     {
       Style inlineStyle = new Style(editorCell) {
         {

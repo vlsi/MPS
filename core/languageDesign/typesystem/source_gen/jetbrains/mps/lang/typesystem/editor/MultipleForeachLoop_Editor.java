@@ -161,11 +161,11 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11765479865551176547986555(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176547986555");
+    editorCell.setCellId("Collection_1176547986555");
   }
 
   private static void setupBasic_Collection_11765480000911176548000091(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176548000091");
+    editorCell.setCellId("Collection_1176548000091");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -178,26 +178,26 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11765480000921176548000092(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176548000092");
+    editorCell.setCellId("Constant_1176548000092");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11765480045311176548004531(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176548004531");
+    editorCell.setCellId("Constant_1176548004531");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNodeList_loopVariable1176548009689(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_loopVariable");
+    editorCell.setCellId("refNodeList_loopVariable");
   }
 
   private static void setupBasic_Constant_11765480174571176548017457(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176548017457");
+    editorCell.setCellId("Constant_1176548017457");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11765480364301176548036430(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176548036430");
+    editorCell.setCellId("Collection_1176548036430");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -213,17 +213,17 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11765480461381176548046138(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176548046138");
+    editorCell.setCellId("Constant_1176548046138");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12173346199791217334619979(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217334619979");
+    editorCell.setCellId("Constant_1217334619979");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Indent_12173346317461217334631746(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1217334631746");
+    editorCell.setCellId("Indent_1217334631746");
   }
 
   private static void setupLabel_Constant_1176548000092_1176548000092(EditorCell_Label editorCell, SNode node, EditorContext context) {

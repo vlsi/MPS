@@ -95,11 +95,11 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11384059079701138405907970(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1138405907970");
+    editorCell.setCellId("Collection_1138405907970");
   }
 
   private static void setupBasic_Constant_11384059168301138405916830(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1138405916830");
+    editorCell.setCellId("Constant_1138405916830");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -113,7 +113,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11384060056911138406005691(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1138406005691");
+    editorCell.setCellId("Constant_1138406005691");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -127,7 +127,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_concept1138406014241(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_concept");
+    editorCell.setCellId("refCell_concept");
     SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -144,7 +144,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11384061026251138406102625(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1138406102625");
+    editorCell.setCellId("Constant_1138406102625");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -214,7 +214,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1138406019759(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

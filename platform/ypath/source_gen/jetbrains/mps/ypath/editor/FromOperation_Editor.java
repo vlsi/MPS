@@ -79,18 +79,18 @@ public class FromOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11685138178301168513817830(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1168513817830");
+    editorCell.setCellId("Collection_1168513817830");
   }
 
   private static void setupBasic_Constant_11685138195921168513819592(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168513819592");
+    editorCell.setCellId("Constant_1168513819592");
   }
 
   private static void setupBasic_refNode_fromExpression1168526891335(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11685270277991168527027799(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168527027799");
+    editorCell.setCellId("Constant_1168527027799");
   }
 
   private static void setupLabel_Constant_1168513819592_1168513819592(EditorCell_Label editorCell, SNode node, EditorContext context) {

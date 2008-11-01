@@ -39,11 +39,11 @@ public class DotRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11745568414261174556841426(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174556841426");
+    editorCell.setCellId("Collection_1174556841426");
   }
 
   private static void setupBasic_Constant_11745568423651174556842365(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174556842365");
+    editorCell.setCellId("Constant_1174556842365");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -150,16 +150,16 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12097281201521209728120152(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1209728120152");
+    editorCell.setCellId("Collection_1209728120152");
   }
 
   private static void setupBasic_conceptProperty_alias1209728126060(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12097281287761209728128776(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209728128776");
+    editorCell.setCellId("Constant_1209728128776");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
@@ -167,7 +167,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12097281807001209728180700(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209728180700");
+    editorCell.setCellId("Constant_1209728180700");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
@@ -175,7 +175,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12097281861401209728186140(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209728186140");
+    editorCell.setCellId("Constant_1209728186140");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 

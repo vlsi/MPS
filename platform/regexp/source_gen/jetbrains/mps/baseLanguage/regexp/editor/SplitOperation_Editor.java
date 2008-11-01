@@ -71,11 +71,11 @@ public class SplitOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12222567414991222256741499(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1222256741499");
+    editorCell.setCellId("Collection_1222256741499");
   }
 
   private static void setupBasic_Constant_12222567446121222256744612(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1222256744612");
+    editorCell.setCellId("Constant_1222256744612");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 

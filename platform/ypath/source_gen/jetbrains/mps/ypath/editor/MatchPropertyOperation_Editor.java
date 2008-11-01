@@ -163,7 +163,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11751698415261175169841526(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175169841526");
+    editorCell.setCellId("Collection_1175169841526");
   }
 
   private static void setupBasic_refNode_nodeKindOccurrence1175169854239(EditorCell editorCell, SNode node, EditorContext context) {
@@ -179,7 +179,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751698693241175169869324(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175169869324");
+    editorCell.setCellId("Constant_1175169869324");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -192,14 +192,14 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_property1175169875861(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_property");
+    editorCell.setCellId("refCell_property");
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
 
   private static void setupBasic_Constant_11751698990091175169899009(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175169899009");
+    editorCell.setCellId("Constant_1175169899009");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -215,7 +215,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751700792641175170079264(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175170079264");
+    editorCell.setCellId("Constant_1175170079264");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -228,7 +228,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751700852971175170085297(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175170085297");
+    editorCell.setCellId("Constant_1175170085297");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -306,7 +306,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1175169884783(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1175169884783(EditorCell_Label editorCell, SNode node, EditorContext context) {

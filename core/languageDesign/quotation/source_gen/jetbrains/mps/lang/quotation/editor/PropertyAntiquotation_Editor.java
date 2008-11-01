@@ -231,11 +231,11 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11968666741601196866674160(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1196866674160");
+    editorCell.setCellId("Collection_1196866674160");
   }
 
   private static void setupBasic_Constant_11968666741611196866674161(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196866674161");
+    editorCell.setCellId("Constant_1196866674161");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -263,7 +263,7 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11968666741671196866674167(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196866674167");
+    editorCell.setCellId("Constant_1196866674167");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -288,19 +288,19 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11968667470551196866747055(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1196866747055");
+    editorCell.setCellId("Collection_1196866747055");
   }
 
   private static void setupBasic_Collection_11968667470561196866747056(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1196866747056");
+    editorCell.setCellId("Collection_1196866747056");
   }
 
   private static void setupBasic_Constant_11968667470571196866747057(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196866747057");
+    editorCell.setCellId("Constant_1196866747057");
   }
 
   private static void setupBasic_Constant_11968667470581196866747058(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196866747058");
+    editorCell.setCellId("Constant_1196866747058");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -313,27 +313,27 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11968667470591196866747059(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1196866747059");
+    editorCell.setCellId("Collection_1196866747059");
   }
 
   private static void setupBasic_Constant_11968667470601196866747060(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196866747060");
+    editorCell.setCellId("Constant_1196866747060");
   }
 
   private static void setupBasic_ModelAccess_11968667470611196866747061(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ModelAccess_1196866747061");
+    editorCell.setCellId("ModelAccess_1196866747061");
   }
 
   private static void setupBasic_Collection_11968667470761196866747076(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1196866747076");
+    editorCell.setCellId("Collection_1196866747076");
   }
 
   private static void setupBasic_Constant_11968667470771196866747077(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196866747077");
+    editorCell.setCellId("Constant_1196866747077");
   }
 
   private static void setupBasic_ModelAccess_11968667470781196866747078(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ModelAccess_1196866747078");
+    editorCell.setCellId("ModelAccess_1196866747078");
   }
 
   private static void setupLabel_Constant_1196866674161_1196866674161(EditorCell_Label editorCell, SNode node, EditorContext context) {

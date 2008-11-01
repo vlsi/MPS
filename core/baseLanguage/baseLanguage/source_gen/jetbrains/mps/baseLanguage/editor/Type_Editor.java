@@ -75,11 +75,11 @@ public class Type_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Alternation_11380603806941138060380694(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Alternation_1138060380694");
+    editorCell.setCellId("Alternation_1138060380694");
   }
 
   private static void setupBasic_Error_11380603845421138060384542(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1138060384542");
+    editorCell.setCellId("Error_1138060384542");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -93,7 +93,7 @@ public class Type_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conceptProperty_alias1138060501183(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

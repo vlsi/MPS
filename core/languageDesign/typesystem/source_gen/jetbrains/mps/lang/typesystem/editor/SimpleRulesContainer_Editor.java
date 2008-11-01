@@ -72,19 +72,19 @@ public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12230346746821223034674682(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1223034674682");
+    editorCell.setCellId("Collection_1223034674682");
   }
 
   private static void setupBasic_Constant_12230346790001223034679000(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1223034679000");
+    editorCell.setCellId("Constant_1223034679000");
   }
 
   private static void setupBasic_refNodeList_simpleRule1223034714783(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_simpleRule");
+    editorCell.setCellId("refNodeList_simpleRule");
   }
 
   private static void setupBasic_Constant_12230599279491223059927949(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1223059927949");
+    editorCell.setCellId("Constant_1223059927949");
     {
       Style inlineStyle = new Style(editorCell) {
         {

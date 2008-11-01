@@ -45,7 +45,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refNodeList_statement1073416106126(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_statement");
+    editorCell.setCellId("refNodeList_statement");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -117,7 +117,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_10799582420491079958242049(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1079958242049");
+      editorCell.setCellId("Constant_1079958242049");
       {
         Style inlineStyle = new Style(editorCell) {
           {

@@ -48,11 +48,11 @@ public class SkipStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12244466240121224446624012(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1224446624012");
+    editorCell.setCellId("Collection_1224446624012");
   }
 
   private static void setupBasic_Constant_12244466240131224446624013(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224446624013");
+    editorCell.setCellId("Constant_1224446624013");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -66,7 +66,7 @@ public class SkipStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12244466240151224446624015(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224446624015");
+    editorCell.setCellId("Constant_1224446624015");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 

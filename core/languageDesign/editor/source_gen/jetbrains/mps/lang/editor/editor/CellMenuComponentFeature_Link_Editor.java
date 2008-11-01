@@ -54,7 +54,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_linkDeclaration1166057869265(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_linkDeclaration");
+    editorCell.setCellId("refCell_linkDeclaration");
   }
 
   private static void setupLabel_refCell_linkDeclaration_1166057869265(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -105,7 +105,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_role1166057869267(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_role");
+      editorCell.setCellId("property_role");
       {
         Style inlineStyle = new Style(editorCell) {
           {

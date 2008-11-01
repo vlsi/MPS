@@ -90,7 +90,7 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12013727518441201372751844(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1201372751844");
+    editorCell.setCellId("Collection_1201372751844");
   }
 
   private static void setupBasic_refNode_defaultGetAccessor1202065379758(EditorCell editorCell, SNode node, EditorContext context) {

@@ -256,33 +256,33 @@ public class AbstractEquationInspector extends AbstractCellProvider {
 
 
   private static void setupBasic_Collection_12120565789091212056578909(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212056578909");
+    editorCell.setCellId("Collection_1212056578909");
   }
 
   private static void setupBasic_Collection_12120565789101212056578910(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212056578910");
+    editorCell.setCellId("Collection_1212056578910");
   }
 
   private static void setupBasic_Constant_12120565789111212056578911(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212056578911");
+    editorCell.setCellId("Constant_1212056578911");
   }
 
   private static void setupBasic_refNode_nodeToCheck1212056578912(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Collection_12120565789131212056578913(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212056578913");
+    editorCell.setCellId("Collection_1212056578913");
   }
 
   private static void setupBasic_Constant_12120565789141212056578914(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212056578914");
+    editorCell.setCellId("Constant_1212056578914");
   }
 
   private static void setupBasic_refNode_errorString1212056578915(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12120565789161212056578916(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212056578916");
+    editorCell.setCellId("Constant_1212056578916");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -295,7 +295,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Collection_12120565789171212056578917(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212056578917");
+    editorCell.setCellId("Collection_1212056578917");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -308,15 +308,15 @@ public class AbstractEquationInspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_12120565789181212056578918(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212056578918");
+    editorCell.setCellId("Constant_1212056578918");
   }
 
   private static void setupBasic_property_checkOnly1212056578919(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_checkOnly");
+    editorCell.setCellId("property_checkOnly");
   }
 
   private static void setupBasic_Collection_12162046470061216204647006(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1216204647006");
+    editorCell.setCellId("Collection_1216204647006");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -330,14 +330,14 @@ public class AbstractEquationInspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_12162046486971216204648697(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216204648697");
+    editorCell.setCellId("Constant_1216204648697");
   }
 
   private static void setupBasic_refNode_helginsIntention1216204661777(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12162046778881216204677888(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216204677888");
+    editorCell.setCellId("Constant_1216204677888");
     {
       Style inlineStyle = new Style(editorCell) {
         {

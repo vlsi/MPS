@@ -190,14 +190,14 @@ public class Path_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12209744252621220974425262(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1220974425262");
+    editorCell.setCellId("Collection_1220974425262");
   }
 
   private static void setupBasic_refNode_path1220974540492(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Collection_12211451168161221145116816(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221145116816");
+    editorCell.setCellId("Collection_1221145116816");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -214,11 +214,11 @@ public class Path_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12211454638781221145463878(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221145463878");
+    editorCell.setCellId("Collection_1221145463878");
   }
 
   private static void setupBasic_Constant_12211454647651221145464765(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221145464765");
+    editorCell.setCellId("Constant_1221145464765");
     MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
@@ -226,11 +226,11 @@ public class Path_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12211456817621221145681762(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221145681762");
+    editorCell.setCellId("Constant_1221145681762");
   }
 
   private static void setupBasic_Collection_12211456885721221145688572(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221145688572");
+    editorCell.setCellId("Collection_1221145688572");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -244,7 +244,7 @@ public class Path_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12211456902771221145690277(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221145690277");
+    editorCell.setCellId("Constant_1221145690277");
   }
 
   private static void setupLabel_refNode_path_1220974540492(EditorCell_Label editorCell, SNode node, EditorContext context) {

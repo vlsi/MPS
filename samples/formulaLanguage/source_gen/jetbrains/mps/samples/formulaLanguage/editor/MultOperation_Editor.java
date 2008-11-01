@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class MultOperation_Editor extends DefaultNodeEditor {
@@ -108,7 +107,7 @@ public class MultOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11123843395451112384339545(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1112384339545");
+    editorCell.setCellId("Collection_1112384339545");
   }
 
   private static void setupBasic_refNode_leftOperand1112384339546(EditorCell editorCell, SNode node, EditorContext context) {
@@ -116,17 +115,11 @@ public class MultOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11123843395471112384339547(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1112384339547");
+    editorCell.setCellId("Constant_1112384339547");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return MultOperation_Editor.calculateBoolean0165_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -146,12 +139,6 @@ public class MultOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_rightOperand_1112384339548(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean0165_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
   public static class MultOperation_Editor_replaceWith_Operation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

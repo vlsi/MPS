@@ -97,11 +97,11 @@ public class ConceptSubstitutePart_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11801352215621180135221562(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180135221562");
+    editorCell.setCellId("Collection_1180135221562");
   }
 
   private static void setupBasic_conceptProperty_alias1180135221563(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -115,7 +115,7 @@ public class ConceptSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_concept1180135221564(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_concept");
+    editorCell.setCellId("refCell_concept");
   }
 
   private static void setupLabel_conceptProperty_alias_1180135221563(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -169,7 +169,7 @@ public class ConceptSubstitutePart_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1180135221566(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

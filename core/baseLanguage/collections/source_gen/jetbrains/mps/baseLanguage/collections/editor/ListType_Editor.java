@@ -92,11 +92,11 @@ public class ListType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11516907927861151690792786(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1151690792786");
+    editorCell.setCellId("Collection_1151690792786");
   }
 
   private static void setupBasic_Constant_11516907961461151690796146(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1151690796146");
+    editorCell.setCellId("Constant_1151690796146");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -117,7 +117,7 @@ public class ListType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11516908126501151690812650(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1151690812650");
+    editorCell.setCellId("Constant_1151690812650");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -131,7 +131,7 @@ public class ListType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12157067415681215706741568(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215706741568");
+    editorCell.setCellId("Constant_1215706741568");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

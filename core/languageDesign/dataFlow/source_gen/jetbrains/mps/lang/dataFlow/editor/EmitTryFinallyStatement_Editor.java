@@ -153,16 +153,16 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12069565827601206956582760(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206956582760");
+    editorCell.setCellId("Collection_1206956582760");
   }
 
   private static void setupBasic_Constant_12069565836851206956583685(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206956583685");
+    editorCell.setCellId("Constant_1206956583685");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12069565920921206956592092(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206956592092");
+    editorCell.setCellId("Collection_1206956592092");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -175,19 +175,19 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_12069565920931206956592093(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1206956592093");
+    editorCell.setCellId("Indent_1206956592093");
   }
 
   private static void setupBasic_refNode_tryPart1206956597228(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12069565989981206956598998(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206956598998");
+    editorCell.setCellId("Constant_1206956598998");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12069566019571206956601957(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206956601957");
+    editorCell.setCellId("Collection_1206956601957");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -200,14 +200,14 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_12069566019581206956601958(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1206956601958");
+    editorCell.setCellId("Indent_1206956601958");
   }
 
   private static void setupBasic_refNode_finallyPart1206956601959(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12069566073861206956607386(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206956607386");
+    editorCell.setCellId("Constant_1206956607386");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
   }
 

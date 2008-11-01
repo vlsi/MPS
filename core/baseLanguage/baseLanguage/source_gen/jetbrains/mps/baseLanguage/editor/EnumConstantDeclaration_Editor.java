@@ -108,11 +108,11 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10854851124281085485112428(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1085485112428");
+    editorCell.setCellId("Collection_1085485112428");
   }
 
   private static void setupBasic_property_name1085485112429(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -126,16 +126,16 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_10854851124301085485112430(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1085485112430");
+    editorCell.setCellId("Constant_1085485112430");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNodeList_actualArgument1085485112431(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_actualArgument");
+    editorCell.setCellId("refNodeList_actualArgument");
   }
 
   private static void setupBasic_Constant_10854851124321085485112432(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1085485112432");
+    editorCell.setCellId("Constant_1085485112432");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
@@ -212,7 +212,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_10952575664231095257566423(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1095257566423");
+      editorCell.setCellId("Constant_1095257566423");
       {
         Style inlineStyle = new Style(editorCell) {
           {

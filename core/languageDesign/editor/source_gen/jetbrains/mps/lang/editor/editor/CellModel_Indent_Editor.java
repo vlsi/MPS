@@ -28,7 +28,7 @@ public class CellModel_Indent_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_11982569606551198256960655(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1198256960655");
+    editorCell.setCellId("Constant_1198256960655");
     {
       Style inlineStyle = new Style(editorCell) {
         {

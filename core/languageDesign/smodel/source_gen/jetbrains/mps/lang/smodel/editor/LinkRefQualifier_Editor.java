@@ -51,7 +51,7 @@ public class LinkRefQualifier_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_link1204851958179(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_link");
+    editorCell.setCellId("refCell_link");
   }
 
   private static void setupLabel_refCell_link_1204851958179(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -102,7 +102,7 @@ public class LinkRefQualifier_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_role1204851963572(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_role");
+      editorCell.setCellId("property_role");
       Styles_StyleSheet.getRef_link_role(editorCell).apply(editorCell);
     }
 

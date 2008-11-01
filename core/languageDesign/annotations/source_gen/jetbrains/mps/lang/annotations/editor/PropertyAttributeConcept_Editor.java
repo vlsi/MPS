@@ -54,19 +54,19 @@ public class PropertyAttributeConcept_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11360275327791136027532779(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1136027532779");
+    editorCell.setCellId("Collection_1136027532779");
   }
 
   private static void setupBasic_Constant_11360275327801136027532780(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136027532780");
+    editorCell.setCellId("Constant_1136027532780");
   }
 
   private static void setupBasic_Constant_11360275327821136027532782(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136027532782");
+    editorCell.setCellId("Constant_1136027532782");
   }
 
   private static void setupBasic_Constant_11767389964381176738996438(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176738996438");
+    editorCell.setCellId("Constant_1176738996438");
   }
 
   private static void setupLabel_Constant_1136027532780_1136027532780(EditorCell_Label editorCell, SNode node, EditorContext context) {

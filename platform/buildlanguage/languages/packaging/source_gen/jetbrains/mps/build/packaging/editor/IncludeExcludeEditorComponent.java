@@ -145,7 +145,7 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
 
 
   private static void setupBasic_Collection_12245969165491224596916549(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1224596916549");
+    editorCell.setCellId("Collection_1224596916549");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -159,29 +159,29 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
   }
 
   private static void setupBasic_Collection_12245969165511224596916551(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1224596916551");
+    editorCell.setCellId("Collection_1224596916551");
   }
 
   private static void setupBasic_Constant_12245969165521224596916552(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224596916552");
+    editorCell.setCellId("Constant_1224596916552");
     MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_excludes1224596916553(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_excludes");
+    editorCell.setCellId("property_excludes");
   }
 
   private static void setupBasic_Collection_12245969165541224596916554(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1224596916554");
+    editorCell.setCellId("Collection_1224596916554");
   }
 
   private static void setupBasic_Constant_12245969165551224596916555(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224596916555");
+    editorCell.setCellId("Constant_1224596916555");
     MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_includes1224596916556(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_includes");
+    editorCell.setCellId("property_includes");
   }
 
   private static void setupLabel_Constant_1224596916552_1224596916552(EditorCell_Label editorCell, SNode node, EditorContext context) {

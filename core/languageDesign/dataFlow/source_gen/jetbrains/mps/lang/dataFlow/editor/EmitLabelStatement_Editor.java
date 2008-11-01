@@ -70,16 +70,16 @@ public class EmitLabelStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12070624928031207062492803(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1207062492803");
+    editorCell.setCellId("Collection_1207062492803");
   }
 
   private static void setupBasic_Constant_12070624928041207062492804(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1207062492804");
+    editorCell.setCellId("Constant_1207062492804");
     DataFlow_StyleSheet.getLabel(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_name1207062494415(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupLabel_Constant_1207062492804_1207062492804(EditorCell_Label editorCell, SNode node, EditorContext context) {

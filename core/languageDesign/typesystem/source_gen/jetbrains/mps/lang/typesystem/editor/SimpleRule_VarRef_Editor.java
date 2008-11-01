@@ -116,11 +116,11 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12230351480921223035148092(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1223035148092");
+    editorCell.setCellId("Collection_1223035148092");
   }
 
   private static void setupBasic_Constant_12230351510751223035151075(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1223035151075");
+    editorCell.setCellId("Constant_1223035151075");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -129,7 +129,7 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12230351692141223035169214(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1223035169214");
+    editorCell.setCellId("Constant_1223035169214");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -143,7 +143,7 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_link1223035186573(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_link");
+    editorCell.setCellId("refCell_link");
   }
 
   private static void setupLabel_Constant_1223035151075_1223035151075(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -203,7 +203,7 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_role1223035190126(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_role");
+      editorCell.setCellId("property_role");
       SharedStyles_StyleSheet.getReferenceOnConceptualFeature(editorCell).apply(editorCell);
     }
 

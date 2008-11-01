@@ -81,11 +81,11 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10818800104091081880010409(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1081880010409");
+    editorCell.setCellId("Collection_1081880010409");
   }
 
   private static void setupBasic_Constant_10818800104101081880010410(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081880010410");
+    editorCell.setCellId("Constant_1081880010410");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new OpenParenthesis_KeyMap());
@@ -95,7 +95,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_10818800104121081880010412(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081880010412");
+    editorCell.setCellId("Constant_1081880010412");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

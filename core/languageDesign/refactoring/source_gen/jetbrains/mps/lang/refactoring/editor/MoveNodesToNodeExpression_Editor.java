@@ -149,11 +149,11 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11996209978751199620997875(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1199620997875");
+    editorCell.setCellId("Collection_1199620997875");
   }
 
   private static void setupBasic_Constant_11996209978761199620997876(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199620997876");
+    editorCell.setCellId("Constant_1199620997876");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -161,7 +161,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11996209978781199620997878(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199620997878");
+    editorCell.setCellId("Constant_1199620997878");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -169,7 +169,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11996209978801199620997880(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199620997880");
+    editorCell.setCellId("Constant_1199620997880");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 

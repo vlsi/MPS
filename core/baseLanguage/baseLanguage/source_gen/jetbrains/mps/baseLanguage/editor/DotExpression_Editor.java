@@ -102,7 +102,7 @@ public class DotExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11970281327081197028132708(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197028132708");
+    editorCell.setCellId("Collection_1197028132708");
   }
 
   private static void setupBasic_refNode_operand1197028135780(EditorCell editorCell, SNode node, EditorContext context) {
@@ -118,7 +118,7 @@ public class DotExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11970281393801197028139380(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197028139380");
+    editorCell.setCellId("Constant_1197028139380");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 

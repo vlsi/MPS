@@ -171,11 +171,11 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11755179688391175517968839(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175517968839");
+    editorCell.setCellId("Collection_1175517968839");
   }
 
   private static void setupBasic_Constant_11755179708561175517970856(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175517970856");
+    editorCell.setCellId("Constant_1175517970856");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -183,22 +183,22 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11755179861091175517986109(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175517986109");
+    editorCell.setCellId("Constant_1175517986109");
   }
 
   private static void setupBasic_refNode_nodeToReport1175517990173(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11755180525141175518052514(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175518052514");
+    editorCell.setCellId("Constant_1175518052514");
   }
 
   private static void setupBasic_Collection_12107731874921210773187492(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1210773187492");
+    editorCell.setCellId("Collection_1210773187492");
   }
 
   private static void setupBasic_Constant_12107732477201210773247720(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210773247720");
+    editorCell.setCellId("Constant_1210773247720");
   }
 
   private static void setupBasic_refNode_helginsIntention1210784741834(EditorCell editorCell, SNode node, EditorContext context) {

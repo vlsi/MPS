@@ -28,7 +28,7 @@ public class Node_IsNotNullOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_11720083401761172008340176(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172008340176");
+    editorCell.setCellId("Constant_1172008340176");
     {
       Style inlineStyle = new Style(editorCell) {
         {

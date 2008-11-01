@@ -106,15 +106,15 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11057275253731105727525373(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1105727525373");
+    editorCell.setCellId("Collection_1105727525373");
   }
 
   private static void setupBasic_refCell_stringConceptPropertyDeclaration1105727610549(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_stringConceptPropertyDeclaration");
+    editorCell.setCellId("refCell_stringConceptPropertyDeclaration");
   }
 
   private static void setupBasic_Constant_11057317061561105731706156(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1105731706156");
+    editorCell.setCellId("Constant_1105731706156");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -127,7 +127,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_value1105731706157(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_value");
+    editorCell.setCellId("property_value");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -194,7 +194,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1105727610550(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

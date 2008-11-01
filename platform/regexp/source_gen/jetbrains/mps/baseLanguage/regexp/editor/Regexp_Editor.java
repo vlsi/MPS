@@ -24,7 +24,7 @@ public class Regexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_11793581613151179358161315(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1179358161315");
+    editorCell.setCellId("Error_1179358161315");
   }
 
   private static void setupLabel_Error_1179358161315_1179358161315(EditorCell_Label editorCell, SNode node, EditorContext context) {

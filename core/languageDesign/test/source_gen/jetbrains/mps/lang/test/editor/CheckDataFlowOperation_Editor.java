@@ -26,7 +26,7 @@ public class CheckDataFlowOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_12156118736391215611873639(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215611873639");
+    editorCell.setCellId("Constant_1215611873639");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
   }
 

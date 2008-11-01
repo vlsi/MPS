@@ -119,11 +119,11 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11686230875751168623087575(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1168623087575");
+    editorCell.setCellId("Collection_1168623087575");
   }
 
   private static void setupBasic_Constant_11686230962331168623096233(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168623096233");
+    editorCell.setCellId("Constant_1168623096233");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -138,11 +138,11 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Alternation_11976513633051197651363305(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Alternation_1197651363305");
+    editorCell.setCellId("Alternation_1197651363305");
   }
 
   private static void setupBasic_property_value1197651363306(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_value");
+    editorCell.setCellId("property_value");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -156,7 +156,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_value1197651366849(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_value");
+    editorCell.setCellId("property_value");
     {
       Style inlineStyle = new Style(editorCell) {
         {

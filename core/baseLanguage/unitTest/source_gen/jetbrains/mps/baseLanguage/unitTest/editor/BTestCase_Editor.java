@@ -264,11 +264,11 @@ public class BTestCase_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11719318517501171931851750(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1171931851750");
+    editorCell.setCellId("Collection_1171931851750");
   }
 
   private static void setupBasic_Collection_11719318517511171931851751(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1171931851751");
+    editorCell.setCellId("Collection_1171931851751");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -281,16 +281,16 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11719318517521171931851752(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171931851752");
+    editorCell.setCellId("Constant_1171931851752");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_testCaseName1171931851753(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_testCaseName");
+    editorCell.setCellId("property_testCaseName");
   }
 
   private static void setupBasic_Constant_11719318517541171931851754(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171931851754");
+    editorCell.setCellId("Constant_1171931851754");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -298,7 +298,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12246751436361224675143636(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224675143636");
+    editorCell.setCellId("Constant_1224675143636");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -312,12 +312,12 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12246751550131224675155013(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224675155013");
+    editorCell.setCellId("Constant_1224675155013");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12246751646721224675164672(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1224675164672");
+    editorCell.setCellId("Collection_1224675164672");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -331,11 +331,11 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_12246751683441224675168344(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1224675168344");
+    editorCell.setCellId("Indent_1224675168344");
   }
 
   private static void setupBasic_Collection_12246751733661224675173366(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1224675173366");
+    editorCell.setCellId("Collection_1224675173366");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -349,7 +349,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12246751738701224675173870(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224675173870");
+    editorCell.setCellId("Constant_1224675173870");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -362,11 +362,11 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_staticField1224675173872(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_staticField");
+    editorCell.setCellId("refNodeList_staticField");
   }
 
   private static void setupBasic_Constant_12246751738741224675173874(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224675173874");
+    editorCell.setCellId("Constant_1224675173874");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -382,7 +382,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12246751738771224675173877(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224675173877");
+    editorCell.setCellId("Constant_1224675173877");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -395,7 +395,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_method1224675173879(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_method");
+    editorCell.setCellId("refNodeList_method");
   }
 
   private static void setupLabel_Constant_1171931851752_1171931851752(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -490,7 +490,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_12246751738731224675173873(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224675173873");
+      editorCell.setCellId("Constant_1224675173873");
     }
 
     private static void setupLabel_Constant_1224675173873_1224675173873(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -553,7 +553,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_12246751738801224675173880(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224675173880");
+      editorCell.setCellId("Constant_1224675173880");
     }
 
     private static void setupLabel_Constant_1224675173880_1224675173880(EditorCell_Label editorCell, SNode node, EditorContext context) {

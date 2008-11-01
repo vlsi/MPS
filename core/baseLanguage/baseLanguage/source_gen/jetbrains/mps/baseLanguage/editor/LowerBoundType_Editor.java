@@ -79,15 +79,15 @@ public class LowerBoundType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11719038792841171903879284(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1171903879284");
+    editorCell.setCellId("Collection_1171903879284");
   }
 
   private static void setupBasic_Constant_11719038805521171903880552(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171903880552");
+    editorCell.setCellId("Constant_1171903880552");
   }
 
   private static void setupBasic_Constant_11719038822571171903882257(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171903882257");
+    editorCell.setCellId("Constant_1171903882257");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 

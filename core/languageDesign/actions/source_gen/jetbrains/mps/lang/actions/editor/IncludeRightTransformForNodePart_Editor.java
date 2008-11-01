@@ -100,15 +100,15 @@ public class IncludeRightTransformForNodePart_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11801115448121180111544812(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180111544812");
+    editorCell.setCellId("Collection_1180111544812");
   }
 
   private static void setupBasic_Collection_11801115448131180111544813(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180111544813");
+    editorCell.setCellId("Collection_1180111544813");
   }
 
   private static void setupBasic_Constant_11801115448141180111544814(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180111544814");
+    editorCell.setCellId("Constant_1180111544814");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -121,14 +121,14 @@ public class IncludeRightTransformForNodePart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11801115448151180111544815(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180111544815");
+    editorCell.setCellId("Collection_1180111544815");
   }
 
   private static void setupBasic_refNode_nodeBlock1180111544817(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Indent_12161128537681216112853768(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1216112853768");
+    editorCell.setCellId("Indent_1216112853768");
   }
 
   private static void setupLabel_Constant_1180111544814_1180111544814(EditorCell_Label editorCell, SNode node, EditorContext context) {

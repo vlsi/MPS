@@ -104,14 +104,14 @@ public class LambdaMethod_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11684287394921168428739492(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1168428739492");
+    editorCell.setCellId("Collection_1168428739492");
   }
 
   private static void setupBasic_refNode_parameter1168428744598(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11684287495951168428749595(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168428749595");
+    editorCell.setCellId("Constant_1168428749595");
     {
       Style inlineStyle = new Style(editorCell) {
         {

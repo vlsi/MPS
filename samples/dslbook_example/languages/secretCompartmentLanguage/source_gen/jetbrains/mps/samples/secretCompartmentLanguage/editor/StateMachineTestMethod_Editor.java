@@ -186,11 +186,11 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11972527330081197252733008(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197252733008");
+    editorCell.setCellId("Collection_1197252733008");
   }
 
   private static void setupBasic_Collection_11972527511821197252751182(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197252751182");
+    editorCell.setCellId("Collection_1197252751182");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -203,15 +203,15 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11972527546991197252754699(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197252754699");
+    editorCell.setCellId("Constant_1197252754699");
   }
 
   private static void setupBasic_property_methodName1197252776280(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_methodName");
+    editorCell.setCellId("property_methodName");
   }
 
   private static void setupBasic_Collection_11972552373491197255237349(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197255237349");
+    editorCell.setCellId("Collection_1197255237349");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -224,7 +224,7 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11972552373501197255237350(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197255237350");
+    editorCell.setCellId("Constant_1197255237350");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -237,7 +237,7 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11972552474301197255247430(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197255247430");
+    editorCell.setCellId("Collection_1197255247430");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -250,7 +250,7 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11972552545881197255254588(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197255254588");
+    editorCell.setCellId("Collection_1197255254588");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -263,15 +263,15 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11972552562001197255256200(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197255256200");
+    editorCell.setCellId("Constant_1197255256200");
   }
 
   private static void setupBasic_refCell_finalState1197255262342(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_finalState");
+    editorCell.setCellId("refCell_finalState");
   }
 
   private static void setupBasic_refNodeList_handleEvent1197255836498(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_handleEvent");
+    editorCell.setCellId("refNodeList_handleEvent");
   }
 
   private static void setupLabel_Constant_1197252754699_1197252754699(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -337,7 +337,7 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_stateName1197255269330(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_stateName");
+      editorCell.setCellId("property_stateName");
     }
 
     private static void setupLabel_property_stateName_1197255269330(EditorCell_Label editorCell, SNode node, EditorContext context) {

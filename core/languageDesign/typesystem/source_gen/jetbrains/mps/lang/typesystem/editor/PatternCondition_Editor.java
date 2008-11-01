@@ -105,18 +105,18 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11746430094691174643009469(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174643009469");
+    editorCell.setCellId("Collection_1174643009469");
   }
 
   private static void setupBasic_refNode_pattern1174643011893(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11746430151451174643015145(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174643015145");
+    editorCell.setCellId("Constant_1174643015145");
   }
 
   private static void setupBasic_property_name1174643021631(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {

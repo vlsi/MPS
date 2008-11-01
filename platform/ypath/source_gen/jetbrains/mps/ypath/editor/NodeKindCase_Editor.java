@@ -24,7 +24,7 @@ public class NodeKindCase_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_11800100679301180010067930(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1180010067930");
+    editorCell.setCellId("Error_1180010067930");
   }
 
   private static void setupLabel_Error_1180010067930_1180010067930(EditorCell_Label editorCell, SNode node, EditorContext context) {

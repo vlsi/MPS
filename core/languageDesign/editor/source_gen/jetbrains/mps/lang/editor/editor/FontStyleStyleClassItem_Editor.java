@@ -130,20 +130,20 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11864038891791186403889179(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1186403889179");
+    editorCell.setCellId("Collection_1186403889179");
   }
 
   private static void setupBasic_Constant_11864038899311186403889931(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1186403889931");
+    editorCell.setCellId("Constant_1186403889931");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11864038941981186403894198(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1186403894198");
+    editorCell.setCellId("Constant_1186403894198");
   }
 
   private static void setupBasic_property_style1186403896216(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_style");
+    editorCell.setCellId("property_style");
   }
 
   private static void setupBasic_refNode_query1220975756218(EditorCell editorCell, SNode node, EditorContext context) {

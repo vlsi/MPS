@@ -133,21 +133,21 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
 
 
   private static void setupBasic_Collection_12168601463391216860146339(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1216860146339");
+    editorCell.setCellId("Collection_1216860146339");
   }
 
   private static void setupBasic_Constant_12168601463401216860146340(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216860146340");
+    editorCell.setCellId("Constant_1216860146340");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_label1216860146341(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_label");
+    editorCell.setCellId("refCell_label");
     jetbrains.mps.lang.generator.editor.Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12168601463441216860146344(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216860146344");
+    editorCell.setCellId("Constant_1216860146344");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -164,12 +164,12 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   }
 
   private static void setupBasic_Constant_12254001821691225400182169(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225400182169");
+    editorCell.setCellId("Constant_1225400182169");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12254001969371225400196937(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225400196937");
+    editorCell.setCellId("Constant_1225400196937");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
@@ -236,7 +236,7 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
 
 
     private static void setupBasic_property_name1216860146343(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1216860146343(EditorCell_Label editorCell, SNode node, EditorContext context) {

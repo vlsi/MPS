@@ -127,11 +127,11 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11121191536511112119153651(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1112119153651");
+    editorCell.setCellId("Collection_1112119153651");
   }
 
   private static void setupBasic_Collection_11121191841831112119184183(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1112119184183");
+    editorCell.setCellId("Collection_1112119184183");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -144,7 +144,7 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11121192238101112119223810(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1112119223810");
+    editorCell.setCellId("Constant_1112119223810");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -157,7 +157,7 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_actionsBuilder1112119223812(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_actionsBuilder");
+    editorCell.setCellId("refNodeList_actionsBuilder");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -170,7 +170,7 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11449611629151144961162915(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1144961162915");
+    editorCell.setCellId("Collection_1144961162915");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -183,11 +183,11 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11449611673571144961167357(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144961167357");
+    editorCell.setCellId("Constant_1144961167357");
   }
 
   private static void setupBasic_property_name1144961173015(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {

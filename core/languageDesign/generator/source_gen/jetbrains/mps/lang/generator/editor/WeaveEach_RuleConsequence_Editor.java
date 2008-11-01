@@ -161,11 +161,11 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11695700929141169570092914(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169570092914");
+    editorCell.setCellId("Collection_1169570092914");
   }
 
   private static void setupBasic_Collection_11952522405991195252240599(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1195252240599");
+    editorCell.setCellId("Collection_1195252240599");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -178,14 +178,14 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11952522406001195252240600(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1195252240600");
+    editorCell.setCellId("Constant_1195252240600");
   }
 
   private static void setupBasic_refNode_sourceNodesQuery1195252250461(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Collection_11952522713521195252271352(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1195252271352");
+    editorCell.setCellId("Collection_1195252271352");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -198,7 +198,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11952522713531195252271353(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1195252271353");
+    editorCell.setCellId("Constant_1195252271353");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -211,11 +211,11 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_template1195252271355(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_template");
+    editorCell.setCellId("refCell_template");
   }
 
   private static void setupBasic_Constant_11952523278371195252327837(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1195252327837");
+    editorCell.setCellId("Constant_1195252327837");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -229,7 +229,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11952523334941195252333494(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1195252333494");
+    editorCell.setCellId("Constant_1195252333494");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -243,7 +243,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11952527582771195252758277(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1195252758277");
+    editorCell.setCellId("Constant_1195252758277");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -321,7 +321,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1195252271357(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       Styles_StyleSheet.getReference(editorCell).apply(editorCell);
     }
 

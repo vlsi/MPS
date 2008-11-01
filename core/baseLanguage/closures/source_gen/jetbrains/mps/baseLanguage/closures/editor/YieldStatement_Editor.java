@@ -80,11 +80,11 @@ public class YieldStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12008309468671200830946867(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1200830946867");
+    editorCell.setCellId("Collection_1200830946867");
   }
 
   private static void setupBasic_Constant_12008309482251200830948225(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200830948225");
+    editorCell.setCellId("Constant_1200830948225");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -92,7 +92,7 @@ public class YieldStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12008309556091200830955609(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200830955609");
+    editorCell.setCellId("Constant_1200830955609");
   }
 
   private static void setupLabel_Constant_1200830948225_1200830948225(EditorCell_Label editorCell, SNode node, EditorContext context) {

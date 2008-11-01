@@ -51,7 +51,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_variableDeclaration1134569731483(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_variableDeclaration");
+    editorCell.setCellId("refCell_variableDeclaration");
   }
 
   private static void setupLabel_refCell_variableDeclaration_1134569731483(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -102,7 +102,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1134569731485(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
     }
 

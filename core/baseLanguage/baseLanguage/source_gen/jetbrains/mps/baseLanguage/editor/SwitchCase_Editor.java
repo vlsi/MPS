@@ -138,11 +138,11 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11636707111921163670711192(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1163670711192");
+    editorCell.setCellId("Collection_1163670711192");
   }
 
   private static void setupBasic_Collection_11636707136481163670713648(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1163670713648");
+    editorCell.setCellId("Collection_1163670713648");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -155,7 +155,7 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11636707167111163670716711(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1163670716711");
+    editorCell.setCellId("Constant_1163670716711");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -163,11 +163,11 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11636707348371163670734837(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1163670734837");
+    editorCell.setCellId("Constant_1163670734837");
   }
 
   private static void setupBasic_Collection_11636707399811163670739981(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1163670739981");
+    editorCell.setCellId("Collection_1163670739981");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -183,7 +183,7 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_12150121368131215012136813(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1215012136813");
+    editorCell.setCellId("Indent_1215012136813");
   }
 
   private static void setupLabel_Constant_1163670716711_1163670716711(EditorCell_Label editorCell, SNode node, EditorContext context) {

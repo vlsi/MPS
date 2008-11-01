@@ -49,7 +49,7 @@ public class MatrixIndexVariableDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_property_name1210246433816(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupLabel_property_name_1210246433816(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -111,23 +111,23 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12057532727481205753272748(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1205753272748");
+    editorCell.setCellId("Collection_1205753272748");
   }
 
   private static void setupBasic_conceptProperty_alias1205753275877(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12057532812091205753281209(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205753281209");
+    editorCell.setCellId("Constant_1205753281209");
   }
 
   private static void setupBasic_refNode_length1205753284619(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12057532873381205753287338(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205753287338");
+    editorCell.setCellId("Constant_1205753287338");
   }
 
   private static void setupLabel_conceptProperty_alias_1205753275877(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -74,11 +74,11 @@ public class LinkPatternVariableDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11374186619031137418661903(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1137418661903");
+    editorCell.setCellId("Collection_1137418661903");
   }
 
   private static void setupBasic_property_varName1137418665045(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_varName");
+    editorCell.setCellId("property_varName");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -92,7 +92,7 @@ public class LinkPatternVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11409695223891140969522389(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1140969522389");
+    editorCell.setCellId("Constant_1140969522389");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -24,7 +24,7 @@ public class Reference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_11117854827801111785482780(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1111785482780");
+    editorCell.setCellId("Error_1111785482780");
   }
 
   private static void setupLabel_Error_1111785482780_1111785482780(EditorCell_Label editorCell, SNode node, EditorContext context) {

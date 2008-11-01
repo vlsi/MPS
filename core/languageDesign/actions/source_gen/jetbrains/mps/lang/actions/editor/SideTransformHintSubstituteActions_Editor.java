@@ -127,11 +127,11 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
 
 
   private static void setupBasic_Collection_11380795164211138079516421(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1138079516421");
+    editorCell.setCellId("Collection_1138079516421");
   }
 
   private static void setupBasic_Constant_11380795164231138079516423(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1138079516423");
+    editorCell.setCellId("Constant_1138079516423");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -144,7 +144,7 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
   }
 
   private static void setupBasic_Collection_11380795164241138079516424(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1138079516424");
+    editorCell.setCellId("Collection_1138079516424");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -157,7 +157,7 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
   }
 
   private static void setupBasic_refNodeList_actionsBuilder1138079516426(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_actionsBuilder");
+    editorCell.setCellId("refNodeList_actionsBuilder");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -170,7 +170,7 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
   }
 
   private static void setupBasic_Collection_11449612901321144961290132(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1144961290132");
+    editorCell.setCellId("Collection_1144961290132");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -183,11 +183,11 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
   }
 
   private static void setupBasic_Constant_11449612901331144961290133(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144961290133");
+    editorCell.setCellId("Constant_1144961290133");
   }
 
   private static void setupBasic_property_name1144961290134(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {

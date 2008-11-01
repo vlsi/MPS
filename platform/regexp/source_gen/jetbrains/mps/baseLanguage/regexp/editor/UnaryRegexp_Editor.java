@@ -91,14 +91,14 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11749002987991174900298799(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174900298799");
+    editorCell.setCellId("Collection_1174900298799");
   }
 
   private static void setupBasic_refNode_regexp1174900298800(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_conceptProperty_alias1174900304959(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
   }
 

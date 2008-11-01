@@ -24,7 +24,7 @@ public class Pattern_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_11367200967571136720096757(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1136720096757");
+    editorCell.setCellId("Error_1136720096757");
   }
 
   private static void setupLabel_Error_1136720096757_1136720096757(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -88,22 +88,22 @@ public class NotOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11425297420541142529742054(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1142529742054");
+    editorCell.setCellId("Collection_1142529742054");
   }
 
   private static void setupBasic_Constant_11425297453211142529745321(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1142529745321");
+    editorCell.setCellId("Constant_1142529745321");
   }
 
   private static void setupBasic_refNode_leftOperand1142529760323(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11425314439641142531443964(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1142531443964");
+    editorCell.setCellId("Constant_1142531443964");
   }
 
   private static void setupBasic_Constant_11425314499041142531449904(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1142531449904");
+    editorCell.setCellId("Constant_1142531449904");
   }
 
   private static void setupLabel_Constant_1142529745321_1142529745321(EditorCell_Label editorCell, SNode node, EditorContext context) {

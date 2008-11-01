@@ -30,7 +30,7 @@ public class CellFinders {
   public static CellFinder<EditorCell> byId(final SNode node, final String cellId) {
     return byCondition(new Condition<EditorCell>() {
       public boolean met(EditorCell object) {
-        return object.getSNode() == node && cellId.equals(object.getUserObject(EditorCell.CELL_ID));
+        return object.getSNode() == node && cellId.equals(object.getCellId());
       }
     }, true);
   }

@@ -91,11 +91,11 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11720282547801172028254780(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1172028254780");
+    editorCell.setCellId("Collection_1172028254780");
   }
 
   private static void setupBasic_Constant_11720282565951172028256595(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172028256595");
+    editorCell.setCellId("Constant_1172028256595");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -108,14 +108,14 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11720282619881172028261988(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172028261988");
+    editorCell.setCellId("Constant_1172028261988");
   }
 
   private static void setupBasic_refNode_expression1172028266661(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11720284226201172028422620(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172028422620");
+    editorCell.setCellId("Constant_1172028422620");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -5,30 +5,16 @@ package jetbrains.mpslite.editor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class MPSLite_Style_StyleSheet {
 
   public static Style getMPSLiteOperation(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return MPSLite_Style_StyleSheet.calculateColor9936_0(cell);
-          }
-
-        });
-        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-          public Integer calculate(EditorCell cell) {
-            return MPSLite_Style_StyleSheet.calculateFontStyle9936_0(cell);
-          }
-
-        });
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
 
     };
@@ -37,20 +23,8 @@ public class MPSLite_Style_StyleSheet {
   public static Style getMPSLiteProperty(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return MPSLite_Style_StyleSheet.calculateColor9936_1(cell);
-          }
-
-        });
-        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-          public Integer calculate(EditorCell cell) {
-            return MPSLite_Style_StyleSheet.calculateFontStyle9936_1(cell);
-          }
-
-        });
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
 
     };
@@ -59,20 +33,8 @@ public class MPSLite_Style_StyleSheet {
   public static Style getMPSLiteChild(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return MPSLite_Style_StyleSheet.calculateColor9936_2(cell);
-          }
-
-        });
-        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-          public Integer calculate(EditorCell cell) {
-            return MPSLite_Style_StyleSheet.calculateFontStyle9936_2(cell);
-          }
-
-        });
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       }
 
     };
@@ -81,20 +43,8 @@ public class MPSLite_Style_StyleSheet {
   public static Style getMPSLiteReference(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return MPSLite_Style_StyleSheet.calculateColor9936_3(cell);
-          }
-
-        });
-        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-          public Integer calculate(EditorCell cell) {
-            return MPSLite_Style_StyleSheet.calculateFontStyle9936_3(cell);
-          }
-
-        });
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
       }
 
     };
@@ -103,20 +53,8 @@ public class MPSLite_Style_StyleSheet {
   public static Style getMPSLiteOption(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return MPSLite_Style_StyleSheet.calculateColor9936_4(cell);
-          }
-
-        });
-        this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-          public Integer calculate(EditorCell cell) {
-            return MPSLite_Style_StyleSheet.calculateFontStyle9936_4(cell);
-          }
-
-        });
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       }
 
     };
@@ -125,82 +63,10 @@ public class MPSLite_Style_StyleSheet {
   public static Style getMPSLiteOptionalPart(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-          public Color calculate(EditorCell cell) {
-            return MPSLite_Style_StyleSheet.calculateColor9936_5(cell);
-          }
-
-        });
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
       }
 
     };
-  }
-
-  private static Integer calculateFontStyle9936_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
-  }
-
-  private static Integer calculateFontStyle9936_1(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
-  }
-
-  private static Integer calculateFontStyle9936_2(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
-  }
-
-  private static Integer calculateFontStyle9936_3(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD_ITALIC;
-    return result;
-  }
-
-  private static Integer calculateFontStyle9936_4(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Color calculateColor9936_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-  private static Color calculateColor9936_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_GREEN;
-    return result;
-  }
-
-  private static Color calculateColor9936_2(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor9936_3(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor9936_4(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor9936_5(EditorCell cell) {
-    Color result;
-    result = MPSColors.gray;
-    return result;
   }
 
 }

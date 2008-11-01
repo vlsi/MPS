@@ -52,7 +52,7 @@ public class ListVarReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_listVarDeclaration1203432771309(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_listVarDeclaration");
+    editorCell.setCellId("refCell_listVarDeclaration");
   }
 
   private static void setupLabel_refCell_listVarDeclaration_1203432771309(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -103,7 +103,7 @@ public class ListVarReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1203432777530(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
     }
 

@@ -27,7 +27,7 @@ public class Node_GetChildrenOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_11715010304111171501030411(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171501030411");
+    editorCell.setCellId("Constant_1171501030411");
     {
       Style inlineStyle = new Style(editorCell) {
         {

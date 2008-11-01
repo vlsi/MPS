@@ -113,14 +113,14 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11749041922541174904192254(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174904192254");
+    editorCell.setCellId("Collection_1174904192254");
   }
 
   private static void setupBasic_refNode_regexp1174904205489(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11749042189281174904218928(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174904218928");
+    editorCell.setCellId("Constant_1174904218928");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -134,11 +134,11 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_n1174904221804(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_n");
+    editorCell.setCellId("property_n");
   }
 
   private static void setupBasic_Constant_11749042245251174904224525(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174904224525");
+    editorCell.setCellId("Constant_1174904224525");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -52,7 +52,7 @@ public class AbstractOperationParameter_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_conceptProperty_alias1146258034223(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -118,22 +118,22 @@ public class DegreeComplexExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11964221388081196422138808(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1196422138808");
+    editorCell.setCellId("Collection_1196422138808");
   }
 
   private static void setupBasic_Constant_11964221464041196422146404(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196422146404");
+    editorCell.setCellId("Constant_1196422146404");
   }
 
   private static void setupBasic_refNode_complexExpression1196422151437(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11964221572981196422157298(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196422157298");
+    editorCell.setCellId("Constant_1196422157298");
   }
 
   private static void setupBasic_Constant_11964221640661196422164066(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196422164066");
+    editorCell.setCellId("Constant_1196422164066");
   }
 
   private static void setupBasic_refNode_degree1196422169600(EditorCell editorCell, SNode node, EditorContext context) {

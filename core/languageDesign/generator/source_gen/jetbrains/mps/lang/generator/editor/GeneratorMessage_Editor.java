@@ -104,11 +104,11 @@ public class GeneratorMessage_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11696705813441169670581344(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169670581344");
+    editorCell.setCellId("Collection_1169670581344");
   }
 
   private static void setupBasic_property_messageType1169670587361(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_messageType");
+    editorCell.setCellId("property_messageType");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -122,7 +122,7 @@ public class GeneratorMessage_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11696705998321169670599832(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169670599832");
+    editorCell.setCellId("Constant_1169670599832");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -135,7 +135,7 @@ public class GeneratorMessage_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_messageText1169670607428(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_messageText");
+    editorCell.setCellId("property_messageText");
     {
       Style inlineStyle = new Style(editorCell) {
         {

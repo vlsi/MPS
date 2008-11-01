@@ -118,15 +118,15 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12251944139481225194413948(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1225194413948");
+    editorCell.setCellId("Collection_1225194413948");
   }
 
   private static void setupBasic_Collection_12251944139491225194413949(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1225194413949");
+    editorCell.setCellId("Collection_1225194413949");
   }
 
   private static void setupBasic_Constant_12251944139501225194413950(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225194413950");
+    editorCell.setCellId("Constant_1225194413950");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -140,23 +140,23 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12251944139521225194413952(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225194413952");
+    editorCell.setCellId("Constant_1225194413952");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12251944139531225194413953(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1225194413953");
+    editorCell.setCellId("Collection_1225194413953");
   }
 
   private static void setupBasic_Indent_12251944139541225194413954(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1225194413954");
+    editorCell.setCellId("Indent_1225194413954");
   }
 
   private static void setupBasic_refNode_body1225194413955(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12251944139561225194413956(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225194413956");
+    editorCell.setCellId("Constant_1225194413956");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 

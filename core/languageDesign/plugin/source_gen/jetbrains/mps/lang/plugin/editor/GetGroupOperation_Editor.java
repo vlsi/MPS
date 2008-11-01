@@ -91,24 +91,24 @@ public class GetGroupOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12099110997991209911099799(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1209911099799");
+    editorCell.setCellId("Collection_1209911099799");
   }
 
   private static void setupBasic_Constant_12099111008681209911100868(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209911100868");
+    editorCell.setCellId("Constant_1209911100868");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12099111264311209911126431(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209911126431");
+    editorCell.setCellId("Constant_1209911126431");
   }
 
   private static void setupBasic_Constant_12099111273351209911127335(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209911127335");
+    editorCell.setCellId("Constant_1209911127335");
   }
 
   private static void setupBasic_refCell_group1209911130966(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_group");
+    editorCell.setCellId("refCell_group");
   }
 
   private static void setupLabel_Constant_1209911100868_1209911100868(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -168,7 +168,7 @@ public class GetGroupOperation_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1209911133289(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1209911133289(EditorCell_Label editorCell, SNode node, EditorContext context) {

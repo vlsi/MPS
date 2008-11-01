@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class AnsotherGoodConcept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198682124392");
+    editorCell.setCellId(node.getId() + "_1198682124392");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

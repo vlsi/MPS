@@ -77,15 +77,15 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11794093340551179409334055(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1179409334055");
+    editorCell.setCellId("Collection_1179409334055");
   }
 
   private static void setupBasic_refCell_conceptMethodDeclaration1179409337167(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_conceptMethodDeclaration");
+    editorCell.setCellId("refCell_conceptMethodDeclaration");
   }
 
   private static void setupBasic_component_IMethodCall_actualArguments1225529460832(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_IMethodCall_actualArguments");
+    editorCell.setCellId("component_IMethodCall_actualArguments");
   }
 
   private static void setupLabel_refCell_conceptMethodDeclaration_1179409337167(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -136,7 +136,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1179409341654(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

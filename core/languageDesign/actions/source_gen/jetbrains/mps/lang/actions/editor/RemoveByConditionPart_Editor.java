@@ -100,11 +100,11 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11774140940141177414094014(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1177414094014");
+    editorCell.setCellId("Collection_1177414094014");
   }
 
   private static void setupBasic_Collection_11774140952761177414095276(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1177414095276");
+    editorCell.setCellId("Collection_1177414095276");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -117,7 +117,7 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11774140960491177414096049(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177414096049");
+    editorCell.setCellId("Constant_1177414096049");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -130,7 +130,7 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11774141017901177414101790(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1177414101790");
+    editorCell.setCellId("Collection_1177414101790");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -146,7 +146,7 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_12248431385551224843138555(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1224843138555");
+    editorCell.setCellId("Indent_1224843138555");
   }
 
   private static void setupLabel_Constant_1177414096049_1177414096049(EditorCell_Label editorCell, SNode node, EditorContext context) {

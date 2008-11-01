@@ -68,7 +68,7 @@ public class TreePath_component extends AbstractCellProvider {
 
 
   private static void setupBasic_Collection_11793061980781179306198078(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1179306198078");
+    editorCell.setCellId("Collection_1179306198078");
   }
 
   private static void setupBasic_refNode_treePathType1179306204982(EditorCell editorCell, SNode node, EditorContext context) {

@@ -113,11 +113,11 @@ public class SimpleRule_Annotated_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12230360422431223036042243(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1223036042243");
+    editorCell.setCellId("Collection_1223036042243");
   }
 
   private static void setupBasic_Constant_12230360454371223036045437(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1223036045437");
+    editorCell.setCellId("Constant_1223036045437");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -126,7 +126,7 @@ public class SimpleRule_Annotated_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12230360521271223036052127(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1223036052127");
+    editorCell.setCellId("Constant_1223036052127");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

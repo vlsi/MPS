@@ -234,7 +234,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
 
 
   private static void setupBasic_Collection_11587909895651158790989565(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1158790989565");
+    editorCell.setCellId("Collection_1158790989565");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -247,7 +247,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Constant_11587909895661158790989566(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989566");
+    editorCell.setCellId("Constant_1158790989566");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -261,7 +261,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Constant_11587909895671158790989567(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989567");
+    editorCell.setCellId("Constant_1158790989567");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -274,7 +274,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Constant_11587909895681158790989568(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989568");
+    editorCell.setCellId("Constant_1158790989568");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -287,7 +287,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Constant_11587909895691158790989569(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989569");
+    editorCell.setCellId("Constant_1158790989569");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -300,7 +300,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Constant_11587909895701158790989570(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989570");
+    editorCell.setCellId("Constant_1158790989570");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -313,7 +313,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Collection_11587909895711158790989571(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1158790989571");
+    editorCell.setCellId("Collection_1158790989571");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -326,7 +326,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Collection_11587909895721158790989572(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1158790989572");
+    editorCell.setCellId("Collection_1158790989572");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -339,11 +339,11 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Constant_11587909895731158790989573(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989573");
+    editorCell.setCellId("Constant_1158790989573");
   }
 
   private static void setupBasic_Constant_11587909895741158790989574(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989574");
+    editorCell.setCellId("Constant_1158790989574");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -356,7 +356,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Collection_11587909895751158790989575(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1158790989575");
+    editorCell.setCellId("Collection_1158790989575");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -369,11 +369,11 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Constant_11587909895761158790989576(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989576");
+    editorCell.setCellId("Constant_1158790989576");
   }
 
   private static void setupBasic_Constant_11587909895771158790989577(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989577");
+    editorCell.setCellId("Constant_1158790989577");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -386,7 +386,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Collection_11587909895781158790989578(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1158790989578");
+    editorCell.setCellId("Collection_1158790989578");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -399,11 +399,11 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Constant_11587909895791158790989579(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989579");
+    editorCell.setCellId("Constant_1158790989579");
   }
 
   private static void setupBasic_Collection_11587909895801158790989580(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1158790989580");
+    editorCell.setCellId("Collection_1158790989580");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -416,7 +416,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Constant_11587909895811158790989581(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989581");
+    editorCell.setCellId("Constant_1158790989581");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -429,7 +429,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Constant_11587909895821158790989582(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989582");
+    editorCell.setCellId("Constant_1158790989582");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -443,7 +443,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Collection_11587909895831158790989583(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1158790989583");
+    editorCell.setCellId("Collection_1158790989583");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -456,11 +456,11 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_Constant_11587909895841158790989584(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989584");
+    editorCell.setCellId("Constant_1158790989584");
   }
 
   private static void setupBasic_Constant_11587909895851158790989585(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1158790989585");
+    editorCell.setCellId("Constant_1158790989585");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -473,7 +473,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   }
 
   private static void setupBasic_component_ConceptFunction_Component1196975976719(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ConceptFunction_Component");
+    editorCell.setCellId("component_ConceptFunction_Component");
   }
 
   private static void setupLabel_Constant_1158790989566_1158790989566(EditorCell_Label editorCell, SNode node, EditorContext context) {

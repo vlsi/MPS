@@ -51,7 +51,7 @@ public class ArrayLengthOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_conceptProperty_alias1208890828990(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

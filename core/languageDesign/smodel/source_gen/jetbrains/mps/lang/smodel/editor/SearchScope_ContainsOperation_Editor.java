@@ -91,11 +91,11 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12211705792421221170579242(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221170579242");
+    editorCell.setCellId("Collection_1221170579242");
   }
 
   private static void setupBasic_Constant_12211705835101221170583510(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221170583510");
+    editorCell.setCellId("Constant_1221170583510");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -108,7 +108,7 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12211707049181221170704918(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221170704918");
+    editorCell.setCellId("Constant_1221170704918");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
@@ -116,7 +116,7 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12211710776261221171077626(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221171077626");
+    editorCell.setCellId("Constant_1221171077626");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 

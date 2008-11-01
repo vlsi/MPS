@@ -137,15 +137,15 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11441954490931144195449093(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1144195449093");
+    editorCell.setCellId("Collection_1144195449093");
   }
 
   private static void setupBasic_refCell_conceptOfParent1144195585868(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_conceptOfParent");
+    editorCell.setCellId("refCell_conceptOfParent");
   }
 
   private static void setupBasic_Constant_11441981233721144198123372(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1144198123372");
+    editorCell.setCellId("Constant_1144198123372");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -158,7 +158,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_linkInParent1144198126876(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_linkInParent");
+    editorCell.setCellId("refCell_linkInParent");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -171,16 +171,16 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12064873631261206487363126(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487363126");
+    editorCell.setCellId("Constant_1206487363126");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206487372236(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAlias_Comp");
+    editorCell.setCellId("component_ReplaceableAlias_Comp");
   }
 
   private static void setupBasic_Constant_12064873722371206487372237(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206487372237");
+    editorCell.setCellId("Constant_1206487372237");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
@@ -244,7 +244,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1144195593746(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {
@@ -305,7 +305,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_role1144198126878(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_role");
+      editorCell.setCellId("property_role");
       {
         Style inlineStyle = new Style(editorCell) {
           {

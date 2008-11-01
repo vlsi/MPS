@@ -70,14 +70,14 @@ public class VariableArityType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12199211290271219921129027(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1219921129027");
+    editorCell.setCellId("Collection_1219921129027");
   }
 
   private static void setupBasic_refNode_componentType1219921129028(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12199211354201219921135420(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219921135420");
+    editorCell.setCellId("Constant_1219921135420");
   }
 
   private static void setupLabel_refNode_componentType_1219921129028(EditorCell_Label editorCell, SNode node, EditorContext context) {

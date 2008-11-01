@@ -125,11 +125,11 @@ public class PasteWrappers_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12211353430831221135343083(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221135343083");
+    editorCell.setCellId("Collection_1221135343083");
   }
 
   private static void setupBasic_Collection_12211353496491221135349649(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221135349649");
+    editorCell.setCellId("Collection_1221135349649");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -143,15 +143,15 @@ public class PasteWrappers_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12211353496511221135349651(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221135349651");
+    editorCell.setCellId("Constant_1221135349651");
   }
 
   private static void setupBasic_property_name1221135366468(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupBasic_Constant_12211353945801221135394580(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221135394580");
+    editorCell.setCellId("Constant_1221135394580");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -164,7 +164,7 @@ public class PasteWrappers_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12211354016141221135401614(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1221135401614");
+    editorCell.setCellId("Collection_1221135401614");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -178,7 +178,7 @@ public class PasteWrappers_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_wrapper1221135404884(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_wrapper");
+    editorCell.setCellId("refNodeList_wrapper");
   }
 
   private static void setupLabel_Constant_1221135349651_1221135349651(EditorCell_Label editorCell, SNode node, EditorContext context) {

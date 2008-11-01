@@ -25,7 +25,7 @@ public class NodeReachable_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_12155257304651215525730465(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215525730465");
+    editorCell.setCellId("Constant_1215525730465");
     transformationTest_StyleSheet.getNodeProperty(editorCell).apply(editorCell);
   }
 

@@ -118,7 +118,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
         noRefCell.setAction(CellActionType.INSERT_BEFORE, new CellAction_Insert(getSNode(), myGenuineRole));
       }
 
-      noRefCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_" + myLinkDeclaration.getRole());
+      noRefCell.setCellId(node.getId() + "_" + myLinkDeclaration.getRole());
       return noRefCell;
     }
 

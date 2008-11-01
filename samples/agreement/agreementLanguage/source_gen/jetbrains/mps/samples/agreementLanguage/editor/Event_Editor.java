@@ -18,11 +18,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -179,27 +177,27 @@ public class Event_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11117957346121111795734612(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1111795734612");
+    editorCell.setCellId("Collection_1111795734612");
   }
 
   private static void setupBasic_Collection_11117957390201111795739020(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1111795739020");
+    editorCell.setCellId("Collection_1111795739020");
   }
 
   private static void setupBasic_Collection_11117958072091111795807209(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1111795807209");
+    editorCell.setCellId("Collection_1111795807209");
   }
 
   private static void setupBasic_Constant_11117958704911111795870491(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1111795870491");
+    editorCell.setCellId("Constant_1111795870491");
   }
 
   private static void setupBasic_refCell_type1111795870492(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_type");
+    editorCell.setCellId("refCell_type");
   }
 
   private static void setupBasic_Constant_11117958704941111795870494(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1111795870494");
+    editorCell.setCellId("Constant_1111795870494");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -212,22 +210,16 @@ public class Event_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_postingRule1111795870495(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_postingRule");
+    editorCell.setCellId("refNodeList_postingRule");
   }
 
   private static void setupBasic_Constant_11163735898121116373589812(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1116373589812");
+    editorCell.setCellId("Constant_1116373589812");
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return Event_Editor.calculateColor6350_3(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
         }
 
       };
@@ -236,22 +228,16 @@ public class Event_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_taxable1116373608705(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_taxable");
+    editorCell.setCellId("property_taxable");
   }
 
   private static void setupBasic_Constant_11163736172851116373617285(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1116373617285");
+    editorCell.setCellId("Constant_1116373617285");
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return Event_Editor.calculateColor6350_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
         }
 
       };
@@ -278,42 +264,6 @@ public class Event_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1116373617285_1116373617285(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle6350_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
-  }
-
-  private static Integer calculateFontStyle6350_1(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Color calculateColor6350_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
-  }
-
-  private static Color calculateColor6350_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.lightGray;
-    return result;
-  }
-
-  private static Color calculateColor6350_2(EditorCell cell) {
-    Color result;
-    result = MPSColors.blue;
-    return result;
-  }
-
-  private static Color calculateColor6350_3(EditorCell cell) {
-    Color result;
-    result = MPSColors.lightGray;
-    return result;
   }
 
   public static class _Inline6350_0 extends AbstractCellProvider {
@@ -361,24 +311,12 @@ public class Event_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1111795870493(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-              public Integer calculate(EditorCell cell) {
-                return Event_Editor.calculateFontStyle6350_0(cell);
-              }
-
-            });
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return Event_Editor.calculateColor6350_0(cell);
-              }
-
-            });
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
 
         };
@@ -446,24 +384,12 @@ public class Event_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_11117958704961111795870496(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1111795870496");
+      editorCell.setCellId("Constant_1111795870496");
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-              public Integer calculate(EditorCell cell) {
-                return Event_Editor.calculateFontStyle6350_1(cell);
-              }
-
-            });
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return Event_Editor.calculateColor6350_2(cell);
-              }
-
-            });
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           }
 
         };

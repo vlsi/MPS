@@ -121,7 +121,7 @@ public class IntersectionSymbolClassPart_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12200229994271220022999427(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1220022999427");
+    editorCell.setCellId("Collection_1220022999427");
   }
 
   private static void setupBasic_refNode_left1220356824529(EditorCell editorCell, SNode node, EditorContext context) {
@@ -129,7 +129,7 @@ public class IntersectionSymbolClassPart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conceptProperty_alias1220356843355(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
   }
 
   private static void setupBasic_refNode_right1220356849720(EditorCell editorCell, SNode node, EditorContext context) {

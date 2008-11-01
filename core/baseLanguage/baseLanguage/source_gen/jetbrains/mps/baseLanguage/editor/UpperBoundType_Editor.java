@@ -79,15 +79,15 @@ public class UpperBoundType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11719039338301171903933830(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1171903933830");
+    editorCell.setCellId("Collection_1171903933830");
   }
 
   private static void setupBasic_Constant_11719039338311171903933831(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171903933831");
+    editorCell.setCellId("Constant_1171903933831");
   }
 
   private static void setupBasic_Constant_11719039338321171903933832(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171903933832");
+    editorCell.setCellId("Constant_1171903933832");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 

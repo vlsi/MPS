@@ -54,7 +54,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
 
 
   private static void setupBasic_refCell_propertyDeclaration1166057861191(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_propertyDeclaration");
+    editorCell.setCellId("refCell_propertyDeclaration");
   }
 
   private static void setupLabel_refCell_propertyDeclaration_1166057861191(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -105,7 +105,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
 
 
     private static void setupBasic_property_name1166057861193(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

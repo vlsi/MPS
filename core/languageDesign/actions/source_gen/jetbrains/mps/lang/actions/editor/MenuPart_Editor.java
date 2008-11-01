@@ -24,7 +24,7 @@ public class MenuPart_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_11793576409891179357640989(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1179357640989");
+    editorCell.setCellId("Error_1179357640989");
   }
 
   private static void setupLabel_Error_1179357640989_1179357640989(EditorCell_Label editorCell, SNode node, EditorContext context) {

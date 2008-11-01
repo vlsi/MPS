@@ -180,15 +180,15 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11746565648401174656564840(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174656564840");
+    editorCell.setCellId("Collection_1174656564840");
   }
 
   private static void setupBasic_Collection_11746565654251174656565425(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174656565425");
+    editorCell.setCellId("Collection_1174656565425");
   }
 
   private static void setupBasic_Constant_11746565654261174656565426(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174656565426");
+    editorCell.setCellId("Constant_1174656565426");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -204,7 +204,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11746565654281174656565428(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174656565428");
+    editorCell.setCellId("Constant_1174656565428");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -220,7 +220,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11746565708561174656570856(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174656570856");
+    editorCell.setCellId("Collection_1174656570856");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -233,7 +233,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11746565718581174656571858(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174656571858");
+    editorCell.setCellId("Constant_1174656571858");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -246,7 +246,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11746565728031174656572803(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174656572803");
+    editorCell.setCellId("Constant_1174656572803");
     {
       Style inlineStyle = new Style(editorCell) {
         {

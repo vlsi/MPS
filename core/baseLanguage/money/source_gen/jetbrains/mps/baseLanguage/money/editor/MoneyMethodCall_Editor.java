@@ -93,14 +93,14 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11877033198201187703319820(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1187703319820");
+    editorCell.setCellId("Collection_1187703319820");
   }
 
   private static void setupBasic_refNode_instance1187703323463(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_conceptProperty_alias1187703331058(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {

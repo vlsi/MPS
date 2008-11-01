@@ -215,11 +215,11 @@ public class InputRootWithStatementList_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12091495192581209149519258(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1209149519258");
+    editorCell.setCellId("Collection_1209149519258");
   }
 
   private static void setupBasic_Collection_12091495192591209149519259(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1209149519259");
+    editorCell.setCellId("Collection_1209149519259");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -232,19 +232,19 @@ public class InputRootWithStatementList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12091495192601209149519260(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209149519260");
+    editorCell.setCellId("Constant_1209149519260");
   }
 
   private static void setupBasic_Constant_12091495192611209149519261(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209149519261");
+    editorCell.setCellId("Constant_1209149519261");
   }
 
   private static void setupBasic_property_name1209149519262(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupBasic_Collection_12091495192631209149519263(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1209149519263");
+    editorCell.setCellId("Collection_1209149519263");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -257,27 +257,27 @@ public class InputRootWithStatementList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12091495192641209149519264(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209149519264");
+    editorCell.setCellId("Constant_1209149519264");
   }
 
   private static void setupBasic_Constant_12091495192651209149519265(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209149519265");
+    editorCell.setCellId("Constant_1209149519265");
   }
 
   private static void setupBasic_property_useInTest1209149519266(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_useInTest");
+    editorCell.setCellId("property_useInTest");
   }
 
   private static void setupBasic_Constant_12091495192671209149519267(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209149519267");
+    editorCell.setCellId("Constant_1209149519267");
   }
 
   private static void setupBasic_Constant_12091495192681209149519268(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209149519268");
+    editorCell.setCellId("Constant_1209149519268");
   }
 
   private static void setupBasic_Collection_12091495192691209149519269(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1209149519269");
+    editorCell.setCellId("Collection_1209149519269");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -290,7 +290,7 @@ public class InputRootWithStatementList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_12091495744121209149574412(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1209149574412");
+    editorCell.setCellId("Indent_1209149574412");
   }
 
   private static void setupBasic_refNode_statementList1209149582491(EditorCell editorCell, SNode node, EditorContext context) {

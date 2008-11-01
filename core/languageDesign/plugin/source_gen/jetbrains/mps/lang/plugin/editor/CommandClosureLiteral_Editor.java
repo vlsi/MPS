@@ -60,7 +60,7 @@ public class CommandClosureLiteral_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12254412168131225441216813(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1225441216813");
+    editorCell.setCellId("Collection_1225441216813");
   }
 
   private static void setupBasic_refNode_body1225441216814(EditorCell editorCell, SNode node, EditorContext context) {

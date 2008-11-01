@@ -135,7 +135,7 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11788715576331178871557633(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1178871557633");
+    editorCell.setCellId("Collection_1178871557633");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -148,7 +148,7 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11788715576341178871557634(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178871557634");
+    editorCell.setCellId("Constant_1178871557634");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -161,7 +161,7 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11788715576351178871557635(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178871557635");
+    editorCell.setCellId("Constant_1178871557635");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
@@ -169,14 +169,14 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11788715576371178871557637(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178871557637");
+    editorCell.setCellId("Constant_1178871557637");
   }
 
   private static void setupBasic_refNode_pattern1178871557638(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11788715576391178871557639(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178871557639");
+    editorCell.setCellId("Constant_1178871557639");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 

@@ -133,19 +133,19 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12126998520321212699852032(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212699852032");
+    editorCell.setCellId("Collection_1212699852032");
   }
 
   private static void setupBasic_refCell_constructorDeclaration1212699852034(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_constructorDeclaration");
+    editorCell.setCellId("refCell_constructorDeclaration");
   }
 
   private static void setupBasic_Collection_12126998520371212699852037(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212699852037");
+    editorCell.setCellId("Collection_1212699852037");
   }
 
   private static void setupBasic_Constant_12126998520381212699852038(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212699852038");
+    editorCell.setCellId("Constant_1212699852038");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -160,11 +160,11 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_typeParameter1212699852039(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_typeParameter");
+    editorCell.setCellId("refNodeList_typeParameter");
   }
 
   private static void setupBasic_Constant_12126998520401212699852040(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212699852040");
+    editorCell.setCellId("Constant_1212699852040");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -178,7 +178,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_component_IMethodCall_actualArguments1212699852051(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_IMethodCall_actualArguments");
+    editorCell.setCellId("component_IMethodCall_actualArguments");
   }
 
   private static void setupLabel_refCell_constructorDeclaration_1212699852034(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -242,7 +242,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_resolveInfo1212700054374(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_resolveInfo");
+      editorCell.setCellId("property_resolveInfo");
       BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
       {
         Style inlineStyle = new Style(editorCell) {

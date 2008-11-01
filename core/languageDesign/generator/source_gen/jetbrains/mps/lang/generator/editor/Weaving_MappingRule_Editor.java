@@ -439,7 +439,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11675179602071167517960207(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1167517960207");
+    editorCell.setCellId("Collection_1167517960207");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -452,7 +452,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11675179602081167517960208(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167517960208");
+    editorCell.setCellId("Constant_1167517960208");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -467,7 +467,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11675179602091167517960209(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167517960209");
+    editorCell.setCellId("Constant_1167517960209");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -480,7 +480,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11675179602101167517960210(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1167517960210");
+    editorCell.setCellId("Collection_1167517960210");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -493,7 +493,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11675179602111167517960211(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167517960211");
+    editorCell.setCellId("Constant_1167517960211");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -506,7 +506,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1167517960212(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -519,11 +519,11 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11695804720281169580472028(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169580472028");
+    editorCell.setCellId("Collection_1169580472028");
   }
 
   private static void setupBasic_Collection_11695804720291169580472029(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169580472029");
+    editorCell.setCellId("Collection_1169580472029");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -536,7 +536,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11695804720301169580472030(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169580472030");
+    editorCell.setCellId("Collection_1169580472030");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -549,11 +549,11 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_component_BaseMappingRule_premise1169580472031(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_BaseMappingRule_premise");
+    editorCell.setCellId("component_BaseMappingRule_premise");
   }
 
   private static void setupBasic_Constant_11695804720331169580472033(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169580472033");
+    editorCell.setCellId("Constant_1169580472033");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -566,7 +566,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11695804720341169580472034(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169580472034");
+    editorCell.setCellId("Collection_1169580472034");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -579,7 +579,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1169580472035(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -593,7 +593,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11695804720361169580472036(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169580472036");
+    editorCell.setCellId("Constant_1169580472036");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -606,7 +606,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11695804720451169580472045(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169580472045");
+    editorCell.setCellId("Collection_1169580472045");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -624,7 +624,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11695804864091169580486409(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169580486409");
+    editorCell.setCellId("Constant_1169580486409");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -637,7 +637,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11846164020931184616402093(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184616402093");
+    editorCell.setCellId("Collection_1184616402093");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -650,7 +650,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11846164020941184616402094(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184616402094");
+    editorCell.setCellId("Constant_1184616402094");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
   }
 
@@ -658,7 +658,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11952534513151195253451315(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1195253451315");
+    editorCell.setCellId("Constant_1195253451315");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -672,7 +672,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12009176587301200917658730(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1200917658730");
+    editorCell.setCellId("Collection_1200917658730");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -685,15 +685,15 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12009176587311200917658731(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200917658731");
+    editorCell.setCellId("Constant_1200917658731");
   }
 
   private static void setupBasic_refCell_labelDeclaration1200917658732(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_labelDeclaration");
+    editorCell.setCellId("refCell_labelDeclaration");
   }
 
   private static void setupBasic_Collection_12009176873091200917687309(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1200917687309");
+    editorCell.setCellId("Collection_1200917687309");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -706,15 +706,15 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_labelDeclaration1200917687310(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_labelDeclaration");
+    editorCell.setCellId("refCell_labelDeclaration");
   }
 
   private static void setupBasic_Constant_12009178842821200917884282(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200917884282");
+    editorCell.setCellId("Constant_1200917884282");
   }
 
   private static void setupBasic_Constant_12154753152651215475315265(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215475315265");
+    editorCell.setCellId("Constant_1215475315265");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -727,7 +727,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12198646063901219864606390(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219864606390");
+    editorCell.setCellId("Constant_1219864606390");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -850,7 +850,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1200917658734(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {
@@ -911,7 +911,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1200917687312(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

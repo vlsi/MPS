@@ -79,19 +79,19 @@ public class SelectPositionParameter_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12012688920101201268892010(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1201268892010");
+    editorCell.setCellId("Collection_1201268892010");
   }
 
   private static void setupBasic_Constant_12012688926991201268892699(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1201268892699");
+    editorCell.setCellId("Constant_1201268892699");
   }
 
   private static void setupBasic_Constant_12012688959041201268895904(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1201268895904");
+    editorCell.setCellId("Constant_1201268895904");
   }
 
   private static void setupBasic_property_position1201268897781(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_position");
+    editorCell.setCellId("property_position");
   }
 
   private static void setupLabel_Constant_1201268892699_1201268892699(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -70,15 +70,15 @@ public class UnboundClosureParameterDeclaration_Editor extends DefaultNodeEditor
 
 
   private static void setupBasic_Collection_12032523835391203252383539(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1203252383539");
+    editorCell.setCellId("Collection_1203252383539");
   }
 
   private static void setupBasic_Constant_12032523879631203252387963(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203252387963");
+    editorCell.setCellId("Constant_1203252387963");
   }
 
   private static void setupBasic_property_name1203252424075(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupLabel_Constant_1203252387963_1203252387963(EditorCell_Label editorCell, SNode node, EditorContext context) {

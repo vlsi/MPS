@@ -100,11 +100,11 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11999027277921199902727792(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1199902727792");
+    editorCell.setCellId("Collection_1199902727792");
   }
 
   private static void setupBasic_Collection_11999027305441199902730544(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1199902730544");
+    editorCell.setCellId("Collection_1199902730544");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -117,7 +117,7 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11999027315151199902731515(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199902731515");
+    editorCell.setCellId("Constant_1199902731515");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -130,7 +130,7 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11999027397051199902739705(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1199902739705");
+    editorCell.setCellId("Collection_1199902739705");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -143,7 +143,7 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_11999027454571199902745457(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1199902745457");
+    editorCell.setCellId("Indent_1199902745457");
   }
 
   private static void setupBasic_refNode_query1199902749771(EditorCell editorCell, SNode node, EditorContext context) {

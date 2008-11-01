@@ -74,15 +74,15 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12029489023151202948902315(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1202948902315");
+    editorCell.setCellId("Collection_1202948902315");
   }
 
   private static void setupBasic_refCell_instanceMethodDeclaration1202948938317(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_instanceMethodDeclaration");
+    editorCell.setCellId("refCell_instanceMethodDeclaration");
   }
 
   private static void setupBasic_component_IMethodCall_actualArguments1225532011450(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_IMethodCall_actualArguments");
+    editorCell.setCellId("component_IMethodCall_actualArguments");
   }
 
   private static void setupLabel_refCell_instanceMethodDeclaration_1202948938317(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -133,7 +133,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1202948938319(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
     }
 

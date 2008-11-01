@@ -106,11 +106,11 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12101612480021210161248002(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1210161248002");
+    editorCell.setCellId("Collection_1210161248002");
   }
 
   private static void setupBasic_refNodeList_row1210161250534(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_row");
+    editorCell.setCellId("refNodeList_row");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -124,12 +124,12 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12101612621621210161262162(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210161262162");
+    editorCell.setCellId("Constant_1210161262162");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12101612734141210161273414(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210161273414");
+    editorCell.setCellId("Constant_1210161273414");
   }
 
   private static void setupBasic_refNode_scalarType1210161282776(EditorCell editorCell, SNode node, EditorContext context) {

@@ -27,7 +27,7 @@ public class NodeWarningProperty_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_12155153618401215515361840(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215515361840");
+    editorCell.setCellId("Constant_1215515361840");
     transformationTest_StyleSheet.getNodeProperty(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

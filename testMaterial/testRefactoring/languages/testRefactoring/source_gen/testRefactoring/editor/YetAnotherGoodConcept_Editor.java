@@ -17,15 +17,15 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class YetAnotherGoodConcept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1200588808710");
+    editorCell.setCellId(node.getId() + "_1200588808710");
   }
 
   private static void setupBasic_NicePropertyCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1200588815978");
+    editorCell.setCellId(node.getId() + "_1200588815978");
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1200588808709");
+    editorCell.setCellId(node.getId() + "_1200588808709");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

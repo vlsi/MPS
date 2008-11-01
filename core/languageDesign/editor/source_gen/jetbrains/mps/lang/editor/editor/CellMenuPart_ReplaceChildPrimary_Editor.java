@@ -78,11 +78,11 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11740881309531174088130953(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174088130953");
+    editorCell.setCellId("Collection_1174088130953");
   }
 
   private static void setupBasic_Collection_11740881309541174088130954(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174088130954");
+    editorCell.setCellId("Collection_1174088130954");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -95,7 +95,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11740881309551174088130955(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174088130955");
+    editorCell.setCellId("Constant_1174088130955");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -109,7 +109,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11740881309561174088130956(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174088130956");
+    editorCell.setCellId("Collection_1174088130956");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -122,7 +122,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11740881309571174088130957(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174088130957");
+    editorCell.setCellId("Constant_1174088130957");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -135,7 +135,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11740881309581174088130958(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174088130958");
+    editorCell.setCellId("Constant_1174088130958");
     {
       Style inlineStyle = new Style(editorCell) {
         {

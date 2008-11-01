@@ -110,11 +110,11 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11745544370471174554437047(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174554437047");
+    editorCell.setCellId("Collection_1174554437047");
   }
 
   private static void setupBasic_Collection_11745544449731174554444973(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174554444973");
+    editorCell.setCellId("Collection_1174554444973");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -127,7 +127,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11745544505711174554450571(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174554450571");
+    editorCell.setCellId("Collection_1174554450571");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -140,7 +140,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11745544513701174554451370(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174554451370");
+    editorCell.setCellId("Constant_1174554451370");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -153,15 +153,15 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11745544565901174554456590(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174554456590");
+    editorCell.setCellId("Constant_1174554456590");
   }
 
   private static void setupBasic_Constant_11745544595451174554459545(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174554459545");
+    editorCell.setCellId("Constant_1174554459545");
   }
 
   private static void setupBasic_Constant_11745544695931174554469593(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174554469593");
+    editorCell.setCellId("Constant_1174554469593");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -174,7 +174,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_symbolClass1174554472861(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_symbolClass");
+    editorCell.setCellId("refNodeList_symbolClass");
   }
 
   private static void setupLabel_Constant_1174554451370_1174554451370(EditorCell_Label editorCell, SNode node, EditorContext context) {

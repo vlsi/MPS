@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class EqualsOperation_Editor extends DefaultNodeEditor {
@@ -108,7 +107,7 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11340354012451134035401245(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1134035401245");
+    editorCell.setCellId("Collection_1134035401245");
   }
 
   private static void setupBasic_refNode_leftOperand1134035401246(EditorCell editorCell, SNode node, EditorContext context) {
@@ -116,17 +115,11 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11340354012471134035401247(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1134035401247");
+    editorCell.setCellId("Constant_1134035401247");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return EqualsOperation_Editor.calculateBoolean4892_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -146,12 +139,6 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_rightOperand_1134035401248(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean4892_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
   public static class EqualsOperation_Editor_replaceWith_Operation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

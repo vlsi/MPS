@@ -48,11 +48,11 @@ public class StopStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12244518885141224451888514(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1224451888514");
+    editorCell.setCellId("Collection_1224451888514");
   }
 
   private static void setupBasic_Constant_12244518885151224451888515(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224451888515");
+    editorCell.setCellId("Constant_1224451888515");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -66,7 +66,7 @@ public class StopStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12244518885171224451888517(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224451888517");
+    editorCell.setCellId("Constant_1224451888517");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 

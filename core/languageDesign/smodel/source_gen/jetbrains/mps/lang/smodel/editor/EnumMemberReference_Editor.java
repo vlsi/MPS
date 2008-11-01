@@ -85,15 +85,15 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11461582561461146158256146(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1146158256146");
+    editorCell.setCellId("Collection_1146158256146");
   }
 
   private static void setupBasic_refCell_enumMember1146158258594(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_enumMember");
+    editorCell.setCellId("refCell_enumMember");
   }
 
   private static void setupBasic_Constant_11461582705881146158270588(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1146158270588");
+    editorCell.setCellId("Constant_1146158270588");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -109,7 +109,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11461583559841146158355984(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1146158355984");
+    editorCell.setCellId("Constant_1146158355984");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -178,7 +178,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_externalValue1146158258596(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_externalValue");
+      editorCell.setCellId("property_externalValue");
       {
         Style inlineStyle = new Style(editorCell) {
           {

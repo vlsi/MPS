@@ -90,15 +90,15 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11866680174111186668017411(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1186668017411");
+    editorCell.setCellId("Collection_1186668017411");
   }
 
   private static void setupBasic_property_amount1186668023743(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_amount");
+    editorCell.setCellId("property_amount");
   }
 
   private static void setupBasic_property_currency1186668032201(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_currency");
+    editorCell.setCellId("property_currency");
   }
 
   private static void setupLabel_property_amount_1186668023743(EditorCell_Label editorCell, SNode node, EditorContext context) {

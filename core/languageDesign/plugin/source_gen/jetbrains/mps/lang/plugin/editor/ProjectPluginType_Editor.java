@@ -93,11 +93,11 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12061117290871206111729087(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206111729087");
+    editorCell.setCellId("Collection_1206111729087");
   }
 
   private static void setupBasic_Constant_12061117420731206111742073(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206111742073");
+    editorCell.setCellId("Constant_1206111742073");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -112,7 +112,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12061117637731206111763773(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206111763773");
+    editorCell.setCellId("Constant_1206111763773");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -126,7 +126,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12061117675711206111767571(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206111767571");
+    editorCell.setCellId("Constant_1206111767571");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -140,7 +140,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_plugin1206111775837(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_plugin");
+    editorCell.setCellId("refCell_plugin");
   }
 
   private static void setupLabel_Constant_1206111742073_1206111742073(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -200,7 +200,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1206111777590(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1206111777590(EditorCell_Label editorCell, SNode node, EditorContext context) {

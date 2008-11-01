@@ -24,7 +24,7 @@ public class AbstractAntiquotation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_11963509154871196350915487(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1196350915487");
+    editorCell.setCellId("Error_1196350915487");
   }
 
   private static void setupLabel_Error_1196350915487_1196350915487(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -226,11 +226,11 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11963509154891196350915489(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1196350915489");
+    editorCell.setCellId("Collection_1196350915489");
   }
 
   private static void setupBasic_Constant_11963509154901196350915490(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196350915490");
+    editorCell.setCellId("Constant_1196350915490");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -258,7 +258,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11963509154961196350915496(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196350915496");
+    editorCell.setCellId("Constant_1196350915496");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -283,15 +283,15 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11963509155011196350915501(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1196350915501");
+    editorCell.setCellId("Collection_1196350915501");
   }
 
   private static void setupBasic_Constant_11963509155021196350915502(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196350915502");
+    editorCell.setCellId("Constant_1196350915502");
   }
 
   private static void setupBasic_Constant_11963509155031196350915503(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196350915503");
+    editorCell.setCellId("Constant_1196350915503");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -304,27 +304,27 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11963509155041196350915504(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1196350915504");
+    editorCell.setCellId("Collection_1196350915504");
   }
 
   private static void setupBasic_Constant_11963509155051196350915505(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196350915505");
+    editorCell.setCellId("Constant_1196350915505");
   }
 
   private static void setupBasic_ModelAccess_11963509155061196350915506(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ModelAccess_1196350915506");
+    editorCell.setCellId("ModelAccess_1196350915506");
   }
 
   private static void setupBasic_Collection_11963509155411196350915541(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1196350915541");
+    editorCell.setCellId("Collection_1196350915541");
   }
 
   private static void setupBasic_Constant_11963509155421196350915542(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196350915542");
+    editorCell.setCellId("Constant_1196350915542");
   }
 
   private static void setupBasic_ModelAccess_11963509155431196350915543(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ModelAccess_1196350915543");
+    editorCell.setCellId("ModelAccess_1196350915543");
   }
 
   private static void setupLabel_Constant_1196350915490_1196350915490(EditorCell_Label editorCell, SNode node, EditorContext context) {

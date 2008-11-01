@@ -56,7 +56,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_applicableNode1174650488858(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_applicableNode");
+    editorCell.setCellId("refCell_applicableNode");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -119,7 +119,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1174650491174(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

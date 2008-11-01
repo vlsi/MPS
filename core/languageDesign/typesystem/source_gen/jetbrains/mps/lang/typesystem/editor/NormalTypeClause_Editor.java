@@ -73,14 +73,14 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11857887252551185788725255(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1185788725255");
+    editorCell.setCellId("Collection_1185788725255");
   }
 
   private static void setupBasic_refNode_normalType1185788737962(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11858020045781185802004578(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1185802004578");
+    editorCell.setCellId("Constant_1185802004578");
   }
 
   private static void setupLabel_refNode_normalType_1185788737962(EditorCell_Label editorCell, SNode node, EditorContext context) {

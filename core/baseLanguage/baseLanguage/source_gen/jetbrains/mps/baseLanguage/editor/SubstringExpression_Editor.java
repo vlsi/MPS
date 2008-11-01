@@ -150,14 +150,14 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12252714850791225271485079(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1225271485079");
+    editorCell.setCellId("Collection_1225271485079");
   }
 
   private static void setupBasic_refNode_operand1225271485080(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12252714850811225271485081(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225271485081");
+    editorCell.setCellId("Constant_1225271485081");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -183,7 +183,7 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12252714850851225271485085(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225271485085");
+    editorCell.setCellId("Constant_1225271485085");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -209,7 +209,7 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12252714850901225271485090(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225271485090");
+    editorCell.setCellId("Constant_1225271485090");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 

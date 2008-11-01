@@ -70,11 +70,11 @@ public class DeterminantExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12099897063541209989706354(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1209989706354");
+    editorCell.setCellId("Collection_1209989706354");
   }
 
   private static void setupBasic_Constant_12099897103661209989710366(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209989710366");
+    editorCell.setCellId("Constant_1209989710366");
   }
 
   private static void setupBasic_refNode_literal1209989725186(EditorCell editorCell, SNode node, EditorContext context) {

@@ -53,7 +53,7 @@ public class PropertyRefQualifier_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_property1204837286691(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_property");
+    editorCell.setCellId("refCell_property");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -113,7 +113,7 @@ public class PropertyRefQualifier_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1204837292350(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

@@ -100,14 +100,14 @@ public class MultipleForeachLoopVariable_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11765479104361176547910436(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176547910436");
+    editorCell.setCellId("Collection_1176547910436");
   }
 
   private static void setupBasic_refNode_variable1176547913156(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11765479164711176547916471(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176547916471");
+    editorCell.setCellId("Constant_1176547916471");
   }
 
   private static void setupBasic_refNode_iterable1176547925817(EditorCell editorCell, SNode node, EditorContext context) {

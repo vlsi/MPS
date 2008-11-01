@@ -123,7 +123,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10753104802821075310480282(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1075310480282");
+    editorCell.setCellId("Collection_1075310480282");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -162,7 +162,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conceptProperty_alias1215694331196(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
   }
 

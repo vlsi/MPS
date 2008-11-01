@@ -150,15 +150,15 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11722427666451172242766645(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1172242766645");
+    editorCell.setCellId("Collection_1172242766645");
   }
 
   private static void setupBasic_Constant_11722427690011172242769001(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172242769001");
+    editorCell.setCellId("Constant_1172242769001");
   }
 
   private static void setupBasic_Constant_11722429496051172242949605(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172242949605");
+    editorCell.setCellId("Constant_1172242949605");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -171,18 +171,18 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Alternation_11751652925971175165292597(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Alternation_1175165292597");
+    editorCell.setCellId("Alternation_1175165292597");
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
   }
 
   private static void setupBasic_Collection_11751653350071175165335007(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175165335007");
+    editorCell.setCellId("Collection_1175165335007");
   }
 
   private static void setupBasic_Constant_11751653395711175165339571(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175165339571");
+    editorCell.setCellId("Constant_1175165339571");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -196,7 +196,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_nodeKind1175165391444(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_nodeKind");
+    editorCell.setCellId("refCell_nodeKind");
   }
 
   private static void setupBasic_refNode_nodeKindOccurrence1175166625464(EditorCell editorCell, SNode node, EditorContext context) {
@@ -275,7 +275,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1175165391446(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1175165391446(EditorCell_Label editorCell, SNode node, EditorContext context) {

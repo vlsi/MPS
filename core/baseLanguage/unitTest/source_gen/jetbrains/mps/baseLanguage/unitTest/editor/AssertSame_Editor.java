@@ -122,11 +122,11 @@ public class AssertSame_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11719857789661171985778966(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1171985778966");
+    editorCell.setCellId("Collection_1171985778966");
   }
 
   private static void setupBasic_Constant_11719857805151171985780515(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171985780515");
+    editorCell.setCellId("Constant_1171985780515");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -139,11 +139,11 @@ public class AssertSame_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11719857842671171985784267(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171985784267");
+    editorCell.setCellId("Constant_1171985784267");
   }
 
   private static void setupBasic_Constant_11719857885191171985788519(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171985788519");
+    editorCell.setCellId("Constant_1171985788519");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

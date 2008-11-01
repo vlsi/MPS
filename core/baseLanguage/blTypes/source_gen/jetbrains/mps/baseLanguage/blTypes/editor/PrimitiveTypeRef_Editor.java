@@ -65,11 +65,11 @@ public class PrimitiveTypeRef_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11592686617941159268661794(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1159268661794");
+    editorCell.setCellId("Collection_1159268661794");
   }
 
   private static void setupBasic_refCell_descriptor1159268661795(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_descriptor");
+    editorCell.setCellId("refCell_descriptor");
   }
 
   private static void setupLabel_refCell_descriptor_1159268661795(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -120,7 +120,7 @@ public class PrimitiveTypeRef_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1159268661797(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

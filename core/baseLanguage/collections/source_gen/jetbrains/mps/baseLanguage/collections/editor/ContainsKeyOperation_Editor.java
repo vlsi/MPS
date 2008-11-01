@@ -113,11 +113,11 @@ public class ContainsKeyOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12013155819761201315581976(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1201315581976");
+    editorCell.setCellId("Collection_1201315581976");
   }
 
   private static void setupBasic_conceptProperty_alias1201315584462(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -130,7 +130,7 @@ public class ContainsKeyOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12013155866671201315586667(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1201315586667");
+    editorCell.setCellId("Constant_1201315586667");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -144,7 +144,7 @@ public class ContainsKeyOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12013155887161201315588716(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1201315588716");
+    editorCell.setCellId("Constant_1201315588716");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 

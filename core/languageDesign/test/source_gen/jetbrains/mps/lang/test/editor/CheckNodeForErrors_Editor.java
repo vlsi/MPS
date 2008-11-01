@@ -91,11 +91,11 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12150760705701215076070570(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1215076070570");
+    editorCell.setCellId("Collection_1215076070570");
   }
 
   private static void setupBasic_Constant_12150760762571215076076257(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215076076257");
+    editorCell.setCellId("Constant_1215076076257");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
   }
 
@@ -103,7 +103,7 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12150760963291215076096329(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215076096329");
+    editorCell.setCellId("Constant_1215076096329");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -118,7 +118,7 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12150761059641215076105964(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215076105964");
+    editorCell.setCellId("Constant_1215076105964");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 

@@ -381,7 +381,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11675182708051167518270805(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1167518270805");
+    editorCell.setCellId("Collection_1167518270805");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -394,7 +394,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11675182708061167518270806(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167518270806");
+    editorCell.setCellId("Constant_1167518270806");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -409,7 +409,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11675182708071167518270807(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167518270807");
+    editorCell.setCellId("Constant_1167518270807");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -422,7 +422,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11675182708081167518270808(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1167518270808");
+    editorCell.setCellId("Collection_1167518270808");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -435,7 +435,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11675182708091167518270809(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167518270809");
+    editorCell.setCellId("Constant_1167518270809");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -449,7 +449,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1167518270810(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -462,11 +462,11 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11696729483711169672948371(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169672948371");
+    editorCell.setCellId("Collection_1169672948371");
   }
 
   private static void setupBasic_Collection_11696729483721169672948372(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169672948372");
+    editorCell.setCellId("Collection_1169672948372");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -479,7 +479,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11696729483731169672948373(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169672948373");
+    editorCell.setCellId("Collection_1169672948373");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -492,11 +492,11 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_component_BaseMappingRule_premise1169672948374(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_BaseMappingRule_premise");
+    editorCell.setCellId("component_BaseMappingRule_premise");
   }
 
   private static void setupBasic_Collection_11696729483761169672948376(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169672948376");
+    editorCell.setCellId("Collection_1169672948376");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -509,7 +509,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11696729483771169672948377(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169672948377");
+    editorCell.setCellId("Constant_1169672948377");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -522,7 +522,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11696729483781169672948378(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169672948378");
+    editorCell.setCellId("Collection_1169672948378");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -535,7 +535,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1169672948379(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -549,7 +549,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11696729483801169672948380(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169672948380");
+    editorCell.setCellId("Constant_1169672948380");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -565,7 +565,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11696729484041169672948404(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169672948404");
+    editorCell.setCellId("Constant_1169672948404");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -578,7 +578,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11696729611881169672961188(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169672961188");
+    editorCell.setCellId("Constant_1169672961188");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -591,7 +591,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12009175542601200917554260(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1200917554260");
+    editorCell.setCellId("Collection_1200917554260");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -604,15 +604,15 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12009175551841200917555184(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200917555184");
+    editorCell.setCellId("Constant_1200917555184");
   }
 
   private static void setupBasic_refCell_labelDeclaration1200917562296(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_labelDeclaration");
+    editorCell.setCellId("refCell_labelDeclaration");
   }
 
   private static void setupBasic_Collection_12009175768951200917576895(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1200917576895");
+    editorCell.setCellId("Collection_1200917576895");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -625,15 +625,15 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_labelDeclaration1200917586647(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_labelDeclaration");
+    editorCell.setCellId("refCell_labelDeclaration");
   }
 
   private static void setupBasic_Constant_12009178733431200917873343(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200917873343");
+    editorCell.setCellId("Constant_1200917873343");
   }
 
   private static void setupBasic_Constant_12154752647611215475264761(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215475264761");
+    editorCell.setCellId("Constant_1215475264761");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -747,7 +747,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1200917563252(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {
@@ -808,7 +808,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1200917586649(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

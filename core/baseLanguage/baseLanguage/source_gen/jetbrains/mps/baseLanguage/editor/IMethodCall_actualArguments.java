@@ -85,7 +85,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
 
 
   private static void setupBasic_Collection_11739909372331173990937233(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1173990937233");
+    editorCell.setCellId("Collection_1173990937233");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -98,7 +98,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_11739909564381173990956438(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1173990956438");
+    editorCell.setCellId("Constant_1173990956438");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -113,14 +113,14 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
   }
 
   private static void setupBasic_refNodeList_actualArgument1173990956439(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_actualArgument");
+    editorCell.setCellId("refNodeList_actualArgument");
     if (renderingCondition4497_1(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
     }
   }
 
   private static void setupBasic_Constant_11739909564411173990956441(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1173990956441");
+    editorCell.setCellId("Constant_1173990956441");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -219,7 +219,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
 
 
     private static void setupBasic_Constant_11739909564401173990956440(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1173990956440");
+      editorCell.setCellId("Constant_1173990956440");
       {
         Style inlineStyle = new Style(editorCell) {
           {

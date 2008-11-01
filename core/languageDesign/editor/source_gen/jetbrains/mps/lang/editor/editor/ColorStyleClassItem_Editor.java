@@ -151,20 +151,20 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11864038348981186403834898(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1186403834898");
+    editorCell.setCellId("Collection_1186403834898");
   }
 
   private static void setupBasic_conceptProperty_alias1186403839417(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11864038419661186403841966(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1186403841966");
+    editorCell.setCellId("Constant_1186403841966");
   }
 
   private static void setupBasic_property_color1186412595080(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_color");
+    editorCell.setCellId("property_color");
   }
 
   private static void setupBasic_refNode_query1186412603348(EditorCell editorCell, SNode node, EditorContext context) {

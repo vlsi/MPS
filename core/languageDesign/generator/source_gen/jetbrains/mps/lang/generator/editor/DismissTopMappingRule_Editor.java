@@ -73,11 +73,11 @@ public class DismissTopMappingRule_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11696704468671169670446867(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169670446867");
+    editorCell.setCellId("Collection_1169670446867");
   }
 
   private static void setupBasic_Constant_11696704686661169670468666(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169670468666");
+    editorCell.setCellId("Constant_1169670468666");
     {
       Style inlineStyle = new Style(editorCell) {
         {

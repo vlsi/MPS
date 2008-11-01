@@ -319,11 +319,11 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11496086370301149608637030(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1149608637030");
+    editorCell.setCellId("Collection_1149608637030");
   }
 
   private static void setupBasic_Constant_11496086603001149608660300(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1149608660300");
+    editorCell.setCellId("Constant_1149608660300");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -336,7 +336,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12047499257951204749925795(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204749925795");
+    editorCell.setCellId("Collection_1204749925795");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -349,15 +349,15 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12047499257961204749925796(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204749925796");
+    editorCell.setCellId("Constant_1204749925796");
   }
 
   private static void setupBasic_property_role1204749937611(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_role");
+    editorCell.setCellId("property_role");
   }
 
   private static void setupBasic_Collection_12047506959271204750695927(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204750695927");
+    editorCell.setCellId("Collection_1204750695927");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -370,7 +370,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12047507018981204750701898(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204750701898");
+    editorCell.setCellId("Constant_1204750701898");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -383,7 +383,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12047507343371204750734337(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204750734337");
+    editorCell.setCellId("Collection_1204750734337");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -396,7 +396,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12047510569491204751056949(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204751056949");
+    editorCell.setCellId("Collection_1204751056949");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -409,15 +409,15 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12047511297951204751129795(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204751129795");
+    editorCell.setCellId("Constant_1204751129795");
   }
 
   private static void setupBasic_property_stereotype1204751142436(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_stereotype");
+    editorCell.setCellId("property_stereotype");
   }
 
   private static void setupBasic_Collection_12047511525621204751152562(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204751152562");
+    editorCell.setCellId("Collection_1204751152562");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -430,15 +430,15 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12047511525631204751152563(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204751152563");
+    editorCell.setCellId("Constant_1204751152563");
   }
 
   private static void setupBasic_refCell_source1204751188237(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_source");
+    editorCell.setCellId("refCell_source");
   }
 
   private static void setupBasic_Collection_12047513836461204751383646(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204751383646");
+    editorCell.setCellId("Collection_1204751383646");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -451,15 +451,15 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12047513836471204751383647(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204751383647");
+    editorCell.setCellId("Constant_1204751383647");
   }
 
   private static void setupBasic_refCell_target1204751383648(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_target");
+    editorCell.setCellId("refCell_target");
   }
 
   private static void setupBasic_Collection_12047515127921204751512792(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204751512792");
+    editorCell.setCellId("Collection_1204751512792");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -472,11 +472,11 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12047515127931204751512793(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204751512793");
+    editorCell.setCellId("Constant_1204751512793");
   }
 
   private static void setupBasic_property_sourceCardinality1204751512794(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_sourceCardinality");
+    editorCell.setCellId("property_sourceCardinality");
   }
 
   private static void setupLabel_Constant_1149608660300_1149608660300(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -560,7 +560,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1204751188239(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {
@@ -621,7 +621,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1204751383650(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

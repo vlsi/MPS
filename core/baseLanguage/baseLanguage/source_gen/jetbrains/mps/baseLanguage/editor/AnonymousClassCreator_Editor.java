@@ -61,7 +61,7 @@ public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11821601758041182160175804(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1182160175804");
+    editorCell.setCellId("Collection_1182160175804");
   }
 
   private static void setupBasic_refNode_cls1182160175805(EditorCell editorCell, SNode node, EditorContext context) {

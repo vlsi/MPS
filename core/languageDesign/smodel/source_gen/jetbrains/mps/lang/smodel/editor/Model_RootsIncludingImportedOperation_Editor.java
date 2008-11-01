@@ -135,31 +135,31 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
 
 
   private static void setupBasic_Collection_11761097271501176109727150(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176109727150");
+    editorCell.setCellId("Collection_1176109727150");
   }
 
   private static void setupBasic_refCell_concept1176109740908(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_concept");
+    editorCell.setCellId("refCell_concept");
   }
 
   private static void setupBasic_refNode_scope1176109781602(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11761097847601176109784760(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176109784760");
+    editorCell.setCellId("Constant_1176109784760");
   }
 
   private static void setupBasic_Constant_12064866769971206486676997(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206486676997");
+    editorCell.setCellId("Constant_1206486676997");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206486688202(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAlias_Comp");
+    editorCell.setCellId("component_ReplaceableAlias_Comp");
   }
 
   private static void setupBasic_Constant_12064866882031206486688203(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206486688203");
+    editorCell.setCellId("Constant_1206486688203");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
@@ -223,7 +223,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
 
 
     private static void setupBasic_property_name1176109745364(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     }
 

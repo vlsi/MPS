@@ -51,7 +51,7 @@ public class FinderReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_finderDeclaration1212242618102(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_finderDeclaration");
+    editorCell.setCellId("refCell_finderDeclaration");
   }
 
   private static void setupLabel_refCell_finderDeclaration_1212242618102(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -102,7 +102,7 @@ public class FinderReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1212242622371(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1212242622371(EditorCell_Label editorCell, SNode node, EditorContext context) {

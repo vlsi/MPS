@@ -25,7 +25,7 @@ public class Separator_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_12049081418431204908141843(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204908141843");
+    editorCell.setCellId("Constant_1204908141843");
   }
 
   private static void setupLabel_Constant_1204908141843_1204908141843(EditorCell_Label editorCell, SNode node, EditorContext context) {

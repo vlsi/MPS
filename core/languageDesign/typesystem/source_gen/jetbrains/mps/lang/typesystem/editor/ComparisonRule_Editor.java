@@ -344,15 +344,15 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11888132177371188813217737(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188813217737");
+    editorCell.setCellId("Collection_1188813217737");
   }
 
   private static void setupBasic_Collection_11888132177381188813217738(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188813217738");
+    editorCell.setCellId("Collection_1188813217738");
   }
 
   private static void setupBasic_Constant_11888132177391188813217739(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188813217739");
+    editorCell.setCellId("Constant_1188813217739");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -366,11 +366,11 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1188813217740(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupBasic_Constant_11888132177411188813217741(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188813217741");
+    editorCell.setCellId("Constant_1188813217741");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -383,11 +383,11 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11888132177421188813217742(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188813217742");
+    editorCell.setCellId("Collection_1188813217742");
   }
 
   private static void setupBasic_Constant_11888132177431188813217743(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188813217743");
+    editorCell.setCellId("Constant_1188813217743");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -404,7 +404,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11888132177451188813217745(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188813217745");
+    editorCell.setCellId("Constant_1188813217745");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -417,11 +417,11 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11888132177471188813217747(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188813217747");
+    editorCell.setCellId("Collection_1188813217747");
   }
 
   private static void setupBasic_Constant_11888132177481188813217748(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188813217748");
+    editorCell.setCellId("Constant_1188813217748");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -437,7 +437,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11888132177501188813217750(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188813217750");
+    editorCell.setCellId("Constant_1188813217750");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -450,7 +450,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11888132177511188813217751(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188813217751");
+    editorCell.setCellId("Collection_1188813217751");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -463,35 +463,35 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_isWeak1188813217753(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_isWeak");
+    editorCell.setCellId("property_isWeak");
   }
 
   private static void setupBasic_Constant_11888207893081188820789308(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188820789308");
+    editorCell.setCellId("Constant_1188820789308");
   }
 
   private static void setupBasic_refNode_anotherNode1188820797560(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Collection_12016079291941201607929194(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1201607929194");
+    editorCell.setCellId("Collection_1201607929194");
   }
 
   private static void setupBasic_Constant_12016079291961201607929196(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1201607929196");
+    editorCell.setCellId("Constant_1201607929196");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12016079291971201607929197(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1201607929197");
+    editorCell.setCellId("Constant_1201607929197");
   }
 
   private static void setupBasic_Collection_12016079709821201607970982(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1201607970982");
+    editorCell.setCellId("Collection_1201607970982");
   }
 
   private static void setupBasic_Constant_12016079709841201607970984(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1201607970984");
+    editorCell.setCellId("Constant_1201607970984");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -505,7 +505,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12016079709851201607970985(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1201607970985");
+    editorCell.setCellId("Constant_1201607970985");
     {
       Style inlineStyle = new Style(editorCell) {
         {

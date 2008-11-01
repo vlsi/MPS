@@ -26,7 +26,7 @@ public class DialogExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_12036105231461203610523146(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203610523146");
+    editorCell.setCellId("Constant_1203610523146");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 

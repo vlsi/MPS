@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -77,21 +75,15 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11616967501241161696750124(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1161696750124");
+    editorCell.setCellId("Collection_1161696750124");
   }
 
   private static void setupBasic_Constant_11616967501281161696750128(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1161696750128");
+    editorCell.setCellId("Constant_1161696750128");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return BLArrayType_Editor.calculateColor2925_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
 
       };
@@ -100,19 +92,13 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_componentType1219697884425(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_componentType");
+    editorCell.setCellId("refCell_componentType");
   }
 
   private static void setupLabel_Constant_1161696750128_1161696750128(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_refCell_componentType_1219697884425(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor2925_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
   }
 
   public static class _Inline2925_0 extends AbstractCellProvider {
@@ -160,7 +146,7 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1219697890195(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1219697890195(EditorCell_Label editorCell, SNode node, EditorContext context) {

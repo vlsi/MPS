@@ -52,7 +52,7 @@ public class ChildTypeRestrictionReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_typeRestriction1212763726768(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_typeRestriction");
+    editorCell.setCellId("refCell_typeRestriction");
   }
 
   private static void setupLabel_refCell_typeRestriction_1212763726768(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -103,7 +103,7 @@ public class ChildTypeRestrictionReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1212763729005(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
     }
 

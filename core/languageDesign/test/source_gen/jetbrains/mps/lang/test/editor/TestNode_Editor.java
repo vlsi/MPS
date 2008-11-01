@@ -62,7 +62,7 @@ public class TestNode_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12169920465411216992046541(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1216992046541");
+    editorCell.setCellId("Collection_1216992046541");
   }
 
   private static void setupBasic_refNode_nodeToCheck1216992052771(EditorCell editorCell, SNode node, EditorContext context) {

@@ -141,14 +141,14 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11636689473051163668947305(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1163668947305");
+    editorCell.setCellId("Collection_1163668947305");
   }
 
   private static void setupBasic_refNode_condition1163668952186(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11636689544061163668954406(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1163668954406");
+    editorCell.setCellId("Constant_1163668954406");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -165,7 +165,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11636689587381163668958738(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1163668958738");
+    editorCell.setCellId("Constant_1163668958738");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

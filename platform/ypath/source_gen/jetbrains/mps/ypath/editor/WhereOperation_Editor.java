@@ -79,18 +79,18 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11685277750581168527775058(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1168527775058");
+    editorCell.setCellId("Collection_1168527775058");
   }
 
   private static void setupBasic_Constant_11685277768001168527776800(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168527776800");
+    editorCell.setCellId("Constant_1168527776800");
   }
 
   private static void setupBasic_refNode_whereBlock1168527781288(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11685277866731168527786673(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168527786673");
+    editorCell.setCellId("Constant_1168527786673");
   }
 
   private static void setupLabel_Constant_1168527776800_1168527776800(EditorCell_Label editorCell, SNode node, EditorContext context) {

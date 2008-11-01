@@ -10059,11 +10059,7 @@
                 <link role="variableDeclaration" targetNodeId="1182908332424" resolveInfo="editorCell" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995326114">
-                <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell.putUserObject(java.lang.Object,java.lang.Object):void" resolveInfo="putUserObject" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1182974244856">
-                  <link role="classifier" targetNodeId="67.~EditorCell" resolveInfo="EditorCell" />
-                  <link role="variableDeclaration" targetNodeId="67.~EditorCell.CELL_ID" resolveInfo="CELL_ID" />
-                </node>
+                <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell.setCellId(java.lang.String):void" resolveInfo="setCellId" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1182974244860">
                   <property name="value" value="_cell_id_" />
                   <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1182974244861">

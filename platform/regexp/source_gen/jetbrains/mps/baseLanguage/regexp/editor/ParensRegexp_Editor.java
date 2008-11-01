@@ -82,11 +82,11 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11744911867831174491186783(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174491186783");
+    editorCell.setCellId("Collection_1174491186783");
   }
 
   private static void setupBasic_Constant_11744911891751174491189175(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174491189175");
+    editorCell.setCellId("Constant_1174491189175");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -103,7 +103,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11744911960391174491196039(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174491196039");
+    editorCell.setCellId("Constant_1174491196039");
     {
       Style inlineStyle = new Style(editorCell) {
         {

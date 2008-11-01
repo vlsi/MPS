@@ -72,19 +72,19 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11800251143251180025114325(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180025114325");
+    editorCell.setCellId("Collection_1180025114325");
   }
 
   private static void setupBasic_refNodeList_visitParameterDeclaration1180025114326(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_visitParameterDeclaration");
+    editorCell.setCellId("refNodeList_visitParameterDeclaration");
   }
 
   private static void setupBasic_Constant_11800251180961180025118096(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180025118096");
+    editorCell.setCellId("Constant_1180025118096");
   }
 
   private static void setupBasic_Constant_11800251221131180025122113(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180025122113");
+    editorCell.setCellId("Constant_1180025122113");
   }
 
   private static void setupLabel_refNodeList_visitParameterDeclaration_1180025114326(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -152,7 +152,7 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_11800251143271180025114327(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180025114327");
+      editorCell.setCellId("Constant_1180025114327");
       {
         Style inlineStyle = new Style(editorCell) {
           {

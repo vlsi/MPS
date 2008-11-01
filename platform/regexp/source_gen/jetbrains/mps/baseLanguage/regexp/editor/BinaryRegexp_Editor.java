@@ -121,7 +121,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11749004707651174900470765(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174900470765");
+    editorCell.setCellId("Collection_1174900470765");
   }
 
   private static void setupBasic_refNode_left1174900472658(EditorCell editorCell, SNode node, EditorContext context) {
@@ -129,7 +129,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conceptProperty_alias1174900475613(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
   }
 
   private static void setupBasic_refNode_right1174900480209(EditorCell editorCell, SNode node, EditorContext context) {

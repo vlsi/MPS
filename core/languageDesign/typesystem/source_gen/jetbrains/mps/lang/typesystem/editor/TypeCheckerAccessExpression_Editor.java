@@ -25,7 +25,7 @@ public class TypeCheckerAccessExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_11755949259541175594925954(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175594925954");
+    editorCell.setCellId("Constant_1175594925954");
   }
 
   private static void setupLabel_Constant_1175594925954_1175594925954(EditorCell_Label editorCell, SNode node, EditorContext context) {

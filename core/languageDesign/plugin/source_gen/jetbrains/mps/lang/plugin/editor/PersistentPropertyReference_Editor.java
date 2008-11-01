@@ -54,7 +54,7 @@ public class PersistentPropertyReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_propertyDeclaration1210181153278(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_propertyDeclaration");
+    editorCell.setCellId("refCell_propertyDeclaration");
   }
 
   private static void setupLabel_refCell_propertyDeclaration_1210181153278(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -105,7 +105,7 @@ public class PersistentPropertyReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1210181156769(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
       {
         Style inlineStyle = new Style(editorCell) {

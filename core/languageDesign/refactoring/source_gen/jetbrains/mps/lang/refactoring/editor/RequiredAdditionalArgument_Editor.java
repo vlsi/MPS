@@ -16,8 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class RequiredAdditionalArgument_Editor extends DefaultNodeEditor {
@@ -106,21 +104,15 @@ public class RequiredAdditionalArgument_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11897685901151189768590115(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1189768590115");
+    editorCell.setCellId("Collection_1189768590115");
   }
 
   private static void setupBasic_property_name1189768590116(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return RequiredAdditionalArgument_Editor.calculateColor7015_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         }
 
       };
@@ -129,7 +121,7 @@ public class RequiredAdditionalArgument_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11906371548351190637154835(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1190637154835");
+    editorCell.setCellId("Constant_1190637154835");
   }
 
   private static void setupBasic_refNode_argumentType1190637157524(EditorCell editorCell, SNode node, EditorContext context) {
@@ -142,12 +134,6 @@ public class RequiredAdditionalArgument_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_argumentType_1190637157524(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor7015_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
   }
 
 }

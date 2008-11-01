@@ -105,15 +105,15 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11882145826141188214582614(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188214582614");
+    editorCell.setCellId("Collection_1188214582614");
   }
 
   private static void setupBasic_refCell_key1188214583881(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_key");
+    editorCell.setCellId("refCell_key");
   }
 
   private static void setupBasic_Constant_11882145899801188214589980(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188214589980");
+    editorCell.setCellId("Constant_1188214589980");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
   }
 
@@ -174,7 +174,7 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1188214586947(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

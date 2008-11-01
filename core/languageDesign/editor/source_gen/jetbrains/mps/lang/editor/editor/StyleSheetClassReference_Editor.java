@@ -51,7 +51,7 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_styleSheetClass1198252344955(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_styleSheetClass");
+    editorCell.setCellId("refCell_styleSheetClass");
   }
 
   private static void setupLabel_refCell_styleSheetClass_1198252344955(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -102,7 +102,7 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1198252346521(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1198252346521(EditorCell_Label editorCell, SNode node, EditorContext context) {

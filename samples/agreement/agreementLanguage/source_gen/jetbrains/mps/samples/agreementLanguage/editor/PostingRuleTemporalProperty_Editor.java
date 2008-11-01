@@ -102,14 +102,14 @@ public class PostingRuleTemporalProperty_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11120332522751112033252275(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1112033252275");
+    editorCell.setCellId("Collection_1112033252275");
   }
 
   private static void setupBasic_refNode_date1112033307260(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11120333072611112033307261(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1112033307261");
+    editorCell.setCellId("Constant_1112033307261");
     {
       Style inlineStyle = new Style(editorCell) {
         {

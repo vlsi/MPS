@@ -136,25 +136,25 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11746430536491174643053649(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174643053649");
+    editorCell.setCellId("Collection_1174643053649");
   }
 
   private static void setupBasic_refCell_concept1174643056495(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_concept");
+    editorCell.setCellId("refCell_concept");
   }
 
   private static void setupBasic_Constant_11746466599041174646659904(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174646659904");
+    editorCell.setCellId("Constant_1174646659904");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11746471108801174647110880(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174647110880");
+    editorCell.setCellId("Constant_1174647110880");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_name1174647124944(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -168,7 +168,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11982433828741198243382874(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1198243382874");
+    editorCell.setCellId("Constant_1198243382874");
   }
 
   private static void setupLabel_refCell_concept_1174643056495(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -231,7 +231,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1174643059857(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     }
 

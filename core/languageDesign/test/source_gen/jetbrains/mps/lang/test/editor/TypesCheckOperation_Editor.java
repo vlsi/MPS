@@ -26,7 +26,7 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_12156070946991215607094699(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215607094699");
+    editorCell.setCellId("Constant_1215607094699");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
   }
 

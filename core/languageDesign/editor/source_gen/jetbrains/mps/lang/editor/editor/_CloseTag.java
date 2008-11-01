@@ -60,7 +60,7 @@ public class _CloseTag extends AbstractCellProvider {
 
 
   private static void setupBasic_ModelAccess_11767169182721176716918272(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ModelAccess_1176716918272");
+    editorCell.setCellId("ModelAccess_1176716918272");
     {
       Style inlineStyle = new Style(editorCell) {
         {

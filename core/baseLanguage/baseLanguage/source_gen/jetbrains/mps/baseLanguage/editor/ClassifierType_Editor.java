@@ -122,15 +122,15 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12115050699811211505069981(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1211505069981");
+    editorCell.setCellId("Collection_1211505069981");
   }
 
   private static void setupBasic_refCell_classifier1211505069982(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_classifier");
+    editorCell.setCellId("refCell_classifier");
   }
 
   private static void setupBasic_Collection_12115051688561211505168856(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1211505168856");
+    editorCell.setCellId("Collection_1211505168856");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -143,7 +143,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12115051688571211505168857(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1211505168857");
+    editorCell.setCellId("Constant_1211505168857");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -158,11 +158,11 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_parameter1211505175170(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_parameter");
+    editorCell.setCellId("refNodeList_parameter");
   }
 
   private static void setupBasic_Constant_12115051751711211505175171(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1211505175171");
+    editorCell.setCellId("Constant_1211505175171");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -237,7 +237,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_nestedName1211505069984(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_nestedName");
+      editorCell.setCellId("property_nestedName");
       {
         Style inlineStyle = new Style(editorCell) {
           {

@@ -70,14 +70,14 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
 
 
   private static void setupBasic_Collection_10753805668291075380566829(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1075380566829");
+    editorCell.setCellId("Collection_1075380566829");
   }
 
   private static void setupBasic_refNode_localVariableDeclaration1075380566830(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_10753805668311075380566831(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1075380566831");
+    editorCell.setCellId("Constant_1075380566831");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 

@@ -192,7 +192,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
 
 
   private static void setupBasic_Collection_11673281702731167328170273(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1167328170273");
+    editorCell.setCellId("Collection_1167328170273");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -207,7 +207,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   }
 
   private static void setupBasic_Collection_11694949427571169494942757(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169494942757");
+    editorCell.setCellId("Collection_1169494942757");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -220,7 +220,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_11694949427581169494942758(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169494942758");
+    editorCell.setCellId("Constant_1169494942758");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -234,14 +234,14 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   }
 
   private static void setupBasic_refCell_applicableConcept1169494942759(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_applicableConcept");
+    editorCell.setCellId("refCell_applicableConcept");
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
     }
   }
 
   private static void setupBasic_Collection_11694949427621169494942762(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169494942762");
+    editorCell.setCellId("Collection_1169494942762");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -254,7 +254,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_11694949427631169494942763(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169494942763");
+    editorCell.setCellId("Constant_1169494942763");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -268,11 +268,11 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   }
 
   private static void setupBasic_property_applyToConceptInheritors1169494942764(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_applyToConceptInheritors");
+    editorCell.setCellId("property_applyToConceptInheritors");
   }
 
   private static void setupBasic_Collection_11694949427741169494942774(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1169494942774");
+    editorCell.setCellId("Collection_1169494942774");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -285,7 +285,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_11694949427751169494942775(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1169494942775");
+    editorCell.setCellId("Constant_1169494942775");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -364,7 +364,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
 
 
     private static void setupBasic_property_name1169494942761(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

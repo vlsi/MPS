@@ -72,16 +72,16 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
 
 
   private static void setupBasic_Collection_12168601463471216860146347(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1216860146347");
+    editorCell.setCellId("Collection_1216860146347");
   }
 
   private static void setupBasic_Constant_12168601463481216860146348(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216860146348");
+    editorCell.setCellId("Constant_1216860146348");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_label1216860254150(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_label");
+    editorCell.setCellId("refCell_label");
     jetbrains.mps.lang.generator.editor.Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
   }
 
@@ -136,7 +136,7 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
 
 
     private static void setupBasic_property_name1216860264996(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1216860264996(EditorCell_Label editorCell, SNode node, EditorContext context) {

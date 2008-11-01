@@ -51,7 +51,7 @@ public class TestNodeReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_declaration1210674549425(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_declaration");
+    editorCell.setCellId("refCell_declaration");
   }
 
   private static void setupLabel_refCell_declaration_1210674549425(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -102,7 +102,7 @@ public class TestNodeReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1210674551757(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       transformationTest_StyleSheet.getNodeAnnotation(editorCell).apply(editorCell);
     }
 

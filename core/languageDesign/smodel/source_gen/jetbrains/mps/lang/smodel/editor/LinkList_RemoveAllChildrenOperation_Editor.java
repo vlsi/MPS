@@ -27,7 +27,7 @@ public class LinkList_RemoveAllChildrenOperation_Editor extends DefaultNodeEdito
 
 
   private static void setupBasic_Constant_12151036396661215103639666(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215103639666");
+    editorCell.setCellId("Constant_1215103639666");
     {
       Style inlineStyle = new Style(editorCell) {
         {

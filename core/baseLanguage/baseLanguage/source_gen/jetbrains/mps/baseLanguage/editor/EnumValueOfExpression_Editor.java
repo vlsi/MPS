@@ -141,20 +141,20 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12245752002021224575200202(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1224575200202");
+    editorCell.setCellId("Collection_1224575200202");
   }
 
   private static void setupBasic_refCell_enumClass1224575200203(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_enumClass");
+    editorCell.setCellId("refCell_enumClass");
   }
 
   private static void setupBasic_Constant_12245752002071224575200207(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224575200207");
+    editorCell.setCellId("Constant_1224575200207");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12245752002081224575200208(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224575200208");
+    editorCell.setCellId("Constant_1224575200208");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -168,12 +168,12 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12245752814401224575281440(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224575281440");
+    editorCell.setCellId("Constant_1224575281440");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12245752829421224575282942(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224575282942");
+    editorCell.setCellId("Constant_1224575282942");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
@@ -243,7 +243,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1224575200205(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

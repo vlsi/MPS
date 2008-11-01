@@ -136,11 +136,11 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
 
   private static void setupBasic_Collection_12069959303981206995930398(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206995930398");
+    editorCell.setCellId("Collection_1206995930398");
   }
 
   private static void setupBasic_conceptProperty_alias1206995930399(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -154,7 +154,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   }
 
   private static void setupBasic_Collection_12069959599021206995959902(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206995959902");
+    editorCell.setCellId("Collection_1206995959902");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -167,7 +167,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_12069959599031206995959903(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206995959903");
+    editorCell.setCellId("Constant_1206995959903");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -183,11 +183,11 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   }
 
   private static void setupBasic_refNodeList_parameter1206995959904(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_parameter");
+    editorCell.setCellId("refNodeList_parameter");
   }
 
   private static void setupBasic_Constant_12069959599061206995959906(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206995959906");
+    editorCell.setCellId("Constant_1206995959906");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -279,7 +279,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
 
     private static void setupBasic_Constant_12069959599051206995959905(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206995959905");
+      editorCell.setCellId("Constant_1206995959905");
       {
         Style inlineStyle = new Style(editorCell) {
           {

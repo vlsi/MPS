@@ -90,16 +90,16 @@ public class TrimOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12252715465561225271546556(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1225271546556");
+    editorCell.setCellId("Collection_1225271546556");
   }
 
   private static void setupBasic_Constant_12252715465571225271546557(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225271546557");
+    editorCell.setCellId("Constant_1225271546557");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12252715465581225271546558(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225271546558");
+    editorCell.setCellId("Constant_1225271546558");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -113,7 +113,7 @@ public class TrimOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_trimKind1225271546560(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_trimKind");
+    editorCell.setCellId("property_trimKind");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -126,7 +126,7 @@ public class TrimOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12252715465621225271546562(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225271546562");
+    editorCell.setCellId("Constant_1225271546562");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 

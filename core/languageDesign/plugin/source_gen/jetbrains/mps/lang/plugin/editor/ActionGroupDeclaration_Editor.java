@@ -419,11 +419,11 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12030882361161203088236116(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1203088236116");
+    editorCell.setCellId("Collection_1203088236116");
   }
 
   private static void setupBasic_Collection_12030882442441203088244244(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1203088244244");
+    editorCell.setCellId("Collection_1203088244244");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -436,7 +436,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12030882498091203088249809(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203088249809");
+    editorCell.setCellId("Constant_1203088249809");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -449,30 +449,30 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1203088257717(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupBasic_Collection_12051608809451205160880945(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1205160880945");
+    editorCell.setCellId("Collection_1205160880945");
   }
 
   private static void setupBasic_Constant_12051608836491205160883649(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205160883649");
+    editorCell.setCellId("Constant_1205160883649");
   }
 
   private static void setupBasic_property_isInternal1205160899073(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_isInternal");
+    editorCell.setCellId("property_isInternal");
   }
 
   private static void setupBasic_Collection_12051652316451205165231645(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1205165231645");
+    editorCell.setCellId("Collection_1205165231645");
   }
 
   private static void setupBasic_refNode_contents1207146991319(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12071478020131207147802013(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1207147802013");
+    editorCell.setCellId("Constant_1207147802013");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -485,7 +485,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12132836597401213283659740(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1213283659740");
+    editorCell.setCellId("Collection_1213283659740");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -498,19 +498,19 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12132836625861213283662586(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1213283662586");
+    editorCell.setCellId("Constant_1213283662586");
   }
 
   private static void setupBasic_property_isPopup1213283669791(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_isPopup");
+    editorCell.setCellId("property_isPopup");
   }
 
   private static void setupBasic_component_ModificationsEditor1215777327291(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ModificationsEditor");
+    editorCell.setCellId("component_ModificationsEditor");
   }
 
   private static void setupBasic_Constant_12157773975521215777397552(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215777397552");
+    editorCell.setCellId("Constant_1215777397552");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -523,11 +523,11 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12169066582501216906658250(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1216906658250");
+    editorCell.setCellId("Collection_1216906658250");
   }
 
   private static void setupBasic_Collection_12169066628301216906662830(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1216906662830");
+    editorCell.setCellId("Collection_1216906662830");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -540,7 +540,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12169066628321216906662832(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216906662832");
+    editorCell.setCellId("Constant_1216906662832");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -553,11 +553,11 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_caption1216906662834(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_caption");
+    editorCell.setCellId("property_caption");
   }
 
   private static void setupBasic_Collection_12169066628351216906662835(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1216906662835");
+    editorCell.setCellId("Collection_1216906662835");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -570,7 +570,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12169066628371216906662837(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216906662837");
+    editorCell.setCellId("Constant_1216906662837");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -583,11 +583,11 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_mnemonic1216906662839(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_mnemonic");
+    editorCell.setCellId("property_mnemonic");
   }
 
   private static void setupBasic_Collection_12170061191901217006119190(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1217006119190");
+    editorCell.setCellId("Collection_1217006119190");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -600,7 +600,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12170061191921217006119192(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217006119192");
+    editorCell.setCellId("Constant_1217006119192");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -613,7 +613,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_isInvisibleWhenDisabled1217006119194(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_isInvisibleWhenDisabled");
+    editorCell.setCellId("property_isInvisibleWhenDisabled");
   }
 
   private static void setupLabel_Constant_1203088249809_1203088249809(EditorCell_Label editorCell, SNode node, EditorContext context) {

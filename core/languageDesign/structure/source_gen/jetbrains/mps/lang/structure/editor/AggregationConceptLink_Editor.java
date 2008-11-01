@@ -113,15 +113,15 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11057391247431105739124743(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1105739124743");
+    editorCell.setCellId("Collection_1105739124743");
   }
 
   private static void setupBasic_refCell_aggregationConceptLinkDeclaration1105739124744(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_aggregationConceptLinkDeclaration");
+    editorCell.setCellId("refCell_aggregationConceptLinkDeclaration");
   }
 
   private static void setupBasic_Constant_11057391247461105739124746(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1105739124746");
+    editorCell.setCellId("Constant_1105739124746");
   }
 
   private static void setupBasic_refNode_target1105987989392(EditorCell editorCell, SNode node, EditorContext context) {
@@ -181,7 +181,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1105739124745(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

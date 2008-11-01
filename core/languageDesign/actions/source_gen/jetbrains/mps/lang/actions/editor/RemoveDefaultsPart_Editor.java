@@ -39,11 +39,11 @@ public class RemoveDefaultsPart_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11776147326121177614732612(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1177614732612");
+    editorCell.setCellId("Collection_1177614732612");
   }
 
   private static void setupBasic_Constant_11776147334181177614733418(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177614733418");
+    editorCell.setCellId("Constant_1177614733418");
     {
       Style inlineStyle = new Style(editorCell) {
         {

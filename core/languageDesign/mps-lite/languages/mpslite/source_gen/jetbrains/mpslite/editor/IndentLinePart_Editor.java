@@ -10,10 +10,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class IndentLinePart_Editor extends DefaultNodeEditor {
 
@@ -41,21 +39,15 @@ public class IndentLinePart_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11825127196051182512719605(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1182512719605");
+    editorCell.setCellId("Collection_1182512719605");
   }
 
   private static void setupBasic_Constant_11825127214191182512721419(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1182512721419");
+    editorCell.setCellId("Constant_1182512721419");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return IndentLinePart_Editor.calculateColor9913_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
         }
 
       };
@@ -65,12 +57,6 @@ public class IndentLinePart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1182512721419_1182512721419(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor9913_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.lightGray;
-    return result;
   }
 
 }

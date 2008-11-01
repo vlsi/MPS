@@ -81,7 +81,7 @@ public class EditorCell_Component extends EditorCell_Basic {
 
   public static EditorCell createComponentCell(EditorContext context, SNode node, JComponent component, String cellId) {
     EditorCell_Component editorCell_component = new EditorCell_Component(context, node, component);
-    editorCell_component.putUserObject(CELL_ID, node.getId() + "_" + cellId);
+    editorCell_component.setCellId(node.getId() + "_" + cellId);
     return editorCell_component;
   }
 

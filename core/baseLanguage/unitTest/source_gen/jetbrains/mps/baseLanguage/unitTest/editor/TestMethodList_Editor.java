@@ -41,7 +41,7 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refNodeList_testMethod1171931858964(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_testMethod");
+    editorCell.setCellId("refNodeList_testMethod");
   }
 
   private static void setupLabel_refNodeList_testMethod_1171931858964(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -103,7 +103,7 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_11719318589651171931858965(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1171931858965");
+      editorCell.setCellId("Constant_1171931858965");
     }
 
     private static void setupLabel_Constant_1171931858965_1171931858965(EditorCell_Label editorCell, SNode node, EditorContext context) {

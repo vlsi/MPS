@@ -105,20 +105,20 @@ public class DefaultCaretPositionStyleClassItem_Editor extends DefaultNodeEditor
 
 
   private static void setupBasic_Collection_12144728393311214472839331(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1214472839331");
+    editorCell.setCellId("Collection_1214472839331");
   }
 
   private static void setupBasic_conceptProperty_alias1214472841427(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12144728426481214472842648(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1214472842648");
+    editorCell.setCellId("Constant_1214472842648");
   }
 
   private static void setupBasic_property_position1214472845446(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_position");
+    editorCell.setCellId("property_position");
   }
 
   private static void setupLabel_conceptProperty_alias_1214472841427(EditorCell_Label editorCell, SNode node, EditorContext context) {

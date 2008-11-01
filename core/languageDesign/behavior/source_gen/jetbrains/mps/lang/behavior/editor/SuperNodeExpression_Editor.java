@@ -39,11 +39,11 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12251946284921225194628492(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1225194628492");
+    editorCell.setCellId("Collection_1225194628492");
   }
 
   private static void setupBasic_Constant_12251946284931225194628493(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1225194628493");
+    editorCell.setCellId("Constant_1225194628493");
     {
       Style inlineStyle = new Style(editorCell) {
         {

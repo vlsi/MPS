@@ -70,11 +70,11 @@ public class Message_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11720759650401172075965040(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1172075965040");
+    editorCell.setCellId("Collection_1172075965040");
   }
 
   private static void setupBasic_Constant_11720759650411172075965041(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172075965041");
+    editorCell.setCellId("Constant_1172075965041");
   }
 
   private static void setupBasic_refNode_message1172075965042(EditorCell editorCell, SNode node, EditorContext context) {

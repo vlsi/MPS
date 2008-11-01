@@ -111,21 +111,21 @@ public class MapRemoveOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12072335247301207233524730(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1207233524730");
+    editorCell.setCellId("Collection_1207233524730");
   }
 
   private static void setupBasic_conceptProperty_alias1207233528326(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12072335380911207233538091(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1207233538091");
+    editorCell.setCellId("Constant_1207233538091");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12072335396461207233539646(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1207233539646");
+    editorCell.setCellId("Constant_1207233539646");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 

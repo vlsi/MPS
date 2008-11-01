@@ -41,7 +41,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
         public SNode substitute(@Nullable EditorContext context, String pattern) {
           String selectedCellId = null;
           if (context != null) {
-            selectedCellId = (String) context.getSelectedCell().getUserObject(EditorCell.CELL_ID);                                    
+            selectedCellId = context.getSelectedCell().getCellId();
           }
 
           SNode result = super.substitute(context, pattern);

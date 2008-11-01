@@ -80,20 +80,20 @@ public class TypeVarDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11746656120971174665612097(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174665612097");
+    editorCell.setCellId("Collection_1174665612097");
   }
 
   private static void setupBasic_Constant_11746656144571174665614457(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174665614457");
+    editorCell.setCellId("Constant_1174665614457");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_name1174665627186(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupBasic_Constant_11746656534891174665653489(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174665653489");
+    editorCell.setCellId("Constant_1174665653489");
   }
 
   private static void setupLabel_Constant_1174665614457_1174665614457(EditorCell_Label editorCell, SNode node, EditorContext context) {

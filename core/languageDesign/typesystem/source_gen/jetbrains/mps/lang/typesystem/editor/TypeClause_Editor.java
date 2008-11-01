@@ -24,7 +24,7 @@ public class TypeClause_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_11979367344971197936734497(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1197936734497");
+    editorCell.setCellId("Error_1197936734497");
   }
 
   private static void setupLabel_Error_1197936734497_1197936734497(EditorCell_Label editorCell, SNode node, EditorContext context) {

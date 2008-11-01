@@ -121,14 +121,14 @@ public class AnnotationMethodDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11882066518431188206651843(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188206651843");
+    editorCell.setCellId("Collection_1188206651843");
   }
 
   private static void setupBasic_refNode_returnType1188206654658(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_property_name1188206662537(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -142,17 +142,17 @@ public class AnnotationMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11882066675081188206667508(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188206667508");
+    editorCell.setCellId("Constant_1188206667508");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11882066691041188206669104(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188206669104");
+    editorCell.setCellId("Constant_1188206669104");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11882066721061188206672106(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188206672106");
+    editorCell.setCellId("Constant_1188206672106");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 

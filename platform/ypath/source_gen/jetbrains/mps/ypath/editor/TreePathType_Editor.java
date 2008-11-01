@@ -91,11 +91,11 @@ public class TreePathType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11684285751441168428575144(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1168428575144");
+    editorCell.setCellId("Collection_1168428575144");
   }
 
   private static void setupBasic_Constant_11684285767161168428576716(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168428576716");
+    editorCell.setCellId("Constant_1168428576716");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -112,11 +112,11 @@ public class TreePathType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11684285938131168428593813(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1168428593813");
+    editorCell.setCellId("Constant_1168428593813");
   }
 
   private static void setupBasic_Constant_11982577363361198257736336(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1198257736336");
+    editorCell.setCellId("Constant_1198257736336");
   }
 
   private static void setupLabel_Constant_1168428576716_1168428576716(EditorCell_Label editorCell, SNode node, EditorContext context) {

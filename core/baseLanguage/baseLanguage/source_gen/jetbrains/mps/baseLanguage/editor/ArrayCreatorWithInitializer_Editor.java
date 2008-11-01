@@ -116,7 +116,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11545430060781154543006078(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1154543006078");
+    editorCell.setCellId("Collection_1154543006078");
   }
 
   private static void setupBasic_refNode_componentType1154543009938(EditorCell editorCell, SNode node, EditorContext context) {
@@ -126,17 +126,17 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11545430218471154543021847(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1154543021847");
+    editorCell.setCellId("Constant_1154543021847");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11545430414581154543041458(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1154543041458");
+    editorCell.setCellId("Constant_1154543041458");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNodeList_initValue1154543050632(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_initValue");
+    editorCell.setCellId("refNodeList_initValue");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -149,7 +149,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11545430715091154543071509(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1154543071509");
+    editorCell.setCellId("Constant_1154543071509");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
@@ -229,7 +229,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_11545434737061154543473706(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1154543473706");
+      editorCell.setCellId("Constant_1154543473706");
       {
         Style inlineStyle = new Style(editorCell) {
           {

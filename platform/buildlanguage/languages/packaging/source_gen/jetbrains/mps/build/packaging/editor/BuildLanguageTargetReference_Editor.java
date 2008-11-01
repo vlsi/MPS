@@ -51,7 +51,7 @@ public class BuildLanguageTargetReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_targetDeclaration1210778012738(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_targetDeclaration");
+    editorCell.setCellId("refCell_targetDeclaration");
   }
 
   private static void setupLabel_refCell_targetDeclaration_1210778012738(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -102,7 +102,7 @@ public class BuildLanguageTargetReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1210778028241(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1210778028241(EditorCell_Label editorCell, SNode node, EditorContext context) {

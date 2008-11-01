@@ -89,16 +89,16 @@ public class MatrixType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12101596950671210159695067(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1210159695067");
+    editorCell.setCellId("Collection_1210159695067");
   }
 
   private static void setupBasic_Constant_12101596950681210159695068(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210159695068");
+    editorCell.setCellId("Constant_1210159695068");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12101596964921210159696492(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210159696492");
+    editorCell.setCellId("Constant_1210159696492");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
@@ -106,7 +106,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12101596990591210159699059(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210159699059");
+    editorCell.setCellId("Constant_1210159699059");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 

@@ -21,7 +21,7 @@ public class DefaultCellInfo implements CellInfo {
 
   public DefaultCellInfo(EditorCell cell) {
     myNodePointer = cell.getSNodePointer();
-    myCellId = (String) cell.getUserObject(EditorCell.CELL_ID);
+    myCellId = cell.getCellId();
 
     EditorCell_Collection parent = cell.getParent();
     if (parent != null) {

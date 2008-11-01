@@ -118,25 +118,25 @@ public class Pair_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12124855615441212485561544(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212485561544");
+    editorCell.setCellId("Collection_1212485561544");
   }
 
   private static void setupBasic_Constant_12124855670971212485567097(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212485567097");
+    editorCell.setCellId("Constant_1212485567097");
   }
 
   private static void setupBasic_refNode_first1212485573667(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12124855790791212485579079(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212485579079");
+    editorCell.setCellId("Constant_1212485579079");
   }
 
   private static void setupBasic_refNode_second1212485582662(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12124855877771212485587777(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212485587777");
+    editorCell.setCellId("Constant_1212485587777");
   }
 
   private static void setupLabel_Constant_1212485567097_1212485567097(EditorCell_Label editorCell, SNode node, EditorContext context) {

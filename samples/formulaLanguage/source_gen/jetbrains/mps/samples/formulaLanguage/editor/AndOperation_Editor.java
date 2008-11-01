@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class AndOperation_Editor extends DefaultNodeEditor {
@@ -108,7 +107,7 @@ public class AndOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11339560074361133956007436(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1133956007436");
+    editorCell.setCellId("Collection_1133956007436");
   }
 
   private static void setupBasic_refNode_leftOperand1133956007437(EditorCell editorCell, SNode node, EditorContext context) {
@@ -116,17 +115,11 @@ public class AndOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11339560074381133956007438(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1133956007438");
+    editorCell.setCellId("Constant_1133956007438");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return AndOperation_Editor.calculateBoolean5372_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -146,12 +139,6 @@ public class AndOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_rightOperand_1133956007439(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean5372_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
   public static class AndOperation_Editor_replaceWith_Operation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

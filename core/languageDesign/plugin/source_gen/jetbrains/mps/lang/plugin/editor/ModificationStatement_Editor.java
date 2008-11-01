@@ -111,23 +111,23 @@ public class ModificationStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12036827468801203682746880(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1203682746880");
+    editorCell.setCellId("Collection_1203682746880");
   }
 
   private static void setupBasic_Constant_12036827728271203682772827(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203682772827");
+    editorCell.setCellId("Constant_1203682772827");
   }
 
   private static void setupBasic_refCell_modifiedGroup1203682836892(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_modifiedGroup");
+    editorCell.setCellId("refCell_modifiedGroup");
   }
 
   private static void setupBasic_Constant_12036843989411203684398941(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203684398941");
+    editorCell.setCellId("Constant_1203684398941");
   }
 
   private static void setupBasic_refCell_point1204992326342(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_point");
+    editorCell.setCellId("refCell_point");
   }
 
   private static void setupLabel_Constant_1203682772827_1203682772827(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -187,7 +187,7 @@ public class ModificationStatement_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1203682839442(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1203682839442(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -239,7 +239,7 @@ public class ModificationStatement_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1204992330376(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1204992330376(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -114,11 +114,11 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12048342224311204834222431(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204834222431");
+    editorCell.setCellId("Collection_1204834222431");
   }
 
   private static void setupBasic_refCell_annotationLink1204834222432(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_annotationLink");
+    editorCell.setCellId("refCell_annotationLink");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -131,7 +131,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12048342371551204834237155(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204834237155");
+    editorCell.setCellId("Constant_1204834237155");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -148,7 +148,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12048342627091204834262709(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204834262709");
+    editorCell.setCellId("Constant_1204834262709");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -218,7 +218,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_role1204834222434(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_role");
+      editorCell.setCellId("property_role");
       {
         Style inlineStyle = new Style(editorCell) {
           {

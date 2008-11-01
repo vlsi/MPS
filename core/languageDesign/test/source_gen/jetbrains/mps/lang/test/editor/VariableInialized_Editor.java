@@ -71,11 +71,11 @@ public class VariableInialized_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12156144624661215614462466(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1215614462466");
+    editorCell.setCellId("Collection_1215614462466");
   }
 
   private static void setupBasic_Constant_12156144654991215614465499(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215614465499");
+    editorCell.setCellId("Constant_1215614465499");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
   }
 

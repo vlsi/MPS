@@ -102,14 +102,14 @@ public class QuantityTemporalProperty_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11120308985861112030898586(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1112030898586");
+    editorCell.setCellId("Collection_1112030898586");
   }
 
   private static void setupBasic_refNode_date1112030934056(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11120309340571112030934057(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1112030934057");
+    editorCell.setCellId("Constant_1112030934057");
     {
       Style inlineStyle = new Style(editorCell) {
         {

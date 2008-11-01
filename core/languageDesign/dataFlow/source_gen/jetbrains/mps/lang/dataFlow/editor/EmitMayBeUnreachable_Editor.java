@@ -81,14 +81,14 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12065342585181206534258518(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206534258518");
+    editorCell.setCellId("Collection_1206534258518");
   }
 
   private static void setupBasic_refNode_emitStatement1206534283286(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12065343113401206534311340(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206534311340");
+    editorCell.setCellId("Constant_1206534311340");
     DataFlow_StyleSheet.getMayBeUnreachable(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -103,7 +103,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12065343194981206534319498(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206534319498");
+    editorCell.setCellId("Constant_1206534319498");
     DataFlow_StyleSheet.getMayBeUnreachable(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

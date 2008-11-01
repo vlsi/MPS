@@ -113,20 +113,20 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11720586880931172058688093(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1172058688093");
+    editorCell.setCellId("Collection_1172058688093");
   }
 
   private static void setupBasic_refCell_staticMethodDeclaration1172058697111(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_staticMethodDeclaration");
+    editorCell.setCellId("refCell_staticMethodDeclaration");
   }
 
   private static void setupBasic_Constant_11720587301631172058730163(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172058730163");
+    editorCell.setCellId("Constant_1172058730163");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11720587322591172058732259(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172058732259");
+    editorCell.setCellId("Constant_1172058732259");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     if (renderingCondition2124_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
@@ -134,7 +134,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_actualArgument1172058760745(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_actualArgument");
+    editorCell.setCellId("refNodeList_actualArgument");
   }
 
   private static void setupLabel_refCell_staticMethodDeclaration_1172058697111(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -198,7 +198,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1172058703208(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {
@@ -277,7 +277,7 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_11720587729491172058772949(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1172058772949");
+      editorCell.setCellId("Constant_1172058772949");
       {
         Style inlineStyle = new Style(editorCell) {
           {

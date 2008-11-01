@@ -197,11 +197,11 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11609989297421160998929742(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1160998929742");
+    editorCell.setCellId("Collection_1160998929742");
   }
 
   private static void setupBasic_Constant_11609989320101160998932010(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1160998932010");
+    editorCell.setCellId("Constant_1160998932010");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -217,33 +217,33 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11609989519211160998951921(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1160998951921");
+    editorCell.setCellId("Collection_1160998951921");
   }
 
   private static void setupBasic_Constant_11609989534851160998953485(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1160998953485");
+    editorCell.setCellId("Constant_1160998953485");
   }
 
   private static void setupBasic_refNode_message1160998956472(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Collection_11609989601761160998960176(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1160998960176");
+    editorCell.setCellId("Collection_1160998960176");
   }
 
   private static void setupBasic_Collection_11609989637571160998963757(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1160998963757");
+    editorCell.setCellId("Collection_1160998963757");
   }
 
   private static void setupBasic_Constant_11609989672471160998967247(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1160998967247");
+    editorCell.setCellId("Constant_1160998967247");
   }
 
   private static void setupBasic_refNode_message1160998974609(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11610017540751161001754075(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1161001754075");
+    editorCell.setCellId("Constant_1161001754075");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 

@@ -60,11 +60,11 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11825112942751182511294275(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1182511294275");
+    editorCell.setCellId("Collection_1182511294275");
   }
 
   private static void setupBasic_property_text1182511294276(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_text");
+    editorCell.setCellId("property_text");
     _LinePart_RT.setCellActions(editorCell, node, context);
   }
 

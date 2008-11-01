@@ -114,20 +114,20 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10909286013761090928601376(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1090928601376");
+    editorCell.setCellId("Collection_1090928601376");
   }
 
   private static void setupBasic_Constant_10909286013781090928601378(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1090928601378");
+    editorCell.setCellId("Constant_1090928601378");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_enumConstantDeclaration1090928601379(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_enumConstantDeclaration");
+    editorCell.setCellId("refCell_enumConstantDeclaration");
   }
 
   private static void setupBasic_refCell_enumClass1144432986234(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_enumClass");
+    editorCell.setCellId("refCell_enumClass");
   }
 
   private static void setupLabel_Constant_1090928601378_1090928601378(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -184,7 +184,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1090928601381(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {
@@ -247,7 +247,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1144432992143(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

@@ -38,11 +38,11 @@ public class Concept_GetAllSuperConcepts_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12069962559861206996255986(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206996255986");
+    editorCell.setCellId("Collection_1206996255986");
   }
 
   private static void setupBasic_component_ReplaceableAliasAndParms_Comp1206996255987(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAliasAndParms_Comp");
+    editorCell.setCellId("component_ReplaceableAliasAndParms_Comp");
   }
 
 }

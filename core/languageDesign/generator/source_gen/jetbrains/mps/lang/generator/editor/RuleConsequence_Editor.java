@@ -24,7 +24,7 @@ public class RuleConsequence_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_11685592893831168559289383(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1168559289383");
+    editorCell.setCellId("Error_1168559289383");
   }
 
   private static void setupLabel_Error_1168559289383_1168559289383(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -66,11 +66,11 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11745650529321174565052932(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174565052932");
+    editorCell.setCellId("Collection_1174565052932");
   }
 
   private static void setupBasic_refCell_match1174565057138(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_match");
+    editorCell.setCellId("refCell_match");
   }
 
   private static void setupLabel_refCell_match_1174565057138(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -121,7 +121,7 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1174565058688(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

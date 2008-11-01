@@ -24,7 +24,7 @@ public class Constant_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_11117853203971111785320397(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1111785320397");
+    editorCell.setCellId("Error_1111785320397");
   }
 
   private static void setupLabel_Error_1111785320397_1111785320397(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -53,7 +53,7 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_annotationLink1204763572767(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_annotationLink");
+    editorCell.setCellId("refCell_annotationLink");
   }
 
   private static void setupLabel_refCell_annotationLink_1204763572767(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -104,7 +104,7 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_role1204763584536(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_role");
+      editorCell.setCellId("property_role");
       {
         Style inlineStyle = new Style(editorCell) {
           {

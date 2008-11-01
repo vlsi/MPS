@@ -122,11 +122,11 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11800141781151180014178115(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180014178115");
+    editorCell.setCellId("Collection_1180014178115");
   }
 
   private static void setupBasic_conceptProperty_alias1180014178116(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -140,19 +140,19 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11800141831191180014183119(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180014183119");
+    editorCell.setCellId("Collection_1180014183119");
   }
 
   private static void setupBasic_Constant_11800141934191180014193419(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180014193419");
+    editorCell.setCellId("Constant_1180014193419");
   }
 
   private static void setupBasic_Constant_11800141955771180014195577(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180014195577");
+    editorCell.setCellId("Constant_1180014195577");
   }
 
   private static void setupBasic_refNodeList_actualArgument1180014198298(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_actualArgument");
+    editorCell.setCellId("refNodeList_actualArgument");
   }
 
   private static void setupLabel_conceptProperty_alias_1180014178116(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -232,7 +232,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_11800142194711180014219471(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180014219471");
+      editorCell.setCellId("Constant_1180014219471");
       {
         Style inlineStyle = new Style(editorCell) {
           {

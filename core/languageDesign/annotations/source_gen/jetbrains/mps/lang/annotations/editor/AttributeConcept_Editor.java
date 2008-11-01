@@ -79,18 +79,18 @@ public class AttributeConcept_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11360275327691136027532769(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1136027532769");
+    editorCell.setCellId("Collection_1136027532769");
   }
 
   private static void setupBasic_Constant_11360275327701136027532770(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136027532770");
+    editorCell.setCellId("Constant_1136027532770");
   }
 
   private static void setupBasic_refNode_attributedNode1136027532771(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11360275327721136027532772(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136027532772");
+    editorCell.setCellId("Constant_1136027532772");
   }
 
   private static void setupLabel_Constant_1136027532770_1136027532770(EditorCell_Label editorCell, SNode node, EditorContext context) {

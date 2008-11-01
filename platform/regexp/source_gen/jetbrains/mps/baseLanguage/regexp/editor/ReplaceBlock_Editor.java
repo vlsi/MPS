@@ -63,7 +63,7 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11746564600681174656460068(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174656460068");
+    editorCell.setCellId("Collection_1174656460068");
   }
 
   private static void setupBasic_refNode_body1174656462804(EditorCell editorCell, SNode node, EditorContext context) {

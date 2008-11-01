@@ -41,11 +41,11 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_11765443224111176544322411(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176544322411");
+    editorCell.setCellId("Constant_1176544322411");
   }
 
   private static void setupBasic_component__NotInRules_Component1176544407635(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component__NotInRules_Component");
+    editorCell.setCellId("component__NotInRules_Component");
   }
 
   private static void setupLabel_Constant_1176544322411_1176544322411(EditorCell_Label editorCell, SNode node, EditorContext context) {

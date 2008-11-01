@@ -83,7 +83,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11365645837261136564583726(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1136564583726");
+    editorCell.setCellId("Collection_1136564583726");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -96,7 +96,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11365645837271136564583727(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136564583727");
+    editorCell.setCellId("Constant_1136564583727");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -110,7 +110,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11365645837281136564583728(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136564583728");
+    editorCell.setCellId("Constant_1136564583728");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -125,7 +125,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11365645837291136564583729(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136564583729");
+    editorCell.setCellId("Constant_1136564583729");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -139,7 +139,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11498506416791149850641679(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1149850641679");
+    editorCell.setCellId("Collection_1149850641679");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -152,7 +152,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_component__CellModel_Common1214478688195(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component__CellModel_Common");
+    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupLabel_Constant_1136564583727_1136564583727(EditorCell_Label editorCell, SNode node, EditorContext context) {

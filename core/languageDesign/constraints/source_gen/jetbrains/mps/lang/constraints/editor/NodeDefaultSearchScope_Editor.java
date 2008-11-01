@@ -254,15 +254,15 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11592898341891159289834189(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1159289834189");
+    editorCell.setCellId("Collection_1159289834189");
   }
 
   private static void setupBasic_Collection_11592898342011159289834201(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1159289834201");
+    editorCell.setCellId("Collection_1159289834201");
   }
 
   private static void setupBasic_Constant_11592898342021159289834202(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1159289834202");
+    editorCell.setCellId("Constant_1159289834202");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -275,7 +275,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11592898342031159289834203(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1159289834203");
+    editorCell.setCellId("Collection_1159289834203");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -288,7 +288,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11592898342041159289834204(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1159289834204");
+    editorCell.setCellId("Collection_1159289834204");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -301,7 +301,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11592898342051159289834205(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1159289834205");
+    editorCell.setCellId("Constant_1159289834205");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -315,7 +315,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11592898342061159289834206(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1159289834206");
+    editorCell.setCellId("Constant_1159289834206");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -328,7 +328,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_description1159289834207(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_description");
+    editorCell.setCellId("property_description");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -341,7 +341,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11592898342351159289834235(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1159289834235");
+    editorCell.setCellId("Collection_1159289834235");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -354,7 +354,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11592898342361159289834236(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1159289834236");
+    editorCell.setCellId("Constant_1159289834236");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -368,7 +368,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11592898342371159289834237(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1159289834237");
+    editorCell.setCellId("Constant_1159289834237");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -384,7 +384,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11592898342391159289834239(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1159289834239");
+    editorCell.setCellId("Collection_1159289834239");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -397,7 +397,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11592898342401159289834240(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1159289834240");
+    editorCell.setCellId("Constant_1159289834240");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -411,7 +411,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11592898342411159289834241(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1159289834241");
+    editorCell.setCellId("Constant_1159289834241");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -427,7 +427,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11592898342431159289834243(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1159289834243");
+    editorCell.setCellId("Constant_1159289834243");
   }
 
   private static void setupLabel_Constant_1159289834202_1159289834202(EditorCell_Label editorCell, SNode node, EditorContext context) {

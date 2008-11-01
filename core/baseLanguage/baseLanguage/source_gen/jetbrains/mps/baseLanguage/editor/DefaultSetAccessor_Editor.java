@@ -79,15 +79,15 @@ public class DefaultSetAccessor_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12020777610841202077761084(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1202077761084");
+    editorCell.setCellId("Collection_1202077761084");
   }
 
   private static void setupBasic_Constant_12020777627581202077762758(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202077762758");
+    editorCell.setCellId("Constant_1202077762758");
   }
 
   private static void setupBasic_Constant_12020777649481202077764948(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1202077764948");
+    editorCell.setCellId("Constant_1202077764948");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 

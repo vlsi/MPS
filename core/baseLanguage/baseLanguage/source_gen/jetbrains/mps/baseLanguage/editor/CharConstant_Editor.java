@@ -126,21 +126,21 @@ public class CharConstant_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12003975933671200397593367(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1200397593367");
+    editorCell.setCellId("Collection_1200397593367");
   }
 
   private static void setupBasic_Constant_12003975945261200397594526(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200397594526");
+    editorCell.setCellId("Constant_1200397594526");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12003975986551200397598655(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200397598655");
+    editorCell.setCellId("Constant_1200397598655");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Alternation_12088591558721208859155872(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Alternation_1208859155872");
+    editorCell.setCellId("Alternation_1208859155872");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -153,7 +153,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_charConstant1208859155873(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_charConstant");
+    editorCell.setCellId("property_charConstant");
     BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -167,7 +167,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_charConstant1208859230495(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_charConstant");
+    editorCell.setCellId("property_charConstant");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
   }
 

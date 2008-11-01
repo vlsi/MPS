@@ -25,7 +25,7 @@ public class CheckCancelledStatusStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_12071418991851207141899185(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1207141899185");
+    editorCell.setCellId("Constant_1207141899185");
   }
 
   private static void setupLabel_Constant_1207141899185_1207141899185(EditorCell_Label editorCell, SNode node, EditorContext context) {

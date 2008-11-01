@@ -50,11 +50,11 @@ public class Line_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11825112564071182511256407(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1182511256407");
+    editorCell.setCellId("Collection_1182511256407");
   }
 
   private static void setupBasic_refNodeList_linePart1182511258456(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_linePart");
+    editorCell.setCellId("refNodeList_linePart");
     editorCell.addKeyMap(new _Line_Actions());
   }
 

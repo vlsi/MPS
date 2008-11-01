@@ -122,14 +122,14 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11749044974281174904497428(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174904497428");
+    editorCell.setCellId("Collection_1174904497428");
   }
 
   private static void setupBasic_refNode_regexp1174904497429(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11749044974301174904497430(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174904497430");
+    editorCell.setCellId("Constant_1174904497430");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -143,11 +143,11 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_n1174904497431(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_n");
+    editorCell.setCellId("property_n");
   }
 
   private static void setupBasic_Constant_11749044974321174904497432(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174904497432");
+    editorCell.setCellId("Constant_1174904497432");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -161,7 +161,7 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11749045003401174904500340(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174904500340");
+    editorCell.setCellId("Constant_1174904500340");
   }
 
   private static void setupLabel_refNode_regexp_1174904497429(EditorCell_Label editorCell, SNode node, EditorContext context) {

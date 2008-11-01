@@ -292,7 +292,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11187865970471118786597047(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1118786597047");
+    editorCell.setCellId("Collection_1118786597047");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -305,11 +305,11 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11498660397281149866039728(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1149866039728");
+    editorCell.setCellId("Collection_1149866039728");
   }
 
   private static void setupBasic_Constant_11498660406381149866040638(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1149866040638");
+    editorCell.setCellId("Constant_1149866040638");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
@@ -318,7 +318,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11679522244661167952224466(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167952224466");
+    editorCell.setCellId("Constant_1167952224466");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -333,7 +333,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11679522244671167952224467(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167952224467");
+    editorCell.setCellId("Constant_1167952224467");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -346,7 +346,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11679522244681167952224468(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1167952224468");
+    editorCell.setCellId("Collection_1167952224468");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -359,7 +359,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11679522244691167952224469(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1167952224469");
+    editorCell.setCellId("Collection_1167952224469");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -372,7 +372,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11679522244701167952224470(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167952224470");
+    editorCell.setCellId("Constant_1167952224470");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -385,7 +385,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11679522244711167952224471(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167952224471");
+    editorCell.setCellId("Constant_1167952224471");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -398,7 +398,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_mappingId1167952224472(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_mappingId");
+    editorCell.setCellId("property_mappingId");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -411,7 +411,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11679522244851167952224485(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1167952224485");
+    editorCell.setCellId("Collection_1167952224485");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -424,7 +424,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11679522244861167952224486(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167952224486");
+    editorCell.setCellId("Constant_1167952224486");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -437,7 +437,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11679522244871167952224487(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1167952224487");
+    editorCell.setCellId("Constant_1167952224487");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -456,11 +456,11 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_component_NodeMacro_postfix1184865359555(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_NodeMacro_postfix");
+    editorCell.setCellId("component_NodeMacro_postfix");
   }
 
   private static void setupBasic_Collection_12009122872651200912287265(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1200912287265");
+    editorCell.setCellId("Collection_1200912287265");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -473,11 +473,11 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12009122872661200912287266(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200912287266");
+    editorCell.setCellId("Constant_1200912287266");
   }
 
   private static void setupBasic_Constant_12009122872671200912287267(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200912287267");
+    editorCell.setCellId("Constant_1200912287267");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -490,11 +490,11 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_mappingLabel1200912287268(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_mappingLabel");
+    editorCell.setCellId("refCell_mappingLabel");
   }
 
   private static void setupBasic_Constant_12154789403181215478940318(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215478940318");
+    editorCell.setCellId("Constant_1215478940318");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -594,7 +594,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1200912287270(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

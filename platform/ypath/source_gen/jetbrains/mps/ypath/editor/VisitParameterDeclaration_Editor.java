@@ -133,18 +133,18 @@ public class VisitParameterDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11800138153151180013815315(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180013815315");
+    editorCell.setCellId("Collection_1180013815315");
   }
 
   private static void setupBasic_refNode_type1180013818192(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_property_name1180013823179(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupBasic_Constant_11800138582591180013858259(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180013858259");
+    editorCell.setCellId("Constant_1180013858259");
     {
       Style inlineStyle = new Style(editorCell) {
         {

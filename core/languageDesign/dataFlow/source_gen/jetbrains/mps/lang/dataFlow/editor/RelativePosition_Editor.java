@@ -91,11 +91,11 @@ public class RelativePosition_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12064449342511206444934251(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206444934251");
+    editorCell.setCellId("Collection_1206444934251");
   }
 
   private static void setupBasic_conceptProperty_alias1206444935206(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     DataFlow_StyleSheet.getPosition(editorCell).apply(editorCell);
   }
 

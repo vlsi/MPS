@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class LessThanOperation_Editor extends DefaultNodeEditor {
@@ -108,7 +107,7 @@ public class LessThanOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11120377093761112037709376(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1112037709376");
+    editorCell.setCellId("Collection_1112037709376");
   }
 
   private static void setupBasic_refNode_leftOperand1112037733643(EditorCell editorCell, SNode node, EditorContext context) {
@@ -116,17 +115,11 @@ public class LessThanOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11120377336441112037733644(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1112037733644");
+    editorCell.setCellId("Constant_1112037733644");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return LessThanOperation_Editor.calculateBoolean4945_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.EDITABLE, true);
         }
 
       };
@@ -146,12 +139,6 @@ public class LessThanOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_rightOperand_1112037733645(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Boolean calculateBoolean4945_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
   }
 
   public static class LessThanOperation_Editor_replaceWith_Operation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

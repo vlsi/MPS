@@ -82,11 +82,11 @@ public class MatchDefaultPropertyOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11758792694641175879269464(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175879269464");
+    editorCell.setCellId("Collection_1175879269464");
   }
 
   private static void setupBasic_Constant_11758792694651175879269465(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175879269465");
+    editorCell.setCellId("Constant_1175879269465");
   }
 
   private static void setupBasic_refNode_matchExpression1175879269472(EditorCell editorCell, SNode node, EditorContext context) {
@@ -96,7 +96,7 @@ public class MatchDefaultPropertyOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11758792694731175879269473(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175879269473");
+    editorCell.setCellId("Constant_1175879269473");
     {
       Style inlineStyle = new Style(editorCell) {
         {

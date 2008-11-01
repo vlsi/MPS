@@ -103,14 +103,14 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11751644399821175164439982(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175164439982");
+    editorCell.setCellId("Collection_1175164439982");
   }
 
   private static void setupBasic_refNode_expr1175164450235(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11751644522681175164452268(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175164452268");
+    editorCell.setCellId("Constant_1175164452268");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

@@ -168,32 +168,32 @@ public class File_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12035986196011203598619601(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1203598619601");
+    editorCell.setCellId("Collection_1203598619601");
   }
 
   private static void setupBasic_Constant_12035986332611203598633261(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203598633261");
+    editorCell.setCellId("Constant_1203598633261");
     MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_conceptProperty_alias1203599074970(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     MPSLayoutStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_component_ConfigurationReferencesEditorComponent1204128152423(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ConfigurationReferencesEditorComponent");
+    editorCell.setCellId("component_ConfigurationReferencesEditorComponent");
   }
 
   private static void setupBasic_refNode_title1205344590206(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Collection_12095398789431209539878943(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1209539878943");
+    editorCell.setCellId("Collection_1209539878943");
   }
 
   private static void setupBasic_component_ConfigurationReferencesEditorComponent1209539879976(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ConfigurationReferencesEditorComponent");
+    editorCell.setCellId("component_ConfigurationReferencesEditorComponent");
   }
 
   private static void setupBasic_refNode_sourcePath1220982003265(EditorCell editorCell, SNode node, EditorContext context) {

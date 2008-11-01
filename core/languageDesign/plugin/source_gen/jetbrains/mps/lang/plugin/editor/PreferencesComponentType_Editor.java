@@ -91,24 +91,24 @@ public class PreferencesComponentType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12101842121521210184212152(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1210184212152");
+    editorCell.setCellId("Collection_1210184212152");
   }
 
   private static void setupBasic_Constant_12101842145051210184214505(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210184214505");
+    editorCell.setCellId("Constant_1210184214505");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12101842471861210184247186(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210184247186");
+    editorCell.setCellId("Constant_1210184247186");
   }
 
   private static void setupBasic_refCell_componentDeclaration1210184250191(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_componentDeclaration");
+    editorCell.setCellId("refCell_componentDeclaration");
   }
 
   private static void setupBasic_Constant_12101842536061210184253606(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210184253606");
+    editorCell.setCellId("Constant_1210184253606");
   }
 
   private static void setupLabel_Constant_1210184214505_1210184214505(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -168,7 +168,7 @@ public class PreferencesComponentType_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1210184251719(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1210184251719(EditorCell_Label editorCell, SNode node, EditorContext context) {

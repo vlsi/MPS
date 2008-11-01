@@ -25,7 +25,7 @@ public class ImaginaryUnit_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_11964343008831196434300883(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1196434300883");
+    editorCell.setCellId("Constant_1196434300883");
   }
 
   private static void setupLabel_Constant_1196434300883_1196434300883(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -74,7 +74,7 @@ public class Operation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11133448939561113344893956(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1113344893956");
+    editorCell.setCellId("Collection_1113344893956");
   }
 
   private static void setupBasic_refNode_leftOperand1113344932644(EditorCell editorCell, SNode node, EditorContext context) {
@@ -82,7 +82,7 @@ public class Operation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Error_11133449326451113344932645(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1113344932645");
+    editorCell.setCellId("Error_1113344932645");
     Operation_symbol_Actions.setCellActions(editorCell, node, context);
   }
 

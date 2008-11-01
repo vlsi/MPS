@@ -81,7 +81,7 @@ public class CellAction_SideTransform extends EditorCellAction {
       node.addRightTransformHint();
     }
 
-    node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID, anchorCell.getUserObject(EditorCell.CELL_ID));
+    node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID, anchorCell.getCellId());
     if (anchorTag != null) {
       node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_TAG, anchorTag);
     } else {

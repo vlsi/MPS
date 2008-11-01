@@ -73,11 +73,11 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11545471983721154547198372(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1154547198372");
+    editorCell.setCellId("Collection_1154547198372");
   }
 
   private static void setupBasic_Constant_11545472021851154547202185(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1154547202185");
+    editorCell.setCellId("Constant_1154547202185");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -91,11 +91,11 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_concept1154547221297(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_concept");
+    editorCell.setCellId("refNodeList_concept");
   }
 
   private static void setupBasic_Constant_11545472440331154547244033(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1154547244033");
+    editorCell.setCellId("Constant_1154547244033");
     {
       Style inlineStyle = new Style(editorCell) {
         {

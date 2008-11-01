@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class TransposeExpression_Editor extends DefaultNodeEditor {
@@ -74,24 +73,18 @@ public class TransposeExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12099995274391209999527439(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1209999527439");
+    editorCell.setCellId("Collection_1209999527439");
   }
 
   private static void setupBasic_refNode_matrix1209999546411(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12099995573871209999557387(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209999557387");
+    editorCell.setCellId("Constant_1209999557387");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return TransposeExpression_Editor.calculateFontStyle8379_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         }
 
       };
@@ -103,12 +96,6 @@ public class TransposeExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1209999557387_1209999557387(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle8379_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
   }
 
 }

@@ -25,7 +25,7 @@ public class NodeErrorPropety_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_12155077029241215507702924(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215507702924");
+    editorCell.setCellId("Constant_1215507702924");
     transformationTest_StyleSheet.getNodeProperty(editorCell).apply(editorCell);
   }
 

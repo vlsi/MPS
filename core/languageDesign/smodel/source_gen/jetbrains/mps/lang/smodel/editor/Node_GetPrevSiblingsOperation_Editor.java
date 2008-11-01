@@ -27,7 +27,7 @@ public class Node_GetPrevSiblingsOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_component_ReplaceableAliasAndParms_Comp1207249521256(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAliasAndParms_Comp");
+    editorCell.setCellId("component_ReplaceableAliasAndParms_Comp");
   }
 
 }

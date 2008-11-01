@@ -91,11 +91,11 @@ public class TestNodeAnnotation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12106737899111210673789911(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1210673789911");
+    editorCell.setCellId("Collection_1210673789911");
   }
 
   private static void setupBasic_property_name1210673792352(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     transformationTest_StyleSheet.getNodeAnnotation(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -109,16 +109,16 @@ public class TestNodeAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12106737949021210673794902(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210673794902");
+    editorCell.setCellId("Constant_1210673794902");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_AttributedNodeCell_12106738413861210673841386(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "AttributedNodeCell_1210673841386");
+    editorCell.setCellId("AttributedNodeCell_1210673841386");
   }
 
   private static void setupBasic_Constant_12106738434831210673843483(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1210673843483");
+    editorCell.setCellId("Constant_1210673843483");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 

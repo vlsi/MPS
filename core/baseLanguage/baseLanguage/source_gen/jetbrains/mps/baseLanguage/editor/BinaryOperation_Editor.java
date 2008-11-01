@@ -127,7 +127,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11660639558201166063955820(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1166063955820");
+    editorCell.setCellId("Collection_1166063955820");
   }
 
   private static void setupBasic_refNode_leftExpression1166063955821(EditorCell editorCell, SNode node, EditorContext context) {
@@ -139,7 +139,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_conceptProperty_alias1166063984223(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

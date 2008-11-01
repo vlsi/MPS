@@ -109,18 +109,18 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11999647791701199964779170(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1199964779170");
+    editorCell.setCellId("Collection_1199964779170");
   }
 
   private static void setupBasic_Constant_11999647804371199964780437(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199964780437");
+    editorCell.setCellId("Constant_1199964780437");
   }
 
   private static void setupBasic_refNode_typeHint1199964788783(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11999647901601199964790160(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1199964790160");
+    editorCell.setCellId("Constant_1199964790160");
   }
 
   private static void setupBasic_refNode_expression1199964792662(EditorCell editorCell, SNode node, EditorContext context) {

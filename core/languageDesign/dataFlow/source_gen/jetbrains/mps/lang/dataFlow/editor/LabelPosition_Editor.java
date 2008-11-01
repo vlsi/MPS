@@ -72,16 +72,16 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12070627205231207062720523(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1207062720523");
+    editorCell.setCellId("Collection_1207062720523");
   }
 
   private static void setupBasic_Constant_12070627205241207062720524(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1207062720524");
+    editorCell.setCellId("Constant_1207062720524");
     DataFlow_StyleSheet.getPosition(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_label1207062721854(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_label");
+    editorCell.setCellId("refCell_label");
   }
 
   private static void setupLabel_Constant_1207062720524_1207062720524(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -135,7 +135,7 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1207062722716(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1207062722716(EditorCell_Label editorCell, SNode node, EditorContext context) {

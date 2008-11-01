@@ -295,8 +295,8 @@ public class CellExplorerView extends BaseProjectTool {
 
     public String calculateNodeIdentifier() {
       String result = NameUtil.shortNameFromLongName(myCell.getClass().getName());
-      if (myCell.getUserObject(EditorCell.CELL_ID) != null)
-        result += "[" + myCell.getUserObject(EditorCell.CELL_ID).toString() + "]";
+      if (myCell.getCellId() != null)
+        result += "[" + myCell.getCellId() + "]";
       return result;
     }
   }

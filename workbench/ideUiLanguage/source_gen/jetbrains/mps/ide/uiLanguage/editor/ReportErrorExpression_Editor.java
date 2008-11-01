@@ -71,11 +71,11 @@ public class ReportErrorExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12036075450851203607545085(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1203607545085");
+    editorCell.setCellId("Collection_1203607545085");
   }
 
   private static void setupBasic_Constant_12036075479311203607547931(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203607547931");
+    editorCell.setCellId("Constant_1203607547931");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 

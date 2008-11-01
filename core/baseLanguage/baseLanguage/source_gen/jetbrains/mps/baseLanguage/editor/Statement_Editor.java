@@ -26,7 +26,7 @@ public class Statement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_10787460859841078746085984(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1078746085984");
+    editorCell.setCellId("Error_1078746085984");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -72,7 +72,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10753791412351075379141235(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1075379141235");
+    editorCell.setCellId("Collection_1075379141235");
   }
 
   private static void setupBasic_refNode_expression1075379141236(EditorCell editorCell, SNode node, EditorContext context) {
@@ -89,7 +89,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_10753791412371075379141237(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1075379141237");
+    editorCell.setCellId("Constant_1075379141237");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 

@@ -93,15 +93,15 @@ public class Expression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Alternation_12091473152971209147315297(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Alternation_1209147315297");
+    editorCell.setCellId("Alternation_1209147315297");
   }
 
   private static void setupBasic_Custom_12091473152981209147315298(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Custom_1209147315298");
+    editorCell.setCellId("Custom_1209147315298");
   }
 
   private static void setupBasic_conceptProperty_alias1209748868405(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {

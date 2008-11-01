@@ -109,11 +109,11 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11012101851601101210185160(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1101210185160");
+    editorCell.setCellId("Collection_1101210185160");
   }
 
   private static void setupBasic_Constant_11012104854611101210485461(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1101210485461");
+    editorCell.setCellId("Constant_1101210485461");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -129,12 +129,12 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11012104854621101210485462(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1101210485462");
+    editorCell.setCellId("Constant_1101210485462");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11994700837741199470083774(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1199470083774");
+    editorCell.setCellId("Collection_1199470083774");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -147,7 +147,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_label1199470083776(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_label");
+    editorCell.setCellId("property_label");
     {
       Style inlineStyle = new Style(editorCell) {
         {

@@ -372,7 +372,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11745105656841174510565684(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174510565684");
+    editorCell.setCellId("Collection_1174510565684");
   }
 
   private static void setupBasic_refNode_regexp1174510567265(EditorCell editorCell, SNode node, EditorContext context) {
@@ -389,15 +389,15 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11751589207891175158920789(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175158920789");
+    editorCell.setCellId("Collection_1175158920789");
   }
 
   private static void setupBasic_Constant_11751589223841175158922384(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175158922384");
+    editorCell.setCellId("Constant_1175158922384");
   }
 
   private static void setupBasic_Collection_11751589259481175158925948(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175158925948");
+    editorCell.setCellId("Collection_1175158925948");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -410,15 +410,15 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751589269041175158926904(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175158926904");
+    editorCell.setCellId("Constant_1175158926904");
   }
 
   private static void setupBasic_property_dotAll1175158931609(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_dotAll");
+    editorCell.setCellId("property_dotAll");
   }
 
   private static void setupBasic_Collection_11751589388451175158938845(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175158938845");
+    editorCell.setCellId("Collection_1175158938845");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -431,7 +431,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751589398781175158939878(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175158939878");
+    editorCell.setCellId("Constant_1175158939878");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -444,7 +444,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751589423491175158942349(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175158942349");
+    editorCell.setCellId("Constant_1175158942349");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -457,11 +457,11 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751589791321175158979132(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175158979132");
+    editorCell.setCellId("Constant_1175158979132");
   }
 
   private static void setupBasic_Collection_11751589807121175158980712(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175158980712");
+    editorCell.setCellId("Collection_1175158980712");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -474,15 +474,15 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751589818241175158981824(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175158981824");
+    editorCell.setCellId("Constant_1175158981824");
   }
 
   private static void setupBasic_property_multiLine1175158987435(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_multiLine");
+    editorCell.setCellId("property_multiLine");
   }
 
   private static void setupBasic_Collection_11751589912181175158991218(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175158991218");
+    editorCell.setCellId("Collection_1175158991218");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -495,7 +495,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751589922831175158992283(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175158992283");
+    editorCell.setCellId("Constant_1175158992283");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -508,7 +508,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751589940971175158994097(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175158994097");
+    editorCell.setCellId("Constant_1175158994097");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -521,7 +521,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11751590247101175159024710(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175159024710");
+    editorCell.setCellId("Collection_1175159024710");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -534,7 +534,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751590261491175159026149(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175159026149");
+    editorCell.setCellId("Constant_1175159026149");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -547,7 +547,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751590294331175159029433(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175159029433");
+    editorCell.setCellId("Constant_1175159029433");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -560,11 +560,11 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751591182161175159118216(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175159118216");
+    editorCell.setCellId("Constant_1175159118216");
   }
 
   private static void setupBasic_Collection_11751591218271175159121827(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175159121827");
+    editorCell.setCellId("Collection_1175159121827");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -577,15 +577,15 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751591226731175159122673(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175159122673");
+    editorCell.setCellId("Constant_1175159122673");
   }
 
   private static void setupBasic_property_caseInsensitive1175159127847(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_caseInsensitive");
+    editorCell.setCellId("property_caseInsensitive");
   }
 
   private static void setupBasic_Constant_11751591786531175159178653(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175159178653");
+    editorCell.setCellId("Constant_1175159178653");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -598,7 +598,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751592090991175159209099(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175159209099");
+    editorCell.setCellId("Constant_1175159209099");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -611,7 +611,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751592272651175159227265(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175159227265");
+    editorCell.setCellId("Constant_1175159227265");
     {
       Style inlineStyle = new Style(editorCell) {
         {

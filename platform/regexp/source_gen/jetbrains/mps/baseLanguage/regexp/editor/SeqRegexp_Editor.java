@@ -90,7 +90,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11749005676791174900567679(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174900567679");
+    editorCell.setCellId("Collection_1174900567679");
   }
 
   private static void setupBasic_refNode_left1174900570494(EditorCell editorCell, SNode node, EditorContext context) {

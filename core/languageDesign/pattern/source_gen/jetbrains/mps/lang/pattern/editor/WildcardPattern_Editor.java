@@ -40,11 +40,11 @@ public class WildcardPattern_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11367200967621136720096762(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1136720096762");
+    editorCell.setCellId("Collection_1136720096762");
   }
 
   private static void setupBasic_Constant_11367200967631136720096763(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136720096763");
+    editorCell.setCellId("Constant_1136720096763");
     {
       Style inlineStyle = new Style(editorCell) {
         {

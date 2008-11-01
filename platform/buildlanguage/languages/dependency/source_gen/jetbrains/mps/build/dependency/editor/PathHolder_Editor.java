@@ -141,23 +141,23 @@ public class PathHolder_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12194188389721219418838972(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1219418838972");
+    editorCell.setCellId("Collection_1219418838972");
   }
 
   private static void setupBasic_refCell_macro1219418849657(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_macro");
+    editorCell.setCellId("refCell_macro");
   }
 
   private static void setupBasic_property_path1219418859024(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_path");
+    editorCell.setCellId("property_path");
   }
 
   private static void setupBasic_Constant_12194188659691219418865969(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219418865969");
+    editorCell.setCellId("Constant_1219418865969");
   }
 
   private static void setupBasic_refCell_macro1219418927891(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_macro");
+    editorCell.setCellId("refCell_macro");
   }
 
   private static void setupLabel_refCell_macro_1219418849657(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -225,7 +225,7 @@ public class PathHolder_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1219418854910(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1219418854910(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -277,7 +277,7 @@ public class PathHolder_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1219418932321(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1219418932321(EditorCell_Label editorCell, SNode node, EditorContext context) {

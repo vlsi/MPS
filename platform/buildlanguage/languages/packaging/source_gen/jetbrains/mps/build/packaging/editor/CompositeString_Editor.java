@@ -90,7 +90,7 @@ public class CompositeString_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12053429058211205342905821(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1205342905821");
+    editorCell.setCellId("Collection_1205342905821");
     CompositeString_RT.setCellActions(editorCell, node, context);
   }
 

@@ -100,14 +100,14 @@ public class MapEntry_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12066576974491206657697449(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206657697449");
+    editorCell.setCellId("Collection_1206657697449");
   }
 
   private static void setupBasic_refNode_key1206657701029(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12066577031091206657703109(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206657703109");
+    editorCell.setCellId("Constant_1206657703109");
   }
 
   private static void setupBasic_refNode_value1206657736486(EditorCell editorCell, SNode node, EditorContext context) {

@@ -62,7 +62,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private Style myStyle = new Style(this);
 
   private EditorCellKeyMap myKeyMap;
-
+  private String myCellId;
   private boolean myInTree;
 
   protected EditorCell_Basic(EditorContext editorContext, SNode node) {
@@ -283,6 +283,15 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void setSelectable(boolean selectable) {
     getStyle().set(StyleAttributes.SELECTABLE, selectable);
+  }
+
+  public void setCellId(String cellId) {
+    myCellId = cellId;
+    putUserObject(CELL_ID, cellId);
+  }
+
+  public String getCellId() {
+    return myCellId;
   }
 
   public void setSelected(boolean selected) {

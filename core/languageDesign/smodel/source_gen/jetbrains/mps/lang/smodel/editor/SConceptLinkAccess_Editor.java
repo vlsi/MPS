@@ -76,15 +76,15 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11756227891351175622789135(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175622789135");
+    editorCell.setCellId("Collection_1175622789135");
   }
 
   private static void setupBasic_refCell_conceptLinkDeclaration1175622789848(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_conceptLinkDeclaration");
+    editorCell.setCellId("refCell_conceptLinkDeclaration");
   }
 
   private static void setupBasic_Constant_11756227937111175622793711(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175622793711");
+    editorCell.setCellId("Constant_1175622793711");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -149,7 +149,7 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1175622789850(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

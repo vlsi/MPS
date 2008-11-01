@@ -134,11 +134,11 @@ public class State_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11971706000001197170600000(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197170600000");
+    editorCell.setCellId("Collection_1197170600000");
   }
 
   private static void setupBasic_Collection_11971706207671197170620767(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197170620767");
+    editorCell.setCellId("Collection_1197170620767");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -151,15 +151,15 @@ public class State_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11971706222851197170622285(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197170622285");
+    editorCell.setCellId("Constant_1197170622285");
   }
 
   private static void setupBasic_property_stateName1197170640819(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_stateName");
+    editorCell.setCellId("property_stateName");
   }
 
   private static void setupBasic_Collection_11972405004761197240500476(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197240500476");
+    editorCell.setCellId("Collection_1197240500476");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -172,7 +172,7 @@ public class State_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11972405004771197240500477(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197240500477");
+    editorCell.setCellId("Constant_1197240500477");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -185,11 +185,11 @@ public class State_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_transition1197240509135(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_transition");
+    editorCell.setCellId("refNodeList_transition");
   }
 
   private static void setupBasic_Constant_11972409225341197240922534(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197240922534");
+    editorCell.setCellId("Constant_1197240922534");
   }
 
   private static void setupLabel_Constant_1197170622285_1197170622285(EditorCell_Label editorCell, SNode node, EditorContext context) {

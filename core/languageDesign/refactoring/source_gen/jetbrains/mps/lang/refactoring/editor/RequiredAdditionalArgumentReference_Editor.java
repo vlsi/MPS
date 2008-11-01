@@ -11,13 +11,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEditor {
 
@@ -56,16 +54,10 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
 
 
   private static void setupBasic_refCell_argument1189694123409(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_argument");
+    editorCell.setCellId("refCell_argument");
   }
 
   private static void setupLabel_refCell_argument_1189694123409(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor3524_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
   }
 
   public static class _Inline3524_0 extends AbstractCellProvider {
@@ -113,17 +105,11 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
 
 
     private static void setupBasic_property_name1189694134365(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return RequiredAdditionalArgumentReference_Editor.calculateColor3524_0(cell);
-              }
-
-            });
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
 
         };

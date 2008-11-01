@@ -90,11 +90,11 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12174259196671217425919667(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1217425919667");
+    editorCell.setCellId("Collection_1217425919667");
   }
 
   private static void setupBasic_Constant_12174259253261217425925326(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217425925326");
+    editorCell.setCellId("Constant_1217425925326");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
   }
 
@@ -102,7 +102,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12174259531941217425953194(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217425953194");
+    editorCell.setCellId("Constant_1217425953194");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -117,7 +117,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12179422340571217942234057(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217942234057");
+    editorCell.setCellId("Constant_1217942234057");
     {
       Style inlineStyle = new Style(editorCell) {
         {

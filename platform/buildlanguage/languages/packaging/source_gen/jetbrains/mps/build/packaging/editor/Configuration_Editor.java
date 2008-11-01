@@ -60,11 +60,11 @@ public class Configuration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12041156823341204115682334(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204115682334");
+    editorCell.setCellId("Collection_1204115682334");
   }
 
   private static void setupBasic_property_name1204115701868(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     MPSLayoutStyles_StyleSheet.getConfiguration(editorCell).apply(editorCell);
   }
 

@@ -82,11 +82,11 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11770936826241177093682624(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1177093682624");
+    editorCell.setCellId("Collection_1177093682624");
   }
 
   private static void setupBasic_Constant_11770936877201177093687720(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177093687720");
+    editorCell.setCellId("Constant_1177093687720");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -100,7 +100,7 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11770937295981177093729598(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177093729598");
+    editorCell.setCellId("Constant_1177093729598");
     {
       Style inlineStyle = new Style(editorCell) {
         {

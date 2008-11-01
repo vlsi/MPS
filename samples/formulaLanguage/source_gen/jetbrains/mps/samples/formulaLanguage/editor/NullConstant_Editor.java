@@ -9,11 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class NullConstant_Editor extends DefaultNodeEditor {
 
@@ -31,38 +29,14 @@ public class NullConstant_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_11425187639911142518763991(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1142518763991");
+    editorCell.setCellId("Constant_1142518763991");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.SELECTABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NullConstant_Editor.calculateBoolean0177_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return NullConstant_Editor.calculateFontStyle0177_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.EDITABLE, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return NullConstant_Editor.calculateBoolean0177_1(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return NullConstant_Editor.calculateColor0177_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
 
       };
@@ -71,30 +45,6 @@ public class NullConstant_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1142518763991_1142518763991(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle0177_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
-  }
-
-  private static Color calculateColor0177_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_BLUE;
-    return result;
-  }
-
-  public static Boolean calculateBoolean0177_0(EditorCell cell) {
-    boolean result;
-    result = true;
-    return result;
-  }
-
-  public static Boolean calculateBoolean0177_1(EditorCell cell) {
-    boolean result;
-    result = false;
-    return result;
   }
 
 }

@@ -213,11 +213,11 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
 
 
   private static void setupBasic_Collection_12150325097831215032509783(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1215032509783");
+    editorCell.setCellId("Collection_1215032509783");
   }
 
   private static void setupBasic_Collection_12150325097841215032509784(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1215032509784");
+    editorCell.setCellId("Collection_1215032509784");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -230,7 +230,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
   }
 
   private static void setupBasic_Collection_12150325097851215032509785(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1215032509785");
+    editorCell.setCellId("Collection_1215032509785");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -243,7 +243,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
   }
 
   private static void setupBasic_ModelAccess_12150325097861215032509786(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ModelAccess_1215032509786");
+    editorCell.setCellId("ModelAccess_1215032509786");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -258,12 +258,12 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_12150325098971215032509897(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215032509897");
+    editorCell.setCellId("Constant_1215032509897");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12150325098991215032509899(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1215032509899");
+    editorCell.setCellId("Collection_1215032509899");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -276,19 +276,19 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
   }
 
   private static void setupBasic_Indent_12150325099001215032509900(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1215032509900");
+    editorCell.setCellId("Indent_1215032509900");
   }
 
   private static void setupBasic_refNode_body1215032509901(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12150325099031215032509903(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215032509903");
+    editorCell.setCellId("Constant_1215032509903");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_conceptProperty_alias1215032787857(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {

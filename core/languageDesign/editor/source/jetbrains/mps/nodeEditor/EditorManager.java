@@ -362,7 +362,7 @@ public class EditorManager {
 
     protected EditorCell_STHint(EditorContext editorContext, SNode node, CellSide side) {
       super(editorContext, node, "");
-      putUserObject(EditorCell.CELL_ID, node.getId());
+      setCellId(node.getId());
       setDefaultText(" ");
       setEditable(true);
       setCellBackgroundColor(LightColors.BLUE);

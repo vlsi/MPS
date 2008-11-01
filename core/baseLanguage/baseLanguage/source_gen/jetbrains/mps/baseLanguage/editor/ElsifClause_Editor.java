@@ -176,7 +176,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12060610471061206061047106(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206061047106");
+    editorCell.setCellId("Collection_1206061047106");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -189,7 +189,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12060610515921206061051592(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206061051592");
+    editorCell.setCellId("Collection_1206061051592");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -202,13 +202,13 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12060610550321206061055032(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206061055032");
+    editorCell.setCellId("Constant_1206061055032");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     ElseifClause_DeletePrevious.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Constant_12060610598151206061059815(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206061059815");
+    editorCell.setCellId("Constant_1206061059815");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -222,17 +222,17 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12060610688021206061068802(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206061068802");
+    editorCell.setCellId("Constant_1206061068802");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12060610711001206061071100(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206061071100");
+    editorCell.setCellId("Constant_1206061071100");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12060610745091206061074509(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206061074509");
+    editorCell.setCellId("Constant_1206061074509");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
@@ -240,7 +240,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12060610997781206061099778(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1206061099778");
+    editorCell.setCellId("Collection_1206061099778");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -254,7 +254,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_12060610997791206061099779(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1206061099779");
+    editorCell.setCellId("Indent_1206061099779");
     {
       Style inlineStyle = new Style(editorCell) {
         {

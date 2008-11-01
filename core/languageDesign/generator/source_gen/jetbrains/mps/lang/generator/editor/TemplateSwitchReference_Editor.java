@@ -51,7 +51,7 @@ public class TemplateSwitchReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_templateSwitch1112911714074(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_templateSwitch");
+    editorCell.setCellId("refCell_templateSwitch");
   }
 
   private static void setupLabel_refCell_templateSwitch_1112911714074(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -102,7 +102,7 @@ public class TemplateSwitchReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1112911714075(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1112911714075(EditorCell_Label editorCell, SNode node, EditorContext context) {

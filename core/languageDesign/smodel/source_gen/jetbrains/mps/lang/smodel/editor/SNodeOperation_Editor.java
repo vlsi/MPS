@@ -27,7 +27,7 @@ public class SNodeOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_component_ReplaceableAlias_Comp1212009058728(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAlias_Comp");
+    editorCell.setCellId("component_ReplaceableAlias_Comp");
   }
 
 }

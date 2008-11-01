@@ -120,22 +120,22 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11767432575491176743257549(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1176743257549");
+    editorCell.setCellId("Collection_1176743257549");
   }
 
   private static void setupBasic_Constant_11767432597381176743259738(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176743259738");
+    editorCell.setCellId("Constant_1176743259738");
   }
 
   private static void setupBasic_refNode_type1176743262365(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11767432660701176743266070(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1176743266070");
+    editorCell.setCellId("Constant_1176743266070");
   }
 
   private static void setupBasic_property_name1176743304856(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
   }
 

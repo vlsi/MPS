@@ -135,7 +135,7 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11788709894731178870989473(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1178870989473");
+    editorCell.setCellId("Collection_1178870989473");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -148,7 +148,7 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11788709894741178870989474(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178870989474");
+    editorCell.setCellId("Constant_1178870989474");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -161,7 +161,7 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11788709894751178870989475(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178870989475");
+    editorCell.setCellId("Constant_1178870989475");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
@@ -169,14 +169,14 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11788709894771178870989477(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178870989477");
+    editorCell.setCellId("Constant_1178870989477");
   }
 
   private static void setupBasic_refNode_pattern1178870989478(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11788709894791178870989479(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1178870989479");
+    editorCell.setCellId("Constant_1178870989479");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 

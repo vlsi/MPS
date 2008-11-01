@@ -74,14 +74,14 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11454046643031145404664303(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1145404664303");
+    editorCell.setCellId("Collection_1145404664303");
   }
 
   private static void setupBasic_refNode_leftExpression1145404664304(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11454046643051145404664305(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1145404664305");
+    editorCell.setCellId("Constant_1145404664305");
     {
       Style inlineStyle = new Style(editorCell) {
         {

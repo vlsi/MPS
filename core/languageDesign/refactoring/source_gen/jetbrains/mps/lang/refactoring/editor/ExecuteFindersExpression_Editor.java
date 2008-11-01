@@ -160,23 +160,23 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12122427561911212242756191(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212242756191");
+    editorCell.setCellId("Collection_1212242756191");
   }
 
   private static void setupBasic_Constant_12122427633491212242763349(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212242763349");
+    editorCell.setCellId("Constant_1212242763349");
   }
 
   private static void setupBasic_Constant_12122427762891212242776289(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212242776289");
+    editorCell.setCellId("Constant_1212242776289");
   }
 
   private static void setupBasic_Constant_12122427806201212242780620(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212242780620");
+    editorCell.setCellId("Constant_1212242780620");
   }
 
   private static void setupBasic_refNodeList_finders1212242818597(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_finders");
+    editorCell.setCellId("refNodeList_finders");
   }
 
   private static void setupBasic_refNode_searchNode1212242825771(EditorCell editorCell, SNode node, EditorContext context) {
@@ -186,11 +186,11 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12122429844841212242984484(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212242984484");
+    editorCell.setCellId("Constant_1212242984484");
   }
 
   private static void setupBasic_Constant_12122429907051212242990705(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212242990705");
+    editorCell.setCellId("Constant_1212242990705");
   }
 
   private static void setupLabel_Constant_1212242763349_1212242763349(EditorCell_Label editorCell, SNode node, EditorContext context) {

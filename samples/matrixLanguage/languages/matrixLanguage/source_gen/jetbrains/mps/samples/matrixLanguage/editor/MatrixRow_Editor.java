@@ -52,11 +52,11 @@ public class MatrixRow_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12154309380571215430938057(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1215430938057");
+    editorCell.setCellId("Collection_1215430938057");
   }
 
   private static void setupBasic_refNodeList_items1215430938058(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_items");
+    editorCell.setCellId("refNodeList_items");
   }
 
   private static void setupLabel_refNodeList_items_1215430938058(EditorCell_Label editorCell, SNode node, EditorContext context) {

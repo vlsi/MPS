@@ -72,11 +72,11 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_component_ConceptFunction_Component1196975582231(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ConceptFunction_Component");
+    editorCell.setCellId("component_ConceptFunction_Component");
   }
 
   private static void setupBasic_Custom_12075779223241207577922324(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Custom_1207577922324");
+    editorCell.setCellId("Custom_1207577922324");
   }
 
 }

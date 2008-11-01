@@ -14,8 +14,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
@@ -96,28 +94,16 @@ public class EventVariable_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11120326992721112032699272(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1112032699272");
+    editorCell.setCellId("Collection_1112032699272");
   }
 
   private static void setupBasic_property_type1112032765117(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_type");
+    editorCell.setCellId("property_type");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return EventVariable_Editor.calculateFontStyle6854_1(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return EventVariable_Editor.calculateColor6854_1(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
         }
 
       };
@@ -126,24 +112,12 @@ public class EventVariable_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1112032765118(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-            public Integer calculate(EditorCell cell) {
-              return EventVariable_Editor.calculateFontStyle6854_0(cell);
-            }
-
-          });
-          this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-            public Color calculate(EditorCell cell) {
-              return EventVariable_Editor.calculateColor6854_0(cell);
-            }
-
-          });
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
         }
 
       };
@@ -155,30 +129,6 @@ public class EventVariable_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_name_1112032765118(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle6854_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD_ITALIC;
-    return result;
-  }
-
-  private static Integer calculateFontStyle6854_1(EditorCell cell) {
-    int result;
-    result = MPSFonts.BOLD;
-    return result;
-  }
-
-  private static Color calculateColor6854_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.blue;
-    return result;
-  }
-
-  private static Color calculateColor6854_1(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
   }
 
 }

@@ -82,12 +82,12 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11367200967491136720096749(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1136720096749");
+    editorCell.setCellId("Collection_1136720096749");
     editorCell.addKeyMap(new _PatternExpression_KeyMap());
   }
 
   private static void setupBasic_Constant_11367200967501136720096750(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136720096750");
+    editorCell.setCellId("Constant_1136720096750");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -116,7 +116,7 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11367200967521136720096752(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136720096752");
+    editorCell.setCellId("Constant_1136720096752");
     {
       Style inlineStyle = new Style(editorCell) {
         {

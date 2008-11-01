@@ -91,11 +91,11 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11773265710871177326571087(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1177326571087");
+    editorCell.setCellId("Collection_1177326571087");
   }
 
   private static void setupBasic_Constant_11773266060891177326606089(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177326606089");
+    editorCell.setCellId("Constant_1177326606089");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -109,7 +109,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11773266220771177326622077(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177326622077");
+    editorCell.setCellId("Constant_1177326622077");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -123,7 +123,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11773266283281177326628328(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1177326628328");
+    editorCell.setCellId("Collection_1177326628328");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -136,7 +136,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11773266283291177326628329(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1177326628329");
+    editorCell.setCellId("Constant_1177326628329");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -149,7 +149,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_statement1177326980923(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_statement");
+    editorCell.setCellId("refNodeList_statement");
     {
       Style inlineStyle = new Style(editorCell) {
         {

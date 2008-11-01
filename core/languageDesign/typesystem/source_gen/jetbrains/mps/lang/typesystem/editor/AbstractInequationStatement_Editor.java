@@ -248,14 +248,14 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12120566319681212056631968(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212056631968");
+    editorCell.setCellId("Collection_1212056631968");
   }
 
   private static void setupBasic_refNode_leftExpression1212056631969(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_conceptProperty_alias1212056631970(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -285,11 +285,11 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12120566319871212056631987(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212056631987");
+    editorCell.setCellId("Constant_1212056631987");
   }
 
   private static void setupBasic_property_inequationPriority1212056656052(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_inequationPriority");
+    editorCell.setCellId("property_inequationPriority");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -302,15 +302,15 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_12120566630371212056663037(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212056663037");
+    editorCell.setCellId("Collection_1212056663037");
   }
 
   private static void setupBasic_component_AbstractEquationInspector1212056663038(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_AbstractEquationInspector");
+    editorCell.setCellId("component_AbstractEquationInspector");
   }
 
   private static void setupBasic_Collection_12120566748221212056674822(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1212056674822");
+    editorCell.setCellId("Collection_1212056674822");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -323,11 +323,11 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_inequationPriority1212056680433(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_inequationPriority");
+    editorCell.setCellId("property_inequationPriority");
   }
 
   private static void setupBasic_Constant_12120566825921212056682592(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1212056682592");
+    editorCell.setCellId("Constant_1212056682592");
   }
 
   private static void setupLabel_refNode_leftExpression_1212056631969(EditorCell_Label editorCell, SNode node, EditorContext context) {

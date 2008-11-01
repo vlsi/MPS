@@ -437,11 +437,11 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11652712116471165271211647(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1165271211647");
+    editorCell.setCellId("Collection_1165271211647");
   }
 
   private static void setupBasic_Collection_11652712116481165271211648(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1165271211648");
+    editorCell.setCellId("Collection_1165271211648");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -454,7 +454,7 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11652712116491165271211649(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211649");
+    editorCell.setCellId("Constant_1165271211649");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -468,7 +468,7 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11652712116501165271211650(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1165271211650");
+    editorCell.setCellId("Collection_1165271211650");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -481,7 +481,7 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11652712116511165271211651(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211651");
+    editorCell.setCellId("Constant_1165271211651");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -494,7 +494,7 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11652712116521165271211652(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1165271211652");
+    editorCell.setCellId("Collection_1165271211652");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -507,7 +507,7 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11652712116531165271211653(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1165271211653");
+    editorCell.setCellId("Collection_1165271211653");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -520,11 +520,11 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11652712116541165271211654(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211654");
+    editorCell.setCellId("Constant_1165271211654");
   }
 
   private static void setupBasic_Constant_11652712116551165271211655(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211655");
+    editorCell.setCellId("Constant_1165271211655");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -540,7 +540,7 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11652712116571165271211657(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1165271211657");
+    editorCell.setCellId("Collection_1165271211657");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -553,11 +553,11 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11652712116581165271211658(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211658");
+    editorCell.setCellId("Constant_1165271211658");
   }
 
   private static void setupBasic_Constant_11652712116591165271211659(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211659");
+    editorCell.setCellId("Constant_1165271211659");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -570,11 +570,11 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_presentation1165271211660(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_presentation");
+    editorCell.setCellId("property_presentation");
   }
 
   private static void setupBasic_Collection_11652712116611165271211661(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1165271211661");
+    editorCell.setCellId("Collection_1165271211661");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -587,11 +587,11 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11652712116621165271211662(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211662");
+    editorCell.setCellId("Constant_1165271211662");
   }
 
   private static void setupBasic_Constant_11652712116631165271211663(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211663");
+    editorCell.setCellId("Constant_1165271211663");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -607,7 +607,7 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11652712116741165271211674(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1165271211674");
+    editorCell.setCellId("Collection_1165271211674");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -620,11 +620,11 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11652712116751165271211675(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211675");
+    editorCell.setCellId("Constant_1165271211675");
   }
 
   private static void setupBasic_Constant_11652712116761165271211676(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211676");
+    editorCell.setCellId("Constant_1165271211676");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -640,7 +640,7 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11652712116871165271211687(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1165271211687");
+    editorCell.setCellId("Collection_1165271211687");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -653,11 +653,11 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11652712116881165271211688(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211688");
+    editorCell.setCellId("Constant_1165271211688");
   }
 
   private static void setupBasic_Constant_11652712116891165271211689(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211689");
+    editorCell.setCellId("Constant_1165271211689");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -673,7 +673,7 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11652712116911165271211691(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1165271211691");
+    editorCell.setCellId("Collection_1165271211691");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -686,11 +686,11 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11652712116921165271211692(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211692");
+    editorCell.setCellId("Constant_1165271211692");
   }
 
   private static void setupBasic_Constant_11652712116931165271211693(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1165271211693");
+    editorCell.setCellId("Constant_1165271211693");
     {
       Style inlineStyle = new Style(editorCell) {
         {

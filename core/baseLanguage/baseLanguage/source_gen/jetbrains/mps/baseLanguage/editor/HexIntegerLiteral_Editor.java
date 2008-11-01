@@ -73,11 +73,11 @@ public class HexIntegerLiteral_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11793608653641179360865364(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1179360865364");
+    editorCell.setCellId("Collection_1179360865364");
   }
 
   private static void setupBasic_Constant_11793608668501179360866850(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1179360866850");
+    editorCell.setCellId("Constant_1179360866850");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -90,7 +90,7 @@ public class HexIntegerLiteral_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_value1179360871462(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_value");
+    editorCell.setCellId("property_value");
     {
       Style inlineStyle = new Style(editorCell) {
         {

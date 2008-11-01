@@ -17,9 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -27,7 +24,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ReaderConfiguration_Editor extends DefaultNodeEditor {
 
@@ -139,11 +137,11 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11165350734791116535073479(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1116535073479");
+    editorCell.setCellId("Collection_1116535073479");
   }
 
   private static void setupBasic_Collection_11165350796381116535079638(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1116535079638");
+    editorCell.setCellId("Collection_1116535079638");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -156,15 +154,15 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11165350837491116535083749(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1116535083749");
+    editorCell.setCellId("Constant_1116535083749");
   }
 
   private static void setupBasic_property_name1116535104470(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupBasic_Constant_11165351277061116535127706(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1116535127706");
+    editorCell.setCellId("Constant_1116535127706");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -177,15 +175,15 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11165351791771116535179177(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1116535179177");
+    editorCell.setCellId("Collection_1116535179177");
   }
 
   private static void setupBasic_Constant_11165351821631116535182163(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1116535182163");
+    editorCell.setCellId("Constant_1116535182163");
   }
 
   private static void setupBasic_refNodeList_mapping1116535190962(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_mapping");
+    editorCell.setCellId("refNodeList_mapping");
   }
 
   private static void setupLabel_Constant_1116535083749_1116535083749(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -201,18 +199,6 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNodeList_mapping_1116535190962(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Integer calculateFontStyle2681_0(EditorCell cell) {
-    int result;
-    result = MPSFonts.ITALIC;
-    return result;
-  }
-
-  private static Color calculateColor2681_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.blue;
-    return result;
   }
 
   public static class mappingListHandler_2681_0 extends RefNodeListHandler {
@@ -276,24 +262,12 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_Constant_11165353422821116535342282(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1116535342282");
+      editorCell.setCellId("Constant_1116535342282");
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
-              public Integer calculate(EditorCell cell) {
-                return ReaderConfiguration_Editor.calculateFontStyle2681_0(cell);
-              }
-
-            });
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return ReaderConfiguration_Editor.calculateColor2681_0(cell);
-              }
-
-            });
+            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           }
 
         };

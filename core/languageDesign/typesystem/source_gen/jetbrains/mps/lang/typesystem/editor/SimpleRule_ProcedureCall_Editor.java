@@ -214,11 +214,11 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12230567238261223056723826(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1223056723826");
+    editorCell.setCellId("Collection_1223056723826");
   }
 
   private static void setupBasic_Collection_12230567238271223056723827(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1223056723827");
+    editorCell.setCellId("Collection_1223056723827");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -231,7 +231,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12230567238281223056723828(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1223056723828");
+    editorCell.setCellId("Constant_1223056723828");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -240,7 +240,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12230567355651223056735565(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1223056735565");
+    editorCell.setCellId("Constant_1223056735565");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -254,11 +254,11 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_actualArgumentsLink1223056748889(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_actualArgumentsLink");
+    editorCell.setCellId("refCell_actualArgumentsLink");
   }
 
   private static void setupBasic_Collection_12230567616591223056761659(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1223056761659");
+    editorCell.setCellId("Collection_1223056761659");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -272,16 +272,16 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12230567630921223056763092(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1223056763092");
+    editorCell.setCellId("Constant_1223056763092");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_procedureDeclaration1223056781582(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_procedureDeclaration");
+    editorCell.setCellId("refCell_procedureDeclaration");
   }
 
   private static void setupBasic_Constant_12230567945251223056794525(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1223056794525");
+    editorCell.setCellId("Constant_1223056794525");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -295,7 +295,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_parametersLink1223056821393(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_parametersLink");
+    editorCell.setCellId("refCell_parametersLink");
   }
 
   private static void setupLabel_Constant_1223056723828_1223056723828(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -367,7 +367,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_role1223056756729(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_role");
+      editorCell.setCellId("property_role");
       SharedStyles_StyleSheet.getReferenceOnConceptualFeature(editorCell).apply(editorCell);
     }
 
@@ -420,7 +420,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_role1223056783746(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_role");
+      editorCell.setCellId("property_role");
       SharedStyles_StyleSheet.getReferenceOnConceptualFeature(editorCell).apply(editorCell);
     }
 
@@ -473,7 +473,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_role1223056824695(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_role");
+      editorCell.setCellId("property_role");
       SharedStyles_StyleSheet.getReferenceOnConceptualFeature(editorCell).apply(editorCell);
     }
 

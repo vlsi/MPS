@@ -70,15 +70,15 @@ public class BarConcept_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12094764146261209476414626(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1209476414626");
+    editorCell.setCellId("Collection_1209476414626");
   }
 
   private static void setupBasic_Constant_12094764146271209476414627(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209476414627");
+    editorCell.setCellId("Constant_1209476414627");
   }
 
   private static void setupBasic_property_name1209476419691(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupLabel_Constant_1209476414627_1209476414627(EditorCell_Label editorCell, SNode node, EditorContext context) {

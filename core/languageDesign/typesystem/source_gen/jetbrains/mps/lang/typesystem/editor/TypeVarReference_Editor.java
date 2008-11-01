@@ -51,7 +51,7 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_typeVarDeclaration1174666294979(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_typeVarDeclaration");
+    editorCell.setCellId("refCell_typeVarDeclaration");
   }
 
   private static void setupLabel_refCell_typeVarDeclaration_1174666294979(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -102,7 +102,7 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1174666297138(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1174666297138(EditorCell_Label editorCell, SNode node, EditorContext context) {

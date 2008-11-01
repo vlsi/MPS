@@ -260,7 +260,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
 
 
   private static void setupBasic_Collection_11842144190281184214419028(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184214419028");
+    editorCell.setCellId("Collection_1184214419028");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -273,7 +273,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_11842144190291184214419029(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184214419029");
+    editorCell.setCellId("Constant_1184214419029");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -288,7 +288,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_11842144190301184214419030(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184214419030");
+    editorCell.setCellId("Constant_1184214419030");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -301,7 +301,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Collection_11842144190311184214419031(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184214419031");
+    editorCell.setCellId("Collection_1184214419031");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -314,7 +314,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Collection_11842144190321184214419032(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184214419032");
+    editorCell.setCellId("Collection_1184214419032");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -327,7 +327,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_11842144190331184214419033(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184214419033");
+    editorCell.setCellId("Constant_1184214419033");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -340,7 +340,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_11842144190341184214419034(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184214419034");
+    editorCell.setCellId("Constant_1184214419034");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -353,7 +353,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_property_mappingId1184214419035(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_mappingId");
+    editorCell.setCellId("property_mappingId");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -366,7 +366,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Collection_11842144190571184214419057(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184214419057");
+    editorCell.setCellId("Collection_1184214419057");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -379,7 +379,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_11842144190581184214419058(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184214419058");
+    editorCell.setCellId("Constant_1184214419058");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -392,7 +392,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_11842144190591184214419059(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184214419059");
+    editorCell.setCellId("Constant_1184214419059");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -411,7 +411,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Collection_12009122382481200912238248(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1200912238248");
+    editorCell.setCellId("Collection_1200912238248");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -424,11 +424,11 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_Constant_12009122390941200912239094(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200912239094");
+    editorCell.setCellId("Constant_1200912239094");
   }
 
   private static void setupBasic_Constant_12009122427681200912242768(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1200912242768");
+    editorCell.setCellId("Constant_1200912242768");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -441,11 +441,11 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private static void setupBasic_refCell_mappingLabel1200912246505(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_mappingLabel");
+    editorCell.setCellId("refCell_mappingLabel");
   }
 
   private static void setupBasic_Constant_12154789149231215478914923(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215478914923");
+    editorCell.setCellId("Constant_1215478914923");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -542,7 +542,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
 
 
     private static void setupBasic_property_name1200912247570(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

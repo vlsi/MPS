@@ -55,7 +55,7 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_refCell_booleanConceptPropertyDeclaration1146699642295(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_booleanConceptPropertyDeclaration");
+    editorCell.setCellId("refCell_booleanConceptPropertyDeclaration");
   }
 
   private static void setupLabel_refCell_booleanConceptPropertyDeclaration_1146699642295(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -106,7 +106,7 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1146699642297(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

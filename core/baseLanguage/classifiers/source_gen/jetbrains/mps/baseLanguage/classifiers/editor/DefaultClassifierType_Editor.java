@@ -93,11 +93,11 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12057529265761205752926576(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1205752926576");
+    editorCell.setCellId("Collection_1205752926576");
   }
 
   private static void setupBasic_Constant_12057529272971205752927297(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205752927297");
+    editorCell.setCellId("Constant_1205752927297");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -111,7 +111,7 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12057529299091205752929909(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205752929909");
+    editorCell.setCellId("Constant_1205752929909");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -127,11 +127,11 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refCell_classifier1205752934708(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_classifier");
+    editorCell.setCellId("refCell_classifier");
   }
 
   private static void setupBasic_Constant_12057529507611205752950761(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205752950761");
+    editorCell.setCellId("Constant_1205752950761");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -201,7 +201,7 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1205752935414(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

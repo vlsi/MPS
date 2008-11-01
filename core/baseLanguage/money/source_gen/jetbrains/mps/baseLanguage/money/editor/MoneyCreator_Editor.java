@@ -127,19 +127,19 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11873435948991187343594899(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1187343594899");
+    editorCell.setCellId("Collection_1187343594899");
   }
 
   private static void setupBasic_Constant_11873436096051187343609605(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1187343609605");
+    editorCell.setCellId("Constant_1187343609605");
   }
 
   private static void setupBasic_Constant_11873436222481187343622248(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1187343622248");
+    editorCell.setCellId("Constant_1187343622248");
   }
 
   private static void setupBasic_Constant_11873436371581187343637158(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1187343637158");
+    editorCell.setCellId("Constant_1187343637158");
   }
 
   private static void setupBasic_refNode_amount1187344116411(EditorCell editorCell, SNode node, EditorContext context) {
@@ -149,7 +149,7 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11873442494631187344249463(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1187344249463");
+    editorCell.setCellId("Constant_1187344249463");
   }
 
   private static void setupLabel_Constant_1187343609605_1187343609605(EditorCell_Label editorCell, SNode node, EditorContext context) {

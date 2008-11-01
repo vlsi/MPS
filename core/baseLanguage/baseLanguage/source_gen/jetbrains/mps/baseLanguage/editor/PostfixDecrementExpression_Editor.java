@@ -71,14 +71,14 @@ public class PostfixDecrementExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12149191397141214919139714(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1214919139714");
+    editorCell.setCellId("Collection_1214919139714");
   }
 
   private static void setupBasic_refNode_expression1214919142236(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12149191441791214919144179(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1214919144179");
+    editorCell.setCellId("Constant_1214919144179");
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }

@@ -120,11 +120,11 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12199524495021219952449502(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1219952449502");
+    editorCell.setCellId("Collection_1219952449502");
   }
 
   private static void setupBasic_refCell_applicableConcept1219952622803(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_applicableConcept");
+    editorCell.setCellId("refCell_applicableConcept");
     SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
@@ -132,7 +132,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12199528484651219952848465(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219952848465");
+    editorCell.setCellId("Constant_1219952848465");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
   }
 
@@ -140,7 +140,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12199533946871219953394687(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219953394687");
+    editorCell.setCellId("Constant_1219953394687");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -213,7 +213,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1219952622805(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1219952622805(EditorCell_Label editorCell, SNode node, EditorContext context) {

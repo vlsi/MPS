@@ -135,30 +135,30 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
 
 
   private static void setupBasic_Collection_11822797992301182279799230(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1182279799230");
+    editorCell.setCellId("Collection_1182279799230");
   }
 
   private static void setupBasic_component_ReplaceableAlias_Comp1206485988830(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_ReplaceableAlias_Comp");
+    editorCell.setCellId("component_ReplaceableAlias_Comp");
   }
 
   private static void setupBasic_Constant_12064859888311206485988831(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206485988831");
+    editorCell.setCellId("Constant_1206485988831");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12064859888371206485988837(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1206485988837");
+    editorCell.setCellId("Constant_1206485988837");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_referenceLink1221164457353(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_referenceLink");
+    editorCell.setCellId("refCell_referenceLink");
     SharedStyles_StyleSheet.getReferenceOnConceptualFeature(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12211646500301221164650030(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1221164650030");
+    editorCell.setCellId("Constant_1221164650030");
   }
 
   private static void setupBasic_refNode_operationContext1221165896439(EditorCell editorCell, SNode node, EditorContext context) {
@@ -224,7 +224,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
 
 
     private static void setupBasic_property_role1221164467825(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_role");
+      editorCell.setCellId("property_role");
     }
 
     private static void setupLabel_property_role_1221164467825(EditorCell_Label editorCell, SNode node, EditorContext context) {

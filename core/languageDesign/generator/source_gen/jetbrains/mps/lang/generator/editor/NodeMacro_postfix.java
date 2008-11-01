@@ -173,7 +173,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
 
   private static void setupBasic_Collection_11848653015791184865301579(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184865301579");
+    editorCell.setCellId("Collection_1184865301579");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -186,15 +186,15 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   private static void setupBasic_Collection_11848653023301184865302330(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1184865302330");
+    editorCell.setCellId("Collection_1184865302330");
   }
 
   private static void setupBasic_Constant_11848653023311184865302331(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1184865302331");
+    editorCell.setCellId("Constant_1184865302331");
   }
 
   private static void setupBasic_ModelAccess_11848653023321184865302332(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "ModelAccess_1184865302332");
+    editorCell.setCellId("ModelAccess_1184865302332");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -207,7 +207,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   private static void setupBasic_property_mappingId1184865331990(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_mappingId");
+    editorCell.setCellId("property_mappingId");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -221,12 +221,12 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   private static void setupBasic_AttributedNodeCell_11848653319911184865331991(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "AttributedNodeCell_1184865331991");
+    editorCell.setCellId("AttributedNodeCell_1184865331991");
     Styles_StyleSheet.getNodeUnderMacro(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_mappingLabel1200912672389(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_mappingLabel");
+    editorCell.setCellId("refCell_mappingLabel");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -305,7 +305,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
 
     private static void setupBasic_property_name1200912674689(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

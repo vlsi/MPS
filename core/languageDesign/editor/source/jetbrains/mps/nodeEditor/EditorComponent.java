@@ -1300,7 +1300,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return null;
     }
 
-    if (id.equals(root.getUserObject(EditorCell.CELL_ID))) {
+    if (id.equals(root.getCellId())) {
       return root;
     }
 

@@ -79,11 +79,11 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11649911338301164991133830(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1164991133830");
+    editorCell.setCellId("Collection_1164991133830");
   }
 
   private static void setupBasic_Constant_11649911352851164991135285(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1164991135285");
+    editorCell.setCellId("Constant_1164991135285");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -91,7 +91,7 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11649911546831164991154683(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1164991154683");
+    editorCell.setCellId("Constant_1164991154683");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 

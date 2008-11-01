@@ -171,11 +171,11 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12247602782701224760278270(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1224760278270");
+    editorCell.setCellId("Collection_1224760278270");
   }
 
   private static void setupBasic_Constant_12247602782711224760278271(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224760278271");
+    editorCell.setCellId("Constant_1224760278271");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
@@ -183,22 +183,22 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12247602782731224760278273(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224760278273");
+    editorCell.setCellId("Constant_1224760278273");
   }
 
   private static void setupBasic_refNode_nodeToReport1224760278274(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12247602782751224760278275(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224760278275");
+    editorCell.setCellId("Constant_1224760278275");
   }
 
   private static void setupBasic_Collection_12247603398131224760339813(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1224760339813");
+    editorCell.setCellId("Collection_1224760339813");
   }
 
   private static void setupBasic_Constant_12247603398141224760339814(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224760339814");
+    editorCell.setCellId("Constant_1224760339814");
   }
 
   private static void setupBasic_refNode_helginsIntention1224760339815(EditorCell editorCell, SNode node, EditorContext context) {

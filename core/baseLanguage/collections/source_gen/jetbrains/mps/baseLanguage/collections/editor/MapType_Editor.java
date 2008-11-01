@@ -130,11 +130,11 @@ public class MapType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11976834299601197683429960(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197683429960");
+    editorCell.setCellId("Collection_1197683429960");
   }
 
   private static void setupBasic_Constant_11976834316651197683431665(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197683431665");
+    editorCell.setCellId("Constant_1197683431665");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -148,12 +148,12 @@ public class MapType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11976834407301197683440730(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197683440730");
+    editorCell.setCellId("Constant_1197683440730");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11976834424661197683442466(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197683442466");
+    editorCell.setCellId("Constant_1197683442466");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
   }
 
@@ -161,7 +161,7 @@ public class MapType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11976835027851197683502785(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197683502785");
+    editorCell.setCellId("Constant_1197683502785");
   }
 
   private static void setupBasic_refNode_valueType1197683505787(EditorCell editorCell, SNode node, EditorContext context) {

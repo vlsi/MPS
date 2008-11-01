@@ -71,11 +71,11 @@ public class MatchRegexpOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12222615924441222261592444(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1222261592444");
+    editorCell.setCellId("Collection_1222261592444");
   }
 
   private static void setupBasic_Constant_12222615924461222261592446(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1222261592446");
+    editorCell.setCellId("Constant_1222261592446");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 

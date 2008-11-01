@@ -90,15 +90,15 @@ public class Event_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11971694245161197169424516(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197169424516");
+    editorCell.setCellId("Collection_1197169424516");
   }
 
   private static void setupBasic_property_eventName1197169427033(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_eventName");
+    editorCell.setCellId("property_eventName");
   }
 
   private static void setupBasic_property_code1197169429473(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_code");
+    editorCell.setCellId("property_code");
   }
 
   private static void setupLabel_property_eventName_1197169427033(EditorCell_Label editorCell, SNode node, EditorContext context) {

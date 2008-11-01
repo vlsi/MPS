@@ -120,11 +120,11 @@ public class AssertType_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12175245796251217524579625(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1217524579625");
+    editorCell.setCellId("Collection_1217524579625");
   }
 
   private static void setupBasic_Constant_12175245847681217524584768(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217524584768");
+    editorCell.setCellId("Constant_1217524584768");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
   }
 
@@ -132,7 +132,7 @@ public class AssertType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12175246048031217524604803(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217524604803");
+    editorCell.setCellId("Constant_1217524604803");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -149,7 +149,7 @@ public class AssertType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12175248506931217524850693(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1217524850693");
+    editorCell.setCellId("Constant_1217524850693");
   }
 
   private static void setupLabel_Constant_1217524584768_1217524584768(EditorCell_Label editorCell, SNode node, EditorContext context) {

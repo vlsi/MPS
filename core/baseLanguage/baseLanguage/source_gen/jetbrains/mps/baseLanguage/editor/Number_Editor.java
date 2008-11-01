@@ -28,7 +28,7 @@ public class Number_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_11571038366721157103836672(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1157103836672");
+    editorCell.setCellId("Constant_1157103836672");
     {
       Style inlineStyle = new Style(editorCell) {
         {

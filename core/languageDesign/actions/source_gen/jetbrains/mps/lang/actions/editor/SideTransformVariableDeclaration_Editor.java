@@ -152,14 +152,14 @@ public class SideTransformVariableDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12033478071361203347807136(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1203347807136");
+    editorCell.setCellId("Collection_1203347807136");
   }
 
   private static void setupBasic_refNode_type1203347807137(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_property_name1203347807138(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -172,18 +172,18 @@ public class SideTransformVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12033478071391203347807139(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203347807139");
+    editorCell.setCellId("Constant_1203347807139");
   }
 
   private static void setupBasic_Collection_12033478071401203347807140(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1203347807140");
+    editorCell.setCellId("Collection_1203347807140");
   }
 
   private static void setupBasic_refNode_initializerBlock1203347807141(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12033478071421203347807142(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1203347807142");
+    editorCell.setCellId("Constant_1203347807142");
     {
       Style inlineStyle = new Style(editorCell) {
         {

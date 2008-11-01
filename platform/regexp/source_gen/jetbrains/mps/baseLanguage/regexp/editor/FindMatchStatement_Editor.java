@@ -205,11 +205,11 @@ public class FindMatchStatement_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11751690367011175169036701(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175169036701");
+    editorCell.setCellId("Collection_1175169036701");
   }
 
   private static void setupBasic_Collection_11751690382031175169038203(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175169038203");
+    editorCell.setCellId("Collection_1175169038203");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -222,12 +222,12 @@ public class FindMatchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751690399861175169039986(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175169039986");
+    editorCell.setCellId("Constant_1175169039986");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11751690413321175169041332(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175169041332");
+    editorCell.setCellId("Constant_1175169041332");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
@@ -235,7 +235,7 @@ public class FindMatchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751691358051175169135805(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175169135805");
+    editorCell.setCellId("Constant_1175169135805");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -252,22 +252,22 @@ public class FindMatchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11751691464491175169146449(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175169146449");
+    editorCell.setCellId("Constant_1175169146449");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11751691483111175169148311(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175169148311");
+    editorCell.setCellId("Constant_1175169148311");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_11751691499381175169149938(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1175169149938");
+    editorCell.setCellId("Constant_1175169149938");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11751691622221175169162222(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1175169162222");
+    editorCell.setCellId("Collection_1175169162222");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -283,7 +283,7 @@ public class FindMatchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Indent_12166359492551216635949255(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Indent_1216635949255");
+    editorCell.setCellId("Indent_1216635949255");
   }
 
   private static void setupLabel_Constant_1175169039986_1175169039986(EditorCell_Label editorCell, SNode node, EditorContext context) {

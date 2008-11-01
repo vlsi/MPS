@@ -89,11 +89,11 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
 
 
   private static void setupBasic_Alternation_12120089261141212008926114(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Alternation_1212008926114");
+    editorCell.setCellId("Alternation_1212008926114");
   }
 
   private static void setupBasic_conceptProperty_alias1212008926115(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -107,7 +107,7 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
   }
 
   private static void setupBasic_Error_12120089658621212008965862(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1212008965862");
+    editorCell.setCellId("Error_1212008965862");
   }
 
   private static void setupLabel_conceptProperty_alias_1212008926115(EditorCell_Label editorCell, SNode node, EditorContext context) {

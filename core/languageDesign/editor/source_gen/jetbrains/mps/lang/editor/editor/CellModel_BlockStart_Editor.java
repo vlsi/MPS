@@ -79,7 +79,7 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_property_openBrace1198504910573(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_openBrace");
+    editorCell.setCellId("property_openBrace");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -94,7 +94,7 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11985049534701198504953470(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1198504953470");
+    editorCell.setCellId("Collection_1198504953470");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -108,7 +108,7 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_component__CellModel_Common1214478813995(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component__CellModel_Common");
+    editorCell.setCellId("component__CellModel_Common");
   }
 
   private static void setupLabel_property_openBrace_1198504910573(EditorCell_Label editorCell, SNode node, EditorContext context) {

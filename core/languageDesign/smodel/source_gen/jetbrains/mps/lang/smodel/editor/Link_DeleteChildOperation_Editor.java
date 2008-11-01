@@ -27,7 +27,7 @@ public class Link_DeleteChildOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Constant_11401297101231140129710123(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1140129710123");
+    editorCell.setCellId("Constant_1140129710123");
     {
       Style inlineStyle = new Style(editorCell) {
         {

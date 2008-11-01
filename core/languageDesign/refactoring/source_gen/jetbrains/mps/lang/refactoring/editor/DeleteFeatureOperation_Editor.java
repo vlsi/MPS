@@ -88,22 +88,22 @@ public class DeleteFeatureOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12047231771181204723177118(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204723177118");
+    editorCell.setCellId("Collection_1204723177118");
   }
 
   private static void setupBasic_Constant_12047231834641204723183464(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204723183464");
+    editorCell.setCellId("Constant_1204723183464");
   }
 
   private static void setupBasic_refNode_feature1204723192309(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12047231943581204723194358(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204723194358");
+    editorCell.setCellId("Constant_1204723194358");
   }
 
   private static void setupBasic_Constant_12047232045631204723204563(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204723204563");
+    editorCell.setCellId("Constant_1204723204563");
   }
 
   private static void setupLabel_Constant_1204723183464_1204723183464(EditorCell_Label editorCell, SNode node, EditorContext context) {

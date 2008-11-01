@@ -142,18 +142,18 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11688903126501168890312650(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1168890312650");
+    editorCell.setCellId("Collection_1168890312650");
   }
 
   private static void setupBasic_refNode_expression1168890321048(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Collection_11974490486121197449048612(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197449048612");
+    editorCell.setCellId("Collection_1197449048612");
   }
 
   private static void setupBasic_Collection_11974490533041197449053304(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1197449053304");
+    editorCell.setCellId("Collection_1197449053304");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -166,15 +166,15 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11974490542821197449054282(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197449054282");
+    editorCell.setCellId("Constant_1197449054282");
   }
 
   private static void setupBasic_refCell_treepathAspect1197449068841(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_treepathAspect");
+    editorCell.setCellId("refCell_treepathAspect");
   }
 
   private static void setupBasic_Constant_11974511693411197451169341(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1197451169341");
+    editorCell.setCellId("Constant_1197451169341");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -248,7 +248,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1197449072761(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1197449072761(EditorCell_Label editorCell, SNode node, EditorContext context) {

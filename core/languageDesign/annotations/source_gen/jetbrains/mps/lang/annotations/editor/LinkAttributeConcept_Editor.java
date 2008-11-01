@@ -54,19 +54,19 @@ public class LinkAttributeConcept_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11360275327741136027532774(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1136027532774");
+    editorCell.setCellId("Collection_1136027532774");
   }
 
   private static void setupBasic_Constant_11360275327751136027532775(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136027532775");
+    editorCell.setCellId("Constant_1136027532775");
   }
 
   private static void setupBasic_Constant_11360275327761136027532776(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136027532776");
+    editorCell.setCellId("Constant_1136027532776");
   }
 
   private static void setupBasic_Constant_11360275327771136027532777(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1136027532777");
+    editorCell.setCellId("Constant_1136027532777");
   }
 
   private static void setupLabel_Constant_1136027532775_1136027532775(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -92,7 +92,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
 
 
   private static void setupBasic_Collection_12155173448671215517344867(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1215517344867");
+    editorCell.setCellId("Collection_1215517344867");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -105,7 +105,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
   }
 
   private static void setupBasic_property_name1215517344868(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -131,7 +131,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
   }
 
   private static void setupBasic_Constant_12155173467951215517346795(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215517346795");
+    editorCell.setCellId("Constant_1215517346795");
     {
       Style inlineStyle = new Style(editorCell) {
         {

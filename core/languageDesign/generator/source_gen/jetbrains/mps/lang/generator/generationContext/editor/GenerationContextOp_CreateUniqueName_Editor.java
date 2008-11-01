@@ -111,11 +111,11 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
 
 
   private static void setupBasic_Collection_12180479561231218047956123(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1218047956123");
+    editorCell.setCellId("Collection_1218047956123");
   }
 
   private static void setupBasic_Constant_12180479623591218047962359(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218047962359");
+    editorCell.setCellId("Constant_1218047962359");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
   }
 
@@ -123,7 +123,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
   }
 
   private static void setupBasic_Constant_12180498174251218049817425(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218049817425");
+    editorCell.setCellId("Constant_1218049817425");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

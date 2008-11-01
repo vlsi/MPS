@@ -91,11 +91,11 @@ public class NotExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_10819297062951081929706295(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1081929706295");
+    editorCell.setCellId("Collection_1081929706295");
   }
 
   private static void setupBasic_Constant_10819300716081081930071608(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081930071608");
+    editorCell.setCellId("Constant_1081930071608");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -115,7 +115,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_10819300716101081930071610(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1081930071610");
+    editorCell.setCellId("Constant_1081930071610");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -130,7 +130,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12150120517401215012051740(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1215012051740");
+    editorCell.setCellId("Constant_1215012051740");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 

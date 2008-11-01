@@ -102,14 +102,14 @@ public class AsExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12240711549421224071154942(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1224071154942");
+    editorCell.setCellId("Collection_1224071154942");
   }
 
   private static void setupBasic_refNode_expression1224071154943(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_12240711549441224071154944(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1224071154944");
+    editorCell.setCellId("Constant_1224071154944");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

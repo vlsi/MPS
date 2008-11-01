@@ -283,11 +283,11 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11882121842371188212184237(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188212184237");
+    editorCell.setCellId("Collection_1188212184237");
   }
 
   private static void setupBasic_Collection_11882121842381188212184238(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188212184238");
+    editorCell.setCellId("Collection_1188212184238");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -300,19 +300,19 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11882121842391188212184239(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188212184239");
+    editorCell.setCellId("Constant_1188212184239");
   }
 
   private static void setupBasic_property_isFinal1188212184240(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_isFinal");
+    editorCell.setCellId("property_isFinal");
   }
 
   private static void setupBasic_Collection_11882122070031188212207003(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188212207003");
+    editorCell.setCellId("Collection_1188212207003");
   }
 
   private static void setupBasic_Collection_11882122070041188212207004(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188212207004");
+    editorCell.setCellId("Collection_1188212207004");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -325,7 +325,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11882122070051188212207005(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188212207005");
+    editorCell.setCellId("Constant_1188212207005");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     VariableDeclaration_RemoveFinalOnDelete.setCellActions(editorCell, node, context);
   }
@@ -334,11 +334,11 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_component_VariableDeclaration_NameCellComponent1188212207013(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "component_VariableDeclaration_NameCellComponent");
+    editorCell.setCellId("component_VariableDeclaration_NameCellComponent");
   }
 
   private static void setupBasic_Collection_11882122070141188212207014(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188212207014");
+    editorCell.setCellId("Collection_1188212207014");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -351,7 +351,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11882122070151188212207015(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188212207015");
+    editorCell.setCellId("Constant_1188212207015");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, context);
   }
@@ -370,7 +370,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11882122196171188212219617(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188212219617");
+    editorCell.setCellId("Collection_1188212219617");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -383,15 +383,15 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11882122196181188212219618(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1188212219618");
+    editorCell.setCellId("Constant_1188212219618");
   }
 
   private static void setupBasic_refNodeList_annotation1188212219619(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_annotation");
+    editorCell.setCellId("refNodeList_annotation");
   }
 
   private static void setupBasic_Collection_11882208427701188220842770(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1188220842770");
+    editorCell.setCellId("Collection_1188220842770");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -404,7 +404,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNodeList_annotation1188220842771(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_annotation");
+    editorCell.setCellId("refNodeList_annotation");
   }
 
   private static void setupLabel_Constant_1188212184239_1188212184239(EditorCell_Label editorCell, SNode node, EditorContext context) {

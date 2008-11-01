@@ -79,18 +79,18 @@ public class UpdateModelProcedure_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11985775014901198577501490(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1198577501490");
+    editorCell.setCellId("Collection_1198577501490");
   }
 
   private static void setupBasic_Constant_11985775065281198577506528(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1198577506528");
+    editorCell.setCellId("Constant_1198577506528");
   }
 
   private static void setupBasic_refNode_argument1198577509283(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11985775114591198577511459(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1198577511459");
+    editorCell.setCellId("Constant_1198577511459");
   }
 
   private static void setupLabel_Constant_1198577506528_1198577506528(EditorCell_Label editorCell, SNode node, EditorContext context) {

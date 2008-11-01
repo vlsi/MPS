@@ -24,7 +24,7 @@ public class ConceptLinkDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Error_11375329457241137532945724(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Error_1137532945724");
+    editorCell.setCellId("Error_1137532945724");
   }
 
   private static void setupLabel_Error_1137532945724_1137532945724(EditorCell_Label editorCell, SNode node, EditorContext context) {

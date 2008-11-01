@@ -114,11 +114,11 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11745641075211174564107521(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174564107521");
+    editorCell.setCellId("Collection_1174564107521");
   }
 
   private static void setupBasic_Constant_11745641088511174564108851(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174564108851");
+    editorCell.setCellId("Constant_1174564108851");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -132,7 +132,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11745641115091174564111509(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174564111509");
+    editorCell.setCellId("Constant_1174564111509");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -146,7 +146,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1174564130683(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
     {
       Style inlineStyle = new Style(editorCell) {
         {

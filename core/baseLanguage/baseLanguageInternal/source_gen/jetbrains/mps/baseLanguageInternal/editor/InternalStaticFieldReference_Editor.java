@@ -100,20 +100,20 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11739953754351173995375435(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1173995375435");
+    editorCell.setCellId("Collection_1173995375435");
   }
 
   private static void setupBasic_Constant_11739953771251173995377125(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1173995377125");
+    editorCell.setCellId("Constant_1173995377125");
   }
 
   private static void setupBasic_property_fqClassName1173995481086(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_fqClassName");
+    editorCell.setCellId("property_fqClassName");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_fieldName1173995486322(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_fieldName");
+    editorCell.setCellId("property_fieldName");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
   }
 

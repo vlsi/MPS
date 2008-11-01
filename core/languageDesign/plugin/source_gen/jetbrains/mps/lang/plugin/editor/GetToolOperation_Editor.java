@@ -93,11 +93,11 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12099099550681209909955068(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1209909955068");
+    editorCell.setCellId("Collection_1209909955068");
   }
 
   private static void setupBasic_Constant_12099099594541209909959454(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209909959454");
+    editorCell.setCellId("Constant_1209909959454");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -111,7 +111,7 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12099099617051209909961705(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209909961705");
+    editorCell.setCellId("Constant_1209909961705");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -125,12 +125,12 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12099099631321209909963132(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1209909963132");
+    editorCell.setCellId("Constant_1209909963132");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_tool1209909966445(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_tool");
+    editorCell.setCellId("refCell_tool");
   }
 
   private static void setupLabel_Constant_1209909959454_1209909959454(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -190,7 +190,7 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1209909969528(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

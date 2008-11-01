@@ -101,20 +101,20 @@ public class PositionStyleClassItem_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12163092841791216309284179(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1216309284179");
+    editorCell.setCellId("Collection_1216309284179");
   }
 
   private static void setupBasic_conceptProperty_alias1216309284180(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "conceptProperty_alias");
+    editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12163092841811216309284181(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1216309284181");
+    editorCell.setCellId("Constant_1216309284181");
   }
 
   private static void setupBasic_property_position1216309284182(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_position");
+    editorCell.setCellId("property_position");
   }
 
   private static void setupLabel_conceptProperty_alias_1216309284180(EditorCell_Label editorCell, SNode node, EditorContext context) {

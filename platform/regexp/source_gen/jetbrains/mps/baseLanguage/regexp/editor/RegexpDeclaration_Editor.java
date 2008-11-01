@@ -209,15 +209,15 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11746623131171174662313117(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174662313117");
+    editorCell.setCellId("Collection_1174662313117");
   }
 
   private static void setupBasic_Collection_11746623138331174662313833(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174662313833");
+    editorCell.setCellId("Collection_1174662313833");
   }
 
   private static void setupBasic_Constant_11746623138341174662313834(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174662313834");
+    editorCell.setCellId("Constant_1174662313834");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -230,19 +230,19 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_name1174662313835(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+    editorCell.setCellId("property_name");
   }
 
   private static void setupBasic_Constant_11746623138361174662313836(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174662313836");
+    editorCell.setCellId("Constant_1174662313836");
   }
 
   private static void setupBasic_Constant_11746623163851174662316385(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174662316385");
+    editorCell.setCellId("Constant_1174662316385");
   }
 
   private static void setupBasic_Collection_11746623193871174662319387(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174662319387");
+    editorCell.setCellId("Collection_1174662319387");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -255,7 +255,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11746623203581174662320358(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174662320358");
+    editorCell.setCellId("Constant_1174662320358");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -271,7 +271,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Collection_11746629892621174662989262(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174662989262");
+    editorCell.setCellId("Collection_1174662989262");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -284,7 +284,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11746629904831174662990483(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174662990483");
+    editorCell.setCellId("Constant_1174662990483");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -297,7 +297,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11746629927971174662992797(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1174662992797");
+    editorCell.setCellId("Constant_1174662992797");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -310,7 +310,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_property_description1174662994690(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_description");
+    editorCell.setCellId("property_description");
     {
       Style inlineStyle = new Style(editorCell) {
         {

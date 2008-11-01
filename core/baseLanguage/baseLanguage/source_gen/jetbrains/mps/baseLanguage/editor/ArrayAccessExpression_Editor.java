@@ -111,14 +111,14 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11731755993661173175599366(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1173175599366");
+    editorCell.setCellId("Collection_1173175599366");
   }
 
   private static void setupBasic_refNode_array1173175602450(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Constant_11731756048271173175604827(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1173175604827");
+    editorCell.setCellId("Constant_1173175604827");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -137,7 +137,7 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_11731756109881173175610988(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1173175610988");
+    editorCell.setCellId("Constant_1173175610988");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {

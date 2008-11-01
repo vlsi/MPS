@@ -66,11 +66,11 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11745558756961174555875696(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174555875696");
+    editorCell.setCellId("Collection_1174555875696");
   }
 
   private static void setupBasic_refCell_symbolClass1174555877167(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_symbolClass");
+    editorCell.setCellId("refCell_symbolClass");
   }
 
   private static void setupLabel_refCell_symbolClass_1174555877167(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -121,7 +121,7 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1174555878920(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {

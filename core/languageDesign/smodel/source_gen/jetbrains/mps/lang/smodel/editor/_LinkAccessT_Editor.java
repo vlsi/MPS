@@ -159,35 +159,35 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12049198189911204919818991(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1204919818991");
+    editorCell.setCellId("Collection_1204919818991");
   }
 
   private static void setupBasic_Constant_12049198222431204919822243(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204919822243");
+    editorCell.setCellId("Constant_1204919822243");
   }
 
   private static void setupBasic_Constant_12049198525281204919852528(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1204919852528");
+    editorCell.setCellId("Constant_1204919852528");
   }
 
   private static void setupBasic_refCell_targetConcept1204926270355(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_targetConcept");
+    editorCell.setCellId("refCell_targetConcept");
   }
 
   private static void setupBasic_Constant_12052649565491205264956549(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205264956549");
+    editorCell.setCellId("Constant_1205264956549");
   }
 
   private static void setupBasic_property_singularCradinality1205264969895(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_singularCradinality");
+    editorCell.setCellId("property_singularCradinality");
   }
 
   private static void setupBasic_Constant_12052663480841205266348084(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1205266348084");
+    editorCell.setCellId("Constant_1205266348084");
   }
 
   private static void setupBasic_property_aggregation1205266348085(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_aggregation");
+    editorCell.setCellId("property_aggregation");
   }
 
   private static void setupLabel_Constant_1204919822243_1204919822243(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -256,7 +256,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1204926276952(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
     }
 
     private static void setupLabel_property_name_1204926276952(EditorCell_Label editorCell, SNode node, EditorContext context) {

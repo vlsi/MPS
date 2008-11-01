@@ -17,11 +17,9 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ModelQuery_Editor extends DefaultNodeEditor {
 
@@ -167,11 +165,11 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12187936286301218793628630(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1218793628630");
+    editorCell.setCellId("Collection_1218793628630");
   }
 
   private static void setupBasic_Collection_12187955002721218795500272(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1218795500272");
+    editorCell.setCellId("Collection_1218795500272");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -185,12 +183,12 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12187955049961218795504996(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218795504996");
+    editorCell.setCellId("Constant_1218795504996");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12187955523151218795552315(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1218795552315");
+    editorCell.setCellId("Collection_1218795552315");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -204,16 +202,16 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12187955550841218795555084(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218795555084");
+    editorCell.setCellId("Constant_1218795555084");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_conceptDeclaration1218795568071(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_conceptDeclaration");
+    editorCell.setCellId("refCell_conceptDeclaration");
   }
 
   private static void setupBasic_Collection_12187955771861218795577186(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1218795577186");
+    editorCell.setCellId("Collection_1218795577186");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -226,12 +224,12 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12187959127441218795912744(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1218795912744");
+    editorCell.setCellId("Constant_1218795912744");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_12187959186841218795918684(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1218795918684");
+    editorCell.setCellId("Collection_1218795918684");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -260,12 +258,6 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_condition_1218795923674(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static Color calculateColor5213_0(EditorCell cell) {
-    Color result;
-    result = MPSColors.DARK_MAGENTA;
-    return result;
   }
 
   public static class _Inline5213_0 extends AbstractCellProvider {
@@ -313,17 +305,11 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1218795571418(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-              public Color calculate(EditorCell cell) {
-                return ModelQuery_Editor.calculateColor5213_0(cell);
-              }
-
-            });
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
 
         };

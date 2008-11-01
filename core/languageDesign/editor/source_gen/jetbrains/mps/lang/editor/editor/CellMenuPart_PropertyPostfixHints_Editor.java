@@ -120,11 +120,11 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
 
 
   private static void setupBasic_Collection_11806159100791180615910079(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180615910079");
+    editorCell.setCellId("Collection_1180615910079");
   }
 
   private static void setupBasic_Collection_11806159100801180615910080(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180615910080");
+    editorCell.setCellId("Collection_1180615910080");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -137,7 +137,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_Constant_11806159100811180615910081(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180615910081");
+    editorCell.setCellId("Constant_1180615910081");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -151,7 +151,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_Collection_11806159100821180615910082(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1180615910082");
+    editorCell.setCellId("Collection_1180615910082");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -164,7 +164,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_Constant_11806159100831180615910083(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180615910083");
+    editorCell.setCellId("Constant_1180615910083");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -177,7 +177,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_Constant_11806159100841180615910084(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180615910084");
+    editorCell.setCellId("Constant_1180615910084");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -190,7 +190,7 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
   }
 
   private static void setupBasic_Constant_11806159100851180615910085(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1180615910085");
+    editorCell.setCellId("Constant_1180615910085");
     {
       Style inlineStyle = new Style(editorCell) {
         {

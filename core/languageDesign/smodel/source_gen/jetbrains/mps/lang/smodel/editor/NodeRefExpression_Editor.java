@@ -94,11 +94,11 @@ public class NodeRefExpression_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_12193532197491219353219749(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1219353219749");
+    editorCell.setCellId("Collection_1219353219749");
   }
 
   private static void setupBasic_Constant_12193532197501219353219750(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219353219750");
+    editorCell.setCellId("Constant_1219353219750");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
@@ -112,17 +112,17 @@ public class NodeRefExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Constant_12193532197521219353219752(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219353219752");
+    editorCell.setCellId("Constant_1219353219752");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_12193532197601219353219760(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Constant_1219353219760");
+    editorCell.setCellId("Constant_1219353219760");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refCell_referentNode1219353235996(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "refCell_referentNode");
+    editorCell.setCellId("refCell_referentNode");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -191,7 +191,7 @@ public class NodeRefExpression_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_property_name1219353257327(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, "property_name");
+      editorCell.setCellId("property_name");
       SharedStyles_StyleSheet.getReferenceDecorated(editorCell).apply(editorCell);
     }
 

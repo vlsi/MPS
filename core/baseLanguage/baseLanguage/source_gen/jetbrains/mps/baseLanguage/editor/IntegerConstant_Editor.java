@@ -52,7 +52,7 @@ public class IntegerConstant_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_property_value1083091696640(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_value");
+    editorCell.setCellId("property_value");
     {
       Style inlineStyle = new Style(editorCell) {
         {

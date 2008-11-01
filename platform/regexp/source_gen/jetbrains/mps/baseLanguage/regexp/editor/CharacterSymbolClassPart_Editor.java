@@ -60,11 +60,11 @@ public class CharacterSymbolClassPart_Editor extends DefaultNodeEditor {
 
 
   private static void setupBasic_Collection_11745580164841174558016484(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "Collection_1174558016484");
+    editorCell.setCellId("Collection_1174558016484");
   }
 
   private static void setupBasic_property_character1174558018736(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, "property_character");
+    editorCell.setCellId("property_character");
   }
 
   private static void setupLabel_property_character_1174558018736(EditorCell_Label editorCell, SNode node, EditorContext context) {
