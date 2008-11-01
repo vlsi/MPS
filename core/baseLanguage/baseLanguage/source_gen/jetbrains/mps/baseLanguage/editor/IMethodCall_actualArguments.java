@@ -114,6 +114,9 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
 
   private static void setupBasic_refNodeList_actualArgument1173990956439(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, "refNodeList_actualArgument");
+    if (renderingCondition4497_1(node, context, context.getScope())) {
+      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
+    }
   }
 
   private static void setupBasic_Constant_11739909564411173990956441(EditorCell editorCell, SNode node, EditorContext context) {
@@ -149,6 +152,10 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
       return false;
     }
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
+  }
+
+  public static boolean renderingCondition4497_1(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty();
   }
 
   public static class actualArgumentListHandler_4497_0 extends RefNodeListHandler {

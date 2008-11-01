@@ -8670,6 +8670,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1173990956439">
         <property name="separatorText" value="," />
         <property name="vertical" value="false" />
+        <property name="attractsFocus" value="2" />
         <link role="relationDeclaration" targetNodeId="17.1068499141038" />
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1173990956440">
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997391">
@@ -8683,6 +8684,26 @@
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215188230145">
             <property name="value" value="0.0" />
+          </node>
+        </node>
+        <node role="focusPolicyApplicable" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1225529606622">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225529606623">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225529681230">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225529696021">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225529691751">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225529681638">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1225529681231" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225529690860">
+                      <link role="link" targetNodeId="17.1068499141037" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1225529692785">
+                    <link role="link" targetNodeId="17.1068580123134" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1225529699664" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
