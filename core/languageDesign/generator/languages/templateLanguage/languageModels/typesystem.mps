@@ -298,6 +298,9 @@
           </node>
         </node>
       </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225546583460">
+        <property name="value" value="todo: extract into non-typesystem rule" />
+      </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" id="1186133214609">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186133214610">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1186133221693">
@@ -1276,6 +1279,9 @@
               <link role="variableDeclaration" targetNodeId="1184801497342" resolveInfo="query" />
             </node>
           </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225546603169">
+          <property name="value" value="todo: used in two rules, one of the usages can be converted into non-typesystem rule" />
         </node>
         <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" id="1186132825697">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186132825698">

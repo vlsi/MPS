@@ -6,10 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -18,26 +16,16 @@ public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runt
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
+    final SNode T_typevar_1225547330471 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
-      final SNode type = typeCheckingContext.typeOf(SLinkOperations.getTarget(nodeToCheck, "literal", true), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210175481776", true);
-      typeCheckingContext.whenConcrete(type, new Runnable() {
-
-        public void run() {
-          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(type), "jetbrains.mps.samples.matrixLanguage.structure.MatrixType"))) {
-            {
-              BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.reportTypeError(nodeToCheck, "Should be matrix but was " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(typeCheckingContext.getEquationManager().getRepresentator(type)), "name"), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210173696595", intentionProvider);
-            }
-          }
-          SNode matrix = (SNode)typeCheckingContext.getEquationManager().getRepresentator(type);
-          {
-            SNode _nodeToCheck_1029348928467 = nodeToCheck;
-            BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1215405423730", true), SLinkOperations.getTarget(matrix, "scalarType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1215405423725", intentionProvider);
-          }
-        }
-
-      }, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210172894554");
+      SNode _nodeToCheck_1029348928467 = nodeToCheck;
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(SLinkOperations.getTarget(nodeToCheck, "literal", true), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1225547290624", true), new _Quotations.QuotationClass_2().createNode(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1225547330471), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1225547308673", intentionProvider);
+    }
+    {
+      SNode _nodeToCheck_1029348928467 = nodeToCheck;
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(nodeToCheck, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1225547343050", true), typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1225547330471), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1225547352826", intentionProvider);
     }
   }
 
