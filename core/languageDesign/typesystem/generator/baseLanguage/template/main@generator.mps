@@ -6840,7 +6840,7 @@
         </node>
       </node>
       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929834605">
-        <link role="baseMethodDeclaration" targetNodeId="6.~SubtypingManager.isSubtype(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,boolean,boolean):boolean" resolveInfo="isSubtype" />
+        <link role="baseMethodDeclaration" targetNodeId="6.~SubtypingManager.isSubtype(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,boolean):boolean" resolveInfo="isSubtype" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1177406558036">
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1177406558037">
             <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1177406558038">
@@ -6872,9 +6872,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1177406585390">
-          <property name="value" value="false" />
         </node>
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1177409175845">
           <property name="value" value="false" />
