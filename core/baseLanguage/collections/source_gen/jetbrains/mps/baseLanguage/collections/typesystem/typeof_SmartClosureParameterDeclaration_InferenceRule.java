@@ -27,6 +27,9 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
   }
 
   public void applyRule(final SNode scpd, final TypeCheckingContext typeCheckingContext) {
+    if (SmartClosureParameterDeclarationUtil.SIMPLE_TYPE_RULE) {
+      return;
+    }
     final SNode sampleTypeVar_typevar_1204072172194 = typeCheckingContext.createNewRuntimeTypesVariable();
     SmartClosureParameterTypeUtil.equateInputType(typeCheckingContext, scpd, typeCheckingContext.getEquationManager().getRepresentator(sampleTypeVar_typevar_1204072172194));
     {

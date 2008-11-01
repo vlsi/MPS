@@ -2072,11 +2072,6 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204991762959">
       <property name="name" value="inputEmpty" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1204991765850">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204991770729">
-          <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
-        </node>
-      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204991762961" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204991762962">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204991776828">
@@ -2084,6 +2079,12 @@
             <link role="baseMethodDeclaration" targetNodeId="1.~Collections.emptyList():java.util.List" resolveInfo="emptyList" />
             <link role="classConcept" targetNodeId="1.~Collections" resolveInfo="Collections" />
           </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557124605">
+        <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557130406">
+          <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
         </node>
       </node>
     </node>
@@ -2113,8 +2114,9 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1204794148838">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204794152990">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557144485">
+        <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557144486">
           <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
         </node>
       </node>
@@ -2160,19 +2162,15 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1205754306152">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205754306153">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557148574">
+        <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557148575">
           <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
         </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1207739322344">
       <property name="name" value="expectEmpty" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1207739325327">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207739329155">
-          <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
-        </node>
-      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207739322346" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207739322347">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207739334741">
@@ -2182,14 +2180,15 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1205949300713">
-      <property name="name" value="expect5" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1205949303149">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205949306604">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557152317">
+        <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557152318">
           <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
         </node>
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1205949300713">
+      <property name="name" value="expect5" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205949300715" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205949300716">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1205949316702">
@@ -2214,14 +2213,15 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206730471291">
-      <property name="name" value="expect10" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1206730477498">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206730480627">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557155164">
+        <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557155165">
           <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
         </node>
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1206730471291">
+      <property name="name" value="expect10" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206730471293" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206730471294">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206730488670">
@@ -2261,6 +2261,12 @@
           </node>
         </node>
       </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557158511">
+        <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557158512">
+          <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204793880605">
       <property name="name" value="expectOdd5" />
@@ -2282,19 +2288,15 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1204794156954">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204794161184">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557161630">
+        <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557161631">
           <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
         </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204981312409">
       <property name="name" value="expectEven10" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1204981315250">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204981318733">
-          <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
-        </node>
-      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1204981312411" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204981312412">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1204981333544">
@@ -2317,6 +2319,12 @@
               <property name="value" value="10" />
             </node>
           </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557165669">
+        <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557165670">
+          <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
         </node>
       </node>
     </node>
