@@ -22,6 +22,10 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention extends BaseIntent
     return false;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Convert to in-line template";
   }

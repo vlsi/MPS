@@ -12,7 +12,7 @@ public enum MappingScriptKind {
   private String myName;
   private String myValue;
 
-MappingScriptKind(String name, String value) {
+  MappingScriptKind(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

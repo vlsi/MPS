@@ -63,6 +63,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   private EditorCellKeyMap myKeyMap;
   private String myCellId;
+  private LinkDeclaration myLinkDeclaration;
   private boolean myInTree;
 
   protected EditorCell_Basic(EditorContext editorContext, SNode node) {
@@ -193,7 +194,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public SNode getSNodeWRTReference() {
     SNode node = getSNode();
     SNode operationNode = null;
-    LinkDeclaration linkDeclaration = (LinkDeclaration) BaseAdapter.fromNode((SNode) getUserObject(EditorCell.METAINFO_LINK_DECLARATION));
+    LinkDeclaration linkDeclaration = getLinkDeclaration();
     if (linkDeclaration != null && linkDeclaration.getMetaClass() == LinkMetaclass.reference) {
       SNode referentNode = node.getReferent(linkDeclaration.getRole());
       if (referentNode != null) {
@@ -205,7 +206,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public String getCellRole() {
-    LinkDeclaration linkDeclaration = (LinkDeclaration) BaseAdapter.fromNode((SNode) getUserObject(EditorCell.METAINFO_LINK_DECLARATION));
+    LinkDeclaration linkDeclaration = getLinkDeclaration();
     if (linkDeclaration != null) {
       return SModelUtil_new.getGenuineLinkRole(linkDeclaration);
     } else {//try legacy technique
@@ -291,6 +292,14 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public String getCellId() {
     return myCellId;
+  }
+
+  public void setLinkDeclaration(LinkDeclaration link) {
+    myLinkDeclaration = link;
+  }
+
+  public LinkDeclaration getLinkDeclaration() {
+    return myLinkDeclaration;
   }
 
   public void setSelected(boolean selected) {

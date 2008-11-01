@@ -72,10 +72,10 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     EditorCell result = createCell_internal(myEditorContext);
     // do not override role/link-declaration if they are already set
     if (result.getUserObject(EditorCell.ROLE) == null &&
-      result.getUserObject(EditorCell.METAINFO_LINK_DECLARATION) == null) {
+      result.getLinkDeclaration() == null) {
       result.putUserObject(EditorCell.ROLE, myGenuineRole);
       if (myGenuineLinkDeclaration != null) {
-        result.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, myGenuineLinkDeclaration.getNode());
+        result.setLinkDeclaration(myGenuineLinkDeclaration);
       } else {
         LOG.error("Can't find link declaration " + myGenuineRole);
       }

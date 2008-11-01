@@ -25,6 +25,10 @@ public class NewTemplateInRootMappingRule_Intention extends BaseIntention {
     return false;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return "New root template";
   }

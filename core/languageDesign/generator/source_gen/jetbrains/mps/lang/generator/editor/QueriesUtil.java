@@ -15,6 +15,8 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 
 public class QueriesUtil {
@@ -176,12 +178,12 @@ public class QueriesUtil {
   }
 
   public static String getEditedLinkRole(EditorCell cell) {
-    Object linkDeclaration = cell.getUserObject(EditorCell.METAINFO_LINK_DECLARATION);
+    LinkDeclaration linkDeclaration = cell.getLinkDeclaration();
     Object referentNode = cell.getUserObject(EditorCell.METAINFO_SOURCE_NODE);
     if (referentNode == null || linkDeclaration == null) {
       return null;
     }
-    SNode link = (SNode)linkDeclaration;
+    SNode link = (SNode)BaseAdapter.fromAdapter(linkDeclaration);
     return LinkDeclaration_Behavior.call_getGenuineRole_1213877254542(link);
   }
 

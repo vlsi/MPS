@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.quotation.structure.Antiquotation_AnnotationLink;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.quotation.structure.ListAntiquotation;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation_AnnotationLink;
@@ -430,7 +429,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = selectedCell.getSNode();
-      SNode linkNode = (SNode)selectedCell.getUserObject(EditorCell_Component.METAINFO_LINK_DECLARATION);
+      SNode linkNode = BaseAdapter.fromAdapter(selectedCell.getLinkDeclaration());
       if (!(BaseAdapter.isInstance(linkNode, LinkDeclaration.class))) {
         return;
       }

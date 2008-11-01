@@ -248,12 +248,12 @@ public class Resolver {
     frontier.add(editorCell);
     while (!frontier.isEmpty()) {
       for (EditorCell cell : frontier) {
-        Object userObject = cell.getUserObject(EditorCell.METAINFO_LINK_DECLARATION);
+        LinkDeclaration userObject = cell.getLinkDeclaration();
         if (cell.getSNode() == sourceNode) {
-          if (userObject == refLinkDeclaration.getNode()) {
+          if (userObject == refLinkDeclaration) {
             return cell;
           }
-          if (childLinkDeclaration != null && userObject == childLinkDeclaration.getNode()) {
+          if (childLinkDeclaration != null && userObject == childLinkDeclaration) {
             if (foundCell == null) foundCell = cell;
           }
         }

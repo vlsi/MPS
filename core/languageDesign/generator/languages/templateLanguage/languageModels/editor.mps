@@ -6250,16 +6250,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205879900223">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205879900224">
             <property name="name" value="linkDeclaration" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205879900225">
-              <link role="classifier" targetNodeId="65.~Object" resolveInfo="Object" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225547045503">
+              <link role="classifier" targetNodeId="73.~LinkDeclaration" resolveInfo="LinkDeclaration" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205879900226">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205879900227">
-                <link role="baseMethodDeclaration" targetNodeId="70.~EditorCell.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1205879900228">
-                  <link role="classifier" targetNodeId="70.~EditorCell" resolveInfo="EditorCell" />
-                  <link role="variableDeclaration" targetNodeId="70.~EditorCell.METAINFO_LINK_DECLARATION" resolveInfo="METAINFO_LINK_DECLARATION" />
-                </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225547084888">
+                <link role="baseMethodDeclaration" targetNodeId="70.~EditorCell.getLinkDeclaration():jetbrains.mps.lang.structure.structure.LinkDeclaration" resolveInfo="getLinkDeclaration" />
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1205879901519">
                 <link role="variableDeclaration" targetNodeId="1205879822862" resolveInfo="cell" />
@@ -6315,8 +6311,12 @@
               <link role="concept" targetNodeId="6.1071489288298" resolveInfo="LinkDeclaration" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1205880021924">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205881528918">
-                <link role="variableDeclaration" targetNodeId="1205879900224" resolveInfo="linkDeclaration" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225547102545">
+                <link role="baseMethodDeclaration" targetNodeId="10.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
+                <link role="classConcept" targetNodeId="10.~BaseAdapter" resolveInfo="BaseAdapter" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225547103952">
+                  <link role="variableDeclaration" targetNodeId="1205879900224" resolveInfo="linkDeclaration" />
+                </node>
               </node>
               <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1205880021931">
                 <link role="concept" targetNodeId="6.1071489288298" resolveInfo="LinkDeclaration" />

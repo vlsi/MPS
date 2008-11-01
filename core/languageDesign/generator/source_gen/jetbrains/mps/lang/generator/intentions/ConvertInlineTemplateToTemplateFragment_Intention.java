@@ -20,6 +20,10 @@ public class ConvertInlineTemplateToTemplateFragment_Intention extends BaseInten
     return false;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Convert inline template to template fragment";
   }

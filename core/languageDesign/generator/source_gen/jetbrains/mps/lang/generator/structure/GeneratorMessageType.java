@@ -13,7 +13,7 @@ public enum GeneratorMessageType {
   private String myName;
   private String myValue;
 
-GeneratorMessageType(String name, String value) {
+  GeneratorMessageType(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

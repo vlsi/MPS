@@ -25,7 +25,7 @@ public class ReferencesTest extends BaseMPSTest {
       public void info(LogEntry e) {
       }
 
-      public void warning(LogEntry e) {
+      public void warning(LogEntry e) {        
       }
 
       public void debug(LogEntry e) {

@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
 import javax.swing.JComponent;
 import java.awt.Color;
@@ -22,7 +23,6 @@ import java.util.List;
 public interface EditorCell extends Cloneable {
   static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];
 
-  static final Object METAINFO_LINK_DECLARATION = "metainfo-link-declaration";
   static final Object METAINFO_SOURCE_NODE = "metainfo-source-node";
   static final Object ROLE = "role";  
 
@@ -63,6 +63,9 @@ public interface EditorCell extends Cloneable {
 
   void setCellId(String cellId);
   String getCellId();
+
+  void setLinkDeclaration(LinkDeclaration link);
+  LinkDeclaration getLinkDeclaration();
 
   boolean isErrorState();
   void setErrorState(boolean isError);

@@ -861,21 +861,16 @@
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176736750438">
                 <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1176736750439">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217628900183">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1176736750441">
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225546763005">
+                <link role="baseMethodDeclaration" targetNodeId="7.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
+                <link role="classConcept" targetNodeId="7.~BaseAdapter" resolveInfo="BaseAdapter" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225546778426">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225546777456">
                     <link role="variableDeclaration" targetNodeId="1176736750427" resolveInfo="selectedCell" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628900184">
-                    <link role="baseMethodDeclaration" targetNodeId="31.~EditorCell.getUserObject(java.lang.Object):java.lang.Object" resolveInfo="getUserObject" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1176736750442">
-                      <link role="classifier" targetNodeId="31.~EditorCell_Component" resolveInfo="EditorCell_Component" />
-                      <link role="variableDeclaration" targetNodeId="31.~EditorCell.METAINFO_LINK_DECLARATION" resolveInfo="METAINFO_LINK_DECLARATION" />
-                    </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225546780288">
+                    <link role="baseMethodDeclaration" targetNodeId="31.~EditorCell.getLinkDeclaration():jetbrains.mps.lang.structure.structure.LinkDeclaration" resolveInfo="getLinkDeclaration" />
                   </node>
-                </node>
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176736750443">
-                  <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
                 </node>
               </node>
             </node>
