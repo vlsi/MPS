@@ -25,63 +25,63 @@ public class MyVeryGoodConcept1_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myAnotherGoodConceptListHandler_anotherGoodConceptList_;
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198157565308");
+    editorCell.setCellId(node.getId() + "_1198157565308");
   }
 
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198157571305");
+    editorCell.setCellId(node.getId() + "_1198157571305");
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198591086989");
+    editorCell.setCellId(node.getId() + "_1198591086989");
   }
 
   private static void setupBasic_BrotherReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198591099073");
+    editorCell.setCellId(node.getId() + "_1198591099073");
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198157576738");
+    editorCell.setCellId(node.getId() + "_1198157576738");
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198157565307");
+    editorCell.setCellId(node.getId() + "_1198157565307");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198765061466");
+    editorCell.setCellId(node.getId() + "_1198765061466");
   }
 
   private static void setupBasic_VeryNicePropertyCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198765073046");
+    editorCell.setCellId(node.getId() + "_1198765073046");
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198765057636");
+    editorCell.setCellId(node.getId() + "_1198765057636");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198157589263");
+    editorCell.setCellId(node.getId() + "_1198157589263");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_AnotherGoodConceptList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198157597905");
+    editorCell.setCellId(node.getId() + "_1198157597905");
   }
 
   private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198157589262");
+    editorCell.setCellId(node.getId() + "_1198157589262");
     editorCell.setSelectable(false);
   }
 
   private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198157603808");
+    editorCell.setCellId(node.getId() + "_1198157603808");
   }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198157540601");
+    editorCell.setCellId(node.getId() + "_1198157540601");
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -323,7 +323,7 @@ public class MyVeryGoodConcept1_Editor extends DefaultNodeEditor {
     }
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198591101955");
+      editorCell.setCellId(node.getId() + "_1198591101955");
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

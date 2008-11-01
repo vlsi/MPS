@@ -287,7 +287,6 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void setCellId(String cellId) {
     myCellId = cellId;
-    putUserObject(CELL_ID, cellId);
   }
 
   public String getCellId() {
