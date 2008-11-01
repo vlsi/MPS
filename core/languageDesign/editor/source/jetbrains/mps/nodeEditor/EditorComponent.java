@@ -1242,15 +1242,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     SNode sourceNode = reference.getSourceNode();
     String role = reference.getRole();
     EditorCell cell;
-    if (role == null) cell = findNodeCell(sourceNode);
-    else {
+    if (role == null) {
+      cell = findNodeCell(sourceNode);
+    } else {
       cell = findNodeCellWithRole(sourceNode, role);
       if (cell == null) cell = findNodeCell(sourceNode);
     }
     if (cell == null) {
       return;
     }
-    changeSelectionWRTFocusPolicy(cell);
+    changeSelection(cell.getLastLeaf(CellConditions.SELECTABLE));
   }
 
   public EditorCell findNodeCell(final SNode node) {

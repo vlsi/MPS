@@ -3564,6 +3564,7 @@
           <link role="conceptDeclaration" targetNodeId="17.1070462154015" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1088427644685">
             <property name="readOnly" value="true" />
+            <property name="attractsFocus" value="1" />
             <link role="styleClass" targetNodeId="1198160792349" resolveInfo="staticField" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215103151285">
