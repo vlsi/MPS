@@ -23,7 +23,7 @@ public class typeof_Node_GetReferentSearchScopeOperation_InferenceRule extends A
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168249378", true), new _Quotations.QuotationClass_98().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168255365", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168249378", true), new _Quotations.QuotationClass_101().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168255365", intentionProvider);
     }
     // generic check 
     RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
@@ -31,7 +31,7 @@ public class typeof_Node_GetReferentSearchScopeOperation_InferenceRule extends A
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "operationContext", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221167442901", true), new _Quotations.QuotationClass_99().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221167466283", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "operationContext", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221167442901", true), new _Quotations.QuotationClass_102().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221167466283", false, 0, intentionProvider);
     }
     // check link role argument
     final SNode linkDecl = SLinkOperations.getTarget(op, "referenceLink", false);
@@ -42,6 +42,7 @@ public class typeof_Node_GetReferentSearchScopeOperation_InferenceRule extends A
       }
       final SNode Concept_typevar_1221168662799 = typeCheckingContext.createNewRuntimeTypesVariable();
       RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1221168662799));
+      // todo: extract into non-typesystem rule
       {
         final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1221168662799);
         typeCheckingContext.whenConcrete(C, new Runnable() {

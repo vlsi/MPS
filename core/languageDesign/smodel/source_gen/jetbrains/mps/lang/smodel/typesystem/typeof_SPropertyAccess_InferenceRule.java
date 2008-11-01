@@ -25,6 +25,7 @@ public class typeof_SPropertyAccess_InferenceRule extends AbstractInferenceRule_
     if ((SLinkOperations.getTarget(op, "property", false) != null)) {
       final SNode Concept_typevar_1186062582563 = typeCheckingContext.createNewRuntimeTypesVariable();
       RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1186062582563));
+      // todo: extract into non-typesystem rule
       {
         final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1186062582563);
         typeCheckingContext.whenConcrete(C, new Runnable() {

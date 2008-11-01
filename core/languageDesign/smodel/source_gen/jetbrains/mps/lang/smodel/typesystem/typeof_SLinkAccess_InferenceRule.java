@@ -34,6 +34,7 @@ public class typeof_SLinkAccess_InferenceRule extends AbstractInferenceRule_Runt
     RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     final SNode Concept_typevar_1186062441601 = typeCheckingContext.createNewRuntimeTypesVariable();
     RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1186062441601));
+    // todo: extract into non-typesystem rule
     {
       final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1186062441601);
       typeCheckingContext.whenConcrete(C, new Runnable() {

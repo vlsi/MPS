@@ -14,7 +14,7 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
   }
 
   public SNode getSubOrSuperType(SNode subtype) {
-    return new _Quotations.QuotationClass_80().createNode(this.myMatchingPattern.PatternVar0);
+    return new _Quotations.QuotationClass_83().createNode(this.myMatchingPattern.PatternVar0);
   }
 
   public String getApplicableConceptFQName() {

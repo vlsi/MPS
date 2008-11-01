@@ -24,6 +24,7 @@ public class typeof_SConceptLinkAccess_InferenceRule extends AbstractInferenceRu
     }
     final SNode Concept_typevar_1208191126316 = typeCheckingContext.createNewRuntimeTypesVariable();
     RulesUtil.equate_inputNodeConceptOrInputConceptType(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1208191126316));
+    // todo: extract into non-typesystem rule
     {
       final SNode concreteConcept = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1208191126316);
       typeCheckingContext.whenConcrete(concreteConcept, new Runnable() {

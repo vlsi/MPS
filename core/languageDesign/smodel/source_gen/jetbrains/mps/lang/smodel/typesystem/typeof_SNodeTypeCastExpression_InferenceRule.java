@@ -23,6 +23,7 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), typeCheckingContext.typeOf(SLinkOperations.getTarget(expr, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061683045", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061673586", intentionProvider);
     }
+    //  this when concrete has a sense of overloading
     {
       final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928);
       typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {

@@ -24,6 +24,7 @@ public class typeof_SConceptPropertyAccess_InferenceRule extends AbstractInferen
     }
     final SNode Concept_typevar_1208190489964 = typeCheckingContext.createNewRuntimeTypesVariable();
     RulesUtil.equate_inputNodeConceptOrInputConceptType(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1208190489964));
+    // todo: extract into non-typesystem rule
     {
       final SNode concreteConcept = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1208190489964);
       typeCheckingContext.whenConcrete(concreteConcept, new Runnable() {
