@@ -1,39 +1,39 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.IntegerValueDocumentFilter;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.options.Configurable;
+import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorSettings.MyState;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.TextLine;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.IntegerValueDocumentFilter;
+import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import javax.swing.Timer;
-import javax.swing.text.AbstractDocument;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.AbstractDocument;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.util.*;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
-
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.components.PersistentStateComponent;
-import com.intellij.openapi.components.State;
-import com.intellij.openapi.components.Storage;
-import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NonNls;
 
 @State(
   name = "EditorSettings",
   storages = {
     @Storage(
-      id ="other",
+      id = "other",
       file = "$APP_CONFIG$/mpsEditor.xml"
     )}
 )
@@ -82,7 +82,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
   public void setUseBraces(boolean newUseBraces) {
     myState.myUseBraces = newUseBraces;
   }
-  
+
   public int getIndentSize() {
     return myIndentSize;
   }
@@ -149,10 +149,10 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
   }
 
   private abstract static class MyColorComponent extends JPanel {
-    private JTextField myRedTextField = new JTextField();
-    private JTextField myGreenTextField = new JTextField();
-    private JTextField myBlueTextField = new JTextField();
-    private JTextField myAlphaTextField = new JTextField();
+    private JTextField myRedTextField = new JTextField(3);
+    private JTextField myGreenTextField = new JTextField(3);
+    private JTextField myBlueTextField = new JTextField(3);
+    private JTextField myAlphaTextField = new JTextField(3);
 
     private JButton myResetButton = new JButton(new AbstractAction("Reset") {
       public void actionPerformed(ActionEvent e) {
@@ -170,7 +170,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
       public void paint(Graphics g) {
         super.paint(g);
         g.setColor(getColor());
-        g.fillRect(0,0,getWidth(), getHeight());
+        g.fillRect(0, 0, getWidth(), getHeight());
       }
     };
 
@@ -180,7 +180,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
       prepareColorPartField(myAlphaTextField);
       prepareColorPartField(myGreenTextField);
       setColor(c);
-      myAlphaTextField.setText(c.getAlpha()+"");
+      myAlphaTextField.setText(c.getAlpha() + "");
       myLabel.setSize(40, 20);
       myLabel.setBackground(Color.white);
       setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -211,9 +211,9 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     }
 
     private void setColor(Color c) {
-      myRedTextField.setText(c.getRed()+"");
-      myGreenTextField.setText(c.getGreen()+"");
-      myBlueTextField.setText(c.getBlue()+"");
+      myRedTextField.setText(c.getRed() + "");
+      myGreenTextField.setText(c.getGreen() + "");
+      myBlueTextField.setText(c.getBlue() + "");
     }
 
     public Color getColor() {
@@ -255,7 +255,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
   }
 
   public boolean isModified() {
-    return true;
+    return getPreferencesPage().isModified();
   }
 
   public void apply() throws ConfigurationException {
@@ -263,7 +263,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
   }
 
   public void reset() {
-
+    getPreferencesPage().reset();
   }
 
   public void disposeUIResources() {
@@ -285,71 +285,104 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
 
   private class MyPreferencesPage {
     private static final int SLIDER_RATIO = 10000;
-    private JPanel myEditorSettingsPanel = new JPanel(new BorderLayout());
-    private JComboBox myFontsComboBox = createFontsComboBox();
-    private JTextField myLineSpacingField = createLineSpacingField();
-    private JComboBox myFontSizesComboBox = createSizeComboBox();
-    private JComboBox myTextWidthComboBox = createTextWidthComboBox();
-    private MyColorComponent mySelectionBackgroundColorComponent = new MyColorComponent(getSelectionBackgroundColor()) {
-      protected Color getDefaultColor() {
-        return getDefaultSelectionBackgroundColor();
-      }
-    };
-    private MyColorComponent mySelectionForegroundColorComponent = new MyColorComponent(getSelectionForegroundColor()) {
-      protected Color getDefaultColor() {
-        return getDefaultSelectionForegroundColor();
-      }
-    };
-    private JCheckBox myAntialiasingCheckBox = createAntialiasinbCheckBox();
-    private JCheckBox myUseBraces = createUseBracesCheckBox();
-    private JSlider myBlinkingRateSlider = createBlinkingRateSlider();
-
-    private final EditorComponent myBlinkingDemo = createBlinkingDemo();
-    Timer myTimer;
+    private JPanel myEditorSettingsPanel;
+    private JComboBox myFontsComboBox;
+    private JTextField myLineSpacingField;
+    private JComboBox myFontSizesComboBox;
+    private JComboBox myTextWidthComboBox;
+    private MyColorComponent mySelectionBackgroundColorComponent;
+    private MyColorComponent mySelectionForegroundColorComponent;
+    private JCheckBox myAntialiasingCheckBox;
+    private JCheckBox myUseBraces;
+    private JSlider myBlinkingRateSlider;
+    private final EditorComponent myBlinkingDemo;
+    private Timer myTimer;
 
     public MyPreferencesPage() {
-
       JPanel panel = new JPanel();
       panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
       JPanel fontPropertiesPanel = new JPanel(new GridLayout(0, 1));
       fontPropertiesPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
       fontPropertiesPanel.add(new JLabel("Font Name : "));
+      myFontsComboBox = new JComboBox(GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames());
       fontPropertiesPanel.add(myFontsComboBox);
       fontPropertiesPanel.add(new JLabel("Font Size : "));
+      List<String> sizes2 = new ArrayList<String>();
+      for (int i = 1; i <= 50; i++) {
+        sizes2.add("" + i);
+      }
+      myFontSizesComboBox = new JComboBox(sizes2.toArray());
       fontPropertiesPanel.add(myFontSizesComboBox);
       fontPropertiesPanel.add(new JLabel("Line Spacing : "));
+      myLineSpacingField = new JTextField();
       fontPropertiesPanel.add(myLineSpacingField);
       fontPropertiesPanel.add(new JLabel("Text Width : "));
+      List<String> sizes = new ArrayList<String>();
+      for (int i = 200; i < 1600; i += 100) {
+        sizes.add("" + i);
+      }
+      myTextWidthComboBox = new JComboBox(sizes.toArray());
       fontPropertiesPanel.add(myTextWidthComboBox);
 
       panel.add(fontPropertiesPanel);
 
       JPanel useBraces = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      myUseBraces = new JCheckBox("Use Braces");
       useBraces.add(myUseBraces);
 
       panel.add(useBraces);
 
       JPanel antialiasingPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      myAntialiasingCheckBox = new JCheckBox("Use Antialiasing");
       antialiasingPanel.add(myAntialiasingCheckBox);
 
       panel.add(antialiasingPanel);
 
-      JPanel colorSettingsPanel = new JPanel(new GridLayout(0, 1));
+      JPanel colorSettingsPanel = new JPanel();
+      Border outerBorder = BorderFactory.createEmptyBorder(5, 3, 0, 0);
+      Border innerBorder = BorderFactory.createLineBorder(Color.black);
+      CompoundBorder border = BorderFactory.createCompoundBorder(outerBorder, innerBorder);
+      colorSettingsPanel.setBorder(border);
+      colorSettingsPanel.setLayout(new BoxLayout(colorSettingsPanel, BoxLayout.Y_AXIS));
       colorSettingsPanel.add(new JLabel("Selection Background:"));
+      mySelectionBackgroundColorComponent = new MyColorComponent(getSelectionBackgroundColor()) {
+        protected Color getDefaultColor() {
+          return getDefaultSelectionBackgroundColor();
+        }
+      };
       colorSettingsPanel.add(mySelectionBackgroundColorComponent);
 
       colorSettingsPanel.add(new JLabel("Selection Foreground:"));
+      mySelectionForegroundColorComponent = new MyColorComponent(getSelectionForegroundColor()) {
+        protected Color getDefaultColor() {
+          return getDefaultSelectionForegroundColor();
+        }
+      };
       colorSettingsPanel.add(mySelectionForegroundColorComponent);
 
       colorSettingsPanel.add(new JLabel(" "));
       colorSettingsPanel.add(new JLabel("Cursor Blinking Rate : "));
+      myBlinkingRateSlider = new JSlider(1, 10, 5);
       colorSettingsPanel.add(myBlinkingRateSlider);
+      myBlinkingDemo = createBlinkingDemo();
       colorSettingsPanel.add(myBlinkingDemo);
+
+      for (Component c : colorSettingsPanel.getComponents()) {
+        if (c instanceof JComponent) {
+          ((JComponent) c).setAlignmentX(Component.LEFT_ALIGNMENT);
+        }
+      }
 
       panel.add(colorSettingsPanel);
 
       myBlinkingDemo.setBackground(fontPropertiesPanel.getBackground());
+
+      for (Component c : panel.getComponents()) {
+        if (c instanceof JComponent) {
+          ((JComponent) c).setAlignmentX(Component.LEFT_ALIGNMENT);
+        }
+      }
 
       ActionListener listener = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
@@ -360,63 +393,15 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
       };
       myTimer = new Timer(myCaretBlinker.getCaretBlinkingRateTimeMillis(), listener);
 
+      myEditorSettingsPanel = new JPanel(new BorderLayout());
       myEditorSettingsPanel.add(panel, BorderLayout.NORTH);
+
       myTimer.start();
+
+      reset();
+      validate();
     }
 
-    private JComboBox createTextWidthComboBox() {
-      List<String> sizes = new ArrayList<String>();
-
-      for (int i = 200; i < 1600; i += 100) {
-        sizes.add("" + i);
-      }
-
-      JComboBox result = new JComboBox(sizes.toArray());
-      result.setSelectedItem("" + getTextWidth());
-      return result;
-    }
-
-    private JCheckBox createAntialiasinbCheckBox() {
-      JCheckBox result = new JCheckBox("Use Antialiasing");
-      result.setSelected(isUseAntialiasing());
-      return result;
-    }
-
-    private JCheckBox createUseBracesCheckBox() {
-      JCheckBox result = new JCheckBox("Use Braces");
-      result.setSelected(useBraces());
-      return result;
-    }
-
-    private JComboBox createSizeComboBox() {
-      List<String> sizes = new ArrayList<String>();
-
-      for (int i = 1; i <= 50; i++) {
-        sizes.add("" + i);
-      }
-
-      JComboBox result = new JComboBox(sizes.toArray());
-      result.setSelectedItem("" + myState.myFontSize);
-      return result;
-    }
-
-    private JComboBox createFontsComboBox() {
-      JComboBox result = new JComboBox(GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames());
-      result.setSelectedItem("" + myState.myFontFamily);
-      return result;
-    }
-
-    private JTextField createLineSpacingField() {
-      return new JTextField("" + myState.myLineSpacing);
-    }
-
-    private JSlider createBlinkingRateSlider() {
-      long value = CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis();
-      int intMin = (SLIDER_RATIO / CaretBlinker.MAX_BLINKING_PERIOD);
-      int intMax = (SLIDER_RATIO / CaretBlinker.MIN_BLINKING_PERIOD);
-      int intValue = (int) (SLIDER_RATIO / value);
-      return new JSlider(intMin, intMax, intValue);
-    }
 
     private EditorComponent createBlinkingDemo() {
       return new EditorComponent(null) {
@@ -429,6 +414,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
             }
           });
         }
+
         public EditorCell createRootCell() {
           return new EditorCell_Demo(getEditorContext(), "blinking");
         }
@@ -457,40 +443,87 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
 
     public void commit() {
       ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {         
-            String fontName = myFontsComboBox.getSelectedItem().toString();
-            int fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
+        public void run() {
+          String fontName = myFontsComboBox.getSelectedItem().toString();
+          int fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
 
-            Font newFont = new Font(fontName, Font.PLAIN, fontSize);
-            setDefaultEditorFont(newFont);
+          Font newFont = new Font(fontName, Font.PLAIN, fontSize);
+          setDefaultEditorFont(newFont);
 
-            setTextWidth(Integer.parseInt(myTextWidthComboBox.getSelectedItem().toString()));
+          setTextWidth(Integer.parseInt(myTextWidthComboBox.getSelectedItem().toString()));
 
-            int blinkingPeriod = getBlinkingPeriod();
-            CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
+          int blinkingPeriod = getBlinkingPeriod();
+          CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
 
-            setUseAntialiasing(myAntialiasingCheckBox.isSelected());
-            setUseBraces(myUseBraces.isSelected());
+          setUseAntialiasing(myAntialiasingCheckBox.isSelected());
+          setUseBraces(myUseBraces.isSelected());
 
-            try {
-              myState.myLineSpacing = Double.parseDouble(myLineSpacingField.getText());
-            } catch (NumberFormatException e) {
-              myState.myLineSpacing = 1.0;
-            }
-
-            myState.mySelectionBackground = mySelectionBackgroundColorComponent.getColor();
-            myState.mySelectionForeground = mySelectionForegroundColorComponent.getColor();
-
-            fireEditorSettingsChanged();
-
-            updateCachedFont();
+          try {
+            myState.myLineSpacing = Double.parseDouble(myLineSpacingField.getText());
+          } catch (NumberFormatException e) {
+            myState.myLineSpacing = 1.0;
           }
-        });
+
+          myState.mySelectionBackground = mySelectionBackgroundColorComponent.getColor();
+          myState.mySelectionForeground = mySelectionForegroundColorComponent.getColor();
+
+          fireEditorSettingsChanged();
+
+          updateCachedFont();
+        }
+      });
     }
 
     private int getBlinkingPeriod() {
       int sliderValue = myBlinkingRateSlider.getValue();
       return SLIDER_RATIO / sliderValue;
+    }
+
+    public boolean isModified() {
+      boolean sameTextWidth = myTextWidthComboBox.getSelectedItem() == ("" + getTextWidth());
+      boolean sameAntialiasing = myAntialiasingCheckBox.isSelected() == isUseAntialiasing();
+      boolean sameUseBraces = myUseBraces.isSelected() == useBraces();
+      boolean sameFontSize = myFontSizesComboBox.getSelectedItem() == "" + myState.myFontSize;
+      boolean sameFontFamily = myFontsComboBox.getSelectedItem() == "" + myState.myFontFamily;
+      boolean sameLineSpacing = myLineSpacingField.getText() == "" + myState.myLineSpacing;
+      boolean sameBgColor = mySelectionBackgroundColorComponent.getColor().equals(getDefaultSelectionBackgroundColor());
+      boolean sameFgColor = mySelectionForegroundColorComponent.getColor().equals(getDefaultSelectionForegroundColor());
+      boolean sameBlinkingRate = myBlinkingRateSlider.getValue() == (int) (SLIDER_RATIO / (long) CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis());
+
+      return sameTextWidth && sameAntialiasing && sameUseBraces && sameFontSize && sameFontFamily && sameLineSpacing && sameBgColor && sameFgColor && sameBlinkingRate;
+    }
+
+    public void reset() {
+      myTextWidthComboBox.setSelectedItem("" + getTextWidth());
+
+      myAntialiasingCheckBox.setSelected(isUseAntialiasing());
+
+      myUseBraces.setSelected(useBraces());
+
+      myFontSizesComboBox.setSelectedItem("" + myState.myFontSize);
+
+
+      myFontsComboBox.setSelectedItem("" + myState.myFontFamily);
+
+      myLineSpacingField.setText("" + myState.myLineSpacing);
+
+      mySelectionBackgroundColorComponent.setColor(getDefaultSelectionBackgroundColor());
+
+      mySelectionForegroundColorComponent.setColor(getDefaultSelectionForegroundColor());
+
+      long value = CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis();
+      int intMin = (SLIDER_RATIO / CaretBlinker.MAX_BLINKING_PERIOD);
+      int intMax = (SLIDER_RATIO / CaretBlinker.MIN_BLINKING_PERIOD);
+      int intValue = (int) (SLIDER_RATIO / value);
+      myBlinkingRateSlider.setMinimum(intMin);
+      myBlinkingRateSlider.setMaximum(intMax);
+      myBlinkingRateSlider.setValue(intValue);
+
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          myBlinkingDemo.rebuildEditorContent();
+        }
+      });
     }
   }
 
@@ -535,6 +568,44 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     private Color mySelectionBackground = getDefaultSelectionBackgroundColor();
 
     private boolean myUseBraces = true;
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      MyState myState = (MyState) o;
+
+      if (myFontSize != myState.myFontSize) return false;
+      if (Double.compare(myState.myLineSpacing, myLineSpacing) != 0) return false;
+      if (myTextWidth != myState.myTextWidth) return false;
+      if (myUseAntialiasing != myState.myUseAntialiasing) return false;
+      if (myUseBraces != myState.myUseBraces) return false;
+      if (myFontFamily != null ? !myFontFamily.equals(myState.myFontFamily) : myState.myFontFamily != null)
+        return false;
+      if (mySelectionBackground != null ? !mySelectionBackground.equals(myState.mySelectionBackground) : myState.mySelectionBackground != null)
+        return false;
+      if (mySelectionForeground != null ? !mySelectionForeground.equals(myState.mySelectionForeground) : myState.mySelectionForeground != null)
+        return false;
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int result;
+      long temp;
+      result = myFontFamily != null ? myFontFamily.hashCode() : 0;
+      result = 31 * result + myFontSize;
+      temp = myLineSpacing != +0.0d ? Double.doubleToLongBits(myLineSpacing) : 0L;
+      result = 31 * result + (int) (temp ^ (temp >>> 32));
+      result = 31 * result + myTextWidth;
+      result = 31 * result + (myUseAntialiasing ? 1 : 0);
+      result = 31 * result + (mySelectionForeground != null ? mySelectionForeground.hashCode() : 0);
+      result = 31 * result + (mySelectionBackground != null ? mySelectionBackground.hashCode() : 0);
+      result = 31 * result + (myUseBraces ? 1 : 0);
+      return result;
+    }
 
     public String getFontFamily() {
       return myFontFamily;
