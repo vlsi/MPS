@@ -1,32 +1,30 @@
 package jetbrains.mps.library;
 
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.library.LibraryManager.MyState;
-import jetbrains.mps.cleanup.CleanupManager;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.*;
-
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.util.xmlb.annotations.Transient;
+import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.library.LibraryManager.MyState;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.FileSystem;
+import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
+import java.util.*;
 
 
 @State(
@@ -248,7 +246,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   }
 
   public boolean isModified() {
-    return true;
+    return getPreferences().isModified();
   }
 
   public void apply() throws ConfigurationException {
@@ -256,6 +254,7 @@ public class LibraryManager implements ApplicationComponent, Configurable, Persi
   }
 
   public void reset() {
+    getPreferences().reset();
   }
 
   public void disposeUIResources() {

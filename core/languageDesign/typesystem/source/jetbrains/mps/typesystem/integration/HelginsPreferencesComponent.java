@@ -1,29 +1,28 @@
 package jetbrains.mps.typesystem.integration;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.options.Configurable;
+import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.typesystem.integration.HelginsPreferencesComponent.MyState;
+import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.components.State;
-import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.components.PersistentStateComponent;
-import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NonNls;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 
 
 @State(
   name = "HelginsPreferences",
   storages = {
     @Storage(
-      id ="other",
+      id = "other",
       file = "$APP_CONFIG$/helgins.xml"
     )}
 )
@@ -82,7 +81,7 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
   }
 
   public boolean isModified() {
-    return true;
+    return myPreferencesPage.isModified();
   }
 
   public void apply() throws ConfigurationException {
@@ -90,13 +89,13 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
   }
 
   public void reset() {
+    myPreferencesPage.reset();
   }
 
   public void disposeUIResources() {
   }
 
   private class MyPreferencesPage {
-    //  private JCheckBox myIncrementalCheckBox = new JCheckBox("Use incremental algorithm");
     private JCheckBox myHighlightingCheckBox = new JCheckBox("Use debug highlighting");
     private JCheckBox myGeneratorOptimizationCheckBox = new JCheckBox("Use optimization for generation");
     private JTextField myHelginsTimeoutField = new JTextField();
@@ -109,14 +108,6 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
 
     public MyPreferencesPage() {
       JPanel panel = new JPanel(new GridLayout(0, 1));
-      //   myIncrementalCheckBox.setSelected(myUsesIncrementalAlgorithm);
-      myHighlightingCheckBox.setSelected(myState.isUsesDebugHighlighting());
-      myGeneratorOptimizationCheckBox.setSelected(myState.isGenerationOptimizationEnabled());
-      myHelginsTimeoutField.setText(myState.getHelginsTimeout() + "");
-      myCacheSubtypingCheckBox.setSelected(myState.isSubtypingCached());
-      myCacheCoerceSimpleCheckBox.setSelected(myState.isCoersionSimpleCached());
-      myCacheCoercePatternsCheckBox.setSelected(myState.isCoersionPatternCached());
-      //   panel.add(myIncrementalCheckBox);
       panel.add(myHighlightingCheckBox);
       panel.add(myGeneratorOptimizationCheckBox);
 
@@ -140,6 +131,8 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
       panel.add(myCacheCoercePatternsCheckBox);
 
       myComponent.add(panel, BorderLayout.NORTH);
+
+      reset();
     }
 
     public String getName() {
@@ -151,12 +144,15 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
     }
 
     public boolean validate() {
-      return true;
+      try {
+        Integer.parseInt(myHelginsTimeoutField.getText());
+        return true;
+      } catch (NumberFormatException ex) {
+        return false;
+      }
     }
 
     public void commit() {
-      //    boolean selectedIncremental = myIncrementalCheckBox.isSelected();
-      //    boolean changedIncremental = (myUsesIncrementalAlgorithm != selectedIncremental);
       boolean selectedHighlighting = myHighlightingCheckBox.isSelected();
       boolean changedHighlighting = (myState.isUsesDebugHighlighting() != selectedHighlighting);
       if (changedHighlighting) {
@@ -167,19 +163,10 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
       if (changedOptimization) {
         myState.setGenerationOptimizationEnabled(selectedOptimization);
       }
-      try {
-        int timeout = Integer.parseInt(myHelginsTimeoutField.getText());
-        if (timeout != myState.getHelginsTimeout()) {
-          myState.setHelginsTimeout(timeout);
-        }
-      } catch (NumberFormatException ex) {
-
+      int timeout = Integer.parseInt(myHelginsTimeoutField.getText());
+      if (timeout != myState.getHelginsTimeout()) {
+        myState.setHelginsTimeout(timeout);
       }
-      /* if (changedIncremental) {
-        myUsesIncrementalAlgorithm = selectedIncremental;
-        NodeTypesComponentsRepository.getInstance().clear();
-        TypeChecker.getInstance().clearForReload();
-      }*/
       myState.setSubtypingCached(myCacheSubtypingCheckBox.isSelected());
       myState.setCoersionSimpleCached(myCacheCoerceSimpleCheckBox.isSelected());
       myState.setCoersionPatternCached(myCacheCoercePatternsCheckBox.isSelected());
@@ -187,6 +174,26 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
 
     public JComponent getComponent() {
       return myComponent;
+    }
+
+    public void reset() {
+      myHighlightingCheckBox.setSelected(myState.isUsesDebugHighlighting());
+      myGeneratorOptimizationCheckBox.setSelected(myState.isGenerationOptimizationEnabled());
+      myHelginsTimeoutField.setText(myState.getHelginsTimeout() + "");
+      myCacheSubtypingCheckBox.setSelected(myState.isSubtypingCached());
+      myCacheCoerceSimpleCheckBox.setSelected(myState.isCoersionSimpleCached());
+      myCacheCoercePatternsCheckBox.setSelected(myState.isCoersionPatternCached());
+    }
+
+    public boolean isModified() {
+      boolean sameHighlighting = myHighlightingCheckBox.isSelected() == myState.isUsesDebugHighlighting();
+      boolean sameGenOptimization = myGeneratorOptimizationCheckBox.isSelected() == myState.isGenerationOptimizationEnabled();
+      boolean sameTimeout = myHelginsTimeoutField.getText().equals(myState.getHelginsTimeout() + "");
+      boolean sameCacheSubtyping = myCacheSubtypingCheckBox.isSelected() == myState.isSubtypingCached();
+      boolean sameCacheCoerceSimple = myCacheCoerceSimpleCheckBox.isSelected() == myState.isCoersionSimpleCached();
+      boolean sameCacheCoercePatterns = myCacheCoercePatternsCheckBox.isSelected() == myState.isCoersionPatternCached();
+
+      return  sameHighlighting&&sameGenOptimization&&sameTimeout&&sameCacheSubtyping&&sameCacheCoerceSimple&&sameCacheCoercePatterns;
     }
   }
 

@@ -3,8 +3,6 @@ package jetbrains.mps.library;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -14,11 +12,6 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.Task.Modal;
-import org.jetbrains.annotations.NotNull;
 
 public class LibraryManagerPreferences {
   private LibraryManager myManager;
@@ -168,5 +161,14 @@ public class LibraryManagerPreferences {
   }
 
   public void commit() {
+
+  }
+
+  public boolean isModified() {
+    return myChanged;
+  }
+
+  public void reset() {
+
   }
 }
