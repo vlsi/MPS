@@ -667,7 +667,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void hideMessageToolTip() {
-    try {                                   
+    try {
       //todo this is a hack but I don't know other way to show tooltip programatically
       ToolTipManager toolTipManager = ToolTipManager.sharedInstance();
       toolTipManager.mousePressed(new MouseEvent(
@@ -739,6 +739,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         EditorComponent.MPSActionProxy proxy = new MPSActionProxy();
         myActionProxies.put(keyStroke, proxy);
         registerKeyboardAction(proxy, keyStroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+      } else {
+        LOG.error(
+          "Action " + action.getClass().getSimpleName() +
+            " is being registered for shortcut <" + keyStroke.toString() + ">" +
+            " for which an action " + myActionProxies.get(keyStroke).getClass().getSimpleName() + " is already registered");
       }
       EditorComponent.MPSActionProxy proxy = myActionProxies.get(keyStroke);
       proxy.add(ActionPlaces.EDITOR_POPUP, action);
@@ -1118,7 +1123,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_ADD) {
       if (ctrlShiftDown(keyEvent)) {
         return CellActionType.UNFOLD_ALL;
-      } else if (ctrlDown(keyEvent)){
+      } else if (ctrlDown(keyEvent)) {
         return CellActionType.UNFOLD;
       }
     }
