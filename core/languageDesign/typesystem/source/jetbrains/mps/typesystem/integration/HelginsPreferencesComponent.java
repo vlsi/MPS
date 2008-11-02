@@ -193,7 +193,7 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
       boolean sameCacheCoerceSimple = myCacheCoerceSimpleCheckBox.isSelected() == myState.isCoersionSimpleCached();
       boolean sameCacheCoercePatterns = myCacheCoercePatternsCheckBox.isSelected() == myState.isCoersionPatternCached();
 
-      return  sameHighlighting&&sameGenOptimization&&sameTimeout&&sameCacheSubtyping&&sameCacheCoerceSimple&&sameCacheCoercePatterns;
+      return  !(sameHighlighting&&sameGenOptimization&&sameTimeout&&sameCacheSubtyping&&sameCacheCoerceSimple&&sameCacheCoercePatterns);
     }
   }
 

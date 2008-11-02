@@ -477,17 +477,17 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
     }
 
     public boolean isModified() {
-      boolean sameTextWidth = myTextWidthComboBox.getSelectedItem() == ("" + getTextWidth());
+      boolean sameTextWidth = myTextWidthComboBox.getSelectedItem().equals("" + getTextWidth());
       boolean sameAntialiasing = myAntialiasingCheckBox.isSelected() == isUseAntialiasing();
       boolean sameUseBraces = myUseBraces.isSelected() == useBraces();
-      boolean sameFontSize = myFontSizesComboBox.getSelectedItem() == "" + myState.myFontSize;
-      boolean sameFontFamily = myFontsComboBox.getSelectedItem() == "" + myState.myFontFamily;
-      boolean sameLineSpacing = myLineSpacingField.getText() == "" + myState.myLineSpacing;
+      boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals("" + myState.myFontSize);
+      boolean sameFontFamily = myFontsComboBox.getSelectedItem().equals("" + myState.myFontFamily);
+      boolean sameLineSpacing = myLineSpacingField.getText().equals("" + myState.myLineSpacing);
       boolean sameBgColor = mySelectionBackgroundColorComponent.getColor().equals(getDefaultSelectionBackgroundColor());
       boolean sameFgColor = mySelectionForegroundColorComponent.getColor().equals(getDefaultSelectionForegroundColor());
       boolean sameBlinkingRate = myBlinkingRateSlider.getValue() == (int) (SLIDER_RATIO / (long) CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis());
 
-      return sameTextWidth && sameAntialiasing && sameUseBraces && sameFontSize && sameFontFamily && sameLineSpacing && sameBgColor && sameFgColor && sameBlinkingRate;
+      return !(sameTextWidth && sameAntialiasing && sameUseBraces && sameFontSize && sameFontFamily && sameLineSpacing && sameBgColor && sameFgColor && sameBlinkingRate);
     }
 
     public void reset() {
