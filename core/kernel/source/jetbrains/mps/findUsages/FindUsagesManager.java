@@ -3,10 +3,10 @@ package jetbrains.mps.findUsages;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -88,19 +88,7 @@ public class FindUsagesManager implements ApplicationComponent {
    */
   public Set<SReference> findUsages(SNode node, IScope scope, IAdaptiveProgressMonitor progress) {
     LOG.assertCanRead();
-    return findUsages(CollectionUtil.asSet(node), scope, progress);
-  }
-
-  /**
-   * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
-   *
-   * @param nodes
-   * @param scope
-   * @param progress
-   * @return
-   */
-  public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress) {
-    return findUsages(nodes, scope, progress, true);
+    return findUsages(CollectionUtil.asSet(node), scope, progress,true);
   }
 
   public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
@@ -145,7 +133,7 @@ public class FindUsagesManager implements ApplicationComponent {
    * @return
    */
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope) {
-    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null);
+    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null,true);
     return new ArrayList<SNode>(set);
   }
 
@@ -161,20 +149,8 @@ public class FindUsagesManager implements ApplicationComponent {
    * @return
    */
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope, IAdaptiveProgressMonitor monitor) {
-    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, monitor);
+    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, monitor,true);
     return new ArrayList<SNode>(set);
-  }
-
-  /**
-   * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
-   *
-   * @param concept
-   * @param scope
-   * @param progress
-   * @return
-   */
-  public Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress) {
-    return findInstances(concept, scope, progress, true);
   }
 
   public Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
