@@ -638,6 +638,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1160612356232">
     <property name="name" value="AbstractListOperation" />
+    <property name="package" value="list" />
     <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1160612402249">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
@@ -645,6 +646,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1160612413312">
     <property name="name" value="AddElementOperation" />
+    <property name="package" value="list" />
     <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1160612519549">
       <property name="metaClass" value="aggregation" />
@@ -659,6 +661,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1160666733551">
     <property name="name" value="AddAllElementsOperation" />
+    <property name="package" value="list" />
     <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1160666822012">
       <property name="metaClass" value="aggregation" />
@@ -673,6 +676,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1162934736510">
     <property name="name" value="GetElementOperation" />
+    <property name="package" value="list" />
     <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1162934736511">
       <property name="metaClass" value="aggregation" />
@@ -719,6 +723,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1167380149909">
     <property name="name" value="RemoveElementOperation" />
+    <property name="package" value="list" />
     <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1167380149910">
       <property name="metaClass" value="aggregation" />
@@ -842,6 +847,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1173946412755">
     <property name="name" value="RemoveAllElementsOperation" />
+    <property name="package" value="list" />
     <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1173946412756">
       <property name="metaClass" value="aggregation" />
@@ -856,6 +862,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1175845471038">
     <property name="name" value="ReverseOperation" />
+    <property name="package" value="list" />
     <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1175845487791">
       <property name="value" value="reverse" />
@@ -1358,6 +1365,48 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224451859022">
       <property name="value" value="stop iterating input sequence" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225621920911">
+    <property name="name" value="InsertElementOperation" />
+    <property name="package" value="list" />
+    <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225621960341">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="index" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225621943565">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="element" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225625055792">
+      <property name="value" value="insert" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225645868993">
+    <property name="name" value="SetElementOperation" />
+    <property name="package" value="list" />
+    <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225645893896">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="index" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225645893898">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="element" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225645896949">
+      <property name="value" value="set" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

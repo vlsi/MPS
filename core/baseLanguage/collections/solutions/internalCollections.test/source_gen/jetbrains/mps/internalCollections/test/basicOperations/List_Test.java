@@ -82,4 +82,15 @@ public class List_Test extends Util_Test {
     Assert.assertEquals(Arrays.asList(strings), test2);
   }
 
+  @Test()
+  public void test_insertSet() throws Exception {
+    List<Integer> test = ListSequence.<Integer>fromArray(1, 2, 3, 5);
+    Assert.assertEquals(Arrays.asList(new Integer[]{1,2,3,5}), test);
+    int insElm = ListSequence.fromList(test).insertElement(3, 4);
+    Assert.assertEquals(4, insElm);
+    Assert.assertEquals(Arrays.asList(new Integer[]{1,2,3,4,5}), test);
+    int setElm = ListSequence.fromList(test).setElement(2, 0);
+    Assert.assertEquals(3, setElm);
+  }
+
 }

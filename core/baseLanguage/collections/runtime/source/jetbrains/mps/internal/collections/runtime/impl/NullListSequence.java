@@ -112,14 +112,24 @@ public class NullListSequence<T> extends NullSequence<T> implements IListSequenc
     
     // additional methods 
     
-    public void addElement(T t) {
+    public T addElement(T t) {
+    	return null;
     }
     
-    public void removeElement(T t) {
+    public T removeElement(T t) {
+    	return null;
+    }
+    
+    public T insertElement(int idx, T t) {
+    	return null;
     }
     
     public T getElement(int idx) {
         return null;
+    }
+    
+    public T setElement(int idx, T t) {
+    	return null;
     }
     
     public void addSequence (ISequence<T> seq) {

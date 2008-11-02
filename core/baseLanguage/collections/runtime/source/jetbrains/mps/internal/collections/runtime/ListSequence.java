@@ -213,17 +213,31 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     
     // Additional methods
     
-    public void addElement(T t) {
+    public T addElement(T t) {
         if (Sequence.IGNORE_NULL_VALUES) {
             if (t == null) {
-                return;
+                return null;
             }
         }
         list.add(t);
+        return t;
     }
     
-    public void removeElement(T t) {
-        remove((Object)t);
+    public T removeElement(T t) {
+        if (remove((Object)t)) {
+        	return t;
+        }
+        return null;
+    }
+    
+    public T insertElement(int idx, T t) {
+        if (Sequence.IGNORE_NULL_VALUES) {
+            if (t == null) {
+                return null;
+            }
+        }
+        add(idx, t);
+    	return t;
     }
     
     public T getElement(int idx) {
@@ -233,6 +247,20 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
             }
         }
         return get (idx);
+    }
+
+    public T setElement(int idx, T t) {
+        if (Sequence.IGNORE_NULL_VALUES) {
+            if (t == null) {
+                return null;
+            }
+        }
+        if (Sequence.NULL_WHEN_EMPTY) {
+            if (size() == 0 && (idx == 0 || idx == -1)) {
+                return null;
+            }
+        }
+    	return set (idx, t);
     }
     
     public void addSequence (ISequence<T> seq) {

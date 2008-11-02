@@ -10,11 +10,15 @@ import java.util.List;
  */
 public interface IListSequence<T> extends ISequence<T>, List<T> {
 
-    void addElement (T t);
+    T addElement (T t);
     
-    void removeElement (T t);
+    T removeElement (T t);
+    
+    T insertElement (int idx, T t);
     
     T getElement (int idx);
+
+    T setElement (int idx, T t);
 
     void addSequence(ISequence<T> seq);
 
