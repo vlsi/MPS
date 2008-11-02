@@ -1,5 +1,8 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -14,9 +17,6 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.*;
 
 import java.util.*;
 
@@ -390,6 +390,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return result;
   }
 
+  public Set<SReference> findUsages(SNode node) {
+    return findUsages(CollectionUtil.asSet(node));
+  }
+
   public boolean hasUsages(Set<SModelReference> models) {
     if (!myModelRootManager.isFindUsagesSupported()) return false;
 
@@ -442,10 +446,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       return mySModel.hasLanguage(language.getModuleReference());
     }
     return false;
-  }
-
-  public Set<SReference> findUsages(SNode node) {
-    return findUsages(CollectionUtil.asSet(node));
   }
 
   public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> descendantsKnownInModel) {
