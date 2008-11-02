@@ -20,7 +20,6 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.border.Border;
-import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.AbstractDocument;
 import java.awt.*;
@@ -340,9 +339,7 @@ public class EditorSettings implements Configurable, PersistentStateComponent<My
       panel.add(antialiasingPanel);
 
       JPanel colorSettingsPanel = new JPanel();
-      Border outerBorder = BorderFactory.createEmptyBorder(5, 3, 0, 0);
-      Border innerBorder = BorderFactory.createLineBorder(Color.black);
-      CompoundBorder border = BorderFactory.createCompoundBorder(outerBorder, innerBorder);
+      Border border = BorderFactory.createEmptyBorder(5, 5, 0, 0);
       colorSettingsPanel.setBorder(border);
       colorSettingsPanel.setLayout(new BoxLayout(colorSettingsPanel, BoxLayout.Y_AXIS));
       colorSettingsPanel.add(new JLabel("Selection Background:"));

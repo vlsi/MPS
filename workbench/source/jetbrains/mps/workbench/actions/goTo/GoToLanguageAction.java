@@ -27,7 +27,7 @@ public class GoToLanguageAction extends BaseAction {
 
   @NotNull
   protected String getKeyStroke() {
-    return "control alt shift L";
+    return "ctrl alt shift L";
   }
 
   public void doExecute(AnActionEvent e) {

@@ -33,7 +33,7 @@ public class GoToModelAction extends BaseAction {
 
   @NotNull
   protected String getKeyStroke() {
-    return "control alt shift M";
+    return "ctrl alt shift M";
   }
 
   public void doExecute(AnActionEvent e) {

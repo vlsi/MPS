@@ -29,7 +29,7 @@ public class GoToRootNodeAction extends BaseAction {
 
   @NotNull
   protected String getKeyStroke() {
-    return "control N";
+    return "ctrl N";
   }
 
   public void doExecute(AnActionEvent e) {

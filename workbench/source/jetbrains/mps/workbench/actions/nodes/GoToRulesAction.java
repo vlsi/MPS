@@ -1,12 +1,12 @@
 package jetbrains.mps.workbench.actions.nodes;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.typesystem.structure.AbstractRule;
 import jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition;
 import jetbrains.mps.lang.typesystem.structure.PatternCondition;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
@@ -39,7 +39,7 @@ public class GoToRulesAction extends BaseAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "control alt R";
+    return "ctrl alt R";
   }
 
   protected void doExecute(AnActionEvent e) {

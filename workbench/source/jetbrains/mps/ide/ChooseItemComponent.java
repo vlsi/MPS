@@ -1,23 +1,22 @@
 package jetbrains.mps.ide;
 
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import javax.swing.event.DocumentListener;
 import javax.swing.event.DocumentEvent;
-import java.util.*;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+import javax.swing.event.DocumentListener;
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
 import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.ActionEvent;
-
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.icons.IconManager;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by IntelliJ IDEA.
@@ -84,7 +83,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
           }
         }
       }
-    }, KeyStroke.getKeyStroke("control SPACE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, KeyStroke.getKeyStroke("ctrl SPACE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     myMainPanel.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         int index = myList.getSelectedIndex();

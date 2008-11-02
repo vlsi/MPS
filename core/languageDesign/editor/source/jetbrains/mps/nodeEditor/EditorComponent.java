@@ -288,7 +288,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
         new NodeInformationDialog(frame, point, cell.getSNode()).setVisible(true);
       }
-    }, KeyStroke.getKeyStroke("control Q"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, KeyStroke.getKeyStroke("ctrl Q"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
@@ -348,7 +348,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       public void actionPerformed(ActionEvent e) {
         mySearchPanel.activate();
       }
-    }, KeyStroke.getKeyStroke("control F"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, KeyStroke.getKeyStroke("ctrl F"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
@@ -1115,17 +1115,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_ADD && ctrlDown(keyEvent)) {
-      if (keyEvent.isShiftDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_ADD) {
+      if (ctrlShiftDown(keyEvent)) {
         return CellActionType.UNFOLD_ALL;
-      } else {
+      } else if (ctrlDown(keyEvent)){
         return CellActionType.UNFOLD;
       }
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_SUBTRACT && ctrlDown(keyEvent)) {
-      if (keyEvent.isShiftDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_SUBTRACT) {
+      if (ctrlShiftDown(keyEvent)) {
         return CellActionType.FOLD_ALL;
-      } else {
+      } else if (ctrlDown(keyEvent)) {
         return CellActionType.FOLD;
       }
     }
@@ -1148,7 +1148,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && shiftDown(keyEvent)) {
       return CellActionType.PASTE;
     }
-
 
     return null;
   }

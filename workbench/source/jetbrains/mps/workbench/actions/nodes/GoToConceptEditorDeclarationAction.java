@@ -1,10 +1,10 @@
 package jetbrains.mps.workbench.actions.nodes;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
@@ -101,7 +101,7 @@ public class GoToConceptEditorDeclarationAction extends BaseAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "control shift E";
+    return "ctrl shift E";
   }
 
   protected boolean collectActionData(AnActionEvent e) {

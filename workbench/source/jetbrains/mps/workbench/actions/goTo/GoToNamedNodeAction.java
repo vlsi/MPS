@@ -31,7 +31,7 @@ public class GoToNamedNodeAction extends BaseAction {
 
   @NotNull
   protected String getKeyStroke() {
-    return "control alt shift N";
+    return "ctrl alt shift N";
   }
 
   public void doExecute(AnActionEvent e) {

@@ -30,7 +30,7 @@ public class GoToSolutionAction extends BaseAction {
 
   @NotNull
   protected String getKeyStroke() {
-    return "control alt shift S";
+    return "ctrl alt shift S";
   }
 
   public void doExecute(AnActionEvent e) {

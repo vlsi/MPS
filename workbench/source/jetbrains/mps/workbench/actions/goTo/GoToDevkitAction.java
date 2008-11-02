@@ -27,7 +27,7 @@ public class GoToDevkitAction extends BaseAction {
 
   @NotNull
   protected String getKeyStroke() {
-    return "control alt shift D";
+    return "ctrl alt shift D";
   }
 
   public void doExecute(AnActionEvent e) {

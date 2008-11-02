@@ -28,7 +28,7 @@ public class GoToConceptNodeAction extends BaseAction {
 
   @NotNull
   protected String getKeyStroke() {
-    return "control alt shift C";
+    return "ctrl alt shift C";
   }
 
   public void doExecute(AnActionEvent e) {

@@ -84,7 +84,7 @@ public abstract class CompletionTextField extends JTextField {
         myHint.show();
         updateCompletion();
       }
-    }, KeyStroke.getKeyStroke("control SPACE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, KeyStroke.getKeyStroke("ctrl SPACE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {

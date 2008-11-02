@@ -46,7 +46,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
   @NotNull
   public String getKeyStroke() {
     if (myRegenerate) return "";
-    return "control F9";
+    return "ctrl F9";
   }
 
   protected void doExecute(AnActionEvent e) {
