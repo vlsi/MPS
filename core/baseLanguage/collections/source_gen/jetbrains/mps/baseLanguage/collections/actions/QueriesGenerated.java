@@ -66,6 +66,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true) == null);
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1225711446897(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.ListType"), false) != null);
+  }
+
   public static void nodeFactory_NodeSetup_DefaultInputElement_1174261447073(final IOperationContext operationContext, final NodeSetupContext _context) {
     SPropertyOperations.set(_context.getNewNode(), "name", "it");
   }
@@ -333,6 +337,35 @@ public class QueriesGenerated {
 
         public String getDescriptionText(String pattern) {
           return "add type parameter";
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1225711439964(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
+      result.add(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode lea = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression");
+          SLinkOperations.setTarget(lea, "list", _context.getSourceNode(), true);
+          return lea;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "[";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "list element access";
         }
 
       });

@@ -93,4 +93,13 @@ public class List_Test extends Util_Test {
     Assert.assertEquals(3, setElm);
   }
 
+  @Test()
+  public void test_elementAccess() throws Exception {
+    List<Integer> test = ListSequence.<Integer>fromArray(1, 2, 3, 5);
+    int val = ListSequence.fromList(test).getElement(3);
+    Assert.assertEquals(5, val);
+    ListSequence.fromList(test).setElement(3, 4);
+    Assert.assertEquals(Arrays.asList(new Integer[]{1,2,3,4}), test);
+  }
+
 }

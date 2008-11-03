@@ -1770,5 +1770,27 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1225711178945">
+    <property name="package" value="list" />
+    <link role="conceptDeclaration" targetNodeId="1.1225711141656" resolveInfo="ListElementAccessExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225711202311">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1225711208571">
+        <link role="relationDeclaration" targetNodeId="1.1225711182005" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225711210863">
+        <property name="text" value="[" />
+        <link role="styleClass" targetNodeId="15.1215091279307" resolveInfo="LeftBrace" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1225711216983">
+        <property name="attractsFocus" value="2" />
+        <link role="relationDeclaration" targetNodeId="1.1225711191269" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225711218746">
+        <property name="text" value="]" />
+        <link role="styleClass" targetNodeId="15.1215091331565" resolveInfo="RightBrace" />
+      </node>
+    </node>
+  </node>
 </model>
 
