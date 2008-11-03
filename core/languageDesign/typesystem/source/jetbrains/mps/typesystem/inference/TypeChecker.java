@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
-import jetbrains.mps.typesystem.integration.HelginsPreferencesComponent;
+import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -289,7 +289,7 @@ public class TypeChecker implements ApplicationComponent {
   @Nullable
   public SNode getTypeOf(SNode node) {
     if (node == null) return null;
-    if (myIsGeneration && HelginsPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
+    if (myIsGeneration && TypesystemPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
       return getTypeOf_generationMode(node);
     } else if (NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node).isInEditorQueries()) {
       return getTypeOf_resolveMode(node, true);

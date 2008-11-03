@@ -6,7 +6,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
-import jetbrains.mps.typesystem.integration.HelginsPreferencesComponent.MyState;
+import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent.MyState;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -19,20 +19,20 @@ import java.awt.GridLayout;
 
 
 @State(
-  name = "HelginsPreferences",
+  name = "TypesystemPreferences",
   storages = {
     @Storage(
       id = "other",
-      file = "$APP_CONFIG$/helgins.xml"
+      file = "$APP_CONFIG$/typesystem.xml"
     )}
 )
-public class HelginsPreferencesComponent implements Configurable, PersistentStateComponent<MyState> {
+public class TypesystemPreferencesComponent implements Configurable, PersistentStateComponent<MyState> {
   private MyState myState = new MyState();
 
   private MyPreferencesPage myPreferencesPage = new MyPreferencesPage();
 
-  public static HelginsPreferencesComponent getInstance() {
-    return ApplicationManager.getApplication().getComponent(HelginsPreferencesComponent.class);
+  public static TypesystemPreferencesComponent getInstance() {
+    return ApplicationManager.getApplication().getComponent(TypesystemPreferencesComponent.class);
   }
 
   public boolean isUsesDebugHighlighting() {
@@ -62,7 +62,7 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
 
   @Nls
   public String getDisplayName() {
-    return "Helgins Preferences";
+    return "Typesystem Preferences";
   }
 
   @Nullable
@@ -136,7 +136,7 @@ public class HelginsPreferencesComponent implements Configurable, PersistentStat
     }
 
     public String getName() {
-      return "HELGINS preferences";
+      return "Typesystem preferences";
     }
 
     public Icon getIcon() {

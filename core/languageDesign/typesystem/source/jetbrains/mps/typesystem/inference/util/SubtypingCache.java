@@ -3,7 +3,7 @@ package jetbrains.mps.typesystem.inference.util;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.typesystem.integration.HelginsPreferencesComponent;
+import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 
@@ -28,9 +28,9 @@ public class SubtypingCache {
   private Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCacheWeak
     = new HashMap<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>>();
 
-  private boolean myCoersionSimpleCached = HelginsPreferencesComponent.getInstance().isCoersionSimpleCached();
-  private boolean myCoersionPatternCached = HelginsPreferencesComponent.getInstance().isCoersionPatternCached();
-  private boolean mySubtypingCached = HelginsPreferencesComponent.getInstance().isSubtypingCached();
+  private boolean myCoersionSimpleCached = TypesystemPreferencesComponent.getInstance().isCoersionSimpleCached();
+  private boolean myCoersionPatternCached = TypesystemPreferencesComponent.getInstance().isCoersionPatternCached();
+  private boolean mySubtypingCached = TypesystemPreferencesComponent.getInstance().isSubtypingCached();
 
   public void addCacheEntry(SNode subtype, SNode supertype, boolean answer, boolean isWeak) {
     if (!mySubtypingCached) {

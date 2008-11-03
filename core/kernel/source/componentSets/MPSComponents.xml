@@ -209,7 +209,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.typesystem.integration.HelginsPreferencesComponent</implementation-class>
+      <implementation-class>jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent</implementation-class>
     </component>
 
     <component>
