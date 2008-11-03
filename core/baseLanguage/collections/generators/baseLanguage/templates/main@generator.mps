@@ -6405,22 +6405,6 @@
       <link role="labelDeclaration" targetNodeId="1205849557200" resolveInfo="foreach" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1205849346557">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1205849361590">
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.Expression" id="1205849361591">
-            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1205849436249">
-              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1205849436250">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205849436251">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205849438663">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205849439080">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1205849438664" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1205849440372">
-                        <link role="link" targetNodeId="8.1153944424730" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205849361592">
             <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1205849361593">
               <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1205849447055">
@@ -6454,7 +6438,11 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1205849482871">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1205849484660" />
+                      <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1225731471980">
+                        <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225731479093">
+                          <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -6504,6 +6492,26 @@
                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1209858992116" />
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1209858994401">
                       <link role="property" targetNodeId="6.1199465379613" resolveInfo="label" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225731743634">
+            <link role="baseMethodDeclaration" targetNodeId="13.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
+            <link role="classConcept" targetNodeId="13.~Sequence" resolveInfo="Sequence" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="1225731744397">
+              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1225731746900">
+                <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1225731746901">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225731746902">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225731749924">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225731750150">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1225731749925" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225731752188">
+                          <link role="link" targetNodeId="8.1153944424730" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

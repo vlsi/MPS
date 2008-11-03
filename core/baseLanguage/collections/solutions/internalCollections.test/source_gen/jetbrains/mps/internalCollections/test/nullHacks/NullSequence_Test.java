@@ -72,4 +72,14 @@ public class NullSequence_Test extends Util_Test {
     }
   }
 
+  @Test()
+  public void test_forEach() throws Exception {
+    if (Sequence.USE_NULL_SEQUENCE) {
+      for(Object foo : Sequence.fromIterable(null)) {
+        //  must not throw exception
+        throw new RuntimeException("unpossible!");
+      }
+    }
+  }
+
 }

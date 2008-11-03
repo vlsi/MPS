@@ -505,6 +505,41 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1225731147875">
+        <property name="methodName" value="forEach" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225731147876" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225731147877">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225731159906">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225731159908">
+              <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1225731168633">
+                <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1225731168634">
+                  <property name="name" value="foo" />
+                </node>
+                <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225731172461" />
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225731168636">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225731177909">
+                    <property name="value" value=" must not throw exception" />
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1225731194464">
+                    <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225731195471">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1225731218356">
+                        <link role="baseMethodDeclaration" targetNodeId="4.~RuntimeException.&lt;init&gt;(java.lang.String)" resolveInfo="RuntimeException" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225731219003">
+                          <property name="value" value="me fail english? unpossible!" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1225731160298">
+              <link role="classifier" targetNodeId="5.~Sequence" resolveInfo="Sequence" />
+              <link role="variableDeclaration" targetNodeId="5.~Sequence.USE_NULL_SEQUENCE" resolveInfo="USE_NULL_SEQUENCE" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1207738889315">
       <link role="classifier" targetNodeId="2.1204129267857" resolveInfo="Util_Test" />
