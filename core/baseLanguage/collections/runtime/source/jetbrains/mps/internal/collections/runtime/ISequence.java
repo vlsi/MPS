@@ -12,6 +12,10 @@ public interface ISequence<T> extends Iterable<T> {
 
     ISequence<T> where(IWhereFilter<T> filter);
 
+    T findFirst(IWhereFilter<T> filter);
+
+    T findLast(IWhereFilter<T> filter);
+    
     <U> ISequence<U> translate(ITranslator<T, U> translator);
 
     <U> ISequence<U> select(ISelector<T, U> selector);

@@ -80,6 +80,14 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
         return new FilteringSequence<T> (this, filter);
     }
     
+    public T findFirst(IWhereFilter<T> filter) {
+    	return where (filter).first();
+    }
+    
+    public T findLast(IWhereFilter<T> filter) {
+		return where(filter).last();
+    }
+    
     // public <U> Sequence<T,U> map (IMapper<? super T,U> mapper)
     public <U> ISequence<U> translate (ITranslator<T,U> translator) {
         return new TranslatingSequence<T,U> (this, translator);

@@ -1426,5 +1426,37 @@
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225727723840">
+    <property name="name" value="FindFirstOperation" />
+    <property name="package" value="internal" />
+    <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225727743579">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="filter" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <link role="specializedLink" targetNodeId="1204796294226" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225727754355">
+      <property name="value" value="findFirst" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225730411176">
+    <property name="name" value="FindLastOperation" />
+    <property name="package" value="internal" />
+    <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225730460423">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="filter" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <link role="specializedLink" targetNodeId="1204796294226" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225730425545">
+      <property name="value" value="findLast" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

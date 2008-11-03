@@ -144,6 +144,24 @@ public class QueriesGenerated {
     SPropertyOperations.set(sd, "value", "" + (true));
   }
 
+  public static void nodeFactory_NodeSetup_FindFirstOperation_1225728791328(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNode filter = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+    if ((filter == null)) {
+      filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    }
+    SNode pd = SLinkOperations.addNewChild(filter, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SPropertyOperations.set(pd, "name", "it");
+  }
+
+  public static void nodeFactory_NodeSetup_FindLastOperation_1225730740848(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNode filter = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+    if ((filter == null)) {
+      filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    }
+    SNode pd = SLinkOperations.addNewChild(filter, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SPropertyOperations.set(pd, "name", "it");
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1152144005896(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
