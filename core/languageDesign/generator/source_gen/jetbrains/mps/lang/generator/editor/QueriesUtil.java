@@ -55,12 +55,17 @@ public class QueriesUtil {
   }
 
   private static boolean isAnyMacroApplicable(SNode node) {
-    //  not inside any kind of macro (code shown in inspector) but OK on a macro node itself
-    if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro","jetbrains.mps.lang.generator.structure.PropertyMacro","jetbrains.mps.lang.generator.structure.ReferenceMacro"}, false, false) != null) {
-      return false;
-    }
     // not inside 'root template annotation'
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", true, false) != null) {
+      return false;
+    }
+    //  not inside any kind of macro (code shown in inspector) but OK on a macro node itself
+    SNode ancestorMacro = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro","jetbrains.mps.lang.generator.structure.PropertyMacro","jetbrains.mps.lang.generator.structure.ReferenceMacro","jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"}, false, false);
+    if (ancestorMacro != null) {
+      //  exception: can be inside 'alternativeConsequence' in IF-macro
+      if (SNodeOperations.isInstanceOf(ancestorMacro, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) {
+        return true;
+      }
       return false;
     }
     // inside 'root template'
@@ -147,7 +152,7 @@ public class QueriesUtil {
       }
 
     });
-    for(SNode child : children) {
+    for(SNode child : Sequence.fromIterable(children)) {
       ListSequence.fromList(SNodeOperations.getDescendants(child, "jetbrains.mps.lang.generator.structure.TemplateFragment", false)).visitAll(new IVisitor <SNode>() {
 
         public void visit(SNode it) {

@@ -217,6 +217,22 @@
                 <link role="baseMethodDeclaration" targetNodeId="2.~Object.clone():java.lang.Object" resolveInfo="clone" />
               </node>
             </node>
+            <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1225740976170" />
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1225740978563">
+              <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1225740978564">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225740978565" />
+              </node>
+              <node role="alternativeConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1225740998347">
+                <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225741009614">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225741020929">
+                    <link role="variableDeclaration" targetNodeId="1205879491247" resolveInfo="c" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225741076416">
+                    <link role="baseMethodDeclaration" targetNodeId="2.~Object.getClass():java.lang.Class" resolveInfo="getClass" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

@@ -5378,39 +5378,6 @@
       <property name="name" value="isAnyMacroApplicable" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1216145929484" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216145916090">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216146082148">
-          <property name="value" value=" not inside any kind of macro (code shown in inspector) but OK on a macro node itself" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216146405923">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216146405924">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216146428782">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1216146431846">
-                <property name="value" value="false" />
-              </node>
-            </node>
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1216146423949">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1216146425718" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216146411552">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216146411553">
-                <link role="variableDeclaration" targetNodeId="1216145971156" resolveInfo="node" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1216146411554">
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="1216146411555">
-                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1216146411556">
-                    <link role="concept" targetNodeId="1.1087833466690" resolveInfo="NodeMacro" />
-                  </node>
-                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1216146411557">
-                    <link role="concept" targetNodeId="1.1087833241328" resolveInfo="PropertyMacro" />
-                  </node>
-                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1216146411558">
-                    <link role="concept" targetNodeId="1.1088761943574" resolveInfo="ReferenceMacro" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216666083523">
           <property name="value" value="not inside 'root template annotation'" />
         </node>
@@ -5436,6 +5403,73 @@
                 </node>
                 <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1216666469790" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216146082148">
+          <property name="value" value=" not inside any kind of macro (code shown in inspector) but OK on a macro node itself" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225741743296">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225741743297">
+            <property name="name" value="ancestorMacro" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225741743298" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225741743299">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225741743300">
+                <link role="variableDeclaration" targetNodeId="1216145971156" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1225741743301">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="1225741743302">
+                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1225741743303">
+                    <link role="concept" targetNodeId="1.1087833466690" resolveInfo="NodeMacro" />
+                  </node>
+                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1225741743304">
+                    <link role="concept" targetNodeId="1.1087833241328" resolveInfo="PropertyMacro" />
+                  </node>
+                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1225741743305">
+                    <link role="concept" targetNodeId="1.1088761943574" resolveInfo="ReferenceMacro" />
+                  </node>
+                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1225741791251">
+                    <link role="concept" targetNodeId="1.1177093525992" resolveInfo="InlineTemplate_RuleConsequence" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216146405923">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216146405924">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225741844284">
+              <property name="value" value=" exception: can be inside 'alternativeConsequence' in IF-macro" />
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225741908896">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225741908897">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225741952218">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1225741954673">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225741922916">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225741920009">
+                  <link role="variableDeclaration" targetNodeId="1225741743297" resolveInfo="ancestorMacro" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1225741930560">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1225741943014">
+                    <link role="conceptDeclaration" targetNodeId="1.1177093525992" resolveInfo="InlineTemplate_RuleConsequence" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216146428782">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1216146431846">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1216146423949">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1216146425718" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225741743306">
+              <link role="variableDeclaration" targetNodeId="1225741743297" resolveInfo="mayBeMacro" />
             </node>
           </node>
         </node>
