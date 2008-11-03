@@ -7,6 +7,12 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Arrays;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import junit.framework.Assert;
 
 public class SelectTest_Test extends Util_Test {
 
@@ -80,6 +86,65 @@ public class SelectTest_Test extends Util_Test {
 
     });
     this.assertIterableEquals(this.expectEven10(), test);
+  }
+
+  @Test()
+  public void test_selectMany() throws Exception {
+    final List<Integer> list = ListSequence.<Integer>fromArray(1, 2, 3);
+    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure <Integer>() {
+
+      public Iterable<Integer> iterable() {
+        return new Iterable <Integer>() {
+
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator <Integer>() {
+
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 1;
+                      this.yield(0);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+
+            };
+          }
+
+        };
+      }
+
+    });
+    Sequence.fromIterable(test).select(new ISelector <Integer, List<Integer>>() {
+
+      public List<Integer> select(Integer it) {
+        return list;
+      }
+
+    });
+    Iterable<List<Integer>> result = Sequence.fromIterable(test).select(new ISelector <Integer, List<Integer>>() {
+
+      public List<Integer> select(Integer it) {
+        return list;
+      }
+
+    });
+    Assert.assertEquals(list, Sequence.fromIterable(result).first());
   }
 
 }
