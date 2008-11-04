@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class CellModel_Collection_Actions {
 
@@ -37,7 +38,7 @@ public class CellModel_Collection_Actions {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
         SNode p = SNodeOperations.getParent(node);
         List<SNode> children = SLinkOperations.getTargets(node, "childCellModel", true);
-        for(SNode child : children) {
+        for(SNode child : Sequence.fromIterable(children)) {
           SNodeOperations.insertPrevSiblingChild(node, child);
         }
       }

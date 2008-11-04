@@ -77,7 +77,6 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
       setupLabel_property_style_1186403896216((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu0(),new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu3()}));
     return editorCell;
   }
 
@@ -107,7 +106,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
       setupLabel_refNode_query_1220975756218((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu2(),new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu1(),new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu0()}));
     return editorCell;
   }
 
@@ -206,50 +205,9 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class FontStyleStyleClassItem_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Group {
+  public static class FontStyleStyleClassItem_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
 
     public FontStyleStyleClassItem_generic_cellMenu1() {
-    }
-
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<_Colors_Enum> types = ListSequence.<_Colors_Enum>fromArray();
-      for(_Colors_Enum color : _Colors_Enum.values()) {
-        ListSequence.fromList(types).addElement(color);
-      }
-      return types;
-    }
-
-    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((_Colors_Enum)parameterObject, node, model, scope, operationContext);
-    }
-
-    public void handleAction_impl(_Colors_Enum parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.removeChild(node, "query");
-      SPropertyOperations.set(node, "style", parameterObject.getValue());
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
-
-}
-  public static class FontStyleStyleClassItem_generic_cellMenu2 extends AbstractCellMenuPart_Generic_Item {
-
-    public FontStyleStyleClassItem_generic_cellMenu2() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle");
-    }
-
-    public String getMatchingText() {
-      return "query";
-    }
-
-}
-  public static class FontStyleStyleClassItem_generic_cellMenu3 extends AbstractCellMenuPart_Generic_Item {
-
-    public FontStyleStyleClassItem_generic_cellMenu3() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
