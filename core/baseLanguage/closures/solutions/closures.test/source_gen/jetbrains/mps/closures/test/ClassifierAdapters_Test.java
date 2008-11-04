@@ -27,7 +27,8 @@ public class ClassifierAdapters_Test extends TestCase {
 
     };
     _FunctionTypes._return_P1_E0<? extends String, ? super Integer> ft = new _Adapters.Worker_to__return_P1_E0_adapter(wrk);
-    Assert.assertEquals("Done: 1234", ft.invoke(1234));
+    int res = 1234;
+    Assert.assertEquals("Done: 1234", ft.invoke(res));
   }
 
   @Test()

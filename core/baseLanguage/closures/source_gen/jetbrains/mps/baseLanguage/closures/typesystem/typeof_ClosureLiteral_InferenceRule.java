@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -71,7 +72,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
           allThrows.add(typeCheckingContext.getEquationManager().getRepresentator(tt_typevar_1221579075612));
         } else
         if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-          for(SNode thr : SLinkOperations.getTargets(SLinkOperations.getTarget(stmt, "baseMethodDeclaration", false), "throwsItem", true)) {
+          for(SNode thr : Sequence.fromIterable(SLinkOperations.getTargets(SLinkOperations.getTarget(stmt, "baseMethodDeclaration", false), "throwsItem", true))) {
             allThrows.add(SNodeOperations.copyNode(thr));
           }
         }

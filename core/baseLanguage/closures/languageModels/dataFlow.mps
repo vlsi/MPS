@@ -59,5 +59,33 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1225800111839">
+    <link role="conceptDeclaration" targetNodeId="1.1225797177491" resolveInfo="InvokeFunctionOperation" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1225800111840">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225800111841">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1225800681510">
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225800688915">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1225800688883" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1225800689879">
+              <link role="link" targetNodeId="1.1225797361612" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225800681512">
+            <property name="name" value="p" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225800684084">
+              <link role="concept" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225800681514">
+            <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1225800692068">
+              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225800693980">
+                <link role="variableDeclaration" targetNodeId="1225800681512" resolveInfo="p" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -1469,5 +1469,23 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877405321" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1225799468871">
+    <link role="concept" targetNodeId="1.1199547238293" resolveInfo="InvokeFunctionExpression" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1225799470492">
+      <property name="name" value="isDeprecated" />
+      <link role="overriddenMethod" targetNodeId="7.1224609060727" resolveInfo="isDeprecated" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225799470494">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225799494507">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1225799494508">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1225799490024" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1225799468872">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225799468873" />
+    </node>
+  </node>
 </model>
 

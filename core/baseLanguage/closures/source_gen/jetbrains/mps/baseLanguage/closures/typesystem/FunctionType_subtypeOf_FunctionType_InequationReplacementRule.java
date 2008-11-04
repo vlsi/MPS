@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -54,10 +55,10 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       }
     }
     SNode join = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
-    for(SNode superThrows : SLinkOperations.getTargets(supertype, "throwsType", true)) {
+    for(SNode superThrows : Sequence.fromIterable(SLinkOperations.getTargets(supertype, "throwsType", true))) {
       SLinkOperations.addChild(join, "argument", SNodeOperations.copyNode(superThrows));
     }
-    for(SNode subThrows : SLinkOperations.getTargets(subtype, "throwsType", true)) {
+    for(SNode subThrows : Sequence.fromIterable(SLinkOperations.getTargets(subtype, "throwsType", true))) {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         BaseIntentionProvider intentionProvider = null;
@@ -92,10 +93,10 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         }
       }
       SNode join = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
-      for(SNode superThrows : SLinkOperations.getTargets(supertype, "throwsType", true)) {
+      for(SNode superThrows : Sequence.fromIterable(SLinkOperations.getTargets(supertype, "throwsType", true))) {
         SLinkOperations.addChild(join, "argument", SNodeOperations.copyNode(superThrows));
       }
-      for(SNode subThrows : SLinkOperations.getTargets(subtype, "throwsType", true)) {
+      for(SNode subThrows : Sequence.fromIterable(SLinkOperations.getTargets(subtype, "throwsType", true))) {
         result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(subThrows, join, true);
       }
     }

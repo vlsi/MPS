@@ -142,6 +142,7 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          this.set(StyleAttributes.STRIKE_OUT, true);
         }
 
       };
