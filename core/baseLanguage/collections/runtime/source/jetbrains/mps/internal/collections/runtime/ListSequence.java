@@ -3,6 +3,7 @@
  */
 package jetbrains.mps.internal.collections.runtime;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,9 +23,14 @@ import jetbrains.mps.internal.collections.runtime.impl.NullListSequence;
  * necessary synchronization if needed.
  * @author fyodor
  */
-public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, List<T> {
+public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, List<T>, Serializable {
 
-    List<T> list;
+    /**
+	 * Auto-computed serialVersionUID
+	 */
+	private static final long serialVersionUID = 8593660517992105071L;
+	
+	List<T> list;
     
     public static <U> IListSequence<U> fromArray (U...array) {
         if (Sequence.USE_NULL_SEQUENCE) {

@@ -9,6 +9,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Arrays;
 import junit.framework.Assert;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ObjectInputStream;
 
 public class List_Test extends Util_Test {
 
@@ -100,6 +104,20 @@ public class List_Test extends Util_Test {
     Assert.assertEquals(5, val);
     ListSequence.fromList(test).setElement(3, 4);
     Assert.assertEquals(Arrays.asList(new Integer[]{1,2,3,4}), test);
+  }
+
+  @Test()
+  public void test_serializeList() throws Exception {
+    List<String> test = ListSequence.<String>fromArray("Quick", "brown", "fox");
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    ObjectOutputStream oos = new ObjectOutputStream(baos);
+    oos.writeObject(test);
+    oos.close();
+    ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
+    ObjectInputStream ois = new ObjectInputStream(bais);
+    List<String> copy = (List<String>)ois.readObject();
+    Assert.assertFalse(test == copy);
+    Assert.assertEquals(test, copy);
   }
 
 }
