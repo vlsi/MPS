@@ -22,7 +22,7 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
       typeCheckingContext.reportTypeError(classifierType, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591081", intentionProvider);
     }
     for(SNode typeParameter : SLinkOperations.getTargets(classifierType, "parameter", true)) {
-      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeParameter, SLinkOperations.getTarget(new _Quotations.QuotationClass_77().createNode(typeCheckingContext), "descriptor", false), false, false)))) {
+      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeParameter, SLinkOperations.getTarget(new _Quotations.QuotationClass_77().createNode(typeCheckingContext), "descriptor", false), false)))) {
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.reportTypeError(typeParameter, "primitive types not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591112", intentionProvider);
       }

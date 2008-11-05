@@ -14971,5 +14971,67 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1225894572070">
+    <link role="conceptDeclaration" targetNodeId="17.1225894555487" resolveInfo="BitwiseNotExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225894578681">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225894578682">
+        <property name="text" value="~" />
+        <link role="actionMap" targetNodeId="1225894671574" resolveInfo="BitwiseNotExpression_Parens_Actions" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1225894578683">
+          <property name="style" value="PLAIN" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1225894578684">
+          <property name="value" value="0.0" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225894578685">
+          <property name="value" value="0.0" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1225894578686">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225894578687">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="1215087929380" resolveInfo="LeftParen" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1225894578688">
+        <link role="relationDeclaration" targetNodeId="17.1081516765348" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225894578689">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="1215088010675" resolveInfo="RightParen" />
+        <link role="actionMap" targetNodeId="1140733182387" resolveInfo="NotExpression_Parens_Actions" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225894578690">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="1225894671574">
+    <property name="name" value="BitwiseNotExpression_Parens_Actions" />
+    <link role="applicableConcept" targetNodeId="17.1225894555487" resolveInfo="BitwiseNotExpression" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="1225894671575">
+      <property name="description" value="remove bitwise not-expression" />
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="1225894671576">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225894671577">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225894671578">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225894671579">
+              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1225894671580" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="1225894671581">
+                <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225894671582">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="1225894671583" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225894685808">
+                    <link role="link" targetNodeId="17.1225894555490" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

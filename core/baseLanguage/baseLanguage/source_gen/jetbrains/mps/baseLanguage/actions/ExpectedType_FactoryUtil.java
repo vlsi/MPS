@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.actions;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ExpectedType_FactoryUtil {
@@ -23,7 +24,7 @@ public class ExpectedType_FactoryUtil {
 
   public static SNode getOriginalExpression(SNode enclosingNode, SNode copiedExpression) {
     SNode originalExpression = null;
-    for(SNode child : SNodeOperations.getChildren(enclosingNode)) {
+    for(SNode child : Sequence.fromIterable(SNodeOperations.getChildren(enclosingNode))) {
       if (MatchingUtil.matchNodes(copiedExpression, child)) {
         originalExpression = child;
       }

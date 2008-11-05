@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class StaticMethodCall_Actions {
 
@@ -34,7 +35,7 @@ public class StaticMethodCall_Actions {
       if (classConcept1 == classConcept2) {
         SNode localStaticMethodCall = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall");
         SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
-        for(SNode actualArgument : SLinkOperations.getTargets(node, "actualArgument", true)) {
+        for(SNode actualArgument : Sequence.fromIterable(SLinkOperations.getTargets(node, "actualArgument", true))) {
           SLinkOperations.addChild(localStaticMethodCall, "actualArgument", actualArgument);
         }
       }

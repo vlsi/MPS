@@ -35,7 +35,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
     final SNode LCS_typevar_1186052624152 = typeCheckingContext.createNewRuntimeTypesVariable();
     if (noReturnExpected) {
       // shouldn't return any values
-      for(SNode returnStatement : returnStatements) {
+      for(SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             BaseIntentionProvider intentionProvider = null;
@@ -52,7 +52,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
     {
       // should return subtypes of the 'expected type'
       // if 'expected type' is null - should still return some value (of any type)
-      for(SNode returnStatement : returnStatements) {
+      for(SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             BaseIntentionProvider intentionProvider = null;

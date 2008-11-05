@@ -26,6 +26,7 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -403,7 +404,7 @@ __switch__:
               SNode constructorDeclaration = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "constructor", true)).first();
               if (constructorDeclaration != null) {
                 SLinkOperations.setTarget(_context.getNewNode(), "baseMethodDeclaration", constructorDeclaration, false);
-                for(SNode type : SLinkOperations.getTargets(classifierType, "parameter", true)) {
+                for(SNode type : Sequence.fromIterable(SLinkOperations.getTargets(classifierType, "parameter", true))) {
                   SLinkOperations.addChild(_context.getNewNode(), "typeParameter", SNodeOperations.copyNode(type));
                 }
               }
@@ -423,6 +424,12 @@ __switch__:
   public static void nodeFactory_NodeSetup_ClassConcept_1213605907037(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (!(SNodeOperations.isInstanceOf(_context.getNewNode(), "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
       SLinkOperations.addNewChild(_context.getNewNode(), "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_BitwiseNotExpression_1225896127901(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "expression", _context.getSampleNode(), true);
     }
   }
 
@@ -619,7 +626,7 @@ __switch__:
             }
             List<SNode> result = new ArrayList<SNode>();
             List<SNode> outerClassifiers = SNodeOperations.getAncestors(anonymousClass, "jetbrains.mps.baseLanguage.structure.Classifier", false);
-            for(SNode outerClassifier : outerClassifiers) {
+            for(SNode outerClassifier : Sequence.fromIterable(outerClassifiers)) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(outerClassifier, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_METHOD)));
             }
             return result;
@@ -917,7 +924,7 @@ __switch__:
                 SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", _context.getCurrentTargetNode());
                 SLinkOperations.setTarget(newNode, "constructorDeclaration", (item), false);
                 if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")) {
-                  for(SNode argument : SLinkOperations.getTargets(_context.getCurrentTargetNode(), "actualArgument", true)) {
+                  for(SNode argument : Sequence.fromIterable(SLinkOperations.getTargets(_context.getCurrentTargetNode(), "actualArgument", true))) {
                     SLinkOperations.addChild(newNode, "actualArgument", argument);
                   }
                 }
@@ -966,7 +973,7 @@ __switch__:
                 SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", _context.getCurrentTargetNode());
                 SLinkOperations.setTarget(newNode, "constructorDeclaration", (item), false);
                 if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation")) {
-                  for(SNode argument : SLinkOperations.getTargets(_context.getCurrentTargetNode(), "actualArgument", true)) {
+                  for(SNode argument : Sequence.fromIterable(SLinkOperations.getTargets(_context.getCurrentTargetNode(), "actualArgument", true))) {
                     SLinkOperations.addChild(newNode, "actualArgument", argument);
                   }
                 }
@@ -1045,7 +1052,7 @@ __switch__:
               }
 
             });
-            for(SNode method : SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true)) {
+            for(SNode method : Sequence.fromIterable(SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true))) {
               ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).visitAll(new IVisitor <SNode>() {
 
                 public void visit(SNode it) {
@@ -1267,7 +1274,7 @@ __switch__:
 
                   }).toListSequence();
                 }
-                for(SNode method : methodsToImplement) {
+                for(SNode method : Sequence.fromIterable(methodsToImplement)) {
                   SNode method_copy = SNodeOperations.copyNode(method);
                   SPropertyOperations.set(method_copy, "isAbstract", "" + false);
                   SLinkOperations.setNewChild(method_copy, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
@@ -1275,7 +1282,7 @@ __switch__:
                 }
                 // replace all type vars with Object
                 List<SNode> typeVarRefs = SNodeOperations.getDescendants(SLinkOperations.getTarget(creator, "cls", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false);
-                for(SNode typeVar : typeVarRefs) {
+                for(SNode typeVar : Sequence.fromIterable(typeVarRefs)) {
                   SNodeOperations.replaceWithAnother(typeVar, new _Quotations.QuotationClass_3().createNode());
                 }
                 return creator;
@@ -2443,7 +2450,7 @@ __switch__:
         public SNode doSubstitute(String pattern) {
           SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
           SNode cls = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
-          for(SNode arg : SLinkOperations.getTargets(_context.getSourceNode(), "actualArgument", true)) {
+          for(SNode arg : Sequence.fromIterable(SLinkOperations.getTargets(_context.getSourceNode(), "actualArgument", true))) {
             SLinkOperations.addChild(cls, "parameter", arg);
           }
           SLinkOperations.setTarget(cls, "classifier", SNodeOperations.getParent(SLinkOperations.getTarget(_context.getSourceNode(), "baseMethodDeclaration", false)), false);

@@ -3130,5 +3130,23 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225894555487">
+    <property name="name" value="BitwiseNotExpression" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225894555488">
+      <property name="value" value="~(expr)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225894555489">
+      <property name="value" value="bitwise not-expression" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225894555490">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="expression" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
 </model>
 

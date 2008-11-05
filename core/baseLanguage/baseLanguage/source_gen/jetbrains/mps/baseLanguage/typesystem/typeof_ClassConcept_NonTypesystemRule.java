@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
@@ -26,7 +27,7 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
         typeCheckingContext.reportTypeError(SLinkOperations.getTarget(cls, "superclass", true), "Class expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637809856", intentionProvider);
       }
     }
-    for(SNode impl : SLinkOperations.getTargets(cls, "implementedInterface", true)) {
+    for(SNode impl : Sequence.fromIterable(SLinkOperations.getTargets(cls, "implementedInterface", true))) {
       if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(impl, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"))) {
         {
           BaseIntentionProvider intentionProvider = null;
