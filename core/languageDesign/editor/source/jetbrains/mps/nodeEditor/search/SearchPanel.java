@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor.search;
 
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.ui.CompletionTextField;
+import jetbrains.mps.ide.modelProperties.SortedList;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
@@ -24,6 +25,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -297,22 +300,13 @@ public class SearchPanel extends JPanel {
     Matcher matcher = getPattern().matcher(sourceBuilder.toString());
     while (matcher.find()) {
       int index = 0;
-      while (!((startCellPosition.get(index) <= matcher.start())
+      while (index < cells.size()
+        && !((startCellPosition.get(index) <= matcher.start())
         && (endCellPosition.get(index) > matcher.start()))) {
         index++;
-        if (index == cells.size()) {
-          if (myCells.isEmpty()) {
-            return;
-          } else {
-            break;
-          }
-        }
-        if (startCellPosition.get(index) <= matcher.start()
-          && !(endCellPosition.indexOf(index) > matcher.start())
-          && index < cells.size() - 1
-          && startCellPosition.get(index + 1) > matcher.start()) {
-          break;
-        }
+      }
+      if (index == cells.size()) {
+        break;
       }
       myCells.add(cells.get(index));
       CellLayout cellLayout = cells.get(index).getParent().getCellLayout();
@@ -375,8 +369,8 @@ public class SearchPanel extends JPanel {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               myHighlightManager.mark(new SearchPanelEditorMessage(cells.get(index),
-                startPosition.get(resultIndex.indexOf(index)),
-                endPosition.get(resultIndex.indexOf(index))));
+                startPosition.get(Collections.binarySearch(resultIndex, index)   /*resultIndex.indexOf(index)*/),
+                endPosition.get(Collections.binarySearch(resultIndex, index)  /*resultIndex.indexOf(index)*/)));
             }
           });
         }
@@ -474,7 +468,7 @@ public class SearchPanel extends JPanel {
         String text = editorCell.getRenderedText().substring(myStartPosition, myEndPosition);
         int prevStringWidth = metrics.stringWidth(editorCell.getRenderedText().
           substring(0, editorCell.getRenderedText().toLowerCase().
-          indexOf(text.toLowerCase())));
+            indexOf(text.toLowerCase())));
         int x = editorCell.getX() + editorCell.getLeftInternalInset()
           + prevStringWidth;
         int y = editorCell.getY();
