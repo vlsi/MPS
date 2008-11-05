@@ -15,8 +15,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class GoToTypeErrorRule_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(GoToTypeErrorRule_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(GoToTypeErrorRule_Action.class);
+  private static final Icon ICON = null;
 
   public IOperationContext operationContext;
   public MPSProject project;

@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.JSplitPaneWithoutBorders;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -19,6 +20,8 @@ import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 
 public class MyBaseNodeDialog extends BaseNodeDialog {
+  private static Logger LOG = Logger.getLogger(MyBaseNodeDialog.class);
+
   private final SNode myType;
   private final IErrorReporter myError;
   private boolean myWasRegistered = true;
@@ -63,7 +66,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     if (myError != null) {
       JButton errorButton = new JButton(new AbstractAction("Go To Rule Which Caused Error") {
         public void actionPerformed(ActionEvent e) {
-          GoToTypeErrorRuleUtil.goToTypeErrorRule(getOperationContext(), myError, GoToTypeErrorRule_Action.LOG);
+          GoToTypeErrorRuleUtil.goToTypeErrorRule(getOperationContext(), myError, LOG);
         }
       });
       return new JButton[]{button, errorButton};

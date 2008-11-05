@@ -14,6 +14,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -113,6 +114,7 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11746430151451174643015145(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1174643015145");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_name1174643021631(EditorCell editorCell, SNode node, EditorContext context) {
@@ -122,6 +124,7 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
         }
 
       };

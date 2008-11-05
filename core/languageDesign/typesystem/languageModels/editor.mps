@@ -63,6 +63,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174643015145">
         <property name="text" value="as" />
+        <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174643021631">
         <link role="relationDeclaration" targetNodeId="2.1169194664001" />
@@ -71,6 +72,9 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678235">
           <property name="color" value="DARK_BLUE" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225885870830">
+          <property name="value" value="0.0" />
         </node>
       </node>
     </node>
@@ -1677,6 +1681,9 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1205762043713">
           <property name="text" value="as" />
           <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1225888075273">
+            <property name="value" value="1.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1205762295902">
           <link role="relationDeclaration" targetNodeId="1.1205761991995" />
@@ -2397,6 +2404,9 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1205762236138">
       <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
       <link role="styleClass" targetNodeId="27.1198596033801" resolveInfo="LocalVariable" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225888087257">
+        <property name="value" value="0.0" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1205762719474">

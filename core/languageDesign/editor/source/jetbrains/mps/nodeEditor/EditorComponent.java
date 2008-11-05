@@ -1443,7 +1443,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                     public void actionPerformed(ActionEvent e) {
                       ModelAccess.instance().runReadAction(new Runnable() {
                         public void run() {
-                          GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror, GoToTypeErrorRule_Action.LOG);
+                          GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror, LOG);
                           dialog.dispose();
                         }
                       });
