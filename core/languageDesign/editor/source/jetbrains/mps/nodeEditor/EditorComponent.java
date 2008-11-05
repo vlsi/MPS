@@ -18,7 +18,6 @@ import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
-import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
@@ -41,10 +40,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.IErrorReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.NodesParetoFrontier;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
@@ -740,10 +736,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         myActionProxies.put(keyStroke, proxy);
         registerKeyboardAction(proxy, keyStroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
       } else {
+        StringBuilder actionNames = new StringBuilder();
+        for (String actionName:((MPSActionProxy)myActionProxies.get(keyStroke)).getActionNames()){
+          actionNames.append(actionName).append(";");
+        }
+        actionNames.delete(actionNames.length()-1,actionNames.length());
         LOG.error(
           "Action " + action.getClass().getSimpleName() +
             " is being registered for shortcut <" + keyStroke.toString() + ">" +
-            " for which an action " + myActionProxies.get(keyStroke).getClass().getSimpleName() + " is already registered");
+            " for which an action " + actionNames + " is already registered");
       }
       EditorComponent.MPSActionProxy proxy = myActionProxies.get(keyStroke);
       proxy.add(ActionPlaces.EDITOR_POPUP, action);
@@ -2441,6 +2442,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myActions.add(a);
     }
 
+    public List<String> getActionNames(){
+      return CollectionUtil.map(myActions,new Mapper<BaseAction, String>() {
+        public String map(BaseAction baseAction) {
+          return baseAction.getClass().getSimpleName();
+        }
+      });
+    }
 
     public void actionPerformed(ActionEvent e) {
       for (final BaseAction action : myActions) {
