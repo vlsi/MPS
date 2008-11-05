@@ -3780,5 +3780,34 @@
       <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225898583838">
+    <property name="name" value="ReadOnlyModelAccessor" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225898971709">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="getter" />
+      <link role="target" targetNodeId="1176717841777" resolveInfo="QueryFunction_ModelAccess_Getter" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225900081164">
+    <property name="package" value="CellModel" />
+    <property name="name" value="CellModel_ReadOnlyModelAccessor" />
+    <link role="extends" targetNodeId="1079353555532" resolveInfo="CellModel_AbstractLabel" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225903603081">
+      <property name="value" value="read only model access" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225903603082">
+      <property name="value" value="reference to read only accessor" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225900141900">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="modelAcessor" />
+      <link role="target" targetNodeId="1225898583838" resolveInfo="ReadOnlyModelAccessor" />
+    </node>
+  </node>
 </model>
 
