@@ -13,7 +13,7 @@ public enum NodePresentationOptions {
   private String myName;
   private String myValue;
 
-NodePresentationOptions(String name, String value) {
+  NodePresentationOptions(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

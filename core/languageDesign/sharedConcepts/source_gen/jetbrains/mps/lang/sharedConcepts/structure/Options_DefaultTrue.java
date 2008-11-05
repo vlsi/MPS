@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.LinkedList;
 
 public enum Options_DefaultTrue {
-  default_("default_", null),
-  true_("true_", "true");
+  default_("default", null),
+  true_("true", "true");
 
   private String myName;
   private String myValue;
 
-Options_DefaultTrue(String name, String value) {
+  Options_DefaultTrue(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

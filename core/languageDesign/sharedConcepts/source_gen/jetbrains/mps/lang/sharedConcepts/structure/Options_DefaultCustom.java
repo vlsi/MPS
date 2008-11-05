@@ -12,7 +12,7 @@ public enum Options_DefaultCustom {
   private String myName;
   private String myValue;
 
-Options_DefaultCustom(String name, String value) {
+  Options_DefaultCustom(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
