@@ -150,7 +150,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
-
   public void setCaretPosition(int position, boolean selection) {
     assert isCaretPositionAllowed(position);    
     myTextLine.setCaretPosition(position, selection);
@@ -331,10 +330,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   private void makePositionValid() {
-    if (myTextLine.getCaretPosition() == 0 && !isFirstPositionAllowed()) {
+    if (myTextLine.getCaretPosition() == 0 && !isFirstPositionAllowed() && isCaretPositionAllowed(1)) {
       setCaretPosition(1);
     }
-    if (myTextLine.getCaretPosition() == getText().length() && !isLastPositionAllowed()) {
+    if (myTextLine.getCaretPosition() == getText().length() && !isLastPositionAllowed() && isCaretPositionAllowed(getText().length() - 1)) {
       setCaretPosition(getText().length() - 1);
     }
   }
