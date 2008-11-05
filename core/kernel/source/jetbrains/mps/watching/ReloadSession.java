@@ -1,23 +1,24 @@
 package jetbrains.mps.watching;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.library.LibraryManager;
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.logging.Logger;
-
-import java.util.Set;
-import java.util.LinkedHashSet;
-import java.util.HashSet;
-import java.io.File;
-
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.File;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 class ReloadSession {
   private final static Logger LOG = Logger.getLogger(ReloadSession.class);
@@ -57,7 +58,7 @@ class ReloadSession {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           try {
-            progressIndicator.setText2("Reloading " + model.getSModelReference());
+            progressIndicator.setText2("Reloading " + model.getSModelReference().getSModelFqName());
             model.reloadFromDisk();
           } catch (RuntimeException e) {
             LOG.error(e);
