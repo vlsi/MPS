@@ -152,15 +152,18 @@ public class SubtypingManager {
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
     frontier.add(subRepresentator.getNode());
     while (!frontier.isEmpty()) {
+      Set<SNode> yetPassedRaw = new HashSet<SNode>();
+
       //collecting a set of frontier's ancestors
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
-        ancestors.addAllStructurally(collectImmediateSupertypes(node, isWeak));
-        yetPassed.add(node);
+        collectImmediateSupertypes_internal(node, isWeak, ancestors);
+        yetPassedRaw.add(node);
+    //    yetPassed.add(node);
       }
-      for (SNode passedNode : yetPassed) {
+   /*   for (SNode passedNode : yetPassed) {
         ancestors.removeStructurally(passedNode);
-      }
+      }*/
       ArrayList<SNode> ancestorsSorted;
       ancestorsSorted = new ArrayList<SNode>(ancestors);
       Collections.sort(ancestorsSorted, new Comparator<SNode>() {
@@ -194,6 +197,14 @@ public class SubtypingManager {
           equationManager.addChildEquations(childEqs, errorInfo);
         }
         return true;
+      }
+
+      //new:
+      for (SNode passedNodeRaw : yetPassedRaw) {
+        yetPassed.add(passedNodeRaw);
+      }
+      for (SNode passedNode : yetPassed) {
+        ancestors.removeStructurally(passedNode);
       }
 
       newFrontier.addAllStructurally(ancestors);
@@ -234,10 +245,14 @@ public class SubtypingManager {
 
   public StructuralNodeSet collectImmediateSupertypes(SNode term, boolean isWeak) {
     StructuralNodeSet result = new StructuralNodeSet();
-    if (term == null) {
-      return result;
-    }
+    collectImmediateSupertypes_internal(term, isWeak, result);
+    return result;
+  }
 
+  private void collectImmediateSupertypes_internal(SNode term, boolean isWeak, StructuralNodeSet result) {
+    if (term == null) {
+      return;
+    }
     Set<SubtypingRule_Runtime> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
     if (subtypingRule_runtimes != null) {
       for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
@@ -245,9 +260,8 @@ public class SubtypingManager {
         result.addAll(supertypes);
       }
     }
-
-    return result;
   }
+
 
   public StructuralWrapperSet collectImmediateSupertypes(IWrapper term, boolean isWeak) {
     StructuralWrapperSet result = new StructuralWrapperSet();
