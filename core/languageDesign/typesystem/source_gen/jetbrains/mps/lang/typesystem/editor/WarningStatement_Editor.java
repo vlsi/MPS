@@ -184,6 +184,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12070555877661207055587766(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1207055587766");
+    BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_nodeToReport1207055587767(EditorCell editorCell, SNode node, EditorContext context) {

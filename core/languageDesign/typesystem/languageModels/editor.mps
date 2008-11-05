@@ -2446,6 +2446,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1207055587766">
         <property name="text" value="-&gt;" />
+        <link role="styleClass" targetNodeId="27.1215010940130" resolveInfo="Operator" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1207055587767">
         <property name="noTargetText" value="&lt;node to highlight&gt;" />
@@ -3349,6 +3350,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224760278273">
         <property name="text" value="-&gt;" />
+        <link role="styleClass" targetNodeId="27.1215010940130" resolveInfo="Operator" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1224760278274">
         <property name="noTargetText" value="&lt;node to highlight&gt;" />

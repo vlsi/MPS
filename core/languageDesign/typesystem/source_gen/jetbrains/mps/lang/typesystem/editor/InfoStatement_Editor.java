@@ -184,6 +184,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12247602782731224760278273(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1224760278273");
+    BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_nodeToReport1224760278274(EditorCell editorCell, SNode node, EditorContext context) {

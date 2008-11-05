@@ -10761,8 +10761,8 @@
               <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1214919130326">
                 <link role="applicableNode" targetNodeId="1214919123054" resolveInfo="nodeToCheck" />
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1214919130327">
-                <link role="link" targetNodeId="1.1214918834761" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225891960234">
+                <link role="link" targetNodeId="1.1214918975463" />
               </node>
             </node>
           </node>
@@ -10794,8 +10794,8 @@
               <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1215003597528">
                 <link role="applicableNode" targetNodeId="1214919123054" resolveInfo="nodeToCheck" />
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215003597529">
-                <link role="link" targetNodeId="1.1214918834761" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225891963141">
+                <link role="link" targetNodeId="1.1214918975463" />
               </node>
             </node>
           </node>
