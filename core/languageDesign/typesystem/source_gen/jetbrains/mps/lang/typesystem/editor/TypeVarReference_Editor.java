@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class TypeVarReference_Editor extends DefaultNodeEditor {
 
@@ -103,6 +105,15 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_name1174666297138(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          }
+
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_property_name_1174666297138(EditorCell_Label editorCell, SNode node, EditorContext context) {

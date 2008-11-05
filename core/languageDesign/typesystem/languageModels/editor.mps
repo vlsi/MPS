@@ -645,6 +645,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174665627186">
         <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225890646395">
+          <property name="value" value="0.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174665653489">
         <property name="text" value=";" />
@@ -660,6 +663,9 @@
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174666297138">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225890658238">
+            <property name="value" value="0.0" />
+          </node>
         </node>
       </node>
     </node>

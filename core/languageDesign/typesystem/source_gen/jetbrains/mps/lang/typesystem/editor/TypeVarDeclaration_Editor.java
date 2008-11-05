@@ -14,6 +14,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class TypeVarDeclaration_Editor extends DefaultNodeEditor {
 
@@ -90,6 +92,15 @@ public class TypeVarDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_property_name1174665627186(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_11746656534891174665653489(EditorCell editorCell, SNode node, EditorContext context) {
