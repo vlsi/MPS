@@ -64,7 +64,7 @@ public class InspectorEditorComponent extends EditorComponent {
     if (dataId.equals(MPSDataKeys.VIRTUAL_FILE.getName())) {
       return ModelAccess.instance().runReadAction(new Computable<Object>() {
         public Object compute() {
-          if (myNodePointer.getNode() == null) return null;
+          if (myNodePointer == null || myNodePointer.getNode() == null) return null;
           SNode node = myNodePointer.getNode();
           return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
         }
