@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.lang.editor.structure._Colors_Enum;
+import jetbrains.mps.lang.editor.structure._FontStyle_Enum;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -184,18 +184,18 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<_Colors_Enum> types = ListSequence.<_Colors_Enum>fromArray();
-      for(_Colors_Enum color : _Colors_Enum.values()) {
+      List<_FontStyle_Enum> types = ListSequence.<_FontStyle_Enum>fromArray();
+      for(_FontStyle_Enum color : _FontStyle_Enum.values()) {
         ListSequence.fromList(types).addElement(color);
       }
       return types;
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((_Colors_Enum)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((_FontStyle_Enum)parameterObject, node, model, scope, operationContext);
     }
 
-    public void handleAction_impl(_Colors_Enum parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(_FontStyle_Enum parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       SLinkOperations.removeChild(node, "query");
       SPropertyOperations.set(node, "style", parameterObject.getValue());
     }

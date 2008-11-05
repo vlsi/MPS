@@ -6418,14 +6418,14 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225473442529">
                     <property name="name" value="types" />
                     <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1225473442530">
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225473442531">
-                        <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225884572239">
+                        <link role="classifier" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
                       </node>
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225473442532">
                       <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1225473442533">
-                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225473442534">
-                          <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225884577571">
+                          <link role="classifier" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
                         </node>
                       </node>
                     </node>
@@ -6447,12 +6447,12 @@
                     </node>
                   </node>
                   <node role="iterable" type="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" id="1225473442542">
-                    <link role="enumClass" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
+                    <link role="enumClass" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
                   </node>
                   <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225473442543">
                     <property name="name" value="color" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225473442544">
-                      <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225884583609">
+                      <link role="classifier" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
                     </node>
                   </node>
                 </node>
@@ -6487,8 +6487,8 @@
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1225473442560">
                       <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225473442561">
                         <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject" id="1225473442562" />
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225473442563">
-                          <link role="baseMethodDeclaration" targetNodeId="36.~_Colors_Enum.getValue():java.lang.String" resolveInfo="getValue" />
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225884990630">
+                          <link role="baseMethodDeclaration" targetNodeId="36.~_FontStyle_Enum.getValue():java.lang.String" resolveInfo="getValue" />
                         </node>
                       </node>
                     </node>
@@ -6496,8 +6496,8 @@
                 </node>
               </node>
             </node>
-            <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225473442564">
-              <link role="classifier" targetNodeId="36.~_Colors_Enum" resolveInfo="_Colors_Enum" />
+            <node role="parameterObjectType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225884597256">
+              <link role="classifier" targetNodeId="36.~_FontStyle_Enum" resolveInfo="_FontStyle_Enum" />
             </node>
           </node>
         </node>
