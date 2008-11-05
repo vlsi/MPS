@@ -992,6 +992,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1175518115931">
         <property name="text" value="-&gt;" />
+        <link role="styleClass" targetNodeId="27.1215010940130" resolveInfo="Operator" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1175518122026">
         <property name="noTargetText" value="&lt;node to highlight&gt;" />
@@ -1283,6 +1284,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177406341888">
         <property name="text" value=":&lt;&lt;" />
+        <link role="styleClass" targetNodeId="27.1215010940130" resolveInfo="Operator" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1177406341889">
         <link role="relationDeclaration" targetNodeId="1.1176543950311" />

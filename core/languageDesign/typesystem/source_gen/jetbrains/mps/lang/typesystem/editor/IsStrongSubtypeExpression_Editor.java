@@ -156,6 +156,7 @@ public class IsStrongSubtypeExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11774063418881177406341888(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1177406341888");
+    BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_supertypeExpression1177406341889(EditorCell editorCell, SNode node, EditorContext context) {

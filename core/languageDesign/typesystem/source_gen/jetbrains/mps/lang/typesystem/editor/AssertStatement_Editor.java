@@ -242,6 +242,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11755181159311175518115931(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1175518115931");
+    BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_nodeToReport1175518122026(EditorCell editorCell, SNode node, EditorContext context) {
