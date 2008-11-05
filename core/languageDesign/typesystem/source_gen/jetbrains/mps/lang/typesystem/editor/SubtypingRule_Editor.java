@@ -369,6 +369,15 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_property_name1175147714479(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_11982438544911198243854491(EditorCell editorCell, SNode node, EditorContext context) {
