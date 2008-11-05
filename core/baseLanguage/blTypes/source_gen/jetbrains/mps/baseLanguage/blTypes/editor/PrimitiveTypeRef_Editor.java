@@ -125,6 +125,7 @@ public class PrimitiveTypeRef_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }
 
         };

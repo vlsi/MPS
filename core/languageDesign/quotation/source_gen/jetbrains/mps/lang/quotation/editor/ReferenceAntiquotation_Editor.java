@@ -252,6 +252,9 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
         }
 
       };
@@ -281,6 +284,8 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
             }
 
           });
+          this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+          this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
         }
 
       };

@@ -64,6 +64,9 @@
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934159">
               <property name="style" value="ITALIC" />
             </node>
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225889793355">
+              <property name="value" value="0.0" />
+            </node>
           </node>
         </node>
       </node>
