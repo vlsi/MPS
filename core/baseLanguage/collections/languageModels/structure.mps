@@ -1199,6 +1199,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203518072036">
     <property name="name" value="SmartClosureParameterDeclaration" />
+    <property name="package" value="internal" />
     <link role="extends" targetNodeId="4.1203252195462" resolveInfo="UnboundClosureParameterDeclaration" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1203518094838">
       <property name="value" value="~ &lt;name&gt;" />

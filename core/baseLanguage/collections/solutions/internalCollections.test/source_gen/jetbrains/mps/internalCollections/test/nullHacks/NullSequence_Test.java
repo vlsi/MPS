@@ -77,7 +77,7 @@ public class NullSequence_Test extends Util_Test {
     if (Sequence.USE_NULL_SEQUENCE) {
       for(Object foo : Sequence.fromIterable(null)) {
         //  must not throw exception
-        throw new RuntimeException("unpossible!");
+        throw new RuntimeException("me fail english? unpossible!");
       }
     }
   }

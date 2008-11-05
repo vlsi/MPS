@@ -4,13 +4,14 @@ package jetbrains.mps.internalCollections.test.closures;
 
 import org.junit.Test;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ForEach_Test extends Util_Test {
 
   @Test()
   public void test_legacyForeach() throws Exception {
     ArrayList<Integer> res = new ArrayList<Integer>();
-    for(Integer foo : this.input5()) {
+    for(Integer foo : Sequence.fromIterable(this.input5())) {
       res.add(foo * 2);
     }
     this.assertIterableEquals(this.expectEven10(), res);

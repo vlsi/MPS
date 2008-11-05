@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class RulesFunctions_Collections {
 
@@ -131,7 +132,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 11:
-                      this._11_yieldStmt_it = collectYieldStatements(it).iterator();
+                      this._11_yieldStmt_it = Sequence.fromIterable(collectYieldStatements(it)).iterator();
                     case 12:
                       if (!(this._11_yieldStmt_it.hasNext())) {
                         this.__CP__ = 3;

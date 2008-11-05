@@ -43,6 +43,7 @@
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1203518207327">
+    <property name="package" value="internal" />
     <link role="conceptDeclaration" targetNodeId="1.1203518072036" resolveInfo="SmartClosureParameterDeclaration" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1203518210010">
       <property name="vertical" value="false" />
