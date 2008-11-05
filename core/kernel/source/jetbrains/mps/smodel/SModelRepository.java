@@ -7,7 +7,6 @@ import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.cleanup.CleanupManager;
 
-import javax.swing.*;
 import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
@@ -378,11 +377,11 @@ public class SModelRepository implements ApplicationComponent {
 
       boolean needSaving = false;
 
-      if (sm.getSModel().updateSModelReferences() && sm.getModelFile() != null && !sm.getModelFile().isReadOnly()) {
+      if (sm.getSModel().updateSModelReferences() && sm.getModelFile() != null && !sm.isReadOnly()) {
         needSaving = true;
       }
 
-      if (sm.getSModel().updateModuleReferences() && sm.getModelFile() != null && !sm.getModelFile().isReadOnly()) {
+      if (sm.getSModel().updateModuleReferences() && sm.getModelFile() != null && !sm.isReadOnly()) {
         needSaving = true;
       }
 
@@ -418,43 +417,71 @@ public class SModelRepository implements ApplicationComponent {
 
   private void fireBeforeModelRemoved(SModelDescriptor modelDescriptor) {
     for (SModelRepositoryListener l : listeners()) {
-      l.beforeModelRemoved(modelDescriptor);
+      try {
+        l.beforeModelRemoved(modelDescriptor);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   private void fireModelRemoved(SModelDescriptor modelDescriptor) {
     for (SModelRepositoryListener l : listeners()) {
-      l.modelRemoved(modelDescriptor);
+      try {
+        l.modelRemoved(modelDescriptor);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   private void fireModelAdded(SModelDescriptor modelDescriptor) {
     for (SModelRepositoryListener l : listeners()) {
-      l.modelAdded(modelDescriptor);
+      try {
+        l.modelAdded(modelDescriptor);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   private void fireModelRenamed(SModelDescriptor modelDescriptor) {
     for (SModelRepositoryListener l : listeners()) {
-      l.modelRenamed(modelDescriptor);
+      try {
+        l.modelRenamed(modelDescriptor);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   private void fireModelFileChanged(SModelDescriptor modelDescriptor, IFile from) {
     for (SModelRepositoryListener l : listeners()) {
-      l.modelFileChanged(modelDescriptor, from);
+      try {
+        l.modelFileChanged(modelDescriptor, from);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   private void fireModelOwnerAdded(SModelDescriptor modelDescriptor, ModelOwner owner) {
     for (SModelRepositoryListener l : listeners()) {
-      l.modelOwnerAdded(modelDescriptor, owner);
+      try {
+        l.modelOwnerAdded(modelDescriptor, owner);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   private void fireModelOwnerRemoved(SModelDescriptor modelDescriptor, ModelOwner owner) {
     for (SModelRepositoryListener l : listeners()) {
-      l.modelOwnerRemoved(modelDescriptor, owner);
+      try {
+        l.modelOwnerRemoved(modelDescriptor, owner);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
@@ -462,25 +489,41 @@ public class SModelRepository implements ApplicationComponent {
     MPSModuleRepository.getInstance().invalidateCaches();
 
     for (SModelRepositoryListener listener : listeners()) {
-      listener.modelCreated(modelDescriptor);
+      try {
+        listener.modelCreated(modelDescriptor);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   private void fireModelDeletedEvent(SModelDescriptor modelDescriptor) {
     for (SModelRepositoryListener listener : listeners()) {
-      listener.modelDeleted(modelDescriptor);
+      try {
+        listener.modelDeleted(modelDescriptor);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   private void fireModelWillBeDeletedEvent(SModelDescriptor modelDescriptor) {
     for (SModelRepositoryListener listener : listeners()) {
-      listener.beforeModelDeleted(modelDescriptor);
+      try {
+        listener.beforeModelDeleted(modelDescriptor);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   private void fireBeforeModelFileChangedEvent(SModelDescriptor modelDescriptor) {
     for (SModelRepositoryListener listener : listeners()) {
-      listener.beforeModelFileChanged(modelDescriptor);
+      try {
+        listener.beforeModelFileChanged(modelDescriptor);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 

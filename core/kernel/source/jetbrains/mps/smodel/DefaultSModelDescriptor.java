@@ -97,7 +97,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     }
   }
 
-  public boolean isNotEditable() {
+  public boolean isReadOnly() {
     String stereotype = getSModelReference().getStereotype();
     return stereotype.equals(SModelStereotype.JAVA_STUB);
   }

@@ -98,7 +98,7 @@ public interface SModelDescriptor {
 
   void delete();
 
-  boolean isNotEditable();
+  boolean isReadOnly();
 
   boolean isEmpty();
 

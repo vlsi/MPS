@@ -124,7 +124,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
         return new SModel(getSModelReference());
       }
 
-      public boolean isNotEditable() {
+      public boolean isReadOnly() {
         return false;
       }
     };
