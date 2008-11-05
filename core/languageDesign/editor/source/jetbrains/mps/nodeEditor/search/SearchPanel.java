@@ -2,7 +2,6 @@ package jetbrains.mps.nodeEditor.search;
 
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.ui.CompletionTextField;
-import jetbrains.mps.ide.modelProperties.SortedList;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
@@ -25,7 +24,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
