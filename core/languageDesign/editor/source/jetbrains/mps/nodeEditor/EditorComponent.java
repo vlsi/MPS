@@ -741,7 +741,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           actionNames.append(actionName).append(";");
         }
         actionNames.delete(actionNames.length()-1,actionNames.length());
-        LOG.error(
+        LOG.warning(
           "Action " + action.getClass().getSimpleName() +
             " is being registered for shortcut <" + keyStroke.toString() + ">" +
             " for which an action " + actionNames + " is already registered");
