@@ -12,9 +12,8 @@ import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.projectLanguage.structure.BaseGeneratorConfiguration;
-import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
-import jetbrains.mps.projectLanguage.structure.SolutionGeneratorConfiguration;
+import jetbrains.mps.project.newpl.BaseGeneratorConfiguration;
+import jetbrains.mps.project.newpl.ModuleGeneratorConfiguration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionEventData;
@@ -86,15 +85,15 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
         BaseGeneratorConfiguration conf = null;
 
         if (module instanceof Solution) {
-          SolutionGeneratorConfiguration solutionConfig = SolutionGeneratorConfiguration.newInstance(tmp);
-          solutionConfig.setSolutionModuleUID(module.getModuleUID());
+          ModuleGeneratorConfiguration solutionConfig = new ModuleGeneratorConfiguration();
+          solutionConfig.setModuleUID(module.getModuleUID());
           solutionConfig.setName("tmp");
           conf = solutionConfig;
         }
 
         if (module instanceof Language) {
-          LanguageGeneratorConfiguration languageConfig = LanguageGeneratorConfiguration.newInstance(tmp);
-          languageConfig.setLanguageNamespace(module.getModuleUID());
+          ModuleGeneratorConfiguration languageConfig = new ModuleGeneratorConfiguration();
+          languageConfig.setModuleUID(module.getModuleUID());
           languageConfig.setName("tmp");
           conf = languageConfig;
         }

@@ -1,6 +1,6 @@
 package jetbrains.mps.project.newpl;
 
-public class BaseGeneratorConfiguration {
+public class BaseGeneratorConfiguration implements Comparable{
   private String myName;
 
   public String getName() {
@@ -9,5 +9,11 @@ public class BaseGeneratorConfiguration {
 
   public void setName(String name) {
     myName = name;
+  }
+
+  public int compareTo(Object o) {
+    assert o instanceof BaseGeneratorConfiguration;
+
+    return myName.compareTo(((BaseGeneratorConfiguration)o).myName);
   }
 }

@@ -7,6 +7,13 @@ import java.util.List;
 public class ModelsGeneratorConfiguration extends BaseGeneratorConfiguration{
   private List<Model> myModels = new ArrayList<Model>();
 
+  public ModelsGeneratorConfiguration() {
+  }
+
+  public ModelsGeneratorConfiguration(List<Model> models) {
+    myModels = models;
+  }
+
   public List<Model> getModels() {
     return Collections.unmodifiableList(myModels);
   }

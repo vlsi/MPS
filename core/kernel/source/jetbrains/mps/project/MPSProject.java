@@ -5,23 +5,20 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.project.newpl.NewProjectDescriptor;
+import jetbrains.mps.project.newpl.Path;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -39,7 +36,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   private File myProjectFile;
 
-  private ProjectDescriptor myProjectDescriptor;
+  private NewProjectDescriptor myProjectDescriptor;
   private List<Solution> mySolutions = new ArrayList<Solution>();
   private List<Language> myLanguages = new ArrayList<Language>();
 
@@ -51,7 +48,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   private boolean myDisposed;
   private String myErrors = null;
 
-  public MPSProject(final File projectFile, final ProjectDescriptor projectDescriptor, Project ideaProject) {
+  public MPSProject(final File projectFile, final NewProjectDescriptor projectDescriptor, Project ideaProject) {
     myIDEAProject = ideaProject;
 
     if (ideaProject.isDefault()) return;
@@ -59,16 +56,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         myProjectFile = projectFile;
-        SModel model = ProjectModels.createDescriptorFor(MPSProject.this).getSModel();
-        model.setLoading(true);
-
         myProjectDescriptor = projectDescriptor;
-        model.addRoot(myProjectDescriptor);
 
         MPSProjects projects = MPSProjects.instance();
         projects.addProject(MPSProject.this);
-
-        LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
 
         readModules();
 
@@ -76,13 +67,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
           m.onModuleLoad();
         }
 
-
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-
-        model.setLoading(false);
       }
     });
-
   }
 
   public IScope getScope() {
@@ -102,7 +89,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
     // load solutions
     mySolutions = new LinkedList<Solution>();
-    for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectSolutions())) {
+    for (Path solutionPath : myProjectDescriptor.getSolutions()) {
       String path = solutionPath.getPath();
       IFile descriptorFile = FileSystem.getFile(path);
       if (descriptorFile.exists()) {
@@ -114,7 +101,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
     // load languages
     myLanguages = new LinkedList<Language>();
-    for (LanguagePath languagePath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectLanguages())) {
+    for (Path languagePath : myProjectDescriptor.getLanguages()) {
       String path = languagePath.getPath();
       IFile descriptorFile = FileSystem.getFile(path);
       if (descriptorFile.exists()) {
@@ -126,23 +113,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
     //load devkits
     myDevKits = new LinkedList<DevKit>();
-    for (DevKitPath dk : myProjectDescriptor.getProjectDevkits()) {
+    for (Path dk : myProjectDescriptor.getDevkits()) {
       String path = dk.getPath();
       IFile devKit = FileSystem.getFile(path);
       if (devKit.exists()) {
         myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
       } else {
         error("Can't load devkit from " + devKit.getCanonicalPath() + " File doesn't exist");
-      }
-    }
-
-    for (Library l : myProjectDescriptor.getLibraries()) {
-      String name = l.getName();
-      jetbrains.mps.library.Library lib = LibraryManager.getInstance().get(name);
-      if (lib != null) {
-        MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(lib.getPath()), this);
-      } else {
-        error("Can't find a global library " + name);
       }
     }
   }
@@ -177,57 +154,41 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     return result;
   }
 
-  public void setProjectDescriptor(final @NotNull ProjectDescriptor newDescriptor) {
-    // release languages/solutions and models (except descriptor model)
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getSModelReference(), (ModelOwner) MPSProject.this);
-    assert modelDescriptor != null;
+  public void setProjectDescriptor(final @NotNull NewProjectDescriptor newDescriptor) {
     MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
-    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, MPSProject.this);
 
     myProjectDescriptor = newDescriptor;
-
-    LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
 
     readModules();
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
   public void addProjectLanguage(@NotNull Language language) {
-    ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    SModel model = projectDescriptor.getModel();
-    model.setLoading(true);
-    LanguagePath languagePath = LanguagePath.newInstance(model);
+    NewProjectDescriptor projectDescriptor = getProjectDescriptor();
+    Path languagePath = new Path();
     IFile descriptorFile = language.getDescriptorFile();
     assert descriptorFile != null;
     languagePath.setPath(descriptorFile.getAbsolutePath());
-    projectDescriptor.addProjectLanguage(languagePath);
+    projectDescriptor.getLanguages().add(languagePath);
     setProjectDescriptor(projectDescriptor);
   }
 
   public void removeProjectLanguage(@NotNull Language language) {
-    ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    SModel model = projectDescriptor.getModel();
-    model.setLoading(true);
+    NewProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = language.getDescriptorFile();
     assert descriptorFile != null;
-    String absolutePath = descriptorFile.getAbsolutePath();
-    for (LanguagePath languagePath : projectDescriptor.getProjectLanguages()) {
-      if (languagePath.getPath().equals(absolutePath)) {
-        languagePath.delete();
-      }
-    }
+    Path p = new Path(descriptorFile.getAbsolutePath());
+    projectDescriptor.getLanguages().remove(p);
     setProjectDescriptor(projectDescriptor);
   }
 
   @NotNull
   public Solution addProjectSolution(@NotNull File solutionDescriptionFile) {
-    ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    SModel model = projectDescriptor.getModel();
-    model.setLoading(true);
+    NewProjectDescriptor projectDescriptor = getProjectDescriptor();
 
-    SolutionPath solutionPath = null;
-    for (SolutionPath p : getProjectDescriptor().getProjectSolutions()) {
+    Path solutionPath = null;
+    for (Path p : getProjectDescriptor().getSolutions()) {
       if (p.getPath().equals(solutionDescriptionFile.getPath())) {
         solutionPath = p;
         break;
@@ -235,9 +196,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     }
 
     if (solutionPath == null) {
-      solutionPath = SolutionPath.newInstance(model);
+      solutionPath = new Path();
       solutionPath.setPath(solutionDescriptionFile.getAbsolutePath());
-      projectDescriptor.addProjectSolution(solutionPath);
+      projectDescriptor.getSolutions().add(solutionPath);
     }
 
     setProjectDescriptor(projectDescriptor);
@@ -254,44 +215,27 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   public void removeProjectSolution(@NotNull Solution solution) {
-    ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    SModel model = projectDescriptor.getModel();
-    model.setLoading(true);
+    NewProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = solution.getDescriptorFile();
     assert descriptorFile != null;
-    String absolutePath = descriptorFile.getAbsolutePath();
-    for (SolutionPath solutionPath : projectDescriptor.getProjectSolutions()) {
-      if (solutionPath.getPath().equals(absolutePath)) {
-        solutionPath.delete();
-      }
-    }
+    Path p = new Path(descriptorFile.getAbsolutePath());
+    projectDescriptor.getSolutions().remove(p);
     setProjectDescriptor(projectDescriptor);
   }
 
   public void addProjectDevKit(@NotNull IFile devKitDescriptorFile) {
-    ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    SModel model = projectDescriptor.getModel();
-    model.setLoading(true);
-
-    DevKitPath devKitPath = DevKitPath.newInstance(model);
-    devKitPath.setPath(devKitDescriptorFile.getAbsolutePath());
-    projectDescriptor.addProjectDevkit(devKitPath);
-
+    NewProjectDescriptor projectDescriptor = getProjectDescriptor();
+    Path devKitPath = new Path(devKitDescriptorFile.getAbsolutePath());
+    projectDescriptor.getDevkits().add(devKitPath);
     setProjectDescriptor(projectDescriptor);
   }
 
   public void removeProjectDevKit(@NotNull DevKit devkit) {
-    ProjectDescriptor projectDescriptor = getProjectDescriptor();
-    SModel model = projectDescriptor.getModel();
-    model.setLoading(true);
+    NewProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = devkit.getDescriptorFile();
     assert descriptorFile != null;
-    String absolutePath = descriptorFile.getAbsolutePath();
-    for (DevKitPath devKitPath : projectDescriptor.getProjectDevkits()) {
-      if (devKitPath.getPath().equals(absolutePath)) {
-        devKitPath.delete();
-      }
-    }
+    Path p = new Path(descriptorFile.getAbsolutePath());
+    projectDescriptor.getDevkits().remove(p);
     setProjectDescriptor(projectDescriptor);
   }
 
@@ -317,9 +261,16 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   public void addLanguageRoot(@NotNull String languagePath) {
-    LanguagePath path = LanguagePath.newInstance(getProjectDescriptor().getModel());
-    path.setPath(languagePath);
-    getProjectDescriptor().addProjectLanguage(path);
+    getProjectDescriptor().getLanguages().add(new Path(languagePath));
+  }
+
+  @NotNull
+  public List<Path> getAllModulePaths(){
+    ArrayList<Path> result = new ArrayList<Path>();
+    result.addAll(myProjectDescriptor.getLanguages());
+    result.addAll(myProjectDescriptor.getSolutions());
+    result.addAll(myProjectDescriptor.getDevkits());
+    return result;
   }
 
   @Nullable
@@ -327,24 +278,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     IFile file = module.getDescriptorFile();
     assert file != null;
     String path = FileUtil.getCanonicalPath(file.getAbsolutePath());
-    for (SolutionPath sp : myProjectDescriptor.getProjectSolutions()) {
+    for (Path sp : getAllModulePaths()) {
       if (path.equals(sp.getPath())) {
-        return sp.getFolder();
+        return sp.getMPSFolder();
       }
     }
-
-    for (LanguagePath lp : myProjectDescriptor.getProjectLanguages()) {
-      if (path.equals(lp.getPath())) {
-        return lp.getFolder();
-      }
-    }
-
-    for (DevKitPath dp : myProjectDescriptor.getProjectDevkits()) {
-      if (path.equals(dp.getPath())) {
-        return dp.getFolder();
-      }
-    }
-
     return null;
   }
 
@@ -352,30 +290,16 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     IFile file = module.getDescriptorFile();
     assert file != null;
     String path = FileUtil.getCanonicalPath(file.getAbsolutePath());
-    for (SolutionPath sp : myProjectDescriptor.getProjectSolutions()) {
+    for (Path sp : getAllModulePaths()) {
       if (path.equals(sp.getPath())) {
-        sp.setFolder(newFolder);
-        return;
-      }
-    }
-
-    for (LanguagePath lp : myProjectDescriptor.getProjectLanguages()) {
-      if (path.equals(lp.getPath())) {
-        lp.setFolder(newFolder);
-        return;
-      }
-    }
-
-    for (DevKitPath dp : myProjectDescriptor.getProjectDevkits()) {
-      if (path.equals(dp.getPath())) {
-        dp.setFolder(newFolder);
+        sp.setMPSFolder(newFolder);
         return;
       }
     }
   }
 
   @NotNull
-  public ProjectDescriptor getProjectDescriptor() {
+  public NewProjectDescriptor getProjectDescriptor() {
     return myProjectDescriptor;
   }
 

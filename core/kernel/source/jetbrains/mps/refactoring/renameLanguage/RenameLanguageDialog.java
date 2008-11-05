@@ -1,29 +1,28 @@
 package jetbrains.mps.refactoring.renameLanguage;
 
-import jetbrains.mps.ide.dialogs.BaseDialog;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
-import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.*;
-import jetbrains.mps.projectLanguage.structure.LanguageGeneratorConfiguration;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.genconf.GenParameters;
+import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.newpl.ModuleGeneratorConfiguration;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
 
 import javax.swing.*;
 import java.awt.Frame;
-import java.awt.HeadlessException;
-import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-import java.util.*;
-import java.io.File;
-
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
+import java.awt.GridBagLayout;
+import java.awt.HeadlessException;
 
 public class RenameLanguageDialog extends BaseDialog {
   private JPanel myMainPanel;
@@ -113,8 +112,8 @@ public class RenameLanguageDialog extends BaseDialog {
         public GenParameters compute() {
           SModel model = AuxilaryRuntimeModel.getDescriptor().getSModel();
 
-          LanguageGeneratorConfiguration languageConfig = LanguageGeneratorConfiguration.newInstance(model);
-          languageConfig.setLanguageNamespace(myLanguage.getNamespace());
+          ModuleGeneratorConfiguration languageConfig = new ModuleGeneratorConfiguration();
+          languageConfig.setModuleUID(myLanguage.getNamespace());
           languageConfig.setName("tmp");
 
           return GeneratorConfigUtil.calculate(mpsProject, languageConfig, true);

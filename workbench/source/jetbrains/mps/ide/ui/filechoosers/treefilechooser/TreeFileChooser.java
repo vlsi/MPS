@@ -12,11 +12,10 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
-import javax.swing.Icon;
 import java.awt.Frame;
-import java.io.File;
 
 public class TreeFileChooser {
   public static final int MODE_FILES = TreeFileChooserDialog.MODE_FILES;
@@ -42,6 +41,14 @@ public class TreeFileChooser {
 
   public void setMode(int mode) {
     myMode = mode;
+  }
+
+  public void setExtensionFileFilter(final String extension) {
+    myFileFilter = new IFileFilter() {
+      public boolean accept(IFile file) {
+        return file.getName().toLowerCase().endsWith(extension) || file.isDirectory();
+      }
+    };
   }
 
   public void setFileFilter(IFileFilter fileFilter) {

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class NewProjectDescriptor {
+public class NewProjectDescriptor{
   private static Logger LOG = Logger.getLogger(NewProjectDescriptor.class);
 
   private static final String NAME = "name";
@@ -30,9 +30,6 @@ public class NewProjectDescriptor {
   private static final String SOLUTION = "solution";
   private static final String LANGUAGE = "language";
 
-  private static final String LIBRARIES = "libraries";
-  private static final String LIBRARY = "library";
-
   private static final String MODEL = "model";
   private static final String MODELS = "models";
   private static final String MODEL_UID = "modelUID";
@@ -46,13 +43,12 @@ public class NewProjectDescriptor {
   private static final String TEST_ALL_LANGUAGES = "testAllLanguages";
 
   private String myName = "";
-  private boolean myAutoImportFromIDEA = false;
+  private boolean myImportClasspath = false;
   private boolean myTestAllLanguages = false;
   private List<Path> myLanguages = new ArrayList<Path>();
   private List<Path> mySolutions = new ArrayList<Path>();
   private List<Path> myDevkits = new ArrayList<Path>();
   private List<BaseGeneratorConfiguration> myGenConfigs = new ArrayList<BaseGeneratorConfiguration>();
-  private List<Library> myLibs = new ArrayList<Library>();
 
   public String getName() {
     return myName;
@@ -62,15 +58,15 @@ public class NewProjectDescriptor {
     myName = name;
   }
 
-  public boolean getAutoImportFromIDEA() {
-    return myAutoImportFromIDEA;
+  public boolean getImportClasspath() {
+    return myImportClasspath;
   }
 
-  public void setAutoImportFromIDEA(boolean autoImportFromIDEA) {
-    myAutoImportFromIDEA = autoImportFromIDEA;
+  public void setImportClasspath(boolean importClasspath) {
+    myImportClasspath = importClasspath;
   }
 
-  public boolean isTestAllLanguages() {
+  public boolean getTestAllLanguages() {
     return myTestAllLanguages;
   }
 
@@ -78,18 +74,26 @@ public class NewProjectDescriptor {
     myTestAllLanguages = testAllLanguages;
   }
 
-  public int getProjectSolutionsCount() {
-    return mySolutions.size();
+  public List<Path> getLanguages() {
+    return myLanguages;
   }
 
-  public int getProjectLanguagesCount() {
-    return mySolutions.size();
+  public List<Path> getSolutions() {
+    return mySolutions;
+  }
+
+  public List<Path> getDevkits() {
+    return myDevkits;
+  }
+
+  public List<BaseGeneratorConfiguration> getGenerationConfigurations() {
+    return myGenConfigs;
   }
 
   public Element saveProjectDescriptorToElement(File file) {
     Macros macros = Macros.projectDescriptor();
     Element projectElement = new Element(PROJECT);
-    projectElement.setAttribute(AUTO_IMPORT_CLASSPATH, "" + getAutoImportFromIDEA());
+    projectElement.setAttribute(AUTO_IMPORT_CLASSPATH, "" + getImportClasspath());
 
     // project solutions
     Element projectSolutionsElement = new Element(PROJECT_SOLUTIONS);
@@ -99,8 +103,8 @@ public class NewProjectDescriptor {
       if (solutionPath.getPath() != null) {
         solutionPathElement.setAttribute(PATH, macros.shrinkPath(solutionPath.getPath(), file));
       }
-      if (solutionPath.getFolder() != null) {
-        solutionPathElement.setAttribute(FOLDER, solutionPath.getFolder());
+      if (solutionPath.getMPSFolder() != null) {
+        solutionPathElement.setAttribute(FOLDER, solutionPath.getMPSFolder());
       }
       projectSolutionsElement.addContent(solutionPathElement);
     }
@@ -113,8 +117,8 @@ public class NewProjectDescriptor {
       if (languagePath.getPath() != null) {
         languagePathElement.setAttribute(PATH, macros.shrinkPath(languagePath.getPath(), file));
       }
-      if (languagePath.getFolder() != null) {
-        languagePathElement.setAttribute(FOLDER, languagePath.getFolder());
+      if (languagePath.getMPSFolder() != null) {
+        languagePathElement.setAttribute(FOLDER, languagePath.getMPSFolder());
       }
       projectLanguagesElement.addContent(languagePathElement);
     }
@@ -127,19 +131,10 @@ public class NewProjectDescriptor {
       if (devkitPath.getPath() != null) {
         devkit.setAttribute(PATH, macros.shrinkPath(devkitPath.getPath(), file));
       }
-      if (devkitPath.getFolder() != null) {
-        devkit.setAttribute(FOLDER, devkitPath.getFolder());
+      if (devkitPath.getMPSFolder() != null) {
+        devkit.setAttribute(FOLDER, devkitPath.getMPSFolder());
       }
       projectDevkitsElement.addContent(devkit);
-    }
-
-    //project libraries
-    Element libraries = new Element(LIBRARIES);
-    projectElement.addContent(libraries);
-    for (Library lib : myLibs) {
-      Element library = new Element(LIBRARY);
-      library.setText(lib.getName());
-      libraries.addContent(library);
     }
 
     //test configurations
@@ -224,9 +219,9 @@ public class NewProjectDescriptor {
     }
 
     if (projectElement.getAttributeValue(AUTO_IMPORT_CLASSPATH) == null) {
-      myAutoImportFromIDEA = true;
+      myImportClasspath = true;
     } else {
-      myAutoImportFromIDEA = "true".equals(projectElement.getAttributeValue(AUTO_IMPORT_CLASSPATH));
+      myImportClasspath = "true".equals(projectElement.getAttributeValue(AUTO_IMPORT_CLASSPATH));
     }
 
     // project solutions
@@ -235,7 +230,7 @@ public class NewProjectDescriptor {
       for (Element element : (List<Element>) projectSolutions.getChildren(SOLUTION_PATH)) {
         Path solutionPath = new Path();
         solutionPath.setPath(macros.expandPath(element.getAttributeValue(PATH), file));
-        solutionPath.setFolder(element.getAttributeValue(FOLDER));
+        solutionPath.setMPSFolder(element.getAttributeValue(FOLDER));
         mySolutions.add(solutionPath);
       }
     }
@@ -250,7 +245,7 @@ public class NewProjectDescriptor {
       for (Element element : elements) {
         Path languagePath = new Path();
         languagePath.setPath(macros.expandPath(element.getAttributeValue(PATH), file));
-        languagePath.setFolder(element.getAttributeValue(FOLDER));
+        languagePath.setMPSFolder(element.getAttributeValue(FOLDER));
         myLanguages.add(languagePath);
       }
     }
@@ -261,18 +256,8 @@ public class NewProjectDescriptor {
       for (Element element : (List<Element>) projectDevKits.getChildren(DEVKIT_PATH)) {
         Path devKit = new Path();
         devKit.setPath(macros.expandPath(element.getAttributeValue(PATH), file));
-        devKit.setFolder(element.getAttributeValue(FOLDER));
+        devKit.setMPSFolder(element.getAttributeValue(FOLDER));
         myDevkits.add(devKit);
-      }
-    }
-
-    //used global libraries
-    Element projectLibraries = projectElement.getChild(LIBRARIES);
-    if (projectLibraries != null) {
-      for (Element element : (List<Element>) projectLibraries.getChildren(LIBRARY)) {
-        Library lib = new Library();
-        lib.setName(element.getText());
-        myLibs.add(lib);
       }
     }
 

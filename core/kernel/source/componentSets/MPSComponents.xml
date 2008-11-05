@@ -42,7 +42,7 @@
       <implementation-class>jetbrains.mps.vcs.VcsRootsManager</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.workbench.projectPaths.MPSProjectPaths</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.dialogs.projectoptions.ProjectOptionsPerfsPage</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.ui.ChangesNotificator</implementation-class>
