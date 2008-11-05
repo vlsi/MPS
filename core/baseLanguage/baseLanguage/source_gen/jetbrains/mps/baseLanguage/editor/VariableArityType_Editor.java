@@ -13,6 +13,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class VariableArityType_Editor extends DefaultNodeEditor {
 
@@ -78,6 +80,15 @@ public class VariableArityType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_12199211354201219921135420(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1219921135420");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_refNode_componentType_1219921129028(EditorCell_Label editorCell, SNode node, EditorContext context) {

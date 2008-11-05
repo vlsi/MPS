@@ -14536,6 +14536,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1219921135420">
         <property name="text" value="..." />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225896014272">
+          <property name="value" value="0.0" />
+        </node>
       </node>
     </node>
   </node>
