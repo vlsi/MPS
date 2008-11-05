@@ -158,16 +158,16 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204735229829">
               <property name="name" value="filter" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1204735229833">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1221825185966">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225907590012">
                   <property name="name" value="it" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1221825185967" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1225907591024" />
                 </node>
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204735229834">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204735229835">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1204735229836">
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.RemExpression" id="1204735229837">
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1204735229838">
-                          <link role="variableDeclaration" targetNodeId="1221825185966" resolveInfo="it" />
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225907594370">
+                          <link role="variableDeclaration" targetNodeId="1225907590012" resolveInfo="it" />
                         </node>
                         <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1204735229839">
                           <property name="value" value="2" />
@@ -572,14 +572,14 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1203688860713">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1221825185384">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225907602082">
                   <property name="name" value="i" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="1221825185385" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1225907602949" />
                 </node>
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203688860714">
                   <node role="statement" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" id="1203688860715">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203688860716">
-                      <link role="variableDeclaration" targetNodeId="1221825185384" resolveInfo="i" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225907607840">
+                      <link role="variableDeclaration" targetNodeId="1225907602082" resolveInfo="i" />
                     </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" id="1203688860717">
@@ -587,8 +587,8 @@
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1203688860719">
                         <property name="value" value="2" />
                       </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1203688860720">
-                        <link role="variableDeclaration" targetNodeId="1221825185384" resolveInfo="i" />
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225907608881">
+                        <link role="variableDeclaration" targetNodeId="1225907602082" resolveInfo="i" />
                       </node>
                     </node>
                   </node>

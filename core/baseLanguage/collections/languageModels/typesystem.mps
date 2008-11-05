@@ -6442,7 +6442,7 @@
       <property name="isFinal" value="true" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225561924139" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1225561916876" />
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1225885430470">
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1225908716020">
         <property name="value" value="false" />
       </node>
     </node>

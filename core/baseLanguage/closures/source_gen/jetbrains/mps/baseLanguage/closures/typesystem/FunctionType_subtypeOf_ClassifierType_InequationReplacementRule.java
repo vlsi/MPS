@@ -10,9 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import java.util.Iterator;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -26,7 +26,15 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     String errorMsg = "";
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
       List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
-      if (methods != null && methods.size() == 1) {
+      if (methods != null) {
+        if (methods.size() > 1) {
+          //  dirty hack
+          errorMsg = ": interface must have only one method";
+          {
+            BaseIntentionProvider intentionProvider = null;
+            typeCheckingContext.reportWarning(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1225908155523", intentionProvider);
+          }
+        }
         SNode md = methods.get(0);
         if (SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
           {
@@ -62,7 +70,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
         }
       } else
       {
-        errorMsg = ": interface must have only one method";
+        errorMsg = ": interface must define a method";
       }
     } else
     {
@@ -81,7 +89,15 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
       String errorMsg = "";
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
         List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
-        if (methods != null && methods.size() == 1) {
+        if (methods != null) {
+          if (methods.size() > 1) {
+            //  dirty hack
+            errorMsg = ": interface must have only one method";
+            {
+              BaseIntentionProvider intentionProvider = null;
+//              typeCheckingContext.reportWarning(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1225908155523", intentionProvider);
+            }
+          }
           SNode md = methods.get(0);
           if (SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
             result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(subtype, "resultType", true), ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype), true);
@@ -109,7 +125,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           }
         } else
         {
-          errorMsg = ": interface must have only one method";
+          errorMsg = ": interface must define a method";
         }
       } else
       {

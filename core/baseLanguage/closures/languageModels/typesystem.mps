@@ -827,6 +827,72 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1202742329276">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202742329277">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225908134581">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225908134582">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225908196345">
+                    <property name="value" value=" dirty hack" />
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225908155519">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1225908155520">
+                      <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225908155521">
+                        <property name="value" value=": interface must have only one method" />
+                      </node>
+                      <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225908190325">
+                        <link role="variableDeclaration" targetNodeId="1202821005225" resolveInfo="errorMsg" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="1225908155523">
+                    <node role="warningText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1225908165846">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225908165847">
+                        <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1225908165848">
+                          <link role="applicableNode" targetNodeId="1202742207433" resolveInfo="ft" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225908165849">
+                          <link role="baseMethodDeclaration" targetNodeId="23.1213877396640" resolveInfo="getPresentation" />
+                        </node>
+                      </node>
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1225908165850">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1225908165851">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225908165852">
+                            <link role="variableDeclaration" targetNodeId="1202821005225" resolveInfo="errorMsg" />
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225908165853">
+                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1225908165854">
+                              <link role="applicableNode" targetNodeId="1202742215241" resolveInfo="ct" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225908165855">
+                              <link role="baseMethodDeclaration" targetNodeId="23.1213877396640" resolveInfo="getPresentation" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225908165856">
+                          <property name="value" value=" is not a subtype of " />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225908175153">
+                      <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression" id="1225908175154" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225908175155">
+                        <link role="baseMethodDeclaration" targetNodeId="7.~EquationInfo.getNodeWithError():jetbrains.mps.smodel.SNode" resolveInfo="getNodeWithError" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1225908145491">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225908146966">
+                    <property name="value" value="1" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225908138256">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225908136526">
+                      <link role="variableDeclaration" targetNodeId="1202742329269" resolveInfo="methods" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225908143283">
+                      <link role="baseMethodDeclaration" targetNodeId="8.~List.size():int" resolveInfo="size" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1202742329278">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1202742329279">
                   <property name="name" value="md" />
@@ -979,33 +1045,18 @@
                 </node>
               </node>
             </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1202742329318">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1202742329319">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1202742329320">
-                  <property name="value" value="1" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209072474388">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202742412678">
-                    <link role="variableDeclaration" targetNodeId="1202742329269" resolveInfo="methods" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209072474389">
-                    <link role="baseMethodDeclaration" targetNodeId="8.~List.size():int" resolveInfo="size" />
-                  </node>
-                </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1202742329323">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202742427007">
+                <link role="variableDeclaration" targetNodeId="1202742329269" resolveInfo="methods" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1202742329323">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202742427007">
-                  <link role="variableDeclaration" targetNodeId="1202742329269" resolveInfo="methods" />
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1202742329325" />
-              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1202742329325" />
             </node>
             <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1202820953338">
               <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202820953339">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202821033494">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1202821035731">
                     <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1202821036904">
-                      <property name="value" value=": interface must have only one method" />
+                      <property name="value" value=": interface must define a method" />
                     </node>
                     <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1202821033495">
                       <link role="variableDeclaration" targetNodeId="1202821005225" resolveInfo="errorMsg" />
