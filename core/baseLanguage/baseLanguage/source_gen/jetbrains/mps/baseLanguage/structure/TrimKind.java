@@ -13,7 +13,7 @@ public enum TrimKind {
   private String myName;
   private String myValue;
 
-TrimKind(String name, String value) {
+  TrimKind(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

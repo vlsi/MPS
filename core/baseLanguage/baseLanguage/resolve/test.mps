@@ -17,5 +17,35 @@
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="233" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="234" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1225892451204">
+    <property name="name" value="ABC" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225892451205" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1225892451206">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225892451207" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225892451208" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225892451209">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225892478917">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ShiftLeftExpression" id="1225892486881">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225892487556">
+              <property name="value" value="3" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225892478918">
+              <property name="value" value="3" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225892490479">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ShiftRightExpression" id="1225892491231">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225892491500">
+              <property name="value" value="1" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1225892490480">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

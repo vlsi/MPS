@@ -3106,5 +3106,29 @@
     <property name="package" value="refactoring" />
     <property name="name" value="IParameter" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225892208569">
+    <property name="name" value="ShiftLeftExpression" />
+    <link role="extends" targetNodeId="1224500579375" resolveInfo="BinaryBitwiseOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225892237429">
+      <property name="value" value="&lt;&lt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1225892303585">
+      <property name="value" value="5" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225892319711">
+    <property name="name" value="ShiftRightExpression" />
+    <link role="extends" targetNodeId="1224500579375" resolveInfo="BinaryBitwiseOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225892332884">
+      <property name="value" value="&gt;&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1225892337542">
+      <property name="value" value="5" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
+    </node>
+  </node>
 </model>
 
