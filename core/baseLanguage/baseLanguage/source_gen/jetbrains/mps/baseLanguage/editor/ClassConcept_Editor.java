@@ -1399,6 +1399,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNode_superclass1211933522644(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Indent_12145796983621214579698362(EditorCell editorCell, SNode node, EditorContext context) {
@@ -2235,6 +2244,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.EDITABLE, true);
+            this.set(StyleAttributes.PADDING_RIGHT, 0.0);
           }
 
         };

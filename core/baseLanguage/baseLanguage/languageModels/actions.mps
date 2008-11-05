@@ -6274,6 +6274,18 @@
           </node>
         </node>
       </node>
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" id="1225898267857">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225898267858">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225898298033">
+            <node role="expression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1225898298034" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225898299723">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1225898300413">
+              <property name="value" value="true" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1214831660018">
       <link role="applicableConcept" targetNodeId="1.1081236700938" resolveInfo="StaticMethodDeclaration" />

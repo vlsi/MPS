@@ -24,7 +24,7 @@ public class StructuralNodeSetView {
       System.err.print("node "+node + " -> ");
       StructuralNodeSet<Integer> superNodes = myStructuralNodeSets.get(node);
       for(SNode superNode : superNodes) {
-        System.err.print(" | " + superNode + "[[" + superNodes.getTag(superNode) + "]]");
+//        System.err.print(" | " + superNode + "[[" + superNodes.getTag(superNode) + "]]");
       }
       System.err.println("");
     }

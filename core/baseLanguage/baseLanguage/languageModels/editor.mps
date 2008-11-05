@@ -265,6 +265,9 @@
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1211933522644">
             <property name="noTargetText" value="&lt;none&gt;" />
             <link role="relationDeclaration" targetNodeId="17.1165602531693" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225896371469">
+              <property name="value" value="0.0" />
+            </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995980">
             <property name="flag" value="false" />
@@ -293,6 +296,9 @@
             <property name="nullText" value="&lt;none&gt;" />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032014">
               <property name="flag" value="true" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225896675827">
+              <property name="value" value="0.0" />
             </node>
           </node>
         </node>
