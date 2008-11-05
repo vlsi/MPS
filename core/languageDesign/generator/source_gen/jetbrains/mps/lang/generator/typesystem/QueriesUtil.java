@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink;
@@ -67,7 +68,7 @@ public class QueriesUtil {
     }
     List<SNode> attributes = node.getAllAttributes();
     SNode prevMacro = null;
-    for(SNode attribute : attributes) {
+    for(SNode attribute : Sequence.fromIterable(attributes)) {
       if (attribute == currMacroNode) {
         break;
       }
@@ -130,6 +131,7 @@ public class QueriesUtil {
       }
       return;
     }
+    // todo: used in two rules, one of the usages can be converted into non-typesystem rule
     {
       final SNode OutputType = typeCheckingContext.typeOf(query, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1206283548589", false);
       typeCheckingContext.whenConcrete(OutputType, new Runnable() {

@@ -3635,6 +3635,7 @@
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177959016741">
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177959016742">
               <property name="text" value="concept" />
+              <link role="styleClass" targetNodeId="1224774992290" resolveInfo="GeneratorKeyWord" />
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996014">
                 <property name="flag" value="false" />
               </node>
@@ -3662,6 +3663,7 @@
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177959016746">
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177959016747">
               <property name="text" value="inheritors" />
+              <link role="styleClass" targetNodeId="1224774992290" resolveInfo="GeneratorKeyWord" />
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995478">
                 <property name="flag" value="false" />
               </node>
@@ -3676,6 +3678,7 @@
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177959016749">
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177959016750">
               <property name="text" value="condition" />
+              <link role="styleClass" targetNodeId="1224774992290" resolveInfo="GeneratorKeyWord" />
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1217438719645" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1177959016751">
@@ -3688,7 +3691,8 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1177959050711">
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1177959050712">
-              <property name="text" value="keep source root" />
+              <property name="text" value="keep input root" />
+              <link role="styleClass" targetNodeId="1224774992290" resolveInfo="GeneratorKeyWord" />
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1217438728912" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1177959058949">

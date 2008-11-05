@@ -154,7 +154,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1177959050712(context, node, "keep source root"));
+    editorCell.addEditorCell(this.createConstant1177959050712(context, node, "keep input root"));
     editorCell.addEditorCell(this.createProperty1177959058949(context, node));
     return editorCell;
   }
@@ -745,6 +745,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11779590167421177959016742(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1177959016742");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -778,6 +779,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11779590167471177959016747(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1177959016747");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -808,6 +810,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11779590167501177959016750(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1177959016750");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -837,6 +840,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11779590507121177959050712(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1177959050712");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {

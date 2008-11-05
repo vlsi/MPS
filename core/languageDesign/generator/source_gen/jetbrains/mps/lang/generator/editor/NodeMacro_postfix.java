@@ -79,7 +79,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   public EditorCell createModelAccess1184865302332(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAcessorFactory_1184865302332(context, node);
+    ModelAccessor modelAccessor = this._modelAccessorFactory_1184865302332(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ModelAccess_11848653023321184865302332(editorCell, node, context);
@@ -88,7 +88,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     return editorCell;
   }
 
-  public ModelAccessor _modelAcessorFactory_1184865302332(final EditorContext editorContext, final SNode node) {
+  public ModelAccessor _modelAccessorFactory_1184865302332(final EditorContext editorContext, final SNode node) {
     return new ModelAccessor() {
 
       public String getText() {
