@@ -46,6 +46,8 @@
 
     <projectOpenProcessor implementation="com.intellij.platform.PlatformProjectOpenProcessor"/>
 
+    <applicationConfigurable implementation="com.intellij.application.options.pathMacros.PathMacroConfigurable"/>
+    
     <applicationService serviceInterface="com.intellij.ui.IconDeferrer"
                             serviceImplementation="com.intellij.ui.DefaultIconDeferrer"/>
 
