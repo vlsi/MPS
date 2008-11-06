@@ -97,7 +97,7 @@ public class ScopeOptions extends BaseOptions<SearchQuery> {
       }
     } else if (myScopeType.equals(MODEL_SCOPE)) {
       if (myModel.equals(DEFAULT_VALUE)) {
-        scope = new ModelScope(operationContext.getModule().getScope(), descriptor);
+        scope = new ModelsScope(descriptor);
       } else {
         List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptorsByModelName(myModel);
         if (models.isEmpty()) {
@@ -106,7 +106,7 @@ public class ScopeOptions extends BaseOptions<SearchQuery> {
           LOG.error("Model is not found for " + myModel + ". Using current model.");
         }
         SModelDescriptor modelDescriptor = models.get(0);
-        scope = new ModelScope(modelDescriptor.getModule().getScope(), modelDescriptor);
+        scope = new ModelsScope(modelDescriptor);
       }
     } else if (myScopeType.equals(BOOTSTRAP_SCOPE)) {
       return BootstrapScope.getInstance();

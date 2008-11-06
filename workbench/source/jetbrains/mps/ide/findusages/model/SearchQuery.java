@@ -16,6 +16,8 @@ import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
 import javax.swing.Icon;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchQuery implements IExternalizeable {
   private static final Logger LOG = Logger.getLogger(SearchQuery.class);
@@ -29,10 +31,12 @@ public class SearchQuery implements IExternalizeable {
   private static final String SCOPE_TYPE_GLOBAL = "global_scope";
   private static final String SCOPE_TYPE_PROJECT = "project_scope";
   private static final String SCOPE_TYPE_MODULE = "module_scope";
-  private static final String SCOPE_TYPE_MODEL = "model_scope";
+  private static final String SCOPE_TYPE_MODELS = "model_scope";
   private static final String SCOPE_TYPE_BOOTSTRAP = "bootstrap_scope";
 
   private static final String MODULE_ID = "module_id";
+  private static final String MODELS = "models";
+  private static final String MODEL = "model";
   private static final String MODEL_ID = "model_id";
 
   private IScope myScope;
@@ -93,14 +97,19 @@ public class SearchQuery implements IExternalizeable {
         throw new CantSaveSomethingException("Module is not found for module. Maybe the module was deleted.");
       }
       scopeXML.setAttribute(MODULE_ID, abstractModule.getModuleUID());
-    } else if (myScope instanceof ModelScope) {
-      scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODEL);
-      SModelDescriptor sModelDescriptor = ((ModelScope) myScope).getModelDescriptor();
-      if (sModelDescriptor == null) {
-        LOG.warning("No model descriptor for model. Maybe the model was deleted");
-        throw new CantSaveSomethingException("Module is not found for module. Maybe the model was deleted");
+    } else if (myScope instanceof ModelsScope) {
+      scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODELS);
+      Element modelsXML = new Element(MODELS);
+      for (SModelDescriptor sModelDescriptor:((ModelsScope) myScope).getModelDescriptors()){
+        Element modelXML = new Element(MODEL);
+        if (sModelDescriptor == null) {
+          LOG.warning("No model descriptor for model. Maybe the model was deleted");
+          throw new CantSaveSomethingException("Module is not found for module. Maybe the model was deleted");
+        }
+        modelXML.setAttribute(MODEL_ID, sModelDescriptor.getSModelReference().toString());
+        modelsXML.addContent(modelXML);
       }
-      scopeXML.setAttribute(MODEL_ID, sModelDescriptor.getSModelReference().toString());
+      scopeXML.addContent(modelsXML);
     } else if (myScope instanceof BootstrapScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_BOOTSTRAP);
     } else {
@@ -133,14 +142,18 @@ public class SearchQuery implements IExternalizeable {
         LOG.warning("module scope not found for module  " + moduleUID);
         throw new CantLoadSomethingException("module scope not found for module  " + moduleUID);
       }
-    } else if (scopeType.equals(SCOPE_TYPE_MODEL)) {
-      String modelUID = scopeXML.getAttribute(MODEL_ID).getValue();
-      SModelDescriptor sModelDescriptor = project.getScope().getModelDescriptor(SModelReference.fromString(modelUID));
-      if (sModelDescriptor == null) {
-        LOG.warning("model scope not found for model " + modelUID);
-        throw new CantLoadSomethingException("model scope not found for model " + modelUID);
+    } else if (scopeType.equals(SCOPE_TYPE_MODELS)) {
+      Element modelsXML = scopeXML.getChild(MODELS);
+      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+      for (Element modelXML:(List<Element>)modelsXML.getChildren(MODEL)){
+        String modelUID = modelXML.getAttribute(MODEL_ID).getValue();
+        SModelDescriptor sModelDescriptor = project.getScope().getModelDescriptor(SModelReference.fromString(modelUID));
+        if (sModelDescriptor == null) {
+          LOG.warning("model scope not found for model " + modelUID);
+          throw new CantLoadSomethingException("model scope not found for model " + modelUID);
+        }
       }
-      myScope = new ModelScope(project.getScope(), sModelDescriptor);
+      myScope = new ModelsScope(models.toArray(new SModelDescriptor[models.size()]));
     }
     if (scopeType.equals(SCOPE_TYPE_BOOTSTRAP)) {
       myScope = BootstrapScope.getInstance();

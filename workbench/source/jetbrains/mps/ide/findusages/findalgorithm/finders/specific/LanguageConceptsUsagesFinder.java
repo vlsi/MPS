@@ -3,6 +3,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
@@ -10,13 +11,13 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Mapper;
+
+import java.util.List;
 
 public class LanguageConceptsUsagesFinder extends BaseFinder {
-
   public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
     SearchResults<SNode> searchResults = new SearchResults<SNode>();
     IHolder holder = query.getObjectHolder();
@@ -33,8 +34,15 @@ public class LanguageConceptsUsagesFinder extends BaseFinder {
 
     searchResults.getSearchedNodes().addAll(sModel.getRoots());
 
-    //todo:make more effective by searching for usages of structure model before searching for usages of its concepts
-    SearchResults results = FindUtils.getSearchResults(indicator, sModel.getRoots(), GlobalScope.getInstance(), new NodeUsages_Finder());
+    SearchResults<SModel> modelResults = FindUtils.getSearchResults(indicator, new SearchQuery(sModel, GlobalScope.getInstance()), new ModelUsagesFinder());
+    List<SModelDescriptor> models = CollectionUtil.map(modelResults.getSearchResults(),new Mapper<SearchResult<SModel>, SModelDescriptor>() {
+      public SModelDescriptor map(SearchResult<SModel> sModelSearchResult) {
+        return sModelSearchResult.getObject().getModelDescriptor();
+      }
+    });
+    IScope scope = new ModelsScope(models.toArray(new SModelDescriptor[models.size()]));
+
+    SearchResults results = FindUtils.getSearchResults(indicator, sModel.getRoots(), scope, new NodeUsages_Finder());
     searchResults.getSearchResults().addAll(results.getSearchResults());
 
     return searchResults;
