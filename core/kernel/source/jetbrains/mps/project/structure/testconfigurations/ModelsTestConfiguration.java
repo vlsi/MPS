@@ -8,6 +8,8 @@ import jetbrains.mps.project.structure.Model;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Mapper;
 
 import java.util.*;
 
@@ -23,6 +25,14 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
 
   public List<Model> getModels() {
     return Collections.unmodifiableList(myModels);
+  }
+
+  public List<SModelDescriptor> getModelDescriptors(final MPSProject project){
+    return CollectionUtil.map(getModels(),new Mapper<Model, SModelDescriptor>() {
+      public SModelDescriptor map(Model model) {
+        return project.getScope().getModelDescriptor(SModelReference.fromString(model.getModelRef())); 
+      }
+    });
   }
 
   public void addModel(Model m) {

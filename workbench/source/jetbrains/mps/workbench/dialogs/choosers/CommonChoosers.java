@@ -44,6 +44,18 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
+  public static IModule showDialogModuleChooser(final Component parent, final List<IModule> modules) {
+    Window window = SwingUtilities.getWindowAncestor(parent);
+    ModuleChooserDialog dialog;
+    if (window instanceof Frame) {
+      dialog = new ModuleChooserDialog((Frame) window, modules);
+    } else {
+      dialog = new ModuleChooserDialog((Dialog) window, modules);
+    }
+    dialog.showDialog();
+    return dialog.getResult();
+  }
+
   public static Language showDialogLanguageChooser(final Component parent, final List<Language> languages) {
     Window window = SwingUtilities.getWindowAncestor(parent);
     LanguageChooserDialog dialog;
