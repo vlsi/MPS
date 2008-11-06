@@ -257,7 +257,7 @@ public class GenerationPartitioner {
             }
           }
         } else {
-          LOG.error("couldn't get model by uid: '" + modelUID + "' in generator" + refGenerator.getAlias());
+          LOG.error("couldn't get model by uid: '" + modelUID + "' in generator " + refGenerator.getAlias());
         }
       }
       return new ArrayList();
