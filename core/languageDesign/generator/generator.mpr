@@ -4,7 +4,7 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSProject" auto-import-from-idea="true" testAllLanguages="false">
+  <component name="MPSProject" auto-import-from-idea="true">
     <projectSolutions>
       <solutionPath path="${project}\TLBase_sandbox\sandbox.msd" />
       <solutionPath path="${project}\test\inputModels\inputModels.msd" />
@@ -19,8 +19,22 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfSolution name="generator" solution="jetbrains.mps.lang.generator" />
-      <genConfLanguage name="generator.generatorationContext" language="jetbrains.mps.lang.generator.generationContext" />
+      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
+      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
+      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
+      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
+      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
+      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
+      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
+      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
+      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
+      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
+      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
+      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
+      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
+      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
+      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
+      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
@@ -39,18 +40,18 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
-    for(SNode implementor : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, indicator)) {
+    for(SNode implementor : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
       ListSequence.fromList(implementorsAndAncestorsList).addElement(implementor);
       ListSequence.fromList(implementorsAndAncestorsList).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", implementor, scope, indicator)));
     }
     // 
     Set<SNode> implementorsAndAncestorsNodes = new HashSet<SNode>();
-    for(SNode implementorOrAncestor : implementorsAndAncestorsList) {
+    for(SNode implementorOrAncestor : Sequence.fromIterable(implementorsAndAncestorsList)) {
       implementorsAndAncestorsNodes.add(implementorOrAncestor);
     }
     // 
-    for(SNode classNode : implementorsAndAncestorsNodes) {
-      for(SNode sMethod : SLinkOperations.getTargets(classNode, "method", true)) {
+    for(SNode classNode : Sequence.fromIterable(implementorsAndAncestorsNodes)) {
+      for(SNode sMethod : Sequence.fromIterable(SLinkOperations.getTargets(classNode, "method", true))) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
           ListOperations.addElement(_results, sMethod);
         }

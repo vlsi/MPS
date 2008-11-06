@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -41,7 +42,7 @@ public class OverridingMethods_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    for(SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node), scope, indicator)) {
+    for(SNode classNode : Sequence.fromIterable(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
       Iterable<SNode> methodsOfSameKind;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
         methodsOfSameKind = SLinkOperations.getTargets(classNode, "method", true);
@@ -49,7 +50,7 @@ public class OverridingMethods_Finder extends GeneratedFinder {
       {
         methodsOfSameKind = SLinkOperations.getTargets(classNode, "staticMethod", true);
       }
-      for(SNode sMethod : methodsOfSameKind) {
+      for(SNode sMethod : Sequence.fromIterable(methodsOfSameKind)) {
         if (SPropertyOperations.getString(sMethod, "name").equals(SPropertyOperations.getString(node, "name")) && SLinkOperations.getCount(sMethod, "parameter") == SLinkOperations.getCount(node, "parameter")) {
           if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
             ListOperations.addElement(_results, sMethod);

@@ -39,7 +39,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="50" />
+  <maxImportIndex value="51" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
@@ -50,6 +50,7 @@
   <import index="13" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="32" modelUID="f:java_stub#jetbrains.mps.baseLanguage.constraints(jetbrains.mps.baseLanguage.constraints@java_stub)" version="-1" />
   <import index="50" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
+  <import index="51" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1212611479483">
     <property name="name" value="RemoveUnusedAssignment" />
     <link role="forConcept" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
@@ -2073,6 +2074,42 @@
               <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1225271316052" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1225271316053">
                 <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1225271316054">
+                  <link role="conceptDeclaration" targetNodeId="1.1197027756228" resolveInfo="DotExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1225995033549">
+    <property name="package" value="dotExpression" />
+    <link role="concept" targetNodeId="1.1197027803184" resolveInfo="IOperation" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1225995041051">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225995041052">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225997204974">
+          <property name="value" value=" an operation can only be 'operation' child in DotExpression" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225995061669">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1225996746136">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225997083191">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225997076358">
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link" id="1225997072528" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1225997078330">
+                  <link role="property" targetNodeId="51.1071599776563" resolveInfo="role" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple" id="1225997092895">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225997184954">
+                  <property name="value" value="operation" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225995064030">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1225995061670" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1225995066721">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1225996742588">
                   <link role="conceptDeclaration" targetNodeId="1.1197027756228" resolveInfo="DotExpression" />
                 </node>
               </node>

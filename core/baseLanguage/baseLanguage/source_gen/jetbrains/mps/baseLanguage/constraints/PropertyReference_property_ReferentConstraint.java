@@ -18,6 +18,7 @@ import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 
@@ -61,11 +62,11 @@ public class PropertyReference_property_ReferentConstraint implements IModelCons
     }
     List<SNode> resultProperties = ListSequence.<SNode>fromArray();
     List<SNode> classifiers = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(opClassifier))).getClassifierNodes();
-    for(SNode classifier : classifiers) {
+    for(SNode classifier : Sequence.fromIterable(classifiers)) {
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         SNode classConcept = classifier;
         List<SNode> properties = SLinkOperations.getTargets(classConcept, "property", true);
-        for(SNode property : properties) {
+        for(SNode property : Sequence.fromIterable(properties)) {
           if (VisibilityUtil.isVisible(_context.getEnclosingNode(), property)) {
             ListSequence.fromList(resultProperties).addElement(property);
           }
