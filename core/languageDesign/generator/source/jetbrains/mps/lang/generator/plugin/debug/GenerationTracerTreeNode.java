@@ -68,7 +68,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
         }
 
         protected void doUpdate(AnActionEvent e) {
-          boolean enabled = enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelUID());
+          boolean enabled = enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelReference());
           setEnabledState(e.getPresentation(), enabled);
         }
       });
@@ -80,7 +80,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
       }
 
       protected void doUpdate(AnActionEvent e) {
-        boolean enabled = enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelUID());
+        boolean enabled = enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelReference());
         setEnabledState(e.getPresentation(), enabled);
       }
     });
@@ -105,7 +105,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
         }
 
         protected void doUpdate(AnActionEvent e) {
-          boolean enabled = enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelUID());
+          boolean enabled = enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelReference());
           setEnabledState(e.getPresentation(), enabled);
         }
       });
@@ -117,7 +117,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
       }
 
       protected void doUpdate(AnActionEvent e) {
-        boolean enabled = enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelUID());
+        boolean enabled = enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelReference());
         setEnabledState(e.getPresentation(), enabled);
       }
     });
@@ -149,7 +149,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
       } else {
         setText(nodePointer.toString());
       }
-      setAdditionalText("" + nodePointer.getModelUID());
+      setAdditionalText("" + nodePointer.getModelReference().getSModelFqName());
       setNodeIdentifier("" + nodePointer.hashCode());
     } else {
       setText("<" + kind + ">");

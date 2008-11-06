@@ -60,7 +60,7 @@ public class SNodePointer {
     return SMODEL_REPOSITORY.getModelDescriptor(modelReference);
   }
 
-  public SModelReference getModelUID() {
+  public SModelReference getModelReference() {
     return getCurrentSModelReference(myModelReference, myTimestamp);
   }
 
