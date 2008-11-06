@@ -42,6 +42,22 @@
       <genConfLanguage name="baseLanguage" language="jetbrains.mps.baseLanguage" />
       <genConfSolution name="baseLanguage" solution="jetbrains.mps.baseLanguage" />
       <genConfLanguage name="baseLanguage" language="jetbrains.mps.baseLanguage" />
+      <genConfSolution name="baseLanguage" solution="jetbrains.mps.baseLanguage" />
+      <genConfLanguage name="baseLanguage" language="jetbrains.mps.baseLanguage" />
+      <genConfSolution name="baseLanguage" solution="jetbrains.mps.baseLanguage" />
+      <genConfLanguage name="baseLanguage" language="jetbrains.mps.baseLanguage" />
+      <genConfSolution name="baseLanguage" solution="jetbrains.mps.baseLanguage" />
+      <genConfLanguage name="baseLanguage" language="jetbrains.mps.baseLanguage" />
+      <genConfSolution name="baseLanguage" solution="jetbrains.mps.baseLanguage" />
+      <genConfLanguage name="baseLanguage" language="jetbrains.mps.baseLanguage" />
+      <genConfSolution name="baseLanguage" solution="jetbrains.mps.baseLanguage" />
+      <genConfLanguage name="baseLanguage" language="jetbrains.mps.baseLanguage" />
+      <genConfSolution name="baseLanguage" solution="jetbrains.mps.baseLanguage" />
+      <genConfLanguage name="baseLanguage" language="jetbrains.mps.baseLanguage" />
+      <genConfSolution name="baseLanguage" solution="jetbrains.mps.baseLanguage" />
+      <genConfLanguage name="baseLanguage" language="jetbrains.mps.baseLanguage" />
+      <genConfSolution name="baseLanguage" solution="jetbrains.mps.baseLanguage" />
+      <genConfLanguage name="baseLanguage" language="jetbrains.mps.baseLanguage" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
