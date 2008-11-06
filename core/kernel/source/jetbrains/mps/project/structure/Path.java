@@ -1,4 +1,4 @@
-package jetbrains.mps.project.newpl;
+package jetbrains.mps.project.structure;
 
 public class Path implements Comparable {
   private String myPath;

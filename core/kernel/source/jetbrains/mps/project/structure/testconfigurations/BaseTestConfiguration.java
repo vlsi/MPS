@@ -1,4 +1,4 @@
-package jetbrains.mps.project.newpl.testconfigurations;
+package jetbrains.mps.project.structure.testconfigurations;
 
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.project.MPSProject;

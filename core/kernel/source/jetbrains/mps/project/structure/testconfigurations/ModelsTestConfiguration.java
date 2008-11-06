@@ -1,10 +1,10 @@
-package jetbrains.mps.project.newpl.testconfigurations;
+package jetbrains.mps.project.structure.testconfigurations;
 
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.newpl.Model;
+import jetbrains.mps.project.structure.Model;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;

@@ -1,4 +1,4 @@
-package jetbrains.mps.project.newpl.testconfigurations;
+package jetbrains.mps.project.structure.testconfigurations;
 
 public class GeneratorConfigurationException extends RuntimeException {
   public GeneratorConfigurationException(String message) {

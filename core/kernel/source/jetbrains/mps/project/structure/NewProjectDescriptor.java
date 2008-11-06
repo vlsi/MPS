@@ -1,9 +1,9 @@
-package jetbrains.mps.project.newpl;
+package jetbrains.mps.project.structure;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.newpl.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.project.newpl.testconfigurations.ModelsTestConfiguration;
-import jetbrains.mps.project.newpl.testconfigurations.ModuleTestConfiguration;
+import jetbrains.mps.project.structure.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.project.structure.testconfigurations.ModelsTestConfiguration;
+import jetbrains.mps.project.structure.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.Macros;
 import org.jdom.Document;

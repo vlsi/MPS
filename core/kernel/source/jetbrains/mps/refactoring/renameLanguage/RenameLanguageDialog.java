@@ -11,7 +11,7 @@ import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.newpl.testconfigurations.ModuleTestConfiguration;
+import jetbrains.mps.project.structure.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
