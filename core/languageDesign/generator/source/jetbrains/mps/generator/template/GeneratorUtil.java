@@ -636,6 +636,7 @@ public class GeneratorUtil {
   }
 
   /*package*/
+  @Nullable
   static List<SNode> applyReductionRule(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException, GenerationFailueException, GenerationCanceledException {
     generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
     try {
@@ -647,6 +648,7 @@ public class GeneratorUtil {
     }
   }
 
+  @Nullable
   private static List<SNode> applyReductionRule_internal(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator)
     throws DismissTopMappingRuleException,
     AbandonRuleInputException,

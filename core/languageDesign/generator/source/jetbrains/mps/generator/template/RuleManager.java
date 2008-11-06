@@ -16,6 +16,8 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jetbrains.annotations.Nullable;
+
 public class RuleManager {
   private static final Logger LOG = Logger.getLogger(RuleManager.class);
 
@@ -147,7 +149,11 @@ public class RuleManager {
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushOutputNode(clonedOutputNode);
   }
 
-  /*package*/ List<SNode> tryToReduce(SNode inputNode, String mappingName) throws GenerationFailueException, GenerationCanceledException {
+  /**
+   * @return null if no reductions found
+   */
+  @Nullable
+  /*package*/List<SNode> tryToReduce(SNode inputNode, String mappingName) throws GenerationFailueException, GenerationCanceledException {
     boolean needStopReductionBlocking = false;
     boolean wasChanged = myGenerator.isChanged();
     try {
@@ -157,7 +163,7 @@ public class RuleManager {
         needStopReductionBlocking = startReductionBlockingForInput(inputNode);
 
         List<SNode> outputNodes = GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
-        if (outputNodes.size() == 1) {
+        if (outputNodes != null && outputNodes.size() == 1) {
           // register copied node
           myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNodes.get(0));
           // output node should be accessible via 'findCopiedNode'
