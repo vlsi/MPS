@@ -39,4 +39,12 @@ public class ApplicationsTest extends BaseMPSTest {
   public void testIDESolution() {
     assertGenerates(new File("workbench/ideSolution/ide.mpr"));
   }
+
+  public void testTestLanguage() {
+    assertGenerates(new File("core/languageDesign/test/test.mpr"));
+  }
+
+  public void testMatrixLanguage() {
+    assertGenerates(new File("samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"));
+  }
 }
