@@ -143,29 +143,7 @@ public class StructuralNodeSet<T> implements Set<SNode> {
 
     private SNodeWrapper(SNode node) {
       myNode = node;
-
-      StringBuilder result = new StringBuilder();
-      toString(result, node);
-      myHashCode = result.toString().hashCode();
-    }
-
-    private void toString(StringBuilder result, SNode node) {
-      result.append(node.getConceptFqName());
-      result.append("(");
-
-      Set<String> roles = new TreeSet<String>(node.getChildRoles(true));
-      for (String role : roles) {
-        for (SNode child : node.getChildren(role)) {
-          toString(result, child);
-          result.append(";");
-        }
-      }
-
-      for (SReference ref : node.getReferences()) {
-        result.append(ref.getTargetNodeId());
-      }
-
-      result.append(")");
+      myHashCode = StructuralCollectionUtil.hashCode(myNode);
     }
 
     @Override
