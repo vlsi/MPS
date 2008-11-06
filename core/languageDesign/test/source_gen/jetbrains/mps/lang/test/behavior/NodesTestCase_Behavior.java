@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -26,10 +27,10 @@ public class NodesTestCase_Behavior {
 
   public static List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode method : SLinkOperations.getTargets(thisNode, "testMethods", true)) {
+    for(SNode method : Sequence.fromIterable(SLinkOperations.getTargets(thisNode, "testMethods", true))) {
       ListSequence.fromList(result).addElement(method);
     }
-    for(SNode operation : SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false)) {
+    for(SNode operation : Sequence.fromIterable(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false))) {
       ListSequence.fromList(result).addElement(operation);
     }
     return result;

@@ -28,7 +28,6 @@
       <languagePath path="${project}\languages\matrixLanguage\matrixLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs />
   </component>
   <component name="ProjectDetails">

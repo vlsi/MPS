@@ -10,7 +10,7 @@ import jetbrains.mps.samples.matrixLanguage.runtime.DoubleFieldOperations;
 import jetbrains.mps.samples.matrixLanguage.runtime.MatrixIterator;
 
 public class MatrixTest_Test extends TestCase {
-  public static double EPSILON = 0.00001;
+  private static double EPSILON = 0.00001;
 
   @Test()
   public void test_matixCreation() throws Exception {

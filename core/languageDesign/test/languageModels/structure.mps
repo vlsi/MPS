@@ -387,9 +387,8 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1216913689992">
     <property name="name" value="NodesTestMethod" />
     <link role="extends" targetNodeId="7.1068580123132" resolveInfo="BaseMethodDeclaration" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1216989116695">
-      <property name="value" value="test method" />
-      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1225977872469">
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473854053" resolveInfo="abstract" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1216913708620">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
@@ -438,6 +437,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225467090849">
     <property name="name" value="ProjectExpression" />
+    <property name="package" value="expression" />
     <link role="extends" targetNodeId="7.1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225467858469">
       <property name="value" value="project" />
@@ -446,9 +446,41 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225469856668">
     <property name="name" value="ModelExpression" />
+    <property name="package" value="expression" />
     <link role="extends" targetNodeId="7.1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225469878420">
       <property name="value" value="model" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225977061701">
+    <property name="name" value="EditorTestMethod" />
+    <link role="extends" targetNodeId="1216913689992" resolveInfo="NodesTestMethod" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225981599433">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="nodeToEdit" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="7.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225977092860">
+      <property name="value" value="editor test" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225978065297">
+    <property name="name" value="SimpleNodeTest" />
+    <link role="extends" targetNodeId="1216913689992" resolveInfo="NodesTestMethod" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225978439707">
+      <property name="value" value="test method" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225983109083">
+    <property name="package" value="expression" />
+    <property name="name" value="EditorExpression" />
+    <link role="extends" targetNodeId="7.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1225983136898">
+      <property name="value" value="editor" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>

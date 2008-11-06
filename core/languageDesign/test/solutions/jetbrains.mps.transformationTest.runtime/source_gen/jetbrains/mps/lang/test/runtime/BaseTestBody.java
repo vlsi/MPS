@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class BaseTestBody {
 
@@ -35,34 +33,12 @@ public class BaseTestBody {
     BaseTestBody.this.myCopyes.add(copy);
   }
 
-  public SNode getNodeById(final String id) {
-    final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-
-      public void run() {
-        node.value = BaseTestBody.this.myMap.get(BaseTestBody.this.myModel.getSModel().getNodeById(id));
-      }
-
-    });
-    return node.value;
+  public SNode getNodeById(String id) {
+    return this.myMap.get(this.myModel.getSModel().getNodeById(id));
   }
 
-  public SNode getRealNodeById(final String id) {
-    final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-
-      public void run() {
-        node.value = BaseTestBody.this.myModel.getSModel().getNodeById(id);
-      }
-
-    });
-    return node.value;
-  }
-
-  public void tearDown() throws Exception {
-    for(SNode copy : Sequence.fromIterable(this.myCopyes)) {
-      this.myModel.getSModel().removeRoot(copy);
-    }
+  public SNode getRealNodeById(String id) {
+    return this.myModel.getSModel().getNodeById(id);
   }
 
 }

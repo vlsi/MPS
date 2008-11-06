@@ -14,6 +14,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -21,15 +22,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1210006619050(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new QuotationClass_1().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new QuotationClass_0().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new _Quotations.QuotationClass_1().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new _Quotations.QuotationClass_0().createNode());
   }
 
   public static boolean baseMappingRule_Condition_1210007827934(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new QuotationClass_3().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new QuotationClass_2().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new _Quotations.QuotationClass_3().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new _Quotations.QuotationClass_2().createNode());
   }
 
   public static boolean baseMappingRule_Condition_1210008136766(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new QuotationClass_5().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new QuotationClass_4().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), new _Quotations.QuotationClass_5().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), new _Quotations.QuotationClass_4().createNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1210184675751(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -199,7 +200,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1210160088643(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> possibleScalarTypes = new ArrayList<SNode>();
-    for(SNode root : SModelOperations.getRoots(_context.getInputModel(), null)) {
+    for(SNode root : Sequence.fromIterable(SModelOperations.getRoots(_context.getInputModel(), null))) {
       for(SNode t : SNodeOperations.getDescendants(root, "jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral", false)) {
         ListSequence.fromList(possibleScalarTypes).addElement(SLinkOperations.getTarget(t, "scalarType", true));
       }

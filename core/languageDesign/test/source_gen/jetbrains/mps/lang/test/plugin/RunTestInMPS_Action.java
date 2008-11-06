@@ -16,6 +16,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
@@ -87,7 +88,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
     try {
       final Set<SNode> tests = new HashSet<SNode>();
       tests.addAll(ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(RunTestInMPS_Action.this.node)).toListSequence());
-      for(SNode test : tests) {
+      for(SNode test : Sequence.fromIterable(tests)) {
         RunTestInMPS_Action.this.runTest(test);
       }
     } catch (Throwable t) {
