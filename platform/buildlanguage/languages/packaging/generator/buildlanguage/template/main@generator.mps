@@ -2960,6 +2960,23 @@
                 </node>
               </node>
             </node>
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1225993322930">
+              <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1225993322931">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225993322932">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225993352225">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225993360887">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225993352439">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1225993352226" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225993358906">
+                          <link role="link" targetNodeId="1.1205340441197" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1225993364525" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

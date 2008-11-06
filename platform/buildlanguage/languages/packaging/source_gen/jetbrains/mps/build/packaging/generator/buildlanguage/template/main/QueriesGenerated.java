@@ -470,6 +470,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "compile");
   }
 
+  public static boolean ifMacro_Condition_1225993322931(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "title", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1219156054317(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "left", true);
   }

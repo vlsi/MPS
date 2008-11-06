@@ -53,7 +53,7 @@ import java.util.Collection;
 import java.util.ArrayList;
 
 public abstract class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
-  private final Logger LOG = Logger.getLogger(FileViewProjectPane.class);
+  private static final Logger LOG = Logger.getLogger(FileViewProjectPane.class);
   private ChangeListListener myChangeListListener;
   private final MessageBus myBus;
   private MessageBusConnection myMessageBusConnection;
