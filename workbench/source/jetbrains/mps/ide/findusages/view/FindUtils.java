@@ -31,9 +31,10 @@ public class FindUtils {
       public void run() {
         SearchResults result = new SearchResults();
         for (SNode node : nodes) {
+          if (indicator!=null && indicator.isCanceled()) break;
           SearchResults singleRes = makeProvider(finders).getResults(new SearchQuery(node, scope), indicator);
           result.getSearchedNodes().addAll(singleRes.getSearchedNodes());
-          result.getSearchResults().addAll(singleRes.getSearchedNodes());
+          result.getSearchResults().addAll(singleRes.getSearchResults());
           result.removeDuplicates();
         }
         results[0] = result;

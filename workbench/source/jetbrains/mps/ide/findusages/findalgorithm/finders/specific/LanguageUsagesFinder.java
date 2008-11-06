@@ -12,16 +12,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 
-import java.util.Arrays;
-import java.util.List;
-
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 05.05.2008
- * Time: 13:35:27
- * To change this template use File | Settings | File Templates.
- */
 public class LanguageUsagesFinder extends BaseFinder {
   private static final String USED_BY = "used by";
   private static final String DEPENDENT_MODULES = "dependent modules";
