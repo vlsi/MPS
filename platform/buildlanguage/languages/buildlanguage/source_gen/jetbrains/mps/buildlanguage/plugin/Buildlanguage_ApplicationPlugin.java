@@ -12,6 +12,7 @@ public class Buildlanguage_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = new ArrayList<BaseGroup>();
     groups.add(new ProjectPaneLanguageAddition_ActionGroup());
+    groups.add(new ProjectPaneNodeAddition_ActionGroup());
     return groups;
   }
 

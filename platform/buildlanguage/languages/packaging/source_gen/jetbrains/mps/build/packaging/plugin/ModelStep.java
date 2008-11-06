@@ -13,6 +13,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
 
@@ -79,7 +80,7 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
               if (modelFile == null) {
                 return false;
               }
-              for(SModelRoot root : solution.getSModelRoots()) {
+              for(SModelRoot root : Sequence.fromIterable(solution.getSModelRoots())) {
                 if (modelFile.getAbsolutePath().startsWith(root.getPath())) {
                   return true;
                 }
