@@ -6084,6 +6084,28 @@
       </node>
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1205368275944">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205368275945">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1226005844205">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1226004450717">
+              <property name="value" value="test" />
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226004471407">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226004635533">
+                <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1226004471408" />
+                <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage" id="1226004639677">
+                  <node role="messageText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226004655758">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226004658325">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1226004658199" />
+                      <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1226004659937" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226004642351">
+                      <property name="value" value="TEST!!! type:" />
+                    </node>
+                  </node>
+                  <node role="referenceNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1226004664438" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205368275946">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205432007721">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205432002671">

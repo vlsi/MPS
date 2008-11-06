@@ -152,6 +152,10 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1205368275944(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    /*
+      // test
+      _context.showInformationMessage(_context.getNode(), "TEST!!! type:" + TypeChecker.getInstance().getTypeOf(_context.getNode()));
+    */
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.lang.smodel.structure._LinkAccessT");
   }
 

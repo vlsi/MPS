@@ -16,7 +16,7 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="true" testAllLanguages="false">
+  <component name="MPSProject" auto-import-from-idea="true">
     <projectSolutions>
       <solutionPath path="${project}\solutions\samples\smodelLanguage-samples.msd" />
       <solutionPath path="${project}\solutions\sandbox\sandbox.msd" />
@@ -30,7 +30,7 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfSolution name="smodel language" solution="jetbrains.mps.lang.smodel" />
+      <genConfModule name="smodel language" moduleUID="jetbrains.mps.lang.smodel" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
