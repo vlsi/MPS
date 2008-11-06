@@ -18,6 +18,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.text.Collator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.closures.util.Constants;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import java.util.Comparator;
 
@@ -120,6 +121,13 @@ public class FunctionTypeUtil {
     );
     if ((lFType == null) && (lCType == null)) {
       return;
+    }
+    if (Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE) {
+      //  TEMP HACK: proceed only if the "right" expression is a ClosureLiteral, balk otherwise
+      //  This may cause unexpected results, so please disable in case of difficulties generating some code
+      if (!(SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"))) {
+        return;
+      }
     }
     SNode rtype = TypeChecker.getInstance().getTypeOf(rexpr);
     SNode rFType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") ?

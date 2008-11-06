@@ -4296,6 +4296,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201177809952" />
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
+  <visible index="3" modelUID="r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1201646588418">
     <property name="name" value="FunctionTypeUtil" />
     <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1201646675180">
@@ -5274,6 +5275,37 @@
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="1216738966325" />
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225980035078">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225980035079">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225979428162">
+              <property name="value" value=" TEMP HACK: proceed only if the &quot;right&quot; expression is a ClosureLiteral, balk otherwise" />
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225979488912">
+              <property name="value" value=" This may cause unexpected results, so please disable in case of difficulties generating some code" />
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225979408764">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225979408765">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225979425697" />
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1225979412011">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225979416779">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225979416003">
+                    <link role="variableDeclaration" targetNodeId="1215470040223" resolveInfo="rexpr" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1225979418310">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1225979423588">
+                      <link role="conceptDeclaration" targetNodeId="20.1199569711397" resolveInfo="ClosureLiteral" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1225980040093">
+            <link role="classifier" targetNodeId="3v.1225980323340" resolveInfo="Constants" />
+            <link role="variableDeclaration" targetNodeId="3v.1225980328125" resolveInfo="ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216737430028">

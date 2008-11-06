@@ -4,6 +4,7 @@ package jetbrains.mps.closures.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
+import jetbrains.mps.baseLanguage.closures.util.Constants;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
 import java.util.Iterator;
@@ -26,9 +27,13 @@ public class ClassifierAdapters_Test extends TestCase {
       }
 
     };
-    _FunctionTypes._return_P1_E0<? extends String, ? super Integer> ft = new _Adapters.Worker_to__return_P1_E0_adapter(wrk);
-    int res = 1234;
-    Assert.assertEquals("Done: 1234", ft.invoke(res));
+    if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
+      /*
+        _FunctionTypes._return_P1_E0<? extends String, ? super Integer> ft = wrk;
+        int res = 1234;
+        Assert.assertEquals("Done: 1234", ft.invoke(res));
+      */
+    }
   }
 
   @Test()
@@ -40,8 +45,12 @@ public class ClassifierAdapters_Test extends TestCase {
       }
 
     };
-    Worker wrk = new _Adapters._return_P1_E0_to_Worker_adapter(cls);
-    Assert.assertEquals("Done: 4321", wrk.doWork(4321));
+    if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
+      /*
+        Worker wrk = cls;
+        Assert.assertEquals("Done: 4321", wrk.doWork(4321));
+      */
+    }
   }
 
   @Test()

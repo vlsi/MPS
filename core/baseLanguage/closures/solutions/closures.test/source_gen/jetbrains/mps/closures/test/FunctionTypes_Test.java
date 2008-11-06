@@ -5,6 +5,7 @@ package jetbrains.mps.closures.test;
 import junit.framework.TestCase;
 import org.junit.Test;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.closures.util.Constants;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
@@ -83,7 +84,11 @@ public class FunctionTypes_Test extends TestCase {
       }
 
     };
-    throwsOne = new _Adapters._void_P0_E2_to__void_P0_E1_adapter(throwsTwo);
+    if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
+      /*
+        throwsOne = throwsTwo;
+      */
+    }
   }
 
   @Test()
@@ -216,7 +221,11 @@ __switch__:
       }
 
     };
-    throwsOne = new _Adapters._return_P0_E3_to__return_P0_E1_adapter(throwsThree);
+    if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
+      /*
+        throwsOne = throwsThree;
+      */
+    }
   }
 
   @Test()
