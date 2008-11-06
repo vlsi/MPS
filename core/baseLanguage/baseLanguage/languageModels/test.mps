@@ -44,7 +44,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="34" />
+  <maxImportIndex value="35" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -69,6 +69,7 @@
   <import index="32" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="33" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="34" modelUID="f:java_stub#jetbrains.mps.lang.test.matcher(jetbrains.mps.lang.test.matcher@java_stub)" version="-1" />
+  <import index="35" modelUID="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215441101658">
     <property name="name" value="SandboxConcept" />
     <property name="package" value="inlineMethod" />
@@ -13718,113 +13719,17 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1225531941556">
-    <property name="name" value="editorTest" />
+    <property name="name" value="intentionTest" />
+    <property name="package" value="editor" />
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.EditorTestMethod" id="1225980167510">
       <property name="name" value="editorTest" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225980167511" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225980167512">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225980261254">
-          <property name="value" value=" Get intention" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225987901708">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225987901709">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225987901710">
-              <link role="baseMethodDeclaration" targetNodeId="31.~IEditor.selectNode(jetbrains.mps.smodel.SNode):void" resolveInfo="selectNode" />
-              <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1225987901711">
-                <link role="declaration" targetNodeId="1225531941622" resolveInfo="nodeBefore" />
-              </node>
-            </node>
-            <node role="operand" type="jetbrains.mps.lang.test.structure.EditorExpression" id="1225987901712" />
+        <node role="statement" type="jetbrains.mps.lang.test.structure.InvokeIntentionStatement" id="1225991023116">
+          <link role="intention" targetNodeId="35.1223648378225" resolveInfo="DeprecatedJavaDoc" />
+          <node role="parameter" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1225991023117">
+            <link role="declaration" targetNodeId="1225531941622" resolveInfo="nodeBefore" />
           </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225980261255">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225980261256">
-            <property name="name" value="availableIntentions" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225980261257">
-              <link role="classifier" targetNodeId="4.~Set" resolveInfo="Set" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225980261258">
-                <link role="classifier" targetNodeId="29.~Intention" resolveInfo="Intention" />
-              </node>
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225980261259">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225980261260">
-                <link role="baseMethodDeclaration" targetNodeId="29.~IntentionsManager.getInstance():jetbrains.mps.intentions.IntentionsManager" resolveInfo="getInstance" />
-                <link role="classConcept" targetNodeId="29.~IntentionsManager" resolveInfo="IntentionsManager" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225980261261">
-                <link role="baseMethodDeclaration" targetNodeId="29.~IntentionsManager.getAvailableIntentionsForExactNode(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,boolean):java.util.Set" resolveInfo="getAvailableIntentionsForExactNode" />
-                <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1225980261262">
-                  <link role="declaration" targetNodeId="1225531941622" resolveInfo="nodeBefore" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225980261263">
-                  <node role="operand" type="jetbrains.mps.lang.test.structure.EditorExpression" id="1225985325515" />
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225980261265">
-                    <link role="baseMethodDeclaration" targetNodeId="31.~IEditor.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolveInfo="getEditorContext" />
-                  </node>
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1225980261266">
-                  <property name="value" value="false" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1225980261272">
-          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1225980261273">
-            <property name="name" value="intention" />
-          </node>
-          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225980261274">
-            <link role="variableDeclaration" targetNodeId="1225980261256" resolveInfo="availableIntentions" />
-          </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225980261275">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225980261276">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225980261277">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225980261278">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225980261279">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1225980261280">
-                      <link role="variable" targetNodeId="1225980261273" resolveInfo="intention" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225980261281">
-                      <link role="baseMethodDeclaration" targetNodeId="29.~Intention.execute(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext):void" resolveInfo="execute" />
-                      <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1225980261282">
-                        <link role="declaration" targetNodeId="1225531941622" resolveInfo="nodeBefore" />
-                      </node>
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225980261283">
-                        <node role="operand" type="jetbrains.mps.lang.test.structure.EditorExpression" id="1225985302228" />
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225980261285">
-                          <link role="baseMethodDeclaration" targetNodeId="31.~IEditor.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolveInfo="getEditorContext" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225980261286">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225980261287">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225980261288">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1225980261289">
-                      <link role="variable" targetNodeId="1225980261273" resolveInfo="intention" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225980261290">
-                      <link role="baseMethodDeclaration" targetNodeId="5.~Object.getClass():java.lang.Class" resolveInfo="getClass" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225980261291">
-                    <link role="baseMethodDeclaration" targetNodeId="5.~Class.getCanonicalName():java.lang.String" resolveInfo="getCanonicalName" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225980261292">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225980261293">
-                    <property name="value" value="jetbrains.mps.baseLanguage.intentions.DeprecatedJavaDoc_Intention" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225980261294">
-          <property name="value" value=" Compare nodes" />
         </node>
         <node role="statement" type="jetbrains.mps.lang.test.structure.AssertMatch" id="1225980261315">
           <node role="before" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1225980261316">
