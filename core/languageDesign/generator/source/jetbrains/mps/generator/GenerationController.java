@@ -320,6 +320,8 @@ public class GenerationController {
   }
 
   private void reloadClasses(long totalJob, long startJobTime) {
+    long start = System.currentTimeMillis();
+
     info("");
     String info = "reloading MPS classes...";
     info(info);
@@ -330,6 +332,8 @@ public class GenerationController {
     ClassLoaderManager.getInstance().reloadAll(myProgress);
     taskProgressHelper.finishTask();
     setText2("", totalJob, startJobTime);
+
+    info("Reloaded in " + (System.currentTimeMillis() - start) + " ms");
   }
 
   private boolean isIDEAPresent() {
