@@ -100,6 +100,7 @@ public class GenerationController {
       if (generationOK) {
         fireBeforeModelsCompiled(generationOK);
         boolean compiledSuccessfully = true;
+        long compilationStart = System.currentTimeMillis();
         boolean needToReload = false;
         for (Pair<IModule, List<SModelDescriptor>> moduleListPair : myModuleSequence) {
           IModule module = moduleListPair.o1;
@@ -117,6 +118,8 @@ public class GenerationController {
         }
 
         generationOK = generationOK && compiledSuccessfully;
+
+        info("Compilation finished in " + (System.currentTimeMillis() - compilationStart) + " ms");
 
         fireAfterModelsCompiled(generationOK);
       }
