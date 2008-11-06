@@ -7922,6 +7922,10 @@
       <property name="name" value="project" />
       <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1225990064405">
+      <property name="modifiers" value="alt" />
+      <property name="keycode" value="VK_ENTER" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1222862438774">
     <property name="package" value="Menu.MainMenu.HelpActions" />

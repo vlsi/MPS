@@ -26,7 +26,7 @@ public class MPSProjectPaths_Action extends GeneratedAction {
 
   @NotNull()
   public String getKeyStroke() {
-    return "";
+    return "alt ENTER";
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
