@@ -8,6 +8,7 @@ import java.io.File;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.EqualUtil;
@@ -39,7 +40,7 @@ public class AbstractProjectComponent_Behavior {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).isEmpty()) {
       return true;
     }
-    for(SNode ref : SLinkOperations.getTargets(thisNode, "configuration", true)) {
+    for(SNode ref : Sequence.fromIterable(SLinkOperations.getTargets(thisNode, "configuration", true))) {
       if (SLinkOperations.getTarget(ref, "configuration", false) == config) {
         return true;
       }

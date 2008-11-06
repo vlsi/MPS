@@ -5,6 +5,7 @@ package jetbrains.mps.build.packaging.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CompositePathComponent_Behavior {
@@ -17,7 +18,7 @@ public class CompositePathComponent_Behavior {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "path", true)).count() == 0) {
       return path;
     }
-    for(SNode p : SLinkOperations.getTargets(thisNode, "path", true)) {
+    for(SNode p : Sequence.fromIterable(SLinkOperations.getTargets(thisNode, "path", true))) {
       path += SPropertyOperations.getString(p, "path") + "/";
     }
     return path.substring(0, path.length() - 1);

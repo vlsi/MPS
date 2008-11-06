@@ -22,4 +22,11 @@ public class PathHolder_Behavior {
     return SPropertyOperations.getString(thisNode, "fullPath");
   }
 
+  public static boolean call_equals_1225982685171(SNode thisNode, SNode pathHolder) {
+    if (pathHolder == null) {
+      return false;
+    }
+    return PathHolder_Behavior.call_getValue_1219231432401(thisNode).equals(PathHolder_Behavior.call_getValue_1219231432401(pathHolder));
+  }
+
 }

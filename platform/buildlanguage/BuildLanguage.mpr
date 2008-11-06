@@ -30,12 +30,11 @@
       <languagePath path="${project}\languages\dependency\dependency.mpl" folder="package" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
-      <genConfLanguage name="generate packaging language" language="jetbrains.mps.build.packaging" />
-      <genConfLanguage name="generate dependency language" language="jetbrains.mps.build.dependency" />
-      <genConfLanguage name="generate property language" language="jetbrains.mps.build.property" />
-      <genConfLanguage name="generate buildLanguage" language="jetbrains.mps.buildlanguage" />
+      <genConfModule name="generate packaging language" moduleUID="jetbrains.mps.build.packaging" />
+      <genConfModule name="generate dependency language" moduleUID="jetbrains.mps.build.dependency" />
+      <genConfModule name="generate property language" moduleUID="jetbrains.mps.build.property" />
+      <genConfModule name="generate buildLanguage" moduleUID="jetbrains.mps.buildlanguage" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

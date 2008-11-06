@@ -26,6 +26,7 @@ import jetbrains.mps.build.packaging.behavior.ModuleUtil;
 import jetbrains.mps.build.packaging.behavior.CompositePathComponent_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -36,7 +37,6 @@ import java.util.ArrayList;
 import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.Map;
@@ -363,7 +363,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1220983242941(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> macros = SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "macro", true);
-    for(SNode m : macros) {
+    for(SNode m : Sequence.fromIterable(macros)) {
       if (SPropertyOperations.getString(m, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name"))) {
         return _context.getOutputNodeByInputNodeAndMappingLabel(m, "MacroToPropertyDeclaration");
       }
@@ -450,7 +450,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1220361608323(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> references = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, false), "jetbrains.mps.build.packaging.structure.VariableReference", false);
-    for(SNode ref : references) {
+    for(SNode ref : Sequence.fromIterable(references)) {
       if (SLinkOperations.getTarget(ref, "variable", false) == _context.getNode()) {
         return true;
       }
@@ -557,7 +557,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1210779121082(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> antcalls = SNodeOperations.getDescendants(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "jetbrains.mps.build.packaging.structure.Antcall", false);
     List<SNode> projects = new ArrayList<SNode>();
-    for(SNode call : antcalls) {
+    for(SNode call : Sequence.fromIterable(antcalls)) {
       if ((SLinkOperations.getTarget(call, "project", false) == null)) {
         _context.showErrorMessage(call, "Null project reference!");
         continue;
@@ -616,9 +616,9 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1220362753899(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> replaces = SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.packaging.structure.Replace", false);
     Set<SNode> vars = new HashSet<SNode>();
-    for(SNode replace : replaces) {
+    for(SNode replace : Sequence.fromIterable(replaces)) {
       List<SNode> variableReferences = SNodeOperations.getDescendants(replace, "jetbrains.mps.build.packaging.structure.VariableReference", false);
-      for(SNode ref : variableReferences) {
+      for(SNode ref : Sequence.fromIterable(variableReferences)) {
         if (!(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "builtInVariable", true)).contains(SLinkOperations.getTarget(ref, "variable", false)))) {
           vars.add(SLinkOperations.getTarget(ref, "variable", false));
         }
@@ -638,14 +638,14 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_1217435006860(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout");
-    for(SNode layout : layouts) {
+    for(SNode layout : Sequence.fromIterable(layouts)) {
       if (!(SPropertyOperations.getBoolean(layout, "compile"))) {
         continue;
       }
       List<SNode> modules = SNodeOperations.getDescendants(layout, "jetbrains.mps.build.packaging.structure.Module", false);
       Map<IModule, List<SNode>> map = MapSequence.fromMap(new HashMap<IModule, List<SNode>>());
       // fill map
-      for(SNode module : modules) {
+      for(SNode module : Sequence.fromIterable(modules)) {
         IModule imodule = Module_Behavior.call_getModule_1213877515148(module);
         if ((imodule instanceof DevKit) || (!(imodule.isCompileInMPS()))) {
           continue;
@@ -660,12 +660,12 @@ public class QueriesGenerated {
       // calculate module cycles
       List<Set<IModule>> sm = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(MapSequence.fromMap(map).keySet());
       // say to all modules it's cycle
-      for(Set<IModule> moduleSet : sm) {
+      for(Set<IModule> moduleSet : Sequence.fromIterable(sm)) {
         SNode cycle = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycle", null);
         SLinkOperations.addChild(layout, "cycle", cycle);
-        for(IModule imodule : moduleSet) {
+        for(IModule imodule : Sequence.fromIterable(moduleSet)) {
           List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
-          for(SNode module : modulesForIModule) {
+          for(SNode module : Sequence.fromIterable(modulesForIModule)) {
             SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.NewModuleReference", null);
             SLinkOperations.setTarget(ref, "module", module, false);
             SLinkOperations.addChild(cycle, "moduleReference", ref);
@@ -677,13 +677,33 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_1219229087938(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout");
-    for(SNode layout : layouts) {
+    for(SNode layout : Sequence.fromIterable(layouts)) {
       List<String> allMAcroNames = MPSLayout_Behavior.call_getAllMacroNames_1220980057360(layout);
-      for(String macroName : allMAcroNames) {
+      for(String macroName : Sequence.fromIterable(allMAcroNames)) {
         SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
         SPropertyOperations.set(macro, "name", macroName);
         SPropertyOperations.set(macro, "path", MPSLayout_Behavior.call_evaluateMacro_1220980091008(layout, macroName).replace("\\", Util.SEPARATOR));
         SLinkOperations.addChild(layout, "macro", macro);
+      }
+    }
+  }
+
+  public static void mappingScript_CodeBlock_1225982372767(final IOperationContext operationContext, final MappingScriptContext _context) {
+    List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout");
+    for(SNode layout : Sequence.fromIterable(layouts)) {
+      List<SNode> modules = SNodeOperations.getDescendants(layout, "jetbrains.mps.build.packaging.structure.Module", false);
+      for(SNode module : Sequence.fromIterable(modules)) {
+        List<SNode> classPath = Module_Behavior.call_getClassPath_1213877515083(module);
+        List<SNode> runtimeClassPath = Module_Behavior.call_getRuntimeClassPath_1213877515098(module);
+        for(SNode runtimeCpItem : Sequence.fromIterable(runtimeClassPath)) {
+          for(SNode cp : Sequence.fromIterable(classPath)) {
+            if (PathHolder_Behavior.call_equals_1225982685171(runtimeCpItem, cp)) {
+              String warningMessage = "Runtime class path item " + PathHolder_Behavior.call_getValue_1219231432401(runtimeCpItem) + " of module " + SPropertyOperations.getString(module, "name") + " is also listed in it's classpath, which can lead to bugs in build.";
+              System.out.println(warningMessage);
+              _context.showWarningMessage(null, warningMessage);
+            }
+          }
+        }
       }
     }
   }

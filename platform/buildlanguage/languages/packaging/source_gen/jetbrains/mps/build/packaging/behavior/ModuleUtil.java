@@ -4,6 +4,7 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -31,7 +32,7 @@ public class ModuleUtil {
   }
 
   public static void findMacro(SNode pathHolder, List<SNode> macro) {
-    for(SNode m : macro) {
+    for(SNode m : Sequence.fromIterable(macro)) {
       if (SPropertyOperations.getString(pathHolder, "fullPath").startsWith(SPropertyOperations.getString(m, "path"))) {
         SLinkOperations.setTarget(pathHolder, "macro", m, false);
         SPropertyOperations.set(pathHolder, "fullPath", getRelativePath(SPropertyOperations.getString(pathHolder, "fullPath"), SPropertyOperations.getString(m, "path")));
@@ -44,7 +45,7 @@ public class ModuleUtil {
     List<String> result = ListSequence.<String>fromArray();
     if (cpitem instanceof CompositeClassPathItem) {
       List<IClassPathItem> flattenedClassPath = cpitem.flatten();
-      for(IClassPathItem item : flattenedClassPath) {
+      for(IClassPathItem item : Sequence.fromIterable(flattenedClassPath)) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(retrieveClassPath(item)));
       }
     } else

@@ -5128,6 +5128,55 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219770848850" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1225982685171">
+      <property name="name" value="equals" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1225982688026" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225982685173">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225982715747">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1225982719209">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225982720940" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225982717837">
+              <link role="variableDeclaration" targetNodeId="1225982697668" resolveInfo="pathHolder" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225982715749">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225982757059">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1225982758987">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225982793284">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225982811422">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225982808119">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1225982807043" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225982810088">
+                <link role="baseMethodDeclaration" targetNodeId="1219231432401" resolveInfo="getValue" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225982814226">
+              <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225982816905">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225982815921">
+                  <link role="variableDeclaration" targetNodeId="1225982697668" resolveInfo="pathHolder" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225982819631">
+                  <link role="baseMethodDeclaration" targetNodeId="1219231432401" resolveInfo="getValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225982697668">
+        <property name="name" value="pathHolder" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1225982697669">
+          <link role="concept" targetNodeId="1.1204737220833" resolveInfo="PathHolder" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225982711692" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1219231429107">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219231429108" />
     </node>

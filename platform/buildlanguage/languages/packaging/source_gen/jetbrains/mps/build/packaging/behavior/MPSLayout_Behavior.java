@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.PathManager;
 import java.io.File;
@@ -16,7 +17,6 @@ import java.util.Set;
 import com.intellij.openapi.application.PathMacros;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MPSLayout_Behavior {
 
@@ -30,7 +30,7 @@ public class MPSLayout_Behavior {
     MapSequence.fromMap(vars).put(":", "path.separator");
     MapSequence.fromMap(vars).put("date", "DSTAMP");
     SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).first(), "name", "default");
-    for(String s : MapSequence.fromMap(vars).keySet()) {
+    for(String s : Sequence.fromIterable(MapSequence.fromMap(vars).keySet())) {
       SNode var = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Variable", null);
       SPropertyOperations.set(var, "name", s);
       SPropertyOperations.set(var, "antName", MapSequence.fromMap(vars).get(s));
@@ -50,7 +50,7 @@ public class MPSLayout_Behavior {
     }
     // check for some macro name
     Set<String> macroNames = PathMacros.getInstance().getAllMacroNames();
-    for(String macroName : macroNames) {
+    for(String macroName : Sequence.fromIterable(macroNames)) {
       String macroNameWithBuckString = "$" + macroName + "$";
       if (SPropertyOperations.getString(thisNode, "basedir").startsWith(macroNameWithBuckString)) {
         String pathEnd = SPropertyOperations.getString(thisNode, "basedir").substring(macroNameWithBuckString.length());
@@ -70,7 +70,7 @@ public class MPSLayout_Behavior {
 
   public static void call_proceedAbstractProjectComponent_1213877228237(SNode thisNode, SNode component, List<SNode> list) {
     if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
-      for(SNode entry : SLinkOperations.getTargets(((SNode)component), "entry", true)) {
+      for(SNode entry : Sequence.fromIterable(SLinkOperations.getTargets(((SNode)component), "entry", true))) {
         MPSLayout_Behavior.call_proceedAbstractProjectComponent_1213877228237(thisNode, entry, list);
       }
     }
@@ -79,7 +79,7 @@ public class MPSLayout_Behavior {
 
   public static List<SNode> call_getTopologicalSortedComponents_1213877228271(SNode thisNode) {
     List<SNode> result = ListSequence.<SNode>fromArray();
-    for(SNode component : SLinkOperations.getTargets(thisNode, "component", true)) {
+    for(SNode component : Sequence.fromIterable(SLinkOperations.getTargets(thisNode, "component", true))) {
       MPSLayout_Behavior.call_proceedAbstractProjectComponent_1213877228237(thisNode, component, result);
     }
     return result;
@@ -88,7 +88,7 @@ public class MPSLayout_Behavior {
   public static List<SNode> call_getTopologicalSortedComponents_1213877228296(SNode thisNode, SNode config) {
     List<SNode> result = ListSequence.<SNode>fromArray();
     List<SNode> all = MPSLayout_Behavior.call_getTopologicalSortedComponents_1213877228271(thisNode);
-    for(SNode component : all) {
+    for(SNode component : Sequence.fromIterable(all)) {
       if (AbstractProjectComponent_Behavior.call_included_1213877333807(component, config)) {
         ListSequence.fromList(result).addElement(component);
         ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractProjectComponent_Behavior.call_getPostProcessingTasks_1213877333861(component)));
@@ -99,7 +99,7 @@ public class MPSLayout_Behavior {
 
   public static List<SNode> call_getModules_1213877228340(SNode thisNode) {
     List<SNode> result = ListSequence.<SNode>fromArray();
-    for(SNode component : SLinkOperations.getTargets(thisNode, "component", true)) {
+    for(SNode component : Sequence.fromIterable(SLinkOperations.getTargets(thisNode, "component", true))) {
       if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228389(thisNode, ((SNode)component))));
       } else
@@ -112,7 +112,7 @@ public class MPSLayout_Behavior {
 
   public static List<SNode> call_getModules_1213877228389(SNode thisNode, SNode component) {
     List<SNode> result = ListSequence.<SNode>fromArray();
-    for(SNode entry : SLinkOperations.getTargets(component, "entry", true)) {
+    for(SNode entry : Sequence.fromIterable(SLinkOperations.getTargets(component, "entry", true))) {
       if (SNodeOperations.isInstanceOf(entry, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228389(thisNode, ((SNode)entry))));
       } else
