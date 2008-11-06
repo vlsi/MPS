@@ -2115,7 +2115,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1176897082253" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176897078112">
         <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1176897142200">
-          <property name="inequationPriority" value="500" />
+          <property name="checkOnly" value="true" />
           <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1185790951949">
             <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977964608">
               <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196777955042">
@@ -2142,7 +2142,7 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1176897185023">
-          <property name="inequationPriority" value="500" />
+          <property name="checkOnly" value="true" />
           <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1185790951951">
             <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977962656">
               <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196777955044">
@@ -2243,7 +2243,7 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1176908856117">
-          <property name="inequationPriority" value="500" />
+          <property name="checkOnly" value="true" />
           <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1185790951953">
             <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977967433">
               <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196777955048">
@@ -2271,7 +2271,7 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1176908902743">
-          <property name="inequationPriority" value="500" />
+          <property name="checkOnly" value="true" />
           <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1185790951955">
             <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977963383">
               <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196777955050">
