@@ -1,4 +1,3 @@
-
 package jetbrains.mps.plugin;
 
 import jetbrains.mps.logging.Logger;
@@ -12,8 +11,9 @@ import java.rmi.RemoteException;
 public class MPSPlugin {
   private static final Logger LOG = Logger.getLogger(MPSPlugin.class);
 
-  private static MPSPlugin ourInstance;
+  //---singleton stuff---
 
+  private static MPSPlugin ourInstance;
   public static MPSPlugin getInstance() {
     if (ourInstance == null) {
       ourInstance = new MPSPlugin();
@@ -21,9 +21,11 @@ public class MPSPlugin {
     return ourInstance;
   }
 
-  public static final int PORT = 23239;
+  //---plugin---
 
+  public static final int PORT = 23239;
   private IMPSPlugin myPlugin = null;
+  private boolean myMessageShown = false;
 
   private MPSPlugin() {
     getPlugin();
@@ -42,7 +44,10 @@ public class MPSPlugin {
       try {
         myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
       } catch (Exception e) {
-        LOG.info("Wasn't able to connect to IDEA");       
+        if (!myMessageShown){
+          myMessageShown = true;
+          LOG.info("Wasn't able to connect to IDEA");
+        }
       }
     }
     return myPlugin;
@@ -53,9 +58,8 @@ public class MPSPlugin {
       if (getPlugin() == null) return null;
       return getPlugin().getProjectHandlerFor(projectPath);
     } catch (RemoteException e) {
-      //ignore it's ok not to have IDEA
+      return null;
     }
-    return null;
   }
 
   public boolean isIDEAPresent() {
