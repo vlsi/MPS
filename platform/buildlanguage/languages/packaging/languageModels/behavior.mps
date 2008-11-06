@@ -8,6 +8,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -34,7 +35,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="12" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -47,6 +48,7 @@
   <import index="10" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <import index="13" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877173053">
     <property name="package" value="variables" />
     <link role="concept" targetNodeId="1.1205339194346" resolveInfo="IStringExpression" />
@@ -3961,29 +3963,42 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877515107">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877515108">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877515109">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877515110">
-                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877515111" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877515112">
-                  <link role="baseMethodDeclaration" targetNodeId="1213877515000" resolveInfo="getClassPath" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877515113">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1213877515114">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1213877515115">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877515116">
-                          <link role="variableDeclaration" targetNodeId="1213877515102" resolveInfo="module" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225985793099">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225985775928">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225985775929">
+                    <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1225985775930" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225985775931">
+                      <link role="baseMethodDeclaration" targetNodeId="1213877515000" resolveInfo="getPathHolders" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225985775932">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1225985775933">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1225985775934">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225985775935">
+                              <link role="variableDeclaration" targetNodeId="1213877515102" resolveInfo="module" />
+                            </node>
+                            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225985775936">
+                              <link role="classifier" targetNodeId="8.~Language" resolveInfo="Language" />
+                            </node>
+                          </node>
                         </node>
-                        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877515117">
-                          <link role="classifier" targetNodeId="8.~Language" resolveInfo="Language" />
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225985775937">
+                          <link role="baseMethodDeclaration" targetNodeId="8.~Language.getLanguageRuntimeClassPathItems():java.util.List" resolveInfo="getLanguageRuntimeClassPathItems" />
                         </node>
                       </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213877515118">
-                      <link role="baseMethodDeclaration" targetNodeId="8.~Language.getLanguageRuntimeClassPathItems():java.util.List" resolveInfo="getLanguageRuntimeClassPathItems" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1225985775938">
+                        <property name="value" value="true" />
+                      </node>
                     </node>
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1218642698498">
-                    <property name="value" value="true" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ExcludeOperation" id="1225985775939">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225985775940">
+                      <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1225985775941" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225985775942">
+                        <link role="baseMethodDeclaration" targetNodeId="1213877515083" resolveInfo="getClassPath" />
+                      </node>
+                    </node>
                   </node>
                 </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" id="1225985804359" />
               </node>
             </node>
           </node>

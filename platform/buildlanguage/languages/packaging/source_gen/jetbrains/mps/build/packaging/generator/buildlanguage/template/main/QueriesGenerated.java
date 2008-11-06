@@ -688,24 +688,4 @@ public class QueriesGenerated {
     }
   }
 
-  public static void mappingScript_CodeBlock_1225982372767(final IOperationContext operationContext, final MappingScriptContext _context) {
-    List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout");
-    for(SNode layout : Sequence.fromIterable(layouts)) {
-      List<SNode> modules = SNodeOperations.getDescendants(layout, "jetbrains.mps.build.packaging.structure.Module", false);
-      for(SNode module : Sequence.fromIterable(modules)) {
-        List<SNode> classPath = Module_Behavior.call_getClassPath_1213877515083(module);
-        List<SNode> runtimeClassPath = Module_Behavior.call_getRuntimeClassPath_1213877515098(module);
-        for(SNode runtimeCpItem : Sequence.fromIterable(runtimeClassPath)) {
-          for(SNode cp : Sequence.fromIterable(classPath)) {
-            if (PathHolder_Behavior.call_equals_1225982685171(runtimeCpItem, cp)) {
-              String warningMessage = "Runtime class path item " + PathHolder_Behavior.call_getValue_1219231432401(runtimeCpItem) + " of module " + SPropertyOperations.getString(module, "name") + " is also listed in it's classpath, which can lead to bugs in build.";
-              System.out.println(warningMessage);
-              _context.showWarningMessage(null, warningMessage);
-            }
-          }
-        }
-      }
-    }
-  }
-
 }
