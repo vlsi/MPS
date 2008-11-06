@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -699,7 +700,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createModelAccess1197922168418(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAcessorFactory_1197922168418(context, node);
+    ModelAccessor modelAccessor = this._modelAccessorFactory_1197922168418(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ModelAccess_11979221684181197922168418(editorCell, node, context);
@@ -708,13 +709,13 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public ModelAccessor _modelAcessorFactory_1197922168418(final EditorContext editorContext, final SNode node) {
+  public ModelAccessor _modelAccessorFactory_1197922168418(final EditorContext editorContext, final SNode node) {
     return new ModelAccessor() {
 
       public String getText() {
         StringBuilder sb = new StringBuilder("[ ");
         String sep = "";
-        for(SNode foo : IFeature_Behavior.call_getPartialOpposites_1213877499798(node)) {
+        for(SNode foo : Sequence.fromIterable(IFeature_Behavior.call_getPartialOpposites_1213877499798(node))) {
           sb.append(sep).append(SPropertyOperations.getString(foo, "name"));
           sep = ", ";
         }

@@ -63,7 +63,7 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createModelAccess1197465964250(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAcessorFactory_1197465964250(context, node);
+    ModelAccessor modelAccessor = this._modelAccessorFactory_1197465964250(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ModelAccess_11974659642501197465964250(editorCell, node, context);
@@ -72,7 +72,7 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public ModelAccessor _modelAcessorFactory_1197465964250(final EditorContext editorContext, final SNode node) {
+  public ModelAccessor _modelAccessorFactory_1197465964250(final EditorContext editorContext, final SNode node) {
     return new ModelAccessor() {
 
       public String getText() {

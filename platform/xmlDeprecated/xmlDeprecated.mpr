@@ -12,8 +12,10 @@
       <languagePath path="${project}\languageDescriptor.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
+      <genConfSolution name="xmlDeprecated" solution="jetbrains.mps.xml.deprecated" />
+      <genConfLanguage name="xmlDeprecated" language="jetbrains.mps.xml.deprecated" />
+      <genConfSolution name="xmlDeprecated" solution="jetbrains.mps.xml.deprecated" />
       <genConfLanguage name="xmlDeprecated" language="jetbrains.mps.xml.deprecated" />
     </genConfs>
   </component>

@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
@@ -37,15 +38,15 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
       List<Triplet> res = ListSequence.<Triplet>fromArray();
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
         SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true);
-        for(TraversalAxis axis : TraversalAxis.getConstants()) {
+        for(TraversalAxis axis : Sequence.fromIterable(TraversalAxis.getConstants())) {
           ListSequence.fromList(res).addElement(new Triplet(axis, null, null));
-          for(SNode feat : TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType)) {
+          for(SNode feat : Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType))) {
             if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
               if (SPropertyOperations.getBoolean(feat, "default")) {
                 ListSequence.fromList(res).addElement(new Triplet(axis, feat, null));
               } else
               if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-                for(SNode pw : IParamFeature_Behavior.call_getParameterObjects_1213877340242(feat, nodeType)) {
+                for(SNode pw : Sequence.fromIterable(IParamFeature_Behavior.call_getParameterObjects_1213877340242(feat, nodeType))) {
                   ListSequence.fromList(res).addElement(new Triplet(axis, feat, pw));
                 }
               } else

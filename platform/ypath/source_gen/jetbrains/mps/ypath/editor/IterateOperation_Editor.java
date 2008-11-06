@@ -136,7 +136,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createModelAccess1178981885129(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAcessorFactory_1178981885129(context, node);
+    ModelAccessor modelAccessor = this._modelAccessorFactory_1178981885129(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ModelAccess_11789818851291178981885129(editorCell, node, context);
@@ -146,7 +146,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public ModelAccessor _modelAcessorFactory_1178981885129(final EditorContext editorContext, final SNode node) {
+  public ModelAccessor _modelAccessorFactory_1178981885129(final EditorContext editorContext, final SNode node) {
     return new ModelAccessor() {
 
       public String getText() {
