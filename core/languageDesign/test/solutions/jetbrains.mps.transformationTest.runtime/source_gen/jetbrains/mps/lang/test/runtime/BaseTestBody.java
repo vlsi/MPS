@@ -8,6 +8,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -27,7 +28,7 @@ public class BaseTestBody {
   public void addNodeById(String id) throws Exception {
     SNode node = BaseTestBody.this.myModel.getSModel().getNodeById(id);
     SNode copy = CopyUtil.copy(node, BaseTestBody.this.myMap, true);
-    for(SNode a : SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.TestNodeAnnotation", false)) {
+    for(SNode a : Sequence.fromIterable(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.TestNodeAnnotation", false))) {
       SNodeOperations.deleteNode(a);
     }
     BaseTestBody.this.myModel.getSModel().addRoot(copy);
@@ -59,7 +60,7 @@ public class BaseTestBody {
   }
 
   public void tearDown() throws Exception {
-    for(SNode copy : this.myCopyes) {
+    for(SNode copy : Sequence.fromIterable(this.myCopyes)) {
       this.myModel.getSModel().removeRoot(copy);
     }
   }

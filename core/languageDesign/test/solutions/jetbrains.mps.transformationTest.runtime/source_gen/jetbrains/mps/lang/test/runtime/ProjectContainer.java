@@ -6,6 +6,7 @@ import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import java.util.HashMap;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
@@ -24,7 +25,7 @@ public class ProjectContainer {
       SwingUtilities.invokeAndWait(new Runnable() {
 
         public void run() {
-          for(MPSProject project : projects.values()) {
+          for(MPSProject project : Sequence.fromIterable(projects.values())) {
             project.dispose();
           }
           MapSequence.fromMap(projects).clear();

@@ -5,6 +5,8 @@ package jetbrains.mps.lang.test.runtime;
 import junit.framework.TestCase;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
+import java.awt.event.MouseEvent;
+import java.awt.Panel;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.IFile;
 import javax.swing.SwingUtilities;
@@ -26,6 +28,8 @@ public class BaseTransformationTest extends TestCase {
   private MPSProject myProject;
 
   public BaseTransformationTest() {
+    //  Load class MouseEvent. This is hack, else test hungs.
+    new MouseEvent(new Panel(), 0, 0, 0, 0, 0, 0, false);
   }
 
   public void initTest(String projectName, final String model) throws Exception {
