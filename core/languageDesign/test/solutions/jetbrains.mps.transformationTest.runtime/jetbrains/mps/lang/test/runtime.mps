@@ -1515,6 +1515,15 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225557807335">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225557807336">
+            <property name="name" value="exception" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557807337">
+              <link role="classifier" targetNodeId="10.~Throwable" resolveInfo="Throwable" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225557845591" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225535664192">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225535664193">
             <link role="classConcept" targetNodeId="20.~SwingUtilities" resolveInfo="SwingUtilities" />
@@ -1560,8 +1569,8 @@
                               <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1225535714673">
                                 <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225535714674">
                                   <property name="name" value="e" />
-                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225535731358">
-                                    <link role="classifier" targetNodeId="10.~Throwable" resolveInfo="Throwable" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557339338">
+                                    <link role="classifier" targetNodeId="10.~NoSuchMethodException" resolveInfo="NoSuchMethodException" />
                                   </node>
                                 </node>
                                 <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225535714676">
@@ -1572,6 +1581,51 @@
                                       </node>
                                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225535736614">
                                         <link role="baseMethodDeclaration" targetNodeId="10.~Throwable.printStackTrace():void" resolveInfo="printStackTrace" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1225557320359">
+                                <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225557320360">
+                                  <property name="name" value="e" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557325692">
+                                    <link role="classifier" targetNodeId="10.~IllegalAccessException" resolveInfo="IllegalAccessException" />
+                                  </node>
+                                </node>
+                                <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225557320362">
+                                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225557329708">
+                                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225557329709">
+                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225557329710">
+                                        <link role="variableDeclaration" targetNodeId="1225557320360" resolveInfo="e" />
+                                      </node>
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225557329711">
+                                        <link role="baseMethodDeclaration" targetNodeId="10.~Throwable.printStackTrace():void" resolveInfo="printStackTrace" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1225557347778">
+                                <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225557347779">
+                                  <property name="name" value="e" />
+                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557357251">
+                                    <link role="classifier" targetNodeId="21.~InvocationTargetException" resolveInfo="InvocationTargetException" />
+                                  </node>
+                                </node>
+                                <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225557347781">
+                                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225557826901">
+                                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1225557838066">
+                                      <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225557839164">
+                                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225557838335">
+                                          <link role="variableDeclaration" targetNodeId="1225557347779" resolveInfo="e" />
+                                        </node>
+                                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225557842089">
+                                          <link role="baseMethodDeclaration" targetNodeId="21.~InvocationTargetException.getCause():java.lang.Throwable" resolveInfo="getCause" />
+                                        </node>
+                                      </node>
+                                      <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225557832500">
+                                        <link role="variableDeclaration" targetNodeId="1225557807336" resolveInfo="exception" />
                                       </node>
                                     </node>
                                   </node>
@@ -1611,6 +1665,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225557852265">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225557852266">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1225557865759">
+              <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225557868152">
+                <link role="variableDeclaration" targetNodeId="1225557807336" resolveInfo="exception" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1225557860317">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225557861992" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225557857972">
+              <link role="variableDeclaration" targetNodeId="1225557807336" resolveInfo="exception" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1221572178950">
         <property name="name" value="className" />
@@ -1624,8 +1693,8 @@
           <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
         </node>
       </node>
-      <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1221572567812">
-        <link role="classifier" targetNodeId="10.~Exception" resolveInfo="Exception" />
+      <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557886237">
+        <link role="classifier" targetNodeId="10.~Throwable" resolveInfo="Throwable" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215696484421" />

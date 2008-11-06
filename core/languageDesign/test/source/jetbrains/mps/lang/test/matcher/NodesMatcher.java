@@ -21,6 +21,10 @@ public class NodesMatcher {
 
   public static ArrayList<NodeDifference> matchNodes(List<SNode> a, List<SNode> b) {
     HashMap<SNode, SNode> map = new HashMap<SNode, SNode>();
+    return matchNodes(a, b, map);
+  }
+
+  public static ArrayList<NodeDifference> matchNodes(List<SNode> a, List<SNode> b, Map<SNode, SNode> map) {
     Iterator<SNode> iteratorA = a.iterator();
     Iterator<SNode> iteratorB = b.iterator();
     while (iteratorA.hasNext() && iteratorB.hasNext()) {
@@ -42,7 +46,7 @@ public class NodesMatcher {
     return ret;
   }
 
-  private static void match(SNode a, SNode b, HashMap<SNode, SNode> map) {
+  private static void match(SNode a, SNode b, Map<SNode, SNode> map) {
      if (!a.getConceptFqName().equals(b.getConceptFqName())) {
       return;
     }
@@ -65,7 +69,7 @@ public class NodesMatcher {
   }
 
 
-  public static NodeDifference matchNodes(SNode a, SNode b, HashMap<SNode, SNode> map) {
+  public static NodeDifference matchNodes(SNode a, SNode b, Map<SNode, SNode> map) {
     ArrayList<DifferanceItem> difference = new ArrayList<DifferanceItem>();
     if (matchConcepts(a, b, difference)) return new NodeDifference(a.toString(), difference);
 
@@ -87,7 +91,7 @@ public class NodesMatcher {
     return false;
   }
 
-  private static void matchReferences(SNode a, SNode b, HashMap<SNode, SNode> map, ArrayList<DifferanceItem> difference) {
+  private static void matchReferences(SNode a, SNode b, Map<SNode, SNode> map, ArrayList<DifferanceItem> difference) {
     HashSet<String> roles = new HashSet<String>();
     roles.addAll(a.getReferenceRoles());
     roles.addAll(b.getReferenceRoles());
@@ -113,7 +117,7 @@ public class NodesMatcher {
     }
   }
 
-  private static void matchChildren(SNode a, SNode b, HashMap<SNode, SNode> map, ArrayList<DifferanceItem> difference) {
+  private static void matchChildren(SNode a, SNode b, Map<SNode, SNode> map, ArrayList<DifferanceItem> difference) {
     HashSet<String> roles = new HashSet<String>();
     roles.addAll(a.getChildRoles());
     roles.addAll(b.getChildRoles());

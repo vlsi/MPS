@@ -2,9 +2,11 @@ package com.intellij.testFramework;
 
 import com.intellij.ide.highlighter.HighlighterFactory;
 import com.intellij.openapi.Disposable;
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.wm.ex.WindowManagerEx;
 import com.intellij.openapi.wm.impl.IdeFrameImpl;
 import com.intellij.openapi.wm.impl.FrameTitleBuilder;
+import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.diagnostic.Logger;
@@ -15,13 +17,14 @@ import com.intellij.openapi.editor.LogicalPosition;
 import com.intellij.openapi.editor.ex.EditorEx;
 import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
-import com.intellij.openapi.fileEditor.impl.EditorComposite;
-import com.intellij.openapi.fileEditor.impl.EditorWindow;
-import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
+import com.intellij.openapi.fileEditor.ex.FileEditorProviderManager;
+import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
+import com.intellij.openapi.fileEditor.impl.*;
 import com.intellij.openapi.fileEditor.impl.text.TextEditorProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.psi.PsiDocumentManager;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
@@ -40,12 +43,13 @@ import java.io.File;
 
 // My version
 
-@NonNls public class TestEditorManagerImpl extends FileEditorManagerImpl implements ApplicationComponent, ProjectComponent {
+@NonNls
+public class TestEditorManagerImpl extends FileEditorManagerImpl implements ApplicationComponent, ProjectComponent {
   private static final Logger LOG = Logger.getInstance("#com.intellij.idea.test.TestEditorManagerImpl");
 
   private final Project myProject;
 
-  private Map<VirtualFile, Editor> myVirtualFile2Editor = new HashMap<VirtualFile,Editor>();
+  private Map<VirtualFile, Editor> myVirtualFile2Editor = new HashMap<VirtualFile, Editor>();
   private VirtualFile myActiveFile = null;
   private static final LightVirtualFile LIGHT_VIRTUAL_FILE = new LightVirtualFile("Dummy.java");
 
@@ -113,7 +117,7 @@ import java.io.File;
     final EditorFactory editorFactory = EditorFactory.getInstance();
     for (VirtualFile file : myVirtualFile2Editor.keySet()) {
       Editor editor = myVirtualFile2Editor.get(file);
-      if (editor != null && !editor.isDisposed()){
+      if (editor != null && !editor.isDisposed()) {
         editorFactory.releaseEditor(editor);
       }
     }
@@ -195,7 +199,7 @@ import java.io.File;
   public FileEditor[] getEditors(@NotNull VirtualFile file) {
     FileEditor e = getSelectedEditor(file);
     if (e == null) return new FileEditor[0];
-    return new FileEditor[] {e};
+    return new FileEditor[]{e};
   }
 
   public TestEditorManagerImpl(Project project) {
@@ -212,7 +216,8 @@ import java.io.File;
     closeAllFiles();
   }
 
-  public void initComponent() { }
+  public void initComponent() {
+  }
 
   public void projectClosed() {
   }
@@ -222,7 +227,7 @@ import java.io.File;
 
   public void closeFile(@NotNull VirtualFile file) {
     Editor editor = myVirtualFile2Editor.get(file);
-    if (editor != null){
+    if (editor != null) {
       EditorFactory.getInstance().releaseEditor(editor);
       myVirtualFile2Editor.remove(file);
     }
@@ -260,7 +265,7 @@ import java.io.File;
   }
 
   @NotNull
-  public FileEditor[] getAllEditors(){
+  public FileEditor[] getAllEditors() {
     throw new UnsupportedOperationException();
   }
 
@@ -290,10 +295,9 @@ import java.io.File;
       myVirtualFile2Editor.put(file, editor);
     }
 
-    if (descriptor.getOffset() >= 0){
+    if (descriptor.getOffset() >= 0) {
       editor.getCaretModel().moveToOffset(descriptor.getOffset());
-    }
-    else if (descriptor.getLine() >= 0 && descriptor.getColumn() >= 0){
+    } else if (descriptor.getLine() >= 0 && descriptor.getColumn() >= 0) {
       editor.getCaretModel().moveToLogicalPosition(new LogicalPosition(descriptor.getLine(), descriptor.getColumn()));
     }
     editor.getSelectionModel().removeSelection();
@@ -328,17 +332,107 @@ import java.io.File;
     throw new UnsupportedOperationException();
   }
 
-  /**
-   * Updates tab title and tab tool tip for the specified <code>file</code>
-   */
-  void updateFileName(@Nullable final VirtualFile file) {
-   
-  }
-
-
   @NotNull
   public Pair<FileEditor[], FileEditorProvider[]> getEditorsWithProviders(@NotNull VirtualFile file) {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  @NotNull
+  public FileEditor[] openFile(@NotNull final VirtualFile file, final boolean focusEditor) {
+    // Open file
+    FileEditor[] editors;
+    FileEditorProvider[] providers;
+    final EditorWithProviderComposite newSelectedComposite;
+    boolean newEditorCreated = false;
+
+    // File is not opened yet. In this case we have to create editors
+    // and select the created EditorComposite.
+    final FileEditorProviderManager editorProviderManager = FileEditorProviderManager.getInstance();
+    providers = editorProviderManager.getProviders(myProject, file);
+
+    newEditorCreated = true;
+
+    editors = new FileEditor[providers.length];
+    for (int i = 0; i < providers.length; i++) {
+      try {
+        final FileEditorProvider provider = providers[i];
+        LOG.assertTrue(provider != null);
+        LOG.assertTrue(provider.accept(myProject, file));
+        final FileEditor editor = provider.createEditor(myProject, file);
+        editors[i] = editor;
+        LOG.assertTrue(editor != null);
+        LOG.assertTrue(editor.isValid());
+      }
+      catch (Exception e) {
+        LOG.error(e);
+      }
+      catch (AssertionError e) {
+        LOG.error(e);
+      }
+    }
+
+
+
+    final EditorHistoryManager editorHistoryManager = EditorHistoryManager.getInstance(myProject);
+    for (int i = 0; i < editors.length; i++) {
+      final FileEditor editor = editors[i];
+      if (editor instanceof TextEditor) {
+        // hack!!!
+        // This code prevents "jumping" on next repaint.
+        ((EditorEx) ((TextEditor) editor).getEditor()).stopOptimizedScrolling();
+      }
+
+      final FileEditorProvider provider = providers[i];//getProvider(editor);
+
+      // Restore editor state
+      FileEditorState state = null;
+
+      if (state == null) {
+        // We have to try to get state from the history only in case
+        // if editor is not opened. Otherwise history enty might have a state
+        // out of sync with the current editor state.
+        state = editorHistoryManager.getState(file, provider);
+      }
+      if (state != null) {
+        editor.setState(state);
+      }
+    }
+    /*
+    // Restore selected editor
+    final FileEditorProvider selectedProvider = editorHistoryManager.getSelectedProvider(file);
+    if (selectedProvider != null) {
+      final FileEditor[] _editors = newSelectedComposite.getEditors();
+      final FileEditorProvider[] _providers = newSelectedComposite.getProviders();
+      for (int i = _editors.length - 1; i >= 0; i--) {
+        final FileEditorProvider provider = _providers[i];//getProvider(_editors[i]);
+        if (provider.equals(selectedProvider)) {
+          newSelectedComposite.setSelectedEditor(i);
+          break;
+        }
+      }
+    }
+    */
+    /*
+    if (newEditorCreated) {
+      getProject().getMessageBus().syncPublisher(FileEditorManagerListener.FILE_EDITOR_MANAGER).fileOpened(this, file);
+
+      //Add request to watch this editor's virtual file
+      final VirtualFile parentDir = file.getParent();
+      if (parentDir != null) {
+        final LocalFileSystem.WatchRequest request = LocalFileSystem.getInstance().addRootToWatch(parentDir.getPath(), false);
+        file.putUserData(WATCH_REQUEST_KEY, request);
+      }
+    }
+    */
+
+    //[jeka] this is a hack to support back-forward navigation
+    // previously here was incorrect call to fireSelectionChanged() with a side-effect
+    ((IdeDocumentHistoryImpl) IdeDocumentHistory.getInstance(myProject)).onSelectionChanged();
+
+    // Make back/forward work
+    IdeDocumentHistory.getInstance(myProject).includeCurrentCommandAsNavigation();
+
+    return editors;
   }
 
   public String getComponentName() {

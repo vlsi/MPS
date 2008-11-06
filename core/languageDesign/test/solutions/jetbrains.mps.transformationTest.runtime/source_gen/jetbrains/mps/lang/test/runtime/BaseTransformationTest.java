@@ -16,6 +16,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.template.CloneUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.lang.reflect.InvocationTargetException;
 
 public class BaseTransformationTest extends TestCase {
   private static ProjectContainer myContainer = new ProjectContainer();
@@ -55,7 +56,7 @@ public class BaseTransformationTest extends TestCase {
     this.myTransidentModel.getSModel().validateLanguagesAndImports();
   }
 
-  public void runTest(final String className, final String methodName) throws Exception {
+  public void runTest(final String className, final String methodName) throws Throwable {
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
     ModelAccess.instance().runReadAction(new Runnable() {
 
@@ -67,6 +68,7 @@ public class BaseTransformationTest extends TestCase {
     final Object obj = clazz.value.newInstance();
     clazz.value.getField("myModel").set(obj, this.myTransidentModel);
     clazz.value.getField("myProject").set(obj, this.myProject);
+    final Wrappers._T<Throwable> exception = new Wrappers._T<Throwable>(null);
     SwingUtilities.invokeAndWait(new Runnable() {
 
       public void run() {
@@ -75,8 +77,12 @@ public class BaseTransformationTest extends TestCase {
           public void run() {
             try {
               clazz.value.getDeclaredMethod(methodName).invoke(obj);
-            } catch (Throwable e) {
+            } catch (NoSuchMethodException e) {
               e.printStackTrace();
+            } catch (IllegalAccessException e) {
+              e.printStackTrace();
+            } catch (InvocationTargetException e) {
+              exception.value = e.getCause();
             }
           }
 
@@ -91,6 +97,9 @@ public class BaseTransformationTest extends TestCase {
       }
 
     });
+    if (exception.value != null) {
+      throw exception.value;
+    }
   }
 
 

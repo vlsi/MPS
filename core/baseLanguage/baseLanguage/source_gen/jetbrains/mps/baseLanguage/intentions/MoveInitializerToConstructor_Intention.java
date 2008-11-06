@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MoveInitializerToConstructor_Intention extends BaseIntention {
 
@@ -47,7 +48,7 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention {
     SLinkOperations.setTarget(fieldReference, "variableDeclaration", node, false);
     SLinkOperations.setNewChild(fieldReference, "instance", "jetbrains.mps.baseLanguage.structure.ThisExpression");
     // 
-    for(SNode constr : SLinkOperations.getTargets(classNode, "constructor", true)) {
+    for(SNode constr : Sequence.fromIterable(SLinkOperations.getTargets(classNode, "constructor", true))) {
       SLinkOperations.insertChildFirst(SLinkOperations.getTarget(constr, "body", true), "statement", SNodeOperations.copyNode(assignmentStmt));
     }
     // 

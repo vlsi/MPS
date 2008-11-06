@@ -12,6 +12,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -57,7 +58,7 @@ public class CommentStatements_Action extends GeneratedAction {
       List<SNode> nodes = event.getData(MPSDataKeys.SNODES);
       boolean error = false;
       if (nodes != null) {
-        for(SNode node : nodes) {
+        for(SNode node : Sequence.fromIterable(nodes)) {
           if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
             error = true;
             break;

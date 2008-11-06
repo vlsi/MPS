@@ -706,8 +706,8 @@
           </node>
         </node>
       </node>
-      <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217255061641">
-        <link role="classifier" targetNodeId="2.~Exception" resolveInfo="Exception" />
+      <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557977753">
+        <link role="classifier" targetNodeId="2.~Throwable" resolveInfo="Throwable" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216994643105" />

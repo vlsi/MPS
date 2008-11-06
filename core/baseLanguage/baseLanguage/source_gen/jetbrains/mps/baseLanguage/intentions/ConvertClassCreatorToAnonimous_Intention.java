@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ConvertClassCreatorToAnonimous_Intention extends BaseIntention {
 
@@ -33,10 +34,10 @@ public class ConvertClassCreatorToAnonimous_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode anonimousClassCreator = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
     SLinkOperations.setTarget(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "classifier", SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), false);
-    for(SNode typeParm : SLinkOperations.getTargets(node, "typeParameter", true)) {
+    for(SNode typeParm : Sequence.fromIterable(SLinkOperations.getTargets(node, "typeParameter", true))) {
       SLinkOperations.addChild(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", typeParm);
     }
-    for(SNode typeParm : SLinkOperations.getTargets(node, "typeParameter", true)) {
+    for(SNode typeParm : Sequence.fromIterable(SLinkOperations.getTargets(node, "typeParameter", true))) {
       SLinkOperations.addChild(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", typeParm);
     }
   }
