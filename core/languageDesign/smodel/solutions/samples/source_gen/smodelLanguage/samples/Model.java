@@ -8,10 +8,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.IScope;
 
 public class Model {
 
@@ -31,8 +31,9 @@ public class Model {
     SPropertyOperations.set(named, "name", "a");
   }
 
-  public void roots_access_1(SModel model) {
+  public void roots_access_1(SModel model, IScope scope) {
     List<SNode> roots1 = SModelOperations.getRoots(model, null);
+    SModelOperations.getRootsIncludingImported(model, scope, null);
     List<SNode> roots2 = SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     Iterable<SNode> roots3 = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter <SNode>() {
 

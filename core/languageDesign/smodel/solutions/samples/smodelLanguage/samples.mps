@@ -3871,7 +3871,9 @@
               <link role="variableDeclaration" targetNodeId="1171315708426" resolveInfo="model" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation" id="1224251172304">
-              <node role="scope" type="jetbrains.mps.baseLanguage.structure.Expression" id="1224251172305" />
+              <node role="scope" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225936321085">
+                <link role="variableDeclaration" targetNodeId="1225936311254" resolveInfo="scope" />
+              </node>
             </node>
           </node>
         </node>
@@ -3941,6 +3943,12 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1171315708426">
         <property name="name" value="model" />
         <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1171315708427" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225936311254">
+        <property name="name" value="scope" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225936315131">
+          <link role="classifier" targetNodeId="4.~IScope" resolveInfo="IScope" />
+        </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679189" />
     </node>

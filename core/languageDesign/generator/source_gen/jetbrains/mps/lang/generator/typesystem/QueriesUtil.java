@@ -10,6 +10,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator;
+import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink;
@@ -94,6 +102,77 @@ public class QueriesUtil {
       return prevMacro;
     }
     return getEnclosing_SourceSubstituteMacro(SNodeOperations.getParent(node), null);
+  }
+
+  public static SNode getEnclosing_TemplateFragment(SNode node) {
+    //  find first ancestor (inclusive) which has a template fragment attribute
+    /*
+      Iterable<SNode> TFs = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).translate(new ITranslator <SNode, SNode>() {
+
+        public ISequence<SNode> translate(final SNode it) {
+          return new ISequenceIterableAdapter <SNode>() {
+
+            public Iterator<SNode> iterator() {
+              return new YieldingIterator <SNode>() {
+
+                private int __CP__ = 0;
+                private SNode _5_TF;
+
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 6:
+                        if (this._5_TF != null) {
+                          this.__CP__ = 7;
+                          break;
+                        }
+                        this.__CP__ = 3;
+                        break;
+                      case 3:
+                        if (false) {
+                          this.__CP__ = 2;
+                          break;
+                        }
+                        this.__CP__ = 1;
+                        break;
+                      case 8:
+                        this.__CP__ = 9;
+                        this.yield(this._5_TF);
+                        return true;
+                      case 2:
+                        this._5_TF = SLinkOperations.getTarget(AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true);
+                        this.__CP__ = 6;
+                        break;
+                      case 7:
+                        this.__CP__ = 8;
+                        break;
+                      case 9:
+                        throw new StopIteratingException();
+                      case 0:
+                        this.__CP__ = 2;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while(true);
+                  return false;
+                }
+
+              };
+            }
+
+          };
+        }
+
+      });
+      return Sequence.fromIterable(TFs).first();
+    */
+    return null;
   }
 
   private static SNode getQueryFunction_fromSourceSubstituteMacro(SNode macro) {

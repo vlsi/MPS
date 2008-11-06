@@ -29,8 +29,10 @@
       <languagePath path="${mps_home}\core\languageDesign\plugin\plugin.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
+      <genConfSolution name="smodel language" solution="jetbrains.mps.lang.smodel" />
+      <genConfLanguage name="smodel language" language="jetbrains.mps.lang.smodel" />
+      <genConfSolution name="smodel language" solution="jetbrains.mps.lang.smodel" />
       <genConfLanguage name="smodel language" language="jetbrains.mps.lang.smodel" />
     </genConfs>
   </component>

@@ -599,7 +599,20 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1216371087635">
     <property name="name" value="default_switch_aaa" />
-    <node role="contentNode" type="jetbrains.mps.lang.core.structure.BaseConcept" id="1216371087636" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1225936045769">
+      <property name="name" value="name" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225936045770" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1225936045771">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225936045772" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225936045773" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225936045774" />
+      </node>
+      <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1225936054966">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1225936054967">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225936054968" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1216405459907">
     <property name="name" value="map_AbstractCreator" />
