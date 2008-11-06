@@ -27,8 +27,15 @@ public class NewProjectDescriptor{
   private static final String PATH = "path";
   private static final String FOLDER = "folder";
 
+  //todo: remove it
   private static final String SOLUTION = "solution";
   private static final String LANGUAGE = "language";
+  private static final String GEN_CONF_SOLUTION = "genConfSolution";
+  private static final String GEN_CONF_LANGUAGE = "genConfLanguage";
+  //todo end remove part
+
+  private static final String MODULE_UID = "moduleUID";
+  private static final String GEN_CONF_MODULE = "genConfModule";
 
   private static final String MODEL = "model";
   private static final String MODELS = "models";
@@ -36,8 +43,6 @@ public class NewProjectDescriptor{
 
   private static final String GEN_CONFS = "genConfs";
   private static final String GEN_CONF = "genConf";
-  private static final String GEN_CONF_SOLUTION = "genConfSolution";
-  private static final String GEN_CONF_LANGUAGE = "genConfLanguage";
 
   private static final String AUTO_IMPORT_CLASSPATH = "auto-import-from-idea";
   private static final String TEST_ALL_LANGUAGES = "testAllLanguages";
@@ -163,36 +168,18 @@ public class NewProjectDescriptor{
       }
 
       if (tc instanceof ModuleGeneratorConfiguration) {
-
-
         ModuleGeneratorConfiguration sgc = (ModuleGeneratorConfiguration) tc;
 
-        Element t = new Element(GEN_CONF_SOLUTION);
+        Element t = new Element(GEN_CONF_MODULE);
         if (sgc.getName() != null) {
           t.setAttribute(NAME, sgc.getName());
         }
 
         if (sgc.getModuleUID() != null) {
-          t.setAttribute(SOLUTION, sgc.getModuleUID());
+          t.setAttribute(MODULE_UID, sgc.getModuleUID());
         }
         tests.addContent(t);
       }
-
-      if (tc instanceof ModuleGeneratorConfiguration) {
-        ModuleGeneratorConfiguration lgc = (ModuleGeneratorConfiguration) tc;
-
-        Element t = new Element(GEN_CONF_LANGUAGE);
-        if (lgc.getName() != null) {
-          t.setAttribute(NAME, lgc.getName());
-        }
-
-        if (lgc.getModuleUID() != null) {
-          t.setAttribute(LANGUAGE, lgc.getModuleUID());
-        }
-
-        tests.addContent(t);
-      }
-
     }
     return projectElement;
   }
@@ -279,6 +266,7 @@ public class NewProjectDescriptor{
         myGenConfigs.add(tc);
       }
 
+      //todo remove it
       for (Element e : (List<Element>) tests.getChildren(GEN_CONF_SOLUTION)) {
         ModuleGeneratorConfiguration sc = new ModuleGeneratorConfiguration();
 
@@ -294,6 +282,16 @@ public class NewProjectDescriptor{
         lc.setModuleUID(e.getAttributeValue(LANGUAGE));
 
         myGenConfigs.add(lc);
+      }
+      //todo end remove part
+
+      for (Element e : (List<Element>) tests.getChildren(GEN_CONF_MODULE)) {
+        ModuleGeneratorConfiguration conf = new ModuleGeneratorConfiguration();
+
+        conf.setName(e.getAttributeValue(NAME));
+        conf.setModuleUID(e.getAttributeValue(MODULE_UID));
+
+        myGenConfigs.add(conf);
       }
     }
   }
