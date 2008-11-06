@@ -20,20 +20,6 @@
     <projectDevkits />
     <genConfs>
       <genConfSolution name="generator" solution="jetbrains.mps.lang.generator" />
-      <genConfLanguage name="generator" language="jetbrains.mps.lang.generator" />
-      <genConfSolution name="generator.generatorationContext" solution="jetbrains.mps.lang.generator.generationContext" />
-      <genConfLanguage name="generator.generatorationContext" language="jetbrains.mps.lang.generator.generationContext" />
-      <genConfSolution name="generator" solution="jetbrains.mps.lang.generator" />
-      <genConfLanguage name="generator" language="jetbrains.mps.lang.generator" />
-      <genConfSolution name="generator.generatorationContext" solution="jetbrains.mps.lang.generator.generationContext" />
-      <genConfLanguage name="generator.generatorationContext" language="jetbrains.mps.lang.generator.generationContext" />
-      <genConfSolution name="generator" solution="jetbrains.mps.lang.generator" />
-      <genConfLanguage name="generator" language="jetbrains.mps.lang.generator" />
-      <genConfSolution name="generator.generatorationContext" solution="jetbrains.mps.lang.generator.generationContext" />
-      <genConfLanguage name="generator.generatorationContext" language="jetbrains.mps.lang.generator.generationContext" />
-      <genConfSolution name="generator" solution="jetbrains.mps.lang.generator" />
-      <genConfLanguage name="generator" language="jetbrains.mps.lang.generator" />
-      <genConfSolution name="generator.generatorationContext" solution="jetbrains.mps.lang.generator.generationContext" />
       <genConfLanguage name="generator.generatorationContext" language="jetbrains.mps.lang.generator.generationContext" />
     </genConfs>
   </component>

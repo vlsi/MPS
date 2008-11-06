@@ -35,9 +35,7 @@
     <projectDevkits />
     <genConfs>
       <genConfSolution name="UnitTests" solution="collections_unittest" />
-      <genConfLanguage name="UnitTests" language="collections_unittest" />
       <genConfSolution name="collections lang test" solution="jetbrains.mps.baseLanguage.collections" />
-      <genConfLanguage name="collections lang test" language="jetbrains.mps.baseLanguage.collections" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

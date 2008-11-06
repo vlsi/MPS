@@ -31,9 +31,6 @@
     <projectDevkits />
     <genConfs>
       <genConfSolution name="smodel language" solution="jetbrains.mps.lang.smodel" />
-      <genConfLanguage name="smodel language" language="jetbrains.mps.lang.smodel" />
-      <genConfSolution name="smodel language" solution="jetbrains.mps.lang.smodel" />
-      <genConfLanguage name="smodel language" language="jetbrains.mps.lang.smodel" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
