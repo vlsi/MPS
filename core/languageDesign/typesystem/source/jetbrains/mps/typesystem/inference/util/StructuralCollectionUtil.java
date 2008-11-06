@@ -2,16 +2,26 @@ package jetbrains.mps.typesystem.inference.util;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.util.misc.ObjectCache;
 
 import java.util.Set;
 import java.util.TreeSet;
 
 public class StructuralCollectionUtil {
 
+  private static final ObjectCache<SNode, Integer> ourHashCodeCash = new ObjectCache<SNode, Integer>(20000);
+
+
   public static int hashCode(SNode node) {
+    Integer result = ourHashCodeCash.tryKey(node);
+    if (result != null) {
+      return result;
+    }
     StringBuilder sb = new StringBuilder();    
     toString(sb, node, node);
-    return sb.toString().hashCode();
+    result = sb.toString().hashCode();
+    ourHashCodeCash.put(node, result);
+    return result;
   }
 
   private static void toString(StringBuilder result, SNode root, SNode node) {
