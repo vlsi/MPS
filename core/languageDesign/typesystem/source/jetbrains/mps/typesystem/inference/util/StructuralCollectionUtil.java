@@ -37,7 +37,6 @@ public class StructuralCollectionUtil {
     }
 
     for (SReference ref : node.getReferences()) {
-
       if (!ref.isExternal()) {
         SNode target = ref.getTargetNode();
         if (!target.isDescendantOf(root, true)) {
