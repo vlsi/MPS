@@ -216,6 +216,19 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225996190344">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225996190345">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225996196667">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225996198383" />
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1225996193519">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225996194858" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225996192162">
+                <link role="variableDeclaration" targetNodeId="1222448597595" resolveInfo="module" />
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222448597604">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222448597605">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222448597606">

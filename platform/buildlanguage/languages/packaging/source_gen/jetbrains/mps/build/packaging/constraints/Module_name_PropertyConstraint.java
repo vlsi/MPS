@@ -27,6 +27,9 @@ public class Module_name_PropertyConstraint implements IModelConstraints, INodeP
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     IModule module = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(SPropertyOperations.getString(node, "id")));
+    if (module == null) {
+      return null;
+    }
     return module.getModuleFqName();
   }
 
