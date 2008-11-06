@@ -4,16 +4,14 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.newpl.BaseGeneratorConfiguration;
-import jetbrains.mps.project.newpl.ModuleGeneratorConfiguration;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.newpl.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.project.newpl.testconfigurations.GeneratorConfigurationException;
 import jetbrains.mps.smodel.ModelAccess;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -22,8 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectTester {
-  private static Logger LOG = Logger.getLogger(ProjectTester.class);
-
   private MPSProject myProject;
 
   public ProjectTester(MPSProject project) {
@@ -37,9 +33,9 @@ public class ProjectTester {
       if (r.getErrors() != null) {
         for (CategorizedProblem p : r.getErrors()) {
           res.add(new String(
-                  r.getCompilationUnit().getFileName()) +
-                  " (" + p.getSourceLineNumber() + "): " +
-                  p.getMessage());
+            r.getCompilationUnit().getFileName()) +
+            " (" + p.getSourceLineNumber() + "): " +
+            p.getMessage());
         }
       }
     }
@@ -124,38 +120,30 @@ public class ProjectTester {
 
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          List<BaseGeneratorConfiguration> configurations = new ArrayList<BaseGeneratorConfiguration>(myProject.getProjectDescriptor().getGenerationConfigurations());
+          List<BaseTestConfiguration> configurations = new ArrayList<BaseTestConfiguration>(myProject.getProjectDescriptor().getTestConfigurations());
 
-          if (myProject.getProjectDescriptor().getTestAllLanguages()) {
-            for (Language l : myProject.getProjectLanguages()) {
-              ModuleGeneratorConfiguration conf = new ModuleGeneratorConfiguration();
-              conf.setModuleUID(l.getNamespace());
-              configurations.add(conf);
-            }
-          } else {
-            if (configurations.isEmpty()) {
-              throw new RuntimeException("tested project has no test configurations");
-            }
+          if (configurations.isEmpty()) {
+            throw new RuntimeException("tested project has no test configurations");
           }
 
-          for (BaseGeneratorConfiguration t : configurations) {
+          for (BaseTestConfiguration t : configurations) {
             System.out.println("completed : " + configurations.indexOf(t) + " / " + configurations.size());
 
             GenParameters parms;
             try {
-              parms = GeneratorConfigUtil.calculate(myProject, t);
-            } catch (GeneratorConfigUtil.GeneratorConfigurationException e) {
+              parms = t.getGenParams(myProject, true);
+            } catch (GeneratorConfigurationException e) {
               errors.add("Can't create a generator configuration : " + e.getMessage());
               return;
             }
 
             GeneratorManager gm = myProject.getComponentSafe(GeneratorManager.class);
             gm.generateModels(
-                    parms.getModels(),
-                    new ModuleContext(parms.getModule(), myProject),
-                    generationType,
-                    new EmptyProgressIndicator(),
-                    handler
+              parms.getModels(),
+              new ModuleContext(parms.getModule(), myProject),
+              generationType,
+              new EmptyProgressIndicator(),
+              handler
             );
 
             compilationResults.addAll(createCompilationProblemsList(generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR)));
@@ -172,5 +160,4 @@ public class ProjectTester {
 
     return new TestResult(errors, warnings, compilationResults);
   }
-
 }

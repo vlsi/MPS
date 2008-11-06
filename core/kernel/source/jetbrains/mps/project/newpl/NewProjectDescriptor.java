@@ -1,6 +1,9 @@
 package jetbrains.mps.project.newpl;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.newpl.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.project.newpl.testconfigurations.ModelsTestConfiguration;
+import jetbrains.mps.project.newpl.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.Macros;
 import org.jdom.Document;
@@ -27,13 +30,6 @@ public class NewProjectDescriptor{
   private static final String PATH = "path";
   private static final String FOLDER = "folder";
 
-  //todo: remove it
-  private static final String SOLUTION = "solution";
-  private static final String LANGUAGE = "language";
-  private static final String GEN_CONF_SOLUTION = "genConfSolution";
-  private static final String GEN_CONF_LANGUAGE = "genConfLanguage";
-  //todo end remove part
-
   private static final String MODULE_UID = "moduleUID";
   private static final String GEN_CONF_MODULE = "genConfModule";
 
@@ -45,15 +41,13 @@ public class NewProjectDescriptor{
   private static final String GEN_CONF = "genConf";
 
   private static final String AUTO_IMPORT_CLASSPATH = "auto-import-from-idea";
-  private static final String TEST_ALL_LANGUAGES = "testAllLanguages";
 
   private String myName = "";
   private boolean myImportClasspath = false;
-  private boolean myTestAllLanguages = false;
   private List<Path> myLanguages = new ArrayList<Path>();
   private List<Path> mySolutions = new ArrayList<Path>();
   private List<Path> myDevkits = new ArrayList<Path>();
-  private List<BaseGeneratorConfiguration> myGenConfigs = new ArrayList<BaseGeneratorConfiguration>();
+  private List<BaseTestConfiguration> myTestConfigurations = new ArrayList<BaseTestConfiguration>();
 
   public String getName() {
     return myName;
@@ -71,14 +65,6 @@ public class NewProjectDescriptor{
     myImportClasspath = importClasspath;
   }
 
-  public boolean getTestAllLanguages() {
-    return myTestAllLanguages;
-  }
-
-  public void setTestAllLanguages(boolean testAllLanguages) {
-    myTestAllLanguages = testAllLanguages;
-  }
-
   public List<Path> getLanguages() {
     return myLanguages;
   }
@@ -91,8 +77,8 @@ public class NewProjectDescriptor{
     return myDevkits;
   }
 
-  public List<BaseGeneratorConfiguration> getGenerationConfigurations() {
-    return myGenConfigs;
+  public List<BaseTestConfiguration> getTestConfigurations() {
+    return myTestConfigurations;
   }
 
   public Element saveProjectDescriptorToElement(File file) {
@@ -142,14 +128,11 @@ public class NewProjectDescriptor{
       projectDevkitsElement.addContent(devkit);
     }
 
-    //test configurations
-    projectElement.setAttribute(TEST_ALL_LANGUAGES, "" + myTestAllLanguages);
-
     Element tests = new Element(GEN_CONFS);
     projectElement.addContent(tests);
-    for (BaseGeneratorConfiguration tc : myGenConfigs) {
-      if (tc instanceof ModelsGeneratorConfiguration) {
-        ModelsGeneratorConfiguration mgc = (ModelsGeneratorConfiguration) tc;
+    for (BaseTestConfiguration tc : myTestConfigurations) {
+      if (tc instanceof ModelsTestConfiguration) {
+        ModelsTestConfiguration mgc = (ModelsTestConfiguration) tc;
 
         Element t = new Element(GEN_CONF);
         if (mgc.getName() != null) {
@@ -167,8 +150,8 @@ public class NewProjectDescriptor{
         tests.addContent(t);
       }
 
-      if (tc instanceof ModuleGeneratorConfiguration) {
-        ModuleGeneratorConfiguration sgc = (ModuleGeneratorConfiguration) tc;
+      if (tc instanceof ModuleTestConfiguration) {
+        ModuleTestConfiguration sgc = (ModuleTestConfiguration) tc;
 
         Element t = new Element(GEN_CONF_MODULE);
         if (sgc.getName() != null) {
@@ -248,12 +231,10 @@ public class NewProjectDescriptor{
       }
     }
 
-    myTestAllLanguages = "true".equals(projectElement.getAttributeValue(TEST_ALL_LANGUAGES));
-
     Element tests = projectElement.getChild(GEN_CONFS);
     if (tests != null) {
       for (Element e : (List<Element>) tests.getChildren(GEN_CONF)) {
-        ModelsGeneratorConfiguration tc = new ModelsGeneratorConfiguration();
+        ModelsTestConfiguration tc = new ModelsTestConfiguration();
         tc.setName(e.getAttributeValue(NAME));
 
         if (e.getChild(MODELS) != null) {
@@ -263,35 +244,31 @@ public class NewProjectDescriptor{
             tc.addModel(m);
           }
         }
-        myGenConfigs.add(tc);
+        myTestConfigurations.add(tc);
       }
 
-      //todo remove it
-      for (Element e : (List<Element>) tests.getChildren(GEN_CONF_SOLUTION)) {
-        ModuleGeneratorConfiguration sc = new ModuleGeneratorConfiguration();
-
+      //todo remove it - outdated code
+      for (Element e : (List<Element>) tests.getChildren("genConfSolution")) {
+        ModuleTestConfiguration sc = new ModuleTestConfiguration();
         sc.setName(e.getAttributeValue(NAME));
-        sc.setModuleUID(e.getAttributeValue(SOLUTION));
-        myGenConfigs.add(sc);
+        sc.setModuleUID(e.getAttributeValue("solution"));
+        myTestConfigurations.add(sc);
       }
-
-      for (Element e : (List<Element>) tests.getChildren(GEN_CONF_LANGUAGE)) {
-        ModuleGeneratorConfiguration lc = new ModuleGeneratorConfiguration();
-
+      for (Element e : (List<Element>) tests.getChildren("genConfLanguage")) {
+        ModuleTestConfiguration lc = new ModuleTestConfiguration();
         lc.setName(e.getAttributeValue(NAME));
-        lc.setModuleUID(e.getAttributeValue(LANGUAGE));
-
-        myGenConfigs.add(lc);
+        lc.setModuleUID(e.getAttributeValue("language"));
+        myTestConfigurations.add(lc);
       }
       //todo end remove part
 
       for (Element e : (List<Element>) tests.getChildren(GEN_CONF_MODULE)) {
-        ModuleGeneratorConfiguration conf = new ModuleGeneratorConfiguration();
+        ModuleTestConfiguration conf = new ModuleTestConfiguration();
 
         conf.setName(e.getAttributeValue(NAME));
         conf.setModuleUID(e.getAttributeValue(MODULE_UID));
 
-        myGenConfigs.add(conf);
+        myTestConfigurations.add(conf);
       }
     }
   }

@@ -1,26 +1,25 @@
 package jetbrains.mps.refactoring.renameLanguage;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
-import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.vcs.MPSVCSManager;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
+import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
+import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vcs.MPSVCSManager;
 
 import java.io.File;
-import java.util.List;
-import java.util.Collections;
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class LanguageRenamer {
   private Project myProject;

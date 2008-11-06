@@ -8,11 +8,10 @@ import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.newpl.ModuleGeneratorConfiguration;
+import jetbrains.mps.project.newpl.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -112,11 +111,11 @@ public class RenameLanguageDialog extends BaseDialog {
         public GenParameters compute() {
           SModel model = AuxilaryRuntimeModel.getDescriptor().getSModel();
 
-          ModuleGeneratorConfiguration languageConfig = new ModuleGeneratorConfiguration();
+          ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
           languageConfig.setModuleUID(myLanguage.getNamespace());
           languageConfig.setName("tmp");
 
-          return GeneratorConfigUtil.calculate(mpsProject, languageConfig, true);
+          return languageConfig.getGenParams(mpsProject, true);
         }
       });
 

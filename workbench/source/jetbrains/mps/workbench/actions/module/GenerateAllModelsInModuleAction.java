@@ -8,12 +8,12 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.newpl.BaseGeneratorConfiguration;
-import jetbrains.mps.project.newpl.ModuleGeneratorConfiguration;
+import jetbrains.mps.project.newpl.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.project.newpl.testconfigurations.GeneratorConfigurationException;
+import jetbrains.mps.project.newpl.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionEventData;
@@ -82,17 +82,17 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
         tmp.setLoading(true);
 
 
-        BaseGeneratorConfiguration conf = null;
+        BaseTestConfiguration conf = null;
 
         if (module instanceof Solution) {
-          ModuleGeneratorConfiguration solutionConfig = new ModuleGeneratorConfiguration();
+          ModuleTestConfiguration solutionConfig = new ModuleTestConfiguration();
           solutionConfig.setModuleUID(module.getModuleUID());
           solutionConfig.setName("tmp");
           conf = solutionConfig;
         }
 
         if (module instanceof Language) {
-          ModuleGeneratorConfiguration languageConfig = new ModuleGeneratorConfiguration();
+          ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
           languageConfig.setModuleUID(module.getModuleUID());
           languageConfig.setName("tmp");
           conf = languageConfig;
@@ -101,8 +101,8 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
         assert conf != null;
 
         try {
-          return GeneratorConfigUtil.calculate(myProject, conf, myRegenerate);
-        } catch (GeneratorConfigUtil.GeneratorConfigurationException e) {
+          return conf.getGenParams(myProject, myRegenerate);
+        } catch (GeneratorConfigurationException e) {
           JOptionPane.showMessageDialog(myFrame, e.getMessage());
           return null;
         }
