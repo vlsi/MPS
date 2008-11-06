@@ -59,8 +59,8 @@ public class SubtypingManager {
       }
     }
 
-    return isSubtype(NodeWrapper.createWrapperFromNode(subtype, null),
-      NodeWrapper.createWrapperFromNode(supertype, null), null, null, isWeak);
+    return isSubtype(NodeWrapper.createWrapperFromNode(subtype, null, true),
+      NodeWrapper.createWrapperFromNode(supertype, null, true), null, null, isWeak);
   }
 
   public boolean isSubtype(IWrapper subtype, IWrapper supertype, EquationManager equationManager, EquationInfo errorInfo) {
