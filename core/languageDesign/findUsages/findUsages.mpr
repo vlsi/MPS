@@ -12,7 +12,9 @@
       <languagePath path="${mps_home}\platform\quickQueryLanguage\quickQueryLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfLanguage name="Generation" language="jetbrains.mps.lang.findUsages" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="findUsagesLanguage" />
