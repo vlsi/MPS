@@ -222,7 +222,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222884814983">
-                            <link role="baseMethodDeclaration" targetNodeId="23.~Logger.error(java.lang.String):void" resolveInfo="error" />
+                            <link role="baseMethodDeclaration" targetNodeId="23.~Logger.warning(java.lang.String):void" resolveInfo="warning" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1222884815988">
                               <property name="value" value="Argument of an instance of MEET type is not a subconcept of Type" />
                             </node>

@@ -35,7 +35,7 @@ public class ClassifierTypeUtil {
           SLinkOperations.addChild(res, "argument", getTypeCoercedToClassifierType(arg));
         } else
         {
-          Logger.getLogger(ClassifierTypeUtil.class).error("Argument of an instance of MEET type is not a subconcept of Type");
+          Logger.getLogger(ClassifierTypeUtil.class).warning("Argument of an instance of MEET type is not a subconcept of Type");
         }
       }
       return res;
