@@ -353,6 +353,9 @@ public class SubtypingManager {
       newFrontier = new HashSet<IWrapper>();
     }
 
+   /* System.out.println("alltypes size = " + allTypes.size());
+    System.out.println("alltypes = " + allTypes);*/
+
     for (IWrapper node2 : allTypes) { // transitive closure
       for (IWrapper node1 : allTypes) {
         for (IWrapper node3 : allTypes) {
