@@ -6,19 +6,17 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.baseLanguage.typesystem.DataFlowUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_WhenConcreteStatement_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+public class check_WhenConcreteStatement_DF_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
 
-  public check_WhenConcreteStatement_NonTypesystemRule() {
+  public check_WhenConcreteStatement_DF_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode whenConcreteStatement, final TypeCheckingContext typeCheckingContext) {
-    if (!(RulesUtil.withinInferenceItem(whenConcreteStatement))) {
-      BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(whenConcreteStatement, "WHEN CONCRETE should be used only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1195223608203", intentionProvider);
-    }
+    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(whenConcreteStatement, "body", true));
   }
 
   public String getApplicableConceptFQName() {

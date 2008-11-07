@@ -1851,7 +1851,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1207316363415">
-    <property name="name" value="check_WhenConcreteStatement" />
+    <property name="name" value="check_WhenConcreteStatement_DF" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207316363416">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223643119238">
         <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223643122162">
@@ -2173,6 +2173,29 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1224760391348">
       <property name="name" value="nodeToCheck" />
       <link role="concept" targetNodeId="1.1224760201579" resolveInfo="InfoStatement" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1226079508446">
+    <property name="name" value="typeof_ChildTypeRestrictionReference" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226079508447">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1226079524187">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1226079527482">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1226079527483">
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1226079537610" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1226079524191">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1226079518068">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1226079521587">
+              <link role="applicableNode" targetNodeId="1226079508448" resolveInfo="reference" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1226079508448">
+      <property name="name" value="reference" />
+      <link role="concept" targetNodeId="1.1212763614690" resolveInfo="ChildTypeRestrictionReference" />
     </node>
   </node>
 </model>
