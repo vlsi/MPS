@@ -76,22 +76,6 @@ public class TreeFileChooser {
           if (!super.isFileVisible(file, showHiddenFiles)) return false;
           return myFileFilter.accept(new FileSystemFile(file.getPath()));
         }
-
-        @Override
-        public Icon getOpenIcon(VirtualFile virtualFile) {
-          if (virtualFile.isDirectory()) {
-            return super.getOpenIcon(virtualFile);
-          }
-          return virtualFile.getFileType().getIcon();
-        }
-
-        @Override
-        public Icon getClosedIcon(VirtualFile virtualFile) {
-          if (virtualFile.isDirectory()) {
-            return super.getClosedIcon(virtualFile);
-          }
-          return virtualFile.getFileType().getIcon();
-        }
       };
       descriptor.setTitle("Select File");
       descriptor.setShowFileSystemRoots(true);
