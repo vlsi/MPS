@@ -19,6 +19,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
@@ -73,11 +74,14 @@ public class QueriesGenerated {
           public Object calculate() {
             SNode compositePathComponent = _context.getParentNode();
             String base = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.getParent(compositePathComponent), "macro", true), "path");
-            for(SNode path : SLinkOperations.getTargets(compositePathComponent, "path", true)) {
+            for(SNode path : Sequence.fromIterable(SLinkOperations.getTargets(compositePathComponent, "path", true))) {
               if (path == _context.getCurrentTargetNode()) {
                 break;
               }
               base += "/" + SPropertyOperations.getString(path, "path");
+            }
+            if (base.equals("")) {
+              base = ".";
             }
             File baseDir = new File(base);
             File[] suggestFiles = baseDir.listFiles();

@@ -245,6 +245,29 @@
                   </node>
                 </node>
               </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1226086924560">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226086924561">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226086936176">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1226086938941">
+                      <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226086936177">
+                        <link role="variableDeclaration" targetNodeId="1220978475073" resolveInfo="base" />
+                      </node>
+                      <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226086940803">
+                        <property name="value" value="." />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226086927146">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226086926508">
+                    <link role="variableDeclaration" targetNodeId="1220978475073" resolveInfo="base" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226086929824">
+                    <link role="baseMethodDeclaration" targetNodeId="6.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226086930857" />
+                  </node>
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1220978550911">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220978550912">
                   <property name="name" value="baseDir" />

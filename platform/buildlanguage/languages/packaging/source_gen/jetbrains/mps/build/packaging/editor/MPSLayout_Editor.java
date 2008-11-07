@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
 import com.intellij.openapi.application.PathMacros;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MPSLayout_Editor extends DefaultNodeEditor {
 
@@ -849,7 +850,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
       List<String> list = ListSequence.<String>fromArray();
       Set<String> allMacroNames = PathMacros.getInstance().getUserMacroNames();
-      for(String macroName : allMacroNames) {
+      for(String macroName : Sequence.fromIterable(allMacroNames)) {
         ListSequence.fromList(list).addElement("$" + macroName + "$");
       }
       return list;

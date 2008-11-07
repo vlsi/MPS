@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -18,8 +19,8 @@ public class DuplicateModule_NonTypesystemRule extends AbstractNonTypesystemRule
   }
 
   public void applyRule(final SNode iCompositeComponent, final TypeCheckingContext typeCheckingContext) {
-    for(SNode e : SLinkOperations.getTargets(iCompositeComponent, "entry", true)) {
-      for(SNode e2 : SLinkOperations.getTargets(iCompositeComponent, "entry", true)) {
+    for(SNode e : Sequence.fromIterable(SLinkOperations.getTargets(iCompositeComponent, "entry", true))) {
+      for(SNode e2 : Sequence.fromIterable(SLinkOperations.getTargets(iCompositeComponent, "entry", true))) {
         if (!(e == e2)) {
           if (AbstractProjectComponent_Behavior.call_equals_1213877333900(e, e2)) {
             {
