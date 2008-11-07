@@ -13,13 +13,10 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class StructuralWrapperMap<T> implements Map<IWrapper, T> {
-  private HashMap<IWrapper, IWrapper> myRepresentatorsMap = new HashMap<IWrapper, IWrapper>();
-  private HashMap<IWrapper, T> myMap = new HashMap<IWrapper,T>();
-  private HashSet<IWrapper> myAbsentWrappers = new HashSet<IWrapper>();
-
-  public IWrapper getKeyRepresentator(IWrapper wrapper) {
-    return myRepresentatorsMap.get(wrapper);
-  }
+  private Map<IWrapperWrapper, IWrapperWrapper> myMap = new HashMap<IWrapperWrapper, IWrapperWrapper>();
+  private Map<IWrapper, T> myWrapperMap = new HashMap<IWrapper,T>();
+  private Map<IWrapper, IWrapper> myRepresentatorMap = new HashMap<IWrapper, IWrapper>();
+  private Set<IWrapper> myAbsent = new HashSet<IWrapper>();
 
   public int size() {
     return myMap.size();
@@ -38,108 +35,67 @@ public class StructuralWrapperMap<T> implements Map<IWrapper, T> {
   }
 
   public Set<IWrapper> keySet() {
-    return myMap.keySet();
+    return Collections.unmodifiableSet(myWrapperMap.keySet());
   }
 
   public void clear() {
-    myRepresentatorsMap.clear();
     myMap.clear();
-    myAbsentWrappers.clear();
+    myWrapperMap.clear();
+    myAbsent.clear();
   }
 
   public Collection<T> values() {
-    return myMap.values();
+    return myWrapperMap.values();
   }
 
   public Set<Entry<IWrapper, T>> entrySet() {
-    return myMap.entrySet();
+    throw new UnsupportedOperationException();
   }
 
   public T get(Object key) {
-    if (!(key instanceof IWrapper)) return null;
-    IWrapper keyWrapper = (IWrapper) key;
-    IWrapper representator = getKeyRepresentator(keyWrapper);
-    if (representator == null) {
-      if (myAbsentWrappers.contains(keyWrapper)) return null;
-      if (keyWrapper.isConcrete()) {
-        for (IWrapper wrapper : myMap.keySet()) {
-          if (!wrapper.isConcrete()) continue;
-          if (MatchingUtil.matchNodes(wrapper.getNode(), keyWrapper.getNode())) {
-            myRepresentatorsMap.put(keyWrapper, wrapper);
-            return myMap.get(wrapper);
-          }
-        }
-      }
+    IWrapper w = (IWrapper) key;
+    IWrapper representator = myRepresentatorMap.get(w);
+    if (representator != null) {
+      return myWrapperMap.get(representator);
     }
-    if (representator == null) {
-      myAbsentWrappers.add(keyWrapper);
+
+    if (myAbsent.contains(w)) {
       return null;
     }
-    return myMap.get(representator);
+
+    IWrapperWrapper wrapper = myMap.get(new IWrapperWrapper(w));
+    if (wrapper == null) {
+      myAbsent.add(w);
+      return null;
+    } else {
+      myRepresentatorMap.put(w, wrapper.getWrapper());
+      return myWrapperMap.get(wrapper);
+    }
   }
 
   public T put(IWrapper keyWrapper, T value) {
-    if (keyWrapper == null) return null;
-    IWrapper representator = getKeyRepresentator(keyWrapper);
-    if (keyWrapper.isConcrete()) {
-      if (representator == null) {
-        for (IWrapper wrapper : myMap.keySet()) {
-          if (!wrapper.isConcrete()) continue;
-          if (MatchingUtil.matchNodes(wrapper.getNode(), keyWrapper.getNode())) {
-            myRepresentatorsMap.put(keyWrapper, wrapper);
-            return myMap.put(wrapper, value);
-          }
-        }
-      }
-    }
-    if (representator == null) {
-      myRepresentatorsMap.put(keyWrapper, keyWrapper);
-      myAbsentWrappers.remove(keyWrapper);
-      representator = keyWrapper;
-    }
-    return myMap.put(representator, value);
-  }
+    IWrapperWrapper wrapper = new IWrapperWrapper(keyWrapper);
+    myMap.put(wrapper, wrapper);
+    myRepresentatorMap.put(keyWrapper,  keyWrapper);
+    T result = myWrapperMap.put(keyWrapper, value);
+    invalidateCache();
+    return result;
+   }
 
   public T remove(Object key) {
     if (!(key instanceof IWrapper)) return null;
-    IWrapper keyWrapper = (IWrapper) key;
-    myAbsentWrappers.add(keyWrapper);
-    IWrapper representator = getKeyRepresentator(keyWrapper);
-    if (representator == null) {
-      if (keyWrapper.isConcrete()) {
-        for (IWrapper wrapper : myMap.keySet()) {
-          if (!wrapper.isConcrete()) continue;
-          if (MatchingUtil.matchNodes(wrapper.getNode(), keyWrapper.getNode())) {
-            myRepresentatorsMap.put(keyWrapper, wrapper);
-            return myMap.remove(wrapper);
-          }
-        }
-      }
-    }
-    if (representator == null) return null;
-    return myMap.remove(representator);
+    myMap.remove((IWrapperWrapper) key);
+    T result = myWrapperMap.remove(((IWrapperWrapper) key).getWrapper());
+    invalidateCache();
+    return result;
   }
 
   public boolean containsKey(Object key) {
     if (!(key instanceof IWrapper)) return false;
-    IWrapper keyWrapper = (IWrapper) key;
-    IWrapper representator = getKeyRepresentator(keyWrapper);
-    if (representator == null) {
-      if (myAbsentWrappers.contains(keyWrapper)) return false;
-      if (keyWrapper.isConcrete()) {
-        for (IWrapper wrapper : myMap.keySet()) {
-          if (!wrapper.isConcrete()) continue;
-          if (MatchingUtil.matchNodes(wrapper.getNode(), keyWrapper.getNode())) {
-            myRepresentatorsMap.put(keyWrapper, wrapper);
-            return myMap.containsKey(wrapper);
-          }
-        }
-      }
-    }
-    if (representator == null) {
-      myAbsentWrappers.add(keyWrapper);
-      return false;
-    }
-    return myMap.containsKey(representator);
+    return myMap.containsKey(new IWrapperWrapper((IWrapper) key));
+  }
+
+  private void invalidateCache() {
+    myAbsent.clear();
   }
 }
