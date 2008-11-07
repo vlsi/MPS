@@ -785,12 +785,12 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1201421585183(final IOperationContext operationContext, final IfMacroContext _context) {
-    List<SNode> stmts = SLinkOperations.getTargets(_context.getNode(), "statement", true);
+    List<SNode> stmts = (List<SNode>)_context.getNode().getUserObject("CHUNK_OF_STATEMENTS");
     return stmts.size() == 0 || !(SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
   }
 
   public static boolean ifMacro_Condition_1201421814921(final IOperationContext operationContext, final IfMacroContext _context) {
-    List<SNode> stmts = SLinkOperations.getTargets(_context.getNode(), "statement", true);
+    List<SNode> stmts = (List<SNode>)_context.getNode().getUserObject("CHUNK_OF_STATEMENTS");
     return stmts.size() == 0 || !(SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(stmts.get(stmts.size() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
   }
 
@@ -1183,11 +1183,16 @@ public class QueriesGenerated {
       int endLabel = END;
       SNode lastStmt = null;
       SNode slist = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+      List<SNode> chunk = new ArrayList<SNode>();
+      slist.putUserObject("CHUNK_OF_STATEMENTS", chunk);
       for(SNode stmt : stmts) {
-        SNode tmp = SNodeOperations.copyNode(stmt);
-        SLinkOperations.addChild(slist, "statement", tmp);
-        PrepStatementUtil.copyPrepData(stmt, tmp, _context.getGenerator());
-        WrappersUtils.copyPrepData(stmt, tmp, _context.getGenerator());
+        /*
+          SNode tmp = SNodeOperations.copyNode(stmt);
+          SLinkOperations.addChild(slist, "statement", tmp);
+          PrepStatementUtil.copyPrepData(stmt, tmp, _context.getGenerator());
+          WrappersUtils.copyPrepData(stmt, tmp, _context.getGenerator());
+        */
+        chunk.add(stmt);
         lastStmt = stmt;
       }
       SNode cstmt = null;
@@ -1393,10 +1398,6 @@ public class QueriesGenerated {
     }
   }
 
-  public static Iterable sourceNodesQuery_1207224822468(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "statement", true);
-  }
-
   public static Iterable sourceNodesQuery_1209329471483(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true);
   }
@@ -1574,6 +1575,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1225798647983(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "operation", true), "parameter", true);
+  }
+
+  public static Iterable sourceNodesQuery_1226054358909(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return (List<SNode>)_context.getNode().getUserObject("CHUNK_OF_STATEMENTS");
   }
 
   public static SNode mapSrcMacro_mapper_1202998342276(final IOperationContext operationContext, final MapSrcMacroContext _context) {

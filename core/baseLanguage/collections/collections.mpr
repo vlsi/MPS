@@ -19,7 +19,7 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject" auto-import-from-idea="false">
     <projectSolutions>
       <solutionPath path="${project}\solutions\internalCollections.sandbox\internalCollections.sandbox.msd" />
       <solutionPath path="${project}\solutions\internalCollections.test\internalCollections.test.msd" />
@@ -34,8 +34,14 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfSolution name="UnitTests" solution="collections_unittest" />
-      <genConfSolution name="collections lang test" solution="jetbrains.mps.baseLanguage.collections" />
+      <genConfModule name="UnitTests" moduleUID="collections_unittest" />
+      <genConfModule name="collections lang test" moduleUID="jetbrains.mps.baseLanguage.collections" />
+      <genConfModule name="UnitTests" moduleUID="collections_unittest" />
+      <genConfModule name="collections lang test" moduleUID="jetbrains.mps.baseLanguage.collections" />
+      <genConfModule name="UnitTests" moduleUID="collections_unittest" />
+      <genConfModule name="collections lang test" moduleUID="jetbrains.mps.baseLanguage.collections" />
+      <genConfModule name="UnitTests" moduleUID="collections_unittest" />
+      <genConfModule name="collections lang test" moduleUID="jetbrains.mps.baseLanguage.collections" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
