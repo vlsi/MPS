@@ -636,10 +636,10 @@ __switch__:
 
   public void assertSameContents(Iterable<String> seq1, Iterable<String> seq2) {
     Assert.assertSame(Sequence.fromIterable(seq1).count(), Sequence.fromIterable(seq2).count());
-    for(String x : seq1) {
+    for(String x : Sequence.fromIterable(seq1)) {
       Assert.assertTrue(Sequence.fromIterable(seq2).contains(x));
     }
-    for(String y : seq2) {
+    for(String y : Sequence.fromIterable(seq2)) {
       Assert.assertTrue(Sequence.fromIterable(seq1).contains(y));
     }
   }

@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.collections.unittest.query_operations;
 import junit.framework.TestCase;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -16,7 +16,7 @@ public class ForEach_loop_Test1 extends TestCase {
   public void test_1() {
     List<Integer> list = ListSequence.<Integer>fromArray(1, 2, 3, 4, 5);
     int sum = 0;
-    for(Integer i : list) {
+    for(Integer i : Sequence.fromIterable(list)) {
       sum = sum + i;
     }
     Assert.assertEquals(15, sum);
@@ -80,7 +80,7 @@ __switch__:
 
     });
     int sum = 0;
-    for(Integer i : seq) {
+    for(Integer i : Sequence.fromIterable(seq)) {
       sum = sum + i;
     }
     Assert.assertEquals(15, sum);

@@ -70,12 +70,12 @@ __switch__:
 
     });
     int count = 0;
-    for(String s : ss) {
+    for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count = count + 1;
     }
     Assert.assertEquals(count, 5);
-    for(String s : ss) {
+    for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + (count - 5), s);
       count = count + 1;
     }
@@ -146,13 +146,13 @@ __switch__:
 
     });
     int count = 0;
-    for(String s : ss) {
+    for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count = count + 1;
     }
     Assert.assertEquals(count, 5);
     Assert.assertEquals(yield_count.value, 5);
-    for(String s : ss) {
+    for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count = count + 1;
     }
@@ -220,12 +220,12 @@ __switch__:
 
     });
     int count = 0;
-    for(String s : ss) {
+    for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count = count + 1;
     }
     Assert.assertEquals(count, sequence_size);
-    for(String s : ss) {
+    for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + (count - sequence_size), s);
       count = count + 1;
     }
@@ -297,13 +297,13 @@ __switch__:
 
     });
     int count = 0;
-    for(String s : ss) {
+    for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count = count + 1;
     }
     Assert.assertEquals(count, sequence_size);
     Assert.assertEquals(yield_count.value, sequence_size);
-    for(String s : ss) {
+    for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count = count + 1;
     }

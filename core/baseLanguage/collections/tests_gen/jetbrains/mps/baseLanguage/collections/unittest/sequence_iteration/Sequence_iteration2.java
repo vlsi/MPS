@@ -69,11 +69,11 @@ __switch__:
 
     });
     int count = 0;
-    for(String s : ss) {
+    for(String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count = count + 1;
       int count_inner = 0;
-      for(String s_inner : ss) {
+      for(String s_inner : Sequence.fromIterable(ss)) {
         Assert.assertEquals("" + count_inner, s_inner);
         count_inner = count_inner + 1;
       }

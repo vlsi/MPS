@@ -162,7 +162,7 @@ __switch__:
     });
     Assert.assertEquals(0, count.value);
     int resultCount = 0;
-    for(String s : strings) {
+    for(String s : Sequence.fromIterable(strings)) {
       String expected = "num:" + resultCount;
       if (resultCount % 2 != 0) {
         expected = "num:" + ((resultCount - 1) * 100);

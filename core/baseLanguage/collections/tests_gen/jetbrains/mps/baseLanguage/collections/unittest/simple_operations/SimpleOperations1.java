@@ -132,7 +132,7 @@ __switch__:
 
     });
     int count = 0;
-    for(String s : S) {
+    for(String s : Sequence.fromIterable(S)) {
       Assert.assertEquals("" + count, s);
       count = count + 1;
       Assert.assertEquals("0", Sequence.fromIterable(S).first());

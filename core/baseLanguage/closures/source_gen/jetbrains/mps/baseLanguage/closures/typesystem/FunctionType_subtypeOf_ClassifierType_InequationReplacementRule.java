@@ -93,10 +93,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           if (methods.size() > 1) {
             //  dirty hack
             errorMsg = ": interface must have only one method";
-            {
-              BaseIntentionProvider intentionProvider = null;
-//              typeCheckingContext.reportWarning(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1225908155523", intentionProvider);
-            }
+            // generated from warning statement
           }
           SNode md = methods.get(0);
           if (SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {

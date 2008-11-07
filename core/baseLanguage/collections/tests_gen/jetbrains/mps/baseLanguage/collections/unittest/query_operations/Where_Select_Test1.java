@@ -92,7 +92,7 @@ __switch__:
     });
     Assert.assertEquals(0, count.value);
     int expectedNum = 0;
-    for(String s : strings) {
+    for(String s : Sequence.fromIterable(strings)) {
       String expected = "num:" + expectedNum;
       Assert.assertEquals(expected, s);
       expectedNum = expectedNum + 2;

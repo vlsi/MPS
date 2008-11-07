@@ -88,9 +88,6 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
       }
     }
     final SNode RLCS_typevar_1221579075692 = typeCheckingContext.createNewRuntimeTypesVariable();
-    final SNode YLCS_typevar_1221579075693 = typeCheckingContext.createNewRuntimeTypesVariable();
-    boolean returnsValue = !(allRets.isEmpty());
-    boolean yieldsValue = !(allYlds.isEmpty());
     for(SNode rs : allRets) {
       {
         SNode _nodeToCheck_1029348928467 = closure;
@@ -98,6 +95,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
         typeCheckingContext.createGreaterThanInequation(typeCheckingContext.getEquationManager().getRepresentator(RLCS_typevar_1221579075692), typeCheckingContext.typeOf(SLinkOperations.getTarget(rs, "expression", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579075714", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579075710", false, 0, intentionProvider);
       }
     }
+    final SNode YLCS_typevar_1221579075693 = typeCheckingContext.createNewRuntimeTypesVariable();
     for(SNode ys : allYlds) {
       {
         SNode _nodeToCheck_1029348928467 = closure;
@@ -110,8 +108,11 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
       stmts.get(stmts.size() - 1) :
       null
     );
+    boolean returnsValue = !(allRets.isEmpty());
+    boolean returnsFromLast = SNodeOperations.isInstanceOf(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+    boolean yieldsValue = !(allYlds.isEmpty());
     final SNode RESULT_typevar_1221579592331 = typeCheckingContext.createNewRuntimeTypesVariable();
-    if (SNodeOperations.isInstanceOf(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+    if (returnsFromLast && !(yieldsValue)) {
       {
         SNode _nodeToCheck_1029348928467 = closure;
         BaseIntentionProvider intentionProvider = null;
@@ -131,7 +132,6 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
           typeCheckingContext.createEquation(typeCheckingContext.getEquationManager().getRepresentator(RESULT_typevar_1221579592331), new _Quotations.QuotationClass_5().createNode(typeCheckingContext.getEquationManager().getRepresentator(RLCS_typevar_1221579075692), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579747323", intentionProvider);
         }
       }
-      returnsValue = true;
     } else
     {
       {
@@ -159,7 +159,7 @@ with_allThrows:
         typeCheckingContext.reportTypeError(closure, "closure must either return or yield value", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579075859", intentionProvider);
       }
     } else
-    if (returnsValue) {
+    if ((returnsValue || returnsFromLast) && !(yieldsValue)) {
       {
         SNode _nodeToCheck_1029348928467 = closure;
         BaseIntentionProvider intentionProvider = null;
