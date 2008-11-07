@@ -21,6 +21,10 @@ public class AddMissingDependency_Intention extends BaseIntention {
     return true;
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(final SNode node, final EditorContext editorContext) {
     IScope scope = editorContext.getScope();
     for(SReference ref : node.getReferences()) {

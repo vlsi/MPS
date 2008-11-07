@@ -22,20 +22,6 @@ public class typeof_SConceptPropertyAccess_InferenceRule extends AbstractInferen
     if (conceptPropertyDecl == null) {
       return;
     }
-    final SNode Concept_typevar_1208190489964 = typeCheckingContext.createNewRuntimeTypesVariable();
-    RulesUtil.equate_inputNodeConceptOrInputConceptType(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1208190489964));
-    // todo: extract into non-typesystem rule
-    {
-      final SNode concreteConcept = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1208190489964);
-      typeCheckingContext.whenConcrete(concreteConcept, new Runnable() {
-
-        public void run() {
-          SNode declaringConcept = SNodeOperations.getParent(conceptPropertyDecl);
-          RulesUtil.checkAssignableConcept(typeCheckingContext, (SNode)typeCheckingContext.getEquationManager().getRepresentator(concreteConcept), declaringConcept, op, "operation is applied to wrong concept");
-        }
-
-      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186060002359");
-    }
     // ==========
     if (SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration")) {
       {

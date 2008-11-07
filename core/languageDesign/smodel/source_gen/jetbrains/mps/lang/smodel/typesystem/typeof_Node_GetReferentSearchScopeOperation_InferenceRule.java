@@ -8,10 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Node_GetReferentSearchScopeOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -32,32 +28,6 @@ public class typeof_Node_GetReferentSearchScopeOperation_InferenceRule extends A
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "operationContext", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221167442901", true), new _Quotations.QuotationClass_102().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221167466283", false, 0, intentionProvider);
-    }
-    // check link role argument
-    final SNode linkDecl = SLinkOperations.getTarget(op, "referenceLink", false);
-    if (linkDecl != null) {
-      if (!(SPropertyOperations.hasValue(linkDecl, "metaClass", "reference", "reference"))) {
-        BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(op, "reference link is expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168677396", intentionProvider);
-      }
-      final SNode Concept_typevar_1221168662799 = typeCheckingContext.createNewRuntimeTypesVariable();
-      RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1221168662799));
-      // todo: extract into non-typesystem rule
-      {
-        final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1221168662799);
-        typeCheckingContext.whenConcrete(C, new Runnable() {
-
-          public void run() {
-            SNode inputNodeConcept = typeCheckingContext.getEquationManager().getRepresentator(C);
-            List<SNode> declaredLinks = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(inputNodeConcept);
-            if (!(ListSequence.fromList(declaredLinks).contains(linkDecl))) {
-              BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168662817", intentionProvider);
-            }
-          }
-
-        }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168662804");
-      }
     }
   }
 

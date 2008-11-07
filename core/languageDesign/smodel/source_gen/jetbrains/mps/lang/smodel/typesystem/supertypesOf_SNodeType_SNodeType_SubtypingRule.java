@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -23,7 +24,7 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
     // DO NOT TOUCH THIS. CONCEPT MIGHT BE A TYPE VARIABLE
     if (concept != null && SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept, false);
-      for(SNode superConcept : superConcepts) {
+      for(SNode superConcept : Sequence.fromIterable(superConcepts)) {
         ListSequence.fromList(list).addElement(new _Quotations.QuotationClass_38().createNode(superConcept));
       }
       ListSequence.fromList(list).addElement(new _Quotations.QuotationClass_39().createNode());

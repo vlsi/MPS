@@ -29,7 +29,7 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
       typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
 
         public void run() {
-          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), new _Quotations.QuotationClass_1().createNode(typeCheckingContext), false, false)) {
+          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), new _Quotations.QuotationClass_1().createNode(typeCheckingContext), false)) {
             {
               SNode _nodeToCheck_1029348928467 = expr;
               BaseIntentionProvider intentionProvider = null;

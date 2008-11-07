@@ -18,6 +18,7 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Map;
@@ -44,17 +45,17 @@ public class RulesUtil {
         public void run() {
           boolean isGood = false;
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new _Quotations.QuotationClass_44().createNode(typeCheckingContext), false, false)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new _Quotations.QuotationClass_44().createNode(typeCheckingContext), false)) {
               isGood = true;
             }
           }
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new _Quotations.QuotationClass_45().createNode(typeCheckingContext), false, false)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new _Quotations.QuotationClass_45().createNode(typeCheckingContext), false)) {
               isGood = true;
             }
           }
           if (SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new _Quotations.QuotationClass_46().createNode(typeCheckingContext), false, false)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType), new _Quotations.QuotationClass_46().createNode(typeCheckingContext), false)) {
               isGood = true;
             }
           }
@@ -181,7 +182,7 @@ public class RulesUtil {
   public static boolean checkOpParameters_generic(final TypeCheckingContext typeCheckingContext, SNode op) {
     boolean noProblem = true;
     List<SNode> applicableParmConcepts = SLinkOperations.getConceptLinkTargets(op, "applicableParameter");
-    for(SNode parm : SLinkOperations.getTargets(op, "parameter", true)) {
+    for(SNode parm : Sequence.fromIterable(SLinkOperations.getTargets(op, "parameter", true))) {
       if (!(ListSequence.fromList(applicableParmConcepts).contains(SNodeOperations.getConceptDeclaration(parm)))) {
         {
           BaseIntentionProvider intentionProvider = null;
@@ -238,6 +239,30 @@ public class RulesUtil {
 
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1208202100447");
     }
+  }
+
+  public static SNode get_inputNodeConcept(final SNode op, final boolean conceptOfConceptIfInputConcept) {
+    final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
+    SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
+    SNode conceptDeclaration = null;
+    if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.lang.smodel.structure._LinkAccessT")) {
+      conceptDeclaration = SLinkOperations.getTarget(leftType, "targetConcept", false);
+    } else
+    if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
+      conceptDeclaration = SLinkOperations.getTarget(leftType, "concept", false);
+    } else
+    if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.lang.smodel.structure.SConceptType")) {
+      if (conceptOfConceptIfInputConcept) {
+        conceptDeclaration = SLinkOperations.getTarget(leftType, "conceptDeclaraton", false);
+      } else
+      {
+        conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+      }
+    }
+    if (conceptDeclaration == null) {
+      conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
+    }
+    return conceptDeclaration;
   }
 
   @InferenceMethod()

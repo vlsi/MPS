@@ -10,9 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_PropertyAttributeAccessQualifier_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -43,28 +40,6 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule extends Abstr
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SLinkOperations.getTarget(propQ, "expression", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204835998062", false), new _Quotations.QuotationClass_85().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204835998060", false, 0, intentionProvider);
-      }
-    } else
-    if (SNodeOperations.isInstanceOf(propQ, "jetbrains.mps.lang.smodel.structure.PropertyRefQualifier")) {
-      // check that property is in scope
-      final SNode property = SLinkOperations.getTarget(propQ, "property", false);
-      final SNode Concept_typevar_1204914077372 = typeCheckingContext.createNewRuntimeTypesVariable();
-      RulesUtil.equate_inputNodeConcept(typeCheckingContext, SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, false), typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1204914077372));
-      // todo: extract into non-typesystem rule
-      {
-        final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1204914077372);
-        typeCheckingContext.whenConcrete(C, new Runnable() {
-
-          public void run() {
-            SNode inputNodeConcept = typeCheckingContext.getEquationManager().getRepresentator(C);
-            List<SNode> declaredProperties = AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(inputNodeConcept);
-            if (!(ListSequence.fromList(declaredProperties).contains(property))) {
-              BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.reportTypeError(propQ, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204914077394", intentionProvider);
-            }
-          }
-
-        }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204914077379");
       }
     }
   }
