@@ -105,7 +105,7 @@ class AddOperation extends VcsOperation {
       } else {
         VirtualFile[] files = parent.getChildren();
         for (VirtualFile child : files) {
-          if (MPSFileTypesManager.instance().isModuleFile(child)){
+          if (MPSFileTypesManager.instance().isModuleFile(child) && !child.equals(vf)){
             return Collections.EMPTY_LIST;
           }
         }

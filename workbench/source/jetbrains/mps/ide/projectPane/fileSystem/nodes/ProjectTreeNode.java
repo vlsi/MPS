@@ -33,7 +33,9 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
     if (mpsProjectHolder != null) {
       List<IModule> modules = mpsProjectHolder.getMPSProject().getModules();
       for (IModule m : modules) {
-        moduleNodes.add(new ModuleTreeNode(project, m));
+        if (m.getDescriptorFile().exists()) {
+          moduleNodes.add(new ModuleTreeNode(project, m));
+        }
       }
     }
 
@@ -41,7 +43,7 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
       public int compare(ModuleTreeNode node1, ModuleTreeNode node2) {
         IModule module1 = node1.getModule();
         IModule module2 = node2.getModule();
-        if (module1.getClass().getName().equals(module2.getClass().getName())){
+        if (module1.getClass().getName().equals(module2.getClass().getName())) {
           return node1.getText().compareTo(node2.getText());
         } else if (module1 instanceof Solution) {
           return -1;
@@ -57,7 +59,7 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
 
 
     MyNamespaceTreeBuilder builder = new MyNamespaceTreeBuilder();
-    for (ModuleTreeNode mtn : moduleNodes){
+    for (ModuleTreeNode mtn : moduleNodes) {
       builder.addNode(mtn);
     }
     builder.fillNode(this);
@@ -84,7 +86,7 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
   private class MyNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
     protected String getNamespace(@NotNull MPSTreeNode node) {
       String folder = "";
-      if (node instanceof ModuleTreeNode){
+      if (node instanceof ModuleTreeNode) {
         folder = myProject.getComponent(MPSProjectHolder.class).getMPSProject().getFolderFor(((ModuleTreeNode) node).getModule());
       }
       if (folder == null) {

@@ -241,7 +241,10 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
           Object lastPathComponent = tp.getLastPathComponent();
           if (lastPathComponent instanceof FileNode) {
             FileNode node = (FileNode) lastPathComponent;
-            files.add(node.getFile());
+            VirtualFile file = node.getFile();
+            if (file.isValid()) {
+              files.add(file);
+            }
           }
         }
       }
@@ -254,7 +257,10 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       Object lastPathComponent = tp.getLastPathComponent();
       if (lastPathComponent instanceof FileNode) {
         FileNode node = (FileNode) lastPathComponent;
-        return node.getFile();
+        VirtualFile file = node.getFile();
+        if (file.isValid()) {
+          return node.getFile();
+        }
       }
     }
     return super.getData(dataId);
@@ -262,7 +268,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
 
   private void getFiles(FileNode node, Collection<VirtualFile> files) {
     files.add(node.getFile());
-    ((MPSTreeNode)node).init();
+    ((MPSTreeNode) node).init();
     for (FileNode child : node.getChildren()) {
       getFiles(child, files);
     }
