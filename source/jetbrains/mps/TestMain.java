@@ -175,21 +175,25 @@ public class TestMain {
       FileUtil.delete(destination);
     }
     FileUtil.copyDir(projectDirectory, destination);
-    final  MPSProject[] projectArray = new MPSProject[]{null};
+    final MPSProject[] projectArray = new MPSProject[]{null};
 
     //loading a project
-    try {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          File projectFile = new File(destination, "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT);
-          projectArray[0] = loadProject(projectFile);
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        try {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              File projectFile = new File(destination, "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT);
+              projectArray[0] = loadProject(projectFile);
+            }
+          });
+        } catch (Throwable t) {
+          t.printStackTrace();
         }
-      });
-    } catch (Throwable t) {
-      t.printStackTrace();
-      return false;
-    }
-
+      }
+    });
+    if (projectArray[0] == null) return false;
+    
     final MPSProject project = projectArray[0];
 
 
@@ -236,7 +240,8 @@ public class TestMain {
           b[0] = false;
           return;
         }
-      } });
+      }
+    });
 
     if (!b[0]) {
       return false;
@@ -323,6 +328,7 @@ public class TestMain {
 
   /**
    * Null result means no problems, not null result contains error description.
+   *
    * @param projectFile
    * @param treatThisWarningAsError
    * @return
@@ -344,7 +350,7 @@ public class TestMain {
       public void run() {
         project.dispose();
 
-        IdeEventQueue.getInstance().flushQueue();        
+        IdeEventQueue.getInstance().flushQueue();
         gc();
       }
     });
@@ -389,7 +395,7 @@ public class TestMain {
 
     return message;
   }
-    
+
 
   public static void configureMPS() {
     System.setProperty("idea.is.internal", "true");
