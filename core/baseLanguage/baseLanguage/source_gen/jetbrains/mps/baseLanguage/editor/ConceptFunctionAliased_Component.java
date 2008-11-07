@@ -103,7 +103,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
   }
 
   public EditorCell createModelAccess1215032509786(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAcessorFactory_1215032509786(context, node);
+    ModelAccessor modelAccessor = this._modelAccessorFactory_1215032509786(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ModelAccess_12150325097861215032509786(editorCell, node, context);
@@ -112,7 +112,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public ModelAccessor _modelAcessorFactory_1215032509786(final EditorContext editorContext, final SNode node) {
+  public ModelAccessor _modelAccessorFactory_1215032509786(final EditorContext editorContext, final SNode node) {
     return new ModelAccessor() {
 
       public String getText() {
