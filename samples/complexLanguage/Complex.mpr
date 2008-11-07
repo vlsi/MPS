@@ -4,7 +4,7 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="true">
+  <component name="MPSProject" auto-import-from-idea="false">
     <projectSolutions>
       <solutionPath path="${project}\solutions\sandbox\sandbox.msd" />
       <solutionPath path="${project}\solutions\jetbrains.mps.complex.runtime\jetbrains.mps.complex.runtime.msd" />
@@ -13,11 +13,10 @@
       <languagePath path="${project}\languages\complex\complex.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
-      <genConfSolution name="Generate Sandbox" solution="jetbrains.mps.samples.complex.sandbox" />
-      <genConfSolution name="Generate Complex Runtime" solution="jetbrains.mps.samples.complex.runtime" />
-      <genConfLanguage name="Generate Complex" language="jetbrains.mps.samples.complex" />
+      <genConfModule name="Generate Sandbox" moduleUID="jetbrains.mps.samples.complex.sandbox" />
+      <genConfModule name="Generate Complex Runtime" moduleUID="jetbrains.mps.samples.complex.runtime" />
+      <genConfModule name="Generate Complex" moduleUID="jetbrains.mps.samples.complex" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
@@ -28,6 +27,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
 </project>
 

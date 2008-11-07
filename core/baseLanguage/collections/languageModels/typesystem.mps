@@ -31,12 +31,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="20" />
+  <maxImportIndex value="21" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="8" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -47,6 +46,7 @@
   <import index="15" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="19" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" />
+  <import index="21" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1178725704623">
     <property name="name" value="RulesFunctions_Collections" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1184783863841">
@@ -3790,7 +3790,7 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1179262412845">
         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196777966186">
           <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196777966187">
-            <link role="classifier" targetNodeId="6.~ISequence" resolveInfo="ISequence" />
+            <link role="classifier" targetNodeId="21.~ISequence" resolveInfo="ISequence" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1196777966188">
               <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1196777966193">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227923049">
@@ -5155,7 +5155,7 @@
           <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227904501">
             <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1203342819768">
               <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206795571036">
-                <link role="classifier" targetNodeId="6.~ISequence" resolveInfo="ISequence" />
+                <link role="classifier" targetNodeId="21.~ISequence" resolveInfo="ISequence" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1203342819767">

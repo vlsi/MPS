@@ -109,7 +109,6 @@
   </generators>
   <classPath>
     <entry path="${language_descriptor}\classes" />
-    <entry path="${language_descriptor}\runtime\classes" />
   </classPath>
   <languageRuntimeClassPath>
     <entry path="${language_descriptor}\runtime\classes" />
@@ -120,6 +119,7 @@
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="true">fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</dependency>
     <dependency reexport="false">562bb5cb-73ce-4c74-a5e5-9f72731d9ac6(jetbrains.mps.internal.collections)</dependency>
+    <dependency reexport="false">5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>

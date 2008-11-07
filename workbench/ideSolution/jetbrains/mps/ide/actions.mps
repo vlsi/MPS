@@ -8,6 +8,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
+  <language namespace="3a0a09eb-2888-405e-80d4-8112e7b4d416(jetbrains.mps.baseLanguage.strings)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="18" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -29,7 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="125" />
+  <maxImportIndex value="124" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -72,6 +73,7 @@
   <import index="83" modelUID="f:java_stub#jetbrains.mps.ide.ui(jetbrains.mps.ide.ui@java_stub)" version="-1" />
   <import index="84" modelUID="f:java_stub#javax.swing.tree(javax.swing.tree@java_stub)" version="-1" />
   <import index="85" modelUID="f:java_stub#jetbrains.mps.ide.messages(jetbrains.mps.ide.messages@java_stub)" version="-1" />
+  <import index="87" modelUID="f:java_stub#jetbrains.mps.workbench.output(jetbrains.mps.workbench.output@java_stub)" version="-1" />
   <import index="88" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="90" modelUID="f:java_stub#jetbrains.mps.ide.newDevkitDialog(jetbrains.mps.ide.newDevkitDialog@java_stub)" version="-1" />
   <import index="91" modelUID="f:java_stub#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" />
@@ -88,6 +90,8 @@
   <import index="106" modelUID="f:java_stub#jetbrains.mps.ide.modelRepositoryViewer(jetbrains.mps.ide.modelRepositoryViewer@java_stub)" version="-1" />
   <import index="107" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="109" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
+  <import index="113" modelUID="f:java_stub#com.intellij.openapi.fileChooser.actions(com.intellij.openapi.fileChooser.actions@java_stub)" version="-1" />
+  <import index="114" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def.v3(jetbrains.mps.smodel.persistence.def.v3@java_stub)" version="-1" />
   <import index="115" modelUID="f:java_stub#jetbrains.mps.refactoring.renameModel(jetbrains.mps.refactoring.renameModel@java_stub)" version="-1" />
   <import index="116" modelUID="f:java_stub#jetbrains.mps.refactoring.renameLanguage(jetbrains.mps.refactoring.renameLanguage@java_stub)" version="-1" />
   <import index="117" modelUID="f:java_stub#jetbrains.mps.workbench.actions.goTo(jetbrains.mps.workbench.actions.goTo@java_stub)" version="-1" />
@@ -96,7 +100,6 @@
   <import index="121" modelUID="f:java_stub#jetbrains.mps.lang.structure.plugin(jetbrains.mps.lang.structure.plugin@java_stub)" version="-1" />
   <import index="122" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
   <import index="123" modelUID="f:java_stub#jetbrains.mps.vcs.actions(jetbrains.mps.vcs.actions@java_stub)" version="-1" />
-  <import index="125" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.projectoptions(jetbrains.mps.workbench.dialogs.projectoptions@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="ProjectPaneNodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -7880,6 +7883,7 @@
       <link role="point" targetNodeId="1222348086225" resolveInfo="refactoring" />
     </node>
   </node>
+  <visible index="2" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.projectoptions(jetbrains.mps.workbench.dialogs.projectoptions@java_stub)" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1222856130125">
     <property name="package" value="Menu.ProjectPane.Project.Actions" />
     <property name="name" value="MPSProjectPaths" />
@@ -7890,12 +7894,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1222856493078">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1222856493079">
             <property name="name" value="dialog" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225891983375">
-              <link role="classifier" targetNodeId="125.~ProjectOptionsDialog" resolveInfo="ProjectOptionsDialog" />
-            </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1222856493081">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1222856493082">
-                <link role="baseMethodDeclaration" targetNodeId="125.~ProjectOptionsDialog.&lt;init&gt;(com.intellij.openapi.project.Project)" resolveInfo="ProjectOptionsDialog" />
+                <link role="baseMethodDeclaration" targetNodeId="109.~ProjectPathsDialog.&lt;init&gt;(jetbrains.mps.project.MPSProject,jetbrains.mps.smodel.IOperationContext)" resolveInfo="ProjectPathsDialog" />
+                <link role="baseMethodDeclaration" targetNodeId="2v.~ProjectOptionsDialog.&lt;init&gt;(com.intellij.openapi.project.Project)" resolveInfo="ProjectOptionsDialog" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222856493083">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" id="1222856493084" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1222856493085">
@@ -7903,6 +7905,9 @@
                   </node>
                 </node>
               </node>
+            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225891983375">
+              <link role="classifier" targetNodeId="2v.~ProjectOptionsDialog" resolveInfo="ProjectOptionsDialog" />
             </node>
           </node>
         </node>
@@ -7920,6 +7925,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1222856407515">
       <property name="name" value="project" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
       <link role="key" targetNodeId="107.~MPSDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1225990064405">

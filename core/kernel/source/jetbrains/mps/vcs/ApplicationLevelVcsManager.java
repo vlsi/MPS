@@ -300,5 +300,9 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     public LocalChangeList findOrCreateList(String name, String comment) {
       return null;
     }
+
+    public void editComment(String name, String comment) {
+
+    }
   }
 }
