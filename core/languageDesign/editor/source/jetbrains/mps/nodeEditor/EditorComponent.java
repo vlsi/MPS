@@ -1619,13 +1619,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (!rectangle.isEmpty()) {
       boolean adjustHorizontally = !visibleRect.contains(rectangle);
       if (adjustHorizontally) {
-        int x1 = Math.max(0, x0 + width - viewportWidth);
-        scrollRectToVisible(
-          expandRectangleOneLine(
-            new Rectangle(
-              x1, largestVerticalBigCell.getY(),
-              x0 - x1 + width, largestVerticalBigCell.getHeight()
-            )));
+        if (width <= viewportWidth) {
+          int x1 = Math.max(0, x0 + width - viewportWidth);
+          scrollRectToVisible(
+            expandRectangleOneLine(
+              new Rectangle(
+                x1, largestVerticalBigCell.getY(),
+                x0 - x1 + width, largestVerticalBigCell.getHeight()
+              )));
+        } else {
+          scrollRectToVisible(
+            expandRectangleOneLine(
+              new Rectangle(
+                x0, largestVerticalBigCell.getY(),
+                viewportWidth, largestVerticalBigCell.getHeight()
+              )));
+        }                                                                       
       } else {
         scrollRectToVisible(
           expandRectangleOneLine(
