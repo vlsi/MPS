@@ -2133,5 +2133,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1226075737918">
+    <link role="conceptDeclaration" targetNodeId="1.1225894555487" resolveInfo="BitwiseNotExpression" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1226075737919">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226075737920">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1226075741369">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226075743700">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1226075743371" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1226075744625">
+              <link role="link" targetNodeId="1.1225894555490" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ArrayCreator_DataFlow extends DataFlowBuilder {
@@ -14,7 +15,7 @@ public class ArrayCreator_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode expression : SLinkOperations.getTargets(_context.getNode(), "dimensionExpression", true)) {
+    for(SNode expression : Sequence.fromIterable(SLinkOperations.getTargets(_context.getNode(), "dimensionExpression", true))) {
       _context.getBuilder().build((SNode)expression);
     }
   }
