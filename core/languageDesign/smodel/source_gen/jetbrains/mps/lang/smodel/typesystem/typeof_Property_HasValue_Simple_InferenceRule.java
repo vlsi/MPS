@@ -18,7 +18,6 @@ public class typeof_Property_HasValue_Simple_InferenceRule extends AbstractInfer
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;

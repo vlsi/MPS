@@ -19,7 +19,6 @@ public class typeof_Property_SetOperation_InferenceRule extends AbstractInferenc
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     SNode propertyAccessOp = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op);
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(propertyAccessOp, "property", false), "dataType", false);
     if (!((dataType != null))) {

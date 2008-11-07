@@ -17,7 +17,6 @@ public class typeof_SConceptPropertyAccess_InferenceRule extends AbstractInferen
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     final SNode conceptPropertyDecl = SLinkOperations.getTarget(op, "conceptProperty", false);
     if (conceptPropertyDecl == null) {
       return;

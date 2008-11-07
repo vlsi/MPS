@@ -17,8 +17,6 @@ public class typeof_Node_GetConceptOperation_InferenceRule extends AbstractInfer
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
-    RulesUtil.checkOpParameters_generic(typeCheckingContext, op);
     SNode operand = SLinkOperations.getTarget(SNodeOperations.getParent(op), "operand", true);
     final SNode C_typevar_1225294414283 = typeCheckingContext.createNewRuntimeTypesVariable();
     {

@@ -10,24 +10,23 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_SConceptPropertyAccess_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+public class check_SConceptLinkAccess_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
 
-  public check_SConceptPropertyAccess_NonTypesystemRule() {
+  public check_SConceptLinkAccess_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    final SNode conceptPropertyDecl = SLinkOperations.getTarget(op, "conceptProperty", false);
-    if (conceptPropertyDecl == null) {
+    final SNode conceptLinkDecl = SLinkOperations.getTarget(op, "conceptLinkDeclaration", false);
+    if (conceptLinkDecl == null) {
       return;
     }
-    final SNode Concept_typevar_1226071804497 = typeCheckingContext.createNewRuntimeTypesVariable();
     SNode concreteConcept = RulesUtil.get_inputNodeConcept(op, true);
-    SNode declaringConcept = SNodeOperations.getParent(conceptPropertyDecl);
+    SNode declaringConcept = SNodeOperations.getParent(conceptLinkDecl);
     RulesUtil.checkAssignableConcept(typeCheckingContext, (SNode)concreteConcept, declaringConcept, op, "operation is applied to wrong concept");
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess";
+    return "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess";
   }
 
   public boolean isApplicable(SNode argument) {

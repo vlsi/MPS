@@ -16,7 +16,6 @@ public class typeof_SConceptLinkAccess_InferenceRule extends AbstractInferenceRu
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     final SNode conceptLinkDecl = SLinkOperations.getTarget(op, "conceptLinkDeclaration", false);
     if (conceptLinkDecl == null) {
       return;

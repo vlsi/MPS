@@ -27,8 +27,6 @@ public class typeof_SLinkAccess_InferenceRule extends AbstractInferenceRule_Runt
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206103331026", true), new _Quotations.QuotationClass_13().createNode(SLinkOperations.getTarget(linkDecl, "target", false), SPropertyOperations.hasValue(linkDecl, "metaClass", "aggregation", "reference") + "", typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206103335045", intentionProvider);
     }
-    // ---
-    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
   }
 
   public String getApplicableConceptFQName() {

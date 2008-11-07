@@ -16,7 +16,6 @@ public class typeOf_Model_RootsOperation_InferenceRule extends AbstractInference
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, node);
     {
       SNode _nodeToCheck_1029348928467 = node;
       BaseIntentionProvider intentionProvider = null;

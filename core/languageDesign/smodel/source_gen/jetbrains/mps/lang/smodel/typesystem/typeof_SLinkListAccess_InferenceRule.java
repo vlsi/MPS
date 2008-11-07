@@ -21,14 +21,11 @@ public class typeof_SLinkListAccess_InferenceRule extends AbstractInferenceRule_
     if (linkDecl == null) {
       return;
     }
-    // assign type
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206103737722", true), new _Quotations.QuotationClass_14().createNode(SLinkOperations.getTarget(linkDecl, "target", false), "" + SPropertyOperations.hasValue(linkDecl, "metaClass", "aggregation", "reference"), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206103745585", intentionProvider);
     }
-    // ---
-    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
   }
 
   public String getApplicableConceptFQName() {

@@ -41,7 +41,7 @@ public class check_SLinkListAccess_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public boolean overrides() {
-    return true;
+    return false;
   }
 
 }

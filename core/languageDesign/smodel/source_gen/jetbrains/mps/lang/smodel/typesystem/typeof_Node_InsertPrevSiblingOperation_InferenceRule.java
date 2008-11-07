@@ -16,8 +16,6 @@ public class typeof_Node_InsertPrevSiblingOperation_InferenceRule extends Abstra
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    // checking
-    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     SNode parameter = SLinkOperations.getTarget(op, "insertedNode", true);
     if (!((parameter == null))) {
       {

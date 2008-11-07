@@ -17,7 +17,6 @@ public class typeof_SPropertyAccess_InferenceRule extends AbstractInferenceRule_
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(op, "property", false), "dataType", false);
     if (dataType != null) {
       {

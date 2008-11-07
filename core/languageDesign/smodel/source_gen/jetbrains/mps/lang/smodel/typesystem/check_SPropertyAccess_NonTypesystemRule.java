@@ -41,7 +41,7 @@ public class check_SPropertyAccess_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public boolean overrides() {
-    return true;
+    return false;
   }
 
 }

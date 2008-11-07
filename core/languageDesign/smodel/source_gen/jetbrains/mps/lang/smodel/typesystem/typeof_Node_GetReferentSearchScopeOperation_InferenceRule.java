@@ -21,9 +21,6 @@ public class typeof_Node_GetReferentSearchScopeOperation_InferenceRule extends A
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168249378", true), new _Quotations.QuotationClass_101().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221168255365", intentionProvider);
     }
-    // generic check 
-    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
-    // check operation context argument
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;

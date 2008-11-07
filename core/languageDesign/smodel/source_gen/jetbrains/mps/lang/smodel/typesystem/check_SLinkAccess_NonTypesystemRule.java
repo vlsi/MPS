@@ -41,7 +41,7 @@ public class check_SLinkAccess_NonTypesystemRule extends AbstractNonTypesystemRu
   }
 
   public boolean overrides() {
-    return true;
+    return false;
   }
 
 }

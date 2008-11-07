@@ -16,8 +16,6 @@ public class typeof_Node_ReplaceWithAnotherOperation_InferenceRule extends Abstr
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    // checking
-    RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
