@@ -89,19 +89,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
         gToBase.add(gWhat, constraints);
       }
     }
-    {
-      BaseGroup gToBase = ActionUtils.getGroup(AbstractFileActions_ActionGroup.ID);
-      ActionGroup gWhat = ActionUtils.getDefaultGroup("CutCopyPasteGroup");
-      if (gToBase == null || gWhat == null) {
-        return;
-      }
-      {
-        String labelName = null;
-        labelName = AbstractFileActions_ActionGroup.LABEL_ID_cutcopypaste;
-        Constraints constraints = new Constraints(Anchor.AFTER, labelName);
-        gToBase.add(gWhat, constraints);
-      }
-    }
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

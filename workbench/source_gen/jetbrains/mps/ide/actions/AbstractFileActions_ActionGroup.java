@@ -13,7 +13,6 @@ import com.intellij.openapi.actionSystem.Anchor;
 public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(AbstractFileActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.AbstractFileActions";
-  public static final String LABEL_ID_cutcopypaste = ID + "cutcopypaste";
   public static final String LABEL_ID_vcs = ID + "vcs";
 
   public AbstractFileActions_ActionGroup() {
@@ -21,9 +20,7 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_cutcopypaste);
       this.add(new FileDeleteActionFixed());
-      this.add(new RestartMerge_Action());
       this.addSeparator();
       this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);
     } catch (Throwable t) {
