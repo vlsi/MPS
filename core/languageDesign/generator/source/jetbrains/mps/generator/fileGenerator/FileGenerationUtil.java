@@ -43,7 +43,7 @@ public class FileGenerationUtil {
     generateFiles(status, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
 
     MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
-    manager.addFilesToVcs(new ArrayList<File>(generatedFiles));
+    manager.addFilesToVcs(new ArrayList<File>(generatedFiles), false);
 
     // always clean-up default output dir.
     directories.add(getDefaultOutputDir(status.getInputModel(), outputRootDirectory));

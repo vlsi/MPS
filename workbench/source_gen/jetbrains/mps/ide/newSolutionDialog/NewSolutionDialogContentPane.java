@@ -36,8 +36,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vfs.VFileSystem;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.util.FileUtil;
 
 public class NewSolutionDialogContentPane extends JPanel {
@@ -273,7 +275,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     return solutionDescriptorFile;
   }
 
-  /* package */Solution createNewSolution(String solutionName, IFile solutionDescriptorFile) {
+  /* package */Solution createNewSolution(String solutionName, final IFile solutionDescriptorFile) {
     SNode solutionDescriptor = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.SolutionDescriptor", null);
     SPropertyOperations.set(solutionDescriptor, "externallyVisible", "" + (true));
     SPropertyOperations.set(solutionDescriptor, "compileInMPS", "" + (myThis.getCompileInMPS()));
@@ -284,7 +286,13 @@ public class NewSolutionDialogContentPane extends JPanel {
     SPropertyOperations.set(modelRoot, "path", solutionDescriptorFile.getParent().getAbsolutePath());
     SLinkOperations.addChild(solutionDescriptor, "modelRoot", modelRoot);
     DescriptorsPersistence.saveSolutionDescriptor(solutionDescriptorFile, ((SolutionDescriptor)SNodeOperations.getAdapter(solutionDescriptor)));
-    ApplicationLevelVcsManager.instance().addFileToVcs(VFileSystem.refreshAndGetFile(solutionDescriptorFile));
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+
+      public void run() {
+        ApplicationLevelVcsManager.instance().addFileToVcs(VFileSystem.refreshAndGetFile(solutionDescriptorFile), false);
+      }
+
+    }, ModalityState.NON_MODAL);
     return myThis.getProject().addProjectSolution(solutionDescriptorFile.toFile());
   }
 

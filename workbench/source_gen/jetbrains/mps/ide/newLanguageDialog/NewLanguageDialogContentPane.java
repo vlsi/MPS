@@ -38,6 +38,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vfs.VFileSystem;
+import com.intellij.openapi.application.ModalityState;
 
 public class NewLanguageDialogContentPane extends JPanel {
 
@@ -264,7 +268,7 @@ public class NewLanguageDialogContentPane extends JPanel {
 
   /* package */void createNewLanguage() {
     String descriptorFileName = NameUtil.shortNameFromLongName(myThis.getLanguageNamespace());
-    File descriptorFile = new File(myThis.getLanguagePath(), descriptorFileName + MPSExtentions.DOT_LANGUAGE);
+    final File descriptorFile = new File(myThis.getLanguagePath(), descriptorFileName + MPSExtentions.DOT_LANGUAGE);
     File dir = descriptorFile.getParentFile();
     if (!(dir.exists())) {
       dir.mkdirs();
@@ -272,7 +276,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     Language language = Language.createLanguage(myThis.getLanguageNamespace(), new FileSystemFile(descriptorFile), myThis.getProject());
     SNode languageDescriptor = (SNode)language.getLanguageDescriptor().getNode();
     SNode devkitRef = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.DevKitReference", null);
-    SPropertyOperations.set(devkitRef, "name", "" + LanguageDesign_DevKit.MODULE_REFERENCE.toString());
+    SPropertyOperations.set(devkitRef, "name", LanguageDesign_DevKit.MODULE_REFERENCE.toString());
     SLinkOperations.addChild(languageDescriptor, "usedDevKit", devkitRef);
     SPropertyOperations.set(languageDescriptor, "compileInMPS", "" + (myThis.getCompileInMPS()));
     LanguageAspect.STRUCTURE.createNew(language);
@@ -283,6 +287,14 @@ public class NewLanguageDialogContentPane extends JPanel {
     myThis.getProject().addProjectLanguage(language);
     language.save();
     myThis.setResult(language);
+    // add to vcs
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+
+      public void run() {
+        ApplicationLevelVcsManager.instance().addFileToVcs(VFileSystem.refreshAndGetFile(descriptorFile.getParentFile()), true);
+      }
+
+    }, ModalityState.NON_MODAL);
   }
 
 }

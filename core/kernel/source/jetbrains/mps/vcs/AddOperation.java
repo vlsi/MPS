@@ -24,14 +24,17 @@ class AddOperation extends VcsOperation {
   private static final Logger LOG = Logger.getLogger(AddOperation.class);
   private final List<File> myFilesToAdd = new ArrayList<File>();
   private final Set<VirtualFile> myVirtualFilesToAdd = new HashSet<VirtualFile>();
+  private final boolean myRecursive;
 
-  public AddOperation(Set<VirtualFile> filesToAdd, ProjectLevelVcsManager manager, Project project) {
+  public AddOperation(Set<VirtualFile> filesToAdd, ProjectLevelVcsManager manager, Project project, boolean recursive) {
     super(manager, project);
+    myRecursive = recursive;
     myVirtualFilesToAdd.addAll(filesToAdd);
   }
 
-  public AddOperation(List<File> filesToAdd, ProjectLevelVcsManager manager, Project project) {
+  public AddOperation(List<File> filesToAdd, ProjectLevelVcsManager manager, Project project, boolean recursive) {
     super(manager, project);
+    myRecursive = recursive;
     myFilesToAdd.addAll(filesToAdd);
   }
 
@@ -45,7 +48,24 @@ class AddOperation extends VcsOperation {
       }
     }
 
+    if (myRecursive) {
+      Set<VirtualFile> allChildren = getAllChildren(myVirtualFilesToAdd, new LinkedHashSet<VirtualFile>());
+      myVirtualFilesToAdd.addAll(allChildren);
+    }
+
     reallyPerform();
+  }
+
+  private Set<VirtualFile> getAllChildren(final Set<VirtualFile> parentFiles, final Set<VirtualFile> allChildren) {
+    for (VirtualFile f : parentFiles){
+      if (!f.isDirectory()) continue;
+      VirtualFile[] children = f.getChildren();
+      for (VirtualFile child : children){
+        allChildren.add(child);
+        getAllChildren(Collections.singleton(child), allChildren);
+      }
+    }
+    return allChildren;
   }
 
   private void reallyPerform() {
@@ -105,7 +125,7 @@ class AddOperation extends VcsOperation {
       } else {
         VirtualFile[] files = parent.getChildren();
         for (VirtualFile child : files) {
-          if (MPSFileTypesManager.instance().isModuleFile(child) && !child.equals(vf)){
+          if (MPSFileTypesManager.instance().isModuleFile(child) && !myVirtualFilesToAdd.contains(child)){
             return Collections.EMPTY_LIST;
           }
         }

@@ -91,23 +91,23 @@ public class MPSVCSManager implements ProjectComponent {
     return true;
   }
 
-  public boolean addFilesToVcs(List<File> files) {
+  public boolean addFilesToVcs(List<File> files, final boolean recursive) {
     if ((files.size() == 0) || (!isProjectUnderVcs())) return true;
     final List<File> copiedFileList = new ArrayList<File>(files); //a list "files" can be modified by caller before invokeLater calls its runnable
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        perform(new AddOperation(copiedFileList, myManager, myProject));
+        perform(new AddOperation(copiedFileList, myManager, myProject, recursive));
       }
     });
     return true;
   }
 
-  public boolean addVirtualFilesToVcs(List<VirtualFile> files) {
+  public boolean addVirtualFilesToVcs(List<VirtualFile> files, final boolean recursive) {
     if (files.size() == 0 || (!isProjectUnderVcs())) return true;
     final HashSet<VirtualFile> filesCopy = new HashSet<VirtualFile>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        perform(new AddOperation(filesCopy, myManager, myProject));
+        perform(new AddOperation(filesCopy, myManager, myProject, recursive));
       }
     });
     return true;
@@ -171,7 +171,7 @@ public class MPSVCSManager implements ProjectComponent {
     public void modelSaved(SModelDescriptor sm) {
       final IFile ifile = sm.getModelFile();
       if (ifile != null) {
-        addFilesToVcs(Collections.singletonList(ifile.toFile()));
+        addFilesToVcs(Collections.singletonList(ifile.toFile()), false);
         sm.removeModelListener(this);
       }
     }
@@ -180,7 +180,7 @@ public class MPSVCSManager implements ProjectComponent {
   private class MyMetadataCreationListener implements MetadataCreationListener {
     public void metadataFileCreated(IFile ifile) {
       if (ifile != null) {
-        addFilesToVcs(Collections.singletonList(ifile.toFile()));
+        addFilesToVcs(Collections.singletonList(ifile.toFile()), false);
       }
     }
   }

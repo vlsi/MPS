@@ -17,7 +17,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.logging.Logger;
 
 import java.util.*;
@@ -165,7 +164,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
     return result[0];
   }
 
-  public void addFilesToVcs(List<VirtualFile> files) {
+  public void addFilesToVcs(List<VirtualFile> files, boolean recursive) {
     // collect
     Map<MPSVCSManager, List<VirtualFile>> vcsManagerToFile = new HashMap<MPSVCSManager, List<VirtualFile>>();
     for (VirtualFile file : files) {
@@ -184,14 +183,14 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
 
     // add
     for (MPSVCSManager manager : vcsManagerToFile.keySet()) {
-      manager.addVirtualFilesToVcs(vcsManagerToFile.get(manager));
+      manager.addVirtualFilesToVcs(vcsManagerToFile.get(manager), recursive);
     }
   }
 
-  public void addFileToVcs(VirtualFile file) {
+  public void addFileToVcs(VirtualFile file, boolean recursive) {
     MPSVCSManager manager = MPSVCSManager.getInstance(getProjectForFile(file));
     if (manager != null) {
-      manager.addVirtualFilesToVcs(Collections.singletonList(file));
+      manager.addVirtualFilesToVcs(Collections.singletonList(file), recursive);
     } else {
       LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
     }
@@ -268,7 +267,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent {
         VirtualFile file = VFileSystem.getFile(f);
         filesToAdd.add(file);
       }
-      addFilesToVcs(filesToAdd);
+      addFilesToVcs(filesToAdd, false);
     }
   }
 

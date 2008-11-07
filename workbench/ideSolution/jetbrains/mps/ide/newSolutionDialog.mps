@@ -27,7 +27,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="18" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <maxImportIndex value="17" />
+  <maxImportIndex value="18" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)" version="-1" />
@@ -44,6 +44,7 @@
   <import index="15" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c8959054d(jetbrains.mps.uiLanguage.components)" version="-1" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.vcs(jetbrains.mps.vcs@java_stub)" version="-1" />
+  <import index="18" modelUID="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" version="-1" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="1203592850595">
     <property name="name" value="NewSolutionDialog" />
     <node role="root" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialog" id="1203592858466">
@@ -611,6 +612,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1203608561247">
         <property name="name" value="solutionDescriptorFile" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1203609563118">
           <link role="classifier" targetNodeId="8.~IFile" resolveInfo="IFile" />
         </node>
@@ -814,20 +816,54 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226065206630">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226065212515">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1226065209370">
-              <link role="baseMethodDeclaration" targetNodeId="17.~ApplicationLevelVcsManager.instance():jetbrains.mps.vcs.ApplicationLevelVcsManager" resolveInfo="instance" />
-              <link role="classConcept" targetNodeId="17.~ApplicationLevelVcsManager" resolveInfo="ApplicationLevelVcsManager" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226081995589">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226081995590">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1226081995591">
+              <link role="baseMethodDeclaration" targetNodeId="18.~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolveInfo="getApplication" />
+              <link role="classConcept" targetNodeId="18.~ApplicationManager" resolveInfo="ApplicationManager" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226065264404">
-              <link role="baseMethodDeclaration" targetNodeId="17.~ApplicationLevelVcsManager.addFileToVcs(com.intellij.openapi.vfs.VirtualFile):void" resolveInfo="addFileToVcs" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1226065575339">
-                <link role="baseMethodDeclaration" targetNodeId="8.~VFileSystem.refreshAndGetFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolveInfo="refreshAndGetFile" />
-                <link role="classConcept" targetNodeId="8.~VFileSystem" resolveInfo="VFileSystem" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1226065575340">
-                  <link role="variableDeclaration" targetNodeId="1203608561247" resolveInfo="solutionDescriptorFile" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226081995592">
+              <link role="baseMethodDeclaration" targetNodeId="18.~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolveInfo="invokeLater" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226081995593">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1226081995594">
+                  <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1226081995595">
+                    <link role="classifier" targetNodeId="1.~Runnable" resolveInfo="Runnable" />
+                    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226081995596" />
+                    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1226081995597">
+                      <property name="isAbstract" value="false" />
+                      <property name="name" value="run" />
+                      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226081995598" />
+                      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1226081995599" />
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226081995600">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226081995601">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226081995602">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1226081995603">
+                              <link role="baseMethodDeclaration" targetNodeId="17.~ApplicationLevelVcsManager.instance():jetbrains.mps.vcs.ApplicationLevelVcsManager" resolveInfo="instance" />
+                              <link role="classConcept" targetNodeId="17.~ApplicationLevelVcsManager" resolveInfo="ApplicationLevelVcsManager" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226081995604">
+                              <link role="baseMethodDeclaration" targetNodeId="17.~ApplicationLevelVcsManager.addFileToVcs(com.intellij.openapi.vfs.VirtualFile,boolean):void" resolveInfo="addFileToVcs" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1226082015138">
+                                <link role="baseMethodDeclaration" targetNodeId="8.~VFileSystem.refreshAndGetFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolveInfo="refreshAndGetFile" />
+                                <link role="classConcept" targetNodeId="8.~VFileSystem" resolveInfo="VFileSystem" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1226082015139">
+                                  <link role="variableDeclaration" targetNodeId="1203608561247" resolveInfo="solutionDescriptorFile" />
+                                </node>
+                              </node>
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1226081995607">
+                                <property name="value" value="false" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226081995608">
+                <link role="classifier" targetNodeId="18.~ModalityState" resolveInfo="ModalityState" />
+                <link role="variableDeclaration" targetNodeId="18.~ModalityState.NON_MODAL" resolveInfo="NON_MODAL" />
               </node>
             </node>
           </node>
