@@ -58,8 +58,16 @@ class ModuleChooserDialog<T> extends BaseDialog {
         };
       }
 
+      public IModule[] find(boolean checkboxState) {
+        if (checkboxState){
+          return myNonProjectModules.toArray(new IModule[myNonProjectModules.size()]);
+        }else{
+          return myModules.toArray(new IModule[myModules.size()]);
+        }
+      }
+
       public IModule[] find(IScope scope) {
-        return myModules.toArray(new IModule[myModules.size()]);
+        throw new UnsupportedOperationException("must not be used");
       }
 
       @Nullable

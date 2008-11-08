@@ -8,6 +8,7 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -57,8 +58,17 @@ class ModelChooserDialog extends BaseDialog {
         };
       }
 
+      @Override
+      public SModelDescriptor[] find(boolean checkboxState) {
+        if (checkboxState){
+          return myNonProjectModels.toArray(new SModelDescriptor[myNonProjectModels.size()]);
+        } else{
+          return myModels.toArray(new SModelDescriptor[myModels.size()]);
+        }
+      }
+
       public SModelDescriptor[] find(IScope scope) {
-        return myModels.toArray(new SModelDescriptor[myModels.size()]);
+        throw new UnsupportedOperationException("must not be used");
       }
 
       @Nullable
