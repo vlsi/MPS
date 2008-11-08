@@ -735,6 +735,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         EditorComponent.MPSActionProxy proxy = new MPSActionProxy();
         myActionProxies.put(keyStroke, proxy);
         registerKeyboardAction(proxy, keyStroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+        proxy.add(ActionPlaces.EDITOR_POPUP, action);
         return proxy;
       } else {
         MPSActionProxy proxy = myActionProxies.get(keyStroke);
