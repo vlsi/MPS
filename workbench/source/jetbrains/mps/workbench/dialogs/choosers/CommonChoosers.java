@@ -32,56 +32,28 @@ import java.awt.Window;
 import java.util.List;
 
 public class CommonChoosers {
-  public static SModelDescriptor showDialogModelChooser(final Component parent, final List<SModelDescriptor> models) {
+  public static SModelDescriptor showDialogModelChooser(final Component parent, final List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) {
     Window window = SwingUtilities.getWindowAncestor(parent);
     ModelChooserDialog dialog;
     if (window instanceof Frame) {
-      dialog = new ModelChooserDialog((Frame) window, models);
+      dialog = new ModelChooserDialog((Frame) window, models, nonProjectModels);
     } else {
-      dialog = new ModelChooserDialog((Dialog) window, models);
+      dialog = new ModelChooserDialog((Dialog) window, models, nonProjectModels);
     }
     dialog.showDialog();
     return dialog.getResult();
   }
 
-  public static IModule showDialogModuleChooser(final Component parent, final List<IModule> modules) {
+  public static <T> T showDialogModuleChooser(final Component parent, final List<T> modules, @Nullable List<T> nonProjectModules) {
     Window window = SwingUtilities.getWindowAncestor(parent);
-    ModuleChooserDialog dialog;
+    ModuleChooserDialog<T> dialog;
     if (window instanceof Frame) {
-      dialog = new ModuleChooserDialog((Frame) window, modules);
+      dialog = new ModuleChooserDialog<T>((Frame) window, modules, nonProjectModules);
     } else {
-      dialog = new ModuleChooserDialog((Dialog) window, modules);
+      dialog = new ModuleChooserDialog<T>((Dialog) window, modules, nonProjectModules);
     }
     dialog.showDialog();
     return dialog.getResult();
-  }
-
-  public static Language showDialogLanguageChooser(final Component parent, final List<Language> languages) {
-    Window window = SwingUtilities.getWindowAncestor(parent);
-    LanguageChooserDialog dialog;
-    if (window instanceof Frame) {
-      dialog = new LanguageChooserDialog((Frame) window, languages);
-    } else {
-      dialog = new LanguageChooserDialog((Dialog) window, languages);
-    }
-    dialog.showDialog();
-    return dialog.getResult();
-  }
-
-  public static DevKit showDialogDevKitChooser(final Component parent, final List<DevKit> devKits) {
-    Window window = SwingUtilities.getWindowAncestor(parent);
-    final DevKitChooserDialog dialog;
-    if (window instanceof Frame) {
-      dialog = new DevKitChooserDialog((Frame) window, devKits);
-    } else {
-      dialog = new DevKitChooserDialog((Dialog) window, devKits);
-    }
-    dialog.showDialog();
-    return ModelAccess.instance().runReadAction(new Computable<DevKit>() {
-      public DevKit compute() {
-        return dialog.getResult();
-      }
-    });
   }
 
   public static void showSimpleModelChooser(final List<SModelDescriptor> models, final ChooserCallback<SModelDescriptor> callback) {

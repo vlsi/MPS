@@ -24,23 +24,27 @@ import java.util.List;
 
 class ModelChooserDialog extends BaseDialog {
   private List<SModelDescriptor> myModels = new ArrayList<SModelDescriptor>();
+  private List<SModelDescriptor> myNonProjectModels = new ArrayList<SModelDescriptor>();
   private SmartChooseByNamePanel myChooser;
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
 
-  ModelChooserDialog(Frame owner, List<SModelDescriptor> options) throws HeadlessException {
+  ModelChooserDialog(Frame owner, List<SModelDescriptor> models,@Nullable List<SModelDescriptor> nonProjectModels) throws HeadlessException {
     super(owner, "Choose Model");
-    doInit(options);
+    doInit(models,nonProjectModels);
   }
 
-  ModelChooserDialog(Dialog owner, List<SModelDescriptor> options) throws HeadlessException {
+  ModelChooserDialog(Dialog owner, List<SModelDescriptor> models,@Nullable  List<SModelDescriptor> nonProjectModels) throws HeadlessException {
     super(owner, "Choose Model");
-    doInit(options);
+    doInit(models,nonProjectModels);
   }
 
-  private void doInit(final List<SModelDescriptor> options) {
+  private void doInit(final List<SModelDescriptor> options,@Nullable  List<SModelDescriptor> nonProjectModels) {
     setModal(true);
     myModels.addAll(options);
+    if (nonProjectModels!=null){
+      myNonProjectModels.addAll(nonProjectModels);
+    }
 
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
@@ -61,9 +65,14 @@ class ModelChooserDialog extends BaseDialog {
       public String getPromptText() {
         return "Model name:";
       }
+
+      @Override
+      public boolean loadInitialCheckBoxState() {
+        return !myNonProjectModels.isEmpty();
+      }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToModelModel);
+    myChooser = new SmartChooseByNamePanel(goToModelModel,!myNonProjectModels.isEmpty());
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {

@@ -54,13 +54,15 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
 
   //---------------------INTERFACE STUFF------------------------
 
+  public String getCheckBoxName() {
+    return "Include non-project modules";
+  }
+
   public String getNotInMessage() {
-    //return IdeBundle.message("label.no.matches.found.in.project");
     return "no modules found in project";
   }
 
   public String getNotFoundMessage() {
-    //return IdeBundle.message("label.no.matches.found");
     return "no mathches found";
   }
 }

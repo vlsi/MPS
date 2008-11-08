@@ -10,7 +10,6 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
@@ -23,25 +22,29 @@ import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.List;
 
-class LanguageChooserDialog extends BaseDialog {
-  private List<Language> myLanguages = new ArrayList<Language>();
+class ModuleChooserDialog<T> extends BaseDialog {
+  private List<T> myModules = new ArrayList<T>();
+  private List<T> myNonProjectModules = new ArrayList<T>();
   private SmartChooseByNamePanel myChooser;
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
 
-  LanguageChooserDialog(Frame owner, List<Language> options) throws HeadlessException {
+  ModuleChooserDialog(Frame owner, List<T> modules,@Nullable List<T> nonProjectModules) throws HeadlessException {
     super(owner, "Choose Language");
-    doInit(options);
+    doInit(modules, nonProjectModules);
   }
 
-  LanguageChooserDialog(Dialog owner, List<Language> options) throws HeadlessException {
+  ModuleChooserDialog(Dialog owner, List<T> modules,@Nullable List<T> nonProjectModules) throws HeadlessException {
     super(owner, "Choose Language");
-    doInit(options);
+    doInit(modules, nonProjectModules);
   }
 
-  private void doInit(final List<Language> options) {
+  private void doInit(final List<T> options, List<T> nonProjectLanguages) {
     setModal(true);
-    myLanguages.addAll(options);
+    myModules.addAll(options);
+    if (nonProjectLanguages!=null){
+      myNonProjectModules.addAll(nonProjectLanguages);
+    }
 
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
@@ -55,7 +58,7 @@ class LanguageChooserDialog extends BaseDialog {
       }
 
       public IModule[] find(IScope scope) {
-        return myLanguages.toArray(new IModule[myLanguages.size()]);
+        return myModules.toArray(new IModule[myModules.size()]);
       }
 
       @Nullable
@@ -67,9 +70,14 @@ class LanguageChooserDialog extends BaseDialog {
       public String getCheckBoxName() {
         return "";
       }
+
+      @Override
+      public boolean loadInitialCheckBoxState() {
+        return !myNonProjectModules.isEmpty();
+      }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToModuleModel);
+    myChooser = new SmartChooseByNamePanel(goToModuleModel,!myNonProjectModules.isEmpty());
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {
@@ -92,11 +100,11 @@ class LanguageChooserDialog extends BaseDialog {
     return myChooser.getPanel();
   }
 
-  public Language getResult() {
+  public T getResult() {
     if (myIsCancelled) return null;
     BaseModuleItem moduleItem = (BaseModuleItem) myChooser.getChosenElement();
     if (moduleItem == null) return null;
-    return (Language) moduleItem.getModule();
+    return (T) moduleItem.getModule();
   }
 
   @Button(position = 0, name = "OK", defaultButton = true)

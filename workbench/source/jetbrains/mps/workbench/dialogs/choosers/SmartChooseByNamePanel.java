@@ -16,9 +16,11 @@ import java.awt.Insets;
 
 public class SmartChooseByNamePanel extends ChooseByNameBase {
   private JPanel myPanel;
+  private boolean myCheckboxVisible = false;
 
-  public SmartChooseByNamePanel(ChooseByNameModel model) {
+  public SmartChooseByNamePanel(ChooseByNameModel model,boolean checkboxVisible) {
     super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, "", new FakePsiContext());
+    myCheckboxVisible = checkboxVisible;
   }
 
   protected int getVisibleItemsCount() {
@@ -64,7 +66,7 @@ public class SmartChooseByNamePanel extends ChooseByNameBase {
   }
 
   protected boolean isCheckboxVisible() {
-    return false;
+    return myCheckboxVisible;
   }
 
   protected void showTextFieldPanel() {

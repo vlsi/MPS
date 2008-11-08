@@ -8,7 +8,6 @@ public abstract class BaseLanguageModel extends BaseModuleModel {
   }
 
   public String getCheckBoxName() {
-    //return IdeBundle.message("checkbox.include.non.project.classes");
     return "Include non-project languages";
   }
 }
