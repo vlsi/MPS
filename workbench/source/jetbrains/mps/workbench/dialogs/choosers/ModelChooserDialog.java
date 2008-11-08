@@ -78,7 +78,7 @@ class ModelChooserDialog extends BaseDialog {
 
       @Override
       public boolean loadInitialCheckBoxState() {
-        return !myNonProjectModels.isEmpty();
+        return false;
       }
     };
 

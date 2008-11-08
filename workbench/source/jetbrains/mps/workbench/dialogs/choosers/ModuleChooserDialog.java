@@ -87,7 +87,7 @@ class ModuleChooserDialog<T> extends BaseDialog {
 
       @Override
       public boolean loadInitialCheckBoxState() {
-        return !myNonProjectModules.isEmpty();
+        return false;
       }
     };
 
