@@ -30,7 +30,6 @@ public abstract class BaseNodeData implements IExternalizeable {
   private boolean myResultsSection;
   private boolean myIsExcluded;
   private boolean myIsExpanded;
-  private int mySubresultsCount;
   private boolean myIsResultNode;
 
   protected BaseNodeData() {
@@ -75,14 +74,6 @@ public abstract class BaseNodeData implements IExternalizeable {
     //notifyChangeListeners();
   }
 
-  public int getSubresultsCount() {
-    return mySubresultsCount;
-  }
-
-  public void setSubresultsCount(int subresultsCount) {
-    mySubresultsCount = subresultsCount;
-  }
-
   public PathItemRole getRole() {
     return myRole;
   }
@@ -118,7 +109,6 @@ public abstract class BaseNodeData implements IExternalizeable {
     element.setAttribute(INFO, myAdditionalInfo);
     element.setAttribute(EXCLUDED, Boolean.toString(myIsExcluded));
     element.setAttribute(EXPANDED, Boolean.toString(myIsExpanded));
-    element.setAttribute(RESULTS, Integer.toString(mySubresultsCount));
     element.setAttribute(ISRESULT, Boolean.toString(myIsResultNode));
 
     Element roleXML = new Element(ROLE);
@@ -131,7 +121,6 @@ public abstract class BaseNodeData implements IExternalizeable {
     myAdditionalInfo = element.getAttributeValue(INFO);
     myIsExcluded = Boolean.parseBoolean(element.getAttributeValue(EXCLUDED));
     myIsExpanded = Boolean.parseBoolean(element.getAttributeValue(EXPANDED));
-    mySubresultsCount = Integer.parseInt(element.getAttributeValue(RESULTS));
     myIsResultNode = Boolean.parseBoolean(element.getAttributeValue(ISRESULT));
 
     Element roleXML = element.getChild(ROLE);

@@ -43,7 +43,7 @@ public class CategoryNodeData extends BaseNodeData {
   }
 
   public String getText(TextOptions options) {
-    String counter = options.myCounters && isResultsSection() ? " " + sizeRepresentation(getSubresultsCount()) : "";
+    String counter = options.myCounters && isResultsSection() ? " " + sizeRepresentation(options.mySubresultsCount) : "";
     return super.getText(options) + counter;
   }
 

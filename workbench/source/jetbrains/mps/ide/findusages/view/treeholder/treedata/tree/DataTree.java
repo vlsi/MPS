@@ -111,26 +111,9 @@ public class DataTree implements IExternalizeable, IChangeListener {
         }
         root.add(resultsRoot);
 
-        buildCounters(resultsRoot);
-
         return root;
       }
     });
-  }
-
-  private int buildCounters(DataNode root) {
-    int num = 0;
-    for (DataNode child : root.getChildren()) {
-      num += buildCounters(child);
-    }
-
-    if (root.getData().isResultNode()) {
-      num++;
-    }
-
-    root.getData().setSubresultsCount(num);
-
-    return num;
   }
 
   private void addSearchedNode(DataNode root, Object node) {

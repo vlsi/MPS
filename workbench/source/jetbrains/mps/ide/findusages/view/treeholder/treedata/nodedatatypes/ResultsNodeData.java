@@ -29,7 +29,7 @@ public class ResultsNodeData extends BaseNodeData {
   }
 
   public String getText(TextOptions options) {
-    return "<b>" + sizeRepresentation(getSubresultsCount()) + " found" + "</b>";
+    return "<b>" + sizeRepresentation(options.mySubresultsCount) + " found" + "</b>";
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {

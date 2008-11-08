@@ -88,7 +88,7 @@ public class ModuleNodeData extends BaseNodeData {
 
   public String getText(TextOptions options) {
     boolean showCounter = options.myCounters && isResultsSection() && (!isResultNode());
-    String counter = showCounter ? " " + sizeRepresentation(getSubresultsCount()) : "";
+    String counter = showCounter ? " " + sizeRepresentation(options.mySubresultsCount) : "";
     return super.getText(options) + counter;
   }
 

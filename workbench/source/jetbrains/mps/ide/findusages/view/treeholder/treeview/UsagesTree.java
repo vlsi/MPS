@@ -231,28 +231,33 @@ public abstract class UsagesTree extends MPSTree {
           } else {
             searchedNodesPathProvider.add(PathItemRole.ROLE_MODULE);
           }
-          root.add(buildGoodSubtreeWithIcons(myContents.getTreeRoot().getChild(0), searchedNodesPathProvider).get(0));
+          root.add(buildTree(myContents.getTreeRoot().getChild(0), searchedNodesPathProvider));
         }
-        root.add(buildGoodSubtreeWithIcons(myContents.getTreeRoot().getChild(1), myResultPathProvider).get(0));
-
-        makeAllNodesHTMLNodes(root);
+        root.add(buildTree(myContents.getTreeRoot().getChild(1), myResultPathProvider));
 
         return root;
       }
     });
   }
 
-  private List<UsagesTreeNode> buildGoodSubtreeWithIcons(DataNode root, HashSet<PathItemRole> nodeCategories) {
-    List<UsagesTreeNode> children = buildSubtree(root, nodeCategories);
+  //this is not recursive
+  //use only for top-level nodes
+  private UsagesTreeNode buildTree(DataNode root, HashSet<PathItemRole> nodeCategories) {
+    List<UsagesTreeNode> children = buildSubtreeStructure(root, nodeCategories);
+    assert children.size()==1;
+    
+    UsagesTreeNode child = children.get(0);
+
     mergeChildren(children);
-    sortSubtreeByTextPresentation(children);
-    for (UsagesTreeNode child : children) {
-      setTreeIcons(child);
-    }
-    return children;
+    buildCounters(child);
+    sortByCaption(children);
+    setUIProperties(child);
+    makeNodesHTML(child);
+
+    return child;
   }
 
-  private void sortSubtreeByTextPresentation(List<UsagesTreeNode> children) {
+  private void sortByCaption(List<UsagesTreeNode> children) {
     Collections.sort(children, new Comparator<UsagesTreeNode>() {
       public int compare(UsagesTreeNode o1, UsagesTreeNode o2) {
         String s1 = o1.getUserObject().getData().getPlainText();
@@ -261,31 +266,21 @@ public abstract class UsagesTree extends MPSTree {
       }
     });
     for (UsagesTreeNode child : children) {
-      sortSubtreeByTextPresentation(child.internalGetChildren());
+      sortByCaption(child.internalGetChildren());
     }
   }
 
-  private List<UsagesTreeNode> buildSubtree(DataNode root, HashSet<PathItemRole> nodeCategories) {
+  private List<UsagesTreeNode> buildSubtreeStructure(DataNode root, HashSet<PathItemRole> nodeCategories) {
     List<UsagesTreeNode> children = new ArrayList<UsagesTreeNode>();
     for (DataNode child : root.getChildren()) {
-      children.addAll(buildSubtree(child, nodeCategories));
+      children.addAll(buildSubtreeStructure(child, nodeCategories));
     }
 
     BaseNodeData data = root.getData();
     if (nodeCategories.contains(data.getRole())) {
       UsagesTreeNode node = new UsagesTreeNode("");
       node.setNodeIdentifier(data.getPlainText());
-
-      node.setIcon(data.getIcon());
       node.setUserObject(root);
-
-      String invalid = data.isInvalid() ? "<font color=red>[Invalid]</font> " : "";
-      String caption = data.getText(new TextOptions(myAdditionalInfoNeeded, true));
-      if (data.isExcluded()) {
-        node.setText(invalid + "<font color=gray><s>" + caption + "</s></font>");
-      } else {
-        node.setText(invalid + caption);
-      }
 
       for (UsagesTreeNode child : children) {
         node.add(child);
@@ -294,6 +289,21 @@ public abstract class UsagesTree extends MPSTree {
       children.add(node);
     }
     return children;
+  }
+
+  private int buildCounters(UsagesTreeNode root) {
+    int num = 0;
+    for (UsagesTreeNode child : root.internalGetChildren()) {
+      num += buildCounters(child);
+    }
+
+    if (root.getUserObject().getData().isResultNode()) {
+      num++;
+    }
+
+    root.setSubresultsCount(num);
+
+    return num;
   }
 
   private void mergeChildren(List<UsagesTreeNode> children) {
@@ -328,20 +338,31 @@ public abstract class UsagesTree extends MPSTree {
     children.addAll(mergedChildren);
   }
 
-  private void setTreeIcons(UsagesTreeNode root) {
-    root.setIcon(root.getUserObject().getData().getIcon());
+  private void setUIProperties(UsagesTreeNode root) {
+    BaseNodeData data = root.getUserObject().getData();
+
+    root.setIcon(data.getIcon());
+
+    String invalid = data.isInvalid() ? "<font color=red>[Invalid]</font> " : "";
+    String caption = data.getText(new TextOptions(myAdditionalInfoNeeded, true,root.getSubresultsCount()));
+    if (data.isExcluded()) {
+      root.setText(invalid + "<font color=gray><s>" + caption + "</s></font>");
+    } else {
+      root.setText(invalid + caption);
+    }
+
     int i;
     for (i = 0; i < root.getChildCount(); i++) {
-      setTreeIcons((UsagesTreeNode) root.getChildAt(i));
+      setUIProperties((UsagesTreeNode) root.getChildAt(i));
     }
   }
 
-  private void makeAllNodesHTMLNodes(UsagesTreeNode root) {
+  private void makeNodesHTML(UsagesTreeNode root) {
     root.setText("<html>" + root.getText() + "</html>");
     int i;
     for (i = 0; i < root.getChildCount(); i++) {
       UsagesTreeNode child = (UsagesTreeNode) root.getChildAt(i);
-      makeAllNodesHTMLNodes(child);
+      makeNodesHTML(child);
     }
   }
 
@@ -595,8 +616,18 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   public class UsagesTreeNode extends TextMPSTreeNode {
+    private int mySubresultsCount = 0;
+
     public UsagesTreeNode(String text) {
       super(text, null);
+    }
+
+    public int getSubresultsCount() {
+      return mySubresultsCount;
+    }
+
+    public void setSubresultsCount(int subresultsCount) {
+      mySubresultsCount = subresultsCount;
     }
 
     public void setChildAt(int i, UsagesTreeNode child) {
