@@ -4,12 +4,10 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="true">
-    <projectSolutions>
-      <solutionPath path="${mps_home}\platform\regexp\solutions\jetbrains.mps.regexp.examples\jetbrains.mps.regexp.examples.msd" />
-    </projectSolutions>
+  <component name="MPSProject" auto-import-from-idea="false">
+    <projectSolutions />
     <projectLanguages>
-      <languagePath path="${mps_home}\platform\quickQueryLanguage\quickQueryLanguage.mpl" />
+      <languagePath path="${project}\findUsages.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

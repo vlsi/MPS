@@ -12,7 +12,6 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
