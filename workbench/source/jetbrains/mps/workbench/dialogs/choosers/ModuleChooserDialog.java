@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
@@ -31,15 +32,15 @@ class ModuleChooserDialog<T> extends BaseDialog {
 
   ModuleChooserDialog(Frame owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString) throws HeadlessException {
     super(owner, "Choose "+entityString);
-    doInit(modules, nonProjectModules);
+    doInit(modules, nonProjectModules, entityString);
   }
 
   ModuleChooserDialog(Dialog owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString) throws HeadlessException {
     super(owner, "Choose "+entityString);
-    doInit(modules, nonProjectModules);
+    doInit(modules, nonProjectModules,entityString);
   }
 
-  private void doInit(final List<T> options, List<T> nonProjectLanguages) {
+  private void doInit(final List<T> options, List<T> nonProjectLanguages, final String entityString) {
     setModal(true);
     myModules.addAll(options);
     if (nonProjectLanguages!=null){
@@ -63,12 +64,17 @@ class ModuleChooserDialog<T> extends BaseDialog {
 
       @Nullable
       public String getPromptText() {
-        return "Language name:";
+        return NameUtil.capitalize(entityString)+" name:";
       }
 
       @Nullable
       public String getCheckBoxName() {
-        return "";
+        return "Include non-project "+NameUtil.pluralize(entityString);
+      }
+
+      @Override
+      public String getNotInMessage() {
+        return "no "+NameUtil.pluralize(entityString)+" found in project";
       }
 
       @Override

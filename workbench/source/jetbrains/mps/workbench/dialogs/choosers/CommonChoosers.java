@@ -3,23 +3,22 @@ package jetbrains.mps.workbench.dialogs.choosers;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import com.intellij.ide.util.gotoByName.UseIdeaChooser;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
-import jetbrains.mps.workbench.choose.modules.BaseDevkitModel;
-import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import org.jetbrains.annotations.Nullable;
 
@@ -43,7 +42,7 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
-  public static <T> T showDialogModuleChooser(final Component parent,String entityString, final List<T> modules, @Nullable List<T> nonProjectModules) {
+  public static <T extends IModule> T showDialogModuleChooser(final Component parent, String entityString, final List<T> modules, @Nullable List<T> nonProjectModules) {
     Window window = SwingUtilities.getWindowAncestor(parent);
     ModuleChooserDialog<T> dialog;
     if (window instanceof Frame) {
@@ -94,65 +93,50 @@ public class CommonChoosers {
     }, ModalityState.current(), true);
   }
 
-  public static void showSimpleLanguageChooser(final List<Language> languages, final ChooserCallback<Language> callback) {
+  public static <T extends IModule> void showSimpleModuleChooser(final List<T> modules, final String entityString, final ChooserCallback<T> callback) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
     final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
 
-    BaseLanguageModel goToLanguageModel = new BaseLanguageModel(mpsProject) {
-      public NavigationItem doGetNavigationItem(final IModule module) {
+    BaseMPSChooseModel<T> goToModuleModel = new BaseMPSChooseModel<T>(mpsProject) {
+      public String doGetFullName(Object element) {
+        return ((BaseModuleItem) element).getModule().getModuleUID();
+      }
+
+      public String doGetObjectName(T module) {
+        return UseIdeaChooser.useIdeaChooser() ? NameUtil.shortNameFromLongName(module.getModuleUID()) : module.getModuleFqName();
+      }
+
+      public String getCheckBoxName() {
+        return "Include non-project "+NameUtil.pluralize(entityString);
+      }
+
+      public String getNotInMessage() {
+        return "no "+NameUtil.pluralize(entityString)+" found in project";
+      }
+
+      public String getNotFoundMessage() {
+        return "no mathches found";
+      }
+
+      public NavigationItem doGetNavigationItem(final T module) {
         return new BaseModuleItem(module) {
           public void navigate(boolean requestFocus) {
-            callback.execute((Language) module);
+            callback.execute((T) module);
           }
         };
       }
 
-      public Language[] find(IScope scope) {
-        return languages.toArray(new Language[languages.size()]);
+      public T[] find(IScope scope) {
+        return (T[]) modules.toArray();
       }
 
       @Nullable
       public String getPromptText() {
-        return "Language name:";
+        return NameUtil.capitalize(entityString) + " name:";
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, new FakePsiContext());
-
-    popup.invoke(new ChooseByNamePopupComponent.Callback() {
-      public void onClose() {
-      }
-
-      public void elementChosen(Object element) {
-        ((NavigationItem) element).navigate(true);
-      }
-    }, ModalityState.current(), true);
-  }
-
-  public static void showSimpleDevKitChooser(final List<DevKit> devKits, final ChooserCallback<DevKit> callback) {
-    DataContext dataContext = DataManager.getInstance().getDataContext();
-    final Project project = MPSDataKeys.PROJECT.getData(dataContext);
-    final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
-
-    BaseDevkitModel goToDevkitModel = new BaseDevkitModel(mpsProject) {
-      public NavigationItem doGetNavigationItem(final IModule module) {
-        return new BaseModuleItem(module) {
-          public void navigate(boolean requestFocus) {
-            callback.execute((DevKit) module);
-          }
-        };
-      }
-
-      public DevKit[] find(IScope scope) {
-        return devKits.toArray(new DevKit[devKits.size()]);
-      }
-
-      @Nullable
-      public String getPromptText() {
-        return "Devkit name:";
-      }
-    };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToDevkitModel, new FakePsiContext());
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModuleModel, new FakePsiContext());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
