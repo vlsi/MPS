@@ -729,26 +729,31 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  protected AbstractAction registerNodeAction(final BaseAction action, KeyStroke keyStroke) {
+  protected AbstractAction registerNodeAction(final BaseAction action, @Nullable KeyStroke keyStroke) {
     if (keyStroke != null) {
       if (!myActionProxies.containsKey(keyStroke)) {
         EditorComponent.MPSActionProxy proxy = new MPSActionProxy();
         myActionProxies.put(keyStroke, proxy);
         registerKeyboardAction(proxy, keyStroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+        return proxy;
       } else {
-        StringBuilder actionNames = new StringBuilder();
-        for (String actionName:((MPSActionProxy)myActionProxies.get(keyStroke)).getActionNames()){
-          actionNames.append(actionName).append(";");
+        MPSActionProxy proxy = myActionProxies.get(keyStroke);
+        List<BaseAction> activeActionsBefore = proxy.getActiveActions();
+        proxy.add(ActionPlaces.EDITOR_POPUP, action);
+
+        if (!activeActionsBefore.isEmpty() && proxy.isActionActive(action)) {
+          StringBuilder actionNames = new StringBuilder();
+          for (BaseAction a : activeActionsBefore) {
+            actionNames.append(a.getClass().getSimpleName()).append(";");
+          }
+          actionNames.delete(actionNames.length() - 1, actionNames.length());
+          LOG.warning(
+            "Action " + action.getClass().getSimpleName() +
+              " is being registered for shortcut <" + keyStroke.toString() + ">" +
+              " for which an action " + actionNames + " is already registered, and both are active");
         }
-        actionNames.delete(actionNames.length()-1,actionNames.length());
-        LOG.warning(
-          "Action " + action.getClass().getSimpleName() +
-            " is being registered for shortcut <" + keyStroke.toString() + ">" +
-            " for which an action " + actionNames + " is already registered");
+        return proxy;
       }
-      EditorComponent.MPSActionProxy proxy = myActionProxies.get(keyStroke);
-      proxy.add(ActionPlaces.EDITOR_POPUP, action);
-      return proxy;
     }
     return null;
   }
@@ -1634,7 +1639,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                 x0, largestVerticalBigCell.getY(),
                 viewportWidth, largestVerticalBigCell.getHeight()
               )));
-        }                                                                       
+        }
       } else {
         scrollRectToVisible(
           expandRectangleOneLine(
@@ -2451,25 +2456,41 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myActions.add(a);
     }
 
-    public List<String> getActionNames(){
-      return CollectionUtil.map(myActions,new Mapper<BaseAction, String>() {
+    public List<String> getActionNames() {
+      return CollectionUtil.map(myActions, new Mapper<BaseAction, String>() {
         public String map(BaseAction baseAction) {
           return baseAction.getClass().getSimpleName();
         }
       });
     }
 
+    public List<BaseAction> getActiveActions() {
+      List<BaseAction> result = new ArrayList<BaseAction>();
+      for (final BaseAction action : myActions) {
+        if (isActionActive(action)) {
+          result.add(action);
+        }
+      }
+      return result;
+    }
+
+    public boolean isActionActive(BaseAction action) {
+      if (mySelectedCell == null || mySelectedCell.getSNode() == null) {
+        return false;
+      }
+      DataContext context = DataManager.getInstance().getDataContext(EditorComponent.this);
+      AnActionEvent event = ActionUtils.createEvent(myPlace, context);
+
+      action.update(event);
+      return event.getPresentation().isEnabled();
+    }
+
     public void actionPerformed(ActionEvent e) {
       for (final BaseAction action : myActions) {
-        if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
+        if (isActionActive(action)) {
           DataContext context = DataManager.getInstance().getDataContext(EditorComponent.this);
           AnActionEvent event = ActionUtils.createEvent(myPlace, context);
-
-          action.update(event);
-          if (event.getPresentation().isEnabled()) {
-            action.actionPerformed(event);
-            return;
-          }
+          action.actionPerformed(event);
         }
       }
     }
