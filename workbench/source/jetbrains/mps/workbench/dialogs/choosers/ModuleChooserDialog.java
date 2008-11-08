@@ -29,13 +29,13 @@ class ModuleChooserDialog<T> extends BaseDialog {
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
 
-  ModuleChooserDialog(Frame owner, List<T> modules,@Nullable List<T> nonProjectModules) throws HeadlessException {
-    super(owner, "Choose Language");
+  ModuleChooserDialog(Frame owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString) throws HeadlessException {
+    super(owner, "Choose "+entityString);
     doInit(modules, nonProjectModules);
   }
 
-  ModuleChooserDialog(Dialog owner, List<T> modules,@Nullable List<T> nonProjectModules) throws HeadlessException {
-    super(owner, "Choose Language");
+  ModuleChooserDialog(Dialog owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString) throws HeadlessException {
+    super(owner, "Choose "+entityString);
     doInit(modules, nonProjectModules);
   }
 

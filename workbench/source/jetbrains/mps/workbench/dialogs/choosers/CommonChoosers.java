@@ -7,7 +7,6 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -44,13 +43,13 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
-  public static <T> T showDialogModuleChooser(final Component parent, final List<T> modules, @Nullable List<T> nonProjectModules) {
+  public static <T> T showDialogModuleChooser(final Component parent,String entityString, final List<T> modules, @Nullable List<T> nonProjectModules) {
     Window window = SwingUtilities.getWindowAncestor(parent);
     ModuleChooserDialog<T> dialog;
     if (window instanceof Frame) {
-      dialog = new ModuleChooserDialog<T>((Frame) window, modules, nonProjectModules);
+      dialog = new ModuleChooserDialog<T>((Frame) window, modules, nonProjectModules, entityString);
     } else {
-      dialog = new ModuleChooserDialog<T>((Dialog) window, modules, nonProjectModules);
+      dialog = new ModuleChooserDialog<T>((Dialog) window, modules, nonProjectModules, entityString);
     }
     dialog.showDialog();
     return dialog.getResult();
