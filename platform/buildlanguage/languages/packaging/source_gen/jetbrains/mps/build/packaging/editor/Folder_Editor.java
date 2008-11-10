@@ -261,6 +261,15 @@ public class Folder_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_12035987384791203598738479(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1203598738479");
     MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Collection_12035987547341203598754734(EditorCell editorCell, SNode node, EditorContext context) {

@@ -325,6 +325,9 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1205344621976">
           <link role="relationDeclaration" targetNodeId="1.1205340441197" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1226343975256">
+            <property name="value" value="1.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1224596511516">
           <link role="editorComponent" targetNodeId="1224596805841" resolveInfo="IncludeExcludeEditorComponent" />
@@ -409,6 +412,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1203598633261">
         <property name="text" value="from" />
         <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1226344180288">
+          <property name="value" value="1.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1220982003265">
         <link role="relationDeclaration" targetNodeId="1.1220981955937" />
@@ -441,6 +447,9 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1203598738479">
           <property name="text" value="from" />
           <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1226344038979">
+            <property name="value" value="1.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1220982084139">
           <link role="relationDeclaration" targetNodeId="1.1220982054961" />
@@ -1314,6 +1323,9 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224596916552">
           <property name="text" value="excludes" />
           <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1226344150190">
+            <property name="value" value="1.0" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1224596916553">
           <property name="allowEmptyText" value="true" />

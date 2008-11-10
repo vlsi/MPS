@@ -366,6 +366,15 @@ public class Jar_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNode_title1205344621976(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_RIGHT, 1.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_component_ICompositeComponentEditorComponenmt1206440342373(EditorCell editorCell, SNode node, EditorContext context) {
