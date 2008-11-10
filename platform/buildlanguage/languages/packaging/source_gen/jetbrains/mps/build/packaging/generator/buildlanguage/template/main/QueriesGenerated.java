@@ -14,7 +14,6 @@ import jetbrains.mps.build.packaging.behavior.ICompositeComponent_Behavior;
 import java.io.File;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.build.packaging.behavior.Copy_Behavior;
-import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -35,6 +34,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import java.util.ArrayList;
 import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
+import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -118,10 +118,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1204107873448(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1204116311399(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ILayoutComponent_Behavior.call_getPath_1213877230696(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode())).replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1204122982909(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -381,10 +377,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1204016587285(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "sourcePath", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_1204116292641(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "setBasedir");
   }
 
   public static boolean ifMacro_Condition_1209915520020(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -86,8 +86,6 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1204114265324(context, node, "basedir"));
     editorCell.addEditorCell(this.createProperty1204114274013(context, node));
-    editorCell.addEditorCell(this.createConstant1204116139217(context, node, "set"));
-    editorCell.addEditorCell(this.createProperty1204116144985(context, node));
     return editorCell;
   }
 
@@ -163,14 +161,6 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12041159285481204115928548(editorCell, node, context);
     setupLabel_Constant_1204115928548_1204115928548(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant1204116139217(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_12041161392171204116139217(editorCell, node, context);
-    setupLabel_Constant_1204116139217_1204116139217(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -347,35 +337,6 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createProperty1204116144985_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_setBasedir1204116144985(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_setBasedir_1204116144985((EditorCell_Label)editorCell, node, context);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty1204116144985(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("setBasedir");
-    provider.setNoTargetText("<no setBasedir>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1204116144985_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
   public EditorCell createProperty1216901163375_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -451,6 +412,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_conceptProperty_alias1203614651921(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
+    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_property_name1203614743774(EditorCell editorCell, SNode node, EditorContext context) {
@@ -512,15 +474,6 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refNodeList_configuration1204115937925(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_configuration");
-  }
-
-  private static void setupBasic_Constant_12041161392171204116139217(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1204116139217");
-    MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_property_setBasedir1204116144985(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_setBasedir");
   }
 
   private static void setupBasic_Constant_12047065407461204706540746(EditorCell editorCell, SNode node, EditorContext context) {
@@ -658,12 +611,6 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNodeList_configuration_1204115937925(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1204116139217_1204116139217(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_property_setBasedir_1204116144985(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1204706540746_1204706540746(EditorCell_Label editorCell, SNode node, EditorContext context) {

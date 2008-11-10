@@ -22,7 +22,6 @@ public class MPSLayout_Behavior {
 
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "basedir", ".");
-    SPropertyOperations.set(thisNode, "setBasedir", "" + (false));
     Map<String, String> vars = MapSequence.fromMap(new HashMap<String, String>());
     MapSequence.fromMap(vars).put("basedir", "basedir");
     MapSequence.fromMap(vars).put("\\n", "line.separator");

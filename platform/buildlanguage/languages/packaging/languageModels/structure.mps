@@ -217,16 +217,12 @@
       <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1203614596836">
-      <property name="value" value="layout" />
+      <property name="value" value="build script" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1204114229489">
       <property name="name" value="basedir" />
       <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1204116114324">
-      <property name="name" value="setBasedir" />
-      <link role="dataType" targetNodeId="3.1082983657063" resolveInfo="boolean" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1216901049448">
       <property name="name" value="compile" />

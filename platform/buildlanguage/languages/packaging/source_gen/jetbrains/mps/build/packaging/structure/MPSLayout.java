@@ -18,7 +18,6 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NAME = "name";
-  public static final String SET_BASEDIR = "setBasedir";
   public static final String COMPILE = "compile";
   public static final String CONFIGURATION = "configuration";
   public static final String COMPONENT = "component";
@@ -69,14 +68,6 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
 
   public void setName(String value) {
     this.setProperty(MPSLayout.NAME, value);
-  }
-
-  public boolean getSetBasedir() {
-    return this.getBooleanProperty(MPSLayout.SET_BASEDIR);
-  }
-
-  public void setSetBasedir(boolean value) {
-    this.setBooleanProperty(MPSLayout.SET_BASEDIR, value);
   }
 
   public boolean getCompile() {

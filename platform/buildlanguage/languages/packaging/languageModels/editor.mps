@@ -67,6 +67,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1203614651921">
           <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+          <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997604">
           <property name="flag" value="false" />
@@ -161,13 +162,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1204116139217">
-          <property name="text" value="set" />
-          <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1204116144985">
-          <link role="relationDeclaration" targetNodeId="1.1204116114324" resolveInfo="setBasedir" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996536">
           <property name="flag" value="false" />

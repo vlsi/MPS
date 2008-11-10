@@ -964,62 +964,6 @@
         </node>
       </node>
     </node>
-    <node role="basedir" type="jetbrains.mps.buildlanguage.structure.FileName" id="1204116281355">
-      <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1204116281356">
-        <property name="value" value="layout.basedir" />
-        <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1204116311398">
-          <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1204116311399">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204116311400">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204116318510">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210762682880">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204116319465">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204117603728">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1204116318511" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1204117608620">
-                        <link role="baseMethodDeclaration" targetNodeId="20.1213877261819" resolveInfo="getLayout" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1204116326483">
-                      <link role="baseMethodDeclaration" targetNodeId="20.1213877230696" resolveInfo="getPath" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210762684195">
-                    <link role="baseMethodDeclaration" targetNodeId="2.~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolveInfo="replace" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210762684196">
-                      <link role="classifier" targetNodeId="6.~File" resolveInfo="File" />
-                      <link role="variableDeclaration" targetNodeId="6.~File.separator" resolveInfo="separator" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1210762684197">
-                      <link role="classifier" targetNodeId="19.1210761300056" resolveInfo="Util" />
-                      <link role="variableDeclaration" targetNodeId="19.1210761316257" resolveInfo="SEPARATOR" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1204116292640">
-        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1204116292641">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204116292642">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204116302236">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204116303817">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204117587209">
-                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1204116302237" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1204117590133">
-                    <link role="baseMethodDeclaration" targetNodeId="20.1213877261819" resolveInfo="getLayout" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1204116306787">
-                  <link role="property" targetNodeId="1.1204116114324" resolveInfo="setBasedir" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1203620346433">
     <property name="name" value="reduce_File" />

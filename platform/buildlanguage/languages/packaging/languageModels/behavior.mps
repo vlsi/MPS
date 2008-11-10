@@ -988,21 +988,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877228449">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877228450">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877228451">
-              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877228452" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1213877228453">
-                <link role="property" targetNodeId="1.1204116114324" resolveInfo="setBasedir" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1213877228454">
-              <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1213877228455">
-                <property name="value" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877228456">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877228457">
             <property name="name" value="vars" />
