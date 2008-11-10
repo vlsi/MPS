@@ -1143,6 +1143,7 @@ public class QueriesGenerated {
       SNode pd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
       SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(FunctionTypeUtil.unmeet(ft)), true);
       SPropertyOperations.set(pd, "name", SPropertyOperations.getString(paramDecls.get(idx), "name"));
+      SPropertyOperations.set(pd, "isFinal", "" + (SPropertyOperations.getBoolean(paramDecls.get(idx), "isFinal")));
       idx = idx + 1;
       res.add(pd);
     }
@@ -1443,6 +1444,7 @@ public class QueriesGenerated {
           SNode newpd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
           SLinkOperations.setTarget(newpd, "type", ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pd, "type", true), ct), true);
           SPropertyOperations.set(newpd, "name", SPropertyOperations.getString(paramDecls.get(idx), "name"));
+          SPropertyOperations.set(newpd, "isFinal", "" + (SPropertyOperations.getBoolean(paramDecls.get(idx), "isFinal")));
           idx = idx + 1;
           res.add(newpd);
         }
