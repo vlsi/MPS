@@ -584,16 +584,7 @@ public class GeneratorUtil {
 
     if (ruleConsequence instanceof DismissTopMappingRule) {
       GeneratorMessage message = ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage();
-      if (message != null) {
-        String text = message.getMessageText();
-        if (message.getMessageType() == GeneratorMessageType.error) {
-          generator.showErrorMessage(inputNode, null, ruleNode, text);
-        } else if (message.getMessageType() == GeneratorMessageType.warning) {
-          generator.showWarningMessage(inputNode, text);
-        } else {
-          generator.showInformationMessage(inputNode, text);
-        }
-      }
+      processGeneratorMessage(message, inputNode, null, ruleNode, generator);
       throw new DismissTopMappingRuleException();
 
     } else if (ruleConsequence instanceof AbandonInput_RuleConsequence) {
@@ -633,6 +624,19 @@ public class GeneratorUtil {
     }
 
     return null;
+  }
+
+  /*package*/ static void processGeneratorMessage(GeneratorMessage message, SNode inputNode, SNode templateNode, SNode ruleNode, ITemplateGenerator generator) {
+    if (message != null) {
+      String text = message.getMessageText();
+      if (message.getMessageType() == GeneratorMessageType.error) {
+        generator.showErrorMessage(inputNode, null, ruleNode, text);
+      } else if (message.getMessageType() == GeneratorMessageType.warning) {
+        generator.showWarningMessage(inputNode, text);
+      } else {
+        generator.showInformationMessage(inputNode, text);
+      }
+    }
   }
 
   /*package*/

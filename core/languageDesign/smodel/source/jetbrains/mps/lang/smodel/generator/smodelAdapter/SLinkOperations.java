@@ -1,7 +1,13 @@
 package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
 import java.util.Collections;
 import java.util.List;
@@ -12,6 +18,13 @@ import java.util.ArrayList;
  * Apr 26, 2006
  */
 public class SLinkOperations {
+  public static SNode findLinkDeclaration(String conceptFqName, String linkRole) {
+    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(concept, linkRole);
+    return BaseAdapter.fromAdapter(linkDeclaration);
+  }
+
+
   public static SNode getTarget(SNode node, String role, boolean child) {
     if (node != null) {
       if (child) {

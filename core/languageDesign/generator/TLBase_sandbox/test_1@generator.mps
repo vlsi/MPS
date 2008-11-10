@@ -593,9 +593,6 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch" id="1216323660196">
     <property name="name" value="switch_aaa" />
-    <node role="defaultConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1216371087637">
-      <link role="template" targetNodeId="1216371087635" resolveInfo="default_switch_aaa" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1216371087635">
     <property name="name" value="default_switch_aaa" />

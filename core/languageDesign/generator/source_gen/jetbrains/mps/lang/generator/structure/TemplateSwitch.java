@@ -19,6 +19,7 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MODIFIED_SWITCH = "modifiedSwitch";
   public static final String DEFAULT_CONSEQUENCE = "defaultConsequence";
+  public static final String NULL_INPUT_MESSAGE = "nullInputMessage";
   public static final String REDUCTION_MAPPING_RULE = "reductionMappingRule";
 
   public TemplateSwitch(SNode node) {
@@ -71,6 +72,14 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept {
 
   public void setDefaultConsequence(RuleConsequence node) {
     super.setChild(TemplateSwitch.DEFAULT_CONSEQUENCE, node);
+  }
+
+  public GeneratorMessage getNullInputMessage() {
+    return (GeneratorMessage)this.getChild(TemplateSwitch.NULL_INPUT_MESSAGE);
+  }
+
+  public void setNullInputMessage(GeneratorMessage node) {
+    super.setChild(TemplateSwitch.NULL_INPUT_MESSAGE, node);
   }
 
   public int getReductionMappingRulesCount() {

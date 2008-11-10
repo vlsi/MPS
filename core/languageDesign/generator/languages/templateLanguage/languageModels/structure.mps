@@ -492,6 +492,11 @@
       <property name="role" value="defaultConsequence" />
       <link role="target" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1226355936225">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="nullInputMessage" />
+      <link role="target" targetNodeId="1169670156577" resolveInfo="GeneratorMessage" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1112731569622">
     <property name="name" value="SwitchMacro" />

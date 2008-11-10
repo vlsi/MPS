@@ -2,10 +2,10 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailueException;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
@@ -337,6 +337,10 @@ public class TemplateProcessor {
 
       SNode newInputNode = MacroUtil.getNewInputNode(nodeMacro, inputNode, myGenerator);
       if (newInputNode == null) {
+        GeneratorMessage generatorMessage = templateSwitch.getNullInputMessage();
+        if (generatorMessage != null) {
+          GeneratorUtil.processGeneratorMessage(generatorMessage, null, nodeMacro.getNode(), null, myGenerator);
+        }
         return outputNodes; // skip template
       }
 
