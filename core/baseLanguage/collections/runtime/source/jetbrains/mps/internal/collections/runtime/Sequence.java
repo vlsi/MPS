@@ -94,7 +94,6 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
         return new TranslatingSequence<T,U> (this, translator);
     }
     
-    @Override
     public <U> ISequence<U> translate(ITranslator2<T, U> translator) {
     	return translate(new TranslatorAdapter<T, U> (translator));
     }

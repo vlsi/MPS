@@ -13,7 +13,6 @@ public class TranslatorAdapter<T,S> implements ITranslator<T, S> {
 		this.translator2 = translator2;
 	}
 	
-	@Override
 	public ISequence<S> translate(T t) {
 		return Sequence.fromIterable(translator2.translate(t));
 	}
