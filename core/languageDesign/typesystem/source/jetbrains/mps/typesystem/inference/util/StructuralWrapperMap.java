@@ -69,7 +69,7 @@ public class StructuralWrapperMap<T> implements Map<IWrapper, T> {
       return null;
     } else {
       myRepresentatorMap.put(w, wrapper.getWrapper());
-      return myWrapperMap.get(wrapper);
+      return myWrapperMap.get(wrapper.getWrapper());
     }
   }
 
