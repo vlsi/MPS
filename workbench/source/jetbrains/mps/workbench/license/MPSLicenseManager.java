@@ -26,7 +26,7 @@ public class MPSLicenseManager extends LicenseManager {
   }
 
   public String licensedRestrictionsMessage() {
-    return "";
+    return "(C) 2003-2008, JetBrains, s.r.o. All rights reserved.";
   }
 
   public LicenseFactory createLicenseFactory() {
