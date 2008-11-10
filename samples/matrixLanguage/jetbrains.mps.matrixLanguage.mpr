@@ -19,16 +19,19 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject" auto-import-from-idea="false">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\jetbrains.mps.matrixLanguage.sandbox\jetbrains.mps.matrixLanguage.sandbox.msd" />
       <solutionPath path="${project}\solutions\jetbrains.mps.matrixLanguage.runtime\jetbrains.mps.matrixLanguage.runtime.msd" />
+      <solutionPath path="${project}\solutions\jetbrains.mps.matrixLanguage.sandbox\jetbrains.mps.matrixLanguage.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}\languages\matrixLanguage\matrixLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="test matrix language" moduleUID="jetbrains.mps.samples.matrixLanguage" />
+      <genConfModule name="test matrix runtime" moduleUID="jetbrains.mps.matrixLanguage.runtime" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="jetbrains.mps.matrixLanguage.mpr" />
