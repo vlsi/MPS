@@ -4749,101 +4749,95 @@
   <node type="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" id="1176716781495">
     <property name="name" value="_OpenTag" />
     <link role="conceptDeclaration" targetNodeId="2.1073389214265" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ModelAccess" id="1176716878596">
-      <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1176718832706">
-        <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1176718832707">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176718832708">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176718836838">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340552805">
-                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1220340552491" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1220340556480">
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" id="1226062528866">
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem" id="1226320982078">
+        <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="1226320982079">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226320982080">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226320982081">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1226320982082">
+                <link role="baseMethodDeclaration" targetNodeId="1176888881562" resolveInfo="grayIfNotSelectable" />
+                <link role="classConcept" targetNodeId="1176888877514" resolveInfo="_EditorUtil" />
+                <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1226320982083" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1226320982084" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1226320982085">
+        <property name="flag" value="true" />
+      </node>
+      <node role="modelAccessor" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" id="1226062528867">
+        <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062528868">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062528869">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226062528870">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062528871">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1226062528872" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226062528873">
                   <link role="baseMethodDeclaration" targetNodeId="30.1220340471382" resolveInfo="getOpeningTag" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1176718832709">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176718832710" />
-        </node>
-        <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1176718832711">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176718832712">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176718853143">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1176718856802">
-                <property name="value" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1214314940483">
-        <property name="flag" value="true" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem" id="1214396913665">
-        <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="1214396913666">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214396913667">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214396913668">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1214396913669">
-                <link role="classConcept" targetNodeId="1176888877514" resolveInfo="_EditorUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="1176888881562" resolveInfo="grayIfNotSelectable" />
-                <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1214396913670" />
-              </node>
-            </node>
-          </node>
+      <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1226062528874">
+        <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062528875">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062528876" />
         </node>
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398031944">
-        <property name="flag" value="false" />
+        <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1226062528877">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062528878" />
+        </node>
+        <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1226062528879">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062528880" />
+        </node>
       </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" id="1176716904723">
     <property name="name" value="_CloseTag" />
     <link role="conceptDeclaration" targetNodeId="2.1073389214265" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ModelAccess" id="1176716918272">
-      <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1176718766209">
-        <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1176718766210">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176718766211">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1220340578159">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220340582243">
-                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1220340582211" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1220340585418">
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" id="1226062535564">
+      <node role="modelAccessor" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" id="1226062535565">
+        <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062535566">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062535567">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226062535568">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062535569">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1226062535570" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226062535571">
                   <link role="baseMethodDeclaration" targetNodeId="30.1220340488560" resolveInfo="getClosingTag" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1176718766212">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176718766213" />
+      </node>
+      <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1226062535572">
+        <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062535573">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062535574" />
         </node>
-        <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1176718766214">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176718766215">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176718802282">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1176718803877">
-                <property name="value" value="true" />
-              </node>
-            </node>
-          </node>
+        <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1226062535575">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062535576" />
+        </node>
+        <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1226062535577">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062535578" />
         </node>
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem" id="1214396913635">
-        <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="1214396913636">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214396913637">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214396913638">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1214396913639">
-                <link role="classConcept" targetNodeId="1176888877514" resolveInfo="_EditorUtil" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem" id="1226320812243">
+        <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="1226320829979">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226320829980">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226320901425">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1226320903458">
                 <link role="baseMethodDeclaration" targetNodeId="1176888881562" resolveInfo="grayIfNotSelectable" />
-                <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1214396913640" />
+                <link role="classConcept" targetNodeId="1176888877514" resolveInfo="_EditorUtil" />
+                <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1226320908459" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398031974">
-        <property name="flag" value="false" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1215163005154">
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1226320921368" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1226320933840">
         <property name="flag" value="true" />
       </node>
     </node>
@@ -7905,8 +7899,11 @@
     <link role="conceptDeclaration" targetNodeId="2.1225900081164" resolveInfo="CellModel_ReadOnlyModelAccessor" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225900578294">
       <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1226070216539">
+        <link role="editorComponent" targetNodeId="1176716781495" resolveInfo="_OpenTag" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225900578296">
-        <property name="text" value="read only model access" />
+        <property name="text" value="read-only model access" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1225900578297">
           <property name="flag" value="true" />
         </node>
@@ -7981,38 +7978,39 @@
           </node>
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1226070224915">
+        <link role="editorComponent" targetNodeId="1176716904723" resolveInfo="_CloseTag" />
+      </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1225900578335">
         <property name="flag" value="true" />
       </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225900615400">
       <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1226072308234">
+        <link role="editorComponent" targetNodeId="1214476568032" resolveInfo="_CellModel_Common" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1226072312673" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225900615405">
-        <property name="text" value="Read only value:" />
+        <property name="text" value="Read-only value:" />
         <property name="name" value="headerCell" />
         <link role="styleClass" targetNodeId="1214478266312" resolveInfo="header" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225900718056">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1226072334801">
         <property name="vertical" value="false" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225900718057">
-          <property name="flag" value="false" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225900718059">
-          <property name="flag" value="false" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1225903198925">
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1226061336321">
           <link role="relationDeclaration" targetNodeId="2.1225900141900" />
-          <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1225903198926">
-            <link role="conceptDeclaration" targetNodeId="2.1225898583838" resolveInfo="ReadOnlyModelAccessor" />
-            <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1225903206490">
-              <link role="relationDeclaration" targetNodeId="2.1225898971709" />
-            </node>
-          </node>
         </node>
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225900615420">
         <property name="flag" value="false" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1226061219312">
+    <link role="conceptDeclaration" targetNodeId="2.1225898583838" resolveInfo="ReadOnlyModelAccessor" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1226061419246">
+      <link role="relationDeclaration" targetNodeId="2.1225898971709" />
     </node>
   </node>
 </model>

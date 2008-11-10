@@ -3805,7 +3805,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225900141900">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
-      <property name="role" value="modelAcessor" />
+      <property name="role" value="modelAccessor" />
       <link role="target" targetNodeId="1225898583838" resolveInfo="ReadOnlyModelAccessor" />
     </node>
   </node>

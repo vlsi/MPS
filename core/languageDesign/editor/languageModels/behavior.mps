@@ -4391,5 +4391,42 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225463370898" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1226070122940">
+    <property name="package" value="CellModel" />
+    <link role="concept" targetNodeId="1.1225900081164" resolveInfo="CellModel_ReadOnlyModelAccessor" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226070124177">
+      <property name="name" value="getOpeningText" />
+      <link role="overriddenMethod" targetNodeId="1220339714057" resolveInfo="getOpeningText" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226070124178">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226070124179">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226070124180">
+            <property name="value" value="*" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226070124181">
+        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226070124182" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226070124183">
+      <property name="name" value="getClosingText" />
+      <link role="overriddenMethod" targetNodeId="1220339738643" resolveInfo="getClosingText" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226070124184">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226070124185">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226070124186">
+            <property name="value" value="*" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226070124187">
+        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226070124188" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1226070122941">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226070122942" />
+    </node>
+  </node>
 </model>
 

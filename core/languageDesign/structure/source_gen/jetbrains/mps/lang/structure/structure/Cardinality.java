@@ -14,7 +14,7 @@ public enum Cardinality {
   private String myName;
   private String myValue;
 
-Cardinality(String name, String value) {
+  Cardinality(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

@@ -8,8 +8,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.smodel.IOperationContext;
@@ -66,7 +66,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1184865302331(context, node, "bad role:"));
-    editorCell.addEditorCell(this.createModelAccess1184865302332(context, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor1226062535455(context, node));
     return editorCell;
   }
 
@@ -78,31 +78,25 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createModelAccess1184865302332(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAccessorFactory_1184865302332(context, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ModelAccess_11848653023321184865302332(editorCell, node, context);
-    setupLabel_ModelAccess_1184865302332_1184865302332(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public ModelAccessor _modelAccessorFactory_1184865302332(final EditorContext editorContext, final SNode node) {
-    return new ModelAccessor() {
+  public EditorCell createReadOnlyModelAccessor1226062535455(final EditorContext context, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
         return node.getRole_();
       }
 
-      public void setText(String text) {
+      public void setText(String s) {
       }
 
-      public boolean isValidText(String text) {
-        return true;
+      public boolean isValidText(String s) {
+        return s.equals(this.getText());
       }
 
-    };
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    setupBasic_ReadOnlyModelAccessor_12260625354551226062535455(editorCell, node, context);
+    setupLabel_ReadOnlyModelAccessor_1226062535455_1226062535455(editorCell, node, context);
+    return editorCell;
   }
 
   public EditorCell createAttributedNodeCell1184865331991(EditorContext context, SNode node) {
@@ -193,19 +187,6 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     editorCell.setCellId("Constant_1184865302331");
   }
 
-  private static void setupBasic_ModelAccess_11848653023321184865302332(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ModelAccess_1184865302332");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_property_mappingId1184865331990(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_mappingId");
     {
@@ -238,16 +219,29 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     }
   }
 
-  private static void setupLabel_Constant_1184865302331_1184865302331(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ReadOnlyModelAccessor_12260625354551226062535455(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("ReadOnlyModelAccessor_1226062535455");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
-  private static void setupLabel_ModelAccess_1184865302332_1184865302332(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_1184865302331_1184865302331(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_property_mappingId_1184865331990(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_refCell_mappingLabel_1200912672389(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ReadOnlyModelAccessor_1226062535455_1226062535455(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition9824_0(SNode node, EditorContext editorContext, IScope scope) {

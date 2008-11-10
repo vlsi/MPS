@@ -8,14 +8,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import java.util.List;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -68,7 +68,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createModelAccess1214568089972(context, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor1226062526433(context, node));
     editorCell.addEditorCell(this.createConstant1214568090084(context, node, "{"));
     return editorCell;
   }
@@ -100,18 +100,8 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createModelAccess1214568089972(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAccessorFactory_1214568089972(context, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ModelAccess_12145680899721214568089972(editorCell, node, context);
-    setupLabel_ModelAccess_1214568089972_1214568089972(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public ModelAccessor _modelAccessorFactory_1214568089972(final EditorContext editorContext, final SNode node) {
-    return new ModelAccessor() {
+  public EditorCell createReadOnlyModelAccessor1226062526433(final EditorContext context, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
         StringBuilder result = new StringBuilder();
@@ -142,14 +132,18 @@ public class ConceptFunction_Component extends AbstractCellProvider {
         return result.toString();
       }
 
-      public void setText(String text) {
+      public void setText(String s) {
       }
 
-      public boolean isValidText(String text) {
-        return this.getText().equals(text);
+      public boolean isValidText(String s) {
+        return s.equals(this.getText());
       }
 
-    };
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    setupBasic_ReadOnlyModelAccessor_12260625264331226062526433(editorCell, node, context);
+    setupLabel_ReadOnlyModelAccessor_1226062526433_1226062526433(editorCell, node, context);
+    return editorCell;
   }
 
   public EditorCell createIndentCell8338_0(EditorContext context, SNode node) {
@@ -217,22 +211,6 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     }
   }
 
-  private static void setupBasic_ModelAccess_12145680899721214568089972(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ModelAccess_1214568089972");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.EDITABLE, false);
-          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_Constant_12145680900841214568090084(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1214568090084");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -263,7 +241,20 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     editorCell.setCellId("Indent_1214568101312");
   }
 
-  private static void setupLabel_ModelAccess_1214568089972_1214568089972(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ReadOnlyModelAccessor_12260625264331226062526433(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("ReadOnlyModelAccessor_1226062526433");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, true);
+          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_1214568090084_1214568090084(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -273,6 +264,9 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   }
 
   private static void setupLabel_Constant_1214568090089_1214568090089(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ReadOnlyModelAccessor_1226062526433_1226062526433(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

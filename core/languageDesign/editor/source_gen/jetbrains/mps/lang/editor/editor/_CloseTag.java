@@ -6,11 +6,11 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
-import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
@@ -28,46 +28,40 @@ public class _CloseTag extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createModelAccess1176716918272(context, node);
+    return this.createReadOnlyModelAccessor1226062535564(context, node);
   }
 
-  public EditorCell createModelAccess1176716918272(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAcessorFactory_1176716918272(context, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ModelAccess_11767169182721176716918272(editorCell, node, context);
-    setupLabel_ModelAccess_1176716918272_1176716918272(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public ModelAccessor _modelAcessorFactory_1176716918272(final EditorContext editorContext, final SNode node) {
-    return new ModelAccessor() {
+  public EditorCell createReadOnlyModelAccessor1226062535564(final EditorContext context, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
         return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node);
       }
 
-      public void setText(String text) {
+      public void setText(String s) {
       }
 
-      public boolean isValidText(String text) {
-        return true;
+      public boolean isValidText(String s) {
+        return s.equals(this.getText());
       }
 
-    };
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    setupBasic_ReadOnlyModelAccessor_12260625355641226062535564(editorCell, node, context);
+    setupLabel_ReadOnlyModelAccessor_1226062535564_1226062535564(editorCell, node, context);
+    return editorCell;
   }
 
 
-  private static void setupBasic_ModelAccess_11767169182721176716918272(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ModelAccess_1176716918272");
+  private static void setupBasic_ReadOnlyModelAccessor_12260625355641226062535564(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("ReadOnlyModelAccessor_1226062535564");
     {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
             public Color calculate(EditorCell cell) {
-              return _CloseTag._StyleParameter_QueryFunction_1214396913636((cell == null ?
+              return _CloseTag._StyleParameter_QueryFunction_1226320829979((cell == null ?
                 null :
                 cell.getSNode()
               ), (cell == null ?
@@ -86,10 +80,10 @@ public class _CloseTag extends AbstractCellProvider {
     }
   }
 
-  private static void setupLabel_ModelAccess_1176716918272_1176716918272(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ReadOnlyModelAccessor_1226062535564_1226062535564(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static Color _StyleParameter_QueryFunction_1214396913636(SNode node, EditorContext editorContext) {
+  public static Color _StyleParameter_QueryFunction_1226320829979(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 

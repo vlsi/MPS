@@ -8,11 +8,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -77,7 +77,7 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1196350915691(context, node, "reference role:"));
-    editorCell.addEditorCell(this.createModelAccess1196350915692(context, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor1226062535909(context, node));
     return editorCell;
   }
 
@@ -88,7 +88,7 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1196350915708(context, node, "source concept:"));
-    editorCell.addEditorCell(this.createModelAccess1196350915709(context, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor1226062536067(context, node));
     return editorCell;
   }
 
@@ -140,45 +140,29 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createModelAccess1196350915692(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAcessorFactory_1196350915692(context, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ModelAccess_11963509156921196350915692(editorCell, node, context);
-    setupLabel_ModelAccess_1196350915692_1196350915692(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public ModelAccessor _modelAcessorFactory_1196350915692(final EditorContext editorContext, final SNode node) {
-    return new ModelAccessor() {
+  public EditorCell createReadOnlyModelAccessor1226062535909(final EditorContext context, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
         return AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(node.getRole_());
       }
 
-      public void setText(String text) {
+      public void setText(String s) {
       }
 
-      public boolean isValidText(String text) {
-        return true;
+      public boolean isValidText(String s) {
+        return s.equals(this.getText());
       }
 
-    };
-  }
-
-  public EditorCell createModelAccess1196350915709(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAcessorFactory_1196350915709(context, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
+    }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ModelAccess_11963509157091196350915709(editorCell, node, context);
-    setupLabel_ModelAccess_1196350915709_1196350915709(editorCell, node, context);
-    editorCell.setDefaultText("<no concept>");
+    setupBasic_ReadOnlyModelAccessor_12260625359091226062535909(editorCell, node, context);
+    setupLabel_ReadOnlyModelAccessor_1226062535909_1226062535909(editorCell, node, context);
     return editorCell;
   }
 
-  public ModelAccessor _modelAcessorFactory_1196350915709(final EditorContext editorContext, final SNode node) {
-    return new ModelAccessor() {
+  public EditorCell createReadOnlyModelAccessor1226062536067(final EditorContext context, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
         SNode parent = SNodeOperations.getParent(node);
@@ -190,14 +174,18 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
         }
       }
 
-      public void setText(String text) {
+      public void setText(String s) {
       }
 
-      public boolean isValidText(String text) {
-        return true;
+      public boolean isValidText(String s) {
+        return s.equals(this.getText());
       }
 
-    };
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    setupBasic_ReadOnlyModelAccessor_12260625360671226062536067(editorCell, node, context);
+    setupLabel_ReadOnlyModelAccessor_1226062536067_1226062536067(editorCell, node, context);
+    return editorCell;
   }
 
   public EditorCell createRefNode1196350915680_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -326,10 +314,6 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1196350915691");
   }
 
-  private static void setupBasic_ModelAccess_11963509156921196350915692(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ModelAccess_1196350915692");
-  }
-
   private static void setupBasic_Collection_11963509157071196350915707(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1196350915707");
   }
@@ -338,8 +322,12 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1196350915708");
   }
 
-  private static void setupBasic_ModelAccess_11963509157091196350915709(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ModelAccess_1196350915709");
+  private static void setupBasic_ReadOnlyModelAccessor_12260625359091226062535909(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("ReadOnlyModelAccessor_1226062535909");
+  }
+
+  private static void setupBasic_ReadOnlyModelAccessor_12260625360671226062536067(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("ReadOnlyModelAccessor_1226062536067");
   }
 
   private static void setupLabel_Constant_1196350915675_1196350915675(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -360,13 +348,13 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1196350915691_1196350915691(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ModelAccess_1196350915692_1196350915692(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_Constant_1196350915708_1196350915708(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ModelAccess_1196350915709_1196350915709(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ReadOnlyModelAccessor_1226062535909_1226062535909(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ReadOnlyModelAccessor_1226062536067_1226062536067(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static Color _StyleParameter_QueryFunction_1214399678256(SNode node, EditorContext editorContext) {

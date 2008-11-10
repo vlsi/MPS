@@ -9,18 +9,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CellModel_ReadOnlyModelAccessor extends CellModel_AbstractLabel {
   public static final String concept = "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor";
-  public static final String MODEL_ACESSOR = "modelAcessor";
+  public static final String MODEL_ACCESSOR = "modelAccessor";
 
   public CellModel_ReadOnlyModelAccessor(SNode node) {
     super(node);
   }
 
-  public ReadOnlyModelAccessor getModelAcessor() {
-    return (ReadOnlyModelAccessor)this.getChild(CellModel_ReadOnlyModelAccessor.MODEL_ACESSOR);
+  public ReadOnlyModelAccessor getModelAccessor() {
+    return (ReadOnlyModelAccessor)this.getChild(CellModel_ReadOnlyModelAccessor.MODEL_ACCESSOR);
   }
 
-  public void setModelAcessor(ReadOnlyModelAccessor node) {
-    super.setChild(CellModel_ReadOnlyModelAccessor.MODEL_ACESSOR, node);
+  public void setModelAccessor(ReadOnlyModelAccessor node) {
+    super.setChild(CellModel_ReadOnlyModelAccessor.MODEL_ACCESSOR, node);
   }
 
 

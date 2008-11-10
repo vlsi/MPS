@@ -12,13 +12,13 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -332,7 +332,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1197921944684(context, node, "<<--"));
-    editorCell.addEditorCell(this.createModelAccess1197921944687(context, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor1226062535028(context, node));
     return editorCell;
   }
 
@@ -552,18 +552,8 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createModelAccess1197921944687(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAccessorFactory_1197921944687(context, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ModelAccess_11979219446871197921944687(editorCell, node, context);
-    setupLabel_ModelAccess_1197921944687_1197921944687(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public ModelAccessor _modelAccessorFactory_1197921944687(final EditorContext editorContext, final SNode node) {
-    return new ModelAccessor() {
+  public EditorCell createReadOnlyModelAccessor1226062535028(final EditorContext context, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
         StringBuilder sb = new StringBuilder("");
@@ -575,14 +565,18 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
         return sb.toString();
       }
 
-      public void setText(String text) {
+      public void setText(String s) {
       }
 
-      public boolean isValidText(String text) {
-        return true;
+      public boolean isValidText(String s) {
+        return s.equals(this.getText());
       }
 
-    };
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    setupBasic_ReadOnlyModelAccessor_12260625350281226062535028(editorCell, node, context);
+    setupLabel_ReadOnlyModelAccessor_1226062535028_1226062535028(editorCell, node, context);
+    return editorCell;
   }
 
   public EditorCell createProperty1184095840184_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -1317,21 +1311,6 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_ModelAccess_11979219446871197921944687(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ModelAccess_1197921944687");
-    BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BRACKETS, true);
-          this.set(StyleAttributes.EDITABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_Collection_11979219447351197921944735(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1197921944735");
     {
@@ -1385,6 +1364,20 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_ReadOnlyModelAccessor_12260625350281226062535028(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("ReadOnlyModelAccessor_1226062535028");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.DRAW_BRACKETS, true);
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -1470,9 +1463,6 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1197921944684_1197921944684(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ModelAccess_1197921944687_1197921944687(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_Constant_1197921944736_1197921944736(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -1483,6 +1473,9 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1199108440089_1199108440089(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ReadOnlyModelAccessor_1226062535028_1226062535028(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition0537_0(SNode node, EditorContext editorContext, IScope scope) {

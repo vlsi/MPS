@@ -12,7 +12,7 @@ public enum LinkMetaclass {
   private String myName;
   private String myValue;
 
-LinkMetaclass(String name, String value) {
+  LinkMetaclass(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

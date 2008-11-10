@@ -9,11 +9,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
-import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -129,7 +129,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndentCell6299_0(context, node));
     editorCell.addEditorCell(this.createConstant1225194473543(context, node, "overrides"));
-    editorCell.addEditorCell(this.createModelAccess1225194473544(context, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor1226062536391(context, node));
     editorCell.addEditorCell(this.createConstant1225194473565(context, node, "."));
     editorCell.addEditorCell(this.createRefCell1225194473566(context, node));
     return editorCell;
@@ -323,31 +323,25 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createModelAccess1225194473544(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAcessorFactory_1225194473544(context, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ModelAccess_12251944735441225194473544(editorCell, node, context);
-    setupLabel_ModelAccess_1225194473544_1225194473544(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public ModelAccessor _modelAcessorFactory_1225194473544(final EditorContext editorContext, final SNode node) {
-    return new ModelAccessor() {
+  public EditorCell createReadOnlyModelAccessor1226062536391(final EditorContext context, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
         return ConceptMethodDeclaration_Behavior.call_getOverridenMethodConceptName_1225196403980(node);
       }
 
-      public void setText(String text) {
+      public void setText(String s) {
       }
 
-      public boolean isValidText(String text) {
-        return this.getText().equals(ConceptMethodDeclaration_Behavior.call_getOverridenMethodConceptName_1225196403980(node));
+      public boolean isValidText(String s) {
+        return s.equals(this.getText());
       }
 
-    };
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    setupBasic_ReadOnlyModelAccessor_12260625363911226062536391(editorCell, node, context);
+    setupLabel_ReadOnlyModelAccessor_1226062536391_1226062536391(editorCell, node, context);
+    return editorCell;
   }
 
   public EditorCell createRefNodeList1225194473534(EditorContext context, SNode node) {
@@ -727,20 +721,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_ModelAccess_12251944735441225194473544(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ModelAccess_1225194473544");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, 0.0);
-          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_Constant_12251944735651225194473565(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1225194473565");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
@@ -886,6 +866,20 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refCell_overriddenMethod");
   }
 
+  private static void setupBasic_ReadOnlyModelAccessor_12260625363911226062536391(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("ReadOnlyModelAccessor_1226062536391");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 0.0);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_refNode_visibility_1225194473513(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -911,9 +905,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1225194473543_1225194473543(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ModelAccess_1225194473544_1225194473544(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1225194473565_1225194473565(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -959,6 +950,9 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refCell_overriddenMethod_1225194473662(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ReadOnlyModelAccessor_1226062536391_1226062536391(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition6299_0(SNode node, EditorContext editorContext, IScope scope) {

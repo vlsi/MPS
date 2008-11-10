@@ -550,46 +550,36 @@
               <property name="text" value="overrides" />
               <link role="styleClass" targetNodeId="3.1186415544875" resolveInfo="KeyWord" />
             </node>
-            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ModelAccess" id="1225194473544">
-              <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1225194473545">
-                <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1225194473546">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225194473547">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225194473548">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225194473549">
-                        <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1225194473550" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225194473551">
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" id="1226062536391">
+              <node role="modelAccessor" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" id="1226062536392">
+                <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062536393">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062536394">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226062536395">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062536396">
+                        <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1226062536397" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226062536398">
                           <link role="baseMethodDeclaration" targetNodeId="3v.1225196403980" resolveInfo="getOverridenMethodConceptName" />
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-                <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1225194473552">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225194473553" />
+              </node>
+              <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1226062536399">
+                <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062536400">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062536401" />
                 </node>
-                <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1225194473554">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225194473555">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225194473556">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225194473557">
-                        <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText" id="1225194473558" />
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225194473559">
-                          <link role="baseMethodDeclaration" targetNodeId="9.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225194473560">
-                            <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1225194473561" />
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1225194473562">
-                              <link role="baseMethodDeclaration" targetNodeId="3v.1225196403980" resolveInfo="getOverridenMethodConceptName" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
+                <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1226062536402">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062536403" />
+                </node>
+                <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1226062536404">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062536405" />
                 </node>
               </node>
-              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1225194473563">
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1226320694888">
                 <property name="value" value="0.0" />
               </node>
-              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225194473564">
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1226320700422">
                 <property name="value" value="0.0" />
               </node>
             </node>

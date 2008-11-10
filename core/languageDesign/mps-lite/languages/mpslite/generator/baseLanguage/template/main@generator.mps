@@ -1577,33 +1577,32 @@
         <node role="templateNode" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1182950987288">
           <link role="relationDeclaration" targetNodeId="1182950624499" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1182950987289">
-            <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ModelAccess" id="1182958749522">
-              <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1182958749523">
-                <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1182958749524">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182958749525">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182958763873">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209004081159">
-                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1182958765984">
-                          <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1182958763874" />
+            <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" id="1226062534966">
+              <node role="modelAccessor" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" id="1226062534967">
+                <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062534968">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062534969">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226062534970">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062534971">
+                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1226062534972">
+                          <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1226062534973" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209004081160">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226062534974">
                           <link role="baseMethodDeclaration" targetNodeId="8.~SNode.toString():java.lang.String" resolveInfo="toString" />
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-                <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1182958749526">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182958749527" />
+              </node>
+              <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1226062534975">
+                <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062534976">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062534977" />
                 </node>
-                <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1182958749528">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182958749529">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182958759888">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1182958759889">
-                        <property name="value" value="true" />
-                      </node>
-                    </node>
-                  </node>
+                <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1226062534978">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062534979" />
+                </node>
+                <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1226062534980">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062534981" />
                 </node>
               </node>
             </node>
@@ -1632,33 +1631,32 @@
         <node role="templateNode" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1182951004600">
           <link role="relationDeclaration" targetNodeId="1182950624499" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1182951004601">
-            <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ModelAccess" id="1182958775764">
-              <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1182958775765">
-                <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1182958775766">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182958775767">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182958775768">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209004084080">
-                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1182958775770">
-                          <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1182958775771" />
+            <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" id="1226062530595">
+              <node role="modelAccessor" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" id="1226062530596">
+                <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062530597">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062530598">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226062530599">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062530600">
+                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1226062530601">
+                          <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1226062530602" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209004084081">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226062530603">
                           <link role="baseMethodDeclaration" targetNodeId="8.~SNode.toString():java.lang.String" resolveInfo="toString" />
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-                <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1182958775772">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182958775773" />
+              </node>
+              <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1226062530604">
+                <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062530605">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062530606" />
                 </node>
-                <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1182958775774">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182958775775">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182958775776">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1182958775777">
-                        <property name="value" value="true" />
-                      </node>
-                    </node>
-                  </node>
+                <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1226062530607">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062530608" />
+                </node>
+                <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1226062530609">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062530610" />
                 </node>
               </node>
             </node>
@@ -1774,22 +1772,22 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1197470166646">
       <link role="applicableConcept" targetNodeId="1.1197469545212" resolveInfo="AccessorPart" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1197470193804">
-        <node role="templateNode" type="jetbrains.mps.lang.editor.structure.CellModel_ModelAccess" id="1197470207534">
-          <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1197470207535">
-            <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1197470207536">
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197470207537">
-                <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1197470298621">
-                  <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1197470298622">
-                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197470298623">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197470304281">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227932536">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227937779">
-                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1197470304282" />
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1197470307301">
+        <node role="templateNode" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" id="1226062528477">
+          <node role="modelAccessor" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" id="1226062528478">
+            <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062528479">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062528480">
+                <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1226062528481">
+                  <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1226062528482">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062528483">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226062528484">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062528485">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062528486">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1226062528487" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1226062528488">
                               <link role="link" targetNodeId="1.1197469877946" />
                             </node>
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1197470309008">
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1226062528489">
                             <link role="link" targetNodeId="12.1137022507850" />
                           </node>
                         </node>
@@ -1799,17 +1797,16 @@
                 </node>
               </node>
             </node>
-            <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1197470207538">
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197470207539" />
+          </node>
+          <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1226062528490">
+            <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062528491">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062528492" />
             </node>
-            <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1197470207540">
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197470207541">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197470293884">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1197470293885">
-                    <property name="value" value="true" />
-                  </node>
-                </node>
-              </node>
+            <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1226062528493">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062528494" />
+            </node>
+            <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1226062528495">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062528496" />
             </node>
           </node>
         </node>

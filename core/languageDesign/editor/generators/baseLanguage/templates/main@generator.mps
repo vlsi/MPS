@@ -16955,7 +16955,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201270300712">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227840268">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1201270300713" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1201270302468">
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226067537849">
                 <link role="baseMethodDeclaration" targetNodeId="62.1213877395610" resolveInfo="isBefore" />
               </node>
             </node>
@@ -18514,12 +18514,14 @@
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225901389820">
           <property name="name" value="context" />
+          <property name="isFinal" value="true" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225901389821">
             <link role="classifier" targetNodeId="11.~EditorContext" resolveInfo="EditorContext" />
           </node>
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225901389822">
           <property name="name" value="node" />
+          <property name="isFinal" value="true" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225901389823">
             <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
           </node>

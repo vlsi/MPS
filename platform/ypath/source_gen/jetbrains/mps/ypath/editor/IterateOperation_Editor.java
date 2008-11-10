@@ -11,11 +11,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.ypath.behavior.IterateOperation_Behavior;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
-import jetbrains.mps.ypath.behavior.IterateOperation_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -50,7 +50,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createModelAccess1178981885129(context, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor1226062536173(context, node));
     if (renderingCondition7857_3(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection1197644974882(context, node));
     }
@@ -135,32 +135,25 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createModelAccess1178981885129(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAccessorFactory_1178981885129(context, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ModelAccess_11789818851291178981885129(editorCell, node, context);
-    setupLabel_ModelAccess_1178981885129_1178981885129(editorCell, node, context);
-    editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu3()}));
-    return editorCell;
-  }
-
-  public ModelAccessor _modelAccessorFactory_1178981885129(final EditorContext editorContext, final SNode node) {
-    return new ModelAccessor() {
+  public EditorCell createReadOnlyModelAccessor1226062536173(final EditorContext context, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
         return IterateOperation_Behavior.call_getAxisInternalValue_1213877293456(node);
       }
 
-      public void setText(String text) {
+      public void setText(String s) {
       }
 
-      public boolean isValidText(String text) {
-        return IterateOperation_Behavior.call_getAxisInternalValue_1213877293456(node).equals(text);
+      public boolean isValidText(String s) {
+        return s.equals(this.getText());
       }
 
-    };
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    setupBasic_ReadOnlyModelAccessor_12260625361731226062536173(editorCell, node, context);
+    setupLabel_ReadOnlyModelAccessor_1226062536173_1226062536173(editorCell, node, context);
+    return editorCell;
   }
 
   public EditorCell createRefCell1197457270305_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -295,20 +288,6 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_ModelAccess_11789818851291178981885129(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ModelAccess_1178981885129");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.EDITABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-    IterateOperation_DELETE.setCellActions(editorCell, node, context);
-  }
-
   private static void setupBasic_Collection_11974572597491197457259749(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1197457259749");
   }
@@ -381,7 +360,8 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1199790457860");
   }
 
-  private static void setupLabel_ModelAccess_1178981885129_1178981885129(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ReadOnlyModelAccessor_12260625361731226062536173(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("ReadOnlyModelAccessor_1226062536173");
   }
 
   private static void setupLabel_Constant_1197457264548_1197457264548(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -403,6 +383,9 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1199790457860_1199790457860(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ReadOnlyModelAccessor_1226062536173_1226062536173(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition7857_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -570,19 +553,6 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
 
     public IterateOperation_component_cellMenu2() {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
-  public static class IterateOperation_component_cellMenu3 implements SubstituteInfoPart {
-
-    private menu_SubstituteIterateOperationAxis myComponent;
-
-    public IterateOperation_component_cellMenu3() {
-      this.myComponent = new menu_SubstituteIterateOperationAxis();
     }
 
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {

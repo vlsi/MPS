@@ -12,13 +12,13 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -415,7 +415,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1197922168415(context, node, "<<--"));
-    editorCell.addEditorCell(this.createModelAccess1197922168418(context, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor1226062536250(context, node));
     return editorCell;
   }
 
@@ -699,18 +699,8 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createModelAccess1197922168418(EditorContext context, SNode node) {
-    ModelAccessor modelAccessor = this._modelAccessorFactory_1197922168418(context, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ModelAccess_11979221684181197922168418(editorCell, node, context);
-    setupLabel_ModelAccess_1197922168418_1197922168418(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public ModelAccessor _modelAccessorFactory_1197922168418(final EditorContext editorContext, final SNode node) {
-    return new ModelAccessor() {
+  public EditorCell createReadOnlyModelAccessor1226062536250(final EditorContext context, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
         StringBuilder sb = new StringBuilder("[ ");
@@ -722,14 +712,18 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
         return sb.append(" ]").toString();
       }
 
-      public void setText(String text) {
+      public void setText(String s) {
       }
 
-      public boolean isValidText(String text) {
-        return true;
+      public boolean isValidText(String s) {
+        return s.equals(this.getText());
       }
 
-    };
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    setupBasic_ReadOnlyModelAccessor_12260625362501226062536250(editorCell, node, context);
+    setupLabel_ReadOnlyModelAccessor_1226062536250_1226062536250(editorCell, node, context);
+    return editorCell;
   }
 
   public EditorCell createProperty1184659128464_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -1711,19 +1705,6 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
   }
 
-  private static void setupBasic_ModelAccess_11979221684181197922168418(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ModelAccess_1197922168418");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.EDITABLE, false);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
   private static void setupBasic_Collection_11979221684661197922168466(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1197922168466");
     {
@@ -1777,6 +1758,19 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_ReadOnlyModelAccessor_12260625362501226062536250(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("ReadOnlyModelAccessor_1226062536250");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
         }
 
       };
@@ -1895,9 +1889,6 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_1197922168415_1197922168415(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ModelAccess_1197922168418_1197922168418(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_Constant_1197922168467_1197922168467(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -1908,6 +1899,9 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1199108395257_1199108395257(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ReadOnlyModelAccessor_1226062536250_1226062536250(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition1460_0(SNode node, EditorContext editorContext, IScope scope) {

@@ -13,7 +13,7 @@ public enum EnumerationMemberIdentifierPolicy {
   private String myName;
   private String myValue;
 
-EnumerationMemberIdentifierPolicy(String name, String value) {
+  EnumerationMemberIdentifierPolicy(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }

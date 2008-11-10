@@ -15496,7 +15496,7 @@
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225390474868">
                             <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1225390462754">
                               <link role="concept" targetNodeId="1.1068580123155" resolveInfo="ExpressionStatement" />
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225390460753">
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226074205648">
                                 <link role="variableDeclaration" targetNodeId="1225390006207" resolveInfo="last" />
                               </node>
                             </node>

@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class CopyThisDown_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(CopyThisDown_Action.class);
@@ -111,7 +112,7 @@ public class CopyThisDown_Action extends GeneratedAction {
         if (link == null) {
           return;
         }
-        for(SNode node : ListSequence.fromList(CopyThisDown_Action.this.inputNodes).reversedList()) {
+        for(SNode node : Sequence.fromIterable(ListSequence.fromList(CopyThisDown_Action.this.inputNodes).reversedList())) {
           parent.insertChild(lastNode, role, SNodeOperations.copyNode(node));
         }
         CopyThisDown_Action.this.editor.getEditorContext().selectRange(firstNode, lastNode);
