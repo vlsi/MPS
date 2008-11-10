@@ -130,7 +130,7 @@
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218643444898">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218643456108">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218643457079">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218643456109">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226334836109">
                             <link role="variableDeclaration" targetNodeId="1218643365987" resolveInfo="list" />
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1218643459160">
@@ -744,6 +744,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1205331546803">
         <property name="text" value="&gt;" />
         <link role="styleClass" targetNodeId="1203598923024" resolveInfo="keyword" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1226343152959">
+          <property name="value" value="1.0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1205344861008">
         <link role="relationDeclaration" targetNodeId="1.1205340441197" />
@@ -791,6 +794,12 @@
       <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
       <link role="actionMap" targetNodeId="1205343437256" resolveInfo="CompositeString_RT" />
       <link role="styleClass" targetNodeId="1205343740058" resolveInfo="string" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1226330394988">
+        <property name="value" value="0.2" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1226342922887">
+        <property name="value" value="0.2" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1205339498504">
@@ -806,6 +815,12 @@
           <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
           <link role="styleClass" targetNodeId="1205337004073" resolveInfo="variable" />
         </node>
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1226330366311">
+        <property name="value" value="0.2" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1226343036096">
+        <property name="value" value="0.2" />
       </node>
     </node>
   </node>

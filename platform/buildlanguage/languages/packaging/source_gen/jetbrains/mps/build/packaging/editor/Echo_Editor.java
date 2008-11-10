@@ -15,6 +15,8 @@ import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class Echo_Editor extends DefaultNodeEditor {
 
@@ -164,6 +166,15 @@ public class Echo_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_12053315468031205331546803(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1205331546803");
     MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 1.0);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_component_ConfigurationReferencesEditorComponent1205331920317(EditorCell editorCell, SNode node, EditorContext context) {

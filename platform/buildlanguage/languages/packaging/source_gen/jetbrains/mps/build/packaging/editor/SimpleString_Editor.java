@@ -11,6 +11,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class SimpleString_Editor extends DefaultNodeEditor {
 
@@ -51,6 +53,16 @@ public class SimpleString_Editor extends DefaultNodeEditor {
   private static void setupBasic_property_name1205339395970(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
     MPSLayoutStyles_StyleSheet.getString(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 0.2);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.2);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     CompositeString_RT.setCellActions(editorCell, node, context);
   }
 

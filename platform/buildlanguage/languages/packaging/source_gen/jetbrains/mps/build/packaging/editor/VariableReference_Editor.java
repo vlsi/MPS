@@ -11,6 +11,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -52,6 +54,16 @@ public class VariableReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_refCell_variable1205339501475(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refCell_variable");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PADDING_LEFT, 0.2);
+          this.set(StyleAttributes.PADDING_RIGHT, 0.2);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
     CompositeString_RT.setCellActions(editorCell, node, context);
   }
 
