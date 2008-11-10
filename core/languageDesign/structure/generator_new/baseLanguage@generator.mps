@@ -287,6 +287,23 @@
     </node>
     <node role="createRootRule" type="jetbrains.mps.lang.generator.structure.CreateRootRule" id="1225099640119">
       <link role="templateNode" targetNodeId="1225099204495" resolveInfo="XYZ_Language" />
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.CreateRootRule_Condition" id="1226343664102">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226343664103">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226343678979">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1226343682437">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1226343678980">
+                <link role="classConcept" targetNodeId="19.1167253485745" resolveInfo="QueriesUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="19.1225099380388" resolveInfo="getInputLanguage" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226343678981">
+                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1226343678982" />
+                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel" id="1226343678983" />
+                </node>
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1226343686716" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1095424864671">
