@@ -163,6 +163,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   protected void invalidateCaches() {
     myCachesAreValid = false;
+    myDisabledIntentionsCache.clear();
   }
 
   public boolean intentionIsDisabled(Intention intention) {

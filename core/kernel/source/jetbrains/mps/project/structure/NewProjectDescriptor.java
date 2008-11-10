@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class NewProjectDescriptor{
+public class NewProjectDescriptor {
   private static Logger LOG = Logger.getLogger(NewProjectDescriptor.class);
 
   private static final String NAME = "name";
