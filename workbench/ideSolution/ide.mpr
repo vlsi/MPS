@@ -4,14 +4,15 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject" auto-import-from-idea="false">
     <projectSolutions>
       <solutionPath path="${project}\jetbrains.mps.ide.msd" />
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />
-    <libraries />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="test ide solution" moduleUID="jetbrains.mps.ide" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="ide" />
