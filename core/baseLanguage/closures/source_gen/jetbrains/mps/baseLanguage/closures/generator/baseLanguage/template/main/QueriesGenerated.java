@@ -1741,7 +1741,8 @@ public class QueriesGenerated {
         for(SNode pdecl : pdecls) {
           if (idx < args.size()) {
             SNode arg = args.get(idx);
-            FunctionTypeUtil.prepAdaptations(SLinkOperations.getTarget(pdecl, "type", true), arg, _context.getGenerator());
+            SNode pdeclType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pdecl, "type", true), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)));
+            FunctionTypeUtil.prepAdaptations(FunctionTypeUtil.unmeet(pdeclType), arg, _context.getGenerator());
           }
           idx = idx + 1;
         }

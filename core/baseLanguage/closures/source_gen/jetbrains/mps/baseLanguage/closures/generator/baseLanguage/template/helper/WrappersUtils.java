@@ -32,6 +32,8 @@ with_decls:
         if ((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.ParameterReference")) && SLinkOperations.getTarget(desc, "variableDeclaration", false) == vd) {
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.AssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.getParent(desc), "lValue", true) == desc) {
             continue with_decls;
+          } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.getParent(desc), "lValue", true) == desc) {
+            continue with_decls;
           }
         }
       }

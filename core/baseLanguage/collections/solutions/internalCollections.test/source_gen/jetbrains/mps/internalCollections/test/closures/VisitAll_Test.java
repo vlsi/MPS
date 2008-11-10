@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import java.util.Arrays;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import junit.framework.Assert;
 
 public class VisitAll_Test extends Util_Test {
 
@@ -105,6 +110,24 @@ __skip__:
 
     });
     this.assertIterableEquals(Arrays.asList(4, 8, 12), res);
+  }
+
+  @Test()
+  public void test_parameterizedAdaptation() throws Exception {
+    List<String> ls = ListSequence.<String>fromArray("A", "BB", "CCC", "DDDD");
+    final Wrappers._int len = new Wrappers._int(0);
+    this.forEach(ls, new _FunctionTypes._void_P1_E0 <String>() {
+
+      public void invoke(String s) {
+        len.value += s.length();
+      }
+
+    });
+    Assert.assertEquals(10, len.value);
+  }
+
+  public void forEach(Iterable<String> seqs, _FunctionTypes._void_P1_E0<? super String> visitor) {
+    Sequence.fromIterable(seqs).visitAll(new _Adapters._void_P1_E0_to_IVisitor_adapter(visitor));
   }
 
 }

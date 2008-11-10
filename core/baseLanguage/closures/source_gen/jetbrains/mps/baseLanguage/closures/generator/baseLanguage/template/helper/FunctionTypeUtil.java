@@ -98,6 +98,15 @@ public class FunctionTypeUtil {
       }
       return last;
     }
+    if (SNodeOperations.isInstanceOf(possiblyMeet, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+      List<SNode> params = SLinkOperations.getTargets(possiblyMeet, "parameter", true);
+      for(SNode p : params) {
+        SNode up = unmeet(p);
+        if (up != p) {
+          SNodeOperations.replaceWithAnother(p, up);
+        }
+      }
+    }
     return possiblyMeet;
   }
 
