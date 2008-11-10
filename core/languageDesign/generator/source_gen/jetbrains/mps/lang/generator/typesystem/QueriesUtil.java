@@ -11,9 +11,7 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -106,10 +104,10 @@ public class QueriesUtil {
 
   public static SNode getEnclosing_TemplateFragment(SNode node) {
     //  find first ancestor (inclusive) which has a template fragment attribute
-    Iterable<SNode> TFs = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).translate(new ITranslator <SNode, SNode>() {
+    Iterable<SNode> TFs = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).translate(new ITranslator2 <SNode, SNode>() {
 
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
+      public Iterable<SNode> translate(final SNode it) {
+        return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
             return new YieldingIterator <SNode>() {
@@ -170,9 +168,6 @@ __switch__:
 
     });
     return Sequence.fromIterable(TFs).first();
-    /*
-      return null;
-    */
   }
 
   private static SNode getQueryFunction_fromSourceSubstituteMacro(SNode macro) {

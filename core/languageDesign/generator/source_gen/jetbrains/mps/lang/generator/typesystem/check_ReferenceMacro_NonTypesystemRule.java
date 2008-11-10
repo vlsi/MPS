@@ -10,9 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_PropertyMacro_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+public class check_ReferenceMacro_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
 
-  public check_PropertyMacro_NonTypesystemRule() {
+  public check_ReferenceMacro_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode macro, final TypeCheckingContext typeCheckingContext) {
@@ -20,14 +20,14 @@ public class check_PropertyMacro_NonTypesystemRule extends AbstractNonTypesystem
       if (QueriesUtil.getEnclosing_TemplateFragment(SNodeOperations.getParent(macro)) == null) {
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportTypeError(macro, "Macro is outside a Template Fragment", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225935926122", intentionProvider);
+          typeCheckingContext.reportTypeError(macro, "Macro is outside a Template Fragment", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1226346278940", intentionProvider);
         }
       }
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.generator.structure.PropertyMacro";
+    return "jetbrains.mps.lang.generator.structure.ReferenceMacro";
   }
 
   public boolean isApplicable(SNode argument) {

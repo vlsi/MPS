@@ -606,6 +606,11 @@
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225936045772" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225936045773" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225936045774" />
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1226346470484">
+          <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1226346470485">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226346470486" />
+          </node>
+        </node>
       </node>
       <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1225936054966">
         <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1225936054967">
