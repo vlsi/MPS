@@ -7,6 +7,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.nodeEditor.MessageStatus;
+import jetbrains.mps.logging.Logger;
 
 import java.util.Map;
 import java.util.List;
@@ -29,7 +30,13 @@ public class TypeCheckingContext {
   private Stack<Boolean> myIsInEditorQueriesStack = new Stack<Boolean>();
   private Stack<NodeTypesComponent> myTemporaryComponentsStack = new Stack<NodeTypesComponent>();
 
-  public TypeCheckingContext(@NotNull SNode rootNode, TypeChecker typeChecker) {
+  private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
+
+  public TypeCheckingContext(SNode rootNode, TypeChecker typeChecker) {
+    if (rootNode == null) {
+      LOG.error("root node in type checking context is null");
+      return;
+    }
     myNodeTypesComponent = new NodeTypesComponent(rootNode, typeChecker, this);
     myTypeChecker = typeChecker;
     myRootNode = rootNode;

@@ -1580,7 +1580,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1204308047624(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(_context.getNode());
+    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_1212004903095(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

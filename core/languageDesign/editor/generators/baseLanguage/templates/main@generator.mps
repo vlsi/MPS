@@ -17290,10 +17290,7 @@
             <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1204308047624">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204308047625">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1204308074661">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204308075492">
-                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1204308074662" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" id="1204308077181" />
-                  </node>
+                  <node role="expression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1204308074662" />
                 </node>
               </node>
             </node>
