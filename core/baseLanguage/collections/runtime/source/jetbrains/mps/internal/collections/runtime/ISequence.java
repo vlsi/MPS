@@ -18,6 +18,8 @@ public interface ISequence<T> extends Iterable<T> {
     
     <U> ISequence<U> translate(ITranslator<T, U> translator);
 
+    <U> ISequence<U> translate(ITranslator2<T, U> translator);
+
     <U> ISequence<U> select(ISelector<T, U> selector);
 
     ISequence<T> sort(ISelector<T, Comparable<?>> selector, boolean ascending);

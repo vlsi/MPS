@@ -304,6 +304,10 @@ public class QueriesGenerated {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.getParent(_context.getNode()), "lValue", true) == _context.getNode());
   }
 
+  public static boolean baseMappingRule_Condition_1226316484720(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return false;
+  }
+
   public static Object propertyMacro_GetPropertyValue_1167778587376(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.createUniqueName("_zCursor", null);
   }
@@ -1329,6 +1333,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1225731746901(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "inputSequence", true);
+  }
+
+  public static SNode sourceNodeQuery_1226316536986(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "closure", true);
   }
 
   public static Iterable sourceNodesQuery_1200500184872(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

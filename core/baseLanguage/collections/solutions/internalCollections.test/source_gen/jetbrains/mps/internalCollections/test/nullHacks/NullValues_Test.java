@@ -6,9 +6,7 @@ import jetbrains.mps.internalCollections.test.closures.Util_Test;
 import org.junit.Test;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.List;
@@ -27,10 +25,10 @@ public class NullValues_Test extends Util_Test {
         }
 
       }));
-      this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).translate(new ITranslator <Integer, Integer>() {
+      this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).translate(new ITranslator2 <Integer, Integer>() {
 
-        public ISequence<Integer> translate(final Integer it) {
-          return new ISequenceIterableAdapter <Integer>() {
+        public Iterable<Integer> translate(final Integer it) {
+          return new Iterable <Integer>() {
 
             public Iterator<Integer> iterator() {
               return new YieldingIterator <Integer>() {

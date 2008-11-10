@@ -12,6 +12,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 public class ChainedOperations_Test extends Util_Test {
 
@@ -79,10 +80,10 @@ __switch__:
         return it * 3;
       }
 
-    }).translate(new ITranslator <Integer, String>() {
+    }).translate(new ITranslator2 <Integer, String>() {
 
-      public ISequence<String> translate(final Integer it) {
-        return new ISequenceIterableAdapter <String>() {
+      public Iterable<String> translate(final Integer it) {
+        return new Iterable <String>() {
 
           public Iterator<String> iterator() {
             return new YieldingIterator <String>() {

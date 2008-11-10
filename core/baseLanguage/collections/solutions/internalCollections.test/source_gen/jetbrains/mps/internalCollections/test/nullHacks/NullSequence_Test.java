@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 
 public class NullSequence_Test extends Util_Test {
@@ -46,9 +46,9 @@ public class NullSequence_Test extends Util_Test {
   public void test_nullTranslate() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
       Iterable<Integer> input = this.input5();
-      Iterable<String> nullSeq = Sequence.fromIterable(input).translate(new ITranslator <Integer, String>() {
+      Iterable<String> nullSeq = Sequence.fromIterable(input).translate(new ITranslator2 <Integer, String>() {
 
-        public ISequence<String> translate(Integer it) {
+        public Iterable<String> translate(Integer it) {
           return ((ISequence<String>)null);
         }
 

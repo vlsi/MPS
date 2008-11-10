@@ -8,9 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import junit.framework.Assert;
 import java.util.List;
@@ -80,10 +78,10 @@ __switch__:
     // "num:<n>"
     // "num:<n*100>"
     final Wrappers._int count = new Wrappers._int(0);
-    Iterable<String> strings = Sequence.fromIterable(nums).translate(new ITranslator <Integer, String>() {
+    Iterable<String> strings = Sequence.fromIterable(nums).translate(new ITranslator2 <Integer, String>() {
 
-      public ISequence<String> translate(final Integer n) {
-        return new ISequenceIterableAdapter <String>() {
+      public Iterable<String> translate(final Integer n) {
+        return new Iterable <String>() {
 
           public Iterator<String> iterator() {
             return new YieldingIterator <String>() {
@@ -175,10 +173,10 @@ __switch__:
 
   public void test_yieldNull() {
     List<String> strings = ListSequence.<String>fromArray("a");
-    List<String> strings2 = ListSequence.fromList(strings).translate(new ITranslator <String, String>() {
+    List<String> strings2 = ListSequence.fromList(strings).translate(new ITranslator2 <String, String>() {
 
-      public ISequence<String> translate(final String it) {
-        return new ISequenceIterableAdapter <String>() {
+      public Iterable<String> translate(final String it) {
+        return new Iterable <String>() {
 
           public Iterator<String> iterator() {
             return new YieldingIterator <String>() {
@@ -219,10 +217,10 @@ __switch__:
 
   public void test_null() {
     List<String> s1 = null;
-    Iterable<String> s2 = ListSequence.fromList(s1).translate(new ITranslator <String, String>() {
+    Iterable<String> s2 = ListSequence.fromList(s1).translate(new ITranslator2 <String, String>() {
 
-      public ISequence<String> translate(final String it) {
-        return new ISequenceIterableAdapter <String>() {
+      public Iterable<String> translate(final String it) {
+        return new Iterable <String>() {
 
           public Iterator<String> iterator() {
             return new YieldingIterator <String>() {

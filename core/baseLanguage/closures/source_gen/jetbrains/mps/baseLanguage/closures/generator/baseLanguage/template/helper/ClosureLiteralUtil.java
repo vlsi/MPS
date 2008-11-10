@@ -143,18 +143,38 @@ public class ClosureLiteralUtil {
   public static Map<String, SNode> matchReturnType(SNode absType, SNode realType, Map<String, SNode> map) {
     Set<String> visited = new HashSet<String>();
     LinkedList<SNode> queue = new LinkedList<SNode>();
-    queue.addLast(absType);
+    if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+      for(SNode arg : SLinkOperations.getTargets(realType, "argument", true)) {
+        queue.addLast(arg);
+      }
+    } else
+    {
+      queue.addLast(realType);
+    }
+    /*
+      queue.addLast(absType);
+    */
     while (!(queue.isEmpty())) {
       SNode candidate = queue.removeFirst();
       if (!(visited.contains(BaseConcept_Behavior.call_getPresentation_1213877396640(candidate)))) {
-        SNode matched = null;
-        if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-          matched = whichTypeMatching(SLinkOperations.getTargets(realType, "argument", true), candidate);
-        } else if (isTypeMatching(realType, candidate)) {
-          matched = realType;
-        }
-        if ((matched != null)) {
-          map = matchType(candidate, matched, map);
+        /*
+          SNode matched = null;
+        */
+        /*
+          if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+            matched = whichTypeMatching(SLinkOperations.getTargets(realType, "argument", true), candidate);
+          } else if (isTypeMatching(realType, candidate)) {
+            matched = realType;
+          }
+        */
+        /*
+          if ((matched != null)) {
+            map = matchType(candidate, matched, map);
+            return map;
+          }
+        */
+        if (isTypeMatching(absType, candidate)) {
+          map = matchType(absType, candidate, map);
           return map;
         }
         visited.add(BaseConcept_Behavior.call_getPresentation_1213877396640(candidate));

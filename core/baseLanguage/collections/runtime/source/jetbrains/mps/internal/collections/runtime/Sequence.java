@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.impl.PagingSequence;
 import jetbrains.mps.internal.collections.runtime.impl.SelectingSequence;
 import jetbrains.mps.internal.collections.runtime.impl.SortingSequence;
 import jetbrains.mps.internal.collections.runtime.impl.TranslatingSequence;
+import jetbrains.mps.internal.collections.runtime.impl.TranslatorAdapter;
 
 
 /**
@@ -91,6 +92,11 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     // public <U> Sequence<T,U> map (IMapper<? super T,U> mapper)
     public <U> ISequence<U> translate (ITranslator<T,U> translator) {
         return new TranslatingSequence<T,U> (this, translator);
+    }
+    
+    @Override
+    public <U> ISequence<U> translate(ITranslator2<T, U> translator) {
+    	return translate(new TranslatorAdapter<T, U> (translator));
     }
     
     // public <U> Sequence<T,U> select (ISelector<? super T,U> selector)

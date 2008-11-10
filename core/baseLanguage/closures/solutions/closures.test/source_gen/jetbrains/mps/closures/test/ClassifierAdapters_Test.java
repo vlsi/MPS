@@ -29,7 +29,7 @@ public class ClassifierAdapters_Test extends TestCase {
     };
     if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
       /*
-        _FunctionTypes._return_P1_E0<? extends String, ? super Integer> ft = wrk;
+        _FunctionTypes._return_P1_E0<? extends String, ? super Integer> ft = new _Adapters.Worker_to__return_P1_E0_adapter(wrk);
         int res = 1234;
         Assert.assertEquals("Done: 1234", ft.invoke(res));
       */
@@ -47,7 +47,7 @@ public class ClassifierAdapters_Test extends TestCase {
     };
     if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
       /*
-        Worker wrk = cls;
+        Worker wrk = new _Adapters._return_P1_E0_to_Worker_adapter(cls);
         Assert.assertEquals("Done: 4321", wrk.doWork(4321));
       */
     }
