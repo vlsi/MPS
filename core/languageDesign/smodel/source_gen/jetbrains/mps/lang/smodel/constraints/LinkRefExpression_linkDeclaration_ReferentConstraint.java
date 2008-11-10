@@ -12,24 +12,20 @@ import jetbrains.mps.smodel.search.EmptySearchScope;
 import java.util.List;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class SLinkAccess_link_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
+public class LinkRefExpression_linkDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
-  public SLinkAccess_link_ReferentConstraint() {
+  public LinkRefExpression_linkDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.lang.smodel.structure.SLinkAccess", "link", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.lang.smodel.structure.LinkRefExpression", "linkDeclaration", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.lang.smodel.structure.SLinkAccess", "link");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.lang.smodel.structure.LinkRefExpression", "linkDeclaration");
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
@@ -50,16 +46,7 @@ public class SLinkAccess_link_ReferentConstraint implements IModelConstraints, I
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // links with cardinality 1 or 0..1
-    SNode dotOperandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(_context.getEnclosingNode());
-    List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(dotOperandConcept);
-    return ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
-
-      public boolean accept(SNode it) {
-        return LinkDeclaration_Behavior.call_isSingular_1213877254557(it);
-      }
-
-    });
+    return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(_context.getReferenceNode(), "conceptDeclaration", false));
   }
 
 }

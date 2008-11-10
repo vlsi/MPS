@@ -18,7 +18,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 
 public class ConceptRefExpression_Editor extends DefaultNodeEditor {
 
@@ -192,11 +192,11 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_property_name1172424127661(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
+      SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
       {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.PADDING_RIGHT, 0.0);
-            this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
           }
 
         };

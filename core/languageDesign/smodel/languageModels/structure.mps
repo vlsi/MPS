@@ -2853,5 +2853,28 @@
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226359078165">
+    <property name="name" value="LinkRefExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1226359078166">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="conceptDeclaration" />
+      <link role="target" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1226359192215">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="linkDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1071489288298" resolveInfo="LinkDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1226359078167">
+      <property name="value" value="link/&lt;role&gt;/" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1226359078168">
+      <property name="value" value="link reference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
 </model>
 
