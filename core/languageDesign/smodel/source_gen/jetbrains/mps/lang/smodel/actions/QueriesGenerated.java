@@ -12,6 +12,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
@@ -71,7 +72,7 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_Node_GetAncestorOperation_1171415364778(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation")) {
       List<SNode> parms = SLinkOperations.getTargets(_context.getSampleNode(), "parameter", true);
-      for(SNode parm : parms) {
+      for(SNode parm : Sequence.fromIterable(parms)) {
         SLinkOperations.addChild(_context.getNewNode(), "parameter", parm);
       }
     }
@@ -111,7 +112,7 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_Node_GetDescendantsOperation_1207248813875(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation")) {
       List<SNode> parms = SLinkOperations.getTargets(_context.getSampleNode(), "parameter", true);
-      for(SNode parm : parms) {
+      for(SNode parm : Sequence.fromIterable(parms)) {
         SLinkOperations.addChild(_context.getNewNode(), "parameter", parm);
       }
     }
