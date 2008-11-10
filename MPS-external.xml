@@ -52,10 +52,10 @@
   </target>
   <target name="do.the.job" depends="folders.create">
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/Contents">
-      <fileset dir="build/Contents" excludes="**/*.iml, **/*.iws" includes="" />
+      <fileset dir="build/Contents" excludes="**/*.iml, **/*.iws" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/bin">
-      <fileset dir="bin" excludes="**/*.iml, **/*.iws" includes="" />
+      <fileset dir="bin" excludes="**/*.iml, **/*.iws" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/beansbinding">
       <fileset dir="lib/beansbinding" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
@@ -124,13 +124,13 @@
     </antcall>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/license">
-      <fileset dir="license" excludes="**/*.iml, **/*.iws" includes="" />
+      <fileset dir="license" excludes="**/*.iml, **/*.iws" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/plugins">
-      <fileset dir="plugins" excludes="**/*.iml, **/*.iws" includes="" />
+      <fileset dir="plugins" excludes="**/*.iml, **/*.iws" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/samples">
-      <fileset dir="samples" excludes="**/*.iml, **/*.iws" includes="" />
+      <fileset dir="samples" excludes="**/*.iml, **/*.iws" />
     </copy>
     <antcall target="pack.jetbrains.mps.devkit.general-purpose" />
     <antcall target="pack.jetbrains.mps.devkit.language-design" />
@@ -205,12 +205,12 @@
     <antcall target="pack.jetbrains.mps.gtext.runtime" />
     <antcall target="pack.jetbrains.mps.quickQueryLanguage" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/plugin">
-      <fileset dir="plugin" excludes="**/*.java, **/*.iml, **/*.iws" includes="" />
+      <fileset dir="plugin" excludes="**/*.java, **/*.iml, **/*.iws" />
     </copy>
     <antcall target="pack.jetbrains.mps.ide.uiLanguage" />
     <antcall target="pack.jetbrains.mps.ide" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/log">
-      <fileset dir="log" excludes="**/*.java, **/*.iml, **/*.iws" includes="" />
+      <fileset dir="log" excludes="**/*.java, **/*.iml, **/*.iws" />
     </copy>
     <echo file="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}</echo>
     <copy file="entryPoints.xml" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/entryPoints.xml" />
@@ -218,7 +218,7 @@
     <copy file="mps.sh" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/mps.sh" />
     <copy file="mps.bat" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/mps.bat" />
     <zip destfile="${deploy.dir}/MPS-${build.number}.zip" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp" excludes="**/*.iml, **/*.iws" includes="" filemode="755" />
+      <zipfileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp" excludes="**/*.iml, **/*.iws" filemode="755" />
     </zip>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp" />
     <copy file="lib/idea-platform/idea-platform-src.zip" tofile="${deploy.dir}/debug/idea-platform-src.zip" />
@@ -247,7 +247,7 @@
     </antcall>
     <delete dir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources" />
     <zip destfile="${deploy.dir}/debug/MPS-src.zip" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${deploy.dir}/debug/MPS-src.zip.tmp" excludes="" includes="" />
+      <zipfileset dir="${deploy.dir}/debug/MPS-src.zip.tmp" />
     </zip>
     <delete dir="${deploy.dir}/debug/MPS-src.zip.tmp" />
   </target>

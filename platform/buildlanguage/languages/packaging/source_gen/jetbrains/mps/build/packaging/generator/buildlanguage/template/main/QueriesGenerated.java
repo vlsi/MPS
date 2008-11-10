@@ -28,6 +28,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -464,6 +465,38 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1225993322931(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "title", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1226345902716(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isNotEmpty(ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode()));
+  }
+
+  public static boolean ifMacro_Condition_1226345946802(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isNotEmpty(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()));
+  }
+
+  public static boolean ifMacro_Condition_1226346273741(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()).isEmpty());
+  }
+
+  public static boolean ifMacro_Condition_1226346293894(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(Copy_Behavior.call_getIncludes_1213877251415(_context.getNode()).isEmpty());
+  }
+
+  public static boolean ifMacro_Condition_1226346311970(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()).isEmpty());
+  }
+
+  public static boolean ifMacro_Condition_1226346323637(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()).isEmpty());
+  }
+
+  public static boolean ifMacro_Condition_1226346345677(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()).isEmpty());
+  }
+
+  public static boolean ifMacro_Condition_1226346367196(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()).isEmpty());
   }
 
   public static SNode sourceNodeQuery_1219156054317(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

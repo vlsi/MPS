@@ -1191,6 +1191,27 @@
                   </node>
                 </node>
               </node>
+              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1226346345676">
+                <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1226346345677">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226346345678">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226346360280">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1226346360281">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226346360282">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226346360283">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1226346360284" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226346360285">
+                              <link role="baseMethodDeclaration" targetNodeId="20.1213877251358" resolveInfo="getExcludes" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226346360286">
+                            <link role="baseMethodDeclaration" targetNodeId="2.~String.isEmpty():boolean" resolveInfo="isEmpty" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1206440125708">
               <link role="attributeDeclaration" targetNodeId="7.1199644187653" resolveInfo="includes" />
@@ -1204,6 +1225,27 @@
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1206440132169" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1206440132170">
                             <link role="baseMethodDeclaration" targetNodeId="20.1213877279430" resolveInfo="getIncludes" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1226346367195">
+                <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1226346367196">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226346367197">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226346372298">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1226346372299">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226346372300">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226346372301">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1226346372302" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226346377916">
+                              <link role="baseMethodDeclaration" targetNodeId="20.1213877279430" resolveInfo="getIncludes" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226346372304">
+                            <link role="baseMethodDeclaration" targetNodeId="2.~String.isEmpty():boolean" resolveInfo="isEmpty" />
                           </node>
                         </node>
                       </node>
@@ -1322,6 +1364,27 @@
                   </node>
                 </node>
               </node>
+              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1226346311969">
+                <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1226346311970">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226346311971">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226346314711">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1226346314712">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226346314713">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226346314714">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1226346318028" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226346314716">
+                              <link role="baseMethodDeclaration" targetNodeId="20.1213877251358" resolveInfo="getExcludes" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226346314717">
+                            <link role="baseMethodDeclaration" targetNodeId="2.~String.isEmpty():boolean" resolveInfo="isEmpty" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1206440105073">
               <link role="attributeDeclaration" targetNodeId="7.1199644187653" resolveInfo="includes" />
@@ -1335,6 +1398,27 @@
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1206440112831" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1206440112832">
                             <link role="baseMethodDeclaration" targetNodeId="20.1213877279430" resolveInfo="getIncludes" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1226346323636">
+                <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1226346323637">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226346323638">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226346325803">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1226346325804">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226346325805">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226346325806">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1226346333346" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226346328525">
+                              <link role="baseMethodDeclaration" targetNodeId="20.1213877279430" resolveInfo="getIncludes" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226346325809">
+                            <link role="baseMethodDeclaration" targetNodeId="2.~String.isEmpty():boolean" resolveInfo="isEmpty" />
                           </node>
                         </node>
                       </node>
@@ -1514,6 +1598,27 @@
                   </node>
                 </node>
               </node>
+              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1226346273740">
+                <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1226346273741">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226346273742">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226346280312">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1226346280313">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226346280314">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226346280315">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1226346280316" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226346280317">
+                              <link role="baseMethodDeclaration" targetNodeId="20.1213877251358" resolveInfo="getExcludes" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226346280318">
+                            <link role="baseMethodDeclaration" targetNodeId="2.~String.isEmpty():boolean" resolveInfo="isEmpty" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1206439779154">
               <link role="attributeDeclaration" targetNodeId="7.1199644187653" resolveInfo="includes" />
@@ -1527,6 +1632,27 @@
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1206439785896" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1206439785897">
                             <link role="baseMethodDeclaration" targetNodeId="20.1213877251415" resolveInfo="getIncludes" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1226346293893">
+                <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1226346293894">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226346293895">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226346297209">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1226346297210">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226346297211">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226346297212">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1226346297213" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226346304144">
+                              <link role="baseMethodDeclaration" targetNodeId="20.1213877251415" resolveInfo="getIncludes" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226346297215">
+                            <link role="baseMethodDeclaration" targetNodeId="2.~String.isEmpty():boolean" resolveInfo="isEmpty" />
                           </node>
                         </node>
                       </node>
@@ -1639,6 +1765,23 @@
                   </node>
                 </node>
               </node>
+              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1226345902715">
+                <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1226345902716">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226345902717">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226345938997">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226345938998">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226345938999">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1226345939000" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226345939001">
+                            <link role="baseMethodDeclaration" targetNodeId="20.1213877279373" resolveInfo="getExcludes" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="1226345939002" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
             <node role="atributes" type="jetbrains.mps.buildlanguage.structure.GenericAttribute" id="1209893117988">
               <link role="attributeDeclaration" targetNodeId="7.1199644187653" resolveInfo="includes" />
@@ -1654,6 +1797,23 @@
                             <link role="baseMethodDeclaration" targetNodeId="20.1213877279430" resolveInfo="getIncludes" />
                           </node>
                         </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1226345946801">
+                <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1226345946802">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226345946803">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226345949053">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226345949054">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226345949055">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1226345949056" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226345952992">
+                            <link role="baseMethodDeclaration" targetNodeId="20.1213877279430" resolveInfo="getIncludes" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="1226345949058" />
                       </node>
                     </node>
                   </node>
