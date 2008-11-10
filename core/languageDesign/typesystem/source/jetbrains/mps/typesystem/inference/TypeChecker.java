@@ -214,6 +214,8 @@ public class TypeChecker implements ApplicationComponent {
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
 
+  //  System.err.println("getting type of " + node + node.getId() + " in a root " + containingRoot + " in a model " + node.getModel().getModelDescriptor().getSModelFqName());
+
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
       getNodeTypesComponent(node.getContainingRoot());
     if (!myCheckedRoots.contains(containingRoot) || component == null) {
@@ -228,9 +230,13 @@ public class TypeChecker implements ApplicationComponent {
           });
         }
       });
-      return result[0];
+      SNode resultt_type = result[0];
+   //   System.err.println("type is " + resultt_type);
+      return resultt_type;
     }
-    return getTypeDontCheck(node);
+    SNode resultType = getTypeDontCheck(node);
+  //  System.err.println("type is " + resultType);
+    return resultType;
   }
 
   private SNode getTypeOf_resolveMode(final SNode node, boolean nodeIsNotChecked) {
@@ -289,10 +295,10 @@ public class TypeChecker implements ApplicationComponent {
   @Nullable
   public SNode getTypeOf(SNode node) {
     if (node == null) return null;
-    if (myIsGeneration && TypesystemPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
+    if (NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node).isInEditorQueries()) {
+       return getTypeOf_resolveMode(node, true);
+    } else if (myIsGeneration && TypesystemPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
       return getTypeOf_generationMode(node);
-    } else if (NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node).isInEditorQueries()) {
-      return getTypeOf_resolveMode(node, true);
     } else {
       return getTypeOf_normalMode(node);
     }
