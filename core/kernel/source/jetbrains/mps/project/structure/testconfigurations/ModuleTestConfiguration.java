@@ -30,7 +30,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
   }
 
   public GenParameters getGenParams(MPSProject project, boolean fullRegeneration) {
-    IModule module = MPSModuleRepository.getInstance().getModuleById(myModuleRef.getModuleId());
+    IModule module = MPSModuleRepository.getInstance().getModule(myModuleRef);
 
     if (module == null) {
       throw new GeneratorConfigurationException("Can't find module " + myModuleRef.getModuleFqName());
