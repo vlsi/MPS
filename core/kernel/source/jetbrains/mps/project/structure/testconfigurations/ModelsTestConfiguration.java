@@ -1,13 +1,11 @@
 package jetbrains.mps.project.structure.testconfigurations;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.Model;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.CollectionUtil;
@@ -29,14 +27,10 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
     return Collections.unmodifiableList(myModels);
   }
 
-  public List<SModelDescriptor> getModelDescriptors(final MPSProject project) {
-    return ModelAccess.instance().runReadAction(new Computable<List<SModelDescriptor>>() {
-      public List<SModelDescriptor> compute() {
-        return CollectionUtil.map(getModels(), new Mapper<Model, SModelDescriptor>() {
-          public SModelDescriptor map(Model model) {
-            return project.getScope().getModelDescriptor(SModelReference.fromString(model.getModelRef()));
-          }
-        });
+  public List<SModelReference> getModelRefs(final MPSProject project) {
+    return CollectionUtil.map(getModels(), new Mapper<Model, SModelReference>() {
+      public SModelReference map(Model model) {
+        return SModelReference.fromString(model.getModelRef());
       }
     });
   }
