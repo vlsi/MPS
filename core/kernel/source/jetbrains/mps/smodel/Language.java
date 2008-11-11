@@ -134,6 +134,12 @@ public class Language extends AbstractModule {
       }
     }
 
+    for (IModule m : getRuntimeDependOnModules()) {
+      if (!result.contains(m)) {
+        result.add(m);
+      }
+    }
+
     return result;
   }
 

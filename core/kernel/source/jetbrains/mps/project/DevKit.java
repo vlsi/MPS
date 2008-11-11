@@ -201,6 +201,30 @@ public class DevKit extends AbstractModule {
     });
   }
 
+  @Override
+  public List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap) {
+    List<IModule> result = super.getExplicitlyDependOnModules(includeBootstrap);
+
+    for (DevKit dk : getExtendedDevKits()) {
+      if (!result.contains(dk)) {
+        result.add(dk);
+      }
+    }
+
+    for (Language l : getExportedLanguages()) {
+      if (!result.contains(l)) {
+        result.add(l);
+      }
+    }
+
+    for (Solution s : getExportedSolutions()) {
+      if (!result.contains(s)) {
+        result.add(s);
+      }
+    }
+
+    return result;
+  }
 
   public void save() {
     DescriptorsPersistence.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
