@@ -134,6 +134,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     MPSNodeVirtualFile vf = myVirtualFiles.get(rootNode.getContainingRoot());
     if (vf != null) {
       vf.setModificationStamp(LocalTimeCounter.currentTime());
+      vf.setTimeStamp(System.currentTimeMillis());
     }
   }
 

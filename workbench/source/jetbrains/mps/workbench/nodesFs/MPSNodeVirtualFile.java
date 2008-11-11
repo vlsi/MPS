@@ -20,9 +20,11 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   private String myPath;
   private String myName;
   private long myModificationStamp = LocalTimeCounter.currentTime();
+  private long myTimeStamp;
 
   MPSNodeVirtualFile(@NotNull SNode node) {
     myNode = node;
+    myTimeStamp = node.getModel().getModelDescriptor().lastChangeTime();
     updateFields();
   }
 
@@ -97,11 +99,11 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   }
 
   public long getTimeStamp() {
-    return ModelAccess.instance().runReadAction(new Computable<Long>() {
-      public Long compute() {
-        return myNode.getModel().getModelDescriptor().lastChangeTime();
-      }
-    });
+    return myTimeStamp;
+  }
+
+  public void setTimeStamp(long newTimeStamp) {
+    myTimeStamp = newTimeStamp;
   }
 
   public long getModificationStamp() {
