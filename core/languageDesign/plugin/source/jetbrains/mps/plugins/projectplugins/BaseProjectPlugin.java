@@ -192,7 +192,10 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     for (ComponentState componentState : state.myComponentsState) {
       if (componentState.second == null) return;
       try {
-        components.get(componentState.first).loadState(componentState.second);
+        BaseProjectPrefsComponent component = components.get(componentState.first);
+        if (component!=null){
+          component.loadState(componentState.second);
+        }
       } catch (Throwable t) {
         LOG.error(t);
       }
