@@ -698,7 +698,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ToolDeclaration" id="1225567254245">
     <property name="name" value="BuildLanguageTool" />
-    <property name="caption" value="Run Build Language Script" />
+    <property name="caption" value="Run Build Language Project" />
     <property name="icon" value="${language_descriptor}\icons\build.png" />
     <property name="package" value="run" />
     <node role="getComponentBlock" type="jetbrains.mps.lang.plugin.structure.GetComponentBlock" id="1225567254246">
@@ -751,7 +751,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1225568085443">
     <property name="package" value="run" />
     <property name="name" value="RunBuildLanguageScript" />
-    <property name="caption" value="Run Build Script" />
+    <property name="caption" value="Run Build Language Project" />
     <property name="iconPath" value="${language_descriptor}\icons\run.png" />
     <property name="outsideCommandExecution" value="true" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1225568085444">
