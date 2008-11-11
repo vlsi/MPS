@@ -21,6 +21,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.baseLanguage.unitTest.plugin.TestStatisticsModel;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -67,10 +68,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeNode;
-import javax.swing.tree.TreePath;
+import javax.swing.tree.*;
 import java.awt.Component;
 import java.awt.Point;
 import java.awt.event.KeyAdapter;
@@ -887,8 +885,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public class MyTree extends MPSTree {
     public MyTree() {
       super();
-      scrollsOnExpand = false;
 
+      getSelectionModel().setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
+      scrollsOnExpand = false;
       registerActions();
     }
 

@@ -17,7 +17,6 @@ import java.util.List;
 
 public class NewProjectDescriptor {
   private String myName = "";
-  private boolean myImportClasspath = false;
   private List<Path> myLanguages = new ArrayList<Path>();
   private List<Path> mySolutions = new ArrayList<Path>();
   private List<Path> myDevkits = new ArrayList<Path>();
@@ -29,14 +28,6 @@ public class NewProjectDescriptor {
 
   public void setName(String name) {
     myName = name;
-  }
-
-  public boolean getImportClasspath() {
-    return myImportClasspath;
-  }
-
-  public void setImportClasspath(boolean importClasspath) {
-    myImportClasspath = importClasspath;
   }
 
   public List<Path> getLanguages() {
