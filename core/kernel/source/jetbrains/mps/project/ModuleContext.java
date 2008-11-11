@@ -93,7 +93,7 @@ public class ModuleContext extends StandaloneMPSContext {
     }
 
     IModule module;
-    if (owningModules.size() == 1 || !askIfMany) {
+    if (owningModules.size() == 1 || !askIfMany || SModelStereotype.JAVA_STUB.equals(model.getStereotype())) {
       module = owningModules.iterator().next();
     } else {
       Frame frame = null;
