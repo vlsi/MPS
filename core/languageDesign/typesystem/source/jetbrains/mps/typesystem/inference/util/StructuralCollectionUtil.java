@@ -28,7 +28,7 @@ public class StructuralCollectionUtil {
     result.append(node.getConceptFqName());
     result.append("(");
 
-    Set<String> roles = new TreeSet<String>(node.getChildRoles(true));
+    Set<String> roles = new TreeSet<String>(node.getChildRoles(false));
     for (String role : roles) {
       for (SNode child : node.getChildren(role)) {
         toString(result, root, child);
