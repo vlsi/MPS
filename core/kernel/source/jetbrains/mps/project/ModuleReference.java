@@ -1,10 +1,14 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.util.EqualUtil;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.jetbrains.annotations.Nullable;
 
 public class ModuleReference implements Comparable<ModuleReference> {
   private static Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");

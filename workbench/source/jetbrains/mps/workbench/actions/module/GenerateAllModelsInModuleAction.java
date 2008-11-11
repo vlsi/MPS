@@ -86,14 +86,14 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
 
         if (module instanceof Solution) {
           ModuleTestConfiguration solutionConfig = new ModuleTestConfiguration();
-          solutionConfig.setModuleUID(module.getModuleUID());
+          solutionConfig.setModuleRef(module.getModuleReference());
           solutionConfig.setName("tmp");
           conf = solutionConfig;
         }
 
         if (module instanceof Language) {
           ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
-          languageConfig.setModuleUID(module.getModuleUID());
+          languageConfig.setModuleRef(module.getModuleReference());
           languageConfig.setName("tmp");
           conf = languageConfig;
         }

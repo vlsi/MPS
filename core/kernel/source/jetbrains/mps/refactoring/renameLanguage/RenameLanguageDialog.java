@@ -112,7 +112,7 @@ public class RenameLanguageDialog extends BaseDialog {
           SModel model = AuxilaryRuntimeModel.getDescriptor().getSModel();
 
           ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
-          languageConfig.setModuleUID(myLanguage.getNamespace());
+          languageConfig.setModuleRef(myLanguage.getModuleReference());
           languageConfig.setName("tmp");
 
           return languageConfig.getGenParams(mpsProject, true);

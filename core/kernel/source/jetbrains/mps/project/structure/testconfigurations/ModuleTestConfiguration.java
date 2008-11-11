@@ -6,6 +6,7 @@ import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -15,24 +16,24 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ModuleTestConfiguration extends BaseTestConfiguration {
-  private String myModuleUID;
+  private ModuleReference myModuleRef;
 
   public ModuleTestConfiguration() {
   }
 
-  public String getModuleUID() {
-    return myModuleUID;
+  public ModuleReference getModuleRef() {
+    return myModuleRef;
   }
 
-  public void setModuleUID(String moduleUID) {
-    myModuleUID = moduleUID;
+  public void setModuleRef(ModuleReference moduleRef) {
+    myModuleRef = moduleRef;
   }
 
   public GenParameters getGenParams(MPSProject project, boolean fullRegeneration) {
-    IModule module = MPSModuleRepository.getInstance().getModuleByUID(getModuleUID());
+    IModule module = MPSModuleRepository.getInstance().getModuleById(myModuleRef.getModuleId());
 
     if (module == null) {
-      throw new GeneratorConfigurationException("Can't find module " + getModuleUID());
+      throw new GeneratorConfigurationException("Can't find module " + myModuleRef.getModuleFqName());
     }
 
     if (module instanceof Solution) {
@@ -67,6 +68,6 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
 
     }
 
-    throw new GeneratorConfigurationException("Not applicable to non-language/solution module " + getModuleUID());
+    throw new GeneratorConfigurationException("Not applicable to non-language/solution module " + myModuleRef.getModuleFqName());
   }
 }
