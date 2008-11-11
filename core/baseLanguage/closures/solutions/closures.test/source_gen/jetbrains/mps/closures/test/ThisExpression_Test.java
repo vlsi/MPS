@@ -16,11 +16,10 @@ public class ThisExpression_Test extends TestCase {
       private Integer foo = 0;
 
       public void run() {
-        new _FunctionTypes._void_P0_E0() {
+        new _FunctionTypes._return_P0_E0 <Integer>() {
 
-          public void invoke() {
-            foo = 42;
-            // workaround (MPS-1840)
+          public Integer invoke() {
+            return foo = 42;
           }
 
         }.invoke();

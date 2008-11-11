@@ -1788,6 +1788,7 @@ public class QueriesGenerated {
                   SNode ifr = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference");
                   SLinkOperations.setNewChild(ifr, "instance", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression");
                   SPropertyOperations.set(ifr, "fieldName", SPropertyOperations.getString(SLinkOperations.getTarget(parent, "variableDeclaration", false), "name"));
+                  SLinkOperations.setTarget(ifr, "fieldType", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(parent, "variableDeclaration", false), "type", true)), true);
                 } else
                 if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
                   SNode op = SLinkOperations.getTarget(parent, "operation", true);
@@ -1795,6 +1796,7 @@ public class QueriesGenerated {
                     SNode ifr = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference");
                     SLinkOperations.setNewChild(ifr, "instance", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression");
                     SPropertyOperations.set(ifr, "fieldName", SPropertyOperations.getString(SLinkOperations.getTarget(op, "fieldDeclaration", false), "name"));
+                    SLinkOperations.setTarget(ifr, "fieldType", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(op, "fieldDeclaration", false), "type", true)), true);
                   } else
                   if (SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
                     _context.showErrorMessage(te, "'this' expression coulnd't be removed");

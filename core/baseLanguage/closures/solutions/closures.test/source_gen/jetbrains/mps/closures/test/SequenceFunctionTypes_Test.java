@@ -64,16 +64,13 @@ __switch__:
       }
 
     };
-    // TODO: fix the test
-    /*
-      fun1 = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
+    fun1 = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
 
-        public Iterable<Integer> invoke() {
-          return ListSequence.<Integer>fromArray(Integer.valueOf(1));
-        }
+      public Iterable<Integer> invoke() {
+        return ListSequence.<Integer>fromArray(Integer.valueOf(1));
+      }
 
-      };
-    */
+    };
     fun1 = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
 
       public Iterable<Integer> invoke() {
