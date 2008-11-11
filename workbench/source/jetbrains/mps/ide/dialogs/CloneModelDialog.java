@@ -147,7 +147,10 @@ public class CloneModelDialog extends BaseNodeDialog {
       public void run() {
         Set<String> modelsInProps = getModelsInProperties();
         for (String modelUID : modelsInProps) {
-          model.addImportedModel(SModelReference.fromString(modelUID));
+          SModelReference ref = SModelReference.fromString(modelUID);
+          if (ref!=null){
+            model.addImportedModel(ref);
+          }
         }
 
         for (jetbrains.mps.projectLanguage.structure.Language l : myCloneModelProperties.getLanguages()) {
