@@ -9,6 +9,7 @@ import java.util.Map;
 
 public final class ObjectCache<K, V> {
 
+
   public static final int DEFAULT_SIZE = 8192;
   public static final int MIN_SIZE = 4;
   public static final float DEFAULT_SECOND_GENERATION_QUEUE_SIZE_RATIO = 0.4f;
@@ -18,9 +19,10 @@ public final class ObjectCache<K, V> {
   private LinkedHashMap<K, V> _firstGenerationQueue;
   private LinkedHashMap<K, V> _secondGenerationQueue;
   private DeletedPairsListener[] myListeners;
-  private int myAttempts;
-  private int myHits;
-
+  private int _attempts;
+  private int _hits;
+  private K _lastKey;
+  private V _lastValue;
 
   public ObjectCache() {
     this(DEFAULT_SIZE);
@@ -121,17 +123,11 @@ public final class ObjectCache<K, V> {
   }
 
   public V tryKey(final K key) {
-    ++myAttempts;
-    /*
-    V result = _secondGenerationQueue.remove(key);
-    if (result == null) {
-      result = _firstGenerationQueue.remove(key);
+    ++_attempts;
+    if (key == _lastKey) {
+      ++_hits;
+      return _lastValue;
     }
-    if (result != null) {
-      _secondGenerationQueue.put(key, result);
-      ++myHits;
-    }
-    */
     V result = _secondGenerationQueue.get(key);
     if (result == null) {
       result = _firstGenerationQueue.remove(key);
@@ -140,7 +136,9 @@ public final class ObjectCache<K, V> {
       }
     }
     if (result != null) {
-      ++myHits;
+      _lastKey = key;
+      _lastValue = result;
+      ++_hits;
     }
     return result;
   }
@@ -152,6 +150,9 @@ public final class ObjectCache<K, V> {
    * @return
    */
   public V getObject(final K key) {
+    if (key == _lastKey) {
+      return _lastValue;
+    }
     V result = _firstGenerationQueue.get(key);
     if (result == null) {
       result = _secondGenerationQueue.get(key);
@@ -172,7 +173,7 @@ public final class ObjectCache<K, V> {
   }
 
   public double hitRate() {
-    return (myAttempts > 0) ? ((double) myHits / (double) myAttempts) : 0;
+    return (_attempts > 0) ? ((double) _hits / (double) _attempts) : 0;
   }
 
   public Iterator<K> keys() {
@@ -270,6 +271,8 @@ public final class ObjectCache<K, V> {
   }
 
   private void fireListenersAboutDeletion(final K key, final V x) {
+    _lastKey = null;
+    _lastValue = null;
     if (myListeners != null) {
       for (final DeletedPairsListener myListener : myListeners) {
         myListener.objectRemoved(key, x);
