@@ -12,7 +12,7 @@ public class Buildlanguage_ProjectPlugin extends BaseProjectPlugin {
 
   public List<GeneratedTool> initTools(Project project) {
     List<GeneratedTool> tools = new ArrayList<GeneratedTool>();
-    tools.add(new BuildTool_Tool(project));
+    tools.add(new BuildLanguageTool_Tool(project));
     return tools;
   }
 
