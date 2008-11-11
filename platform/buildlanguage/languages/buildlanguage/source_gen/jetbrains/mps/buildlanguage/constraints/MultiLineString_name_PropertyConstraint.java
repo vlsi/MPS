@@ -28,10 +28,9 @@ public class MultiLineString_name_PropertyConstraint implements IModelConstraint
     String result = "";
     for(SNode lit : Sequence.fromIterable(SLinkOperations.getTargets(node, "stringExpression", true))) {
       result += PropertyValueExpression_Behavior.call_toString_1213877472569(lit);
-      result += " ";
     }
     return (result.length() > 0 ?
-      result.substring(0, result.length() - 1) :
+      result :
       ""
     );
   }
