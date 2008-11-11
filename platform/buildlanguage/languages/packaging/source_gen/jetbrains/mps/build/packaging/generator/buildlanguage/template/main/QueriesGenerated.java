@@ -476,27 +476,27 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1226346273741(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()).length() == 0);
+    return StringUtils.isNotEmpty(Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1226346293894(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(Copy_Behavior.call_getIncludes_1213877251415(_context.getNode()).length() == 0);
+    return StringUtils.isNotEmpty(Copy_Behavior.call_getIncludes_1213877251415(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1226346311970(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()).length() == 0);
+    return StringUtils.isNotEmpty(ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1226346323637(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()).length() == 0);
+    return StringUtils.isNotEmpty(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1226346345677(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()).length() == 0);
+    return StringUtils.isNotEmpty(Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1226346367196(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()).length() == 0);
+    return StringUtils.isNotEmpty(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()));
   }
 
   public static SNode sourceNodeQuery_1219156054317(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
