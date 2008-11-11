@@ -19,7 +19,7 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false">
+  <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}\solutions\internalCollections.sandbox\internalCollections.sandbox.msd" />
       <solutionPath path="${project}\solutions\internalCollections.test\internalCollections.test.msd" />
