@@ -132,7 +132,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     }
 
     final SModelRoot modelRoot = module.findModelRoot(reference.getPath());
-    final SModelDescriptor modelDescriptor = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
+    final SModelDescriptor modelDescriptor = ModelAccess.instance().runWriteAction(new Computable<SModelDescriptor>() {
       public SModelDescriptor compute() {
         return module.createModel(new SModelFqName(modelName, stereotype), modelRoot);
       }
