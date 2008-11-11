@@ -235,6 +235,9 @@
       <fileset dir="source" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
+      <fileset dir="tests" includes="**/*.java, **/*.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
       <fileset dir="resources" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
