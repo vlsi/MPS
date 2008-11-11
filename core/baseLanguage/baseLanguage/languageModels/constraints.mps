@@ -2093,17 +2093,13 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225995061669">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1225996746136">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225997083191">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225997076358">
-                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link" id="1225997072528" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1225997078330">
-                  <link role="property" targetNodeId="51.1071599776563" resolveInfo="role" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1226362816764">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1226362824043">
+                <node role="rightExpression" type="jetbrains.mps.lang.smodel.structure.LinkRefExpression" id="1226362827514">
+                  <link role="conceptDeclaration" targetNodeId="1.1197027756228" resolveInfo="DotExpression" />
+                  <link role="linkDeclaration" targetNodeId="1.1197027833540" />
                 </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple" id="1225997092895">
-                <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225997184954">
-                  <property name="value" value="operation" />
-                </node>
+                <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link" id="1226362816767" />
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225995064030">
