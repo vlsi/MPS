@@ -49,6 +49,9 @@
     <mkdir dir="${deploy.dir}/debug" />
     <mkdir dir="${deploy.dir}/debug/MPS-src.zip.tmp" />
     <mkdir dir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources" />
+    <mkdir dir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources/source" />
+    <mkdir dir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources/source_gen" />
+    <mkdir dir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources/tests" />
   </target>
   <target name="do.the.job" depends="folders.create">
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/Contents">
@@ -232,16 +235,19 @@
       <fileset dir="plugin" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
-      <fileset dir="source" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
-      <fileset dir="tests" includes="**/*.java, **/*.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
       <fileset dir="resources" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
     </copy>
     <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources">
       <fileset dir="workbench" excludes="**/sandbox/**, " includes="**/*.java, **/*.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources/source">
+      <fileset dir="source" includes="**/*.java, **/*.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources/source_gen">
+      <fileset dir="source_gen" includes="**/*.java, **/*.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources/tests">
+      <fileset dir="tests" includes="**/*.java, **/*.xml, " />
     </copy>
     <antcall target="repack.sources" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
