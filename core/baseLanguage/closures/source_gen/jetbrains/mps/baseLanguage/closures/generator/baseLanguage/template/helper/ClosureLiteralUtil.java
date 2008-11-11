@@ -66,6 +66,9 @@ public class ClosureLiteralUtil {
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true);
     SNode absRetCT = null;
     if (imds.size() > 0) {
+      if (imds.size() != 1) {
+        generator.showWarningMessage(literal, "The adaptation target interface has more than one method");
+      }
       SNode method = imds.get(0);
       if ((SLinkOperations.getTarget(method, "returnType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
         /*
