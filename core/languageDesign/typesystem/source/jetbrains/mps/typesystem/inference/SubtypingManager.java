@@ -263,8 +263,8 @@ public class SubtypingManager {
   }
 
 
-  public StructuralWrapperSet collectImmediateSupertypes(IWrapper term, boolean isWeak) {
-    StructuralWrapperSet result = new StructuralWrapperSet();
+  public StructuralWrapperMap collectImmediateSupertypes(IWrapper term, boolean isWeak) {
+    StructuralWrapperMap result = new StructuralWrapperMap();
     if (term == null) {
       return result;
     }
@@ -283,7 +283,7 @@ public class SubtypingManager {
       if (subtypingRule_runtimes != null) {
         for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
           List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(node);
-          result.addAll(toWrappers(new HashSet<SNode>(supertypes), null));
+          result.addCollectionStructurally(toWrappers(new HashSet<SNode>(supertypes), null));
         }
       }
     }
@@ -324,29 +324,29 @@ public class SubtypingManager {
 
   public Set<IWrapper> leastCommonSupertypesWrappers(Set<IWrapper> types, boolean isWeak) {
     if (types.size() == 1) return new HashSet<IWrapper>(types);
-    StructuralWrapperSet<?> allTypes = new StructuralWrapperSet();
-    StructuralWrapperSet<?> result = new StructuralWrapperSet(types);
+    StructuralWrapperMap<?> allTypes = new StructuralWrapperMap();
+    StructuralWrapperMap<?> result = new StructuralWrapperMap(types);
 
     allTypes.addCollectionStructurally((Set<IWrapper>) types);
 
-    StructuralWrapperMap<StructuralWrapperSet<Integer>> subTypesToSupertypes = new StructuralWrapperMap<StructuralWrapperSet<Integer>>();
+    StructuralWrapperMap<StructuralWrapperMap<Integer>> subTypesToSupertypes = new StructuralWrapperMap<StructuralWrapperMap<Integer>>();
 
     Set<IWrapper> frontier = new HashSet<IWrapper>(types);
     Set<IWrapper> newFrontier = new HashSet<IWrapper>();
 
-    StructuralWrapperSet subTypesToSupertypesKeySet = new StructuralWrapperSet(subTypesToSupertypes.keySet());
+    StructuralWrapperMap subTypesToSupertypesKeySet = new StructuralWrapperMap(subTypesToSupertypes.keySet());
     while (!frontier.isEmpty()) {
       for (IWrapper type : frontier) {
-        if (subTypesToSupertypesKeySet.containsStructurally(type)) {
+        if (subTypesToSupertypesKeySet.containsKey(type)) {
           continue;
         }
-        StructuralWrapperSet superTypes = collectImmediateSupertypes(type, isWeak);
-        superTypes.setAllTags(1);
+        StructuralWrapperMap superTypes = collectImmediateSupertypes(type, isWeak);
+        superTypes.setAllValues(1);
         subTypesToSupertypes.put(type, superTypes);
         subTypesToSupertypesKeySet.addStructurally(type);
-        newFrontier.addAll(superTypes);
+        newFrontier.addAll(superTypes.keySet());
         allTypes.addAllStructurally(superTypes);
-        superTypes.putStructurally(type, 0);
+        superTypes.put(type, 0);
       }
 
       frontier = newFrontier;
@@ -356,21 +356,21 @@ public class SubtypingManager {
    /* System.out.println("alltypes size = " + allTypes.size());
     System.out.println("alltypes = " + allTypes);*/
 
-    for (IWrapper node2 : allTypes) { // transitive closure
-      for (IWrapper node1 : allTypes) {
-        for (IWrapper node3 : allTypes) {
-          StructuralWrapperSet<Integer> supertypes1 = subTypesToSupertypes.get(node1);
+    for (IWrapper node2 : allTypes.keySet()) { // transitive closure
+      for (IWrapper node1 : allTypes.keySet()) {
+        for (IWrapper node3 : allTypes.keySet()) {
+          StructuralWrapperMap<Integer> supertypes1 = subTypesToSupertypes.get(node1);
           if (supertypes1 == null) continue;
-          StructuralWrapperSet<Integer> supertypes2 = subTypesToSupertypes.get(node2);
+          StructuralWrapperMap<Integer> supertypes2 = subTypesToSupertypes.get(node2);
           if (supertypes2 == null) continue;
-          if (supertypes1.containsStructurally(node2) && supertypes2.containsStructurally(node3)) {
-            Integer dist1_2 = supertypes1.getTag(node2);
-            Integer dist2_3 = supertypes2.getTag(node3);
+          if (supertypes1.containsKey(node2) && supertypes2.containsKey(node3)) {
+            Integer dist1_2 = supertypes1.get(node2);
+            Integer dist2_3 = supertypes2.get(node3);
             Integer sum = 0;
             sum = dist1_2 + dist2_3;
-            Integer dist1_3 = supertypes1.getTag(node3);
+            Integer dist1_3 = supertypes1.get(node3);
             if (dist1_3 == null || dist1_3 > sum) {
-              supertypes1.putStructurally(node3, sum);
+              supertypes1.put(node3, sum);
             }
           }
         }
@@ -378,7 +378,7 @@ public class SubtypingManager {
     }
 
     while (result.size() >= 2) {
-      Iterator<? extends IWrapper> iterator = result.iterator();
+      Iterator<? extends IWrapper> iterator = result.keySet().iterator();
       IWrapper a = iterator.next();
       IWrapper b = iterator.next();
       result.remove(a);
@@ -386,30 +386,30 @@ public class SubtypingManager {
       result.addAllStructurally(leastCommonSupertypes(a, b, subTypesToSupertypes, isWeak));
     }
 
-    return result;
+    return result.keySet();
   }
 
-  private StructuralWrapperSet leastCommonSupertypes(final IWrapper a, final IWrapper b, final StructuralWrapperMap<StructuralWrapperSet<Integer>> subTypesToSuperTypes, boolean isWeak) {
+  private StructuralWrapperMap leastCommonSupertypes(final IWrapper a, final IWrapper b, final StructuralWrapperMap<StructuralWrapperMap<Integer>> subTypesToSuperTypes, boolean isWeak) {
     // System.err.println("lcs inner, types are: " + PresentationManager.toString(a) + " , " + PresentationManager.toString(b));
-    StructuralWrapperSet result = new StructuralWrapperSet();
+    StructuralWrapperMap result = new StructuralWrapperMap();
     if ((a.isConcrete() && b.isConcrete() && MatchingUtil.matchNodes(a.getNode(), b.getNode())) ||
       a.equals(b)) { // todo what if not concrete?
-      result.add(a);
+      result.addStructurally(a);
       return result;
     }
 
-    StructuralWrapperSet<?> superTypesA = subTypesToSuperTypes.get(a) != null ?
-      new StructuralWrapperSet(subTypesToSuperTypes.get(a)) :
-      new StructuralWrapperSet();
-    superTypesA.add(a);
+    StructuralWrapperMap<?> superTypesA = subTypesToSuperTypes.get(a) != null ?
+      new StructuralWrapperMap(subTypesToSuperTypes.get(a).keySet()) :
+      new StructuralWrapperMap();
+    superTypesA.addStructurally(a);
 
-    StructuralWrapperSet<?> superTypesB = subTypesToSuperTypes.get(b) != null ?
-      new StructuralWrapperSet(subTypesToSuperTypes.get(b)) :
-      new StructuralWrapperSet();
-    superTypesB.add(b);
-    for (IWrapper superTypeA : new HashSet<IWrapper>(superTypesA)) {
+    StructuralWrapperMap<?> superTypesB = subTypesToSuperTypes.get(b) != null ?
+      new StructuralWrapperMap(subTypesToSuperTypes.get(b).keySet()) :
+      new StructuralWrapperMap();
+    superTypesB.addStructurally(b);
+    for (IWrapper superTypeA : new HashSet<IWrapper>(superTypesA.keySet())) {
       boolean matches = false;
-      for (IWrapper superTypeB : superTypesB) {
+      for (IWrapper superTypeB : superTypesB.keySet()) {
         if ((superTypeA.isConcrete() && superTypeB.isConcrete() &&     // todo what if not concrete?
           MatchingUtil.matchNodes(superTypeA.getNode(), superTypeB.getNode())) || superTypeA.equals(superTypeB)) {
           matches = true;
@@ -420,14 +420,14 @@ public class SubtypingManager {
         superTypesA.remove(superTypeA);
       }
     }
-    StructuralWrapperSet commonSupertypes = superTypesA;
-    List<IWrapper> commonSupertypesSorted = new ArrayList<IWrapper>(commonSupertypes);
+    StructuralWrapperMap commonSupertypes = superTypesA;
+    List<IWrapper> commonSupertypesSorted = new ArrayList<IWrapper>(commonSupertypes.keySet());
     Collections.sort(commonSupertypesSorted, new Comparator<IWrapper>() {
       public int compare(IWrapper o1, IWrapper o2) {
-        Integer distA1 = subTypesToSuperTypes.get(a).getTag(o1);
-        Integer distA2 = subTypesToSuperTypes.get(a).getTag(o2);
-        Integer distB1 = subTypesToSuperTypes.get(b).getTag(o1);
-        Integer distB2 = subTypesToSuperTypes.get(b).getTag(o2);
+        Integer distA1 = subTypesToSuperTypes.get(a).get(o1);
+        Integer distA2 = subTypesToSuperTypes.get(a).get(o2);
+        Integer distB1 = subTypesToSuperTypes.get(b).get(o1);
+        Integer distB2 = subTypesToSuperTypes.get(b).get(o2);
         return (distA1 + distB1) - (distA2 + distB2);
       }
     });
@@ -436,20 +436,20 @@ public class SubtypingManager {
       if (!commonSupertypes.contains(commonSupertype)) {
         continue;
       }
-      Set<IWrapper> superTypes = subTypesToSuperTypes.get(commonSupertype);
+      Set<IWrapper> superTypes = subTypesToSuperTypes.get(commonSupertype).keySet();
       if (superTypes != null) {
         for (IWrapper superType : superTypes) {
           if ((superType.isConcrete() && commonSupertype.isConcrete() && !MatchingUtil.matchNodes(superType.getNode(),
             commonSupertype.getNode())) //todo what if not concrete?
             && !superType.equals(commonSupertype)) {
-            commonSupertypes.removeStructurally(superType);
+            commonSupertypes.remove(superType);
           }
         }
       }
     }
 
-    StructuralWrapperSet result_ = new StructuralWrapperSet();
-    result_.add(LatticeUtil.meet(commonSupertypes));
+    StructuralWrapperMap result_ = new StructuralWrapperMap();
+    result_.addStructurally(LatticeUtil.meet(commonSupertypes.keySet()));
 
     return result_; //commonSupertypes;
   }

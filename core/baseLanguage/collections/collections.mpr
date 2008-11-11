@@ -36,12 +36,6 @@
     <genConfs>
       <genConfModule name="UnitTests" moduleUID="collections_unittest" />
       <genConfModule name="collections lang test" moduleUID="jetbrains.mps.baseLanguage.collections" />
-      <genConfModule name="UnitTests" moduleUID="collections_unittest" />
-      <genConfModule name="collections lang test" moduleUID="jetbrains.mps.baseLanguage.collections" />
-      <genConfModule name="UnitTests" moduleUID="collections_unittest" />
-      <genConfModule name="collections lang test" moduleUID="jetbrains.mps.baseLanguage.collections" />
-      <genConfModule name="UnitTests" moduleUID="collections_unittest" />
-      <genConfModule name="collections lang test" moduleUID="jetbrains.mps.baseLanguage.collections" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

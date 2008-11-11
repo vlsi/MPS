@@ -20,21 +20,7 @@
     <projectDevkits />
     <genConfs>
       <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
-      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
-      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
-      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
-      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
-      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
-      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
-      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
-      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
-      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
-      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
-      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
-      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
-      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
-      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
-      <genConfModule name="generator.generatorationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
+      <genConfModule name="generator.generationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
