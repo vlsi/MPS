@@ -84,6 +84,15 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     return getComponentSafe(Project.class).getComponent(ProjectPluginManager.class);
   }
 
+  public List<SModelDescriptor> getProjectModels() {
+    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    List<IModule> modules = getModules();
+    for (IModule module : modules) {
+      result.addAll(module.getOwnModelDescriptors());
+    }
+    return result;
+  }
+
   private void readModules() {
     myErrors = null;
 
@@ -265,7 +274,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   @NotNull
-  public List<Path> getAllModulePaths(){
+  public List<Path> getAllModulePaths() {
     ArrayList<Path> result = new ArrayList<Path>();
     result.addAll(myProjectDescriptor.getLanguages());
     result.addAll(myProjectDescriptor.getSolutions());
@@ -426,5 +435,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
       result.addAll(getProjectDevKits());
       return result;
     }
+
+
   }
 }             
