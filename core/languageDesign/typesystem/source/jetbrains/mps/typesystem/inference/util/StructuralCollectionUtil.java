@@ -20,7 +20,7 @@ public class StructuralCollectionUtil {
     StringBuilder sb = new StringBuilder();    
     toString(sb, node, node);
     result = sb.toString().hashCode();
-    ourHashCodeCash.put(node, result);
+    ourHashCodeCash.cacheObject(node, result);
     return result;
   }
 

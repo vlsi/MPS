@@ -117,9 +117,7 @@ public final class ObjectCache<K, V> {
   // Some AbstractMap functions finished
 
   public void cacheObject(final K key, final V x) {
-    if (!isCached(key)) {
-      _firstGenerationQueue.put(key, x);
-    }
+    _firstGenerationQueue.put(key, x);
   }
 
   public V tryKey(final K key) {
