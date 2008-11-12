@@ -4,7 +4,6 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.structure.Model;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
@@ -14,36 +13,28 @@ import jetbrains.mps.util.Mapper;
 import java.util.*;
 
 public class ModelsTestConfiguration extends BaseTestConfiguration {
-  private List<Model> myModels = new ArrayList<Model>();
+  private List<SModelReference> myModels = new ArrayList<SModelReference>();
 
   public ModelsTestConfiguration() {
   }
 
-  public ModelsTestConfiguration(List<Model> models) {
+  public ModelsTestConfiguration(List<SModelReference> models) {
     myModels = models;
   }
 
-  public List<Model> getModels() {
+  public List<SModelReference> getModels() {
     return Collections.unmodifiableList(myModels);
   }
 
-  public List<SModelReference> getModelRefs(final MPSProject project) {
-    return CollectionUtil.map(getModels(), new Mapper<Model, SModelReference>() {
-      public SModelReference map(Model model) {
-        return SModelReference.fromString(model.getModelRef());
-      }
-    });
-  }
-
-  public void addModel(Model m) {
+  public void addModel(SModelReference m) {
     myModels.add(m);
   }
 
   public GenParameters getGenParams(MPSProject project, boolean fullRegeneration) {
     Set<SModelDescriptor> modelDescriptors = new LinkedHashSet<SModelDescriptor>();
 
-    for (Model m : getModels()) {
-      modelDescriptors.add(project.getScope().getModelDescriptor(SModelReference.fromString(m.getModelRef())));
+    for (SModelReference m : getModels()) {
+      modelDescriptors.add(project.getScope().getModelDescriptor(m));
     }
 
     if (modelDescriptors.isEmpty()) {
