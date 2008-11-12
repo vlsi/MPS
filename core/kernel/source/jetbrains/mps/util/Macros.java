@@ -1,26 +1,18 @@
 package jetbrains.mps.util;
 
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
+import com.intellij.openapi.application.PathMacros;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.util.Map;
 import java.util.Set;
 
-import com.intellij.openapi.application.PathMacros;
-
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Aug 26, 2005
- * Time: 4:28:12 PM
- * To change this template use File | Settings | File Templates.
- */
 public abstract class Macros {
   private static final Logger LOG = Logger.getLogger(Macros.class);
 
@@ -134,9 +126,9 @@ public abstract class Macros {
       Set<String> macroNames = PathMacros.getInstance().getAllMacroNames();
       for (String macro : macroNames) {
         String path = PathMacros.getInstance().getValue(macro);
-        if (path != null) {
-          path = path.replace('/', '\\');
-        }
+        if (path == null) continue;
+
+        path = path.replace('/', '\\');
         if (pathStartsWith(absolutePath, path)) {
           String relationalPath = shrink(absolutePath, path);
           fileName = "${" + macro + "}" + relationalPath;
@@ -248,13 +240,23 @@ public abstract class Macros {
     }
   }
 
-  private static boolean pathStartsWith(String path, String with) {
+  private static boolean pathStartsWith(String path, @NotNull String with) {
+    path = FileUtil.getCanonicalPath(path);
+
     if (path.equals(with)) return true;
-    return path.startsWith(with + ((with != null) && with.endsWith(File.separator) ? "" : File.separator));
+
+    String fullPart = with + (with.endsWith(File.separator) ? "" : File.separator);
+    boolean notCroppedPart = path.toLowerCase().startsWith(fullPart.toLowerCase());
+
+    if (!notCroppedPart) return false;
+
+    String pathReplaced = FileUtil.getCanonicalPath(with + path.substring(with.length()));
+    boolean sameObjects = path.equals(pathReplaced);
+
+    return sameObjects;
   }
 
   private static String shrink(String path, String prefix) {
-    assert path.startsWith(prefix);
     String result = path.substring(prefix.length());
 
     if (result.length() == 0) {
