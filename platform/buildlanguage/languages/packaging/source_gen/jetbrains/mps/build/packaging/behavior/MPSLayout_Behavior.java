@@ -15,6 +15,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.Macros;
 
 public class MPSLayout_Behavior {
 
@@ -94,22 +95,30 @@ public class MPSLayout_Behavior {
   }
 
   public static List<String> call_getAllMacroNames_1220980057360(SNode thisNode, boolean addBasedir) {
-    List<String> names = ListSequence.<String>fromArray("mps.home");
+    List<String> names = ListSequence.<String>fromArray(MPSLayout_Behavior.getMPSHomeName_1226508944077());
     if (addBasedir) {
-      ListSequence.fromList(names).addElement("basedir");
+      ListSequence.fromList(names).addElement(MPSLayout_Behavior.getBasedirName_1226509010730());
     }
     ListSequence.fromList(names).addSequence(Sequence.fromIterable(PathMacros.getInstance().getUserMacroNames()));
     return names;
   }
 
   public static String call_evaluateMacro_1220980091008(SNode thisNode, String macroName) {
-    if (macroName.equals("basedir")) {
+    if (macroName.equals(MPSLayout_Behavior.getBasedirName_1226509010730())) {
       return ILayoutComponent_Behavior.call_getPath_1213877230696(thisNode);
     }
-    if (macroName.equals("mps.home")) {
+    if (macroName.equals(MPSLayout_Behavior.getMPSHomeName_1226508944077())) {
       return PathManager.getHomePath();
     }
     return PathMacros.getInstance().getValue(macroName);
+  }
+
+  public static String getMPSHomeName_1226508944077() {
+    return Macros.MPS_HOME.substring("${".length(), Macros.MPS_HOME.lastIndexOf("}"));
+  }
+
+  public static String getBasedirName_1226509010730() {
+    return "basedir";
   }
 
 }

@@ -16,8 +16,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.util.Macros;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -91,16 +92,24 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     targetSModel.addRoot(mpsLayout);
     // set properties
     SPropertyOperations.set(mpsLayout, "name", name);
-    SPropertyOperations.set(mpsLayout, "", "" + (PackagingLanguageGenerator.createBasedirPath("mps.home", targetSModel)));
+    String result = Macros.mpsHomeMacros().shrinkPath(basedir, new File("")).replace("\\", File.separator);
+    int index = result.lastIndexOf("}");
+    if (index > -1) {
+      String macro = result.substring(result.indexOf("{") + 1, index);
+      SLinkOperations.setTarget(mpsLayout, "baseDirectory", PackagingLanguageGenerator.createBasedirPath(macro, result.substring(index + 2)), true);
+    } else
+    {
+      SLinkOperations.setTarget(mpsLayout, "baseDirectory", PackagingLanguageGenerator.createBasedirPath("", basedir), true);
+    }
     SPropertyOperations.set(mpsLayout, "compile", "" + (true));
     SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "configuration", true)).first(), "name", "default");
     // create zip
     SNode zip = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Zip", null);
-    SLinkOperations.setTarget(zip, "title", PackagingLanguageGenerator.createSimpleString(name + ".zip", targetSModel), true);
+    SLinkOperations.setTarget(zip, "title", PackagingLanguageGenerator.createSimpleString(name + ".zip"), true);
     SLinkOperations.addChild(mpsLayout, "component", zip);
     // create folder inside zip
     SNode folder = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Folder", null);
-    SLinkOperations.setTarget(folder, "title", PackagingLanguageGenerator.createSimpleString(name, targetSModel), true);
+    SLinkOperations.setTarget(folder, "title", PackagingLanguageGenerator.createSimpleString(name), true);
     SLinkOperations.addChild(zip, "entry", folder);
     // add modules to folder
     BuildGeneratorImpl.createContent(selectedData, folder, targetSModel);
@@ -112,10 +121,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
   public static SNode createComponent(NodeData data, SModel targetSModel) {
     if (data instanceof ModuleData) {
-      return PackagingLanguageGenerator.createModule(((ModuleData)data).getModule(), targetSModel);
+      return PackagingLanguageGenerator.createModule(((ModuleData)data).getModule());
     } else if (data instanceof NamespaceData) {
       String namespace = ((NamespaceData)data).getText();
-      return PackagingLanguageGenerator.createFolder(namespace, targetSModel);
+      return PackagingLanguageGenerator.createFolder(namespace);
     }
     return null;
   }

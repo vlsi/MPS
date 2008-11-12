@@ -67,6 +67,56 @@
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877228217">
     <link role="concept" targetNodeId="1.1202916958754" resolveInfo="MPSLayout" />
+    <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1226508944077">
+      <property name="name" value="getMPSHomeName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1226508947164" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226508944079">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226508962757">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226508962758">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226508962759">
+              <link role="classifier" targetNodeId="2.~Macros" resolveInfo="Macros" />
+              <link role="variableDeclaration" targetNodeId="2.~Macros.MPS_HOME" resolveInfo="MPS_HOME" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226508962760">
+              <link role="baseMethodDeclaration" targetNodeId="3.~String.substring(int,int):java.lang.String" resolveInfo="substring" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226508962761">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226508962762">
+                  <property name="value" value="${" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226508962763">
+                  <link role="baseMethodDeclaration" targetNodeId="3.~String.length():int" resolveInfo="length" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226508962764">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226508962765">
+                  <link role="classifier" targetNodeId="2.~Macros" resolveInfo="Macros" />
+                  <link role="variableDeclaration" targetNodeId="2.~Macros.MPS_HOME" resolveInfo="MPS_HOME" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226508962766">
+                  <link role="baseMethodDeclaration" targetNodeId="3.~String.lastIndexOf(java.lang.String):int" resolveInfo="lastIndexOf" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226508962767">
+                    <property name="value" value="}" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226508968717" />
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1226509010730">
+      <property name="name" value="getBasedirName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1226509020816" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226509010732">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226509028881">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226509030392">
+            <property name="value" value="basedir" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226509017289" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877228218">
       <property name="name" value="getPath" />
       <property name="isPrivate" value="false" />
@@ -601,10 +651,11 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220980081897">
               <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1220980081898">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1220980081899" />
-                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220980081901">
-                  <property name="value" value="mps.home" />
+                <node role="initValue" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1226508993527">
+                  <link role="concept" targetNodeId="1.1202916958754" resolveInfo="MPSLayout" />
+                  <link role="baseMethodDeclaration" targetNodeId="1226508944077" resolveInfo="getMPSHomeName" />
                 </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1220980081899" />
               </node>
             </node>
           </node>
@@ -617,8 +668,9 @@
                   <link role="variableDeclaration" targetNodeId="1220980081894" resolveInfo="names" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1226494540834">
-                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226494541843">
-                    <property name="value" value="basedir" />
+                  <node role="argument" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1226509065723">
+                    <link role="concept" targetNodeId="1.1202916958754" resolveInfo="MPSLayout" />
+                    <link role="baseMethodDeclaration" targetNodeId="1226509010730" resolveInfo="getBasedirName" />
                   </node>
                 </node>
               </node>
@@ -669,8 +721,9 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220980129361">
               <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220980130741">
-                <property name="value" value="basedir" />
+              <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1226509075164">
+                <link role="concept" targetNodeId="1.1202916958754" resolveInfo="MPSLayout" />
+                <link role="baseMethodDeclaration" targetNodeId="1226509010730" resolveInfo="getBasedirName" />
               </node>
             </node>
           </node>
@@ -700,8 +753,9 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220980162364">
               <link role="baseMethodDeclaration" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220980163649">
-                <property name="value" value="mps.home" />
+              <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1226509082453">
+                <link role="baseMethodDeclaration" targetNodeId="1226508944077" resolveInfo="getMPSHomeName" />
+                <link role="concept" targetNodeId="1.1202916958754" resolveInfo="MPSLayout" />
               </node>
             </node>
           </node>
@@ -4974,8 +5028,9 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1220976327148">
-              <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220976332777">
-                <property name="value" value="basedir" />
+              <node role="value" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1226509043227">
+                <link role="concept" targetNodeId="1.1202916958754" resolveInfo="MPSLayout" />
+                <link role="baseMethodDeclaration" targetNodeId="1226509010730" resolveInfo="getBasedirName" />
               </node>
             </node>
           </node>
@@ -5295,8 +5350,9 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1226502845630">
-              <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226502847683">
-                <property name="value" value="mps.home" />
+              <node role="value" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1226509102315">
+                <link role="baseMethodDeclaration" targetNodeId="1226508944077" resolveInfo="getMPSHomeName" />
+                <link role="concept" targetNodeId="1.1202916958754" resolveInfo="MPSLayout" />
               </node>
             </node>
           </node>
