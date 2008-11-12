@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.apache.commons.lang.StringUtils;
+import java.io.File;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.application.PathMacros;
@@ -36,7 +38,12 @@ public class MPSLayout_Behavior {
   }
 
   public static String virtual_getPath_1213877230696(SNode thisNode) {
-    return Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(thisNode, "baseDirectory", true));
+    String macro = MPSLayout_Behavior.call_evaluateMacro_1220980091008(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "baseDirectory", true), "macro", true), "name"));
+    String fullPathWithoutMacro = Path_Behavior.call_getFullPathWithoutMacro_1226511495568(SLinkOperations.getTarget(thisNode, "baseDirectory", true));
+    return (StringUtils.isEmpty(macro) ?
+      fullPathWithoutMacro :
+      macro + File.separator + fullPathWithoutMacro
+    );
   }
 
   public static void call_proceedAbstractProjectComponent_1213877228237(SNode thisNode, SNode component, List<SNode> list) {

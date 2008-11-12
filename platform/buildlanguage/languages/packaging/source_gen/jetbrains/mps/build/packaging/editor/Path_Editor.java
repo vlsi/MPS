@@ -105,9 +105,9 @@ public class Path_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_refNode_path1220974540492(editorCell, node, context);
+    setupBasic_refNode_compositePathComponent1220974540492(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_path_1220974540492((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_compositePathComponent_1220974540492((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -115,8 +115,8 @@ public class Path_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode1220974540492(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("path");
-    provider.setNoTargetText("<no path>");
+    provider.setRole("compositePathComponent");
+    provider.setNoTargetText("<no compositePathComponent>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode1220974540492_internal(context, node, provider);
@@ -193,7 +193,7 @@ public class Path_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1220974425262");
   }
 
-  private static void setupBasic_refNode_path1220974540492(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_refNode_compositePathComponent1220974540492(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Collection_12211451168161221145116816(EditorCell editorCell, SNode node, EditorContext context) {
@@ -247,7 +247,7 @@ public class Path_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1221145690277");
   }
 
-  private static void setupLabel_refNode_path_1220974540492(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNode_compositePathComponent_1220974540492(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_refNode_macro_1221145117789(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -31,10 +31,10 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNodeList1220978198900(EditorContext context, SNode node) {
     if (this.myListHandler_1220978198900 == null) {
-      this.myListHandler_1220978198900 = new CompositePathComponent_Editor.pathListHandler_6133_0(node, "path", context);
+      this.myListHandler_1220978198900 = new CompositePathComponent_Editor.pathComponentListHandler_6133_0(node, "pathComponent", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1220978198900.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_refNodeList_path1220978198900(editorCell, node, context);
+    setupBasic_refNodeList_pathComponent1220978198900(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -43,8 +43,8 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_refNodeList_path1220978198900(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_path");
+  private static void setupBasic_refNodeList_pathComponent1220978198900(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("refNodeList_pathComponent");
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -56,12 +56,12 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_refNodeList_path_1220978198900(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_refNodeList_pathComponent_1220978198900(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static class pathListHandler_6133_0 extends RefNodeListHandler {
+  public static class pathComponentListHandler_6133_0 extends RefNodeListHandler {
 
-    public pathListHandler_6133_0(SNode ownerNode, String childRole, EditorContext context) {
+    public pathComponentListHandler_6133_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -15,10 +15,10 @@ public class CompositePathComponent_Behavior {
 
   public static String call_getPath_1220983419344(SNode thisNode) {
     String path = "";
-    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "path", true)).count() == 0) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "pathComponent", true)).count() == 0) {
       return path;
     }
-    for(SNode p : Sequence.fromIterable(SLinkOperations.getTargets(thisNode, "path", true))) {
+    for(SNode p : Sequence.fromIterable(SLinkOperations.getTargets(thisNode, "pathComponent", true))) {
       path += SPropertyOperations.getString(p, "path") + "/";
     }
     return path.substring(0, path.length() - 1);

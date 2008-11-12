@@ -50,14 +50,14 @@ public class PackagingLanguageGenerator {
 
       };
       SNode compositePathComponent = createCompositePathComponent(CollectionUtil.map(Arrays.asList(pathComponents), mapper));
-      SLinkOperations.setTarget(basedirPath, "path", compositePathComponent, true);
+      SLinkOperations.setTarget(basedirPath, "compositePathComponent", compositePathComponent, true);
     }
     return basedirPath;
   }
 
   public static SNode createCompositePathComponent(List<SNode> pathComponents) {
     SNode compositePathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.CompositePathComponent", null);
-    SLinkOperations.addAll(compositePathComponent, "path", pathComponents);
+    SLinkOperations.addAll(compositePathComponent, "pathComponent", pathComponents);
     return compositePathComponent;
   }
 

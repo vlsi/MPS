@@ -12,30 +12,30 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CompositePathComponent extends BaseConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.CompositePathComponent";
-  public static final String PATH = "path";
+  public static final String PATH_COMPONENT = "pathComponent";
 
   public CompositePathComponent(SNode node) {
     super(node);
   }
 
-  public int getPathsCount() {
-    return this.getChildCount(CompositePathComponent.PATH);
+  public int getPathComponentsCount() {
+    return this.getChildCount(CompositePathComponent.PATH_COMPONENT);
   }
 
-  public Iterator<PathComponent> paths() {
-    return this.children(CompositePathComponent.PATH);
+  public Iterator<PathComponent> pathComponents() {
+    return this.children(CompositePathComponent.PATH_COMPONENT);
   }
 
-  public List<PathComponent> getPaths() {
-    return this.getChildren(CompositePathComponent.PATH);
+  public List<PathComponent> getPathComponents() {
+    return this.getChildren(CompositePathComponent.PATH_COMPONENT);
   }
 
-  public void addPath(PathComponent node) {
-    this.addChild(CompositePathComponent.PATH, node);
+  public void addPathComponent(PathComponent node) {
+    this.addChild(CompositePathComponent.PATH_COMPONENT, node);
   }
 
-  public void insertPath(PathComponent prev, PathComponent node) {
-    this.insertChild(prev, CompositePathComponent.PATH, node);
+  public void insertPathComponent(PathComponent prev, PathComponent node) {
+    this.insertChild(prev, CompositePathComponent.PATH_COMPONENT, node);
   }
 
 

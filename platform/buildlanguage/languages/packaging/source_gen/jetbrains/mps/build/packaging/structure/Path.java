@@ -12,7 +12,7 @@ public class Path extends BaseConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Path";
   public static final String CPR_CanStartFromBasedir = "canStartFromBasedir";
   public static final String MACRO = "macro";
-  public static final String PATH = "path";
+  public static final String COMPOSITE_PATH_COMPONENT = "compositePathComponent";
 
   public Path(SNode node) {
     super(node);
@@ -26,12 +26,12 @@ public class Path extends BaseConcept {
     super.setChild(Path.MACRO, node);
   }
 
-  public CompositePathComponent getPath() {
-    return (CompositePathComponent)this.getChild(Path.PATH);
+  public CompositePathComponent getCompositePathComponent() {
+    return (CompositePathComponent)this.getChild(Path.COMPOSITE_PATH_COMPONENT);
   }
 
-  public void setPath(CompositePathComponent node) {
-    super.setChild(Path.PATH, node);
+  public void setCompositePathComponent(CompositePathComponent node) {
+    super.setChild(Path.COMPOSITE_PATH_COMPONENT, node);
   }
 
 

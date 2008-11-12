@@ -75,7 +75,7 @@ public class QueriesGenerated {
           public Object calculate() {
             SNode compositePathComponent = _context.getParentNode();
             String base = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.getParent(compositePathComponent), "macro", true), "path");
-            for(SNode path : Sequence.fromIterable(SLinkOperations.getTargets(compositePathComponent, "path", true))) {
+            for(SNode path : Sequence.fromIterable(SLinkOperations.getTargets(compositePathComponent, "pathComponent", true))) {
               if (path == _context.getCurrentTargetNode()) {
                 break;
               }
