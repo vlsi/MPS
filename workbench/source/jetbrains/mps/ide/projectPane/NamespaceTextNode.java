@@ -1,35 +1,33 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNode;
-import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNodeBuilder;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.actions.NewModel_Action;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.action.ActionEventData;
-import jetbrains.mps.workbench.actions.project.NewSolutionAction;
-import jetbrains.mps.workbench.actions.project.NewLanguageAction;
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.NewModel_Action;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNode;
+import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNodeBuilder;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
-
-import java.util.List;
-import java.util.ArrayList;
-import java.awt.Frame;
-
-import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.project.Project;
-import com.intellij.ide.DataManager;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.workbench.action.ActionEventData;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.actions.project.NewLanguageAction;
+import jetbrains.mps.workbench.actions.project.NewSolutionAction;
 
 import javax.swing.JOptionPane;
+import java.awt.Frame;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class NamespaceTextNode extends TextTreeNode implements NamespaceNode {
   private static final NamespaceNodeBuilder<NamespaceTextNode> BUILDER = new NamespaceNodeBuilder<NamespaceTextNode>() {
@@ -59,6 +57,10 @@ public final class NamespaceTextNode extends TextTreeNode implements NamespaceNo
   }
 
   public ActionGroup getActionGroup() {
+    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_NAMESPACE_ACTIONS);
+  }
+
+  public ActionGroup getActionGroup_internal() {
     DefaultActionGroup group = new DefaultActionGroup();
 
     DefaultActionGroup newGroup = createNewGroup();

@@ -6,7 +6,9 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.PackageActions_ActionGroup;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -26,7 +28,7 @@ public class PackageNode extends SNodeGroupTreeNode {
   }
 
   public ActionGroup getActionGroup() {
-    return new PackageActions_ActionGroup();
+    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_PACKAGE_ACTIONS);
   }
 
   public ActionGroup getQuickCreateGroup(boolean plain) {
