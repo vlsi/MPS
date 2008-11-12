@@ -33,6 +33,7 @@ public class PackagingLanguageGenerator {
   public static SNode createFolder(String name) {
     SNode folderComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Folder", null);
     SLinkOperations.setTarget(folderComponent, "title", createSimpleString(name), true);
+    SLinkOperations.removeChild(folderComponent, "sourcePath");
     return folderComponent;
   }
 

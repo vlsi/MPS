@@ -373,6 +373,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226520630546">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226521230182">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226520631811">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226520630547">
+                <link role="variableDeclaration" targetNodeId="1224167011301" resolveInfo="folderComponent" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1226520647763">
+                <link role="link" targetNodeId="1.1220982054961" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" id="1226521234663" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1224167011318">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224167011319">
             <link role="variableDeclaration" targetNodeId="1224167011301" resolveInfo="moduleComponent" />
@@ -2156,32 +2169,11 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1222854358162">
               <link role="concept" targetNodeId="1.1203598512427" resolveInfo="Folder" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1222854358163">
-              <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1222854358164">
-                <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1222854358165">
-                  <link role="concept" targetNodeId="1.1203598512427" resolveInfo="Folder" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1222854358166">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222854358167">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222854358168">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222854358169">
-                <link role="variableDeclaration" targetNodeId="1222854358161" resolveInfo="folder" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1222854358170">
-                <link role="link" targetNodeId="1.1205340441197" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1222854358171">
-              <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1222854358172">
-                <link role="baseMethodDeclaration" targetNodeId="1220376708983" resolveInfo="createSimpleString" />
-                <link role="classConcept" targetNodeId="1220376685232" resolveInfo="PackagingLanguageGenerator" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222854358173">
-                  <link role="variableDeclaration" targetNodeId="1222854358069" resolveInfo="name" />
-                </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1226521644942">
+              <link role="baseMethodDeclaration" targetNodeId="1224167011297" resolveInfo="createFolder" />
+              <link role="classConcept" targetNodeId="1220376685232" resolveInfo="PackagingLanguageGenerator" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1226521646787">
+                <link role="variableDeclaration" targetNodeId="1222854358069" resolveInfo="name" />
               </node>
             </node>
           </node>

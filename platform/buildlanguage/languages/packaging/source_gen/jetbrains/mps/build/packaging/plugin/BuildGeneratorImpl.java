@@ -108,8 +108,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SLinkOperations.setTarget(zip, "title", PackagingLanguageGenerator.createSimpleString(name + ".zip"), true);
     SLinkOperations.addChild(mpsLayout, "component", zip);
     // create folder inside zip
-    SNode folder = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Folder", null);
-    SLinkOperations.setTarget(folder, "title", PackagingLanguageGenerator.createSimpleString(name), true);
+    SNode folder = PackagingLanguageGenerator.createFolder(name);
     SLinkOperations.addChild(zip, "entry", folder);
     // add modules to folder
     BuildGeneratorImpl.createContent(selectedData, folder, targetSModel);
