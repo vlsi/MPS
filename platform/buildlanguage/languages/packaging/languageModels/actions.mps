@@ -473,6 +473,15 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1220980239572">
                     <link role="baseMethodDeclaration" targetNodeId="10.1220980057360" resolveInfo="getAllMacroNames" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226494720087">
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1226494712559">
+                        <link role="concept" targetNodeId="1.1220973916698" resolveInfo="Path" />
+                        <node role="leftExpression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1226494711457" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1226494773722">
+                        <link role="conceptProperty" targetNodeId="1.1226494698325" resolveInfo="canStartFromBasedir" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

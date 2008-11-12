@@ -18,8 +18,7 @@ import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -29,13 +28,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
-import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.Set;
-import com.intellij.openapi.application.PathMacros;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MPSLayout_Editor extends DefaultNodeEditor {
 
@@ -85,7 +77,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1204114265324(context, node, "basedir"));
-    editorCell.addEditorCell(this.createProperty1204114274013(context, node));
+    editorCell.addEditorCell(this.createRefNode1226493258397(context, node));
     return editorCell;
   }
 
@@ -307,36 +299,6 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createProperty1204114274013_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
-    EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_property_basedir1204114274013(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_basedir_1204114274013((EditorCell_Label)editorCell, node, context);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new MPSLayout_Editor.MPSLayout_basedir_cellMenu0()}));
-    return editorCell;
-  }
-
-  public EditorCell createProperty1204114274013(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("basedir");
-    provider.setNoTargetText("<no basedir>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createProperty1204114274013_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
   public EditorCell createProperty1216901163375_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -356,6 +318,35 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty1216901163375_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
+  public EditorCell createRefNode1226493258397_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_refNode_baseDirectory1226493258397(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_refNode_baseDirectory_1226493258397((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createRefNode1226493258397(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("baseDirectory");
+    provider.setNoTargetText("<no baseDirectory>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createRefNode1226493258397_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -435,10 +426,6 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_12041142653241204114265324(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1204114265324");
     MPSLayoutStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_property_basedir1204114274013(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_basedir");
   }
 
   private static void setupBasic_Constant_12041159178091204115917809(EditorCell editorCell, SNode node, EditorContext context) {
@@ -586,6 +573,9 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_compile");
   }
 
+  private static void setupBasic_refNode_baseDirectory1226493258397(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_Constant_1203430907103_1203430907103(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -599,9 +589,6 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_1204114265324_1204114265324(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_property_basedir_1204114274013(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_1204115917809_1204115917809(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -632,6 +619,9 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_compile_1216901163375(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_baseDirectory_1226493258397(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class componentListHandler_8098_0 extends RefNodeListHandler {
@@ -786,21 +776,6 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
 
     public EditorCell createSeparatorCell(EditorContext context) {
       return super.createSeparatorCell(context);
-    }
-
-}
-  public static class MPSLayout_basedir_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
-
-    public MPSLayout_basedir_cellMenu0() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> list = ListSequence.<String>fromArray();
-      Set<String> allMacroNames = PathMacros.getInstance().getUserMacroNames();
-      for(String macroName : Sequence.fromIterable(allMacroNames)) {
-        ListSequence.fromList(list).addElement("$" + macroName + "$");
-      }
-      return list;
     }
 
 }

@@ -707,7 +707,7 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_1219229087938(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout");
     for(SNode layout : Sequence.fromIterable(layouts)) {
-      List<String> allMAcroNames = MPSLayout_Behavior.call_getAllMacroNames_1220980057360(layout);
+      List<String> allMAcroNames = MPSLayout_Behavior.call_getAllMacroNames_1220980057360(layout, true);
       for(String macroName : Sequence.fromIterable(allMAcroNames)) {
         SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
         SPropertyOperations.set(macro, "name", macroName);

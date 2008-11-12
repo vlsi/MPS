@@ -13,12 +13,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.MPSLayout";
-  public static final String BASEDIR = "basedir";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NAME = "name";
   public static final String COMPILE = "compile";
+  public static final String BASE_DIRECTORY = "baseDirectory";
   public static final String CONFIGURATION = "configuration";
   public static final String COMPONENT = "component";
   public static final String VARIABLE = "variable";
@@ -28,14 +28,6 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
 
   public MPSLayout(SNode node) {
     super(node);
-  }
-
-  public String getBasedir() {
-    return this.getProperty(MPSLayout.BASEDIR);
-  }
-
-  public void setBasedir(String value) {
-    this.setProperty(MPSLayout.BASEDIR, value);
   }
 
   public String getShortDescription() {
@@ -76,6 +68,14 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
 
   public void setCompile(boolean value) {
     this.setBooleanProperty(MPSLayout.COMPILE, value);
+  }
+
+  public BaseDirPath getBaseDirectory() {
+    return (BaseDirPath)this.getChild(MPSLayout.BASE_DIRECTORY);
+  }
+
+  public void setBaseDirectory(BaseDirPath node) {
+    super.setChild(MPSLayout.BASE_DIRECTORY, node);
   }
 
   public int getConfigurationsCount() {

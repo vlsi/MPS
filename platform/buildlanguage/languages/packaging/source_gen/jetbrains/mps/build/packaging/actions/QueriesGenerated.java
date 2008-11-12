@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class QueriesGenerated {
 
@@ -124,7 +125,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return MPSLayout_Behavior.call_getAllMacroNames_1220980057360(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, true));
+            return MPSLayout_Behavior.call_getAllMacroNames_1220980057360(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, true), SConceptPropertyOperations.getBoolean(_context.getParentNode(), "canStartFromBasedir"));
           }
 
         };

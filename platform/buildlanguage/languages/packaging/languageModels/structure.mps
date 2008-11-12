@@ -210,6 +210,12 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1219228952036" resolveInfo="Macro" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1226493152214">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="baseDirectory" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1226494304686" resolveInfo="BaseDirPath" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1203013693138">
       <link role="intfc" targetNodeId="1203013653398" resolveInfo="ILayoutComponent" />
     </node>
@@ -219,10 +225,6 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1203614596836">
       <property name="value" value="build script" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1204114229489">
-      <property name="name" value="basedir" />
-      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1216901049448">
       <property name="name" value="compile" />
@@ -651,6 +653,9 @@
     <property name="name" value="Path" />
     <property name="package" value="sourcePaths" />
     <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1226494698325">
+      <property name="name" value="canStartFromBasedir" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1220976095387">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="macro" />
@@ -662,6 +667,9 @@
       <property name="role" value="path" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1220973992845" resolveInfo="CompositePathComponent" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1226494702651">
+      <link role="conceptPropertyDeclaration" targetNodeId="1226494698325" resolveInfo="canStartFromBasedir" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1220973955905">
@@ -701,6 +709,11 @@
     <property name="package" value="variables" />
     <property name="name" value="StringWithoutSpaces" />
     <property name="constraint" value="[^\\s]*" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226494304686">
+    <property name="name" value="BaseDirPath" />
+    <property name="package" value="sourcePaths.basedir" />
+    <link role="extends" targetNodeId="1220973916698" resolveInfo="Path" />
   </node>
 </model>
 

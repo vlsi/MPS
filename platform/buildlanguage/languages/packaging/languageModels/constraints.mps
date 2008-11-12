@@ -571,5 +571,23 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1226494817331">
+    <property name="package" value="sourcePaths.basedir" />
+    <link role="concept" targetNodeId="15.1226494304686" resolveInfo="BaseDirPath" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1226494820840">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226494820841">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226494824130">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226494825547">
+            <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1226494824131" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1226494828698">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1226494830347">
+                <link role="conceptDeclaration" targetNodeId="15.1202916958754" resolveInfo="MPSLayout" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

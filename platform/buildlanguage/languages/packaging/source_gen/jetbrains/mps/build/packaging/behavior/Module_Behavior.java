@@ -9,6 +9,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.MPSExtentions;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
@@ -65,14 +66,21 @@ public class Module_Behavior {
   }
 
   public static String call_getProjectBasedir_1213877514893(SNode thisNode) {
-    String basedir = AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode) + File.separator + Module_Behavior.call_getBasedir_1213877514794(thisNode);
+    String homePath = AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode);
+    String basedir = (StringUtils.isEmpty(homePath) ?
+      "" :
+      (homePath + File.separator)
+    ) + Module_Behavior.call_getBasedir_1213877514794(thisNode);
     File f = new File(basedir);
     String result = Module_Behavior.call_findMPSProjectFile_1213877514840(thisNode, f);
     if (result == null) {
       return result;
     }
-    if (result.equals(AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode))) {
+    if (result.equals(homePath)) {
       return "";
+    }
+    if (homePath.equals("")) {
+      return result;
     }
     return result.substring(AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).length() + 1);
   }

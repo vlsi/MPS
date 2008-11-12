@@ -4940,6 +4940,9 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1220980399922">
                     <link role="baseMethodDeclaration" targetNodeId="20.1220980057360" resolveInfo="getAllMacroNames" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1226494557621">
+                      <property name="value" value="true" />
+                    </node>
                   </node>
                 </node>
               </node>
