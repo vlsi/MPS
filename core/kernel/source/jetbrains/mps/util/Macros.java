@@ -62,7 +62,7 @@ public abstract class Macros {
     };
   }
 
-  public static String getMacroString(IModule module){
+  public static String getMacroString(IModule module) {
     if (module instanceof Language) {
       return LANGUAGE_DESCRIPTOR;
     } else if (module instanceof Solution) {
@@ -134,6 +134,9 @@ public abstract class Macros {
       Set<String> macroNames = PathMacros.getInstance().getAllMacroNames();
       for (String macro : macroNames) {
         String path = PathMacros.getInstance().getValue(macro);
+        if (path != null) {
+          path = path.replace('/', '\\');
+        }
         if (pathStartsWith(absolutePath, path)) {
           String relationalPath = shrink(absolutePath, path);
           fileName = "${" + macro + "}" + relationalPath;
