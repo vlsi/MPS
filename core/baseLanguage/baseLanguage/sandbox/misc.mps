@@ -93,21 +93,22 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1226491956214" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226491956215" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226491956216">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226492283883">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1226492284073">
-            <link role="variableDeclaration" targetNodeId="1226491976432" resolveInfo="sdsd" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226494759129">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1226494806373">
+            <link role="variableDeclaration" targetNodeId="1226494796855" resolveInfo="statementList" />
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1226491976432">
-        <property name="name" value="sdsd" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226491976433">
-          <link role="classifier" targetNodeId="1.~Iterable" resolveInfo="Iterable" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.UpperBoundType" id="1226491980450">
-            <node role="bound" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226492361990">
-              <link role="classifier" targetNodeId="3.~Scanner" resolveInfo="Scanner" />
-            </node>
-          </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1226494944240">
+        <property name="name" value="n" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1226494946430">
+          <link role="concept" targetNodeId="138.1107535904670" resolveInfo="ClassifierType" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1226494796855">
+        <property name="name" value="classifierType" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1226494796856">
+          <link role="concept" targetNodeId="138.1107535904670" resolveInfo="ClassifierType" />
         </node>
       </node>
     </node>

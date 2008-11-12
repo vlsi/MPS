@@ -79,6 +79,7 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
     if (node == null) return null;
     SNode root = node.getContainingRoot();
+    if (root == null) return null;
 
     TypeCheckingContext typeCheckingContext = getTypeCheckingContext(root);
     if (typeCheckingContext != null) {
