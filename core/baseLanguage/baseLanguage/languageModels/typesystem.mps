@@ -13520,22 +13520,10 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1226497006309">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226497006310">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1226497041176">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226497041177">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226497131004">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1226497182326">
-                    <link role="enumConstantDeclaration" targetNodeId="20.~Answer.NO" resolveInfo="NO" />
-                    <link role="enumClass" targetNodeId="20.~Answer" resolveInfo="Answer" />
-                  </node>
-                </node>
-              </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1226497177368">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226497276060">
-                  <link role="variableDeclaration" targetNodeId="1226497255342" resolveInfo="superClassifier" />
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226497177372">
-                  <link role="variableDeclaration" targetNodeId="1226497083691" resolveInfo="objectClassifier" />
-                </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226497131004">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1226497182326">
+                <link role="enumConstantDeclaration" targetNodeId="20.~Answer.NO" resolveInfo="NO" />
+                <link role="enumClass" targetNodeId="20.~Answer" resolveInfo="Answer" />
               </node>
             </node>
           </node>
