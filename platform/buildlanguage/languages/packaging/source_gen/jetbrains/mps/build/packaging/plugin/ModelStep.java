@@ -7,9 +7,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.Solution;
-
 import java.util.List;
-
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -36,7 +34,7 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
   }
 
   protected String getVariantName(final SModelDescriptor model) {
-    return ModelAccess.instance().runReadAction(new Computable<String>() {
+    return ModelAccess.instance().runReadAction(new Computable <String>() {
 
       public String compute() {
         return model.getName();
@@ -69,19 +67,20 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
     final Solution solution = this.myGenerator.getSolution();
     if (solution == null) {
       return new SModelDescriptor[0];
-    } else {
+    } else
+    {
       final List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors(solution);
-      List<SModelDescriptor> filteredDescriptors = ModelAccess.instance().runReadAction(new Computable<List<SModelDescriptor>>() {
+      List<SModelDescriptor> filteredDescriptors = ModelAccess.instance().runReadAction(new Computable <List<SModelDescriptor>>() {
 
         public List<SModelDescriptor> compute() {
-          return CollectionUtil.filter(modelDescriptors, new Condition<SModelDescriptor>() {
+          return CollectionUtil.filter(modelDescriptors, new Condition <SModelDescriptor>() {
 
             public boolean met(SModelDescriptor modelDescriptor) {
               IFile modelFile = modelDescriptor.getModelFile();
               if (modelFile == null) {
                 return false;
               }
-              for (SModelRoot root : Sequence.fromIterable(solution.getSModelRoots())) {
+              for(SModelRoot root : Sequence.fromIterable(solution.getSModelRoots())) {
                 if (modelFile.getAbsolutePath().startsWith(root.getPath())) {
                   return true;
                 }

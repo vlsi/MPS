@@ -4,9 +4,9 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Path_Behavior {
@@ -14,7 +14,6 @@ public class Path_Behavior {
 
   public static void init(SNode thisNode) {
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.MacroReference", null);
-    SPropertyOperations.set(ref, "name", "mps.home");
     SLinkOperations.setTarget(thisNode, "macro", ref, true);
   }
 

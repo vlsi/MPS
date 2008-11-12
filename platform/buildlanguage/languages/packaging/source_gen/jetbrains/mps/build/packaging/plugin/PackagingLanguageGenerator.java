@@ -34,9 +34,7 @@ public class PackagingLanguageGenerator {
 
   public static SNode createBasedirPath(String macro, SModel model) {
     SNode path = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.BaseDirPath", null);
-    SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.MacroReference", null);
-    SPropertyOperations.set(ref, "name", macro);
-    SLinkOperations.setTarget(path, "macro", ref, true);
+    SPropertyOperations.set(SLinkOperations.getTarget(path, "macro", true), "name", macro);
     return path;
   }
 

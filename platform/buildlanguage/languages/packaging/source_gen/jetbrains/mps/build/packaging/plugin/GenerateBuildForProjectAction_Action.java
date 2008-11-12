@@ -4,9 +4,7 @@ package jetbrains.mps.build.packaging.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;

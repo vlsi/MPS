@@ -5,9 +5,7 @@ package jetbrains.mps.build.packaging.plugin;
 import com.intellij.ide.wizard.AbstractWizard;
 import com.intellij.openapi.project.Project;
 import com.intellij.ide.wizard.Step;
-
 import javax.swing.JComponent;
-
 import jetbrains.mps.smodel.ModelAccess;
 
 public class GenerateBuildWizard extends AbstractWizard {
