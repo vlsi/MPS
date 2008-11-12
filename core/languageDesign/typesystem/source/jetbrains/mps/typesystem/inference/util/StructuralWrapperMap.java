@@ -2,8 +2,11 @@ package jetbrains.mps.typesystem.inference.util;
 
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.typesystem.inference.IWrapper;
+import jetbrains.mps.util.misc.hash.*;
+import jetbrains.mps.util.misc.hash.HashSet;
 
 import java.util.*;
+import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,9 +16,9 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class StructuralWrapperMap<T> implements Map<IWrapper, T> {
-  private Map<IWrapperWrapper, IWrapperWrapper> myMap = new HashMap<IWrapperWrapper, IWrapperWrapper>();
-  private Map<IWrapper, T> myWrapperMap = new HashMap<IWrapper,T>();
-  private Map<IWrapper, IWrapper> myRepresentatorMap = new HashMap<IWrapper, IWrapper>();
+  private Map<IWrapperWrapper, IWrapperWrapper> myMap = new jetbrains.mps.util.misc.hash.HashMap<IWrapperWrapper, IWrapperWrapper>();
+  private Map<IWrapper, T> myWrapperMap = new jetbrains.mps.util.misc.hash.HashMap<IWrapper,T>();
+  private Map<IWrapper, IWrapper> myRepresentatorMap = new jetbrains.mps.util.misc.hash.HashMap<IWrapper, IWrapper>();
   private Set<IWrapper> myAbsent = new HashSet<IWrapper>();
 
   public int size() {

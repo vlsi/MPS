@@ -1,8 +1,13 @@
 package jetbrains.mps.typesystem.inference.util;
 
 import jetbrains.mps.typesystem.inference.IWrapper;
+import jetbrains.mps.util.misc.hash.*;
+import jetbrains.mps.util.misc.hash.LinkedHashSet;
+import jetbrains.mps.util.misc.hash.HashSet;
 
 import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,7 +17,7 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class StructuralWrapperSet<T> implements Set<IWrapper> {
-  private Map<IWrapperWrapper, IWrapperWrapper> myMWrapperToMWrapper = new HashMap<IWrapperWrapper, IWrapperWrapper>();
+  private Map<IWrapperWrapper, IWrapperWrapper> myMWrapperToMWrapper = new jetbrains.mps.util.misc.hash.HashMap<IWrapperWrapper, IWrapperWrapper>();
   private Set<IWrapper> myWrappers = new LinkedHashSet<IWrapper>();
   private Map<IWrapper, T> myWrapperToKey = new LinkedHashMap<IWrapper, T>();
 
