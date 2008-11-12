@@ -75,17 +75,23 @@ public class QueriesGenerated {
           public Object calculate() {
             SNode compositePathComponent = _context.getParentNode();
             String base = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.getParent(compositePathComponent), "macro", true), "path");
+            if (base == null) {
+              base = "";
+            }
             for(SNode path : Sequence.fromIterable(SLinkOperations.getTargets(compositePathComponent, "pathComponent", true))) {
               if (path == _context.getCurrentTargetNode()) {
                 break;
               }
               base += "/" + SPropertyOperations.getString(path, "path");
             }
-            if (base.equals("")) {
-              base = ".";
-            }
             File baseDir = new File(base);
             File[] suggestFiles = baseDir.listFiles();
+            if (suggestFiles == null) {
+              suggestFiles = File.listRoots();
+              if (suggestFiles.length == 1 && suggestFiles[0].getAbsolutePath().equals("/")) {
+                suggestFiles = suggestFiles[0].listFiles();
+              }
+            }
             boolean isFile = SPropertyOperations.getBoolean(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", true, false), "file");
             List<String> suggestStrings = ListSequence.<String>fromArray();
             for(File f : suggestFiles) {
