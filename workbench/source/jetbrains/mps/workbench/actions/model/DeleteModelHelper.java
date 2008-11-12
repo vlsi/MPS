@@ -50,9 +50,19 @@ public class DeleteModelHelper {
 
   public static void delete(SModelDescriptor modelDescriptor, boolean deleteFiles) {
     IModule currentModule = modelDescriptor.getModule();
-    deleteModelFromModule(currentModule, modelDescriptor);
 
-    if (deleteFiles) {
+    boolean deleteIfAsked = true;
+    if (currentModule instanceof Language) {
+      deleteIfAsked = deleteModelFromLanguage((Language) currentModule, modelDescriptor);
+    } else if (currentModule instanceof Solution) {
+      deleteModelFromSolution((Solution) currentModule, modelDescriptor);
+    } else if (currentModule instanceof Generator) {
+      deleteModelFromGenerator((Generator) currentModule, modelDescriptor);
+    } else {
+      LOG.warning("Module type " + currentModule.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
+    }
+
+    if (deleteFiles && deleteIfAsked) {
       modelDescriptor.delete();
     }
 
@@ -81,21 +91,12 @@ public class DeleteModelHelper {
     }
   }
 
-  private static void deleteModelFromModule(IModule module, SModelDescriptor modelDescriptor) {
-    if (module instanceof Language) {
-      deleteModelFromLanguage((Language) module, modelDescriptor);
-    } else if (module instanceof Solution) {
-      deleteModelFromSolution((Solution) module, modelDescriptor);
-    } else if (module instanceof Generator) {
-      deleteModelFromGenerator((Generator) module, modelDescriptor);
-    } else {
-      LOG.warning("Module type " + module.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
-    }
-  }
-
-  private static void deleteModelFromLanguage(Language language, SModelDescriptor modelDescriptor) {
+  private static boolean deleteModelFromLanguage(Language language, SModelDescriptor modelDescriptor) {
     if (language.isAccessoryModel(modelDescriptor.getSModelReference())) {
       language.removeAccessoryModel(modelDescriptor);
+      return false;
+    } else {
+      return true;
     }
   }
 
@@ -150,7 +151,15 @@ public class DeleteModelHelper {
           LOG.warning("Model owner type " + modelOwner.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for owners of this type.");
           continue;
         }
-        deleteModelFromModule((IModule) modelOwner, modelDescriptor);
+        if ((IModule) modelOwner instanceof Language) {
+          deleteModelFromLanguage((Language) (IModule) modelOwner, modelDescriptor);
+        } else if ((IModule) modelOwner instanceof Solution) {
+          deleteModelFromSolution((Solution) (IModule) modelOwner, modelDescriptor);
+        } else if ((IModule) modelOwner instanceof Generator) {
+          deleteModelFromGenerator((Generator) (IModule) modelOwner, modelDescriptor);
+        } else {
+          LOG.warning("Module type " + ((IModule) modelOwner).getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
+        }
       }
 
       if (myDeleteFiles) {
