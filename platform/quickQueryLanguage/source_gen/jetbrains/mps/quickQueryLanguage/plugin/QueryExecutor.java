@@ -38,7 +38,8 @@ public class QueryExecutor {
   }
 
   public void showResults() {
-    this.myContext.getProject().getComponent(UsagesViewTool.class).showResults(this.mySearchQuery, this.myResult);
+    UsagesViewTool tool = this.myContext.getProject().getComponent(UsagesViewTool.class);
+    tool.showResults(this.mySearchQuery, this.myResult);
   }
 
   public void execute(@NotNull() final ProgressIndicator indicator, final IScope scope) {
@@ -48,8 +49,7 @@ public class QueryExecutor {
         try {
           if (SLinkOperations.getTarget(QueryExecutor.this.myModelQuery, "conceptDeclaration", false) != null) {
             QueryExecutor.this.mySearchQuery = new SearchQuery(new NodeHolder(SLinkOperations.getTarget(QueryExecutor.this.myModelQuery, "conceptDeclaration", false)), scope);
-          } else
-          {
+          } else {
             QueryExecutor.this.mySearchQuery = new SearchQuery(scope);
           }
           BaseFinder[] finders = new BaseFinder[1];

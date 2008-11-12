@@ -6,6 +6,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
+import jetbrains.mps.ide.actions.PackageActions_ActionGroup;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -25,23 +26,7 @@ public class PackageNode extends SNodeGroupTreeNode {
   }
 
   public ActionGroup getActionGroup() {
-    DefaultActionGroup group = new DefaultActionGroup();
-
-    CreateRootNodeGroup cg = new CreateRootNodeGroup(getPackage());
-    group.add(cg);
-
-    group.addSeparator();
-    group.add(new PasteNodeAction());
-
-    group.addSeparator();
-    Set<SNode> nodesUnderPackage = ModelAccess.instance().runReadAction(new Computable<Set<SNode>>() {
-      public Set<SNode> compute() {
-        return getNodesUnderPackage();
-      }
-    });
-    group.add(new RenamePackageAction(myModelNode.getOperationContext().getMainFrame(), myName, nodesUnderPackage));
-
-    return group;
+    return new PackageActions_ActionGroup();
   }
 
   public ActionGroup getQuickCreateGroup(boolean plain) {

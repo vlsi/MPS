@@ -5,6 +5,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.genconf.GenParameters;
@@ -109,16 +110,22 @@ public class RenameLanguageDialog extends BaseDialog {
       final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
       GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
         public GenParameters compute() {
-          SModel model = AuxilaryRuntimeModel.getDescriptor().getSModel();
-
           ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
           languageConfig.setModuleRef(myLanguage.getModuleReference());
           languageConfig.setName("tmp");
 
-          return languageConfig.getGenParams(mpsProject, true);
+          try {
+            return languageConfig.getGenParams(mpsProject, true);
+          } catch (IllegalGeneratorConfigurationException e) {
+            return null;
+          }
         }
       });
 
+      if (params == null) {
+        setErrorText("Generator configuration is invalid");
+        return;
+      }
 
       myProject.getComponent(GeneratorManager.class)
         .generateModelsFromDifferentModules(
@@ -129,7 +136,6 @@ public class RenameLanguageDialog extends BaseDialog {
 
     dispose();
   }
-
 
 
   @BaseDialog.Button(position = 1, name = "Cancel")

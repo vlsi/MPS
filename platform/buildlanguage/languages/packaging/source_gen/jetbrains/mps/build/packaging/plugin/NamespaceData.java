@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Collections;
 import javax.swing.Icon;
+
 import jetbrains.mps.ide.projectPane.Icons;
 
 public class NamespaceData implements NodeData {

@@ -5,8 +5,11 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+
 import java.util.List;
+
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -26,7 +29,7 @@ public class ArrayType_Behavior {
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.<String>fromArray("array");
     if ((SLinkOperations.getTarget(thisNode, "componentType", true) != null)) {
-      for(String suffix : Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "componentType", true))) {
+      for (String suffix : Sequence.fromIterable(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "componentType", true)))) {
         ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
       }
     }

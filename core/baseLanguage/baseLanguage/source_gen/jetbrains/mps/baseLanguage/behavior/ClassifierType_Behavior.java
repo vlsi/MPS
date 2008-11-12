@@ -5,15 +5,20 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+
 import java.util.List;
+
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+
 import java.util.Iterator;
+
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ClassifierType_Behavior {
@@ -30,7 +35,7 @@ public class ClassifierType_Behavior {
     List<SNode> parms = SLinkOperations.getTargets(thisNode, "parameter", true);
     if (ListSequence.fromList(parms).isNotEmpty()) {
       String parmsText = "";
-      for(SNode parm : parms) {
+      for (SNode parm : Sequence.fromIterable(parms)) {
         if (parmsText.length() > 0) {
           parmsText = parmsText + ",";
         }
@@ -65,7 +70,7 @@ public class ClassifierType_Behavior {
       if (!(SPropertyOperations.getBoolean(classifier, "abstractClass")) && ListSequence.fromList(SLinkOperations.getTargets(classifier, "constructor", true)).isNotEmpty()) {
         SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
         SLinkOperations.setTarget(creator, "baseMethodDeclaration", ListSequence.fromList(SLinkOperations.getTargets(classifier, "constructor", true)).first(), false);
-        for(SNode typeParm : SLinkOperations.getTargets(thisNode, "parameter", true)) {
+        for (SNode typeParm : Sequence.fromIterable(SLinkOperations.getTargets(thisNode, "parameter", true))) {
           SLinkOperations.addChild(creator, "typeParameter", SNodeOperations.copyNode(typeParm));
         }
         return creator;
@@ -87,7 +92,7 @@ public class ClassifierType_Behavior {
           }
         }
         return false;
-      } while(false);
+      } while (false);
     }
     {
       _Patterns.Pattern_1 pattern_0 = new _Patterns.Pattern_1(SLinkOperations.getTarget(thisNode, "classifier", false));
@@ -111,8 +116,7 @@ public class ClassifierType_Behavior {
               if (!(Type_Behavior.call_isSupersetOf_1220438914705(myParam, typeParam))) {
                 return false;
               }
-            } else
-            {
+            } else {
               if (!(MatchingUtil.matchNodes(myParam, typeParam))) {
                 return false;
               }
@@ -120,8 +124,7 @@ public class ClassifierType_Behavior {
           }
         }
         return true;
-      } else
-      {
+      } else {
       }
     }
     return Type_Behavior.callSuper_isSupersetOf_1220438914705(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType", t);

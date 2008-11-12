@@ -7,12 +7,12 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.project.structure.testconfigurations.GeneratorConfigurationException;
 import jetbrains.mps.project.structure.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
@@ -102,7 +102,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
 
         try {
           return conf.getGenParams(myProject, myRegenerate);
-        } catch (GeneratorConfigurationException e) {
+        } catch (IllegalGeneratorConfigurationException e) {
           JOptionPane.showMessageDialog(myFrame, e.getMessage());
           return null;
         }

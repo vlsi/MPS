@@ -4,7 +4,9 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
+
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
@@ -13,8 +15,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.Language;
 
 public class FindInstancesByCondition_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(FindInstancesByCondition_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(FindInstancesByCondition_Action.class);
+  private static final Icon ICON = null;
 
   public IOperationContext context;
   public IModule langModule;
@@ -58,7 +60,7 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       IOperationContext newContext = new FindInstancesContext(new FindInstancesContext(FindInstancesByCondition_Action.this.context));
-      FindInstancesDialog dialog = new FindInstancesDialog(newContext, (Language)FindInstancesByCondition_Action.this.langModule);
+      FindInstancesDialog dialog = new FindInstancesDialog(newContext, (Language) FindInstancesByCondition_Action.this.langModule);
       dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindInstancesByCondition", t);

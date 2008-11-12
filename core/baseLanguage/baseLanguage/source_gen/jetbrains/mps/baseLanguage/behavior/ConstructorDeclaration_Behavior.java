@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class ConstructorDeclaration_Behavior {
@@ -23,16 +24,20 @@ public class ConstructorDeclaration_Behavior {
     result.append(SPropertyOperations.getString(thisNode, "nestedName"));
     result.append("(");
     boolean first = true;
-    for(SNode parm : SLinkOperations.getTargets(thisNode, "parameter", true)) {
+    for (SNode parm : SLinkOperations.getTargets(thisNode, "parameter", true)) {
       if (!(first)) {
         result.append(",");
       }
-      /*statement: [statement] ExecuteLightweightCommandStatement <no name>[1225459513751] in jetbrains.mps.baseLanguage.behavior@3_1*/
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+        }
+
+      });
       first = false;
       if (SLinkOperations.getTarget(parm, "type", true) != null) {
         result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(parm, "type", true)));
-      } else
-      {
+      } else {
         result.append("???");
       }
     }

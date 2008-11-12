@@ -1,14 +1,13 @@
 package jetbrains.mps.project.structure.testconfigurations;
 
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
 
 import java.util.*;
 
@@ -30,7 +29,7 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
     myModels.add(m);
   }
 
-  public GenParameters getGenParams(MPSProject project, boolean fullRegeneration) {
+  public GenParameters getGenParams(MPSProject project, boolean fullRegeneration) throws IllegalGeneratorConfigurationException {
     Set<SModelDescriptor> modelDescriptors = new LinkedHashSet<SModelDescriptor>();
 
     for (SModelReference m : getModels()) {
@@ -38,7 +37,7 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
     }
 
     if (modelDescriptors.isEmpty()) {
-      throw new GeneratorConfigurationException("can't execute test configuration " + getName());
+      throw new IllegalGeneratorConfigurationException("can't execute test configuration " + getName());
     }
 
     IModule module = null;
@@ -50,7 +49,7 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
     }
 
     if (module == null) {
-      throw new GeneratorConfigurationException("there is no module that can be used to generate models " + modelDescriptors);
+      throw new IllegalGeneratorConfigurationException("there is no module that can be used to generate models " + modelDescriptors);
     }
 
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();

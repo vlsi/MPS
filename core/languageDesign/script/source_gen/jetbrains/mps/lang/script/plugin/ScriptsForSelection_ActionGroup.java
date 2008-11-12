@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.ide.actions.ProjectPaneModelActions_ActionGroup;
+import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
 import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
@@ -52,7 +52,7 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
 
   public void adjust() {
     {
-      BaseGroup gToBase = ActionUtils.getGroup(ProjectPaneModelActions_ActionGroup.ID);
+      BaseGroup gToBase = ActionUtils.getGroup(ModelActions_ActionGroup.ID);
       BaseGroup gWhat = ActionUtils.getGroup(ScriptsForSelection_ActionGroup.ID);
       if (gToBase == null || gWhat == null) {
         return;

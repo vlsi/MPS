@@ -5,12 +5,16 @@ package jetbrains.mps.build.packaging.plugin;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelFqName;
+
 import java.util.List;
+
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+
 import java.io.File;
+
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -33,7 +37,7 @@ public class BuildGeneratorUtil {
     SModelFqName newModelFQName = SModelFqName.fromString(modelName);
     List<SModelDescriptor> ownModelDescriptors = solution.getOwnModelDescriptors();
     SModelDescriptor modelDescriptor = null;
-    for(SModelDescriptor descriptor : Sequence.fromIterable(ownModelDescriptors)) {
+    for (SModelDescriptor descriptor : Sequence.fromIterable(ownModelDescriptors)) {
       if (descriptor.getSModelFqName().equals(newModelFQName)) {
         modelDescriptor = descriptor;
         break;
@@ -59,9 +63,8 @@ public class BuildGeneratorUtil {
       if (!(module instanceof Solution)) {
         return null;
       }
-      solution = (Solution)module;
-    } else
-    {
+      solution = (Solution) module;
+    } else {
       solution = BuildGeneratorUtil.createSolutionFormFile(mpsProject, solutionFile);
     }
     ModuleReference packagingLanguageRef = BuildGeneratorUtil.getPackagingLanguageReference();
@@ -80,7 +83,7 @@ public class BuildGeneratorUtil {
     SPropertyOperations.set(modelRoot, "prefix", "");
     SPropertyOperations.set(modelRoot, "path", solutionDescriptorFile.getParent().getAbsolutePath());
     SLinkOperations.addChild(solutionDescriptor, "modelRoot", modelRoot);
-    DescriptorsPersistence.saveSolutionDescriptor(solutionDescriptorFile, ((SolutionDescriptor)SNodeOperations.getAdapter(solutionDescriptor)));
+    DescriptorsPersistence.saveSolutionDescriptor(solutionDescriptorFile, ((SolutionDescriptor) SNodeOperations.getAdapter(solutionDescriptor)));
     return mpsProject.addProjectSolution(solutionDescriptorFile.toFile());
   }
 

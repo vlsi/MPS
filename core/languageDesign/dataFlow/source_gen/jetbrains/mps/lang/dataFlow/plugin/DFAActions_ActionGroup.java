@@ -9,7 +9,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 
 public class DFAActions_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(DFAActions_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(DFAActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.dataFlow.plugin.DFAActions";
 
   public DFAActions_ActionGroup() {

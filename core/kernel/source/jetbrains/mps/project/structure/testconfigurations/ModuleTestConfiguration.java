@@ -1,6 +1,7 @@
 package jetbrains.mps.project.structure.testconfigurations;
 
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.project.IModule;
@@ -29,11 +30,11 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
     myModuleRef = moduleRef;
   }
 
-  public GenParameters getGenParams(MPSProject project, boolean fullRegeneration) {
+  public GenParameters getGenParams(MPSProject project, boolean fullRegeneration) throws IllegalGeneratorConfigurationException {
     IModule module = MPSModuleRepository.getInstance().getModule(myModuleRef);
 
     if (module == null) {
-      throw new GeneratorConfigurationException("Can't find module " + myModuleRef.getModuleFqName());
+      throw new IllegalGeneratorConfigurationException("Can't find module " + myModuleRef.getModuleFqName());
     }
 
     if (module instanceof Solution) {
@@ -68,6 +69,6 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
 
     }
 
-    throw new GeneratorConfigurationException("Not applicable to non-language/solution module " + myModuleRef.getModuleFqName());
+    throw new IllegalGeneratorConfigurationException("Not applicable to non-language/solution module " + myModuleRef.getModuleFqName());
   }
 }

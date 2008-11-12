@@ -4,8 +4,10 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
 import java.awt.Frame;
+
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
@@ -13,6 +15,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+
 import javax.swing.JOptionPane;
 
 public class SetModuleFolder_Action extends GeneratedAction {
@@ -81,7 +84,7 @@ public class SetModuleFolder_Action extends GeneratedAction {
         if (newFolder.equals("")) {
           newFolder = null;
         }
-        for(IModule m : pane.getSelectedModules()) {
+        for (IModule m : pane.getSelectedModules()) {
           SetModuleFolder_Action.this.project.setFolderFor(m, newFolder);
         }
         pane.rebuild();

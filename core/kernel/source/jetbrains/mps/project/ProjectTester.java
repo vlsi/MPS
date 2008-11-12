@@ -11,7 +11,7 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.project.structure.testconfigurations.GeneratorConfigurationException;
+import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.smodel.ModelAccess;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -132,7 +132,7 @@ public class ProjectTester {
             GenParameters parms;
             try {
               parms = t.getGenParams(myProject, true);
-            } catch (GeneratorConfigurationException e) {
+            } catch (IllegalGeneratorConfigurationException e) {
               errors.add("Can't create a generator configuration : " + e.getMessage());
               return;
             }

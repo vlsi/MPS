@@ -9,7 +9,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 
 public class FindInstancesByConditionGroup_ActionGroup extends GeneratedActionGroup {
-  public static Logger LOG = Logger.getLogger(FindInstancesByConditionGroup_ActionGroup.class);
+  private static Logger LOG = Logger.getLogger(FindInstancesByConditionGroup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionGroup";
 
   public FindInstancesByConditionGroup_ActionGroup() {

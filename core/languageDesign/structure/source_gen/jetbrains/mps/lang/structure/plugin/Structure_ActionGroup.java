@@ -9,7 +9,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
-import jetbrains.mps.ide.actions.ProjectPaneNodeActions_ActionGroup;
+import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 
 public class Structure_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Structure_ActionGroup.class);
@@ -41,14 +41,14 @@ public class Structure_ActionGroup extends GeneratedActionGroup {
       }
     }
     {
-      BaseGroup gToBase = ActionUtils.getGroup(ProjectPaneNodeActions_ActionGroup.ID);
+      BaseGroup gToBase = ActionUtils.getGroup(NodeActions_ActionGroup.ID);
       BaseGroup gWhat = ActionUtils.getGroup(Structure_ActionGroup.ID);
       if (gToBase == null || gWhat == null) {
         return;
       }
       {
         String labelName = null;
-        labelName = ProjectPaneNodeActions_ActionGroup.LABEL_ID_structure;
+        labelName = NodeActions_ActionGroup.LABEL_ID_structure;
         Constraints constraints = new Constraints(Anchor.AFTER, labelName);
         gToBase.add(gWhat, constraints);
       }

@@ -81,19 +81,19 @@ import java.util.List;
 @State(
   name = "MPSProjectPane",
   storages = {
-  @Storage(
-    id = "other",
-    file = "$WORKSPACE_FILE$"
-  )
-    }
+    @Storage(
+      id = "other",
+      file = "$WORKSPACE_FILE$"
+    )
+  }
 )
 public class ProjectPane extends AbstractProjectViewPane implements PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
-  public static final String PROJECT_PANE_NODE_ACTIONS = ProjectPaneNodeActions_ActionGroup.ID;
-  public static final String PROJECT_PANE_NODE_ACTIONS_INTERNAL = ProjectPaneNodeActionsInternal_ActionGroup.ID;
-  public static final String PROJECT_PANE_MODEL_ACTIONS = ProjectPaneModelActions_ActionGroup.ID;
-  public static final String PROJECT_PANE_MODEL_ACTIONS_INTERNAL = ProjectPaneModelActionsInternal_ActionGroup.ID;
+  public static final String PROJECT_PANE_NODE_ACTIONS = NodeActions_ActionGroup.ID;
+  public static final String PROJECT_PANE_NODE_ACTIONS_INTERNAL = NodeActionsInternal_ActionGroup.ID;
+  public static final String PROJECT_PANE_MODEL_ACTIONS = ModelActions_ActionGroup.ID;
+  public static final String PROJECT_PANE_MODEL_ACTIONS_INTERNAL = ModelActionsInternal_ActionGroup.ID;
   public static final String PROJECT_PANE_MODEL_ACTIONS_GENERATE_OBSOLETE_MENU = "project-pane-model-actions-generate-obsolete-menu";
   public static final String PROJECT_PANE_VCS_ACTIONS = "project-pane-vcs-actions";
   public static final String PROJECT_PANE_LANGUAGE_ACTIONS = LanguageActions_ActionGroup.ID;
@@ -102,6 +102,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public static final String PROJECT_PANE_SOLUTION_ACTIONS = SolutionActions_ActionGroup.ID;
   public static final String PROJECT_PANE_GENERATOR_ACTIONS = GeneratorActions_ActionGroup.ID;
   public static final String PROJECT_PANE_TRANSIENT_MODULES_ACTIONS = TransientModulesActions_ActionGroup.ID;
+  public static final String PROJECT_PANE_PACKAGE_ACTIONS = PackageActions_ActionGroup.ID;
 
   public static final String PROJECT_NEW_ACTIONS = ProjectNewActions_ActionGroup.ID;
   public static final String SOLUTION_NEW_ACTIONS = SolutionNewActions_ActionGroup.ID;
@@ -163,7 +164,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         final MPSFileNodeEditor editor = (MPSFileNodeEditor) fileEditor;
         if (myProjectView.isAutoscrollFromSource(ID)) {
           EditorComponent editorComponent = editor.getNodeEditor().getCurrentEditorComponent();
-          if (editorComponent==null) return;
+          if (editorComponent == null) return;
           final SNode sNode = editorComponent.getEditedNode();
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
@@ -744,7 +745,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       TreeNode node = (TreeNode) path.getLastPathComponent();
       if (node instanceof ProjectModuleTreeNode) {
         result.add(((ProjectModuleTreeNode) node).getModule());
-      } 
+      }
     }
     return result;
   }

@@ -4,7 +4,9 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
+
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
@@ -15,8 +17,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 
 public class ReplacementQueryActionWithNode_Action extends GeneratedAction {
-  public static final Logger LOG = Logger.getLogger(ReplacementQueryActionWithNode_Action.class);
-  public static final Icon ICON = null;
+  private static final Logger LOG = Logger.getLogger(ReplacementQueryActionWithNode_Action.class);
+  private static final Icon ICON = null;
 
   private SNode node;
   public IOperationContext context;
@@ -72,7 +74,7 @@ public class ReplacementQueryActionWithNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(ReplacementQueryActionWithNode_Action.this.context), (Language)ReplacementQueryActionWithNode_Action.this.langModule);
+      ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(ReplacementQueryActionWithNode_Action.this.context), (Language) ReplacementQueryActionWithNode_Action.this.langModule);
       dialog.setConceptDeclaration(ReplacementQueryActionWithNode_Action.this.node);
       dialog.showDialog();
     } catch (Throwable t) {

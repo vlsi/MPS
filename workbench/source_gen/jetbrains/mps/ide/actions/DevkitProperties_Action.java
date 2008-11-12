@@ -4,7 +4,9 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
+
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.smodel.IOperationContext;
@@ -77,7 +79,7 @@ public class DevkitProperties_Action extends GeneratedAction {
   private DevKit getDevKit(ActionEventData data) {
     IModule module = data.getModule();
     if (module instanceof DevKit) {
-      return (DevKit)module;
+      return (DevKit) module;
     }
     return null;
   }

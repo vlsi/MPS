@@ -4,7 +4,9 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
+
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.smodel.SNode;
@@ -78,7 +80,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       HierarchyViewTool tool = ShowConceptInHierarchy_Action.this.context.getComponent(HierarchyViewTool.class);
-      tool.showConceptInHierarchy((AbstractConceptDeclaration)((INodeAdapter)SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.node)), new ProjectOperationContext(ShowConceptInHierarchy_Action.this.project));
+      tool.showConceptInHierarchy((AbstractConceptDeclaration) ((INodeAdapter) SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.node)), new ProjectOperationContext(ShowConceptInHierarchy_Action.this.project));
       tool.openToolLater(true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowConceptInHierarchy", t);
