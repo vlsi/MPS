@@ -5023,9 +5023,6 @@
     <property name="name" value="thisExpression" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1197884213577">
       <link role="applicableConcept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
-      <node role="part" type="jetbrains.mps.lang.actions.structure.ConceptSubstitutePart" id="1197884248041">
-        <link role="concept" targetNodeId="1.1070475354124" resolveInfo="ThisExpression" />
-      </node>
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1218491493155">
         <link role="concept" targetNodeId="1.1070475354124" resolveInfo="ThisExpression" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart" id="1218491527252">
