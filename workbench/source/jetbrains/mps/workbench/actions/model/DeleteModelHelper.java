@@ -33,7 +33,7 @@ import java.util.Set;
 public class DeleteModelHelper {
   private static final Logger LOG = Logger.getLogger(DeleteModelHelper.class);
 
-  public static void deleteModel(Project project, SModelDescriptor modelDescriptor, boolean safeDelete, boolean deleteFiles) {
+  public static void deleteModel(Project project, IModule contextModule, SModelDescriptor modelDescriptor, boolean safeDelete, boolean deleteFiles) {
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
 
     if (aspect == LanguageAspect.STRUCTURE) {
@@ -44,29 +44,27 @@ public class DeleteModelHelper {
     if (safeDelete) {
       safeDelete(project, modelDescriptor, deleteFiles);
     } else {
-      delete(modelDescriptor, deleteFiles);
+      delete(contextModule, modelDescriptor, deleteFiles);
     }
   }
 
-  public static void delete(SModelDescriptor modelDescriptor, boolean deleteFiles) {
-    IModule currentModule = modelDescriptor.getModule();
-
+  public static void delete(IModule contextModule, SModelDescriptor modelDescriptor, boolean deleteFiles) {
     boolean deleteIfAsked = true;
-    if (currentModule instanceof Language) {
-      deleteIfAsked = deleteModelFromLanguage((Language) currentModule, modelDescriptor);
-    } else if (currentModule instanceof Solution) {
-      deleteModelFromSolution((Solution) currentModule, modelDescriptor);
-    } else if (currentModule instanceof Generator) {
-      deleteModelFromGenerator((Generator) currentModule, modelDescriptor);
+    if (contextModule instanceof Language) {
+      deleteIfAsked = deleteModelFromLanguage((Language) contextModule, modelDescriptor);
+    } else if (contextModule instanceof Solution) {
+      deleteModelFromSolution((Solution) contextModule, modelDescriptor);
+    } else if (contextModule instanceof Generator) {
+      deleteModelFromGenerator((Generator) contextModule, modelDescriptor);
     } else {
-      LOG.warning("Module type " + currentModule.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
+      LOG.warning("Module type " + contextModule.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
     }
 
     if (deleteFiles && deleteIfAsked) {
       modelDescriptor.delete();
     }
 
-    currentModule.save();
+    contextModule.save();
   }
 
   public static void safeDelete(final Project project, final SModelDescriptor modelDescriptor, boolean deleteFiles) {
