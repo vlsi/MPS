@@ -118,6 +118,17 @@ public class QueriesGenerated {
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MacroReference_1220979539658(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    final String no_macro;
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return "no macro";
+        }
+
+      };
+      no_macro = (String)calc.calculate();
+    }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference");
       SNode childConcept = (SNode)_context.getChildConcept();
@@ -125,7 +136,9 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
 
           public Object calculate() {
-            return MPSLayout_Behavior.call_getAllMacroNames_1220980057360(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, true), SConceptPropertyOperations.getBoolean(_context.getParentNode(), "canStartFromBasedir"));
+            List<String> allMacroNames = MPSLayout_Behavior.call_getAllMacroNames_1220980057360(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, true), SConceptPropertyOperations.getBoolean(_context.getParentNode(), "canStartFromBasedir"));
+            ListSequence.fromList(allMacroNames).addElement(no_macro);
+            return allMacroNames;
           }
 
         };
@@ -136,7 +149,12 @@ public class QueriesGenerated {
 
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.MacroReference", null);
-                SPropertyOperations.set(macro, "name", (item));
+                if ((item).equals(no_macro)) {
+                  SPropertyOperations.set(macro, "name", "");
+                } else
+                {
+                  SPropertyOperations.set(macro, "name", (item));
+                }
                 return macro;
               }
 

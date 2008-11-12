@@ -7,6 +7,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -16,6 +19,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class MacroReference_Editor extends DefaultNodeEditor {
 
@@ -29,6 +35,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu2()}));
     if (renderingCondition6371_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createProperty1220976085060(context, node));
     }
@@ -43,6 +50,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     setupBasic_Constant_12265127767661226512776766(editorCell, node, context);
     setupLabel_Constant_1226512776766_1226512776766(editorCell, node, context);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu1()}));
     return editorCell;
   }
 
@@ -55,6 +63,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
       setupLabel_property_name_1220976085060((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu0()}));
     return editorCell;
   }
 
@@ -103,5 +112,45 @@ public class MacroReference_Editor extends DefaultNodeEditor {
   public static boolean renderingCondition6371_1(SNode node, EditorContext editorContext, IScope scope) {
     return StringUtils.isEmpty(SPropertyOperations.getString(node, "name"));
   }
+
+  public static class MacroReference_component_cellMenu0 implements SubstituteInfoPart {
+
+    private MacroReference_MenuComponent myComponent;
+
+    public MacroReference_component_cellMenu0() {
+      this.myComponent = new MacroReference_MenuComponent();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+
+}
+  public static class MacroReference_component_cellMenu1 implements SubstituteInfoPart {
+
+    private MacroReference_MenuComponent myComponent;
+
+    public MacroReference_component_cellMenu1() {
+      this.myComponent = new MacroReference_MenuComponent();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+
+}
+  public static class MacroReference_component_cellMenu2 implements SubstituteInfoPart {
+
+    private MacroReference_MenuComponent myComponent;
+
+    public MacroReference_component_cellMenu2() {
+      this.myComponent = new MacroReference_MenuComponent();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+
+}
 
 }
