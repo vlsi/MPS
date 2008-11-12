@@ -13,8 +13,8 @@ import java.util.*;
  */
 public class StructuralWrapperSet<T> implements Set<IWrapper> {
   private Map<IWrapperWrapper, IWrapperWrapper> myMWrapperToMWrapper = new HashMap<IWrapperWrapper, IWrapperWrapper>();
-  private Set<IWrapper> myWrappers = new HashSet<IWrapper>();
-  private Map<IWrapper, T> myWrapperToKey = new HashMap<IWrapper, T>();
+  private Set<IWrapper> myWrappers = new LinkedHashSet<IWrapper>();
+  private Map<IWrapper, T> myWrapperToKey = new LinkedHashMap<IWrapper, T>();
 
   private Map<IWrapper, IWrapper> myRepresentatorsMap = new HashMap<IWrapper, IWrapper>();
   private Set<IWrapper> myMissing = new HashSet<IWrapper>();
@@ -168,11 +168,7 @@ public class StructuralWrapperSet<T> implements Set<IWrapper> {
   }
 
   private List<IWrapper> getWrapperToWrapper() {
-    List<IWrapper> result = new ArrayList<IWrapper>();
-    for (IWrapperWrapper w : myMWrapperToMWrapper.keySet()) {
-      result.add(w.getWrapper());
-    }
-    return result;
+    return new ArrayList<IWrapper>(myWrappers);
   }
 
   private boolean addWrapper(IWrapperWrapper w) {
