@@ -81,9 +81,7 @@ public class ProjectStep extends BaseStep {
     updateProjectPath();
   }
 
-  public void _commit(boolean finishChosen) throws CommitStepException {
-    super._commit(finishChosen);
-
+  public void _check() throws CommitStepException {
     if (myProjectPath.getPath() == null) {
       throw new CommitStepException("Project path should be specified");
     }
@@ -100,6 +98,10 @@ public class ProjectStep extends BaseStep {
         throw new CommitStepException("Specify another directory");
       }
     }
+  }
+
+  public void _commit(boolean finishChosen) throws CommitStepException {
+    super._commit(finishChosen);
 
     myOptions.setProjectName(myProjectName.getText());
     myOptions.setProjectPath(myProjectPath.getPath());

@@ -103,9 +103,7 @@ public class LanguageStep extends BaseStep {
     }
   }
 
-  public void _commit(boolean finishChosen) throws CommitStepException {
-    super._commit(finishChosen);
-
+  public void _check() throws CommitStepException {
     if (myOptions.getCreateNewLanguage()) {
       File dir = new File(myPath.getPath());
       if (!(dir.isAbsolute())) {
@@ -127,6 +125,10 @@ public class LanguageStep extends BaseStep {
         }
       }
     }
+  }
+
+  public void _commit(boolean finishChosen) throws CommitStepException {
+    super._commit(finishChosen);
 
     myOptions.setLanguageNamespace(myNamespace.getText());
     myOptions.setLanguagePath(myPath.getPath());

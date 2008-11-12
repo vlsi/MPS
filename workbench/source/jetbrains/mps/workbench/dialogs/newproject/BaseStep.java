@@ -2,6 +2,7 @@ package jetbrains.mps.workbench.dialogs.newproject;
 
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.wizard.StepAdapter;
+import com.intellij.ide.wizard.CommitStepException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -132,4 +133,6 @@ public abstract class BaseStep extends StepAdapter {
   public Icon getIcon() {
     return null;
   }
+
+  public abstract void _check() throws CommitStepException;
 }

@@ -1,12 +1,17 @@
 package jetbrains.mps.workbench.dialogs.newproject;
 
 import com.intellij.ide.wizard.AbstractWizard;
+import com.intellij.ide.wizard.Step;
+import com.intellij.ide.wizard.CommitStepException;
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -26,8 +31,9 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
 import java.io.File;
+import java.awt.Frame;
 
-public class NewProjectWizard extends AbstractWizard {
+public class NewProjectWizard extends AbstractWizard<BaseStep> {
   private ProjectStep myProjectStep;
   private LanguageStep myLanguageStep;
   private SolutionStep mySolutionStep;
@@ -63,6 +69,24 @@ public class NewProjectWizard extends AbstractWizard {
     panel.doLayout();
     return panel;
   }
+
+  protected void doNextAction() {
+    final BaseStep currentStep = getCurrentStepObject();
+    try {
+      currentStep._check();
+    }
+    catch (final CommitStepException exc) {
+      Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
+      Messages.showErrorDialog(
+        frame,
+        exc.getMessage()
+      );
+      return;
+    }
+
+    super.doNextAction();
+  }
+
 
   protected void updateStep() {
     super.updateStep();

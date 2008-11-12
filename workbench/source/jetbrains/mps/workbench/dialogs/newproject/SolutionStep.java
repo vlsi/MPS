@@ -5,6 +5,7 @@ import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.DirectoryUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.workbench.dialogs.newproject.Icons.Icons;
 import org.jetbrains.annotations.NotNull;
@@ -94,17 +95,22 @@ public class SolutionStep extends BaseStep {
   public void _init() {
     super._init();
 
-    if (myOptions.getSolutionNamespace() == null)
-      myOptions.setSolutionNamespace(myOptions.getProjectName() + ".sandbox");
+    if (myOptions.getSolutionNamespace() == null){
+      String prefix;
+      if (myOptions.getCreateNewLanguage()){
+        prefix = myOptions.getLanguageNamespace();
+      } else{
+        prefix = myOptions.getProjectName();
+      }
+      myOptions.setSolutionNamespace(prefix + ".sandbox");
+    }
 
     myNamespace.setText(myOptions.getSolutionNamespace());
     myPath.setPath(myOptions.getSolutionPath());
     updateSolutionPath();
   }
 
-  public void _commit(boolean finishChosen) throws CommitStepException {
-    super._commit(finishChosen);
-
+  public void _check() throws CommitStepException {
     if (myOptions.getCreateNewSolution()) {
       if (myPath.getPath().length() == 0) {
         throw new CommitStepException("Enter solution directory");
@@ -135,6 +141,10 @@ public class SolutionStep extends BaseStep {
         throw new CommitStepException("Can't create " + descriptorPath);
       }
     }
+  }
+
+  public void _commit(boolean finishChosen) throws CommitStepException {
+    super._commit(finishChosen);
 
     myOptions.setSolutionNamespace(myNamespace.getText());
     myOptions.setSolutionPath(myPath.getPath());
