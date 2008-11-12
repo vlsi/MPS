@@ -1,6 +1,8 @@
 package jetbrains.mps.smodel;
 
 import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
 
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -8,6 +10,7 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.misc.hash.*;
 
 
 public class FastNodeFinder {
@@ -17,8 +20,8 @@ public class FastNodeFinder {
   private boolean myInitialized;
   private SModelAdapter myListener = new MySModelAdapter();
 
-  private Map<String, Set<SNode>> myNodesAll = new HashMap<String, Set<SNode>>();
-  private Map<String, Set<SNode>> myNodesNoInheritance = new HashMap<String, Set<SNode>>();
+  private Map<String, Set<SNode>> myNodesAll = new jetbrains.mps.util.misc.hash.HashMap<String, Set<SNode>>();
+  private Map<String, Set<SNode>> myNodesNoInheritance = new jetbrains.mps.util.misc.hash.HashMap<String, Set<SNode>>();
 
   public FastNodeFinder(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
