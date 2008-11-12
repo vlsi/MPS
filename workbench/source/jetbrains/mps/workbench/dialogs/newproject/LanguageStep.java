@@ -75,9 +75,9 @@ public class LanguageStep extends BaseStep {
   public String getCommentString() {
     return
       "Language is a set of concepts and their aspects: structure, editor, actions, typesystem, etc." +
-      "Languages can extend other languages, which means they can use concepts from " +
-      "an extended language. They can derive concepts from an extended language, use" +
-      "them as a target of a reference, and store them as children.";
+        "Languages can extend other languages, which means they can use concepts from " +
+        "an extended language. They can derive concepts from an extended language, use" +
+        "them as a target of a reference, and store them as children.";
   }
 
   @Nullable
@@ -92,6 +92,7 @@ public class LanguageStep extends BaseStep {
 
     myNamespace.setText(myOptions.getLanguageNamespace());
     myPath.setPath(myOptions.getLanguagePath());
+
     updateLanguagePath();
   }
 

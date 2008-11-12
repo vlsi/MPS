@@ -78,6 +78,7 @@ public class ProjectStep extends BaseStep {
 
     myProjectName.setText(myOptions.getProjectName());
     myProjectPath.setPath(myOptions.getProjectPath());
+
     updateProjectPath();
   }
 

@@ -134,5 +134,13 @@ public abstract class BaseStep extends StepAdapter {
     return null;
   }
 
+  @Override
+  public void _commit(boolean finishChosen) throws CommitStepException {
+    if (finishChosen) {
+      _check();
+    }
+    super._commit(finishChosen);
+  }
+
   public abstract void _check() throws CommitStepException;
 }

@@ -95,11 +95,11 @@ public class SolutionStep extends BaseStep {
   public void _init() {
     super._init();
 
-    if (myOptions.getSolutionNamespace() == null){
+    if (myOptions.getSolutionNamespace() == null) {
       String prefix;
-      if (myOptions.getCreateNewLanguage()){
+      if (myOptions.getCreateNewLanguage()) {
         prefix = myOptions.getLanguageNamespace();
-      } else{
+      } else {
         prefix = myOptions.getProjectName();
       }
       myOptions.setSolutionNamespace(prefix + ".sandbox");
@@ -107,6 +107,7 @@ public class SolutionStep extends BaseStep {
 
     myNamespace.setText(myOptions.getSolutionNamespace());
     myPath.setPath(myOptions.getSolutionPath());
+
     updateSolutionPath();
   }
 
