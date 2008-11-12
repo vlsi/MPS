@@ -148,8 +148,7 @@ public class StructuralWrapperSet<T> implements Set<IWrapper> {
   }
 
   public Iterator<IWrapper> iterator() {
-    List<IWrapper> wrappers = getWrapperToWrapper();
-    final IWrapper[] w = wrappers.toArray(new IWrapper[wrappers.size()]);
+    final IWrapper[] w = myWrappers.toArray(new IWrapper[myWrappers.size()]);
     return new Iterator<IWrapper>() {
       private int myCurrent = 0;
 
@@ -165,10 +164,6 @@ public class StructuralWrapperSet<T> implements Set<IWrapper> {
         removeStructurally(w[myCurrent]);
       }
     };
-  }
-
-  private List<IWrapper> getWrapperToWrapper() {
-    return new ArrayList<IWrapper>(myWrappers);
   }
 
   private boolean addWrapper(IWrapperWrapper w) {
@@ -208,11 +203,11 @@ public class StructuralWrapperSet<T> implements Set<IWrapper> {
   }
 
   public Object[] toArray() {
-    return getWrapperToWrapper().toArray();
+    return myWrappers.toArray();
   }
 
   public <T> T[] toArray(T[] a) {
-    return getWrapperToWrapper().toArray(a);
+    return myWrappers.toArray(a);
   }
 
   public boolean containsAll(Collection<?> c) {
