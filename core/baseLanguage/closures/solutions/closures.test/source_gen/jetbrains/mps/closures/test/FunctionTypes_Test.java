@@ -86,7 +86,7 @@ public class FunctionTypes_Test extends TestCase {
     };
     if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
       /*
-        throwsOne = new _Adapters._void_P0_E2_to__void_P0_E1_adapter(throwsTwo);
+        throwsOne = throwsTwo;
       */
     }
   }
@@ -223,7 +223,7 @@ __switch__:
     };
     if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
       /*
-        throwsOne = new _Adapters._return_P0_E3_to__return_P0_E1_adapter(throwsThree);
+        throwsOne = throwsThree;
       */
     }
   }

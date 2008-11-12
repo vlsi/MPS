@@ -4493,6 +4493,14 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225980941611">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225980941612">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.AssertStatement" id="1226491448528">
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1226491450074">
+                  <property name="value" value="false" />
+                </node>
+                <node role="message" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226491458341">
+                  <property name="value" value="Fix the test" />
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1225980954423">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1202741965046">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1202741965047">
@@ -4580,6 +4588,14 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225980912045">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225980912046">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.AssertStatement" id="1226491470925">
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1226491472119">
+                  <property name="value" value="false" />
+                </node>
+                <node role="message" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226491475338">
+                  <property name="value" value="Fix the test" />
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1225980924741">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1202779815284">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1202779815285">

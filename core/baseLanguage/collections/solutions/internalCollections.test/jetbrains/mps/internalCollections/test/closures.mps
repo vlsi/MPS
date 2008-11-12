@@ -3164,9 +3164,9 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1226336596823">
         <property name="name" value="visitor" />
-        <node role="type" type="jetbrains.mps.baseLanguage.closures.structure.FunctionType" id="1226336610828">
-          <node role="parameterType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1226336614538" />
-          <node role="resultType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1226336615998" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226491327768">
+          <link role="classifier" targetNodeId="3.~IVisitor" resolveInfo="IVisitor" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1226491341761" />
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1226336578141" />
