@@ -25,8 +25,8 @@
       <property name="name" value="ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225980331168" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1225980333873" />
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1226421236918">
-        <property name="value" value="false" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1226489473488">
+        <property name="value" value="true" />
       </node>
     </node>
   </node>

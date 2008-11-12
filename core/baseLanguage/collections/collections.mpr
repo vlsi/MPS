@@ -52,6 +52,15 @@
     </subPane>
   </component>
   <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$APPLICATION_HOME_DIR$">
+          <value>
+            <SvnBranchConfiguration />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="myVersion" value="124" />
   </component>
   <component name="VcsDirectoryMappings">
