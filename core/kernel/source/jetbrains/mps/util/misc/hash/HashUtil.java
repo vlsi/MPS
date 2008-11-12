@@ -5,18 +5,40 @@ import java.util.Arrays;
 class HashUtil {
 
   public static final int MIN_CAPACITY = 4;
-  public static final float ENTRIES_PER_BUCKET = 1;
-  public static final float CAPACITY_MULTIPLE = 1.618033989f; // phi
+  public static final float DEFAULT_LOAD_FACTOR = 1;
+  public static final float CAPACITY_MULTIPLE = 1.618033989f;
 
-  public static int adjustTableSize(int capacity) {
-    int i = Arrays.binarySearch(_tableSizes, capacity);
-    if (i < 0) {
-      i = -i - 1;
+  public static int indexFor(int hash, final int length, final int shift, final int mask) {
+    hash = (hash + ((++hash) >> shift)) & mask;
+    if (hash >= length) {
+      hash -= length;
     }
-    return _tableSizes[i];
+    return hash;
   }
 
-  private static final int[] _tableSizes = {
+  public static int indexFor(final long hash, final int length, final int shift, final int mask) {
+    return indexFor((int) (hash + (hash >> 32)), length, shift, mask);
+  }
+
+  public static int shift(int length) {
+    int shift = 1;
+    int shifted = 2;
+    while (shifted <= length) {
+      ++shift;
+      shifted <<= 1;
+    }
+    return shift;
+  }
+
+  public static int adjustTableLength(int size) {
+    int i = Arrays.binarySearch(tableSizes, size);
+    if (i < 0) {
+      i = ~i;
+    }
+    return tableSizes[i];
+  }
+
+  private static final int[] tableSizes = {
 
           // include all odd primes under 1000
           3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
@@ -64,6 +86,6 @@ class HashUtil {
   };
 
   static {
-    Arrays.sort(_tableSizes);
+    Arrays.sort(tableSizes);
   }
 }
