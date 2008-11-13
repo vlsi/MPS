@@ -339,7 +339,7 @@ public class TemplateProcessor {
       if (newInputNode == null) {
         GeneratorMessage generatorMessage = templateSwitch.getNullInputMessage();
         if (generatorMessage != null) {
-          GeneratorUtil.processGeneratorMessage(generatorMessage, null, nodeMacro.getNode(), null, myGenerator);
+          GeneratorUtil.processGeneratorMessage(generatorMessage, inputNode, nodeMacro.getNode(), null, myGenerator);
         }
         return outputNodes; // skip template
       }

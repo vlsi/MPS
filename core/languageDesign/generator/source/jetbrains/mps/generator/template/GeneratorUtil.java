@@ -630,7 +630,7 @@ public class GeneratorUtil {
     if (message != null) {
       String text = message.getMessageText();
       if (message.getMessageType() == GeneratorMessageType.error) {
-        generator.showErrorMessage(inputNode, null, ruleNode, text);
+        generator.showErrorMessage(inputNode, templateNode, ruleNode, text);
       } else if (message.getMessageType() == GeneratorMessageType.warning) {
         generator.showWarningMessage(inputNode, text);
       } else {
