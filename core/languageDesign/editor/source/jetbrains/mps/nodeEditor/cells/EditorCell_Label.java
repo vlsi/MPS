@@ -25,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.LocalTimeCounter;
+import com.intellij.util.ui.UIUtil;
 
 public abstract class EditorCell_Label extends EditorCell_Basic {
   protected boolean myNoTextSet;
@@ -413,7 +414,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   private boolean allowsIntelligentInputKeyStroke(KeyEvent keyEvent) {
-    return KeyboardUtil.isDefaultAction(keyEvent);
+    return UIUtil.isReallyTypedEvent(keyEvent);
   }
 
   private boolean isMutableKeystroke(KeyEvent keyEvent) {
@@ -526,7 +527,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     int endSelection = myTextLine.getEndTextSelectionPosition();
 
     char keyChar = keyEvent.getKeyChar();
-    if (KeyboardUtil.isDefaultAction(keyEvent)) {
+    if (UIUtil.isReallyTypedEvent(keyEvent)) {
       String newText = oldText.substring(0, startSelection) + keyChar + oldText.substring(endSelection);
       changeText(newText);
       setCaretPositionIfPossible(startSelection + 1);

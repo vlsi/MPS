@@ -2,11 +2,12 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.nodeEditor.cells.TextLine;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.KeyboardUtil;
 
 import javax.swing.JWindow;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+
+import com.intellij.util.ui.UIUtil;
 
 /**
  * Author: Sergey Dmitriev.
@@ -152,7 +153,7 @@ public class NodeSubstitutePatternEditor {
       int caretPosition = myTextLine.getCaretPosition();
 
       char keyChar = keyEvent.getKeyChar();
-      if (KeyboardUtil.isDefaultAction(keyEvent)) {
+      if (UIUtil.isReallyTypedEvent(keyEvent)) {
         changeText(oldText.substring(0, caretPosition) + keyChar/* + myText.substring(caretPosition)*/);
         myTextLine.setCaretPosition(caretPosition + 1);
         return true;

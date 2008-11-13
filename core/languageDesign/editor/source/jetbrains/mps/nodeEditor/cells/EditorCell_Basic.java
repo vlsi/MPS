@@ -27,6 +27,8 @@ import java.awt.event.MouseEvent;
 import java.util.*;
 import java.util.List;
 
+import com.intellij.util.ui.UIUtil;
+
 /**
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
@@ -369,7 +371,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   protected boolean doProcessKeyTyped(KeyEvent e) {
-    if (getSNode() != null && !getSNode().isRoot() && KeyboardUtil.isDefaultAction(e)) {
+    if (getSNode() != null && !getSNode().isRoot() && UIUtil.isReallyTypedEvent(e)) {
       SNode newNode = replaceWithDefault();      
       EditorComponent editor = getEditorContext().getNodeEditorComponent();
       EditorCell nodeCell = editor.findNodeCell(newNode);
