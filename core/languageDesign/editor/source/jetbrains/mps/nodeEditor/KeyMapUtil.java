@@ -36,7 +36,7 @@ public class KeyMapUtil {
    */
   static List<Pair<EditorCellKeyMapAction, EditorCell>> getKeyMapActionsForEvent(EditorCell selectedCell, KeyEvent keyEvent, EditorContext editorContext) {
     // need to process key event?
-    if (keyEvent.getID() != KeyEvent.KEY_PRESSED) return Collections.emptyList();
+    if (keyEvent.getID() != KeyEvent.KEY_PRESSED && keyEvent.getID() != KeyEvent.KEY_TYPED) return Collections.emptyList();
     int keyCode = keyEvent.getKeyCode();
     if (keyCode == KeyEvent.VK_CONTROL || keyCode == KeyEvent.VK_ALT || keyCode == KeyEvent.VK_SHIFT ||
             /*keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_RIGHT || */ //TODO why?!

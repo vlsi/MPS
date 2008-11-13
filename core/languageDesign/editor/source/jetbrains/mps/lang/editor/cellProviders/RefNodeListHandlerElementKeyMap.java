@@ -49,8 +49,8 @@ public class RefNodeListHandlerElementKeyMap extends EditorCellKeyMap {
 
       // populate the key map
       if (!" ".equals(elementSeparator)) { //we do not want separator triggered inserts to interfere with RT.
-        putAction(EditorCellKeyMap.KEY_MODIFIERS_ANY, elementSeparator, insertAction);
-        putAction(EditorCellKeyMap.KEY_MODIFIERS_ANY, elementSeparator, addAction);
+        putAction(EditorCellKeyMap.KEY_MODIFIERS_ANY, elementSeparator, true, insertAction);
+        putAction(EditorCellKeyMap.KEY_MODIFIERS_ANY, elementSeparator, true, addAction);
       }
     }
   }

@@ -11370,6 +11370,34 @@
           </node>
         </node>
       </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1226577518285">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226577518286">
+          <property name="name" value="o" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226577518287">
+            <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226577519632">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1226582068900">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1226582068901">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226582068902">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226582068903">
+                <link role="variableDeclaration" targetNodeId="1226577518286" resolveInfo="o" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226582068904">
+                <link role="baseMethodDeclaration" targetNodeId="4.~Object.toString():java.lang.String" resolveInfo="toString" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1226582068905">
+                  <property name="value" value="2323" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1226582068906">
+                  <property name="value" value="23" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1217023658417">
       <property name="name" value="op" />

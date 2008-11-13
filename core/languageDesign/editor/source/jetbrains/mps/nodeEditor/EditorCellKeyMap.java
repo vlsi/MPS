@@ -11,6 +11,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.EqualUtil;
 
 import java.awt.event.KeyEvent;
 import java.lang.reflect.Field;
@@ -78,7 +79,11 @@ public class EditorCellKeyMap {
   }
 
   public void putAction(String modifiers, String keyCode, EditorCellKeyMapAction action) {
-    ActionKey key = new ActionKey(modifiers, keyCode);
+    putAction(modifiers, keyCode, false, action);
+  }
+
+  public void putAction(String modifiers, String keyCode, boolean typed, EditorCellKeyMapAction action) {
+    ActionKey key = new ActionKey(modifiers, keyCode, typed);
     if (!myActionMap.containsKey(key)) {
       myActionMap.put(key, action);
     } else {
@@ -147,8 +152,8 @@ public class EditorCellKeyMap {
   private static List<EditorCellKeyMapAction> findActions(EditorCellKeyMap keyMap, KeyEvent event) {
     if (event == null) return findAllActions(keyMap);
     List<EditorCellKeyMapAction> result = null;
-    List<ActionKey> actionKeies = keyEvent2ActionKey(event);
-    for (ActionKey actionKey : actionKeies) {
+    List<ActionKey> actionsKeys = keyEvent2ActionKey(event);
+    for (ActionKey actionKey : actionsKeys) {
       EditorCellKeyMapAction action = keyMap.myActionMap.get(actionKey);
       if (action != null) {
         if (result == null) result = new LinkedList<EditorCellKeyMapAction>();
@@ -209,7 +214,7 @@ public class EditorCellKeyMap {
     if (modifiers.size() > 0 && keyCodes.size() > 0) {
       for (String modifier : modifiers) {
         for (String keyKode : keyCodes) {
-          ActionKey actionKey = new ActionKey(modifier, keyKode);
+          ActionKey actionKey = new ActionKey(modifier, keyKode, event.getID() == KeyEvent.KEY_TYPED);
           keys.add(actionKey);
         }
       }
@@ -245,15 +250,13 @@ public class EditorCellKeyMap {
     List<String> keyCodes = new LinkedList<String>();
 
     int keyCode = event.getKeyCode();
-    if (keyCode == KeyEvent.VK_UNDEFINED) {
-      return keyCodes;
-    }
 
     keyCodes.add("");
 
     if (keyCode != KeyEvent.VK_CONTROL &&
-            keyCode != KeyEvent.VK_ALT &&
-            keyCode != KeyEvent.VK_SHIFT) {
+        keyCode != KeyEvent.VK_ALT &&
+        keyCode != KeyEvent.VK_SHIFT &&
+        keyCode != KeyEvent.VK_UNDEFINED) {
       String keyCodeName = ourJavaKeycodesMap.get(new Integer(keyCode));
       assert keyCodeName != null;
       keyCodes.add(keyCodeName);
@@ -396,12 +399,14 @@ public class EditorCellKeyMap {
   public static class ActionKey {
     private String myModifiers;
     private String myKeyCode;
+    private boolean myTyped;
 
-    public ActionKey(String modifiers, String keyCode) {
+    public ActionKey(String modifiers, String keyCode, boolean typed) {
       assert modifiers != null;
       assert keyCode != null;
       myModifiers = modifiers;
       myKeyCode = keyCode;
+      myTyped = typed;
     }
 
     public int hashCode() {
@@ -409,11 +414,17 @@ public class EditorCellKeyMap {
     }
 
     public boolean equals(Object o) {
-      return o != null && hashCode() == o.hashCode();
+      if (!(o instanceof ActionKey)) return false;
+
+      ActionKey key = (ActionKey) o;
+
+      return EqualUtil.equals(myModifiers, key.myModifiers) &&
+        EqualUtil.equals(myKeyCode, key.myKeyCode) &&
+        myTyped == key.myTyped;
     }
 
     public String toString() {
-      return "action key: " + myModifiers + " + " + myKeyCode;
+      return (myTyped ? "typed " : "") + "action key: " + myModifiers + " + " + myKeyCode;
     }
 
     public String presentation() {
