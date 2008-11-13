@@ -8,7 +8,4 @@
   <names product="MPS" fullname="JetBrains MPS"/>
 
   <welcome-screen caption-url="/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png" slogan-url="/jetbrains/mps/workbench/icons/mpsSlogan.png"/>
-
-  <update-urls check="http://www.jetbrains.com/updates/update.xml" download="http://www.jetbrains.com/idea/download/"/>
-  <eap-update-urls check="http://www.jetbrains.com/updates/eap-update.xml" download="http://www.intellij.net/eap/products/idea/download.jsp"/>
 </component>
