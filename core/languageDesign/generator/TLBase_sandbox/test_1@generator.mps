@@ -248,20 +248,6 @@
     <node role="createRootRule" type="jetbrains.mps.lang.generator.structure.CreateRootRule" id="1216337408929" />
     <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1207695225743">
       <link role="applicableConcept" targetNodeId="1.1080120340718" resolveInfo="AndExpression" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence" id="1217890246503">
-        <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1217890246504">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217890246505">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217890252678">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217890253633">
-                <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1217890252679" />
-                <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" id="1218574644070">
-                  <node role="baseName" type="jetbrains.mps.baseLanguage.structure.Expression" id="1218574644071" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1207695225745">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207695225746">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207695237606">
@@ -290,6 +276,17 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216753715946" />
         </node>
+      </node>
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence" id="1226534878362">
+        <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1226534878363">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226534878364" />
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1226534843655">
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.RuleConsequence" id="1226534843656" />
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1226534843657">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226534843658" />
       </node>
     </node>
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1207694002149">
@@ -378,7 +375,11 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1216147939815">
       <link role="applicableConcept" targetNodeId="1.1145552809883" resolveInfo="AbstractCreator" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence" id="1216147947739">
-        <node role="defaultConsequence" type="jetbrains.mps.lang.generator.structure.RuleConsequence" id="1216147947740" />
+        <node role="defaultConsequence" type="jetbrains.mps.lang.generator.structure.DismissTopMappingRule" id="1226540100541">
+          <node role="generatorMessage" type="jetbrains.mps.lang.generator.structure.GeneratorMessage" id="1226540102542">
+            <property name="messageType" value="error" />
+          </node>
+        </node>
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1216147949803">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1216147949804">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216147949805">

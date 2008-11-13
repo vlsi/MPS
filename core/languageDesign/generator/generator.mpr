@@ -4,7 +4,7 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSProject" auto-import-from-idea="true">
+  <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}\TLBase_sandbox\sandbox.msd" />
       <solutionPath path="${project}\test\inputModels\inputModels.msd" />
@@ -19,8 +19,8 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule name="generator" moduleUID="jetbrains.mps.lang.generator" />
-      <genConfModule name="generator.generationContext" moduleUID="jetbrains.mps.lang.generator.generationContext" />
+      <genConfModule name="generator" moduleRef="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
+      <genConfModule name="generator.generationContext" moduleRef="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
