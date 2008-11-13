@@ -51,7 +51,7 @@ public class NodeSubstitutePatternEditor {
 
   public boolean processKeyPressed(KeyEvent keyEvent) {
     if(myEditorActivated) {
-      return myEditorWindow.processKeyPressed(keyEvent);
+      return myEditorWindow.processKeyPressed(keyEvent);      
     }
     return false;
   }
