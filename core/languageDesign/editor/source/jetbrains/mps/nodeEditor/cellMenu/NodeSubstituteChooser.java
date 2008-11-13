@@ -232,6 +232,15 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
+    if (getPatternEditor().processKeyTyped(keyEvent)) {
+      if (myPopupActivated) {
+        rebuildMenuEntries();
+        relayoutPopupMenu();
+        tryToApplyIntelligentInput();
+      }
+      return true;
+    }
+
     return false;
   }
 

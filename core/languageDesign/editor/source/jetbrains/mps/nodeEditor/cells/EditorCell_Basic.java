@@ -360,35 +360,46 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   protected boolean doProcessKeyPressed(KeyEvent e, boolean allowErrors) {
+    return false;
+  }
+
+  public final boolean processKeyTyped(KeyEvent e) {
+    if (e.isConsumed()) return false;
+    return doProcessKeyTyped(e);
+  }
+
+  protected boolean doProcessKeyTyped(KeyEvent e) {
     if (getSNode() != null && !getSNode().isRoot() && KeyboardUtil.isDefaultAction(e)) {
-      EditorContext editorContext = getEditorContext();
-      EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
-
-      SNode node = getSNode();
-      LinkDeclaration link = node.getParent().getLinkDeclaration(node.getRole_());
-      AbstractConceptDeclaration concept = link.getTarget();
-      String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept), editorContext.getScope());
-      SNode newNode = new SNode(node.getModel(), concreteConceptFqName);
-      node.getParent().replaceChild(node, newNode);
-
-      editorContext.flushEvents();
-
-      EditorCell nodeCell = nodeEditor.findNodeCell(newNode);
+      SNode newNode = replaceWithDefault();      
+      EditorComponent editor = getEditorContext().getNodeEditorComponent();
+      EditorCell nodeCell = editor.findNodeCell(newNode);
       if (nodeCell == null) return false;
       EditorCell_Label editable = nodeCell.findChild(CellFinders.FIRST_EDITABLE);
       if (editable != null) {
-        nodeEditor.changeSelection(editable);
+        editor.changeSelection(editable);
         editable.processKeyPressed(e, true);
       } else {
-        nodeEditor.changeSelection(nodeCell);
-        nodeEditor.activateNodeSubstituteChooser(nodeCell, true);
-        nodeEditor.processKeyPressed(e);
+        editor.changeSelection(nodeCell);
+        editor.activateNodeSubstituteChooser(nodeCell, true);
+        editor.processKeyPressed(e);
       }
       return true;
     }
-
     return false;
   }
+
+  private SNode replaceWithDefault() {
+    EditorContext editorContext = getEditorContext();
+    SNode node = getSNode();
+    LinkDeclaration link = node.getParent().getLinkDeclaration(node.getRole_());
+    AbstractConceptDeclaration concept = link.getTarget();
+    String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept), editorContext.getScope());
+    SNode newNode = new SNode(node.getModel(), concreteConceptFqName);
+    node.getParent().replaceChild(node, newNode);
+    editorContext.flushEvents();
+    return newNode;
+  }
+
 
   public void setCaretX(int x) {
     myCaretX = x;

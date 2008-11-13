@@ -364,14 +364,33 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       side = CellSide.RIGHT;
     }
 
-    if (keyEvent.isConsumed()) return false;
-
     myCaretIsVisible = true;
 
     if (isNotApplicableKeyEvent(keyEvent)) return false;                                               
 
     if (processMutableKeyPressed(keyEvent, allowErrors)) {
       getEditorContext().flushEvents();      
+
+      getEditor().relayout();
+      return true;
+    }
+    return false;
+  }
+
+  protected boolean doProcessKeyTyped(KeyEvent keyEvent) {
+    int wasPosition = getCaretPosition();
+    CellSide side;
+    if (wasPosition == 0) {
+      side = CellSide.LEFT;
+    } else {
+      side = CellSide.RIGHT;
+    }
+
+    myCaretIsVisible = true;
+
+
+    if (processMutableKeyTyped(keyEvent)) {
+      getEditorContext().flushEvents();
 
       getEditor().relayout();
 
@@ -384,7 +403,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       return true;
     }
     if (!isEditable() && allowsIntelligentInputKeyStroke(keyEvent)) {
-      String pattern = getRenderedTextOn(keyEvent, allowErrors);
+      String pattern = getRenderedTextOn(keyEvent);
       if (!pattern.equals(getRenderedText())) {
         IntelligentInputUtil.processCell(this, getEditorContext(), pattern, side);
         return true;
@@ -393,40 +412,30 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return false;
   }
 
-
   private boolean allowsIntelligentInputKeyStroke(KeyEvent keyEvent) {
     return KeyboardUtil.isDefaultAction(keyEvent);
   }
 
   private boolean isMutableKeystroke(KeyEvent keyEvent) {
     return keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE ||
-      keyEvent.getKeyCode() == KeyEvent.VK_DELETE ||
-      KeyboardUtil.isDefaultAction(keyEvent);
+      keyEvent.getKeyCode() == KeyEvent.VK_DELETE;
   }
 
-  private String getRenderedTextOn(KeyEvent keyEvent, boolean allowErrors) {
-    return emulateKeyPress(keyEvent, allowErrors, new Computable<String>() {
+  private String getRenderedTextOn(KeyEvent keyEvent) {
+    return emulateKeyType(keyEvent, new Computable<String>() {
       public String compute() {
         return getRenderedText();
       }
     });
   }
 
-  public String getTextOn(KeyEvent keyEvent, boolean allowErrors) {
-    return emulateKeyPress(keyEvent, allowErrors, new Computable<String>() {
-      public String compute() {
-        return getText();
-      }
-    });
-  }
-
-  private <T> T emulateKeyPress(KeyEvent keyEvent, boolean allowErrors, Computable<T> c) {
+  private <T> T emulateKeyType(KeyEvent keyEvent, Computable<T> c) {
     String oldString = getText();
     String oldNullString = getNullText();
     int caretPosition = myTextLine.getCaretPosition();
     int nullCaretPosition = myNullTextLine.getCaretPosition();
     boolean wasErrorState = isErrorState();
-    processMutableKeyPressed_impl(keyEvent, allowErrors);
+    processMutableKeyTyped(keyEvent);
     T result = c.compute();
     myTextLine.setText(oldString);
     myNullTextLine.setText(oldNullString);
@@ -447,9 +456,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   private boolean processMutableKeyPressed_impl(KeyEvent keyEvent, boolean allowErrors) {
-    String myText = myTextLine.getText();
+    String oldText = myTextLine.getText();
     int caretPosition = myTextLine.getCaretPosition();
-    EditorComponent editor = getEditorContext().getNodeEditorComponent();
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
       if (myTextLine.hasNonTrivialSelection()) {
@@ -459,7 +467,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       }
 
       if (caretPosition > 0) {
-        String newText = myText.substring(0, caretPosition - 1) + myText.substring(caretPosition);
+        String newText = oldText.substring(0, caretPosition - 1) + oldText.substring(caretPosition);
         if (!allowErrors && !isValidText(newText)) {
           return false;
         }
@@ -486,8 +494,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         deleteSelection();
         deleteIfPossible();
         return true;
-      } else if (caretPosition < myText.length()) {
-        String newText = myText.substring(0, caretPosition) + myText.substring(caretPosition + 1);
+      } else if (caretPosition < oldText.length()) {
+        String newText = oldText.substring(0, caretPosition) + oldText.substring(caretPosition + 1);
         if (!allowErrors && !isValidText(newText)) {
           return false;
         }
@@ -507,16 +515,19 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       }
     }
 
+    return false;
+  }
+
+  private boolean processMutableKeyTyped(KeyEvent keyEvent) {
+    String oldText = myTextLine.getText();
+    EditorComponent editor = getEditorContext().getNodeEditorComponent();
+
     int startSelection = myTextLine.getStartTextSelectionPosition();
     int endSelection = myTextLine.getEndTextSelectionPosition();
 
     char keyChar = keyEvent.getKeyChar();
     if (KeyboardUtil.isDefaultAction(keyEvent)) {
-      String newText = myText.substring(0, startSelection) + keyChar + myText.substring(endSelection);
-      if (!allowErrors && !isValidText(newText)) {
-        return false;
-      }
-
+      String newText = oldText.substring(0, startSelection) + keyChar + oldText.substring(endSelection);
       changeText(newText);
       setCaretPositionIfPossible(startSelection + 1);
       myTextLine.resetSelection();
@@ -525,6 +536,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       return true;
     }
     return false;
+
   }
 
   private boolean canDeleteFrom(EditorCell cell) {

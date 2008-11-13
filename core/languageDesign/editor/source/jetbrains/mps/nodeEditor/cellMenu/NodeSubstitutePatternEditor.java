@@ -56,6 +56,13 @@ public class NodeSubstitutePatternEditor {
     return false;
   }
 
+  public boolean processKeyTyped(KeyEvent keyEvent) {
+    if (myEditorActivated) {
+      return myEditorWindow.processKeyTyped(keyEvent);
+    }
+    return false;
+  }
+
   public String getPattern() {
     if(myEditorActivated) {
       TextLine textLine = myEditorWindow.myTextLine;
@@ -131,6 +138,29 @@ public class NodeSubstitutePatternEditor {
       textLine.paint(g, 0, 0, false, true);
     }
 
+    public boolean processKeyTyped(KeyEvent keyEvent) {
+      if(processKeyTypedInternal(keyEvent)) {
+        relayout();
+        repaint();
+        return true;
+      }
+      return false;
+    }
+
+    private boolean processKeyTypedInternal(KeyEvent keyEvent) {
+      String oldText = myTextLine.getText();
+      int caretPosition = myTextLine.getCaretPosition();
+
+      char keyChar = keyEvent.getKeyChar();
+      if (KeyboardUtil.isDefaultAction(keyEvent)) {
+        changeText(oldText.substring(0, caretPosition) + keyChar/* + myText.substring(caretPosition)*/);
+        myTextLine.setCaretPosition(caretPosition + 1);
+        return true;
+      }
+
+      return false;
+    }
+
     public boolean processKeyPressed(KeyEvent keyEvent) {
       if(processKeyPressedInternal(keyEvent)) {
         relayout();
@@ -145,11 +175,11 @@ public class NodeSubstitutePatternEditor {
         return false;
       }
 
-      String myText = myTextLine.getText();
+      String oldText = myTextLine.getText();
       int caretPosition = myTextLine.getCaretPosition();
       if(keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
         if(caretPosition > 0) {
-          changeText(myText.substring(0, caretPosition - 1) + myText.substring(caretPosition));
+          changeText(oldText.substring(0, caretPosition - 1) + oldText.substring(caretPosition));
           myTextLine.setCaretPosition(caretPosition - 1);
           return true;
         } else {
@@ -158,8 +188,8 @@ public class NodeSubstitutePatternEditor {
       }
 
       if(keyEvent.getKeyCode() == KeyEvent.VK_DELETE) {
-        if(caretPosition < myText.length()) {
-          changeText(myText.substring(0, caretPosition) + myText.substring(caretPosition + 1));
+        if(caretPosition < oldText.length()) {
+          changeText(oldText.substring(0, caretPosition) + oldText.substring(caretPosition + 1));
           return true;
         } else {
           return false;
@@ -176,7 +206,7 @@ public class NodeSubstitutePatternEditor {
       }
 
       if(keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
-        if(caretPosition < myText.length()) {
+        if(caretPosition < oldText.length()) {
           myTextLine.setCaretPosition(caretPosition + 1);
           return true;
         } else {
@@ -184,12 +214,6 @@ public class NodeSubstitutePatternEditor {
         }
       }
 
-      char keyChar = keyEvent.getKeyChar();
-      if(KeyboardUtil.isDefaultAction(keyEvent)) {
-        changeText(myText.substring(0, caretPosition) + keyChar/* + myText.substring(caretPosition)*/);
-        myTextLine.setCaretPosition(caretPosition + 1);
-        return true;
-      }
       return false;
     }
 
