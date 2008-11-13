@@ -54,7 +54,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   private SNodePointer myNodePointer;
   private NodeSubstituteInfo mySubstitueInfo;
   private Map<CellActionType, EditorCellAction> myActionMap = new ListMap<CellActionType, EditorCellAction>();
-  private List<KeyboardHandler> myAdditionalKeyboardHandlers;
 
   private boolean myNextIsPunctuation = false;
 
@@ -357,13 +356,6 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public final boolean processKeyPressed(KeyEvent e, boolean allowErrors) {
     if (e.isConsumed()) return false;
-    if (allowErrors && myAdditionalKeyboardHandlers != null) {
-      for (KeyboardHandler handler : myAdditionalKeyboardHandlers) {
-        if (handler.processKeyPressed(getEditorContext(), e)) {
-          return true;
-        }
-      }
-    }
     return doProcessKeyPressed(e, allowErrors);
   }
 
@@ -396,18 +388,6 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
 
     return false;
-  }
-
-  public void addAdditionalKeyboardHandler(KeyboardHandler handler) {
-    if (myAdditionalKeyboardHandlers == null) {
-      myAdditionalKeyboardHandlers = new ArrayList<KeyboardHandler>(1);
-    }
-    myAdditionalKeyboardHandlers.add(handler);
-  }
-
-  public void removeAdditionalKeyboardHandler(KeyboardHandler handler) {
-    if (myAdditionalKeyboardHandlers == null) return;
-    myAdditionalKeyboardHandlers.remove(handler);
   }
 
   public void setCaretX(int x) {

@@ -140,9 +140,6 @@ public interface EditorCell extends Cloneable {
   String getRightTransformAnchorTag();
   boolean hasRightTransformAnchorTag(String tag);
 
-  void addAdditionalKeyboardHandler(KeyboardHandler handler);
-  void removeAdditionalKeyboardHandler(KeyboardHandler handler);
-
   Iterator<EditorCell_Collection> parents();
 
   boolean isUnderFolded();
