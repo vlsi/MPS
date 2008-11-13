@@ -377,6 +377,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         processKeyPressed(e);
       }
 
+      @Override
+      public void keyTyped(KeyEvent e) {
+        super.keyTyped(e);
+      }
+
       public void keyReleased(final KeyEvent e) {
         processKeyReleased(e);
       }
@@ -1782,11 +1787,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  public void processKeyReleased(KeyEvent keyEvent) {
-    peekKeyboardHandler().processKeyReleased(getEditorContext(), keyEvent);
-    revalidateAndRepaint(false);
-  }
-
   public void processKeyPressed(final KeyEvent keyEvent) {
     if (keyEvent.isConsumed()) return;
 
@@ -1833,6 +1833,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
     revalidateAndRepaint(false);
   }
+
+  public void processKeyReleased(KeyEvent keyEvent) {
+    peekKeyboardHandler().processKeyReleased(getEditorContext(), keyEvent);
+    revalidateAndRepaint(false);
+  }
+
+  public void processKeyTyped(KeyEvent keyEvent) {
+    
+  }
+  
 
   void executeCommand(final Runnable r) {
     myInsideOfCommand = true;

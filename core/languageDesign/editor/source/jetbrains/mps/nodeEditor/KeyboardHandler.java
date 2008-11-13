@@ -4,5 +4,6 @@ import java.awt.event.KeyEvent;
 
 public interface KeyboardHandler {
   boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent);
+  boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent);
   boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent);
 }

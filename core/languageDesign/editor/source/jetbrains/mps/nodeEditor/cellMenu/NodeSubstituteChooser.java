@@ -206,10 +206,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return text.length();
   }
 
-  public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
-    return false;
-  }
-
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     if (getPatternEditor().processKeyPressed(keyEvent)) {
       if (myPopupActivated) {
@@ -232,6 +228,14 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
       return doSubstitute();
     }
+    return false;
+  }
+
+  public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
+    return false;
+  }
+
+  public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
     return false;
   }
 

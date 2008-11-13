@@ -47,6 +47,23 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226563458775">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="1226563462404">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1226563462719">
+              <property name="value" value="4" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1226563466343">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226563461713">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1226563466344">
+                  <property name="value" value="2" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1226563461762">
+                  <property name="value" value="3" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224663870566">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224663870567">
             <property name="name" value="as" />

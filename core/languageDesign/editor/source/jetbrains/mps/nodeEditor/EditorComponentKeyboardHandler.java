@@ -19,10 +19,6 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 
 public class EditorComponentKeyboardHandler implements KeyboardHandler {
-  public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
-    return false;
-  }
-
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
     EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
     nodeEditor.hideMessageToolTip();
@@ -130,6 +126,13 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     return false;
   }
 
+  public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
+    return false;
+  }
+
+  public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
+    return false;
+  }
 
   private boolean processSelectedCell(EditorContext editorContext, KeyEvent event, boolean allowErrors) {
     EditorCell selectedCell = editorContext.getSelectedCell();

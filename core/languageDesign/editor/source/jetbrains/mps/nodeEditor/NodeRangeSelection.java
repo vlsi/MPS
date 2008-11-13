@@ -240,6 +240,10 @@ public class NodeRangeSelection implements KeyboardHandler {
     return true;
   }
 
+  public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
+    return false;
+  }
+
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
     return false;
   }
