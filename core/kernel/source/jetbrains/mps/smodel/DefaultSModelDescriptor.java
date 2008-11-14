@@ -146,10 +146,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     try {
       mySModel.setLoading(true);
 
-      if (getSModelFqName().toString().equals("webr.javascript.generator.baseLanguage.template.htmlStep@generator")) {
-        System.out.println("!!!!!");
-      }
-
       for (SModelDescriptor modelDescriptor : mySModel.getDependenciesModels()) {
         playUsedModelDescriptorsRefactoring(modelDescriptor);
       }

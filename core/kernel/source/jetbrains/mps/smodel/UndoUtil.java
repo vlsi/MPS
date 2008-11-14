@@ -23,8 +23,6 @@ public class UndoUtil {
       if (!undoManager.isUndoInProgress() && !undoManager.isRedoInProgress()) {
         undoManager.undoableActionPerformed(action);
       }
-    } else {
-      System.out.println("!!!!");
     }
   }
 }
