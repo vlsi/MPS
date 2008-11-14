@@ -78,11 +78,11 @@ public class EditorCellKeyMap {
     myChildKeyMaps.add(keyMap);
   }
 
-  private void putAction(String modifiers, String keyCode, EditorCellKeyMapAction action) {
+  public void putAction(String modifiers, String keyCode, EditorCellKeyMapAction action) {
     putAction(modifiers, keyCode, keyCode.length() == 1, action);
   }
 
-  public void putAction(String modifiers, String keyCode, boolean typed, EditorCellKeyMapAction action) {
+  private void putAction(String modifiers, String keyCode, boolean typed, EditorCellKeyMapAction action) {
     ActionKey key = new ActionKey(modifiers, keyCode, typed);
     if (!myActionMap.containsKey(key)) {
       myActionMap.put(key, action);
