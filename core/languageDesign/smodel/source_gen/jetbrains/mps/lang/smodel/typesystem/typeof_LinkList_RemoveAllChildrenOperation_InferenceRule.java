@@ -20,7 +20,7 @@ public class typeof_LinkList_RemoveAllChildrenOperation_InferenceRule extends Ab
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1215104325502", true), new _Quotations.QuotationClass_98().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1215104325493), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1215104325500", intentionProvider);
+      typeCheckingContext.createEquation(typeCheckingContext.typeOf(op, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1215104325502", true), new _Quotations.QuotationClass_99().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1215104325493), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1215104325500", intentionProvider);
     }
   }
 

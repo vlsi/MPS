@@ -3935,88 +3935,45 @@
             </node>
             <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207350917191">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207350917192">
-                <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" id="1219348182096">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219348182097">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1219348182098">
-                      <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1219348182099">
-                        <property name="name" value="conceptType" />
-                        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1219348182100">
-                          <link role="concept" targetNodeId="1.1172420572800" resolveInfo="SConceptType" />
-                        </node>
-                        <node role="initializer" type="jetbrains.mps.lang.typesystem.structure.CoerceExpression" id="1219348182101">
-                          <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1219348182102">
-                            <property name="name" value="sConceptType" />
-                            <link role="concept" targetNodeId="1.1172420572800" resolveInfo="SConceptType" />
-                          </node>
-                          <node role="nodeToCoerce" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference" id="1219348182103">
-                            <link role="whenConcreteVar" targetNodeId="1219348182129" resolveInfo="poundExpressionType" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1219348182104">
-                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219348182105">
-                        <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1219348182106">
-                          <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1219348182107">
-                            <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219348182108">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219348182109">
-                                <link role="variableDeclaration" targetNodeId="1219348182099" resolveInfo="conceptType" />
-                              </node>
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219348182110">
-                                <link role="link" targetNodeId="1.1180481110358" />
-                              </node>
-                            </node>
-                          </node>
-                          <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1219348182111">
-                            <node role="normalType" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219348182112">
-                              <link role="variableDeclaration" targetNodeId="1207350349129" resolveInfo="TypeToEquate" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1219348182113">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1219348182114" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219348182115">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219348182116">
-                            <link role="variableDeclaration" targetNodeId="1219348182099" resolveInfo="conceptType" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219348182117">
-                            <link role="link" targetNodeId="1.1180481110358" />
-                          </node>
-                        </node>
-                      </node>
-                      <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1219348182118">
-                        <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219348182119">
-                          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1219348182120">
-                            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1219348182121">
-                              <node role="normalType" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1219348182122">
-                                <link role="variableDeclaration" targetNodeId="1207350349129" resolveInfo="TypeToEquate" />
-                              </node>
-                            </node>
-                            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1219348182123">
-                              <node role="normalType" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1219348182124">
-                                <link role="conceptDeclaration" targetNodeId="18.1133920641626" resolveInfo="BaseConcept" />
-                              </node>
-                            </node>
+                <node role="statement" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" id="1226669497837">
+                  <property name="name" value="Concept" />
+                </node>
+                <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1226669167291">
+                  <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1226669172389">
+                    <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1226669172390">
+                      <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1226669183330">
+                        <node role="referenceAntiquotation$link_attribute$conceptDeclaraton" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="1226669184925">
+                          <node role="expression" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1226669502181">
+                            <link role="typeVarDeclaration" targetNodeId="1226669497837" resolveInfo="Concept" />
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node role="argument" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1219348182125">
-                    <property name="skipDependencyOnCurrent" value="true" />
-                    <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219348182126">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219348182127">
-                        <link role="variableDeclaration" targetNodeId="1207353525180" resolveInfo="opParm" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219348182128">
-                        <link role="link" targetNodeId="1.1207343664468" />
+                  <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1226669167294">
+                    <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1226669149487">
+                      <property name="skipDependencyOnCurrent" value="true" />
+                      <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226669153881">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226669152473">
+                          <link role="variableDeclaration" targetNodeId="1207353525180" resolveInfo="opParm" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1226669155477">
+                          <link role="link" targetNodeId="1.1207343664468" />
+                        </node>
                       </node>
                     </node>
                   </node>
-                  <node role="argumentRepresentator" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration" id="1219348182129">
-                    <property name="name" value="poundExpressionType" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1219348182130" />
+                </node>
+                <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1226669541468">
+                  <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1226669543284">
+                    <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1226669552818">
+                      <link role="typeVarDeclaration" targetNodeId="1226669497837" resolveInfo="Concept" />
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1226669541471">
+                    <node role="normalType" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1226669539373">
+                      <link role="variableDeclaration" targetNodeId="1207350349129" resolveInfo="TypeToEquate" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -4542,7 +4499,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1222433426255">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1222433429273">
-                <link role="baseMethodDeclaration" targetNodeId="6.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
+                <link role="baseMethodDeclaration" targetNodeId="6.~HashSet.&lt;init&gt;(java.util.Collection)" resolveInfo="HashSet" />
                 <node role="typeParameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1222433436525">
                   <link role="concept" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
                 </node>
