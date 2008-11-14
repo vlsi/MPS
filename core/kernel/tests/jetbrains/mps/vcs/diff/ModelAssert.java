@@ -1,19 +1,20 @@
 package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.ModuleReference;
 
 import java.util.List;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 public class ModelAssert {
   public static void assertDeepModelEquals(SModel expectedModel, SModel actualModel) {
     ModelAccess.instance().checkReadAccess();
+
+    assertSameImports(expectedModel, actualModel);
 
     // todo check not only child nodes
 
@@ -28,6 +29,23 @@ public class ModelAssert {
       SNode actualRoot = actualRoots.get(expectedRoot.getSNodeId());
       assertNotNull("Not found expected root " + expectedRoot, actualRoot);
       assertDeepNodeEquals(expectedRoot, actualRoot);
+    }
+  }
+
+  private static void assertSameImports(SModel expectedModel, SModel actualModel) {
+    List<ModuleReference> expectedLanguages = expectedModel.getExplicitlyImportedLanguages();
+    List<ModuleReference> actualLanguages = actualModel.getExplicitlyImportedLanguages();
+
+    for (ModuleReference expectedRef : expectedLanguages) {
+      if (!actualLanguages.contains(expectedRef)){
+        fail("Not found expected import " + expectedRef);
+      }
+    }
+
+    for (ModuleReference actualRef : actualLanguages) {
+      if (!expectedLanguages.contains(actualRef)){
+        fail("Not expected import " + actualRef);
+      }
     }
   }
 

@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 
-public class MergeTest extends MergeTestCase {
+public class MergeReferencesTest extends MergeTestCase {
 
   public void testSimpleStructure() throws IOException, ReadException {
     testZip("resources/structure.mps.zip");

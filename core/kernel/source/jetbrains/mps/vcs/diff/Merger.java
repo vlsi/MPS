@@ -9,9 +9,13 @@ import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.misc.hash.*;
 import jetbrains.mps.vcs.diff.changes.*;
 
 import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.HashSet;
 
 public class Merger {
   private final SModel[] mySourceModels = new SModel[VERSION.values().length];
@@ -93,6 +97,32 @@ public class Merger {
     collectSetNodeConflicts();
     collectAddAndDeleteConflicts();
     collectMoveConflicts();
+    collectConceptConflicts();
+  }
+
+  private void collectConceptConflicts() {
+    List<ChangeConceptChange> conceptChanges = getChanges(ChangeConceptChange.class);
+    Map<SNodeId, List<ChangeConceptChange>> map = new jetbrains.mps.util.misc.hash.LinkedHashMap<SNodeId, List<ChangeConceptChange>>();
+
+    for (ChangeConceptChange ch : conceptChanges) {
+      List<ChangeConceptChange> changeList = map.get(ch.getAffectedNodeId());
+      if (changeList == null) {
+        changeList = new LinkedList<ChangeConceptChange>();
+        map.put(ch.getAffectedNodeId(), changeList);
+      }
+      changeList.add(ch);
+    }
+
+    for (SNodeId id : map.keySet()) {
+      List<ChangeConceptChange> changeList = map.get(id);
+      if (changeList.size() == 2) {
+        ChangeConceptChange first = changeList.get(0);
+        ChangeConceptChange last = changeList.get(1);
+        if (!first.equals(last)) {
+          myConflicts.add(new Conflict(first, last));
+        }
+      }
+    }
   }
 
   private void collectWarnings() {
@@ -245,6 +275,7 @@ public class Merger {
     }
     myResultModel.addRoot(tmp);
 
+    applyImportLanguages();
     applyNewNodes();
     applyProperties();
     applyReferences();
@@ -265,10 +296,28 @@ public class Merger {
 
     applyDeletes();
     applyMoves();
+    applyConceptChanges();
 
     myResultModel.removeRoot(tmp);
     if (!notRemoveLanguage) myResultModel.deleteLanguage(languageNamespace);
     myResultModel.setLoading(false);
+  }
+
+  private void applyConceptChanges() {
+    List<ChangeConceptChange> conceptChangeList = getChanges(ChangeConceptChange.class);
+    for (ChangeConceptChange ch : conceptChangeList) {
+      if (!myExcludedChanges.contains(ch)) {
+        ch.apply(myResultModel);
+      }
+    }
+  }
+
+  private void applyImportLanguages() {
+    List<ImportLanguageChange> importLanguageChanges = getChanges(ImportLanguageChange.class);
+
+    for (ImportLanguageChange ch : importLanguageChanges) {
+      ch.apply(myResultModel);
+    }
   }
 
   private void applyNewNodes() {

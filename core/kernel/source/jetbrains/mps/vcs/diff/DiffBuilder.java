@@ -5,12 +5,10 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.vcs.diff.changes.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 public class DiffBuilder {
   private SModel myOldModel;
@@ -27,11 +25,53 @@ public class DiffBuilder {
   }
 
   private void collectChanges() {
+    collectAddedImports();
     collectDeletedNodes();
     collectAddedNodes();
     collectMovedNodes();
     collectPropertyChanges();
     collectReferenceChanges();
+    collectConceptChanges();
+  }
+
+  private void collectConceptChanges() {
+    Set<SNodeId> oldNodes = myOldModel.getNodeIds();
+    Set<SNodeId> newNodeIds = myNewModel.getNodeIds();
+
+    oldNodes.retainAll(newNodeIds);
+
+    for (SNodeId id : oldNodes) {
+      SNode newNode = myNewModel.getNodeById(id);
+      SNode oldNode = myOldModel.getNodeById(id);
+
+      assert newNode != null;
+      assert oldNode != null;
+      if (!oldNode.getConceptFqName().equals(newNode.getConceptFqName())) {
+        myChanges.add(new ChangeConceptChange(id, newNode.getConceptFqName()));
+      }
+    }
+  }
+
+  private void collectAddedImports() {
+    List<ModuleReference> oldLanguages = myOldModel.getExplicitlyImportedLanguages();
+    List<ModuleReference> newLanguages = myNewModel.getExplicitlyImportedLanguages();
+
+    Set<ModuleReference> addedImports = getDiff(oldLanguages, newLanguages);
+    Set<ModuleReference> deletedImports = getDiff(newLanguages, oldLanguages);
+
+    for (ModuleReference ref : addedImports) {
+      myChanges.add(new ImportLanguageChange(ref, false));
+    }
+
+    for (ModuleReference ref : deletedImports) {
+      myChanges.add(new ImportLanguageChange(ref, true));
+    }
+  }
+
+  private Set<ModuleReference> getDiff(List<ModuleReference> oldLanguages, List<ModuleReference> newLanguages) {
+    Set<ModuleReference> addedImports = new LinkedHashSet<ModuleReference>(newLanguages);
+    addedImports.removeAll(oldLanguages);
+    return addedImports;
   }
 
   private void collectDeletedNodes() {
