@@ -70,7 +70,9 @@ public abstract class BaseStep extends StepAdapter {
             launchBrowserAction(url, "");
           }
         });
-        GridBagConstraints cAnchor = new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.NORTHEAST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+        aLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+        aLabel.setHorizontalTextPosition(SwingConstants.RIGHT);
+        GridBagConstraints cAnchor = new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
         commentPanel.add(aLabel, cAnchor);
       }
     }
