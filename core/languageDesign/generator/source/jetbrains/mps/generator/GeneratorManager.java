@@ -173,7 +173,7 @@ public class GeneratorManager implements PersistentStateComponent<MyState>, Conf
   private void showMessageView() {
     MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
     if (messagesView != null) {
-      messagesView.openToolLater(true);
+      messagesView.openToolLater(false);
     }
   }
 
