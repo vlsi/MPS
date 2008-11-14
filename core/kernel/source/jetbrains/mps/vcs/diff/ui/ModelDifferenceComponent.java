@@ -106,6 +106,10 @@ class ModelDifferenceComponent extends JPanel {
       myChangedNodes.add(r.getNodeId());
     }
 
+    for (ChangeConceptChange ch : CollectionUtil.filter(ChangeConceptChange.class, changes)) {
+      myChangedNodes.add(ch.getAffectedNodeId());
+    }
+
     updateView();
 
 
@@ -145,6 +149,13 @@ class ModelDifferenceComponent extends JPanel {
 
   private MPSTreeNode buildChangesTree() {
     TextTreeNode changes = new TextTreeNode("Changes");
+
+    List<ImportLanguageChange> importLanguageChanges = CollectionUtil.filter(ImportLanguageChange.class, myChanges);
+    TextTreeNode addImport = new TextTreeNode("Add Import (" + importLanguageChanges.size() + ")");
+    for (ImportLanguageChange change : importLanguageChanges) {
+      addImport.add(new ChangeNode(change));
+    }
+    changes.add(addImport);
 
     List<AddNodeChange> addNodeChanges = CollectionUtil.filter(AddNodeChange.class, myChanges);
     TextTreeNode addNode = new TextTreeNode("Add Node (" + addNodeChanges.size() + ")");
@@ -194,6 +205,13 @@ class ModelDifferenceComponent extends JPanel {
       setReference.add(new ChangeNode(change));
     }
     changes.add(setReference);
+
+    List<ChangeConceptChange> changeConceptChanges = CollectionUtil.filter(ChangeConceptChange.class, myChanges);
+    TextTreeNode changeConceptNode = new TextTreeNode("Change Concept (" + changeConceptChanges.size() + ")");
+    for (ChangeConceptChange change : changeConceptChanges) {
+      changeConceptNode.add(new ChangeNode(change));
+    }
+    changes.add(changeConceptNode);
 
     return changes;
   }

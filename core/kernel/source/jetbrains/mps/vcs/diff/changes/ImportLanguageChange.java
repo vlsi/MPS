@@ -18,6 +18,15 @@ public class ImportLanguageChange extends Change {
     return null;
   }
 
+  @Override
+  public String toString() {
+    if (myIsDeleted) {
+      return "delete import of " + myReference;
+    } else {
+      return "add import of " + myReference;
+    }
+  }
+
   public boolean apply(SModel m) {
     if (myIsDeleted) {
       m.deleteLanguage(myReference);
