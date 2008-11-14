@@ -357,14 +357,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   protected boolean doProcessKeyPressed(KeyEvent keyEvent, boolean allowErrors) {
-    int wasPosition = getCaretPosition();
-    CellSide side;
-    if (wasPosition == 0) {
-      side = CellSide.LEFT;
-    } else {
-      side = CellSide.RIGHT;
-    }
-
     myCaretIsVisible = true;
 
     if (isNotApplicableKeyEvent(keyEvent)) return false;                                               
@@ -379,6 +371,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   protected boolean doProcessKeyTyped(KeyEvent keyEvent) {
+    if (!isEditable()) {
+      return false;
+    }
+
     int wasPosition = getCaretPosition();
     CellSide side;
     if (wasPosition == 0) {
