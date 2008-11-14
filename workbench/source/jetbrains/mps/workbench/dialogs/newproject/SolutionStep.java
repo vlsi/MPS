@@ -73,7 +73,7 @@ public class SolutionStep extends BaseStep {
 
   public String getCommentString() {
     return
-      "Solutions are used to storeZ code written in MPS languages. " +
+      "Solutions are used to store code written in MPS languages. " +
         "Each solution is a set of models with a name.";
   }
 
