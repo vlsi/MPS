@@ -120,9 +120,6 @@ public class LanguageStep extends BaseStep {
       if (NameUtil.shortNameFromLongName(myNamespace.getText()).length() == 0) {
         throw new CommitStepException("Enter valid namespace");
       }
-      if (!(dir.exists())) {
-        dir.mkdirs();
-      }
     }
   }
 

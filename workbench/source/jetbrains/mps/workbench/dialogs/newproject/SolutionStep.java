@@ -73,7 +73,7 @@ public class SolutionStep extends BaseStep {
 
   public String getCommentString() {
     return
-      "Solutions are used to store application's code written in MPS languages. " +
+      "Solutions are used to storeZ code written in MPS languages. " +
         "Each solution is a set of models with a name.";
   }
 
@@ -121,21 +121,13 @@ public class SolutionStep extends BaseStep {
       if (MPSModuleRepository.getInstance().getModuleByUID(myNamespace.getText()) != null) {
         throw new CommitStepException("Duplicate solution name");
       }
-      String descriptorPath = myPath.getPath() + File.separator + myNamespace.getText() + MPSExtentions.DOT_SOLUTION;
-      File file = new File(descriptorPath);
+      File file = new File(myPath.getPath());
       if (file.exists()) {
         throw new CommitStepException("Solution file already exists");
       }
       File dir = file.getParentFile();
       if (!(dir.isAbsolute())) {
         throw new CommitStepException("Path should be absolute");
-      }
-      if (!(dir.exists())) {
-        dir.mkdirs();
-      }
-      final File descriptorFile = prepareToCreateNewSolutionDescriptorFile(descriptorPath);
-      if (descriptorFile == null) {
-        throw new CommitStepException("Can't create " + descriptorPath);
       }
     }
   }
@@ -151,14 +143,5 @@ public class SolutionStep extends BaseStep {
     myOptions.setCreateNewSolution(value);
     myNamespace.setEnabled(value);
     myPath.setEnabled(value);
-  }
-
-  private File prepareToCreateNewSolutionDescriptorFile(String path) {
-    File solutionDescriptorFile = new File(path);
-    File dir = solutionDescriptorFile.getParentFile();
-    if (!(dir.exists())) {
-      dir.mkdirs();
-    }
-    return solutionDescriptorFile;
   }
 }

@@ -95,9 +95,6 @@ public class ProjectStep extends BaseStep {
     if (myProjectName.getText().length() == 0) {
       throw new CommitStepException("Project name shouldn't be empty");
     }
-    if (!(projectDirFile.exists())) {
-      projectDirFile.mkdirs();
-    }
   }
 
   public void _commit(boolean finishChosen) throws CommitStepException {

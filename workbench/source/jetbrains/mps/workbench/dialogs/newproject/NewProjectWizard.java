@@ -1,7 +1,6 @@
 package jetbrains.mps.workbench.dialogs.newproject;
 
 import com.intellij.ide.wizard.AbstractWizard;
-import com.intellij.ide.wizard.Step;
 import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -28,8 +27,10 @@ import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
+import javax.swing.JOptionPane;
 import java.io.File;
 import java.awt.Frame;
 
@@ -95,14 +96,21 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
   }
 
   protected void doOKAction() {
-    super.doOKAction();
-
+    final String[] error = new String[]{null};
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Creating", false) {
-      public void run(@NotNull()ProgressIndicator indicator) {
+      public void run(@NotNull() ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
+        error[0] = createDirs();
+        if (error[0] != null) {
+          return;
+        }
         createProject();
       }
     });
+    if (error[0] != null) {
+      Messages.showErrorDialog(getContentPane(), error[0]);
+      return;
+    }
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -117,6 +125,8 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     myCreatedProject.save();
     ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
     projectManager.openProject(myCreatedProject);
+
+    super.doOKAction();
   }
 
   private void createProject() {
@@ -138,6 +148,29 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
       }
     });
   }
+
+  @Nullable
+  private String createDirs() {
+    File projectDirFile = new File(myOptions.getProjectPath());
+    if (!(projectDirFile.exists())) {
+      if (!projectDirFile.mkdirs()) return "Project directory creation failed";
+    }
+
+    File languageDirFile = new File(myOptions.getLanguagePath());
+    if (!(languageDirFile.exists())) {
+      if (!languageDirFile.mkdirs()) return "Language directory creation failed";
+    }
+
+    String path = getSolutionFileName();
+    File solutionDescriptorFile = new File(path);
+    File dir = solutionDescriptorFile.getParentFile();
+    if (!(dir.exists())) {
+      if (!dir.mkdirs()) return "Solution directory creation failed";
+    }
+
+    return null;
+  }
+
 
   private void addLanguageImportToSolution(final Language language, final Solution solution) {
     solution.addUsedLanguage(language.getNamespace());
@@ -173,7 +206,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     SNode solutionDescriptor = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.SolutionDescriptor", null);
     SPropertyOperations.set(solutionDescriptor, "externallyVisible", "" + (true));
     SPropertyOperations.set(solutionDescriptor, "compileInMPS", "" + true);
-    FileSystemFile solutionFile = new FileSystemFile(myOptions.getSolutionPath() + File.separator + myOptions.getSolutionNamespace() + MPSExtentions.DOT_SOLUTION);
+    FileSystemFile solutionFile = new FileSystemFile(getSolutionFileName());
     String fileName = solutionFile.getName();
     SPropertyOperations.set(solutionDescriptor, "name", fileName.substring(0, fileName.length() - 4));
     SNode modelRoot = SConceptOperations.createNewNode("jetbrains.mps.projectLanguage.structure.ModelRoot", null);
@@ -183,6 +216,10 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     DescriptorsPersistence.saveSolutionDescriptor(solutionFile, (SolutionDescriptor) SNodeOperations.getAdapter(solutionDescriptor));
 
     return solutionFile;
+  }
+
+  private String getSolutionFileName() {
+    return myOptions.getSolutionPath() + File.separator + myOptions.getSolutionNamespace() + MPSExtentions.DOT_SOLUTION;
   }
 
 
