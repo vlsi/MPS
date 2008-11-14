@@ -4025,14 +4025,47 @@
                     </node>
                   </node>
                 </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1226678153086">
+                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226678153087">
+                    <property name="name" value="classifier" />
+                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1226678153088">
+                      <link role="concept" targetNodeId="3.1107461130800" resolveInfo="Classifier" />
+                    </node>
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226678153089">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226678153090">
+                        <link role="variableDeclaration" targetNodeId="1179507393485" resolveInfo="nodeType" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1226678153091">
+                        <link role="link" targetNodeId="3.1107535924139" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1226678166015">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226678166016">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226678181809">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226678192972">
+                        <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1226678186108">
+                          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226678191346">
+                            <link role="classifier" targetNodeId="1.~INodeAdapter" resolveInfo="INodeAdapter" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1226678194330">
+                          <link role="link" targetNodeId="3.1107535924139" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1226678178180">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1226678179761" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226678167394">
+                      <link role="variableDeclaration" targetNodeId="1226678153087" resolveInfo="classifier" />
+                    </node>
+                  </node>
+                </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1179508049541">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227820768">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1186396825913">
-                      <link role="variableDeclaration" targetNodeId="1179507393485" resolveInfo="nodeType" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1179508456656">
-                      <link role="link" targetNodeId="3.1107535924139" />
-                    </node>
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226678153092">
+                    <link role="variableDeclaration" targetNodeId="1226678153087" resolveInfo="classifier" />
                   </node>
                 </node>
               </node>

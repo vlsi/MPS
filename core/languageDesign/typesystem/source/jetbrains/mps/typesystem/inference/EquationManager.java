@@ -1037,7 +1037,9 @@ public class EquationManager {
   private NodeWrapper expandNode(SNode term, IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel,
                                  boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
     if (wrapper == null) return null;
-
+    if (wrapper.getNode().isRegistered()) {
+      wrapper = new NodeWrapper(CopyUtil.copy(wrapper.getNode()));
+    }
     if (wrapper.isVariable()) {
       IWrapper type = this.getRepresentatorWrapper(wrapper);
       NodeWrapper wrapper1 = (NodeWrapper) wrapper;
@@ -1106,8 +1108,6 @@ public class EquationManager {
     }
     for (SReference reference : new ArrayList<SReference>(references)) {
       if (!referenceReplacement.keySet().contains(reference)) continue;
-
-
       String role = reference.getRole();
       assert role != null;
       SNode replacement = referenceReplacement.get(reference);
