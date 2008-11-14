@@ -15,7 +15,6 @@ public class typeOf_Link_DeleteChildOperation_InferenceRule extends AbstractInfe
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedTo_LinkAccess_aggregation(typeCheckingContext, op);
     final SNode Concept_typevar_1206099630117 = typeCheckingContext.createNewRuntimeTypesVariable();
     RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099630117));
     {

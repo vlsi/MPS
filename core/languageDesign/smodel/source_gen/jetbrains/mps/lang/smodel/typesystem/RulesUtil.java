@@ -130,31 +130,23 @@ public class RulesUtil {
     }
   }
 
-  @InferenceMethod()
+  @CheckingMethod()
   public static void checkAppliedTo_LinkAccess_aggregation(final TypeCheckingContext typeCheckingContext, final SNode op) {
     // expect access to an aggregation link with singular cardinality
     // ------------------- new (duplicates checkAppliedCorrectly_generic)
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
-    {
-      final SNode LeftType = typeCheckingContext.typeOf(leftExpression, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206099156468", false);
-      typeCheckingContext.whenConcrete(LeftType, new Runnable() {
-
-        public void run() {
-          boolean isGood = false;
-          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(LeftType), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false, typeCheckingContext);
-          if (linkAccessT != null) {
-            if (SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
-              isGood = true;
-            }
-          }
-          // ----
-          if (!(isGood)) {
-            BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportTypeError(op, "operation is only applicable to aggregation-link-access", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205272067893", intentionProvider);
-          }
-        }
-
-      }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205267101146");
+    SNode LeftType = TypeChecker.getInstance().getTypeOf(leftExpression);
+    boolean isGood = false;
+    SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false, typeCheckingContext);
+    if (linkAccessT != null) {
+      if (SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
+        isGood = true;
+      }
+    }
+    // ----
+    if (!(isGood)) {
+      BaseIntentionProvider intentionProvider = null;
+      typeCheckingContext.reportTypeError(op, "operation is only applicable to aggregation-link-access", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205272067893", intentionProvider);
     }
   }
 
