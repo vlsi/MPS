@@ -21,7 +21,7 @@ import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class MergeTest {
+public class TestMergeDialog {
   public static void main(final String[] args) throws JDOMException, IOException {
     IdeMain.setTestMode(false);
     configureMPS();
@@ -47,6 +47,7 @@ public class MergeTest {
             ModelPersistence.saveModel(result, FileSystem.getFile(args[3]));
           }
         });
+        System.exit(0);
       }
     });
   }
