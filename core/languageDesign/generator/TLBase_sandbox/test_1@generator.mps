@@ -212,6 +212,11 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205879497924">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205879496861">
                 <link role="variableDeclaration" targetNodeId="1205879491247" resolveInfo="c" />
+                <node role="referenceMacro$link_attribute$variableDeclaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1226613764191">
+                  <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1226613764192">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226613764193" />
+                  </node>
+                </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1205879500270">
                 <link role="baseMethodDeclaration" targetNodeId="2.~Object.clone():java.lang.Object" resolveInfo="clone" />
@@ -612,7 +617,16 @@
       </node>
       <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1225936054966">
         <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1225936054967">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225936054968" />
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225936054968">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226624132793">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226624135310">
+                <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1226624132794" />
+                <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" id="1226624552264">
+                  <node role="baseName" type="jetbrains.mps.baseLanguage.structure.Expression" id="1226624552265" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
