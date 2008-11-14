@@ -1,6 +1,6 @@
 package jetbrains.mps.project.structure;
 
-public class Path implements Comparable {
+public class Path implements Comparable<Path> {
   private String myPath;
   private String myMPSFolder;
 
@@ -46,9 +46,7 @@ public class Path implements Comparable {
     return result;
   }
 
-  public int compareTo(Object o) {
-    assert o instanceof Path;
-
-    return myPath.compareTo(((Path)o).myPath);
+  public int compareTo(Path p) {
+    return myPath.compareTo(p.myPath);
   }
 }

@@ -1,8 +1,8 @@
 package jetbrains.mps.workbench.dialogs.newproject;
 
 import com.intellij.ide.BrowserUtil;
-import com.intellij.ide.wizard.StepAdapter;
 import com.intellij.ide.wizard.CommitStepException;
+import com.intellij.ide.wizard.StepAdapter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,15 +24,70 @@ public abstract class BaseStep extends StepAdapter {
     GridBagLayout bagLayout = new GridBagLayout();
     myComponent = new JPanel(bagLayout);
 
-
-    URL imageUrl = getImageURL();
-    String comment = getCommentString();
     JComponent controlComponent = createControlComponent();
-    JLabel imageComponent = imageUrl == null ? null : new JLabel();
+
+    JPanel imagePanel = createImagePanel();
+    GridBagConstraints cImage = new GridBagConstraints(0, 0, 1, 2, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+    myComponent.add(imagePanel, cImage);
+
+    JPanel commentPanel = createCommentPanel();
+    GridBagConstraints cComment = new GridBagConstraints(1, 0, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
+    myComponent.add(commentPanel, cComment);
+
+    Border outerBorder = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
+    Border innerBorder = BorderFactory.createEmptyBorder(3, 3, 3, 3);
+    Border border = BorderFactory.createCompoundBorder(outerBorder, innerBorder);
+    controlComponent.setBorder(border);
+    GridBagConstraints cControl = new GridBagConstraints(1, 1, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
+    myComponent.add(controlComponent, cControl);
+
+    GridBagConstraints cFillY = new GridBagConstraints(0, 2, 2, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
+    JPanel yFillPanel = new JPanel();
+    myComponent.add(yFillPanel, cFillY);
+
+    int w = controlComponent.getPreferredSize().width + (imagePanel.getPreferredSize().width);
+    int h = Math.max(300, imagePanel.getPreferredSize().height);
+    myComponent.setPreferredSize(new Dimension(w, h));
+  }
+
+  private JPanel createCommentPanel() {
+    GridBagLayout bagLayout = new GridBagLayout();
+    JPanel commentPanel = new JPanel(bagLayout);
+    commentPanel.setBorder(BorderFactory.createEmptyBorder(0, 3, 6, 3));
+
+    String comment = getCommentString();
+    JLabel commentLabel = new JLabel("<html>" + comment + "</html>");
+    GridBagConstraints cComment = new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
+    commentPanel.add(commentLabel, cComment);
+
+    if (comment != null) {
+      final String url = getURL();
+      if (url != null) {
+        JLabel aLabel = new JLabel("<html><a href=\"\">Read more</a></html>");
+        aLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
+        aLabel.addMouseListener(new MouseAdapter() {
+          public void mouseClicked(MouseEvent e) {
+            launchBrowserAction(url, "");
+          }
+        });
+        GridBagConstraints cAnchor = new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.NORTHEAST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+        commentPanel.add(aLabel, cAnchor);
+      }
+    }
+
+    return commentPanel;
+  }
+
+  private JPanel createImagePanel() {
+    URL imageUrl = getImageURL();
     String imageText = getImageText();
 
+    JLabel imageComponent = imageUrl == null ? null : new JLabel();
+    GridBagLayout bagLayout = new GridBagLayout();
+    JPanel imagePanel = new JPanel(bagLayout);
+
     if (imageUrl != null) {
-      GridBagConstraints cImage = new GridBagConstraints(0, 0, 1, 2, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+      GridBagConstraints cImage = new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
       ImageIcon info = new ImageIcon(imageUrl);
 
       BufferedImage bim = null;
@@ -51,47 +106,10 @@ public abstract class BaseStep extends StepAdapter {
       graphics.drawChars(imageText.toCharArray(), 0, imageText.length(), x, y);
 
       imageComponent.setIcon(new ImageIcon(bim));
-      bagLayout.setConstraints(imageComponent, cImage);
-      myComponent.add(imageComponent);
+      imagePanel.add(imageComponent, cImage);
     }
 
-    if (comment != null) {
-      final String url = getURL();
-      boolean refSet = url != null;
-      String ref = " " + "(<a href=\"\">Read more</a>)";
-
-      JLabel commentLabel = new JLabel("<html>" + comment + (refSet ? ref : "") + "</html>");
-      commentLabel.setCursor(refSet ? Cursor.getPredefinedCursor(Cursor.HAND_CURSOR) : Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-      if (refSet) {
-        commentLabel.addMouseListener(new MouseAdapter() {
-          public void mouseClicked(MouseEvent e) {
-            launchBrowserAction(url, "");
-          }
-        });
-      }
-      commentLabel.setBorder(BorderFactory.createEmptyBorder(0, 3, 6, 3));
-
-      GridBagConstraints cComment = new GridBagConstraints(imageComponent == null ? 0 : 1, 0, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
-      bagLayout.setConstraints(commentLabel, cComment);
-      myComponent.add(commentLabel);
-    }
-
-    Border outerBorder = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
-    Border innerBorder = BorderFactory.createEmptyBorder(3, 3, 3, 3);
-    Border border = BorderFactory.createCompoundBorder(outerBorder, innerBorder);
-    controlComponent.setBorder(border);
-    GridBagConstraints cControl = new GridBagConstraints(imageComponent == null ? 0 : 1, comment == null ? 0 : 1, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
-    bagLayout.setConstraints(controlComponent, cControl);
-    myComponent.add(controlComponent);
-
-    GridBagConstraints cFillY = new GridBagConstraints(0, 2, 2, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
-    JPanel yFillPanel = new JPanel();
-    bagLayout.setConstraints(yFillPanel, cFillY);
-    myComponent.add(yFillPanel);
-
-    int w = controlComponent.getPreferredSize().width + (imageComponent == null ? 0 : imageComponent.getPreferredSize().width);
-    int h = imageComponent == null ? 300 : imageComponent.getPreferredSize().height;
-    myComponent.setPreferredSize(new Dimension(w, h));
+    return imagePanel;
   }
 
   private static void launchBrowserAction(String cmd, String prefix) {

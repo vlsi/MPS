@@ -73,8 +73,8 @@ public class SolutionStep extends BaseStep {
 
   public String getCommentString() {
     return
-      "Solution is the simplest possible kind of module in MPS." +
-        "It is just a set of models with a name.";
+      "Solutions are used to store application's code written in MPS languages. " +
+        "Each solution is a set of models with a name.";
   }
 
   @Nullable

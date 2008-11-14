@@ -74,10 +74,8 @@ public class LanguageStep extends BaseStep {
 
   public String getCommentString() {
     return
-      "Language is a set of concepts and their aspects: structure, editor, actions, typesystem, etc." +
-        "Languages can extend other languages, which means they can use concepts from " +
-        "an extended language. They can derive concepts from an extended language, use" +
-        "them as a target of a reference, and store them as children.";
+      "Working with MPS consists of creating new languages and using them to write code in solutions. " +
+        "MPS language describes syntax, editor, generator and other aspects of the new language.";
   }
 
   @Nullable

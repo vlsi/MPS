@@ -67,7 +67,7 @@ public class ProjectStep extends BaseStep {
 
   public String getCommentString() {
     return
-      "Project is just a set of modules with which you work.";
+      "Project a set of languages and solutions with which you work.";
   }
 
   @Nullable
