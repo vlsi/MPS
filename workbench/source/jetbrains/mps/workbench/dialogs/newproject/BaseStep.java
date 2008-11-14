@@ -64,7 +64,7 @@ public abstract class BaseStep extends StepAdapter {
       final String url = getURL();
       if (url != null) {
         JLabel aLabel = new JLabel("<html><a href=\"\">Read more</a></html>");
-        aLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
+        aLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         aLabel.addMouseListener(new MouseAdapter() {
           public void mouseClicked(MouseEvent e) {
             launchBrowserAction(url, "");
