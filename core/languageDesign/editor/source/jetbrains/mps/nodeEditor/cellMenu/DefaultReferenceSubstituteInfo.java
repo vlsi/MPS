@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.util.List;
+import java.util.Collections;
 
 public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   private static final Logger LOG = Logger.getLogger(DefaultReferenceSubstituteInfo.class);
@@ -27,10 +28,13 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   public DefaultReferenceSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
     super(editorContext);
     LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
-    if(genuineLink == null) {
-      // test
-      genuineLink = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
+    myLinkDeclaration = linkDeclaration;
+
+    if (genuineLink == null) {
+      return;
     }
+
+
     if (genuineLink.getMetaClass() != LinkMetaclass.reference) {
       LOG.error("only reference links are allowed here", linkDeclaration.getNode());
     }
@@ -40,11 +44,14 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     }
 
     mySourceNode = sourceNode;
-    myLinkDeclaration = linkDeclaration;
     myCurrentReferent = sourceNode.getReferent(SModelUtil_new.getGenuineLinkRole(linkDeclaration));
   }
 
   public List<INodeSubstituteAction> createActions() {
+    if (myLinkDeclaration == null) {
+      return Collections.emptyList();
+    }
+
     EditorComponent editor = getEditorContext().getNodeEditorComponent();
     EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, SModelUtil_new.getGenuineLinkRole(myLinkDeclaration));
 
