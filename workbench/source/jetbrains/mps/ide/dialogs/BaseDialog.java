@@ -220,7 +220,7 @@ public abstract class BaseDialog extends JDialog {
       result.add(button);
     }
 
-    return result.toArray(new JButton[0]);
+    return result.toArray(new JButton[result.size()]);
   }
 
   private Map<Integer, Method> getButtonMethods() {

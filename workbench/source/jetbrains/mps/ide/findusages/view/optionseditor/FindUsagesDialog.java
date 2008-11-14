@@ -16,9 +16,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
-import javax.swing.JComponent;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
 
 public class FindUsagesDialog extends BaseDialog {
   private JPanel myPanel;
@@ -26,6 +29,7 @@ public class FindUsagesDialog extends BaseDialog {
   private FindersEditor myFindersEditor;
   private ViewOptionsEditor myViewOptionsEditor;
   private boolean myIsCancelled = true;
+  private JButton myOkButton;
 
   public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final ActionEventData data) {
     super(data.getOperationContext().getMainFrame(), "Find Usages");
@@ -33,7 +37,13 @@ public class FindUsagesDialog extends BaseDialog {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myScopeEditor = new ScopeEditor(defaultOptions.getOption(ScopeOptions.class));
-        myFindersEditor = new MyFindersEditor(defaultOptions, node, data);
+        myFindersEditor = new MyFindersEditor(defaultOptions, node, data) {
+          @Override
+          protected void findersListChangedByUser() {
+            super.findersListChangedByUser();
+            updateOkButton();
+          }
+        };
         myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class));
       }
     });
@@ -45,6 +55,20 @@ public class FindUsagesDialog extends BaseDialog {
     myPanel = new JPanel(new BorderLayout());
     myPanel.add(centerPanel, BorderLayout.CENTER);
     myPanel.add(myScopeEditor.getComponent(), BorderLayout.SOUTH);
+
+    myOkButton = new JButton(new AbstractAction("OK") {
+      public void actionPerformed(ActionEvent e) {
+        myIsCancelled = false;
+        dispose();
+      }
+    });
+
+    updateOkButton();
+  }
+
+  private void updateOkButton() {
+    boolean enabled = myFindersEditor.getOptions().getFindersClassNames().size() != 0;
+    myOkButton.setEnabled(enabled);
   }
 
   public FindUsagesOptions getResult() {
@@ -56,13 +80,16 @@ public class FindUsagesDialog extends BaseDialog {
     return myIsCancelled;
   }
 
-  @Button(position = 0, name = "OK", defaultButton = true)
-  public void onOk() {
-    myIsCancelled = false;
-    dispose();
+  @Override
+  protected JButton[] createButtons() {
+    JButton[] buttonsArray = super.createButtons();
+    List<JButton> buttons = new ArrayList<JButton>(Arrays.asList(buttonsArray));
+    buttons.add(0, myOkButton);
+    setDefaultButton(myOkButton);
+    return buttons.toArray(new JButton[buttons.size()]);
   }
 
-  @Button(position = 1, name = "Cancel")
+  @Button(position = 0, name = "Cancel")
   public void onCancel() {
     dispose();
   }
@@ -84,7 +111,7 @@ public class FindUsagesDialog extends BaseDialog {
     private final ActionEventData myContext;
 
     public MyFindersEditor(FindUsagesOptions defaultOptions, SNode node, ActionEventData data) {
-      super(defaultOptions.getOption(FindersOptions.class),node);
+      super(defaultOptions.getOption(FindersOptions.class), node);
       myContext = data;
     }
 

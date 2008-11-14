@@ -4,7 +4,6 @@ import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.action.ActionEventData;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -60,9 +59,11 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
           if (((JCheckBox) e.getSource()).isSelected()) {
             if (!myOptions.getFindersClassNames().contains(finderClassName)) {
               myOptions.getFindersClassNames().add(finderClassName);
+              findersListChangedByUser();
             }
           } else {
             myOptions.getFindersClassNames().remove(finderClassName);
+            findersListChangedByUser();
           }
         }
       });
@@ -105,4 +106,8 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
   }
 
   public abstract void goToFinder(GeneratedFinder finder);
+
+  protected void findersListChangedByUser() {
+
+  }
 }
