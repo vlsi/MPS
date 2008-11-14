@@ -698,8 +698,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       Style style = new Style();
       style.set(StyleAttributes.TEXT_COLOR, Color.BLUE);
       style.set(StyleAttributes.FONT_STYLE, Font.BOLD);
-      style.set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
-      style.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+      style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
+      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
 
       myBraceTextLine = new TextLine(text, style, false);
       myBraceTextLine.setCaretEnabled(false);

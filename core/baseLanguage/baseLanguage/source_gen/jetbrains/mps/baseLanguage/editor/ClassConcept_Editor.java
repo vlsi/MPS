@@ -1024,7 +1024,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
         }
 
       };
@@ -1037,7 +1037,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(1.0, "spaces"));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, "spaces"));
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
         }
@@ -1170,8 +1170,8 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(1.0, "spaces"));
-          this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(1.0, "spaces"));
+          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, "spaces"));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, "spaces"));
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         }
 
@@ -1403,7 +1403,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
         }
 
       };
@@ -1445,8 +1445,8 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
-          this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
         }
 
       };
@@ -2245,7 +2245,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.EDITABLE, true);
-            this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
           }
 
         };

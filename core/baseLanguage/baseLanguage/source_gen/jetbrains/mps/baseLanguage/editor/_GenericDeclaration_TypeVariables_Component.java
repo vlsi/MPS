@@ -98,7 +98,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
           this.set(StyleAttributes.SELECTABLE, false);
         }
 

@@ -22,7 +22,7 @@ public class transformationTest_StyleSheet {
   public static Style getNodeAnnotation(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
         this.set(StyleAttributes.UNDERLINED, true);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
@@ -33,7 +33,7 @@ public class transformationTest_StyleSheet {
   public static Style getNodeProperty(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
 

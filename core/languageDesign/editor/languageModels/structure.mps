@@ -3475,7 +3475,7 @@
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226491332601">
         <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PADDING_LEFT_WITH_MEASURE" resolveInfo="PADDING_LEFT_WITH_MEASURE" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PADDING_LEFT" resolveInfo="PADDING_LEFT" />
       </node>
     </node>
   </node>
@@ -3491,7 +3491,7 @@
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226491353889">
         <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PADDING_RIGHT_WITH_MEASURE" resolveInfo="PADDING_RIGHT_WITH_MEASURE" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PADDING_RIGHT" resolveInfo="PADDING_RIGHT" />
       </node>
     </node>
   </node>
@@ -3835,7 +3835,7 @@
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226491369520">
         <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PADDING_TOP_WITH_MEASURE" resolveInfo="PADDING_TOP_WITH_MEASURE" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PADDING_TOP" resolveInfo="PADDING_TOP" />
       </node>
     </node>
   </node>
@@ -3851,7 +3851,7 @@
       <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226491315063">
         <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PADDING_BOTTOM_WITH_MEASURE" resolveInfo="PADDING_BOTTOM_WITH_MEASURE" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PADDING_BOTTOM" resolveInfo="PADDING_BOTTOM" />
       </node>
     </node>
   </node>

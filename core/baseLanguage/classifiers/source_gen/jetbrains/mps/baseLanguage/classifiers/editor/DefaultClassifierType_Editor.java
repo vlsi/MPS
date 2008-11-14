@@ -103,7 +103,7 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
         }
 
       };
@@ -119,7 +119,7 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
           this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
-          this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
         }
 
       };
@@ -206,7 +206,7 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
           }
 
         };

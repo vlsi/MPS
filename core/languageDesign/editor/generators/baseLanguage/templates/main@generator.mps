@@ -18455,7 +18455,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="64.~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,jetbrains.mps.nodeEditor.style.AttributeCalculator):void" resolveInfo="set" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226675961717">
                   <link role="classifier" targetNodeId="64.~StyleAttributes" resolveInfo="StyleAttributes" />
-                  <link role="variableDeclaration" targetNodeId="64.~StyleAttributes.PADDING_LEFT_WITH_MEASURE" resolveInfo="PADDING_LEFT_WITH_MEASURE" />
+                  <link role="variableDeclaration" targetNodeId="64.~StyleAttributes.PADDING_LEFT" resolveInfo="PADDING_LEFT" />
                   <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1226676047184">
                     <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1226676047185">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226676047186">

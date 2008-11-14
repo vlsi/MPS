@@ -2284,7 +2284,7 @@
                               <link role="baseMethodDeclaration" targetNodeId="76.~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,java.lang.Object):void" resolveInfo="set" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215092612363">
                                 <link role="classifier" targetNodeId="76.~StyleAttributes" resolveInfo="StyleAttributes" />
-                                <link role="variableDeclaration" targetNodeId="76.~StyleAttributes.PADDING_LEFT_WITH_MEASURE" resolveInfo="PADDING_LEFT_WITH_MEASURE" />
+                                <link role="variableDeclaration" targetNodeId="76.~StyleAttributes.PADDING_LEFT" resolveInfo="PADDING_LEFT" />
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226682598143">
                                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1226682602350">
@@ -2314,7 +2314,7 @@
                               <link role="baseMethodDeclaration" targetNodeId="76.~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,java.lang.Object):void" resolveInfo="set" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215092624129">
                                 <link role="classifier" targetNodeId="76.~StyleAttributes" resolveInfo="StyleAttributes" />
-                                <link role="variableDeclaration" targetNodeId="76.~StyleAttributes.PADDING_RIGHT_WITH_MEASURE" resolveInfo="PADDING_RIGHT_WITH_MEASURE" />
+                                <link role="variableDeclaration" targetNodeId="76.~StyleAttributes.PADDING_RIGHT" resolveInfo="PADDING_RIGHT" />
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226682436866">
                                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1226682441166">

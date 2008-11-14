@@ -214,7 +214,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(1.0, "spaces"));
+          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, "spaces"));
           this.set(StyleAttributes.SELECTABLE, false);
         }
 
@@ -263,7 +263,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(1.0, "spaces"));
+          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, "spaces"));
         }
 
       };

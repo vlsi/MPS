@@ -270,8 +270,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public void relayoutImpl() {
     if (isPunctuationLayout()) {
-      getStyle().set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
-      getStyle().set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+      getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
+      getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
     }
 
     myTextLine.relayout();

@@ -16,7 +16,7 @@ public class Styles_StyleSheet {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
-        this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
       }
 
     };

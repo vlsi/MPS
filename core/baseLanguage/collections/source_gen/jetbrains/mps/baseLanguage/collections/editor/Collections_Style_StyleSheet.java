@@ -14,7 +14,7 @@ public class Collections_Style_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
       }
 
     };
@@ -33,8 +33,8 @@ public class Collections_Style_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(Collections_Style_StyleSheet.getAngleBracket(null));
-        this.set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
       }
 
     };
@@ -44,8 +44,8 @@ public class Collections_Style_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(Collections_Style_StyleSheet.getAngleBracket(null));
-        this.set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
       }
 
     };

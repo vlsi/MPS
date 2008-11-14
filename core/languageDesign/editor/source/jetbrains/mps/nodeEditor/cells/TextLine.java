@@ -123,11 +123,11 @@ public class TextLine {
   }
 
   public int getLeftInternalInset() {
-    Double value = myStyle.get(StyleAttributes.PADDING_LEFT_WITH_MEASURE).getValue();
-    String type = myStyle.get(StyleAttributes.PADDING_LEFT_WITH_MEASURE).getType();
+    Double value = myStyle.get(StyleAttributes.PADDING_LEFT).getValue();
+    String type = myStyle.get(StyleAttributes.PADDING_LEFT).getType();
 
     //todo this is hack which makes code look well in editor
-    if (myStyle.get(StyleAttributes.DRAW_BORDER) && myStyle.getCurrent(StyleAttributes.PADDING_LEFT_WITH_MEASURE) == null) {
+    if (myStyle.get(StyleAttributes.DRAW_BORDER) && myStyle.getCurrent(StyleAttributes.PADDING_LEFT) == null) {
       value = 0.5;
       return getHorizontalInternalInsert(value, "spaces");
     }
@@ -135,11 +135,11 @@ public class TextLine {
   }
 
   public int getRightInternalInset() {
-    Double value = myStyle.get(StyleAttributes.PADDING_RIGHT_WITH_MEASURE).getValue();
-    String type = myStyle.get(StyleAttributes.PADDING_RIGHT_WITH_MEASURE).getType();
+    Double value = myStyle.get(StyleAttributes.PADDING_RIGHT).getValue();
+    String type = myStyle.get(StyleAttributes.PADDING_RIGHT).getType();
 
     //todo this is hack which makes code look well in editor
-    if (myStyle.get(StyleAttributes.DRAW_BORDER) && myStyle.getCurrent(StyleAttributes.PADDING_RIGHT_WITH_MEASURE) == null) {
+    if (myStyle.get(StyleAttributes.DRAW_BORDER) && myStyle.getCurrent(StyleAttributes.PADDING_RIGHT) == null) {
       value = 0.5;
       return getHorizontalInternalInsert(value, "spaces");
     }

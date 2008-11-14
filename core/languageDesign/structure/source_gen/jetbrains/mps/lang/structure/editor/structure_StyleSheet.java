@@ -13,7 +13,7 @@ public class structure_StyleSheet {
   public static Style getAnnotationNode(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
         this.set(StyleAttributes.UNDERLINED, true);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }

@@ -119,8 +119,8 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(1.0, "spaces"));
-          this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(1.0, "spaces"));
+          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, "spaces"));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, "spaces"));
         }
 
       };
@@ -192,7 +192,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-            this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
           }
 
         };

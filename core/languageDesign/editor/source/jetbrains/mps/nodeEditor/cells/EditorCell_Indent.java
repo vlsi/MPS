@@ -13,8 +13,8 @@ public class EditorCell_Indent extends EditorCell_Label {
     setSelectable(false);
     setEditable(false);
 
-    getStyle().set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
-    getStyle().set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+    getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
+    getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
   }
 
   private static String getIndentText() {

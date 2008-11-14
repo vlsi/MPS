@@ -55,8 +55,8 @@ public class Expression_Editor extends DefaultNodeEditor {
 
       public EditorCell createEditorCell(EditorContext context) {
         EditorCell_Error result = new EditorCell_Error(editorContext, node, "<" + node.getRole_() + ">");
-        result.getStyle().set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
-        result.getStyle().set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+        result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
+        result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
         return result;
       }
 
@@ -106,8 +106,8 @@ public class Expression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
-          this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
         }
 
       };

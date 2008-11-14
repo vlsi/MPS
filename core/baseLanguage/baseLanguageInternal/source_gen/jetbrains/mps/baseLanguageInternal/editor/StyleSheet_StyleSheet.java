@@ -35,8 +35,8 @@ public class StyleSheet_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
-        this.set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         this.set(StyleAttributes.SELECTABLE, false);
       }

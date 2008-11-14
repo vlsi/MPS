@@ -34,10 +34,10 @@ public class StyleAttributes {
   public static final StyleAttribute<Integer> FONT_STYLE = new InheritableStyleAttribute("font-style", Font.PLAIN);
   public static final StyleAttribute<Integer> FONT_SIZE = new InheritableStyleAttribute("font-size");
 
-  public static final StyleAttribute<Padding> PADDING_LEFT_WITH_MEASURE = new SimpleStyleAttribute<Padding>("padding-left", new Padding(0.0, null));
-  public static final StyleAttribute<Padding> PADDING_RIGHT_WITH_MEASURE = new SimpleStyleAttribute<Padding>("padding-right", new Padding(1.0, null));
-  public static final StyleAttribute<Padding> PADDING_TOP_WITH_MEASURE = new SimpleStyleAttribute<Padding>("padding-top", new Padding(0.0, null));
-  public static final StyleAttribute<Padding> PADDING_BOTTOM_WITH_MEASURE = new SimpleStyleAttribute<Padding>("padding-bottom", new Padding(0.0, null));
+  public static final StyleAttribute<Padding> PADDING_LEFT = new SimpleStyleAttribute<Padding>("padding-left", new Padding(0.0, null));
+  public static final StyleAttribute<Padding> PADDING_RIGHT = new SimpleStyleAttribute<Padding>("padding-right", new Padding(1.0, null));
+  public static final StyleAttribute<Padding> PADDING_TOP = new SimpleStyleAttribute<Padding>("padding-top", new Padding(0.0, null));
+  public static final StyleAttribute<Padding> PADDING_BOTTOM = new SimpleStyleAttribute<Padding>("padding-bottom", new Padding(0.0, null));
 
   public static final StyleAttribute<Boolean> FIRST_POSITION_ALLOWED = new SimpleStyleAttribute<Boolean>("first-position-allowed", true);
   public static final StyleAttribute<Boolean> LAST_POSITION_ALLOWED = new SimpleStyleAttribute<Boolean>("last-position-allowed", true);
