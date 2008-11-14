@@ -253,6 +253,33 @@ __switch__:
     }
   }
 
+  public static SNode getOutputNodeType_fromSourceQuery(SNode query) {
+    if (query == null) {
+      return new _Quotations.QuotationClass_4().createNode();
+    }
+    SNode OutputType = TypeChecker.getInstance().getTypeOf(query);
+    if (SNodeOperations.isInstanceOf(OutputType, "jetbrains.mps.lang.smodel.structure.SNodeListType")) {
+      return new _Quotations.QuotationClass_5().createNode(SLinkOperations.getTarget(OutputType, "elementConcept", false));
+    } else
+    {
+      SNode outputSNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(OutputType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
+      if (outputSNodeType != null) {
+        return outputSNodeType;
+      } else
+      {
+        SNode outputSequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce_(OutputType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
+        if (outputSequenceType != null) {
+          SNode elementType = SLinkOperations.getTarget(outputSequenceType, "elementType", true);
+          SNode outputSNodeType2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(elementType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
+          if (outputSNodeType2 != null) {
+            return outputSNodeType2;
+          }
+        }
+      }
+    }
+    return new _Quotations.QuotationClass_6().createNode();
+  }
+
   private static SNode getApplicableConcept_fromEnvironment(SNode node) {
     SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration","jetbrains.mps.lang.generator.structure.BaseMappingRule"}, false, false);
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
