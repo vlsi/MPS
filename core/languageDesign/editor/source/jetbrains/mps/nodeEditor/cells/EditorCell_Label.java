@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.util.NameUtil;
@@ -269,8 +270,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public void relayoutImpl() {
     if (isPunctuationLayout()) {
-      getStyle().set(StyleAttributes.PADDING_LEFT, 0.0);
-      getStyle().set(StyleAttributes.PADDING_RIGHT, 0.0);
+      getStyle().set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
+      getStyle().set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
     }
 
     myTextLine.relayout();

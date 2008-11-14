@@ -2284,10 +2284,18 @@
                               <link role="baseMethodDeclaration" targetNodeId="76.~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,java.lang.Object):void" resolveInfo="set" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215092612363">
                                 <link role="classifier" targetNodeId="76.~StyleAttributes" resolveInfo="StyleAttributes" />
-                                <link role="variableDeclaration" targetNodeId="76.~StyleAttributes.PADDING_LEFT" resolveInfo="PADDING_LEFT" />
+                                <link role="variableDeclaration" targetNodeId="76.~StyleAttributes.PADDING_LEFT_WITH_MEASURE" resolveInfo="PADDING_LEFT_WITH_MEASURE" />
                               </node>
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1215092617730">
-                                <property name="value" value="0.0" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226682598143">
+                                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1226682602350">
+                                  <link role="baseMethodDeclaration" targetNodeId="76.~Padding.&lt;init&gt;(double,java.lang.String)" resolveInfo="Padding" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1226682604117">
+                                    <property name="value" value="0.0" />
+                                  </node>
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226682606307">
+                                    <property name="value" value="spaces" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -2306,10 +2314,18 @@
                               <link role="baseMethodDeclaration" targetNodeId="76.~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,java.lang.Object):void" resolveInfo="set" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1215092624129">
                                 <link role="classifier" targetNodeId="76.~StyleAttributes" resolveInfo="StyleAttributes" />
-                                <link role="variableDeclaration" targetNodeId="76.~StyleAttributes.PADDING_RIGHT" resolveInfo="PADDING_RIGHT" />
+                                <link role="variableDeclaration" targetNodeId="76.~StyleAttributes.PADDING_RIGHT_WITH_MEASURE" resolveInfo="PADDING_RIGHT_WITH_MEASURE" />
                               </node>
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1215092624130">
-                                <property name="value" value="0.0" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226682436866">
+                                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1226682441166">
+                                  <link role="baseMethodDeclaration" targetNodeId="76.~Padding.&lt;init&gt;(double,java.lang.String)" resolveInfo="Padding" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1226682442965">
+                                    <property name="value" value="0.0" />
+                                  </node>
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226682444920">
+                                    <property name="value" value="spaces" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -2350,11 +2366,13 @@
       </node>
       <node role="ifFalseCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1209748868405">
         <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1215092493192">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1226681221777">
           <property name="value" value="0.0" />
+          <property name="measure" value="spaces" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215092495616">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1226681224028">
           <property name="value" value="0.0" />
+          <property name="measure" value="spaces" />
         </node>
       </node>
     </node>

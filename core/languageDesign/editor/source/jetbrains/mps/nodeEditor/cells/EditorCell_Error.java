@@ -5,6 +5,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Padding;
 
 /**
  * Author: Sergey Dmitriev
@@ -20,8 +21,8 @@ public class EditorCell_Error extends EditorCell_Label {
     setErrorState(true);
 
 
-    getStyle().set(StyleAttributes.PADDING_LEFT, 0.0);
-    getStyle().set(StyleAttributes.PADDING_RIGHT, 0.0);
+    getStyle().set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
+    getStyle().set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
   }
 
   public boolean canPasteText() {

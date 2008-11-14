@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
@@ -272,8 +273,8 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
             }
 
           });
-          this.set(StyleAttributes.PADDING_LEFT, 1.0);
-          this.set(StyleAttributes.PADDING_RIGHT, 1.0);
+          this.set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(1.0, "spaces"));
+          this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(1.0, "spaces"));
         }
 
       };

@@ -25,6 +25,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.editor.behavior.CellModel_WithRole_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior;
 import jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_Behavior;
+import jetbrains.mps.lang.editor.structure._Enum_Measure;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -572,14 +573,6 @@ public class QueriesGenerated {
     return "<no " + CellModel_WithRole_Behavior.call_getRoleForCell_1216377898846(_context.getNode()) + ">";
   }
 
-  public static Object propertyMacro_GetPropertyValue_1215009108211(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "value");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1215009121825(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "value");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1215085777836(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "flag");
   }
@@ -650,6 +643,17 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1225901389825(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1226676163552(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "value");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1226677492369(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return (SPropertyOperations.getString_def(_context.getNode(), "measure", "spaces") != null ?
+      SPropertyOperations.getString_def(_context.getNode(), "measure", "spaces") :
+      (_Enum_Measure.getDefault()).getName()
+    );
   }
 
   public static Object referenceMacro_GetReferent_1176478910892(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1617,6 +1621,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1225901798862(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "modelAccessor", true), "getter", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1226676047185(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return StyleClassItem_Behavior.call_getStyleConstant_1215703564594(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1168628426627(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PaddingLeftStyleClassItem extends FloatStyleClassItem {
+public class PaddingLeftStyleClassItem extends AbstractPaddingStyleClassItem {
   public static final String concept = "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem";
 
   public PaddingLeftStyleClassItem(SNode node) {

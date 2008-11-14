@@ -4,6 +4,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.lang.editor.structure._Enum_Measure;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
@@ -107,28 +108,42 @@ public class TextLine {
     return Math.max(myMinimalLength * metrics.charWidth('w'), 2);
   }
 
-  public int getLeftInternalInset() {
-    Double value = myStyle.get(StyleAttributes.PADDING_LEFT);
-
-    //todo this is hack which makes code look well in editor
-    if (myStyle.get(StyleAttributes.DRAW_BORDER) && myStyle.getCurrent(StyleAttributes.PADDING_LEFT) == null) {
-      value = 0.5;
+  private int getHorizontalInternalInsert(double value, String type) {
+    if (type == null) {
+      type = _Enum_Measure.getDefault().getValueAsString();    
     }
 
-    int result = (int) (charWidth() * value);    
-    return result;
+    if (type.equals("spaces")) {
+      return (int) (charWidth() * value);
+    }
+    if (type.equals("pixels")) {
+      return (int) value;
+    }
+    return 0;
+  }
+
+  public int getLeftInternalInset() {
+    Double value = myStyle.get(StyleAttributes.PADDING_LEFT_WITH_MEASURE).getValue();
+    String type = myStyle.get(StyleAttributes.PADDING_LEFT_WITH_MEASURE).getType();
+
+    //todo this is hack which makes code look well in editor
+    if (myStyle.get(StyleAttributes.DRAW_BORDER) && myStyle.getCurrent(StyleAttributes.PADDING_LEFT_WITH_MEASURE) == null) {
+      value = 0.5;
+      return getHorizontalInternalInsert(value, "spaces");
+    }
+    return getHorizontalInternalInsert(value, type);
   }
 
   public int getRightInternalInset() {
-    Double value = myStyle.get(StyleAttributes.PADDING_RIGHT);
+    Double value = myStyle.get(StyleAttributes.PADDING_RIGHT_WITH_MEASURE).getValue();
+    String type = myStyle.get(StyleAttributes.PADDING_RIGHT_WITH_MEASURE).getType();
 
     //todo this is hack which makes code look well in editor
-    if (myStyle.get(StyleAttributes.DRAW_BORDER) && myStyle.getCurrent(StyleAttributes.PADDING_RIGHT) == null) {
+    if (myStyle.get(StyleAttributes.DRAW_BORDER) && myStyle.getCurrent(StyleAttributes.PADDING_RIGHT_WITH_MEASURE) == null) {
       value = 0.5;
+      return getHorizontalInternalInsert(value, "spaces");
     }
-
-    int result = (int) (charWidth() * value);
-    return result;
+    return getHorizontalInternalInsert(value, type);
   }
 
   public int charWidth() {

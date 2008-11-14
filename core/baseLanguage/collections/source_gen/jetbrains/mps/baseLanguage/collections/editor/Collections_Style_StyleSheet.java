@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.style.Padding;
 
 public class Collections_Style_StyleSheet {
 
@@ -13,7 +14,7 @@ public class Collections_Style_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
       }
 
     };
@@ -32,8 +33,8 @@ public class Collections_Style_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(Collections_Style_StyleSheet.getAngleBracket(null));
-        this.set(StyleAttributes.PADDING_LEFT, 0.0);
-        this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        this.set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
       }
 
     };
@@ -43,8 +44,8 @@ public class Collections_Style_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(Collections_Style_StyleSheet.getAngleBracket(null));
-        this.set(StyleAttributes.PADDING_LEFT, 0.0);
-        this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        this.set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
       }
 
     };

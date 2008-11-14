@@ -4861,6 +4861,7 @@
           <link role="styleClass" targetNodeId="26.1215091279307" resolveInfo="LeftBrace" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1222331114571">
             <property name="value" value="0.0" />
+            <property name="measure" value="spaces" />
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995263">
@@ -4885,6 +4886,7 @@
               <link role="styleClass" targetNodeId="26.1215091279307" resolveInfo="LeftBrace" />
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1222330566836">
                 <property name="value" value="0.0" />
+                <property name="measure" value="spaces" />
               </node>
             </node>
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995351">
@@ -4919,6 +4921,7 @@
               <link role="styleClass" targetNodeId="26.1215091279307" resolveInfo="LeftBrace" />
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1222330570431">
                 <property name="value" value="0.0" />
+                <property name="measure" value="spaces" />
               </node>
             </node>
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310993606">
@@ -4953,6 +4956,7 @@
               <link role="styleClass" targetNodeId="26.1215091279307" resolveInfo="LeftBrace" />
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1222330572604">
                 <property name="value" value="0.0" />
+                <property name="measure" value="spaces" />
               </node>
             </node>
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997656">
@@ -7886,6 +7890,7 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225463083074">
           <property name="value" value="0.0" />
+          <property name="measure" value="spaces" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1225456821421">
@@ -7903,7 +7908,7 @@
         <link role="editorComponent" targetNodeId="1176716781495" resolveInfo="_OpenTag" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225900578296">
-        <property name="text" value="read-only model access" />
+        <property name="text" value="R/O model access" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1225900578297">
           <property name="flag" value="true" />
         </node>
@@ -7990,9 +7995,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1226072308234">
         <link role="editorComponent" targetNodeId="1214476568032" resolveInfo="_CellModel_Common" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1226072312673" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1226335562250" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225900615405">
-        <property name="text" value="Read-only value:" />
+        <property name="text" value="Value:" />
         <property name="name" value="headerCell" />
         <link role="styleClass" targetNodeId="1214478266312" resolveInfo="header" />
       </node>
@@ -8011,6 +8016,31 @@
     <link role="conceptDeclaration" targetNodeId="2.1225898583838" resolveInfo="ReadOnlyModelAccessor" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1226061419246">
       <link role="relationDeclaration" targetNodeId="2.1225898971709" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1226492935647">
+    <property name="package" value="Stylesheet.Paddings" />
+    <link role="conceptDeclaration" targetNodeId="2.1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1226492963665">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1226492963666">
+        <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
+        <link role="relationDeclaration" targetNodeId="3.1156235010670" resolveInfo="alias" />
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1226492963667">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1226492963668">
+            <link role="replacementConcept" targetNodeId="2.1186402475462" resolveInfo="StyleClassItem" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1226492963669">
+        <property name="text" value=":" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1226492963670">
+        <link role="relationDeclaration" targetNodeId="2.1215007802031" resolveInfo="value" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1226504870583">
+        <link role="relationDeclaration" targetNodeId="2.1226504838901" resolveInfo="measure" />
+      </node>
     </node>
   </node>
 </model>

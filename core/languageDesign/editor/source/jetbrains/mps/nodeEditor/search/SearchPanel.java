@@ -278,14 +278,14 @@ public class SearchPanel extends JPanel {
     StringBuilder sourceBuilder = new StringBuilder();
     boolean doubleSpace = false;
     for (EditorCell_Label cell : cells) {
-      if (cell.getStyle().get(StyleAttributes.PADDING_LEFT) >= 1.0
+      if (cell.getStyle().get(StyleAttributes.PADDING_LEFT_WITH_MEASURE).getValue() >= 1.0
         && !doubleSpace) {
         sourceBuilder.append(" ");
       }
       startCellPosition.add(sourceBuilder.length());
       sourceBuilder.append(cell.getRenderedText());
       endCellPosition.add(sourceBuilder.length());
-      if (cell.getStyle().get(StyleAttributes.PADDING_RIGHT) >= 1.0) {
+      if (cell.getStyle().get(StyleAttributes.PADDING_RIGHT_WITH_MEASURE).getValue() >= 1.0) {
         sourceBuilder.append(" ");
         doubleSpace = true;
       } else {

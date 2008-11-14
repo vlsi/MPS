@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.style.Padding;
 
 public class transformationTest_StyleSheet {
 
@@ -21,7 +22,7 @@ public class transformationTest_StyleSheet {
   public static Style getNodeAnnotation(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
         this.set(StyleAttributes.UNDERLINED, true);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
@@ -32,7 +33,7 @@ public class transformationTest_StyleSheet {
   public static Style getNodeProperty(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_RIGHT, 0.0);
+        this.set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       }
 

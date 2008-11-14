@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 
@@ -367,8 +368,8 @@ public class EditorManager {
       setEditable(true);
       setCellBackgroundColor(LightColors.BLUE);
 
-      getStyle().set(StyleAttributes.PADDING_LEFT, 0.0);
-      getStyle().set(StyleAttributes.PADDING_RIGHT, 0.0);
+      getStyle().set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
+      getStyle().set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
 
       mySide = side;
     }

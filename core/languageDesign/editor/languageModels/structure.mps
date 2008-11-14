@@ -3464,21 +3464,35 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215007883204">
-    <property name="package" value="Stylesheet" />
+    <property name="package" value="Stylesheet.Paddings" />
     <property name="name" value="PaddingLeftStyleClassItem" />
-    <link role="extends" targetNodeId="1215007762405" resolveInfo="FloatStyleSheetItem" />
+    <link role="extends" targetNodeId="1226339938453" resolveInfo="PaddingStyleClassItem" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215007893986">
       <property name="value" value="padding-left" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1226491327426">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226491332601">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PADDING_LEFT_WITH_MEASURE" resolveInfo="PADDING_LEFT_WITH_MEASURE" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215007897487">
-    <property name="package" value="Stylesheet" />
+    <property name="package" value="Stylesheet.Paddings" />
     <property name="name" value="PaddingRightStyleClassItem" />
-    <link role="extends" targetNodeId="1215007762405" resolveInfo="FloatStyleSheetItem" />
+    <link role="extends" targetNodeId="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215007897488">
       <property name="value" value="padding-right" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1226491349683">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226491353889">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PADDING_RIGHT_WITH_MEASURE" resolveInfo="PADDING_RIGHT_WITH_MEASURE" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215085112640">
@@ -3807,6 +3821,64 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="modelAccessor" />
       <link role="target" targetNodeId="1225898583838" resolveInfo="ReadOnlyModelAccessor" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226339751946">
+    <property name="package" value="Stylesheet.Paddings" />
+    <property name="name" value="PaddingTopStyleClassItem" />
+    <link role="extends" targetNodeId="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1226339797666">
+      <property name="value" value="padding-top" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1226491363829">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226491369520">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PADDING_TOP_WITH_MEASURE" resolveInfo="PADDING_TOP_WITH_MEASURE" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226339813308">
+    <property name="package" value="Stylesheet.Paddings" />
+    <property name="name" value="PaddingBottomStyleClassItem" />
+    <link role="extends" targetNodeId="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1226339845434">
+      <property name="value" value="padding-bottom" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1226491309950">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226491315063">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.PADDING_BOTTOM_WITH_MEASURE" resolveInfo="PADDING_BOTTOM_WITH_MEASURE" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226339938453">
+    <property name="package" value="Stylesheet.Paddings" />
+    <property name="name" value="AbstractPaddingStyleClassItem" />
+    <link role="extends" targetNodeId="1215007762405" resolveInfo="FloatStyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1226503604644">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1226504838901">
+      <property name="name" value="measure" />
+      <link role="dataType" targetNodeId="1226504633752" resolveInfo="_Enum_Measure" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1226504633752">
+    <property name="package" value="Stylesheet.Paddings" />
+    <property name="name" value="_Enum_Measure" />
+    <link role="memberDataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    <link role="defaultMember" targetNodeId="1226504706052" />
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1226504633753">
+      <property name="internalValue" value="pixels" />
+      <property name="externalValue" value="pixels" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1226504706052">
+      <property name="internalValue" value="spaces" />
+      <property name="externalValue" value="spaces" />
     </node>
   </node>
 </model>

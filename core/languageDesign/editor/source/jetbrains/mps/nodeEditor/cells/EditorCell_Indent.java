@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor.cells;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorSettings;
 
@@ -12,8 +13,8 @@ public class EditorCell_Indent extends EditorCell_Label {
     setSelectable(false);
     setEditable(false);
 
-    getStyle().set(StyleAttributes.PADDING_LEFT, 0.0);
-    getStyle().set(StyleAttributes.PADDING_RIGHT, 0.0);
+    getStyle().set(StyleAttributes.PADDING_LEFT_WITH_MEASURE, new Padding(0.0, "spaces"));
+    getStyle().set(StyleAttributes.PADDING_RIGHT_WITH_MEASURE, new Padding(0.0, "spaces"));
   }
 
   private static String getIndentText() {

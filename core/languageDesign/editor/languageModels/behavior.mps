@@ -3173,74 +3173,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214406624349" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1215009299420">
-    <property name="package" value="Stylesheet" />
-    <link role="concept" targetNodeId="1.1215007897487" resolveInfo="PaddingRightStyleSheetItem" />
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1215009301220">
-      <property name="name" value="isApplicableTo" />
-      <property name="isPrivate" value="false" />
-      <link role="overriddenMethod" targetNodeId="1214304723440" resolveInfo="isApplicableTo" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215009301222">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215009313544">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215009315329">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215009314718">
-              <link role="variableDeclaration" targetNodeId="1215009307088" resolveInfo="cellModel" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1215009317207">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1215009334552">
-                <link role="conceptDeclaration" targetNodeId="1.1079353555532" resolveInfo="CellModel_AbstractLabel" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1215009307088">
-        <property name="name" value="cellModel" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215009307089">
-          <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1215009307090" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724501" />
-    </node>
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1215009299421">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215009299422" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1215009382337">
-    <property name="package" value="Stylesheet" />
-    <link role="concept" targetNodeId="1.1215007883204" resolveInfo="PaddingLeftStyleSheetItem" />
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1215009383762">
-      <property name="name" value="isApplicableTo" />
-      <property name="isPrivate" value="false" />
-      <link role="overriddenMethod" targetNodeId="1214304723440" resolveInfo="isApplicableTo" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215009383764">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215009388065">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215009389412">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1215009388942">
-              <link role="variableDeclaration" targetNodeId="1215009386468" resolveInfo="cellModel" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1215009391008">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1215009394322">
-                <link role="conceptDeclaration" targetNodeId="1.1079353555532" resolveInfo="CellModel_AbstractLabel" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1215009386468">
-        <property name="name" value="cellModel" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215009386469">
-          <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1215009386470" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724516" />
-    </node>
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1215009382338">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215009382339" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1215085210820">
     <property name="package" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1215085112640" resolveInfo="FirstPositionAllowedStyleSheetItem" />
@@ -4426,6 +4358,95 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1226070122941">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226070122942" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1226339994113">
+    <property name="package" value="Stylesheet.Paddings" />
+    <link role="concept" targetNodeId="1.1226339938453" resolveInfo="PaddingStyleClassItem" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226339995678">
+      <property name="name" value="isApplicableTo" />
+      <property name="isPrivate" value="false" />
+      <property name="isDeprecated" value="false" />
+      <link role="overriddenMethod" targetNodeId="1214304723440" resolveInfo="isApplicableTo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226339995679">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226339995680">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226339995681">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1226339995682">
+              <link role="variableDeclaration" targetNodeId="1226339995685" resolveInfo="cellModel" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1226339995683">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1226339995684">
+                <link role="conceptDeclaration" targetNodeId="1.1079353555532" resolveInfo="CellModel_AbstractLabel" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1226339995685">
+        <property name="name" value="cellModel" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1226339995686">
+          <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1226339995687" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226339995688" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1226497978684" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226492824000">
+      <property name="name" value="canUseSpaces" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1226492835307" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226492824002">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226492861652">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1226492864107">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226492830738" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1226339994114">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226339994115" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1226492869577">
+    <property name="package" value="Stylesheet.Paddings" />
+    <link role="concept" targetNodeId="1.1226339813308" resolveInfo="PaddingBottomStyleClassItem" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226492871049">
+      <property name="name" value="canUseSpaces" />
+      <link role="overriddenMethod" targetNodeId="1226492824000" resolveInfo="canUseSpaces" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226492871051">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226492893132">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1226492894837">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1226492890521" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226492890522" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1226492869578">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226492869579" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1226492900089">
+    <property name="package" value="Stylesheet.Paddings" />
+    <link role="concept" targetNodeId="1.1226339751946" resolveInfo="PaddingTopStyleClassItem" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226492901482">
+      <property name="name" value="canUseSpaces" />
+      <link role="overriddenMethod" targetNodeId="1226492824000" resolveInfo="canUseSpaces" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226492901484">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226492906628">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1226492908239">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1226492904735" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226492904736" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1226492900090">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226492900091" />
     </node>
   </node>
 </model>
