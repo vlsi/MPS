@@ -7,8 +7,8 @@ import java.io.IOException;
 /**
  * Test is made from MPS-3152
  */
-public class MergeConceptsTest extends MergeTestCase{
-  public void testMPS3152() throws IOException, ReadException {
+public class MergeConceptAndImportsTest extends MergeTestCase{
+  public void testConceptsAndImports() throws IOException, ReadException {
     testZip("resources/help.mps.zip");
   }
 }

@@ -1,6 +1,7 @@
 package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.project.ModuleReference;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class ModelAssert {
     ModelAccess.instance().checkReadAccess();
 
     assertSameImports(expectedModel, actualModel);
+    assertSameLanguageAspects(expectedModel, actualModel);
 
     // todo check not only child nodes
 
@@ -32,18 +34,57 @@ public class ModelAssert {
     }
   }
 
+  private static void assertSameLanguageAspects(SModel expectedModel, SModel actualModel) {
+    List<ImportElement> expectedLanguageAspects = expectedModel.getLanguageAspectModelElements();
+    List<ImportElement> actualLanguageAspects = actualModel.getLanguageAspectModelElements();
+
+    for (ImportElement expectedEl : expectedLanguageAspects) {
+      boolean found = false;
+      for (ImportElement actualEl : actualLanguageAspects) {
+        if (actualEl.getModelReference().equals(expectedEl.getModelReference())) {
+          assertSameLanguageAspects(expectedEl, actualEl);
+          found = true;
+          break;
+        }
+      }
+
+      if (!found) {
+        fail("Not found expected language aspect " + expectedEl.getModelReference());
+      }
+    }
+
+    for (ImportElement actualEl : actualLanguageAspects) {
+      boolean found = false;
+      for (ImportElement expectedEl : expectedLanguageAspects) {
+        if (actualEl.getModelReference().equals(expectedEl.getModelReference())) {
+          assertSameLanguageAspects(expectedEl, actualEl);
+          found = true;
+          break;
+        }
+      }
+
+      if (!found) {
+        fail("Unexpected language aspect " + actualEl.getModelReference());
+      }
+    }
+  }
+
+  private static void assertSameLanguageAspects(ImportElement expectedEl, ImportElement actualEl) {
+    assertEquals("Language aspect verion of model " + expectedEl.getModelReference() + " differ ", expectedEl.getUsedVersion(), actualEl.getUsedVersion());
+  }
+
   private static void assertSameImports(SModel expectedModel, SModel actualModel) {
     List<ModuleReference> expectedLanguages = expectedModel.getExplicitlyImportedLanguages();
     List<ModuleReference> actualLanguages = actualModel.getExplicitlyImportedLanguages();
 
     for (ModuleReference expectedRef : expectedLanguages) {
-      if (!actualLanguages.contains(expectedRef)){
+      if (!actualLanguages.contains(expectedRef)) {
         fail("Not found expected import " + expectedRef);
       }
     }
 
     for (ModuleReference actualRef : actualLanguages) {
-      if (!expectedLanguages.contains(actualRef)){
+      if (!expectedLanguages.contains(actualRef)) {
         fail("Not expected import " + actualRef);
       }
     }

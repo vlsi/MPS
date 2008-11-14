@@ -1,9 +1,6 @@
 package jetbrains.mps.vcs.diff;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.util.NameUtil;
@@ -92,12 +89,38 @@ public class Merger {
   private void collectConflicts() {
     myConflicts.clear();
 
+    collectLanguageAspectChangeConflict();
     collectPropertyConflicts();
     collectReferenceConflicts();
     collectSetNodeConflicts();
     collectAddAndDeleteConflicts();
     collectMoveConflicts();
     collectConceptConflicts();
+  }
+
+  private void collectLanguageAspectChangeConflict() {
+    List<AddLanguageAspectChange> conceptChanges = getChanges(AddLanguageAspectChange.class);
+    Map<SModelReference, List<AddLanguageAspectChange>> map = new jetbrains.mps.util.misc.hash.LinkedHashMap<SModelReference, List<AddLanguageAspectChange>>();
+
+    for (AddLanguageAspectChange ch : conceptChanges) {
+      List<AddLanguageAspectChange> changeList = map.get(ch.getSModelReference());
+      if (changeList == null) {
+        changeList = new LinkedList<AddLanguageAspectChange>();
+        map.put(ch.getSModelReference(), changeList);
+      }
+      changeList.add(ch);
+    }
+
+    for (SModelReference id : map.keySet()) {
+      List<AddLanguageAspectChange> changeList = map.get(id);
+      if (changeList.size() == 2) {
+        AddLanguageAspectChange first = changeList.get(0);
+        AddLanguageAspectChange last = changeList.get(1);
+        if (!first.equals(last)) {
+          myConflicts.add(new Conflict(first, last));
+        }
+      }
+    }
   }
 
   private void collectConceptConflicts() {
@@ -131,6 +154,10 @@ public class Merger {
       if (srf.isBrokenReference()) {
         myWarnings.add(new Warning(srf.getNodeId(), "Maybe broken reference to " + srf.getResolveInfo() + " at " + srf.getNodeId()));
       }
+    }
+
+    for (ChangeConceptChange ch : getChanges(ChangeConceptChange.class)) {
+      myWarnings.add(new Warning(ch.getAffectedNodeId(), "Concept changed to " + ch.getConceptFqName() + " for node " + ch.getAffectedNodeId()));
     }
   }
 
@@ -276,6 +303,7 @@ public class Merger {
     myResultModel.addRoot(tmp);
 
     applyImportLanguages();
+    applyLanguageAspectChange();
     applyNewNodes();
     applyProperties();
     applyReferences();
@@ -301,6 +329,15 @@ public class Merger {
     myResultModel.removeRoot(tmp);
     if (!notRemoveLanguage) myResultModel.deleteLanguage(languageNamespace);
     myResultModel.setLoading(false);
+  }
+
+  private void applyLanguageAspectChange() {
+    List<AddLanguageAspectChange> aspectChangeList = getChanges(AddLanguageAspectChange.class);
+    for (AddLanguageAspectChange ch : aspectChangeList) {
+      if (!myExcludedChanges.contains(ch)){
+        ch.apply(myResultModel);
+      }
+    }
   }
 
   private void applyConceptChanges() {

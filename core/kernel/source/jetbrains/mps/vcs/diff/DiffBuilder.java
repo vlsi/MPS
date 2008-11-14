@@ -1,6 +1,7 @@
 package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
@@ -26,12 +27,24 @@ public class DiffBuilder {
 
   private void collectChanges() {
     collectAddedImports();
+    collectLanguageAspects();
     collectDeletedNodes();
     collectAddedNodes();
     collectMovedNodes();
     collectPropertyChanges();
     collectReferenceChanges();
     collectConceptChanges();
+  }
+
+  private void collectLanguageAspects() {
+    List<ImportElement> oldImportElements = myOldModel.getLanguageAspectModelElements();
+    List<ImportElement> newImportElements = myNewModel.getLanguageAspectModelElements();
+
+    newImportElements.removeAll(oldImportElements);
+
+    for (ImportElement el : newImportElements) {
+      myChanges.add(new AddLanguageAspectChange(el));
+    }
   }
 
   private void collectConceptChanges() {

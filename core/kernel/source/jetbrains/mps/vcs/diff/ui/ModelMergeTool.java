@@ -80,9 +80,13 @@ public class ModelMergeTool implements DiffTool {
     writeContentsToFile(contents[ModelMergeRequest.ORIGINAL], file, tmp, "base");
     writeContentsToFile(contents[ModelMergeRequest.CURRENT], file, tmp, "myne");
     writeContentsToFile(contents[ModelMergeRequest.LAST_REVISION], file, tmp, "repository");
-    FileUtil.zip(tmp, new File(file.getPath() + ".zip"));
+    FileUtil.zip(tmp, getZipFile(file));
 
     FileUtil.delete(tmp);
+  }
+
+  private File getZipFile(VirtualFile file) {
+    return new File(file.getPath() + ".zip");
   }
 
   private void writeContentsToFile(DiffContent contents, VirtualFile file, File tmpDir, String suffix) throws IOException {

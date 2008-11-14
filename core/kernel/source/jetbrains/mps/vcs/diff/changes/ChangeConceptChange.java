@@ -48,4 +48,8 @@ public class ChangeConceptChange extends Change{
     result = 31 * result + myConceptFqName.hashCode();
     return result;
   }
+
+  public String getConceptFqName() {
+    return myConceptFqName;
+  }
 }
