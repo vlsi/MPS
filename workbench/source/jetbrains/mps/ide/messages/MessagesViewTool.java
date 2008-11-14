@@ -410,7 +410,11 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
         if (isVisible(message)) {
           myModel.addElement(message);
-          myList.setSelectedValue(message, true);
+          int index = myModel.size() - 1;
+          myList.getSelectionModel().setSelectionInterval(index, index);
+          if (messages == 0) {
+            myList.ensureIndexIsVisible(index);
+          }
         }
         myMessages.add(message);
 
