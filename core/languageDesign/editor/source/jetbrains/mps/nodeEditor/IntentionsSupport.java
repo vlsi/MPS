@@ -20,6 +20,8 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
@@ -64,62 +66,78 @@ public class IntentionsSupport {
     };
     myEditor.registerKeyboardAction(myShowIntentionsAction, KeyStroke.getKeyStroke("alt ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
+    myEditor.addFocusListener(new FocusAdapter() {
+      public void focusGained(FocusEvent e) {
+        updateIntentionsStatus();
+      }
+
+      public void focusLost(FocusEvent e) {
+        hideLightBulb();
+      }
+    });
+
+
 
     myEditor.addCellSelectionListener(new CellSelectionListener() {
       public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
-        Thread thread = myShowIntentionsThread.get();
-        if (thread != null) {
-          thread.interrupt();
-        }
-
-        hideLightBulb();
-        myShowIntentionsAction.setEnabled(false);
-
-        myShowIntentionsThread.set(new Thread("Intentions") {
-          public void run() {
-            try {
-              final boolean[] enabledPresent = new boolean[1];
-              final boolean[] availablePresent = new boolean[1];
-              ModelAccess.instance().runReadAction(new Runnable() {
-                public void run() {
-                  enabledPresent[0] = !getEnabledIntentions().isEmpty();
-                  availablePresent[0] = !getAvailableIntentions().isEmpty();
-                }
-              });
-
-              ModelAccess.instance().runReadInEDT(new Runnable() {
-                public void run() {
-                  if (myEditor.getSelectedCell() != null) {
-                    adjustLightBulbLocation();
-                    myShowIntentionsAction.setEnabled(availablePresent[0]);
-                  } else {
-                    myShowIntentionsAction.setEnabled(false);
-                  }
-                }
-              });
-
-              Thread.sleep(IntentionsSupport.INTENTION_SHOW_DELAY);
-
-              ModelAccess.instance().runReadInEDT(new Runnable() {
-                public void run() {
-                  if (myEditor.getSelectedCell() != null) {
-                    setLightBulbVisibility(enabledPresent[0]);
-                  } else {
-                    hideLightBulb();
-                  }
-                }
-              });
-
-              myShowIntentionsThread.compareAndSet(this, null);
-            } catch (InterruptedException e) {
-            } catch (RuntimeInterruptedException e) {
-            }
-          }
-        });
-
-        myShowIntentionsThread.get().start();
+        if (!editor.isFocusOwner()) return;
+        updateIntentionsStatus();
       }
     });
+  }
+
+  private void updateIntentionsStatus() {
+    Thread thread = myShowIntentionsThread.get();
+    if (thread != null) {
+      thread.interrupt();
+    }
+
+    hideLightBulb();
+    myShowIntentionsAction.setEnabled(false);
+
+    myShowIntentionsThread.set(new Thread("Intentions") {
+      public void run() {
+        try {
+          final boolean[] enabledPresent = new boolean[1];
+          final boolean[] availablePresent = new boolean[1];
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              enabledPresent[0] = !getEnabledIntentions().isEmpty();
+              availablePresent[0] = !getAvailableIntentions().isEmpty();
+            }
+          });
+
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+            public void run() {
+              if (myEditor.getSelectedCell() != null) {
+                adjustLightBulbLocation();
+                myShowIntentionsAction.setEnabled(availablePresent[0]);
+              } else {
+                myShowIntentionsAction.setEnabled(false);
+              }
+            }
+          });
+
+          Thread.sleep(IntentionsSupport.INTENTION_SHOW_DELAY);
+
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+            public void run() {
+              if (myEditor.getSelectedCell() != null) {
+                setLightBulbVisibility(enabledPresent[0]);
+              } else {
+                hideLightBulb();
+              }
+            }
+          });
+
+          myShowIntentionsThread.compareAndSet(this, null);
+        } catch (InterruptedException e) {
+        } catch (RuntimeInterruptedException e) {
+        }
+      }
+    });
+
+    myShowIntentionsThread.get().start();
   }
 
   private void adjustLightBulbLocation() {
