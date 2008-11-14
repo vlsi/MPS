@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @State(
   name = "MessagesViewTool",
@@ -74,6 +75,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private JList myList = new JList(myModel);
   private MessageViewLoggingHandler myLoggingHandler;
   private ActionToolbar myToolbar;
+  private AtomicInteger myMessagesInProgress = new AtomicInteger();
 
   public MessagesViewTool(Project project) {
     super(project, "MPS Messages", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
@@ -393,8 +395,12 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       return;
     }
 
+    myMessagesInProgress.incrementAndGet();
+
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
+        int messages = myMessagesInProgress.decrementAndGet();
+
         if (myMessages.size() >= MAX_MESSAGES_SIZE) {
           Message toRemove = myMessages.remove();
           if (isVisible(toRemove)) {
