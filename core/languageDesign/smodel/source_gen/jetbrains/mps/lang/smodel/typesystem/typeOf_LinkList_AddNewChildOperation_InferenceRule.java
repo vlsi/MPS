@@ -19,7 +19,6 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule extends Abstract
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedTo_LinkListAccess_aggregation(typeCheckingContext, op);
     final SNode Concept_typevar_1206099501305 = typeCheckingContext.createNewRuntimeTypesVariable();
     RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099501305));
     {

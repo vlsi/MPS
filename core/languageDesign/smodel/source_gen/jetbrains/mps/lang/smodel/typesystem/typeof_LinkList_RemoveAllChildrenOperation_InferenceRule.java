@@ -15,7 +15,6 @@ public class typeof_LinkList_RemoveAllChildrenOperation_InferenceRule extends Ab
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    RulesUtil.checkAppliedTo_LinkListAccess_aggregation(typeCheckingContext, op);
     final SNode Concept_typevar_1215104325493 = typeCheckingContext.createNewRuntimeTypesVariable();
     RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1215104325493));
     {

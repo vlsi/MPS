@@ -17,7 +17,6 @@ public class typeOf_LinkList_InsertChildFirstOperation_InferenceRule extends Abs
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     // checking
-    RulesUtil.checkAppliedTo_LinkListAccess_aggregation(typeCheckingContext, op);
     SNode parameter = SLinkOperations.getTarget(op, "childNode", true);
     if ((parameter != null)) {
       final SNode ExpectedType_typevar_1206101286415 = typeCheckingContext.createNewRuntimeTypesVariable();
