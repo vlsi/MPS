@@ -19,7 +19,7 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}\unittest\dates.msd" />
       <solutionPath path="${project}\runtime\jetbrains.mps.baseLanguage.dates.runtime.msd" />
@@ -29,10 +29,9 @@
       <languagePath path="${project}\internal\internal.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
-      <genConfSolution name="UnitTests" solution="dates_unittest" />
-      <genConfLanguage name="dates" language="jetbrains.mps.baseLanguage.ext.dates.lang" />
+      <genConfModule name="UnitTests" moduleRef="d5e1eadc-0b90-46d3-ad09-aafe577e509d(dates_unittest)" />
+      <genConfModule name="dates" moduleRef="jetbrains.mps.baseLanguage.ext.dates.lang" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
