@@ -8,6 +8,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.wm.ToolWindow;
+import com.intellij.openapi.wm.ToolWindowType;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.treeholder.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treedata.TextOptions;
@@ -244,8 +245,8 @@ public abstract class UsagesTree extends MPSTree {
   //use only for top-level nodes
   private UsagesTreeNode buildTree(DataNode root, HashSet<PathItemRole> nodeCategories) {
     List<UsagesTreeNode> children = buildSubtreeStructure(root, nodeCategories);
-    assert children.size()==1;
-    
+    assert children.size() == 1;
+
     UsagesTreeNode child = children.get(0);
 
     mergeChildren(children);
@@ -344,7 +345,7 @@ public abstract class UsagesTree extends MPSTree {
     root.setIcon(data.getIcon());
 
     String invalid = data.isInvalid() ? "<font color=red>[Invalid]</font> " : "";
-    String caption = data.getText(new TextOptions(myAdditionalInfoNeeded, true,root.getSubresultsCount()));
+    String caption = data.getText(new TextOptions(myAdditionalInfoNeeded, true, root.getSubresultsCount()));
     if (data.isExcluded()) {
       root.setText(invalid + "<font color=gray><s>" + caption + "</s></font>");
     } else {
@@ -650,7 +651,7 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   protected boolean isUnstableWindow() {
-    return getToolWindow().isAutoHide();
+    return getToolWindow().isAutoHide() || getToolWindow().getType() == ToolWindowType.SLIDING;
   }
 
   private ToolWindow getToolWindow() {
