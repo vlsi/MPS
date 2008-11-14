@@ -1,119 +1,115 @@
 <component xmlns:xi="http://www.w3.org/2001/XInclude">
-  <xi:include href="/idea/PlatformActions.xml" xpointer="xpointer(/component/*)"/>
-  <xi:include href="/idea/VcsActions.xml" xpointer="xpointer(/component/*)"/>
+    <xi:include href="/idea/PlatformActions.xml" xpointer="xpointer(/component/*)"/>
+    <xi:include href="/idea/VcsActions.xml" xpointer="xpointer(/component/*)"/>
 
-  <actions>
-    <!--add "select in" action to all the editors-->
-    <group id="CodeEditorViewGroup" class="com.intellij.ide.actions.CodeEditorActionGroup">
-      <action id="SelectIn" class="com.intellij.ide.actions.SelectInAction"/>
-    </group>
+    <actions>
+        <!--add "select in" action to all the editors-->
+        <group id="CodeEditorViewGroup" class="com.intellij.ide.actions.CodeEditorActionGroup">
+            <action id="SelectIn" class="com.intellij.ide.actions.SelectInAction"/>
+        </group>
 
-    <group>
-      <action id="NewProject" class="jetbrains.mps.workbench.actions.NewMPSProjectAction" text="New MPS Project"/>
-      <action id="OpenProject" class="jetbrains.mps.workbench.actions.OpenMPSProjectAction" text="Open MPS Project"/>
-      <add-to-group anchor="first" group-id="FileMenu"/>
-    </group>
+        <group>
+            <action id="NewProject" class="jetbrains.mps.workbench.actions.NewMPSProjectAction" text="New MPS Project"/>
+            <action id="OpenProject" class="jetbrains.mps.workbench.actions.OpenMPSProjectAction"
+                    text="Open MPS Project"/>
+            <add-to-group anchor="first" group-id="FileMenu"/>
+        </group>
 
-    <group id="GenerateMenu" popup="true" text="Ge_nerate">
-      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu"/>
-    </group>
+        <group id="GenerateMenu" popup="true" text="Ge_nerate">
+            <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu"/>
+        </group>
 
-    <group id="BuildMenu" popup="true" text="Build">
-      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GenerateMenu"/>
-    </group>
+        <group id="BuildMenu" popup="true" text="Build">
+            <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GenerateMenu"/>
+        </group>
 
-    <group id="MPSHelpMenu">
-      <add-to-group group-id="HelpMenu" anchor="after" relative-to-action="ProductivityGude"/>
-    </group>
+        <group id="MPSHelpMenu">
+            <add-to-group group-id="HelpMenu" anchor="after" relative-to-action="ProductivityGude"/>
+        </group>
 
-    <group id="MPSWelcomeDocumentationMenu">
-      <action id="ShowMPSDocumentation" class="jetbrains.mps.workbench.actions.help.ShowMPSDocumentationSiteAction" text="Show MPS Documentation" description="You can read MPS Documentation here" />
-      <action id="ShowTheSimplestLanguageScreenCast" class="jetbrains.mps.workbench.actions.help.ShowTheSimplestLanguageScreenCastAction" text="Show The Simplest Language Screencast" description="You can watch how a simple language is created. (Thanks to Sebastien Arbogast)" />
+        <group id="MPSWelcomeDocumentationMenu">
+            <action id="ShowMPSDocumentation"
+                    class="jetbrains.mps.workbench.actions.help.ShowMPSDocumentationSiteAction"
+                    text="Show MPS Documentation" description="You can read MPS Documentation here"/>
+            <action id="ShowTheSimplestLanguageScreenCast"
+                    class="jetbrains.mps.workbench.actions.help.ShowTheSimplestLanguageScreenCastAction"
+                    text="Show The Simplest Language Screencast"
+                    description="You can watch how a simple language is created. (Thanks to Sebastien Arbogast)"/>
 
-      <action id="OpenTheComplexNumberLanguageProject"
-         class="jetbrains.mps.workbench.actions.welcomeScreen.OpenComplexLanguageProjectAction"
-         text="Open Complex Numbers Support Language's Project"
-         description="This language is a simple baseLanguage's extension. You can learn how to extend baseLanguage in order to add first class support for domain specific notions to it" />
+            <action id="OpenTheComplexNumberLanguageProject"
+                    class="jetbrains.mps.workbench.actions.welcomeScreen.OpenComplexLanguageProjectAction"
+                    text="Open Complex Numbers Support Language's Project"
+                    description="This language is a simple baseLanguage's extension. You can learn how to extend baseLanguage in order to add first class support for domain specific notions to it"/>
 
 
-      <action
-        id="OpenTheSimplestLanguageProject"
-        class="jetbrains.mps.workbench.actions.welcomeScreen.OpenTheSimplestLanguageProjectAction"
-        text="Open The Simplest Language's Project"
-        description="You can take a look at the simplest possible language which contains many aspects that most of the languages have" />
+            <action
+                    id="OpenTheSimplestLanguageProject"
+                    class="jetbrains.mps.workbench.actions.welcomeScreen.OpenTheSimplestLanguageProjectAction"
+                    text="Open The Simplest Language's Project"
+                    description="You can take a look at the simplest possible language which contains many aspects that most of the languages have"/>
 
-      <add-to-group group-id="WelcomeScreen.Documentation" anchor="first"/>
-    </group>
+            <add-to-group group-id="WelcomeScreen.Documentation" anchor="first"/>
+        </group>
 
-    <group id="MPSWelcomeGettingStartedMenu">
-      <action id="CreateNewProjectAction"
-        class="jetbrains.mps.workbench.actions.NewMPSProjectAction"
-        text="Create New MPS Project"
-        description="You can create a new project with this action" />
+        <group id="MPSWelcomeGettingStartedMenu">
+            <action id="CreateNewProjectAction"
+                    class="jetbrains.mps.workbench.actions.NewMPSProjectAction"
+                    text="Create New MPS Project"
+                    description="You can create a new project with this action"/>
 
-      <action id="OpenExistingProjectAction"
-        class="jetbrains.mps.workbench.actions.OpenMPSProjectAction"
-        text="Open MPS Project"
-        description="You can open existing MPS project with this action" />
+            <action id="OpenExistingProjectAction"
+                    class="jetbrains.mps.workbench.actions.OpenMPSProjectAction"
+                    text="Open MPS Project"
+                    description="You can open existing MPS project with this action"/>
 
-      <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
-    </group>
+            <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
+        </group>
 
-    <group id="EditorFix">
-      <!--We need this only cause platform requires this action, and NPE is thrown if
-      the action is not in its place (see MPS-2081 for further details) -->
-      <action id="EditorSelectWord" class="com.intellij.openapi.editor.actions.SelectWordAtCaretAction"/>
-      <add-to-group group-id="EditMenu" anchor="last"/>
-    </group>
+        <group id="EditorFix">
+            <!--We need this only cause platform requires this action, and NPE is thrown if
+the action is not in its place (see MPS-2081 for further details) -->
+            <action id="EditorSelectWord" class="com.intellij.openapi.editor.actions.SelectWordAtCaretAction"/>
+            <add-to-group group-id="EditMenu" anchor="last"/>
+        </group>
 
-    <group id="VcsMappingsFix">
-      <!--fix MPS-2142-->
-      <action id="NewElement" class="com.intellij.ide.actions.NewElementAction"/>
-      <action id="IncrementalSearch" class="com.intellij.codeInsight.navigation.actions.IncrementalSearchAction"/>
-    </group>
+        <group id="VcsMappingsFix">
+            <!--fix MPS-2142-->
+            <action id="NewElement" class="com.intellij.ide.actions.NewElementAction"/>
+            <action id="IncrementalSearch" class="com.intellij.codeInsight.navigation.actions.IncrementalSearchAction"/>
+        </group>
 
-    <!--fix MPS-2156 after fixing MPS-2142-->
-    <group id="NewGroup" popup="true">
-    </group>
+        <!--fix MPS-2156 after fixing MPS-2142-->
+        <group id="NewGroup" popup="true">
+        </group>
 
-    <group>
-      <separator/>
-      <action id="AddMPSModelImportAction" class="jetbrains.mps.workbench.actions.imports.AddModelImportAction"
-              text="Add Model Import">
-        <keyboard-shortcut first-keystroke="control M" keymap="$default"/>
-      </action>
-      <action id="AddMPSLanguageImportAction" class="jetbrains.mps.workbench.actions.imports.AddLanguageImportAction"
-              text="Add Language Import">
-        <keyboard-shortcut first-keystroke="control L" keymap="$default"/>
-      </action>
+        <group>
+            <separator/>
+            <action id="ShowInFileView" class="jetbrains.mps.vcs.actions.ShowInFileView"
+                    text="Show In File System View"/>
+            <action id="ShowInVcsRootsView" class="jetbrains.mps.vcs.actions.ShowInVcsRootsView"
+                    text="Show In VCS Roots View"/>
+            <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
+        </group>
 
-      <add-to-group anchor="last" group-id="EditMenu"/>
-    </group>
-
-    <group>
-      <separator/>
-      <action id="ShowInFileView" class="jetbrains.mps.vcs.actions.ShowInFileView" text="Show In File System View"/>
-      <action id="ShowInVcsRootsView" class="jetbrains.mps.vcs.actions.ShowInVcsRootsView"
-              text="Show In VCS Roots View"/>
-      <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
-    </group>
-
-    <group id="SearchMenu" popup="true">
-      <action id="Find" class="com.intellij.openapi.editor.actions.IncrementalFindAction"
-              icon="/actions/menu-find.png"/>
-      <action id="Replace" class="com.intellij.openapi.editor.actions.ReplaceAction" icon="/actions/menu-replace.png"/>
-      <action id="FindNext" class="com.intellij.ide.actions.SearchAgainAction"/>
-      <action id="FindPrevious" class="com.intellij.ide.actions.SearchBackAction"/>
-      <action id="FindWordAtCaret" class="com.intellij.openapi.editor.actions.FindWordAtCaretAction"/>
-      <separator/>
-      <action id="FindUsages" class="com.intellij.find.actions.FindUsagesAction"/>
-      <action id="ShowUsages" class="com.intellij.find.actions.ShowUsagesAction"/>
-      <action id="FindUsagesInFile" class="com.intellij.find.actions.FindUsagesInFileAction"/>
-      <action id="HighlightUsagesInFile" class="com.intellij.codeInsight.highlighting.actions.HighlightUsagesAction"/>
-      <group id="ShowRecentFindUsagesGroup" class="com.intellij.find.impl.ShowRecentFindUsagesGroup" popup="true"/>
-      <separator/>
-      <!--<action id="FindInPath" class="com.intellij.find.actions.FindInPathAction"/>-->
-      <action id="ReplaceInPath" class="com.intellij.find.actions.ReplaceInPathAction"/>
-    </group>
-  </actions>
+        <group id="SearchMenu" popup="true">
+            <action id="Find" class="com.intellij.openapi.editor.actions.IncrementalFindAction"
+                    icon="/actions/menu-find.png"/>
+            <action id="Replace" class="com.intellij.openapi.editor.actions.ReplaceAction"
+                    icon="/actions/menu-replace.png"/>
+            <action id="FindNext" class="com.intellij.ide.actions.SearchAgainAction"/>
+            <action id="FindPrevious" class="com.intellij.ide.actions.SearchBackAction"/>
+            <action id="FindWordAtCaret" class="com.intellij.openapi.editor.actions.FindWordAtCaretAction"/>
+            <separator/>
+            <action id="FindUsages" class="com.intellij.find.actions.FindUsagesAction"/>
+            <action id="ShowUsages" class="com.intellij.find.actions.ShowUsagesAction"/>
+            <action id="FindUsagesInFile" class="com.intellij.find.actions.FindUsagesInFileAction"/>
+            <action id="HighlightUsagesInFile"
+                    class="com.intellij.codeInsight.highlighting.actions.HighlightUsagesAction"/>
+            <group id="ShowRecentFindUsagesGroup" class="com.intellij.find.impl.ShowRecentFindUsagesGroup"
+                   popup="true"/>
+            <separator/>
+            <!--<action id="FindInPath" class="com.intellij.find.actions.FindInPathAction"/>-->
+            <action id="ReplaceInPath" class="com.intellij.find.actions.ReplaceInPathAction"/>
+        </group>
+    </actions>
 </component>
