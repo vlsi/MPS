@@ -122,6 +122,20 @@ public class TextLine {
     return 0;
   }
 
+  private int getVerticalInternalInsert(double value, String type) {
+    if (type == null) {
+      type = _Enum_Measure.getDefault().getValueAsString();
+    }
+
+    if (type.equals("spaces")) {
+      return (int) (charHeight() * value);
+    }
+    if (type.equals("pixels")) {
+      return (int) value;
+    }
+    return 0;
+  }
+
   public int getLeftInternalInset() {
     Double value = myStyle.get(StyleAttributes.PADDING_LEFT).getValue();
     String type = myStyle.get(StyleAttributes.PADDING_LEFT).getType();
@@ -146,9 +160,25 @@ public class TextLine {
     return getHorizontalInternalInsert(value, type);
   }
 
+  public int getTopInternalInsert() {
+    Double value = myStyle.get(StyleAttributes.PADDING_TOP).getValue();
+    String type = myStyle.get(StyleAttributes.PADDING_TOP).getType();
+    return getVerticalInternalInsert(value, type);
+  }
+
+  public int getBottomInternalInsert() {
+    Double value = myStyle.get(StyleAttributes.PADDING_BOTTOM).getValue();
+    String type = myStyle.get(StyleAttributes.PADDING_BOTTOM).getType();
+    return getVerticalInternalInsert(value, type);
+  }
+
   public int charWidth() {
     FontMetrics metrics = getFontMetrics();
     return metrics.charWidth('w');
+  }
+
+  public int charHeight() {
+    return getFontMetrics().getHeight();
   }
 
   public boolean isCaretEnabled() {
