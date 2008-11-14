@@ -3,9 +3,7 @@ package jetbrains.mps.workbench.dialogs.newproject;
 import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.DirectoryUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.workbench.dialogs.newproject.Icons.Icons;
 import org.jetbrains.annotations.NotNull;
@@ -24,7 +22,7 @@ public class SolutionStep extends BaseStep {
 
   private JTextField myNamespace;
   private PathField myPath;
-  private JCheckBox myDontCreate;
+  private JCheckBox myCreate;
 
   public SolutionStep(ProjectOptions options) {
     super();
@@ -34,12 +32,12 @@ public class SolutionStep extends BaseStep {
   public JComponent createControlComponent() {
     JPanel panel = new JPanel(new GridLayout(5, 1));
 
-    myDontCreate = new JCheckBox(new AbstractAction("Do not create solution") {
+    myCreate = new JCheckBox(new AbstractAction("Create new solution") {
       public void actionPerformed(ActionEvent e) {
-        setCreateSolution(myDontCreate.isSelected());
+        setCreateSolution(myCreate.isSelected());
       }
     });
-    panel.add(myDontCreate);
+    panel.add(myCreate);
 
     JLabel nameLabel = new JLabel();
     nameLabel.setText("Name:");
@@ -103,6 +101,7 @@ public class SolutionStep extends BaseStep {
         prefix = myOptions.getProjectName();
       }
       myOptions.setSolutionNamespace(prefix + ".sandbox");
+      myCreate.doClick();
     }
 
     myNamespace.setText(myOptions.getSolutionNamespace());
@@ -132,10 +131,7 @@ public class SolutionStep extends BaseStep {
         throw new CommitStepException("Path should be absolute");
       }
       if (!(dir.exists())) {
-        boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(getComponent()), dir, false);
-        if (!created) {
-          throw new CommitStepException("Specify another directory");
-        }
+        dir.mkdirs();
       }
       final File descriptorFile = prepareToCreateNewSolutionDescriptorFile(descriptorPath);
       if (descriptorFile == null) {
@@ -152,9 +148,9 @@ public class SolutionStep extends BaseStep {
   }
 
   private void setCreateSolution(boolean value) {
-    myOptions.setCreateNewSolution(!value);
-    myNamespace.setEnabled(!value);
-    myPath.setEnabled(!value);
+    myOptions.setCreateNewSolution(value);
+    myNamespace.setEnabled(value);
+    myPath.setEnabled(value);
   }
 
   private File prepareToCreateNewSolutionDescriptorFile(String path) {

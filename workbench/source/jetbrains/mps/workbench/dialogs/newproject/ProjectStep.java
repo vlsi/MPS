@@ -2,13 +2,15 @@ package jetbrains.mps.workbench.dialogs.newproject;
 
 import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.ide.common.PathField;
-import jetbrains.mps.util.DirectoryUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.workbench.dialogs.newproject.Icons.Icons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
 import java.awt.GridLayout;
@@ -94,10 +96,7 @@ public class ProjectStep extends BaseStep {
       throw new CommitStepException("Project name shouldn't be empty");
     }
     if (!(projectDirFile.exists())) {
-      boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(getComponent()), projectDirFile, false);
-      if (!created) {
-        throw new CommitStepException("Specify another directory");
-      }
+      projectDirFile.mkdirs();
     }
   }
 

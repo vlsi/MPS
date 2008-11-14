@@ -23,7 +23,7 @@ public class LanguageStep extends BaseStep {
 
   private JTextField myNamespace;
   private PathField myPath;
-  private JCheckBox myDontCreate;
+  private JCheckBox myCreate;
 
   public LanguageStep(ProjectOptions options) {
     super();
@@ -33,12 +33,12 @@ public class LanguageStep extends BaseStep {
   public JComponent createControlComponent() {
     JPanel panel = new JPanel(new GridLayout(5, 1));
 
-    myDontCreate = new JCheckBox(new AbstractAction("Do not create language") {
+    myCreate = new JCheckBox(new AbstractAction("Create new language") {
       public void actionPerformed(ActionEvent e) {
-        setCreateLanguage(myDontCreate.isSelected());
+        setCreateLanguage(myCreate.isSelected());
       }
     });
-    panel.add(myDontCreate);
+    panel.add(myCreate);
 
     JLabel namespaceLabel = new JLabel();
     namespaceLabel.setText("Language Namespace:");
@@ -88,7 +88,10 @@ public class LanguageStep extends BaseStep {
   public void _init() {
     super._init();
 
-    if (myOptions.getLanguageNamespace() == null) myOptions.setLanguageNamespace(myOptions.getProjectName());
+    if (myOptions.getLanguageNamespace() == null) {
+      myOptions.setLanguageNamespace(myOptions.getProjectName());
+      myCreate.doClick();
+    }
 
     myNamespace.setText(myOptions.getLanguageNamespace());
     myPath.setPath(myOptions.getLanguagePath());
@@ -120,10 +123,7 @@ public class LanguageStep extends BaseStep {
         throw new CommitStepException("Enter valid namespace");
       }
       if (!(dir.exists())) {
-        boolean created = DirectoryUtil.askToCreateNewDirectory(JOptionPane.getFrameForComponent(getComponent()), dir, false);
-        if (!created) {
-          throw new CommitStepException("Specify another directory");
-        }
+        dir.mkdirs();
       }
     }
   }
@@ -136,8 +136,8 @@ public class LanguageStep extends BaseStep {
   }
 
   private void setCreateLanguage(boolean value) {
-    myOptions.setCreateNewLanguage(!value);
-    myNamespace.setEnabled(!value);
-    myPath.setEnabled(!value);
+    myOptions.setCreateNewLanguage(value);
+    myNamespace.setEnabled(value);
+    myPath.setEnabled(value);
   }
 }
