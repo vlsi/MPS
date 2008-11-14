@@ -28,9 +28,7 @@ import org.jetbrains.annotations.NotNull;
  * Date: Aug 2, 2003
  */
 public final class SNode {
-  private static final boolean COPY_USER_OBJECTS = true;
-
-private static final Logger LOG = Logger.getLogger(SNode.class);
+  private static final Logger LOG = Logger.getLogger(SNode.class);
 
   private static final ModelConstraintsManager CONSTRAINTS_MANAGER = ModelConstraintsManager.getInstance();
 
@@ -315,14 +313,11 @@ private static final Logger LOG = Logger.getLogger(SNode.class);
   }
 
   public void putUserObjects(SNode fromNode) {
-    // DON'T REMOVE PLS. UNDER CONSTRUCTION!
-	if (COPY_USER_OBJECTS){
-		if (fromNode == null || fromNode.myUserObjects == null) return;
-		if (myUserObjects == null) {
-			myUserObjects = new ListMap<Object, Object>();
-		}
-		myUserObjects.putAll(fromNode.myUserObjects);
-	}
+    if (fromNode == null || fromNode.myUserObjects == null) return;
+    if (myUserObjects == null) {
+      myUserObjects = new ListMap<Object, Object>();
+    }
+    myUserObjects.putAll(fromNode.myUserObjects);
   }
 
   public void removeUserObject(Object key) {
