@@ -98,23 +98,23 @@
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/idea-patch.jar.tmp" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="classes" excludes="production/, test/, **/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="classes" excludes="production/, test/, **/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="workbench/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="workbench/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="core/kernel/classes" excludes="idea/MPSApplicationInfo.xml, **/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="core/kernel/classes" excludes="idea/MPSApplicationInfo.xml, **/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html" />
     </copy>
     <antcall target="replace0" />
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="core/runtime/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="core/runtime/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html" />
     </copy>
     <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp">
-      <fileset dir="MPSPlugin/MPSSupport/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="MPSPlugin/MPSSupport/classes" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html" />
     </copy>
     <jar destfile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, " />
+      <fileset dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp" excludes="**/*.java, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html" />
     </jar>
     <delete dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/lib/build-helpers.zkm/mps.jar.tmp" />
     <antcall target="zkm" inheritall="true">
