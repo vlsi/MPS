@@ -324,6 +324,23 @@ public class SubtypingManager {
 
   public Set<IWrapper> leastCommonSupertypesWrappers(Set<IWrapper> types, boolean isWeak) {
     if (types.size() == 1) return new HashSet<IWrapper>(types);
+
+    if (types.size() == 2) {
+      Iterator<IWrapper> iterator = types.iterator();
+      IWrapper type1 = iterator.next();
+      IWrapper type2 = iterator.next();
+      if (isSubtype(type1.getNode(), type2.getNode())) {
+        HashSet<IWrapper> result = new HashSet<IWrapper>();
+        result.add(type2);
+        return result;
+      }
+      if (isSubtype(type2.getNode(), type1.getNode())) {
+        HashSet<IWrapper> result = new HashSet<IWrapper>();
+        result.add(type1);
+        return result;
+      }
+    }
+
     StructuralWrapperSet<?> allTypes = new StructuralWrapperSet();
     StructuralWrapperSet<?> result = new StructuralWrapperSet(types);
 
