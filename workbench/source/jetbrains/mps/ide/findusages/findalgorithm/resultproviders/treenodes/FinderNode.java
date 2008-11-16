@@ -13,6 +13,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.Language;
 import org.jdom.Element;
 
 public class FinderNode extends BaseLeaf {
@@ -79,8 +80,24 @@ public class FinderNode extends BaseLeaf {
     Element finderXML = element.getChild(FINDER);
     String finderName = finderXML.getAttribute(CLASS_NAME).getValue();
     try {
-      myFinder = (BaseFinder) Class.forName(finderName).newInstance();
-      myFinder.read(finderXML, project);
+      Class finderClass = null;
+      for (Language l : project.getProjectLanguages()) {
+        finderClass = l.getClass(finderName);
+        if (finderClass != null) break;
+      }
+      if (finderClass == null) {
+        try {
+          finderClass = Class.forName(finderName);
+        } catch (ClassNotFoundException e) {
+          finderClass = null;
+        }
+      }
+      if (finderClass != null) {
+        myFinder = (BaseFinder) finderClass.newInstance();
+        myFinder.read(finderXML, project);
+      } else {
+        throw new CantLoadSomethingException("Can't find finder class " + finderName);
+      }
     } catch (Throwable t) {
       throw new CantLoadSomethingException("Can't find or read finder " + finderName, t);
     }

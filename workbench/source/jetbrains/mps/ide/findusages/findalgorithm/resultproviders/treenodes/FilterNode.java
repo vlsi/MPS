@@ -4,6 +4,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.filters.BaseFilter;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
@@ -11,6 +12,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.Language;
 import org.jdom.Element;
 
 public class FilterNode extends BaseNode {
@@ -79,8 +81,24 @@ public class FilterNode extends BaseNode {
     Element filterXML = element.getChild(FILTER);
     String filterName = filterXML.getAttribute(CLASS_NAME).getValue();
     try {
-      myFilter = (BaseFilter) Class.forName(filterName).newInstance();
-      myFilter.read(filterXML, project);
+      Class filterClass = null;
+      for (Language l : project.getProjectLanguages()) {
+        filterClass = l.getClass(filterName);
+        if (filterClass != null) break;
+      }
+      if (filterClass == null) {
+        try {
+          filterClass = Class.forName(filterName);
+        } catch (ClassNotFoundException e) {
+          filterClass = null;
+        }
+      }
+      if (filterClass != null) {
+        myFilter = (BaseFilter) filterClass.newInstance();
+        myFilter.read(filterXML, project);
+      } else {
+        throw new CantLoadSomethingException("Can't find filter class " + filterName);
+      }
     } catch (Throwable t) {
       throw new CantLoadSomethingException("Can't instantiate or read filter " + filterName, t);
     }
