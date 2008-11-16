@@ -175,11 +175,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   public void addProjectLanguage(@NotNull Language language) {
     NewProjectDescriptor projectDescriptor = getProjectDescriptor();
-    Path languagePath = new Path();
     IFile descriptorFile = language.getDescriptorFile();
     assert descriptorFile != null;
-    languagePath.setPath(descriptorFile.getAbsolutePath());
-    projectDescriptor.getLanguages().add(languagePath);
+    projectDescriptor.addLanguage(descriptorFile.getAbsolutePath());
     setProjectDescriptor(projectDescriptor);
   }
 
@@ -187,29 +185,14 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     NewProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = language.getDescriptorFile();
     assert descriptorFile != null;
-    Path p = new Path(descriptorFile.getAbsolutePath());
-    projectDescriptor.getLanguages().remove(p);
+    projectDescriptor.removeLanguage(descriptorFile.getAbsolutePath());
     setProjectDescriptor(projectDescriptor);
   }
 
   @NotNull
   public Solution addProjectSolution(@NotNull File solutionDescriptionFile) {
     NewProjectDescriptor projectDescriptor = getProjectDescriptor();
-
-    Path solutionPath = null;
-    for (Path p : getProjectDescriptor().getSolutions()) {
-      if (p.getPath().equals(solutionDescriptionFile.getPath())) {
-        solutionPath = p;
-        break;
-      }
-    }
-
-    if (solutionPath == null) {
-      solutionPath = new Path();
-      solutionPath.setPath(solutionDescriptionFile.getAbsolutePath());
-      projectDescriptor.getSolutions().add(solutionPath);
-    }
-
+    projectDescriptor.addSolution(solutionDescriptionFile.getAbsolutePath());
     setProjectDescriptor(projectDescriptor);
 
     for (Solution s : getProjectSolutions()) {
@@ -227,15 +210,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     NewProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = solution.getDescriptorFile();
     assert descriptorFile != null;
-    Path p = new Path(descriptorFile.getAbsolutePath());
-    projectDescriptor.getSolutions().remove(p);
+    projectDescriptor.removeSolution(descriptorFile.getAbsolutePath());
     setProjectDescriptor(projectDescriptor);
   }
 
   public void addProjectDevKit(@NotNull IFile devKitDescriptorFile) {
     NewProjectDescriptor projectDescriptor = getProjectDescriptor();
-    Path devKitPath = new Path(devKitDescriptorFile.getAbsolutePath());
-    projectDescriptor.getDevkits().add(devKitPath);
+    projectDescriptor.addDevkit(devKitDescriptorFile.getAbsolutePath());
     setProjectDescriptor(projectDescriptor);
   }
 
@@ -243,8 +224,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     NewProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = devkit.getDescriptorFile();
     assert descriptorFile != null;
-    Path p = new Path(descriptorFile.getAbsolutePath());
-    projectDescriptor.getDevkits().remove(p);
+    projectDescriptor.removeDevkit(descriptorFile.getAbsolutePath());
     setProjectDescriptor(projectDescriptor);
   }
 
@@ -270,7 +250,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   public void addLanguageRoot(@NotNull String languagePath) {
-    getProjectDescriptor().getLanguages().add(new Path(languagePath));
+    getProjectDescriptor().addLanguage(languagePath);
   }
 
   @NotNull
@@ -286,9 +266,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   public String getFolderFor(IModule module) {
     IFile file = module.getDescriptorFile();
     assert file != null;
-    String path = FileUtil.getCanonicalPath(file.getAbsolutePath());
+    Path path = new Path(FileUtil.getCanonicalPath(file.getAbsolutePath()));
     for (Path sp : getAllModulePaths()) {
-      if (path.equals(sp.getPath())) {
+      if (sp.isSamePath(path)) {
         return sp.getMPSFolder();
       }
     }
@@ -298,9 +278,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   public void setFolderFor(IModule module, String newFolder) {
     IFile file = module.getDescriptorFile();
     assert file != null;
-    String path = FileUtil.getCanonicalPath(file.getAbsolutePath());
+    Path path = new Path(FileUtil.getCanonicalPath(file.getAbsolutePath()));
     for (Path sp : getAllModulePaths()) {
-      if (path.equals(sp.getPath())) {
+      if (sp.isSamePath(path)) {
         sp.setMPSFolder(newFolder);
         return;
       }

@@ -16,12 +16,14 @@ public class GenParameters {
   public GenParameters(List<SModelDescriptor> models, IModule module) {
     myModels.addAll(models);
 
+/*
     Collections.sort(myModels, new Comparator<SModelDescriptor>() {
       public int compare(SModelDescriptor o1, SModelDescriptor o2) {
         return o1.getSModelReference().compareTo(o2.getSModelReference());
       }
     });
 
+*/
     myModule = module;
   }
 

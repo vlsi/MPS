@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 import org.jetbrains.annotations.Nullable;
 
-public class ModuleReference implements Comparable<ModuleReference> {
+public class ModuleReference {
   private static Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");
 
   public static ModuleReference fromString(String text) {
@@ -89,8 +89,5 @@ public class ModuleReference implements Comparable<ModuleReference> {
     return myModuleFqName;
   }
 
-  public int compareTo(ModuleReference o) {
-    return this.getModuleFqName().compareTo(((ModuleReference) o).getModuleFqName());
-  }
 }
 

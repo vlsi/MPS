@@ -4,7 +4,7 @@ import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 
-public abstract class BaseTestConfiguration implements Comparable {
+public abstract class BaseTestConfiguration {
   private String myName;
 
   public String getName() {
@@ -16,10 +16,4 @@ public abstract class BaseTestConfiguration implements Comparable {
   }
 
   public abstract GenParameters getGenParams(MPSProject project, boolean fullRegeneration) throws IllegalGeneratorConfigurationException;
-
-  public int compareTo(Object o) {
-    assert o instanceof BaseTestConfiguration;
-
-    return myName.compareTo(((BaseTestConfiguration) o).myName);
-  }
 }

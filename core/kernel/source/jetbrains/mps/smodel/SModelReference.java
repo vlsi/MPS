@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
  * Time: 14:07:53
  * To change this template use File | Settings | File Templates.
  */
-public class SModelReference implements Comparable<Object> {
+public class SModelReference {
   private static Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
 
   @Nullable
@@ -118,11 +118,4 @@ public class SModelReference implements Comparable<Object> {
     }
     return sm.getSModelReference();
   }
-
-  public int compareTo(Object o) {
-    int compareStereotypes = this.getStereotype().compareTo(((SModelReference) o).getStereotype());
-    if (compareStereotypes != 0) return compareStereotypes;
-    return this.getLongName().compareTo(((SModelReference) o).getLongName());
-  }
-
 }
