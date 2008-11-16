@@ -499,90 +499,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myOwner;
   }
 
-  private void updateMPSActionsWithKeyStrokes(@NotNull DataContext data) {
-    myActionProxies.clear();
-    for (BaseAction a : myMPSActionsWithShortcuts) {
-      Shortcut[] shortcuts = a.getShortcutSet().getShortcuts();
-      if (shortcuts.length == 0) continue;
-      KeyStroke keyStroke = ((KeyboardShortcut) shortcuts[0]).getFirstKeyStroke();
-      unregisterKeyboardAction(keyStroke);
-    }
-    myMPSActionsWithShortcuts.clear();
-    BaseGroup group = (BaseGroup) ActionManager.getInstance().getAction(EDITOR_POPUP_MENU_ACTIONS);
-    registerKeyStrokes(group, data);
-  }
-
-  private void registerKeyStrokes(BaseGroup group, @NotNull final DataContext data) {
-    if (group != null) {
-      AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, data);
-      group.update(event);
-      if (!event.getPresentation().isEnabled()) return;
-
-      for (final AnAction child : group.getChildren(null)) {
-        event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, data);
-        if (child instanceof BaseAction) {
-          BaseAction childAction = (BaseAction) child;
-          try {
-            childAction.update(event);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-          if (!event.getPresentation().isEnabled()) continue;
-          if (childAction.getShortcutSet().getShortcuts().length > 0) {
-            registerNodeAction(childAction);
-            myMPSActionsWithShortcuts.add(childAction);
-          }
-        }
-        if (child instanceof BaseGroup) {
-          try {
-            BaseGroup childGroup = (BaseGroup) child;
-            childGroup.update(event);
-            if (!event.getPresentation().isEnabled()) continue;
-            registerKeyStrokes(childGroup, data);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-      }
-    }
-  }
-
-  protected void registerNodeAction(BaseAction action) {
-    for (Shortcut shortcut : action.getShortcutSet().getShortcuts()) {
-      registerNodeAction(action, ((KeyboardShortcut) shortcut).getFirstKeyStroke());
-    }
-  }
-
-  protected AbstractAction registerNodeAction(final BaseAction action, @Nullable KeyStroke keyStroke) {
-    if (keyStroke != null) {
-      if (!myActionProxies.containsKey(keyStroke)) {
-        EditorComponent.MPSActionProxy proxy = new MPSActionProxy();
-        myActionProxies.put(keyStroke, proxy);
-        registerKeyboardAction(proxy, keyStroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-        proxy.add(ActionPlaces.EDITOR_POPUP, action);
-        return proxy;
-      } else {
-        MPSActionProxy proxy = myActionProxies.get(keyStroke);
-        List<BaseAction> activeActionsBefore = proxy.getActiveActions();
-        proxy.add(ActionPlaces.EDITOR_POPUP, action);
-
-        if (!activeActionsBefore.isEmpty() && proxy.isActionActive(action)) {
-          StringBuilder actionNames = new StringBuilder();
-          for (BaseAction a : activeActionsBefore) {
-            actionNames.append(a.getClass().getSimpleName()).append(";");
-          }
-          actionNames.delete(actionNames.length() - 1, actionNames.length());
-          LOG.warning(
-            "Action " + action.getClass().getSimpleName() +
-              " is being registered for shortcut <" + keyStroke.toString() + ">" +
-              " for which an action " + actionNames + " is already registered, and both are active");
-        }
-        return proxy;
-      }
-    }
-    return null;
-  }
-
   private void moveCurrentUp() {
     new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), false).move();
   }
@@ -807,6 +723,90 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     JPopupMenu popupMenu = ActionUtils.createPopup(ActionPlaces.EDITOR_POPUP, group);
     popupMenu.show(EditorComponent.this, x, y);
+  }
+
+  private void updateMPSActionsWithKeyStrokes(@NotNull DataContext data) {
+    myActionProxies.clear();
+    for (BaseAction a : myMPSActionsWithShortcuts) {
+      Shortcut[] shortcuts = a.getShortcutSet().getShortcuts();
+      if (shortcuts.length == 0) continue;
+      KeyStroke keyStroke = ((KeyboardShortcut) shortcuts[0]).getFirstKeyStroke();
+      unregisterKeyboardAction(keyStroke);
+    }
+    myMPSActionsWithShortcuts.clear();
+    BaseGroup group = (BaseGroup) ActionManager.getInstance().getAction(EDITOR_POPUP_MENU_ACTIONS);
+    registerKeyStrokes(group, data);
+  }
+
+  private void registerKeyStrokes(BaseGroup group, @NotNull final DataContext data) {
+    if (group != null) {
+      AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, data);
+      group.update(event);
+      if (!event.getPresentation().isEnabled()) return;
+
+      for (final AnAction child : group.getChildren(null)) {
+        event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, data);
+        if (child instanceof BaseAction) {
+          BaseAction childAction = (BaseAction) child;
+          try {
+            childAction.update(event);
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
+          if (!event.getPresentation().isEnabled()) continue;
+          if (childAction.getShortcutSet().getShortcuts().length > 0) {
+            registerNodeAction(childAction);
+            myMPSActionsWithShortcuts.add(childAction);
+          }
+        }
+        if (child instanceof BaseGroup) {
+          try {
+            BaseGroup childGroup = (BaseGroup) child;
+            childGroup.update(event);
+            if (!event.getPresentation().isEnabled()) continue;
+            registerKeyStrokes(childGroup, data);
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
+        }
+      }
+    }
+  }
+
+  protected void registerNodeAction(BaseAction action) {
+    for (Shortcut shortcut : action.getShortcutSet().getShortcuts()) {
+      registerNodeAction(action, ((KeyboardShortcut) shortcut).getFirstKeyStroke());
+    }
+  }
+
+  protected AbstractAction registerNodeAction(final BaseAction action, @Nullable KeyStroke keyStroke) {
+    if (keyStroke != null) {
+      if (!myActionProxies.containsKey(keyStroke)) {
+        EditorComponent.MPSActionProxy proxy = new MPSActionProxy();
+        myActionProxies.put(keyStroke, proxy);
+        registerKeyboardAction(proxy, keyStroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+        proxy.add(ActionPlaces.EDITOR_POPUP, action);
+        return proxy;
+      } else {
+        MPSActionProxy proxy = myActionProxies.get(keyStroke);
+        List<BaseAction> activeActionsBefore = proxy.getActiveActions();
+        proxy.add(ActionPlaces.EDITOR_POPUP, action);
+
+        if (!activeActionsBefore.isEmpty() && proxy.isActionActive(action)) {
+          StringBuilder actionNames = new StringBuilder();
+          for (BaseAction a : activeActionsBefore) {
+            actionNames.append(a.getClass().getSimpleName()).append(";");
+          }
+          actionNames.delete(actionNames.length() - 1, actionNames.length());
+          LOG.warning(
+            "Action " + action.getClass().getSimpleName() +
+              " is being registered for shortcut <" + keyStroke.toString() + ">" +
+              " for which an action " + actionNames + " is already registered, and both are active");
+        }
+        return proxy;
+      }
+    }
+    return null;
   }
 
   private void addCellActionsToPopup(DefaultActionGroup group) {
