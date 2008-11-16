@@ -36,6 +36,8 @@ import javax.swing.JPopupMenu;
 import javax.swing.KeyStroke;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
 import java.awt.event.*;
 import java.util.*;
@@ -118,8 +120,7 @@ public abstract class UsagesTree extends MPSTree {
         boolean goOneClick = e.getClickCount() == 1 && myAutoscroll && e.getButton() == MouseEvent.BUTTON1;
         boolean goTwoClick = e.getClickCount() == 2 && e.getButton() == MouseEvent.BUTTON1;
         if (goOneClick || goTwoClick) {
-          boolean focus = goTwoClick || !isUnstableWindow();
-          openCurrentNodeLink(false, focus);
+          openCurrentNodeLink(false, goTwoClick);
         }
       }
     });
@@ -334,7 +335,6 @@ public abstract class UsagesTree extends MPSTree {
       mergeChildren(child.internalGetChildren());
     }
 
-    //noinspection UnusedAssignment
     children.clear();
     children.addAll(mergedChildren);
   }
