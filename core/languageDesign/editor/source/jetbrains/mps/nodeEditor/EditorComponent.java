@@ -5,6 +5,9 @@ import com.intellij.ide.CutProvider;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.impl.Utils;
+import com.intellij.openapi.actionSystem.impl.ActionMenuItem;
+import com.intellij.openapi.actionSystem.impl.PresentationFactory;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
@@ -12,7 +15,6 @@ import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
@@ -124,7 +126,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected EditorCell myRootCell;
   protected EditorCell mySelectedCell;
   private boolean myCellSwapInProgress;
-  private boolean mySelectionValidationEnabled = true;
   private static final int MIN_SHIFT_X = 30;
   private static final int ADDITIONAL_SHIFT_X = 10;
   private int myShiftX = MIN_SHIFT_X + ADDITIONAL_SHIFT_X;
@@ -162,10 +163,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myInsideOfCommand = false;
 
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
+  @SuppressWarnings({"UnusedDeclaration"})
   private CellSpeedSearch myCellSpeedSearch;
   private IntentionsSupport myIntentionsSupport;
+  @SuppressWarnings({"UnusedDeclaration"})
   private AutoValidator myAutoValidator;
   private SearchPanel mySearchPanel = new SearchPanel(this);
+  @SuppressWarnings({"UnusedDeclaration"})
   private ReferenceUnderliner myReferenceUnderliner = new ReferenceUnderliner();
 
   public EditorComponent(IOperationContext operationContext) {
@@ -209,8 +213,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
     myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     myScrollPane.setViewportView(this);
-    //    myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-    //    myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
     myContainer = new JPanel();
     myContainer.setMinimumSize(new Dimension(0, 0));
@@ -493,6 +495,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
+  public EditorMessageOwner getHighlightMessagesOwner() {
+    return myOwner;
+  }
+
   private void updateMPSActionsWithKeyStrokes(@NotNull DataContext data) {
     myActionProxies.clear();
     for (BaseAction a : myMPSActionsWithShortcuts) {
@@ -504,10 +510,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myMPSActionsWithShortcuts.clear();
     BaseGroup group = (BaseGroup) ActionManager.getInstance().getAction(EDITOR_POPUP_MENU_ACTIONS);
     registerKeyStrokes(group, data);
-  }
-
-  public EditorMessageOwner getHighlightMessagesOwner() {
-    return myOwner;
   }
 
   private void registerKeyStrokes(BaseGroup group, @NotNull final DataContext data) {
@@ -543,6 +545,42 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       }
     }
+  }
+
+  protected void registerNodeAction(BaseAction action) {
+    for (Shortcut shortcut : action.getShortcutSet().getShortcuts()) {
+      registerNodeAction(action, ((KeyboardShortcut) shortcut).getFirstKeyStroke());
+    }
+  }
+
+  protected AbstractAction registerNodeAction(final BaseAction action, @Nullable KeyStroke keyStroke) {
+    if (keyStroke != null) {
+      if (!myActionProxies.containsKey(keyStroke)) {
+        EditorComponent.MPSActionProxy proxy = new MPSActionProxy();
+        myActionProxies.put(keyStroke, proxy);
+        registerKeyboardAction(proxy, keyStroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+        proxy.add(ActionPlaces.EDITOR_POPUP, action);
+        return proxy;
+      } else {
+        MPSActionProxy proxy = myActionProxies.get(keyStroke);
+        List<BaseAction> activeActionsBefore = proxy.getActiveActions();
+        proxy.add(ActionPlaces.EDITOR_POPUP, action);
+
+        if (!activeActionsBefore.isEmpty() && proxy.isActionActive(action)) {
+          StringBuilder actionNames = new StringBuilder();
+          for (BaseAction a : activeActionsBefore) {
+            actionNames.append(a.getClass().getSimpleName()).append(";");
+          }
+          actionNames.delete(actionNames.length() - 1, actionNames.length());
+          LOG.warning(
+            "Action " + action.getClass().getSimpleName() +
+              " is being registered for shortcut <" + keyStroke.toString() + ">" +
+              " for which an action " + actionNames + " is already registered, and both are active");
+        }
+        return proxy;
+      }
+    }
+    return null;
   }
 
   private void moveCurrentUp() {
@@ -727,42 +765,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myOperationContext = operationContext;
   }
 
-  protected void registerNodeAction(BaseAction action) {
-    for (Shortcut shortcut : action.getShortcutSet().getShortcuts()) {
-      registerNodeAction(action, ((KeyboardShortcut) shortcut).getFirstKeyStroke());
-    }
-  }
-
-  protected AbstractAction registerNodeAction(final BaseAction action, @Nullable KeyStroke keyStroke) {
-    if (keyStroke != null) {
-      if (!myActionProxies.containsKey(keyStroke)) {
-        EditorComponent.MPSActionProxy proxy = new MPSActionProxy();
-        myActionProxies.put(keyStroke, proxy);
-        registerKeyboardAction(proxy, keyStroke, WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-        proxy.add(ActionPlaces.EDITOR_POPUP, action);
-        return proxy;
-      } else {
-        MPSActionProxy proxy = myActionProxies.get(keyStroke);
-        List<BaseAction> activeActionsBefore = proxy.getActiveActions();
-        proxy.add(ActionPlaces.EDITOR_POPUP, action);
-
-        if (!activeActionsBefore.isEmpty() && proxy.isActionActive(action)) {
-          StringBuilder actionNames = new StringBuilder();
-          for (BaseAction a : activeActionsBefore) {
-            actionNames.append(a.getClass().getSimpleName()).append(";");
-          }
-          actionNames.delete(actionNames.length() - 1, actionNames.length());
-          LOG.warning(
-            "Action " + action.getClass().getSimpleName() +
-              " is being registered for shortcut <" + keyStroke.toString() + ">" +
-              " for which an action " + actionNames + " is already registered, and both are active");
-        }
-        return proxy;
-      }
-    }
-    return null;
-  }
-
   private EditorCell_Component findCellForComponent(Component component, EditorCell root) {
     if (root instanceof EditorCell_Component && ((EditorCell_Component) root).getComponent() == component) {
       return (EditorCell_Component) root;
@@ -795,11 +797,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void showPopupMenu(int x, int y) {
-    BaseGroup group = ActionUtils.getGroup(EDITOR_POPUP_MENU_ACTIONS);
-    if (group == null) return;
+    BaseGroup baseGroup = ActionUtils.getGroup(EDITOR_POPUP_MENU_ACTIONS);
+    baseGroup.setPopup(false);
+
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(baseGroup);
+    group.addSeparator();
+    addCellActionsToPopup(group);
 
     JPopupMenu popupMenu = ActionUtils.createPopup(ActionPlaces.EDITOR_POPUP, group);
+    popupMenu.show(EditorComponent.this, x, y);
+  }
 
+  private void addCellActionsToPopup(DefaultActionGroup group) {
     EditorCell cell = getSelectedCell();
 
     final EditorContext editorContext = createEditorContextForActions();
@@ -813,11 +823,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         LOG.error(t);
       }
     }
-    if (!actions.isEmpty()) popupMenu.addSeparator();
-
-    JMenu keyMapActions = new JMenu("KeyMap Actions");
-    keyMapActions.setBorder(null);
-    keyMapActions.setIcon(IconManager.EMPTY_ICON);
+    if (!actions.isEmpty()) group.addSeparator();
 
     for (final EditorCellKeyMapAction action : actions) {
       BaseAction mpsAction = new BaseAction("" + action.getDescriptionText()) {
@@ -832,13 +838,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           myAction.execute(null, editorContext);
         }
       };
-      JComponent component = ActionManager.getInstance().createButtonToolbar(ActionPlaces.EDITOR_POPUP, ActionUtils.groupFromActions(mpsAction));
-      keyMapActions.add(component);
+      group.add(mpsAction);
     }
-
-    popupMenu.add(keyMapActions);
-
-    popupMenu.show(EditorComponent.this, x, y);
   }
 
   private EditorContext createEditorContextForActions() {
@@ -1859,7 +1860,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     revalidateAndRepaint(false);
   }
-  
+
 
   void executeCommand(final Runnable r) {
     myInsideOfCommand = true;
