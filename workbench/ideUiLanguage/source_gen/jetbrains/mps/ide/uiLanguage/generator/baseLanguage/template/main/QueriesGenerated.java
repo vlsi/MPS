@@ -83,6 +83,22 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "root", true), "stretch");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1226850537260(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "root", true), "dimensions", true), "left");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1226850677742(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "root", true), "dimensions", true), "top");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1226850686662(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "root", true), "dimensions", true), "width");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1226850696566(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "root", true), "dimensions", true), "height");
+  }
+
   public static Object referenceMacro_GetReferent_1203607249398(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode contextComponent = DialogUtil.getContextComponent(_context.getNode());
     return _context.getOutputNodeByInputNodeAndMappingLabel(contextComponent, "dialogAttribute");
@@ -159,7 +175,7 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1203594547726(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for(SNode cc : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+    for (SNode cc : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       if ("_ToRemove".equals(SPropertyOperations.getString(cc, "name"))) {
         SNodeOperations.deleteNode(cc);
       }

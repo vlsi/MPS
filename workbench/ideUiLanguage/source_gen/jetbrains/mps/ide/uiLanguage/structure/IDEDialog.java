@@ -5,8 +5,10 @@ package jetbrains.mps.ide.uiLanguage.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.uiLanguage.structure.IComponentInstance;
 import jetbrains.mps.smodel.SNode;
+
 import java.util.Iterator;
 import java.util.List;
+
 import jetbrains.mps.uiLanguage.structure.IComponentPart;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -19,6 +21,7 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String STRETCH = "stretch";
+  public static final String DIMENSIONS = "dimensions";
   public static final String CONTENT_PANE = "contentPane";
   public static final String BUTTON = "button";
   public static final String CONTENT = "content";
@@ -67,8 +70,16 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
     this.setBooleanProperty(IDEDialog.STRETCH, value);
   }
 
+  public DialogDimensions getDimensions() {
+    return (DialogDimensions) this.getChild(IDEDialog.DIMENSIONS);
+  }
+
+  public void setDimensions(DialogDimensions node) {
+    super.setChild(IDEDialog.DIMENSIONS, node);
+  }
+
   public IComponentInstance getContentPane() {
-    return (IComponentInstance)this.getChild(IDEDialog.CONTENT_PANE);
+    return (IComponentInstance) this.getChild(IDEDialog.CONTENT_PANE);
   }
 
   public void setContentPane(IComponentInstance node) {
@@ -117,7 +128,7 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
 
 
   public static IDEDialog newInstance(SModel sm, boolean init) {
-    return (IDEDialog)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.IDEDialog", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IDEDialog) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.IDEDialog", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IDEDialog newInstance(SModel sm) {

@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class IDEDialog_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1203592765859;
+  /* package */ AbstractCellListHandler myListHandler_1203592765859;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection1203592633158(context, node);
@@ -67,6 +67,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createRefNode1226851029035(context, node));
     editorCell.addEditorCell(this.createCollection1203680955733(context, node));
     editorCell.addEditorCell(this.createConstant1203680954247(context, node, ""));
     editorCell.addEditorCell(this.createConstant1203592743787(context, node, "content pane:"));
@@ -198,7 +199,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refNode_contentPane1203592748177(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_contentPane_1203592748177((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_contentPane_1203592748177((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -218,7 +219,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createProperty1203603985511_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -227,7 +228,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_property_stretch1203603985511(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_stretch_1203603985511((EditorCell_Label)editorCell, node, context);
+      setupLabel_property_stretch_1203603985511((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -247,7 +248,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createProperty1203680960692_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -256,7 +257,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_property_title1203680960692(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_title_1203680960692((EditorCell_Label)editorCell, node, context);
+      setupLabel_property_title_1203680960692((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -276,7 +277,36 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
+  }
+
+  public EditorCell createRefNode1226851029035_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_refNode_dimensions1226851029035(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_refNode_dimensions_1226851029035((EditorCell_Label) editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createRefNode1226851029035(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("dimensions");
+    provider.setNoTargetText("<no dimensions>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createRefNode1226851029035_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+      return cellWithRole;
   }
 
 
@@ -410,6 +440,9 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_title");
   }
 
+  private static void setupBasic_refNode_dimensions1226851029035(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_Constant_1203592725681_1203592725681(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -444,6 +477,9 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_property_title_1203680960692(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_dimensions_1226851029035(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class buttonListHandler_1434_0 extends RefNodeListHandler {
@@ -488,6 +524,6 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-}
+  }
 
 }
