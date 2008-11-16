@@ -46,16 +46,16 @@ import java.util.List;
 @State(
   name = "UsagesViewTool",
   storages = {
-  @Storage(
-    id = "other",
-    file = "$WORKSPACE_FILE$"
-  )
-    }
+    @Storage(
+      id = "other",
+      file = "$WORKSPACE_FILE$"
+    )
+  }
 )
 public class UsagesViewTool extends BaseProjectTool implements PersistentStateComponent<Element> {
   private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
 
-  private static final String VERSION_NUMBER = "0.9992";
+  private static final String VERSION_NUMBER = "0.9993";
   private static final String VERSION = "version";
   private static final String ID = "id";
 

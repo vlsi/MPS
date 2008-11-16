@@ -18,7 +18,7 @@ public abstract class BaseNodeData implements IExternalizeable {
   private static final String CAPTION = "caption";
   private static final String INFO = "info";
   private static final String EXCLUDED = "excluded";
-  private static final String RESULTS = "results";
+  private static final String RESULTS_SECTION = "results_section";
   private static final String ISRESULT = "isresult";
   private static final String ROLE = "role";
 
@@ -110,6 +110,7 @@ public abstract class BaseNodeData implements IExternalizeable {
     element.setAttribute(EXCLUDED, Boolean.toString(myIsExcluded));
     element.setAttribute(EXPANDED, Boolean.toString(myIsExpanded));
     element.setAttribute(ISRESULT, Boolean.toString(myIsResultNode));
+    element.setAttribute(RESULTS_SECTION, Boolean.toString(myResultsSection));
 
     Element roleXML = new Element(ROLE);
     PathItemRole.write(myRole, roleXML);
@@ -122,6 +123,7 @@ public abstract class BaseNodeData implements IExternalizeable {
     myIsExcluded = Boolean.parseBoolean(element.getAttributeValue(EXCLUDED));
     myIsExpanded = Boolean.parseBoolean(element.getAttributeValue(EXPANDED));
     myIsResultNode = Boolean.parseBoolean(element.getAttributeValue(ISRESULT));
+    myResultsSection = Boolean.parseBoolean(element.getAttributeValue(RESULTS_SECTION));
 
     Element roleXML = element.getChild(ROLE);
     myRole = PathItemRole.read(roleXML);
