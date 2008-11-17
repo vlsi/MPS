@@ -13815,5 +13815,37 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1226936033402">
+    <property name="package" value="dataFlow" />
+    <property name="name" value="CommentCanBeUnreachable" />
+    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1226936061419">
+      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1226936065326">
+        <property name="name" value="Class" />
+        <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1226936071520">
+          <property name="name" value="method" />
+          <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1226936085126" />
+          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226936071522" />
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226936071523">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226936086674">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1226936088239">
+                <property name="value" value="0" />
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1226936098446">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226936092022">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1226936092023">
+                  <property name="value" value="50" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="nodeOpraretionsMark$attribute" type="jetbrains.mps.lang.test.structure.NodeOperationsContainer" id="1226936109744">
+            <node role="operations" type="jetbrains.mps.lang.test.structure.TypesCheckOperation" id="1226936244308" />
+          </node>
+        </node>
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226936065327" />
+      </node>
+    </node>
+  </node>
 </model>
 

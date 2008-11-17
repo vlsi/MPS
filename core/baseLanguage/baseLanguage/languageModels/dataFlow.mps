@@ -2148,5 +2148,15 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1226935762687">
+    <link role="conceptDeclaration" targetNodeId="1.1177326519037" resolveInfo="CommentedStatementsBlock" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1226935762688">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226935762689">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable" id="1226935788187">
+          <node role="emitStatement" type="jetbrains.mps.lang.dataFlow.structure.EmitNopStatement" id="1226935792767" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
