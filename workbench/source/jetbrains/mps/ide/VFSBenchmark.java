@@ -15,7 +15,7 @@ import java.util.LinkedList;
 import java.util.Arrays;
 import java.util.Set;
 
-public class VFSTest {
+public class VFSBenchmark {
   private static final int COUNT = 1;
 
   public static void main(String[] args) throws IOException {
