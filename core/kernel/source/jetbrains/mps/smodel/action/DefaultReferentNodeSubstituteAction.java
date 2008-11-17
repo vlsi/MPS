@@ -48,6 +48,6 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
       }
       getSourceNode().setReferent(SModelUtil_new.getGenuineLinkRole(myLinkDeclaration), parameterNode);
     }
-    return getSourceNode();
+    return null;
   }
 }
