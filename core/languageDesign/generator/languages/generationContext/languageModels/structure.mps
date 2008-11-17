@@ -527,7 +527,7 @@
     <property name="name" value="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" />
     <link role="extends" targetNodeId="1216860049619" resolveInfo="GenerationContextOp_Base" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1221219412886">
-      <property name="value" value="get output by label and input using ref.scope" />
+      <property name="value" value="pick output by label and input using ref.scope" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1221219412888">

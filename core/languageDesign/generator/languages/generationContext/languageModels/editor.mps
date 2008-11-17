@@ -53,7 +53,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1216860146344">
-        <property name="text" value="for input" />
+        <property name="text" value="for" />
         <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1218067724276" />
       </node>
@@ -130,7 +130,7 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1217884861524">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1217884861525">
-        <property name="text" value="get copied output for input" />
+        <property name="text" value="get copied output for" />
         <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225400108746">
@@ -236,7 +236,7 @@
         <property name="flag" value="true" />
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1218067438887">
-        <property name="style" value="BOLD_ITALIC" />
+        <property name="style" value="BOLD" />
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1226961469077">
         <property name="color" value="darkGray" />
@@ -264,7 +264,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221156651502">
-        <property name="text" value="for input" />
+        <property name="text" value="for" />
         <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1221156651503" />
       </node>

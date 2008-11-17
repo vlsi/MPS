@@ -34,7 +34,7 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant1216860146340(context, node, "get output"));
     editorCell.addEditorCell(this.createRefCell1216860146341(context, node));
-    editorCell.addEditorCell(this.createConstant1216860146344(context, node, "for input"));
+    editorCell.addEditorCell(this.createConstant1216860146344(context, node, "for"));
     editorCell.addEditorCell(this.createConstant1225400182169(context, node, "("));
     editorCell.addEditorCell(this.createRefNode1216860146345(context, node));
     editorCell.addEditorCell(this.createConstant1225400196937(context, node, ")"));

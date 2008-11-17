@@ -27,7 +27,7 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant1217884861525(context, node, "get copied output for input"));
+    editorCell.addEditorCell(this.createConstant1217884861525(context, node, "get copied output for"));
     editorCell.addEditorCell(this.createConstant1225400108746(context, node, "("));
     editorCell.addEditorCell(this.createRefNode1217884861530(context, node));
     editorCell.addEditorCell(this.createConstant1225400068385(context, node, ")"));

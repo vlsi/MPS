@@ -14,7 +14,7 @@ public class Styles_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.EDITABLE, true);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
       }
 
