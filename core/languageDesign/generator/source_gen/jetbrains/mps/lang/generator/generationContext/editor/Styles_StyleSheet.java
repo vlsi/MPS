@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Styles_StyleSheet {
 
@@ -13,7 +14,8 @@ public class Styles_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.EDITABLE, true);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
       }
 
     };

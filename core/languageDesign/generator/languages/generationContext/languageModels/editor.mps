@@ -236,7 +236,10 @@
         <property name="flag" value="true" />
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1218067438887">
-        <property name="style" value="PLAIN" />
+        <property name="style" value="BOLD_ITALIC" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1226961469077">
+        <property name="color" value="darkGray" />
       </node>
     </node>
   </node>
@@ -284,7 +287,7 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1221219519621">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221219519622">
-        <property name="text" value="get output" />
+        <property name="text" value="pick output" />
         <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1221219519623">
@@ -300,18 +303,21 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221219519626">
-        <property name="text" value="for input" />
+        <property name="text" value="for" />
         <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1221219519627" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1226961386700">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="2v.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1221219519628">
         <property name="noTargetText" value="&lt;no input node&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1216860049632" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1221219525391">
-        <property name="text" value="(using ref.scope)" />
-        <link role="styleClass" targetNodeId="1218067356490" resolveInfo="genContext_operation" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1221219559413" />
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
       </node>
     </node>
   </node>

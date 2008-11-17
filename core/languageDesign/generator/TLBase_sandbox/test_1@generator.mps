@@ -643,5 +643,12 @@
       <link role="applicableConcept" targetNodeId="1.1145552809883" resolveInfo="AbstractCreator" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.generator.structure.MappingScript" id="1226692835513">
+    <property name="name" value="N" />
+    <property name="scriptKind" value="pre_processing" />
+    <node role="codeBlock" type="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock" id="1226692835514">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226692835515" />
+    </node>
+  </node>
 </model>
 
