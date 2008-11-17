@@ -26,7 +26,8 @@ public class DiffBuilder {
   }
 
   private void collectChanges() {
-    collectAddedImports();
+    collectAddedLanguageImports();
+    collectAddedModelImport();
     collectLanguageAspects();
     collectDeletedNodes();
     collectAddedNodes();
@@ -34,6 +35,22 @@ public class DiffBuilder {
     collectPropertyChanges();
     collectReferenceChanges();
     collectConceptChanges();
+  }
+
+  private void collectAddedModelImport() {
+    List<SModelReference> oldImportElements = myOldModel.getImportedModelUIDs();
+    List<SModelReference> newImportElements = myNewModel.getImportedModelUIDs();
+
+    Set<SModelReference> addedImports = getDiff(oldImportElements, newImportElements);
+    Set<SModelReference> deletedImports = getDiff(newImportElements, oldImportElements);
+
+    for (SModelReference ref : addedImports) {
+      myChanges.add(new ModelImportChange(ref, false));
+    }
+
+    for (SModelReference ref : deletedImports) {
+      myChanges.add(new ModelImportChange(ref, true));
+    }
   }
 
   private void collectLanguageAspects() {
@@ -65,7 +82,7 @@ public class DiffBuilder {
     }
   }
 
-  private void collectAddedImports() {
+  private void collectAddedLanguageImports() {
     List<ModuleReference> oldLanguages = myOldModel.getExplicitlyImportedLanguages();
     List<ModuleReference> newLanguages = myNewModel.getExplicitlyImportedLanguages();
 
@@ -81,9 +98,9 @@ public class DiffBuilder {
     }
   }
 
-  private Set<ModuleReference> getDiff(List<ModuleReference> oldLanguages, List<ModuleReference> newLanguages) {
-    Set<ModuleReference> addedImports = new LinkedHashSet<ModuleReference>(newLanguages);
-    addedImports.removeAll(oldLanguages);
+  private <C> Set<C> getDiff(List<C> oldList, List<C> newList) {
+    Set<C> addedImports = new LinkedHashSet<C>(newList);
+    addedImports.removeAll(oldList);
     return addedImports;
   }
 

@@ -16,6 +16,7 @@ public class ModelAssert {
     ModelAccess.instance().checkReadAccess();
 
     assertSameImports(expectedModel, actualModel);
+    assertSameModelImports(expectedModel, actualModel);
     assertSameLanguageAspects(expectedModel, actualModel);
 
     // todo check not only child nodes
@@ -32,6 +33,12 @@ public class ModelAssert {
       assertNotNull("Not found expected root " + expectedRoot, actualRoot);
       assertDeepNodeEquals(expectedRoot, actualRoot);
     }
+  }
+
+  private static void assertSameModelImports(SModel expectedModel, SModel actualModel) {
+    assertListsEqual(expectedModel.getImportedModelUIDs(),
+      actualModel.getImportedModelUIDs(),
+      "model import");
   }
 
   private static void assertSameLanguageAspects(SModel expectedModel, SModel actualModel) {
@@ -74,18 +81,21 @@ public class ModelAssert {
   }
 
   private static void assertSameImports(SModel expectedModel, SModel actualModel) {
-    List<ModuleReference> expectedLanguages = expectedModel.getExplicitlyImportedLanguages();
-    List<ModuleReference> actualLanguages = actualModel.getExplicitlyImportedLanguages();
+    assertListsEqual(expectedModel.getExplicitlyImportedLanguages(),
+      actualModel.getExplicitlyImportedLanguages(),
+      "import");
+  }
 
-    for (ModuleReference expectedRef : expectedLanguages) {
-      if (!actualLanguages.contains(expectedRef)) {
-        fail("Not found expected import " + expectedRef);
+  private static <C> void assertListsEqual(List<C> expectedList, List<C> actualList, String name) {
+    for (C expected : expectedList) {
+      if (!actualList.contains(expected)) {
+        fail("Not found expected " + name + " " + expected);
       }
     }
 
-    for (ModuleReference actualRef : actualLanguages) {
-      if (!expectedLanguages.contains(actualRef)) {
-        fail("Not expected import " + actualRef);
+    for (C actual : actualList) {
+      if (!expectedList.contains(actual)) {
+        fail("Not expected " + name + " " + actual);
       }
     }
   }

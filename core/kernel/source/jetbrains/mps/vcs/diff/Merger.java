@@ -303,6 +303,7 @@ public class Merger {
     myResultModel.addRoot(tmp);
 
     applyImportLanguages();
+    applyImportModels();
     applyLanguageAspectChange();
     applyNewNodes();
     applyProperties();
@@ -329,6 +330,13 @@ public class Merger {
     myResultModel.removeRoot(tmp);
     if (!notRemoveLanguage) myResultModel.deleteLanguage(languageNamespace);
     myResultModel.setLoading(false);
+  }
+
+  private void applyImportModels() {
+    List<ModelImportChange> importChangeList = getChanges(ModelImportChange.class);
+    for (ModelImportChange ch : importChangeList) {
+      ch.apply(myResultModel);
+    }
   }
 
   private void applyLanguageAspectChange() {
