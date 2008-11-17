@@ -175,7 +175,6 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
 
 	// ISetSequence
 	
-	@Override
 	public T addElement(T t) {
         if (Sequence.IGNORE_NULL_VALUES) {
             if (t == null) {
@@ -186,7 +185,6 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
         return t;
 	}
 
-	@Override
 	public void addSequence(ISequence<T> seq) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (seq == null) {
@@ -204,7 +202,6 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
 		
 	}
 
-	@Override
 	public T removeElement(T t) {
         if (remove((Object)t)) {
         	return t;
@@ -212,7 +209,6 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
         return null;
 	}
 
-	@Override
 	public void removeSequence(ISequence<T> seq) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (seq == null) {
@@ -225,19 +221,16 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public T[] toGenericArray() {
         return (T[]) set.toArray();
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public T[] toGenericArray(Class<T> runtimeClass) {
         T[] arr = (T[]) Array.newInstance(runtimeClass, set.size());
         return set.toArray(arr);
 	}
 
-	@Override
 	public Set<T> toSet() {
 		return set;
 	}

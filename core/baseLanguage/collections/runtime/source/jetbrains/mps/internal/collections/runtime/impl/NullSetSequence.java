@@ -90,7 +90,6 @@ public class NullSetSequence<T> extends NullSequence<T> implements ISetSequence<
         return (T[]) Collections.<T>emptyList().toArray();
     }
 
-	@Override
 	public Set<T> toSet() {
 		return this;
 	}
