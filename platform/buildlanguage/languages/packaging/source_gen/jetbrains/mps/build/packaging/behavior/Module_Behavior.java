@@ -46,11 +46,11 @@ public class Module_Behavior {
   public static String call_getBasedir_1213877514794(SNode thisNode) {
     IFile descriptor = Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile();
     String str = Module_Behavior.call_getMacros_1213877515158(thisNode).expandPath(Macros.getMacroString(Module_Behavior.call_getModule_1213877515148(thisNode)), descriptor);
-    return ModuleUtil.getRelativePath(str, AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode));
+    return ModuleUtil.getRelativePath(str, AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath());
   }
 
   public static String call_findMPSProjectFile_1213877514840(SNode thisNode, File file) {
-    if (AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).startsWith(file.getAbsolutePath()) && !(AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).equals(file.getAbsolutePath()))) {
+    if (AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getAbsolutePath().startsWith(file.getAbsolutePath()) && !(AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getAbsolutePath().equals(file.getAbsolutePath()))) {
       return null;
     }
     File[] children = file.listFiles();
@@ -66,7 +66,10 @@ public class Module_Behavior {
   }
 
   public static String call_getProjectBasedir_1213877514893(SNode thisNode) {
-    String homePath = AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode);
+    String homePath = AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath();
+    if (homePath.endsWith(File.separator)) {
+      homePath = homePath.substring(0, homePath.length() - 1);
+    }
     String basedir = (StringUtils.isEmpty(homePath) ?
       "" :
       (homePath + File.separator)
@@ -82,7 +85,7 @@ public class Module_Behavior {
     if (homePath.equals("")) {
       return result;
     }
-    return result.substring(AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).length() + 1);
+    return result.substring(homePath.length() + 1);
   }
 
   public static String call_getChildrenTargetDir_1213877514970(SNode thisNode) {
@@ -107,7 +110,7 @@ public class Module_Behavior {
     for(String cp : Sequence.fromIterable(classpath)) {
       if (!(onlyUnderProjectBasedir) || cp.startsWith(projectBasedir)) {
         SNode nodeCP = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathHolder", null);
-        SPropertyOperations.set(nodeCP, "fullPath", ModuleUtil.getRelativePath(cp, AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode)));
+        SPropertyOperations.set(nodeCP, "fullPath", ModuleUtil.getRelativePath(cp, AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath()));
         if (SPropertyOperations.getString(nodeCP, "fullPath").equals(cp)) {
           ModuleUtil.findMacro(nodeCP, SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.MPSLayout", true, true), "macro", true));
         }
@@ -147,7 +150,7 @@ public class Module_Behavior {
   }
 
   public static String call_getClassesGen_1216909316753(SNode thisNode) {
-    return ModuleUtil.getRelativePath(Module_Behavior.call_getModule_1213877515148(thisNode).getClassesGen().getAbsolutePath(), AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode));
+    return ModuleUtil.getRelativePath(Module_Behavior.call_getModule_1213877515148(thisNode).getClassesGen().getAbsolutePath(), AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getAbsolutePath());
   }
 
   public static List<SNode> call_getSources_1216909568805(SNode thisNode) {

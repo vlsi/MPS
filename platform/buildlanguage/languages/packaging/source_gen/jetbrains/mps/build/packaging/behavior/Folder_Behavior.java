@@ -15,7 +15,7 @@ public class Folder_Behavior {
   }
 
   public static String virtual_getChildrenTargetDir_1213877279370(SNode thisNode) {
-    return AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode);
+    return AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode).getPath();
   }
 
 }
