@@ -1,11 +1,14 @@
 package jetbrains.mps.typesystem.inference.util;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.lang.smodel.structure.SNodeType;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -115,14 +118,16 @@ public class SubtypingCache {
     }
     map.put(conceptFQName, result);
 
-    if (bothMaps) {
+    if (bothMaps && result == null) {
       CacheNodeHandler subtypeHandler2 = new CacheNodeHandler(subtype);
       Map<String, SNode> map2 = cache2.get(subtypeHandler2);
       if (map2 == null) {
         map2 = new HashMap<String, SNode>();
         cache2.put(subtypeHandler2, map2);
       }
-      map2.put(conceptFQName, result);
+   /*   if (map2.get(conceptFQName) == null) {
+        map2.put(conceptFQName, result);
+      }*/
     }
   }
 
@@ -144,14 +149,16 @@ public class SubtypingCache {
     }
     map.put(c, new Pair<SNode, GeneratedMatchingPattern>(result, pattern));
 
-    if (bothMaps) {
+    if (bothMaps && result == null) {
       CacheNodeHandler subtypeHandler2 = new CacheNodeHandler(subtype);
       Map<Class, Pair<SNode, GeneratedMatchingPattern>> map2 = cache2.get(subtypeHandler2);
       if (map2 == null) {
         map2 = new HashMap<Class, Pair<SNode, GeneratedMatchingPattern>>();
         cache2.put(subtypeHandler2, map2);
       }
-      map2.put(c, new Pair<SNode, GeneratedMatchingPattern>(result, pattern));
+     /* if (map2.get(c) == null) {
+        map2.put(c, new Pair<SNode, GeneratedMatchingPattern>(result, pattern));
+      }*/
     }
   }
 
