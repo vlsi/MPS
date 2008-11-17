@@ -27,6 +27,8 @@ import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileNode;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.actions.FilePaneCopyProvider;
+import jetbrains.mps.ide.projectPane.fileSystem.actions.FilePanePasteProvider;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -262,6 +264,10 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
           return node.getFile();
         }
       }
+    } else if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) {
+      return new FilePaneCopyProvider();
+    } else if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) {
+      return new FilePanePasteProvider();
     }
     return super.getData(dataId);
   }

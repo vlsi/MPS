@@ -4,9 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
@@ -75,11 +73,13 @@ public class RemoveModuleFromProject_Action extends GeneratedAction {
     try {
       IModule module = RemoveModuleFromProject_Action.this.context.getModule();
       if (module instanceof Language) {
-        RemoveModuleFromProject_Action.this.project.removeProjectLanguage((Language) module);
-      } else if (module instanceof Solution) {
-        RemoveModuleFromProject_Action.this.project.removeProjectSolution((Solution) module);
-      } else if (module instanceof DevKit) {
-        RemoveModuleFromProject_Action.this.project.removeProjectDevKit((DevKit) module);
+        RemoveModuleFromProject_Action.this.project.removeProjectLanguage((Language)module);
+      } else
+      if (module instanceof Solution) {
+        RemoveModuleFromProject_Action.this.project.removeProjectSolution((Solution)module);
+      } else
+      if (module instanceof DevKit) {
+        RemoveModuleFromProject_Action.this.project.removeProjectDevKit((DevKit)module);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RemoveModuleFromProject", t);

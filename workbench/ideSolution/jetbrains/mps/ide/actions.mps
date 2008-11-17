@@ -29,7 +29,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="128" />
+  <maxImportIndex value="130" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -100,6 +100,8 @@
   <import index="126" modelUID="f:java_stub#jetbrains.mps.ide.ui.smodel(jetbrains.mps.ide.ui.smodel@java_stub)" version="-1" />
   <import index="127" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="128" modelUID="f:java_stub#com.intellij.ide.projectView.impl(com.intellij.ide.projectView.impl@java_stub)" version="-1" />
+  <import index="129" modelUID="f:java_stub#jetbrains.mps.ide.projectPane.fileSystem.actions(jetbrains.mps.ide.projectPane.fileSystem.actions@java_stub)" version="-1" />
+  <import index="130" modelUID="f:java_stub#com.intellij.ide.actions(com.intellij.ide.actions@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="NodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -7805,8 +7807,17 @@
     <property name="name" value="AbstractFileActions" />
     <property name="package" value="Menu.FileView" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1217431154934">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1226939846701">
+        <link role="constructorDeclaration" targetNodeId="129.~FileCutAction.&lt;init&gt;()" resolveInfo="FileCutAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1226939852542">
+        <link role="constructorDeclaration" targetNodeId="129.~FileCopyAction.&lt;init&gt;()" resolveInfo="FileCopyAction" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1226939856611">
+        <link role="constructorDeclaration" targetNodeId="129.~FilePasteAction.&lt;init&gt;()" resolveInfo="FilePasteAction" />
+      </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1221761213650">
-        <link role="constructorDeclaration" targetNodeId="123.~FileDeleteActionFixed.&lt;init&gt;()" resolveInfo="FileDeleteActionFixed" />
+        <link role="constructorDeclaration" targetNodeId="129.~FileDeleteActionFixed.&lt;init&gt;()" resolveInfo="FileDeleteActionFixed" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1221761396218" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ExtentionPoint" id="1217431278099">

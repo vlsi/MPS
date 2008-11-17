@@ -4,7 +4,10 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.vcs.actions.FileDeleteActionFixed;
+import jetbrains.mps.ide.projectPane.fileSystem.actions.FileCutAction;
+import jetbrains.mps.ide.projectPane.fileSystem.actions.FileCopyAction;
+import jetbrains.mps.ide.projectPane.fileSystem.actions.FilePasteAction;
+import jetbrains.mps.ide.projectPane.fileSystem.actions.FileDeleteActionFixed;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
@@ -20,6 +23,9 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
+      this.add(new FileCutAction());
+      this.add(new FileCopyAction());
+      this.add(new FilePasteAction());
       this.add(new FileDeleteActionFixed());
       this.addSeparator();
       this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);

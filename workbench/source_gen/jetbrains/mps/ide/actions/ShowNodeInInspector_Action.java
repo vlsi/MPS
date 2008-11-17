@@ -4,9 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
@@ -66,7 +64,7 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      InspectorEditorComponent inspector = (InspectorEditorComponent) ShowNodeInInspector_Action.this.editor;
+      InspectorEditorComponent inspector = (InspectorEditorComponent)ShowNodeInInspector_Action.this.editor;
       inspector.inspectNode(ShowNodeInInspector_Action.this.node, inspector.getOperationContext());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeInInspector", t);

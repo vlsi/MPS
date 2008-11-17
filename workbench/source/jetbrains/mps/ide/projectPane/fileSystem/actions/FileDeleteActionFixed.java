@@ -1,4 +1,4 @@
-package jetbrains.mps.vcs.actions;
+package jetbrains.mps.ide.projectPane.fileSystem.actions;
 
 import com.intellij.ide.actions.DeleteAction;
 import com.intellij.ide.DeleteProvider;

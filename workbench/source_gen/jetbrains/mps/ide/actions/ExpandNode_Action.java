@@ -4,18 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
-
 import javax.swing.tree.TreePath;
-
 import jetbrains.mps.ide.ui.MPSTreeNode;
 
 public class ExpandNode_Action extends GeneratedAction {
@@ -64,7 +60,7 @@ public class ExpandNode_Action extends GeneratedAction {
       if (path == null) {
         return;
       }
-      tree.expandAll((MPSTreeNode) path.getLastPathComponent());
+      tree.expandAll((MPSTreeNode)path.getLastPathComponent());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ExpandNode", t);
     }

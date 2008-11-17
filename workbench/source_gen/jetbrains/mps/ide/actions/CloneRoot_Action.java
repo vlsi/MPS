@@ -4,18 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
 import java.util.List;
-
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-
 import java.util.ArrayList;
-
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -61,7 +57,8 @@ public class CloneRoot_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.nodes = null;
-      } else {
+      } else
+      {
         this.nodes = new ArrayList<SNode>(nodes);
       }
     }
@@ -77,7 +74,7 @@ public class CloneRoot_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      for (SNode node : Sequence.fromIterable(CloneRoot_Action.this.nodes)) {
+      for(SNode node : Sequence.fromIterable(CloneRoot_Action.this.nodes)) {
         SNode root = SNodeOperations.getContainingRoot(node);
         SNode copy = SNodeOperations.copyNode(root);
         SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
