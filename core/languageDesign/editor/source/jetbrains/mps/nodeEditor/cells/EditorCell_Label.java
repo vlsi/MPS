@@ -372,10 +372,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   protected boolean doProcessKeyTyped(KeyEvent keyEvent) {
-    if (!isEditable()) {
-      return false;
-    }
-
     int wasPosition = getCaretPosition();
     CellSide side;
     if (wasPosition == 0) {
@@ -387,7 +383,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myCaretIsVisible = true;
 
 
-    if (processMutableKeyTyped(keyEvent)) {
+    if (isEditable() && processMutableKeyTyped(keyEvent)) {
       getEditorContext().flushEvents();
 
       getEditor().relayout();
