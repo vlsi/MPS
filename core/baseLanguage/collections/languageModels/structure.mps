@@ -623,6 +623,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1219697389604">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1226941030274">
+      <link role="intfc" targetNodeId="2.1212170275853" resolveInfo="IValidIdentifier" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1153944233411">
     <property name="name" value="ForEachVariableReference" />
