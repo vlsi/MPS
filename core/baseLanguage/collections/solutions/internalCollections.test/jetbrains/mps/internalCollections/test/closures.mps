@@ -12,7 +12,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
@@ -2300,6 +2300,65 @@
         <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225557148575">
           <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1226857595632">
+      <property name="name" value="inputABC" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226857598878">
+        <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1226857600494" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226857595634" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226857595635">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226857610722">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1226857615623">
+            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
+            <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226857616720">
+              <property name="value" value="A" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226857617828">
+              <property name="value" value="B" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226857618947">
+              <property name="value" value="C" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1226857625189">
+      <property name="name" value="inputABCDEF" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226857625190">
+        <link role="classifier" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="1226857625191" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226857625192" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226857625193">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226857625194">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1226857625195">
+            <link role="classConcept" targetNodeId="1.~Arrays" resolveInfo="Arrays" />
+            <link role="baseMethodDeclaration" targetNodeId="1.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226857625196">
+              <property name="value" value="A" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226857625197">
+              <property name="value" value="B" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226857625198">
+              <property name="value" value="C" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226857630644">
+              <property name="value" value="D" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226857632053">
+              <property name="value" value="E" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226857632848">
+              <property name="value" value="F" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

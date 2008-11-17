@@ -74,6 +74,14 @@ public class Util_Test extends TestCase {
     return Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
   }
 
+  public Iterable<String> inputABC() {
+    return Arrays.asList("A", "B", "C");
+  }
+
+  public Iterable<String> inputABCDEF() {
+    return Arrays.asList("A", "B", "C", "D", "E", "F");
+  }
+
   public Iterable<Integer> expectEmpty() {
     return Collections.emptyList();
   }
