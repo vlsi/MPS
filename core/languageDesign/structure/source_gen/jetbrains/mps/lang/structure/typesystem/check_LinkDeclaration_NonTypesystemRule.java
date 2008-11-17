@@ -11,11 +11,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -32,10 +31,10 @@ public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesyst
     }
     SNode declaringConcept = SNodeOperations.getAncestor(linkToCheck, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
     List<SNode> supers = SConceptOperations.getDirectSuperConcepts(declaringConcept, false);
-    Iterable<SNode> linksInSupers = ListSequence.fromList(supers).translate(new ITranslator <SNode, SNode>() {
+    Iterable<SNode> linksInSupers = ListSequence.fromList(supers).translate(new ITranslator2 <SNode, SNode>() {
 
-      public ISequence<SNode> translate(final SNode concept) {
-        return new ISequenceIterableAdapter <SNode>() {
+      public Iterable<SNode> translate(final SNode concept) {
+        return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
             return new YieldingIterator <SNode>() {
@@ -54,7 +53,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 4:
-                      this._4_link_it = this._3_links.iterator();
+                      this._4_link_it = Sequence.fromIterable(this._3_links).iterator();
                     case 5:
                       if (!(this._4_link_it.hasNext())) {
                         this.__CP__ = 1;
@@ -88,7 +87,7 @@ __switch__:
       }
 
     });
-    for(SNode link : linksInSupers) {
+    for(SNode link : Sequence.fromIterable(linksInSupers)) {
       if (SPropertyOperations.getString(linkToCheck, "role").equals(SPropertyOperations.getString(link, "role"))) {
         {
           BaseIntentionProvider intentionProvider = null;

@@ -505,5 +505,13 @@
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226066719224">
+    <property name="name" value="TestCellAnnotation" />
+    <link role="extends" targetNodeId="1210673684636" resolveInfo="TestNodeAnnotation" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1226066756036">
+      <property name="name" value="cellId" />
+      <link role="dataType" targetNodeId="5.1082983041843" resolveInfo="string" />
+    </node>
+  </node>
 </model>
 

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SNodeOperation_DataFlow extends DataFlowBuilder {
@@ -14,7 +15,7 @@ public class SNodeOperation_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode expr : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Expression", false)) {
+    for(SNode expr : Sequence.fromIterable(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Expression", false))) {
       _context.getBuilder().build((SNode)expr);
     }
   }

@@ -10,9 +10,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 public class InlineLocalVariable_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(InlineLocalVariable_Action.class);
@@ -34,7 +34,15 @@ public class InlineLocalVariable_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return InlineVariableRefactoring.isApplicable(InlineLocalVariable_Action.this.node);
+    final Wrappers._boolean result = new Wrappers._boolean();
+    ModelAccess.instance().runReadAction(new Runnable() {
+
+      public void run() {
+        result.value = InlineVariableRefactoring.isApplicable(InlineLocalVariable_Action.this.node);
+      }
+
+    });
+    return result.value;
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {

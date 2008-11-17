@@ -24,7 +24,7 @@ public class ConstructorDeclaration_Behavior {
     result.append(SPropertyOperations.getString(thisNode, "nestedName"));
     result.append("(");
     boolean first = true;
-    for (SNode parm : SLinkOperations.getTargets(thisNode, "parameter", true)) {
+    for(SNode parm : SLinkOperations.getTargets(thisNode, "parameter", true)) {
       if (!(first)) {
         result.append(",");
       }
@@ -37,7 +37,8 @@ public class ConstructorDeclaration_Behavior {
       first = false;
       if (SLinkOperations.getTarget(parm, "type", true) != null) {
         result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(parm, "type", true)));
-      } else {
+      } else
+      {
         result.append("???");
       }
     }

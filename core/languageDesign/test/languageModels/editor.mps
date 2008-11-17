@@ -650,5 +650,36 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1226066777145">
+    <link role="conceptDeclaration" targetNodeId="1.1226066719224" resolveInfo="TestCellAnnotation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1226066826518">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1226066826519">
+        <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="3.1215087929380" resolveInfo="LeftParen" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1226066826520">
+        <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
+        <link role="styleClass" targetNodeId="1215703780827" resolveInfo="NodeAnnotation" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1226066826521">
+          <property name="value" value="1.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" id="1226066826522" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1226066826523">
+        <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="3.1215088010675" resolveInfo="RightParen" />
+      </node>
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1226066834681">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1226066838058">
+        <property name="text" value="Cell id:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1226066864653">
+        <link role="relationDeclaration" targetNodeId="1.1226066756036" resolveInfo="cellId" />
+      </node>
+    </node>
+  </node>
 </model>
 
