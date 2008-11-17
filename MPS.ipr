@@ -7,6 +7,7 @@
       <antReference projectDefault="true" />
       <customJdkName value="" />
       <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
       <properties />
     </buildFile>
     <buildFile url="file://$PROJECT_DIR$/MPS-languages.xml">
@@ -14,6 +15,7 @@
       <antReference projectDefault="true" />
       <customJdkName value="" />
       <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
       <properties />
     </buildFile>
     <buildFile url="file://$PROJECT_DIR$/pack-idea-sources.xml">
@@ -21,6 +23,7 @@
       <antReference projectDefault="true" />
       <customJdkName value="" />
       <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
       <properties />
     </buildFile>
     <buildFile url="file://$PROJECT_DIR$/get-idea.xml">
@@ -28,6 +31,7 @@
       <antReference projectDefault="true" />
       <customJdkName value="" />
       <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
       <properties />
     </buildFile>
   </component>
@@ -84,28 +88,19 @@
         <option name="PACKAGES_TO_USE_IMPORT_ON_DEMAND">
           <value />
         </option>
+        <ADDITIONAL_INDENT_OPTIONS fileType="">
+          <option name="INDENT_SIZE" value="4" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
         <ADDITIONAL_INDENT_OPTIONS fileType="java">
           <option name="INDENT_SIZE" value="2" />
           <option name="CONTINUATION_INDENT_SIZE" value="2" />
           <option name="TAB_SIZE" value="8" />
-          <option name="USE_TAB_CHARACTER" value="false" />
-          <option name="SMART_TABS" value="false" />
-          <option name="LABEL_INDENT_SIZE" value="0" />
-          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
-        </ADDITIONAL_INDENT_OPTIONS>
-        <ADDITIONAL_INDENT_OPTIONS fileType="js">
-          <option name="INDENT_SIZE" value="4" />
-          <option name="CONTINUATION_INDENT_SIZE" value="8" />
-          <option name="TAB_SIZE" value="4" />
-          <option name="USE_TAB_CHARACTER" value="false" />
-          <option name="SMART_TABS" value="false" />
-          <option name="LABEL_INDENT_SIZE" value="0" />
-          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
-        </ADDITIONAL_INDENT_OPTIONS>
-        <ADDITIONAL_INDENT_OPTIONS fileType="jsp">
-          <option name="INDENT_SIZE" value="4" />
-          <option name="CONTINUATION_INDENT_SIZE" value="8" />
-          <option name="TAB_SIZE" value="4" />
           <option name="USE_TAB_CHARACTER" value="false" />
           <option name="SMART_TABS" value="false" />
           <option name="LABEL_INDENT_SIZE" value="0" />
@@ -349,13 +344,9 @@
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Default" />
         <option name="myLocal" value="false" />
-        <inspection_tool class="StrutsInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="StrutsTilesInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="StrutsValidatorInspection" level="ERROR" enabled="false" />
         <inspection_tool class="ClassEscapesItsScope" level="WARNING" enabled="true" />
         <inspection_tool class="CloneCallsSuperClone" level="WARNING" enabled="false" />
         <inspection_tool class="CloneDeclaresCloneNotSupported" level="WARNING" enabled="false" />
-        <inspection_tool class="FacesModelInspection" level="ERROR" enabled="false" />
         <inspection_tool class="CheckEmptyScriptTag" level="WARNING" enabled="false" />
         <inspection_tool class="CheckImageSize" level="WARNING" enabled="false" />
         <inspection_tool class="RequiredAttributes" level="WARNING" enabled="false">
@@ -363,10 +354,6 @@
         </inspection_tool>
         <inspection_tool class="CheckValidXmlInScriptTagBody" level="ERROR" enabled="false" />
         <inspection_tool class="SimplifiableIfStatement" level="WARNING" enabled="false" />
-        <inspection_tool class="CheckJsfComponentUnderViewTag" level="INFO" enabled="false" />
-        <inspection_tool class="CssNoGenericFontName" level="WARNING" enabled="false" />
-        <inspection_tool class="CssOverwrittenProperties" level="WARNING" enabled="false" />
-        <inspection_tool class="CssUnitlessNumber" level="WARNING" enabled="false" />
         <inspection_tool class="WeakerAccess" level="WARNING" enabled="false">
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
@@ -377,11 +364,6 @@
           <option name="CHECK_TRY_CATCH_SECTION" value="true" />
           <option name="CHECK_METHOD_BODY" value="true" />
         </inspection_tool>
-        <inspection_tool class="EjbDomInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="EjbQlInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="ReferencesToClassesFromDefaultPackagesInJSPFile" level="ERROR" enabled="false" />
-        <inspection_tool class="SelfIncludingJspFiles" level="ERROR" enabled="false" />
-        <inspection_tool class="WebProperties" level="ERROR" enabled="false" />
         <inspection_tool class="JavaDoc" level="WARNING" enabled="false">
           <option name="TOP_LEVEL_CLASS_OPTIONS">
             <value>
@@ -467,7 +449,6 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
@@ -499,9 +480,6 @@
           </option>
         </inspection_tool>
         <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
-        <inspection_tool class="StrutsInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="StrutsTilesInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="StrutsValidatorInspection" level="ERROR" enabled="false" />
         <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
         <inspection_tool class="UnnecessaryConditionalExpression" level="WARNING" enabled="false" />
         <inspection_tool class="CheckEmptyScriptTag" level="WARNING" enabled="false" />
@@ -510,12 +488,7 @@
           <option name="myAdditionalRequiredHtmlAttributes" value="" />
         </inspection_tool>
         <inspection_tool class="CheckValidXmlInScriptTagBody" level="ERROR" enabled="false" />
-        <inspection_tool class="FacesModelInspection" level="ERROR" enabled="false" />
         <inspection_tool class="SimplifiableIfStatement" level="WARNING" enabled="false" />
-        <inspection_tool class="CheckJsfComponentUnderViewTag" level="INFO" enabled="false" />
-        <inspection_tool class="CssNoGenericFontName" level="WARNING" enabled="false" />
-        <inspection_tool class="CssOverwrittenProperties" level="WARNING" enabled="false" />
-        <inspection_tool class="CssUnitlessNumber" level="WARNING" enabled="false" />
         <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
         <inspection_tool class="WeakerAccess" level="WARNING" enabled="false">
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
@@ -527,11 +500,6 @@
           <option name="CHECK_TRY_CATCH_SECTION" value="true" />
           <option name="CHECK_METHOD_BODY" value="true" />
         </inspection_tool>
-        <inspection_tool class="EjbDomInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="EjbQlInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="ReferencesToClassesFromDefaultPackagesInJSPFile" level="ERROR" enabled="false" />
-        <inspection_tool class="SelfIncludingJspFiles" level="ERROR" enabled="false" />
-        <inspection_tool class="WebProperties" level="ERROR" enabled="false" />
         <inspection_tool class="JavaDoc" level="WARNING" enabled="false">
           <option name="TOP_LEVEL_CLASS_OPTIONS">
             <value>
@@ -577,7 +545,6 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
@@ -623,13 +590,9 @@
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Query methods" />
         <option name="myLocal" value="false" />
-        <inspection_tool class="StrutsInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="StrutsTilesInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="StrutsValidatorInspection" level="ERROR" enabled="false" />
         <inspection_tool class="ClassEscapesItsScope" level="WARNING" enabled="true" />
         <inspection_tool class="CloneCallsSuperClone" level="WARNING" enabled="false" />
         <inspection_tool class="CloneDeclaresCloneNotSupported" level="WARNING" enabled="false" />
-        <inspection_tool class="FacesModelInspection" level="ERROR" enabled="false" />
         <inspection_tool class="CheckEmptyScriptTag" level="WARNING" enabled="false" />
         <inspection_tool class="CheckImageSize" level="WARNING" enabled="false" />
         <inspection_tool class="RequiredAttributes" level="WARNING" enabled="false">
@@ -637,10 +600,6 @@
         </inspection_tool>
         <inspection_tool class="CheckValidXmlInScriptTagBody" level="ERROR" enabled="false" />
         <inspection_tool class="SimplifiableIfStatement" level="WARNING" enabled="false" />
-        <inspection_tool class="CheckJsfComponentUnderViewTag" level="INFO" enabled="false" />
-        <inspection_tool class="CssNoGenericFontName" level="WARNING" enabled="false" />
-        <inspection_tool class="CssOverwrittenProperties" level="WARNING" enabled="false" />
-        <inspection_tool class="CssUnitlessNumber" level="WARNING" enabled="false" />
         <inspection_tool class="WeakerAccess" level="WARNING" enabled="false">
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
@@ -651,11 +610,6 @@
           <option name="CHECK_TRY_CATCH_SECTION" value="true" />
           <option name="CHECK_METHOD_BODY" value="true" />
         </inspection_tool>
-        <inspection_tool class="EjbDomInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="EjbQlInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="ReferencesToClassesFromDefaultPackagesInJSPFile" level="ERROR" enabled="false" />
-        <inspection_tool class="SelfIncludingJspFiles" level="ERROR" enabled="false" />
-        <inspection_tool class="WebProperties" level="ERROR" enabled="false" />
         <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
         <inspection_tool class="JavaDoc" level="WARNING" enabled="false">
           <option name="TOP_LEVEL_CLASS_OPTIONS">
@@ -741,7 +695,6 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
@@ -927,6 +880,9 @@
       </item>
     </group>
   </component>
+  <component name="ProjectDetails">
+    <option name="projectName" value="MPS" />
+  </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectModuleManager">
     <modules>
@@ -1018,11 +974,11 @@
       <module fileurl="file://$PROJECT_DIR$/platform/xml/xmlSchema/xmlSchema.iml" filepath="$PROJECT_DIR$/platform/xml/xmlSchema/xmlSchema.iml" group="platform/xml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false">
+    <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false" runner="emma">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
       <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=92m -Xss1024k -Dmps.internal=true " />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -1046,264 +1002,6 @@
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Profile " />
       <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="false" name="depot_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
-      <option name="WORKING_DIRECTORY" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="8080" />
-      <option name="LOCAL" value="true" />
-      <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
-      <option name="COMMON_VM_ARGUMENTS" value="" />
-      <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
-      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c1" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="2299" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;additional-options=&#13;&#10;snapshots-dir=&#13;&#10;" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" run" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" stop" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile ">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" run" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" stop" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" run" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" stop" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="false" name="hello_webrSample" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
-      <option name="WORKING_DIRECTORY" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="8080" />
-      <option name="LOCAL" value="true" />
-      <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
-      <option name="COMMON_VM_ARGUMENTS" value="" />
-      <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
-      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c3" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="3714" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" run" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" stop" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" run" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" stop" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="false" name="MForum" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
-      <option name="WORKING_DIRECTORY" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="8080" />
-      <option name="LOCAL" value="true" />
-      <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
-      <option name="COMMON_VM_ARGUMENTS" value="" />
-      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
-      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c2" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="4474" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" run" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" stop" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile ">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" run" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" stop" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="false" name="PubMedDB" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
-      <option name="WORKING_DIRECTORY" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="8080" />
-      <option name="LOCAL" value="true" />
-      <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
-      <option name="COMMON_VM_ARGUMENTS" value="" />
-      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
-      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c3" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="3878" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" run" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" stop" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile ">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" run" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value=" stop" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
       <method>
         <option name="Make" value="true" />
       </method>
@@ -1359,7 +1057,7 @@
         </entry>
       </map>
     </option>
-    <option name="myVersion" value="123" />
+    <option name="myVersion" value="124" />
   </component>
   <component name="TeamCityRootDirectoryHolder">
     <option name="myRelativeRootDirectory" />
