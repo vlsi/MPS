@@ -305,7 +305,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, EnumMeasure.spaces));
         }
 
       };

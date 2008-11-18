@@ -99,7 +99,7 @@
           <property name="text" value="{" />
           <link role="styleClass" targetNodeId="5.1215091279307" resolveInfo="LeftBrace" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1224675559746">
-            <property name="value" value="0.0" />
+            <property name="value" value="1.0" />
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996431">

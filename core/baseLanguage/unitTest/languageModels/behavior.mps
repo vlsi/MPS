@@ -105,6 +105,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877238817" />
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877487741">
     <link role="concept" targetNodeId="1.1171931851043" resolveInfo="BTestCase" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1216128067084">
@@ -227,6 +228,51 @@
         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724505" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1227020751285">
+      <property name="name" value="getMembers" />
+      <link role="overriddenMethod" targetNodeId="2v.1213877531970" resolveInfo="getMembers" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227020751287">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227020780680">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227020780681">
+            <property name="name" value="members" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1227020780682" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227021451989">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.SuperNodeExpression" id="1227020780684" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1227021459615">
+                <link role="baseMethodDeclaration" targetNodeId="2v.1213877531970" resolveInfo="getMembers" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227020864862">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227020866446">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227020864863">
+              <link role="variableDeclaration" targetNodeId="1227020780681" resolveInfo="members" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" id="1227020869728">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227020893730">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227020888127">
+                  <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1227020886308" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227020892082">
+                    <link role="link" targetNodeId="1.1171931851044" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1227020897282">
+                  <link role="link" targetNodeId="1.1171931858462" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227020900805">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227020900806">
+            <link role="variableDeclaration" targetNodeId="1227020780681" resolveInfo="members" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1227020761545" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227020761546" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877487742">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877487743" />
