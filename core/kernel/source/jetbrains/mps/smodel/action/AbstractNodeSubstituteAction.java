@@ -135,13 +135,15 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
 
   public final SNode substitute(@Nullable EditorContext context, String pattern) {
     SNode newNode = doSubstitute(pattern);
-    if (context != null) {                                                         
-      EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
-
-      selectedCell.getContainingBigCell().synchronizeViewWithModel();
-      context.getNodeEditorComponent().relayout();
-      
+    if (context != null) {
       if (newNode == null) {
+        context.flushEvents();
+
+        EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+
+        selectedCell.getContainingBigCell().synchronizeViewWithModel();
+        context.getNodeEditorComponent().relayout();
+
         // put caret at the end of text
         if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isEditable()) {
           EditorCell_Label cell = (EditorCell_Label) selectedCell;
