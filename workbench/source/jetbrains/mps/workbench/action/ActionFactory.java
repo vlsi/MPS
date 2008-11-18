@@ -41,7 +41,7 @@ public class ActionFactory {
       id = actionClass.getName();
     } else {
       try {
-        id = languageNamespace + "#" + (String) idMethod.invoke(null, params);
+        id = languageNamespace + "#" + (String) idMethod.invoke(null, new Object[]{params});
       } catch (IllegalAccessException e) {
         LOG.error("This can't happen", e);
         return null;
