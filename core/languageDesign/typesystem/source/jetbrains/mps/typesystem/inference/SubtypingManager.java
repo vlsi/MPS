@@ -52,15 +52,20 @@ public class SubtypingManager {
     if (subtype == supertype) return true;
     if (subtype == null || supertype == null) return false;
 
+    if (isSubtypeByReplacementRules(subtype, supertype)) return true;
+
+    return isSubtype(NodeWrapper.createWrapperFromNode(subtype, null, true),
+      NodeWrapper.createWrapperFromNode(supertype, null, true), null, null, isWeak);
+  }
+
+  private boolean isSubtypeByReplacementRules(SNode subtype, SNode supertype) {
     Set<InequationReplacementRule_Runtime> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(subtype, supertype);
     for (InequationReplacementRule_Runtime inequationReplacementRule : inequationReplacementRules) {
       if (inequationReplacementRule.checkInequation(subtype, supertype, new EquationInfo(null, null))) {
         return true;
       }
     }
-
-    return isSubtype(NodeWrapper.createWrapperFromNode(subtype, null, true),
-      NodeWrapper.createWrapperFromNode(supertype, null, true), null, null, isWeak);
+    return false;
   }
 
   public boolean isSubtype(IWrapper subtype, IWrapper supertype, EquationManager equationManager, EquationInfo errorInfo) {
@@ -107,6 +112,9 @@ public class SubtypingManager {
       SNode node = superRepresentator.getNode();
       if (BaseAdapter.isInstance(node, JoinType.class)) {
         for (SNode argument : node.getChildren(JoinType.ARGUMENT)) {
+          if (isSubtypeByReplacementRules(subRepresentator.getNode(), argument)) {
+            return true;
+          }
           if (isSubtype(subRepresentator, NodeWrapper.createWrapperFromNode(argument, equationManager), equationManager, errorInfo, isWeak)) {
             return true;
           }
@@ -121,7 +129,10 @@ public class SubtypingManager {
       //meets
       if (BaseAdapter.isInstance(node, MeetType.class)) {
         for (SNode argument : node.getChildren(MeetType.ARGUMENT)) {
-          if (isSubtype(NodeWrapper.createWrapperFromNode(argument, equationManager), supertype, equationManager, errorInfo, isWeak)) {
+          if (isSubtypeByReplacementRules(argument, superRepresentator.getNode())) {
+            return true;
+          }
+          if (isSubtype(NodeWrapper.createWrapperFromNode(argument, equationManager), superRepresentator, equationManager, errorInfo, isWeak)) {
             return true;
           }
         }
