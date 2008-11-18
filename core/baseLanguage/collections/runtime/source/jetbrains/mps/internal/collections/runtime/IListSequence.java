@@ -14,15 +14,17 @@ public interface IListSequence<T> extends ISequence<T>, List<T> {
     
     T removeElement (T t);
     
+    T removeElementAT (int idx);
+    
     T insertElement (int idx, T t);
     
     T getElement (int idx);
 
     T setElement (int idx, T t);
 
-    void addSequence(ISequence<T> seq);
+    IListSequence<T> addSequence(ISequence<T> seq);
 
-    void removeSequence(ISequence<T> seq);
+    IListSequence<T> removeSequence(ISequence<T> seq);
 
     IListSequence<T> reversedList ();
 

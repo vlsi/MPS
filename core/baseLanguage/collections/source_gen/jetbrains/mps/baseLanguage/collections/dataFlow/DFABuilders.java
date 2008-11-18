@@ -30,6 +30,10 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation", new RemoveSetElementOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation", new AddAllSetElementsOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation", new RemoveAllSetElementsOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", new LinkedListCreator_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation", new RemoveAtElementOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation", new AddLastElementOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation", new AddFirstElementOperation_DataFlow());
   }
 
 }

@@ -120,6 +120,10 @@ public class NullListSequence<T> extends NullSequence<T> implements IListSequenc
     	return null;
     }
     
+    public T removeElementAT(int idx) {
+    	return null;
+    }
+    
     public T insertElement(int idx, T t) {
     	return null;
     }
@@ -132,14 +136,16 @@ public class NullListSequence<T> extends NullSequence<T> implements IListSequenc
     	return null;
     }
     
-    public void addSequence (ISequence<T> seq) {
+    public IListSequence<T> addSequence (ISequence<T> seq) {
+    	return this;
     }
 
     public IListSequence<T> reversedList() {
         return this;
     }
 
-    public void removeSequence(ISequence<T> seq) {
+    public IListSequence<T> removeSequence(ISequence<T> seq) {
+    	return this;
     }
     
     public IListSequence<T> distinctList() {

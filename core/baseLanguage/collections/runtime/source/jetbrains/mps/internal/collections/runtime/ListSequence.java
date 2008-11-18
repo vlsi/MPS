@@ -236,6 +236,15 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
         return null;
     }
     
+    public T removeElementAT(int idx) {
+        if (Sequence.NULL_WHEN_EMPTY) {
+            if (size() == 0 && (idx == 0 || idx == -1)) {
+                return null;
+            }
+        }
+    	return remove (idx);
+    }
+    
     public T insertElement(int idx, T t) {
         if (Sequence.IGNORE_NULL_VALUES) {
             if (t == null) {
@@ -269,10 +278,10 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     	return set (idx, t);
     }
     
-    public void addSequence (ISequence<T> seq) {
+    public IListSequence<T> addSequence (ISequence<T> seq) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (seq == null) {
-                return;
+                return this;
             }
         }
         for (T t : seq.toIterable()) {
@@ -283,17 +292,19 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
             }
             list.add(t);
         }
+        return this;
     }
     
-    public void removeSequence (ISequence<T> seq) {
+    public IListSequence<T> removeSequence (ISequence<T> seq) {
         if (Sequence.USE_NULL_SEQUENCE) {
             if (seq == null) {
-                return;
+                return this;
             }
         }
         for (T t : seq.toIterable()) {
             list.remove(t);
         }
+        return this;
     }
     
     public IListSequence<T> reversedList () {

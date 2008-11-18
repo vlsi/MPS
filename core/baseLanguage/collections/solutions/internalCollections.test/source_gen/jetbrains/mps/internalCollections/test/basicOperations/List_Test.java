@@ -13,6 +13,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;
+import java.util.LinkedList;
 
 public class List_Test extends Util_Test {
 
@@ -118,6 +119,48 @@ public class List_Test extends Util_Test {
     List<String> copy = (List<String>)ois.readObject();
     Assert.assertFalse(test == copy);
     Assert.assertEquals(test, copy);
+  }
+
+  @Test()
+  public void test_emptyLinkedList() throws Exception {
+    List<String> llist = ListSequence.fromList(new LinkedList<String>());
+    Assert.assertTrue(ListSequence.fromList(llist).isEmpty());
+  }
+
+  @Test()
+  public void test_nonEmptyLinkedList() throws Exception {
+    List<String> llist = ListSequence.fromList(new LinkedList<String>()).addSequence(Sequence.fromArray("A", "B", "C"));
+    Assert.assertFalse(ListSequence.fromList(llist).isEmpty());
+    Assert.assertEquals(3, ListSequence.fromList(llist).count());
+  }
+
+  @Test()
+  public void test_clear() throws Exception {
+    List<Integer> test = ListSequence.<Integer>fromArray(1, 2, 3, 5);
+    Assert.assertTrue(ListSequence.fromList(test).isNotEmpty());
+    ListSequence.fromList(test).clear();
+    Assert.assertTrue(ListSequence.fromList(test).isEmpty());
+  }
+
+  @Test()
+  public void test_addFirst() throws Exception {
+    List<String> test = ListSequence.<String>fromArray("B", "C");
+    ListSequence.fromList(test).insertElement(0, "A");
+    this.assertIterableEquals(this.inputABC(), test);
+  }
+
+  @Test()
+  public void test_addLast() throws Exception {
+    List<String> test = ListSequence.<String>fromArray("A", "B");
+    ListSequence.fromList(test).addElement("C");
+    this.assertIterableEquals(this.inputABC(), test);
+  }
+
+  @Test()
+  public void test_removeAt() throws Exception {
+    List<String> test = ListSequence.<String>fromArray("A", "B", "X", "C");
+    ListSequence.fromList(test).removeElementAT(2);
+    this.assertIterableEquals(this.inputABC(), test);
   }
 
 }
