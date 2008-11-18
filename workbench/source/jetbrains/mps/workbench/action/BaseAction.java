@@ -14,10 +14,12 @@ public abstract class BaseAction extends AnAction {
 
   public BaseAction() {
     this(null, null, null);
+    updateShortcuts();
   }
 
   public BaseAction(String text) {
     this(text, null, null);
+    updateShortcuts();
   }
 
   public BaseAction(String text, String description, Icon icon) {
@@ -138,6 +140,4 @@ public abstract class BaseAction extends AnAction {
   public static String getIdMethodName() {
     return "getActionId";
   }
-
-
 }

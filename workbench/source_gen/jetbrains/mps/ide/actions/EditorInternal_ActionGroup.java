@@ -4,9 +4,12 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.workbench.actions.nodes.HighlightCellDependenciesAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.actions.nodes.HighlightCellDependenciesAction;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 public class EditorInternal_ActionGroup extends GeneratedActionGroup {
@@ -18,12 +21,29 @@ public class EditorInternal_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(true);
     this.setPopup(true);
     try {
-      this.add(ActionFactory.getInstance().getRegisteredAction(new TestNodePath_Action()));
-      this.add(ActionFactory.getInstance().getRegisteredAction(new CellProperties_Action()));
-      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowCellInExplorer_Action()));
+      {
+        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.TestNodePath_Action"), language.getModuleFqName()));
+      }
+      {
+        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.CellProperties_Action"), language.getModuleFqName()));
+      }
+      {
+        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowCellInExplorer_Action"), language.getModuleFqName()));
+      }
       this.addSeparator();
-      this.add(ActionFactory.getInstance().getRegisteredAction(new PrintNodeID_Action()));
-      this.add(new HighlightCellDependenciesAction());
+      {
+        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.PrintNodeID_Action"), language.getModuleFqName()));
+      }
+      if (BaseGroup.class.isAssignableFrom(HighlightCellDependenciesAction.class)) {
+        this.add(new HighlightCellDependenciesAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(HighlightCellDependenciesAction.class, null));
+      }
       this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

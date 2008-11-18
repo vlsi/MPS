@@ -4,13 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.generate.SaveTransientModelsAction;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction;
 import jetbrains.mps.workbench.actions.generate.GenerateFilesFromCurrentModelAction;
 import jetbrains.mps.workbench.actions.generate.GenerateTextFromCurrentModelAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseGroup;
 
 public class Generate_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Generate_ActionGroup.class);
@@ -21,12 +22,32 @@ public class Generate_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new SaveTransientModelsAction());
+      if (BaseGroup.class.isAssignableFrom(SaveTransientModelsAction.class)) {
+        this.add(new SaveTransientModelsAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(SaveTransientModelsAction.class, null));
+      }
       this.addSeparator();
-      this.add(new GenerateAllModelsInModuleAction(false));
+      if (BaseGroup.class.isAssignableFrom(GenerateAllModelsInModuleAction.class)) {
+        this.add(new GenerateAllModelsInModuleAction(false));
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GenerateAllModelsInModuleAction.class, null, false));
+      }
       this.addSeparator();
-      this.add(new GenerateFilesFromCurrentModelAction());
-      this.add(new GenerateTextFromCurrentModelAction());
+      if (BaseGroup.class.isAssignableFrom(GenerateFilesFromCurrentModelAction.class)) {
+        this.add(new GenerateFilesFromCurrentModelAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GenerateFilesFromCurrentModelAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(GenerateTextFromCurrentModelAction.class)) {
+        this.add(new GenerateTextFromCurrentModelAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GenerateTextFromCurrentModelAction.class, null));
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

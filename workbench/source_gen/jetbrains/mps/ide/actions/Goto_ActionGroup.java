@@ -4,12 +4,16 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.goTo.GoToActionAction;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
 import jetbrains.mps.workbench.actions.goTo.GoToNamedNodeAction;
 import jetbrains.mps.workbench.actions.goTo.GoToConceptNodeAction;
 import jetbrains.mps.workbench.actions.goTo.GoToNodeByIdAction;
-import jetbrains.mps.workbench.action.ActionFactory;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationAction;
 import jetbrains.mps.workbench.actions.nodes.GoToRulesAction;
 import jetbrains.mps.workbench.actions.goTo.GoToModelAction;
@@ -18,7 +22,6 @@ import jetbrains.mps.workbench.actions.goTo.GoToSolutionAction;
 import jetbrains.mps.workbench.actions.goTo.GoToDevkitAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseGroup;
 
 public class Goto_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Goto_ActionGroup.class);
@@ -29,21 +32,79 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new GoToActionAction());
+      if (BaseGroup.class.isAssignableFrom(GoToActionAction.class)) {
+        this.add(new GoToActionAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GoToActionAction.class, null));
+      }
       this.addSeparator();
-      this.add(new GoToRootNodeAction());
-      this.add(new GoToNamedNodeAction());
-      this.add(new GoToConceptNodeAction());
-      this.add(new GoToNodeByIdAction());
+      if (BaseGroup.class.isAssignableFrom(GoToRootNodeAction.class)) {
+        this.add(new GoToRootNodeAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GoToRootNodeAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(GoToNamedNodeAction.class)) {
+        this.add(new GoToNamedNodeAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GoToNamedNodeAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(GoToConceptNodeAction.class)) {
+        this.add(new GoToConceptNodeAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GoToConceptNodeAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(GoToNodeByIdAction.class)) {
+        this.add(new GoToNodeByIdAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GoToNodeByIdAction.class, null));
+      }
       this.addSeparator();
-      this.add(ActionFactory.getInstance().getRegisteredAction(new GoToConceptDeclaration_Action()));
-      this.add(new GoToEditorDeclarationAction());
-      this.add(new GoToRulesAction());
+      {
+        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action"), language.getModuleFqName()));
+      }
+      if (BaseGroup.class.isAssignableFrom(GoToEditorDeclarationAction.class)) {
+        this.add(new GoToEditorDeclarationAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GoToEditorDeclarationAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(GoToRulesAction.class)) {
+        this.add(new GoToRulesAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GoToRulesAction.class, null));
+      }
       this.addSeparator();
-      this.add(new GoToModelAction());
-      this.add(new GoToLanguageAction());
-      this.add(new GoToSolutionAction());
-      this.add(new GoToDevkitAction());
+      if (BaseGroup.class.isAssignableFrom(GoToModelAction.class)) {
+        this.add(new GoToModelAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GoToModelAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(GoToLanguageAction.class)) {
+        this.add(new GoToLanguageAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GoToLanguageAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(GoToSolutionAction.class)) {
+        this.add(new GoToSolutionAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GoToSolutionAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(GoToDevkitAction.class)) {
+        this.add(new GoToDevkitAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GoToDevkitAction.class, null));
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

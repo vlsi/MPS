@@ -7,9 +7,7 @@ import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
-
 import javax.swing.tree.DefaultMutableTreeNode;
-
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
@@ -38,7 +36,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       DefaultMutableTreeNode selectedNode = MPSDataKeys.PROJECT.getData(dataContext).getComponent(ProjectPane.class).getSelectedNode();
       assert selectedNode instanceof NamespaceTextNode;
-      NamespaceTextNode node = (NamespaceTextNode) selectedNode;
+      NamespaceTextNode node = (NamespaceTextNode)selectedNode;
       this.add(node.getActionGroup_internal());
     } catch (Throwable t) {
       LOG.error("User group error", t);

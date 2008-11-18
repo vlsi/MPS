@@ -4,9 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
@@ -91,6 +89,16 @@ public class NewModel_Action extends GeneratedAction {
 
   protected String getNamespace() {
     return null;
+  }
+
+
+  @NotNull()
+  public static String getActionId(Object... args) {
+    StringBuilder res = new StringBuilder(500);
+    res.append(NewModel_Action.class.getName());
+    res.append("#");
+    int i = 0;
+    return res.toString();
   }
 
 }

@@ -4,10 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.language.GenerateTemplateQueriesAction;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.actions.module.ShowModuleDependenciesAction;
 import jetbrains.mps.workbench.actions.language.DeleteGeneratorAction;
-import jetbrains.mps.workbench.action.ActionFactory;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleReference;
 
 public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GeneratorActions_ActionGroup.class);
@@ -20,16 +24,42 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.addAnchor(GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
-      this.add(new GenerateTemplateQueriesAction(true));
-      this.add(new GenerateTemplateQueriesAction(false));
+      if (BaseGroup.class.isAssignableFrom(GenerateTemplateQueriesAction.class)) {
+        this.add(new GenerateTemplateQueriesAction(true));
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GenerateTemplateQueriesAction.class, null, true));
+      }
+      if (BaseGroup.class.isAssignableFrom(GenerateTemplateQueriesAction.class)) {
+        this.add(new GenerateTemplateQueriesAction(false));
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(GenerateTemplateQueriesAction.class, null, false));
+      }
       this.addSeparator();
-      this.add(new ShowModuleDependenciesAction());
+      if (BaseGroup.class.isAssignableFrom(ShowModuleDependenciesAction.class)) {
+        this.add(new ShowModuleDependenciesAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(ShowModuleDependenciesAction.class, null));
+      }
       this.addSeparator();
-      this.add(new DeleteGeneratorAction());
+      if (BaseGroup.class.isAssignableFrom(DeleteGeneratorAction.class)) {
+        this.add(new DeleteGeneratorAction());
+      } else
+      {
+        this.add(ActionFactory.getInstance().getRegisteredAction(DeleteGeneratorAction.class, null));
+      }
       this.addSeparator();
-      this.add(ActionFactory.getInstance().getRegisteredAction(new CheckGenerator_Action()));
+      {
+        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.CheckGenerator_Action"), language.getModuleFqName()));
+      }
       this.addSeparator();
-      this.add(ActionFactory.getInstance().getRegisteredAction(new GeneratorProperties_Action()));
+      {
+        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.GeneratorProperties_Action"), language.getModuleFqName()));
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

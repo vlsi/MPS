@@ -20,7 +20,6 @@ public class GenerationResult {
     this.myDescriptor = modelDescriptor;
     this.myType = type;
   }
-
   /* package */GenerationResult(SNode node, IOperationContext context) {
     this.myContext = context;
     this.myNode = node;

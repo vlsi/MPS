@@ -4,9 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.KeyStrokesUtil;
@@ -49,6 +47,16 @@ public class DumpKeyStrokes_Action extends GeneratedAction {
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "DumpKeyStrokes", t);
     }
+  }
+
+
+  @NotNull()
+  public static String getActionId(Object... args) {
+    StringBuilder res = new StringBuilder(500);
+    res.append(DumpKeyStrokes_Action.class.getName());
+    res.append("#");
+    int i = 0;
+    return res.toString();
   }
 
 }

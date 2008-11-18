@@ -4,10 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
 import java.awt.Frame;
-
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionEventData;
@@ -67,7 +65,7 @@ public class NewGenerator_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       ActionEventData data = new ActionEventData(event);
-      final Language language = (Language) data.getModule();
+      final Language language = (Language)data.getModule();
       final Frame localFrame = NewGenerator_Action.this.frame;
       final NewGeneratorDialog[] dialog = new NewGeneratorDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -81,6 +79,16 @@ public class NewGenerator_Action extends GeneratedAction {
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "NewGenerator", t);
     }
+  }
+
+
+  @NotNull()
+  public static String getActionId(Object... args) {
+    StringBuilder res = new StringBuilder(500);
+    res.append(NewGenerator_Action.class.getName());
+    res.append("#");
+    int i = 0;
+    return res.toString();
   }
 
 }

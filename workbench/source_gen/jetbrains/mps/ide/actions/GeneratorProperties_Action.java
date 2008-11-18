@@ -4,9 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.project.MPSProject;
@@ -65,12 +63,22 @@ public class GeneratorProperties_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       ActionEventData data = new ActionEventData(event);
-      final Generator generator = (Generator) data.getModule();
+      final Generator generator = (Generator)data.getModule();
       GeneratorPropertiesDialog dialog = new GeneratorPropertiesDialog(GeneratorProperties_Action.this.project, generator);
       dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GeneratorProperties", t);
     }
+  }
+
+
+  @NotNull()
+  public static String getActionId(Object... args) {
+    StringBuilder res = new StringBuilder(500);
+    res.append(GeneratorProperties_Action.class.getName());
+    res.append("#");
+    int i = 0;
+    return res.toString();
   }
 
 }

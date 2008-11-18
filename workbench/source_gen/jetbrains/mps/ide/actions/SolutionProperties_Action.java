@@ -4,9 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.smodel.IOperationContext;
@@ -67,7 +65,7 @@ public class SolutionProperties_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       final IOperationContext localContext = SolutionProperties_Action.this.context;
-      final Solution solution = (Solution) SolutionProperties_Action.this.context.getModule();
+      final Solution solution = (Solution)SolutionProperties_Action.this.context.getModule();
       final SolutionPropertiesDialog[] dialog = new SolutionPropertiesDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
 
@@ -80,6 +78,16 @@ public class SolutionProperties_Action extends GeneratedAction {
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "SolutionProperties", t);
     }
+  }
+
+
+  @NotNull()
+  public static String getActionId(Object... args) {
+    StringBuilder res = new StringBuilder(500);
+    res.append(SolutionProperties_Action.class.getName());
+    res.append("#");
+    int i = 0;
+    return res.toString();
   }
 
 }

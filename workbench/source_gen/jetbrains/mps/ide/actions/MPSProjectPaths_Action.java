@@ -58,4 +58,14 @@ public class MPSProjectPaths_Action extends GeneratedAction {
     }
   }
 
+
+  @NotNull()
+  public static String getActionId(Object... args) {
+    StringBuilder res = new StringBuilder(500);
+    res.append(MPSProjectPaths_Action.class.getName());
+    res.append("#");
+    int i = 0;
+    return res.toString();
+  }
+
 }
