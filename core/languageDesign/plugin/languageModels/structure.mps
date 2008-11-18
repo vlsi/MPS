@@ -1602,6 +1602,8 @@
               id="1205676232975">
             <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember"/>
         </node>
+        <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"
+              id="1227012955733"/>
     </node>
     <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="1205676676847">
         <property name="package" value="Actions.Groups"/>
@@ -1854,6 +1856,8 @@
             <property name="value" value="add"/>
             <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
         </node>
+        <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"
+              id="1227012987922"/>
     </node>
     <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1207145163717">
         <property name="package" value="Actions.Groups.GroupContents"/>
@@ -3090,6 +3094,17 @@
         <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference"
               id="1227009339244">
             <link role="intfc" targetNodeId="14.1205756064662" resolveInfo="IMemberOperation"/>
+        </node>
+    </node>
+    <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227013049127">
+        <property name="package" value="Actions.Groups.GroupContents"/>
+        <property name="name" value="AddStatement"/>
+        <link role="extends" targetNodeId="2.1068580123155" resolveInfo="ExpressionStatement"/>
+        <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227013166210">
+            <property name="metaClass" value="aggregation"/>
+            <property name="role" value="item"/>
+            <property name="sourceCardinality" value="1"/>
+            <link role="target" targetNodeId="1204391079391" resolveInfo="ActionGroupMember"/>
         </node>
     </node>
 </model>

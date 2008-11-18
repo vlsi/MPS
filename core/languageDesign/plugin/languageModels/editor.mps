@@ -4580,5 +4580,31 @@
             </node>
         </node>
     </node>
+    <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1227013092957">
+        <property name="package" value="Actions.Groups.GroupContents"/>
+        <link role="conceptDeclaration" targetNodeId="1.1227013049127" resolveInfo="AddStatement"/>
+        <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227013095318">
+            <property name="vertical" value="false"/>
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant"
+                  id="1227013095319">
+                <property name="text" value="add"/>
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"
+                      id="1227013095320">
+                    <property name="flag" value="false"/>
+                </node>
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1227013095321">
+                <link role="relationDeclaration" targetNodeId="1.1227013166210"/>
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant"
+                  id="1227013095322">
+                <property name="text" value=";"/>
+                <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"
+                      id="1227013095323">
+                    <property name="flag" value="false"/>
+                </node>
+            </node>
+        </node>
+    </node>
 </model>
 
