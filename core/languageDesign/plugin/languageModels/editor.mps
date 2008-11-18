@@ -1854,7 +1854,7 @@
         </node>
     </node>
     <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1205679147982">
-        <property name="package" value="Actions.Action"/>
+        <property name="package" value="Actions.Action.Parameters"/>
         <link role="conceptDeclaration" targetNodeId="1.1205679047295" resolveInfo="ActionParameterDeclaration"/>
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1205679156187">
             <property name="vertical" value="false"/>
@@ -1941,7 +1941,7 @@
         </node>
     </node>
     <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1206093115255">
-        <property name="package" value="Actions.Action"/>
+        <property name="package" value="Actions.Action.Parameters"/>
         <link role="conceptDeclaration" targetNodeId="1.1206092561075" resolveInfo="ActionParameterReferenceOperation"/>
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1206093125722">
             <link role="relationDeclaration" targetNodeId="1.1206092795071"/>
@@ -3492,7 +3492,7 @@
         </node>
     </node>
     <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1217252381395">
-        <property name="package" value="Actions.Action"/>
+        <property name="package" value="Actions.Action.Parameters"/>
         <link role="conceptDeclaration" targetNodeId="1.1217252042208" resolveInfo="ActionDataParameterDeclaration"/>
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1217252791143">
             <property name="vertical" value="false"/>
@@ -4362,7 +4362,7 @@
         </node>
     </node>
     <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1217252477267">
-        <property name="package" value="Actions.Action"/>
+        <property name="package" value="Actions.Action.Parameters"/>
         <link role="conceptDeclaration" targetNodeId="1.1217252428768"
               resolveInfo="ActionDataParameterReferenceOperation"/>
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1217252486328">
@@ -4539,7 +4539,7 @@
         </node>
     </node>
     <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1227009469176">
-        <property name="package" value="Actions.Action"/>
+        <property name="package" value="Actions.Action.Parameters"/>
         <link role="conceptDeclaration" targetNodeId="1.1227008925923"
               resolveInfo="ActionConstructorParameterReferenceOperation"/>
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1227009474146">
@@ -4556,7 +4556,7 @@
         </node>
     </node>
     <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1227010595783">
-        <property name="package" value="Actions.Action"/>
+        <property name="package" value="Actions.Action.Parameters"/>
         <link role="conceptDeclaration" targetNodeId="1.1227008846812"
               resolveInfo="ActionConstructionParameterDeclaration"/>
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227010597707">
@@ -4577,6 +4577,43 @@
                   id="1227010597711">
                 <property name="text" value=";"/>
                 <link role="styleClass" targetNodeId="17.1215094139260" resolveInfo="Semicolon"/>
+            </node>
+        </node>
+        <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1227020646278">
+            <link role="relationDeclaration" targetNodeId="1.1227019158144"/>
+            <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition"
+                  id="1227020655669">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227020655670">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
+                          id="1227020663515">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression"
+                              id="1227020701840">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                                  id="1227020701841">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                                      id="1227020701842">
+                                    <node role="operand"
+                                          type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node"
+                                          id="1227020701843"/>
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess"
+                                          id="1227020701844">
+                                        <link role="link" targetNodeId="15.1068431790188"/>
+                                    </node>
+                                </node>
+                                <node role="operation"
+                                      type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"
+                                      id="1227020701845">
+                                    <node role="conceptArgument"
+                                          type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference"
+                                          id="1227020701846">
+                                        <link role="conceptDeclaration" targetNodeId="15.1164118113764"
+                                              resolveInfo="PrimitiveType"/>
+                                    </node>
+                                </node>
+                            </node>
+                        </node>
+                    </node>
+                </node>
             </node>
         </node>
     </node>

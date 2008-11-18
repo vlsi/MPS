@@ -15,6 +15,7 @@ public class ActionConstructionParameterDeclaration extends DefaultClassifierFie
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String TO_STRING_FUNCTION = "toStringFunction";
 
   public ActionConstructionParameterDeclaration(SNode node) {
     super(node);
@@ -50,6 +51,14 @@ public class ActionConstructionParameterDeclaration extends DefaultClassifierFie
 
   public void setVirtualPackage(String value) {
     this.setProperty(ActionConstructionParameterDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public ToStringConceptFunction getToStringFunction() {
+    return (ToStringConceptFunction) this.getChild(ActionConstructionParameterDeclaration.TO_STRING_FUNCTION);
+  }
+
+  public void setToStringFunction(ToStringConceptFunction node) {
+    super.setChild(ActionConstructionParameterDeclaration.TO_STRING_FUNCTION, node);
   }
 
 
