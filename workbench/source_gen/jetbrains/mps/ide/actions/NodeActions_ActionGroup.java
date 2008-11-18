@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.actions.nodes.SetNodePackageAction;
 import jetbrains.mps.workbench.actions.nodes.GoToConceptEditorDeclarationAction;
 import jetbrains.mps.workbench.actions.nodes.CopyNodeAction;
@@ -27,11 +28,11 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new EditNode_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new EditNode_Action()));
       this.addSeparator();
       this.add(new SetNodePackageAction());
       this.addSeparator();
-      this.add(new ExpandNode_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ExpandNode_Action()));
       this.addSeparator();
       this.add(new GoToConceptEditorDeclarationAction());
       this.addSeparator();
@@ -39,26 +40,26 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
       this.add(new CopyNodeReferenceAction());
       this.add(new PasteNodeAction());
       this.add(new CutNodeAction());
-      this.add(new CloneRoot_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new CloneRoot_Action()));
       this.addSeparator();
       this.add(new DeleteNodeAction());
       this.addSeparator();
-      this.add(new GoToConceptDeclaration_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new GoToConceptDeclaration_Action()));
       this.add(new GoToEditorDeclarationAction());
       this.add(new GoToRulesAction());
-      this.add(new ShowNodeInExplorer_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowNodeInExplorer_Action()));
       this.addSeparator();
       this.add(new ShowGenerationTraceAction());
-      this.add(new ShowGenerationTraceback_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowGenerationTraceback_Action()));
       this.addSeparator();
       this.add(new FindSpecificNodeUsagesAction());
       this.add(new FastFindUsagesNodeAction());
       this.addSeparator();
-      this.add(new ShowConceptInHierarchy_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowConceptInHierarchy_Action()));
       this.addAnchor(NodeActions_ActionGroup.LABEL_ID_structure);
-      this.add(new ShowClassInHierarchy_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowClassInHierarchy_Action()));
       this.addSeparator();
-      this.add(new ShowErrorMessage_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowErrorMessage_Action()));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

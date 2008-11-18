@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.actions.project.AddModuleToProjectAction;
 import jetbrains.mps.workbench.actions.module.DeleteModuleAction;
 
@@ -16,14 +17,14 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new SetModuleFolder_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new SetModuleFolder_Action()));
       this.addSeparator();
       this.add(new AddModuleToProjectAction());
-      this.add(new RemoveModuleFromProject_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new RemoveModuleFromProject_Action()));
       this.add(new DeleteModuleAction());
-      this.add(new AnalyzeClasspath_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new AnalyzeClasspath_Action()));
       this.addSeparator();
-      this.add(new DevkitProperties_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new DevkitProperties_Action()));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

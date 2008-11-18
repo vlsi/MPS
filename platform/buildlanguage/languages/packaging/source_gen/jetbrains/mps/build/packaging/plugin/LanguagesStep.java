@@ -5,15 +5,20 @@ package jetbrains.mps.build.packaging.plugin;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.MPSProjectHolder;
+
 import javax.swing.JComponent;
 import java.util.List;
+
 import jetbrains.mps.project.IModule;
+
 import java.util.Collections;
 import java.util.Comparator;
+
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+
 import java.util.Set;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -22,6 +27,7 @@ import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.border.EtchedBorder;
 import java.awt.GridBagConstraints;
+
 import jetbrains.mps.smodel.IOperationContext;
 
 public class LanguagesStep extends AbstractStep {
@@ -57,7 +63,7 @@ public class LanguagesStep extends AbstractStep {
     List<IModule> allModules = this.myMpsProject.getModules();
     ModulesListData data = new ModulesListData(allModules);
     List<ModuleData> children = data.getModules();
-    Collections.sort(children, new Comparator <ModuleData>() {
+    Collections.sort(children, new Comparator<ModuleData>() {
 
       public int compare(ModuleData data1, ModuleData data2) {
         IModule module1 = data1.getModule();
@@ -76,7 +82,7 @@ public class LanguagesStep extends AbstractStep {
 
     });
     NamespaceTreeBuilder builder = new LanguagesStep.MyTreeBuilder(this.myMpsProject);
-    for(ModuleData moduleData : Sequence.fromIterable(children)) {
+    for (ModuleData moduleData : Sequence.fromIterable(children)) {
       builder.addNode(new CheckBoxNode(moduleData, false));
     }
     CheckBoxNode allModulesNode = new CheckBoxNode(data, false);
@@ -85,11 +91,11 @@ public class LanguagesStep extends AbstractStep {
     return new CheckBoxTree(allModulesNode);
   }
 
-  public  <N extends NodeData>void fillChildren(CheckBoxNode<N> node) {
+  public <N extends NodeData> void fillChildren(CheckBoxNode<N> node) {
     int childCount = node.getChildCount();
-    for(int i = 0 ; i < childCount ; i++ ) {
+    for (int i = 0; i < childCount; i++) {
       N data = node.getData();
-      CheckBoxNode<N> child = (CheckBoxNode<N>)node.getChildAt(i);
+      CheckBoxNode<N> child = (CheckBoxNode<N>) node.getChildAt(i);
       NodeData childData = child.getData();
       data.addChildren(childData);
       childData.setParent(data);
@@ -104,11 +110,11 @@ public class LanguagesStep extends AbstractStep {
   public void _commit(boolean finish) {
     Set<NodeData> selectedItems = this.myCheckTree.getSelectedItems();
     Set<NodeData> modules = new LinkedHashSet<NodeData>();
-    for(NodeData item : Sequence.fromIterable(selectedItems)) {
+    for (NodeData item : Sequence.fromIterable(selectedItems)) {
       this.fillWithParents(item, modules);
     }
     LinkedList<NodeData> toSort = new LinkedList<NodeData>(modules);
-    Collections.sort(toSort, new Comparator <NodeData>() {
+    Collections.sort(toSort, new Comparator<NodeData>() {
 
       public int compare(NodeData p0, NodeData p1) {
         if ((p0 instanceof NamespaceData) && (p1 instanceof ModuleData)) {
@@ -148,7 +154,7 @@ public class LanguagesStep extends AbstractStep {
     private MPSProject myMpsProject;
 
     public MyTreeBuilder(MPSProject mpsProject) {
-      super(new NamespaceTreeBuilder.NamespaceNodeBuilder <CheckBoxNamespaceNode>() {
+      super(new NamespaceTreeBuilder.NamespaceNodeBuilder<CheckBoxNamespaceNode>() {
 
         public CheckBoxNamespaceNode createNamespaceNode(String text, IOperationContext context) {
           return new CheckBoxNamespaceNode(new NamespaceData(text));
@@ -162,7 +168,7 @@ public class LanguagesStep extends AbstractStep {
       NodeData data = node.getData();
       String namespace = "";
       if (data instanceof ModuleData) {
-        ModuleData moduleData = (ModuleData)data;
+        ModuleData moduleData = (ModuleData) data;
         namespace = this.myMpsProject.getFolderFor(moduleData.getModule());
       }
       if (namespace == null) {
@@ -171,6 +177,6 @@ public class LanguagesStep extends AbstractStep {
       return namespace;
     }
 
-}
+  }
 
 }

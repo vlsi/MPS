@@ -4,6 +4,7 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
@@ -18,8 +19,8 @@ public class FindInstancesByConditionAndNodeGroup_ActionGroup extends GeneratedA
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new FindInstancesByConditionAndNode_Action());
-      this.add(new ReplacementQueryActionWithNode_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new FindInstancesByConditionAndNode_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ReplacementQueryActionWithNode_Action()));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

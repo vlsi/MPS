@@ -4,7 +4,9 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
+
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.smodel.IOperationContext;
@@ -64,7 +66,7 @@ public class LanguageProperties_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       ActionEventData data = new ActionEventData(event);
-      final Language language = (Language)data.getModule();
+      final Language language = (Language) data.getModule();
       final IOperationContext localContext = LanguageProperties_Action.this.context;
       final LanguagePropertiesDialog[] dialog = new LanguagePropertiesDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {

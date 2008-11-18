@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.actions.nodes.HighlightCellDependenciesAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -17,11 +18,11 @@ public class EditorInternal_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(true);
     this.setPopup(true);
     try {
-      this.add(new TestNodePath_Action());
-      this.add(new CellProperties_Action());
-      this.add(new ShowCellInExplorer_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new TestNodePath_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new CellProperties_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowCellInExplorer_Action()));
       this.addSeparator();
-      this.add(new PrintNodeID_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new PrintNodeID_Action()));
       this.add(new HighlightCellDependenciesAction());
       this.addSeparator();
     } catch (Throwable t) {

@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -17,9 +18,9 @@ public class ToolsInternal_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(true);
     this.setPopup(false);
     try {
-      this.add(new RemoveTransientModels_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new RemoveTransientModels_Action()));
       this.addSeparator();
-      this.add(new DumpKeyStrokes_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new DumpKeyStrokes_Action()));
       this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

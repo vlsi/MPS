@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.ActionFactory;
 
 public class TransientModulesActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(TransientModulesActions_ActionGroup.class);
@@ -14,7 +15,7 @@ public class TransientModulesActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new RemoveTransientModels_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new RemoveTransientModels_Action()));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

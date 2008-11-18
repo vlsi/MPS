@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
@@ -19,7 +20,7 @@ public class BaseLanguageToolsAddition_ActionGroup extends GeneratedActionGroup 
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new ShowTodoViewer_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowTodoViewer_Action()));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

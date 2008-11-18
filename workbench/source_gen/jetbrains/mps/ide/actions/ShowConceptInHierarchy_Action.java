@@ -4,12 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
+
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -23,9 +25,9 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(ShowConceptInHierarchy_Action.class);
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\hierarchyView.png", "jetbrains.mps.ide"), true);
 
-  private SNode node;
   public MPSProject project;
   public IOperationContext context;
+  private SNode node;
 
   public ShowConceptInHierarchy_Action() {
     super("Show Concept In Hierarchy", "", ICON);
@@ -78,7 +80,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       HierarchyViewTool tool = ShowConceptInHierarchy_Action.this.context.getComponent(HierarchyViewTool.class);
-      tool.showConceptInHierarchy((AbstractConceptDeclaration)((INodeAdapter)SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.node)), new ProjectOperationContext(ShowConceptInHierarchy_Action.this.project));
+      tool.showConceptInHierarchy((AbstractConceptDeclaration) ((INodeAdapter) SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.node)), new ProjectOperationContext(ShowConceptInHierarchy_Action.this.project));
       tool.openToolLater(true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowConceptInHierarchy", t);

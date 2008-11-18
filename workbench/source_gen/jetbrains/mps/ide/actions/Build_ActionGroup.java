@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.ActionFactory;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -17,9 +18,9 @@ public class Build_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new MakeAllModules_Action());
-      this.add(new CleanAllModules_Action());
-      this.add(new RebuildAllModules_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new MakeAllModules_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new CleanAllModules_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new RebuildAllModules_Action()));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -7,9 +7,9 @@ import jetbrains.mps.logging.Logger;
 
 import javax.swing.Icon;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -20,9 +20,9 @@ public class ReplacementQueryActionWithNode_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(ReplacementQueryActionWithNode_Action.class);
   private static final Icon ICON = null;
 
-  private SNode node;
   public IOperationContext context;
   public IModule langModule;
+  private SNode node;
 
   public ReplacementQueryActionWithNode_Action() {
     super("Modify Instances By Condition", "", ICON);

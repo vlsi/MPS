@@ -4,17 +4,22 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
+
 import jetbrains.mps.smodel.SNode;
-import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
+
+import java.util.List;
 import java.awt.Frame;
+
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -23,8 +28,8 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
   private static final Icon ICON = null;
 
   private SNode node;
-  private List<SNode> nodes;
   public IOperationContext context;
+  private List<SNode> nodes;
   public Frame frame;
 
   public ShowGenerationTraceback_Action() {
@@ -75,8 +80,7 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.nodes = null;
-      } else
-      {
+      } else {
         this.nodes = new ArrayList<SNode>(nodes);
       }
     }

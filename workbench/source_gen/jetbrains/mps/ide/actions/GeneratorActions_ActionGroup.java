@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.actions.language.GenerateTemplateQueriesAction;
 import jetbrains.mps.workbench.actions.module.ShowModuleDependenciesAction;
 import jetbrains.mps.workbench.actions.language.DeleteGeneratorAction;
+import jetbrains.mps.workbench.action.ActionFactory;
 
 public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GeneratorActions_ActionGroup.class);
@@ -26,9 +27,9 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
       this.addSeparator();
       this.add(new DeleteGeneratorAction());
       this.addSeparator();
-      this.add(new CheckGenerator_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new CheckGenerator_Action()));
       this.addSeparator();
-      this.add(new GeneratorProperties_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new GeneratorProperties_Action()));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

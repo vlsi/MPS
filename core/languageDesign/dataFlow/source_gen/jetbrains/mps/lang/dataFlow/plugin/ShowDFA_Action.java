@@ -7,8 +7,8 @@ import jetbrains.mps.logging.Logger;
 
 import javax.swing.Icon;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 
 import java.awt.Frame;
 
@@ -23,8 +23,8 @@ public class ShowDFA_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(ShowDFA_Action.class);
   private static final Icon ICON = null;
 
-  private SNode node;
   public IOperationContext context;
+  private SNode node;
   public Frame frame;
 
   public ShowDFA_Action() {

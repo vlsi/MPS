@@ -5,6 +5,7 @@ package jetbrains.mps.lang.typesystem.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.actions.nodes.ShowNodeTypeAction;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
@@ -20,10 +21,10 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
     try {
       this.add(new ShowNodeTypeAction());
-      this.add(new GoToTypeErrorRule_Action());
-      this.add(new ShowRulesWhichAffectNodeType_Action());
-      this.add(new GoToNodeThisDependsOn_Action());
-      this.add(new ShowSupertypes_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new GoToTypeErrorRule_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowRulesWhichAffectNodeType_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new GoToNodeThisDependsOn_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowSupertypes_Action()));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

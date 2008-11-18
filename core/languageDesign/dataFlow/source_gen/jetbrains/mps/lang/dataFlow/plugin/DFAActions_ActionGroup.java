@@ -4,6 +4,7 @@ package jetbrains.mps.lang.dataFlow.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
@@ -17,10 +18,10 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new PrintDFAResult_Action());
-      this.add(new PrintInitializationInformation_Action());
-      this.add(new PrintReachingDefinintionsInformation_Action());
-      this.add(new ShowDFA_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new PrintDFAResult_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new PrintInitializationInformation_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new PrintReachingDefinintionsInformation_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowDFA_Action()));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

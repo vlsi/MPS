@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
@@ -17,19 +18,19 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new CommentStatements_Action());
-      this.add(new UncommentStatements_Action());
-      this.add(new RunClassConcept_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new CommentStatements_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new UncommentStatements_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new RunClassConcept_Action()));
       this.addSeparator();
-      this.add(new ExtractMethod_Action());
-      this.add(new InlineMethod_Action());
-      this.add(new ChangeMethodSignature_Action());
-      this.add(new InlineLocalVariable_Action());
-      this.add(new IntroduceVariable_Action());
-      this.add(new IntroduceField_Action());
-      this.add(new IntroduceConstant_Action());
-      this.add(new MoveStaticMethod_Action());
-      this.add(new RenameVariable_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ExtractMethod_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new InlineMethod_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ChangeMethodSignature_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new InlineLocalVariable_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new IntroduceVariable_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new IntroduceField_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new IntroduceConstant_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new MoveStaticMethod_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new RenameVariable_Action()));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

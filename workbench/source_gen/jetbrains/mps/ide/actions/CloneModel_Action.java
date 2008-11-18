@@ -4,7 +4,9 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
+
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
@@ -39,10 +41,9 @@ public class CloneModel_Action extends GeneratedAction {
     }
     IModule module = CloneModel_Action.this.model.getModule();
     if (module instanceof Language) {
-      Language language = (Language)module;
+      Language language = (Language) module;
       return language.getAspectForModel(CloneModel_Action.this.model) == null;
-    } else
-    {
+    } else {
       return true;
     }
   }

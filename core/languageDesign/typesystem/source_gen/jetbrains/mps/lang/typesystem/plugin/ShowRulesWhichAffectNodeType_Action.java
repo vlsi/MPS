@@ -4,22 +4,30 @@ package jetbrains.mps.lang.typesystem.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNode;
+
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SNode;
+
 import java.awt.Frame;
+
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.typesystem.inference.NodeTypesComponent;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+
 import java.util.Set;
+
 import jetbrains.mps.util.Pair;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -31,10 +39,10 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(ShowRulesWhichAffectNodeType_Action.class);
   private static final Icon ICON = null;
 
-  private SNode node;
   public EditorCell cell;
   public IOperationContext operationContext;
   public MPSProject project;
+  private SNode node;
   public Frame frame;
 
   public ShowRulesWhichAffectNodeType_Action() {
@@ -101,7 +109,7 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
         return;
       }
       List<SNode> rules = new ArrayList<SNode>();
-      for(Pair<String, String> ruleId : Sequence.fromIterable(rulesIds)) {
+      for (Pair<String, String> ruleId : Sequence.fromIterable(rulesIds)) {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ruleId.o1));
         if (modelDescriptor == null) {
           continue;

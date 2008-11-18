@@ -4,6 +4,7 @@ package jetbrains.mps.lang.structure.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
@@ -20,7 +21,7 @@ public class Structure_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new ShowConceptStructure_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowConceptStructure_Action()));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

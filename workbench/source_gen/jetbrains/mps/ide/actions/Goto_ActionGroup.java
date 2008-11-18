@@ -9,6 +9,7 @@ import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
 import jetbrains.mps.workbench.actions.goTo.GoToNamedNodeAction;
 import jetbrains.mps.workbench.actions.goTo.GoToConceptNodeAction;
 import jetbrains.mps.workbench.actions.goTo.GoToNodeByIdAction;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationAction;
 import jetbrains.mps.workbench.actions.nodes.GoToRulesAction;
 import jetbrains.mps.workbench.actions.goTo.GoToModelAction;
@@ -35,7 +36,7 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
       this.add(new GoToConceptNodeAction());
       this.add(new GoToNodeByIdAction());
       this.addSeparator();
-      this.add(new GoToConceptDeclaration_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new GoToConceptDeclaration_Action()));
       this.add(new GoToEditorDeclarationAction());
       this.add(new GoToRulesAction());
       this.addSeparator();

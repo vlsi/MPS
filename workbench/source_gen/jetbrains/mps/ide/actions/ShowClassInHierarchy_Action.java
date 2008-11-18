@@ -4,9 +4,11 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNode;
+
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -18,8 +20,8 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(ShowClassInHierarchy_Action.class);
   private static final Icon ICON = null;
 
-  private SNode node;
   public IOperationContext context;
+  private SNode node;
 
   public ShowClassInHierarchy_Action() {
     super("Show Class In Hierarchy", "", ICON);
@@ -33,7 +35,7 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.getAncestorWhereConceptInList(ShowClassInHierarchy_Action.this.node, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept","jetbrains.mps.baseLanguage.structure.Interface"}, true, false) != null;
+    return SNodeOperations.getAncestorWhereConceptInList(ShowClassInHierarchy_Action.this.node, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.Interface"}, true, false) != null;
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
@@ -71,9 +73,9 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      SNode classNode = SNodeOperations.getAncestorWhereConceptInList(ShowClassInHierarchy_Action.this.node, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept","jetbrains.mps.baseLanguage.structure.Interface"}, true, false);
+      SNode classNode = SNodeOperations.getAncestorWhereConceptInList(ShowClassInHierarchy_Action.this.node, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.Interface"}, true, false);
       BaseLanguageHierarchyViewTool tool = ShowClassInHierarchy_Action.this.context.getComponent(BaseLanguageHierarchyViewTool.class);
-      tool.showConceptInHierarchy(((Classifier)SNodeOperations.getAdapter(classNode)), ShowClassInHierarchy_Action.this.context);
+      tool.showConceptInHierarchy(((Classifier) SNodeOperations.getAdapter(classNode)), ShowClassInHierarchy_Action.this.context);
       tool.openToolLater(true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowClassInHierarchy", t);

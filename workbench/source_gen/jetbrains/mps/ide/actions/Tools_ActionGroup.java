@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.actions.ReloadAllAction;
 import jetbrains.mps.workbench.actions.tools.InstallIDEAPluginAction;
 import jetbrains.mps.smodel.RenameAspectsAction;
@@ -22,8 +23,9 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new ShowModuleRepository_Action());
-      this.add(new ShowModelRepository_Action());
+      this.addAnchor(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal);
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowModuleRepository_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowModelRepository_Action()));
       this.addAnchor(Tools_ActionGroup.LABEL_ID_customTools);
       this.addSeparator();
       this.add(new ReloadAllAction());
@@ -31,7 +33,6 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
       this.add(new InstallIDEAPluginAction());
       this.add(new RenameAspectsAction());
       this.addSeparator();
-      this.addAnchor(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

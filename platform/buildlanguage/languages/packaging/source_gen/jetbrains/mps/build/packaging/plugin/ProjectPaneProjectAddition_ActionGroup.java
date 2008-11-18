@@ -4,6 +4,7 @@ package jetbrains.mps.build.packaging.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
@@ -18,7 +19,7 @@ public class ProjectPaneProjectAddition_ActionGroup extends GeneratedActionGroup
     this.setPopup(false);
     try {
       this.addSeparator();
-      this.add(new GenerateBuildForProjectAction_Action());
+      this.add(ActionFactory.getInstance().getRegisteredAction(new GenerateBuildForProjectAction_Action()));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
