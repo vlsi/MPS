@@ -54,7 +54,6 @@ public class QueriesUtil {
       SNode prevSourceSubstituteMacro = QueriesUtil.getEnclosing_SourceSubstituteMacro(macroOwner, enclosingNodeMacro);
       if (prevSourceSubstituteMacro != null) {
         SNode query = QueriesUtil.getQueryFunction_fromSourceSubstituteMacro(prevSourceSubstituteMacro);
-        SNode nodeType;
         QueriesUtil.equate_outputNodeType_fromSourceQuery(typeCheckingContext, query, InputNodeType);
         return;
       }
@@ -205,7 +204,6 @@ __switch__:
       }
       return;
     }
-    // todo: used in two rules, one of the usages can be converted into non-typesystem rule
     final SNode Concept_typevar_1226671834537 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = null;

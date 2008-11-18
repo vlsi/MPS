@@ -4297,6 +4297,9 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem" id="1214407442186">
           <property name="color" value="magenta" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1227020586125">
+          <property name="value" value="1.0" />
+        </node>
       </node>
     </node>
   </node>
