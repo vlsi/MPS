@@ -11133,7 +11133,7 @@
                     </node>
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888330041">
                         <link role="baseMethodDeclaration"
-                              targetNodeId="35.~MPSProject.&lt;init&gt;(java.io.File,jetbrains.mps.project.structure.NewProjectDescriptor,com.intellij.openapi.project.Project)"
+                              targetNodeId="35.~MPSProject.&lt;init&gt;(java.io.File,jetbrains.mps.project.structure.ProjectDescriptor,com.intellij.openapi.project.Project)"
                               resolveInfo="MPSProject"/>
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral"
                               id="1209910252532"/>

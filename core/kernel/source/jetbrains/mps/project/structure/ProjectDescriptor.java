@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Comparator;
 
-public class NewProjectDescriptor {
+public class ProjectDescriptor {
   private static final Comparator<Path> MODULE_BY_PATH_COMPARATOR = new Comparator<Path>() {
     public int compare(Path p1, Path p2) {
       return p1.isSamePath(p2) ? 0 : -1;

@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.project.structure.NewProjectDescriptor;
+import jetbrains.mps.project.structure.ProjectDescriptor;
 import jetbrains.mps.project.structure.Path;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -36,7 +36,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   private File myProjectFile;
 
-  private NewProjectDescriptor myProjectDescriptor;
+  private ProjectDescriptor myProjectDescriptor;
   private List<Solution> mySolutions = new ArrayList<Solution>();
   private List<Language> myLanguages = new ArrayList<Language>();
 
@@ -48,7 +48,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   private boolean myDisposed;
   private String myErrors = null;
 
-  public MPSProject(final File projectFile, final NewProjectDescriptor projectDescriptor, Project ideaProject) {
+  public MPSProject(final File projectFile, final ProjectDescriptor projectDescriptor, Project ideaProject) {
     myIDEAProject = ideaProject;
 
     if (ideaProject.isDefault()) return;
@@ -163,18 +163,18 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     return result;
   }
 
-  public void setProjectDescriptor(final @NotNull NewProjectDescriptor newDescriptor) {
+  public void setProjectDescriptor(final @NotNull ProjectDescriptor descriptor) {
     MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
 
-    myProjectDescriptor = newDescriptor;
+    myProjectDescriptor = descriptor;
 
     readModules();
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
   public void addProjectLanguage(@NotNull Language language) {
-    NewProjectDescriptor projectDescriptor = getProjectDescriptor();
+    ProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = language.getDescriptorFile();
     assert descriptorFile != null;
     projectDescriptor.addLanguage(descriptorFile.getAbsolutePath());
@@ -182,7 +182,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   public void removeProjectLanguage(@NotNull Language language) {
-    NewProjectDescriptor projectDescriptor = getProjectDescriptor();
+    ProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = language.getDescriptorFile();
     assert descriptorFile != null;
     projectDescriptor.removeLanguage(descriptorFile.getAbsolutePath());
@@ -191,7 +191,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   @NotNull
   public Solution addProjectSolution(@NotNull File solutionDescriptionFile) {
-    NewProjectDescriptor projectDescriptor = getProjectDescriptor();
+    ProjectDescriptor projectDescriptor = getProjectDescriptor();
     projectDescriptor.addSolution(solutionDescriptionFile.getAbsolutePath());
     setProjectDescriptor(projectDescriptor);
 
@@ -207,7 +207,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   public void removeProjectSolution(@NotNull Solution solution) {
-    NewProjectDescriptor projectDescriptor = getProjectDescriptor();
+    ProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = solution.getDescriptorFile();
     assert descriptorFile != null;
     projectDescriptor.removeSolution(descriptorFile.getAbsolutePath());
@@ -215,13 +215,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   public void addProjectDevKit(@NotNull IFile devKitDescriptorFile) {
-    NewProjectDescriptor projectDescriptor = getProjectDescriptor();
+    ProjectDescriptor projectDescriptor = getProjectDescriptor();
     projectDescriptor.addDevkit(devKitDescriptorFile.getAbsolutePath());
     setProjectDescriptor(projectDescriptor);
   }
 
   public void removeProjectDevKit(@NotNull DevKit devkit) {
-    NewProjectDescriptor projectDescriptor = getProjectDescriptor();
+    ProjectDescriptor projectDescriptor = getProjectDescriptor();
     IFile descriptorFile = devkit.getDescriptorFile();
     assert descriptorFile != null;
     projectDescriptor.removeDevkit(descriptorFile.getAbsolutePath());
@@ -288,7 +288,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   @NotNull
-  public NewProjectDescriptor getProjectDescriptor() {
+  public ProjectDescriptor getProjectDescriptor() {
     return myProjectDescriptor;
   }
 
