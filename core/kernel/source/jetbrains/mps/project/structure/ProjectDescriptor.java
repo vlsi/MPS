@@ -1,20 +1,10 @@
 package jetbrains.mps.project.structure;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.project.structure.testconfigurations.ModelsTestConfiguration;
-import jetbrains.mps.project.structure.testconfigurations.ModuleTestConfiguration;
-import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.Macros;
-import org.jdom.Document;
-import org.jdom.Element;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Comparator;
+import java.util.List;
 
 public class ProjectDescriptor {
   private static final Comparator<Path> MODULE_BY_PATH_COMPARATOR = new Comparator<Path>() {
