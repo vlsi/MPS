@@ -2745,6 +2745,72 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724519" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226945293888">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="getAbstractCreators" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226945293890">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1226945410240">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226945410241">
+            <property name="name" value="creators" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1226945410242">
+              <link role="elementConcept" targetNodeId="1.1145552809883" resolveInfo="AbstractCreator" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226945410243">
+              <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="1226945410244">
+                <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1226945410245">
+                  <link role="elementConcept" targetNodeId="1.1145552809883" resolveInfo="AbstractCreator" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1226946452033">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226946452034">
+            <property name="name" value="ac" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1226946452035">
+              <link role="concept" targetNodeId="1.1145552809883" resolveInfo="AbstractCreator" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226946452036">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1226946452037" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226946452038">
+                <link role="baseMethodDeclaration" targetNodeId="1213877337340" resolveInfo="getAbstractCreator" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1226946460499">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226946460500">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226945413136">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226945414090">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226945413137">
+                  <link role="variableDeclaration" targetNodeId="1226945410241" resolveInfo="creators" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1226945417450">
+                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226946452040">
+                    <link role="variableDeclaration" targetNodeId="1226946452034" resolveInfo="ac" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226946461701">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226946461627">
+              <link role="variableDeclaration" targetNodeId="1226946452034" resolveInfo="ac" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1226946462987" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226945393364">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226945410247">
+            <link role="variableDeclaration" targetNodeId="1226945410241" resolveInfo="creators" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226945297559" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1226945366169">
+        <link role="elementConcept" targetNodeId="1.1145552809883" resolveInfo="AbstractCreator" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877337345">
       <property name="isVirtual" value="true" />
       <property name="name" value="getJavaType" />

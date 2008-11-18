@@ -12,6 +12,8 @@ import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Type_Behavior {
@@ -19,6 +21,7 @@ public class Type_Behavior {
   private static Class[] PARAMETERS_1213877337313 = {SNode.class};
   private static Class[] PARAMETERS_1213877337320 = {SNode.class};
   private static Class[] PARAMETERS_1213877337340 = {SNode.class};
+  private static Class[] PARAMETERS_1226945293888 = {SNode.class};
   private static Class[] PARAMETERS_1213877337345 = {SNode.class};
   private static Class[] PARAMETERS_1213877337352 = {SNode.class};
   private static Class[] PARAMETERS_1213877337357 = {SNode.class};
@@ -45,6 +48,15 @@ public class Type_Behavior {
 
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     return null;
+  }
+
+  public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
+    List<SNode> creators = new ArrayList<SNode>();
+    SNode ac = Type_Behavior.call_getAbstractCreator_1213877337340(thisNode);
+    if ((ac != null)) {
+      ListSequence.fromList(creators).addElement(ac);
+    }
+    return creators;
   }
 
   public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {
@@ -88,6 +100,10 @@ public class Type_Behavior {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getAbstractCreator_1213877337340", PARAMETERS_1213877337340);
   }
 
+  public static List<SNode> call_getAbstractCreators_1226945293888(SNode thisNode) {
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getAbstractCreators_1226945293888", PARAMETERS_1226945293888);
+  }
+
   public static SNode call_getJavaType_1213877337345(SNode thisNode) {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, thisNode, "virtual_getJavaType_1213877337345", PARAMETERS_1213877337345);
   }
@@ -118,6 +134,10 @@ public class Type_Behavior {
 
   public static SNode callSuper_getAbstractCreator_1213877337340(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getAbstractCreator_1213877337340", PARAMETERS_1213877337340);
+  }
+
+  public static List<SNode> callSuper_getAbstractCreators_1226945293888(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, thisNode, callerConceptFqName, "virtual_getAbstractCreators_1226945293888", PARAMETERS_1226945293888);
   }
 
   public static SNode callSuper_getJavaType_1213877337345(SNode thisNode, String callerConceptFqName) {

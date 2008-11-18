@@ -361,19 +361,22 @@ __switch__:
   }
 
   public static void nodeFactory_NodeSetup_GenericNewExpression_1187945171250(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
-      // Looking for the original node is required because sampleNode is just a copy
-      SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getEnclosingNode(), _context.getSampleNode());
-      if ((originalExpression != null)) {
-        SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
-        if ((expectedType != null)) {
-          SNode abstractCreator = Type_Behavior.call_getAbstractCreator_1213877337340(expectedType);
-          if ((abstractCreator != null)) {
-            SLinkOperations.setTarget(_context.getNewNode(), "creator", abstractCreator, true);
+    //  moved to substitute/expression/new
+    /*
+      if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
+        // Looking for the original node is required because sampleNode is just a copy
+        SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getEnclosingNode(), _context.getSampleNode());
+        if ((originalExpression != null)) {
+          SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
+          if ((expectedType != null)) {
+            SNode abstractCreator = Type_Behavior.call_getAbstractCreator_1213877337340(expectedType);
+            if ((abstractCreator != null)) {
+              SLinkOperations.setTarget(_context.getNewNode(), "creator", abstractCreator, true);
+            }
           }
         }
       }
-    }
+    */
   }
 
   public static void nodeFactory_NodeSetup_ForeachStatement_1188991457471(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -1553,6 +1556,62 @@ __switch__:
                 SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
                 SLinkOperations.setTarget(result, "classifier", (item), false);
                 return result;
+              }
+
+            });
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1227002519873(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression");
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Calculable calc = new Calculable() {
+
+          public Object calculate() {
+            SNode sampleNode = _context.getCurrentTargetNode();
+            //  copied from BL_nodeFactories
+            if (SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
+              // Looking for the original node is required because sampleNode is just a copy
+              SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getParentNode(), sampleNode);
+              if ((originalExpression != null)) {
+                SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
+                if ((expectedType != null)) {
+                  return Type_Behavior.call_getAbstractCreators_1226945293888(expectedType);
+                }
+              }
+            }
+            return null;
+          }
+
+        };
+        Iterable<SNode> queryResult = (Iterable)calc.calculate();
+        if (queryResult != null) {
+          for(final SNode item : queryResult) {
+            result.add(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode gne = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
+                SLinkOperations.setTarget(gne, "creator", (item), true);
+                return gne;
+              }
+
+              public String getMatchingText(String pattern) {
+                return "new " + SConceptPropertyOperations.getString((item), "alias");
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+
+              public String getDescriptionText(String pattern) {
+                return SConceptPropertyOperations.getString((item), "short_description");
               }
 
             });
