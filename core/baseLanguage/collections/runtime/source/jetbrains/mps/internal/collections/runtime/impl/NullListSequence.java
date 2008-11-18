@@ -120,7 +120,11 @@ public class NullListSequence<T> extends NullSequence<T> implements IListSequenc
     	return null;
     }
     
-    public T removeElementAT(int idx) {
+    public T removeElementAt(int idx) {
+    	return null;
+    }
+    
+    public T removeLastElement() {
     	return null;
     }
     

@@ -14,7 +14,9 @@ public interface IListSequence<T> extends ISequence<T>, List<T> {
     
     T removeElement (T t);
     
-    T removeElementAT (int idx);
+    T removeElementAt (int idx);
+    
+    T removeLastElement ();
     
     T insertElement (int idx, T t);
     

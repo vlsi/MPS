@@ -158,8 +158,25 @@ public class List_Test extends Util_Test {
 
   @Test()
   public void test_removeAt() throws Exception {
-    List<String> test = ListSequence.<String>fromArray("A", "B", "X", "C");
-    ListSequence.fromList(test).removeElementAT(2);
+    List<String> test = ListSequence.<String>fromArray("A", "B", "FOO", "C");
+    String foo = ListSequence.fromList(test).removeElementAt(2);
+    Assert.assertEquals("FOO", foo);
+    this.assertIterableEquals(this.inputABC(), test);
+  }
+
+  @Test()
+  public void test_removeFirst() throws Exception {
+    List<String> test = ListSequence.<String>fromArray("FOO", "A", "B", "C");
+    String foo = ListSequence.fromList(test).removeElementAt(0);
+    Assert.assertEquals("FOO", foo);
+    this.assertIterableEquals(this.inputABC(), test);
+  }
+
+  @Test()
+  public void test_removeLast() throws Exception {
+    List<String> test = ListSequence.<String>fromArray("A", "B", "C", "FOO");
+    String foo = ListSequence.fromList(test).removeLastElement();
+    Assert.assertEquals("FOO", foo);
     this.assertIterableEquals(this.inputABC(), test);
   }
 

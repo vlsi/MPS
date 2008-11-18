@@ -2196,5 +2196,31 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1227026125685">
+    <property name="package" value="list" />
+    <link role="conceptDeclaration" targetNodeId="1.1227026094155" resolveInfo="RemoveLastElementOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227026127164">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1227026127165">
+        <link role="relationDeclaration" targetNodeId="2.1156235010670" resolveInfo="alias" />
+        <link role="styleClass" targetNodeId="1215707981329" resolveInfo="Operation" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1227026127166">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1227026173540">
+    <property name="package" value="list" />
+    <link role="conceptDeclaration" targetNodeId="1.1227026082377" resolveInfo="RemoveFirstElementOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227026174430">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1227026174431">
+        <link role="styleClass" targetNodeId="1215707981329" resolveInfo="Operation" />
+        <link role="relationDeclaration" targetNodeId="2.1156235010670" resolveInfo="alias" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1227026174432">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

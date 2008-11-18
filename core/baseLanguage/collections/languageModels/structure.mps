@@ -1680,5 +1680,23 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227026082377">
+    <property name="package" value="list" />
+    <property name="name" value="RemoveFirstElementOperation" />
+    <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227026178290">
+      <property name="value" value="removeFirst" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227026094155">
+    <property name="package" value="list" />
+    <property name="name" value="RemoveLastElementOperation" />
+    <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227026130404">
+      <property name="value" value="removeLast" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

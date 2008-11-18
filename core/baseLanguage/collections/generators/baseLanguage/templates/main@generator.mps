@@ -8505,16 +8505,16 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1227023260981">
       <link role="applicableConcept" targetNodeId="8.1227022196108" resolveInfo="RemoveAtElementOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1227023260982">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227023309807">
-          <link role="baseMethodDeclaration" targetNodeId="13.~IListSequence.removeElementAT(int):java.lang.Object" resolveInfo="removeElementAT" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="1227023309808">
-            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1227023309809">
-              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1227023309810">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227023309811">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227023309812">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227023309813">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227023309814" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227023309815">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227026969001">
+          <link role="baseMethodDeclaration" targetNodeId="13.~IListSequence.removeElementAt(int):java.lang.Object" resolveInfo="removeElementAt" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="1227026969002">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1227026969003">
+              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1227026969004">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227026969005">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227026969006">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227026969007">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227026969008" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227026969009">
                         <link role="link" targetNodeId="8.1227022274197" />
                       </node>
                     </node>
@@ -8523,6 +8523,25 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1227026377653">
+      <link role="applicableConcept" targetNodeId="8.1227026082377" resolveInfo="RemoveFirstElementOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1227026400231">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227027031629">
+          <link role="baseMethodDeclaration" targetNodeId="13.~IListSequence.removeElementAt(int):java.lang.Object" resolveInfo="removeElementAt" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1227027031630">
+            <property name="value" value="0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1227026422636">
+      <link role="applicableConcept" targetNodeId="8.1227026094155" resolveInfo="RemoveLastElementOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1227026430647">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227026647349">
+          <link role="baseMethodDeclaration" targetNodeId="13.~IListSequence.removeLastElement():java.lang.Object" resolveInfo="removeLastElement" />
         </node>
       </node>
     </node>

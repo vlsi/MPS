@@ -236,13 +236,22 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
         return null;
     }
     
-    public T removeElementAT(int idx) {
+    public T removeElementAt(int idx) {
         if (Sequence.NULL_WHEN_EMPTY) {
             if (size() == 0 && (idx == 0 || idx == -1)) {
                 return null;
             }
         }
     	return remove (idx);
+    }
+    
+    public T removeLastElement() {
+        if (Sequence.NULL_WHEN_EMPTY) {
+            if (size() == 0) {
+                return null;
+            }
+        }
+    	return remove (size()-1);
     }
     
     public T insertElement(int idx, T t) {
