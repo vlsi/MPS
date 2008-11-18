@@ -31,5 +31,6 @@ public interface IWrapper extends IMatcher {
 
   public IWrapper getShallowConcreteRepresentator();
 
+  //todo remove
   public boolean isMetaType();
 }

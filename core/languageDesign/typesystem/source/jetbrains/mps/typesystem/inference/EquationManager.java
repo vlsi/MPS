@@ -787,7 +787,7 @@ public class EquationManager {
       hasConcreteTypes = false;
       for (IWrapper type : types) {
         if (type == null) continue;
-        if (!type.isConcrete() && !type.isMetaType()) {       //todo: consider joins
+        if (!type.isConcrete() && !type.isMetaType()) {
           typeLessThanVar(type, true, priority, minPriority);
           typeLessThanVar(type, false, priority, minPriority);
           varLessThanType(type, true, priority, minPriority);
@@ -919,7 +919,7 @@ public class EquationManager {
         continue;
       }
       int inequationPriority = subtypes.get(subtypeNode).getInequationPriority();
-      if (subtypeNode.isConcrete() || subtypeNode.isMetaType() /*O RLY?*/) {//todo are metatypes good here?
+      if (subtypeNode.isConcrete() || subtypeNode.isMetaType() /*O RLY?*/) {
         minPriority[0] = Math.min(minPriority[0], inequationPriority);
         if (inequationPriority <= priority) {
           concreteSubtypes.add(subtypeNode);
@@ -989,7 +989,7 @@ public class EquationManager {
         continue;
       }
       int inequationPriority = supertypes.get(supertypeNode).getInequationPriority();
-      if (supertypeNode.isConcrete() || supertypeNode.isMetaType() /*O RLY?*/) {  //todo are metatypes good here?
+      if (supertypeNode.isConcrete() || supertypeNode.isMetaType() /*O RLY?*/) {
         minPriority[0] = Math.min(minPriority[0], inequationPriority);
         if (inequationPriority <= priority) {
           concreteSupertypes.add(supertypeNode);
@@ -1036,8 +1036,13 @@ public class EquationManager {
 
   private NodeWrapper expandNode(SNode term, IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel,
                                  boolean finalExpansion, NodeTypesComponent nodeTypesComponent) {
+    return expandNode(term, wrapper, representator, depth, variablesMet, typesModel, finalExpansion, nodeTypesComponent, true);
+  }
+
+  private NodeWrapper expandNode(SNode term, IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel,
+                                 boolean finalExpansion, NodeTypesComponent nodeTypesComponent, boolean expandChild) {
     if (wrapper == null) return null;
-    if (wrapper.getNode().isRegistered()) {
+    if (wrapper.getNode().isRegistered() && expandChild) {
       wrapper = new NodeWrapper(CopyUtil.copy(wrapper.getNode()));
     }
     if (wrapper.isVariable()) {
@@ -1052,7 +1057,11 @@ public class EquationManager {
           return NodeWrapper.fromNode(error.getNode(), this);
         }
         variablesMet.add(wrapper);
-        wrapper1 = expandNode(term, type, type, 0, variablesMet, typesModel, finalExpansion, nodeTypesComponent);
+        if (expandChild) {
+          wrapper1 = expandNode(term, type, type, 0, variablesMet, typesModel, finalExpansion, nodeTypesComponent);
+        } else {
+          wrapper1 = (NodeWrapper) type;
+        }
         variablesMet.remove(wrapper);
       }
       return wrapper1;
@@ -1102,7 +1111,7 @@ public class EquationManager {
       SNode oldNode = reference.getTargetNode();
       if (BaseAdapter.isInstance(oldNode, RuntimeTypeVariable.class)) {
         SNode newNode = expandNode(term, NodeWrapper.createWrapperFromNode(oldNode, this), representator,
-          depth, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
+          depth, variablesMet, typesModel, finalExpansion, nodeTypesComponent, false).getNode();
         referenceReplacement.put(reference, newNode);
       }
     }
