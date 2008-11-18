@@ -1142,20 +1142,43 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227014460148">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
                       id="1227014510223">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression"
-                          id="1227014526028">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
-                              id="1227014526029">
-                            <node role="operand"
-                                  type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node"
-                                  id="1227014526030"/>
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"
-                                  id="1227014526031">
-                                <node role="conceptArgument"
-                                      type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference"
-                                      id="1227014526032">
-                                    <link role="conceptDeclaration" targetNodeId="7.1203087890642"
-                                          resolveInfo="ActionGroupDeclaration"/>
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression"
+                          id="1227016368202">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression"
+                              id="1227014526028">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                                  id="1227014526029">
+                                <node role="operand"
+                                      type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node"
+                                      id="1227014526030"/>
+                                <node role="operation"
+                                      type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"
+                                      id="1227014526031">
+                                    <node role="conceptArgument"
+                                          type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference"
+                                          id="1227014526032">
+                                        <link role="conceptDeclaration" targetNodeId="7.1203087890642"
+                                              resolveInfo="ActionGroupDeclaration"/>
+                                    </node>
+                                </node>
+                            </node>
+                        </node>
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression"
+                              id="1227016373299">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                                  id="1227016373300">
+                                <node role="operand"
+                                      type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node"
+                                      id="1227016373301"/>
+                                <node role="operation"
+                                      type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"
+                                      id="1227016373302">
+                                    <node role="conceptArgument"
+                                          type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference"
+                                          id="1227016390561">
+                                        <link role="conceptDeclaration" targetNodeId="7.1203680534665"
+                                              resolveInfo="ExtentionPoint"/>
+                                    </node>
                                 </node>
                             </node>
                         </node>
