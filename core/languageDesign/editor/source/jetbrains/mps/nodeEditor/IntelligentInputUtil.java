@@ -8,8 +8,6 @@ import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingMode;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
@@ -25,7 +23,7 @@ public class IntelligentInputUtil {
 
     if (cell instanceof EditorCell_STHint) {
       EditorCell_STHint rtHintCell = (EditorCell_STHint) cell;
-      processRTHintCell(rtHintCell, editorContext, pattern);
+      processSTHintCell(rtHintCell, editorContext, pattern);
       return;
     }
 
@@ -40,7 +38,7 @@ public class IntelligentInputUtil {
     }  
   }
 
-  private static void processRTHintCell(EditorCell_STHint cell, EditorContext editorContext, String pattern) {
+  private static void processSTHintCell(EditorCell_STHint cell, EditorContext editorContext, String pattern) {
     NodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
     String smallPattern = pattern.substring(0, pattern.length() - 1);
     String tail = "" + pattern.charAt(pattern.length() - 1);
@@ -49,7 +47,13 @@ public class IntelligentInputUtil {
       nextCell = nextCell.getNextLeaf();      
     }
 
-    if (canCompleteSmallPatternImmediately(substituteInfo, pattern, "")) {
+    if (canCompleteSmallPatternImmediately(substituteInfo, pattern, "") ||
+      canCompleteSmallPatternImmediately(substituteInfo, trimLeft(pattern), "")) {
+
+      if (!canCompleteSmallPatternImmediately(substituteInfo, pattern, "")) {
+        pattern = trimLeft(pattern);
+      }
+
       substituteInfo.getMatchingActions(pattern, true).get(0).substitute(editorContext, pattern);
     } else if (pattern.length() > 0 && canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail)) {
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
