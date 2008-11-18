@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class BTestCase_Behavior {
 
@@ -27,6 +29,12 @@ public class BTestCase_Behavior {
 
   public static String virtual_getClassName_1216136193905(SNode thisNode) {
     return INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
+  }
+
+  public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
+    List<SNode> members = IMemberContainer_Behavior.callSuper_getMembers_1213877531970(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase");
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)));
+    return members;
   }
 
 }
