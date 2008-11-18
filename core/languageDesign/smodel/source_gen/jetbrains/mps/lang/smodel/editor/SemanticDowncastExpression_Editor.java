@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
@@ -88,7 +89,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.EDITABLE, false);
           this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
           this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
         }
 

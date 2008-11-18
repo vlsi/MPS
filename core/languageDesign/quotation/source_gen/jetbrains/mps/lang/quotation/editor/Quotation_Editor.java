@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -158,7 +159,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, true);
           this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.cyan);
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
         }
 
       };

@@ -26,6 +26,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
 
 public class IMethodCall_actualArguments extends AbstractCellProvider {
 
@@ -226,8 +227,8 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
           {
             this.set(StyleAttributes.SELECTABLE, true);
             this.set(StyleAttributes.EDITABLE, true);
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
+            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
           }
 
         };

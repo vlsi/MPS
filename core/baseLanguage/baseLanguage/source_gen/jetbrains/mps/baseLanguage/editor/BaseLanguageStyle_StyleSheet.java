@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
 
 public class BaseLanguageStyle_StyleSheet {
 
@@ -25,8 +26,8 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getKeyWord(null));
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
       }
 
     };
@@ -147,8 +148,8 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, EnumMeasure.spaces));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, EnumMeasure.spaces));
       }
 
     };
@@ -168,8 +169,8 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
         this.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
       }
 
     };
@@ -180,8 +181,8 @@ public class BaseLanguageStyle_StyleSheet {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
         this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
       }
 
     };
@@ -200,8 +201,8 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, EnumMeasure.spaces));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
       }
 
     };
@@ -220,7 +221,7 @@ public class BaseLanguageStyle_StyleSheet {
     return new Style(cell) {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
       }
 
     };
@@ -229,8 +230,8 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getMethodName(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
       }
 
     };
@@ -239,7 +240,7 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getVariableName(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
       }
 
     };
@@ -248,8 +249,8 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getClassName(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
       }
 
     };
@@ -258,8 +259,8 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getSemicolon(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
         this.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
       }
 
@@ -269,8 +270,8 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getDot(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
         this.set(StyleAttributes.SELECTABLE, false);
       }
 

@@ -16,6 +16,7 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.TextPasteUtil;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.editor.structure._Enum_Measure;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -238,6 +239,14 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return getRenderedTextLine().getRightInternalInset();
   }
 
+  public int getTopInternalInset() {
+    return getRenderedTextLine().getTopInternalInset();
+  }
+
+  public int getBottomInternalInset() {
+    return getRenderedTextLine().getBottomInternalInset();
+  }
+
   public int getTextLineWidth() {
     int textLineWidth;
     if (myNoTextSet && myTextLine.getText().length() == 0) {
@@ -270,8 +279,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public void relayoutImpl() {
     if (isPunctuationLayout()) {
-      getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-      getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+      getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
+      getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
     }
 
     myTextLine.relayout();

@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
 
 public class MatchVariableReference_Editor extends DefaultNodeEditor {
 
@@ -128,7 +129,7 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
             this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
           }
 
         };

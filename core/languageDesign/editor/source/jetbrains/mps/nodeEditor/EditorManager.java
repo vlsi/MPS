@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.lang.annotations.structure.LinkAttributeConcept;
 import jetbrains.mps.lang.annotations.structure.PropertyAttributeConcept;
+import jetbrains.mps.lang.editor.structure._Enum_Measure;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -14,6 +15,7 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 
@@ -368,8 +370,8 @@ public class EditorManager {
       setEditable(true);
       setCellBackgroundColor(LightColors.BLUE);
 
-      getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-      getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+      getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
+      getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
 
       mySide = side;
     }

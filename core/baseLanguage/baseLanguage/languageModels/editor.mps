@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903c8(jetbrains.mps.baseLanguage.ext.csharp.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="80" />
+  <maxImportIndex value="82" />
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -68,6 +68,8 @@
   <import index="78" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
   <import index="79" modelUID="r:00000000-0000-4000-0000-011c895903c8(jetbrains.mps.baseLanguage.ext.csharp.structure)" version="1" />
   <import index="80" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
+  <import index="81" modelUID="f:java_stub#jetbrains.mps.lang.structure.editor(jetbrains.mps.lang.structure.editor@java_stub)" version="-1" />
+  <import index="82" modelUID="f:java_stub#jetbrains.mps.lang.editor.structure(jetbrains.mps.lang.editor.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1073416106125">
     <property name="name" value="StatementList_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123136" />
@@ -2288,13 +2290,14 @@
                                 <link role="variableDeclaration" targetNodeId="76.~StyleAttributes.PADDING_LEFT" resolveInfo="PADDING_LEFT" />
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226682598143">
-                                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1226682602350">
-                                  <link role="baseMethodDeclaration" targetNodeId="76.~Padding.&lt;init&gt;(double,java.lang.String)" resolveInfo="Padding" />
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1226682604117">
+                                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227021144633">
+                                  <link role="baseMethodDeclaration" targetNodeId="76.~Padding.&lt;init&gt;(double,jetbrains.mps.lang.editor.structure._Enum_Measure)" resolveInfo="Padding" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1227021146572">
                                     <property name="value" value="0.0" />
                                   </node>
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226682606307">
-                                    <property name="value" value="spaces" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1227019578375">
+                                    <link role="enumConstantDeclaration" targetNodeId="82.~_Enum_Measure.spaces" resolveInfo="spaces" />
+                                    <link role="enumClass" targetNodeId="76.~EnumMeasure" resolveInfo="EnumMeasure" />
                                   </node>
                                 </node>
                               </node>
@@ -2319,12 +2322,13 @@
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226682436866">
                                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1226682441166">
-                                  <link role="baseMethodDeclaration" targetNodeId="76.~Padding.&lt;init&gt;(double,java.lang.String)" resolveInfo="Padding" />
+                                  <link role="baseMethodDeclaration" targetNodeId="76.~Padding.&lt;init&gt;(double,jetbrains.mps.lang.editor.structure._Enum_Measure)" resolveInfo="Padding" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1226682442965">
                                     <property name="value" value="0.0" />
                                   </node>
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226682444920">
-                                    <property name="value" value="spaces" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1227019586113">
+                                    <link role="enumConstantDeclaration" targetNodeId="82.~_Enum_Measure.spaces" resolveInfo="spaces" />
+                                    <link role="enumClass" targetNodeId="76.~EnumMeasure" resolveInfo="EnumMeasure" />
                                   </node>
                                 </node>
                               </node>

@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
 
 public class Styles_StyleSheet {
 
@@ -54,8 +55,8 @@ public class Styles_StyleSheet {
   public static Style getMacroStart(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
         this.set(StyleAttributes.EDITABLE, true);
@@ -67,8 +68,8 @@ public class Styles_StyleSheet {
   public static Style getNodeUnderMacro(final EditorCell cell) {
     return new Style(cell) {
       {
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
         this.set(StyleAttributes.DRAW_BRACKETS, true);
         this.set(StyleAttributes.BRACKETS_COLOR, MPSColors.LIGHT_BLUE);
       }

@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -204,8 +205,8 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
         Style inlineStyle = new Style(editorCell) {
           {
             this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-            this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+            this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
           }
 
         };
@@ -284,8 +285,8 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
           {
             this.set(StyleAttributes.SELECTABLE, true);
             this.set(StyleAttributes.EDITABLE, true);
-            this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+            this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
           }
 
         };

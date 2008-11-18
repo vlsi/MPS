@@ -17,6 +17,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -70,7 +71,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refNode_type1227010597708(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_type_1227010597708((EditorCell_Label) editorCell, node, context);
+      setupLabel_refNode_type_1227010597708((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -90,7 +91,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createProperty1227010597709_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -99,7 +100,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_property_name1227010597709(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_name_1227010597709((EditorCell_Label) editorCell, node, context);
+      setupLabel_property_name_1227010597709((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -119,7 +120,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createRefNode1227020757847_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -164,7 +165,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, "spaces"));
+          this.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, EnumMeasure.spaces));
         }
 
       };

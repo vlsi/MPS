@@ -4,6 +4,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
+import jetbrains.mps.lang.editor.structure._Enum_Measure;
 
 /**
  * Author: Sergey Dmitriev
@@ -19,8 +21,8 @@ public class EditorCell_Error extends EditorCell_Label {
     setErrorState(true);
 
 
-    getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-    getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+    getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
+    getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
   }
 
   public boolean canPasteText() {

@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
 
 public class Styles_StyleSheet {
 
@@ -16,7 +17,7 @@ public class Styles_StyleSheet {
       {
         this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
       }
 
     };

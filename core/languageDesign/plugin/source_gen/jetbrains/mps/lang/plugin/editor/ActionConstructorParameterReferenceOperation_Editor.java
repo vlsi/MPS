@@ -26,7 +26,7 @@ public class ActionConstructorParameterReferenceOperation_Editor extends Default
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refCell_declaration1227009474146(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refCell_declaration_1227009474146((EditorCell_Label) editorCell, node, context);
+      setupLabel_refCell_declaration_1227009474146((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -46,7 +46,7 @@ public class ActionConstructorParameterReferenceOperation_Editor extends Default
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
 
@@ -77,7 +77,7 @@ public class ActionConstructorParameterReferenceOperation_Editor extends Default
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_property_name1227009476431(editorCell, node, context);
       if (editorCell instanceof EditorCell_Label) {
-        setupLabel_property_name_1227009476431((EditorCell_Label) editorCell, node, context);
+        setupLabel_property_name_1227009476431((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -97,7 +97,7 @@ public class ActionConstructorParameterReferenceOperation_Editor extends Default
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
-        return cellWithRole;
+      return cellWithRole;
     }
 
 
@@ -108,6 +108,6 @@ public class ActionConstructorParameterReferenceOperation_Editor extends Default
     private static void setupLabel_property_name_1227009476431(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
-  }
+}
 
 }

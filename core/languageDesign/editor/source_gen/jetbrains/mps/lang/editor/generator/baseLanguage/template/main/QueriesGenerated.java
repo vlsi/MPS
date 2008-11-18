@@ -25,7 +25,6 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.editor.behavior.CellModel_WithRole_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior;
 import jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_Behavior;
-import jetbrains.mps.lang.editor.structure._Enum_Measure;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -649,13 +648,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "value");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1226677492369(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (SPropertyOperations.getString_def(_context.getNode(), "measure", "spaces") != null ?
-      SPropertyOperations.getString_def(_context.getNode(), "measure", "spaces") :
-      (_Enum_Measure.getDefault()).getName()
-    );
-  }
-
   public static Object referenceMacro_GetReferent_1176478910892(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "componentProvider", true), "jcomponent_query_method");
   }
@@ -1037,6 +1029,13 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1225901389745(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_AbstractLabel");
+  }
+
+  public static Object referenceMacro_GetReferent_1227014628233(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (SPropertyOperations.getString_def(_context.getNode(), "measure", "spaces") != null ?
+      SPropertyOperations.getString_def(_context.getNode(), "measure", "spaces") :
+      "spaces"
+    );
   }
 
   public static boolean ifMacro_Condition_1168384460946(final IOperationContext operationContext, final IfMacroContext _context) {

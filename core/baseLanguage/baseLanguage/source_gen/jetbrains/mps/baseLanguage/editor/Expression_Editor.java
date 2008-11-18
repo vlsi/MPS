@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
@@ -55,8 +56,8 @@ public class Expression_Editor extends DefaultNodeEditor {
 
       public EditorCell createEditorCell(EditorContext context) {
         EditorCell_Error result = new EditorCell_Error(editorContext, node, "<" + node.getRole_() + ">");
-        result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-        result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+        result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+        result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
         return result;
       }
 
@@ -106,8 +107,8 @@ public class Expression_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+          this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
+          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
         }
 
       };

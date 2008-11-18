@@ -5,9 +5,9 @@ package jetbrains.mps.lang.editor.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,8 +22,8 @@ public class CopyThisDown_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(CopyThisDown_Action.class);
   private static final Icon ICON = null;
 
-  private List<SNode> inputNodes;
   public EditorComponent editor;
+  private List<SNode> inputNodes;
 
   public CopyThisDown_Action() {
     super("Duplicate Node", "", ICON);

@@ -5,23 +5,23 @@ import jetbrains.mps.lang.editor.structure._Enum_Measure;
 public class Padding {
 
   private double myValue;
-  private String myType;
-  
-  public Padding(final double value, final String type) {
+  private EnumMeasure myType;
+
+  public Padding(double value, final EnumMeasure type) {
     myValue = value;
     myType = type;
+  }
+
+  public Padding(double value) {
+    this(value, EnumMeasure.spaces);
   }
 
   public double getValue() {
     return myValue;
   }
 
-  public String getType() {
+  public EnumMeasure getType() {
     return myType;
-  }
-
-  public static Padding getDefault() {
-    return new Padding(0.0, _Enum_Measure.getDefault().getValueAsString());
   }
 
 }

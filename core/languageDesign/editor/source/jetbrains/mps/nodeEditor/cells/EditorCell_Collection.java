@@ -5,6 +5,7 @@ import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Flow;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
@@ -15,6 +16,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ArrayWrapper;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.lang.editor.structure._Enum_Measure;
 
 import javax.swing.JComponent;
 import java.awt.Color;
@@ -704,8 +706,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       Style style = new Style();
       style.set(StyleAttributes.TEXT_COLOR, Color.BLUE);
       style.set(StyleAttributes.FONT_STYLE, Font.BOLD);
-      style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, "spaces"));
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, "spaces"));
+      style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
+      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
 
       myBraceTextLine = new TextLine(text, style, false);
       myBraceTextLine.setCaretEnabled(false);

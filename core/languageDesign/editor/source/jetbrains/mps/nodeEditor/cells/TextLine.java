@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.EnumMeasure;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.lang.editor.structure._Enum_Measure;
 
@@ -108,29 +109,29 @@ public class TextLine {
     return Math.max(myMinimalLength * metrics.charWidth('w'), 2);
   }
 
-  private int getHorizontalInternalInsert(double value, String type) {
+  private int getHorizontalInternalInsert(double value, EnumMeasure type) {
     if (type == null) {
-      type = _Enum_Measure.getDefault().getValueAsString();    
+      type = EnumMeasure.spaces;
     }
 
-    if (type.equals("spaces")) {
+    if (type.equals(EnumMeasure.spaces)) {
       return (int) (charWidth() * value);
     }
-    if (type.equals("pixels")) {
+    if (type.equals(EnumMeasure.pixels)) {
       return (int) value;
     }
     return 0;
   }
 
-  private int getVerticalInternalInsert(double value, String type) {
+  private int getVerticalInternalInsert(double value, EnumMeasure type) {
     if (type == null) {
-      type = _Enum_Measure.getDefault().getValueAsString();
+      type = EnumMeasure.spaces;
     }
 
-    if (type.equals("spaces")) {
+    if (type.equals(EnumMeasure.spaces)) {
       return (int) (charHeight() * value);
     }
-    if (type.equals("pixels")) {
+    if (type.equals(EnumMeasure.pixels)) {
       return (int) value;
     }
     return 0;
@@ -138,37 +139,37 @@ public class TextLine {
 
   public int getLeftInternalInset() {
     Double value = myStyle.get(StyleAttributes.PADDING_LEFT).getValue();
-    String type = myStyle.get(StyleAttributes.PADDING_LEFT).getType();
+    EnumMeasure type = myStyle.get(StyleAttributes.PADDING_LEFT).getType();
 
     //todo this is hack which makes code look well in editor
     if (myStyle.get(StyleAttributes.DRAW_BORDER) && myStyle.getCurrent(StyleAttributes.PADDING_LEFT) == null) {
       value = 0.5;
-      return getHorizontalInternalInsert(value, "spaces");
+      return getHorizontalInternalInsert(value, EnumMeasure.spaces);
     }
     return getHorizontalInternalInsert(value, type);
   }
 
   public int getRightInternalInset() {
     Double value = myStyle.get(StyleAttributes.PADDING_RIGHT).getValue();
-    String type = myStyle.get(StyleAttributes.PADDING_RIGHT).getType();
+    EnumMeasure type = myStyle.get(StyleAttributes.PADDING_RIGHT).getType();
 
     //todo this is hack which makes code look well in editor
     if (myStyle.get(StyleAttributes.DRAW_BORDER) && myStyle.getCurrent(StyleAttributes.PADDING_RIGHT) == null) {
       value = 0.5;
-      return getHorizontalInternalInsert(value, "spaces");
+      return getHorizontalInternalInsert(value, EnumMeasure.spaces);
     }
     return getHorizontalInternalInsert(value, type);
   }
 
-  public int getTopInternalInsert() {
+  public int getTopInternalInset() {
     Double value = myStyle.get(StyleAttributes.PADDING_TOP).getValue();
-    String type = myStyle.get(StyleAttributes.PADDING_TOP).getType();
+    EnumMeasure type = myStyle.get(StyleAttributes.PADDING_TOP).getType();
     return getVerticalInternalInsert(value, type);
   }
 
-  public int getBottomInternalInsert() {
+  public int getBottomInternalInset() {
     Double value = myStyle.get(StyleAttributes.PADDING_BOTTOM).getValue();
-    String type = myStyle.get(StyleAttributes.PADDING_BOTTOM).getType();
+    EnumMeasure type = myStyle.get(StyleAttributes.PADDING_BOTTOM).getType();
     return getVerticalInternalInsert(value, type);
   }
 
