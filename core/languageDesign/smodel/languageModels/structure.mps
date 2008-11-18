@@ -1549,7 +1549,7 @@
       <link role="target" targetNodeId="3.1071489288298" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1144195091935">
-      <property name="value" value="isRole" />
+      <property name="value" value="hasRole" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1144195091936">
