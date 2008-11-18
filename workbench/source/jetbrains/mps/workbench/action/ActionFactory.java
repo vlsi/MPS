@@ -54,7 +54,7 @@ public class ActionFactory {
     AnAction action = ActionManager.getInstance().getAction(id);
     if (action == null) {
       try {
-        GeneratedAction newAction = (GeneratedAction) actionClass.getConstructors()[0].newInstance(params);
+        BaseAction newAction = (BaseAction) actionClass.getConstructors()[0].newInstance(new Object[]{params});
         ActionManager.getInstance().registerAction(id, newAction);
         //todo register shortcuts
         return newAction;
@@ -69,7 +69,7 @@ public class ActionFactory {
         return null;
       }
     } else {
-      return (GeneratedAction) action;
+      return (BaseAction) action;
     }
   }
 }
