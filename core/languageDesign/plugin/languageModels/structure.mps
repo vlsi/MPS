@@ -3121,6 +3121,10 @@
             <property name="value" value="toString"/>
             <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias"/>
         </node>
+        <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty"
+              id="1227023147474">
+            <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName"/>
+        </node>
         <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink"
               id="1227019098434">
             <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType"/>

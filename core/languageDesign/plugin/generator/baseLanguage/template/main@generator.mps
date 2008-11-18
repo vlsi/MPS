@@ -2537,22 +2537,22 @@
                 <property name="name" value="object"/>
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227022705511">
                     <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object"/>
-                    <node role="referenceMacro$link_attribute$classifier"
-                          type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1227022769599">
-                        <node role="referentFunction"
-                              type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent"
-                              id="1227022769600">
+                    <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"
+                          id="1227023214028">
+                        <node role="sourceNodeQuery"
+                              type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery"
+                              id="1227023214029">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList"
-                                  id="1227022769601">
+                                  id="1227023214030">
                                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement"
-                                      id="1227022787196">
+                                      id="1227023227519">
                                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
-                                          id="1227022787771">
+                                          id="1227023228696">
                                         <node role="operand"
                                               type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode"
-                                              id="1227022787197"/>
+                                              id="1227023227520"/>
                                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess"
-                                              id="1227022791901">
+                                              id="1227023234731">
                                             <link role="link" targetNodeId="4.1068431790188"/>
                                         </node>
                                     </node>
