@@ -13,4 +13,8 @@ public class PaddingTopStyleClassItem_Behavior {
     return false;
   }
 
+  public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
+    return true;
+  }
+
 }

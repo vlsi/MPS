@@ -2291,13 +2291,9 @@
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226682598143">
                                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227021144633">
-                                  <link role="baseMethodDeclaration" targetNodeId="76.~Padding.&lt;init&gt;(double,jetbrains.mps.lang.editor.structure._Enum_Measure)" resolveInfo="Padding" />
+                                  <link role="baseMethodDeclaration" targetNodeId="76.~Padding.&lt;init&gt;(double)" resolveInfo="Padding" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1227021146572">
                                     <property name="value" value="0.0" />
-                                  </node>
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1227019578375">
-                                    <link role="enumConstantDeclaration" targetNodeId="82.~_Enum_Measure.spaces" resolveInfo="spaces" />
-                                    <link role="enumClass" targetNodeId="76.~EnumMeasure" resolveInfo="EnumMeasure" />
                                   </node>
                                 </node>
                               </node>
@@ -2322,13 +2318,9 @@
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1226682436866">
                                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1226682441166">
-                                  <link role="baseMethodDeclaration" targetNodeId="76.~Padding.&lt;init&gt;(double,jetbrains.mps.lang.editor.structure._Enum_Measure)" resolveInfo="Padding" />
+                                  <link role="baseMethodDeclaration" targetNodeId="76.~Padding.&lt;init&gt;(double)" resolveInfo="Padding" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1226682442965">
                                     <property name="value" value="0.0" />
-                                  </node>
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1227019586113">
-                                    <link role="enumConstantDeclaration" targetNodeId="82.~_Enum_Measure.spaces" resolveInfo="spaces" />
-                                    <link role="enumClass" targetNodeId="76.~EnumMeasure" resolveInfo="EnumMeasure" />
                                   </node>
                                 </node>
                               </node>

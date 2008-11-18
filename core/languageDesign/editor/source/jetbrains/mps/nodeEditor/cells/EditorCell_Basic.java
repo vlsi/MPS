@@ -245,6 +245,14 @@ public abstract class EditorCell_Basic implements EditorCell {
     return 0;
   }
 
+  public int getTopInternalInset() {
+    return 0;
+  }
+
+  public int getBottomInternalInset() {
+    return 0;
+  }
+
   public void setNextIsPunctuation() {
     myNextIsPunctuation = true;
   }
@@ -675,7 +683,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     int effectiveWidth = myNextIsPunctuation ? getWidth() - getRightInternalInset() : getWidth();
 
     g.setColor(c);
-    g.fillRect(getX(), getY(), effectiveWidth, getHeight());
+    g.fillRect(getX(), getY() + getTopInternalInset(), effectiveWidth, getHeight() - getTopInternalInset() - getBottomInternalInset());
     if (getEditor().hasFocus()) {
       g.setColor(c.darker());
       g.drawRect(getX(), getY(), effectiveWidth, getHeight());

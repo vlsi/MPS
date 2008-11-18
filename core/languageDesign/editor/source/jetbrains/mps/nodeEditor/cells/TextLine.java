@@ -25,6 +25,7 @@ public class TextLine {
 
   private int myWidth = 0;
   private int myHeight = 0;
+  private int myTextHeight = 0;
   private boolean myCaretEnabled = true;
   private int myMinimalLength = 0;
 
@@ -91,7 +92,8 @@ public class TextLine {
 
   public void relayout() {
     FontMetrics metrics = getFontMetrics();
-    myHeight = (int) (metrics.getHeight() * myLineSpacing);
+    myHeight = (int) (metrics.getHeight() * myLineSpacing + getTopInternalInset() + getBottomInternalInset());
+    myTextHeight = (int) (metrics.getHeight() * myLineSpacing);
     int minWidth = calculateMinWidth();
     int width = metrics.charsWidth(myText.toCharArray(), 0, myText.length()) + getLeftInternalInset() + getRightInternalInset();
     myWidth = Math.max(minWidth, width);
@@ -286,6 +288,7 @@ public class TextLine {
   }
 
   public void paint(Graphics g, int shiftX, int shiftY, int width, int height, boolean isSelected, boolean toShowCaret) {
+   // shiftY += getTopInternalInset();
     Color backgroundColor;
     Color textColor;
     Color textBackgroundColor;
@@ -304,12 +307,18 @@ public class TextLine {
 
     if (backgroundColor != null && !g.getColor().equals(backgroundColor) && !isSelected) {
       g.setColor(backgroundColor);
-      g.fillRect(shiftX + getLeftInternalInset(), shiftY, (int) stringBounds.getWidth() - 1, myHeight - 1);
+      g.fillRect(shiftX + getLeftInternalInset(),
+        shiftY + getTopInternalInset(),
+        (int) stringBounds.getWidth() - 1,
+        myTextHeight - 1);
     }
 
     if (textBackgroundColor != null) {
       g.setColor(textBackgroundColor);
-      g.fillRect(shiftX + getLeftInternalInset(), shiftY, (int) stringBounds.getWidth() - 1, myHeight - 1);
+      g.fillRect(shiftX + getLeftInternalInset(),
+        shiftY + getTopInternalInset(),
+        (int) stringBounds.getWidth() - 1,
+        myTextHeight - 1);
     }
 
     g.setFont(getFont());
@@ -317,11 +326,12 @@ public class TextLine {
       g.setColor(textColor);
     }
 
-    int deltaShiftX_EndSelection = (myEndTextSelectionPosition <= myText.length()) ? getCaretX(0, myEndTextSelectionPosition) : getLeftInternalInset();
+    int deltaShiftX_EndSelection =
+      (myEndTextSelectionPosition <= myText.length()) ? getCaretX(0, myEndTextSelectionPosition) : getLeftInternalInset();
     int deltaShiftX_StartSelection = getCaretX(0, myStartTextSelectionPosition);
     int endLine = getCaretX(shiftX, myText.length());
-    int baselineY = shiftY + myHeight - myDescent;
-    int centerLineY = shiftY + myHeight / 2;
+    int baselineY = shiftY + myHeight - myDescent - getBottomInternalInset();
+    int centerLineY = shiftY + (myHeight - getBottomInternalInset() + getTopInternalInset())/ 2;
 
     if (myStartTextSelectionPosition > 0) {
       g.drawString(myText.substring(0, myStartTextSelectionPosition), shiftX + getLeftInternalInset(), baselineY);
@@ -346,7 +356,8 @@ public class TextLine {
       //drawing textual selection
       Rectangle2D selectedStringBounds = metrics.getStringBounds(getTextuallySelectedText(), g);
       g.setColor(myTextSelectedBackgroundColor);
-      g.fillRect(shiftX + deltaShiftX_StartSelection + 1, shiftY + 1, (int) selectedStringBounds.getWidth() - 1, myHeight - 1);
+      g.fillRect(shiftX + deltaShiftX_StartSelection + 1, shiftY + getTopInternalInset() + 1, 
+        (int) selectedStringBounds.getWidth() - 1, myTextHeight - 1);    //
 
       g.setColor(myTextSelectedTextColor);
       g.drawString(getTextuallySelectedText(), shiftX + deltaShiftX_StartSelection, baselineY);
@@ -379,11 +390,12 @@ public class TextLine {
     }
     int x = getCaretX(shiftX);
     g.setColor(Color.BLACK);
-    g.drawLine(x, shiftY, x, shiftY + myHeight);
+    shiftY += (getTopInternalInset());
+    g.drawLine(x, shiftY, x, shiftY + myTextHeight);
     if (getCaretPosition() == 0) {
-      g.drawLine(x + 1, shiftY, x + 1, shiftY + myHeight);
+      g.drawLine(x + 1, shiftY, x + 1, shiftY + myTextHeight);
     } else {
-      g.drawLine(x - 1, shiftY, x - 1, shiftY + myHeight);
+      g.drawLine(x - 1, shiftY, x - 1, shiftY + myTextHeight);
     }
     g.setPaintMode();
   }

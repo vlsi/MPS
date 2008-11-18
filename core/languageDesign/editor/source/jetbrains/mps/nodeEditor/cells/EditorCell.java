@@ -44,6 +44,8 @@ public interface EditorCell extends Cloneable {
   int getEffectiveWidth();
   int getLeftInternalInset();
   int getRightInternalInset();
+  int getTopInternalInset();
+  int getBottomInternalInset();
 
   Rectangle getBounds();
 
