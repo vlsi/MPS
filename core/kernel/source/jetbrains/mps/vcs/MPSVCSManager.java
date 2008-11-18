@@ -13,6 +13,7 @@ import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.CompilationListener;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 import com.intellij.openapi.project.Project;
@@ -70,7 +71,14 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean deleteFilesAndRemoveFromVcs(List<File> files) {
-    if (files.size() == 0 || (!isProjectUnderVcs())) return true;
+    if (files.size() == 0) return true;
+    if (!isProjectUnderVcs()) {
+      boolean b = true;
+      for (File f : files) {
+        b &= f.delete();
+      }
+      return b;
+    }
     final List<File> copiedFileList = new ArrayList<File>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
@@ -81,7 +89,19 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public boolean deleteVirtualFilesAndRemoveFromVcs(List<VirtualFile> files) {
-    if (files.size() == 0 || (!isProjectUnderVcs())) return true;
+    if (files.size() == 0) return true;
+    if (!isProjectUnderVcs()) {
+      boolean b = true;
+      for (VirtualFile f : files) {
+        try {
+          f.delete(this);
+        } catch (IOException e) {
+          LOG.error("Error while deleting file " + f + "\n", e);
+          b = false;
+        }
+      }
+      return b;
+    }
     final HashSet<VirtualFile> filesCopy = new HashSet<VirtualFile>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
