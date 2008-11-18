@@ -1313,13 +1313,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return null;
     }
 
-    if (id.equals(root.getCellId())) {
+    if (id.equals(root.getCellId()) && root.getSNode() == node) {
       return root;
     }
 
     if (root instanceof EditorCell_Collection) {
       for (EditorCell child : ((EditorCell_Collection) root)) {
-        if (child.getSNode() == node) {
+        SNode childNode = child.getSNode();
+        if (childNode == node || (childNode.isAttribute() && childNode.getParent() == node)) {
           EditorCell result = findCellWithIdWithingBigCell(child, id, node);
           if (result != null) {
             return result;

@@ -447,7 +447,9 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     if (best == null) {
       best = findClosestHorizontal(x, Condition.TRUE_CONDITION, candidates);
-      best = best.getPrevLeaf(condition);
+      if (best != null) {
+        best = best.getPrevLeaf(condition);
+      }
     }
 
     return best;
