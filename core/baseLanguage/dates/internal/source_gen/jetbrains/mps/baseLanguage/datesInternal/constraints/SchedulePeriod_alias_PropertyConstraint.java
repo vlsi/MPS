@@ -15,11 +15,11 @@ public class SchedulePeriod_alias_PropertyConstraint implements IModelConstraint
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.SchedulePeriod", "alias", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.SchedulePeriod", "alias", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.SchedulePeriod", "alias");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.SchedulePeriod", "alias");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {

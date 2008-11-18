@@ -15,11 +15,11 @@ public class Month_alias_PropertyConstraint implements IModelConstraints, INodeP
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.Month", "alias", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.Month", "alias", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.Month", "alias");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.Month", "alias");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {

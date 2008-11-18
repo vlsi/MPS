@@ -14,11 +14,11 @@ public class DateTimePropertyConfiguration_shortDescription_PropertyConstraint i
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimePropertyConfiguration", "shortDescription", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyConfiguration", "shortDescription", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimePropertyConfiguration", "shortDescription");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyConfiguration", "shortDescription");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {

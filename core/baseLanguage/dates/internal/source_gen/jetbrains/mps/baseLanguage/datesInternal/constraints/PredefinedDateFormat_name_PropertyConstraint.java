@@ -10,21 +10,21 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class DateTimeIntPropertyFormatConfiguration_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
+public class PredefinedDateFormat_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
 
-  public DateTimeIntPropertyFormatConfiguration_name_PropertyConstraint() {
+  public PredefinedDateFormat_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeIntPropertyFormatConfiguration", "name", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.PredefinedDateFormat", "name", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeIntPropertyFormatConfiguration", "name");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.PredefinedDateFormat", "name");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "dateTimeProperty", false), "name");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "formatter", true), "baseMethodDeclaration", false), "name");
   }
 
 }

@@ -24,11 +24,11 @@ public class DateTimeProperty_jodaPeriodType_ReferentConstraint implements IMode
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimeProperty", "jodaPeriodType", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty", "jodaPeriodType", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimeProperty", "jodaPeriodType");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty", "jodaPeriodType");
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {

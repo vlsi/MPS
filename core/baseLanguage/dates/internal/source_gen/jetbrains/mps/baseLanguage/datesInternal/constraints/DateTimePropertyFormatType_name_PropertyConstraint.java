@@ -15,11 +15,11 @@ public class DateTimePropertyFormatType_name_PropertyConstraint implements IMode
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimePropertyFormatType", "name", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyFormatType", "name", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimePropertyFormatType", "name");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyFormatType", "name");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {

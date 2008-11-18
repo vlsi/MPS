@@ -14,11 +14,11 @@ public class DateTimeZonePropertyFormatConfiguration_name_PropertyConstraint imp
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimeZonePropertyFormatConfiguration", "name", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeZonePropertyFormatConfiguration", "name", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimeZonePropertyFormatConfiguration", "name");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeZonePropertyFormatConfiguration", "name");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {

@@ -14,15 +14,15 @@ public class PredefinedDateFormat_isPublic_PropertyConstraint implements IModelC
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.PredefinedDateFormat", "isPublic", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.PredefinedDateFormat", "isPublic", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.PredefinedDateFormat", "isPublic");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.PredefinedDateFormat", "isPublic");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return Boolean.toString(true);
+    return true;
   }
 
 }

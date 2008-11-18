@@ -16,11 +16,11 @@ public class DurationType_name_PropertyConstraint implements IModelConstraints, 
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.DurationType", "name", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.DurationType", "name", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.dates.internal.structure.DurationType", "name");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.datesInternal.structure.DurationType", "name");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {

@@ -24,11 +24,11 @@ public class DateTimeProperty_jodaDateTimeFieldType_ReferentConstraint implement
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimeProperty", "jodaDateTimeFieldType", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty", "jodaDateTimeFieldType", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.dates.internal.structure.DateTimeProperty", "jodaDateTimeFieldType");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty", "jodaDateTimeFieldType");
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {

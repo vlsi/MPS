@@ -14,7 +14,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
   public ConstraintsDescriptor() {
     this.myConstraints.add(new DurationType_name_PropertyConstraint());
     this.myConstraints.add(new SchedulePeriod_alias_PropertyConstraint());
-    this.myConstraints.add(new DateTimePropertyCardinality_name_PropertyConstraint());
     this.myConstraints.add(new DateTimeZonePropertyFormatConfiguration_name_PropertyConstraint());
     this.myConstraints.add(new PredefinedDateFormat_isPublic_PropertyConstraint());
     this.myConstraints.add(new PredefinedDateFormat_name_PropertyConstraint());
