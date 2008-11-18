@@ -252,7 +252,7 @@ public class NodeEditorActions {
     int caretX = selection.getCaretX();
     int y = selection.getY() + (selection.getHeight()/2);
     int newY = y + height;
-    EditorCell target = editor.findNearestCell(caretX, newY);
+    EditorCell target = editor.findCellWeak(caretX, newY);
     if (target == null) {
       target = isDown ? editor.myRootCell.findChild(CellFinders.LAST_SELECTABLE_LEAF) : editor.myRootCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
       editor.changeSelection(target);

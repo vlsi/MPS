@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ArrayWrapper;
+import jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
 import java.awt.Color;
@@ -113,6 +114,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   public CellLayout getCellLayout() {
     return myCellLayout;
+  }
+
+  public boolean isLeaf() {
+    return false;
   }
 
   @SuppressWarnings({"UnusedDeclaration"})
@@ -498,22 +503,23 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     return myCellLayout.doLayoutText(this);
   }
 
-  public EditorCell findNearestCell(int x, int y, boolean isPrevious) {
-    return myCellLayout.findNearestCell(this, x, y, isPrevious);
-  }
-
-  public EditorCell findNearestRow(int y) {
-    return myCellLayout.findNearestRow(this, y);
-  }
-
   public void synchronizeViewWithModel() {
     for (EditorCell myEditorCell : myEditorCells) {
       myEditorCell.synchronizeViewWithModel();
     }
   }
 
-  public EditorCell findCell(int x, int y) {
-    return myCellLayout.findCell(this, x, y);
+  public EditorCell findLeaf(int x, int y, Condition<EditorCell> condition) {
+    if (myX <= x && x < myX + myWidth && myY <= y && y < myY + myHeight) {
+      for (EditorCell child : myEditorCells) {
+        EditorCell result = child.findLeaf(x, y, condition);
+        if (result != null) {
+          return result;
+        }
+      }
+    }
+
+    return null;
   }
 
   public int indexOf(EditorCell cell) {

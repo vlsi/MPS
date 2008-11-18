@@ -5,9 +5,6 @@ import com.intellij.ide.CutProvider;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.actionSystem.impl.Utils;
-import com.intellij.openapi.actionSystem.impl.ActionMenuItem;
-import com.intellij.openapi.actionSystem.impl.PresentationFactory;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
@@ -358,7 +355,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
 
       public void mouseClicked(MouseEvent e) {
-        if (e.getClickCount() == 2 && myRootCell.findCell(e.getX(), e.getY()) == getSelectedCell() &&
+        if (e.getClickCount() == 2 && myRootCell.findLeaf(e.getX(), e.getY()) == getSelectedCell() &&
           getSelectedCell() instanceof EditorCell_Label) {
           ((EditorCell_Label) getSelectedCell()).selectAll();
           repaint();
@@ -554,7 +551,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return null;
         }
 
-        EditorCell cell = myRootCell.findCell(event.getX(), event.getY());
+        EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
         if (cell == null) {
           return null;
         }
@@ -1396,13 +1393,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  public EditorCell findNearestCell(int x, int y) {
-    EditorCell cell = myRootCell.findCell(x, y);
+  public EditorCell findCellWeak(int x, int y) {
+    EditorCell cell = myRootCell.findLeaf(x, y);
     if (cell == null) {
-      cell = myRootCell.findNearestCell(x, y, true);
-      if (cell == null) {
-        cell = myRootCell.findNearestCell(x, y, false);
-      }
+      cell = myRootCell.findCellWeak(x, y);
     }
     return cell;
   }
@@ -1472,17 +1466,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
         }
       });
-
     }
   }
 
   private void processCoordSelection(MouseEvent mouseEvent) {
     if (mouseEvent.getButton() != MouseEvent.BUTTON1 && mouseEvent.getButton() != MouseEvent.BUTTON2) return;
-    EditorCell newSelectedCell = myRootCell.findCell(mouseEvent.getX(), mouseEvent.getY());
+    EditorCell newSelectedCell = myRootCell.findLeaf(mouseEvent.getX(), mouseEvent.getY(), CellConditions.SELECTABLE);
     if (newSelectedCell == null || !newSelectedCell.isSelectable()) {
-      newSelectedCell = myRootCell.findNearestCell(mouseEvent.getX(), mouseEvent.getY(), true);
+      newSelectedCell = myRootCell.findCellWeak(mouseEvent.getX(), mouseEvent.getY(), CellConditions.SELECTABLE);
     }
-    if (newSelectedCell != null && newSelectedCell.isSelectable()) {
+    if (newSelectedCell != null) {
       changeSelection(newSelectedCell, true, false);
       mySelectedCell.processMousePressed(mouseEvent);
       revalidateAndRepaint(false);
@@ -2554,7 +2547,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
           clearControlOver();
 
-          final EditorCell editorCell = myRootCell.findCell(e.getX(), e.getY());
+          final EditorCell editorCell = myRootCell.findLeaf(e.getX(), e.getY());
           if (editorCell == null) {
             myLastReferenceCell = null;
             return;

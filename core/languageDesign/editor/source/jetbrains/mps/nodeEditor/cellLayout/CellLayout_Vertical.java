@@ -206,62 +206,6 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     return 0;
   }
 
-  public EditorCell findNearestRow(EditorCell_Collection editorCells, int y) {
-    if (y >= editorCells.getY() + editorCells.getHeight() || y < editorCells.getY()) {
-      return null;
-    }
-    for (EditorCell editorCell : editorCells) {
-      EditorCell cell = editorCell.findNearestRow(y);
-      if (cell != null) {
-        return cell;
-      }
-    }
-    return null;
-  }
-
-  public EditorCell findNearestCell(EditorCell_Collection editorCells, int x, int y, boolean isPrevious) {
-    if (y >= editorCells.getY() + editorCells.getHeight() || y < editorCells.getY()) {
-      return null;
-    }
-    for (EditorCell editorCell : editorCells) {
-      EditorCell cell = editorCell.findNearestCell(x, y, true);
-      if (cell != null) {
-        return cell;
-      }
-    }
-    return null;
-  }
-
-  public EditorCell findCell(EditorCell_Collection editorCells, int x, int y) {
-    if (!(editorCells.getX() <= x && x < editorCells.getX() + editorCells.getWidth() &&
-            editorCells.getY() <= y && y < editorCells.getY() + editorCells.getHeight())) {
-      return null;
-    }
-
-    if (editorCells.isFolded()) return editorCells;
-    /* for (EditorCell editorCell : editorCells) {
-      EditorCell cell = editorCell.findCell(x, y);
-      if (cell != null) {
-        return cell;
-      }
-    }*/
-    EditorCell editorCell = null;
-    for (EditorCell editorCell1 : editorCells) {
-      editorCell = editorCell1;
-      y = Math.max(editorCell.getY(), y);
-      EditorCell cell = editorCell.findCell(x, y);
-      if (cell != null) {
-        return cell;
-      }
-    }
-    if (editorCell != null) {
-      return editorCell.findCell(x, editorCell.getY() + editorCell.getHeight() - 1);
-    } else {
-      return null;
-    }
-    // return null;
-  }
-
   public String toString() {
     return "Vertical";
   }

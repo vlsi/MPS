@@ -423,22 +423,66 @@ public abstract class EditorCell_Basic implements EditorCell {
     return new Rectangle(getX(), getY(), getWidth(), getHeight());
   }
 
-  public EditorCell findCell(int x, int y) {
-    if (myX <= x && x < myX + myWidth && myY <= y && y < myY + myHeight) {
+
+  public final EditorCell findLeaf(int x, int y) {
+    return findLeaf(x, y, Condition.TRUE_CONDITION);
+  }
+
+  public EditorCell findLeaf(int x, int y, Condition<EditorCell> condition) {
+    if (myX <= x && x < myX + myWidth && myY <= y && y < myY + myHeight && condition.met(this)) {
       return this;
     }
     return null;
   }
 
-  public EditorCell findNearestCell(int x, int y, boolean toLeft) {
-    return findNearestRow(y);
+  public final EditorCell findCellWeak(int x, int y) {
+    return findCellWeak(x, y, Condition.TRUE_CONDITION);
   }
 
-  public EditorCell findNearestRow(int y) {
-    if (isSelectable() && myY <= y && y < myY + myHeight) {
-      return this;
+  public EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition) {
+    Set<EditorCell> candidates = new LinkedHashSet<EditorCell>();
+    collectCellsWithY(this, y, candidates);
+
+    EditorCell best = findClosestHorizontal(x, condition, candidates);
+
+    if (best == null) {
+      best = findClosestHorizontal(x, Condition.TRUE_CONDITION, candidates);
+      best = best.getPrevLeaf(condition);
     }
-    return null;
+
+    return best;
+  }
+
+  private EditorCell findClosestHorizontal(int x, Condition<EditorCell> condition, Set<EditorCell> candidates) {
+    EditorCell best = null;
+    int bestDistance = -1;
+    for (EditorCell cell : candidates) {
+      if (!condition.met(cell)) continue;
+
+      int distance = horizontalDistance(x, cell);
+      if (bestDistance == -1 || distance < bestDistance) {
+        best = cell;
+        bestDistance = distance;
+      }
+    }
+    return best;
+  }
+
+  private int horizontalDistance(int x, EditorCell cell) {
+    if (x >= cell.getX() && x <= cell.getX() + cell.getWidth()) return 0;
+    return Math.min(Math.abs(x - cell.getX()), Math.abs(x - cell.getX() - cell.getWidth()));
+  }
+
+  private void collectCellsWithY(EditorCell current, int y, Set<EditorCell> cells) {
+    if (y >= current.getY() && y <= current.getY() + current.getHeight() &&  current.isLeaf()) {
+      cells.add(current);
+    }
+
+    if (current instanceof EditorCell_Collection) {
+      for (EditorCell cell : ((EditorCell_Collection) current).getCells()) {                
+        collectCellsWithY(cell, y, cells);
+      }
+    }
   }
 
   public EditorCell_Collection getParent() {
@@ -1065,6 +1109,10 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public Style getStyle() {
     return myStyle;
+  }
+
+  public boolean isLeaf() {
+    return true;
   }
 
   boolean isInTree() {

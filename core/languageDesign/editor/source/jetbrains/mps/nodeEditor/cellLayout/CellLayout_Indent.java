@@ -29,18 +29,6 @@ public class CellLayout_Indent extends AbstractCellLayout {
     return null;
   }
 
-  public EditorCell findNearestCell(EditorCell_Collection editorCells, int x, int y, boolean isPrevious) {
-    return null;
-  }
-
-  public EditorCell findNearestRow(EditorCell_Collection editorCells, int y) {
-    return null;
-  }
-
-  public EditorCell findCell(EditorCell_Collection editorCells, int x, int y) {
-    return null;
-  }
-
   public String toString() {
     return "Indent";
   }

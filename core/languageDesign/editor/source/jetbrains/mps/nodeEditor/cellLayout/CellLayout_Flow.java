@@ -276,38 +276,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
     }
 
   } //--FlowLayouter
-
-
-
-  public EditorCell findNearestCell(EditorCell_Collection editorCells, int x, int y, boolean isPrevious) {
-    return findCell(editorCells, x, y);
-  }
-
-  public EditorCell findNearestRow(EditorCell_Collection editorCells, int y) {
-    return findNearestCell(editorCells, 0, y, false);
-  }
-
-  public EditorCell findCell(EditorCell_Collection editorCells, int x, int y) {
-    return findCell_internal(editorCells, x, y);
-  }
-
-  public EditorCell findCell_internal(EditorCell root, int x, int y) {
-    if (root instanceof EditorCell_Collection) {
-      EditorCell_Collection collection = (EditorCell_Collection) root;
-      for (int i = 0; i < collection.getChildCount(); i++) {
-        EditorCell child = collection.getChildAt(i);
-        EditorCell cell = null;
-        if (collection.getBounds().contains(x, y)) {
-          cell = findCell_internal(child, x, y);
-        }
-        if (cell != null) return cell;
-      }
-    } else {
-      if (root.getBounds().contains(x, y)) return root;
-    }
-    return null;
-  }
-
+ 
   public void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c) {
     LOG.assertLog(getFlowLayout(editorCells) == this);
     for (EditorCell cell : editorCells) {

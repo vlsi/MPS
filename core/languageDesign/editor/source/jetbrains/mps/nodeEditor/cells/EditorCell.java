@@ -91,9 +91,11 @@ public interface EditorCell extends Cloneable {
   void home();
   void end();
 
-  EditorCell findCell(int x, int y);
-  EditorCell findNearestCell(int x, int y, boolean toLeft);
-  EditorCell findNearestRow(int y);
+  EditorCell findLeaf(int x, int y);
+  EditorCell findLeaf(int x, int y, Condition<EditorCell> condition);
+  
+  EditorCell findCellWeak(int x, int y);
+  EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition);
 
   EditorCell_Collection getParent();
 
@@ -180,6 +182,8 @@ public interface EditorCell extends Cloneable {
   EditorCell_Label getSTHintCell();
 
   Style getStyle();
+
+  boolean isLeaf();
 
   EditorCell getNextSibling();
   EditorCell getNextSibling(Condition<EditorCell> condition);
