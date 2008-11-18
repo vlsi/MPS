@@ -1278,7 +1278,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1227027826615(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "constructionParameter", true);
+    return SLinkOperations.getTargets(_context.getNode(), "actualParameter", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1217678861866(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {

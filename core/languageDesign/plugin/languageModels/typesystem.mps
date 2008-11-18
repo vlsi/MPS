@@ -1202,5 +1202,73 @@
             <link role="concept" targetNodeId="4.1227008846812" resolveInfo="ActionConstructionParameterDeclaration"/>
         </node>
     </node>
+    <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1227032271475">
+        <property name="package" value="Actions.Groups.GroupMembers"/>
+        <property name="name" value="check_ParametersCount"/>
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227032271476">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227032314459">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227032314461">
+                    <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"
+                          id="1227032366953">
+                        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
+                              id="1227032368206">
+                            <property name="value" value="number of parameters doesn't match"/>
+                        </node>
+                        <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference"
+                              id="1227032387502">
+                            <link role="applicableNode" targetNodeId="1227032301553" resolveInfo="instance"/>
+                        </node>
+                    </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression"
+                      id="1227032343065">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                          id="1227032338452">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                              id="1227032326777">
+                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference"
+                                  id="1227032326214">
+                                <link role="applicableNode" targetNodeId="1227032301553" resolveInfo="instance"/>
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess"
+                                  id="1227032330280">
+                                <link role="link" targetNodeId="4.1227011543811"/>
+                            </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation"
+                              id="1227032341658"/>
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                          id="1227032362215">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                              id="1227032354509">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression"
+                                  id="1227032349068">
+                                <node role="operand"
+                                      type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference"
+                                      id="1227032348130">
+                                    <link role="applicableNode" targetNodeId="1227032301553" resolveInfo="instance"/>
+                                </node>
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess"
+                                      id="1227032353477">
+                                    <link role="link" targetNodeId="4.1203088061055"/>
+                                </node>
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess"
+                                  id="1227032358871">
+                                <link role="link" targetNodeId="4.1227008813498"/>
+                            </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation"
+                              id="1227032363546"/>
+                    </node>
+                </node>
+            </node>
+        </node>
+        <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1227032301553">
+            <property name="name" value="instance"/>
+            <link role="concept" targetNodeId="4.1203088046679" resolveInfo="ActionInstance"/>
+        </node>
+    </node>
 </model>
 
