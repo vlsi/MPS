@@ -1,10 +1,9 @@
 package jetbrains.mps.plugins.pluginparts.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
-
-import org.jetbrains.annotations.NotNull;
 
 public abstract class GeneratedAction extends BaseAction {
   protected GeneratedAction() {
@@ -25,5 +24,14 @@ public abstract class GeneratedAction extends BaseAction {
   @NotNull
   public String getStateIdent() {
     return "";
+  }
+
+  public String getStateIdentForPrimitives(Object... primitives) {
+    StringBuilder res = new StringBuilder(500);
+    for (Object p : primitives) {
+      res.append(p);
+      res.append("@");
+    }
+    return res.toString();
   }
 }
