@@ -325,6 +325,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11882105768281188210576828(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1188210576828");
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_11882105828521188210582852(EditorCell editorCell, SNode node, EditorContext context) {

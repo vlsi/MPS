@@ -1639,6 +1639,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188210576828">
           <property name="text" value=";" />
+          <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310993689">
           <property name="flag" value="false" />

@@ -81,6 +81,11 @@
         </node>
       </node>
     </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1227019449956">
+      <property name="name" value="a" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1227019449957" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227019451053" />
+    </node>
   </node>
 </model>
 
