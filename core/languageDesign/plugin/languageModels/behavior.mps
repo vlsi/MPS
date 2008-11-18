@@ -36,7 +36,7 @@
     <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)"
                     version="1"/>
     <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)"
-                    version="18"/>
+                    version="19"/>
     <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)"
                     version="11"/>
     <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)"
@@ -73,7 +73,7 @@
                     version="9"/>
     <maxImportIndex value="22"/>
     <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)"
-            version="18"/>
+            version="19"/>
     <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1"/>
     <import index="4" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1"/>
     <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1"/>

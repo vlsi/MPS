@@ -17,7 +17,7 @@
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="18" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -118,41 +118,41 @@
       <link role="modifiedGroup" targetNodeId="3.1204991231476" resolveInfo="EditorPopup" />
     </node>
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148319290">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1205254813928">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1205254813928">
         <link role="action" targetNodeId="1205248417575" resolveInfo="CommentStatements" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1205605318439">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1205605318439">
         <link role="action" targetNodeId="1205604975727" resolveInfo="UncommentStatements" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1205837184579">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1205837184579">
         <link role="action" targetNodeId="1205836731341" resolveInfo="RunClassConcept" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1207660282049" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1220973077865">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1220973077865">
         <link role="action" targetNodeId="1223451793768" resolveInfo="ExtractMethod" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1223457975109">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1223457975109">
         <link role="action" targetNodeId="1223452095337" resolveInfo="_InlineMethod" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1214478246100">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1214478246100">
         <link role="action" targetNodeId="1223451996501" resolveInfo="ChangeMethodSignature" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1224423351740">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1224423351740">
         <link role="action" targetNodeId="1224422652338" resolveInfo="InilneLocalVariable" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1225104815444">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1225104815444">
         <link role="action" targetNodeId="1225103350103" resolveInfo="IntroduceVariable" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1225105171285">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1225105171285">
         <link role="action" targetNodeId="1225103563547" resolveInfo="IntroduceField" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1225105175396">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1225105175396">
         <link role="action" targetNodeId="1225104324580" resolveInfo="IntroduceConstant" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1225448359031">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1225448359031">
         <link role="action" targetNodeId="1225447880158" resolveInfo="MoveStaticMethod" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1225464050533">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1225464050533">
         <link role="action" targetNodeId="1225463448250" resolveInfo="RenameVariable" />
       </node>
     </node>
@@ -558,13 +558,13 @@
       <link role="modifiedGroup" targetNodeId="3.1204991215587" resolveInfo="ProjectPaneNodeActions" />
     </node>
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148332827">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1205860134622">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1205860134622">
         <link role="action" targetNodeId="1205836731341" resolveInfo="RunClassConcept" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1220025881711">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1220025881711">
         <link role="action" targetNodeId="1220025720938" resolveInfo="SubstitutionTest" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1226578522784">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1226578522784">
         <link role="action" targetNodeId="1226576197328" resolveInfo="TestSubtypingHelper" />
       </node>
     </node>
@@ -2765,7 +2765,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1217598080127">
     <property name="name" value="BaseLanguageToolsAddition" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1217598095113">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionReference" id="1217598105552">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1217598105552">
         <link role="action" targetNodeId="1217597602946" resolveInfo="ShowTodoViewer" />
       </node>
     </node>

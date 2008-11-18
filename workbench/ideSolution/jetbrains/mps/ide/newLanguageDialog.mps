@@ -38,7 +38,7 @@
     <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)"
                     version="9"/>
     <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)"
-                    version="18"/>
+                    version="19"/>
     <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)"
                     version="19"/>
     <maxImportIndex value="24"/>

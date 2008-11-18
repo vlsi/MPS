@@ -742,6 +742,18 @@
                 </entry>
             </conceptFeatureMap>
         </refactoringContext>
+        <refactoringContext modelVersion="19">
+            <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept"/>
+            <moveMap/>
+            <conceptFeatureMap>
+                <entry>
+                    <key featureName="ActionReference"
+                         conceptFQName="jetbrains.mps.lang.plugin.structure.ActionReference" featureKind="CONCEPT"/>
+                    <value featureName="ActionInstance"
+                           conceptFQName="jetbrains.mps.lang.plugin.structure.ActionInstance" featureKind="CONCEPT"/>
+                </entry>
+            </conceptFeatureMap>
+        </refactoringContext>
     </refactoringHistory>
     <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)"/>
     <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"/>
@@ -768,7 +780,7 @@
                     version="17"/>
     <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2"/>
     <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)"
-                    version="18"/>
+                    version="19"/>
     <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)"
                     version="1"/>
     <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)"
@@ -819,7 +831,7 @@
     <import index="28" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)"
             version="1"/>
     <import index="29" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)"
-            version="18"/>
+            version="19"/>
     <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203071646776">
         <property name="name" value="ActionDeclaration"/>
         <property name="rootable" value="true"/>
@@ -1102,11 +1114,11 @@
     </node>
     <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203088046679">
         <property name="package" value="Actions.Groups.GroupMembers"/>
-        <property name="name" value="ActionReference"/>
+        <property name="name" value="ActionInstance"/>
         <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept"/>
         <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227011543811">
             <property name="metaClass" value="aggregation"/>
-            <property name="role" value="constructionParameter"/>
+            <property name="role" value="actualParameter"/>
             <property name="sourceCardinality" value="0..n"/>
             <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression"/>
         </node>
