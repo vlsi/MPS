@@ -5,9 +5,13 @@ package jetbrains.mps.lang.plugin.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
+
 import java.util.Iterator;
+
 import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration;
+
 import java.util.List;
+
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -29,6 +33,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
   public static final String KEYSTROKE = "keystroke";
   public static final String METHOD_DECLARATION = "methodDeclaration";
   public static final String PARAMETER = "parameter";
+  public static final String CONSTRUCTION_PARAMETER = "constructionParameter";
 
   public ActionDeclaration(SNode node) {
     super(node);
@@ -115,7 +120,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
   }
 
   public UpdateBlock getUpdateBlock() {
-    return (UpdateBlock)this.getChild(ActionDeclaration.UPDATE_BLOCK);
+    return (UpdateBlock) this.getChild(ActionDeclaration.UPDATE_BLOCK);
   }
 
   public void setUpdateBlock(UpdateBlock node) {
@@ -123,7 +128,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
   }
 
   public ExecuteBlock getExecuteFunction() {
-    return (ExecuteBlock)this.getChild(ActionDeclaration.EXECUTE_FUNCTION);
+    return (ExecuteBlock) this.getChild(ActionDeclaration.EXECUTE_FUNCTION);
   }
 
   public void setExecuteFunction(ExecuteBlock node) {
@@ -131,7 +136,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
   }
 
   public KeyMapKeystroke getKeystroke() {
-    return (KeyMapKeystroke)this.getChild(ActionDeclaration.KEYSTROKE);
+    return (KeyMapKeystroke) this.getChild(ActionDeclaration.KEYSTROKE);
   }
 
   public void setKeystroke(KeyMapKeystroke node) {
@@ -178,9 +183,29 @@ public class ActionDeclaration extends BaseConcept implements IClassifier {
     this.insertChild(prev, ActionDeclaration.PARAMETER, node);
   }
 
+  public int getConstructionParametersCount() {
+    return this.getChildCount(ActionDeclaration.CONSTRUCTION_PARAMETER);
+  }
+
+  public Iterator<ActionConstructionParameterDeclaration> constructionParameters() {
+    return this.children(ActionDeclaration.CONSTRUCTION_PARAMETER);
+  }
+
+  public List<ActionConstructionParameterDeclaration> getConstructionParameters() {
+    return this.getChildren(ActionDeclaration.CONSTRUCTION_PARAMETER);
+  }
+
+  public void addConstructionParameter(ActionConstructionParameterDeclaration node) {
+    this.addChild(ActionDeclaration.CONSTRUCTION_PARAMETER, node);
+  }
+
+  public void insertConstructionParameter(ActionConstructionParameterDeclaration prev, ActionConstructionParameterDeclaration node) {
+    this.insertChild(prev, ActionDeclaration.CONSTRUCTION_PARAMETER, node);
+  }
+
 
   public static ActionDeclaration newInstance(SModel sm, boolean init) {
-    return (ActionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ActionDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ActionDeclaration newInstance(SModel sm) {

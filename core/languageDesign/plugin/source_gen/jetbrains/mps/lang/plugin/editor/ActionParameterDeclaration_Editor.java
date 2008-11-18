@@ -37,7 +37,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode1205679157845(context, node));
     editorCell.addEditorCell(this.createProperty1205679161879(context, node));
-    editorCell.addEditorCell(this.createConstant1205679222181(context, node, ""));
+    editorCell.addEditorCell(this.createConstant1205679222181(context, node, ";"));
     editorCell.addEditorCell(this.createConstant1219069195031(context, node, ""));
     return editorCell;
   }
@@ -83,7 +83,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_refNode_type1205679157845(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_refNode_type_1205679157845((EditorCell_Label)editorCell, node, context);
+      setupLabel_refNode_type_1205679157845((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -103,7 +103,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createProperty1205679161879_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -112,7 +112,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_property_name1205679161879(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_name_1205679161879((EditorCell_Label)editorCell, node, context);
+      setupLabel_property_name_1205679161879((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -132,7 +132,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createProperty1221670063439_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -141,7 +141,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_property_isOptional1221670063439(editorCell, node, context);
     if (editorCell instanceof EditorCell_Label) {
-      setupLabel_property_isOptional_1221670063439((EditorCell_Label)editorCell, node, context);
+      setupLabel_property_isOptional_1221670063439((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -161,7 +161,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
 
