@@ -55,7 +55,13 @@ public class IntelligentInputUtil {
       }
 
       substituteInfo.getMatchingActions(pattern, true).get(0).substitute(editorContext, pattern);
-    } else if (pattern.length() > 0 && canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail)) {
+    } else if (pattern.length() > 0 && (canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail) ||
+                canCompleteSmallPatternImmediately(substituteInfo, trimLeft(smallPattern), tail))) {
+
+      if (!canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail)) {
+        smallPattern = trimLeft(smallPattern);
+      }
+
       List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
       INodeSubstituteAction item = matchingActions.get(0);
       SNode newNode = item.substitute(editorContext, smallPattern);
