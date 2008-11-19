@@ -1244,6 +1244,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1107135704075">
     <property name="name" value="ConceptFunctionParameter" />
     <property name="package" value="conceptFunction" />
+    <property name="iconPath" value="${language_descriptor}\icons\parameter.png" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1199886518837">
       <property name="name" value="dontUseParameterObject" />
