@@ -6269,6 +6269,8 @@
         <property name="name" value="NewGenerator"/>
         <property name="caption" value="New Generator"/>
         <property name="outsideCommandExecution" value="true"/>
+        <property name="iconPath"
+                  value="${mps_home}\workbench\source\jetbrains\mps\ide\projectPane\nodes\generator.png"/>
         <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1215905849268">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215905849269">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
