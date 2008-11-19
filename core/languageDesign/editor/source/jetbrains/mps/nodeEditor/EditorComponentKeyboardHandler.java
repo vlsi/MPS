@@ -23,10 +23,6 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
     nodeEditor.hideMessageToolTip();
 
-    if (keyEvent.isConsumed()) {
-      return false;
-    }
-
     if (processSelectedCell(editorContext, keyEvent, false)) {
       return true;
     }
@@ -44,20 +40,12 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
 
     if (selectedCell != null) {
       boolean endEditKeystroke = isEndEditKeystroke(keyEvent);      
-      boolean strictMatching = endEditKeystroke || CellActionType.RIGHT_TRANSFORM.equals(actionType) || CellActionType.LEFT_TRANSFORM.equals(actionType);
 
       if (selectedCell.isErrorState()) {
         if (endEditKeystroke ||
           actionType == CellActionType.INSERT ||
           actionType == CellActionType.INSERT_BEFORE) {
-          if (selectedCell.validate(strictMatching, true)) {
-            return true;
-          }
-        }
-
-        if (actionType == CellActionType.RIGHT_TRANSFORM || actionType == CellActionType.LEFT_TRANSFORM) {
-          // !side effect: can change selection!
-          if (selectedCell.validate(strictMatching, false)) {
+          if (selectedCell.validate(endEditKeystroke, true)) {
             return true;
           }
         }
@@ -127,13 +115,32 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
   }
 
   public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
+    EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
+    nodeEditor.hideMessageToolTip();
+
     EditorCell selectedCell = editorContext.getSelectedCell();
 
     if (processKeyMaps(editorContext, keyEvent)) {
       return true;
     }
 
+    CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
+
     if (selectedCell != null) {
+      boolean strictMatching = CellActionType.RIGHT_TRANSFORM.equals(actionType) || CellActionType.LEFT_TRANSFORM.equals(actionType);
+
+      if (selectedCell.isErrorState() && strictMatching) {
+        if (selectedCell.validate(strictMatching, false)) {
+          return true;
+        }
+      }
+
+      if (actionType != null) {
+        if (selectedCell.executeAction(actionType)) {
+          return true;
+        }
+      }
+
       if (selectedCell.processKeyTyped(keyEvent)) {
         keyEvent.consume();
         return true;

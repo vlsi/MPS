@@ -1030,7 +1030,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     // ---
-    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && noKeysDown(keyEvent)) {
+    if (keyTyped(keyEvent) && keyEvent.getKeyChar() == ' ' && noKeysDown(keyEvent)) {
       EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
 
       if (!(selectedCell instanceof EditorCell_STHint)) {
@@ -1126,6 +1126,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private boolean noKeysDown(KeyEvent keyEvent) {
     return keyEvent.getModifiers() == 0;
+  }
+
+  private boolean keyTyped(KeyEvent keyEvent) {
+    return keyEvent.getID() == KeyEvent.KEY_TYPED;
   }
 
   private boolean ctrlDown(KeyEvent keyEvent) {
