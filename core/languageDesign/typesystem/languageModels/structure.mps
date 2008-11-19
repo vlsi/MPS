@@ -1719,6 +1719,11 @@
       <property name="role" value="helginsIntention" />
       <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227104618952">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="messageTarget" />
+      <link role="target" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1222948753920">
       <property name="name" value="modelId" />
       <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
@@ -1889,6 +1894,11 @@
       <property name="role" value="helginsIntention" />
       <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227104635133">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="messageTarget" />
+      <link role="target" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224760201579">
     <property name="name" value="InfoStatement" />
@@ -1935,6 +1945,11 @@
       <property name="role" value="helginsIntention" />
       <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227104644040">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="messageTarget" />
+      <link role="target" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225971039738">
     <property name="name" value="InfoStatement_internal" />
@@ -1963,6 +1978,11 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="helginsIntention" />
       <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227104609964">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="messageTarget" />
+      <link role="target" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227096479619">

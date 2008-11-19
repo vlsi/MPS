@@ -875,6 +875,50 @@ public class QueriesGenerated {
     return _context.getNode().getId();
   }
 
+  public static Object propertyMacro_GetPropertyValue_1227106296989(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "propertyDeclaration", false), "name");
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "linkDeclaration", false), "role");
+    }
+    return null;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1227106404995(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "propertyDeclaration", false), "name");
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "linkDeclaration", false), "role");
+    }
+    return null;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1227106494787(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "propertyDeclaration", false), "name");
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "linkDeclaration", false), "role");
+    }
+    return null;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1227106551298(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "propertyDeclaration", false), "name");
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "linkDeclaration", false), "role");
+    }
+    return null;
+  }
+
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
     SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "mainMethodForRule");
@@ -1210,6 +1254,50 @@ public class QueriesGenerated {
       if (ListSequence.fromList(SNodeOperations.getDescendants(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false)).contains(variableDeclaration)) {
         return variableDeclaration;
       }
+    }
+    return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1227106134189(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(), "baseMethodDeclaration", false);
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_12().createNode(), "baseMethodDeclaration", false);
+    }
+    return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1227106405038(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_13().createNode(), "baseMethodDeclaration", false);
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_14().createNode(), "baseMethodDeclaration", false);
+    }
+    return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1227106494824(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_15().createNode(), "baseMethodDeclaration", false);
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_16().createNode(), "baseMethodDeclaration", false);
+    }
+    return null;
+  }
+
+  public static Object referenceMacro_GetReferent_1227106551335(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_17().createNode(), "baseMethodDeclaration", false);
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_18().createNode(), "baseMethodDeclaration", false);
     }
     return null;
   }
@@ -1616,6 +1704,22 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "elseClause", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1227106116446(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1227106405072(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1227106494858(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1227106551369(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1174654997817(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -1940,14 +2044,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1223374838180(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode methodDeclaration = SNodeOperations.copyNode(_context.getNode());
-    SLinkOperations.insertChildFirst(methodDeclaration, "parameter", new _Quotations.QuotationClass_11().createNode());
+    SLinkOperations.insertChildFirst(methodDeclaration, "parameter", new _Quotations.QuotationClass_19().createNode());
     SLinkOperations.setNewChild(methodDeclaration, AttributesRolesUtil.childRoleFromAttributeRole("processed"), "jetbrains.mps.lang.typesystem.structure.Processed");
     return methodDeclaration;
   }
 
   public static SNode sourceNodeQuery_1223378950940(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode methodCall = SNodeOperations.copyNode(_context.getNode());
-    SLinkOperations.insertChildFirst(methodCall, "actualArgument", new _Quotations.QuotationClass_12().createNode());
+    SLinkOperations.insertChildFirst(methodCall, "actualArgument", new _Quotations.QuotationClass_20().createNode());
     SLinkOperations.setNewChild(methodCall, AttributesRolesUtil.childRoleFromAttributeRole("processed"), "jetbrains.mps.lang.typesystem.structure.Processed");
     return methodCall;
   }
@@ -2026,6 +2130,22 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1227099663848(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "elseClause", true);
+  }
+
+  public static SNode sourceNodeQuery_1227105299419(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+  }
+
+  public static SNode sourceNodeQuery_1227105337535(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+  }
+
+  public static SNode sourceNodeQuery_1227105351805(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+  }
+
+  public static SNode sourceNodeQuery_1227105363020(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
   }
 
   public static Iterable sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -2186,13 +2306,13 @@ public class QueriesGenerated {
       List<SNode> annotationInstances = SLinkOperations.getTargets(baseMethodDeclaration, "annotation", true);
       for(SNode annotationInstance : annotationInstances) {
         SNode annotation = SLinkOperations.getTarget(annotationInstance, "annotation", false);
-        if (annotation == SLinkOperations.getTarget(new _Quotations.QuotationClass_14().createNode(), "classifier", false) || annotation == SLinkOperations.getTarget(new _Quotations.QuotationClass_13().createNode(), "classifier", false)) {
+        if (annotation == SLinkOperations.getTarget(new _Quotations.QuotationClass_22().createNode(), "classifier", false) || annotation == SLinkOperations.getTarget(new _Quotations.QuotationClass_21().createNode(), "classifier", false)) {
           toProcess = true;
           break;
         }
       }
       if (toProcess) {
-        SLinkOperations.insertChildFirst(methodCall, "actualArgument", new _Quotations.QuotationClass_15().createNode());
+        SLinkOperations.insertChildFirst(methodCall, "actualArgument", new _Quotations.QuotationClass_23().createNode());
       }
     }
     for(SNode baseMethodDeclaration : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
@@ -2200,13 +2320,13 @@ public class QueriesGenerated {
       List<SNode> annotationInstances = SLinkOperations.getTargets(baseMethodDeclaration, "annotation", true);
       for(SNode annotationInstance : annotationInstances) {
         SNode annotation = SLinkOperations.getTarget(annotationInstance, "annotation", false);
-        if (annotation == SLinkOperations.getTarget(new _Quotations.QuotationClass_17().createNode(), "classifier", false) || annotation == SLinkOperations.getTarget(new _Quotations.QuotationClass_16().createNode(), "classifier", false)) {
+        if (annotation == SLinkOperations.getTarget(new _Quotations.QuotationClass_25().createNode(), "classifier", false) || annotation == SLinkOperations.getTarget(new _Quotations.QuotationClass_24().createNode(), "classifier", false)) {
           toProcess = true;
           break;
         }
       }
       if (toProcess) {
-        SLinkOperations.insertChildFirst(baseMethodDeclaration, "parameter", new _Quotations.QuotationClass_18().createNode());
+        SLinkOperations.insertChildFirst(baseMethodDeclaration, "parameter", new _Quotations.QuotationClass_26().createNode());
       }
     }
   }
@@ -2239,13 +2359,13 @@ public class QueriesGenerated {
         }
 parametersLoop:
         for(SNode parameterDeclaration : SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)) {
-          if (SPropertyOperations.getString(parameterDeclaration, "name").equals("typeCheckingContext") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SLinkOperations.getTarget(parameterDeclaration, "type", true), "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_23().createNode(), "classifier", false)) {
+          if (SPropertyOperations.getString(parameterDeclaration, "name").equals("typeCheckingContext") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SLinkOperations.getTarget(parameterDeclaration, "type", true), "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_31().createNode(), "classifier", false)) {
             SNode lastParameterType = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).last(), "type", true);
-            boolean alreadyProcessed = SNodeOperations.isInstanceOf(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(lastParameterType, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_19().createNode(), "classifier", false);
+            boolean alreadyProcessed = SNodeOperations.isInstanceOf(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(lastParameterType, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_27().createNode(), "classifier", false);
             if (!(alreadyProcessed)) {
-              SLinkOperations.addChild(instanceMethodCall, "actualArgument", new _Quotations.QuotationClass_20().createNode());
+              SLinkOperations.addChild(instanceMethodCall, "actualArgument", new _Quotations.QuotationClass_28().createNode());
               SLinkOperations.addChild(SNodeOperations.getParent(instanceMethodDeclaration), "method", SNodeOperations.copyNode(instanceMethodDeclaration));
-              SLinkOperations.addChild(instanceMethodDeclaration, "parameter", new _Quotations.QuotationClass_21().createNode());
+              SLinkOperations.addChild(instanceMethodDeclaration, "parameter", new _Quotations.QuotationClass_29().createNode());
               for(SNode mc : SNodeOperations.getDescendants(instanceMethodDeclaration, "jetbrains.mps.baseLanguage.structure.IMethodCall", false)) {
                 do {
                   SNode matchedNode_7 = mc;
@@ -2254,7 +2374,7 @@ parametersLoop:
                     _Patterns.Pattern_2 matchingPattern = new _Patterns.Pattern_2();
                     matches_8 = matchingPattern.match(matchedNode_7);
                     if (matches_8) {
-                      SLinkOperations.addChild(matchedNode_7, "actualArgument", new _Quotations.QuotationClass_22().createNode());
+                      SLinkOperations.addChild(matchedNode_7, "actualArgument", new _Quotations.QuotationClass_30().createNode());
                       break;
                     }
                   }
@@ -2298,11 +2418,11 @@ parametersLoop:
         } while(false);
 parametersLoop:
         for(SNode parameterDeclaration : SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)) {
-          if (SPropertyOperations.getString(parameterDeclaration, "name").equals("typeCheckingContext") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SLinkOperations.getTarget(parameterDeclaration, "type", true), "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_26().createNode(), "classifier", false)) {
+          if (SPropertyOperations.getString(parameterDeclaration, "name").equals("typeCheckingContext") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SLinkOperations.getTarget(parameterDeclaration, "type", true), "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_34().createNode(), "classifier", false)) {
             SNode lastParameterType = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).last(), "type", true);
-            boolean alreadyProcessed = SNodeOperations.isInstanceOf(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(lastParameterType, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_24().createNode(), "classifier", false);
+            boolean alreadyProcessed = SNodeOperations.isInstanceOf(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(lastParameterType, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_32().createNode(), "classifier", false);
             if (!(alreadyProcessed)) {
-              SLinkOperations.addChild(instanceMethodCall, "actualArgument", new _Quotations.QuotationClass_25().createNode());
+              SLinkOperations.addChild(instanceMethodCall, "actualArgument", new _Quotations.QuotationClass_33().createNode());
             }
             break parametersLoop;
           }

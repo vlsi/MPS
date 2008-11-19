@@ -3127,6 +3127,12 @@
         <property name="noTargetText" value="&lt;no intention&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1222948974816" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227104710783">
+        <property name="text" value="message target" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1227104710784">
+        <link role="relationDeclaration" targetNodeId="1.1227104618952" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1223034588678">
@@ -3365,6 +3371,12 @@
         <property name="noTargetText" value="&lt;no intention&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1223995386459" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227104701735">
+        <property name="text" value="message target" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1227104701736">
+        <link role="relationDeclaration" targetNodeId="1.1227104635133" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1224760276877">
@@ -3451,6 +3463,12 @@
         <property name="noTargetText" value="&lt;no intention&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1225968625361" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227104690023">
+        <property name="text" value="message target" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1227104693816">
+        <link role="relationDeclaration" targetNodeId="1.1227104644040" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1225971344562">
@@ -3492,6 +3510,12 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1225971346184">
         <property name="noTargetText" value="&lt;no intention&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1225971258466" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227104723181">
+        <property name="text" value="message target" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1227104723182">
+        <link role="relationDeclaration" targetNodeId="1.1227104609964" />
       </node>
     </node>
   </node>

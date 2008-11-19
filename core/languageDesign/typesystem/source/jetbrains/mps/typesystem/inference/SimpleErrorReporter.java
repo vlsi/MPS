@@ -29,9 +29,10 @@ public class SimpleErrorReporter implements IErrorReporter {
     myMessageStatus = isWarning ? MessageStatus.WARNING : MessageStatus.ERROR;
   }
 
-  public SimpleErrorReporter(String s, String ruleModel, String ruleId, MessageStatus messageStatus) {
+  public SimpleErrorReporter(String s, String ruleModel, String ruleId, MessageStatus messageStatus, IErrorTarget errorTarget) {
     this(s, ruleModel, ruleId);
     myMessageStatus = messageStatus;
+    myErrorTarget = errorTarget;
   }
 
   public String reportError() {

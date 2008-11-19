@@ -138,6 +138,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227107132964">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227107132965">
+            <property name="name" value="" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227107132966">
+              <link role="classifier" targetNodeId="1226504970585" resolveInfo="Test" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226504970586" />
@@ -165,6 +173,9 @@
           <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
         </node>
       </node>
+    </node>
+    <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1227107121548">
+      <link role="annotation" targetNodeId="1.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </node>
 </model>
