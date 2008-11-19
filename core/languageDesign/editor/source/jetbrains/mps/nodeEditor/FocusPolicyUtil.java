@@ -17,37 +17,40 @@ public class FocusPolicyUtil {
   }
 
   private static EditorCell findFocusedCell(EditorCell selectedCell) {
-    EditorCell prevCell = selectedCell;
-    EditorCell focusedCell = findCellWhichAttractsFocus(selectedCell, true);
-    while (focusedCell != null) {
-      prevCell = focusedCell;
-      focusedCell = findCellWhichAttractsFocus(focusedCell, false);
+    EditorCell focusedCell = findCellWhichAttractsFocus(selectedCell, true, true);
+    if (focusedCell == null) {
+      focusedCell = selectedCell;
     }
 
-    if (prevCell.getFocusPolicy() == FocusPolicy.FIRST_EDITABLE_CELL) {
-      EditorCell result = prevCell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE));
+    if (focusedCell.getFocusPolicy() == FocusPolicy.FIRST_EDITABLE_CELL) {
+      EditorCell result = focusedCell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE));
       if (result != null) {
         return result;
       }
     }
-    return prevCell;
+    return focusedCell;
   }
 
-
-  private static EditorCell findCellWhichAttractsFocus(EditorCell cell, boolean includingMe) {
-    return findCellWhichAttractsFocus(cell, includingMe, true);
-  }
 
   private static EditorCell findCellWhichAttractsFocus(EditorCell cell, boolean includingMe, boolean descend) {
     if (cell == null) return null;
-    if (includingMe && cell.hasFocusPolicy()) return cell;
+
+    if (includingMe &&
+      cell.getFocusPolicy() != FocusPolicy.NONE &&
+      cell.getFocusPolicy() != FocusPolicy.ATTRACTS_RECURSIVELY) return cell;
+
     if (descend && cell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) cell;
       for (EditorCell childCell : collection) {
-        EditorCell focusedCell = findCellWhichAttractsFocus(childCell, true, !childCell.isBigCell());
+        EditorCell focusedCell = findCellWhichAttractsFocus(childCell, true, !childCell.isBigCell() || childCell.getFocusPolicy() == FocusPolicy.ATTRACTS_RECURSIVELY);
         if (focusedCell != null) return focusedCell;
       }
     }
+
+    if (cell.getFocusPolicy() == FocusPolicy.ATTRACTS_RECURSIVELY) {
+      return cell;
+    }
+
     return null;
   }
 }

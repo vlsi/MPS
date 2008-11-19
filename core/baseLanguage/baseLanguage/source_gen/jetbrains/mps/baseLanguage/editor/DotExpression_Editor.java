@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.EnumMeasure;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class DotExpression_Editor extends DefaultNodeEditor {
 
@@ -125,6 +126,9 @@ public class DotExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_refNode_operation1197028151463(EditorCell editorCell, SNode node, EditorContext context) {
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_RECURSIVELY);
+    }
     DotExpression_Actions_DeleteOperation.setCellActions(editorCell, node, context);
   }
 

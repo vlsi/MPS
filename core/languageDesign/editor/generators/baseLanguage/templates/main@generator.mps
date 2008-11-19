@@ -10343,6 +10343,41 @@
                   </node>
                 </node>
               </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227082828904">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227082840906">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1227082828905">
+                    <link role="variableDeclaration" targetNodeId="1182908332424" resolveInfo="editorCell" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227082845198">
+                    <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell.setFocusPolicy(jetbrains.mps.nodeEditor.FocusPolicy):void" resolveInfo="setFocusPolicy" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1227082858169">
+                      <link role="enumConstantDeclaration" targetNodeId="11.~FocusPolicy.ATTRACTS_RECURSIVELY" resolveInfo="ATTRACTS_RECURSIVELY" />
+                      <link role="enumClass" targetNodeId="11.~FocusPolicy" resolveInfo="FocusPolicy" />
+                    </node>
+                  </node>
+                </node>
+                <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1227082862046">
+                  <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1227082862047">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227082862048">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227082865706">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227082872978">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227082867723">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227082865707" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227082872180">
+                              <link role="property" targetNodeId="38.1130859485024" resolveInfo="attractsFocus" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1227082874231">
+                            <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1227082874232">
+                              <link role="enumMember" targetNodeId="38.1227082414196" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1198512952463">
               <link role="baseMethodDeclaration" targetNodeId="1198512932719" resolveInfo="_cell_setup_method_basic_" />

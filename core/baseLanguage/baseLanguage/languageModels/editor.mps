@@ -12561,6 +12561,7 @@
         <link role="styleClass" targetNodeId="1215096040201" resolveInfo="Dot" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1197028151463">
+        <property name="attractsFocus" value="3" />
         <link role="relationDeclaration" targetNodeId="17.1197027833540" />
         <link role="actionMap" targetNodeId="1197028249488" resolveInfo="OperationExpression_Actions_DeleteOperation" />
       </node>

@@ -1342,6 +1342,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "query", true) != null) && !(IQueryFunction_Color_Behavior.call_isFunction_1225463329531(SLinkOperations.getTarget(_context.getNode(), "query", true)));
   }
 
+  public static boolean ifMacro_Condition_1227082862047(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.hasValue(_context.getNode(), "attractsFocus", "3", "0");
+  }
+
   public static SNode sourceNodeQuery_1168383269962(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "cellModel", true);
   }

@@ -8,7 +8,8 @@ import java.util.LinkedList;
 public enum FocusPolicy {
   noAttraction("noAttraction", 0),
   attractsFocus("attractsFocus", 1),
-  firstEditableCell("firstEditableCell", 2);
+  firstEditableCell("firstEditableCell", 2),
+  attractsRecursively("attractsRecursively", 3);
 
   private String myName;
   private int myValue;
@@ -23,6 +24,7 @@ public enum FocusPolicy {
     list.add(FocusPolicy.noAttraction);
     list.add(FocusPolicy.attractsFocus);
     list.add(FocusPolicy.firstEditableCell);
+    list.add(FocusPolicy.attractsRecursively);
     return list;
   }
 
@@ -42,6 +44,9 @@ public enum FocusPolicy {
     }
     if (value.equals(FocusPolicy.firstEditableCell.getValueAsString())) {
       return FocusPolicy.firstEditableCell;
+    }
+    if (value.equals(FocusPolicy.attractsRecursively.getValueAsString())) {
+      return FocusPolicy.attractsRecursively;
     }
     return FocusPolicy.getDefault();
   }

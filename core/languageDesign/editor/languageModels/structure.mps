@@ -1298,6 +1298,10 @@
       <property name="externalValue" value="firstEditableCell" />
       <property name="internalValue" value="2" />
     </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1227082414196">
+      <property name="internalValue" value="3" />
+      <property name="externalValue" value="attractsRecursively" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1134379236839">
     <property name="name" value="CellModel_AttributedPropertyCell" />
