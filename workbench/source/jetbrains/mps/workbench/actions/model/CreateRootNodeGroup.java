@@ -73,12 +73,14 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     Collections.sort(modelLanguages, new ToStringComparator());
 
+    boolean plain = myPlain || modelLanguages.size() == 1;
+
     for (final Language language : modelLanguages) {
       String name = language.getNamespace();
       Icon icon = IconManager.getIconFor(language.getNamespace());
       BaseGroup langRootsGroup;
 
-      if (!myPlain) {
+      if (!plain) {
         langRootsGroup = new BaseGroup(name, name, icon);
         langRootsGroup.setPopup(true);
       } else {
@@ -93,13 +95,14 @@ public class CreateRootNodeGroup extends BaseGroup {
         }
       }
       if (hasChildren) {
-        if (!myPlain) {
+        if (!plain) {
           this.add(langRootsGroup);
         } else {
           this.addSeparator();
         }
       }
     }
+
 
     Integer selectedItemsCount = MPSDataKeys.SELECTED_ITEMS_NUM.getData(event.getDataContext());
     boolean enabled = selectedItemsCount != null && selectedItemsCount == 1;
