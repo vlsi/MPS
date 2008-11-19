@@ -13,15 +13,13 @@ import jetbrains.mps.library.LanguageDesign_DevKit;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.BorderLayout;
-import java.awt.Frame;
-import java.awt.HeadlessException;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.util.List;
 
 public class NewGeneratorDialog extends BaseDialog {
-  private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200, 200, 400, 500);
+  private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200, 200, 400, 200);
 
   private JPanel myContenetPane;
   private JTextField myTemplateModelsDir;
@@ -31,7 +29,7 @@ public class NewGeneratorDialog extends BaseDialog {
   public NewGeneratorDialog(Frame mainFrame, Language sourceLanguage) throws HeadlessException {
     super(mainFrame, "New Generator");
     mySourceLanguage = sourceLanguage;
-    myContenetPane = new JPanel(new BorderLayout());
+    myContenetPane = new JPanel(new GridBagLayout());
     initContentPane();
   }
 
@@ -51,19 +49,31 @@ public class NewGeneratorDialog extends BaseDialog {
   }
 
   private void initContentPane() {
-    JPanel innerPanel = new JPanel(new BorderLayout());
-    innerPanel.setLayout(new BoxLayout(innerPanel, BoxLayout.Y_AXIS));
-    innerPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+    GridBagConstraints cGenNameLabel = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+    myContenetPane.add(new JLabel("Generator name"), cGenNameLabel);
 
+    GridBagConstraints cGenName = new GridBagConstraints(1, 0, 2, 1, 1, 0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
     myGeneratorName = new JTextField();
-    JPanel namePanel = new JPanel(new BorderLayout());
-    namePanel.add(new JLabel("Generator name"), BorderLayout.WEST);
-    namePanel.add(myGeneratorName, BorderLayout.CENTER);
-    namePanel.setBorder(new EmptyBorder(0, 0, 5, 0));
+    myContenetPane.add(myGeneratorName, cGenName);
 
+    GridBagConstraints cModelsDirLabel = new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+    myContenetPane.add(new JLabel("Templates root"), cModelsDirLabel);
+
+    GridBagConstraints cModelsDir = new GridBagConstraints(1, 1, 1, 1, 1, 0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
     myTemplateModelsDir = new JTextField();
-    JPanel templatesPanel = new JPanel(new BorderLayout());
+    myContenetPane.add(myTemplateModelsDir, cModelsDir);
+
+    GridBagConstraints cModelsDirButton = new GridBagConstraints(2, 1, 1, 1, 0, 0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
+    JButton chooseButton = createChooseButton();
+    myContenetPane.add(chooseButton, cModelsDirButton);
+
+    GridBagConstraints cFiller = new GridBagConstraints(0, 2, 3, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
+    myContenetPane.add(new JPanel(), cFiller);
+
     updateTemplateModelsDir();
+  }
+
+  private JButton createChooseButton() {
     JButton chooseButton = new JButton(new AbstractAction("...") {
       public void actionPerformed(ActionEvent e) {
         String oldPath = myTemplateModelsDir.getText();
@@ -82,14 +92,7 @@ public class NewGeneratorDialog extends BaseDialog {
         }
       }
     });
-    templatesPanel.add(new JLabel("Templates root"), BorderLayout.WEST);
-    templatesPanel.add(myTemplateModelsDir, BorderLayout.CENTER);
-    templatesPanel.add(chooseButton, BorderLayout.EAST);
-
-    innerPanel.add(namePanel);
-    innerPanel.add(templatesPanel);
-
-    myContenetPane.add(innerPanel, BorderLayout.NORTH);
+    return chooseButton;
   }
 
   private void updateTemplateModelsDir() {
