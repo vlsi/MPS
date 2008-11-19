@@ -5,7 +5,7 @@ import com.intellij.ide.CutProvider;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.*;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.SystemInfo;
@@ -39,6 +39,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.IErrorReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.*;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
@@ -47,6 +48,8 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.nodes.GoByCurrentReferenceAction;
+import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.intentions.IntentionsManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -708,9 +711,53 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     group.add(baseGroup);
     group.addSeparator();
     group.add(getCellActionsGroup());
+    group.add(getIntentionsGroup());
 
     JPopupMenu popupMenu = ActionUtils.createPopup(ActionPlaces.EDITOR_POPUP, group);
     popupMenu.show(EditorComponent.this, x, y);
+  }
+
+  private DefaultActionGroup getIntentionsGroup() {
+    DefaultActionGroup result = new DefaultActionGroup("Intentions", true);
+    final SNode node = getSelectedNode();
+    final EditorContext context = getEditorContext();
+    for (final com.intellij.openapi.util.Pair<Intention, SNode> pair : getAvailableIntentions()) {
+      String description = pair.first.getDescription(node, context);
+      Icon icon = pair.first.getType().getIcon();
+      result.add(new AnAction(description, "Execute intention", icon) {
+        @Override
+        public void actionPerformed(AnActionEvent e) {
+          executeIntention(pair.first, node, context);
+        }
+      });
+    }
+    return result;
+  }
+
+  public void executeIntention(final Intention intention, final SNode node, final EditorContext context) {
+    context.executeCommand(new Runnable() {
+      public void run() {
+        try {
+          intention.execute(node, context);
+        } catch (Throwable t) {
+          LOG.error("Intention execution failed: " + t.getMessage(), t);
+        }
+      }
+    });
+  }
+
+  private Set<com.intellij.openapi.util.Pair<Intention, SNode>> getAvailableIntentions() {
+    final Set<com.intellij.openapi.util.Pair<Intention, SNode>> result = new LinkedHashSet<com.intellij.openapi.util.Pair<Intention, SNode>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SNode node = getSelectedNode();
+        EditorContext editorContext = getEditorContext();
+        if (node != null && editorContext != null) {
+          result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext));
+        }
+      }
+    });
+    return result;
   }
 
   private DefaultActionGroup getCellActionsGroup() {
