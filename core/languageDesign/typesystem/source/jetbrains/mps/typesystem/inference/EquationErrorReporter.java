@@ -67,4 +67,8 @@ public class EquationErrorReporter implements IErrorReporter {
   public IntentionProvider getIntentionProvider() {
     return myIntentionProvider;
   }
+
+  public IErrorTarget getErrorTarget() {
+    return new NodeErrorTarget();
+  }
 }

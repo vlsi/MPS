@@ -17,4 +17,5 @@ public interface IErrorReporter {
   public MessageStatus getMessageStatus();
   public IntentionProvider getIntentionProvider();
   public void setIntentionProvider(IntentionProvider intentionProvider);
+  public IErrorTarget getErrorTarget();
 }

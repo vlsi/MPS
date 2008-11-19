@@ -16,6 +16,7 @@ public class SimpleErrorReporter implements IErrorReporter {
   private String myRuleId;
   private IntentionProvider myIntentionProvider;
   private MessageStatus myMessageStatus = MessageStatus.ERROR;
+  private IErrorTarget myErrorTarget = new NodeErrorTarget();
 
   public SimpleErrorReporter(String s, String ruleModel, String ruleId) {
     myErrorString = s;
@@ -55,5 +56,9 @@ public class SimpleErrorReporter implements IErrorReporter {
 
   public MessageStatus getMessageStatus() {
     return myMessageStatus;
+  }
+
+  public IErrorTarget getErrorTarget() {
+    return myErrorTarget;
   }
 }
