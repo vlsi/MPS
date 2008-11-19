@@ -715,6 +715,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private DefaultActionGroup getCellActionsGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
+    result.setPopup(true);
     EditorCell cell = getSelectedCell();
 
     final EditorContext editorContext = createEditorContextForActions();
