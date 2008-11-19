@@ -22,8 +22,8 @@ import java.util.ArrayList;
 
 public enum LanguageAspect {
   STRUCTURE("structure") {
-    protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(Structure_Language.MODULE_REFERENCE);
+    public ModuleReference getMainLanguage() {
+      return Structure_Language.MODULE_REFERENCE;
     }
 
     public Icon getIcon() {
@@ -32,8 +32,8 @@ public enum LanguageAspect {
   },
 
   EDITOR("editor") {
-    protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(Editor_Language.MODULE_REFERENCE);
+    public ModuleReference getMainLanguage() {
+      return Editor_Language.MODULE_REFERENCE;
     }
 
     public Icon getIcon() {
@@ -42,8 +42,8 @@ public enum LanguageAspect {
   },
 
   ACTIONS("actions") {
-    protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(Actions_Language.MODULE_REFERENCE);
+    public ModuleReference getMainLanguage() {
+      return Actions_Language.MODULE_REFERENCE;
     }
 
     public Icon getIcon() {
@@ -52,8 +52,8 @@ public enum LanguageAspect {
   },
 
   CONSTRAINTS("constraints") {
-    protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(Constraints_Language.MODULE_REFERENCE);
+    public ModuleReference getMainLanguage() {
+      return Constraints_Language.MODULE_REFERENCE;
     }
 
     public Icon getIcon() {
@@ -62,8 +62,8 @@ public enum LanguageAspect {
   },
 
   BEHAVIOR("behavior") {
-    protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(Constraints_Language.MODULE_REFERENCE);
+    public ModuleReference getMainLanguage() {
+      return Constraints_Language.MODULE_REFERENCE;
     }
 
     public Icon getIcon() {
@@ -81,8 +81,8 @@ public enum LanguageAspect {
       return result;
     }
 
-    protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(Typesystem_Language.MODULE_REFERENCE);
+    public ModuleReference getMainLanguage() {
+      return Typesystem_Language.MODULE_REFERENCE;
     }
 
     public Icon getIcon() {
@@ -91,16 +91,19 @@ public enum LanguageAspect {
   },
 
   SCRIPTS("scripts") {
-    protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(Script_Language.MODULE_REFERENCE);
+    public ModuleReference getMainLanguage() {
+      return Script_Language.MODULE_REFERENCE;
     }
   },
 
-  DOCUMENTATION("documentation"),
+  DOCUMENTATION("documentation"){
+    public ModuleReference getMainLanguage() {
+      return null;
+    }},
 
   INTENTIONS("intentions") {
-    protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(Intentions_Language.MODULE_REFERENCE);
+    public ModuleReference getMainLanguage() {
+      return Intentions_Language.MODULE_REFERENCE;
     }
 
     public Icon getIcon() {
@@ -109,8 +112,8 @@ public enum LanguageAspect {
   },
 
   FIND_USAGES("findUsages") {
-    protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(FindUsages_Language.MODULE_REFERENCE);
+    public ModuleReference getMainLanguage() {
+      return FindUsages_Language.MODULE_REFERENCE;
     }
 
     public Icon getIcon() {
@@ -119,8 +122,8 @@ public enum LanguageAspect {
   },
 
   PLUGIN("plugin") {
-    protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(Plugin_Language.MODULE_REFERENCE);
+    public ModuleReference getMainLanguage() {
+      return Plugin_Language.MODULE_REFERENCE;
     }
 
     public Icon getIcon() {
@@ -129,14 +132,14 @@ public enum LanguageAspect {
   },
 
   DATA_FLOW("dataFlow") {
-    protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(DataFlow_Language.MODULE_REFERENCE);
+    public ModuleReference getMainLanguage() {
+      return DataFlow_Language.MODULE_REFERENCE;
     }
   },
 
   TEST("test") {
-    protected List<ModuleReference> getLanguagesToImport(Language l) {
-      return CollectionUtil.asList(Test_Language.MODULE_REFERENCE);
+    public ModuleReference getMainLanguage() {
+      return Test_Language.MODULE_REFERENCE;
     }
   };
 
@@ -181,8 +184,8 @@ public enum LanguageAspect {
       public void run() {
         model.getSModel().addDevKit(LanguageDesign_DevKit.get());
 
-        for (ModuleReference lang : getLanguagesToImport(l)) {
-          model.getSModel().addLanguage(lang);
+        if (getMainLanguage() != null) {
+          model.getSModel().addLanguage(getMainLanguage());
         }
 
         for (String modelUID : getModelsToImport(l)) {
@@ -204,14 +207,14 @@ public enum LanguageAspect {
   }
 
   public List<ModuleReference> getAllLanguagesToImport(Language l) {
-    List<ModuleReference> result = new ArrayList<ModuleReference>(getLanguagesToImport(l));
-    result.addAll(getLanguagesToImport(l));
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
+    if (getMainLanguage() != null) {
+      result.add(getMainLanguage());
+    }
     return result;
   }
 
-  protected List<ModuleReference> getLanguagesToImport(Language l) {
-    return new ArrayList<ModuleReference>();
-  }
+  public abstract ModuleReference getMainLanguage();
 
   protected List<String> getModelsToImport(Language l) {
     return CollectionUtil.asList(

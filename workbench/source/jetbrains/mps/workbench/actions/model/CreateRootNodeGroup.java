@@ -16,6 +16,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.project.ModuleReference;
 
 import javax.swing.Icon;
 import java.util.*;
@@ -24,20 +25,12 @@ import java.util.*;
  * @author Kostik
  */
 public class CreateRootNodeGroup extends BaseGroup {
-
-  private Set<String> myAllowedLanguages = null;
   private String myPackage;
   private boolean myPlain = false;
 
   public CreateRootNodeGroup() {
     super("Create Root Node");
     setPopup(true);
-  }
-
-  public CreateRootNodeGroup(List<String> allowed) {
-    this();
-    myAllowedLanguages = new HashSet<String>();
-    myAllowedLanguages.addAll(allowed);
   }
 
   public CreateRootNodeGroup(String pack) {
@@ -62,14 +55,25 @@ public class CreateRootNodeGroup extends BaseGroup {
       });
     }
 
+    LanguageAspect aspect = Language.getModelAspect(data.getModelDescriptor());
+    if (aspect != null) {
+      ModuleReference ref = aspect.getMainLanguage();
+      Language lang = data.getScope().getLanguage(ref);
+      modelLanguages.remove(lang);
+
+      for (ConceptDeclaration conceptDeclaration : lang.getConceptDeclarations()) {
+        if (ModelConstraintsManager.getInstance().canBeARoot(data.getOperationContext(), NameUtil.nodeFQName(conceptDeclaration), data.getModelDescriptor().getSModel())) {
+          add(newRootNodeAction(new SNodePointer(conceptDeclaration), data.getModelDescriptor()));
+        }
+      }
+
+      addSeparator();
+    }
+
 
     Collections.sort(modelLanguages, new ToStringComparator());
 
     for (final Language language : modelLanguages) {
-      if (myAllowedLanguages != null) {
-        if (!myAllowedLanguages.contains(language.getNamespace())) continue;
-      }
-
       String name = language.getNamespace();
       Icon icon = IconManager.getIconFor(language.getNamespace());
       BaseGroup langRootsGroup;
