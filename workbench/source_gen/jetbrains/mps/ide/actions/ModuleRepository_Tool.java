@@ -4,13 +4,17 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.ide.moduleRepositoryViewer.ModuleRepositoryComponent;
+
 import javax.swing.JPanel;
+
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
+
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.tools.CloseAction;
 import com.intellij.openapi.actionSystem.ActionManager;

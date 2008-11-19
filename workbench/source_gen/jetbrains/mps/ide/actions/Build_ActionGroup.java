@@ -4,9 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -21,18 +18,9 @@ public class Build_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.MakeAllModules_Action"), language.getModuleFqName()));
-      }
-      {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.CleanAllModules_Action"), language.getModuleFqName()));
-      }
-      {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.RebuildAllModules_Action"), language.getModuleFqName()));
-      }
+      this.add(ActionFactory.getInstance().getRegisteredAction(new MakeAllModules_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new CleanAllModules_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new RebuildAllModules_Action()));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

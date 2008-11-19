@@ -4,9 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
+
 import jetbrains.mps.smodel.IOperationContext;
+
 import java.awt.Frame;
+
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -84,23 +88,13 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
 
   private String optimizeImports(IOperationContext c, MPSProject p) {
     StringBuilder sb = new StringBuilder();
-    for(Language l : p.getProjectLanguages()) {
+    for (Language l : p.getProjectLanguages()) {
       sb.append(OptimizeLanguageImportsAction.optimizeImports(c, l));
     }
-    for(Solution s : p.getProjectSolutions()) {
+    for (Solution s : p.getProjectSolutions()) {
       sb.append(OptimizeSolutionImportsAction.optimizeImports(c, s));
     }
     return sb.toString();
-  }
-
-
-  @NotNull()
-  public static String getActionId(Object... args) {
-    StringBuilder res = new StringBuilder(500);
-    res.append(OptimizeProjectImports_Action.class.getName());
-    res.append("#");
-    int i = 0;
-    return res.toString();
   }
 
 }

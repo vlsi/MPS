@@ -4,7 +4,9 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
+
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
@@ -88,16 +90,6 @@ public class CheckModel_Action extends GeneratedAction {
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CheckModel", t);
     }
-  }
-
-
-  @NotNull()
-  public static String getActionId(Object... args) {
-    StringBuilder res = new StringBuilder(500);
-    res.append(CheckModel_Action.class.getName());
-    res.append("#");
-    int i = 0;
-    return res.toString();
   }
 
 }

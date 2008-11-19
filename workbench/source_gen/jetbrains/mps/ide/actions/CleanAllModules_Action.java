@@ -4,7 +4,9 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
+
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -14,7 +16,9 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
+
 import java.util.LinkedHashSet;
+
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -77,16 +81,6 @@ public class CleanAllModules_Action extends GeneratedAction {
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CleanAllModules", t);
     }
-  }
-
-
-  @NotNull()
-  public static String getActionId(Object... args) {
-    StringBuilder res = new StringBuilder(500);
-    res.append(CleanAllModules_Action.class.getName());
-    res.append("#");
-    int i = 0;
-    return res.toString();
   }
 
 }

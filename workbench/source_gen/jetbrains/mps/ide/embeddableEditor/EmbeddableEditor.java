@@ -9,9 +9,13 @@ import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+
 import javax.swing.JComponent;
+
 import jetbrains.mps.generator.GeneratorManager;
+
 import java.util.Arrays;
+
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;

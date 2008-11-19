@@ -4,16 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.ReloadAllAction;
 import jetbrains.mps.workbench.actions.tools.InstallIDEAPluginAction;
 import jetbrains.mps.smodel.RenameAspectsAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseGroup;
 
 public class Tools_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Tools_ActionGroup.class);
@@ -27,35 +24,14 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.addAnchor(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal);
-      {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowModuleRepository_Action"), language.getModuleFqName()));
-      }
-      {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowModelRepository_Action"), language.getModuleFqName()));
-      }
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowModuleRepository_Action()));
+      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowModelRepository_Action()));
       this.addAnchor(Tools_ActionGroup.LABEL_ID_customTools);
       this.addSeparator();
-      if (BaseGroup.class.isAssignableFrom(ReloadAllAction.class)) {
-        this.add(new ReloadAllAction());
-      } else
-      {
-        this.add(ActionFactory.getInstance().getRegisteredAction(ReloadAllAction.class, null));
-      }
+      this.add(new ReloadAllAction());
       this.addSeparator();
-      if (BaseGroup.class.isAssignableFrom(InstallIDEAPluginAction.class)) {
-        this.add(new InstallIDEAPluginAction());
-      } else
-      {
-        this.add(ActionFactory.getInstance().getRegisteredAction(InstallIDEAPluginAction.class, null));
-      }
-      if (BaseGroup.class.isAssignableFrom(RenameAspectsAction.class)) {
-        this.add(new RenameAspectsAction());
-      } else
-      {
-        this.add(ActionFactory.getInstance().getRegisteredAction(RenameAspectsAction.class, null));
-      }
+      this.add(new InstallIDEAPluginAction());
+      this.add(new RenameAspectsAction());
       this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

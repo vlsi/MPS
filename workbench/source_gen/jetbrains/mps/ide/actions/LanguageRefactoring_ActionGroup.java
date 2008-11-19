@@ -4,9 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.refactoring.renameLanguage.RenameLanguageAction;
-import jetbrains.mps.workbench.action.ActionFactory;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -20,12 +19,7 @@ public class LanguageRefactoring_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      if (BaseGroup.class.isAssignableFrom(RenameLanguageAction.class)) {
-        this.add(new RenameLanguageAction());
-      } else
-      {
-        this.add(ActionFactory.getInstance().getRegisteredAction(RenameLanguageAction.class, null));
-      }
+      this.add(new RenameLanguageAction());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
