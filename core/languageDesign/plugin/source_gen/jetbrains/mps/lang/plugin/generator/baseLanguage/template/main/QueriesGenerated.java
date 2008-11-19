@@ -483,6 +483,10 @@ public class QueriesGenerated {
     return BaseAction.getIdMethodName();
   }
 
+  public static Object propertyMacro_GetPropertyValue_1227114610098(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalInputModel().getModelDescriptor().getModule().getModuleFqName();
+  }
+
   public static Object referenceMacro_GetReferent_1204045280150(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_SingleTabConstructor");
   }
