@@ -875,40 +875,40 @@ public class QueriesGenerated {
     return _context.getNode().getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1227106296989(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "propertyDeclaration", false), "name");
-    }
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "linkDeclaration", false), "role");
-    }
-    return null;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1227106404995(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "propertyDeclaration", false), "name");
-    }
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "linkDeclaration", false), "role");
-    }
-    return null;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1227106494787(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "propertyDeclaration", false), "name");
-    }
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "linkDeclaration", false), "role");
-    }
-    return null;
-  }
-
   public static Object propertyMacro_GetPropertyValue_1227106551298(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "propertyDeclaration", false), "name");
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "linkDeclaration", false), "role");
+    }
+    return null;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1227108441277(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "propertyDeclaration", false), "name");
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "linkDeclaration", false), "role");
+    }
+    return null;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1227108498989(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "propertyDeclaration", false), "name");
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "linkDeclaration", false), "role");
+    }
+    return null;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1227108582071(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
     if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(messageTarget, "propertyDeclaration", false), "name");
@@ -1258,45 +1258,45 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static Object referenceMacro_GetReferent_1227106134189(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1227106551335(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(), "baseMethodDeclaration", false);
     }
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_12().createNode(), "baseMethodDeclaration", false);
     }
     return null;
   }
 
-  public static Object referenceMacro_GetReferent_1227106405038(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1227108441386(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_13().createNode(), "baseMethodDeclaration", false);
     }
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_14().createNode(), "baseMethodDeclaration", false);
     }
     return null;
   }
 
-  public static Object referenceMacro_GetReferent_1227106494824(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1227108499099(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_15().createNode(), "baseMethodDeclaration", false);
     }
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_16().createNode(), "baseMethodDeclaration", false);
     }
     return null;
   }
 
-  public static Object referenceMacro_GetReferent_1227106551335(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1227108582180(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget")) {
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_17().createNode(), "baseMethodDeclaration", false);
     }
-    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget")) {
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_18().createNode(), "baseMethodDeclaration", false);
     }
     return null;
@@ -1704,19 +1704,59 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "elseClause", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1227106116446(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_1227106405072(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_1227106494858(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
-  }
-
   public static boolean ifMacro_Condition_1227106551369(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1227108097896(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    return SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget");
+  }
+
+  public static boolean ifMacro_Condition_1227108187174(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    return SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget");
+  }
+
+  public static boolean ifMacro_Condition_1227108441314(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    return SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget");
+  }
+
+  public static boolean ifMacro_Condition_1227108441334(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    return SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget");
+  }
+
+  public static boolean ifMacro_Condition_1227108441430(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1227108499026(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    return SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget");
+  }
+
+  public static boolean ifMacro_Condition_1227108499047(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    return SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget");
+  }
+
+  public static boolean ifMacro_Condition_1227108499143(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1227108582108(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    return SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget");
+  }
+
+  public static boolean ifMacro_Condition_1227108582128(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    return SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget");
+  }
+
+  public static boolean ifMacro_Condition_1227108582224(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
   }
 
@@ -2146,6 +2186,50 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1227105363020(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+  }
+
+  public static SNode sourceNodeQuery_1227108193180(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget")) {
+      return SLinkOperations.getTarget(messageTarget, "propertyName", true);
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget")) {
+      return SLinkOperations.getTarget(messageTarget, "referenceRole", true);
+    }
+    return null;
+  }
+
+  public static SNode sourceNodeQuery_1227108441353(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget")) {
+      return SLinkOperations.getTarget(messageTarget, "propertyName", true);
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget")) {
+      return SLinkOperations.getTarget(messageTarget, "referenceRole", true);
+    }
+    return null;
+  }
+
+  public static SNode sourceNodeQuery_1227108499066(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget")) {
+      return SLinkOperations.getTarget(messageTarget, "propertyName", true);
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget")) {
+      return SLinkOperations.getTarget(messageTarget, "referenceRole", true);
+    }
+    return null;
+  }
+
+  public static SNode sourceNodeQuery_1227108582147(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget")) {
+      return SLinkOperations.getTarget(messageTarget, "propertyName", true);
+    }
+    if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget")) {
+      return SLinkOperations.getTarget(messageTarget, "referenceRole", true);
+    }
+    return null;
   }
 
   public static Iterable sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

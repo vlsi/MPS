@@ -3,6 +3,7 @@ package jetbrains.mps.typesystem.checking;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -13,13 +14,15 @@ import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import com.intellij.openapi.util.Computable;
+
 /**
  * Created by IntelliJ IDEA.
-* User: Cyril.Konopko
-* Date: 10.04.2008
-* Time: 15:05:40
-* To change this template use File | Settings | File Templates.
-*/
+ * User: Cyril.Konopko
+ * Date: 10.04.2008
+ * Time: 15:05:40
+ * To change this template use File | Settings | File Templates.
+ */
 public class HighlighterMessage extends DefaultEditorMessage {
   private IErrorTarget myErrorTarget;
 
@@ -29,43 +32,49 @@ public class HighlighterMessage extends DefaultEditorMessage {
   }
 
   public EditorCell getCell(EditorComponent editor) {
-    EditorCell rawCell = super.getCell(editor);
+    final EditorCell rawCell = super.getCell(editor);
+    if (rawCell == null) return null;
     if (myErrorTarget.getTarget() == ErrorTargetEnum.NODE) {
       return rawCell;
     }
-    if (myErrorTarget.getTarget() == ErrorTargetEnum.REFERENCE) {
-      EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
-        public boolean met(EditorCell cell) {
-          LinkDeclaration linkDeclaration = cell.getLinkDeclaration();
-          return linkDeclaration != null &&
-            linkDeclaration.getMetaClass() == LinkMetaclass.reference &&
-            myErrorTarget.getRole().equals(linkDeclaration.getRole());
-        }
-      }, true), true);
-      if (child != null) {
-        return child;
-      } else {
-        return rawCell;
-      }
-    }
-    if (myErrorTarget.getTarget() == ErrorTargetEnum.PROPERTY) {
-      EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
-        public boolean met(EditorCell cell) {
-          if (!(cell instanceof EditorCell_Property)) return false;
-          EditorCell_Property propertyCell = (EditorCell_Property) cell;
-          if (myErrorTarget.getRole().equals(((PropertyAccessor)propertyCell.getModelAccessor()).getPropertyName())) {
-            return true;
+    EditorCell result = ModelAccess.instance().runReadAction(new Computable<EditorCell>() {
+      public EditorCell compute() {
+        if (myErrorTarget.getTarget() == ErrorTargetEnum.REFERENCE) {
+          EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
+            public boolean met(EditorCell cell) {
+              LinkDeclaration linkDeclaration = cell.getLinkDeclaration();
+              return linkDeclaration != null &&
+                linkDeclaration.getMetaClass() == LinkMetaclass.reference &&
+                myErrorTarget.getRole().equals(linkDeclaration.getRole());
+            }
+          }, true), true);
+          if (child != null) {
+            return child;
+          } else {
+            return rawCell;
           }
-          return false;
         }
-      }, true), true);
-      if (child != null) {
-        return child;
-      } else {
-        return rawCell;
+        if (myErrorTarget.getTarget() == ErrorTargetEnum.PROPERTY) {
+          EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
+            public boolean met(EditorCell cell) {
+              if (!(cell instanceof EditorCell_Property)) return false;
+              EditorCell_Property propertyCell = (EditorCell_Property) cell;
+              if (myErrorTarget.getRole().equals(((PropertyAccessor)propertyCell.getModelAccessor()).getPropertyName())) {
+                return true;
+              }
+              return false;
+            }
+          }, true), true);
+          if (child != null) {
+            return child;
+          } else {
+            return rawCell;
+          }
+        }
+        return null;
       }
-    }
-    return null;
+    });
+    return result;
   }
 
   public boolean isBackGround() {

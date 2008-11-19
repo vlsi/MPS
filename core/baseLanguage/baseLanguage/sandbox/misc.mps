@@ -140,12 +140,28 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227107132964">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227107132965">
-            <property name="name" value="" />
+            <property name="name" value="s" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227107132966">
               <link role="classifier" targetNodeId="1226504970585" resolveInfo="Test" />
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227110134402">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227110134403">
+            <link role="variableDeclaration" targetNodeId="1227107132965" resolveInfo="s" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227110144712">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1227110145115">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1227110145213">
+              <property name="value" value="5" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227110144713">
+              <link role="variableDeclaration" targetNodeId="1227107132965" resolveInfo="s" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1227110146598" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226504970586" />

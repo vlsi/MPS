@@ -3559,5 +3559,31 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1227107391841">
+    <link role="conceptDeclaration" targetNodeId="1.1227107274859" resolveInfo="PropertyNameTarget" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227107412311">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227107414246">
+        <property name="text" value="property name" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1227107421518">
+        <link role="relationDeclaration" targetNodeId="1.1227107356659" />
+        <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1227107501541">
+    <link role="conceptDeclaration" targetNodeId="1.1227107461373" resolveInfo="ReferenceRoleTarget" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227107503255">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227107508829">
+        <property name="text" value="reference role" />
+        <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1227107516311">
+        <link role="relationDeclaration" targetNodeId="1.1227107481107" />
+      </node>
+    </node>
+  </node>
 </model>
 

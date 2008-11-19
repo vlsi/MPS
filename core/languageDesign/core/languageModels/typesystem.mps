@@ -68,6 +68,16 @@
                     <link role="baseMethodDeclaration" targetNodeId="2v.1225207468592" resolveInfo="getMessage" />
                   </node>
                 </node>
+                <node role="messageTarget" type="jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget" id="1227108877562">
+                  <node role="referenceRole" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227108882207">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227108881924">
+                      <link role="variableDeclaration" targetNodeId="1225206378691" resolveInfo="ref" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227108885244">
+                      <link role="baseMethodDeclaration" targetNodeId="4.~SReference.getRole():java.lang.String" resolveInfo="getRole" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1225207382344">

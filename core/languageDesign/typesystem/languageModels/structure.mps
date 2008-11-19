@@ -2031,5 +2031,33 @@
       <link role="target" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227107274859">
+    <property name="name" value="PropertyNameTarget" />
+    <link role="extends" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227107356659">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="propertyName" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227107380989">
+      <property name="value" value="property name" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227107461373">
+    <property name="name" value="ReferenceRoleTarget" />
+    <link role="extends" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227107481107">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="referenceRole" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227107495731">
+      <property name="value" value="reference role" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

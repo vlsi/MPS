@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_SimpleRuleAnnotatedParameterApplicable_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -18,7 +20,8 @@ public class check_SimpleRuleAnnotatedParameterApplicable_NonTypesystemRule exte
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext) {
     if (!((SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.typesystem.structure.SimpleRule_Annotated", false, false) != null))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(parameter, "not applicable here", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223036669831", intentionProvider);
+      IErrorTarget errorTarget = new NodeErrorTarget();
+      typeCheckingContext.reportTypeError(parameter, "not applicable here", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223036669831", intentionProvider, errorTarget);
     }
   }
 

@@ -10,6 +10,9 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.typesystem.inference.ReferenceErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_DeprecatedReference_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -23,7 +26,9 @@ public class check_DeprecatedReference_NonTypesystemRule extends AbstractNonType
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.IDeprecatable") && IDeprecatable_Behavior.call_isDeprecated_1224609060727(node)) {
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportWarning(baseConcept, IDeprecatable_Behavior.call_getMessage_1225207468592(node), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1225207423729", intentionProvider);
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          errorTarget = new ReferenceErrorTarget(ref.getRole());
+          typeCheckingContext.reportWarning(baseConcept, IDeprecatable_Behavior.call_getMessage_1225207468592(node), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1225207423729", intentionProvider, errorTarget);
         }
       }
     }
