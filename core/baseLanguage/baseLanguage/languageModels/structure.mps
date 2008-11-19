@@ -1658,7 +1658,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1153422105334">
-      <property name="value" value="reminder operation" />
+      <property name="value" value="remainder operation" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1166617944509">
