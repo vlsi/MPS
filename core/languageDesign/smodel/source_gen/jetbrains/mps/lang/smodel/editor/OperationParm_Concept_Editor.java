@@ -13,9 +13,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 
 public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
@@ -78,15 +75,7 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11441020743141144102074314(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1144102074314");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
-        }
-
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_refNode_conceptArgument1207343883309(EditorCell editorCell, SNode node, EditorContext context) {

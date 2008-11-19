@@ -23,4 +23,13 @@ public class Styles_StyleSheet {
     };
   }
 
+  public static Style getOperationParameter(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+      }
+
+    };
+  }
+
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -80,10 +79,10 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11545472021851154547202185(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1154547202185");
+    Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
 
@@ -98,10 +97,10 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11545472440331154547244033(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1154547244033");
+    Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
         }
 
