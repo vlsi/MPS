@@ -707,43 +707,40 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(baseGroup);
     group.addSeparator();
-    addCellActionsToPopup(group);
+    group.add(getCellActionsGroup());
 
     JPopupMenu popupMenu = ActionUtils.createPopup(ActionPlaces.EDITOR_POPUP, group);
     popupMenu.show(EditorComponent.this, x, y);
   }
 
-  private void addCellActionsToPopup(DefaultActionGroup group) {
+  private DefaultActionGroup getCellActionsGroup() {
+    DefaultActionGroup result = new DefaultActionGroup();
     EditorCell cell = getSelectedCell();
 
     final EditorContext editorContext = createEditorContextForActions();
-    List<EditorCellKeyMapAction> actions = new ArrayList<EditorCellKeyMapAction>();
-    for (EditorCellKeyMapAction action : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
+    for (final EditorCellKeyMapAction action : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
       try {
         if (action.isShownInPopupMenu() && action.canExecute(null, editorContext)) {
-          actions.add(action);
+          BaseAction mpsAction = new BaseAction("" + action.getDescriptionText()) {
+            private EditorCellKeyMapAction myAction = action;
+
+            @NotNull
+            public String getKeyStroke() {
+              return action.getKeyStroke();
+            }
+
+            protected void doExecute(AnActionEvent e) {
+              myAction.execute(null, editorContext);
+            }
+          };
+          result.add(mpsAction);
         }
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
-    if (!actions.isEmpty()) group.addSeparator();
 
-    for (final EditorCellKeyMapAction action : actions) {
-      BaseAction mpsAction = new BaseAction("" + action.getDescriptionText()) {
-        private EditorCellKeyMapAction myAction = action;
-
-        @NotNull
-        public String getKeyStroke() {
-          return action.getKeyStroke();
-        }
-
-        protected void doExecute(AnActionEvent e) {
-          myAction.execute(null, editorContext);
-        }
-      };
-      group.add(mpsAction);
-    }
+    return result;
   }
 
   private EditorContext createEditorContextForActions() {
