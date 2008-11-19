@@ -14,8 +14,8 @@ import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
 import jetbrains.mps.workbench.actions.model.DeleteModelsAction;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsAction;
 import jetbrains.mps.workbench.actions.model.ShowReferencesToMissingStuffAction;
-import jetbrains.mps.workbench.actions.model.GenerateGroup_autoplan;
-import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.workbench.actions.model.GenerateModelFilesAction;
+import jetbrains.mps.workbench.actions.model.GenerateModelTextAction;
 import jetbrains.mps.workbench.actions.model.ShowMappingsPartitioningAction;
 import jetbrains.mps.workbench.actions.model.ModelPropertiesAction;
 
@@ -81,19 +81,19 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
         this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.CheckModel_Action"), module.getModuleFqName(), null));
       }
       this.addSeparator();
-      if (BaseGroup.class.isAssignableFrom(GenerateGroup_autoplan.class)) {
-        this.add(new GenerateGroup_autoplan(IGenerationType.FILES));
+      if (BaseGroup.class.isAssignableFrom(GenerateModelFilesAction.class)) {
+        this.add(new GenerateModelFilesAction());
       } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateGroup_autoplan.class, module.getModuleFqName(), null, IGenerationType.FILES));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateModelFilesAction.class, module.getModuleFqName(), null));
       }
-      if (BaseGroup.class.isAssignableFrom(GenerateGroup_autoplan.class)) {
-        this.add(new GenerateGroup_autoplan(IGenerationType.TEXT));
+      if (BaseGroup.class.isAssignableFrom(GenerateModelTextAction.class)) {
+        this.add(new GenerateModelTextAction());
       } else
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateGroup_autoplan.class, module.getModuleFqName(), null, IGenerationType.TEXT));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateModelTextAction.class, module.getModuleFqName(), null));
       }
       if (BaseGroup.class.isAssignableFrom(ShowMappingsPartitioningAction.class)) {
         this.add(new ShowMappingsPartitioningAction());
