@@ -4,7 +4,9 @@ package jetbrains.mps.lang.test.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
+
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.MPSProject;
@@ -12,8 +14,10 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+
 import java.util.Set;
 import java.util.HashSet;
+
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -88,7 +92,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
     try {
       final Set<SNode> tests = new HashSet<SNode>();
       tests.addAll(ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(RunTestInMPS_Action.this.node)).toListSequence());
-      for(SNode test : Sequence.fromIterable(tests)) {
+      for (SNode test : Sequence.fromIterable(tests)) {
         RunTestInMPS_Action.this.runTest(test);
       }
     } catch (Throwable t) {
@@ -102,7 +106,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
       final String testName = ITestMethod_Behavior.call_getTestName_1216136419751(test);
       System.out.println("Test " + className + "." + testName);
       final Class c = RunTestInMPS_Action.this.model.getModelDescriptor().getModule().getClass(ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(test)));
-      final BaseTransformationTest testClass = (BaseTransformationTest)c.newInstance();
+      final BaseTransformationTest testClass = (BaseTransformationTest) c.newInstance();
       testClass.setModelDescriptor(RunTestInMPS_Action.this.model.getModelDescriptor(), RunTestInMPS_Action.this.project);
       Thread thread = new Thread(new Runnable() {
 
@@ -119,6 +123,16 @@ public class RunTestInMPS_Action extends GeneratedAction {
     } catch (Throwable e) {
       e.printStackTrace();
     }
+  }
+
+
+  @NotNull()
+  public static String getActionId(Object... args) {
+    StringBuilder res = new StringBuilder(500);
+    res.append(RunTestInMPS_Action.class.getName());
+    res.append("#");
+    int i = 0;
+    return res.toString();
   }
 
 }

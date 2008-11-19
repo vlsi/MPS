@@ -4,7 +4,9 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
+
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -69,13 +71,23 @@ public class UncommentStatements_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       SNode commentedStatementsBlock = SNodeOperations.getAncestor(UncommentStatements_Action.this.node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false);
-      for(SNode statement : Sequence.fromIterable(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true))) {
+      for (SNode statement : Sequence.fromIterable(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true))) {
         SNodeOperations.insertPrevSiblingChild(commentedStatementsBlock, statement);
       }
       SNodeOperations.deleteNode(commentedStatementsBlock);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "UncommentStatements", t);
     }
+  }
+
+
+  @NotNull()
+  public static String getActionId(Object... args) {
+    StringBuilder res = new StringBuilder(500);
+    res.append(UncommentStatements_Action.class.getName());
+    res.append("#");
+    int i = 0;
+    return res.toString();
   }
 
 }

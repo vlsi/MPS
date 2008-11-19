@@ -4,7 +4,9 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.nodes.CopyNodeAction;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.actions.nodes.CopyNodeReferenceAction;
 import jetbrains.mps.workbench.actions.nodes.PasteNodeAction;
 import jetbrains.mps.workbench.actions.nodes.CutNodeAction;
@@ -13,7 +15,6 @@ import jetbrains.mps.workbench.actions.imports.AddModelImportByRootNodeAction;
 import jetbrains.mps.workbench.actions.imports.AddLanguageImportAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseGroup;
 
 public class Edit_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Edit_ActionGroup.class);
@@ -26,14 +27,42 @@ public class Edit_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.addSeparator();
-      this.add(new CopyNodeAction());
-      this.add(new CopyNodeReferenceAction());
-      this.add(new PasteNodeAction());
-      this.add(new CutNodeAction());
+      if (BaseGroup.class.isAssignableFrom(CopyNodeAction.class)) {
+        this.add(new CopyNodeAction());
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(CopyNodeAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(CopyNodeReferenceAction.class)) {
+        this.add(new CopyNodeReferenceAction());
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(CopyNodeReferenceAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(PasteNodeAction.class)) {
+        this.add(new PasteNodeAction());
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(PasteNodeAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(CutNodeAction.class)) {
+        this.add(new CutNodeAction());
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(CutNodeAction.class, null));
+      }
       this.addSeparator();
-      this.add(new AddModelImportAction());
-      this.add(new AddModelImportByRootNodeAction());
-      this.add(new AddLanguageImportAction());
+      if (BaseGroup.class.isAssignableFrom(AddModelImportAction.class)) {
+        this.add(new AddModelImportAction());
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(AddModelImportAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(AddModelImportByRootNodeAction.class)) {
+        this.add(new AddModelImportByRootNodeAction());
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(AddModelImportByRootNodeAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(AddLanguageImportAction.class)) {
+        this.add(new AddLanguageImportAction());
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(AddLanguageImportAction.class, null));
+      }
       this.addSeparator();
       this.addAnchor(Edit_ActionGroup.LABEL_ID_custom);
     } catch (Throwable t) {

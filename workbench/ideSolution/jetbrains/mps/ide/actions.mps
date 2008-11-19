@@ -323,7 +323,7 @@
         <property name="package" value="Menu.ProjectPane.Model"/>
         <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148419636">
             <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator"
-                  id="1217518717570">
+                  id="1227050120866">
                 <link role="constructorDeclaration" targetNodeId="3.~CreateRootNodeGroup.&lt;init&gt;()"
                       resolveInfo="CreateRootNodeGroup"/>
             </node>
@@ -453,13 +453,21 @@
         <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148417244">
             <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator"
                   id="1217518717801">
-                <link role="constructorDeclaration" targetNodeId="5.~NewSolutionAction.&lt;init&gt;()"
+                <link role="constructorDeclaration" targetNodeId="5.~NewSolutionAction.&lt;init&gt;(java.lang.String)"
                       resolveInfo="NewSolutionAction"/>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
+                      id="1227050826254">
+                    <property name="value" value=""/>
+                </node>
             </node>
             <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator"
                   id="1217518717603">
-                <link role="constructorDeclaration" targetNodeId="5.~NewLanguageAction.&lt;init&gt;()"
+                <link role="constructorDeclaration" targetNodeId="5.~NewLanguageAction.&lt;init&gt;(java.lang.String)"
                       resolveInfo="NewLanguageAction"/>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
+                      id="1227050848130">
+                    <property name="value" value=""/>
+                </node>
             </node>
             <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1215905703388">
                 <link role="action" targetNodeId="1215905183111" resolveInfo="NewDevKit"/>

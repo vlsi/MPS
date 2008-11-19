@@ -143,6 +143,11 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
     return true;
   }
 
+  //used via reflection
+  public static String getActionId(Object... params) {
+    return params[0].toString();
+  }
+
   private static class MyContext implements IOperationContext {
     private final IModule myModule;
     private IOperationContext myOperationContext;

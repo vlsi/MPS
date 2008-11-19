@@ -13,11 +13,13 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.util.Arrays;
 import java.util.List;
@@ -31,13 +33,13 @@ public class FindUsagesDialog extends BaseDialog {
   private boolean myIsCancelled = true;
   private JButton myOkButton;
 
-  public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final ActionEventData data) {
-    super(data.getOperationContext().getMainFrame(), "Find Usages");
+  public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final MPSProject project, Frame mainFrame) {
+    super(mainFrame, "Find Usages");
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myScopeEditor = new ScopeEditor(defaultOptions.getOption(ScopeOptions.class));
-        myFindersEditor = new MyFindersEditor(defaultOptions, node, data) {
+        myFindersEditor = new MyFindersEditor(defaultOptions, node, project) {
           @Override
           protected void findersListChangedByUser() {
             super.findersListChangedByUser();
@@ -108,11 +110,11 @@ public class FindUsagesDialog extends BaseDialog {
   }
 
   private class MyFindersEditor extends FindersEditor {
-    private final ActionEventData myContext;
+    private MPSProject myProject;
 
-    public MyFindersEditor(FindUsagesOptions defaultOptions, SNode node, ActionEventData data) {
+    public MyFindersEditor(FindUsagesOptions defaultOptions, SNode node, MPSProject project) {
       super(defaultOptions.getOption(FindersOptions.class), node);
-      myContext = data;
+      myProject = project;
     }
 
     public void goToFinder(final GeneratedFinder finder) {
@@ -128,8 +130,7 @@ public class FindUsagesDialog extends BaseDialog {
 
       FindUsagesDialog.this.onCancel();
 
-      MPSProject project = myContext.getMPSProject();
-      project.getComponentSafe(MPSEditorOpener.class).openNode(finderNode[0]);
+      myProject.getComponentSafe(MPSEditorOpener.class).openNode(finderNode[0]);
     }
   }
 }

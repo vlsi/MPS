@@ -2,8 +2,11 @@ package jetbrains.mps.workbench.action;
 
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.Shortcut;
+import com.intellij.openapi.keymap.KeymapManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import jetbrains.mps.baseLanguage.plugin.CommentStatements_Action;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
@@ -21,12 +24,18 @@ public class ActionFactory {
   private ActionFactory() {
   }
 
-  public BaseAction getRegisteredAction(GeneratedAction action) {
-    return action;
+  public void registerAction(AnAction action, String id) {
+    Shortcut[] shortcuts = action.getShortcutSet().getShortcuts();
+    if (shortcuts.length != 0) {
+      for (Shortcut s : shortcuts) {
+        KeymapManager.getInstance().getActiveKeymap().addShortcut(id, s);
+      }
+    }
+    ActionManager.getInstance().registerAction(id, action);
   }
 
   @Nullable
-  public BaseAction getRegisteredAction(Class actionClass, String languageNamespace, Object... params) {
+  public AnAction getRegisteredAction(Class actionClass, String languageNamespace, Object... params) {
     Method idMethod = null;
     for (Method m : actionClass.getMethods()) {
       if (m.getName().equals(GeneratedAction.getIdMethodName())) {
@@ -54,9 +63,8 @@ public class ActionFactory {
     AnAction action = ActionManager.getInstance().getAction(id);
     if (action == null) {
       try {
-        BaseAction newAction = (BaseAction) actionClass.getConstructors()[0].newInstance(new Object[]{params});
-        ActionManager.getInstance().registerAction(id, newAction);
-        //todo register shortcuts
+        AnAction newAction = (AnAction) actionClass.getConstructors()[0].newInstance(params);
+        registerAction(newAction, id);
         return newAction;
       } catch (InstantiationException e) {
         LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
@@ -69,7 +77,11 @@ public class ActionFactory {
         return null;
       }
     } else {
-      return (BaseAction) action;
+      return (AnAction) action;
     }
+  }
+
+  public AnAction getRegisteredAction(AnAction action) {
+    return action;
   }
 }

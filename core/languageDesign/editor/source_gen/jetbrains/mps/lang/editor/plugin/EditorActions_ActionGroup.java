@@ -4,6 +4,9 @@ package jetbrains.mps.lang.editor.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -21,7 +24,10 @@ public class EditorActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(ActionFactory.getInstance().getRegisteredAction(new CopyThisDown_Action()));
+      {
+        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.editor"));
+        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.lang.editor.plugin.CopyThisDown_Action"), language.getModuleFqName()));
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

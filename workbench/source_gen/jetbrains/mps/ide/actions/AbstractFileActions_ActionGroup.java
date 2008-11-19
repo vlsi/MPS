@@ -4,11 +4,12 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.FileCutAction;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.FileCopyAction;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.FilePasteAction;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.FileDeleteActionFixed;
-import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -23,10 +24,26 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new FileCutAction());
-      this.add(new FileCopyAction());
-      this.add(new FilePasteAction());
-      this.add(new FileDeleteActionFixed());
+      if (BaseGroup.class.isAssignableFrom(FileCutAction.class)) {
+        this.add(new FileCutAction());
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(FileCutAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(FileCopyAction.class)) {
+        this.add(new FileCopyAction());
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(FileCopyAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(FilePasteAction.class)) {
+        this.add(new FilePasteAction());
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(FilePasteAction.class, null));
+      }
+      if (BaseGroup.class.isAssignableFrom(FileDeleteActionFixed.class)) {
+        this.add(new FileDeleteActionFixed());
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(FileDeleteActionFixed.class, null));
+      }
       this.addSeparator();
       this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);
     } catch (Throwable t) {

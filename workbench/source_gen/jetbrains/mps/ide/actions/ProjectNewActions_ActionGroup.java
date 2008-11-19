@@ -4,10 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.actions.project.NewSolutionAction;
-import jetbrains.mps.workbench.actions.project.NewLanguageAction;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.actions.project.NewSolutionAction;
+import jetbrains.mps.workbench.action.ActionFactory;
+import jetbrains.mps.workbench.actions.project.NewLanguageAction;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.Anchor;
@@ -21,9 +24,20 @@ public class ProjectNewActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      this.add(new NewSolutionAction());
-      this.add(new NewLanguageAction());
-      this.add(ActionFactory.getInstance().getRegisteredAction(new NewDevKit_Action()));
+      if (BaseGroup.class.isAssignableFrom(NewSolutionAction.class)) {
+        this.add(new NewSolutionAction(""));
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(NewSolutionAction.class, null, ""));
+      }
+      if (BaseGroup.class.isAssignableFrom(NewLanguageAction.class)) {
+        this.add(new NewLanguageAction(""));
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(NewLanguageAction.class, null, ""));
+      }
+      {
+        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.NewDevKit_Action"), language.getModuleFqName()));
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

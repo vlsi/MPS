@@ -4,9 +4,12 @@ package jetbrains.mps.lang.typesystem.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.actions.nodes.ShowNodeTypeAction;
 import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 
@@ -20,11 +23,27 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
     this.setMnemonic("T".charAt(0));
     this.setPopup(true);
     try {
-      this.add(new ShowNodeTypeAction());
-      this.add(ActionFactory.getInstance().getRegisteredAction(new GoToTypeErrorRule_Action()));
-      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowRulesWhichAffectNodeType_Action()));
-      this.add(ActionFactory.getInstance().getRegisteredAction(new GoToNodeThisDependsOn_Action()));
-      this.add(ActionFactory.getInstance().getRegisteredAction(new ShowSupertypes_Action()));
+      if (BaseGroup.class.isAssignableFrom(ShowNodeTypeAction.class)) {
+        this.add(new ShowNodeTypeAction());
+      } else {
+        this.add(ActionFactory.getInstance().getRegisteredAction(ShowNodeTypeAction.class, null));
+      }
+      {
+        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.typesystem"));
+        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action"), language.getModuleFqName()));
+      }
+      {
+        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.typesystem"));
+        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action"), language.getModuleFqName()));
+      }
+      {
+        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.typesystem"));
+        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.lang.typesystem.plugin.GoToNodeThisDependsOn_Action"), language.getModuleFqName()));
+      }
+      {
+        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.typesystem"));
+        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.lang.typesystem.plugin.ShowSupertypes_Action"), language.getModuleFqName()));
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

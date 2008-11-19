@@ -138,6 +138,4 @@ public abstract class BaseAction extends AnAction {
   public static String getIdMethodName() {
     return "getActionId";
   }
-
-
 }

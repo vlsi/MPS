@@ -4,13 +4,18 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
+
 import javax.swing.Icon;
 import java.util.List;
+
 import jetbrains.mps.smodel.SNode;
+
 import java.awt.Frame;
+
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+
 import java.util.ArrayList;
 
 public class ExtractMethod_Action extends GeneratedAction {
@@ -59,8 +64,7 @@ public class ExtractMethod_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.nodes = null;
-      } else
-      {
+      } else {
         this.nodes = new ArrayList<SNode>(nodes);
       }
     }
@@ -82,6 +86,16 @@ public class ExtractMethod_Action extends GeneratedAction {
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
     }
+  }
+
+
+  @NotNull()
+  public static String getActionId(Object... args) {
+    StringBuilder res = new StringBuilder(500);
+    res.append(ExtractMethod_Action.class.getName());
+    res.append("#");
+    int i = 0;
+    return res.toString();
   }
 
 }
