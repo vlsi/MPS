@@ -25,13 +25,13 @@ public class LanguageNewActions_ActionGroup extends GeneratedActionGroup {
     try {
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.NewGenerator_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.NewGenerator_Action"), language.getModuleFqName(), null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(NewAccessoryModelAction.class)) {
         this.add(new NewAccessoryModelAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(NewAccessoryModelAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(NewAccessoryModelAction.class, null, null));
       }
       this.addSeparator();
     } catch (Throwable t) {

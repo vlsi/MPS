@@ -27,16 +27,16 @@ public class ProjectNewActions_ActionGroup extends GeneratedActionGroup {
       if (BaseGroup.class.isAssignableFrom(NewSolutionAction.class)) {
         this.add(new NewSolutionAction(""));
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(NewSolutionAction.class, null, ""));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(NewSolutionAction.class, null, null, ""));
       }
       if (BaseGroup.class.isAssignableFrom(NewLanguageAction.class)) {
         this.add(new NewLanguageAction(""));
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(NewLanguageAction.class, null, ""));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(NewLanguageAction.class, null, null, ""));
       }
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.NewDevKit_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.NewDevKit_Action"), language.getModuleFqName(), null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

@@ -39,120 +39,120 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       if (BaseGroup.class.isAssignableFrom(GoByReferenceGroup.class)) {
         this.add(new GoByReferenceGroup());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoByReferenceGroup.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoByReferenceGroup.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(GoByCurrentReferenceAction.class)) {
         this.add(new GoByCurrentReferenceAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoByCurrentReferenceAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoByCurrentReferenceAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(HighlightUsagesAction.class)) {
         this.add(new HighlightUsagesAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(HighlightUsagesAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(HighlightUsagesAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(HighlightInstancesAction.class)) {
         this.add(new HighlightInstancesAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(HighlightInstancesAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(HighlightInstancesAction.class, null, null));
       }
       this.addSeparator();
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowInProject_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowInProject_Action"), language.getModuleFqName(), null));
       }
       if (BaseGroup.class.isAssignableFrom(SelectInActionAdapter.class)) {
         this.add(new SelectInActionAdapter());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(SelectInActionAdapter.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(SelectInActionAdapter.class, null, null));
       }
       this.addSeparator();
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action"), language.getModuleFqName(), null));
       }
       if (BaseGroup.class.isAssignableFrom(GoToEditorDeclarationAction.class)) {
         this.add(new GoToEditorDeclarationAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoToEditorDeclarationAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToEditorDeclarationAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(GoToRulesAction.class)) {
         this.add(new GoToRulesAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoToRulesAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToRulesAction.class, null, null));
       }
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowNodeInExplorer_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowNodeInExplorer_Action"), language.getModuleFqName(), null));
       }
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowNodeInInspector_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowNodeInInspector_Action"), language.getModuleFqName(), null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(GenerateFilesFromCurrentModelAction.class)) {
         this.add(new GenerateFilesFromCurrentModelAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GenerateFilesFromCurrentModelAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateFilesFromCurrentModelAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(GenerateTextFromCurrentModelAction.class)) {
         this.add(new GenerateTextFromCurrentModelAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GenerateTextFromCurrentModelAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTextFromCurrentModelAction.class, null, null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(ShowGenerationTraceAction.class)) {
         this.add(new ShowGenerationTraceAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(ShowGenerationTraceAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(ShowGenerationTraceAction.class, null, null));
       }
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowGenerationTraceback_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowGenerationTraceback_Action"), language.getModuleFqName(), null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(FindSpecificNodeUsagesAction.class)) {
         this.add(new FindSpecificNodeUsagesAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(FindSpecificNodeUsagesAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(FindSpecificNodeUsagesAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(FastFindUsagesNodeAction.class)) {
         this.add(new FastFindUsagesNodeAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(FastFindUsagesNodeAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(FastFindUsagesNodeAction.class, null, null));
       }
       this.addSeparator();
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action"), language.getModuleFqName(), null));
       }
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action"), language.getModuleFqName(), null));
       }
       this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_structure);
       this.addSeparator();
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.CloneRoot_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.CloneRoot_Action"), language.getModuleFqName(), null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(ShowCellKeymapsAction.class)) {
         this.add(new ShowCellKeymapsAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(ShowCellKeymapsAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(ShowCellKeymapsAction.class, null, null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(ShowParametersAction.class)) {
         this.add(new ShowParametersAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(ShowParametersAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(ShowParametersAction.class, null, null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(ModelPropertiesActionWOShortcuts.class)) {
         this.add(new ModelPropertiesActionWOShortcuts());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(ModelPropertiesActionWOShortcuts.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(ModelPropertiesActionWOShortcuts.class, null, null));
       }
       this.addSeparator();
       this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_vcs);

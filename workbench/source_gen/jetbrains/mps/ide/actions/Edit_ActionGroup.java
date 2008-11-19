@@ -30,38 +30,38 @@ public class Edit_ActionGroup extends GeneratedActionGroup {
       if (BaseGroup.class.isAssignableFrom(CopyNodeAction.class)) {
         this.add(new CopyNodeAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(CopyNodeAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(CopyNodeAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(CopyNodeReferenceAction.class)) {
         this.add(new CopyNodeReferenceAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(CopyNodeReferenceAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(CopyNodeReferenceAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(PasteNodeAction.class)) {
         this.add(new PasteNodeAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(PasteNodeAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(PasteNodeAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(CutNodeAction.class)) {
         this.add(new CutNodeAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(CutNodeAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(CutNodeAction.class, null, null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(AddModelImportAction.class)) {
         this.add(new AddModelImportAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(AddModelImportAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(AddModelImportAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(AddModelImportByRootNodeAction.class)) {
         this.add(new AddModelImportByRootNodeAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(AddModelImportByRootNodeAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(AddModelImportByRootNodeAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(AddLanguageImportAction.class)) {
         this.add(new AddLanguageImportAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(AddLanguageImportAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(AddLanguageImportAction.class, null, null));
       }
       this.addSeparator();
       this.addAnchor(Edit_ActionGroup.LABEL_ID_custom);

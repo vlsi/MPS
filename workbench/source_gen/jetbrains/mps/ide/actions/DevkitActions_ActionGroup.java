@@ -23,31 +23,31 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
     try {
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.SetModuleFolder_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.SetModuleFolder_Action"), language.getModuleFqName(), null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(AddModuleToProjectAction.class)) {
         this.add(new AddModuleToProjectAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(AddModuleToProjectAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(AddModuleToProjectAction.class, null, null));
       }
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action"), language.getModuleFqName(), null));
       }
       if (BaseGroup.class.isAssignableFrom(DeleteModuleAction.class)) {
         this.add(new DeleteModuleAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(DeleteModuleAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(DeleteModuleAction.class, null, null));
       }
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.AnalyzeClasspath_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.AnalyzeClasspath_Action"), language.getModuleFqName(), null));
       }
       this.addSeparator();
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.DevkitProperties_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.DevkitProperties_Action"), language.getModuleFqName(), null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

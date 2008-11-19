@@ -25,24 +25,24 @@ public class Generate_ActionGroup extends GeneratedActionGroup {
       if (BaseGroup.class.isAssignableFrom(SaveTransientModelsAction.class)) {
         this.add(new SaveTransientModelsAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(SaveTransientModelsAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(SaveTransientModelsAction.class, null, null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(GenerateAllModelsInModuleAction.class)) {
         this.add(new GenerateAllModelsInModuleAction(false));
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GenerateAllModelsInModuleAction.class, null, false));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateAllModelsInModuleAction.class, null, null, false));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(GenerateFilesFromCurrentModelAction.class)) {
         this.add(new GenerateFilesFromCurrentModelAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GenerateFilesFromCurrentModelAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateFilesFromCurrentModelAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(GenerateTextFromCurrentModelAction.class)) {
         this.add(new GenerateTextFromCurrentModelAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GenerateTextFromCurrentModelAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTextFromCurrentModelAction.class, null, null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

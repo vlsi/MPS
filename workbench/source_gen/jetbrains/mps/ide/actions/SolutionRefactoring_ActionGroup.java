@@ -23,7 +23,7 @@ public class SolutionRefactoring_ActionGroup extends GeneratedActionGroup {
       if (BaseGroup.class.isAssignableFrom(RenameSolutionAction.class)) {
         this.add(new RenameSolutionAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(RenameSolutionAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(RenameSolutionAction.class, null, null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

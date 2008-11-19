@@ -35,64 +35,64 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
       if (BaseGroup.class.isAssignableFrom(GoToActionAction.class)) {
         this.add(new GoToActionAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoToActionAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToActionAction.class, null, null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(GoToRootNodeAction.class)) {
         this.add(new GoToRootNodeAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoToRootNodeAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToRootNodeAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(GoToNamedNodeAction.class)) {
         this.add(new GoToNamedNodeAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoToNamedNodeAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToNamedNodeAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(GoToConceptNodeAction.class)) {
         this.add(new GoToConceptNodeAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoToConceptNodeAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToConceptNodeAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(GoToNodeByIdAction.class)) {
         this.add(new GoToNodeByIdAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoToNodeByIdAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToNodeByIdAction.class, null, null));
       }
       this.addSeparator();
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action"), language.getModuleFqName(), null));
       }
       if (BaseGroup.class.isAssignableFrom(GoToEditorDeclarationAction.class)) {
         this.add(new GoToEditorDeclarationAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoToEditorDeclarationAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToEditorDeclarationAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(GoToRulesAction.class)) {
         this.add(new GoToRulesAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoToRulesAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToRulesAction.class, null, null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(GoToModelAction.class)) {
         this.add(new GoToModelAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoToModelAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToModelAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(GoToLanguageAction.class)) {
         this.add(new GoToLanguageAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoToLanguageAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToLanguageAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(GoToSolutionAction.class)) {
         this.add(new GoToSolutionAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoToSolutionAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToSolutionAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(GoToDevkitAction.class)) {
         this.add(new GoToDevkitAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GoToDevkitAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToDevkitAction.class, null, null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

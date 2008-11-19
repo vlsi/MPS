@@ -26,23 +26,23 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
       if (BaseGroup.class.isAssignableFrom(ShowNodeTypeAction.class)) {
         this.add(new ShowNodeTypeAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(ShowNodeTypeAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(ShowNodeTypeAction.class, null, null));
       }
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.typesystem"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action"), language.getModuleFqName(), null));
       }
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.typesystem"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action"), language.getModuleFqName(), null));
       }
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.typesystem"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.lang.typesystem.plugin.GoToNodeThisDependsOn_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.lang.typesystem.plugin.GoToNodeThisDependsOn_Action"), language.getModuleFqName(), null));
       }
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.typesystem"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.lang.typesystem.plugin.ShowSupertypes_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.lang.typesystem.plugin.ShowSupertypes_Action"), language.getModuleFqName(), null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

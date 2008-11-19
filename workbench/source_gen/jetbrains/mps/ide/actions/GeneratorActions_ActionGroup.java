@@ -27,34 +27,34 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
       if (BaseGroup.class.isAssignableFrom(GenerateTemplateQueriesAction.class)) {
         this.add(new GenerateTemplateQueriesAction(true));
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GenerateTemplateQueriesAction.class, null, true));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTemplateQueriesAction.class, null, null, true));
       }
       if (BaseGroup.class.isAssignableFrom(GenerateTemplateQueriesAction.class)) {
         this.add(new GenerateTemplateQueriesAction(false));
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(GenerateTemplateQueriesAction.class, null, false));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTemplateQueriesAction.class, null, null, false));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(ShowModuleDependenciesAction.class)) {
         this.add(new ShowModuleDependenciesAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(ShowModuleDependenciesAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(ShowModuleDependenciesAction.class, null, null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(DeleteGeneratorAction.class)) {
         this.add(new DeleteGeneratorAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(DeleteGeneratorAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(DeleteGeneratorAction.class, null, null));
       }
       this.addSeparator();
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.CheckGenerator_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.CheckGenerator_Action"), language.getModuleFqName(), null));
       }
       this.addSeparator();
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.GeneratorProperties_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.GeneratorProperties_Action"), language.getModuleFqName(), null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

@@ -17915,7 +17915,7 @@
                                                   type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                                                   id="1227034104205">
                                                 <link role="baseMethodDeclaration"
-                                                      targetNodeId="63.~ActionFactory.getRegisteredAction(java.lang.Class,java.lang.String,java.lang.Object...):com.intellij.openapi.actionSystem.AnAction"
+                                                      targetNodeId="63.~ActionFactory.getRegisteredAction(com.intellij.openapi.actionSystem.AnAction):com.intellij.openapi.actionSystem.AnAction"
                                                       resolveInfo="getRegisteredAction"/>
                                                 <node role="actualArgument"
                                                       type="jetbrains.mps.baseLanguage.structure.DotExpression"
@@ -18387,8 +18387,8 @@
                                                       type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"
                                                       id="1227050411523">
                                                     <link role="baseMethodDeclaration"
-                                                          targetNodeId="63.~ActionFactory.getRegisteredAction(java.lang.Class,java.lang.String,java.lang.Object...):com.intellij.openapi.actionSystem.AnAction"
-                                                          resolveInfo="getRegisteredAction"/>
+                                                          targetNodeId="63.~ActionFactory.acquireRegisteredAction(java.lang.Class,java.lang.String,jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin,java.lang.Object...):com.intellij.openapi.actionSystem.AnAction"
+                                                          resolveInfo="acquireRegisteredAction"/>
                                                     <node role="actualArgument"
                                                           type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"
                                                           id="1227050411524">
@@ -18467,6 +18467,9 @@
                                                                   resolveInfo="getModuleFqName"/>
                                                         </node>
                                                     </node>
+                                                    <node role="actualArgument"
+                                                          type="jetbrains.mps.baseLanguage.structure.NullLiteral"
+                                                          id="1227115866134"/>
                                                     <node role="actualArgument"
                                                           type="jetbrains.mps.baseLanguage.structure.IntegerConstant"
                                                           id="1227050411538">

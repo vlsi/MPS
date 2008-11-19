@@ -29,29 +29,29 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
       this.addAnchor(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal);
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowModuleRepository_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowModuleRepository_Action"), language.getModuleFqName(), null));
       }
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowModelRepository_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowModelRepository_Action"), language.getModuleFqName(), null));
       }
       this.addAnchor(Tools_ActionGroup.LABEL_ID_customTools);
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(ReloadAllAction.class)) {
         this.add(new ReloadAllAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(ReloadAllAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(ReloadAllAction.class, null, null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(InstallIDEAPluginAction.class)) {
         this.add(new InstallIDEAPluginAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(InstallIDEAPluginAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(InstallIDEAPluginAction.class, null, null));
       }
       if (BaseGroup.class.isAssignableFrom(RenameAspectsAction.class)) {
         this.add(new RenameAspectsAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(RenameAspectsAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(RenameAspectsAction.class, null, null));
       }
       this.addSeparator();
     } catch (Throwable t) {

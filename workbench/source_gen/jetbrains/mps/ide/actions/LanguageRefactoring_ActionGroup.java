@@ -23,7 +23,7 @@ public class LanguageRefactoring_ActionGroup extends GeneratedActionGroup {
       if (BaseGroup.class.isAssignableFrom(RenameLanguageAction.class)) {
         this.add(new RenameLanguageAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(RenameLanguageAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(RenameLanguageAction.class, null, null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

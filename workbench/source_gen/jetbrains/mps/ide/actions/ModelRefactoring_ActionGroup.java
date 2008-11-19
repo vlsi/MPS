@@ -23,7 +23,7 @@ public class ModelRefactoring_ActionGroup extends GeneratedActionGroup {
       if (BaseGroup.class.isAssignableFrom(RenameModelAction.class)) {
         this.add(new RenameModelAction());
       } else {
-        this.add(ActionFactory.getInstance().getRegisteredAction(RenameModelAction.class, null));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(RenameModelAction.class, null, null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

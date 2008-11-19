@@ -26,7 +26,7 @@ public class EditorActions_ActionGroup extends GeneratedActionGroup {
     try {
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.editor"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.lang.editor.plugin.CopyThisDown_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.lang.editor.plugin.CopyThisDown_Action"), language.getModuleFqName(), null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

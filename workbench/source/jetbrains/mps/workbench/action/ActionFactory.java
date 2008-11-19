@@ -7,6 +7,7 @@ import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.baseLanguage.plugin.CommentStatements_Action;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,7 +39,7 @@ public class ActionFactory {
   }
 
   @Nullable
-  public AnAction getRegisteredAction(Class actionClass, String languageNamespace, Object... params) {
+  public AnAction acquireRegisteredAction(Class actionClass, String languageNamespace, BaseApplicationPlugin plugin, Object... params) {
     Method idMethod = null;
     for (Method m : actionClass.getMethods()) {
       if (m.getName().equals(GeneratedAction.getIdMethodName())) {

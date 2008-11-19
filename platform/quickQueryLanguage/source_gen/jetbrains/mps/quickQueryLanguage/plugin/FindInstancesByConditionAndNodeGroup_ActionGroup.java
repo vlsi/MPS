@@ -24,11 +24,11 @@ public class FindInstancesByConditionAndNodeGroup_ActionGroup extends GeneratedA
     try {
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.quickQueryLanguage"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNode_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNode_Action"), language.getModuleFqName(), null));
       }
       {
         IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.quickQueryLanguage"));
-        this.add(ActionFactory.getInstance().getRegisteredAction(language.getClass("jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryActionWithNode_Action"), language.getModuleFqName()));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryActionWithNode_Action"), language.getModuleFqName(), null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);
