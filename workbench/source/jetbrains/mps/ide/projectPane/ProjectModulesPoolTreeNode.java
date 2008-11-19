@@ -15,7 +15,7 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
   private boolean myInitialized;
 
   public ProjectModulesPoolTreeNode(MPSProject project) {
-    super("modules pool");
+    super("Modules Pool");
     myProject = project;
 
     setIcon(Icons.PROJECT_ICON);
