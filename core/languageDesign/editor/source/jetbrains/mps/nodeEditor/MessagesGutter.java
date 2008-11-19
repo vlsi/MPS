@@ -1,6 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.nodeEditor.icons.Icons;
 
@@ -218,10 +217,6 @@ public class MessagesGutter extends JPanel {
       }
       removeLater(messagesToRemove);
       return result;
-    }
-
-    public JToolTip createToolTip() {
-      return new JMultiLineToolTip();
     }
   }
 

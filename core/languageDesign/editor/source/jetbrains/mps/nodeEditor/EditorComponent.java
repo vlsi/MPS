@@ -13,7 +13,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
-import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
@@ -660,10 +659,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void updateMessages() {
     myRootCell.updateMessages();
     getExternalComponent().repaint();
-  }
-
-  public JToolTip createToolTip() {
-    return new JMultiLineToolTip();
   }
 
   public IOperationContext getOperationContext() {
