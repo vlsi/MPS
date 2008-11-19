@@ -38,6 +38,10 @@ public class ActionFactory {
     ActionManager.getInstance().registerAction(id, action, PluginId.getId(languageNamespace != null ? languageNamespace : "java actions"));
   }
 
+  public AnAction getRegisteredAction(Class actionClass, String languageNamespace, Object... params) {
+    acquireRegisteredAction(actionClass, languageNamespace, null, params);
+  }
+
   @Nullable
   public AnAction acquireRegisteredAction(Class actionClass, String languageNamespace, BaseApplicationPlugin plugin, Object... params) {
     Method idMethod = null;
