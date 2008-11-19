@@ -33,111 +33,135 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.EditNode_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.EditNode_Action"), module.getModuleFqName(), null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(SetNodePackageAction.class)) {
         this.add(new SetNodePackageAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(SetNodePackageAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(SetNodePackageAction.class, module.getModuleFqName(), null));
       }
       this.addSeparator();
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ExpandNode_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ExpandNode_Action"), module.getModuleFqName(), null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(GoToConceptEditorDeclarationAction.class)) {
         this.add(new GoToConceptEditorDeclarationAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToConceptEditorDeclarationAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToConceptEditorDeclarationAction.class, module.getModuleFqName(), null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(CopyNodeAction.class)) {
         this.add(new CopyNodeAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(CopyNodeAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(CopyNodeAction.class, module.getModuleFqName(), null));
       }
       if (BaseGroup.class.isAssignableFrom(CopyNodeReferenceAction.class)) {
         this.add(new CopyNodeReferenceAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(CopyNodeReferenceAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(CopyNodeReferenceAction.class, module.getModuleFqName(), null));
       }
       if (BaseGroup.class.isAssignableFrom(PasteNodeAction.class)) {
         this.add(new PasteNodeAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(PasteNodeAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(PasteNodeAction.class, module.getModuleFqName(), null));
       }
       if (BaseGroup.class.isAssignableFrom(CutNodeAction.class)) {
         this.add(new CutNodeAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(CutNodeAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(CutNodeAction.class, module.getModuleFqName(), null));
       }
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.CloneRoot_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.CloneRoot_Action"), module.getModuleFqName(), null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(DeleteNodeAction.class)) {
         this.add(new DeleteNodeAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(DeleteNodeAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(DeleteNodeAction.class, module.getModuleFqName(), null));
       }
       this.addSeparator();
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action"), module.getModuleFqName(), null));
       }
       if (BaseGroup.class.isAssignableFrom(GoToEditorDeclarationAction.class)) {
         this.add(new GoToEditorDeclarationAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToEditorDeclarationAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToEditorDeclarationAction.class, module.getModuleFqName(), null));
       }
       if (BaseGroup.class.isAssignableFrom(GoToRulesAction.class)) {
         this.add(new GoToRulesAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToRulesAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToRulesAction.class, module.getModuleFqName(), null));
       }
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowNodeInExplorer_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowNodeInExplorer_Action"), module.getModuleFqName(), null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(ShowGenerationTraceAction.class)) {
         this.add(new ShowGenerationTraceAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(ShowGenerationTraceAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(ShowGenerationTraceAction.class, module.getModuleFqName(), null));
       }
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowGenerationTraceback_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowGenerationTraceback_Action"), module.getModuleFqName(), null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(FindSpecificNodeUsagesAction.class)) {
         this.add(new FindSpecificNodeUsagesAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(FindSpecificNodeUsagesAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(FindSpecificNodeUsagesAction.class, module.getModuleFqName(), null));
       }
       if (BaseGroup.class.isAssignableFrom(FastFindUsagesNodeAction.class)) {
         this.add(new FastFindUsagesNodeAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(FastFindUsagesNodeAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(FastFindUsagesNodeAction.class, module.getModuleFqName(), null));
       }
       this.addSeparator();
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action"), module.getModuleFqName(), null));
       }
       this.addAnchor(NodeActions_ActionGroup.LABEL_ID_structure);
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action"), module.getModuleFqName(), null));
       }
       this.addSeparator();
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowErrorMessage_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowErrorMessage_Action"), module.getModuleFqName(), null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

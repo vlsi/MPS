@@ -4,9 +4,7 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
@@ -59,7 +57,7 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(ReplacementQueryAction_Action.this.context), (Language) ReplacementQueryAction_Action.this.langModule);
+      ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(ReplacementQueryAction_Action.this.context), (Language)ReplacementQueryAction_Action.this.langModule);
       dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ReplacementQueryAction", t);

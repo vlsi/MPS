@@ -23,8 +23,8 @@ public class SolutionNewActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
     try {
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.NewModel_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.NewModel_Action"), module.getModuleFqName(), null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

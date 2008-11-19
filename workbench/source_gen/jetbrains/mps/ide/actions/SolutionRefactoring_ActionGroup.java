@@ -6,6 +6,9 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.refactoring.renameSolution.RenameSolutionAction;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Constraints;
@@ -22,8 +25,10 @@ public class SolutionRefactoring_ActionGroup extends GeneratedActionGroup {
     try {
       if (BaseGroup.class.isAssignableFrom(RenameSolutionAction.class)) {
         this.add(new RenameSolutionAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(RenameSolutionAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(RenameSolutionAction.class, module.getModuleFqName(), null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

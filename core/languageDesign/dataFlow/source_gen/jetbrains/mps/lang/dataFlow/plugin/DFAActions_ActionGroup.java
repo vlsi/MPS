@@ -22,20 +22,20 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.dataFlow"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.lang.dataFlow.plugin.PrintDFAResult_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.dataFlow"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.lang.dataFlow.plugin.PrintDFAResult_Action"), module.getModuleFqName(), null));
       }
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.dataFlow"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.lang.dataFlow.plugin.PrintInitializationInformation_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.dataFlow"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.lang.dataFlow.plugin.PrintInitializationInformation_Action"), module.getModuleFqName(), null));
       }
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.dataFlow"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.lang.dataFlow.plugin.PrintReachingDefinintionsInformation_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.dataFlow"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.lang.dataFlow.plugin.PrintReachingDefinintionsInformation_Action"), module.getModuleFqName(), null));
       }
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.dataFlow"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.lang.dataFlow.plugin.ShowDFA_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.lang.dataFlow"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.lang.dataFlow.plugin.ShowDFA_Action"), module.getModuleFqName(), null));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

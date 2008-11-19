@@ -4,13 +4,11 @@ package jetbrains.mps.build.packaging.plugin;
 
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelDescriptor;
-
 import java.util.List;
 import java.util.LinkedList;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.Collections;
-
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.project.IModule;
@@ -56,7 +54,7 @@ public abstract class AbstractBuildGenerator implements BuildGenerator {
       this.myModelName = modelNamePrefix;
       while (!(this.isValidModelName(this.myModelName))) {
         this.myModelName = modelNamePrefix + count;
-        count++;
+        count++ ;
       }
     }
     return this.myModelName;

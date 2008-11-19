@@ -49,7 +49,8 @@ public class QueryExecutor {
         try {
           if (SLinkOperations.getTarget(QueryExecutor.this.myModelQuery, "conceptDeclaration", false) != null) {
             QueryExecutor.this.mySearchQuery = new SearchQuery(new NodeHolder(SLinkOperations.getTarget(QueryExecutor.this.myModelQuery, "conceptDeclaration", false)), scope);
-          } else {
+          } else
+          {
             QueryExecutor.this.mySearchQuery = new SearchQuery(scope);
           }
           BaseFinder[] finders = new BaseFinder[1];

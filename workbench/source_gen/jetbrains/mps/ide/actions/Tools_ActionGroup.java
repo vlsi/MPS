@@ -28,30 +28,36 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
     try {
       this.addAnchor(Tools_ActionGroup.INTERNAL_LABEL_ID_Internal);
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowModuleRepository_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowModuleRepository_Action"), module.getModuleFqName(), null));
       }
       {
-        IModule language = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(language.getClass("jetbrains.mps.ide.actions.ShowModelRepository_Action"), language.getModuleFqName(), null));
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(module.getClass("jetbrains.mps.ide.actions.ShowModelRepository_Action"), module.getModuleFqName(), null));
       }
       this.addAnchor(Tools_ActionGroup.LABEL_ID_customTools);
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(ReloadAllAction.class)) {
         this.add(new ReloadAllAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(ReloadAllAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(ReloadAllAction.class, module.getModuleFqName(), null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(InstallIDEAPluginAction.class)) {
         this.add(new InstallIDEAPluginAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(InstallIDEAPluginAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(InstallIDEAPluginAction.class, module.getModuleFqName(), null));
       }
       if (BaseGroup.class.isAssignableFrom(RenameAspectsAction.class)) {
         this.add(new RenameAspectsAction());
-      } else {
-        this.add(ActionFactory.getInstance().acquireRegisteredAction(RenameAspectsAction.class, null, null));
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(RenameAspectsAction.class, module.getModuleFqName(), null));
       }
       this.addSeparator();
     } catch (Throwable t) {

@@ -4,9 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -76,11 +74,11 @@ public class LanguageHierarchy_Action extends GeneratedAction {
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       ActionEventData data = new ActionEventData(event);
-      Language language = (Language) data.getModule();
+      Language language = (Language)data.getModule();
       MPSLanguageVirtualFile file = MPSLanguagesVirtualFileSystem.getInstance().getFileFor(language);
       FileEditorManager editorManager = FileEditorManager.getInstance(LanguageHierarchy_Action.this.project);
       FileEditor[] res = editorManager.openFile(file, true);
-      MPSLanguageEditor languageEditor = (MPSLanguageEditor) res[0];
+      MPSLanguageEditor languageEditor = (MPSLanguageEditor)res[0];
       languageEditor.getComponent().requestFocus();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "LanguageHierarchy", t);

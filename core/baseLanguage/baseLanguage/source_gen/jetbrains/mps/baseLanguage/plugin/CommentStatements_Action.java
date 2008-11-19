@@ -4,10 +4,8 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
 import java.util.List;
-
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -15,9 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-
 import java.util.ArrayList;
-
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CommentStatements_Action extends GeneratedAction {
@@ -62,7 +58,7 @@ public class CommentStatements_Action extends GeneratedAction {
       List<SNode> nodes = event.getData(MPSDataKeys.SNODES);
       boolean error = false;
       if (nodes != null) {
-        for (SNode node : Sequence.fromIterable(nodes)) {
+        for(SNode node : Sequence.fromIterable(nodes)) {
           if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
             error = true;
             break;
@@ -71,7 +67,8 @@ public class CommentStatements_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.nodes = null;
-      } else {
+      } else
+      {
         this.nodes = new ArrayList<SNode>(nodes);
       }
     }

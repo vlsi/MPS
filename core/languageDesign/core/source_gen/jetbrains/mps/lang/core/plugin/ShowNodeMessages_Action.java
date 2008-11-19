@@ -4,19 +4,14 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-
 import java.util.List;
-
 import jetbrains.mps.nodeEditor.EditorMessage;
-
 import javax.swing.JOptionPane;
 
 public class ShowNodeMessages_Action extends GeneratedAction {
@@ -73,7 +68,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
     try {
       List<EditorMessage> messages = ShowNodeMessages_Action.this.editorComponent.getHighlightManager().getMessagesFor(ShowNodeMessages_Action.this.node);
       StringBuilder sb = new StringBuilder();
-      for (EditorMessage message : messages) {
+      for(EditorMessage message : messages) {
         sb.append(message.getMessage());
         sb.append("; owner is ");
         sb.append(message.getOwner().toString());

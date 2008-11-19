@@ -7,12 +7,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-
 import java.io.File;
-
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.CollectionUtil;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -45,7 +42,7 @@ public class PackagingLanguageGenerator {
     SPropertyOperations.set(SLinkOperations.getTarget(basedirPath, "macro", true), "name", macro);
     String[] pathComponents = path.split(File.separator);
     if (pathComponents.length > 0) {
-      Mapper<String, SNode> mapper = new Mapper<String, SNode>() {
+      Mapper<String, SNode> mapper = new Mapper <String, SNode>() {
 
         public SNode map(String pathComponentName) {
           SNode pathComponent = PackagingLanguageGenerator.createPathComponent(pathComponentName);

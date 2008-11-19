@@ -4,9 +4,7 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
@@ -74,7 +72,7 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      FindInstancesDialog testDialog = new FindInstancesDialog(new FindInstancesContext(FindInstancesByConditionAndNode_Action.this.context), (Language) FindInstancesByConditionAndNode_Action.this.langModule);
+      FindInstancesDialog testDialog = new FindInstancesDialog(new FindInstancesContext(FindInstancesByConditionAndNode_Action.this.context), (Language)FindInstancesByConditionAndNode_Action.this.langModule);
       testDialog.setConceptDeclaration(FindInstancesByConditionAndNode_Action.this.node);
       testDialog.showDialog();
     } catch (Throwable t) {

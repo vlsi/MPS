@@ -4,9 +4,7 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
@@ -45,7 +43,7 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
     if (!(FindLanguageConceptsUsages_Action.this.module instanceof Language)) {
       return false;
     }
-    Language language = (Language) FindLanguageConceptsUsages_Action.this.module;
+    Language language = (Language)FindLanguageConceptsUsages_Action.this.module;
     SModelDescriptor structureModelDescriptor = language.getStructureModelDescriptor();
     if (structureModelDescriptor == null) {
       return false;

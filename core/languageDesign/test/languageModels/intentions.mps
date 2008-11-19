@@ -273,7 +273,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226066626118">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1226066626900">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226066626901">
-            <property name="name" value="newAnootation" />
+            <property name="name" value="newAnnotation" />
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1226066626902">
               <link role="concept" targetNodeId="1.1226066719224" resolveInfo="TestCellAnnotation" />
             </node>

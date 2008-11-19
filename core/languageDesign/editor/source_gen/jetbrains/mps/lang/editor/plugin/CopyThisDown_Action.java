@@ -4,21 +4,15 @@ package jetbrains.mps.lang.editor.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
-
 import javax.swing.Icon;
-
 import jetbrains.mps.nodeEditor.EditorComponent;
-
 import java.util.List;
-
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-
 import java.util.ArrayList;
-
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
@@ -73,7 +67,8 @@ public class CopyThisDown_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.inputNodes = null;
-      } else {
+      } else
+      {
         this.inputNodes = new ArrayList<SNode>(nodes);
       }
     }
@@ -107,7 +102,8 @@ public class CopyThisDown_Action extends GeneratedAction {
           }
           nodeToCopy = parent;
         }
-      } else {
+      } else
+      {
         SNode firstNode = ListSequence.fromList(CopyThisDown_Action.this.inputNodes).first();
         SNode lastNode = ListSequence.fromList(CopyThisDown_Action.this.inputNodes).last();
         String role = firstNode.getRole_();
@@ -116,7 +112,7 @@ public class CopyThisDown_Action extends GeneratedAction {
         if (link == null) {
           return;
         }
-        for (SNode node : Sequence.fromIterable(ListSequence.fromList(CopyThisDown_Action.this.inputNodes).reversedList())) {
+        for(SNode node : Sequence.fromIterable(ListSequence.fromList(CopyThisDown_Action.this.inputNodes).reversedList())) {
           parent.insertChild(lastNode, role, SNodeOperations.copyNode(node));
         }
         CopyThisDown_Action.this.editor.getEditorContext().selectRange(firstNode, lastNode);

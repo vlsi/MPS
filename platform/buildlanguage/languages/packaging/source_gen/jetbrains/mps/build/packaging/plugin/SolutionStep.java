@@ -9,9 +9,7 @@ import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.Solution;
-
 import java.util.List;
-
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 
@@ -41,7 +39,7 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
   }
 
   protected String getVariantName(final IModule module) {
-    return ModelAccess.instance().runReadAction(new Computable<String>() {
+    return ModelAccess.instance().runReadAction(new Computable <String>() {
 
       public String compute() {
         return module.toString();
@@ -63,7 +61,7 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
   }
 
   protected void setVariant(IModule m) {
-    this.myGenerator.setSolution((Solution) m);
+    this.myGenerator.setSolution((Solution)m);
   }
 
   protected String getTextFieldName() {
@@ -71,7 +69,7 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
   }
 
   protected IModule[] getVariants() {
-    List<IModule> solutionsList = CollectionUtil.filter(this.myMpsProject.getModules(), new Condition<IModule>() {
+    List<IModule> solutionsList = CollectionUtil.filter(this.myMpsProject.getModules(), new Condition <IModule>() {
 
       public boolean met(IModule module) {
         return module instanceof Solution;
