@@ -21,7 +21,6 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1159268590033">
     <property name="iconPath" value="${language_descriptor}\icons\primitive.png" />
-    <property name="rootable" value="true" />
     <property name="name" value="PrimitiveTypeDescriptor" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1159268590032">
@@ -85,7 +84,6 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1162556266355">
     <property name="name" value="BarConcept" />
-    <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1209476407390">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
@@ -93,7 +91,6 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1209476003624">
     <property name="name" value="FooConcept" />
-    <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1209476075374">
       <property name="role" value="bar" />

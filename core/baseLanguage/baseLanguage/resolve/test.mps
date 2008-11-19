@@ -87,6 +87,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227084329546">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227084331941">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227084331628">
+              <link role="variableDeclaration" targetNodeId="1227083346682" resolveInfo="o" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227084333319">
+              <link role="baseMethodDeclaration" targetNodeId="2.~Object.toString():java.lang.String" resolveInfo="toString" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227083351905">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227083354802">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227083352782">
@@ -108,6 +118,14 @@
               <link role="fieldDeclaration" targetNodeId="1227019449956" resolveInfo="a" />
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1227083362311" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227084367722">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227084367723">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1227084367724">
+              <link role="fieldDeclaration" targetNodeId="1227019449956" resolveInfo="a" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1227084367725" />
           </node>
         </node>
       </node>

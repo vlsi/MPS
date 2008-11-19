@@ -58,5 +58,8 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1227084833325">
+    <link role="concept" targetNodeId="1.1159268590033" resolveInfo="PrimitiveTypeDescriptor" />
+  </node>
 </model>
 
