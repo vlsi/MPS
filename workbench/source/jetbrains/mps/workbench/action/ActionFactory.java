@@ -4,6 +4,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.Shortcut;
 import com.intellij.openapi.keymap.KeymapManager;
+import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.baseLanguage.plugin.CommentStatements_Action;
@@ -24,7 +25,7 @@ public class ActionFactory {
   private ActionFactory() {
   }
 
-  public void registerAction(AnAction action, String id) {
+  public void registerAction(AnAction action, String id, String languageNamespace) {
     Shortcut[] shortcuts = action.getShortcutSet().getShortcuts();
     if (shortcuts.length != 0) {
       if (KeymapManager.getInstance().getActiveKeymap().getShortcuts(id).length == 0) {
@@ -33,7 +34,7 @@ public class ActionFactory {
         }
       }
     }
-    ActionManager.getInstance().registerAction(id, action);
+    ActionManager.getInstance().registerAction(id, action, PluginId.getId(languageNamespace != null ? languageNamespace : "java actions"));
   }
 
   @Nullable
@@ -66,7 +67,7 @@ public class ActionFactory {
     if (action == null) {
       try {
         AnAction newAction = (AnAction) actionClass.getConstructors()[0].newInstance(params);
-        registerAction(newAction, id);
+        registerAction(newAction, id, languageNamespace);
         return newAction;
       } catch (InstantiationException e) {
         LOG.error("Unable to create action " + actionClass.getSimpleName(), e);
