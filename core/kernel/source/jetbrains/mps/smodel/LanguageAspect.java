@@ -147,6 +147,14 @@ public enum LanguageAspect {
   }
 
 
+  public boolean is(SModel model) {
+    return is(model.getModelDescriptor());
+  }
+
+  public boolean is(SModelDescriptor sm) {
+    return Language.getModelAspect(sm) == this;
+  }
+
 
   public Icon getIcon() {
     return Icons.MODEL_ICON;

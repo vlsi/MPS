@@ -168,6 +168,9 @@ public class EditorCellModel_Behavior {
     if (SPropertyOperations.hasValue(thisNode, "attractsFocus", "2", "0")) {
       result += "FE";
     }
+    if (SPropertyOperations.hasValue(thisNode, "attractsFocus", "3", "0")) {
+      result += "AR";
+    }
     return result;
   }
 

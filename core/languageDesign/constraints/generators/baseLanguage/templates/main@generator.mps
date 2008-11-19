@@ -344,14 +344,25 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1213107455789" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107448586">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107446098">
-                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1213107445081" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213107448101">
-                      <link role="link" targetNodeId="11.1213106478122" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1227087488096">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227087498239">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227087494876">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227087494703" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227087497238">
+                        <link role="link" targetNodeId="11.1227085062429" />
+                      </node>
                     </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1227087503305" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1213107449933" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107448586">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107446098">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1213107445081" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213107448101">
+                        <link role="link" targetNodeId="11.1213106478122" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1213107449933" />
+                  </node>
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213107442011">
@@ -2809,6 +2820,75 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213106765317">
                 <link role="classifier" targetNodeId="20.~BehaviorConstants" resolveInfo="BehaviorConstants" />
                 <link role="variableDeclaration" targetNodeId="20.~BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME" resolveInfo="CAN_BE_A_PARENT_METHOD_NAME" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1227085854472">
+      <property name="name" value="canBeARoot" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1227085863472" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227085854474" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227085854475">
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1227085938281">
+          <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1227085938282">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227085938283">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227085940034">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227085947166">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227085940490">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227085940035" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227085946415">
+                      <link role="link" targetNodeId="11.1227085062429" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227085947825">
+                    <link role="link" targetNodeId="4.1137022507850" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227085870864">
+        <property name="name" value="operationContext" />
+        <property name="isFinal" value="true" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227085870865">
+          <link role="classifier" targetNodeId="3.~IOperationContext" resolveInfo="IOperationContext" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227085878538">
+        <property name="name" value="_context" />
+        <property name="isFinal" value="true" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227085777365">
+          <link role="classifier" targetNodeId="1.~CanBeARootContext" resolveInfo="CanBeARootContext" />
+        </node>
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1227085790508">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1227085790509">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227085790510">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227085792948">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227085806236">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227085793419">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227085792949" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227085805469">
+                    <link role="link" targetNodeId="11.1227085062429" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1227085808770" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1227085912912">
+        <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1227085912913">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227085912914">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227085927231">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1227085927232">
+                <link role="classifier" targetNodeId="20.~BehaviorConstants" resolveInfo="BehaviorConstants" />
+                <link role="variableDeclaration" targetNodeId="20.~BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME" resolveInfo="CAN_BE_A_ROOT_METHOD_NAME" />
               </node>
             </node>
           </node>

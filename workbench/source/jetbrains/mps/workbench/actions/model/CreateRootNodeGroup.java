@@ -7,6 +7,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
@@ -82,7 +83,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
       boolean hasChildren = false;
       for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
-        if (conceptDeclaration.getRootable()) {
+        if (ModelConstraintsManager.getInstance().canBeARoot(data.getOperationContext(), NameUtil.nodeFQName(conceptDeclaration), data.getModelDescriptor().getSModel())) {
           langRootsGroup.add(newRootNodeAction(new SNodePointer(conceptDeclaration), data.getModelDescriptor()));
           hasChildren = true;
         }

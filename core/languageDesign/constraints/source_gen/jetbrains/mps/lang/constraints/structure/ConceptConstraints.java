@@ -23,6 +23,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
   public static final String DEFAULT_CONCRETE_CONCEPT = "defaultConcreteConcept";
   public static final String DEFAULT_SCOPE = "defaultScope";
   public static final String CAN_BE_CHILD = "canBeChild";
+  public static final String CAN_BE_ROOT = "canBeRoot";
   public static final String CAN_BE_PARENT = "canBeParent";
   public static final String PROPERTY = "property";
   public static final String REFERENT = "referent";
@@ -93,6 +94,14 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept {
 
   public void setCanBeChild(ConstraintFunction_CanBeAChild node) {
     super.setChild(ConceptConstraints.CAN_BE_CHILD, node);
+  }
+
+  public ConstraintFunction_CanBeARoot getCanBeRoot() {
+    return (ConstraintFunction_CanBeARoot)this.getChild(ConceptConstraints.CAN_BE_ROOT);
+  }
+
+  public void setCanBeRoot(ConstraintFunction_CanBeARoot node) {
+    super.setChild(ConceptConstraints.CAN_BE_ROOT, node);
   }
 
   public ConstraintFunction_CanBeAParent getCanBeParent() {

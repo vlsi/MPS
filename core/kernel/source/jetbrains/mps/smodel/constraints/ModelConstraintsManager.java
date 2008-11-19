@@ -49,6 +49,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   private Map<String, Method> myCanBeChildMethods = new HashMap<String, Method>();
   private Map<String, Method> myCanBeParentMethods = new HashMap<String, Method>();
+  private Map<String, Method> myCanBeRootMethods = new HashMap<String, Method>();
   private Map<String, String> myDefaultConceptNames = new HashMap<String, String>();
 
   public ModelConstraintsManager(ClassLoaderManager cm) {
@@ -409,9 +410,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
     myAddedLanguageNamespaces.remove(namespace);
   }
 
-  private void reloadAll() {
+  private void reloadAll() {                        
     myCanBeChildMethods.clear();
     myCanBeParentMethods.clear();
+    myCanBeRootMethods.clear();
     myDefaultConceptNames.clear();
 
     myNodePropertyGettersMap.clear();
@@ -578,7 +580,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  
   public boolean isApplicableInContext(String fqName, IOperationContext context, SNode parentNode, SNode link) {
     Method method = getCanBeChildMethod(fqName, context);
     if (method != null) {
@@ -592,5 +593,73 @@ public class ModelConstraintsManager implements ApplicationComponent {
       }
     }
     return true;
+  }
+
+  private Method getCanBeRootMethod(String conceptFqName, IOperationContext context) {
+    if (myCanBeRootMethods.containsKey(conceptFqName)) {
+      return myCanBeRootMethods.get(conceptFqName);
+    }
+
+    IScope scope = context.getScope();
+    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
+
+    if (concept == null) {
+      LOG.error("Can't find a concept " + conceptFqName);
+      myCanBeRootMethods.put(conceptFqName, null);
+      return null;
+    }
+
+    String fqName = NameUtil.nodeFQName(concept);
+    String namespace = NameUtil.namespaceFromConcept(concept);
+    Language language = scope.getLanguage(namespace);
+    if (language == null) {
+      LOG.error("Can't find a language " + namespace);
+      myCanBeRootMethods.put(conceptFqName, null);
+      return null;
+    }
+
+    String behaviorClassName = constraintsClassByConceptFqName(fqName);
+    Class behaviorClass = language.getClass(behaviorClassName);
+
+    if (behaviorClass == null) {
+      myCanBeRootMethods.put(conceptFqName, null);
+      return null;
+    }
+
+    try {
+      Method method = behaviorClass.getMethod(BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME, IOperationContext.class, CanBeARootContext.class);
+      myCanBeRootMethods.put(conceptFqName, method);
+      return method;
+    } catch (NoSuchMethodException e) {
+      //it's ok
+    }
+
+    myCanBeChildMethods.put(conceptFqName, null);
+    return null;
+  }
+
+
+  public boolean canBeARoot(IOperationContext context, String conceptFqName, SModel model) {
+    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, context.getScope());
+    if (concept == null) {
+      return false;
+    }
+
+    if (concept instanceof ConceptDeclaration && ((ConceptDeclaration) concept).getRootable()) {
+      Method method = getCanBeRootMethod(conceptFqName, context);
+      if (method != null) {
+        try {
+          return (Boolean) method.invoke(null, context, new CanBeARootContext(model));
+        } catch (IllegalAccessException e) {
+          LOG.error(e);
+        } catch (InvocationTargetException e) {
+          LOG.error(e);
+        }
+      } else {
+        return true;
+      }
+    }
+
+    return false;
   }
 }

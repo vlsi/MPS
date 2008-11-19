@@ -507,5 +507,31 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155723942" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1227085021513">
+    <property name="package" value="Functions" />
+    <link role="concept" targetNodeId="1.1227084988347" resolveInfo="ConstraintFunction_CanBeARoot" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1227085021514">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227085021515" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1227085023626">
+      <property name="name" value="usesParameterObjectFor" />
+      <link role="overriddenMethod" targetNodeId="11.1213877374432" resolveInfo="usesParameterObjectFor" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227085023628">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1227085030989">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1227085031257">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227085027457">
+        <property name="name" value="parameter" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227085027458">
+          <link role="concept" targetNodeId="12.1107135704075" resolveInfo="ConceptFunctionParameter" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1227085027459" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227085027460" />
+    </node>
+  </node>
 </model>
 

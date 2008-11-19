@@ -2435,6 +2435,33 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227088350496">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227088350497">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227088364542">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" id="1227088367280">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227088367845">
+                  <property name="value" value="AR" />
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227088365716">
+                  <link role="variableDeclaration" targetNodeId="1220340136451" resolveInfo="result" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227088357223">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227088352641">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1227088351781" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227088355957">
+                <link role="property" targetNodeId="1.1130859485024" resolveInfo="attractsFocus" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1227088358320">
+              <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1227088358321">
+                <link role="enumMember" targetNodeId="1.1227082414196" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1220340140132">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220340140713">
             <link role="variableDeclaration" targetNodeId="1220340136451" resolveInfo="result" />
