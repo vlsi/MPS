@@ -46,6 +46,37 @@ public class HighlighterMessage extends DefaultEditorMessage {
     return result;
   }
 
+  public boolean acceptCell(EditorCell cell, EditorComponent editor) {
+    //cell can be not a big one so we don't call super.acceptCell
+    if (cell == null) {
+      return false;
+    }
+    if (!editor.isValid(cell)) {
+      return false;
+    }
+
+    if (cell.getSNode() != getNode()) {
+      return false;
+    }
+
+    //for ErrorTargetEnum.NODE should be a big cell
+    if (myErrorTarget.getTarget() == ErrorTargetEnum.NODE) {
+      return cell.isBigCell();
+    }
+
+    if (myErrorTarget.getTarget() == ErrorTargetEnum.REFERENCE) {
+      return cell.isReferenceCell() && myErrorTarget.getRole().equals(cell.getRole());
+    }
+
+    if (myErrorTarget.getTarget() == ErrorTargetEnum.PROPERTY) {
+      if (!(cell instanceof EditorCell_Property)) return false;
+      EditorCell_Property propertyCell = (EditorCell_Property) cell;
+      return myErrorTarget.getRole().equals(((PropertyAccessor)propertyCell.getModelAccessor()).getPropertyName());
+    }
+
+    return false;
+  }
+
   public EditorCell getCell(EditorComponent editor) {
     final EditorCell rawCell = super.getCell(editor);
     if (rawCell == null) {

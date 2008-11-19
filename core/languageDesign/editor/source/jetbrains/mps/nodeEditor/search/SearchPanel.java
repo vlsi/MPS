@@ -459,6 +459,10 @@ public class SearchPanel extends JPanel {
       return myInfo.findCell(editor);
     }
 
+    public boolean acceptCell(EditorCell cell, EditorComponent editor) {
+      return getCell(editor) == cell;
+    }
+
     public void paint(Graphics g, EditorComponent editorComponent) {
       EditorCell_Label editorCell = (EditorCell_Label) getCell(editorComponent);
       if (editorCell != null) {

@@ -19,6 +19,7 @@ import java.awt.event.MouseEvent;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.List;
+import java.util.LinkedHashSet;
 
 public interface EditorCell extends Cloneable {
   static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];
@@ -180,7 +181,8 @@ public interface EditorCell extends Cloneable {
   FocusPolicy getFocusPolicy();
   void setFocusPolicy(FocusPolicy fp);
 
-  void updateMessages();
+//  void updateMessages();
+  void updateMessages(LinkedHashSet<EditorMessage> messages);
   List<EditorMessage> getMessages();
   boolean hasErrorMessages();
 

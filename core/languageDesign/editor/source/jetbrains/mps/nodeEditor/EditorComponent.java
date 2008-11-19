@@ -660,7 +660,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void updateMessages() {
-    myRootCell.updateMessages();
+    myRootCell.updateMessages(new LinkedHashSet<EditorMessage>(myHighlightManager.getMessages()));
     getExternalComponent().repaint();
   }
 

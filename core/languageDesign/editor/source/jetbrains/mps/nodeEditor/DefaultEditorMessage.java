@@ -73,6 +73,11 @@ public class DefaultEditorMessage implements EditorMessage {
     return editor.getBigValidCellForNode(getNode());
   }
 
+  public boolean acceptCell(EditorCell cell, EditorComponent editor) {
+    if (cell == null) return false;
+    return cell.isBigCell() && editor.isValid(cell) && cell.getSNode() == getNode();
+  }
+
   public SNode getNode() {
     return myNodePointer.getNode();
   }

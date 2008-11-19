@@ -73,7 +73,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
         }
       }
     }
-    myEditor.getRootCell().updateMessages();
+    myEditor.getRootCell().updateMessages(new LinkedHashSet<EditorMessage>(getMessages()));
     return result;
   }
 

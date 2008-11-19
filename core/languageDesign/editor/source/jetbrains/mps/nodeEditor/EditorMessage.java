@@ -27,6 +27,8 @@ public interface EditorMessage {
 
   EditorCell getCell(EditorComponent editorComponent);
 
+  boolean acceptCell(EditorCell cell, EditorComponent editor);
+
   void paint(Graphics g, EditorComponent editorComponent);
 
   boolean isBackGround();

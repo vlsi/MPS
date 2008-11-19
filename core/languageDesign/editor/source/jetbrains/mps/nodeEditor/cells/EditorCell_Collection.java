@@ -468,10 +468,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     }
   }
 
-  public void updateMessages() {
-    super.updateMessages();
+   public void updateMessages(LinkedHashSet<EditorMessage> messages) {
+    super.updateMessages(messages);
     for (EditorCell child : myEditorCells) {
-      child.updateMessages();
+      child.updateMessages(messages);
     }
   }
 

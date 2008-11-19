@@ -881,13 +881,26 @@ public abstract class EditorCell_Basic implements EditorCell {
     getStyle().set(StyleAttributes.FOCUS_POLICY, fp);
   }
 
-  public void updateMessages() {
+  public void updateMessages(LinkedHashSet<EditorMessage> messages) {
+    myMessages = null;
+    for (EditorMessage message : new ArrayList<EditorMessage>(messages)) {
+      if (message.acceptCell(this, getEditor())) {
+        messages.remove(message);
+        if (myMessages == null) {
+          myMessages = new ArrayList<EditorMessage>(1);
+        }
+        myMessages.add(message);
+      }
+    }
+  }
+
+ /* public void updateMessages() {
     myMessages = null;
  //   if (getUserObject(EditorManager.BIG_CELL_CONTEXT) != null) {
       EditorComponent editor = getEditor();
       NodeHighlightManager highlightManager = editor.getHighlightManager();
       if (highlightManager == null) return;
-      List<EditorMessage> messagesForNode = highlightManager.getMessagesFor(this /*getSNode()*/);
+      List<EditorMessage> messagesForNode = highlightManager.getMessagesFor(this *//*getSNode()*//*);
       if (!messagesForNode.isEmpty()) {
         if (myMessages == null) {
           myMessages = new ArrayList<EditorMessage>(1);
@@ -895,7 +908,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         myMessages.addAll(messagesForNode);
       }
   //  }
-  }
+  }*/
 
   public boolean isAbove(EditorCell cell) {
     return getY() + getHeight() <= cell.getY();
