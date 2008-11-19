@@ -81,7 +81,7 @@ public class LazyTabbedPane extends JPanel {
     JComponent component = tab.getComponent();
     if (component == null) {
       panel.removeAll();
-      JLabel label = new JLabel("<html><p align='center'>" + tab.getNullText() + (tab.canCreate() ? "<br>(Click here or press insert to create)" : "") + "</p>", JLabel.CENTER);
+      JLabel label = new JLabel("<html><p align='center'>" + tab.getNullText() + (tab.canCreate() ? "<br>(Click here or press Insert to create)" : "") + "</p>", JLabel.CENTER);
 
       label.addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
