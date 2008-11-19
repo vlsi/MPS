@@ -39,7 +39,7 @@ public class ActionFactory {
   }
 
   public AnAction getRegisteredAction(Class actionClass, String languageNamespace, Object... params) {
-    acquireRegisteredAction(actionClass, languageNamespace, null, params);
+    return acquireRegisteredAction(actionClass, languageNamespace, null, params);
   }
 
   @Nullable
