@@ -18487,7 +18487,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226675924641">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1226675921624" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226675926909">
-                <link role="baseMethodDeclaration" targetNodeId="64.~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,jetbrains.mps.nodeEditor.style.AttributeCalculator):void" resolveInfo="set" />
+                <link role="baseMethodDeclaration" targetNodeId="64.~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,java.lang.Object):void" resolveInfo="set" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1226675961717">
                   <link role="classifier" targetNodeId="64.~StyleAttributes" resolveInfo="StyleAttributes" />
                   <link role="variableDeclaration" targetNodeId="64.~StyleAttributes.PADDING_LEFT" resolveInfo="PADDING_LEFT" />

@@ -1220,5 +1220,146 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1227110056528">
+    <property name="package" value="CellModel" />
+    <property name="name" value="ChangeOrientationCollection" />
+    <link role="forConcept" targetNodeId="1.1073389446423" resolveInfo="CellModel_Collection" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1227110056529">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227110056530">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227110185595">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1227110185596">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227110188398">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1227110187553" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227110190854">
+                <link role="property" targetNodeId="1.1073389446425" resolveInfo="vertical" />
+              </node>
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227110235482">
+              <property name="value" value="Make vertical" />
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227110613612">
+              <property name="value" value="Make horizontal" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1227110056531">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227110056532">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227110258226">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1227110263341">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1227110269205">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227110276145">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1227110275253" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227110278086">
+                  <link role="property" targetNodeId="1.1073389446425" resolveInfo="vertical" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227110259212">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1227110258227" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227110260231">
+                <link role="property" targetNodeId="1.1073389446425" resolveInfo="vertical" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1227111401175">
+    <property name="package" value="CellModel" />
+    <property name="name" value="ChangeOrientationList" />
+    <link role="forConcept" targetNodeId="1.1140524381322" resolveInfo="CellModel_ListWithRole" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1227111401176">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227111401177">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227111516509">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1227111516510">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227111516511">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1227111516512" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227111516513">
+                <link role="property" targetNodeId="1.1140524450554" resolveInfo="vertical" />
+              </node>
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227111516514">
+              <property name="value" value="Make vertical" />
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227111516515">
+              <property name="value" value="Make horizontal" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1227111401178">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227111401179">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227111529032">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1227111529033">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1227111529034">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227111529035">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1227111529036" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227111529037">
+                  <link role="property" targetNodeId="1.1140524450554" resolveInfo="vertical" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227111529038">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1227111529039" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227111529040">
+                <link role="property" targetNodeId="1.1140524450554" resolveInfo="vertical" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1227111553026">
+    <property name="package" value="CellModel" />
+    <property name="name" value="ChangeOrientationAlternation" />
+    <link role="forConcept" targetNodeId="1.1088612959204" resolveInfo="CellModel_Alternation" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1227111553027">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227111553028">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227111581290">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1227111581291">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227111581292">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1227111581293" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227111581294">
+                <link role="property" targetNodeId="1.1088613081987" resolveInfo="vertical" />
+              </node>
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227111581295">
+              <property name="value" value="Make vertical" />
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227111581296">
+              <property name="value" value="Make horizontal" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="1227111553029">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227111553030">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227111571687">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1227111571688">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1227111571689">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227111571690">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1227111571691" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227111571692">
+                  <link role="property" targetNodeId="1.1088613081987" resolveInfo="vertical" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227111571693">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1227111571694" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227111571695">
+                <link role="property" targetNodeId="1.1088613081987" resolveInfo="vertical" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
