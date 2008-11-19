@@ -4145,6 +4145,7 @@
         <link role="styleClass" targetNodeId="1215096040201" resolveInfo="Dot" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1090928601379">
+        <property name="attractsFocus" value="2" />
         <link role="relationDeclaration" targetNodeId="17.1083260308426" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1090928601380">
           <link role="conceptDeclaration" targetNodeId="17.1083245299891" />
