@@ -9,14 +9,42 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ReportErrorStatement extends Statement {
+public class ReportErrorStatement extends Statement implements MessageStatement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ERROR_STRING = "errorString";
   public static final String NODE_TO_REPORT = "nodeToReport";
   public static final String HELGINS_INTENTION = "helginsIntention";
+  public static final String MESSAGE_TARGET = "messageTarget";
 
   public ReportErrorStatement(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ReportErrorStatement.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ReportErrorStatement.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ReportErrorStatement.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ReportErrorStatement.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ReportErrorStatement.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ReportErrorStatement.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getErrorString() {
@@ -41,6 +69,14 @@ public class ReportErrorStatement extends Statement {
 
   public void setHelginsIntention(HelginsIntention node) {
     super.setChild(ReportErrorStatement.HELGINS_INTENTION, node);
+  }
+
+  public MessageTarget getMessageTarget() {
+    return (MessageTarget)this.getChild(ReportErrorStatement.MESSAGE_TARGET);
+  }
+
+  public void setMessageTarget(MessageTarget node) {
+    super.setChild(ReportErrorStatement.MESSAGE_TARGET, node);
   }
 
 

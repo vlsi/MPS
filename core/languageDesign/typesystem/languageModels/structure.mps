@@ -749,20 +749,12 @@
       <property name="role" value="errorString" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1175517865066">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="nodeToReport" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210784718411">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="helginsIntention" />
-      <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1175517787706">
       <property name="value" value="error" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1227096888232">
+      <link role="intfc" targetNodeId="1227096774658" resolveInfo="MessageStatement" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1175594888091">
@@ -1362,20 +1354,12 @@
       <property name="role" value="warningText" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1207055552305">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="nodeToReport" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210839909256">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="helginsIntention" />
-      <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1207055564760">
       <property name="value" value="warning" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1227096881907">
+      <link role="intfc" targetNodeId="1227096774658" resolveInfo="MessageStatement" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210784285454">
@@ -1915,20 +1899,12 @@
       <property name="role" value="infoText" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224760230763">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="nodeToReport" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1224760230764">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="helginsIntention" />
-      <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1224760271468">
       <property name="value" value="info" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1227096870575">
+      <link role="intfc" targetNodeId="1227096774658" resolveInfo="MessageStatement" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225968571991">
@@ -1987,6 +1963,52 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="helginsIntention" />
       <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227096479619">
+    <property name="name" value="MessageTarget" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1227096493252">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227096498176">
+    <property name="name" value="PropertyMessageTarget" />
+    <link role="extends" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227096521710">
+      <property name="metaClass" value="reference" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="propertyDeclaration" />
+      <link role="target" targetNodeId="3.1071489288299" resolveInfo="PropertyDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227096620180">
+    <property name="name" value="ReferenceMessageTarget" />
+    <link role="extends" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227096645744">
+      <property name="metaClass" value="reference" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="linkDeclaration" />
+      <link role="target" targetNodeId="3.1071489288298" resolveInfo="LinkDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1227096774658">
+    <property name="name" value="MessageStatement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227096802790">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="nodeToReport" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227096802791">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="helginsIntention" />
+      <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227096836496">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="messageTarget" />
+      <link role="target" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
     </node>
   </node>
 </model>

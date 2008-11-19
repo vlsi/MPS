@@ -530,8 +530,8 @@
               <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1185805453829">
                 <link role="applicableNode" targetNodeId="1185805370376" resolveInfo="reportErrorStatement" />
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1185805458333">
-                <link role="link" targetNodeId="1.1175517865066" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227096966776">
+                <link role="link" targetNodeId="1.1227096802790" />
               </node>
             </node>
           </node>
@@ -1745,8 +1745,8 @@
               <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1207055643292">
                 <link role="applicableNode" targetNodeId="1207055628318" resolveInfo="nodeToCheck" />
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207055656825">
-                <link role="link" targetNodeId="1.1207055552305" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227097150118">
+                <link role="link" targetNodeId="1.1227096802790" />
               </node>
             </node>
           </node>
@@ -2162,8 +2162,8 @@
               <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1224760393569">
                 <link role="applicableNode" targetNodeId="1224760391348" resolveInfo="nodeToCheck" />
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1224760420565">
-                <link role="link" targetNodeId="1.1224760230763" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227097291840">
+                <link role="link" targetNodeId="1.1227096802790" />
               </node>
             </node>
           </node>

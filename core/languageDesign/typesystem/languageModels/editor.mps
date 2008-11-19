@@ -945,7 +945,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1175517990173">
         <property name="noTargetText" value="&lt;node to highlight&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1175517865066" />
+        <link role="relationDeclaration" targetNodeId="1.1227096802790" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1175518052514">
         <property name="text" value=";" />
@@ -958,7 +958,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1210784741834">
         <property name="noTargetText" value="&lt;no intention&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1210784718411" />
+        <link role="relationDeclaration" targetNodeId="1.1227096802791" />
       </node>
     </node>
   </node>
@@ -996,7 +996,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1175518122026">
         <property name="noTargetText" value="&lt;node to highlight&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1175517865066" />
+        <link role="relationDeclaration" targetNodeId="1.1227096802790" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1175518125090">
         <property name="text" value=";" />
@@ -1009,7 +1009,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1223995251201">
         <property name="noTargetText" value="&lt;no intention&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1210784718411" />
+        <link role="relationDeclaration" targetNodeId="1.1227096802791" />
       </node>
     </node>
   </node>
@@ -2450,7 +2450,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1207055587767">
         <property name="noTargetText" value="&lt;node to highlight&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1207055552305" />
+        <link role="relationDeclaration" targetNodeId="1.1227096802790" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1207055587768">
         <property name="text" value=";" />
@@ -2463,7 +2463,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1210839954271">
         <property name="noTargetText" value="&lt;no intention&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1210839909256" />
+        <link role="relationDeclaration" targetNodeId="1.1227096802791" />
       </node>
     </node>
   </node>
@@ -3354,7 +3354,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1224760278274">
         <property name="noTargetText" value="&lt;node to highlight&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1224760230763" />
+        <link role="relationDeclaration" targetNodeId="1.1227096802790" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224760278275">
         <property name="text" value=";" />
@@ -3367,7 +3367,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1224760339815">
         <property name="noTargetText" value="&lt;no intention&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1224760230764" />
+        <link role="relationDeclaration" targetNodeId="1.1227096802791" />
       </node>
     </node>
   </node>
@@ -3452,6 +3452,46 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1225971346184">
         <property name="noTargetText" value="&lt;no intention&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1225971258466" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1227096567278">
+    <link role="conceptDeclaration" targetNodeId="1.1227096498176" resolveInfo="PropertyMessageTarget" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227096575712">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227096578700">
+        <property name="text" value="property" />
+        <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1227096600198">
+        <link role="relationDeclaration" targetNodeId="1.1227096521710" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1227096600199">
+          <link role="conceptDeclaration" targetNodeId="8.1071489288299" resolveInfo="PropertyDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1227096609435">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1227096663075">
+    <link role="conceptDeclaration" targetNodeId="1.1227096620180" resolveInfo="ReferenceMessageTarget" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227096664852">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1227096671091">
+        <property name="text" value="reference" />
+        <link role="styleClass" targetNodeId="27.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1227096675494">
+        <link role="relationDeclaration" targetNodeId="1.1227096645744" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1227096675495">
+          <link role="conceptDeclaration" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1227096679713">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
+          </node>
+        </node>
       </node>
     </node>
   </node>

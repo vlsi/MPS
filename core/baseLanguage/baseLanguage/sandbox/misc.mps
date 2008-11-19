@@ -116,6 +116,30 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1226504970585">
     <property name="name" value="Test" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1227096190700">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227096190701" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227096190702" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227096190703">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227096222608">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227096222609">
+            <property name="name" value="c" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227096222610">
+              <link role="concept" targetNodeId="138.1068390468198" resolveInfo="ClassConcept" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227096228955">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227096229886">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227096228956">
+              <link role="variableDeclaration" targetNodeId="1227096222609" resolveInfo="c" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227096383159">
+              <link role="property" targetNodeId="125.1169194664001" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226504970586" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1226504970587">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1226504970588" />

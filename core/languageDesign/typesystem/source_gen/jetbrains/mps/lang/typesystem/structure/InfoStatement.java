@@ -9,14 +9,42 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class InfoStatement extends Statement {
+public class InfoStatement extends Statement implements MessageStatement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.InfoStatement";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INFO_TEXT = "infoText";
   public static final String NODE_TO_REPORT = "nodeToReport";
   public static final String HELGINS_INTENTION = "helginsIntention";
+  public static final String MESSAGE_TARGET = "messageTarget";
 
   public InfoStatement(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(InfoStatement.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(InfoStatement.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(InfoStatement.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(InfoStatement.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(InfoStatement.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(InfoStatement.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getInfoText() {
@@ -41,6 +69,14 @@ public class InfoStatement extends Statement {
 
   public void setHelginsIntention(HelginsIntention node) {
     super.setChild(InfoStatement.HELGINS_INTENTION, node);
+  }
+
+  public MessageTarget getMessageTarget() {
+    return (MessageTarget)this.getChild(InfoStatement.MESSAGE_TARGET);
+  }
+
+  public void setMessageTarget(MessageTarget node) {
+    super.setChild(InfoStatement.MESSAGE_TARGET, node);
   }
 
 
