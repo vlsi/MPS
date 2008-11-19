@@ -7,8 +7,8 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -19,6 +19,11 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
     SNode parentMacro = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.ReferenceMacro","jetbrains.mps.lang.generator.structure.MapSrcNodeMacro","jetbrains.mps.lang.generator.structure.MapSrcListMacro"}, false, false);
     if (SNodeOperations.isInstanceOf(parentMacro, "jetbrains.mps.lang.generator.structure.ReferenceMacro")) {
+      {
+        SNode _nodeToCheck_1029348928467 = node;
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1227099233435", true), new _Quotations.QuotationClass_14().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1227099240563", intentionProvider);
+      }
       return;
     }
     SNode mapperFunc;
@@ -42,7 +47,7 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
       {
         SNode _nodeToCheck_1029348928467 = node;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234961710", true), new _Quotations.QuotationClass_14().createNode(concept, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234961708", intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234961710", true), new _Quotations.QuotationClass_15().createNode(concept, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234961708", intentionProvider);
       }
     }
   }

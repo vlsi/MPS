@@ -2032,6 +2032,20 @@
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225234474248">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225234474249">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1227099240563">
+            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1227099240567">
+              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1227099233435">
+                <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227099237796">
+                  <link role="applicableNode" targetNodeId="1221153432507" resolveInfo="node" />
+                </node>
+              </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1227099244511">
+              <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1227099244512">
+                <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227099247382" />
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225234587964" />
         </node>
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225234478581">
