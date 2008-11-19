@@ -52,6 +52,9 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant1227102625816(context, node, "node feature to highlight(optional)"));
+    editorCell.addEditorCell(this.createRefNode1227102625817(context, node));
+    editorCell.addEditorCell(this.createConstant1227102625818(context, node, " "));
     editorCell.addEditorCell(this.createConstant1223995251200(context, node, "intention to fix an error(optional)"));
     editorCell.addEditorCell(this.createRefNode1223995251201(context, node));
     return editorCell;
@@ -101,6 +104,22 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12239952512001223995251200(editorCell, node, context);
     setupLabel_Constant_1223995251200_1223995251200(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1227102625816(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12271026258161227102625816(editorCell, node, context);
+    setupLabel_Constant_1227102625816_1227102625816(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1227102625818(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12271026258181227102625818(editorCell, node, context);
+    setupLabel_Constant_1227102625818_1227102625818(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -221,6 +240,35 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public EditorCell createRefNode1227102625817_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_refNode_messageTarget1227102625817(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_refNode_messageTarget_1227102625817((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createRefNode1227102625817(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("messageTarget");
+    provider.setNoTargetText("<no messageTarget>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createRefNode1227102625817_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
 
   private static void setupBasic_Collection_11755180828891175518082889(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1175518082889");
@@ -280,6 +328,26 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_refNode_helginsIntention1223995251201(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_Constant_12271026258161227102625816(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1227102625816");
+  }
+
+  private static void setupBasic_refNode_messageTarget1227102625817(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_Constant_12271026258181227102625818(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1227102625818");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_Constant_1175518084610_1175518084610(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -308,6 +376,15 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_helginsIntention_1223995251201(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1227102625816_1227102625816(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_messageTarget_1227102625817(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1227102625818_1227102625818(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

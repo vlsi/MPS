@@ -1139,17 +1139,6 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "parameter", true)).first();
   }
 
-  public static Object referenceMacro_GetReferent_1221215081966(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    List<SNode> declarations = _context.getAllOutputNodesByInputNodeAndMappingLabel(_context.getNode(), "coercedNode");
-    SNode baseMethodDeclaration = SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    for(SNode variableDeclaration : declarations) {
-      if (ListSequence.fromList(SNodeOperations.getDescendants(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false)).contains(variableDeclaration)) {
-        return variableDeclaration;
-      }
-    }
-    return null;
-  }
-
   public static Object referenceMacro_GetReferent_1221215516788(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> declarations = _context.getAllOutputNodesByInputNodeAndMappingLabel(_context.getNode(), "coercedPattern");
     SNode baseMethodDeclaration = SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
@@ -1212,6 +1201,17 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1223922569732(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode statement = (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "typeVarDeclaration", false), "typeVarDeclaration");
     return SLinkOperations.getTarget(statement, "localVariableDeclaration", true);
+  }
+
+  public static Object referenceMacro_GetReferent_1227100854218(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    List<SNode> declarations = _context.getAllOutputNodesByInputNodeAndMappingLabel(_context.getNode(), "coercedNode");
+    SNode baseMethodDeclaration = SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+    for(SNode variableDeclaration : declarations) {
+      if (ListSequence.fromList(SNodeOperations.getDescendants(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false)).contains(variableDeclaration)) {
+        return variableDeclaration;
+      }
+    }
+    return null;
   }
 
   public static boolean ifMacro_Condition_1174643945663(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1610,6 +1610,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1224761479342(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1227099667818(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "elseClause", true) != null);
   }
 
   public static SNode sourceNodeQuery_1174654997817(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2018,6 +2022,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1225972308591(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true);
+  }
+
+  public static SNode sourceNodeQuery_1227099663848(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "elseClause", true);
   }
 
   public static Iterable sourceNodesQuery_1174916595463(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -28,6 +28,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint());
     this.myConstraints.add(new SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint());
     this.myConstraints.add(new SimpleRule_ProcedureCall_parametersLink_ReferentConstraint());
+    this.myConstraints.add(new PropertyMessageTarget_propertyDeclaration_ReferentConstraint());
+    this.myConstraints.add(new ReferenceMessageTarget_linkDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

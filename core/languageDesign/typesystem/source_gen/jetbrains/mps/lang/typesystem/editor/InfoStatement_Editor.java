@@ -14,6 +14,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class InfoStatement_Editor extends DefaultNodeEditor {
 
@@ -45,6 +47,9 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant1227102534856(context, node, "node feature to highlight(optional)"));
+    editorCell.addEditorCell(this.createRefNode1227102557349(context, node));
+    editorCell.addEditorCell(this.createConstant1227102573366(context, node, " "));
     editorCell.addEditorCell(this.createConstant1224760339814(context, node, "intention linked with info message(optional)"));
     editorCell.addEditorCell(this.createRefNode1224760339815(context, node));
     return editorCell;
@@ -78,6 +83,22 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_12247603398141224760339814(editorCell, node, context);
     setupLabel_Constant_1224760339814_1224760339814(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1227102534856(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12271025348561227102534856(editorCell, node, context);
+    setupLabel_Constant_1227102534856_1227102534856(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant1227102573366(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_12271025733661227102573366(editorCell, node, context);
+    setupLabel_Constant_1227102573366_1227102573366(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -169,6 +190,35 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public EditorCell createRefNode1227102557349_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    setupBasic_refNode_messageTarget1227102557349(editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      setupLabel_refNode_messageTarget_1227102557349((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+
+  public EditorCell createRefNode1227102557349(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("messageTarget");
+    provider.setNoTargetText("<no messageTarget>");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createRefNode1227102557349_internal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+
 
   private static void setupBasic_Collection_12247602782701224760278270(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1224760278270");
@@ -205,6 +255,26 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_refNode_helginsIntention1224760339815(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_Constant_12271025348561227102534856(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1227102534856");
+  }
+
+  private static void setupBasic_refNode_messageTarget1227102557349(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_Constant_12271025733661227102573366(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_1227102573366");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_Constant_1224760278271_1224760278271(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -224,6 +294,15 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_refNode_helginsIntention_1224760339815(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1227102534856_1227102534856(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_refNode_messageTarget_1227102557349(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_1227102573366_1227102573366(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }
