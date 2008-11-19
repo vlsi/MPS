@@ -3877,12 +3877,12 @@
     <link role="memberDataType" targetNodeId="3.1082983041843" resolveInfo="string" />
     <link role="defaultMember" targetNodeId="1226504706052" />
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1226504633753">
-      <property name="internalValue" value="pixels" />
       <property name="externalValue" value="pixels" />
+      <property name="internalValue" value="PIXELS" />
     </node>
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1226504706052">
-      <property name="internalValue" value="spaces" />
       <property name="externalValue" value="spaces" />
+      <property name="internalValue" value="SPACES" />
     </node>
   </node>
 </model>

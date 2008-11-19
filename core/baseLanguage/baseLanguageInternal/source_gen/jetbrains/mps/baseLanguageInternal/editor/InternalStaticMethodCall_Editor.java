@@ -30,7 +30,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.EnumMeasure;
+import jetbrains.mps.nodeEditor.style.Measure;
 
 public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
 
@@ -412,8 +412,8 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
-            this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, EnumMeasure.spaces));
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, EnumMeasure.spaces));
+            this.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
+            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
 
         };

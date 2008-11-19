@@ -1,26 +1,24 @@
 package jetbrains.mps.nodeEditor.style;
 
-import jetbrains.mps.lang.editor.structure._Enum_Measure;
-
 public class Padding {
 
   private double myValue;
-  private EnumMeasure myType;
+  private Measure myType;
 
-  public Padding(double value, final EnumMeasure type) {
+  public Padding(double value, final Measure type) {
     myValue = value;
     myType = type;
   }
 
   public Padding(double value) {
-    this(value, EnumMeasure.spaces);
+    this(value, Measure.SPACES);
   }
 
   public double getValue() {
     return myValue;
   }
 
-  public EnumMeasure getType() {
+  public Measure getType() {
     return myType;
   }
 

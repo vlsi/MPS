@@ -4,8 +4,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.EnumMeasure;
-import jetbrains.mps.lang.editor.structure._Enum_Measure;
 
 /**
  * Author: Sergey Dmitriev

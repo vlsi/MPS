@@ -1031,10 +1031,10 @@ public class QueriesGenerated {
     return (SNode)_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_AbstractLabel");
   }
 
-  public static Object referenceMacro_GetReferent_1227014628233(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SPropertyOperations.getString_def(_context.getNode(), "measure", "spaces") != null ?
-      SPropertyOperations.getString_def(_context.getNode(), "measure", "spaces") :
-      "spaces"
+  public static Object referenceMacro_GetReferent_1227109487647(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (SPropertyOperations.getString_def(_context.getNode(), "measure", "SPACES") != null ?
+      SPropertyOperations.getString_def(_context.getNode(), "measure", "SPACES").toUpperCase() :
+      "SPACES"
     );
   }
 

@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.LinkedList;
 
 public enum _Enum_Measure {
-  pixels("pixels", "pixels"),
-  spaces("spaces", "spaces");
+  pixels("pixels", "PIXELS"),
+  spaces("spaces", "SPACES");
 
   private String myName;
   private String myValue;
