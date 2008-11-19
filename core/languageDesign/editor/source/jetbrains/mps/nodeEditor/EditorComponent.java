@@ -663,9 +663,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public JToolTip createToolTip() {
-    JMultiLineToolTip toolTip = new JMultiLineToolTip();
-    toolTip.setFont(EditorSettings.getInstance().getDefaultEditorFont());
-    return toolTip;
+    return new JMultiLineToolTip();
   }
 
   public IOperationContext getOperationContext() {
