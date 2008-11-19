@@ -23,9 +23,7 @@ import javax.swing.plaf.basic.BasicGraphicsUtils;
 import javax.swing.tree.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
 
 public abstract class MPSTree extends DnDAwareTree {
@@ -41,6 +39,8 @@ public abstract class MPSTree extends DnDAwareTree {
   private int myTooltipManagerRecentInitialDelay;
   private boolean myAutoExpandEnabled = true;
   private boolean myAutoOpen = false;
+
+  private Set<MPSTreeNode> myExpadingNodes = new HashSet<MPSTreeNode>();
 
   protected MPSTree() {
     setRootNode(new TextTreeNode("Empty"));
@@ -197,32 +197,6 @@ public abstract class MPSTree extends DnDAwareTree {
         }
         return null;
       }
-
-      private JMenuItem findMenuItem(KeyStroke eventKeyStroke, JMenu menu) {
-        menu.getModel().setSelected(true);
-
-        for (int i = 0; i < menu.getItemCount(); i++) {
-          JMenuItem item = (JMenuItem) menu.getItem(i);
-
-          if (item == null) {
-            continue;
-          }
-
-          KeyStroke keyStroke = item.getAccelerator();
-          if (eventKeyStroke.equals(keyStroke)) {
-            return item;
-          }
-
-          if (item instanceof JMenu) {
-            JMenuItem result = findMenuItem(eventKeyStroke, (JMenu) menu.getItem(i));
-            if (result != null) {
-              return result;
-            }
-          }
-        }
-
-        return null;
-      }
     });
 
     AbstractAction openNodeAction = new AbstractAction() {
@@ -246,11 +220,30 @@ public abstract class MPSTree extends DnDAwareTree {
   }
 
   protected void doInit(final MPSTreeNode node) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        node.init();
+    if (myExpadingNodes.contains(node)) return;
+
+    myExpadingNodes.add(node);
+    try {
+      TextTreeNode progressNode = new TextTreeNode("loading...");
+      node.add(progressNode);
+      ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
+      expandPath(new TreePath(progressNode.getPath()));
+      
+      paint(getGraphics());
+
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          node.init();
+        }
+      });
+
+      if (node.hasChild(progressNode)) { //node.init() might remove all the children        
+        node.remove(progressNode);
+        ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
       }
-    });
+    } finally {
+      myExpadingNodes.remove(node);
+    }
   }
 
   void myMouseReleased(MouseEvent e) {

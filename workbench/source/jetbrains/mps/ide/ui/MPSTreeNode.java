@@ -206,6 +206,13 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     updateErrorState();
   }
 
+  public boolean hasChild(MutableTreeNode node) {
+    for (int i = 0; i < getChildCount(); i++) {
+      if (getChildAt(i) == node) return true;
+    }
+    return false;
+  }
+
   final void removeThisAndChildren() {
     onRemove();
     if (!isInitialized()) {
