@@ -68,6 +68,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private LinkDeclaration myLinkDeclaration;
   private SNode myRefNode;
   private boolean myInTree;
+  private boolean myIsReferenceCell = false;
 
   protected EditorCell_Basic(EditorContext editorContext, SNode node) {
     myEditorContext = editorContext;
@@ -319,6 +320,14 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public LinkDeclaration getLinkDeclaration() {
     return myLinkDeclaration;
+  }
+
+  public void setReferenceCell(boolean isReferenceCell) {
+    myIsReferenceCell = isReferenceCell;
+  }
+
+  public boolean isReferenceCell() {
+    return myIsReferenceCell;
   }
 
   public SNode getRefNode() {
@@ -874,18 +883,18 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void updateMessages() {
     myMessages = null;
-    if (getUserObject(EditorManager.BIG_CELL_CONTEXT) != null) {
+ //   if (getUserObject(EditorManager.BIG_CELL_CONTEXT) != null) {
       EditorComponent editor = getEditor();
       NodeHighlightManager highlightManager = editor.getHighlightManager();
       if (highlightManager == null) return;
-      List<EditorMessage> messagesForNode = highlightManager.getMessagesFor(getSNode());
+      List<EditorMessage> messagesForNode = highlightManager.getMessagesFor(this /*getSNode()*/);
       if (!messagesForNode.isEmpty()) {
         if (myMessages == null) {
           myMessages = new ArrayList<EditorMessage>(1);
         }
         myMessages.addAll(messagesForNode);
       }
-    }
+  //  }
   }
 
   public boolean isAbove(EditorCell cell) {

@@ -72,6 +72,9 @@ public interface EditorCell extends Cloneable {
   void setLinkDeclaration(LinkDeclaration link);
   LinkDeclaration getLinkDeclaration();
 
+  boolean isReferenceCell();
+  void setReferenceCell(boolean isReferenceCell);
+
   boolean isErrorState();
   void setErrorState(boolean isError);
   boolean validate(boolean strict, boolean canActivatePopup);

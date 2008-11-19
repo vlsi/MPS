@@ -1,6 +1,7 @@
 package jetbrains.mps.typesystem.checking;
 
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
@@ -31,50 +32,62 @@ public class HighlighterMessage extends DefaultEditorMessage {
     myErrorTarget = target;
   }
 
+  private EditorCell getCellFromParent(EditorComponent editor) {
+    if (getNode() == null) return null;
+    SNode parent = getNode().getParent();
+    EditorCell result = null;
+    while (parent != null) {
+      result = editor.getBigValidCellForNode(parent);
+      if (result != null) {
+        return result;
+      }
+      parent = parent.getParent();
+    }
+    return result;
+  }
+
   public EditorCell getCell(EditorComponent editor) {
     final EditorCell rawCell = super.getCell(editor);
-    if (rawCell == null) return null;
+    if (rawCell == null) {
+      if (editor instanceof NodeEditorComponent) {
+        EditorCell parent = getCellFromParent(editor);
+        return parent;
+      }
+      return null;
+    }
     if (myErrorTarget.getTarget() == ErrorTargetEnum.NODE) {
       return rawCell;
     }
-    EditorCell result = ModelAccess.instance().runReadAction(new Computable<EditorCell>() {
-      public EditorCell compute() {
-        if (myErrorTarget.getTarget() == ErrorTargetEnum.REFERENCE) {
-          EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
-            public boolean met(EditorCell cell) {
-              LinkDeclaration linkDeclaration = cell.getLinkDeclaration();
-              return linkDeclaration != null &&
-                linkDeclaration.getMetaClass() == LinkMetaclass.reference &&
-                myErrorTarget.getRole().equals(linkDeclaration.getRole());
-            }
-          }, true), true);
-          if (child != null) {
-            return child;
-          } else {
-            return rawCell;
-          }
+    if (myErrorTarget.getTarget() == ErrorTargetEnum.REFERENCE) {
+      EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
+        public boolean met(EditorCell cell) {
+          return cell.isReferenceCell() && myErrorTarget.getRole().equals(cell.getRole());
         }
-        if (myErrorTarget.getTarget() == ErrorTargetEnum.PROPERTY) {
-          EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
-            public boolean met(EditorCell cell) {
-              if (!(cell instanceof EditorCell_Property)) return false;
-              EditorCell_Property propertyCell = (EditorCell_Property) cell;
-              if (myErrorTarget.getRole().equals(((PropertyAccessor)propertyCell.getModelAccessor()).getPropertyName())) {
-                return true;
-              }
-              return false;
-            }
-          }, true), true);
-          if (child != null) {
-            return child;
-          } else {
-            return rawCell;
-          }
-        }
-        return null;
+      }, true), true);
+      if (child != null) {
+        return child;
+      } else {
+        return rawCell;
       }
-    });
-    return result;
+    }
+    if (myErrorTarget.getTarget() == ErrorTargetEnum.PROPERTY) {
+      EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
+        public boolean met(EditorCell cell) {
+          if (!(cell instanceof EditorCell_Property)) return false;
+          EditorCell_Property propertyCell = (EditorCell_Property) cell;
+          if (myErrorTarget.getRole().equals(((PropertyAccessor)propertyCell.getModelAccessor()).getPropertyName())) {
+            return true;
+          }
+          return false;
+        }
+      }, true), true);
+      if (child != null) {
+        return child;
+      } else {
+        return rawCell;
+      }
+    }
+    return null;
   }
 
   public boolean isBackGround() {

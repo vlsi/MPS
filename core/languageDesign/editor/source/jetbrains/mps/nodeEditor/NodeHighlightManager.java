@@ -4,6 +4,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ManyToManyMap;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.Color;
 import java.util.*;
@@ -126,6 +127,20 @@ public class NodeHighlightManager implements EditorMessageOwner {
     synchronized (myMessagesLock) {
       result.addAll(myMessagesToNodes.getBySecond(node));
     }
+    return result;
+  }
+
+   public List<EditorMessage> getMessagesFor(EditorCell cell) {
+    List<EditorMessage> result = new ArrayList<EditorMessage>();
+     Set<EditorMessage> messageSet = new HashSet<EditorMessage>();
+     synchronized (myMessagesLock) {
+     messageSet.addAll(myMessagesToNodes.getBySecond(cell.getSNode()));
+    }
+     for (EditorMessage message : messageSet) {
+       if (message.getCell(myEditor) == cell) {
+         result.add(message);
+       }
+     }
     return result;
   }
 
