@@ -42,10 +42,10 @@ public interface EditorCell extends Cloneable {
   int getDescent();
 
   int getEffectiveWidth();
-  int getLeftInternalInset();
-  int getRightInternalInset();
-  int getTopInternalInset();
-  int getBottomInternalInset();
+  int getPaddingLeft();
+  int getPaddingRight();
+  int getPaddingTop();
+  int getPaddingBottom();
 
   Rectangle getBounds();
 

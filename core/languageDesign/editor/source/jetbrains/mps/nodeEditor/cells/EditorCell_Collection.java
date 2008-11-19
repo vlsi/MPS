@@ -5,7 +5,6 @@ import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.EnumMeasure;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Flow;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
@@ -16,7 +15,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ArrayWrapper;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.lang.editor.structure._Enum_Measure;
 
 import javax.swing.JComponent;
 import java.awt.Color;
@@ -750,9 +748,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
     private int getOverlapping() {
       if (myIsOpening) {
-        return myBraceTextLine.getLeftInternalInset() + myTextLine.getRightInternalInset();
+        return myBraceTextLine.getPaddingLeft() + myTextLine.getPaddingRight();
       } else {
-        return myBraceTextLine.getRightInternalInset() + myTextLine.getLeftInternalInset();
+        return myBraceTextLine.getPaddingRight() + myTextLine.getPaddingLeft();
       }
     }
 

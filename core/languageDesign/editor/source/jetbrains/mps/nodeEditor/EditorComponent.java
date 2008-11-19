@@ -1606,14 +1606,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       EditorCell_Label label = (EditorCell_Label) deepestCell;
 
       g.setColor(new Color(255, 255, 215));
-      g.fillRect(0, deepestCell.getY() + deepestCell.getTopInternalInset(), getWidth(),
-        deepestCell.getHeight() - deepestCell.getTopInternalInset() - deepestCell.getBottomInternalInset());
+      g.fillRect(0, deepestCell.getY(), getWidth(),
+        deepestCell.getHeight() - deepestCell.getPaddingTop() - deepestCell.getPaddingBottom());
 
       g.setColor(new Color(230, 230, 190));
-      g.fillRect(deepestCell.getX() + label.getLeftInternalInset(),
-        deepestCell.getY() + deepestCell.getTopInternalInset(),
-        deepestCell.getWidth() - label.getLeftInternalInset() - label.getRightInternalInset(),
-        deepestCell.getHeight() - deepestCell.getTopInternalInset() - deepestCell.getBottomInternalInset());
+      g.fillRect(deepestCell.getX() + label.getPaddingLeft(),
+        deepestCell.getY(),
+        deepestCell.getWidth() - label.getPaddingLeft() - label.getPaddingRight(),
+        deepestCell.getHeight() - deepestCell.getPaddingTop() - deepestCell.getPaddingBottom());
     }
 
     myLeftHighlighter.paint(g);

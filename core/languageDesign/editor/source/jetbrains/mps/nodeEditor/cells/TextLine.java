@@ -5,7 +5,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.EnumMeasure;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.lang.editor.structure._Enum_Measure;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
@@ -92,17 +91,17 @@ public class TextLine {
 
   public void relayout() {
     FontMetrics metrics = getFontMetrics();
-    myHeight = (int) (metrics.getHeight() * myLineSpacing + getTopInternalInset() + getBottomInternalInset());
+    myHeight = (int) (metrics.getHeight() * myLineSpacing + getPaddingTop() + getPaddingBottom());
     myTextHeight = (int) (metrics.getHeight() * myLineSpacing);
     int minWidth = calculateMinWidth();
-    int width = metrics.charsWidth(myText.toCharArray(), 0, myText.length()) + getLeftInternalInset() + getRightInternalInset();
+    int width = metrics.charsWidth(myText.toCharArray(), 0, myText.length()) + getPaddingLeft() + getPaddingRight();
     myWidth = Math.max(minWidth, width);
     myDescent = metrics.getDescent();
   }
 
   public int getEffectiveWidth() {
     int minWidth = calculateMinWidth();
-    int effectiveWidth = myWidth - getLeftInternalInset() - getRightInternalInset();
+    int effectiveWidth = myWidth - getPaddingLeft() - getPaddingRight();
     return Math.max(minWidth, effectiveWidth);
   }
 
@@ -139,7 +138,7 @@ public class TextLine {
     return 0;
   }
 
-  public int getLeftInternalInset() {
+  public int getPaddingLeft() {
     Double value = myStyle.get(StyleAttributes.PADDING_LEFT).getValue();
     EnumMeasure type = myStyle.get(StyleAttributes.PADDING_LEFT).getType();
 
@@ -151,7 +150,7 @@ public class TextLine {
     return getHorizontalInternalInsert(value, type);
   }
 
-  public int getRightInternalInset() {
+  public int getPaddingRight() {
     Double value = myStyle.get(StyleAttributes.PADDING_RIGHT).getValue();
     EnumMeasure type = myStyle.get(StyleAttributes.PADDING_RIGHT).getType();
 
@@ -163,13 +162,13 @@ public class TextLine {
     return getHorizontalInternalInsert(value, type);
   }
 
-  public int getTopInternalInset() {
+  public int getPaddingTop() {
     Double value = myStyle.get(StyleAttributes.PADDING_TOP).getValue();
     EnumMeasure type = myStyle.get(StyleAttributes.PADDING_TOP).getType();
     return getVerticalInternalInsert(value, type);
   }
 
-  public int getBottomInternalInset() {
+  public int getPaddingBottom() {
     Double value = myStyle.get(StyleAttributes.PADDING_BOTTOM).getValue();
     EnumMeasure type = myStyle.get(StyleAttributes.PADDING_BOTTOM).getType();
     return getVerticalInternalInsert(value, type);
@@ -288,7 +287,7 @@ public class TextLine {
   }
 
   public void paint(Graphics g, int shiftX, int shiftY, int width, int height, boolean isSelected, boolean toShowCaret) {
-   // shiftY += getTopInternalInset();
+   // shiftY += getPaddingTop();
     Color backgroundColor;
     Color textColor;
     Color textBackgroundColor;
@@ -307,16 +306,16 @@ public class TextLine {
 
     if (backgroundColor != null && !g.getColor().equals(backgroundColor) && !isSelected) {
       g.setColor(backgroundColor);
-      g.fillRect(shiftX + getLeftInternalInset(),
-        shiftY + getTopInternalInset(),
+      g.fillRect(shiftX + getPaddingLeft(),
+        shiftY + getPaddingTop(),
         (int) stringBounds.getWidth() - 1,
         myTextHeight - 1);
     }
 
     if (textBackgroundColor != null) {
       g.setColor(textBackgroundColor);
-      g.fillRect(shiftX + getLeftInternalInset(),
-        shiftY + getTopInternalInset(),
+      g.fillRect(shiftX + getPaddingLeft(),
+        shiftY + getPaddingTop(),
         (int) stringBounds.getWidth() - 1,
         myTextHeight - 1);
     }
@@ -327,19 +326,19 @@ public class TextLine {
     }
 
     int deltaShiftX_EndSelection =
-      (myEndTextSelectionPosition <= myText.length()) ? getCaretX(0, myEndTextSelectionPosition) : getLeftInternalInset();
+      (myEndTextSelectionPosition <= myText.length()) ? getCaretX(0, myEndTextSelectionPosition) : getPaddingLeft();
     int deltaShiftX_StartSelection = getCaretX(0, myStartTextSelectionPosition);
     int endLine = getCaretX(shiftX, myText.length());
-    int baselineY = shiftY + myHeight - myDescent - getBottomInternalInset();
-    int centerLineY = shiftY + (myHeight - getBottomInternalInset() + getTopInternalInset())/ 2;
+    int baselineY = shiftY + myHeight - myDescent - getPaddingBottom() - getPaddingTop();
+    int centerLineY = shiftY + (myHeight - getPaddingBottom() + getPaddingTop())/ 2;
 
     if (myStartTextSelectionPosition > 0) {
-      g.drawString(myText.substring(0, myStartTextSelectionPosition), shiftX + getLeftInternalInset(), baselineY);
+      g.drawString(myText.substring(0, myStartTextSelectionPosition), shiftX + getPaddingLeft(), baselineY);
       if (isUnderlined()) {
-        g.drawLine(shiftX + getLeftInternalInset(), baselineY + 1, shiftX + deltaShiftX_StartSelection, baselineY + 1);
+        g.drawLine(shiftX + getPaddingLeft(), baselineY + 1, shiftX + deltaShiftX_StartSelection, baselineY + 1);
       }
       if (isStrikeOut()) {
-        drawStrikeOutLine(g, shiftX + getLeftInternalInset(), shiftX + deltaShiftX_StartSelection, centerLineY);
+        drawStrikeOutLine(g, shiftX + getPaddingLeft(), shiftX + deltaShiftX_StartSelection, centerLineY);
       }
     }
     if (myEndTextSelectionPosition <= myText.length()) {
@@ -356,8 +355,8 @@ public class TextLine {
       //drawing textual selection
       Rectangle2D selectedStringBounds = metrics.getStringBounds(getTextuallySelectedText(), g);
       g.setColor(myTextSelectedBackgroundColor);
-      g.fillRect(shiftX + deltaShiftX_StartSelection + 1, shiftY + getTopInternalInset() + 1, 
-        (int) selectedStringBounds.getWidth() - 1, myTextHeight - 1);    //
+      g.fillRect(shiftX + deltaShiftX_StartSelection + 1, shiftY + getPaddingTop() + 1,
+        (int) selectedStringBounds.getWidth() - 1, myTextHeight - 1);
 
       g.setColor(myTextSelectedTextColor);
       g.drawString(getTextuallySelectedText(), shiftX + deltaShiftX_StartSelection, baselineY);
@@ -390,7 +389,6 @@ public class TextLine {
     }
     int x = getCaretX(shiftX);
     g.setColor(Color.BLACK);
-    shiftY += (getTopInternalInset());
     g.drawLine(x, shiftY, x, shiftY + myTextHeight);
     if (getCaretPosition() == 0) {
       g.drawLine(x + 1, shiftY, x + 1, shiftY + myTextHeight);
@@ -407,7 +405,7 @@ public class TextLine {
 
   public int getCaretX(int shiftX, int caretPosition) {
     FontMetrics metrics = getFontMetrics();
-    return shiftX + getLeftInternalInset() + metrics.charsWidth(myText.toCharArray(), 0, caretPosition);
+    return shiftX + getPaddingLeft() + metrics.charsWidth(myText.toCharArray(), 0, caretPosition);
   }
 
   private FontMetrics getFontMetrics() {
@@ -476,7 +474,7 @@ public class TextLine {
   }
 
   public void setCaretByXCoord(int _x) {
-    int x = _x - getLeftInternalInset();
+    int x = _x - getPaddingLeft();
     FontMetrics metrics = getFontMetrics();
     char[] chars = getText().toCharArray();
     setCaretPosition(myText.length());
@@ -533,7 +531,7 @@ public class TextLine {
   }
 
   public int getAscent() {
-    return myHeight - myDescent;
+    return myTextHeight - myDescent;
   }
 
   public int getDescent() {

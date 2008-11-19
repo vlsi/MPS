@@ -467,7 +467,7 @@ public class SearchPanel extends JPanel {
         int prevStringWidth = metrics.stringWidth(editorCell.getRenderedText().
           substring(0, editorCell.getRenderedText().toLowerCase().
             indexOf(text.toLowerCase())));
-        int x = editorCell.getX() + editorCell.getLeftInternalInset()
+        int x = editorCell.getX() + editorCell.getPaddingLeft()
           + prevStringWidth;
         int y = editorCell.getY();
         int height = editorCell.getHeight();

@@ -237,19 +237,19 @@ public abstract class EditorCell_Basic implements EditorCell {
     return myWidth;
   }
 
-  public int getLeftInternalInset() {
+  public int getPaddingLeft() {
     return 0;
   }
 
-  public int getRightInternalInset() {
+  public int getPaddingRight() {
     return 0;
   }
 
-  public int getTopInternalInset() {
+  public int getPaddingTop() {
     return 0;
   }
 
-  public int getBottomInternalInset() {
+  public int getPaddingBottom() {
     return 0;
   }
 
@@ -574,7 +574,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       g.drawRect(myX, myY, myWidth, myHeight);
     }
 
-    int leftInternalInset = getLeftInternalInset();
+    int leftInternalInset = getPaddingLeft();
 
     if (isDrawBrackets()) {
       g.setColor(getBracketsColor());
@@ -680,10 +680,10 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void paintSelection(Graphics g, Color c) {
-    int effectiveWidth = myNextIsPunctuation ? getWidth() - getRightInternalInset() : getWidth();
+    int effectiveWidth = myNextIsPunctuation ? getWidth() - getPaddingRight() : getWidth();
 
     g.setColor(c);
-    g.fillRect(getX(), getY() + getTopInternalInset(), effectiveWidth, getHeight() - getTopInternalInset() - getBottomInternalInset());
+    g.fillRect(getX(), getY() /*+ getPaddingTop()*/, effectiveWidth, getHeight() - getPaddingTop() - getPaddingBottom());
     if (getEditor().hasFocus()) {
       g.setColor(c.darker());
       g.drawRect(getX(), getY(), effectiveWidth, getHeight());

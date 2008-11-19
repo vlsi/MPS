@@ -16,7 +16,6 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.TextPasteUtil;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.editor.structure._Enum_Measure;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -231,20 +230,20 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return getTextLineWidth();
   }
 
-  public int getLeftInternalInset() {
-    return getRenderedTextLine().getLeftInternalInset();
+  public int getPaddingLeft() {
+    return getRenderedTextLine().getPaddingLeft();
   }
 
-  public int getRightInternalInset() {
-    return getRenderedTextLine().getRightInternalInset();
+  public int getPaddingRight() {
+    return getRenderedTextLine().getPaddingRight();
   }
 
-  public int getTopInternalInset() {
-    return getRenderedTextLine().getTopInternalInset();
+  public int getPaddingTop() {
+    return getRenderedTextLine().getPaddingTop();
   }
 
-  public int getBottomInternalInset() {
-    return getRenderedTextLine().getBottomInternalInset();
+  public int getPaddingBottom() {
+    return getRenderedTextLine().getPaddingBottom();
   }
 
   public int getTextLineWidth() {

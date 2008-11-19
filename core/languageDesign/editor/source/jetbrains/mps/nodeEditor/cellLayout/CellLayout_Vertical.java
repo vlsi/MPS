@@ -5,11 +5,9 @@ import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 
 import java.awt.Font;
 import java.awt.FontMetrics;
-import java.util.Iterator;
 
 /**
  * User: Sergey Dmitriev
@@ -70,7 +68,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       int cellHeight = editorCell.getHeight();
       int indent = getBracesIndent(editorCell);
       braceIndent = Math.max(indent, braceIndent);
-      height += cellHeight;
+      height += cellHeight /*+ editorCell.getPaddingTop() + editorCell.getPaddingBottom()*/;
     }
     for (EditorCell editorCell : cells) {
       lastCellWidth = editorCell.getWidth();
@@ -185,7 +183,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
     EditorCell editorCell = editorCell_collection.firstCell();
     if (editorCell == null) return 0;
-    return editorCell.getRightInternalInset();
+    return editorCell.getPaddingRight();
   }
 
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {

@@ -46,7 +46,7 @@ public class ColorAndGraphicsUtil {
     int x = cell.getX();
     int y = cell.getY();
     int height = cell.getHeight();
-    int leftInternalInset = cell.getLeftInternalInset();
+    int leftInternalInset = cell.getPaddingLeft();
     int effectiveWidth = cell.getEffectiveWidth();
     g.setColor(c);
     ColorAndGraphicsUtil.drawWave(g, x + leftInternalInset, x + leftInternalInset + effectiveWidth, y + height - ColorAndGraphicsUtil.WAVE_HEIGHT);

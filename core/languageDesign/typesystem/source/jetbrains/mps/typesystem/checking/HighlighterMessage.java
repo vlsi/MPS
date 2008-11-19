@@ -87,7 +87,7 @@ public class HighlighterMessage extends DefaultEditorMessage {
       int x = cell.getX();
       int y = cell.getY();
       int height = cell.getHeight();
-      int leftInternalInset = cell.getLeftInternalInset();
+      int leftInternalInset = cell.getPaddingLeft();
       int effectiveWidth = cell.getEffectiveWidth();
       g.setColor(new Color(250, 247, 158));
       g.fillRect(x + leftInternalInset, y, effectiveWidth, height);
