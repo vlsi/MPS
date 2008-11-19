@@ -121,7 +121,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern, false);    
     if (matchingActions.isEmpty()) {
-      matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern.trim(), false);
+      matchingActions = myNodeSubstituteInfo.getMatchingActions(IntelligentInputUtil.trimLeft(pattern), false);
     }
 
     try {

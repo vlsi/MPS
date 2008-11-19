@@ -69,8 +69,8 @@ public class EditorCell_Property extends EditorCell_Label {
   public void changeText(String text) {
     super.changeText(text);
 
-    if (!isValidText(text) && isValidText(text.trim())) {
-      text = text.trim();
+    if (!isValidText(text) && isValidText(IntelligentInputUtil.trimLeft(text))) {
+      text = IntelligentInputUtil.trimLeft(text);
     }
 
     if (isValidText(text)) {

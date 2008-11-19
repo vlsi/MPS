@@ -287,7 +287,9 @@ public class IntelligentInputUtil {
     prepareSTCell(editorContext, newCellForNewNode, head);
   }
 
-  private static String trimLeft(String text) {
+  public static String trimLeft(String text) {
+
+    text.trim();
     for (int i = 0; i < text.length(); i++) {
       if (!Character.isWhitespace(text.charAt(i))) {
         return text.substring(i);
