@@ -2,13 +2,14 @@ package jetbrains.mps.workbench.actions.model;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.project.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
@@ -16,10 +17,11 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.project.ModuleReference;
 
 import javax.swing.Icon;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author Kostik
@@ -73,33 +75,42 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     Collections.sort(modelLanguages, new ToStringComparator());
 
+    List<Language> languagesWithRoots = new ArrayList<Language>();
     for (final Language language : modelLanguages) {
+      for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
+        if (ModelConstraintsManager.getInstance().canBeARoot(data.getOperationContext(), NameUtil.nodeFQName(conceptDeclaration), data.getModelDescriptor().getSModel())) {
+          languagesWithRoots.add(language);
+          break;
+        }
+      }
+    }
+
+    boolean plain = myPlain || languagesWithRoots.size() == 1;
+
+    for (final Language language : languagesWithRoots) {
       String name = language.getNamespace();
       Icon icon = IconManager.getIconFor(language.getNamespace());
       BaseGroup langRootsGroup;
 
-      if (!myPlain) {
+      if (!plain) {
         langRootsGroup = new BaseGroup(name, name, icon);
         langRootsGroup.setPopup(true);
       } else {
         langRootsGroup = this;
       }
 
-      boolean hasChildren = false;
       for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
         if (ModelConstraintsManager.getInstance().canBeARoot(data.getOperationContext(), NameUtil.nodeFQName(conceptDeclaration), data.getModelDescriptor().getSModel())) {
           langRootsGroup.add(newRootNodeAction(new SNodePointer(conceptDeclaration), data.getModelDescriptor()));
-          hasChildren = true;
         }
       }
-      if (hasChildren) {
-        if (!myPlain) {
-          this.add(langRootsGroup);
-        } else {
-          this.addSeparator();
-        }
+      if (!plain) {
+        this.add(langRootsGroup);
+      } else {
+        this.addSeparator();
       }
     }
+
 
     Integer selectedItemsCount = MPSDataKeys.SELECTED_ITEMS_NUM.getData(event.getDataContext());
     boolean enabled = selectedItemsCount != null && selectedItemsCount == 1;
