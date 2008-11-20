@@ -69,8 +69,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       Point anchor = myEditorComponent.getLocationOnScreen();
       getPopupWindow().setRelativeCell(cell);
       getPopupWindow().relayout();
-      myPatternEditorLocation = new Point(anchor.x + cell.getX(), anchor.y + +cell.getY());
-      myPatternEditorSize = new Dimension(cell.getWidth() + 1, cell.getHeight());
+      myPatternEditorLocation = new Point(anchor.x + cell.getX() + cell.getPaddingLeft(), anchor.y + cell.getY() + cell.getPaddingTop());
+      myPatternEditorSize = new Dimension(
+        cell.getWidth() - cell.getPaddingLeft() - cell.getPaddingRight() + 1,
+        cell.getHeight() - cell.getPaddingTop() - cell.getPaddingBottom() + 1);
     }
   }
 
@@ -407,19 +409,19 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         public void mousePressed(MouseEvent e) {
           repaintPopupMenu();
           ModelAccess.instance().runReadAction(new Runnable() {
-                  public void run() {
-                    updatePatternEditor();
-                  }
-                });
+            public void run() {
+              updatePatternEditor();
+            }
+          });
         }
 
         public void mouseClicked(MouseEvent e) {
           if (e.getClickCount() == 2) {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                      public void run() {
-                        doSubstituteSelection();
-                      }
-                    });
+              public void run() {
+                doSubstituteSelection();
+              }
+            });
           }
         }
       });
@@ -475,7 +477,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     public void relayout() {
       Component component = myEditorComponent;
       Point anchor = component.getLocationOnScreen();
-      Point location = new Point(anchor.x + myRelativeCell.getX(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
+      Point location =
+        new Point(anchor.x + myRelativeCell.getX() + myRelativeCell.getPaddingLeft(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
 
       Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 
