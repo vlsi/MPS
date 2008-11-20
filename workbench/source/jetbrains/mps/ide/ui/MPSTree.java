@@ -39,6 +39,7 @@ public abstract class MPSTree extends DnDAwareTree {
   private int myTooltipManagerRecentInitialDelay;
   private boolean myAutoExpandEnabled = true;
   private boolean myAutoOpen = false;
+  private boolean myRebuildInProgress;
 
   private Set<MPSTreeNode> myExpadingNodes = new HashSet<MPSTreeNode>();
 
@@ -224,12 +225,16 @@ public abstract class MPSTree extends DnDAwareTree {
 
     myExpadingNodes.add(node);
     try {
-      TextTreeNode progressNode = new TextTreeNode("loading...");
-      node.add(progressNode);
-      ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
-      expandPath(new TreePath(progressNode.getPath()));
+      TextTreeNode progressNode = null;
+      if (!myRebuildInProgress) {
+        progressNode = new TextTreeNode("loading...");
+        node.add(progressNode);
+        ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
+        expandPath(new TreePath(progressNode.getPath()));
+
+        paint(getGraphics());
+      }
       
-      paint(getGraphics());
 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -237,10 +242,11 @@ public abstract class MPSTree extends DnDAwareTree {
         }
       });
 
-      if (node.hasChild(progressNode)) { //node.init() might remove all the children        
+      if (!myRebuildInProgress && node.hasChild(progressNode)) { //node.init() might remove all the children
         node.remove(progressNode);
         ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
       }
+
     } finally {
       myExpadingNodes.remove(node);
     }
@@ -428,17 +434,23 @@ public abstract class MPSTree extends DnDAwareTree {
       throw new RuntimeException("Rebuild now can be only called from UI thread");
     }
 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        List<String> expansion = getExpandedPaths();
-        List<String> selection = getSelectedPaths();
-        rebuildAction.run();
-        if (saveExpansion) {
-          expandPaths(expansion);
-          selectPaths(selection);
+
+    myRebuildInProgress = true;
+    try {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          List<String> expansion = getExpandedPaths();
+          List<String> selection = getSelectedPaths();
+          rebuildAction.run();
+          if (saveExpansion) {
+            expandPaths(expansion);
+            selectPaths(selection);
+          }
         }
-      }
-    });
+      });
+    } finally {
+      myRebuildInProgress = false;
+    }
 
   }
 
