@@ -21,4 +21,9 @@ public class ReferenceErrorTarget implements IErrorTarget {
   public String getRole() {
     return myRole;
   }
+
+  public boolean sameAs(IErrorTarget errorTarget) {
+    return errorTarget instanceof ReferenceErrorTarget
+      && ((ReferenceErrorTarget)errorTarget).myRole.equals(myRole);
+  }
 }

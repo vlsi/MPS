@@ -26,6 +26,17 @@ public class HighlighterMessage extends DefaultEditorMessage {
     myErrorTarget = target;
   }
 
+  @Override
+  public boolean sameAs(EditorMessage message) {
+    if (!(message instanceof HighlighterMessage)) {
+      return false;
+    }
+    if (!super.sameAs(message)) {
+      return false;
+    }
+    return myErrorTarget.sameAs(((HighlighterMessage)message).myErrorTarget);
+  }
+
   public EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
     if (getNode() == null) return null;
     if (!(editor instanceof NodeEditorComponent)) {

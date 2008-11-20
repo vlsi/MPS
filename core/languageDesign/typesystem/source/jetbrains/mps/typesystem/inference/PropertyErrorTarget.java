@@ -21,4 +21,9 @@ public class PropertyErrorTarget implements IErrorTarget {
   public String getRole() {
     return myPropertyName;
   }
+
+  public boolean sameAs(IErrorTarget errorTarget) {
+    return errorTarget instanceof PropertyErrorTarget &&
+      ((PropertyErrorTarget)errorTarget).myPropertyName.equals(myPropertyName);
+  }
 }

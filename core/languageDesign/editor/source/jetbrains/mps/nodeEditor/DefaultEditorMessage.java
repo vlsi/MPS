@@ -38,6 +38,11 @@ public class DefaultEditorMessage implements EditorMessage {
     myStatus = status;
   }
 
+  public boolean sameAs(EditorMessage message) {
+    return message.getNode() == getNode() && getOwner() == message.getOwner() &&
+      getStatus() == message.getStatus() && getMessage().equals(message.getMessage());
+  }
+
   public String getMessage() {
     return myMessage;
   }
@@ -51,30 +56,27 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   public boolean isValid(EditorComponent editorComponent) {
-    return getCell(editorComponent) != null;
+    return getCellInBothWays(editorComponent) != null;
   }
 
   public int getStart(EditorComponent editorComponent) {
-     return getCell(editorComponent).getY();
+     return getCellInBothWays(editorComponent).getY();
    }
 
   public int getHeight(EditorComponent editorComponent) {
-    return getCell(editorComponent).getHeight();
+    return getCellInBothWays(editorComponent).getHeight();
   }
 
   public void doNavigate(EditorComponent editorComponent) {
-    editorComponent.changeSelection(getCell(editorComponent));
+    editorComponent.changeSelection(getCellInBothWays(editorComponent));
   }
 
-  public EditorCell getCell_new(final EditorComponent editorComponent) {
-    EditorCell rootCell = editorComponent.getRootCell();
-    if (rootCell == null) return null;
-    EditorCell child = rootCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
-      public boolean met(EditorCell object) {
-        return acceptCell(object, editorComponent);
-      }
-    }, true));
-    return child;
+  protected EditorCell getCellInBothWays(EditorComponent editor) {
+    EditorCell editorCell = getCell(editor);
+    if (editorCell != null) {
+      return editorCell;
+    }
+    return getCellForParentNodeInMainEditor(editor);
   }
 
   public MessageStatus getStatus() {

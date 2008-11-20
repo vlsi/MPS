@@ -15,4 +15,8 @@ public class NodeErrorTarget implements IErrorTarget {
   public String getRole() {
     return null;
   }
+
+  public boolean sameAs(IErrorTarget errorTarget) {
+    return errorTarget instanceof NodeErrorTarget;
+  }
 }

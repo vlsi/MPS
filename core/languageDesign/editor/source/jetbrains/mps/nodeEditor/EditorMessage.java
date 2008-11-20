@@ -35,5 +35,7 @@ public interface EditorMessage {
 
   boolean isBackGround();
 
+  boolean sameAs(EditorMessage message);
+
   IntentionProvider getIntentionProvider();
 }

@@ -883,9 +883,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void updateMessages(Set<EditorMessage> messages) {
-    if (myMessages != null && !myMessages.isEmpty()) {
-      System.err.println("oy vey");
-    }
     myMessages = null;
     for (EditorMessage message : new ArrayList<EditorMessage>(messages)) {
       if (message.acceptCell(this, getEditor())) {

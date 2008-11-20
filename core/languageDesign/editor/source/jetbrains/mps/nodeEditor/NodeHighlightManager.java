@@ -83,10 +83,8 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void mark(EditorMessage message) {
-    EditorMessageOwner owner = message.getOwner();
-
     for (EditorMessage msg : getMessages()) {
-      if (msg.getOwner() == owner && msg.getCell(myEditor) == message.getCell(myEditor)) return;
+      if (msg.sameAs(message)) return;
     }
 
     synchronized (myMessagesLock) {

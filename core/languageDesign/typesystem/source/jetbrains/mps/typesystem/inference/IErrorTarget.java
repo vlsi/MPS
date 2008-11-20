@@ -10,4 +10,5 @@ package jetbrains.mps.typesystem.inference;
 public interface IErrorTarget {
   public ErrorTargetEnum getTarget();
   public String getRole();
+  public boolean sameAs(IErrorTarget errorTarget);
 }
