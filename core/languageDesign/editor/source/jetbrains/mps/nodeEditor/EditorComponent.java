@@ -38,6 +38,9 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.IErrorReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.NodeTypesComponent;
+import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.typesystem.checking.HelginsTypesEditorChecker;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
@@ -557,7 +560,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (cell == null) {
           return null;
         }
-        return getMessageFor(cell);
+        return getMessageTextFor(cell);
       }
     });
   }
@@ -572,7 +575,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         EditorCell selection = getSelectedCell();
         String info = "";
         if (selection != null) {
-          String message = getMessageFor(selection);
+          String message = getMessageTextFor(selection);
           if (message != null) {
             info = message;
           }
@@ -582,14 +585,25 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
-  private String getMessageFor(EditorCell cell) {
+  private String getMessageTextFor(EditorCell cell) {
+    EditorMessage message = getEditorMessageFor(cell);
+    if (message != null) {
+      return message.getMessage();
+    }
+    return null;
+  }
+
+  private EditorMessage getEditorMessageFor(EditorCell cell) {
     SNode node = cell.getSNode();
-    while (node != null) {
-      final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(node);
-      if (herror != null) {
-        return herror.reportError();
+    NodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
+      createNodeTypesComponent(node.getContainingRoot());
+
+    while (cell != null) {
+      List<EditorMessage> messages = cell.getMessagesForOwner(nodeTypesComponent);
+      if (!messages.isEmpty()) {
+        return messages.get(0);
       }
-      node = node.getParent();
+      cell = cell.getParent();
     }
 
     return null;
@@ -1490,17 +1504,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void showCellError() {
-    if (getSelectedCell() != null) {
+    final EditorCell selectedCell = getSelectedCell();
+    if (selectedCell != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SNode selectedNode = getSelectedCell().getSNode();
-          while (selectedNode != null) {
-            final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
-            if (herror != null) {
+           final EditorMessage message = getEditorMessageFor(selectedCell);
+          Object info = message.getUserObject(HelginsTypesEditorChecker.ERROR_INFO);
+          if (info instanceof IErrorReporter) {
+              final IErrorReporter herror = (IErrorReporter) info;
               SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
-                  String s = herror.reportError();
-                  final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, "TYPESYSTEM ERROR", false);
+                  String s = message.getMessage();
+                  final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, "Typesystem " + message.getStatus().getPresentation(), false);
                   JButton button = new JButton(new AbstractAction("Go To Rule") {
                     public void actionPerformed(ActionEvent e) {
                       ModelAccess.instance().runReadAction(new Runnable() {
@@ -1518,8 +1533,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
               });
               return;
             }
-            selectedNode = selectedNode.getParent();
-          }
         }
       });
     }

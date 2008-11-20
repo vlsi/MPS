@@ -8,5 +8,18 @@ package jetbrains.mps.nodeEditor;
  * To change this template use File | Settings | File Templates.
  */
 public enum MessageStatus {
-  OK, WARNING, ERROR
+  OK {
+    public String getPresentation() {
+      return "info";
+    }},
+  WARNING {
+    public String getPresentation() {
+      return "warning";
+    }},
+  ERROR {
+    public String getPresentation() {
+      return "error";
+    }};
+
+  public abstract String getPresentation();
 }

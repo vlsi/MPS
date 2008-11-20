@@ -38,4 +38,7 @@ public interface EditorMessage {
   boolean sameAs(EditorMessage message);
 
   IntentionProvider getIntentionProvider();
+
+  public void putUserObject(Object key, Object value);
+  public Object getUserObject(Object key);
 }

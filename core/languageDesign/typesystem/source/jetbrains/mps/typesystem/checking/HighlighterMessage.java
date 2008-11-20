@@ -10,6 +10,7 @@ import jetbrains.mps.typesystem.inference.ErrorTargetEnum;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.

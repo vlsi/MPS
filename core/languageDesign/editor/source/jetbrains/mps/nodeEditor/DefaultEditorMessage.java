@@ -6,9 +6,11 @@ import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.misc.hash.HashMap;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,6 +27,7 @@ public class DefaultEditorMessage implements EditorMessage {
   private IntentionProvider myIntentionProvider;
   private MessageStatus myStatus = MessageStatus.OK;
 
+  private Map<Object, Object> myUserObjects;
 
   public DefaultEditorMessage(SNode node, Color color, String message, EditorMessageOwner owner) {
     myNodePointer = new SNodePointer(node);
@@ -41,6 +44,20 @@ public class DefaultEditorMessage implements EditorMessage {
   public boolean sameAs(EditorMessage message) {
     return message.getNode() == getNode() && getOwner() == message.getOwner() &&
       getStatus() == message.getStatus() && getMessage().equals(message.getMessage());
+  }
+
+  public void putUserObject(Object key, Object value) {
+    if (myUserObjects == null) {
+      myUserObjects = new HashMap<Object, Object>(1);
+    }
+    myUserObjects.put(key, value);
+  }
+
+  public Object getUserObject(Object key) {
+    if (myUserObjects == null) {
+      return null;
+    }
+    return myUserObjects.get(key);
   }
 
   public String getMessage() {

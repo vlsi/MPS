@@ -615,6 +615,19 @@ public abstract class EditorCell_Basic implements EditorCell {
     return new ArrayList<EditorMessage>(myMessages);
   }
 
+  public List<EditorMessage> getMessagesForOwner(EditorMessageOwner owner) {
+    if (myMessages == null) {
+      return Collections.emptyList();
+    }
+    ArrayList<EditorMessage> result = new ArrayList<EditorMessage>(1);
+    for (EditorMessage message : myMessages) {
+      if (message.getOwner() == owner) {
+        result.add(message);
+      }
+    }
+    return result;
+  }
+
   public boolean hasErrorMessages() {
     for (EditorMessage message : getMessages()) {
       if (message.getStatus() == MessageStatus.ERROR) {

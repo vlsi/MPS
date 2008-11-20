@@ -184,6 +184,7 @@ public interface EditorCell extends Cloneable {
   void updateMessages(Set<EditorMessage> messages);
   void addMessage(EditorMessage message);
   List<EditorMessage> getMessages();
+  List<EditorMessage> getMessagesForOwner(EditorMessageOwner owner);
   boolean hasErrorMessages();
 
   EditorCell_Label getSTHintCell();

@@ -28,6 +28,8 @@ import java.util.*;
 public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
   private static Logger LOG = Logger.getLogger(HelginsTypesEditorChecker.class);
 
+  public static final Object ERROR_INFO = new Object();
+
   private Timer myTimer = new Timer("helgins interruptor");
 
   public Set<EditorMessage> createMessages(final SNode node, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
@@ -60,8 +62,10 @@ public class HelginsTypesEditorChecker extends EditorCheckerAdapter {
       Color color = getMessageColor(status);
       String errorString = errorNode.o2.reportError();
       DefaultEditorMessage message =
-        new HighlighterMessage(errorNode.o1, status, errorNode.o2.getErrorTarget(), color, "TYPE ERROR: " + errorString, typesComponent);
+        new HighlighterMessage(errorNode.o1, status, errorNode.o2.getErrorTarget(), color, "Typesystem " + status.getPresentation() + ": " + errorString, typesComponent);
       IntentionProvider intentionProvider = errorNode.o2.getIntentionProvider();
+
+      message.putUserObject(ERROR_INFO, errorNode.o2);
 
       if (intentionProvider != null && intentionProvider.isExecutedImmediately()) {
         final QuickFix_Runtime intention = intentionProvider.getQuickFix();
