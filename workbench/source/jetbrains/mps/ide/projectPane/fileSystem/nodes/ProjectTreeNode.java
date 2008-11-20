@@ -94,6 +94,11 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
       }
       return folder;
     }
+
+    @Override
+    protected boolean isSorted() {
+      return false;
+    }
   }
 
 }
