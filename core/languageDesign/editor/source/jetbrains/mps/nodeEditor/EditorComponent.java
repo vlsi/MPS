@@ -662,7 +662,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void updateMessages() {
-    LinkedHashSet<EditorMessage> messages = new LinkedHashSet<EditorMessage>(myHighlightManager.getMessages());
+    Set<EditorMessage> messages = getMessages();
     myRootCell.updateMessages(messages);
     if (!messages.isEmpty()) { //messages without cells
       for (EditorMessage message : messages) {
@@ -673,6 +673,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
     getExternalComponent().repaint();
+  }
+
+  protected Set<EditorMessage> getMessages() {
+    return new LinkedHashSet<EditorMessage>(myHighlightManager.getMessages());
   }
 
   public IOperationContext getOperationContext() {

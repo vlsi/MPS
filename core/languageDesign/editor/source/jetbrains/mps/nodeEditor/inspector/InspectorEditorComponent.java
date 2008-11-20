@@ -26,6 +26,8 @@ public class InspectorEditorComponent extends EditorComponent {
     reinitEditor();
   }
 
+  private Object myInspectionSessionId = new Object();
+
   private void reinitEditor() {
     if (getEditedNode() == null) {
       setEditorContext(new EditorContext(this, null, null));
@@ -36,10 +38,12 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   public void editNode(SNode semanticNode, IOperationContext operationContext) {
+    //never used
     inspectNode(semanticNode, operationContext);
   }
 
   public void inspectNode(final SNode node, final IOperationContext context) {
+    myInspectionSessionId = new Object();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (node == null) {
@@ -90,5 +94,10 @@ public class InspectorEditorComponent extends EditorComponent {
 
   public EditorCell createRootCell() {
     return createRootCell(null);
+  }
+
+  //inspector is always the same, but inspection sessions differ
+  public Object getInspectionSessionId() {
+    return myInspectionSessionId;
   }
 }

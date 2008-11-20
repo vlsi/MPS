@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.IEditorChecker;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -38,6 +37,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private Set<IEditorChecker> myCheckersToRemove = new LinkedHashSet<IEditorChecker>();
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
   private Set<EditorComponent> myCheckedOnceEditors = new WeakSet<EditorComponent>();
+  private Set<Object> myCheckedOnceInspectors = new WeakSet<Object>();
   private EditorsProvider myEditorsProvider;
   private InspectorTool myInspectorTool;
 
@@ -213,7 +213,11 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         return false;
       }
 
-      myCheckedOnceEditors.add(component);
+      if (component instanceof InspectorEditorComponent) {
+        myCheckedOnceInspectors.add(((InspectorEditorComponent)component).getInspectionSessionId());
+      } else {
+        myCheckedOnceEditors.add(component);
+      }
       if (updateEditor(component, events, wasCheckedOnce, checkersToRecheck, checkersToRemove)) {
         return true;
       }
@@ -222,10 +226,17 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   private boolean wasCheckedOnce(EditorComponent editorComponent) {
+    if (editorComponent instanceof InspectorEditorComponent) {
+      return myCheckedOnceInspectors.contains(((InspectorEditorComponent)editorComponent).getInspectionSessionId());
+    }
     return myCheckedOnceEditors.contains(editorComponent);
   }
 
   public void resetCheckedState(EditorComponent editorComponent) {
+    if (editorComponent instanceof InspectorEditorComponent) {
+      myCheckedOnceInspectors.remove(((InspectorEditorComponent)editorComponent).getInspectionSessionId());
+      return;
+    }
     myCheckedOnceEditors.remove(editorComponent);
   }
 
@@ -313,8 +324,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           LOG.error(t);
         }
       }
-
     }
-
   }
 }
