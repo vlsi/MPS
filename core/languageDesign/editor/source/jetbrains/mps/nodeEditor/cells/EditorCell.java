@@ -74,7 +74,6 @@ public interface EditorCell extends Cloneable {
   LinkDeclaration getLinkDeclaration();
 
   boolean isReferenceCell();
-  void setReferenceCell(boolean isReferenceCell);
 
   boolean isErrorState();
   void setErrorState(boolean isError);
@@ -181,8 +180,7 @@ public interface EditorCell extends Cloneable {
   FocusPolicy getFocusPolicy();
   void setFocusPolicy(FocusPolicy fp);
 
-//  void updateMessages();
-  void updateMessages(LinkedHashSet<EditorMessage> messages);
+  void updateMessages(Set<EditorMessage> messages);
   List<EditorMessage> getMessages();
   boolean hasErrorMessages();
 

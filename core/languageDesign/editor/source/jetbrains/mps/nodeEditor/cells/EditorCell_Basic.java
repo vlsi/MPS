@@ -316,14 +316,15 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void setLinkDeclaration(LinkDeclaration link) {
     myLinkDeclaration = link;
+    if (myLinkDeclaration != null) {
+      myIsReferenceCell = link.getMetaClass() != LinkMetaclass.aggregation;
+    } else {
+      myIsReferenceCell = false;
+    }
   }
 
   public LinkDeclaration getLinkDeclaration() {
     return myLinkDeclaration;
-  }
-
-  public void setReferenceCell(boolean isReferenceCell) {
-    myIsReferenceCell = isReferenceCell;
   }
 
   public boolean isReferenceCell() {
@@ -881,7 +882,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     getStyle().set(StyleAttributes.FOCUS_POLICY, fp);
   }
 
-  public void updateMessages(LinkedHashSet<EditorMessage> messages) {
+  public void updateMessages(Set<EditorMessage> messages) {
     myMessages = null;
     for (EditorMessage message : new ArrayList<EditorMessage>(messages)) {
       if (message.acceptCell(this, getEditor())) {
