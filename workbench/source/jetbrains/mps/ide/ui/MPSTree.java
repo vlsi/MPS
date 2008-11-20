@@ -214,7 +214,9 @@ public abstract class MPSTree extends DnDAwareTree {
 
     AbstractAction refreshTreeAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
+        long start = System.currentTimeMillis();
         rebuildNow();
+        System.out.println("rebuilt in " + (System.currentTimeMillis() - start));
       }
     };
     registerKeyboardAction(refreshTreeAction, KeyStroke.getKeyStroke("F5"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);

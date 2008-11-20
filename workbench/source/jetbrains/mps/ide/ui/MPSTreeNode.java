@@ -25,6 +25,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Collections;
 
 /**
  * @author Kostik
@@ -59,11 +60,22 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public Iterator<MPSTreeNode> iterator() {
-    List<MPSTreeNode> result = new ArrayList<MPSTreeNode>();
-    for (int i = 0; i < getChildCount(); i++) {
-      result.add((MPSTreeNode) getChildAt(i));
+    if (children == null) {
+      return new Iterator<MPSTreeNode>() {
+        public boolean hasNext() {
+          return false;
+        }
+
+        public MPSTreeNode next() {
+          throw new IllegalStateException();
+        }
+
+        public void remove() {
+          throw new IllegalStateException();
+        }
+      };
     }
-    return result.iterator();
+    return children.iterator();
   }
 
   public MPSTree getTree() {
@@ -218,8 +230,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     if (!isInitialized()) {
       return;
     }
-    for (int i = 0; i < getChildCount(); i++) {
-      MPSTreeNode node = (MPSTreeNode) getChildAt(i);
+    for (MPSTreeNode node : this) {
       node.removeThisAndChildren();
     }
   }
@@ -379,9 +390,8 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   private void updateErrorState() {
     ErrorState state = ErrorState.NONE;
-    if (propogateErrorUpwards()) {
-      for (int i = 0; i < getChildCount(); i++) {
-        MPSTreeNode node = (MPSTreeNode) getChildAt(i);
+    if (propogateErrorUpwards()) {            
+      for (MPSTreeNode node : this) {
         state = state.combine(node.getAggregatedErrorState());
       }
     }

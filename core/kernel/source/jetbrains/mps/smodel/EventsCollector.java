@@ -102,7 +102,7 @@ public class EventsCollector {
 
   private static class CommandListenersSupport {
     private final Object myLock = new Object();
-    private List<CommandListener> myListeners = new ArrayList<CommandListener>();
+    private Set<CommandListener> myListeners = new LinkedHashSet<CommandListener>();
 
     private CommandListenersSupport() {
       CommandProcessor.getInstance().addCommandListener(new MyListener());
