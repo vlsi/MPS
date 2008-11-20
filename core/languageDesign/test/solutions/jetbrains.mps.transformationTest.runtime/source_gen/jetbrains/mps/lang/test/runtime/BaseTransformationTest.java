@@ -42,7 +42,7 @@ public class BaseTransformationTest extends TestCase {
           public void run() {
             IdeMain.setTestMode(true);
             SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model));
-            BaseTransformationTest.this.setModelDescriptor(modelDescriptor, BaseTransformationTest.this.myProject);
+            BaseTransformationTest.this.setModelDescriptor(modelDescriptor);
           }
 
         });
@@ -51,9 +51,13 @@ public class BaseTransformationTest extends TestCase {
     });
   }
 
-  public void setModelDescriptor(SModelDescriptor modelDescriptor, MPSProject project) {
+  public void setProject(MPSProject project) {
+    this.myProject = project;
+  }
+
+  public void setModelDescriptor(SModelDescriptor modelDescriptor) {
     this.myModel = modelDescriptor;
-    ModuleContext context = ModuleContext.create(this.myModel, project, false);
+    ModuleContext context = ModuleContext.create(this.myModel, this.myProject, false);
     TransientModelsModule module = context.getComponent(TransientModelsModule.class);
     this.myTransidentModel = module.createTransientModel("testTransidentModel", "testTransidentModel");
     CloneUtil.cloneModel(this.myModel.getSModel(), this.myTransidentModel.getSModel());

@@ -456,6 +456,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225977061701">
     <property name="name" value="EditorTestMethod" />
+    <property name="package" value="editor" />
     <link role="extends" targetNodeId="1216913689992" resolveInfo="NodesTestMethod" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225981599433">
       <property name="metaClass" value="aggregation" />
@@ -507,10 +508,57 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226066719224">
     <property name="name" value="TestCellAnnotation" />
-    <link role="extends" targetNodeId="1210673684636" resolveInfo="TestNodeAnnotation" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1226066756036">
       <property name="name" value="cellId" />
       <link role="dataType" targetNodeId="5.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1226950608043">
+      <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226949237497">
+    <property name="name" value="TestCellReference" />
+    <link role="extends" targetNodeId="7.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1226949237498">
+      <property name="role" value="declaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1226066719224" resolveInfo="TestCellAnnotation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226949806914">
+    <property name="package" value="editor" />
+    <property name="name" value="SelectCellOperation" />
+    <link role="extends" targetNodeId="1227003183644" resolveInfo="EditorOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1226950308893">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="arg" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="7.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1226950366890">
+      <property name="value" value="select cell" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227003183644">
+    <property name="package" value="editor" />
+    <property name="name" value="EditorOperation" />
+    <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1227011531743">
+      <link role="intfc" targetNodeId="7.1197027803184" resolveInfo="IOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227182079811">
+    <property name="package" value="editor" />
+    <property name="name" value="TypeKeyOperation" />
+    <link role="extends" targetNodeId="1227003183644" resolveInfo="EditorOperation" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1227184461946">
+      <property name="name" value="keys" />
+      <link role="dataType" targetNodeId="5.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227182099750">
+      <property name="value" value="type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

@@ -906,6 +906,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1225988545335">
+    <property name="package" value="editor" />
     <link role="concept" targetNodeId="1.1225977061701" resolveInfo="EditorTestMethod" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1225988545336">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225988545337">
@@ -923,6 +924,34 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1227003196629">
+    <property name="package" value="editor" />
+    <link role="concept" targetNodeId="1.1227003183644" resolveInfo="EditorOperation" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1227003198601">
+      <property name="name" value="getOperand" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227003208317" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227003198603">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1227003219881">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227003240049">
+            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1227003234813">
+              <link role="concept" targetNodeId="2v.1197027756228" resolveInfo="DotExpression" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227003230493">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1227003229586" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1227003232356" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227003242912">
+              <link role="link" targetNodeId="2v.1197027771414" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227003201698" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1227003196630">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227003196631" />
     </node>
   </node>
 </model>

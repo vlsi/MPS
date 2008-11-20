@@ -34,10 +34,10 @@ public class AddCellAnnotation_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode newAnootation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.TestCellAnnotation", null);
-    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("testNode"), newAnootation, true);
-    SPropertyOperations.set(newAnootation, "cellId", editorContext.getContextCell().getCellId());
-    editorContext.select(newAnootation);
+    SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.TestCellAnnotation", null);
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("testNode"), newAnnotation, true);
+    SPropertyOperations.set(newAnnotation, "cellId", editorContext.getContextCell().getCellId());
+    editorContext.select(newAnnotation);
   }
 
   public String getLocationString() {
