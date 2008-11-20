@@ -3984,6 +3984,7 @@
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1168625651362">
           <property name="text" value="root template" />
+          <link role="styleClass" targetNodeId="1224774992290" resolveInfo="GeneratorKeyWord" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994477">
             <property name="flag" value="true" />
           </node>
@@ -3991,12 +3992,13 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1168625644511">
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1168625644512">
             <property name="text" value="input" />
+            <link role="styleClass" targetNodeId="1224774992290" resolveInfo="GeneratorKeyWord" />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996810">
               <property name="flag" value="false" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1168625644513">
-            <property name="noTargetText" value="&lt;any node&gt;" />
+            <property name="noTargetText" value="&lt;unspecified&gt;" />
             <link role="relationDeclaration" targetNodeId="1.1168619429071" />
             <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1168625644514">
               <link role="conceptDeclaration" targetNodeId="6.1169125787135" />

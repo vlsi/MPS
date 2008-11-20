@@ -650,5 +650,15 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226692835515" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1227219853403">
+    <property name="name" value="AAA" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227219853404" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1227219853405">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227219853406" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227219853407" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227219853408" />
+    </node>
+    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1227219853409" />
+  </node>
 </model>
 

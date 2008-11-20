@@ -152,7 +152,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
   public EditorCell createRefCell1168625644513(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("applicableConcept");
-    provider.setNoTargetText("<any node>");
+    provider.setNoTargetText("<unspecified>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell1168625644513_internal(context, node, provider);
@@ -215,6 +215,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11686256445121168625644512(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1168625644512");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -232,6 +233,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_11686256513621168625651362(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1168625651362");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
