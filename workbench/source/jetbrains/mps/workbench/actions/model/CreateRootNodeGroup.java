@@ -85,7 +85,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
     }
 
-    boolean plain = myPlain || languagesWithRoots.size() == 1;
+    boolean plain = myPlain || (languagesWithRoots.size() == 1 && aspect == null);
 
     for (final Language language : languagesWithRoots) {
       String name = language.getNamespace();
