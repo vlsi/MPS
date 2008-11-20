@@ -6,7 +6,7 @@ import org.apache.commons.httpclient.methods.PostMethod;
 import java.io.IOException;
 
 public class Performer {
-  public static final String teamsys = "http://teamsys.labs.intellij.net/teamsys";
+  public static final String teamsys = "http://teamsys.intellij.net/teamsys";
   public static final String login = "/rest/user/login";
   public static final String issue = "XX-1";
   public static final String postissue = "/rest/issue/";
