@@ -39,7 +39,7 @@ public abstract class MPSTree extends DnDAwareTree {
   private int myTooltipManagerRecentInitialDelay;
   private boolean myAutoExpandEnabled = true;
   private boolean myAutoOpen = false;
-  private boolean myRebuildInProgress;
+  private boolean myLoadingDisabled;
 
   private Set<MPSTreeNode> myExpadingNodes = new HashSet<MPSTreeNode>();
 
@@ -228,7 +228,7 @@ public abstract class MPSTree extends DnDAwareTree {
     myExpadingNodes.add(node);
     try {
       TextTreeNode progressNode = null;
-      if (!myRebuildInProgress) {
+      if (!myLoadingDisabled) {
         progressNode = new TextTreeNode("loading...");
         node.add(progressNode);
         ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
@@ -244,7 +244,7 @@ public abstract class MPSTree extends DnDAwareTree {
         }
       });
 
-      if (!myRebuildInProgress && node.hasChild(progressNode)) { //node.init() might remove all the children
+      if (!myLoadingDisabled && node.hasChild(progressNode)) { //node.init() might remove all the children
         node.remove(progressNode);
         ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
       }
@@ -394,9 +394,15 @@ public abstract class MPSTree extends DnDAwareTree {
   }
 
   public void expandAll(MPSTreeNode node) {
-    expandPath(new TreePath(node.getPath()));
-    for (int i = 0; i < node.getChildCount(); i++) {
-      expandAll((MPSTreeNode) node.getChildAt(i));
+    boolean wasLoadingDisabled = myLoadingDisabled;
+    myLoadingDisabled = true;
+    try {
+      expandPath(new TreePath(node.getPath()));
+      for (int i = 0; i < node.getChildCount(); i++) {
+        expandAll((MPSTreeNode) node.getChildAt(i));
+      }
+    } finally {
+      myLoadingDisabled = wasLoadingDisabled;
     }
   }
 
@@ -437,7 +443,7 @@ public abstract class MPSTree extends DnDAwareTree {
     }
 
 
-    myRebuildInProgress = true;
+    myLoadingDisabled = true;
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -451,7 +457,7 @@ public abstract class MPSTree extends DnDAwareTree {
         }
       });
     } finally {
-      myRebuildInProgress = false;
+      myLoadingDisabled = false;
     }
 
   }

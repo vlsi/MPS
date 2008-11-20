@@ -173,7 +173,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell createProperty1080742871174(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("text");
-    provider.setNoTargetText("<no text>");
+    provider.setNoTargetText("<constant>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(true);
     EditorCell cellWithRole = this.createProperty1080742871174_internal(context, node, provider);

@@ -712,6 +712,7 @@
         <property name="allowEmptyText" value="true" />
         <property name="writable" value="true" />
         <property name="defaultValue" value="" />
+        <property name="noTargetText" value="&lt;constant&gt;" />
         <link role="relationDeclaration" targetNodeId="2.1073389577007" />
         <link role="keyMap" targetNodeId="1178883358278" resolveInfo="_SplitConctantCellIntoWordsKeyMap" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1214314939614">
