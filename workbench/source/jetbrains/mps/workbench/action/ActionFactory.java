@@ -28,13 +28,13 @@ public class ActionFactory {
 
   public void registerAction(AnAction action, String id, String languageNamespace) {
     Shortcut[] shortcuts = action.getShortcutSet().getShortcuts();
-    /*if (shortcuts.length != 0) {
+    if (shortcuts.length != 0) {
       if (KeymapManager.getInstance().getActiveKeymap().getShortcuts(id).length == 0) {
         for (Shortcut s : shortcuts) {
           KeymapManager.getInstance().getActiveKeymap().addShortcut(id, s);
         }
       }
-    }*/
+    }
     ActionManager.getInstance().registerAction(id, action, PluginId.getId(languageNamespace != null ? languageNamespace : "java actions"));
   }
 
