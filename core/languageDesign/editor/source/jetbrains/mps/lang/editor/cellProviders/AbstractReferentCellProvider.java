@@ -76,7 +76,6 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       result.setRole(myGenuineRole);
       if (myGenuineLinkDeclaration != null) {
         result.setLinkDeclaration(myGenuineLinkDeclaration);
-        result.setReferenceCell(!myIsAggregation);
       } else {
         LOG.error("Can't find link declaration " + myGenuineRole);
       }
