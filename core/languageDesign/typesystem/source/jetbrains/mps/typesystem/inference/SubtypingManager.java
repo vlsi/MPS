@@ -228,26 +228,26 @@ public class SubtypingManager {
   }
 
   private Boolean getCacheAnswer(NodeWrapper subRepresentator, IMatcher superRepresentator, boolean isWeak) {
-    if (myTypeChecker.isGenerationMode()) {
+ //   if (myTypeChecker.isGenerationMode()) {
       SubtypingCache cache = myTypeChecker.getSubtypingCache();
       if (cache != null) {
         if (superRepresentator instanceof NodeWrapper) {
           return cache.getAnswer(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), isWeak);
         }
       }
-    }
+   // }
     return null;
   }
 
   private void addToCache(NodeWrapper subRepresentator, IMatcher superRepresentator, boolean answer, boolean isWeak) {
-    if (myTypeChecker.isGenerationMode()) {
+   // if (myTypeChecker.isGenerationMode()) {
       SubtypingCache cache = myTypeChecker.getSubtypingCache();
       if (cache != null) {
         if (superRepresentator instanceof NodeWrapper) {
           cache.addCacheEntry(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), answer, isWeak);
         }
       }
-    }
+   // }
   }
 
   public StructuralNodeSet<?> collectImmediateSupertypes(SNode term) {
@@ -495,14 +495,14 @@ public class SubtypingManager {
     }
 
     //asking the cache
-    if (myTypeChecker.isGenerationMode()) {
+//    if (myTypeChecker.isGenerationMode()) {
       SubtypingCache cache = myTypeChecker.getSubtypingCache();
       if (cache != null) {
         Pair<Boolean,SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
         if (nodePair.o1) {
           return nodePair.o2;
         }
-      }
+  //    }
     }
 
     CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
@@ -515,12 +515,12 @@ public class SubtypingManager {
     }
 
     //writing to the cache
-    if (myTypeChecker.isGenerationMode()) {
-      SubtypingCache cache = myTypeChecker.getSubtypingCache();
-      if (cache != null) {
-        cache.addCacheEntry(subtype, pattern, result, isWeak);
+ //   if (myTypeChecker.isGenerationMode()) {
+      SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
+      if (subtypingCache != null) {
+        subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
       }
-    }
+  //  }
 
     return result;
   }

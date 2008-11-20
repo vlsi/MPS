@@ -138,10 +138,16 @@ public class TypeChecker implements ApplicationComponent {
 
   public void enableTypesComputingForCompletion() {
     myComputedTypesForCompletion = new HashMap<SNode, SNode>();
+    if (mySubtypingCache == null) {
+      mySubtypingCache = new SubtypingCache();
+    }
   }
 
   public void clearTypesComputedForCompletion() {
     myComputedTypesForCompletion = null;
+    if (!isGenerationMode()) {
+      mySubtypingCache = null;
+    }
   }
 
   public void setIsGeneration(boolean isGeneration) {
