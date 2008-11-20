@@ -557,7 +557,9 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211366813562" />
-    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1211366813579" />
+    <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1211366813579">
+      <link role="applicableConcept" targetNodeId="1.1208623485264" resolveInfo="AbstractOperation" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1216147812749">
     <property name="name" value="NotATemplate" />
