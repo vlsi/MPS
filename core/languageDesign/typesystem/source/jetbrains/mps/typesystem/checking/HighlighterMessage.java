@@ -1,21 +1,15 @@
 package jetbrains.mps.typesystem.checking;
 
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.ErrorTargetEnum;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 
 import java.awt.Color;
 import java.awt.Graphics;
-
-import com.intellij.openapi.util.Computable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,8 +26,11 @@ public class HighlighterMessage extends DefaultEditorMessage {
     myErrorTarget = target;
   }
 
-  private EditorCell getCellFromParent(EditorComponent editor) {
+  public EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
     if (getNode() == null) return null;
+    if (!(editor instanceof NodeEditorComponent)) {
+      return null;
+    }
     SNode parent = getNode().getParent();
     EditorCell result = null;
     while (parent != null) {
@@ -80,10 +77,6 @@ public class HighlighterMessage extends DefaultEditorMessage {
   public EditorCell getCell(EditorComponent editor) {
     final EditorCell rawCell = super.getCell(editor);
     if (rawCell == null) {
-      if (editor instanceof NodeEditorComponent) {
-        EditorCell parent = getCellFromParent(editor);
-        return parent;
-      }
       return null;
     }
     if (myErrorTarget.getTarget() == ErrorTargetEnum.NODE) {

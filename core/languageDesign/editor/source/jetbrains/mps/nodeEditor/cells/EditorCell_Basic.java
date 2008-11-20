@@ -37,7 +37,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public static final Logger LOG = Logger.getLogger(EditorCell_Basic.class);
 
   public static final int BRACKET_WIDTH = 7;
-  
+
 
   private Map myUserObjects;
 
@@ -115,7 +115,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         myEditorContext.getNodeEditorComponent().activateNodeSubstituteChooser(this, false);
       } else {
         return false;
-      }      
+      }
       return true;
     }
 
@@ -172,7 +172,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         return currentAction;
       }
       current = current.getParent();
-    }    
+    }
     return myEditorContext.getNodeEditorComponent().getComponentAction(type);
   }
 
@@ -390,7 +390,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   protected boolean doProcessKeyTyped(KeyEvent e) {
     if (getSNode() != null && !getSNode().isRoot() && UIUtil.isReallyTypedEvent(e)) {
-      SNode newNode = replaceWithDefault();      
+      SNode newNode = replaceWithDefault();
       EditorComponent editor = getEditorContext().getNodeEditorComponent();
       EditorCell nodeCell = editor.findNodeCell(newNode);
       if (nodeCell == null) return false;
@@ -499,7 +499,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
 
     if (current instanceof EditorCell_Collection) {
-      for (EditorCell cell : ((EditorCell_Collection) current).getCells()) {                
+      for (EditorCell cell : ((EditorCell_Collection) current).getCells()) {
         collectCellsWithY(cell, y, cells);
       }
     }
@@ -544,7 +544,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   protected boolean isSelectionPaintedOnAncestor() {
     if (isSelectionPainted()) {
       return true;
-    }    
+    }
     if (getParent() != null) {
       return ((EditorCell_Basic) getParent()).isSelectionPaintedOnAncestor();
     }
@@ -883,6 +883,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void updateMessages(Set<EditorMessage> messages) {
+    if (myMessages != null && !myMessages.isEmpty()) {
+      System.err.println("oy vey");
+    }
     myMessages = null;
     for (EditorMessage message : new ArrayList<EditorMessage>(messages)) {
       if (message.acceptCell(this, getEditor())) {
@@ -893,6 +896,13 @@ public abstract class EditorCell_Basic implements EditorCell {
         myMessages.add(message);
       }
     }
+  }
+
+  public void addMessage(EditorMessage message) {
+    if (myMessages == null) {
+      myMessages = new ArrayList<EditorMessage>(1);
+    }
+    myMessages.add(message);
   }
 
   public boolean isAbove(EditorCell cell) {

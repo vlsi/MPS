@@ -86,6 +86,10 @@ public class DefaultEditorMessage implements EditorMessage {
     return editor.getBigValidCellForNode(getNode());
   }
 
+  public EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
+    return null;
+  }
+
   public boolean acceptCell(EditorCell cell, EditorComponent editor) {
     if (cell == null) return false;
     return cell.isBigCell() && editor.isValid(cell) && cell.getSNode() == getNode();
