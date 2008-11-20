@@ -10,6 +10,7 @@ import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -39,14 +40,10 @@ public class SolutionProperties_Action extends GeneratedAction {
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "SolutionProperties", t);
-      this.disable(event.getPresentation());
+    if (ActionPlaces.PROJECT_VIEW_POPUP.equals(event.getPlace()) && isApplicable(event)) {
+      enable(event.getPresentation());
+    } else {
+      disable(event.getPresentation());
     }
   }
 

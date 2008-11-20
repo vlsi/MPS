@@ -10,6 +10,7 @@ import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionEventData;
 import jetbrains.mps.project.DevKit;
@@ -35,11 +36,10 @@ public class DevkitProperties_Action extends GeneratedAction {
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "DevkitProperties", t);
-      this.disable(event.getPresentation());
+    if (ActionPlaces.PROJECT_VIEW_POPUP.equals(event.getPlace())) {
+      enable(event.getPresentation());
+    } else {
+      disable(event.getPresentation());;
     }
   }
 
