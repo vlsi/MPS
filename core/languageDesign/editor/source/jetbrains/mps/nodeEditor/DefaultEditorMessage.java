@@ -4,6 +4,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.util.Condition;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -62,6 +64,17 @@ public class DefaultEditorMessage implements EditorMessage {
 
   public void doNavigate(EditorComponent editorComponent) {
     editorComponent.changeSelection(getCell(editorComponent));
+  }
+
+  public EditorCell getCell_new(final EditorComponent editorComponent) {
+    EditorCell rootCell = editorComponent.getRootCell();
+    if (rootCell == null) return null;
+    EditorCell child = rootCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
+      public boolean met(EditorCell object) {
+        return acceptCell(object, editorComponent);
+      }
+    }, true));
+    return child;
   }
 
   public MessageStatus getStatus() {

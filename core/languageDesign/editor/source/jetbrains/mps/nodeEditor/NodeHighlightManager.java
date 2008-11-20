@@ -130,20 +130,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
     return result;
   }
 
-   public List<EditorMessage> getMessagesFor(EditorCell cell) {
-    List<EditorMessage> result = new ArrayList<EditorMessage>();
-     Set<EditorMessage> messageSet = new HashSet<EditorMessage>();
-     synchronized (myMessagesLock) {
-     messageSet.addAll(myMessagesToNodes.getBySecond(cell.getSNode()));
-    }
-     for (EditorMessage message : messageSet) {
-       if (message.getCell(myEditor) == cell) {
-         result.add(message);
-       }
-     }
-    return result;
-  }
-
   public void dispose() {
     ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
   }

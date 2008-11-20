@@ -895,22 +895,6 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
   }
 
- /* public void updateMessages() {
-    myMessages = null;
- //   if (getUserObject(EditorManager.BIG_CELL_CONTEXT) != null) {
-      EditorComponent editor = getEditor();
-      NodeHighlightManager highlightManager = editor.getHighlightManager();
-      if (highlightManager == null) return;
-      List<EditorMessage> messagesForNode = highlightManager.getMessagesFor(this *//*getSNode()*//*);
-      if (!messagesForNode.isEmpty()) {
-        if (myMessages == null) {
-          myMessages = new ArrayList<EditorMessage>(1);
-        }
-        myMessages.addAll(messagesForNode);
-      }
-  //  }
-  }*/
-
   public boolean isAbove(EditorCell cell) {
     return getY() + getHeight() <= cell.getY();
   }
