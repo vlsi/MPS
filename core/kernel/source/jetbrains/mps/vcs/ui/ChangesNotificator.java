@@ -50,10 +50,10 @@ public class ChangesNotificator implements ProjectComponent {
   }
 
   private boolean showAddVcsRootsDialog(Project project, VirtualFile vcsRoot, SModelDescriptor sm) {
-    String message = "You have changed model " + sm + ".\n" +
+    String message = "You have changed model " + sm.getSModelFqName() + ".\n" +
       "Do you want to add folder " + vcsRoot.getPath() + " to the list of vcs roots so you would be able to commit your changes?\n" +
       "You can always do it later choosing Settings -> Project Settings -> Version Control.";
-    String title = "Add folder " + vcsRoot.getPath() + " to the list of vcs roots?";
+    String title = "Add Folder " + vcsRoot.getPath() + " To The List Of Vcs Roots?";
     return Messages.showYesNoDialog(project, message, title, Messages.getQuestionIcon()) == DialogWrapper.OK_EXIT_CODE;
   }
 
