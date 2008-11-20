@@ -41,4 +41,13 @@ public class transformationTest_StyleSheet {
     };
   }
 
+  public static Style getEditorOpration(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      }
+
+    };
+  }
+
 }

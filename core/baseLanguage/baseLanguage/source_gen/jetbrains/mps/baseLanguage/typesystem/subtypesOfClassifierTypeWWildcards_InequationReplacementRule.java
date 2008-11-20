@@ -11,6 +11,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -83,7 +85,8 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
             {
               {
                 BaseIntentionProvider intentionProvider = null;
-                typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357915", intentionProvider);
+                IErrorTarget errorTarget = new NodeErrorTarget();
+                typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357915", intentionProvider, errorTarget);
               }
             }
           }

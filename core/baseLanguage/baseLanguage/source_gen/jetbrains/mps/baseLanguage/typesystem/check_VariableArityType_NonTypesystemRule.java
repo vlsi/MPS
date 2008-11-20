@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
 public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
 
@@ -30,7 +32,8 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
           if ((SNodeOperations.getNextSibling(matchedNode_2) != null)) {
             {
               BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.reportTypeError(matchedNode_2, "parameter of variable arity must be a last one", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921711936", intentionProvider);
+              IErrorTarget errorTarget = new NodeErrorTarget();
+              typeCheckingContext.reportTypeError(matchedNode_2, "parameter of variable arity must be a last one", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921711936", intentionProvider, errorTarget);
             }
           }
           break;
@@ -38,7 +41,8 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
       }
       {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(variableArityType, "variable arity types should only be used in method parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921506083", intentionProvider);
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportTypeError(variableArityType, "variable arity types should only be used in method parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921506083", intentionProvider, errorTarget);
       }
     } while(false);
   }

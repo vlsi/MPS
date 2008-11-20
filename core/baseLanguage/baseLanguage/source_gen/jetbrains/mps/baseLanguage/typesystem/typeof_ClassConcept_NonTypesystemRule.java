@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,21 +26,24 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
     if ((SLinkOperations.getTarget(cls, "superclass", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(cls, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(SLinkOperations.getTarget(cls, "superclass", true), "Class expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637809856", intentionProvider);
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportTypeError(SLinkOperations.getTarget(cls, "superclass", true), "Class expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637809856", intentionProvider, errorTarget);
       }
     }
     for(SNode impl : Sequence.fromIterable(SLinkOperations.getTargets(cls, "implementedInterface", true))) {
       if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(impl, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"))) {
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportTypeError(impl, "Interface expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637809876", intentionProvider);
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          typeCheckingContext.reportTypeError(impl, "Interface expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637809876", intentionProvider, errorTarget);
         }
       }
     }
     if (!(SPropertyOperations.getBoolean(cls, "abstractClass")) && ListSequence.fromList(ClassConcept_Behavior.call_getMethodsToImplement_1221637841398(cls)).isNotEmpty()) {
       {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(cls, "Class has not implemented methods (press control+I too see)", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637871546", intentionProvider);
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportTypeError(cls, "Class has not implemented methods (press control+I too see)", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637871546", intentionProvider, errorTarget);
       }
     }
   }

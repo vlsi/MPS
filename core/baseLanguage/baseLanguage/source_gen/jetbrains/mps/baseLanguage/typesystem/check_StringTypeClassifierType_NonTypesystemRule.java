@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_StringTypeClassifierType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -19,7 +21,8 @@ public class check_StringTypeClassifierType_NonTypesystemRule extends AbstractNo
     if (SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_105().createNode(typeCheckingContext), "classifier", false)) {
       {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportInfo(node, "It's recommended to use string type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225197259595", intentionProvider);
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportInfo(node, "It's recommended to use string type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225197259595", intentionProvider, errorTarget);
       }
     }
   }

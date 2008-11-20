@@ -21,7 +21,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="18" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
@@ -32,7 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
@@ -13887,6 +13887,10 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226946696139">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1226946698065">
                   <property name="value" value="2" />
+                  <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestCellAnnotation" id="1227187693502">
+                    <property name="cellId" value="property_value" />
+                    <property name="name" value="end" />
+                  </node>
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1226944291834">
                   <property name="value" value="2" />
@@ -13906,30 +13910,21 @@
     <node role="testMethods" type="jetbrains.mps.lang.test.structure.EditorTestMethod" id="1226944297402">
       <property name="name" value="editorTest" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226944297405">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226949744982">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226949752442">
-            <node role="operand" type="jetbrains.mps.lang.test.structure.EditorExpression" id="1226949744983" />
-            <node role="operation" type="jetbrains.mps.lang.test.structure.SelectCellOperation" id="1226950520635">
-              <node role="arg" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1226950811117">
-                <link role="declaration" targetNodeId="1226944697219" resolveInfo="start" />
-              </node>
-            </node>
+        <node role="statement" type="jetbrains.mps.lang.test.structure.SelectCellStatement" id="1227191239268">
+          <node role="arg" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1227191257834">
+            <link role="declaration" targetNodeId="1226944697219" resolveInfo="start" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227184612489">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227184614116">
-            <node role="operation" type="jetbrains.mps.lang.test.structure.TypeKeyOperation" id="1227184629214">
-              <property name="keys" value="2+2" />
-            </node>
-            <node role="operand" type="jetbrains.mps.lang.test.structure.EditorExpression" id="1227184612490" />
-          </node>
+        <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1227191974865">
+          <property name="keys" value="2+2" />
         </node>
-        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertMatch" id="1226944322909">
-          <node role="before" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1226944324629">
-            <link role="declaration" targetNodeId="1226944252556" resolveInfo="before" />
-          </node>
-          <node role="after" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1226944329052">
+        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertEditor" id="1227188354087">
+          <node role="editor" type="jetbrains.mps.lang.test.structure.EditorExpression" id="1227189811420" />
+          <node role="finishState" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="1227188365766">
             <link role="declaration" targetNodeId="1226944279238" resolveInfo="after" />
+          </node>
+          <node role="finishCell" type="jetbrains.mps.lang.test.structure.TestCellReference" id="1227188378924">
+            <link role="declaration" targetNodeId="1227187693502" resolveInfo="end" />
           </node>
         </node>
       </node>

@@ -4,14 +4,10 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.smodel.IOperationContext;
-
 import java.util.Map;
-
 import jetbrains.mps.smodel.SNode;
-
 import java.util.List;
 import java.util.LinkedHashMap;
-
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -32,11 +28,11 @@ public class TestTree extends MPSTree {
   public MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("Tests");
     this.map.clear();
-    for (SNode testCase : Sequence.fromIterable(MapSequence.fromMap(this.tests).keySet())) {
+    for(SNode testCase : Sequence.fromIterable(MapSequence.fromMap(this.tests).keySet())) {
       TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
       root.add(testCaseTreeNode);
       this.map.put(testCase, testCaseTreeNode);
-      for (SNode method : Sequence.fromIterable(MapSequence.fromMap(this.tests).get(testCase))) {
+      for(SNode method : Sequence.fromIterable(MapSequence.fromMap(this.tests).get(testCase))) {
         TestMethodTreeNode testMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
         testCaseTreeNode.add(testMethodTreeNode);
         this.map.put(testCase, method, testMethodTreeNode);

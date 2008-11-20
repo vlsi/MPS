@@ -11,6 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
 
 public class DataFlowUtil {
@@ -42,13 +44,15 @@ public class DataFlowUtil {
         if (nodeToSelect != null) {
           {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportTypeError(nodeToSelect, "Return expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640343628", intentionProvider);
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            typeCheckingContext.reportTypeError(nodeToSelect, "Return expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640343628", intentionProvider, errorTarget);
           }
         } else
         {
           {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportTypeError(n, "Return expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640343636", intentionProvider);
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            typeCheckingContext.reportTypeError(n, "Return expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640343636", intentionProvider, errorTarget);
           }
         }
       }
@@ -61,7 +65,8 @@ public class DataFlowUtil {
     for(SNode n : unreachable) {
       {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(n, "Unreachable node", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640538234", intentionProvider);
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportTypeError(n, "Unreachable node", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640538234", intentionProvider, errorTarget);
       }
     }
   }
@@ -74,7 +79,8 @@ public class DataFlowUtil {
         SNode ref = read;
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportTypeError(ref, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640624825", intentionProvider);
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          typeCheckingContext.reportTypeError(ref, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640624825", intentionProvider, errorTarget);
         }
       }
     }
@@ -90,7 +96,8 @@ public class DataFlowUtil {
           {
             BaseIntentionProvider intentionProvider = null;
             intentionProvider = new BaseIntentionProvider("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints).RemoveUnusedAssignment_QuickFix");
-            typeCheckingContext.reportWarning(assignment, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223642282236", intentionProvider);
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            typeCheckingContext.reportWarning(assignment, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223642282236", intentionProvider, errorTarget);
           }
         }
       }
@@ -99,7 +106,8 @@ public class DataFlowUtil {
         if (IVariableAssignment_Behavior.call_isCanBeUnused_1223985713603(variableAssignment)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportWarning(write, "Unused parameter", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225278748067", intentionProvider);
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            typeCheckingContext.reportWarning(write, "Unused parameter", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225278748067", intentionProvider, errorTarget);
           }
         }
       }
@@ -108,7 +116,8 @@ public class DataFlowUtil {
         if (IVariableAssignment_Behavior.call_isCanBeUnused_1223985713603(variableAssignment)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportWarning(write, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225278681706", intentionProvider);
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            typeCheckingContext.reportWarning(write, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225278681706", intentionProvider, errorTarget);
           }
         }
       }
@@ -122,7 +131,8 @@ public class DataFlowUtil {
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause")) && SNodeOperations.getAncestor(var, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null) {
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportWarning(var, "Unused variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223642399966", intentionProvider);
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          typeCheckingContext.reportWarning(var, "Unused variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223642399966", intentionProvider, errorTarget);
         }
       }
     }

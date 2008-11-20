@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_BaseAssignmentExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -22,7 +24,8 @@ public class typeof_BaseAssignmentExpression_InferenceRule extends AbstractInfer
     SNode rval = SLinkOperations.getTarget(ae, "rValue", true);
     if (!(Expression_Behavior.call_isLValue_1213877519786(lval))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(lval, "unexpected in left part or assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519229331", intentionProvider);
+      IErrorTarget errorTarget = new NodeErrorTarget();
+      typeCheckingContext.reportTypeError(lval, "unexpected in left part or assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519229331", intentionProvider, errorTarget);
     }
     {
       SNode _nodeToCheck_1029348928467 = baseAssignmentExpression;

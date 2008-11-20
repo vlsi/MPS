@@ -13,6 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -53,7 +55,8 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportTypeError(returnStatement, "no return value expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178765152925", intentionProvider);
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            typeCheckingContext.reportTypeError(returnStatement, "no return value expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178765152925", intentionProvider, errorTarget);
           }
         }
       }
@@ -64,7 +67,8 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.reportTypeError(returnStatement, "should return value", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178765314800", intentionProvider);
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            typeCheckingContext.reportTypeError(returnStatement, "should return value", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178765314800", intentionProvider, errorTarget);
           }
         } else
         {

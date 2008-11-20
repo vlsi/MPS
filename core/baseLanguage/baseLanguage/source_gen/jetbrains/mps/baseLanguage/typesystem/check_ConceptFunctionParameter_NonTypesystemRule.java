@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -26,7 +28,8 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
     if (SNodeOperations.isInstanceOf(conceptFunction, "jetbrains.mps.baseLanguage.structure.Closure")) {
       {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(parameter, "concept function parameter can not be used in closure", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1197313614703", intentionProvider);
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportTypeError(parameter, "concept function parameter can not be used in closure", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1197313614703", intentionProvider, errorTarget);
       }
     } else
     {
@@ -41,7 +44,8 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
       if (Sequence.fromIterable(seq).isEmpty()) {
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportTypeError(parameter, "not applicable in this context", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1197313958459", intentionProvider);
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          typeCheckingContext.reportTypeError(parameter, "not applicable in this context", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1197313958459", intentionProvider, errorTarget);
         }
       }
     }

@@ -527,8 +527,8 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226949806914">
     <property name="package" value="editor" />
-    <property name="name" value="SelectCellOperation" />
-    <link role="extends" targetNodeId="1227003183644" resolveInfo="EditorOperation" />
+    <property name="name" value="SelectCellStatement" />
+    <link role="extends" targetNodeId="7.1068580123157" resolveInfo="Statement" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1226950308893">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="arg" />
@@ -550,14 +550,35 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227182079811">
     <property name="package" value="editor" />
-    <property name="name" value="TypeKeyOperation" />
-    <link role="extends" targetNodeId="1227003183644" resolveInfo="EditorOperation" />
+    <property name="name" value="TypeKeyStatement" />
+    <link role="extends" targetNodeId="7.1068580123157" resolveInfo="Statement" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1227184461946">
       <property name="name" value="keys" />
       <link role="dataType" targetNodeId="5.1082983041843" resolveInfo="string" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227182099750">
       <property name="value" value="type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227187903044">
+    <property name="package" value="editor" />
+    <property name="name" value="AssertEditor" />
+    <link role="extends" targetNodeId="7.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227187928483">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="finishState" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="7.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1227187956219">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="finishCell" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="7.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227188180160">
+      <property name="value" value="assert editor" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>
