@@ -2721,7 +2721,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227218768329">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227218768330">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1227218960034">
-              <property name="value" value="TODO: user should choose mapping config" />
+              <property name="value" value="TODO: let user to choose mapping config?" />
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1227218957857">
@@ -3112,7 +3112,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227221178686">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227221178687">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1227221178688">
-              <property name="value" value="TODO: user should choose mapping config" />
+              <property name="value" value="TODO: let user to choose mapping config?" />
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1227221178689">

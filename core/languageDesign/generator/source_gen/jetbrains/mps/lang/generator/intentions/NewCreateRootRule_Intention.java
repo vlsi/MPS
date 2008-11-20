@@ -81,7 +81,7 @@ public class NewCreateRootRule_Intention extends BaseIntention {
       }
     }
     if (ListSequence.fromList(configs).count() > 1) {
-      // TODO: user should choose mapping config
+      // TODO: let user to choose mapping config?
     }
     SNode config = ListSequence.fromList(configs).first();
     //  add new rule
