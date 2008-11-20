@@ -460,11 +460,11 @@ public class SearchPanel extends JPanel {
     }
 
     public boolean acceptCell(EditorCell cell, EditorComponent editor) {
-      return getCell(editor) == cell;
+      return myInfo.findCell(editor) == cell;
     }
 
-    public void paint(Graphics g, EditorComponent editorComponent) {
-      EditorCell_Label editorCell = (EditorCell_Label) getCell(editorComponent);
+    public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
+      EditorCell_Label editorCell = (EditorCell_Label) cell;
       if (editorCell != null) {
         FontMetrics metrics = g.getFontMetrics();
         String text = editorCell.getRenderedText().substring(myStartPosition, myEndPosition);

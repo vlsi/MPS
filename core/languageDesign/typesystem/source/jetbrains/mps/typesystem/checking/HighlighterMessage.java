@@ -129,8 +129,7 @@ public class HighlighterMessage extends DefaultEditorMessage {
     return getStatus() == MessageStatus.WARNING;
   }
 
-  public void paint(Graphics g, EditorComponent editorComponent) {
-    EditorCell cell = getCell(editorComponent);
+  public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
     paintDecorations(g, cell);
   }
 

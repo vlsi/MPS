@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
@@ -17,8 +18,8 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMess
 
   protected EditorMessage createErrorMessage(SNode node, String message) {
     DefaultEditorMessage error = new DefaultEditorMessage(node, Color.RED, message, getOwner(node.getContainingRoot())) {
-      public void paint(Graphics g, EditorComponent editorComponent) {
-        ColorAndGraphicsUtil.drawWaveUnderCell(g, Color.RED, getCell(editorComponent));
+      public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
+        ColorAndGraphicsUtil.drawWaveUnderCell(g, Color.RED, cell);
       }
     };
     return error;

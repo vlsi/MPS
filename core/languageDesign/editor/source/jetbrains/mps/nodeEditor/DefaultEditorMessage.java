@@ -82,8 +82,7 @@ public class DefaultEditorMessage implements EditorMessage {
     return myNodePointer.getNode();
   }
 
-  public void paint(Graphics g, EditorComponent editorComponent) {
-    EditorCell cell = getCell(editorComponent);
+  public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
     int x = cell.getX();
     int y = cell.getY();
     int width = cell.getWidth();

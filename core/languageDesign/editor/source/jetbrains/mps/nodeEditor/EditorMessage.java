@@ -29,7 +29,7 @@ public interface EditorMessage {
 
   boolean acceptCell(EditorCell cell, EditorComponent editor);
 
-  void paint(Graphics g, EditorComponent editorComponent);
+  void paint(Graphics g, EditorComponent editorComponent, EditorCell cell);
 
   boolean isBackGround();
 
