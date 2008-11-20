@@ -164,6 +164,8 @@ public class ClassifierTypeUtil {
           SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(sup, pattern_0);
           if (coercedNode_0 != null) {
             concretes.addLast(coercedNode_0);
+          } else
+          {
           }
         }
       }

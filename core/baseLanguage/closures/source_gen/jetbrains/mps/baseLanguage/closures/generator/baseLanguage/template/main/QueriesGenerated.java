@@ -378,6 +378,8 @@ public class QueriesGenerated {
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "resultType", true), pattern_0);
       if (coercedNode_0 != null) {
         return BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(coercedNode_0, "elementType", true));
+      } else
+      {
       }
     }
     return null;

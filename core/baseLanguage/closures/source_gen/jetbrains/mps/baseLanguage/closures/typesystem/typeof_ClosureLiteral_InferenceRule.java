@@ -14,6 +14,8 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import java.util.LinkedList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -156,7 +158,8 @@ with_allThrows:
     if (returnsValue && yieldsValue) {
       if (!(false)) {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(closure, "closure must either return or yield value", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579075859", intentionProvider);
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportTypeError(closure, "closure must either return or yield value", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579075859", intentionProvider, errorTarget);
       }
     } else
     if ((returnsValue || returnsFromLast) && !(yieldsValue)) {

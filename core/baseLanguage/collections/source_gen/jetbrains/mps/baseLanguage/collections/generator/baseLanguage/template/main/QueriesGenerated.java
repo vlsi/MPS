@@ -509,6 +509,8 @@ public class QueriesGenerated {
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_context.getNode()), "componentType", true), pattern_0);
       if (coercedNode_0 != null) {
         return SLinkOperations.getTarget(coercedNode_0, "classifier", false);
+      } else
+      {
       }
     }
     return SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false);
@@ -1025,6 +1027,8 @@ public class QueriesGenerated {
       SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.GenericNewExpression", false, false)), pattern_1);
       if (coercedNode_1 != null) {
         return SLinkOperations.getTarget(coercedNode_1, "elementType", true);
+      } else
+      {
       }
     }
     return new _Quotations.QuotationClass_1().createNode();
@@ -1037,6 +1041,8 @@ public class QueriesGenerated {
       SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.GenericNewExpression", false, false)), pattern_2);
       if (coercedNode_2 != null) {
         return SLinkOperations.getTarget(coercedNode_2, "elementType", true);
+      } else
+      {
       }
     }
     return new _Quotations.QuotationClass_2().createNode();
@@ -1377,6 +1383,8 @@ public class QueriesGenerated {
       SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), pattern_3);
       if (coercedNode_3 != null) {
         return SLinkOperations.getTarget(coercedNode_3, "elementType", true);
+      } else
+      {
       }
     }
     return new _Quotations.QuotationClass_5().createNode();
@@ -1396,6 +1404,8 @@ public class QueriesGenerated {
       SNode coercedNode_4 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), pattern_4);
       if (coercedNode_4 != null) {
         return SLinkOperations.getTarget(coercedNode_4, "elementType", true);
+      } else
+      {
       }
     }
     return new _Quotations.QuotationClass_6().createNode();

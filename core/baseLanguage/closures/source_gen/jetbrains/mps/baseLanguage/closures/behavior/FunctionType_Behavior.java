@@ -133,6 +133,8 @@ public class FunctionType_Behavior {
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(thisNode, "resultType", true), pattern_0);
       if (coercedNode_0 != null) {
         return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_0, "elementType", true));
+      } else
+      {
       }
     }
     return null;

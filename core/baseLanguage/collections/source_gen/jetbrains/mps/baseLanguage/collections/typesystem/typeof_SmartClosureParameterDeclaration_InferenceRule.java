@@ -29,7 +29,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
       {
         SNode _nodeToCheck_1029348928467 = scpd;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation(typeCheckingContext.typeOf(SNodeOperations.getParent(scpd), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225884498234", true), new _Quotations.QuotationClass_90().createNode(paramTypes, typeCheckingContext.getEquationManager().getRepresentator(resType_typevar_1225884601347), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225884506962", false, 0, intentionProvider);
+        typeCheckingContext.createEquation(typeCheckingContext.typeOf(SNodeOperations.getParent(scpd), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1227182076310", true), new _Quotations.QuotationClass_90().createNode(paramTypes, typeCheckingContext.getEquationManager().getRepresentator(resType_typevar_1225884601347), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1227182076308", intentionProvider);
       }
       {
         SNode _nodeToCheck_1029348928467 = scpd;
