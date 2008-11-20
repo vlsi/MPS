@@ -4714,8 +4714,8 @@
                                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1193742288697" />
                                             </node>
                                           </node>
-                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1207648294069">
-                                            <link role="baseMethodDeclaration" targetNodeId="4.~SModel.toString():java.lang.String" resolveInfo="toString" />
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227200063763">
+                                            <link role="baseMethodDeclaration" targetNodeId="4.~SModel.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
                                           </node>
                                         </node>
                                       </node>
@@ -4887,8 +4887,8 @@
                                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1193740839090" />
                                             </node>
                                           </node>
-                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216929833156">
-                                            <link role="baseMethodDeclaration" targetNodeId="4.~SModel.toString():java.lang.String" resolveInfo="toString" />
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1227200080108">
+                                            <link role="baseMethodDeclaration" targetNodeId="4.~SModel.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
                                           </node>
                                         </node>
                                       </node>
