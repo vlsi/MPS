@@ -18,6 +18,7 @@ import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationAction;
 import jetbrains.mps.workbench.actions.nodes.GoToRulesAction;
 import jetbrains.mps.workbench.actions.generate.GenerateFilesFromCurrentModelAction;
 import jetbrains.mps.workbench.actions.generate.GenerateTextFromCurrentModelAction;
+import jetbrains.mps.lang.generator.plugin.actions.GoToUsageInMappingConfigAction;
 import jetbrains.mps.lang.generator.plugin.debug.actions.ShowGenerationTraceAction;
 import jetbrains.mps.workbench.actions.nodes.FindSpecificNodeUsagesAction;
 import jetbrains.mps.workbench.actions.nodes.FastFindUsagesNodeAction;
@@ -117,6 +118,13 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       {
         IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
         this.add(ActionFactory.getInstance().acquireRegisteredAction(GenerateTextFromCurrentModelAction.class, module.getModuleFqName(), null));
+      }
+      if (BaseGroup.class.isAssignableFrom(GoToUsageInMappingConfigAction.class)) {
+        this.add(new GoToUsageInMappingConfigAction());
+      } else
+      {
+        IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference("jetbrains.mps.ide"));
+        this.add(ActionFactory.getInstance().acquireRegisteredAction(GoToUsageInMappingConfigAction.class, module.getModuleFqName(), null));
       }
       this.addSeparator();
       if (BaseGroup.class.isAssignableFrom(ShowGenerationTraceAction.class)) {

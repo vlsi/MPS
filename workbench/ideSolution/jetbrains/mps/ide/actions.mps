@@ -218,19 +218,11 @@
         <link role="action" targetNodeId="1215873275289" resolveInfo="CheckModel" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204909253120" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1213882275200">
-        <link role="constructorDeclaration" targetNodeId="3.~GenerateGroup_autoplan.&lt;init&gt;(jetbrains.mps.generator.IGenerationType)" resolveInfo="GenerateGroup_autoplan" />
-        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213882310644">
-          <link role="classifier" targetNodeId="52.~IGenerationType" resolveInfo="IGenerationType" />
-          <link role="variableDeclaration" targetNodeId="52.~IGenerationType.FILES" resolveInfo="FILES" />
-        </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1227148256453">
+        <link role="constructorDeclaration" targetNodeId="3.~GenerateModelFilesAction.&lt;init&gt;()" resolveInfo="GenerateModelFilesAction" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1213882316552">
-        <link role="constructorDeclaration" targetNodeId="3.~GenerateGroup_autoplan.&lt;init&gt;(jetbrains.mps.generator.IGenerationType)" resolveInfo="GenerateGroup_autoplan" />
-        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213882316553">
-          <link role="classifier" targetNodeId="52.~IGenerationType" resolveInfo="IGenerationType" />
-          <link role="variableDeclaration" targetNodeId="52.~IGenerationType.TEXT" resolveInfo="TEXT" />
-        </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1227148266251">
+        <link role="constructorDeclaration" targetNodeId="3.~GenerateModelTextAction.&lt;init&gt;()" resolveInfo="GenerateModelTextAction" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ParameterizedActionCreator" id="1217518717241">
         <link role="constructorDeclaration" targetNodeId="3.~ShowMappingsPartitioningAction.&lt;init&gt;()" resolveInfo="ShowMappingsPartitioningAction" />

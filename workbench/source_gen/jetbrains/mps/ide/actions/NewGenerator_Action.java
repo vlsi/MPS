@@ -5,8 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.logging.Logger;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -19,7 +17,7 @@ import jetbrains.mps.smodel.ModelAccess;
 
 public class NewGenerator_Action extends GeneratedAction {
   private static final Logger LOG = Logger.getLogger(NewGenerator_Action.class);
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}\\workbench\\source\\jetbrains\\mps\\ide\\projectPane\\nodes\\generator.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = null;
 
   public Frame frame;
 
