@@ -5,9 +5,7 @@ package jetbrains.mps.ypath.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -18,10 +16,10 @@ public class TreePathAspect_Behavior {
   }
 
   public static SNode call_getDefaultProperty_1213877241846(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeKinds", true)).translate(new ITranslator <SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeKinds", true)).translate(new ITranslator2 <SNode, SNode>() {
 
-      public ISequence<SNode> translate(final SNode it) {
-        return new ISequenceIterableAdapter <SNode>() {
+      public Iterable<SNode> translate(final SNode it) {
+        return new Iterable <SNode>() {
 
           public Iterator<SNode> iterator() {
             return new YieldingIterator <SNode>() {

@@ -14141,18 +14141,11 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1226062531041">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226062531042">
                       <property name="name" value="expectedReturnType" />
-                      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1226062531043">
-                        <link role="concept" targetNodeId="17.1068431790189" resolveInfo="Type" />
-                      </node>
-                      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1226062531044">
-                        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1226062531045">
-                          <link role="concept" targetNodeId="17.1068431790189" resolveInfo="Type" />
-                        </node>
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062531046">
-                          <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1226062531047" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226062531048">
-                            <link role="baseMethodDeclaration" targetNodeId="75.1213877374441" resolveInfo="getExpectedReturnType" />
-                          </node>
+                      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1226062531043" />
+                      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062531046">
+                        <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1226062531047" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226062531048">
+                          <link role="baseMethodDeclaration" targetNodeId="75.1213877374441" resolveInfo="getExpectedReturnType" />
                         </node>
                       </node>
                     </node>

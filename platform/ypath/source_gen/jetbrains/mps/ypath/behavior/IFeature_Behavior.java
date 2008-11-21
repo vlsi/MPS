@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -46,13 +47,13 @@ public class IFeature_Behavior {
 
   public static void call_removePartialOpposites_1213877499703(SNode thisNode) {
     final SNode thisNodeLoc = thisNode;
-    for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(thisNode), "features", true)).where(new IWhereFilter <SNode>() {
+    for(SNode foo : Sequence.fromIterable(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getParent(thisNode), "features", true)).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return it != thisNodeLoc && SLinkOperations.getTarget(it, "opposite", false) == thisNodeLoc;
       }
 
-    })) {
+    }))) {
       SLinkOperations.setTarget(foo, "opposite", null, false);
     }
   }

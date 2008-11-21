@@ -7,8 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class LinePart_Behavior {
-  public static Class[] PARAMETERS_1213877403247 = {SNode.class};
-  public static Class[] PARAMETERS_1213877403257 = {SNode.class};
+  private static Class[] PARAMETERS_1213877403247 = {SNode.class};
+  private static Class[] PARAMETERS_1213877403257 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }

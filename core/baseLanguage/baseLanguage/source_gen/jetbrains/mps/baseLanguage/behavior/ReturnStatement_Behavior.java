@@ -40,7 +40,10 @@ public class ReturnStatement_Behavior {
         type = SNodeOperations.copyNode(SLinkOperations.getTarget(ancestor, "returnType", true));
       } else
       {
-        type = SNodeOperations.copyNode(ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(ancestor));
+        SNode expectedReturnType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(ancestor);
+        if (SNodeOperations.isInstanceOf(expectedReturnType, "jetbrains.mps.baseLanguage.structure.Type")) {
+          type = SNodeOperations.copyNode(expectedReturnType);
+        }
       }
     }
     return type;

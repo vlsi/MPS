@@ -89,9 +89,7 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877320644">
-        <link role="concept" targetNodeId="5.1068431790189" resolveInfo="Type" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877320644" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724079" />
     </node>
   </node>
@@ -243,9 +241,7 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877405912">
-        <link role="concept" targetNodeId="5.1068431790189" resolveInfo="Type" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877405912" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724026" />
     </node>
   </node>
