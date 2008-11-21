@@ -463,5 +463,37 @@
       <link role="concept" targetNodeId="1.1225194691553" resolveInfo="ThisNodeExpression" />
     </node>
   </node>
+  <visible index="2" modelUID="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)" />
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1227262734777">
+    <property name="name" value="check_ConceptMethodDeclaration" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227262734778">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227262761173">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1227262762879">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227262764976">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227262764193">
+              <link role="applicableNode" targetNodeId="1227262739031" resolveInfo="method" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1227262767041">
+              <link role="baseMethodDeclaration" targetNodeId="2v.1227262347923" resolveInfo="isOverrideCorrectly" />
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227262761175">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1227262769261">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227262770436">
+              <property name="value" value="Method signature doesn't match signature in the base concept" />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227262803938">
+              <link role="applicableNode" targetNodeId="1227262739031" resolveInfo="method" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1227262739031">
+      <property name="name" value="method" />
+      <link role="concept" targetNodeId="1.1225194472830" resolveInfo="ConceptMethodDeclaration" />
+    </node>
+  </node>
 </model>
 

@@ -14,6 +14,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -40,7 +42,8 @@ public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesyst
       if (notImplementedMethods) {
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportTypeError(nodeToCheck, "Concept " + SPropertyOperations.getString(SLinkOperations.getTarget(nodeToCheck, "concept", false), "name") + " doesn't implement " + methodDeclarations, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195203323", intentionProvider);
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          typeCheckingContext.reportTypeError(nodeToCheck, "Concept " + SPropertyOperations.getString(SLinkOperations.getTarget(nodeToCheck, "concept", false), "name") + " doesn't implement " + methodDeclarations, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195203323", intentionProvider, errorTarget);
         }
       }
     }
@@ -48,7 +51,8 @@ public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesyst
       if (SConceptPropertyOperations.getBoolean(cmd, "abstract")) {
         {
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.reportTypeError(cmd, "Abstract method in non abstract concept", "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195203345", intentionProvider);
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          typeCheckingContext.reportTypeError(cmd, "Abstract method in non abstract concept", "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195203345", intentionProvider, errorTarget);
         }
       }
     }

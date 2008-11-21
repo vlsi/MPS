@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ConceptMethodDeclaration_Behavior {
 
@@ -24,6 +26,25 @@ public class ConceptMethodDeclaration_Behavior {
       return thisNode;
     }
     return null;
+  }
+
+  public static boolean call_isCorrectlyOverriden_1227262347923(SNode thisNode) {
+    if ((SLinkOperations.getTarget(thisNode, "overriddenMethod", false) == null)) {
+      return true;
+    }
+    if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(thisNode, "returnType", true), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "returnType", true)))) {
+      return false;
+    }
+    int parameterCount = SLinkOperations.getCount(thisNode, "parameter");
+    if (parameterCount != SLinkOperations.getCount(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "parameter")) {
+      return false;
+    }
+    for(int i = 0 ; i < parameterCount ; i++ ) {
+      if (!(MatchingUtil.matchNodes(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).getElement(i), ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "parameter", true)).getElement(i)))) {
+        return false;
+      }
+    }
+    return true;
   }
 
   public static String call_getOverridenMethodConceptName_1225196403980(SNode thisNode) {
