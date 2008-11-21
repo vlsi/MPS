@@ -99,6 +99,9 @@ public class GoToRulesAction extends BaseAction {
   }
 
   private static boolean maybeApplicable_new(AbstractConceptDeclaration conceptDeclaration, ApplicableNodeCondition applicableNode, IScope scope) {
+    if (conceptDeclaration == null) {
+      return false;
+    }
     if (applicableNode instanceof jetbrains.mps.lang.typesystem.structure.ConceptReference) {
       jetbrains.mps.lang.typesystem.structure.ConceptReference conceptReference =
         (jetbrains.mps.lang.typesystem.structure.ConceptReference) applicableNode;

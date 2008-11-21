@@ -2518,12 +2518,15 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1216644942782">
           <property name="text" value="(" />
+          <link role="styleClass" targetNodeId="27.1215087929380" resolveInfo="LeftParen" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1216645062908">
+          <property name="separatorText" value="," />
           <link role="relationDeclaration" targetNodeId="1.1210784493590" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1216644952036">
           <property name="text" value=")" />
+          <link role="styleClass" targetNodeId="27.1215088010675" resolveInfo="RightParen" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1216644938061">
           <property name="flag" value="false" />
@@ -2969,6 +2972,7 @@
         <property name="text" value="arguments:" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1216386674145">
+        <property name="vertical" value="true" />
         <link role="relationDeclaration" targetNodeId="1.1216383476350" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1216386674146">
