@@ -59,7 +59,7 @@
   </target>
   <target name="upgrade.plugins" depends="replace.libraries">
     <copy todir="plugins" overwrite="true">
-      <fileset dir="${tmp}/idea/plugins/" includes="svn4idea/**" />
+      <fileset dir="${tmp}/idea/plugins/" includes="ClearCaseIntegration/**, cvsIntegration/**,  git4idea/**,  PerforceIntegration/**,  starteamIntegration/**,  svn4idea/**,  vssIntegration/**" />
     </copy>
   </target>
   <target name="clean" depends="upgrade.plugins,download,replace.libraries,unpack.sources,prepare">
