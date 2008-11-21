@@ -8370,10 +8370,10 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227004959713">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227004961047">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1227004963973">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227004972225">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227255447247">
                     <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1227004968421" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1227004977309">
-                      <link role="conceptProperty" targetNodeId="4.1137473891462" resolveInfo="alias" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1227255452672">
+                      <link role="baseMethodDeclaration" targetNodeId="49.1213877396640" resolveInfo="getPresentation" />
                     </node>
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227004961048">
@@ -8383,14 +8383,11 @@
               </node>
             </node>
           </node>
-          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String" id="1227004984560">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227004984561">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227004986123">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227004986922">
-                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1227004986124" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1227004989902">
-                    <link role="conceptProperty" targetNodeId="4.1137473914776" resolveInfo="short_description" />
-                  </node>
+          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String" id="1227256494448">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227256494449">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227256521606">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227256521607">
+                  <property name="value" value="" />
                 </node>
               </node>
             </node>

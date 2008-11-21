@@ -85,6 +85,11 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227083346683">
               <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227256678309">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1227256681603">
+                <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227084329546">

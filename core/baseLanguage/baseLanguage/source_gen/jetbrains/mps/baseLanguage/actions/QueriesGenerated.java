@@ -57,6 +57,7 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.search.VisibleThrowablesScope;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.baseLanguage.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.collections.internal.query.SequenceOperations;
@@ -64,7 +65,6 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class QueriesGenerated {
 
@@ -1603,7 +1603,7 @@ __switch__:
               }
 
               public String getMatchingText(String pattern) {
-                return "new " + SConceptPropertyOperations.getString((item), "alias");
+                return "new " + BaseConcept_Behavior.call_getPresentation_1213877396640((item));
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -1611,7 +1611,7 @@ __switch__:
               }
 
               public String getDescriptionText(String pattern) {
-                return SConceptPropertyOperations.getString((item), "short_description");
+                return "";
               }
 
             });
