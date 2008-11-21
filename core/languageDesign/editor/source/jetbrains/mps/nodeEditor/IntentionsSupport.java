@@ -77,7 +77,6 @@ public class IntentionsSupport {
     });
 
 
-
     myEditor.addCellSelectionListener(new CellSelectionListener() {
       public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
         if (!editor.isFocusOwner()) return;

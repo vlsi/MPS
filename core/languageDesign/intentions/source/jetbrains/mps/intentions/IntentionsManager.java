@@ -135,8 +135,14 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   public Set<Pair<Intention, SNode>> getEnabledAvailableIntentions(SNode node, EditorContext context) {
-    Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>(getAvailableIntentions(node, context));
-    result.removeAll(getDisabledIntentions());
+    Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
+    Set<Intention> disabled = getDisabledIntentions();
+
+    for (Pair<Intention,SNode> ip:getAvailableIntentions(node, context)){
+      if (!disabled.contains(ip.first)){
+        result.add(ip);
+      }
+    }
     return result;
   }
 
