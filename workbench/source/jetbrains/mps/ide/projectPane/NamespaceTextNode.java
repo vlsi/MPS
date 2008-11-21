@@ -28,7 +28,7 @@ import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class NamespaceTextNode extends MPSTreeNode{
+public final class NamespaceTextNode extends TextTreeNode{
   private static final NamespaceNodeBuilder<NamespaceTextNode> BUILDER = new NamespaceNodeBuilder<NamespaceTextNode>() {
     public NamespaceTextNode createNamespaceNode(String text, IOperationContext context) {
       return new NamespaceTextNode(text, context);
