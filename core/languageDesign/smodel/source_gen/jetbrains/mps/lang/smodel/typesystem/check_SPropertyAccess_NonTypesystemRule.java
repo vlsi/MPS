@@ -12,6 +12,8 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_SPropertyAccess_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -27,7 +29,8 @@ public class check_SPropertyAccess_NonTypesystemRule extends AbstractNonTypesyst
       String conceptName = SPropertyOperations.getString(inputNodeConcept, "name");
       if (!(ListSequence.fromList(declaredProperties).contains(property))) {
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.reportTypeError(op, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected for an instance of " + conceptName, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226069952494", intentionProvider);
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        typeCheckingContext.reportTypeError(op, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected for an instance of " + conceptName, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226069952494", intentionProvider, errorTarget);
       }
     }
   }

@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -19,13 +21,15 @@ public class typeof_Node_ConceptMethodCall_InferenceRule extends AbstractInferen
   public void applyRule(final SNode conceptMethodCall, final TypeCheckingContext typeCheckingContext) {
     if (!((SLinkOperations.getTarget(conceptMethodCall, "baseMethodDeclaration", false) != null))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(conceptMethodCall, "no method declaration", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179410829052", intentionProvider);
+      IErrorTarget errorTarget = new NodeErrorTarget();
+      typeCheckingContext.reportTypeError(conceptMethodCall, "no method declaration", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179410829052", intentionProvider, errorTarget);
     }
     int actCount = SLinkOperations.getCount(conceptMethodCall, "actualArgument");
     int expCount = SLinkOperations.getCount(SLinkOperations.getTarget(conceptMethodCall, "baseMethodDeclaration", false), "parameter");
     if (!(actCount == expCount)) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(conceptMethodCall, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179410886099", intentionProvider);
+      IErrorTarget errorTarget = new NodeErrorTarget();
+      typeCheckingContext.reportTypeError(conceptMethodCall, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179410886099", intentionProvider, errorTarget);
     }
     {
       SNode arg;

@@ -2876,5 +2876,21 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227264722563">
+    <property name="name" value="EqualsStructurallyExpression" />
+    <link role="extends" targetNodeId="2.1081773326031" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227265358462">
+      <property name="value" value="matches" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1227265389277">
+      <property name="value" value="nodes structural equality operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1227265355101">
+      <property name="value" value="0" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1166617629900" resolveInfo="priority" />
+    </node>
+  </node>
 </model>
 

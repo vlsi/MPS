@@ -10,6 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -35,7 +37,8 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInfe
             resultConcept = parameterConcept;
             if (!(SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(typeCheckingContext.getEquationManager().getRepresentator(concreteConcept))))) {
               BaseIntentionProvider intentionProvider = null;
-              typeCheckingContext.reportTypeError(op, SPropertyOperations.getString(parameterConcept, "name") + " is not sub-concept of " + SPropertyOperations.getString(typeCheckingContext.getEquationManager().getRepresentator(concreteConcept), "name"), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205442304609", intentionProvider);
+              IErrorTarget errorTarget = new NodeErrorTarget();
+              typeCheckingContext.reportTypeError(op, SPropertyOperations.getString(parameterConcept, "name") + " is not sub-concept of " + SPropertyOperations.getString(typeCheckingContext.getEquationManager().getRepresentator(concreteConcept), "name"), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205442304609", intentionProvider, errorTarget);
             }
           }
           {

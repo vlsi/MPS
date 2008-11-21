@@ -11,6 +11,8 @@ import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -28,7 +30,8 @@ public class check_LinkRefExpression_NonTypesystemRule extends AbstractNonTypesy
     List<SNode> declaredLinks = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept);
     if (!(ListSequence.fromList(declaredLinks).contains(link))) {
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.reportTypeError(expr, "link '" + SPropertyOperations.getString(link, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226360207686", intentionProvider);
+      IErrorTarget errorTarget = new NodeErrorTarget();
+      typeCheckingContext.reportTypeError(expr, "link '" + SPropertyOperations.getString(link, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226360207686", intentionProvider, errorTarget);
     }
   }
 

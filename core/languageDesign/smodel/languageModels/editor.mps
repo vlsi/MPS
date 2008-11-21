@@ -2523,5 +2523,41 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1227266102550">
+    <link role="conceptDeclaration" targetNodeId="1.1227264722563" resolveInfo="EqualsStructurallyExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1227266104349">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1227266104350">
+        <link role="relationDeclaration" targetNodeId="4.1081773367580" />
+        <link role="actionMap" targetNodeId="5.1140734304236" resolveInfo="BinaryOperation_LeftArgument_Actions" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1227266104351">
+        <property name="noTargetText" value="&lt;no operator&gt;" />
+        <link role="relationDeclaration" targetNodeId="2.1156235010670" resolveInfo="alias" />
+        <link role="keyMap" targetNodeId="5.1158938292640" resolveInfo="CastExpression_KeyMap" />
+        <link role="styleClass" targetNodeId="5.1186415544875" resolveInfo="KeyWord" />
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1227266104352">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1227266104353">
+            <link role="replacementConcept" targetNodeId="4.1081773326031" resolveInfo="BinaryOperation" />
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1227266104354">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1227266104355">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1227266223621">
+          <property name="value" value="1.0" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1227266234358">
+          <property name="value" value="1.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1227266104356">
+        <link role="relationDeclaration" targetNodeId="4.1081773367579" />
+        <link role="actionMap" targetNodeId="5.1140734681122" resolveInfo="BinaryOperation_RightArgument_Actions" />
+      </node>
+    </node>
+  </node>
 </model>
 
