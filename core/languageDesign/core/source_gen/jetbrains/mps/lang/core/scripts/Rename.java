@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -25,7 +26,6 @@ import jetbrains.mps.refactoring.framework.ChooseStringComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Rename extends AbstractLoggableRefactoring {
   public static final String newName = "newName";
@@ -53,7 +53,7 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.core.structure.BaseConcept";
+    return "jetbrains.mps.lang.core.structure.INamedConcept";
   }
 
   public Class getOverridenRefactoringClass() {
@@ -61,7 +61,7 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
-    return refactoringContext.getSelectedNode() != null;
+    return refactoringContext.getSelectedNode() != null && SNodeOperations.isInstanceOf(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.core.structure.INamedConcept");
   }
 
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
@@ -150,7 +150,7 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.lang.core.structure.BaseConcept")) {
+    if (SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.lang.core.structure.INamedConcept")) {
       return true;
     } else
     {

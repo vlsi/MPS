@@ -783,7 +783,7 @@
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1199457919461">
     <property name="name" value="Rename" />
     <property name="userFriendlyName" value="Rename" />
-    <link role="applicableConcept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <link role="applicableConcept" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1199457954885">
       <property name="name" value="newName" />
       <property name="presentation" value="new name:" />
@@ -810,9 +810,19 @@
     <node role="isApplicableClause" type="jetbrains.mps.lang.refactoring.structure.IsApplicableClause" id="1199458011650">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199458011651">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199458013855">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1199458018282">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1199458020176" />
-            <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215086302338" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1227270501282">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227270509387">
+              <node role="operand" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1227270509308" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1227270527266">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1227270529345">
+                  <link role="conceptDeclaration" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1199458018282">
+              <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.NodeExpression" id="1215086302338" />
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1199458020176" />
+            </node>
           </node>
         </node>
       </node>
