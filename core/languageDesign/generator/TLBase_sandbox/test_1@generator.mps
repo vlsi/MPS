@@ -322,7 +322,7 @@
     </node>
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1207695310518">
       <property name="name" value="ccc" />
-      <link role="targetConcept" targetNodeId="1.1080120340718" resolveInfo="AndExpression" />
+      <link role="targetConcept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1205943042570">
       <link role="applicableConcept" targetNodeId="1.1145552809883" resolveInfo="AbstractCreator" />
@@ -681,10 +681,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227219853408" />
     </node>
     <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1227219853409" />
-  </node>
-  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1227226555553">
-    <property name="name" value="weave_" />
-    <node role="contentNode" type="jetbrains.mps.lang.core.structure.BaseConcept" id="1227226555554" />
   </node>
 </model>
 

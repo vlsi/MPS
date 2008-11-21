@@ -126,6 +126,7 @@ public final class SConceptOperations {
   }
 
   public static SNode createNewNode(String conceptFqName, SNode prototypeNode) {
+    if(conceptFqName == null) return null;
     return NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, null);
   }
 

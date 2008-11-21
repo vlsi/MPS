@@ -191,7 +191,7 @@ public class NameUtil {
 
   public static String nodeFQName(SNode node) {
     if (node == null) {
-      return "null";
+      return null;
     }
     String name = node.getName();
     return node.getModel().getLongName() + "." + name;
