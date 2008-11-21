@@ -10,6 +10,4 @@ public abstract class BaseOptions<Result> implements IExternalizeable, Cloneable
   }
 
   public abstract BaseOptions clone();
-
-  public abstract Result getResult(SNode node, ActionEventData data);
 }

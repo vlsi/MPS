@@ -51,7 +51,7 @@ public class FindersOptions extends BaseOptions<IResultProvider> {
     myFindersClassNames = findersClassNames;
   }
 
-  public IResultProvider getResult(SNode node, ActionEventData data) {
+  public IResultProvider getResult(SNode node) {
     List<BaseFinder> finders = new ArrayList<BaseFinder>();
     for (String finderClassName : myFindersClassNames) {
       String languageNamespacePlusFindUsages = NameUtil.namespaceFromLongName(finderClassName);

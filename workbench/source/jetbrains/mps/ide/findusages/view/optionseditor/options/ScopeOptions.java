@@ -116,8 +116,8 @@ public class ScopeOptions extends BaseOptions<SearchQuery> {
   }
 
   @NotNull
-  public SearchQuery getResult(SNode node, ActionEventData data) {
-    return new SearchQuery(node, getScope(data.getOperationContext(), data.getModelDescriptor()));
+  public SearchQuery getResult(SNode node, IOperationContext context,SModelDescriptor modelDescriptor) {
+    return new SearchQuery(node, getScope(context, modelDescriptor));
   }
 
   public void write(Element element, MPSProject project) {
