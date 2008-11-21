@@ -1,10 +1,7 @@
 package jetbrains.mps.findUsages;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
@@ -17,17 +14,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class FindUsagesManager implements ApplicationComponent {
-  private static Logger LOG = Logger.getLogger(FindUsagesManager.class);
-
-  public static FindUsagesManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(FindUsagesManager.class);
-  }
+class DefaultFindUsagesManager extends FindUsagesManager {
+  private static Logger LOG = Logger.getLogger(DefaultFindUsagesManager.class);
 
   private HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>> myConceptsToKnownDescendantsInModelDescriptors = new HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>>();
   private ClassLoaderManager myClassLoaderManager;
 
-  public FindUsagesManager(ClassLoaderManager manager) {
+  public DefaultFindUsagesManager(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
   }
 
@@ -232,19 +225,4 @@ public class FindUsagesManager implements ApplicationComponent {
     });
   }
 
-  public static class ProgressAdapter extends NullAdaptiveProgressMonitor {
-    private final ProgressIndicator myProgress;
-
-    public ProgressAdapter(ProgressIndicator progress) {
-      myProgress = progress;
-    }
-
-    public void addText(String text) {
-      myProgress.setText(text);
-    }
-
-    public boolean isCanceled() {
-      return myProgress.isCanceled();
-    }
-  }
 }

@@ -141,7 +141,8 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.findUsages.FindUsagesManager</implementation-class>
+      <interface-class>jetbrains.mps.findUsages.FindUsagesManager</interface-class>
+      <implementation-class>jetbrains.mps.findUsages.DefaultFindUsagesManager</implementation-class>
     </component>
 
     <component>
