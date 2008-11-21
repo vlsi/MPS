@@ -8,7 +8,6 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.actions.NewModel_Action;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNode;
 import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNodeBuilder;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -29,10 +28,22 @@ import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class NamespaceTextNode extends TextTreeNode implements NamespaceNode {
+public final class NamespaceTextNode extends MPSTreeNode{
   private static final NamespaceNodeBuilder<NamespaceTextNode> BUILDER = new NamespaceNodeBuilder<NamespaceTextNode>() {
     public NamespaceTextNode createNamespaceNode(String text, IOperationContext context) {
       return new NamespaceTextNode(text, context);
+    }
+
+    public String getName(NamespaceTextNode node) {
+      return node.getName();
+    }
+
+    public void setName(NamespaceTextNode node, String name) {
+      node.setName(name);
+    }
+
+    public boolean isNamespaceNode(MPSTreeNode n) {
+      return n instanceof NamespaceTextNode;      
     }
   };
 
@@ -169,7 +180,7 @@ public final class NamespaceTextNode extends TextTreeNode implements NamespaceNo
       if (child instanceof ProjectModuleTreeNode) {
         modules.add(((ProjectModuleTreeNode) child).getModule());
       } else {
-        if (child instanceof NamespaceNode) modules.addAll(getModulesUnder(child));
+        if (child instanceof NamespaceTextNode) modules.addAll(getModulesUnder(child));
       }
     }
     return modules;

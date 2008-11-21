@@ -38,6 +38,7 @@ import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
 import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
 import java.util.Set;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.Map;
@@ -656,7 +657,7 @@ public class QueriesGenerated {
       }
     }
     List<SNode> varList = new ArrayList<SNode>();
-    ListSequence.fromList(varList).addSequence(Sequence.fromIterable(vars));
+    ListSequence.fromList(varList).addSequence(SetSequence.fromSet(vars));
     ListSequence.fromList(varList).sort(new ISelector <SNode, Comparable<?>>() {
 
       public Comparable<?> select(SNode it) {

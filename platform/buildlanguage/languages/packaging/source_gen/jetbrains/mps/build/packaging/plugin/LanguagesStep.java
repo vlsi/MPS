@@ -23,6 +23,7 @@ import javax.swing.JLabel;
 import javax.swing.border.EtchedBorder;
 import java.awt.GridBagConstraints;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 
 public class LanguagesStep extends AbstractStep {
 
@@ -152,6 +153,18 @@ public class LanguagesStep extends AbstractStep {
 
         public CheckBoxNamespaceNode createNamespaceNode(String text, IOperationContext context) {
           return new CheckBoxNamespaceNode(new NamespaceData(text));
+        }
+
+        public String getName(CheckBoxNamespaceNode p0) {
+          return p0.getName();
+        }
+
+        public boolean isNamespaceNode(MPSTreeNode p0) {
+          return p0 instanceof CheckBoxNamespaceNode;
+        }
+
+        public void setName(CheckBoxNamespaceNode p0, String p1) {
+          p0.setName(p1);
         }
 
       });

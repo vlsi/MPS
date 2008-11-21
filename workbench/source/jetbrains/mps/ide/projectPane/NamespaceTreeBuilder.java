@@ -11,7 +11,6 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -33,7 +32,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends NamespaceNode> {
+public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPSTreeNode> {
   private T myRootNamespace;
   private NamespaceNodeBuilder<T> myBuilder;
 
@@ -69,14 +68,14 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends Name
     return true;
   }
 
-  private void sortTree(NamespaceNode node) {
+  private void sortTree(T node) {
     List<MPSTreeNode> nodes = new ArrayList<MPSTreeNode>();
-    List<NamespaceNode> namespaces = new ArrayList<NamespaceNode>();
+    List<T> namespaces = new ArrayList<T>();
     for (int i = 0; i < node.getChildCount(); i++) {
       MPSTreeNode child = (MPSTreeNode) node.getChildAt(i);
-      if (child instanceof NamespaceNode) {
-        sortTree((NamespaceNode) child);
-        namespaces.add((NamespaceNode) child);
+      if (myBuilder.isNamespaceNode(child)) {
+        sortTree((T) child);
+        namespaces.add((T) child);
       } else {
         nodes.add(child);
       }
@@ -89,7 +88,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends Name
 
     node.removeAllChildren();
 
-    for (NamespaceNode ns : namespaces) {
+    for (T ns : namespaces) {
       node.add(ns);
     }
 
@@ -98,19 +97,19 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends Name
     }
   }
 
-  private void compactNodes(NamespaceNode node) {
+  private void compactNodes(T node) {
     for (int i = 0; i < node.getChildCount(); i++) {
       MPSTreeNode child = (MPSTreeNode) node.getChildAt(i);
-      if (child instanceof NamespaceNode) {
-        compactNodes((NamespaceNode) child);
+      if (myBuilder.isNamespaceNode(child)) {
+        compactNodes((T) child);
       }
     }
 
 
     if (node.getParent() != null && //skip root
-      node.getChildCount() == 1 && node.getChildAt(0) instanceof NamespaceNode) {
-      NamespaceNode child = (NamespaceNode) node.getChildAt(0);
-      node.setName(node.getName() + "." + child.getName());
+      node.getChildCount() == 1 && myBuilder.isNamespaceNode((MPSTreeNode) node.getChildAt(0))) {
+      T child = (T) node.getChildAt(0);
+      myBuilder.setName(node, myBuilder.getName(node) + "." + myBuilder.getName(child));
 
       for (MPSTreeNode c : (List<MPSTreeNode>) CollectionUtil.iterableAsList(CollectionUtil.enumerationAsIterable(child.children()))) {
         child.remove(c);
@@ -128,9 +127,9 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends Name
     List<String> otherElements = pathElements.subList(1, pathElements.size());
 
     for (int i = 0; i < sourceNode.getChildCount(); i++) {
-      if (sourceNode.getChildAt(i) instanceof NamespaceNode) {
+      if (myBuilder.isNamespaceNode((MPSTreeNode) sourceNode.getChildAt(i))) {
         T child = (T) sourceNode.getChildAt(i);
-        if (first.equals(child.getName())) {
+        if (first.equals(myBuilder.getName(child))) {
           return getSubnamespace(child, otherElements, context);
         }
       }
@@ -144,15 +143,11 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends Name
     return getSubnamespace(newChild, otherElements, context);
   }
 
-  public static interface NamespaceNode extends MutableTreeNode {
-    String getName();
-    void setName(String name);
-    void add(MutableTreeNode newChild);
-    void removeAllChildren();
-  }
-
-  public static interface NamespaceNodeBuilder<N extends NamespaceNode> {
-    N createNamespaceNode(String text, IOperationContext context);
+  public static interface NamespaceNodeBuilder<N extends MPSTreeNode> {
+    public N createNamespaceNode(String text, IOperationContext context);
+    public abstract String getName(N node);
+    public abstract void setName(N node, String name);
+    public abstract boolean isNamespaceNode(MPSTreeNode n);
   }
 
   private static class MyContext implements IOperationContext {
