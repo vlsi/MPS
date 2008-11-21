@@ -21,6 +21,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.List;
+import java.util.Set;
 
 public class MPSDataKeys extends PlatformDataKeys {
   @Description(description = "current IDEA project")
@@ -61,6 +62,8 @@ public class MPSDataKeys extends PlatformDataKeys {
   public static final DataKey<List<String>> VIRTUAL_PACKAGES = DataKey.create("MPS_VirtualPackage_List");
   @Description(description = "number of selected items in ProjectPane")
   public static final DataKey<Integer> SELECTED_ITEMS_NUM = DataKey.create("MPS_SelectedItemsNum");
+  @Description(description = "active place")
+  public static final DataKey<ActionPlace> PLACE = DataKey.create("MPS_Place");
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(ElementType.FIELD)
