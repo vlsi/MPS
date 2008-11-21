@@ -6,11 +6,11 @@ import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.INodeAdapter;
 import java.util.Iterator;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
@@ -24,7 +24,7 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
   }
 
   public void execute(SNode node) {
-    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope((Classifier)((INodeAdapter)SNodeOperations.getAdapter(((SNode)this.getField("classifier")[0]))));
+    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope((Classifier)((Classifier)SNodeOperations.getAdapter(((SNode)this.getField("classifier")[0]))));
     List list = scope.getMethodsByName(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode)this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name"));
     for(Object object : list) {
       INodeAdapter adapter = (INodeAdapter)object;

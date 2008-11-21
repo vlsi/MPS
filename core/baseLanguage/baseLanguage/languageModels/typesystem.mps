@@ -11576,6 +11576,27 @@
             <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1227257158747">
               <property name="applyImmediately" value="true" />
               <link role="quickFix" targetNodeId="1216647860300" resolveInfo="ChooseAppropriateMethodDeclaration" />
+              <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1227257697031">
+                <link role="quickFixArgument" targetNodeId="1216647878010" resolveInfo="methodCall" />
+                <node role="value" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227257711354">
+                  <link role="applicableNode" targetNodeId="1219948090891" resolveInfo="iMethodCall" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" id="1227257734090">
+                <link role="quickFixArgument" targetNodeId="1216647908857" resolveInfo="classifier" />
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227257779796">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227257773092">
+                    <link role="variableDeclaration" targetNodeId="1219948190097" resolveInfo="baseMethodDeclaration" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1227257787691">
+                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1227257787692">
+                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1227257793662">
+                        <link role="conceptDeclaration" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

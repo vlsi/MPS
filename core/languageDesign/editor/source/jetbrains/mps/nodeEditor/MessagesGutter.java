@@ -156,11 +156,14 @@ public class MessagesGutter extends JPanel {
       List<EditorMessage> editorMessages = new ArrayList<EditorMessage>(myMessages);
       Collections.sort(editorMessages, new Comparator<EditorMessage>() {
         public int compare(EditorMessage o1, EditorMessage o2) {
+          if (o1 == o2) return 0;
+          if (o1 == null) return -1;
+          if (o2 == null) return 1;
           return o1.getStatus().ordinal() - o2.getStatus().ordinal();
         }
       });
       for (EditorMessage msg : editorMessages) {
-        if (!msg.isValid(myEditorComponent)) {
+        if (msg == null || !msg.isValid(myEditorComponent)) {
           continue;
         }
         int start = getMessageStart(msg);
