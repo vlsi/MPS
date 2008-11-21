@@ -45,7 +45,6 @@
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/platform" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/plugin" />
     <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/workbench" />
-    <mkdir dir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/log" />
     <mkdir dir="${deploy.dir}/debug" />
     <mkdir dir="${deploy.dir}/debug/MPS-src.zip.tmp" />
     <mkdir dir="${deploy.dir}/debug/MPS-src.zip.tmp/build-helpers.repack.sources" />
@@ -209,9 +208,6 @@
     </copy>
     <antcall target="pack.jetbrains.mps.ide.uiLanguage" />
     <antcall target="pack.jetbrains.mps.ide" />
-    <copy todir="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/log">
-      <fileset dir="log" excludes="**/*.java, **/*.iml, **/*.iws" />
-    </copy>
     <echo file="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}</echo>
     <copy file="entryPoints.xml" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/entryPoints.xml" />
     <copy file="readme.txt" tofile="${deploy.dir}/MPS-${build.number}.zip.tmp/MPS/readme.txt" />
