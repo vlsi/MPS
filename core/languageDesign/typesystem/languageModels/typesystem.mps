@@ -2254,5 +2254,35 @@
       <link role="concept" targetNodeId="1.1227107461373" resolveInfo="ReferenceRoleTarget" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1227257230254">
+    <property name="name" value="typeof_QuickFixArgumentReference" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227257230255">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1227257237871">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1227257241047">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1227257241048">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227257242707">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227257241769">
+                <link role="applicableNode" targetNodeId="1227257230256" resolveInfo="reference" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227257246606">
+                <link role="link" targetNodeId="1.1216390348810" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1227257237874">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1227257233821">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227257235464">
+              <link role="applicableNode" targetNodeId="1227257230256" resolveInfo="reference" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1227257230256">
+      <property name="name" value="reference" />
+      <link role="concept" targetNodeId="1.1216390348809" resolveInfo="QuickFixArgumentReference" />
+    </node>
+  </node>
 </model>
 

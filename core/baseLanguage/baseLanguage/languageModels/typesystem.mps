@@ -11573,6 +11573,10 @@
             <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1219948520792">
               <property name="value" value="wrong number of parameters" />
             </node>
+            <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.HelginsIntention" id="1227257158747">
+              <property name="applyImmediately" value="true" />
+              <link role="quickFix" targetNodeId="1216647860300" resolveInfo="ChooseAppropriateMethodDeclaration" />
+            </node>
           </node>
         </node>
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1219948485708">

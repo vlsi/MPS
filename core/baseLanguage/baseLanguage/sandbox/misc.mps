@@ -116,5 +116,58 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1227257059348">
+    <property name="name" value="Test" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1227257069354">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227257069355" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227257069356" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227257069357" />
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1227257075124">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227257075125" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227257075126" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227257075127" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227257096839">
+        <property name="name" value="i" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227257096840" />
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1227257098731">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227257098732" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227257098733" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227257098734" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1227257103095">
+        <property name="name" value="s" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227257103096">
+          <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1227257105972">
+      <property name="name" value="bar" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227257105973" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227257105974" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227257105975">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227257111882">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1227257113838">
+            <link role="baseMethodDeclaration" targetNodeId="1227257069354" resolveInfo="foo" />
+            <link role="classConcept" targetNodeId="1227257059348" resolveInfo="Test" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227257116057">
+              <property name="value" value="" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227257059349" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1227257059350">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227257059351" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227257059352" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227257059353" />
+    </node>
+  </node>
 </model>
 
