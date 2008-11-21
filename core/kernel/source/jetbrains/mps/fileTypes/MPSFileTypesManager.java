@@ -12,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.fileSystem.FileIcons;
+import jetbrains.mps.ide.java.JavaFileType;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
 import jetbrains.mps.vcs.diff.ui.ModelMergeTool;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -26,7 +27,7 @@ public class MPSFileTypesManager implements ApplicationComponent {
   public static final FileType SOLUTION_FILE_TYPE = new MPSTextFileType("Solution", "MPS Solution File Type", MPSExtentions.SOLUTION, Icons.SOLUTION_ICON);
   public static final FileType LANGUAGE_FILE_TYPE = new MPSTextFileType("Language", "MPS Language File Type", MPSExtentions.LANGUAGE, Icons.PROJECT_LANGUAGE_ICON);
   public static final FileType DEVKIT_FILE_TYPE = new MPSTextFileType("Devkit", "MPS Devkit File Type", MPSExtentions.DEVKIT, Icons.DEVKIT_ICON);
-  public static final FileType JAVA_FILE_TYPE = new MPSTextFileType("Java", "Java Source File Type", MPSExtentions.JAVAFILE, FileIcons.JAVA_ICON);
+  public static final FileType JAVA_FILE_TYPE = new JavaFileType();
   public static final FileType XML_FILE_TYPE = new MPSTextFileType("XML", "XML File", "xml", FileIcons.XML_ICON);
   public static final FileType CLASS_FILE_TYPE = new FileType() {
     @NotNull

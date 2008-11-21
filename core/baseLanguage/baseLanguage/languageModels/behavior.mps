@@ -6727,11 +6727,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1219237347770">
-              <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1219237347771">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219237347772" />
-              </node>
-            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877436372">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1213877436373">
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1213877436374">

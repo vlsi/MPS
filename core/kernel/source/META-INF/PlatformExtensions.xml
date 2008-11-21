@@ -137,4 +137,5 @@
     <ComponentRoamingType component="ChangeListManager" type="DISABLED"/>
     <ComponentRoamingType component="RestoreUpdateTree" type="DISABLED"/>
 
+    <syntaxHighlighter factoryClass="com.intellij.openapi.fileTypes.LanguageFileTypeHighlighterProvider"/>
 </extensions>
